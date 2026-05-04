@@ -17,3 +17,11 @@ Current caveats:
 
 Safety direction:
 - v1 is approval-first: generate candidates, send Telegram summary, publish only approved items
+
+## Editorial Agent Spec
+
+The Poanta editor-agent rules live in:
+- `agents/poanta-editor-agent.md` — full Hebrew operating manual
+- `agents/poanta-editor-agent-prompt.md` — compact prompt for automation/subagents
+
+The approval automation should read/follow this spec before sending candidates for approval.
