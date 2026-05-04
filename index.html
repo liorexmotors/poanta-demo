@@ -124,33 +124,71 @@
           const el = document.getElementById('pushStatus');
           if(el) el.textContent = text;
         }
+        function isIOS(){ return /iphone|ipad|ipod/i.test(navigator.userAgent); }
+        function isStandalone(){ return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true; }
+        function canUseNotifications(){ return window.isSecureContext && ('Notification' in window); }
         async function setupPushDemo(firstItem){
           const enable = document.getElementById('enablePush');
           const demo = document.getElementById('demoPush');
           if(!enable || !demo) return;
-          if(!('Notification' in window)){
-            setPushStatus('הדפדפן הזה לא תומך בהתראות.');
-            enable.disabled = true; demo.disabled = true; return;
+
+          if(!window.isSecureContext){
+            setPushStatus('התראות דורשות קישור HTTPS. בקישור הזמני זה אמור לעבוד; אם לא, נצטרך דומיין קבוע.');
+            return;
           }
+          if(isIOS() && !isStandalone()){
+            setPushStatus('באייפון צריך קודם לשמור את פואנטה למסך הבית: שיתוף ← הוסף למסך הבית. אחר כך לפתוח מהאייקון ולאשר התראות.');
+          } else if(!canUseNotifications()){
+            setPushStatus('הדפדפן הזה לא תומך בהתראות Web Push. נסה Chrome באנדרואיד/דסקטופ, או באייפון אחרי הוספה למסך הבית.');
+          } else if(Notification.permission === 'granted'){
+            setPushStatus('ההתראות כבר מאושרות. אפשר ללחוץ על “שלח התראת דמו”.');
+          }
+
           let registration = await registerPoantaSW().catch(() => null);
+
           enable.onclick = async () => {
+            if(isIOS() && !isStandalone()){
+              setPushStatus('באייפון זה לא יעבוד מתוך Safari רגיל. הוסף למסך הבית, פתח מהאייקון, ואז לחץ שוב על הפעל עדכונים.');
+              alert('באייפון: לחצו שיתוף → הוסף למסך הבית, ואז פתחו את פואנטה מהאייקון החדש כדי לאשר התראות.');
+              return;
+            }
+            if(!canUseNotifications()){
+              setPushStatus('הדפדפן לא מאפשר התראות באתר הזה. נסה Chrome/Android או התקנה למסך הבית באייפון.');
+              return;
+            }
             const permission = await Notification.requestPermission();
             if(permission === 'granted'){
-              registration = registration || await registerPoantaSW();
-              setPushStatus('ההתראות הופעלו בדמו. בשלב הבא נחבר שרת שישלח פוש אמיתי כשנכנסת כתבה חדשה.');
+              registration = registration || await registerPoantaSW().catch(() => null);
+              setPushStatus('ההתראות הופעלו בדמו. עכשיו לחץ “שלח התראת דמו”. בשלב הבא נחבר שרת שישלח פוש אמיתי כשנכנסת כתבה חדשה.');
+            } else if(permission === 'denied'){
+              setPushStatus('ההתראות חסומות בדפדפן. צריך לפתוח הגדרות אתר ולאפשר Notifications.');
             } else {
-              setPushStatus('המשתמש לא אישר התראות, לכן לא ניתן לשלוח פושים.');
+              setPushStatus('לא אושרו התראות, לכן לא ניתן לשלוח פושים.');
             }
           };
+
           demo.onclick = async () => {
+            if(!canUseNotifications()){
+              setPushStatus('אין תמיכה בהתראות בדפדפן/מצב הנוכחי. באייפון צריך לפתוח כאפליקציה ממסך הבית.');
+              return;
+            }
             if(Notification.permission !== 'granted'){
               setPushStatus('צריך ללחוץ קודם על “הפעל עדכונים” ולאשר התראות.');
               return;
             }
-            registration = registration || await registerPoantaSW();
             const title = firstItem?.headline || 'פואנטה חדשה';
             const body = firstItem?.takeaway || 'יש עדכון חדש בפיד פואנטה';
-            registration.showNotification(title, { body, icon:'./icon-192.png', badge:'./icon-192.png', dir:'rtl', lang:'he-IL', tag:'poanta-demo', data:{url:'./index.html'} });
+            try{
+              registration = registration || await registerPoantaSW().catch(() => null);
+              if(registration && registration.showNotification){
+                await registration.showNotification(title, { body, icon:'./icon-192.png', badge:'./icon-192.png', dir:'rtl', lang:'he-IL', tag:'poanta-demo', data:{url:'./index.html'} });
+              } else {
+                new Notification(title, { body, icon:'./icon-192.png', dir:'rtl', lang:'he-IL' });
+              }
+              setPushStatus('נשלחה התראת דמו עם כותרת הכתבה הראשונה.');
+            } catch(err){
+              setPushStatus('הדפדפן חסם את התראת הדמו. נסה לפתוח מהמסך הראשי/Chrome או לבדוק הרשאות אתר.');
+            }
           };
         }
         fetch('feed.json', {cache:'no-store'}).then(r => r.json()).then(renderFeed).catch(() => {
