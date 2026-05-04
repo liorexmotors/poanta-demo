@@ -1,0 +1,31 @@
+name: Update Poanta Feed
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Update feed
+        run: python scripts/update_feed.py
+      - name: Commit feed update
+        run: |
+          if git diff --quiet feed.json .poanta-state.json; then
+            echo "No feed changes"
+            exit 0
+          fi
+          git config user.name "poanta-feed-bot"
+          git config user.email "poanta-feed-bot@users.noreply.github.com"
+          git add feed.json .poanta-state.json
+          git commit -m "Auto-update Poanta feed"
+          git push
