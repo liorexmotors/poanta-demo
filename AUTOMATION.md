@@ -1,6 +1,7 @@
 # Poanta Feed Automation
 
 Approval mode: OpenClaw cron drafts candidates every two hours and sends them to Telegram for approval. GitHub Actions publishing is manual-only for now.
+Approval cron schedule: every two hours during daytime only, 07:00-21:00 Asia/Jerusalem (`0 7-22/2 * * *`), with no scans or Telegram updates between 23:00 and 07:00.
 
 What it does:
 - scans approved sources
