@@ -16,6 +16,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import argparse
 import time
 import html
 from dataclasses import dataclass
@@ -32,6 +33,7 @@ from html.parser import HTMLParser
 ROOT = Path(__file__).resolve().parents[1]
 FEED_PATH = ROOT / "feed.json"
 STATE_PATH = ROOT / ".poanta-state.json"
+CANDIDATES_PATH = ROOT / "candidates.json"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PoantaBot/0.1; +https://github.com/liorexmotors/poanta-demo)",
@@ -340,6 +342,10 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser(description="Update or draft Poanta feed cards")
+    ap.add_argument("--draft", action="store_true", help="Write candidates.json for approval instead of publishing feed.json")
+    args = ap.parse_args()
+
     selected: list[Candidate] = []
     used_urls: set[str] = set()
     for source in SOURCES:
@@ -369,9 +375,14 @@ def main() -> int:
         return 2
 
     feed = build_feed(selected)
-    FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")
-    print(f"Wrote {len(feed['items'])} items to {FEED_PATH}")
+    if args.draft:
+        CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        STATE_PATH.write_text(json.dumps({"lastDraftRun": feed["updatedAt"], "draftCount": len(feed["items"])}), encoding="utf-8")
+        print(f"Wrote {len(feed['items'])} approval candidates to {CANDIDATES_PATH}")
+    else:
+        FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")
+        print(f"Wrote {len(feed['items'])} items to {FEED_PATH}")
     return 0
 
 if __name__ == "__main__":

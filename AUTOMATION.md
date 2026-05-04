@@ -1,13 +1,13 @@
 # Poanta Feed Automation
 
-Runs every two hours via GitHub Actions.
+Approval mode: OpenClaw cron drafts candidates every two hours and sends them to Telegram for approval. GitHub Actions publishing is manual-only for now.
 
 What it does:
 - scans approved sources
 - scores homepage/RSS items by signal, public prominence, and clickbait-style wording
 - selects up to two items per source
-- rewrites into Poanta card structure in `feed.json`
-- commits the updated feed back to the repo
+- rewrites into Poanta card structure in `candidates.json` for approval
+- publishes to `feed.json` only after approval
 
 Current caveats:
 - public views/comments are not consistently exposed by the source sites, so v1 uses prominence + headline signal as proxy
@@ -15,5 +15,4 @@ Current caveats:
 - push notifications still require a backend subscription store + VAPID push sender
 
 Safety direction:
-- v1 publishes automatically to the demo feed
-- recommended production mode: generate candidates first, then approve before publishing
+- v1 is approval-first: generate candidates, send Telegram summary, publish only approved items
