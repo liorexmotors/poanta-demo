@@ -127,13 +127,22 @@
         function isIOS(){ return /iphone|ipad|ipod/i.test(navigator.userAgent); }
         function isStandalone(){ return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true; }
         function canUseNotifications(){ return window.isSecureContext && ('Notification' in window); }
+        function diagnosticText(){
+          const parts = [];
+          parts.push('HTTPS: ' + (window.isSecureContext ? 'כן' : 'לא'));
+          parts.push('Notifications API: ' + (('Notification' in window) ? 'כן' : 'לא'));
+          parts.push('Service Worker: ' + (('serviceWorker' in navigator) ? 'כן' : 'לא'));
+          parts.push('הרשאה: ' + (('Notification' in window) ? Notification.permission : 'לא זמין'));
+          return parts.join(' · ');
+        }
         async function setupPushDemo(firstItem){
           const enable = document.getElementById('enablePush');
           const demo = document.getElementById('demoPush');
           if(!enable || !demo) return;
 
+          setPushStatus('בדיקת תמיכה: ' + diagnosticText());
           if(!window.isSecureContext){
-            setPushStatus('התראות דורשות קישור HTTPS. בקישור הזמני זה אמור לעבוד; אם לא, נצטרך דומיין קבוע.');
+            setPushStatus('התראות דורשות קישור HTTPS. בדיקת תמיכה: ' + diagnosticText());
             return;
           }
           if(isIOS() && !isStandalone()){
@@ -159,7 +168,7 @@
             const permission = await Notification.requestPermission();
             if(permission === 'granted'){
               registration = registration || await registerPoantaSW().catch(() => null);
-              setPushStatus('ההתראות הופעלו בדמו. עכשיו לחץ “שלח התראת דמו”. בשלב הבא נחבר שרת שישלח פוש אמיתי כשנכנסת כתבה חדשה.');
+              setPushStatus('ההתראות הופעלו בדמו. עכשיו לחץ “שלח התראת דמו”. בדיקת תמיכה: ' + diagnosticText());
             } else if(permission === 'denied'){
               setPushStatus('ההתראות חסומות בדפדפן. צריך לפתוח הגדרות אתר ולאפשר Notifications.');
             } else {
@@ -185,7 +194,7 @@
               } else {
                 new Notification(title, { body, icon:'./icon-192.png', dir:'rtl', lang:'he-IL' });
               }
-              setPushStatus('נשלחה התראת דמו עם כותרת הכתבה הראשונה.');
+              setPushStatus('נשלחה התראת דמו עם כותרת הכתבה הראשונה. אם לא ראית אותה, בדוק שההתראות לא חסומות בהגדרות Chrome. ' + diagnosticText());
             } catch(err){
               setPushStatus('הדפדפן חסם את התראת הדמו. נסה לפתוח מהמסך הראשי/Chrome או לבדוק הרשאות אתר.');
             }
