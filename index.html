@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>פואנטה — מה שחשוב. בלי הרעש.</title>
   <meta name="description" content="דמו לפיד פואנטה — כרטיסי חדשות קצרים, ברורים ולא קליקבייט." />
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#09090b">
+  <link rel="apple-touch-icon" href="icon-192.png">
   <style>
     :root{
       --ink:#09090b; --muted:#71717a; --line:#e4e4e7; --soft:#f4f4f5; --paper:#fafafa;
@@ -102,10 +105,53 @@
             a.href = item.sourceUrl;
             host.appendChild(node);
           });
+          const push = document.createElement('article');
+          push.className = 'card push-card';
+          push.innerHTML = '<h2>רוצה פושים עם הפואנטה?</h2><p class="context">בגרסה החיה, כל כתבה חדשה יכולה להגיע כהתראה עם הכותרת האמיתית — לנייד או לדסקטופ, אחרי אישור משתמש.</p><div class="push-actions"><button id="enablePush" class="push-btn">הפעל עדכונים</button><button id="demoPush" class="push-btn secondary">שלח התראת דמו</button></div><div id="pushStatus" class="push-note">שמירה למסך הבית עוזרת לפתוח מהר, אבל פושים דורשים אישור התראות.</div>';
+          host.appendChild(push);
+          setupPushDemo(feed.items[0]);
+
           const onboard = document.createElement('article');
           onboard.className = 'card onboard';
           onboard.innerHTML = '<h2>רוצה פחות רעש?</h2><p class="context">בחר תחומים שמעניינים אותך, ופואנטה תציג לך רק את העדכונים שבאמת רלוונטיים.</p><div class="chips"><span class="chip">כלכלה</span><span class="chip">ביטחון</span><span class="chip">AI</span><span class="chip">נדל״ן</span><span class="chip">צרכנות</span></div>';
           host.appendChild(onboard);
+        }
+        async function registerPoantaSW(){
+          if(!('serviceWorker' in navigator)) return null;
+          return navigator.serviceWorker.register('./sw.js');
+        }
+        function setPushStatus(text){
+          const el = document.getElementById('pushStatus');
+          if(el) el.textContent = text;
+        }
+        async function setupPushDemo(firstItem){
+          const enable = document.getElementById('enablePush');
+          const demo = document.getElementById('demoPush');
+          if(!enable || !demo) return;
+          if(!('Notification' in window)){
+            setPushStatus('הדפדפן הזה לא תומך בהתראות.');
+            enable.disabled = true; demo.disabled = true; return;
+          }
+          let registration = await registerPoantaSW().catch(() => null);
+          enable.onclick = async () => {
+            const permission = await Notification.requestPermission();
+            if(permission === 'granted'){
+              registration = registration || await registerPoantaSW();
+              setPushStatus('ההתראות הופעלו בדמו. בשלב הבא נחבר שרת שישלח פוש אמיתי כשנכנסת כתבה חדשה.');
+            } else {
+              setPushStatus('המשתמש לא אישר התראות, לכן לא ניתן לשלוח פושים.');
+            }
+          };
+          demo.onclick = async () => {
+            if(Notification.permission !== 'granted'){
+              setPushStatus('צריך ללחוץ קודם על “הפעל עדכונים” ולאשר התראות.');
+              return;
+            }
+            registration = registration || await registerPoantaSW();
+            const title = firstItem?.headline || 'פואנטה חדשה';
+            const body = firstItem?.takeaway || 'יש עדכון חדש בפיד פואנטה';
+            registration.showNotification(title, { body, icon:'./icon-192.png', badge:'./icon-192.png', dir:'rtl', lang:'he-IL', tag:'poanta-demo', data:{url:'./index.html'} });
+          };
         }
         fetch('feed.json', {cache:'no-store'}).then(r => r.json()).then(renderFeed).catch(() => {
           document.getElementById('updatedAt').textContent = 'לא הצלחנו לטעון פיד כרגע';
