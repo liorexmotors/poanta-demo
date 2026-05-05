@@ -66,7 +66,9 @@
         </article>
       </template>
       <script>
-        const fallbackFeed = [];
+        const POANTA_FEED_VERSION = '20260505-0742-v2';
+        const embeddedFeed = {"updatedAt": "2026-05-05T07:42:00+03:00", "items": [{"category": "כלכלה", "categoryClass": "money", "source": "N12", "sourceUrl": "https://www.mako.co.il/news-money/2026_q2/Article-61d49b5cc62fd91026.htm", "time": "עודכן אוטומטית", "headline": "השכר הממוצע במשק עלה ל־15,979 שקל במרץ", "context": "הלמ״ס פרסמה אומדן חדש שמצביע על עלייה בשכר הממוצע לעומת השנה שעברה. המספר נשמע גבוה, אבל הוא ממוצע בלבד — ולכן לא בהכרח משקף את מה שקורה בכל ענף או אצל כל עובד.", "takeaway": "אם אתה שכיר או עצמאי, שווה לבדוק אם השכר שלך באמת התקדם ביחס לעלייה במשק."}, {"category": "ביטחון", "categoryClass": "security", "source": "ynet", "sourceUrl": "https://www.ynet.co.il/news/article/h1isvp8rbe", "time": "עודכן אוטומטית", "headline": "טראמפ התייחס להסלמה מול איראן: אין כרגע שינוי הנחיות לציבור", "context": "ברקע הדיווחים והנאומים סביב איראן, הכותרות נשמעות דרמטיות מאוד — אבל נכון לעכשיו המסר המעשי לציבור בישראל הוא שאין שינוי בהנחיות הרשויות.", "takeaway": "לעקוב אחרי עדכונים רשמיים, אבל לא לשנות שגרה בלי הנחיה ברורה מהרשויות."}, {"category": "צרכנות", "categoryClass": "money", "source": "mako", "sourceUrl": "https://www.mako.co.il/finances-consumer/Article-bc1c7a5dfd2fd91026.htm", "time": "עודכן אוטומטית", "headline": "סקר: מחירי מוצרי חלב ומזון עלו עוד לפני האישור הרשמי", "context": "בדיקה צרכנית מצביעה על כך שחלק מההתייקרויות במדפים כבר הורגשו בפועל עוד לפני האישור הרשמי. כלומר, מה שחשוב הוא לא רק ההודעה על העלאה — אלא המחיר שאתה פוגש בקופה.", "takeaway": "בקניות הקרובות כדאי להשוות מחירים בפועל ולא לסמוך על “מבצע” או על מחיר רגיל מהזיכרון."}, {"category": "כלכלה", "categoryClass": "money", "source": "mako", "sourceUrl": "https://www.mako.co.il/finances-money/Article-7d1494afa53fd91026.htm", "time": "עודכן אוטומטית", "headline": "מתווה הפיצויים לעסקים אושר; הגשת תביעות תיפתח ב־17 במאי", "context": "אושר מסלול פיצויים חדש לעסקים שנפגעו, אבל ההגשה עצמה תיפתח רק בהמשך. המשמעות: מי שמחכה לפתיחת המערכת עלול לגלות שחסרים לו מסמכים בזמן אמת.", "takeaway": "אם יש לך עסק שנפגע, כדאי להכין מסמכים מראש ולא לחכות לפתיחת המערכת."}, {"category": "תחבורה", "categoryClass": "real", "source": "גלובס", "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001541935", "time": "עודכן אוטומטית", "headline": "המדינה בוחנת שימוש בסטארלינק לשיפור קליטה ברכבת", "context": "נבחנת אפשרות להשתמש בתשתית לוויינית כדי לשפר חיבור אינטרנט וקליטה בנסיעות רכבת. זה נשמע כמו פתרון גדול, אבל בשלב הזה מדובר בכיוון שנבדק — לא בשירות שכבר זמין לנוסעים.", "takeaway": "אם אתה תלוי בעבודה או שיחות בזמן נסיעה, זה כיוון מעניין — אבל עדיין לא פתרון מיידי."}]};
+        const fallbackFeed = embeddedFeed.items ? embeddedFeed : [];
         function formatUpdated(iso){
           try { return 'עודכן לאחרונה: ' + new Date(iso).toLocaleString('he-IL', { dateStyle:'short', timeStyle:'short' }); }
           catch { return 'עודכן לאחרונה'; }
@@ -200,9 +202,13 @@
             }
           };
         }
-        fetch('feed.json', {cache:'no-store'}).then(r => r.json()).then(renderFeed).catch(() => {
-          document.getElementById('updatedAt').textContent = 'לא הצלחנו לטעון פיד כרגע';
-        });
+        renderFeed(embeddedFeed);
+        fetch('feed.json?v=' + encodeURIComponent(POANTA_FEED_VERSION), {cache:'reload'})
+          .then(r => r.json())
+          .then(renderFeed)
+          .catch(() => {
+            if (!embeddedFeed.items?.length) document.getElementById('updatedAt').textContent = 'לא הצלחנו לטעון פיד כרגע';
+          });
       </script>
     </section>
     <aside><div class="side-ad"><div><small style="color:var(--muted);font-weight:900">פרסום צדדי — דסקטופ בלבד</small><h3>מיקום שלא מפריע לפיד</h3></div><div class="placeholder">300×250</div></div><div class="side-box"><h3>היום בפואנטה</h3><ol><li>5 עדכונים חשובים</li><li>3 תחומים שבחרת</li><li>זמן קריאה משוער: 2 דקות</li></ol></div></aside>

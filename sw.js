@@ -1,5 +1,5 @@
-const CACHE_NAME = 'poanta-demo-v3';
-const ASSETS = ['./', './index.html', './feed.json', './manifest.webmanifest'];
+const CACHE_NAME = 'poanta-demo-v4';
+const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -15,6 +15,10 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
+  if (new URL(request.url).pathname.endsWith('/feed.json')) {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
+    return;
+  }
   event.respondWith(
     fetch(request).then(response => {
       const copy = response.clone();
