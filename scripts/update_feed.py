@@ -397,6 +397,7 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
             "sourceUrl": c.url,
             "time": "עודכן אוטומטית",
             "headline": poanta_headline(c.title, c.description),
+            "originalTitle": c.title,
             "context": context_text(c.title, c.description, c.source),
             "takeaway": takeaway_text(category, c.title, c.description),
         })
