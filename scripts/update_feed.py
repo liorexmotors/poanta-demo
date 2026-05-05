@@ -136,6 +136,7 @@ class Candidate:
     title: str
     description: str = ""
     score: int = 0
+    image_url: str = ""
 
 
 def clean_text(text: str) -> str:
@@ -143,6 +144,21 @@ def clean_text(text: str) -> str:
     text = re.sub(r"\s+", " ", text).strip()
     text = re.sub(r"^[|\-–:•\s]+", "", text)
     return text[:500]
+
+
+def source_logo(source: str) -> str:
+    s = source.lower()
+    if "n12" in s or "mako" in s:
+        return "N12"
+    if "וואלה" in source:
+        return "וואלה"
+    if "ynet" in s:
+        return "ynet"
+    if "גלובס" in source:
+        return "גלובס"
+    if "14" in source:
+        return "14"
+    return source.split()[0] if source else "מקור"
 
 
 
@@ -258,6 +274,9 @@ def enrich(candidate: Candidate) -> Candidate:
     meta_title = sanitize_title(parser.meta.get("og:title") or parser.meta.get("twitter:title") or "")
     if meta_title and len(meta_title) >= 18:
         candidate.title = meta_title
+    image = clean_text(parser.meta.get("og:image") or parser.meta.get("twitter:image") or parser.meta.get("image") or "")
+    if image:
+        candidate.image_url = urljoin(candidate.url, image)
     desc = clean_text(parser.meta.get("og:description") or parser.meta.get("description") or parser.meta.get("twitter:description") or "")
     if not desc:
         ps = [clean_text(p) for p in parser.paragraphs]
@@ -394,7 +413,9 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
             "category": category,
             "categoryClass": cls,
             "source": c.source,
+            "sourceLogo": source_logo(c.source),
             "sourceUrl": c.url,
+            "imageUrl": c.image_url,
             "time": "עודכן אוטומטית",
             "headline": poanta_headline(c.title, c.description),
             "originalTitle": c.title,
