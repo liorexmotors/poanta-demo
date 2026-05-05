@@ -192,6 +192,33 @@ def fetch(url: str, timeout: int = 15) -> str:
 
 
 
+def fetch_jina_metadata(url: str) -> tuple[str, str]:
+    """Read blocked article metadata via Jina Reader as a fallback.
+
+    Used only when the direct source returns WAF/block pages or missing metadata.
+    The returned title is treated as an exact source quote for `originalTitle`;
+    do not sanitize/rewrite it before footer display.
+    """
+    jina_url = "https://r.jina.ai/http://r.jina.ai/http://" + url
+    try:
+        raw = fetch(jina_url, timeout=20)
+    except Exception:
+        return "", ""
+    title = ""
+    image = ""
+    m = re.search(r"^Title:\s*(.+?)\s*$", raw, flags=re.M)
+    if m:
+        title = html.unescape(m.group(1).strip())
+    # Prefer real article/media images and avoid source logo SVGs when possible.
+    for img in re.findall(r"!\[[^\]]*\]\((https?://[^)]+)\)", raw):
+        low = img.lower()
+        if any(x in low for x in ["logo", ".svg", "mako-", "newlogo", "12+"]):
+            continue
+        image = img
+        break
+    return title, image
+
+
 def extract_rss(source: dict) -> list[Candidate]:
     rss_url = source.get("rss")
     if not rss_url:
@@ -269,13 +296,26 @@ def score_title(title: str) -> int:
 
 def enrich(candidate: Candidate) -> Candidate:
     try:
-        parser = parse_html(fetch(candidate.url, timeout=12))
+        raw = fetch(candidate.url, timeout=12)
+        parser = parse_html(raw)
     except Exception:
-        return candidate
-    meta_title = sanitize_title(parser.meta.get("og:title") or parser.meta.get("twitter:title") or "")
-    if meta_title and len(meta_title) >= 18:
-        candidate.title = meta_title
+        raw = ""
+        parser = parse_html("")
+
+    exact_title = clean_text(parser.meta.get("og:title") or parser.meta.get("twitter:title") or "")
     image = clean_text(parser.meta.get("og:image") or parser.meta.get("twitter:image") or parser.meta.get("image") or "")
+
+    # Some N12/Mako URLs return a Radware block page to direct fetches.
+    # In that case, use Jina Reader as a metadata fallback so the footer link
+    # still gets the exact source headline instead of the rewritten Poanta title.
+    if not exact_title or "Radware Block Page" in raw:
+        jina_title, jina_image = fetch_jina_metadata(candidate.url)
+        exact_title = jina_title or exact_title
+        image = image or jina_image
+
+    if exact_title and len(exact_title) >= 18:
+        candidate.original_title = exact_title
+        candidate.title = sanitize_title(exact_title) or exact_title
     if image:
         candidate.image_url = urljoin(candidate.url, image)
     desc = clean_text(parser.meta.get("og:description") or parser.meta.get("description") or parser.meta.get("twitter:description") or "")

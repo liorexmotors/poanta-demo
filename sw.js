@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v12';
+const CACHE_NAME = 'poanta-demo-v13';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
