@@ -31,3 +31,10 @@ The Poanta editor-agent rules live in:
 The approval automation should read/follow this spec before sending candidates for approval.
 
 Important cron behavior: after `python3 scripts/update_feed.py --draft`, do not re-filter candidates against `.poanta-seen.json`; the script already used the pre-run seen history and then marks this approval batch as sent. Use `candidates.json` as the source of truth and do not invent older candidates.
+
+
+Approval Telegram format now includes `תמצית` and `כותרת מקור` per ליאור’s 2026-05-05 instruction:
+- `כותרת פואנטה`: new, short, decisive, not copied, not a question, answers the point.
+- `תמצית`: exactly two sentences — first what happened, second why it matters.
+- `תובנה עבורך`: one practical sentence; if no direct impact, say so.
+- `כותרת מקור`: exact source title word-for-word for comparison/footer link.
