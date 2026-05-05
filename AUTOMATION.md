@@ -7,7 +7,7 @@ What it does:
 - scans approved sources
 - scores homepage/RSS items by signal, public prominence, and clickbait-style wording
 - selects up to two items per source
-- skips URLs/headline keys that already appeared in previous approval batches or published feeds, using `.poanta-seen.json`
+- skips URLs, canonical article IDs, source-title keys, and headline keys that already appeared in previous approval batches or published feeds, using `.poanta-seen.json`
 - if the main/homepage sources repeat themselves, expand search into additional sections such as רכב, פוליטיקה, ספורט, תחבורה and צרכנות rather than recycling old items
 - rewrites into Poanta card structure in `candidates.json` for approval
 - keeps `originalTitle` as the source site headline; the card footer link displays this original headline instead of generic “לכתבה המקורית”
@@ -29,3 +29,5 @@ The Poanta editor-agent rules live in:
 - `agents/poanta-editor-agent-prompt.md` — compact prompt for automation/subagents
 
 The approval automation should read/follow this spec before sending candidates for approval.
+
+Important cron behavior: after `python3 scripts/update_feed.py --draft`, do not re-filter candidates against `.poanta-seen.json`; the script already used the pre-run seen history and then marks this approval batch as sent. Use `candidates.json` as the source of truth and do not invent older candidates.

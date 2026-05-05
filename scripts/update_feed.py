@@ -403,6 +403,29 @@ def takeaway_text(category: str, title: str, desc: str) -> str:
     return "זו ידיעה למעקב: הפואנטה היא להבין את ההשפעה בפועל, לא רק את הכותרת."
 
 
+def canonical_url_key(url: str) -> str:
+    """Stable article key across URL aliases.
+
+    Mako/N12 often exposes the same article under multiple section paths
+    (for example /news-money/... and /finances-money/...). Use the article id
+    when available so old stories cannot re-enter through a different URL.
+    """
+    u = html.unescape(url or "")
+    m = re.search(r"Article-([A-Za-z0-9]+)\.htm", u)
+    if m:
+        return "mako:" + m.group(1).lower()
+    m = re.search(r"/item/(\d+)", u)
+    if m:
+        return "walla:" + m.group(1)
+    m = re.search(r"[?&]did=(\d+)", u)
+    if m:
+        return "globes:" + m.group(1)
+    m = re.search(r"/article/([A-Za-z0-9]+)", u)
+    if m and "ynet.co.il" in u:
+        return "ynet:" + m.group(1).lower()
+    return re.sub(r"[?#].*$", "", u).rstrip("/").lower()
+
+
 def normalized_key(text: str) -> str:
     text = re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", "", text).lower()
     return text[:70]
@@ -411,16 +434,25 @@ def normalized_key(text: str) -> str:
 def load_seen() -> dict:
     try:
         data = json.loads(SEEN_PATH.read_text(encoding="utf-8"))
+        urls = set(data.get("urls", []))
+        url_keys = set(data.get("urlKeys", [])) | {canonical_url_key(u) for u in urls}
         return {
-            "urls": set(data.get("urls", [])),
+            "urls": urls,
+            "urlKeys": url_keys,
             "titleKeys": set(data.get("titleKeys", [])),
         }
     except Exception:
-        return {"urls": set(), "titleKeys": set()}
+        return {"urls": set(), "urlKeys": set(), "titleKeys": set()}
 
 
 def candidate_seen(c: Candidate, seen: dict) -> bool:
-    return c.url in seen["urls"] or normalized_key(c.title) in seen["titleKeys"]
+    title_keys = {normalized_key(c.title), normalized_key(c.original_title)}
+    title_keys.discard("")
+    return (
+        c.url in seen["urls"]
+        or canonical_url_key(c.url) in seen.get("urlKeys", set())
+        or any(k in seen["titleKeys"] for k in title_keys)
+    )
 
 
 def remember_feed(feed: dict) -> None:
@@ -430,11 +462,16 @@ def remember_feed(feed: dict) -> None:
         title = item.get("headline") or ""
         if url:
             seen["urls"].add(url)
+            seen.setdefault("urlKeys", set()).add(canonical_url_key(url))
         key = normalized_key(title)
         if key:
             seen["titleKeys"].add(key)
+        original_key = normalized_key(item.get("originalTitle") or "")
+        if original_key:
+            seen["titleKeys"].add(original_key)
     payload = {
         "urls": sorted(seen["urls"]),
+        "urlKeys": sorted(seen.get("urlKeys", set())),
         "titleKeys": sorted(seen["titleKeys"]),
         "updatedAt": datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds"),
     }
