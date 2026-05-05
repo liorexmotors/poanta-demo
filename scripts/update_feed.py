@@ -287,13 +287,24 @@ def poanta_headline(title: str, desc: str) -> str:
 
 
 def context_text(title: str, desc: str, source: str) -> str:
-    base = desc or title
-    base = clean_text(base)
-    if not base:
-        return f"{source} פרסם ידיעה שעלתה במיקום בולט באתר. פואנטה מסכמת את האירוע בלי הכותרת הדרמטית ובלי למשוך לקליק מיותר."
-    if len(base) < 100:
-        return f"{source} מדווח: {base}. מאחורי הכותרת יש אירוע שכדאי להבין לפי ההשפעה שלו, לא לפי הדרמה של הניסוח."
-    return base[:280].rstrip(" ,") + "."
+    # Never publish article descriptions verbatim. Poanta cards must be
+    # original explanatory summaries, not copied OG/RSS snippets. Use the
+    # description only as weak signal for categorization elsewhere.
+    cat, _ = categorize(f"{title} {desc}")
+    headline = poanta_headline(title, desc)
+    if cat == "ביטחון":
+        return "מאחורי הכותרות הדרמטיות יש בעיקר שאלה מעשית: האם יש הנחיות חדשות לציבור ומה הרשויות אומרות בפועל. עד שאין הנחיה רשמית, חשוב להפריד בין רעש תקשורתי לבין שינוי אמיתי בשגרה."
+    if cat == "כלכלה":
+        return "זו ידיעה כלכלית שכדאי לקרוא דרך ההשפעה הישירה: כסף נכנס, כסף יוצא, זכאות, מחירים או תזרים. הכותרת חשובה פחות מהשאלה מה צריך לבדוק או להכין עכשיו."
+    if cat == "צרכנות":
+        return "הסיפור הצרכני כאן הוא הפער בין הודעות רשמיות לבין מה שקורה בפועל בקופה. לכן הפואנטה היא לבדוק מחיר אמיתי והשוואה, לא להסתפק בסיסמה של מבצע או בכותרת."
+    if cat == "טכנולוגיה":
+        return "העניין הטכנולוגי הוא לא רק החידוש עצמו, אלא איך הוא עשוי להשפיע על שימוש יומיומי, פרטיות, עבודה או שירותים שאתה כבר צורך."
+    if cat == "נדל״ן":
+        return "בנדל״ן ההשפעה בדרך כלל לא מיידית, אבל שינוי כזה יכול להשפיע על ביקושים, תמחור והחלטות רכישה או שכירות בהמשך."
+    if cat == "תחבורה":
+        return "זו ידיעה שיכולה להשפיע על מי שנוסע או תלוי בשירות תחבורתי, אבל צריך להבחין בין בדיקה/כוונה לבין פתרון שכבר עובד בשטח."
+    return f"{source} פרסם ידיעה בנושא: {headline}. פואנטה מסכמת את המשמעות המעשית בלי להעתיק את נוסח המקור ובלי למשוך לקליק מיותר."
 
 
 def takeaway_text(category: str, title: str, desc: str) -> str:
