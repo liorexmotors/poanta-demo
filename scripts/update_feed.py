@@ -137,6 +137,7 @@ class Candidate:
     description: str = ""
     score: int = 0
     image_url: str = ""
+    original_title: str = ""
 
 
 def clean_text(text: str) -> str:
@@ -418,7 +419,7 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
             "imageUrl": c.image_url,
             "time": "עודכן אוטומטית",
             "headline": poanta_headline(c.title, c.description),
-            "originalTitle": c.title,
+            "originalTitle": c.original_title or c.title,
             "context": context_text(c.title, c.description, c.source),
             "takeaway": takeaway_text(category, c.title, c.description),
         })
@@ -446,6 +447,7 @@ def main() -> int:
                 continue
             if not c.description:
                 c = enrich(c)
+            c.original_title = c.original_title or c.title
             c.title = sanitize_title(c.title)
             if len(c.title) < 18 or bad_description(c.description):
                 continue

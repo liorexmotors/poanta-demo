@@ -11,6 +11,7 @@ What it does:
 - if the main/homepage sources repeat themselves, expand search into additional sections such as רכב, פוליטיקה, ספורט, תחבורה and צרכנות rather than recycling old items
 - rewrites into Poanta card structure in `candidates.json` for approval
 - keeps `originalTitle` as the source site headline; the card footer link displays this original headline instead of generic “לכתבה המקורית”
+- `originalTitle` must be an exact source quote for the footer link: do not rewrite, shorten, add words, remove words, or use the Poanta headline there
 - publishes to `feed.json` only after approval
 
 Current caveats:
