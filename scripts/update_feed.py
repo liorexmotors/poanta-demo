@@ -504,10 +504,35 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
     return {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items[:12]}
 
 
+def empty_draft_payload(status: str, message: str = "") -> dict:
+    tz = timezone(timedelta(hours=3))
+    payload = {
+        "updatedAt": datetime.now(tz).isoformat(timespec="seconds"),
+        "status": status,
+        "items": [],
+    }
+    if message:
+        payload["message"] = message
+    return payload
+
+
+def write_empty_draft(status: str, message: str = "") -> None:
+    CANDIDATES_PATH.write_text(
+        json.dumps(empty_draft_payload(status, message), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Update or draft Poanta feed cards")
     ap.add_argument("--draft", action="store_true", help="Write candidates.json for approval instead of publishing feed.json")
     args = ap.parse_args()
+
+    # Never leave a previous approval batch in candidates.json during a new draft.
+    # If the scan fails or finds too few fresh stories, the cron must see an empty
+    # draft rather than accidentally resending yesterday/today's stale candidates.
+    if args.draft:
+        write_empty_draft("generating", "Draft generation in progress; do not send this file.")
 
     selected: list[Candidate] = []
     used_urls: set[str] = set()
@@ -538,11 +563,16 @@ def main() -> int:
         selected.extend(picked)
 
     if len(selected) < 4:
-        print(f"ERROR too few items selected: {len(selected)}", file=sys.stderr)
+        msg = f"Too few fresh unseen items selected: {len(selected)}"
+        print(f"ERROR {msg}", file=sys.stderr)
+        if args.draft:
+            write_empty_draft("failed_too_few_fresh_items", msg)
+            STATE_PATH.write_text(json.dumps({"lastDraftError": msg}), encoding="utf-8")
         return 2
 
     feed = build_feed(selected)
     if args.draft:
+        feed["status"] = "draft"
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastDraftRun": feed["updatedAt"], "draftCount": len(feed["items"])}), encoding="utf-8")

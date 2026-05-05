@@ -40,3 +40,9 @@ Approval Telegram format now includes `תמצית` and `כותרת מקור` per
 - `כותרת מקור`: exact source title word-for-word for comparison/footer link.
 
 - אין להציג שם מקור/לוגו/באדג׳ על גבי תמונת הכרטיס עצמה; התמונה חייבת להישאר נקייה. המקור יכול להופיע רק במטה/באדג׳ שמחוץ לתמונה.
+
+Anti-repeat hard rule added 2026-05-05 after cron repeated an already approved/sent batch:
+- `scripts/update_feed.py --draft` must clear `candidates.json` at the start of a draft run.
+- If a fresh draft fails or finds fewer than 4 unseen items, `candidates.json` must contain `status: failed_too_few_fresh_items` and `items: []`.
+- Cron agents must never send old `candidates.json` or `feed.json` as fallback. Only send when `candidates.json.status == "draft"` from the current successful run.
+- Repeating a previously sent/published URL, canonical article id, original title, Poanta headline, or same topic is forbidden even if the source still promotes it.
