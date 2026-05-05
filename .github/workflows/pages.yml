@@ -1,8 +1,7 @@
 name: Deploy Poanta to GitHub Pages
 
+# Manual only until GitHub Pages is enabled in repository settings by an owner.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -23,8 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
