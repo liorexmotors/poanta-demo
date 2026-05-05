@@ -8,6 +8,7 @@ What it does:
 - scores homepage/RSS items by signal, public prominence, and clickbait-style wording
 - selects up to two items per source
 - skips URLs/headline keys that already appeared in previous approval batches or published feeds, using `.poanta-seen.json`
+- if the main/homepage sources repeat themselves, expand search into additional sections such as רכב, פוליטיקה, ספורט, תחבורה and צרכנות rather than recycling old items
 - rewrites into Poanta card structure in `candidates.json` for approval
 - publishes to `feed.json` only after approval
 
