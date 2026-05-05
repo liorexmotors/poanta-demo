@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FEED_PATH = ROOT / "feed.json"
 STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
+SEEN_PATH = ROOT / ".poanta-seen.json"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PoantaBot/0.1; +https://github.com/liorexmotors/poanta-demo)",
@@ -328,6 +329,39 @@ def normalized_key(text: str) -> str:
     text = re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", "", text).lower()
     return text[:70]
 
+
+def load_seen() -> dict:
+    try:
+        data = json.loads(SEEN_PATH.read_text(encoding="utf-8"))
+        return {
+            "urls": set(data.get("urls", [])),
+            "titleKeys": set(data.get("titleKeys", [])),
+        }
+    except Exception:
+        return {"urls": set(), "titleKeys": set()}
+
+
+def candidate_seen(c: Candidate, seen: dict) -> bool:
+    return c.url in seen["urls"] or normalized_key(c.title) in seen["titleKeys"]
+
+
+def remember_feed(feed: dict) -> None:
+    seen = load_seen()
+    for item in feed.get("items", []):
+        url = item.get("sourceUrl")
+        title = item.get("headline") or ""
+        if url:
+            seen["urls"].add(url)
+        key = normalized_key(title)
+        if key:
+            seen["titleKeys"].add(key)
+    payload = {
+        "urls": sorted(seen["urls"]),
+        "titleKeys": sorted(seen["titleKeys"]),
+        "updatedAt": datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds"),
+    }
+    SEEN_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
 def build_feed(candidates: Iterable[Candidate]) -> dict:
     items = []
     seen_titles = set()
@@ -359,6 +393,7 @@ def main() -> int:
 
     selected: list[Candidate] = []
     used_urls: set[str] = set()
+    seen = load_seen()
     for source in SOURCES:
         picked = []
         candidates = extract_rss(source) + extract_links(source)
@@ -374,6 +409,8 @@ def main() -> int:
             c.title = sanitize_title(c.title)
             if len(c.title) < 18 or bad_description(c.description):
                 continue
+            if candidate_seen(c, seen):
+                continue
             picked.append(c)
             used_urls.add(c.url)
             time.sleep(0.2)
@@ -388,10 +425,12 @@ def main() -> int:
     feed = build_feed(selected)
     if args.draft:
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastDraftRun": feed["updatedAt"], "draftCount": len(feed["items"])}), encoding="utf-8")
         print(f"Wrote {len(feed['items'])} approval candidates to {CANDIDATES_PATH}")
     else:
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")
         print(f"Wrote {len(feed['items'])} items to {FEED_PATH}")
     return 0
