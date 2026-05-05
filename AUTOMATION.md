@@ -38,3 +38,5 @@ Approval Telegram format now includes `תמצית` and `כותרת מקור` per
 - `תמצית`: exactly two sentences — first what happened, second why it matters.
 - `תובנה עבורך`: one practical sentence; if no direct impact, say so.
 - `כותרת מקור`: exact source title word-for-word for comparison/footer link.
+
+- אין להציג שם מקור/לוגו/באדג׳ על גבי תמונת הכרטיס עצמה; התמונה חייבת להישאר נקייה. המקור יכול להופיע רק במטה/באדג׳ שמחוץ לתמונה.
