@@ -35,9 +35,11 @@ FEED_PATH = ROOT / "feed.json"
 STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
 SEEN_PATH = ROOT / ".poanta-seen.json"
+RSS_SOURCES_PATH = ROOT / "rss_sources.json"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; PoantaBot/0.1; +https://github.com/liorexmotors/poanta-demo)",
+    "User-Agent": "Mozilla/5.0 (compatible; PoantaRSS/0.1)",
+    "Accept": "application/rss+xml, application/xml, text/xml, */*;q=0.8",
     "Accept-Language": "he-IL,he;q=0.9,en-US;q=0.7,en;q=0.5",
 }
 
@@ -58,6 +60,36 @@ SOURCES = [
     {"name": "ערוץ 14", "url": "https://www.c14.co.il/", "host": "c14.co.il"},
 ]
 
+
+def load_sources() -> list[dict]:
+    """Load approved RSS-only sources.
+
+    Poanta's first production automation phase is intentionally RSS-only:
+    no homepage scraping and no fallback readers. If the config is missing,
+    keep the legacy constant as a safety fallback for local development, but
+    production should always use rss_sources.json.
+    """
+    try:
+        data = json.loads(RSS_SOURCES_PATH.read_text(encoding="utf-8"))
+        active = data.get("active", [])
+        sources = []
+        for src in active:
+            if not src.get("rss"):
+                continue
+            sources.append({
+                "name": src["name"],
+                "url": src.get("rss"),
+                "rss": src["rss"],
+                "host": urlparse(src["rss"]).netloc,
+                "categoryHint": src.get("categoryHint", "חדשות"),
+                "logo": src.get("logo") or src["name"],
+            })
+        if sources:
+            return sources
+    except Exception as e:
+        print(f"WARN rss_sources.json load failed, using legacy sources: {e}", file=sys.stderr)
+    return [s for s in SOURCES if s.get("rss")]
+
 CLICKBAIT_WORDS = [
     "דרמטי", "מטלטל", "נחשף", "בלעדי", "כאוס", "שעות קריטיות", "קשה לצפייה",
     "לא תאמינו", "הלם", "סערה", "מפתיע", "מפחיד", "איום", "זינוק", "שיא", "הבלוף",
@@ -69,14 +101,15 @@ IMPORTANT_WORDS = [
     "דלק", "ממשלה", "ביטוח", "צרכנים", "הייטק", "בורסה", "רכב", "כביש", "תחבורה", "ספורט", "כדורגל", "נבחרת", "ליגת", "בחירות", "כנסת", "תקציב",
 ]
 CATEGORY_RULES = [
-    ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות"]),
-    ("כלכלה", "money", ["ריבית", "מס", "שכר", "מניות", "בורסה", "מחירים", "פיצויים", "עסקים", "אקזיט", "מיליון", "מיליארד"]),
+    # Order matters: prefer the practical topic over incidental war/politics words.
+    ("נדל״ן", "real", ["נדל", "דירה", "דירות", "בנייה", "פינוי-בינוי", "תל אביב", "דיור", "קרקע"]),
+    ("כלכלה", "money", ["ריבית", "מיסים", "מע״מ", "שכר", "מניות", "בורסה", "מחירים", "פיצויים", "עסקים", "אקזיט", "מיליון", "מיליארד", "דולר", "אינפלציה"]),
     ("צרכנות", "money", ["צרכן", "רשתות", "שופרסל", "מחירי", "קניות", "ביטוח", "סופר", "חלב"]),
-    ("טכנולוגיה", "tech", ["AI", "סייבר", "וואטסאפ", "אפל", "גוגל", "אפליקציה", "טכנולוג", "סטארטאפ"]),
-    ("נדל״ן", "real", ["נדל", "דירה", "דירות", "בנייה", "תל אביב", "דיור", "קרקע"]),
+    ("טכנולוגיה", "tech", ["AI", "סייבר", "וואטסאפ", "אפל", "גוגל", "אפליקציה", "טכנולוג", "סטארטאפ", "GPT"]),
     ("תחבורה", "real", ["טיסות", "רכבת", "כביש", "רכב", "תחבורה", "דלק", "נתבג", "דובאי", "פקקים", "נהגים"]),
-    ("פוליטיקה", "security", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שר", "שרים"]),
-    ("ספורט", "real", ["ספורט", "כדורגל", "כדורסל", "נבחרת", "ליגה", "ליגת", "מכבי", "הפועל", "ביתר", "אליפות"]),
+    ("ספורט", "real", ["ספורט", "כדורגל", "כדורסל", "נבחרת", "ליגה", "ליגת", "מכבי", "הפועל", "ביתר", "אליפות", "מסי", "סוארס", "ניימאר", "יורוליג"]),
+    ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "פוטין", "קרמלין", "התנקשות", "ביון"]),
+    ("פוליטיקה", "security", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שרים", "ח״כ", "חכים", "טייוואן", "סין"]),
 ]
 
 
@@ -175,6 +208,8 @@ def sanitize_title(title: str) -> str:
         title = title.replace(b, "").strip()
     title = re.sub(r"(כתבי|מערכת|N12|וואלה|ynet|mako)\s*$", "", title).strip()
     title = title.strip(' -–:|')
+    if re.match(r"^[א-ת]\s+את\s", title):
+        return ""
     if re.fullmatch(r"[\u0590-\u05ff\s'\"-]{2,28}", title) and not any(w in title for w in IMPORTANT_WORDS + CLICKBAIT_WORDS):
         return ""
     return title
@@ -234,12 +269,23 @@ def extract_rss(source: dict) -> list[Candidate]:
         title = sanitize_title(''.join(item.findtext('title') or ''))
         link = clean_text(item.findtext('link') or '')
         desc = clean_text(re.sub(r'<[^>]+>', ' ', item.findtext('description') or ''))
+        image = ""
+        for child in item.iter():
+            local = child.tag.split('}')[-1].lower()
+            if local in {"thumbnail", "content", "enclosure"}:
+                url = child.attrib.get("url") or child.attrib.get("href")
+                typ = child.attrib.get("type", "")
+                if url and ("image" in typ or local in {"thumbnail", "content"}):
+                    image = clean_text(url)
+                    break
         if len(title) < 18 or not link:
+            continue
+        if source.get("name", "").startswith("גלובס") and "en.globes.co.il" in link:
             continue
         score = score_title(title + ' ' + desc)
         if score <= 0:
             continue
-        out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score))
+        out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score, image_url=image, original_title=title))
     return sorted(out, key=lambda c: c.score, reverse=True)[:12]
 
 
@@ -329,10 +375,25 @@ def enrich(candidate: Candidate) -> Candidate:
 
 
 def categorize(text: str) -> tuple[str, str]:
+    titleish = text.split(". ", 1)[0]
+    for cat, cls, words in CATEGORY_RULES:
+        if any(w.lower() in titleish.lower() for w in words):
+            return cat, cls
     for cat, cls, words in CATEGORY_RULES:
         if any(w.lower() in text.lower() for w in words):
             return cat, cls
     return "חדשות", ""
+
+
+def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
+    if "ספורט" in source:
+        return "ספורט", "real"
+    cat, cls = categorize(title)
+    if cat != "חדשות":
+        return cat, cls
+    if "כלכלה" in source or "שוק ההון" in source or "גלובס" in source:
+        return "כלכלה", "money"
+    return cat, cls
 
 
 def poanta_headline(title: str, desc: str) -> str:
@@ -340,7 +401,6 @@ def poanta_headline(title: str, desc: str) -> str:
     # Remove common clickbait wrappers while preserving claim.
     replacements = [
         (r"^.*?נחשף[:：]?\s*", ""),
-        (r"^.*?דרמטי[:：]?\s*", ""),
         (r"^.*?כאוס[:：]?\s*", ""),
         (r"^.*?הבלוף של\s*", ""),
         (r"כל מה שצריך לדעת על\s*", ""),
@@ -361,7 +421,7 @@ def context_text(title: str, desc: str, source: str) -> str:
     # Never publish article descriptions verbatim. Poanta cards must be
     # original explanatory summaries, not copied OG/RSS snippets. Use the
     # description only as weak signal for categorization elsewhere.
-    cat, _ = categorize(f"{title} {desc}")
+    cat, _ = categorize_item(title, desc, source)
     headline = poanta_headline(title, desc)
     if cat == "ביטחון":
         return "מאחורי הכותרות הדרמטיות יש בעיקר שאלה מעשית: האם יש הנחיות חדשות לציבור ומה הרשויות אומרות בפועל. עד שאין הנחיה רשמית, חשוב להפריד בין רעש תקשורתי לבין שינוי אמיתי בשגרה."
@@ -485,8 +545,7 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
         if key in seen_titles:
             continue
         seen_titles.add(key)
-        text = f"{c.title} {c.description}"
-        category, cls = categorize(text)
+        category, cls = categorize_item(c.title, c.description, c.source)
         items.append({
             "category": category,
             "categoryClass": cls,
@@ -537,9 +596,10 @@ def main() -> int:
     selected: list[Candidate] = []
     used_urls: set[str] = set()
     seen = load_seen()
-    for source in SOURCES:
+    for source in load_sources():
         picked = []
-        candidates = extract_rss(source) + extract_links(source)
+        # RSS-only phase: do not scrape homepages and do not use fallback readers.
+        candidates = extract_rss(source)
         # preserve source-local ranking while dropping duplicate URLs
         local_seen = set()
         candidates = [x for x in candidates if not (x.url in local_seen or local_seen.add(x.url))]
@@ -547,8 +607,6 @@ def main() -> int:
         for c in candidates:
             if c.url in used_urls:
                 continue
-            if not c.description:
-                c = enrich(c)
             c.original_title = c.original_title or c.title
             c.title = sanitize_title(c.title)
             if len(c.title) < 18 or bad_description(c.description):
@@ -561,6 +619,8 @@ def main() -> int:
             if len(picked) >= 2:
                 break
         selected.extend(picked)
+
+    selected = sorted(selected, key=lambda x: x.score, reverse=True)
 
     if len(selected) < 4:
         msg = f"Too few fresh unseen items selected: {len(selected)}"

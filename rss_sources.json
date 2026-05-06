@@ -1,0 +1,94 @@
+{
+  "mode": "rss_only_approval_first",
+  "notes": "RSS-only preparation. No HTML scraping, no fallback, and not connected to the live site until Lior approves.",
+  "active": [
+    {
+      "name": "ynet חדשות",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss2.xml",
+      "logo": "ynet"
+    },
+    {
+      "name": "ynet מבזקים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss1854.xml",
+      "logo": "ynet"
+    },
+    {
+      "name": "ynet ספורט",
+      "categoryHint": "ספורט",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss3.xml",
+      "logo": "ynet"
+    },
+    {
+      "name": "וואלה ראשי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/1?type=main",
+      "logo": "וואלה"
+    },
+    {
+      "name": "וואלה חדשות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/22",
+      "logo": "וואלה"
+    },
+    {
+      "name": "וואלה כלכלה",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/3",
+      "logo": "וואלה"
+    },
+    {
+      "name": "ישראל היום",
+      "categoryHint": "חדשות",
+      "rss": "https://www.israelhayom.co.il/rss.xml",
+      "logo": "ישראל היום"
+    },
+    {
+      "name": "הארץ",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/rss---feedly",
+      "logo": "הארץ"
+    },
+    {
+      "name": "הארץ דעות",
+      "categoryHint": "פוליטיקה",
+      "rss": "https://www.haaretz.co.il/srv/rss-opinion",
+      "logo": "הארץ"
+    },
+    {
+      "name": "הארץ ספורט",
+      "categoryHint": "ספורט",
+      "rss": "https://www.haaretz.co.il/srv/%D7%A1%D7%A4%D7%95%D7%A8%D7%98--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ"
+    },
+    {
+      "name": "גלובס שוק ההון",
+      "categoryHint": "כלכלה",
+      "rss": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=585",
+      "logo": "גלובס"
+    }
+  ],
+  "excluded_for_now": [
+    {
+      "name": "N12 / mako",
+      "reason": "לא נמצא RSS XML נקי בבדיקה; לא נשתמש בסריקה בשלב הראשון"
+    },
+    {
+      "name": "כלכליסט",
+      "reason": "endpoints נפוצים מחזירים 404; ממתין לאיתור RSS רשמי עדכני"
+    },
+    {
+      "name": "TheMarker",
+      "reason": "עמוד RSS קיים אך אינו XML feed נקי בבדיקה הראשונה"
+    },
+    {
+      "name": "מעריב / כאן / ערוץ 14",
+      "reason": "endpoints שנבדקו חסומים ב-403 או לא RSS נקי"
+    },
+    {
+      "name": "ספורט5",
+      "reason": "endpoint שנבדק מחזיר HTML ולא RSS תקין"
+    }
+  ]
+}
