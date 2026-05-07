@@ -414,6 +414,24 @@ def poanta_headline(title: str, desc: str) -> str:
         h = original
     if len(h) < 18 and desc:
         h = clean_text(desc).split(". ")[0]
+    # Poanta headline must not be the source headline with punctuation removed.
+    # If deterministic cleanup did not materially rewrite it, fall back to a
+    # neutral explanatory headline that states the practical reading angle.
+    def norm(text: str) -> str:
+        return re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", "", text or "").lower()
+    if norm(h) == norm(original):
+        cat, _ = categorize(f"{title} {desc}")
+        fallbacks = {
+            "ביטחון": "האירוע הביטחוני מחייב להיצמד לעדכונים רשמיים",
+            "כלכלה": "הכותרת הכלכלית חשובה רק דרך ההשפעה בפועל",
+            "צרכנות": "הפרסום הצרכני דורש בדיקת מחיר ותנאים בפועל",
+            "טכנולוגיה": "החידוש הטכנולוגי חשוב דרך ההשפעה היומיומית",
+            "נדל״ן": "הסיפור הנדלני חשוב בעיקר דרך השפעת המחירים",
+            "תחבורה": "השינוי התחבורתי חשוב רק אם הוא משפיע על נסיעה",
+            "פוליטיקה": "מאחורי הכותרת הפוליטית צריך לבדוק מה משתנה",
+            "ספורט": "הדרמה הספורטיבית חשובה רק דרך ההמשך המעשי",
+        }
+        h = fallbacks.get(cat, "הפואנטה היא המשמעות, לא ניסוח הכותרת המקורית")
     return h[:95]
 
 
