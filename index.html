@@ -132,8 +132,8 @@
             badge.textContent = item.sourceLogo || sourceLogo(item.source);
             badge.classList.add(sourceClass(item.source));
             const pill = node.querySelector('.pill');
-            pill.textContent = item.category;
-            pill.classList.add(item.categoryClass || '');
+            pill.textContent = item.category || 'חדשות';
+            if(item.categoryClass) pill.classList.add(item.categoryClass);
             node.querySelector('.time').textContent = item.time || '';
             node.querySelector('.sourceName').textContent = '· מקור: ' + item.source;
             const thumb = node.querySelector('.article-thumb');
