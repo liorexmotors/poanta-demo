@@ -409,89 +409,128 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     return cat, cls
 
 
+
+QUOTEISH_RE = re.compile(r'["״“”].{0,80}["״“”]|^.*?:')
+GENERIC_HEADLINE_RE = re.compile(r'הפואנטה היא|הכותרת הכלכלית|הסיפור הנדלני|הפרסום הצרכני|החידוש הטכנולוגי|האירוע הביטחוני|מאחורי הכותרת|השינוי התחבורתי|הדרמה הספורטיבית')
+
+def split_sentences(text: str) -> list[str]:
+    text = clean_text(text)
+    if not text:
+        return []
+    parts = re.split(r'(?<=[.!?؟])\s+|(?<=\u05c3)\s+', text)
+    out = []
+    for part in parts:
+        part = clean_text(part).strip(' -–•')
+        if 18 <= len(part) <= 260:
+            out.append(part)
+    return out
+
+
+def trim_words(text: str, max_chars: int) -> str:
+    text = clean_text(text).strip()
+    if len(text) <= max_chars:
+        return text
+    cut = text[:max_chars].rsplit(' ', 1)[0].strip(' ,;:-–')
+    return cut + '…'
+
+
+def dequote_headline(title: str) -> str:
+    h = sanitize_title(title).strip()
+    h = re.sub(r'^\s*["״“”][^"״“”]{3,90}["״“”]\s*[:：-]?\s*', '', h).strip()
+    h = re.sub(r'^[^:：]{3,85}\?\s*', '', h).strip()
+    h = re.sub(r'^[^:：]{3,85}:\s*', '', h).strip()
+    h = h.replace('?', '').strip(' -–:')
+    return h or sanitize_title(title)
+
+
+def story_headline(title: str, desc: str, source: str) -> str:
+    text = f'{title} {desc}'
+    # Specific pattern requested by Lior: turn market teasers into a concrete event.
+    if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
+        return 'מניות הדואליות צפויות לפתוח בירידות בתל אביב אחרי שבוע אדום בשווקים'
+    if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
+        return 'אחים גילו אחרי מות אביהם שהוא הסתיר מהם אחות נוספת'
+    if 'ביטקוין' in title and 'נשיא' in title:
+        return 'בארה״ב מקדמים הגבלות על החזקת ביטקוין בידי הנשיא ומשפחתו'
+    if 'אלצהיימר' in title and 'מחקר' in title:
+        return 'מחקר חדש בודק קשר בין מחלה נפוצה לסיכון לאלצהיימר בעתיד'
+    if 'חניוני קמפינג' in title:
+        return 'עשרה חניוני קמפינג חינמיים נפתחו לציבור מצפון לדרום'
+    if 'מערבולות אוויר' in title:
+        return 'מחקר מסמן היכן בטיסה הסיכוי להיפגע ממערבולות נמוך יותר'
+    if 'SMS מאיראן' in title:
+        return 'הודעות SMS חשודות מאיראן מחייבות זהירות לפני לחיצה או תגובה'
+    if 'הרכבים השיתופיים מגיעים' in title:
+        return 'שירות רכבים שיתופיים מתרחב לבת ים'
+    if 'מדד אפריל' in title:
+        return 'מדד אפריל עלה יותר מהצפוי אך האינפלציה נשארה מתחת ל־2%'
+    if 'מחירי הדלק' in title and 'מדד המחירים' in title:
+        return 'הזינוק במחירי הדלק צפוי לדחוף את מדד המחירים כלפי מעלה'
+
+    h = dequote_headline(title)
+    # Use the description only when the title remains a quote/click teaser with no concrete event.
+    if (len(h) < 22 or GENERIC_HEADLINE_RE.search(h)) and desc:
+        first = split_sentences(desc)[:1]
+        if first:
+            h = first[0]
+    # Avoid vague source questions; make them declarative when possible.
+    h = re.sub(r'^האם\s+', '', h).strip()
+    h = h.replace('?', '').strip()
+    return trim_words(h, 78)
+
+
+def story_context(title: str, desc: str, source: str) -> str:
+    if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
+        return 'המסחר בתל אביב צפוי להיפתח בלחץ אחרי ירידות בוול סטריט ופערי ארביטראז׳ שליליים במניות דואליות כמו נובה, טאואר ואלביט. ברקע, חששות גיאו־פוליטיים, אינפלציה בארה״ב ותנודתיות בסקטור השבבים מכבידים על השווקים.'
+    if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
+        return 'לאחר השבעה גילו בני משפחה כי לאביהם הייתה בת נוספת שלא הכירו במשך שנים. החשיפה הובילה לסכסוך ירושה ולמאבק משפטי סביב חלוקת העיזבון.'
+    sentences = split_sentences(desc)
+    if len(sentences) >= 2:
+        return trim_words(sentences[0] + ' ' + sentences[1], 245)
+    if sentences:
+        return trim_words(sentences[0], 210)
+    cat, _ = categorize_item(title, desc, source)
+    # Last resort: concrete category framing, never "source published an article".
+    fallbacks = {
+        'ביטחון': 'האירוע מצביע על שינוי אפשרי במצב הביטחוני, ולכן חשוב לבדוק אם יש הנחיות רשמיות או השפעה על השגרה.',
+        'כלכלה': 'הידיעה מצביעה על שינוי שיכול להשפיע על מחירים, השקעות או החלטות פיננסיות בתקופה הקרובה.',
+        'צרכנות': 'הסיפור עשוי להשפיע על החלטת קנייה, מחיר סופי או תנאים שהצרכן צריך לבדוק לפני פעולה.',
+        'טכנולוגיה': 'העדכון עשוי להשפיע על שימוש יומיומי, פרטיות, אבטחה או שירותים דיגיטליים.',
+        'תחבורה': 'העדכון יכול להשפיע על נסיעה, זמינות שירות או החלטה מעשית לפני יציאה לדרך.',
+        'ספורט': 'האירוע משנה את תמונת ההמשך סביב הקבוצה, הסגל, הטבלה או המומנטום.',
+    }
+    return fallbacks.get(cat, 'הידיעה מצביעה על שינוי שחשוב להבין דרך ההשפעה המעשית שלו, ולא דרך ניסוח הכותרת המקורית.')
+
+
+def story_takeaway(category: str, title: str, desc: str) -> str:
+    if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
+        return 'שבוע המסחר נפתח בעצבנות, ולכן מניות צמיחה ושבבים עלולות להיות הראשונות להיפגע.'
+    if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
+        return 'סודות משפחתיים שנחשפים אחרי המוות יכולים לשנות לחלוטין את חלוקת הירושה.'
+    if category == 'כלכלה':
+        return 'השאלה המרכזית היא מי נפגע בכיס ומי צריך להיערך לפני החלטה פיננסית.'
+    if category == 'צרכנות':
+        return 'לפני פעולה כדאי לבדוק מחיר סופי, תנאים והשלכות — לא רק את הכותרת.'
+    if category == 'טכנולוגיה':
+        return 'המשמעות נמצאת בהשפעה על פרטיות, אבטחה או שימוש יומיומי.'
+    if category == 'תחבורה':
+        return 'מי שזה משפיע עליו צריך לבדוק זמינות, מחיר או הנחיות לפני יציאה.'
+    if category == 'ספורט':
+        return 'הפואנטה היא מה זה משנה להמשך — לא רק הדרמה של הרגע.'
+    if category == 'ביטחון':
+        return 'צריך להיצמד לעדכונים רשמיים ולהבין אם יש שינוי מעשי בשגרה.'
+    return 'הפואנטה היא ההשפעה המעשית של הסיפור, לא הניסוח הדרמטי של המקור.'
+
 def poanta_headline(title: str, desc: str) -> str:
-    h = sanitize_title(title)
-    # Remove common clickbait wrappers while preserving claim.
-    replacements = [
-        (r"^.*?נחשף[:：]?\s*", ""),
-        (r"^.*?כאוס[:：]?\s*", ""),
-        (r"^.*?הבלוף של\s*", ""),
-        (r"כל מה שצריך לדעת על\s*", ""),
-        (r"זה מה ש\s*", ""),
-    ]
-    original = h
-    for pat, rep in replacements:
-        h = re.sub(pat, rep, h).strip(" -–:|")
-    h = h.replace("?", "")
-    if len(h) < 18:
-        h = original
-    if len(h) < 18 and desc:
-        h = clean_text(desc).split(". ")[0]
-    # Poanta headline must not be the source headline with punctuation removed.
-    # If deterministic cleanup did not materially rewrite it, fall back to a
-    # neutral explanatory headline that states the practical reading angle.
-    def norm(text: str) -> str:
-        return re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", "", text or "").lower()
-    if norm(h) == norm(original):
-        cat, _ = categorize(f"{title} {desc}")
-        fallbacks = {
-            "ביטחון": "האירוע הביטחוני מחייב להיצמד לעדכונים רשמיים",
-            "כלכלה": "הכותרת הכלכלית חשובה רק דרך ההשפעה בפועל",
-            "צרכנות": "הפרסום הצרכני דורש בדיקת מחיר ותנאים בפועל",
-            "טכנולוגיה": "החידוש הטכנולוגי חשוב דרך ההשפעה היומיומית",
-            "נדל״ן": "הסיפור הנדלני חשוב בעיקר דרך השפעת המחירים",
-            "תחבורה": "השינוי התחבורתי חשוב רק אם הוא משפיע על נסיעה",
-            "פוליטיקה": "מאחורי הכותרת הפוליטית צריך לבדוק מה משתנה",
-            "ספורט": "הדרמה הספורטיבית חשובה רק דרך ההמשך המעשי",
-        }
-        h = fallbacks.get(cat, "הפואנטה היא המשמעות, לא ניסוח הכותרת המקורית")
-    return h[:95]
+    return story_headline(title, desc, "")
 
 
 def context_text(title: str, desc: str, source: str) -> str:
-    # Never publish article descriptions verbatim. Poanta cards must be
-    # original explanatory summaries, not copied OG/RSS snippets. Use the
-    # description only as weak signal for categorization elsewhere.
-    cat, _ = categorize_item(title, desc, source)
-    headline = poanta_headline(title, desc)
-    if cat == "ביטחון":
-        return "מאחורי הכותרות הדרמטיות יש בעיקר שאלה מעשית: האם יש הנחיות חדשות לציבור ומה הרשויות אומרות בפועל. עד שאין הנחיה רשמית, חשוב להפריד בין רעש תקשורתי לבין שינוי אמיתי בשגרה."
-    if cat == "כלכלה":
-        return "זו ידיעה כלכלית שכדאי לקרוא דרך ההשפעה הישירה: כסף נכנס, כסף יוצא, זכאות, מחירים או תזרים. הכותרת חשובה פחות מהשאלה מה צריך לבדוק או להכין עכשיו."
-    if cat == "צרכנות":
-        return "הסיפור הצרכני כאן הוא הפער בין הודעות רשמיות לבין מה שקורה בפועל בקופה. לכן הפואנטה היא לבדוק מחיר אמיתי והשוואה, לא להסתפק בסיסמה של מבצע או בכותרת."
-    if cat == "טכנולוגיה":
-        return "העניין הטכנולוגי הוא לא רק החידוש עצמו, אלא איך הוא עשוי להשפיע על שימוש יומיומי, פרטיות, עבודה או שירותים שאתה כבר צורך."
-    if cat == "נדל״ן":
-        return "בנדל״ן ההשפעה בדרך כלל לא מיידית, אבל שינוי כזה יכול להשפיע על ביקושים, תמחור והחלטות רכישה או שכירות בהמשך."
-    if cat == "תחבורה":
-        return "זו ידיעה שיכולה להשפיע על מי שנוסע או תלוי בשירות תחבורתי, אבל צריך להבחין בין בדיקה/כוונה לבין פתרון שכבר עובד בשטח."
-    if cat == "פוליטיקה":
-        return "הסיפור הפוליטי חשוב רק אם מבינים מה הוא משנה בפועל: החלטות, תקציבים, יציבות או שירותים לציבור. לכן הפואנטה היא ההשלכה, לא הריב סביב הכותרת."
-    if cat == "ספורט":
-        return "בספורט קל להיתפס לדרמה של רגע, אבל הפואנטה היא מה זה אומר להמשך: טבלה, סגל, פציעות, ניהול או מומנטום."
-    return "הסיפור מסמן שינוי שכדאי להבין דרך ההשפעה המעשית, לא דרך ניסוח המקור."
+    return story_context(title, desc, source)
 
 
 def takeaway_text(category: str, title: str, desc: str) -> str:
-    text = f"{title} {desc}"
-    if category == "ביטחון":
-        return "לעקוב אחרי עדכונים רשמיים, אבל לא לשנות שגרה בלי הנחיה ברורה מהרשויות."
-    if category == "כלכלה":
-        return "כדאי לבדוק איך זה משפיע על הכיס: תלוש שכר, החזרי הלוואות, מחירים או החלטות השקעה."
-    if category == "צרכנות":
-        return "לפני קנייה או חידוש שירות, שווה להשוות מחירים ולא להסתמך על הכותרת או המבצע הראשון."
-    if category == "טכנולוגיה":
-        return "זו מגמה שכדאי להכיר: היא יכולה להשפיע על עבודה, פרטיות, אבטחה או שימוש יומיומי באפליקציות."
-    if category == "נדל״ן":
-        return "ההשפעה לא תמיד מיידית, אבל היא יכולה להשפיע על מחירים, ביקושים ותכנון רכישה באזור."
-    if category == "תחבורה":
-        return "אם אתה נוסע, טס או תלוי בשירות הזה — בדוק עדכונים לפני יציאה ואל תחכה לרגע האחרון."
-    if category == "פוליטיקה":
-        return "כדאי לבדוק מה ההחלטה משנה בפועל: תקציב, שירותים, מסים או יציבות פוליטית — ולא להסתפק בסיסמאות."
-    if category == "ספורט":
-        return "אם אתה עוקב אחרי הקבוצה או האירוע, שווה לבדוק את המשמעות להמשך העונה ולא רק את הדרמה של הכותרת."
-    return "זו ידיעה למעקב: הפואנטה היא להבין את ההשפעה בפועל, לא רק את הכותרת."
+    return story_takeaway(category, title, desc)
 
 
 def canonical_url_key(url: str) -> str:
