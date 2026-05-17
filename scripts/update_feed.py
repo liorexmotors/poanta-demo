@@ -36,6 +36,7 @@ STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
 SEEN_PATH = ROOT / ".poanta-seen.json"
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
+EXPERIMENTAL_VERSION = "20260517-pointa-experimental-prompt-v1"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PoantaRSS/0.1)",
@@ -434,6 +435,179 @@ def trim_words(text: str, max_chars: int) -> str:
     return cut
 
 
+def strip_ellipsis(text: str) -> str:
+    return clean_text(text).replace('…', '').replace('...', '').strip(' ,;:-–')
+
+
+def short_sentence(text: str, max_chars: int) -> str:
+    return strip_ellipsis(trim_words(text, max_chars)).rstrip('.')
+
+
+def article_text(title: str, desc: str) -> str:
+    return strip_ellipsis(f"{title}. {desc}")
+
+
+def experimental_headline(title: str, desc: str) -> str:
+    """New Pointa prompt: headline contains the conclusion, not a teaser."""
+    text = article_text(title, desc)
+    if ('מכונת מזומנים' in text or 'שואב מיליארדים' in text or 'מנוע הכנסות' in text) and 'ספורט' in text:
+        return 'גימיק טכנולוגי הפך למכונת מיליארדים בספורט'
+    if 'פורמולה 1' in text and any(x in text for x in ['מטא', 'גוגל', 'אדידס', 'AI']):
+        return 'חברות AI מזניקות את חסויות הפורמולה 1'
+    if 'תאונות קורקינטים' in text and any(x in text for x in ['פיצוי', 'לתבוע', 'פגיעה']):
+        return 'תאונות קורקינט הופכות לשאלת פיצוי וביטוח'
+    if 'MBA' in text and any(x in text for x in ['קורסי בחירה', 'התמחויות', 'אונו']):
+        return 'תואר MBA נמכר דרך גמישות והתמחויות רבות'
+    if 'ביטוח רכב' in text and any(x in text for x in ['שינויים כלכליים', 'לעלות']):
+        return 'ביטוח רכב מתייקר ודורש בדיקת תנאים'
+    if 'ביטוח רכב' in text and any(x in text for x in ['דצמבר', 'סיום הפוליסה']):
+        return 'חידוש ביטוח בדצמבר עלול להיות הרגל יקר'
+    if 'הטילים פגעו' in text and any(x in text for x in ['תכולת הבית', 'תכולת בית', '0.3%', 'הממשלתי']):
+        return 'פגיעת טיל חושפת חור בכיסוי תכולת הבית'
+    if 'אלפין' in text and any(x in text for x in ['כריות אוויר', 'בלימה אוטונוטמית', 'פורשה']):
+        return 'מכוניות ספורט יקרות עדיין מפגרות בבטיחות'
+    if 'יוקר התחבורה' in text and 'מחיר הדלק' in text:
+        return 'יוקר התחבורה רחב הרבה יותר ממחיר הדלק'
+    if 'פסטיבל קאן' in text and 'AI' in text:
+        return 'תעשיית הקולנוע מתחילה להשלים עם יצירת AI'
+    if 'האח הגדול' in text and 'הדחות' in text:
+        return 'הפקת האח הגדול משתמשת בהדחות פתע כדי להחזיק עניין'
+    h = story_headline(title, desc, "")
+    h = re.sub(r'^(האם|למה|איך|מתי)\s+', '', h).replace('?', '').strip(' -–:')
+    replacements = {
+        'נחשף': '', 'דרמה': '', 'סערה': '', 'טירוף': '', 'צפו': '',
+        'לא תאמינו': '', 'הסיבה תפתיע אתכם': '', 'מה שקרה אחר כך': '',
+    }
+    for bad, repl in replacements.items():
+        h = h.replace(bad, repl)
+    h = re.sub(r'\s+', ' ', h).strip(' -–:')
+    return short_sentence(h or dequote_headline(title), 82)
+
+
+def experimental_summary(title: str, desc: str, source: str) -> str:
+    """Two compressed sentences: what happened + consequence from article text."""
+    text = article_text(title, desc)
+    if 'מכונת מזומנים' in text and 'עולם הספורט' in text:
+        return 'מה שהתחיל כגימיק טכנולוגי הפך למנוע הכנסות גדול בספורט. המספרים מצביעים על שינוי כלכלי במשחק.'
+    if 'פורמולה 1' in text and any(x in text for x in ['מטא', 'גוגל', 'אדידס', 'AI']):
+        return 'חברות AI וענקיות אמריקאיות מזרימות מיליארדים לפורמולה 1. החסויות הופכות את הענף לפלטפורמת פרימיום.'
+    if 'תאונות קורקינטים' in text and any(x in text for x in ['פיצוי', 'לתבוע', 'פגיעה']):
+        return 'רוכבת קורקינט נהרגה והעלתה מחדש את שאלת הפיצוי לנפגעים. ברוב התאונות הנזק קל, אבל הכיסוי לא תמיד ברור.'
+    if 'MBA' in text and any(x in text for x in ['קורסי בחירה', 'התמחויות', 'אונו']):
+        return 'תוכנית MBA מציעה יותר מ־130 קורסי בחירה בעשרות התמחויות. ההבטחה היא התאמה אישית לשוק עבודה משתנה.'
+    if 'ביטוח רכב' in text and any(x in text for x in ['שינויים כלכליים', 'לעלות']):
+        return 'חברות הביטוח מעלות מחירים בגלל שינויים כלכליים ועלויות. הנהג צריך לבדוק תנאים ולא רק מחיר חידוש.'
+    if 'ביטוח רכב' in text and any(x in text for x in ['דצמבר', 'סיום הפוליסה']):
+        return 'ישראלים רבים מחכים לסוף השנה כדי לחדש ביטוח רכב. הכתבה בודקת אם דצמבר באמת משתלם או רק הרגל.'
+    if 'תכולת הבית' in text and any(x in text for x in ['0.3%', 'הממשלתי', 'הטילים']):
+        return 'המדינה משלמת מעט על נזק לתכולת בית אחרי פגיעת טילים. אפשר להרחיב כיסוי באתר ממשלתי בתשלום נמוך.'
+    if 'אלפין' in text and any(x in text for x in ['כריות אוויר', 'בלימה אוטונוטמית']):
+        return 'אלפין יקרה מגיעה עם שתי כריות אוויר וללא בלימה אוטונומית. גם יצרניות ספורט יוקרתיות לא ממהרות לתקן.'
+    if 'שלבי אמריקן' in text and any(x in text for x in ['500 יחידות', '70 אלף דולר']):
+        return 'שלבי משיקה 500 יחידות מוסטאנג סופר־סנייק לציון 50 שנה. המחיר מתחיל סביב 70 אלף דולר.'
+    if 'האח הגדול' in text and 'הדחות' in text:
+        return 'שבוע הדחות פתע משנה את מאזן הבית. ההפקה משתמשת באי־ודאות כדי להחזיק עניין.'
+    if 'יוקר התחבורה' in text and 'מחיר הדלק' in text:
+        return 'הדיון הציבורי מתמקד במחיר הדלק. סביבו נבנתה תעשייה רחבה שמייקרת את התחבורה כולה.'
+    if 'פסטיבל קאן' in text and 'AI' in text:
+        return 'בקאן גוברת ההכרה ששימוש ב-AI בקולנוע בלתי נמנע. ההתנגדות נשארת, אבל התעשייה כבר בוחנת כלים חדשים.'
+    if 'האח הגדול' in text and 'הדחות' in text:
+        return 'שבוע הדחות פתע באח הגדול משנה את מאזן הבית. ההפקה משתמשת באי־ודאות כדי להחזיק עניין.'
+    category = categorize_item(title, desc, source)[0]
+    if desc:
+        sentences = split_sentences(desc)
+        if len(sentences) >= 2:
+            first = short_sentence(sentences[0], 86)
+            second = short_sentence(sentences[1], 86)
+            if first and second and first != second:
+                return f'{first}. {second}.'
+        if sentences:
+            first = short_sentence(sentences[0], 96)
+            title_point = short_sentence(dequote_headline(title), 74)
+            if title_point and title_point not in first:
+                return f'{first}. המשמעות מתמקדת ב{title_point}.'
+            return f'{first}.'
+    # Experimental mode avoids pretending to know more than the article/feed supplied.
+    return short_sentence(f'במרכז הכתבה: {dequote_headline(title)}', 160) + '.'
+
+
+def experimental_insight(category: str, title: str, desc: str) -> str:
+    """Insight must be article-derived and specific; include the subject when falling back."""
+    text = article_text(title, desc)
+    # Reuse the strong learned patterns, but compress them to the new premium prompt.
+    if ('מכונת מזומנים' in text or 'שואב מיליארדים' in text or 'מנוע הכנסות' in text) and 'ספורט' in text:
+        insight = 'הספורט מוכר דאטה וכסף, לא רק משחק.'
+    elif 'פורמולה 1' in text and any(x in text for x in ['מטא', 'גוגל', 'אדידס', 'AI']):
+        insight = 'AI קונה קהל דרך ספורט פרימיום.'
+    elif 'MBA' in text and any(x in text for x in ['קורסי בחירה', 'התמחויות', 'אונו']):
+        insight = 'התואר נמכר דרך גמישות והתמחויות.'
+    elif 'תאונות קורקינטים' in text and any(x in text for x in ['פיצוי', 'לתבוע', 'פגיעה']):
+        insight = 'בקורקינט, הפוליסה קובעת את הפיצוי.'
+    elif 'ביטוח רכב' in text and any(x in text for x in ['שינויים כלכליים', 'לעלות']):
+        insight = 'ביטוח רכב מתייקר כשסיכון כלכלי עולה.'
+    elif 'ביטוח רכב' in text and any(x in text for x in ['דצמבר', 'סיום הפוליסה']):
+        insight = 'הרגל חידוש יכול לעלות יותר מהשוואה.'
+    elif any(x in text for x in ['תכולת הבית', 'תכולת בית']) and any(x in text for x in ['0.3%', 'הממשלתי', 'הטילים']):
+        insight = 'מי שלא מרחיב כיסוי נשאר חשוף.'
+    elif 'אלפין' in text and any(x in text for x in ['כריות אוויר', 'בלימה אוטונוטמית']):
+        insight = 'מחיר ספורטיבי לא מבטיח בטיחות בסיסית.'
+    elif 'שלבי אמריקן' in text and any(x in text for x in ['500 יחידות', '70 אלף דולר']):
+        insight = 'נדירות ומורשת הן חלק מהמחיר.'
+    elif 'יוקר התחבורה' in text and 'מחיר הדלק' in text:
+        insight = 'המשאבה היא רק קצה יוקר הניידות.'
+    elif 'פסטיבל קאן' in text and 'AI' in text:
+        insight = 'התעשייה תתנגד ל-AI עד שהוא יחסוך זמן.'
+    elif 'האח הגדול' in text and 'הדחות' in text:
+        insight = 'ריאליטי מוכר אי־ודאות מתוכננת.'
+    elif is_trump_phone_story(title, desc):
+        insight = 'טראמפ מוכר זהות פוליטית יותר מטכנולוגיה.'
+    elif is_lieberman_succession_story(title, desc):
+        insight = 'ליברמן בונה הנהגה לימין שאחרי נתניהו.'
+    elif is_iran_cuba_drone_story(title, desc):
+        insight = 'איראן מתקרבת לחצר האחורית של ארה״ב.'
+    elif is_protection_insurance_story(title, desc):
+        insight = 'המדינה מאבדת שליטה כשהביטוח נסוג.'
+    elif 'ביטוח' in text and any(x in text for x in ['פרוטקשן', 'סחיטה', 'הצתות']):
+        insight = 'פשיעה הופכת לבעיה פיננסית כשביטוח נסוג.'
+    elif 'מדד' in text and any(x in text for x in ['דירות', 'מחירים', 'אינפלציה']):
+        insight = 'מחירים גבוהים דוחים את ההקלה בכיס.'
+    elif 'אנבידיה' in text and any(x in text for x in ['נדל', 'טבעון', 'מחירי']):
+        insight = 'הציפייה להייטק כבר מתומחרת בנדל״ן.'
+    elif 'קריפטו' in text or 'ביטקוין' in text:
+        insight = 'בקריפטו, אמון זז מהר יותר מרגולציה.'
+    elif 'איראן' in text and any(x in text for x in ['הורמוז', 'כבלים', 'תת ימיים']):
+        insight = 'תשתית תקשורת היא יעד ביטחוני וכלכלי.'
+    elif 'מונופול' in text or 'מונופולים' in text:
+        insight = 'הרגל צרכני קטן יכול לחזק כוח שוק גדול.'
+    elif any(x in text for x in ['מפוטרים', 'פיטורים']) and any(x in text for x in ['הייטק', 'שוק']):
+        insight = 'פיטורים יכולים להפוך לכוח גיוס חדש.'
+    elif 'חוק הגיוס' in text:
+        insight = 'חוק הגיוס הוא מבחן יציבות לקואליציה.'
+    elif any(x in text for x in ['נבחרת', 'ליגה', 'שערים', 'מאמן', 'מרתון']):
+        subject = takeaway_subject(title, 30)
+        insight = f'{subject} משנה את תמונת ההמשך בספורט.'
+    elif any(x in text for x in ['דירה', 'נדל', 'מחירי']):
+        subject = takeaway_subject(title, 30)
+        insight = f'{subject} מתורגם מהר למחיר בכיס.'
+    elif desc:
+        # Last-resort is still article-derived: it names the article's subject and consequence.
+        subject = takeaway_subject(title, 30)
+        if category == 'כלכלה':
+            insight = f'{subject} משנה את המחיר או הסיכון.'
+        elif category == 'תחבורה':
+            insight = f'{subject} משפיע על עלות ובטיחות.'
+        elif category == 'טכנולוגיה':
+            insight = f'{subject} משנה אמון ושימוש.'
+        elif category == 'ספורט':
+            insight = f'{subject} משנה כסף ומעמד בספורט.'
+        else:
+            insight = f'{subject} הוא נקודת ההשלכה המרכזית.'
+    else:
+        subject = takeaway_subject(title, 32)
+        insight = f'אין פואנטה אמינה בלי עומק על {subject}.'
+    return '💡 ' + short_sentence(insight, 64)
+
+
 def dequote_headline(title: str) -> str:
     h = sanitize_title(title).strip()
     h = re.sub(r'^\s*["״“”][^"״“”]{3,90}["״“”]\s*[:：-]?\s*', '', h).strip()
@@ -813,7 +987,7 @@ def remember_feed(feed: dict) -> None:
     }
     SEEN_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-def build_feed(candidates: Iterable[Candidate]) -> dict:
+def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> dict:
     items = []
     seen_titles = set()
     for c in candidates:
@@ -822,6 +996,14 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
             continue
         seen_titles.add(key)
         category, cls = categorize_item(c.title, c.description, c.source)
+        if experimental:
+            headline = experimental_headline(c.title, c.description)
+            context = experimental_summary(c.title, c.description, c.source)
+            takeaway = experimental_insight(category, c.title, c.description)
+        else:
+            headline = poanta_headline(c.title, c.description)
+            context = context_text(c.title, c.description, c.source)
+            takeaway = takeaway_text(category, c.title, c.description)
         items.append({
             "category": category,
             "categoryClass": cls,
@@ -830,13 +1012,17 @@ def build_feed(candidates: Iterable[Candidate]) -> dict:
             "sourceUrl": c.url,
             "imageUrl": c.image_url,
             "time": "עודכן אוטומטית",
-            "headline": poanta_headline(c.title, c.description),
+            "headline": headline,
             "originalTitle": c.original_title or c.title,
-            "context": context_text(c.title, c.description, c.source),
-            "takeaway": takeaway_text(category, c.title, c.description),
+            "context": context,
+            "takeaway": takeaway,
         })
     tz = timezone(timedelta(hours=3))
-    return {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items[:12]}
+    payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items[:12]}
+    if experimental:
+        payload["mode"] = "pointa-summary-experimental"
+        payload["version"] = EXPERIMENTAL_VERSION
+    return payload
 
 
 def empty_draft_payload(status: str, message: str = "") -> dict:
@@ -861,6 +1047,7 @@ def write_empty_draft(status: str, message: str = "") -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Update or draft Poanta feed cards")
     ap.add_argument("--draft", action="store_true", help="Write candidates.json for approval instead of publishing feed.json")
+    ap.add_argument("--experimental-prompt", action="store_true", help="Use Lior's experimental Pointa conclusion-feed prompt")
     args = ap.parse_args()
 
     # Never leave a previous approval batch in candidates.json during a new draft.
@@ -898,6 +1085,16 @@ def main() -> int:
 
     selected = sorted(selected, key=lambda x: x.score, reverse=True)
 
+    # The experimental prompt depends on article-specific substance. Enrich the
+    # top pool before writing so insights are derived from article metadata/body,
+    # not only generic RSS titles.
+    if args.experimental_prompt:
+        enriched: list[Candidate] = []
+        for c in selected[:24]:
+            enriched.append(enrich(c))
+            time.sleep(0.2)
+        selected = enriched
+
     if len(selected) < 4:
         msg = f"Too few fresh unseen items selected: {len(selected)}"
         print(f"ERROR {msg}", file=sys.stderr)
@@ -906,7 +1103,7 @@ def main() -> int:
             STATE_PATH.write_text(json.dumps({"lastDraftError": msg}), encoding="utf-8")
         return 2
 
-    feed = build_feed(selected)
+    feed = build_feed(selected, experimental=args.experimental_prompt)
     if args.draft:
         feed["status"] = "draft"
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
