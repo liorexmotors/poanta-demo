@@ -431,7 +431,7 @@ def trim_words(text: str, max_chars: int) -> str:
     if len(text) <= max_chars:
         return text
     cut = text[:max_chars].rsplit(' ', 1)[0].strip(' ,;:-–')
-    return cut + '…'
+    return cut
 
 
 def dequote_headline(title: str) -> str:
@@ -476,7 +476,7 @@ def story_headline(title: str, desc: str, source: str) -> str:
     # Avoid vague source questions; make them declarative when possible.
     h = re.sub(r'^האם\s+', '', h).strip()
     h = h.replace('?', '').strip()
-    return trim_words(h, 78)
+    return trim_words(h, 62)
 
 
 def story_context(title: str, desc: str, source: str) -> str:
@@ -508,18 +508,18 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
         return 'סודות משפחתיים שנחשפים אחרי המוות יכולים לשנות לחלוטין את חלוקת הירושה.'
     if category == 'כלכלה':
-        return 'השאלה המרכזית היא מי נפגע בכיס ומי צריך להיערך לפני החלטה פיננסית.'
+        return 'מי נפגע בכיס ומי צריך להיערך פיננסית.'
     if category == 'צרכנות':
-        return 'לפני פעולה כדאי לבדוק מחיר סופי, תנאים והשלכות — לא רק את הכותרת.'
+        return 'לפני פעולה בודקים מחיר, תנאים והשלכות.'
     if category == 'טכנולוגיה':
-        return 'המשמעות נמצאת בהשפעה על פרטיות, אבטחה או שימוש יומיומי.'
+        return 'המשמעות היא בפרטיות, אבטחה או שימוש יומיומי.'
     if category == 'תחבורה':
-        return 'מי שזה משפיע עליו צריך לבדוק זמינות, מחיר או הנחיות לפני יציאה.'
+        return 'לפני יציאה בודקים זמינות, מחיר והנחיות.'
     if category == 'ספורט':
-        return 'הפואנטה היא מה זה משנה להמשך — לא רק הדרמה של הרגע.'
+        return 'החשוב הוא ההמשך, לא הדרמה של הרגע.'
     if category == 'ביטחון':
-        return 'צריך להיצמד לעדכונים רשמיים ולהבין אם יש שינוי מעשי בשגרה.'
-    return 'הפואנטה היא ההשפעה המעשית של הסיפור, לא הניסוח הדרמטי של המקור.'
+        return 'בודקים עדכונים רשמיים ושינוי מעשי בשגרה.'
+    return 'הפואנטה היא ההשפעה המעשית על הקורא.'
 
 def poanta_headline(title: str, desc: str) -> str:
     return story_headline(title, desc, "")
