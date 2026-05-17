@@ -460,12 +460,33 @@ def is_lieberman_succession_story(title: str, desc: str) -> bool:
     )
 
 
+def is_iran_cuba_drone_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        'איראן' in text
+        and 'קובה' in text
+        and any(x in text for x in ['כטב', 'כטב"מים', 'יועצים צבאיים', 'יועצים', 'צבאיים', 'רוסיה'])
+    )
+
+
+def is_protection_insurance_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        any(x in text for x in ['פרוטקשן', 'סחיטה', 'הצתות', 'ארגוני הפשיעה'])
+        and any(x in text for x in ['ביטוח', 'חברות הביטוח', 'פוליסות', 'אשראי', 'עסקים בצפון', 'העסקים בצפון'])
+    )
+
+
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
     if is_trump_phone_story(title, desc):
         return 'הטלפון של טראמפ הגיע - והלקוחות גילו שזה כנראה מכשיר סיני ממותג'
     if is_lieberman_succession_story(title, desc):
         return 'ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו'
+    if is_iran_cuba_drone_story(title, desc):
+        return 'ארה״ב חוששת שקובה הופכת לבסיס כטב"מים איראני ליד הגבול'
+    if is_protection_insurance_story(title, desc):
+        return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
     # Specific pattern requested by Lior: turn market teasers into a concrete event.
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'מניות הדואליות צפויות לפתוח בירידות בתל אביב אחרי שבוע אדום בשווקים'
@@ -533,6 +554,10 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'אחרי חודשים של עיכובים, טראמפ מובייל החלה לשלוח את מכשיר ה-T1, אך אנליסטים טוענים שמדובר בסמארטפון סיני בסיסי עם מיתוג מוזהב ומחיר מנופח. במקביל החברה עדכנה את התקנון כך שגם תשלום מקדמה לא מבטיח אספקת מכשיר.'
     if is_lieberman_succession_story(title, desc):
         return 'במאמר פרשנות בוואלה נטען כי ליברמן בונה עצמו כאלטרנטיבה ימנית מנוסה לליכוד, עם קו תקיף מול איראן, תמיכה בגיוס חרדים ונכונות לשבת עם הליכוד - אך בלי נתניהו. לפי הכותב, הוא מנסה למשוך מאוכזבי ליכוד ולהתכונן ליום שאחרי עידן ביבי.'
+    if is_iran_cuba_drone_story(title, desc):
+        return 'דיווחים בארה״ב טוענים שאיראן שלחה יועצים צבאיים לקובה כדי לסייע בהפעלת כטב"מים וטכנולוגיות צבאיות מתקדמות. ברקע גובר החשש בוושינגטון מהעמקת שיתוף הפעולה בין איראן, רוסיה וקובה סמוך לשטח האמריקאי.'
+    if is_protection_insurance_story(title, desc):
+        return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'המסחר בתל אביב צפוי להיפתח בלחץ אחרי ירידות בוול סטריט ופערי ארביטראז׳ שליליים במניות דואליות.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -560,6 +585,10 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'המוצר האמיתי כאן הוא המותג של טראמפ - לא הטלפון עצמו.'
     if is_lieberman_succession_story(title, desc):
         return 'ליברמן כבר לא מכוון להיות שותף בממשלה - אלא להוביל את מחנה הימין שאחרי נתניהו.'
+    if is_iran_cuba_drone_story(title, desc):
+        return 'מבחינת ארה״ב, איראן כבר לא מאיימת רק מהמזרח התיכון - אלא מתקרבת פיזית לחצר האחורית שלה.'
+    if is_protection_insurance_story(title, desc):
+        return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'שבוע המסחר נפתח בעצבנות, ולכן מניות צמיחה ושבבים עלולות להיות הראשונות להיפגע.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
