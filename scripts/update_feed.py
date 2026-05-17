@@ -443,8 +443,29 @@ def dequote_headline(title: str) -> str:
     return h or sanitize_title(title)
 
 
+def is_trump_phone_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        'טראמפ' in text
+        and any(x in text for x in ['T1', 'T-1', 'מובייל', 'טלפון', 'סמארטפון', 'מכשיר'])
+        and any(x in text for x in ['עיכוב', 'סיני', 'ממותג', 'מוזהב', 'מקדמה', 'לקוחות', 'אנליסט'])
+    )
+
+
+def is_lieberman_succession_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        'ליברמן' in text
+        and any(x in text for x in ['כיבוש השלטון', 'יורש', 'הימין', 'ליכוד', 'נתניהו', 'ביבי', 'מאוכזבי'])
+    )
+
+
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
+    if is_trump_phone_story(title, desc):
+        return 'הטלפון של טראמפ הגיע - והלקוחות גילו שזה כנראה מכשיר סיני ממותג'
+    if is_lieberman_succession_story(title, desc):
+        return 'ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו'
     # Specific pattern requested by Lior: turn market teasers into a concrete event.
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'מניות הדואליות צפויות לפתוח בירידות בתל אביב אחרי שבוע אדום בשווקים'
@@ -508,6 +529,10 @@ def compact_context(text: str, category: str = '', title: str = '') -> str:
 
 
 def story_context(title: str, desc: str, source: str) -> str:
+    if is_trump_phone_story(title, desc):
+        return 'אחרי חודשים של עיכובים, טראמפ מובייל החלה לשלוח את מכשיר ה-T1, אך אנליסטים טוענים שמדובר בסמארטפון סיני בסיסי עם מיתוג מוזהב ומחיר מנופח. במקביל החברה עדכנה את התקנון כך שגם תשלום מקדמה לא מבטיח אספקת מכשיר.'
+    if is_lieberman_succession_story(title, desc):
+        return 'במאמר פרשנות בוואלה נטען כי ליברמן בונה עצמו כאלטרנטיבה ימנית מנוסה לליכוד, עם קו תקיף מול איראן, תמיכה בגיוס חרדים ונכונות לשבת עם הליכוד - אך בלי נתניהו. לפי הכותב, הוא מנסה למשוך מאוכזבי ליכוד ולהתכונן ליום שאחרי עידן ביבי.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'המסחר בתל אביב צפוי להיפתח בלחץ אחרי ירידות בוול סטריט ופערי ארביטראז׳ שליליים במניות דואליות.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -531,6 +556,10 @@ def story_context(title: str, desc: str, source: str) -> str:
 
 
 def story_takeaway(category: str, title: str, desc: str) -> str:
+    if is_trump_phone_story(title, desc):
+        return 'המוצר האמיתי כאן הוא המותג של טראמפ - לא הטלפון עצמו.'
+    if is_lieberman_succession_story(title, desc):
+        return 'ליברמן כבר לא מכוון להיות שותף בממשלה - אלא להוביל את מחנה הימין שאחרי נתניהו.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'שבוע המסחר נפתח בעצבנות, ולכן מניות צמיחה ושבבים עלולות להיות הראשונות להיפגע.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -547,7 +576,13 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'החשוב הוא ההמשך, לא הדרמה של הרגע.'
     if category == 'ביטחון':
         return 'בודקים עדכונים רשמיים ושינוי מעשי בשגרה.'
-    return 'הפואנטה היא ההשפעה המעשית על הקורא.'
+    if category == 'בריאות':
+        return 'הערך הוא בהבנת הסיכון לפני קבלת החלטות בריאותיות.'
+    if category == 'תרבות':
+        return 'הסיפור חושף את המנגנון שמאחורי הדימוי הציבורי.'
+    if category == 'דעות':
+        return 'הטיעון המרכזי חשוב יותר מהניסוח החריף של הכותרת.'
+    return 'השאלה היא מה משתנה בפועל, לא איך המקור ניסח את הדרמה.'
 
 def poanta_headline(title: str, desc: str) -> str:
     return story_headline(title, desc, "")
