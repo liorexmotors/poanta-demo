@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b10">
+  <title>פואנטה סטודיו</title>
+  <style>
+    :root{--bg:#070b10;--panel:#0b1118;--ink:#f6f8fb;--muted:#8e97a3;--line:rgba(255,255,255,.09);--accent:#e8bd63;--danger:#ff6b6b;--ok:#62d39b}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(180deg,#070b10,#04070a);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}a{color:inherit}.wrap{max-width:760px;margin:0 auto;padding:22px 16px 64px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}.brand{font-size:26px;font-weight:950}.sub{color:var(--muted);line-height:1.45}.panel{background:rgba(11,17,24,.82);border:1px solid var(--line);border-radius:22px;padding:16px;margin:14px 0;box-shadow:0 12px 34px rgba(0,0,0,.24)}.actions{display:grid;grid-template-columns:1fr;gap:10px}.btn{border:1px solid rgba(232,189,99,.25);background:rgba(232,189,99,.1);border-radius:16px;color:var(--ink);font-weight:900;padding:13px 14px;text-align:center;text-decoration:none}.btn.secondary{background:rgba(255,255,255,.035);border-color:var(--line);color:#d8dee6}.hint{font-size:13px;color:var(--muted);line-height:1.45;margin-top:10px}.list{display:grid;gap:12px}.item{border-top:1px solid var(--line);padding-top:13px}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;font-weight:800;margin-bottom:6px}.headline{font-size:20px;line-height:1.12;font-weight:950;margin:0 0 7px}.ctx{color:#c8d0da;line-height:1.45;margin:0 0 8px}.take{color:#eef2f6;font-size:14px;line-height:1.4}.source{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:10px;padding-top:8px;color:#bfc7d2;font-size:13px}.empty{color:var(--muted);text-align:center;padding:26px 0}.ok{color:var(--ok)}.bad{color:var(--danger)}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="top"><div><div class="brand">Pointa Studio</div><div class="sub">סביבת עבודה ראשונה לאיסוף, בדיקה ופידבק לפני פרסום.</div></div><a class="btn secondary" href="./index.html">פתח פיד</a></div>
+    <section class="panel">
+      <h2>הפעלת איסוף</h2>
+      <div class="actions">
+        <a class="btn" target="_blank" rel="noopener" href="https://github.com/liorexmotors/poanta-demo/actions/workflows/collect-candidates.yml">אסוף כתבות חדשות ב־GitHub Actions</a>
+        <button class="btn secondary" id="loadCandidates">טען מועמדים מהקובץ האחרון</button>
+        <button class="btn secondary" id="loadFeed">טען פיד מפורסם</button>
+      </div>
+      <div class="hint">בגרסה הזו הכפתור פותח את GitHub Actions להרצה ידנית בטוחה. בשלב הבא נחבר כפתור פנימי מלא עם backend, כדי שלא תצטרך להיכנס לגיטהאב.</div>
+    </section>
+    <section class="panel">
+      <h2 id="title">מועמדים / פיד</h2>
+      <div id="status" class="hint">לחץ על “טען מועמדים” או “טען פיד”.</div>
+      <div id="items" class="list"></div>
+    </section>
+  </main>
+  <script>
+    const itemsEl=document.getElementById('items'), statusEl=document.getElementById('status'), titleEl=document.getElementById('title');
+    function esc(v){return String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+    function render(data,label){const items=Array.isArray(data?.items)?data.items:[]; titleEl.textContent=label; statusEl.innerHTML=`סטטוס: <b>${esc(data?.status||'published')}</b> · עודכן: ${esc(data?.updatedAt||'לא ידוע')} · ${items.length} פריטים`; if(!items.length){itemsEl.innerHTML='<div class="empty">אין פריטים להצגה</div>';return;} itemsEl.innerHTML=items.map((it,i)=>`<article class="item"><div class="meta"><span>${esc(it.category||'חדשות')}</span><span>${i+1}</span></div><h3 class="headline">${esc(it.headline)}</h3><p class="ctx">${esc(it.context)}</p><div class="take">${esc(it.takeaway)}</div><div class="source"><a href="${esc(it.sourceUrl)}" target="_blank" rel="noopener">${esc(it.originalTitle)}</a><span>${esc(it.source||'מקור')}</span></div></article>`).join('');}
+    function load(path,label){statusEl.textContent='טוען...'; fetch(path+'?v='+Date.now(),{cache:'reload'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>render(d,label)).catch(e=>{statusEl.innerHTML='<span class="bad">שגיאה בטעינה: '+esc(e.message)+'</span>';});}
+    document.getElementById('loadCandidates').onclick=()=>load('./candidates.json','מועמדים לאישור');
+    document.getElementById('loadFeed').onclick=()=>load('./feed.json','פיד מפורסם');
+  </script>
+</body>
+</html>
