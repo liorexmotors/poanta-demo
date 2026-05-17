@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v23-layout';
+const CACHE_NAME = 'poanta-demo-v24-exact-mobile-ui';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {

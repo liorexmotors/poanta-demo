@@ -1,88 +1,105 @@
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#070b10">
-  <title>פואנטה</title>
-  <link rel="manifest" href="./manifest.webmanifest">
-  <style>
-    :root{
-      --bg:#070b10;--bg2:#0a0f15;--ink:#f6f8fb;--text:#e7ebf0;--muted:#8e97a3;--muted2:#626c78;
-      --line:rgba(255,255,255,.085);--line2:rgba(255,255,255,.055);--accent:#e8bd63;--accent2:#9f7933;
-      --card:#0b1118;--pill:#101821;--red:#ff5f6f;--purple:#b99cff;--green:#62d39b;--blue:#82b5ff;
-    }
-    *{box-sizing:border-box}
-    html{background:var(--bg)}
-    body{margin:0;min-height:100vh;background:radial-gradient(circle at 65% -12%,rgba(232,189,99,.14),transparent 30%),linear-gradient(180deg,#070b10 0%,#04070a 82%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
-    a{color:inherit;text-decoration:none} button{font:inherit;color:inherit}
-    .app{width:100%;max-width:430px;min-height:100vh;margin:0 auto;padding:14px 16px calc(90px + env(safe-area-inset-bottom));position:relative;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 260px)}
-    .statusbar{direction:ltr;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:15px;font-weight:800;margin:0 0 14px}.phone-icons{display:flex;gap:7px;align-items:center}.signal{width:17px;height:11px;border-radius:2px;background:linear-gradient(90deg,#fff 45%,rgba(255,255,255,.35) 45%)}.battery{width:24px;height:12px;border:2px solid #fff;border-radius:4px;position:relative}.battery:before{content:"";position:absolute;inset:2px 4px 2px 2px;background:#fff;border-radius:2px}.battery:after{content:"";position:absolute;left:-5px;top:3px;width:3px;height:6px;border-radius:2px;background:#fff}
-    .header{position:sticky;top:0;z-index:3;margin:0 -16px;padding:0 16px 10px;background:linear-gradient(180deg,rgba(7,11,16,.98),rgba(7,11,16,.92) 72%,rgba(7,11,16,0));backdrop-filter:blur(12px)}
-    .brand-row{direction:ltr;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.brand{font-size:24px;letter-spacing:.2px;font-weight:900}.menu-btn{width:34px;height:34px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025);display:grid;place-items:center;color:var(--muted)}
-    .tabs{display:flex;gap:17px;overflow:auto;white-space:nowrap;scrollbar-width:none;padding:3px 0 8px;color:#858f9c;font-size:14px;font-weight:800}.tabs::-webkit-scrollbar{display:none}.tab.active{color:#fff}.tab.active:after{content:"";display:block;height:2px;border-radius:3px;background:var(--accent);margin-top:6px}.update-pill{height:34px;border:1px solid rgba(232,189,99,.16);background:rgba(14,21,29,.86);border-radius:14px;color:#cbd2dc;display:flex;align-items:center;justify-content:center;gap:7px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.24)}.update-pill strong{color:var(--accent);font-weight:900}.update-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(232,189,99,.65)}
-    .feed{display:flex;flex-direction:column}.story{padding:18px 0 16px;border-bottom:1px solid var(--line2)}
-    .story-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;color:var(--muted);font-size:13px;font-weight:800}.story-time{direction:ltr;color:#a4adb8}.story-topic{color:var(--accent);max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left}
-    .story-main{display:flex;direction:rtl;gap:11px;align-items:flex-start}.thumb{width:92px;height:92px;flex:0 0 92px;border-radius:18px;background-color:#17202b;background-image:radial-gradient(circle at 65% 30%,rgba(255,255,255,.20),transparent 24%),radial-gradient(circle at 20% 78%,rgba(232,189,99,.16),transparent 30%),linear-gradient(135deg,#263241,#101720);background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),0 10px 26px rgba(0,0,0,.26);overflow:hidden}.thumb.no-image{display:grid;place-items:center}.thumb.no-image:before{content:"P";direction:ltr;color:rgba(232,189,99,.52);font-size:34px;font-weight:950}
-    .story-copy{min-width:0;flex:1;text-align:right}.headline{font-size:22px;line-height:1.06;margin:0 0 7px;font-weight:950;letter-spacing:-.2px;color:#fff;text-wrap:balance}.summary{margin:0;color:#c8d0da;font-size:15px;line-height:1.42;font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.insight{margin-top:8px;display:flex;align-items:flex-start;gap:7px;color:#dce2e9;font-size:13.5px;line-height:1.35}.insight-icon{direction:ltr;width:19px;height:19px;flex:0 0 19px;border-radius:50%;border:1px solid rgba(232,189,99,.36);color:var(--accent);display:grid;place-items:center;font-size:11px;font-weight:950}.insight-text{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-    .story-divider{height:1px;background:var(--line);margin:12px 0 8px}.source-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.original-title{min-width:0;flex:1;color:#bfc7d2;font-size:13.5px;line-height:1.25;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right}.source-brand{direction:ltr;flex:0 0 auto;display:flex;align-items:center;gap:6px;color:#d9dee6;font-size:12.5px;font-weight:900}.source-icon{width:22px;height:22px;border-radius:8px;display:grid;place-items:center;background:#111927;border:1px solid rgba(255,255,255,.10);font-size:9px;box-shadow:0 8px 18px rgba(0,0,0,.20)}.source-icon.ynet{color:#ff6b6b}.source-icon.walla{color:#b99cff}.source-icon.haaretz{color:#d8c4a6}.source-icon.globes{color:#74dbc2}.source-icon.israel{color:#8fd7ff}.source-icon.n12{color:#ff5868}.source-icon.other{color:#d9dee6}
-    .bottom-nav{position:fixed;z-index:6;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;padding:10px 18px calc(9px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(7,11,16,.74),rgba(7,11,16,.98));backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.nav-item{display:grid;gap:4px;place-items:center;color:#6f7985;font-size:11px;font-weight:800}.nav-item.active{color:var(--accent)}.nav-icon{font-size:19px;line-height:1}
-    .empty{padding:40px 0;color:var(--muted);text-align:center}.hidden{display:none!important}
-    @media(min-width:760px){body{background:#020407}.app{border-inline:1px solid rgba(255,255,255,.07);box-shadow:0 0 80px rgba(0,0,0,.55)}}
-    @media(max-width:370px){.app{padding-inline:13px}.header{margin-inline:-13px;padding-inline:13px}.story-main{gap:9px}.thumb{width:82px;height:82px;flex-basis:82px;border-radius:16px}.headline{font-size:20px}.summary{font-size:14px}.insight{font-size:13px}.tabs{gap:14px}.original-title{font-size:13px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#061014">
+<title>Pointa</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<style>
+:root{
+  --bg:#061014; --card:#0b151a; --border:rgba(255,255,255,.145);
+  --soft:rgba(255,255,255,.085); --text:#f6f7f8; --muted:#8f979e;
+  --yellow:#ffc400; --nav:rgba(11,18,22,.95);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:#020608;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif}
+body{display:flex;justify-content:center;padding:18px}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;padding:0}
+.phone{width:430px;max-width:100%;min-height:932px;border-radius:38px;overflow:hidden;position:relative;background:radial-gradient(circle at 28% 0%,rgba(255,196,0,.055),transparent 28%),radial-gradient(circle at 88% 18%,rgba(255,255,255,.045),transparent 22%),linear-gradient(180deg,#071116 0%,#061014 55%,#060d11 100%);box-shadow:0 24px 70px rgba(0,0,0,.46);border:1px solid rgba(255,255,255,.08)}
+.screen{min-height:932px;padding:18px 16px 96px;position:relative}
+.status{direction:ltr;height:34px;padding:0 7px;display:flex;align-items:center;justify-content:space-between;font-size:18px;font-weight:800;color:white}
+.icons{display:flex;align-items:center;gap:7px}.signal{width:24px;height:15px;display:flex;gap:3px;align-items:flex-end}
+.signal span{width:4px;background:#fff;border-radius:4px}.signal span:nth-child(1){height:5px}.signal span:nth-child(2){height:8px}.signal span:nth-child(3){height:11px}.signal span:nth-child(4){height:14px}
+.wifi{width:21px;height:15px;position:relative;overflow:hidden}.wifi:before,.wifi:after{content:"";position:absolute;left:50%;transform:translateX(-50%);border:2.4px solid #fff;border-color:#fff transparent transparent;border-radius:999px}
+.wifi:before{width:22px;height:22px;top:2px}.wifi:after{width:12px;height:12px;top:8px}
+.battery{width:28px;height:14px;border:2px solid white;border-radius:4px;position:relative;padding:1px}.battery:after{content:"";position:absolute;right:-5px;top:3px;width:3px;height:6px;background:white;border-radius:0 2px 2px 0}.battery div{width:19px;height:8px;background:white;border-radius:2px}
+.header{margin-top:20px;display:flex;align-items:center;justify-content:space-between;direction:ltr}
+.brand{display:flex;align-items:center;gap:12px}.mark{width:54px;height:54px;background:linear-gradient(135deg,#ffd84f,#ffc400 70%);border-radius:17px 17px 17px 5px;position:relative;box-shadow:0 10px 22px rgba(255,196,0,.22)}
+.mark:after{content:"";position:absolute;left:0;bottom:-10px;border-top:18px solid var(--yellow);border-right:18px solid transparent}
+.mark i{position:absolute;right:13px;height:4px;background:#0a0d0f;border-radius:20px}.mark i:nth-child(1){top:15px;width:28px}.mark i:nth-child(2){top:26px;width:28px}.mark i:nth-child(3){top:37px;width:19px}
+.logo-text{font-size:31px;font-weight:900;letter-spacing:-.9px;color:white;line-height:1}.bell{position:relative;width:34px;height:34px;color:white}
+.bell svg{width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bell:after{content:"";position:absolute;top:5px;right:2px;width:8px;height:8px;background:var(--yellow);border-radius:50%;box-shadow:0 0 0 3px rgba(255,196,0,.12)}
+.tabs{margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;color:#838b92;font-size:16px;font-weight:700;white-space:nowrap;overflow:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tab{padding-bottom:11px;position:relative;white-space:nowrap;cursor:pointer}.tab.active{color:white;font-weight:900}.tab.active:after{content:"";position:absolute;bottom:0;right:50%;transform:translateX(50%);height:4px;width:37px;border-radius:99px;background:var(--yellow)}
+.updates{margin-top:8px;height:43px;border:1px solid var(--border);border-radius:11px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));display:flex;align-items:center;justify-content:space-between;padding:0 13px;color:#f1f2f3;font-size:16px;font-weight:650;gap:10px}
+.updates .spark{color:var(--yellow);font-size:22px}.updates .chev{font-size:24px;margin-top:-4px}
+.feed{margin-top:13px;display:flex;flex-direction:column;gap:10px}.card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:radial-gradient(circle at 10% 0%,rgba(255,255,255,.045),transparent 26%),linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.016)),var(--card);box-shadow:0 8px 22px rgba(0,0,0,.22)}.inner{padding:15px 13px 0}
+.meta{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:14px;font-weight:700;margin-bottom:7px}
+.cat{display:flex;align-items:center;gap:8px}.dot{width:11px;height:11px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,196,0,.09)}
+.content{display:grid;grid-template-columns:1fr 120px;gap:13px;align-items:center;min-height:135px;direction:rtl}.txt{text-align:center;min-width:0}
+h2{margin:0 0 12px;font-size:23px;line-height:1.24;font-weight:950;letter-spacing:-.35px;color:white}.summary{margin:0 0 12px;color:#c8cdd2;font-size:15.5px;line-height:1.58;font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.insight{color:var(--yellow);font-size:16px;font-weight:950;line-height:1.2;display:inline-flex;align-items:center;gap:7px}
+.img{width:120px;height:108px;border-radius:14px;border:1px solid rgba(255,255,255,.08);object-fit:cover;background:#162027;display:block}
+.img.placeholder{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 65% 30%,rgba(255,196,0,.16),transparent 28%),linear-gradient(135deg,#17242b,#0a1115);color:rgba(255,196,0,.55);font-size:34px;font-weight:950}
+.source{margin-top:13px;border-top:1px solid var(--soft);min-height:58px;display:grid;grid-template-columns:100px 1fr 24px;align-items:center;gap:7px;direction:ltr}
+.slogo{display:flex;align-items:center;gap:8px;color:#dce0e4;font-weight:900;font-size:19px;white-space:nowrap;min-width:0}.slogo span:last-child{overflow:hidden;text-overflow:ellipsis}
+.sym{width:32px;height:32px;flex:0 0 32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:white;overflow:hidden}
+.ynet{background:#e51f2d;font-family:Georgia,serif;font-size:22px;font-weight:900}.marker{background:#13bf55;font-size:7px;text-align:center;line-height:1;font-weight:900}.tech{background:#7519ff;font-size:9px;font-weight:950}.walla{background:#6927ff;font-size:14px;font-weight:950}.n12{background:#e51f2d;font-size:12px;font-weight:950}.israel{background:#148bff;font-size:10px;font-weight:950}.other{background:#24313a;font-size:10px;font-weight:950}
+.orig{color:#8d949a;font-size:15.2px;line-height:1.35;text-align:right;direction:rtl;font-weight:550;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.arrow{color:#eef1f3;font-size:31px;font-weight:300;line-height:1;text-align:center}
+.nav{position:absolute;left:16px;right:16px;bottom:14px;height:70px;background:var(--nav);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:repeat(5,1fr);backdrop-filter:blur(18px);z-index:20}
+.navitem{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#a5acb2;font-size:13px;font-weight:600;gap:4px}.navitem svg{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.navitem.active{color:var(--yellow);font-weight:850}.navitem.active svg{fill:var(--yellow);stroke:var(--yellow)}
+.homebar{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);width:142px;height:5px;border-radius:10px;background:white;z-index:21}
+.empty{padding:34px 0;text-align:center;color:var(--muted);font-weight:700}.hidden{display:none!important}
+@media(max-width:480px){body{padding:0;background:var(--bg)}.phone{width:100%;min-height:100vh;border-radius:0;border:none}.screen{min-height:100vh}}
+@media(max-width:390px){.tabs{gap:10px;font-size:15px}.content{grid-template-columns:1fr 112px;gap:10px}.img{width:112px;height:104px}h2{font-size:21px}.summary{font-size:14.5px}.updates{font-size:14.5px}}
+</style>
 </head>
 <body>
-  <main class="app">
-    <header class="header">
-      <div class="statusbar"><span>9:41</span><span class="phone-icons"><span>5G</span><span class="signal"></span><span class="battery"></span></span></div>
-      <div class="brand-row"><button class="menu-btn" aria-label="תפריט">≡</button><div class="brand">Pointa</div></div>
-      <nav class="tabs" id="tabs" aria-label="תחומים">
-        <button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="חדשות">חדשות</button><button class="tab" data-filter="בארץ">בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button>
-      </nav>
-      <button class="update-pill" id="refreshBtn"><span class="update-dot"></span><strong>3 עדכונים חדשים</strong><span id="updatedAt">מאז הפעם האחרונה</span></button>
-    </header>
-    <section id="feedCards" class="feed" aria-label="פיד פואנטה"></section>
-    <div id="emptyState" class="empty hidden">אין אייטמים בקטגוריה הזו כרגע</div>
-  </main>
-  <nav class="bottom-nav" aria-label="ניווט תחתון">
-    <a class="nav-item"><span class="nav-icon">⋯</span><span>עוד</span></a>
-    <a class="nav-item"><span class="nav-icon">⌕</span><span>חיפוש</span></a>
-    <a class="nav-item active"><span class="nav-icon">⌂</span><span>בית</span></a>
-    <a class="nav-item"><span class="nav-icon">♡</span><span>שמור</span></a>
-    <a class="nav-item"><span class="nav-icon">◌</span><span>פרופיל</span></a>
+<main class="phone">
+<section class="screen">
+  <div class="status"><div>9:41</div><div class="icons"><div class="signal"><span></span><span></span><span></span><span></span></div><div class="wifi"></div><div class="battery"><div></div></div></div></div>
+  <header class="header"><div class="brand"><div class="mark"><i></i><i></i><i></i></div><div class="logo-text">Pointa</div></div><div class="bell"><svg viewBox="0 0 24 24"><path d="M15 17H9"/><path d="M18 14v-3a6 6 0 0 0-12 0v3l-2 3h16l-2-3Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div></header>
+  <nav class="tabs" id="tabs"><button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="בארץ">חדשות בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button></nav>
+  <button class="updates" id="refreshBtn"><div class="spark">✧</div><div id="updatedAt">3 עדכונים חדשים מאז הפעם האחרונה</div><div class="chev">⌄</div></button>
+  <section class="feed" id="feedCards"></section>
+  <div id="emptyState" class="empty hidden">אין אייטמים בקטגוריה הזו כרגע</div>
+  <nav class="nav">
+    <div class="navitem"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-8 8-8s8 3.5 8 8"/></svg><span>פרופיל</span></div>
+    <div class="navitem"><svg viewBox="0 0 24 24"><path d="M6 4h12v17l-6-4-6 4V4Z"/></svg><span>שמור</span></div>
+    <div class="navitem active"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V21h-6v-6H9v6H3v-9.5Z"/></svg><span>בית</span></div>
+    <div class="navitem"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.4-4.4"/></svg><span>חיפוש</span></div>
+    <div class="navitem"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg><span>עוד</span></div>
   </nav>
-  <script>
-    const POANTA_FEED_VERSION = '20260511-layout-v1';
-    const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
-    const host = document.getElementById('feedCards');
-    const updatedAt = document.getElementById('updatedAt');
-    const emptyState = document.getElementById('emptyState');
-    let currentFeed = embeddedFeed;
-    let activeFilter = 'all';
-
-    function esc(value){ return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
-    function sourceClass(source){ const s=String(source||'').toLowerCase(); if(s.includes('n12')||s.includes('mako'))return'n12'; if(s.includes('וואלה')||s.includes('walla'))return'walla'; if(s.includes('ynet'))return'ynet'; if(s.includes('גלובס'))return'globes'; if(s.includes('הארץ'))return'haaretz'; if(s.includes('ישראל'))return'israel'; return'other'; }
-    function logo(item){ return String(item.sourceLogo || item.source || 'מקור').split(' ')[0].slice(0,4); }
-    function timeFor(index){ const now=new Date(); now.setMinutes(now.getMinutes()-index*7); return now.toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'}); }
-    function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='פוליטיקה') return 'בארץ'; return c; }
-    function sourceName(item){ return String(item.source || item.sourceLogo || 'מקור'); }
-    function story(item,index){ const hasImage=Boolean(item.imageUrl); const imgStyle=hasImage?` style="background-image:url(&quot;${esc(item.imageUrl)}&quot;)"`:''; const cls=sourceClass(item.source); return `<article class="story" data-category="${esc(item.category||'חדשות')}">
-      <div class="story-top"><time class="story-time">${timeFor(index)}</time><span class="story-topic">${esc(topicFor(item))}</span></div>
-      <div class="story-main">
-        <a class="thumb${hasImage?'':' no-image'}" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener" aria-label="${esc(item.originalTitle||item.headline)}"${imgStyle}></a>
-        <div class="story-copy"><h2 class="headline">${esc(item.headline)}</h2><p class="summary">${esc(item.context)}</p><div class="insight"><span class="insight-icon">!</span><span class="insight-text">${esc(item.takeaway)}</span></div></div>
-      </div>
-      <div class="story-divider"></div>
-      <div class="source-row"><a class="original-title" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">${esc(item.originalTitle)}</a><a class="source-brand" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener"><span>${esc(sourceName(item))}</span><span class="source-icon ${cls}">${esc(logo(item))}</span></a></div>
-    </article>`; }
-    function visibleItems(){ const items=(currentFeed&&Array.isArray(currentFeed.items))?currentFeed.items:[]; if(activeFilter==='all') return items; return items.filter(i => topicFor(i)===activeFilter || i.category===activeFilter); }
-    function render(feed){ currentFeed=feed||embeddedFeed; const items=visibleItems(); host.innerHTML=items.map(story).join(''); emptyState.classList.toggle('hidden',items.length>0); if(currentFeed.updatedAt){ try{updatedAt.textContent='עודכן '+new Date(currentFeed.updatedAt).toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'});}catch{updatedAt.textContent='עודכן עכשיו';}} }
-    document.getElementById('tabs').addEventListener('click',ev=>{ const btn=ev.target.closest('.tab'); if(!btn) return; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); activeFilter=btn.dataset.filter||'all'; render(currentFeed); });
-    document.getElementById('refreshBtn').addEventListener('click',()=>fetchFeed(true));
-    function fetchFeed(force=false){ const v=force?Date.now():POANTA_FEED_VERSION; return fetch('feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedFeed).then(render).catch(()=>render(embeddedFeed)); }
-    fetchFeed();
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>null);
-  </script>
+  <div class="homebar"></div>
+</section>
+</main>
+<script>
+const POANTA_FEED_VERSION = '20260517-exact-mobile-ui';
+const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
+const host = document.getElementById('feedCards');
+const updatedAt = document.getElementById('updatedAt');
+const emptyState = document.getElementById('emptyState');
+let currentFeed = embeddedFeed;
+let activeFilter = 'all';
+function esc(value){ return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='פוליטיקה'||c==='ביטחון') return 'בארץ'; return c; }
+function timeFor(index){ const now=new Date(); now.setMinutes(now.getMinutes()-index*47); return now.toLocaleTimeString('he-IL',{hour:'numeric',minute:'2-digit'}); }
+function sourceName(item){ return String(item.source || item.sourceLogo || 'מקור'); }
+function sourceClass(item){ const s=sourceName(item).toLowerCase(); if(s.includes('ynet'))return'ynet'; if(s.includes('marker'))return'marker'; if(s.includes('tech'))return'tech'; if(s.includes('וואלה')||s.includes('walla'))return'walla'; if(s.includes('n12')||s.includes('mako'))return'n12'; if(s.includes('ישראל'))return'israel'; return'other'; }
+function sourceLogoText(item){ const s=sourceName(item); if(s.toLowerCase().includes('ynet')) return 'y'; if(s.toLowerCase().includes('marker')) return 'The<br>Marker'; if(s.toLowerCase().includes('tech')) return 'TECH'; if(s.toLowerCase().includes('n12')) return 'N12'; return esc(s.split(' ')[0].slice(0,4)); }
+function imgHtml(item){ if(item.imageUrl) return `<img class="img" src="${esc(item.imageUrl)}" alt="">`; return `<div class="img placeholder">P</div>`; }
+function story(item,index){ const topic=topicFor(item); const cls=sourceClass(item); const href=esc(item.sourceUrl||'#'); return `<article class="card" data-category="${esc(item.category||'חדשות')}"><div class="inner"><div class="meta"><div class="cat"><span class="dot"></span><span>${esc(topic)}</span></div><div>${timeFor(index)}</div></div><div class="content"><div class="txt"><h2>${esc(item.headline)}</h2><p class="summary">${esc(item.context||'')}</p><div class="insight">${esc(item.takeaway||'הפואנטה בקצרה.')} <span>💡</span></div></div><a href="${href}" target="_blank" rel="noopener">${imgHtml(item)}</a></div><a class="source" href="${href}" target="_blank" rel="noopener"><div class="slogo"><span class="sym ${cls}">${sourceLogoText(item)}</span><span>${esc(sourceName(item))}</span></div><div class="orig">${esc(item.originalTitle||item.headline)}</div><div class="arrow">›</div></a></div></article>`; }
+function visibleItems(){ const items=(currentFeed&&Array.isArray(currentFeed.items))?currentFeed.items:[]; if(activeFilter==='all') return items; return items.filter(i => topicFor(i)===activeFilter || i.category===activeFilter); }
+function render(feed){ currentFeed=feed||embeddedFeed; const items=visibleItems(); host.innerHTML=items.map(story).join(''); emptyState.classList.toggle('hidden',items.length>0); if(currentFeed.updatedAt){ try{updatedAt.textContent='3 עדכונים חדשים מאז הפעם האחרונה';}catch{} } }
+document.getElementById('tabs').addEventListener('click',ev=>{ const btn=ev.target.closest('.tab'); if(!btn) return; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); activeFilter=btn.dataset.filter||'all'; render(currentFeed); });
+document.getElementById('refreshBtn').addEventListener('click',()=>fetchFeed(true));
+function fetchFeed(force=false){ const v=force?Date.now():POANTA_FEED_VERSION; return fetch('feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedFeed).then(render).catch(()=>render(embeddedFeed)); }
+fetchFeed();
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>null);
+</script>
 </body>
 </html>
