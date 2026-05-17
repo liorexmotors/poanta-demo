@@ -3,205 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#05090d">
+  <meta name="theme-color" content="#070b10">
   <title>פואנטה</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <style>
-    :root{--bg:#05090d;--panel:#090f15;--panel2:#0d141d;--ink:#f8fbff;--muted:#98a1ac;--soft:#68727d;--line:rgba(255,255,255,.075);--gold:#e9bc63;--gold2:#806229;--blue:#77a8ff;--green:#64d099;--red:#ff6b6b;--radius:24px;}
-    *{box-sizing:border-box} html{background:var(--bg)} body{margin:0;min-height:100vh;background:radial-gradient(circle at 70% -10%,rgba(232,188,99,.16),transparent 28%),linear-gradient(180deg,#05090d,#030608 78%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:0;}
-    a{color:inherit;text-decoration:none} button{font:inherit} body{overflow-x:hidden}.app{width:100%;max-width:393px;min-height:100vh;margin:0 auto;padding:18px 18px calc(96px + env(safe-area-inset-bottom));position:relative;overflow:hidden} .app::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(232,188,99,.055),transparent);pointer-events:none;opacity:.55}
-    .statusbar{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:15px;color:#fff;margin-bottom:18px;direction:ltr} .phone-icons{display:flex;gap:7px;align-items:center} .signal{width:18px;height:11px;background:linear-gradient(90deg,#fff 45%,transparent 45%);border-radius:2px;position:relative} .battery{width:24px;height:12px;border:2px solid #fff;border-radius:4px;position:relative} .battery::after{content:"";position:absolute;left:-5px;top:3px;width:3px;height:6px;background:#fff;border-radius:2px} .battery::before{content:"";position:absolute;inset:2px 4px 2px 2px;background:#fff;border-radius:2px}
-    .top{position:relative;z-index:1} .brand-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;direction:ltr} .brand-wrap{display:flex;align-items:flex-end;gap:10px;direction:ltr;min-width:0} .logo-mark{width:88px;height:88px;border-radius:22px;background:radial-gradient(circle at 30% 22%,#ffe66d,#f4bd1d 55%,#cf8f05);box-shadow:0 0 34px rgba(233,188,99,.22);position:relative;flex:0 0 auto} .logo-mark::before{content:"";position:absolute;right:18px;top:22px;width:48px;height:34px;background:#061015;border-radius:999px 999px 999px 12px} .logo-mark::after{content:"";position:absolute;right:28px;top:30px;width:30px;height:5px;background:#f4bd1d;border-radius:999px;box-shadow:0 11px 0 #f4bd1d,0 22px 0 #f4bd1d} .brand-name{font-size:34px;line-height:.82;font-weight:900;letter-spacing:0;text-shadow:0 8px 24px rgba(0,0,0,.34);min-width:0} .bell{width:38px;height:38px;border:1px solid rgba(233,188,99,.38);border-radius:999px;background:rgba(233,188,99,.06);color:var(--gold);display:grid;place-items:center;font-size:20px;flex:0 0 auto}
-    .tabs{display:flex;gap:20px;overflow:auto;white-space:nowrap;margin:6px -2px 10px;padding:4px 2px 2px;scrollbar-width:none;color:#858d98;font-weight:700;font-size:15px} .tabs::-webkit-scrollbar{display:none} .tab.active{color:var(--gold)} .update-pill{height:38px;border:1px solid rgba(233,188,99,.16);border-radius:15px;background:rgba(11,17,25,.86);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 10px 36px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;gap:8px;color:#d6dce4;font-size:14px;margin-bottom:30px} .update-pill strong{color:var(--gold);font-weight:900} .chev{width:20px;height:20px;border-radius:999px;background:rgba(233,188,99,.14);color:var(--gold);display:grid;place-items:center;font-size:12px}
-    .feed{position:relative;z-index:1;display:flex;flex-direction:column;gap:0} .story{display:grid;grid-template-columns:34px minmax(0,1fr) 96px;gap:10px;align-items:start;padding:26px 0 28px;border-bottom:1px solid var(--line);direction:ltr} .source-mark{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;margin-top:25px;background:#111927;border:1px solid rgba(255,255,255,.10);font-size:11px;font-weight:900;direction:ltr;box-shadow:0 8px 18px rgba(0,0,0,.24)} .source-mark.n12{color:#ff5868} .source-mark.walla{color:#c7a6ff} .source-mark.ynet{color:#ff6b6b} .source-mark.globes{color:#74dbc2} .source-mark.haaretz{color:#d8c4a6} .source-mark.israel{color:#8fd7ff}
-    .story-body{min-width:0;direction:rtl;text-align:right} .story-meta{display:flex;gap:8px;align-items:center;justify-content:flex-start;color:var(--gold);font-size:14px;font-weight:800;margin-bottom:8px} .story-meta time{color:#8d95a1;font-weight:700;direction:ltr} h2{font-size:clamp(27px,7vw,36px);line-height:1.02;margin:0 0 10px;font-weight:900;letter-spacing:0;color:#fff;text-wrap:balance} p{margin:0;color:#c7ced7;font-size:17px;line-height:1.48;font-weight:500} .insight{margin-top:12px;display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;color:#d8dee6;font-size:14px;line-height:1.35} .q{width:22px;height:22px;border-radius:999px;border:1px solid rgba(233,188,99,.36);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:12px;direction:ltr} .origin{display:block;margin-top:5px;color:var(--gold);font-size:14px;font-weight:800;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:rtl}
-    .thumb{width:96px;height:96px;border-radius:22px;background-color:#17202b;background-image:radial-gradient(circle at 70% 35%,rgba(255,255,255,.20),transparent 22%),linear-gradient(135deg,#283241,#111923);background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),0 12px 34px rgba(0,0,0,.26);overflow:hidden} .thumb.no-image{background-image:radial-gradient(circle at 70% 35%,rgba(255,255,255,.18),transparent 23%),radial-gradient(circle at 25% 72%,rgba(233,188,99,.18),transparent 28%),linear-gradient(135deg,#2a3441,#101720)}
-    .bottom-nav{position:fixed;z-index:5;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:393px;padding:12px 22px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(5,9,13,.72),rgba(5,9,13,.98));backdrop-filter:blur(16px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);gap:8px} .nav-item{display:grid;gap:5px;place-items:center;color:#68727d;font-size:12px;font-weight:700} .nav-item.active{color:var(--gold)} .nav-icon{font-size:20px;line-height:1}
-    @media(min-width:760px){body{background:#020407} .app{border-inline:1px solid rgba(255,255,255,.07);box-shadow:0 0 80px rgba(0,0,0,.55)}}
-    @media(min-width:410px){.app{padding-inline:22px}.story{grid-template-columns:42px minmax(0,1fr) 112px;gap:14px}.thumb{width:112px;height:112px;border-radius:24px}}
-    @media(max-width:370px){.app{padding-inline:14px} .story{grid-template-columns:30px minmax(0,1fr) 84px;gap:8px} .source-mark{width:30px;height:30px;font-size:10px}.thumb{width:84px;height:84px;border-radius:18px} h2{font-size:24px} p{font-size:15px} .tabs{gap:14px}}
+    :root{
+      --bg:#070b10;--bg2:#0a0f15;--ink:#f6f8fb;--text:#e7ebf0;--muted:#8e97a3;--muted2:#626c78;
+      --line:rgba(255,255,255,.085);--line2:rgba(255,255,255,.055);--accent:#e8bd63;--accent2:#9f7933;
+      --card:#0b1118;--pill:#101821;--red:#ff5f6f;--purple:#b99cff;--green:#62d39b;--blue:#82b5ff;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg)}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 65% -12%,rgba(232,189,99,.14),transparent 30%),linear-gradient(180deg,#070b10 0%,#04070a 82%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} button{font:inherit;color:inherit}
+    .app{width:100%;max-width:430px;min-height:100vh;margin:0 auto;padding:14px 16px calc(90px + env(safe-area-inset-bottom));position:relative;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 260px)}
+    .statusbar{direction:ltr;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:15px;font-weight:800;margin:0 0 14px}.phone-icons{display:flex;gap:7px;align-items:center}.signal{width:17px;height:11px;border-radius:2px;background:linear-gradient(90deg,#fff 45%,rgba(255,255,255,.35) 45%)}.battery{width:24px;height:12px;border:2px solid #fff;border-radius:4px;position:relative}.battery:before{content:"";position:absolute;inset:2px 4px 2px 2px;background:#fff;border-radius:2px}.battery:after{content:"";position:absolute;left:-5px;top:3px;width:3px;height:6px;border-radius:2px;background:#fff}
+    .header{position:sticky;top:0;z-index:3;margin:0 -16px;padding:0 16px 10px;background:linear-gradient(180deg,rgba(7,11,16,.98),rgba(7,11,16,.92) 72%,rgba(7,11,16,0));backdrop-filter:blur(12px)}
+    .brand-row{direction:ltr;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.brand{font-size:24px;letter-spacing:.2px;font-weight:900}.menu-btn{width:34px;height:34px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025);display:grid;place-items:center;color:var(--muted)}
+    .tabs{display:flex;gap:17px;overflow:auto;white-space:nowrap;scrollbar-width:none;padding:3px 0 8px;color:#858f9c;font-size:14px;font-weight:800}.tabs::-webkit-scrollbar{display:none}.tab.active{color:#fff}.tab.active:after{content:"";display:block;height:2px;border-radius:3px;background:var(--accent);margin-top:6px}.update-pill{height:34px;border:1px solid rgba(232,189,99,.16);background:rgba(14,21,29,.86);border-radius:14px;color:#cbd2dc;display:flex;align-items:center;justify-content:center;gap:7px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.24)}.update-pill strong{color:var(--accent);font-weight:900}.update-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(232,189,99,.65)}
+    .feed{display:flex;flex-direction:column}.story{padding:18px 0 16px;border-bottom:1px solid var(--line2)}
+    .story-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;color:var(--muted);font-size:13px;font-weight:800}.story-time{direction:ltr;color:#a4adb8}.story-topic{color:var(--accent);max-width:48%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left}
+    .story-main{display:flex;direction:rtl;gap:11px;align-items:flex-start}.thumb{width:92px;height:92px;flex:0 0 92px;border-radius:18px;background-color:#17202b;background-image:radial-gradient(circle at 65% 30%,rgba(255,255,255,.20),transparent 24%),radial-gradient(circle at 20% 78%,rgba(232,189,99,.16),transparent 30%),linear-gradient(135deg,#263241,#101720);background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),0 10px 26px rgba(0,0,0,.26);overflow:hidden}.thumb.no-image{display:grid;place-items:center}.thumb.no-image:before{content:"P";direction:ltr;color:rgba(232,189,99,.52);font-size:34px;font-weight:950}
+    .story-copy{min-width:0;flex:1;text-align:right}.headline{font-size:22px;line-height:1.06;margin:0 0 7px;font-weight:950;letter-spacing:-.2px;color:#fff;text-wrap:balance}.summary{margin:0;color:#c8d0da;font-size:15px;line-height:1.42;font-weight:500;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.insight{margin-top:8px;display:flex;align-items:flex-start;gap:7px;color:#dce2e9;font-size:13.5px;line-height:1.35}.insight-icon{direction:ltr;width:19px;height:19px;flex:0 0 19px;border-radius:50%;border:1px solid rgba(232,189,99,.36);color:var(--accent);display:grid;place-items:center;font-size:11px;font-weight:950}.insight-text{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .story-divider{height:1px;background:var(--line);margin:12px 0 8px}.source-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.original-title{min-width:0;flex:1;color:#bfc7d2;font-size:13.5px;line-height:1.25;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right}.source-brand{direction:ltr;flex:0 0 auto;display:flex;align-items:center;gap:6px;color:#d9dee6;font-size:12.5px;font-weight:900}.source-icon{width:22px;height:22px;border-radius:8px;display:grid;place-items:center;background:#111927;border:1px solid rgba(255,255,255,.10);font-size:9px;box-shadow:0 8px 18px rgba(0,0,0,.20)}.source-icon.ynet{color:#ff6b6b}.source-icon.walla{color:#b99cff}.source-icon.haaretz{color:#d8c4a6}.source-icon.globes{color:#74dbc2}.source-icon.israel{color:#8fd7ff}.source-icon.n12{color:#ff5868}.source-icon.other{color:#d9dee6}
+    .bottom-nav{position:fixed;z-index:6;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:430px;padding:10px 18px calc(9px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(7,11,16,.74),rgba(7,11,16,.98));backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.nav-item{display:grid;gap:4px;place-items:center;color:#6f7985;font-size:11px;font-weight:800}.nav-item.active{color:var(--accent)}.nav-icon{font-size:19px;line-height:1}
+    .empty{padding:40px 0;color:var(--muted);text-align:center}.hidden{display:none!important}
+    @media(min-width:760px){body{background:#020407}.app{border-inline:1px solid rgba(255,255,255,.07);box-shadow:0 0 80px rgba(0,0,0,.55)}}
+    @media(max-width:370px){.app{padding-inline:13px}.header{margin-inline:-13px;padding-inline:13px}.story-main{gap:9px}.thumb{width:82px;height:82px;flex-basis:82px;border-radius:16px}.headline{font-size:20px}.summary{font-size:14px}.insight{font-size:13px}.tabs{gap:14px}.original-title{font-size:13px}}
   </style>
 </head>
 <body>
   <main class="app">
-    <header class="top">
+    <header class="header">
       <div class="statusbar"><span>9:41</span><span class="phone-icons"><span>5G</span><span class="signal"></span><span class="battery"></span></span></div>
-      <div class="brand-row"><div class="brand-wrap"><div class="logo-mark" aria-hidden="true"></div><div class="brand-name">Pointa</div></div><button class="bell" aria-label="התראות">⌕</button></div>
-      <nav class="tabs" aria-label="תחומים"><span class="tab active">הכל</span><span class="tab">חדשות</span><span class="tab">בארץ</span><span class="tab">עולם</span><span class="tab">כלכלה</span><span class="tab">טכנולוגיה</span><span class="tab">ספורט</span></nav>
-      <div class="update-pill"><span class="chev">⌄</span><strong>3 עדכונים חדשים</strong><span id="updatedAt">מאז הפעם האחרונה</span><span>+</span></div>
+      <div class="brand-row"><button class="menu-btn" aria-label="תפריט">≡</button><div class="brand">Pointa</div></div>
+      <nav class="tabs" id="tabs" aria-label="תחומים">
+        <button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="חדשות">חדשות</button><button class="tab" data-filter="בארץ">בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button>
+      </nav>
+      <button class="update-pill" id="refreshBtn"><span class="update-dot"></span><strong>3 עדכונים חדשים</strong><span id="updatedAt">מאז הפעם האחרונה</span></button>
     </header>
-    <section id="feedCards" class="feed" aria-label="פיד פואנטה">
-<article class="story" data-category="כלכלה">
-      <a class="source-mark israel" href="https://www.israelhayom.co.il/business/article/20483794" target="_blank" rel="noopener" aria-label="ישראל היום">ישרא</a>
-      <div class="story-body">
-        <div class="story-meta"><span>כלכלה</span><time>9:32</time></div>
-        <h2>הבורסה ביפן מאותתת שהשווקים מתמחרים רגיעה</h2>
-        <p>הניקיי טיפס לשיא חדש ברקע ציפיות להתקרבות לסיום המלחמה. המשמעות היא שהשווקים כבר מתמחרים פחות סיכון, עוד לפני ודאות מדינית.</p>
-        <div class="insight"><span class="q">Q</span><span>אין כאן המלצת השקעה; זה בעיקר סימן למעקב אחרי סנטימנט השווקים.</span></div>
-        <a class="origin" href="https://www.israelhayom.co.il/business/article/20483794" target="_blank" rel="noopener">&lt; לקראת סיום המלחמה? הבורסה ביפן שוברת שיא - ומזנקת בכ-6%</a>
-      </div>
-      <a class="thumb no-image" href="https://www.israelhayom.co.il/business/article/20483794" target="_blank" rel="noopener" aria-label="לקראת סיום המלחמה? הבורסה ביפן שוברת שיא - ומזנקת בכ-6%"></a>
-    </article>
-<article class="story" data-category="כלכלה">
-      <a class="source-mark walla" href="https://finance.walla.co.il/item/3836126" target="_blank" rel="noopener" aria-label="וואלה כלכלה">וואל</a>
-      <div class="story-body">
-        <div class="story-meta"><span>כלכלה</span><time>9:33</time></div>
-        <h2>ישראל עלולה להישאר עם פסולת שאירופה דוחה</h2>
-        <p>הדיווח מתריע שישראל עשויה להפוך יעד לפסולת שמדינות אחרות לא קולטות. זה חשוב כי רגולציה חלשה עלולה להפוך בעיה סביבתית לעלות ציבורית.</p>
-        <div class="insight"><span class="q">Q</span><span>אין פעולה אישית מיידית, אבל זו סוגיה צרכנית וסביבתית שכדאי לעקוב אחריה.</span></div>
-        <a class="origin" href="https://finance.walla.co.il/item/3836126" target="_blank" rel="noopener">&lt; מצב חירום כלכלי: ישראל הולכת להפוך לפח האשפה של העולם</a>
-      </div>
-      <a class="thumb" href="https://finance.walla.co.il/item/3836126" target="_blank" rel="noopener" aria-label="מצב חירום כלכלי: ישראל הולכת להפוך לפח האשפה של העולם" style="background-image:url(&quot;https://images.wcdn.co.il/f_auto,q_auto,w_300/3/5/0/2/3502874-46.jpg&quot;)"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark israel" href="https://www.israelhayom.co.il/food/nutrition-food/article/20412775" target="_blank" rel="noopener" aria-label="ישראל היום">ישרא</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:34</time></div>
-        <h2>המחקר על קפה מעניין, אבל לא משנה הרגלים לבד</h2>
-        <p>הידיעה מציגה השפעה נוספת שמיוחסת לקפה מעבר לקפאין. המשמעות מוגבלת בלי להבין את המחקר, הכמות וההקשר הבריאותי.</p>
-        <div class="insight"><span class="q">Q</span><span>לא משנים תזונה לפי כותרת; אם זה רלוונטי רפואית, בודקים מקור מוסמך.</span></div>
-        <a class="origin" href="https://www.israelhayom.co.il/food/nutrition-food/article/20412775" target="_blank" rel="noopener">&lt; לא רק קפאין: מתברר שלקפה יש השפעה נוספת שלא הכרתם</a>
-      </div>
-      <a class="thumb no-image" href="https://www.israelhayom.co.il/food/nutrition-food/article/20412775" target="_blank" rel="noopener" aria-label="לא רק קפאין: מתברר שלקפה יש השפעה נוספת שלא הכרתם"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark ynet" href="https://www.ynet.co.il/news/120andone/article/hy22onsa11l" target="_blank" rel="noopener" aria-label="ynet חדשות">ynet</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:35</time></div>
-        <h2>לוין מחריף לחץ סביב מינויי שופטי העליון</h2>
-        <p>יריב לוין הזהיר שאי־הסכמה על מינויים תפגע בתפקוד בית המשפט העליון. זה חשוב כי העימות סביב הוועדה משפיע על מערכת המשפט והפוליטיקה.</p>
-        <div class="insight"><span class="q">Q</span><span>אין השפעה אישית מיידית, אבל זו נקודה חשובה למעקב אזרחי.</span></div>
-        <a class="origin" href="https://www.ynet.co.il/news/120andone/article/hy22onsa11l" target="_blank" rel="noopener">&lt; יריב לוין: &quot;אם לא נגיע להסכמה על מינויים, בית המשפט העליון ילך וייכחד&quot;</a>
-      </div>
-      <a class="thumb no-image" href="https://www.ynet.co.il/news/120andone/article/hy22onsa11l" target="_blank" rel="noopener" aria-label="יריב לוין: &quot;אם לא נגיע להסכמה על מינויים, בית המשפט העליון ילך וייכחד&quot;"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark walla" href="https://news.walla.co.il/item/3836087" target="_blank" rel="noopener" aria-label="וואלה ראשי">וואל</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:36</time></div>
-        <h2>פייגלין ובן ארי מנסים לאחד כוח ימין אידאולוגי</h2>
-        <p>משה פייגלין ומיכאל בן ארי הודיעו על ריצה משותפת עם מסר אידאולוגי חד. המשמעות היא ניסיון למשוך קולות ימין מחוץ למפלגות המרכזיות.</p>
-        <div class="insight"><span class="q">Q</span><span>זה בעיקר איתות פוליטי; ההשפעה תתברר רק אם הרשימה תצבור כוח ממשי.</span></div>
-        <a class="origin" href="https://news.walla.co.il/item/3836087" target="_blank" rel="noopener">&lt; פייגלין ובן ארי רצים יחד: &quot;לזרוק את אוסלו לפח האשפה של ההיסטוריה&quot;</a>
-      </div>
-      <a class="thumb" href="https://news.walla.co.il/item/3836087" target="_blank" rel="noopener" aria-label="פייגלין ובן ארי רצים יחד: &quot;לזרוק את אוסלו לפח האשפה של ההיסטוריה&quot;" style="background-image:url(&quot;https://images.wcdn.co.il/f_auto,q_auto,w_300/2/9/9/3/2993429-46.jpeg&quot;)"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark walla" href="https://news.walla.co.il/item/3836011" target="_blank" rel="noopener" aria-label="וואלה ראשי">וואל</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:37</time></div>
-        <h2>גוטליב תוקפת את הדר מוכתר ומחדדת קרב תדמיתי</h2>
-        <p>טלי גוטליב יצאה נגד הדר מוכתר וטענה שהיא אינה מתאימה לזירה הפוליטית. זה חשוב בעיקר כמחוון למאבקי תדמית בתוך הפוליטיקה.</p>
-        <div class="insight"><span class="q">Q</span><span>אין כאן השפעה ישירה; זו ידיעה פוליטית למעקב, לא שינוי מדיניות.</span></div>
-        <a class="origin" href="https://news.walla.co.il/item/3836011" target="_blank" rel="noopener">&lt; גוטליב במתקפה נגד הדר מוכתר: &quot;שיקרה בעבר, לא מתאימה&quot;</a>
-      </div>
-      <a class="thumb" href="https://news.walla.co.il/item/3836011" target="_blank" rel="noopener" aria-label="גוטליב במתקפה נגד הדר מוכתר: &quot;שיקרה בעבר, לא מתאימה&quot;" style="background-image:url(&quot;https://images.wcdn.co.il/f_auto,q_auto,w_300/4/0/4/7/4047388-46.png&quot;)"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark walla" href="https://news.walla.co.il/break/3836077" target="_blank" rel="noopener" aria-label="וואלה חדשות">וואל</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:38</time></div>
-        <h2>חשש ביטחוני בגוש עציון מחייב מעקב אחרי הנחיות</h2>
-        <p>צה״ל דיווח על חשש לחדירת מחבלים ביישוב מיצד שבגוש עציון. המשמעות היא אירוע ביטחוני נקודתי שמחייב להיצמד לעדכונים רשמיים.</p>
-        <div class="insight"><span class="q">Q</span><span>מי שנמצא באזור צריך לעקוב אחרי הוראות צה״ל והרשות המקומית בלבד.</span></div>
-        <a class="origin" href="https://news.walla.co.il/break/3836077" target="_blank" rel="noopener">&lt; צה&quot;ל: חשש לחדירת מחבלים ביישוב מיצד שבגוש עציון</a>
-      </div>
-      <a class="thumb" href="https://news.walla.co.il/break/3836077" target="_blank" rel="noopener" aria-label="צה&quot;ל: חשש לחדירת מחבלים ביישוב מיצד שבגוש עציון" style="background-image:url(&quot;https://images.wcdn.co.il/f_auto,q_auto,w_300/3/7/5/1/3751628-46.jpg&quot;)"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark haaretz" href="https://www.haaretz.co.il/news/law/2026-05-05/ty-article-magazine/.premium/0000019d-f916-df01-a3dd-fbbfb8310000" target="_blank" rel="noopener" aria-label="הארץ">הארץ</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:39</time></div>
-        <h2>עדות המשפחה מציפה את מחיר האלימות המתמשכת</h2>
-        <p>הכתבה מביאה עדות אישית של מי שאיבדה שלושה בני משפחה ועדיין חוששת לחייה. זה חשוב כי הסיפור הפרטי מצביע על כשל מתמשך בתחושת הביטחון.</p>
-        <div class="insight"><span class="q">Q</span><span>אין פעולה מיידית לקורא; זו ידיעה שמדגישה צורך במענה מערכתי.</span></div>
-        <a class="origin" href="https://www.haaretz.co.il/news/law/2026-05-05/ty-article-magazine/.premium/0000019d-f916-df01-a3dd-fbbfb8310000" target="_blank" rel="noopener">&lt; &quot;איבדתי שלושה ואני עדיין מפחדת. למה הדם שלנו חשוב פחות?&quot;</a>
-      </div>
-      <a class="thumb" href="https://www.haaretz.co.il/news/law/2026-05-05/ty-article-magazine/.premium/0000019d-f916-df01-a3dd-fbbfb8310000" target="_blank" rel="noopener" aria-label="&quot;איבדתי שלושה ואני עדיין מפחדת. למה הדם שלנו חשוב פחות?&quot;" style="background-image:url(&quot;https://img.haarets.co.il/bs/0000019d-f946-df01-a3dd-fbef84cb0001/a5/16/3b2f862947efbde9d3b67a643686/862946-2.jpg?width=108&amp;height=81&quot;)"></a>
-    </article>
-<article class="story" data-category="ביטחון">
-      <a class="source-mark haaretz" href="https://www.haaretz.co.il/news/world/middle-east/2026-05-05/ty-article/.premium/0000019d-f473-df01-a3dd-f7fb43a50000" target="_blank" rel="noopener" aria-label="הארץ">הארץ</a>
-      <div class="story-body">
-        <div class="story-meta"><span>ביטחון</span><time>9:40</time></div>
-        <h2>הקרב על הורמוז עשוי דווקא לפתוח נתיב מדיני</h2>
-        <p>הניתוח טוען שהמערכה סביב הורמוז יכולה לחזק מגעים דיפלומטיים במקום רק להסלים. המשמעות היא שהזירה הביטחונית עדיין פתוחה לכמה כיוונים.</p>
-        <div class="insight"><span class="q">Q</span><span>לא מסיקים שינוי שגרה מניתוח; מחכים להודעות רשמיות ולהחלטות בפועל.</span></div>
-        <a class="origin" href="https://www.haaretz.co.il/news/world/middle-east/2026-05-05/ty-article/.premium/0000019d-f473-df01-a3dd-f7fb43a50000" target="_blank" rel="noopener">&lt; המערכה על הורמוז עשויה דווקא למנף את המגעים הדיפלומטיים</a>
-      </div>
-      <a class="thumb" href="https://www.haaretz.co.il/news/world/middle-east/2026-05-05/ty-article/.premium/0000019d-f473-df01-a3dd-f7fb43a50000" target="_blank" rel="noopener" aria-label="המערכה על הורמוז עשויה דווקא למנף את המגעים הדיפלומטיים" style="background-image:url(&quot;https://img.haarets.co.il/bs/0000019d-f473-df01-a3dd-f7fb41c70000/c7/ea/069c32b2483abff3fb6895c738be/65539382.JPG?width=108&amp;height=81&quot;)"></a>
-    </article>
-<article class="story" data-category="חדשות">
-      <a class="source-mark ynet" href="https://www.ynet.co.il/news/article/hkbdphf0ze" target="_blank" rel="noopener" aria-label="ynet חדשות">ynet</a>
-      <div class="story-body">
-        <div class="story-meta"><span>חדשות</span><time>9:41</time></div>
-        <h2>מסמך אפשטיין נחשף, אבל הערך הציבורי מוגבל</h2>
-        <p>ynet פרסם פרטים מתוך מסמך חסוי שיוחס לג׳פרי אפשטיין. זה מושך עניין ציבורי, אך לא ברור ממנו שינוי מעשי או משפטי לקורא.</p>
-        <div class="insight"><span class="q">Q</span><span>זו ידיעת רקע וסקרנות ציבורית; אין לה משמעות פרקטית מיידית.</span></div>
-        <a class="origin" href="https://www.ynet.co.il/news/article/hkbdphf0ze" target="_blank" rel="noopener">&lt; &quot;מכתב ההתאבדות&quot; החסוי של ג&#x27;פרי אפשטיין נחשף: &quot;לא כיף, לא שווה את זה!!&quot;</a>
-      </div>
-      <a class="thumb no-image" href="https://www.ynet.co.il/news/article/hkbdphf0ze" target="_blank" rel="noopener" aria-label="&quot;מכתב ההתאבדות&quot; החסוי של ג&#x27;פרי אפשטיין נחשף: &quot;לא כיף, לא שווה את זה!!&quot;"></a>
-    </article>
-<article class="story" data-category="כלכלה">
-      <a class="source-mark walla" href="https://finance.walla.co.il/item/3836119" target="_blank" rel="noopener" aria-label="וואלה כלכלה">וואל</a>
-      <div class="story-body">
-        <div class="story-meta"><span>כלכלה</span><time>9:42</time></div>
-        <h2>שיא הניקיי משקף אופטימיות, לא הבטחה למשקיעים</h2>
-        <p>מדד הניקיי באסיה הגיע לשיא כל הזמנים. זה חשוב כי שוקי ההון משקפים ציפיות, אבל לא מבטיחים המשך עליות.</p>
-        <div class="insight"><span class="q">Q</span><span>מי שעוקב אחרי שווקים צריך לבדוק מגמה רחבה, לא לפעול לפי כותרת אחת.</span></div>
-        <a class="origin" href="https://finance.walla.co.il/item/3836119" target="_blank" rel="noopener">&lt; חגיגה באסיה: הניקיי בשיא כל הזמנים</a>
-      </div>
-      <a class="thumb" href="https://finance.walla.co.il/item/3836119" target="_blank" rel="noopener" aria-label="חגיגה באסיה: הניקיי בשיא כל הזמנים" style="background-image:url(&quot;https://images.wcdn.co.il/f_auto,q_auto,w_300/3/1/2/2/3122463-46.jpg&quot;)"></a>
-    </article>
-<article class="story" data-category="פוליטיקה">
-      <a class="source-mark haaretz" href="https://www.haaretz.co.il/opinions/letters/2026-05-03/ty-article-opinion/.premium/0000019d-ece6-d7c2-affd-efef829f0000" target="_blank" rel="noopener" aria-label="הארץ דעות">הארץ</a>
-      <div class="story-body">
-        <div class="story-meta"><span>פוליטיקה</span><time>9:43</time></div>
-        <h2>חנינה לנתניהו לא בהכרח סוגרת את השאלה הפוליטית</h2>
-        <p>מאמר הדעה טוען שגם חנינה מנשיא המדינה לא בהכרח תמנע מנתניהו לכהן. המשמעות היא שהדיון המשפטי והפוליטי מורכב יותר מהסיסמה.</p>
-        <div class="insight"><span class="q">Q</span><span>זו פרשנות, לא הכרעה; כדאי להבחין בין עמדה משפטית לבין החלטה רשמית.</span></div>
-        <a class="origin" href="https://www.haaretz.co.il/opinions/letters/2026-05-03/ty-article-opinion/.premium/0000019d-ece6-d7c2-affd-efef829f0000" target="_blank" rel="noopener">&lt; גם אם נתניהו מקבל חנינה מהנשיא הרצוג, הוא עוד יכול להיות ראש ממשלה</a>
-      </div>
-      <a class="thumb" href="https://www.haaretz.co.il/opinions/letters/2026-05-03/ty-article-opinion/.premium/0000019d-ece6-d7c2-affd-efef829f0000" target="_blank" rel="noopener" aria-label="גם אם נתניהו מקבל חנינה מהנשיא הרצוג, הוא עוד יכול להיות ראש ממשלה" style="background-image:url(&quot;https://img.haarets.co.il/bs/0000019d-ed93-d8c4-a9df-ff9306d50001/0b/c6/f0bdfecf4b87a4290fd52f07c263/alon2006-822.jpg?width=108&amp;height=81&quot;)"></a>
-    </article>
-    </section>
+    <section id="feedCards" class="feed" aria-label="פיד פואנטה"></section>
+    <div id="emptyState" class="empty hidden">אין אייטמים בקטגוריה הזו כרגע</div>
   </main>
-  <nav class="bottom-nav" aria-label="ניווט תחתון"><a class="nav-item"><span class="nav-icon">◌</span><span>פרופיל</span></a><a class="nav-item"><span class="nav-icon">⌕</span><span>חיפוש</span></a><a class="nav-item"><span class="nav-icon">▤</span><span>חדשות</span></a><a class="nav-item active"><span class="nav-icon">⌂</span><span>בית</span></a><a class="nav-item"><span class="nav-icon">⋯</span><span>עוד</span></a></nav>
+  <nav class="bottom-nav" aria-label="ניווט תחתון">
+    <a class="nav-item"><span class="nav-icon">⋯</span><span>עוד</span></a>
+    <a class="nav-item"><span class="nav-icon">⌕</span><span>חיפוש</span></a>
+    <a class="nav-item active"><span class="nav-icon">⌂</span><span>בית</span></a>
+    <a class="nav-item"><span class="nav-icon">♡</span><span>שמור</span></a>
+    <a class="nav-item"><span class="nav-icon">◌</span><span>פרופיל</span></a>
+  </nav>
   <script>
-    const POANTA_FEED_VERSION = '20260507-201500';
-    const embeddedFeed = {"updatedAt":"2026-05-07T19:46:00+03:00","items":[{"category":"כלכלה","categoryClass":"money","source":"ישראל היום","sourceLogo":"ישראל","sourceUrl":"https://www.israelhayom.co.il/business/article/20483794","imageUrl":"","time":"עודכן אוטומטית","headline":"הבורסה ביפן מאותתת שהשווקים מתמחרים רגיעה","originalTitle":"לקראת סיום המלחמה? הבורסה ביפן שוברת שיא - ומזנקת בכ-6%","context":"הניקיי טיפס לשיא חדש ברקע ציפיות להתקרבות לסיום המלחמה. המשמעות היא שהשווקים כבר מתמחרים פחות סיכון, עוד לפני ודאות מדינית.","takeaway":"אין כאן המלצת השקעה; זה בעיקר סימן למעקב אחרי סנטימנט השווקים."},{"category":"כלכלה","categoryClass":"money","source":"וואלה כלכלה","sourceLogo":"וואלה","sourceUrl":"https://finance.walla.co.il/item/3836126","imageUrl":"https://images.wcdn.co.il/f_auto,q_auto,w_300/3/5/0/2/3502874-46.jpg","time":"עודכן אוטומטית","headline":"ישראל עלולה להישאר עם פסולת שאירופה דוחה","originalTitle":"מצב חירום כלכלי: ישראל הולכת להפוך לפח האשפה של העולם","context":"הדיווח מתריע שישראל עשויה להפוך יעד לפסולת שמדינות אחרות לא קולטות. זה חשוב כי רגולציה חלשה עלולה להפוך בעיה סביבתית לעלות ציבורית.","takeaway":"אין פעולה אישית מיידית, אבל זו סוגיה צרכנית וסביבתית שכדאי לעקוב אחריה."},{"category":"חדשות","categoryClass":"","source":"ישראל היום","sourceLogo":"ישראל","sourceUrl":"https://www.israelhayom.co.il/food/nutrition-food/article/20412775","imageUrl":"","time":"עודכן אוטומטית","headline":"המחקר על קפה מעניין, אבל לא משנה הרגלים לבד","originalTitle":"לא רק קפאין: מתברר שלקפה יש השפעה נוספת שלא הכרתם","context":"הידיעה מציגה השפעה נוספת שמיוחסת לקפה מעבר לקפאין. המשמעות מוגבלת בלי להבין את המחקר, הכמות וההקשר הבריאותי.","takeaway":"לא משנים תזונה לפי כותרת; אם זה רלוונטי רפואית, בודקים מקור מוסמך."},{"category":"חדשות","categoryClass":"","source":"ynet חדשות","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/120andone/article/hy22onsa11l","imageUrl":"","time":"עודכן אוטומטית","headline":"לוין מחריף לחץ סביב מינויי שופטי העליון","originalTitle":"יריב לוין: \"אם לא נגיע להסכמה על מינויים, בית המשפט העליון ילך וייכחד\"","context":"יריב לוין הזהיר שאי־הסכמה על מינויים תפגע בתפקוד בית המשפט העליון. זה חשוב כי העימות סביב הוועדה משפיע על מערכת המשפט והפוליטיקה.","takeaway":"אין השפעה אישית מיידית, אבל זו נקודה חשובה למעקב אזרחי."},{"category":"חדשות","categoryClass":"","source":"וואלה ראשי","sourceLogo":"וואלה","sourceUrl":"https://news.walla.co.il/item/3836087","imageUrl":"https://images.wcdn.co.il/f_auto,q_auto,w_300/2/9/9/3/2993429-46.jpeg","time":"עודכן אוטומטית","headline":"פייגלין ובן ארי מנסים לאחד כוח ימין אידאולוגי","originalTitle":"פייגלין ובן ארי רצים יחד: \"לזרוק את אוסלו לפח האשפה של ההיסטוריה\"","context":"משה פייגלין ומיכאל בן ארי הודיעו על ריצה משותפת עם מסר אידאולוגי חד. המשמעות היא ניסיון למשוך קולות ימין מחוץ למפלגות המרכזיות.","takeaway":"זה בעיקר איתות פוליטי; ההשפעה תתברר רק אם הרשימה תצבור כוח ממשי."},{"category":"חדשות","categoryClass":"","source":"וואלה ראשי","sourceLogo":"וואלה","sourceUrl":"https://news.walla.co.il/item/3836011","imageUrl":"https://images.wcdn.co.il/f_auto,q_auto,w_300/4/0/4/7/4047388-46.png","time":"עודכן אוטומטית","headline":"גוטליב תוקפת את הדר מוכתר ומחדדת קרב תדמיתי","originalTitle":"גוטליב במתקפה נגד הדר מוכתר: \"שיקרה בעבר, לא מתאימה\"","context":"טלי גוטליב יצאה נגד הדר מוכתר וטענה שהיא אינה מתאימה לזירה הפוליטית. זה חשוב בעיקר כמחוון למאבקי תדמית בתוך הפוליטיקה.","takeaway":"אין כאן השפעה ישירה; זו ידיעה פוליטית למעקב, לא שינוי מדיניות."},{"category":"חדשות","categoryClass":"","source":"וואלה חדשות","sourceLogo":"וואלה","sourceUrl":"https://news.walla.co.il/break/3836077","imageUrl":"https://images.wcdn.co.il/f_auto,q_auto,w_300/3/7/5/1/3751628-46.jpg","time":"עודכן אוטומטית","headline":"חשש ביטחוני בגוש עציון מחייב מעקב אחרי הנחיות","originalTitle":"צה\"ל: חשש לחדירת מחבלים ביישוב מיצד שבגוש עציון","context":"צה״ל דיווח על חשש לחדירת מחבלים ביישוב מיצד שבגוש עציון. המשמעות היא אירוע ביטחוני נקודתי שמחייב להיצמד לעדכונים רשמיים.","takeaway":"מי שנמצא באזור צריך לעקוב אחרי הוראות צה״ל והרשות המקומית בלבד."},{"category":"חדשות","categoryClass":"","source":"הארץ","sourceLogo":"הארץ","sourceUrl":"https://www.haaretz.co.il/news/law/2026-05-05/ty-article-magazine/.premium/0000019d-f916-df01-a3dd-fbbfb8310000","imageUrl":"https://img.haarets.co.il/bs/0000019d-f946-df01-a3dd-fbef84cb0001/a5/16/3b2f862947efbde9d3b67a643686/862946-2.jpg?width=108&height=81","time":"עודכן אוטומטית","headline":"עדות המשפחה מציפה את מחיר האלימות המתמשכת","originalTitle":"\"איבדתי שלושה ואני עדיין מפחדת. למה הדם שלנו חשוב פחות?\"","context":"הכתבה מביאה עדות אישית של מי שאיבדה שלושה בני משפחה ועדיין חוששת לחייה. זה חשוב כי הסיפור הפרטי מצביע על כשל מתמשך בתחושת הביטחון.","takeaway":"אין פעולה מיידית לקורא; זו ידיעה שמדגישה צורך במענה מערכתי."},{"category":"ביטחון","categoryClass":"security","source":"הארץ","sourceLogo":"הארץ","sourceUrl":"https://www.haaretz.co.il/news/world/middle-east/2026-05-05/ty-article/.premium/0000019d-f473-df01-a3dd-f7fb43a50000","imageUrl":"https://img.haarets.co.il/bs/0000019d-f473-df01-a3dd-f7fb41c70000/c7/ea/069c32b2483abff3fb6895c738be/65539382.JPG?width=108&height=81","time":"עודכן אוטומטית","headline":"הקרב על הורמוז עשוי דווקא לפתוח נתיב מדיני","originalTitle":"המערכה על הורמוז עשויה דווקא למנף את המגעים הדיפלומטיים","context":"הניתוח טוען שהמערכה סביב הורמוז יכולה לחזק מגעים דיפלומטיים במקום רק להסלים. המשמעות היא שהזירה הביטחונית עדיין פתוחה לכמה כיוונים.","takeaway":"לא מסיקים שינוי שגרה מניתוח; מחכים להודעות רשמיות ולהחלטות בפועל."},{"category":"חדשות","categoryClass":"","source":"ynet חדשות","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/hkbdphf0ze","imageUrl":"","time":"עודכן אוטומטית","headline":"מסמך אפשטיין נחשף, אבל הערך הציבורי מוגבל","originalTitle":"\"מכתב ההתאבדות\" החסוי של ג'פרי אפשטיין נחשף: \"לא כיף, לא שווה את זה!!\"","context":"ynet פרסם פרטים מתוך מסמך חסוי שיוחס לג׳פרי אפשטיין. זה מושך עניין ציבורי, אך לא ברור ממנו שינוי מעשי או משפטי לקורא.","takeaway":"זו ידיעת רקע וסקרנות ציבורית; אין לה משמעות פרקטית מיידית."},{"category":"כלכלה","categoryClass":"money","source":"וואלה כלכלה","sourceLogo":"וואלה","sourceUrl":"https://finance.walla.co.il/item/3836119","imageUrl":"https://images.wcdn.co.il/f_auto,q_auto,w_300/3/1/2/2/3122463-46.jpg","time":"עודכן אוטומטית","headline":"שיא הניקיי משקף אופטימיות, לא הבטחה למשקיעים","originalTitle":"חגיגה באסיה: הניקיי בשיא כל הזמנים","context":"מדד הניקיי באסיה הגיע לשיא כל הזמנים. זה חשוב כי שוקי ההון משקפים ציפיות, אבל לא מבטיחים המשך עליות.","takeaway":"מי שעוקב אחרי שווקים צריך לבדוק מגמה רחבה, לא לפעול לפי כותרת אחת."},{"category":"פוליטיקה","categoryClass":"security","source":"הארץ דעות","sourceLogo":"הארץ","sourceUrl":"https://www.haaretz.co.il/opinions/letters/2026-05-03/ty-article-opinion/.premium/0000019d-ece6-d7c2-affd-efef829f0000","imageUrl":"https://img.haarets.co.il/bs/0000019d-ed93-d8c4-a9df-ff9306d50001/0b/c6/f0bdfecf4b87a4290fd52f07c263/alon2006-822.jpg?width=108&height=81","time":"עודכן אוטומטית","headline":"חנינה לנתניהו לא בהכרח סוגרת את השאלה הפוליטית","originalTitle":"גם אם נתניהו מקבל חנינה מהנשיא הרצוג, הוא עוד יכול להיות ראש ממשלה","context":"מאמר הדעה טוען שגם חנינה מנשיא המדינה לא בהכרח תמנע מנתניהו לכהן. המשמעות היא שהדיון המשפטי והפוליטי מורכב יותר מהסיסמה.","takeaway":"זו פרשנות, לא הכרעה; כדאי להבחין בין עמדה משפטית לבין החלטה רשמית."}]};
+    const POANTA_FEED_VERSION = '20260511-layout-v1';
+    const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
     const host = document.getElementById('feedCards');
     const updatedAt = document.getElementById('updatedAt');
-    function sourceClass(source){
-      const s = String(source || '').toLowerCase();
-      if(s.includes('n12') || s.includes('mako')) return 'n12';
-      if(s.includes('וואלה')) return 'walla';
-      if(s.includes('ynet')) return 'ynet';
-      if(s.includes('גלובס')) return 'globes';
-      if(s.includes('הארץ')) return 'haaretz';
-      if(s.includes('ישראל')) return 'israel';
-      return 'other';
-    }
+    const emptyState = document.getElementById('emptyState');
+    let currentFeed = embeddedFeed;
+    let activeFilter = 'all';
+
     function esc(value){ return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+    function sourceClass(source){ const s=String(source||'').toLowerCase(); if(s.includes('n12')||s.includes('mako'))return'n12'; if(s.includes('וואלה')||s.includes('walla'))return'walla'; if(s.includes('ynet'))return'ynet'; if(s.includes('גלובס'))return'globes'; if(s.includes('הארץ'))return'haaretz'; if(s.includes('ישראל'))return'israel'; return'other'; }
     function logo(item){ return String(item.sourceLogo || item.source || 'מקור').split(' ')[0].slice(0,4); }
-    function timeFor(index){ return index < 20 ? `9:${String(32 + index).padStart(2,'0')}` : 'עכשיו'; }
-    function story(item, index){
-      const hasImage = Boolean(item.imageUrl);
-      const imgStyle = hasImage ? ` style="background-image:url(&quot;${esc(item.imageUrl)}&quot;)"` : '';
-      return `<article class="story" data-category="${esc(item.category || 'חדשות')}">
-        <a class="source-mark ${sourceClass(item.source)}" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener" aria-label="${esc(item.source)}">${esc(logo(item))}</a>
-        <div class="story-body"><div class="story-meta"><span>${esc(item.category || 'חדשות')}</span><time>${timeFor(index)}</time></div><h2>${esc(item.headline)}</h2><p>${esc(item.context)}</p><div class="insight"><span class="q">Q</span><span>${esc(item.takeaway)}</span></div><a class="origin" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">&lt; ${esc(item.originalTitle)}</a></div>
-        <a class="thumb${hasImage ? '' : ' no-image'}" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener" aria-label="${esc(item.originalTitle || item.headline)}"${imgStyle}></a>
-      </article>`;
-    }
-    function render(feed){
-      if(!feed || !Array.isArray(feed.items) || !feed.items.length) return;
-      host.innerHTML = feed.items.map(story).join('');
-      if(feed.updatedAt){
-        try { updatedAt.textContent = 'עודכן ' + new Date(feed.updatedAt).toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'}); } catch { updatedAt.textContent = 'עודכן עכשיו'; }
-      }
-    }
-    fetch('feed.json?v=' + encodeURIComponent(POANTA_FEED_VERSION), {cache:'reload'}).then(r => r.ok ? r.json() : embeddedFeed).then(render).catch(() => render(embeddedFeed));
-    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => null);
+    function timeFor(index){ const now=new Date(); now.setMinutes(now.getMinutes()-index*7); return now.toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'}); }
+    function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='פוליטיקה') return 'בארץ'; return c; }
+    function sourceName(item){ return String(item.source || item.sourceLogo || 'מקור'); }
+    function story(item,index){ const hasImage=Boolean(item.imageUrl); const imgStyle=hasImage?` style="background-image:url(&quot;${esc(item.imageUrl)}&quot;)"`:''; const cls=sourceClass(item.source); return `<article class="story" data-category="${esc(item.category||'חדשות')}">
+      <div class="story-top"><time class="story-time">${timeFor(index)}</time><span class="story-topic">${esc(topicFor(item))}</span></div>
+      <div class="story-main">
+        <a class="thumb${hasImage?'':' no-image'}" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener" aria-label="${esc(item.originalTitle||item.headline)}"${imgStyle}></a>
+        <div class="story-copy"><h2 class="headline">${esc(item.headline)}</h2><p class="summary">${esc(item.context)}</p><div class="insight"><span class="insight-icon">!</span><span class="insight-text">${esc(item.takeaway)}</span></div></div>
+      </div>
+      <div class="story-divider"></div>
+      <div class="source-row"><a class="original-title" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">${esc(item.originalTitle)}</a><a class="source-brand" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener"><span>${esc(sourceName(item))}</span><span class="source-icon ${cls}">${esc(logo(item))}</span></a></div>
+    </article>`; }
+    function visibleItems(){ const items=(currentFeed&&Array.isArray(currentFeed.items))?currentFeed.items:[]; if(activeFilter==='all') return items; return items.filter(i => topicFor(i)===activeFilter || i.category===activeFilter); }
+    function render(feed){ currentFeed=feed||embeddedFeed; const items=visibleItems(); host.innerHTML=items.map(story).join(''); emptyState.classList.toggle('hidden',items.length>0); if(currentFeed.updatedAt){ try{updatedAt.textContent='עודכן '+new Date(currentFeed.updatedAt).toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'});}catch{updatedAt.textContent='עודכן עכשיו';}} }
+    document.getElementById('tabs').addEventListener('click',ev=>{ const btn=ev.target.closest('.tab'); if(!btn) return; document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); activeFilter=btn.dataset.filter||'all'; render(currentFeed); });
+    document.getElementById('refreshBtn').addEventListener('click',()=>fetchFeed(true));
+    function fetchFeed(force=false){ const v=force?Date.now():POANTA_FEED_VERSION; return fetch('feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedFeed).then(render).catch(()=>render(embeddedFeed)); }
+    fetchFeed();
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>null);
   </script>
 </body>
 </html>
