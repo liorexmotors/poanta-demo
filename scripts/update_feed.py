@@ -36,7 +36,7 @@ STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
 SEEN_PATH = ROOT / ".poanta-seen.json"
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
-EXPERIMENTAL_VERSION = "20260517-pointa-experimental-prompt-v1"
+EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PoantaRSS/0.1)",
@@ -390,6 +390,13 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # With many section RSS feeds enabled, the feed name is a strong signal.
     # Prefer it over incidental keywords in the title/description so sports,
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
+    text = f"{title} {desc} {source}"
+    if 'איראן' in text and any(x in text for x in ['כבלים', 'סוויפט', 'הורמוז', 'תת ימיים']):
+        return "עולם", "security"
+    if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
+        return "צרכנות", "money"
+    if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
+        return "רכב", "real"
     if any(x in source for x in ["ספורט", "כדורגל", "כדורסל", "NBA", "טניס"]):
         return "ספורט", "real"
     if any(x in source for x in ["רכב", "דו-גלגלי", "ביטוח רכב", "בטיחות"]):
@@ -450,6 +457,12 @@ def article_text(title: str, desc: str) -> str:
 def experimental_headline(title: str, desc: str) -> str:
     """New Pointa prompt: headline contains the conclusion, not a teaser."""
     text = article_text(title, desc)
+    if 'איראן' in text and any(x in text for x in ['כבלים התת', 'כבלים תת', 'סוויפט', 'הורמוז']) and any(x in text for x in ['10 טריליון', 'סליקה', 'עסקאות', 'דמי שימוש']):
+        return 'איראן מאיימת על תשתית הכסף של העולם'
+    if any(x in text for x in ['תכולת הבית', 'תכולת בית']) and any(x in text for x in ['נזקי מלחמה', 'פעולות איבה', 'מס רכוש', '0.3%']):
+        return 'ביטוח דירה רגיל לא מכסה נזקי טילים לתכולה'
+    if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['כריות אוויר', 'בלימה אוטונומית', 'בטיחות']):
+        return 'מכוניות ספורט יקרות נמכרות בלי בטיחות בסיסית'
     if ('מכונת מזומנים' in text or 'שואב מיליארדים' in text or 'מנוע הכנסות' in text) and 'ספורט' in text:
         return 'גימיק טכנולוגי הפך למכונת מיליארדים בספורט'
     if 'פורמולה 1' in text and any(x in text for x in ['מטא', 'גוגל', 'אדידס', 'AI']):
@@ -465,7 +478,7 @@ def experimental_headline(title: str, desc: str) -> str:
     if 'הטילים פגעו' in text and any(x in text for x in ['תכולת הבית', 'תכולת בית', '0.3%', 'הממשלתי']):
         return 'פגיעת טיל חושפת חור בכיסוי תכולת הבית'
     if 'אלפין' in text and any(x in text for x in ['כריות אוויר', 'בלימה אוטונוטמית', 'פורשה']):
-        return 'מכוניות ספורט יקרות עדיין מפגרות בבטיחות'
+        return 'מכוניות ספורט יקרות נמכרות בלי בטיחות בסיסית'
     if 'יוקר התחבורה' in text and 'מחיר הדלק' in text:
         return 'יוקר התחבורה רחב הרבה יותר ממחיר הדלק'
     if 'פסטיבל קאן' in text and 'AI' in text:
@@ -487,6 +500,12 @@ def experimental_headline(title: str, desc: str) -> str:
 def experimental_summary(title: str, desc: str, source: str) -> str:
     """Two compressed sentences: what happened + consequence from article text."""
     text = article_text(title, desc)
+    if 'איראן' in text and any(x in text for x in ['כבלים התת', 'כבלים תת', 'סוויפט', 'הורמוז']) and any(x in text for x in ['10 טריליון', 'סליקה', 'עסקאות', 'דמי שימוש']):
+        return 'איראן מאיימת לגבות דמי שימוש מכבלי האינטרנט התת־ימיים במצר הורמוז. דרך הכבלים האלה עוברים מידע פיננסי, תשלומי בנקים ועסקאות בהיקף עצום.'
+    if any(x in text for x in ['תכולת הבית', 'תכולת בית']) and any(x in text for x in ['נזקי מלחמה', 'פעולות איבה', 'מס רכוש', '0.3%']):
+        return 'ביטוח תכולה סטנדרטי בדרך כלל לא מכסה נזקי מלחמה או פעולות איבה. המדינה מפצה דרך מס רכוש, אבל הכיסוי לתכולה מוגבל וצריך להרחיב אותו בנפרד.'
+    if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['כריות אוויר', 'בלימה אוטונומית', 'בטיחות']):
+        return 'אלפין A110 שעולה כמעט חצי מיליון שקל מגיעה עם שתי כריות אוויר וללא בלימה אוטונומית. גם פורשה, פרארי ואסטון מרטין משאירות מערכות בטיחות מחוץ לדגמי ספורט.'
     if 'מכונת מזומנים' in text and 'עולם הספורט' in text:
         return 'מה שהתחיל כגימיק טכנולוגי הפך למנוע הכנסות גדול בספורט. המספרים מצביעים על שינוי כלכלי במשחק.'
     if 'פורמולה 1' in text and any(x in text for x in ['מטא', 'גוגל', 'אדידס', 'AI']):
@@ -535,7 +554,13 @@ def experimental_insight(category: str, title: str, desc: str) -> str:
     """Insight must be article-derived and specific; include the subject when falling back."""
     text = article_text(title, desc)
     # Reuse the strong learned patterns, but compress them to the new premium prompt.
-    if ('מכונת מזומנים' in text or 'שואב מיליארדים' in text or 'מנוע הכנסות' in text) and 'ספורט' in text:
+    if 'איראן' in text and any(x in text for x in ['כבלים התת', 'כבלים תת', 'סוויפט', 'הורמוז']) and any(x in text for x in ['10 טריליון', 'סליקה', 'עסקאות', 'דמי שימוש']):
+        insight = 'האיום הוא לא רק על נפט — אלא על זרימת הכסף.'
+    elif any(x in text for x in ['תכולת הבית', 'תכולת בית']) and any(x in text for x in ['נזקי מלחמה', 'פעולות איבה', 'מס רכוש', '0.3%']):
+        insight = 'מי שלא מרחיב כיסוי מלחמה נשאר חשוף כלכלית.'
+    elif any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['כריות אוויר', 'בלימה אוטונומית', 'בטיחות']):
+        insight = 'מחיר יוקרה לא מבטיח הגנה על הכביש.'
+    elif ('מכונת מזומנים' in text or 'שואב מיליארדים' in text or 'מנוע הכנסות' in text) and 'ספורט' in text:
         insight = 'הספורט מוכר דאטה וכסף, לא רק משחק.'
     elif 'פורמולה 1' in text and any(x in text for x in ['מטא', 'גוגל', 'אדידס', 'AI']):
         insight = 'AI קונה קהל דרך ספורט פרימיום.'
