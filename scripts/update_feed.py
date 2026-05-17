@@ -386,13 +386,26 @@ def categorize(text: str) -> tuple[str, str]:
 
 
 def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
-    if "ספורט" in source:
+    # With many section RSS feeds enabled, the feed name is a strong signal.
+    # Prefer it over incidental keywords in the title/description so sports,
+    # car, tech, health and culture feeds are not mislabeled as politics/real estate.
+    if any(x in source for x in ["ספורט", "כדורגל", "כדורסל", "NBA", "טניס"]):
         return "ספורט", "real"
+    if any(x in source for x in ["רכב", "דו-גלגלי", "ביטוח רכב", "בטיחות"]):
+        return "תחבורה", "real"
+    if any(x in source for x in ["TECH", "טכנולוג", "סייבר", "סטארטאפים", "סמארטפונים", "מחשבים", "מדע"]):
+        return "טכנולוגיה", "tech"
+    if any(x in source for x in ["בריאות", "תזונה", "כושר", "רפואה", "הריון"]):
+        return "בריאות", "real"
+    if any(x in source for x in ["כלכלה", "כסף", "שוק ההון", "גלובס", "צרכנות", "קריפטו", "קריירה"]):
+        return "כלכלה", "money"
+    if any(x in source for x in ["תרבות", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
+        return "תרבות", "real"
+    if any(x in source for x in ["דעות", "פרשנויות"]):
+        return "דעות", "security"
     cat, cls = categorize(title)
     if cat != "חדשות":
         return cat, cls
-    if "כלכלה" in source or "שוק ההון" in source or "גלובס" in source:
-        return "כלכלה", "money"
     return cat, cls
 
 

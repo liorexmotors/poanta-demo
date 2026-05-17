@@ -41,3 +41,30 @@
 4. רק אחרי שהמוצר יציב, אפשר להוסיף מקורות חסומים דרך הסכם/API/RSS רשמי שמצאנו.
 
 המשמעות: פחות מקורות בהתחלה, אבל איכות תפעולית גבוהה יותר ופחות תקלות.
+
+## מקורות חו״ל — RSS תקין בבדיקה חיה 2026-05-16
+
+| מקור | RSS | תוצאה |
+|---|---|---|
+| BBC News World | `https://feeds.bbci.co.uk/news/world/rss.xml` | 26 פריטים, XML תקין |
+| BBC News | `https://feeds.bbci.co.uk/news/rss.xml` | 32 פריטים, XML תקין |
+| CNN Top Stories | `http://rss.cnn.com/rss/edition.rss` | 50 פריטים, XML תקין |
+| CNN World | `http://rss.cnn.com/rss/edition_world.rss` | 29 פריטים, XML תקין |
+| The Guardian World | `https://www.theguardian.com/world/rss` | 45 פריטים, XML תקין |
+| New York Times Home | `https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml` | 20 פריטים, XML תקין |
+| New York Times World | `https://rss.nytimes.com/services/xml/rss/nyt/World.xml` | 58 פריטים, XML תקין |
+| NPR News | `https://feeds.npr.org/1001/rss.xml` | 10 פריטים, XML תקין |
+| NPR World | `https://feeds.npr.org/1004/rss.xml` | 10 פריטים, XML תקין |
+| Al Jazeera | `https://www.aljazeera.com/xml/rss/all.xml` | 25 פריטים, XML תקין |
+| DW Top Stories | `https://rss.dw.com/xml/rss-en-top` | 21 פריטים, XML תקין |
+| France 24 EN | `https://www.france24.com/en/rss` | 24 פריטים, XML תקין |
+| CBS News World | `https://www.cbsnews.com/latest/rss/world` | 30 פריטים, XML תקין |
+| Sky News World | `https://feeds.skynews.com/feeds/rss/world.xml` | 9 פריטים, XML תקין |
+
+### חו״ל — לא מומלץ כרגע
+
+| מקור | מצב |
+|---|---|
+| Reuters World endpoint שנבדק | `https://www.reutersagency.com/feed/?best-topics=world&post_type=best` החזיר 404 |
+| The Guardian International | endpoint החזיר XML חלקי/שבור בבדיקה; להשתמש ב-World במקום |
+

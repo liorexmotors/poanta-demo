@@ -1,94 +1,1540 @@
 {
-  "mode": "rss_only_approval_first",
-  "notes": "RSS-only preparation. No HTML scraping, no fallback, and not connected to the live site until Lior approves.",
+  "mode": "rss_only_all_official_feeds",
+  "notes": "Expanded 2026-05-17 per Lior: connect every clean official RSS feed the source sites publish. RSS is pulled by us; no HTML scraping/fallback.",
   "active": [
     {
-      "name": "ynet חדשות",
+      "name": "ישראל היום - כל הכתבות",
+      "categoryHint": "חדשות",
+      "rss": "https://www.israelhayom.co.il/rss.xml",
+      "logo": "ישראל היום",
+      "lastValidatedItems": 100
+    },
+    {
+      "name": "גלובס - שוק ההון",
+      "categoryHint": "כלכלה",
+      "rss": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=585",
+      "logo": "גלובס",
+      "lastValidatedItems": 15
+    },
+    {
+      "name": "ynet - כל ערוץ החדשות",
       "categoryHint": "חדשות",
       "rss": "https://www.ynet.co.il/Integration/StoryRss2.xml",
-      "logo": "ynet"
+      "logo": "ynet",
+      "lastValidatedItems": 30
     },
     {
-      "name": "ynet מבזקים",
+      "name": "ynet - מבזקי החדשות",
       "categoryHint": "חדשות",
       "rss": "https://www.ynet.co.il/Integration/StoryRss1854.xml",
-      "logo": "ynet"
+      "logo": "ynet",
+      "lastValidatedItems": 30
     },
     {
-      "name": "ynet ספורט",
+      "name": "ynet - כל ערוץ הדעות",
+      "categoryHint": "דעות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss194.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ הצרכנות",
+      "categoryHint": "כלכלה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss5363.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ הספורט",
       "categoryHint": "ספורט",
       "rss": "https://www.ynet.co.il/Integration/StoryRss3.xml",
-      "logo": "ynet"
+      "logo": "ynet",
+      "lastValidatedItems": 30
     },
     {
-      "name": "וואלה ראשי",
+      "name": "ynet - כדורגל ישראלי",
+      "categoryHint": "ספורט",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss57.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ התרבות",
+      "categoryHint": "תרבות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss538.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ מעורבות",
       "categoryHint": "חדשות",
-      "rss": "https://rss.walla.co.il/feed/1?type=main",
-      "logo": "וואלה"
+      "rss": "https://www.ynet.co.il/Integration/StoryRss3262.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - קריירה",
+      "categoryHint": "כלכלה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4111.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ הבריאות",
+      "categoryHint": "בריאות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss1208.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - סביבה",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4879.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 1
+    },
+    {
+      "name": "ynet - בעלי חיים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4880.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ המחשבים",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss544.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - סקירות",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss2424.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - אינטרנט",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss546.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - משחקים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss571.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - טכנולוגיה",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss545.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - מדריכים ותוכנה",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss786.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ הרכב",
+      "categoryHint": "רכב",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss550.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ התיירות",
+      "categoryHint": "תרבות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss598.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ ההורים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss3052.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 9
+    },
+    {
+      "name": "ynet - כל ערוץ האוכל",
+      "categoryHint": "תרבות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss975.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ היהדות",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4403.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ הכלכלה",
+      "categoryHint": "כלכלה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss6.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ מדע וטבע",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss2142.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "ynet - כל ערוץ יחסים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss3925.xml",
+      "logo": "ynet",
+      "lastValidatedItems": 24
     },
     {
       "name": "וואלה חדשות",
       "categoryHint": "חדשות",
-      "rss": "https://rss.walla.co.il/feed/22",
-      "logo": "וואלה"
+      "rss": "https://rss.walla.co.il/feed/1?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
     },
     {
-      "name": "וואלה כלכלה",
-      "categoryHint": "כלכלה",
-      "rss": "https://rss.walla.co.il/feed/3",
-      "logo": "וואלה"
-    },
-    {
-      "name": "ישראל היום",
+      "name": "וואלה חדשות - מבזקים",
       "categoryHint": "חדשות",
-      "rss": "https://www.israelhayom.co.il/rss.xml",
-      "logo": "ישראל היום"
+      "rss": "https://rss.walla.co.il/feed/22",
+      "logo": "וואלה",
+      "lastValidatedItems": 60
     },
     {
-      "name": "הארץ",
+      "name": "וואלה חדשות - צבא וביטחון",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/2689",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - חדשות בארץ",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/1",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - פוליטי-מדיני",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/2686",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - חדשות בעולם",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/2",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - דעות ופרשנויות",
+      "categoryHint": "דעות",
+      "rss": "https://rss.walla.co.il/feed/4996",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - סרי ושלזינגר",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13447",
+      "logo": "וואלה",
+      "lastValidatedItems": 29
+    },
+    {
+      "name": "וואלה חדשות - אסור לפספס",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/5108",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - מדע וסביבה",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/5700",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה חדשות - חדשות יהדות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13441",
+      "logo": "וואלה",
+      "lastValidatedItems": 11
+    },
+    {
+      "name": "וואלה חדשות - חדשות המשפט",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13443",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/3?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - כדורגל ישראלי",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/156",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - כדורגל עולמי",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/316",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - כדורסל",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/151",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - ישראלים ב-NBA",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13444",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - תקצירים",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/12928",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - NBA",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/175",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - מסכמים מחזור",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13452",
+      "logo": "וואלה",
+      "lastValidatedItems": 26
+    },
+    {
+      "name": "וואלה ספורט - אבא של שבת",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13445",
+      "logo": "וואלה",
+      "lastValidatedItems": 17
+    },
+    {
+      "name": "וואלה ספורט - מעל הטבעת",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13446",
+      "logo": "וואלה",
+      "lastValidatedItems": 20
+    },
+    {
+      "name": "וואלה ספורט - סערה בממלכה",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13041",
+      "logo": "וואלה",
+      "lastValidatedItems": 25
+    },
+    {
+      "name": "וואלה ספורט - טניס",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/152",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - טראש טוק",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/3119",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - ספורט אמריקאי",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/3750",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה ספורט - פוקר",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13442",
+      "logo": "וואלה",
+      "lastValidatedItems": 7
+    },
+    {
+      "name": "וואלה ספורט - ענפים נוספים",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/325",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/2?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - חדשות",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/557",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - צרכנות",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/127",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - דעות",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/4997",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - מגזין",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/12964",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - דין וחשבון",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/555",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - קריפטו",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/13373",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - כסף עולמי",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/112",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה כסף - ספורט ביזנס",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/13454",
+      "logo": "וואלה",
+      "lastValidatedItems": 25
+    },
+    {
+      "name": "וואלה כסף - קריירה",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/12864",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/31?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - חדשות רכב",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4705",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - מבחני רכב",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4701",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - דו-גלגלי",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4739",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - משפט וביטוח",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4715",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - שטח ופנאי",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4712",
+      "logo": "וואלה",
+      "lastValidatedItems": 29
+    },
+    {
+      "name": "וואלה רכב - ביטוח רכב",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/12819",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - מבצעים חמים",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/3156",
+      "logo": "וואלה",
+      "lastValidatedItems": 23
+    },
+    {
+      "name": "וואלה רכב - מבחנים ארוכי טווח",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4735",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - אופניים",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4743",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - משומשות",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4714",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - אספנות",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4713",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - ספורט מוטורי",
+      "categoryHint": "ספורט",
+      "rss": "https://rss.walla.co.il/feed/4704",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - צרכנות",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/4702",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - טכנולוגיה",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4703",
+      "logo": "וואלה",
+      "lastValidatedItems": 29
+    },
+    {
+      "name": "וואלה רכב - בטיחות",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4734",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - סדנאות ושיפורים",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4738",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - דעות",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4740",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה רכב - כל הכתבות",
+      "categoryHint": "רכב",
+      "rss": "https://rss.walla.co.il/feed/4700",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/4?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - טלוויזיה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/271",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - אירוויזיון",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13438",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - מוזיקה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/272",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - קולנוע",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/270",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - על סדר היום",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/221",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - ספרות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/273",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - במה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/5545",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - אמנות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/274",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - פרינג'",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/5124",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - הופעות חיות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/12100",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תרבות - חמש המלצות - ואזהרה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/12322",
+      "logo": "וואלה",
+      "lastValidatedItems": 29
+    },
+    {
+      "name": "וואלה תרבות - כל הכתבות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/249",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/22?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - מקומי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/3601",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - ריאליטי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13301",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - עולמי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/3602",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אישי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13449",
+      "logo": "וואלה",
+      "lastValidatedItems": 21
+    },
+    {
+      "name": "וואלה סלבס - שאלת השבוע",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/3605",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - פפראצי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/3609",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - ריאליטי צ'ק",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13429",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - אונלי פאן",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13451",
+      "logo": "וואלה",
+      "lastValidatedItems": 21
+    },
+    {
+      "name": "וואלה סלבס - בית המלוכה",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13302",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה סלבס - כל הכתבות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/3600",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/24?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - ניוז",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2121",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - הפאשניסטות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2125",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - טרנדים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2101",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - טיפוח",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2129",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - RED CARPET",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/12526",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - הפקות אופנה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2131",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אופנה - טובהל'ה +",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13453",
+      "logo": "וואלה",
+      "lastValidatedItems": 4
+    },
+    {
+      "name": "וואלה אופנה - כל הכתבות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2120",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/9?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - חדשות האוכל",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/905",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - אוכלים בחוץ",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/1092",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - מתכונים לשבועות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13151",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - סנהדרינק",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13045",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - אומנות הבישול",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/1143",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - חדש על המדף",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/1094",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - יין ואלכוהול",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/902",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה אוכל - כל הכתבות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/1132",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/139?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - חדשות",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/578",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - הבריאות שלי",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/581",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - תזונה ודיאטה",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/585",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - הריון ולידה",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/590",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה וולנס",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/13423",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - שגרה בצל המלחמה",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/12598",
+      "logo": "וואלה",
+      "lastValidatedItems": 10
+    },
+    {
+      "name": "וואלה בריאות - הורות",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/594",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - בריאות על המדף",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/13392",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - פסיכולוגיה",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1870",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - כושר",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1865",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - חיים בריאים",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/13002",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - דוקטורס",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/13067",
+      "logo": "וואלה",
+      "lastValidatedItems": 50
+    },
+    {
+      "name": "וואלה בריאות - אופטיקה ועיניים",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1881",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - רפואה אלטרנטיבית",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1871",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - לחיות נכון",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/12243",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - יופי וטיפוח",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1860",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - סקס ותפקוד מיני",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1877",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - הגיל השלישי",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/1873",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בריאות - כל הכתבות",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/570",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/14?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - חדשות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2500",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - טיולים בארץ",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/5735",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - טיולים בעולם",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/779",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - מסביב לעולם",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/12113",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - קמפינג",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/787",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - מעיינות בארץ",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/12672",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - מסלולי פריחה",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13165",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - טיפים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/789",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - טורים ומדורים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/790",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - צימרים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/785",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה תיירות - אופניים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/786",
+      "logo": "וואלה",
+      "lastValidatedItems": 19
+    },
+    {
+      "name": "וואלה תיירות - כל הכתבות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/2501",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/6?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - חדשות",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/4000",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - סקירות",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/4001",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - רשתות חברתיות",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/13019",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - פרטיות ואבטחה",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/13024",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - סמארטפונים",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/13021",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - ויראלי",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/4027",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - סוויפ אפ",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/13430",
+      "logo": "וואלה",
+      "lastValidatedItems": 15
+    },
+    {
+      "name": "וואלה TECH - מדע",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/13308",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - סייבר",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/12765",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - סטארטאפים",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/12766",
+      "logo": "וואלה",
+      "lastValidatedItems": 15
+    },
+    {
+      "name": "וואלה TECH - כל הכתבות",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/4",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה TECH - דעות",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://rss.walla.co.il/feed/4028",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/35?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב - חדשות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/4400",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב - טרנדים מובילים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13458",
+      "logo": "וואלה",
+      "lastValidatedItems": 4
+    },
+    {
+      "name": "וואלה בית ועיצוב - עיצוב פנים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/3237",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב - סדר וניקיון",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/4422",
+      "logo": "וואלה",
+      "lastValidatedItems": 100
+    },
+    {
+      "name": "וואלה בית ועיצוב - אדריכלות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/4410",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב - צרכנות",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/4421",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב - משפצים",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/4412",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה בית ועיצוב - כל הכתבות",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/4418",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/138?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות - חדשות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/12937",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות - החיים עצמם",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/12807",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות - מגזין",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/12804",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות - טיפ לחיים",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/12938",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות - מוזיקה יהודית",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/12848",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה יהדות - סגולות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13095",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/430?type=main",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי - חדשות",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13108",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי - טורים ודעות",
+      "categoryHint": "דעות",
+      "rss": "https://rss.walla.co.il/feed/13114",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי - עסקים כלכלי ונדל\"ן",
+      "categoryHint": "כלכלה",
+      "rss": "https://rss.walla.co.il/feed/13111",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי - חינוך רווחה ובריאות",
+      "categoryHint": "בריאות",
+      "rss": "https://rss.walla.co.il/feed/13109",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי - מים ירוק וסביבה",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13110",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "וואלה מקומי - קיץ של מיחזור",
+      "categoryHint": "חדשות",
+      "rss": "https://rss.walla.co.il/feed/13201",
+      "logo": "וואלה",
+      "lastValidatedItems": 28
+    },
+    {
+      "name": "וואלה מקומי - קהילה תרבות ופנאי",
+      "categoryHint": "תרבות",
+      "rss": "https://rss.walla.co.il/feed/13112",
+      "logo": "וואלה",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "הארץ - תרבות",
+      "categoryHint": "תרבות",
+      "rss": "https://www.haaretz.co.il/srv/htz---culture---rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 100
+    },
+    {
+      "name": "הארץ - חדשות",
       "categoryHint": "חדשות",
       "rss": "https://www.haaretz.co.il/srv/rss---feedly",
-      "logo": "הארץ"
+      "logo": "הארץ",
+      "lastValidatedItems": 100
     },
     {
-      "name": "הארץ דעות",
-      "categoryHint": "פוליטיקה",
+      "name": "הארץ - דעות",
+      "categoryHint": "דעות",
       "rss": "https://www.haaretz.co.il/srv/rss-opinion",
-      "logo": "הארץ"
+      "logo": "הארץ",
+      "lastValidatedItems": 100
     },
     {
-      "name": "הארץ ספורט",
+      "name": "הארץ - טיולים",
+      "categoryHint": "תרבות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%98%D7%99%D7%95%D7%9C%D7%99%D7%9D---%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 100
+    },
+    {
+      "name": "הארץ - אוכל",
+      "categoryHint": "תרבות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%90%D7%95%D7%9B%D7%9C--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 30
+    },
+    {
+      "name": "הארץ - סוף שבוע",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%A1%D7%95%D7%A3-%D7%A9%D7%91%D7%95%D7%A2---%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 50
+    },
+    {
+      "name": "הארץ - מדע",
+      "categoryHint": "טכנולוגיה",
+      "rss": "https://www.haaretz.co.il/srv/%D7%9E%D7%93%D7%A2--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 50
+    },
+    {
+      "name": "הארץ - משפחה",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/rss---%D7%9E%D7%A9%D7%A4%D7%97%D7%94",
+      "logo": "הארץ",
+      "lastValidatedItems": 50
+    },
+    {
+      "name": "הארץ - בריאות",
+      "categoryHint": "בריאות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 50
+    },
+    {
+      "name": "הארץ - ספורט",
       "categoryHint": "ספורט",
       "rss": "https://www.haaretz.co.il/srv/%D7%A1%D7%A4%D7%95%D7%A8%D7%98--%D7%94%D7%90%D7%A8%D7%A5-rss",
-      "logo": "הארץ"
+      "logo": "הארץ",
+      "lastValidatedItems": 50
     },
     {
-      "name": "גלובס שוק ההון",
-      "categoryHint": "כלכלה",
-      "rss": "https://www.globes.co.il/webservice/rss/rssfeeder.asmx/FeederNode?iID=585",
-      "logo": "גלובס"
+      "name": "הארץ - סביבה ואקלים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%A1%D7%91%D7%99%D7%91%D7%94-%D7%95%D7%90%D7%A7%D7%9C%D7%99%D7%9D--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 21
+    },
+    {
+      "name": "הארץ - ספרים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%A1%D7%A4%D7%A8%D7%99%D7%9D--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 22
+    },
+    {
+      "name": "הארץ - פודקאסטים",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/%D7%A4%D7%95%D7%93%D7%A7%D7%90%D7%A1%D7%98%D7%99%D7%9D--%D7%94%D7%90%D7%A8%D7%A5-rss",
+      "logo": "הארץ",
+      "lastValidatedItems": 50
+    },
+    {
+      "name": "הארץ - כל הכתבות",
+      "categoryHint": "חדשות",
+      "rss": "https://www.haaretz.co.il/srv/htz---all-articles",
+      "logo": "הארץ",
+      "lastValidatedItems": 100
     }
   ],
   "excluded_for_now": [
     {
+      "name": "ישראל היום - מדורים פרטניים",
+      "reason": "עמוד rss-feed חסום ב-403 מהשרת; מחובר RSS כללי רשמי rss.xml עד שנמצא XML מדורי נקי."
+    },
+    {
       "name": "N12 / mako",
-      "reason": "לא נמצא RSS XML נקי בבדיקה; לא נשתמש בסריקה בשלב הראשון"
+      "reason": "לא נמצא RSS XML נקי בבדיקה; לא נשתמש בסריקה בשלב RSS-only."
     },
     {
       "name": "כלכליסט",
-      "reason": "endpoints נפוצים מחזירים 404; ממתין לאיתור RSS רשמי עדכני"
+      "reason": "endpoints נפוצים מחזירים 404; ממתין לאיתור RSS רשמי עדכני."
     },
     {
       "name": "TheMarker",
-      "reason": "עמוד RSS קיים אך אינו XML feed נקי בבדיקה הראשונה"
+      "reason": "עמוד RSS קיים אבל אינו XML feed נקי בבדיקה הראשונה."
     },
     {
-      "name": "מעריב / כאן / ערוץ 14",
-      "reason": "endpoints שנבדקו חסומים ב-403 או לא RSS נקי"
+      "name": "מעריב / כאן / ערוץ 14 / ספורט5",
+      "reason": "endpoints שנבדקו חסומים/HTML ולא RSS נקי."
     },
     {
-      "name": "ספורט5",
-      "reason": "endpoint שנבדק מחזיר HTML ולא RSS תקין"
+      "name": "ynet - בית",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4113.xml",
+      "reason": "no items"
+    },
+    {
+      "name": "ynet - זוגיות",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4107.xml",
+      "reason": "no items"
+    },
+    {
+      "name": "ynet - סטייל",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4104.xml",
+      "reason": "no items"
+    },
+    {
+      "name": "ynet - שף",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4335.xml",
+      "reason": "no items"
+    },
+    {
+      "name": "ynet - כל הערוץ הירוק",
+      "rss": "https://www.ynet.co.il/Integration/StoryRss4872.xml",
+      "reason": "no items"
+    },
+    {
+      "name": "וואלה אוכל - מתכוני מרקים",
+      "rss": "https://rss.walla.co.il/feed/3476843",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "וואלה אוכל - טעמים מקומיים",
+      "rss": "https://rss.walla.co.il/feed/12012",
+      "reason": "no items"
     }
   ]
 }
