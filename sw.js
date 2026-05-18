@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v33-topics-intl-language';
+const CACHE_NAME = 'poanta-demo-v34-quality-favicons';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
