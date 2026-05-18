@@ -1,15 +1,15 @@
 # Pointa Quality Gate Report
 
-Items checked: 162
+Items checked: 164
 Errors: 0
 Warnings: 0
 
 ## Category distribution
 
+- ספורט: 28
 - כלכלה: 27
-- ספורט: 27
 - ביטחון: 20
-- פוליטיקה: 17
+- פוליטיקה: 18
 - טכנולוגיה: 12
 - בריאות: 11
 - תרבות: 10

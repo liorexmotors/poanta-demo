@@ -313,6 +313,39 @@ def fetch_jina_metadata(url: str) -> tuple[str, str]:
     return title, image
 
 
+
+
+def image_from_html_fragment(fragment: str) -> str:
+    fragment = html.unescape(fragment or "")
+    for m in re.finditer(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", fragment, flags=re.I):
+        url = clean_text(m.group(1))
+        low = url.lower()
+        if not url or low.startswith("data:") or ".svg" in low or "logo" in low:
+            continue
+        return url
+    return ""
+
+
+def image_from_rss_item(item: ET.Element, link: str, raw_desc: str) -> str:
+    candidates: list[str] = []
+    for child in item.iter():
+        local = child.tag.split('}')[-1].lower()
+        if local in {"thumbnail", "content", "enclosure"} or local.startswith("image"):
+            url = child.attrib.get("url") or child.attrib.get("href") or clean_text(child.text or "")
+            typ = child.attrib.get("type", "")
+            if url and ("image" in typ or local in {"thumbnail", "content"} or local.startswith("image") or local == "enclosure"):
+                candidates.append(url)
+    desc_img = image_from_html_fragment(raw_desc)
+    if desc_img:
+        candidates.append(desc_img)
+    for url in candidates:
+        url = clean_text(html.unescape(url))
+        low = url.lower()
+        if not url or low.startswith("data:") or ".svg" in low or "logo" in low:
+            continue
+        return urljoin(link, url)
+    return ""
+
 def extract_rss(source: dict) -> list[Candidate]:
     rss_url = source.get("rss")
     if not rss_url:
@@ -327,17 +360,10 @@ def extract_rss(source: dict) -> list[Candidate]:
     for item in root.findall('.//item'):
         title = sanitize_title(''.join(item.findtext('title') or ''))
         link = clean_text(item.findtext('link') or '')
-        desc = clean_text(re.sub(r'<[^>]+>', ' ', item.findtext('description') or ''))
+        raw_desc = item.findtext('description') or ''
+        desc = clean_text(re.sub(r'<[^>]+>', ' ', raw_desc))
         published_at = parse_feed_datetime(child_text_by_local(item, {'pubdate', 'published', 'updated', 'date', 'dc:date', 'created'}))
-        image = ""
-        for child in item.iter():
-            local = child.tag.split('}')[-1].lower()
-            if local in {"thumbnail", "content", "enclosure"}:
-                url = child.attrib.get("url") or child.attrib.get("href")
-                typ = child.attrib.get("type", "")
-                if url and ("image" in typ or local in {"thumbnail", "content"}):
-                    image = clean_text(url)
-                    break
+        image = image_from_rss_item(item, link, raw_desc)
         if len(title) < 18 or not link:
             continue
         if source.get("name", "").startswith("גלובס") and "en.globes.co.il" in link:
@@ -1470,6 +1496,29 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
 
 
 
+
+
+def fetch_article_image(url: str) -> str:
+    if not url or 'news.google.com/' in url:
+        return ""
+    try:
+        raw = fetch(url, timeout=10)
+        parser = parse_html(raw)
+    except Exception:
+        raw = ""
+        parser = parse_html("")
+    image = clean_text(parser.meta.get("og:image") or parser.meta.get("twitter:image") or parser.meta.get("image") or "")
+    if not image and (not raw or "Radware Block Page" in raw):
+        _, image = fetch_jina_metadata(url)
+    if not image:
+        image = image_from_html_fragment(raw)
+    if not image:
+        return ""
+    low = image.lower()
+    if low.startswith("data:") or ".svg" in low or "logo" in low:
+        return ""
+    return urljoin(url, image)
+
 def refresh_item_pointa(item: dict) -> dict:
     title = str(item.get("originalTitle") or item.get("headline") or "")
     desc = str(item.get("context") or "")
@@ -1562,6 +1611,10 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
             if item.get("hasSourceDate") and not item.get("publishedAt"):
                 item["publishedAt"] = d.isoformat(timespec="seconds")
             item = refresh_item_pointa(item)
+            if not str(item.get("imageUrl") or "").strip():
+                image = fetch_article_image(str(item.get("sourceUrl") or ""))
+                if image:
+                    item["imageUrl"] = image
             merged.append(item)
             seen_keys.add(key)
     merged.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
