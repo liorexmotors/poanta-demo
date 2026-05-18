@@ -470,7 +470,7 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "בריאות", "real"
     if any(x in source for x in ["כלכלה", "כסף", "שוק ההון", "גלובס", "צרכנות", "קריפטו", "קריירה"]):
         return "כלכלה", "money"
-    if any(x in source for x in ["תרבות", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
+    if any(x in source for x in ["תרבות", "סלבס", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
         return "תרבות", "real"
     if any(x in source for x in ["CNN", "BBC", "Sky News", "סקיי"]):
         fp = foreign_pointa_tuple(title, desc)
@@ -824,6 +824,14 @@ def is_smotrich_elgart_hearing_story(title: str, desc: str) -> bool:
     )
 
 
+def is_amos_luzon_relationship_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        'עמוס לוזון' in text
+        and any(x in text for x in ['זוגיות חדשה', 'פער של 33 שנה', 'פער גיל', 'אושר כהן', 'עדן פינס'])
+    )
+
+
 def has_latin_text(text: str) -> bool:
     return len(re.findall(r"[A-Za-z]", text or "")) > 8
 
@@ -965,6 +973,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'המלחמה באיראן הקפיצה את מחירי ההליום ופתחה מרוץ גז חדש'
     if is_smotrich_elgart_hearing_story(title, desc):
         return 'שאלה של סמוטריץ׳ לדני אלגרט הציתה עימות בוועדה'
+    if is_amos_luzon_relationship_story(title, desc):
+        return 'פער הגילים הפך את הזוגיות של עמוס לוזון לכותרת סלבס'
     culture_h = culture_headline_from_context(title, desc)
     if culture_h:
         return culture_h
@@ -1058,6 +1068,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'פגיעה במתקני גז במפרץ בעקבות המלחמה עם איראן הגדילה את הביקוש להליום והקפיצה מחירים. ירדן מנסה לנצל את המחסור באמצעות חיפוש מקורות גז חדשים באזור ים המלח.'
     if is_smotrich_elgart_hearing_story(title, desc):
         return 'דיון בכנסת הידרדר לעימות לאחר שסמוטריץ׳ שאל את דני אלגרט “מי אדוני?”. השאלה הציתה תגובה חריפה והפכה את הדיון ממחלוקת עניינית לעימות אישי ופוליטי.'
+    if is_amos_luzon_relationship_story(title, desc):
+        return 'עמוס לוזון נמצא בזוגיות חדשה, והופעה משותפת בחתונה הפכה את פער הגילים ביניהם לסיפור המרכזי. זו ידיעת סלבס, לא סיפור פוליטי או ציבורי.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return '12 שעות בפסטיבל ג׳נסיס ליד עין חרוד הפכו לחוויה של עשרות אלפי צעירים, עם פופ, רוק, טראנס ותחושת חופש זמנית מהמלחמה ומהשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע אסקפיסטי וסוחף.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
@@ -1210,6 +1222,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'גם מלחמה רחוקה יכולה להפוך חומר גלם נדיר לבעיה כלכלית עולמית.'
     if is_smotrich_elgart_hearing_story(title, desc):
         return 'שאלה מזלזלת אחת יכולה להפוך דיון ציבורי לזירת עימות פוליטית.'
+    if is_amos_luzon_relationship_story(title, desc):
+        return 'כאן הפואנטה היא עצם מנגנון הסלבס: פער גיל הופך זוגיות פרטית לכותרת.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return 'הפואנטה היא שהפסטיבל הצליח למכור לדור צעיר רגע נדיר של חופש, גם כשהמציאות בחוץ נשארת כבדה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
@@ -1378,7 +1392,7 @@ def refresh_item_pointa(item: dict) -> dict:
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
     category = str(item.get("category") or "חדשות")
-    if is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc):
+    if is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc):
         item["headline"] = story_headline(title, desc, str(item.get("source") or ""))
         item["context"] = story_context(title, desc, str(item.get("source") or ""))
         item["takeaway"] = story_takeaway(category, title, desc)
