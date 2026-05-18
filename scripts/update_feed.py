@@ -797,6 +797,15 @@ def is_protection_insurance_story(title: str, desc: str) -> bool:
     )
 
 
+def is_malinovsky_oct7_law_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        any(x in text for x in ['ישראל ביתנו', 'מלינובסקי', 'מרד של כלל חברי הכנסת'])
+        and any(x in text for x in ['מחבלי טבח השבעה באוקטובר', 'מחבלי 7 באוקטובר', 'טבח השבעה באוקטובר'])
+        and any(x in text for x in ['סגירה תקציבית', 'הצבעות', 'החוק'])
+    )
+
+
 def has_latin_text(text: str) -> bool:
     return len(re.findall(r"[A-Za-z]", text or "")) > 8
 
@@ -932,6 +941,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'ארה״ב חוששת שקובה הופכת לבסיס כטב"מים איראני ליד הגבול'
     if is_protection_insurance_story(title, desc):
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
+    if is_malinovsky_oct7_law_story(title, desc):
+        return 'ח״כ מלינובסקי מאיימת לשבש הצבעות עד שימומן חוק מחבלי 7 באוקטובר'
     culture_h = culture_headline_from_context(title, desc)
     if culture_h:
         return culture_h
@@ -1019,6 +1030,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'דיווחים בארה״ב טוענים שאיראן שלחה יועצים צבאיים לקובה כדי לסייע בהפעלת כטב"מים וטכנולוגיות צבאיות מתקדמות. ברקע גובר החשש בוושינגטון מהעמקת שיתוף הפעולה בין איראן, רוסיה וקובה סמוך לשטח האמריקאי.'
     if is_protection_insurance_story(title, desc):
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
+    if is_malinovsky_oct7_law_story(title, desc):
+        return 'ח״כ יוליה מלינובסקי קוראת לחברי הכנסת להשבית הצבעות עד שהממשלה תסיים את המימון לחוק העמדת מחבלי 7 באוקטובר לדין. המהלך הופך מחלוקת תקציבית לניסיון לחץ פרלמנטרי סביב טיפול במחבלים.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return '12 שעות בפסטיבל ג׳נסיס ליד עין חרוד הפכו לחוויה של עשרות אלפי צעירים, עם פופ, רוק, טראנס ותחושת חופש זמנית מהמלחמה ומהשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע אסקפיסטי וסוחף.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
@@ -1168,6 +1181,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'מבחינת ארה״ב, איראן כבר לא מאיימת רק מהמזרח התיכון - אלא מתקרבת פיזית לחצר האחורית שלה.'
     if is_protection_insurance_story(title, desc):
         return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
+    if is_malinovsky_oct7_law_story(title, desc):
+        return 'המאבק על החוק עבר מהצהרות לזירת לחץ בכנסת: בלי תקציב, גם חוק סמלי נתקע.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return 'הפואנטה היא שהפסטיבל הצליח למכור לדור צעיר רגע נדיר של חופש, גם כשהמציאות בחוץ נשארת כבדה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
