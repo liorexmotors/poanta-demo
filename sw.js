@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v31-soft-read-state';
+const CACHE_NAME = 'poanta-demo-v32-topics-intl-placeholder';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {

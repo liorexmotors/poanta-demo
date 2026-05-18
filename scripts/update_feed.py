@@ -87,6 +87,7 @@ def load_sources() -> list[dict]:
                 "host": urlparse(src["rss"]).netloc,
                 "categoryHint": src.get("categoryHint", "חדשות"),
                 "logo": src.get("logo") or src["name"],
+                "language": src.get("language", "he"),
             })
         if sources:
             return sources
@@ -105,15 +106,19 @@ IMPORTANT_WORDS = [
     "דלק", "ממשלה", "ביטוח", "צרכנים", "הייטק", "בורסה", "רכב", "כביש", "תחבורה", "ספורט", "כדורגל", "נבחרת", "ליגת", "בחירות", "כנסת", "תקציב",
 ]
 CATEGORY_RULES = [
-    # Order matters: prefer the practical topic over incidental war/politics words.
-    ("נדל״ן", "real", ["נדל", "דירה", "דירות", "בנייה", "פינוי-בינוי", "תל אביב", "דיור", "קרקע"]),
-    ("כלכלה", "money", ["ריבית", "מיסים", "מע״מ", "שכר", "מניות", "בורסה", "מחירים", "פיצויים", "עסקים", "אקזיט", "מיליון", "מיליארד", "דולר", "אינפלציה"]),
-    ("צרכנות", "money", ["צרכן", "רשתות", "שופרסל", "מחירי", "קניות", "ביטוח", "סופר", "חלב"]),
-    ("טכנולוגיה", "tech", ["AI", "סייבר", "וואטסאפ", "אפל", "גוגל", "אפליקציה", "טכנולוג", "סטארטאפ", "GPT"]),
-    ("תחבורה", "real", ["טיסות", "רכבת", "כביש", "רכב", "תחבורה", "דלק", "נתבג", "דובאי", "פקקים", "נהגים"]),
-    ("ספורט", "real", ["ספורט", "כדורגל", "כדורסל", "נבחרת", "ליגה", "ליגת", "מכבי", "הפועל", "ביתר", "אליפות", "מסי", "סוארס", "ניימאר", "יורוליג"]),
-    ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "פוטין", "קרמלין", "התנקשות", "ביון"]),
-    ("פוליטיקה", "security", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שרים", "ח״כ", "חכים", "טייוואן", "סין"]),
+    # Order matters: prefer specific practical topics over broad local/world buckets.
+    ("משפט", "security", ["בגץ", "בג\"ץ", "בית המשפט", "עליון", "שופט", "שופטים", "יועמ\"ש", "פרקליטות", "כתב אישום", "עתירה", "חוק", "חקיקה", "משפטי", "legal", "court", "supreme court", "trial"]),
+    ("פלילים", "security", ["רצח", "ירי", "דקירה", "חשד", "נעצר", "מעצר", "משטרה", "חקירה", "עבריין", "פשע", "פלילי", "סמים", "אלימות", "אונס", "crime", "police", "shooting", "murder", "arrest"]),
+    ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "פוטין", "קרמלין", "התנקשות", "ביון", "צבא", "טרור", "war", "iran", "russia", "ukraine", "gaza", "israel", "military", "terror"]),
+    ("פוליטיקה", "security", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שרים", "ח״כ", "חכים", "נתניהו", "טראמפ", "ביידן", "נשיא", "ראש ממשלה", "politics", "election", "government", "minister", "president", "trump", "white house"]),
+    ("נדל״ן", "real", ["נדל", "דירה", "דירות", "בנייה", "פינוי-בינוי", "תל אביב", "דיור", "קרקע", "real estate", "housing"]),
+    ("כלכלה", "money", ["ריבית", "מיסים", "מע״מ", "שכר", "מניות", "בורסה", "מחירים", "פיצויים", "עסקים", "אקזיט", "מיליון", "מיליארד", "דולר", "אינפלציה", "markets", "stocks", "economy", "bank", "inflation", "dollar"]),
+    ("צרכנות", "money", ["צרכן", "רשתות", "שופרסל", "מחירי", "קניות", "ביטוח", "סופר", "חלב", "consumer", "shopping"]),
+    ("טכנולוגיה", "tech", ["AI", "סייבר", "וואטסאפ", "אפל", "גוגל", "אפליקציה", "טכנולוג", "סטארטאפ", "GPT", "tech", "cyber", "apple", "google", "openai"]),
+    ("רכב", "real", ["טיסות", "רכבת", "כביש", "רכב", "תחבורה", "דלק", "נתבג", "דובאי", "פקקים", "נהגים", "car", "vehicle", "transport", "flight"]),
+    ("בריאות", "real", ["בריאות", "רפואה", "מחקר", "חולים", "תרופה", "תזונה", "כושר", "health", "medical", "medicine", "disease"]),
+    ("תרבות", "real", ["תרבות", "טלוויזיה", "סרט", "סדרה", "מוזיקה", "קולנוע", "ספר", "אוכל", "אופנה", "culture", "movie", "music", "tv"]),
+    ("ספורט", "real", ["ספורט", "כדורגל", "כדורסל", "נבחרת", "ליגה", "ליגת", "מכבי", "הפועל", "ביתר", "אליפות", "מסי", "סוארס", "ניימאר", "יורוליג", "football", "soccer", "basketball", "league"]),
 ]
 
 
@@ -216,6 +221,12 @@ def parse_feed_datetime(raw: str) -> str:
 
 def source_logo(source: str) -> str:
     s = source.lower()
+    if "cnn" in s:
+        return "CNN"
+    if "bbc" in s:
+        return "BBC"
+    if "sky" in s or "סקיי" in source:
+        return "Sky News"
     if "n12" in s or "mako" in s:
         return "N12"
     if "וואלה" in source:
@@ -240,7 +251,7 @@ def source_logo(source: str) -> str:
 
 def sanitize_title(title: str) -> str:
     title = clean_text(title)
-    title = re.sub(r"\s*[-–|]\s*(N12|mako|וואלה|ynet|גלובס|ערוץ 14).*$", "", title, flags=re.I).strip()
+    title = re.sub(r"\s*[-–|]\s*(N12|mako|וואלה|ynet|גלובס|ערוץ 14|CNN|BBC|Sky News).*$", "", title, flags=re.I).strip()
     title = re.sub(r"\s*\|\s*[^|]{2,45}\s*$", "", title).strip()
     title = re.sub(r"^\d{1,2}:\d{2}\s*", "", title).strip()
     title = re.sub(r"\d{1,2}:\d{2}\s*$", "", title).strip()
@@ -326,6 +337,8 @@ def extract_rss(source: dict) -> list[Candidate]:
         if source.get("name", "").startswith("גלובס") and "en.globes.co.il" in link:
             continue
         score = score_title(title + ' ' + desc)
+        if source.get("language") == "en" or any(x in source.get("name", "") for x in ["BBC", "CNN", "Sky"]):
+            score += 20
         if score <= 0:
             continue
         out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
@@ -417,13 +430,21 @@ def enrich(candidate: Candidate) -> Candidate:
     return candidate
 
 
+def rule_matches(text: str, word: str) -> bool:
+    low = text.lower()
+    w = word.lower()
+    # Avoid matching short Latin tokens such as AI inside words like train/mountain.
+    if re.fullmatch(r"[a-z0-9]{1,3}", w):
+        return re.search(rf"(?<![a-z0-9]){re.escape(w)}(?![a-z0-9])", low) is not None
+    return w in low
+
 def categorize(text: str) -> tuple[str, str]:
     titleish = text.split(". ", 1)[0]
     for cat, cls, words in CATEGORY_RULES:
-        if any(w.lower() in titleish.lower() for w in words):
+        if any(rule_matches(titleish, w) for w in words):
             return cat, cls
     for cat, cls, words in CATEGORY_RULES:
-        if any(w.lower() in text.lower() for w in words):
+        if any(rule_matches(text, w) for w in words):
             return cat, cls
     return "חדשות", ""
 
@@ -434,7 +455,7 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
     text = f"{title} {desc} {source}"
     if 'איראן' in text and any(x in text for x in ['כבלים', 'סוויפט', 'הורמוז', 'תת ימיים']):
-        return "עולם", "security"
+        return "ביטחון", "security"
     if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
         return "צרכנות", "money"
     if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
@@ -442,7 +463,7 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     if any(x in source for x in ["ספורט", "כדורגל", "כדורסל", "NBA", "טניס"]):
         return "ספורט", "real"
     if any(x in source for x in ["רכב", "דו-גלגלי", "ביטוח רכב", "בטיחות"]):
-        return "תחבורה", "real"
+        return "רכב", "real"
     if any(x in source for x in ["TECH", "טכנולוג", "סייבר", "סטארטאפים", "סמארטפונים", "מחשבים", "מדע"]):
         return "טכנולוגיה", "tech"
     if any(x in source for x in ["בריאות", "תזונה", "כושר", "רפואה", "הריון"]):
@@ -451,6 +472,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "כלכלה", "money"
     if any(x in source for x in ["תרבות", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
         return "תרבות", "real"
+    if any(x in source for x in ["CNN", "BBC", "Sky News", "סקיי"]):
+        return categorize(text)
     if any(x in source for x in ["דעות", "פרשנויות"]):
         return "דעות", "security"
     cat, cls = categorize(title)
