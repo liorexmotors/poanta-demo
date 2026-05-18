@@ -806,6 +806,24 @@ def is_malinovsky_oct7_law_story(title: str, desc: str) -> bool:
     )
 
 
+def is_helium_iran_war_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        any(x in text for x in ['הליום', 'הגז הנדיר'])
+        and any(x in text for x in ['איראן', 'המלחמה'])
+        and any(x in text for x in ['קטאר', 'מחירים', 'ים המלח', 'חיפוש'])
+    )
+
+
+def is_smotrich_elgart_hearing_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return (
+        'סמוטריץ' in text
+        and any(x in text for x in ['דני אלגרט', 'אלגרט'])
+        and any(x in text for x in ['מי אדוני', 'הדיון יצא משליטה'])
+    )
+
+
 def has_latin_text(text: str) -> bool:
     return len(re.findall(r"[A-Za-z]", text or "")) > 8
 
@@ -943,6 +961,10 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'ח״כ מלינובסקי מאיימת לשבש הצבעות עד שימומן חוק מחבלי 7 באוקטובר'
+    if is_helium_iran_war_story(title, desc):
+        return 'המלחמה באיראן הקפיצה את מחירי ההליום ופתחה מרוץ גז חדש'
+    if is_smotrich_elgart_hearing_story(title, desc):
+        return 'שאלה של סמוטריץ׳ לדני אלגרט הציתה עימות בוועדה'
     culture_h = culture_headline_from_context(title, desc)
     if culture_h:
         return culture_h
@@ -982,12 +1004,12 @@ def story_headline(title: str, desc: str, source: str) -> str:
         if cat == 'תרבות':
             alt = culture_headline_from_context(title, desc)
             if alt:
-                return complete_headline(alt, 150)
+                return complete_headline(alt, 72)
         if desc:
             first = split_sentences(desc)[:1]
             if first and not is_weak_source_headline(title, first[0]):
-                return complete_headline(first[0], 150)
-    return complete_headline(h, 150)
+                return complete_headline(first[0], 72)
+    return complete_headline(h, 72)
 
 
 def fallback_context_from_title(title: str, category: str = '') -> str:
@@ -1032,6 +1054,10 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'ח״כ יוליה מלינובסקי קוראת לחברי הכנסת להשבית הצבעות עד שהממשלה תסיים את המימון לחוק העמדת מחבלי 7 באוקטובר לדין. המהלך הופך מחלוקת תקציבית לניסיון לחץ פרלמנטרי סביב טיפול במחבלים.'
+    if is_helium_iran_war_story(title, desc):
+        return 'פגיעה במתקני גז במפרץ בעקבות המלחמה עם איראן הגדילה את הביקוש להליום והקפיצה מחירים. ירדן מנסה לנצל את המחסור באמצעות חיפוש מקורות גז חדשים באזור ים המלח.'
+    if is_smotrich_elgart_hearing_story(title, desc):
+        return 'דיון בכנסת הידרדר לעימות לאחר שסמוטריץ׳ שאל את דני אלגרט “מי אדוני?”. השאלה הציתה תגובה חריפה והפכה את הדיון ממחלוקת עניינית לעימות אישי ופוליטי.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return '12 שעות בפסטיבל ג׳נסיס ליד עין חרוד הפכו לחוויה של עשרות אלפי צעירים, עם פופ, רוק, טראנס ותחושת חופש זמנית מהמלחמה ומהשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע אסקפיסטי וסוחף.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
@@ -1170,9 +1196,6 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
     fp = foreign_pointa_tuple(title, desc)
     if fp:
         return fp[2]
-    specific = specific_takeaway(title, desc)
-    if specific:
-        return specific
     if is_trump_phone_story(title, desc):
         return 'המוצר האמיתי כאן הוא המותג של טראמפ - לא הטלפון עצמו.'
     if is_lieberman_succession_story(title, desc):
@@ -1183,12 +1206,19 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'המאבק על החוק עבר מהצהרות לזירת לחץ בכנסת: בלי תקציב, גם חוק סמלי נתקע.'
+    if is_helium_iran_war_story(title, desc):
+        return 'גם מלחמה רחוקה יכולה להפוך חומר גלם נדיר לבעיה כלכלית עולמית.'
+    if is_smotrich_elgart_hearing_story(title, desc):
+        return 'שאלה מזלזלת אחת יכולה להפוך דיון ציבורי לזירת עימות פוליטית.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return 'הפואנטה היא שהפסטיבל הצליח למכור לדור צעיר רגע נדיר של חופש, גם כשהמציאות בחוץ נשארת כבדה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'שבוע המסחר נפתח בעצבנות, ולכן מניות צמיחה ושבבים עלולות להיות הראשונות להיפגע.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
         return 'סודות משפחתיים שנחשפים אחרי המוות יכולים לשנות לחלוטין את חלוקת הירושה.'
+    specific = specific_takeaway(title, desc)
+    if specific:
+        return specific
     subject = takeaway_subject(title)
     if category == 'כלכלה':
         return f'השאלה היא מי משלם את המחיר של {subject}.'
@@ -1347,14 +1377,23 @@ def refresh_item_pointa(item: dict) -> dict:
         item["takeaway"] = fp[2]
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
+    category = str(item.get("category") or "חדשות")
+    if is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc):
+        item["headline"] = story_headline(title, desc, str(item.get("source") or ""))
+        item["context"] = story_context(title, desc, str(item.get("source") or ""))
+        item["takeaway"] = story_takeaway(category, title, desc)
     headline = str(item.get("headline") or "")
     context = str(item.get("context") or "")
     if 'הפך רגע במה לסיפור המרכזי' in headline:
-        item["headline"] = complete_headline(dequote_headline(title), 150)
-    elif context and (context.startswith(headline) and len(context) > len(headline) + 12 or headline_looks_cut(headline)):
-        repaired = complete_headline(context, 150)
-        if repaired and not headline_looks_cut(repaired):
+        item["headline"] = complete_headline(dequote_headline(title), 72)
+    elif context and (context.startswith(headline) and len(context) > len(headline) + 12 or headline_looks_cut(headline) or len(headline) > 75):
+        repaired = story_headline(title, context, str(item.get("source") or ""))
+        if repaired and not headline_looks_cut(repaired) and len(repaired) <= 75:
             item["headline"] = repaired
+        else:
+            repaired = complete_headline(context, 72)
+            if repaired and not headline_looks_cut(repaired):
+                item["headline"] = repaired
     return item
 
 
