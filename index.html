@@ -50,6 +50,9 @@ h2{margin:0 0 10px;font-size:22px;line-height:1.14;font-weight:900;letter-spacin
   <div class="topbar"><header class="header"><div class="brand"><div class="mark"><i></i><i></i><i></i></div><div class="logo-text">Pointa</div></div><div class="bell"><svg viewBox="0 0 24 24"><path d="M15 17H9"/><path d="M18 14v-3a6 6 0 0 0-12 0v3l-2 3h16l-2-3Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div></header>
   <div class="tabline"><nav class="tabs" id="tabs"><button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="בארץ">חדשות בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button></nav><button class="sort-btn" id="sortBtn" type="button" aria-label="מיון"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M7 12h10"/><path d="M10 17h4"/></svg><span>מיון</span></button></div>
   <button class="updates" id="refreshBtn"><div class="spark">✧</div><div id="updatedAt">טוען עדכונים…</div><div class="chev"></div><span class="update-progress" id="unreadProgress"></span></button></div>
+  <section class="pointa-panel search-panel hidden" id="searchPanel" aria-label="חיפוש Pointa">
+    <section class="settings-card"><div class="settings-head"><div><h2>חיפוש</h2><p>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</p></div></div><input class="search-input" id="searchInput" type="search" placeholder="מה לחפש? למשל הופעות רוק" autocomplete="off"><div class="translation-note" id="searchHint">התוצאות יופיעו כמו פיד רגיל, כולל אפשרות שמירה.</div></section>
+  </section>
   <section class="feed" id="feedCards"></section>
   <div id="emptyState" class="empty hidden">אין אייטמים בקטגוריה הזו כרגע</div>
   <section class="pointa-panel hidden" id="pointaPanel" aria-label="הגדרות Pointa">
@@ -57,9 +60,6 @@ h2{margin:0 0 10px;font-size:22px;line-height:1.14;font-weight:900;letter-spacin
     <section class="settings-card"><div class="settings-head"><div><h2>תחומי עניין</h2><p>התחומים שתבחר יופיעו גם בטאבים העליונים לסינון.</p></div><span class="saved-pill" id="savedTopics">נשמר</span></div><div class="chip-grid" id="topicPrefs"></div></section>
     <section class="settings-card"><div class="settings-head"><div><h2>כמה כותרות לשמור</h2><p>בחר כמה ימים אחורה להציג בפיד.</p></div><span class="saved-pill" id="savedDays">נשמר</span></div><div class="days-control"><input type="range" id="daysPref" min="1" max="7" step="1"><div class="days-value" id="daysValue">3 ימים</div></div></section>
     <section class="settings-card"><div class="settings-head"><div><h2>שפת הפיד</h2><p>בחר באיזו שפה Pointa תציג לך את הפיד.</p></div><span class="saved-pill" id="savedLang">נשמר</span></div><select class="language-select" id="languagePref"></select><div class="translation-note">כותרת המקור נשארת בשפת המקור להשוואה. Pointa מתרגמת כותרת, סיכום ופואנטה.</div></section>
-  </section>
-  <section class="pointa-panel search-panel hidden" id="searchPanel" aria-label="חיפוש Pointa">
-    <section class="settings-card"><div class="settings-head"><div><h2>חיפוש</h2><p>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</p></div></div><input class="search-input" id="searchInput" type="search" placeholder="מה לחפש? למשל הופעות רוק" autocomplete="off"><div class="translation-note" id="searchHint">התוצאות יופיעו כמו פיד רגיל, כולל אפשרות שמירה.</div></section>
   </section>
   <section class="pointa-panel hidden" id="morePanel" aria-label="עוד">
     <section class="settings-card" id="moreContent"></section>
@@ -75,7 +75,7 @@ h2{margin:0 0 10px;font-size:22px;line-height:1.14;font-weight:900;letter-spacin
 </section>
 </main>
 <script>
-const POANTA_FEED_VERSION = '20260518-search-layout-fix-local-v1';
+const POANTA_FEED_VERSION = '20260518-search-dom-fix-local-v1';
 const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
 const host = document.getElementById('feedCards');
 const updatedAt = document.getElementById('updatedAt');
