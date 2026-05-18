@@ -741,6 +741,42 @@ def is_protection_insurance_story(title: str, desc: str) -> bool:
     )
 
 
+def is_avihu_pinchasov_genesis_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return 'אביהו פנחסוב' in text and any(x in text for x in ["ג'נסיס", 'פסטיבל', 'עירום', 'במה', 'קהל'])
+
+
+def is_weak_source_headline(title: str, headline: str) -> bool:
+    """True when Pointa failed to rewrite and mostly copied the source framing."""
+    a = re.sub(r'[^\w\u0590-\u05ff]+', ' ', sanitize_title(title)).strip().lower()
+    b = re.sub(r'[^\w\u0590-\u05ff]+', ' ', sanitize_title(headline)).strip().lower()
+    if not a or not b:
+        return False
+    shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
+    if len(shorter) >= 24 and shorter in longer:
+        return True
+    aw = [w for w in a.split() if len(w) > 2]
+    bw = set(w for w in b.split() if len(w) > 2)
+    if len(aw) >= 5 and sum(1 for w in aw if w in bw) / max(1, len(aw)) >= 0.72:
+        return True
+    return False
+
+
+def culture_headline_from_context(title: str, desc: str) -> str:
+    text = f'{title} {desc}'
+    if is_avihu_pinchasov_genesis_story(title, desc):
+        return 'ההופעה של אביהו פנחסוב הפכה לרגע הפרובוקטיבי של פסטיבל ג׳נסיס'
+    if 'האח הגדול' in text and any(x in text for x in ['הדחה', 'הדחות', 'מודח']):
+        return 'האח הגדול משתמש בהדחות כדי לייצר דרמה ולהחזיק את הצופים'
+    if any(x in text for x in ['פסטיבל', 'הופעה', 'במה', 'קהל']):
+        who = re.split(r'[.:–-]', dequote_headline(title))[0].strip()
+        who = trim_words(who, 34).strip(' ,;:-–')
+        return f'{who} הפך רגע במה לסיפור המרכזי של האירוע' if who else 'רגע במה אחד הפך לסיפור המרכזי של האירוע'
+    if any(x in text for x in ['סדרה', 'טלוויזיה', 'נטפליקס', 'קשת', 'רשת']):
+        return 'הסיפור הטלוויזיוני מוכר לצופים דרמה מעבר למסך'
+    return ''
+
+
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
     if is_trump_phone_story(title, desc):
@@ -751,6 +787,9 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'ארה״ב חוששת שקובה הופכת לבסיס כטב"מים איראני ליד הגבול'
     if is_protection_insurance_story(title, desc):
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
+    culture_h = culture_headline_from_context(title, desc)
+    if culture_h:
+        return culture_h
     # Specific pattern requested by Lior: turn market teasers into a concrete event.
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'מניות הדואליות צפויות לפתוח בירידות בתל אביב אחרי שבוע אדום בשווקים'
@@ -782,6 +821,16 @@ def story_headline(title: str, desc: str, source: str) -> str:
     # Avoid vague source questions; make them declarative when possible.
     h = re.sub(r'^האם\s+', '', h).strip()
     h = h.replace('?', '').strip()
+    if is_weak_source_headline(title, h):
+        cat, _ = categorize_item(title, desc, source)
+        if cat == 'תרבות':
+            alt = culture_headline_from_context(title, desc)
+            if alt:
+                return trim_words(alt, 62)
+        if desc:
+            first = split_sentences(desc)[:1]
+            if first and not is_weak_source_headline(title, first[0]):
+                return trim_words(first[0], 62)
     return trim_words(h, 62)
 
 
@@ -822,6 +871,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'דיווחים בארה״ב טוענים שאיראן שלחה יועצים צבאיים לקובה כדי לסייע בהפעלת כטב"מים וטכנולוגיות צבאיות מתקדמות. ברקע גובר החשש בוושינגטון מהעמקת שיתוף הפעולה בין איראן, רוסיה וקובה סמוך לשטח האמריקאי.'
     if is_protection_insurance_story(title, desc):
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
+    if is_avihu_pinchasov_genesis_story(title, desc):
+        return 'בפסטיבל ג׳נסיס אביהו פנחסוב משך את תשומת הלב כשהופיע בעירום על הבמה, והכתב מתאר את הקהל כמגיב באקסטזה חריגה. הסיפור הוא פחות ביקורת מוזיקה ויותר דוגמה לאופן שבו פרובוקציה הופכת לרגע הוויראלי של אירוע תרבות.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'המסחר בתל אביב צפוי להיפתח בלחץ אחרי ירידות בוול סטריט ופערי ארביטראז׳ שליליים במניות דואליות.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -966,6 +1017,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'מבחינת ארה״ב, איראן כבר לא מאיימת רק מהמזרח התיכון - אלא מתקרבת פיזית לחצר האחורית שלה.'
     if is_protection_insurance_story(title, desc):
         return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
+    if is_avihu_pinchasov_genesis_story(title, desc):
+        return 'בתרבות פופולרית, פרובוקציה על הבמה יכולה לגנוב את הסיפור מהמוזיקה עצמה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'שבוע המסחר נפתח בעצבנות, ולכן מניות צמיחה ושבבים עלולות להיות הראשונות להיפגע.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -1110,7 +1163,7 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "takeaway": takeaway,
         })
     tz = timezone(timedelta(hours=3))
-    payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items[:MAX_FEED_ITEMS]}
+    payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items}
     if experimental:
         payload["mode"] = "pointa-summary-experimental"
         payload["version"] = EXPERIMENTAL_VERSION
