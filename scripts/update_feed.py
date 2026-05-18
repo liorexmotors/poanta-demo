@@ -510,6 +510,59 @@ def trim_words(text: str, max_chars: int) -> str:
     return cut
 
 
+DANGLING_HEADLINE_ENDINGS = {
+    'של', 'את', 'על', 'עם', 'אל', 'כל', 'כי', 'אבל', 'אולם', 'כאשר', 'בגלל',
+    'בין', 'תוך', 'לפני', 'אחרי', 'עד', 'מול', 'נגד', 'כדי', 'אם', 'בעקבות',
+    'ח"כ', 'ח״כ', 'גררו', 'נאלצו', 'התייחס', 'התארח', 'נחשף', 'יוכלו',
+}
+
+
+def headline_looks_cut(text: str) -> bool:
+    text = clean_text(text).strip(' ,;:-–')
+    if not text:
+        return True
+    words = text.split()
+    last = words[-1].strip('"׳״.,;:!?()[]') if words else ''
+    if last in DANGLING_HEADLINE_ENDINGS:
+        return True
+    if text.endswith((',', ':', '-', '–')):
+        return True
+    return False
+
+
+def complete_headline(text: str, max_chars: int = 108) -> str:
+    """Return a compact headline without cutting it at a visibly incomplete point.
+
+    Pointa cards must not look like the generator simply chopped a sentence.
+    Prefer a complete first sentence. If the sentence is too long, keep a longer
+    phrase than before and avoid dangling connector/preposition endings.
+    """
+    text = clean_text(text).replace('…', '').replace('...', '').strip(' ,;:-–')
+    if not text:
+        return text
+    if len(text) <= max_chars and not headline_looks_cut(text):
+        return text.rstrip('.')
+    sentences = split_sentences(text)
+    if sentences:
+        first = sentences[0].strip(' ,;:-–')
+        if len(first) <= max_chars and not headline_looks_cut(first):
+            return first.rstrip('.')
+    # Try a clause boundary before falling back to a word cut.
+    window = text[:max_chars + 22]
+    boundaries = [m.end() for m in re.finditer(r'[,;:–-]\s+', window)]
+    for pos in reversed(boundaries):
+        candidate = window[:pos].strip(' ,;:-–')
+        if 34 <= len(candidate) <= max_chars and not headline_looks_cut(candidate):
+            return candidate.rstrip('.')
+    limit = max_chars
+    while limit >= 52:
+        candidate = trim_words(text, limit).strip(' ,;:-–')
+        if candidate and not headline_looks_cut(candidate):
+            return candidate.rstrip('.')
+        limit -= 10
+    return trim_words(text, max_chars).strip(' ,;:-–').rstrip('.')
+
+
 def strip_ellipsis(text: str) -> str:
     return clean_text(text).replace('…', '').replace('...', '').strip(' ,;:-–')
 
@@ -918,12 +971,12 @@ def story_headline(title: str, desc: str, source: str) -> str:
         if cat == 'תרבות':
             alt = culture_headline_from_context(title, desc)
             if alt:
-                return trim_words(alt, 62)
+                return complete_headline(alt, 150)
         if desc:
             first = split_sentences(desc)[:1]
             if first and not is_weak_source_headline(title, first[0]):
-                return trim_words(first[0], 62)
-    return trim_words(h, 62)
+                return complete_headline(first[0], 150)
+    return complete_headline(h, 150)
 
 
 def fallback_context_from_title(title: str, category: str = '') -> str:
@@ -1279,8 +1332,14 @@ def refresh_item_pointa(item: dict) -> dict:
         item["takeaway"] = fp[2]
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
-    if 'הפך רגע במה לסיפור המרכזי' in str(item.get("headline") or ""):
-        item["headline"] = trim_words(dequote_headline(title), 62)
+    headline = str(item.get("headline") or "")
+    context = str(item.get("context") or "")
+    if 'הפך רגע במה לסיפור המרכזי' in headline:
+        item["headline"] = complete_headline(dequote_headline(title), 150)
+    elif context and (context.startswith(headline) and len(context) > len(headline) + 12 or headline_looks_cut(headline)):
+        repaired = complete_headline(context, 150)
+        if repaired and not headline_looks_cut(repaired):
+            item["headline"] = repaired
     return item
 
 
