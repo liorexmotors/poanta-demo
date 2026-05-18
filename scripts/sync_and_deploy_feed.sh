@@ -31,6 +31,7 @@ git checkout main
 git pull --ff-only origin main
 
 python3 scripts/update_feed.py
+python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 npm run build
 
 if ! git diff --quiet feed.json .poanta-state.json .poanta-seen.json; then
