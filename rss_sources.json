@@ -1,6 +1,6 @@
 {
   "mode": "rss_only_all_official_feeds",
-  "notes": "Expanded and trimmed locally 2026-05-18 after Lior approval: official RSS sources added for Maariv, TheMarker, expanded Globes, and N12/mako; culture trimmed to a lean default set. RSS is pulled by us; no HTML scraping. Aggregator feeds are tracked as fallback candidates only, not active by default.",
+  "notes": "Expanded and trimmed locally 2026-05-18 after Lior approval: official RSS sources added for Maariv, TheMarker, expanded Globes, and N12/mako; culture trimmed to a lean default set. RSS is pulled by us; no HTML scraping. Aggregator feeds are tracked as fallback candidates only, not active by default.\n2026-05-18 local: added international RSS sources for BBC World and Sky News World; CNN uses Google News RSS fallback because official CNN RSS feeds tested stale/old. Also refined topic taxonomy from broad בארץ/עולם buckets into פוליטיקה/ביטחון/משפט/פלילים etc.",
   "active": [
     {
       "name": "ישראל היום - כל הכתבות",
@@ -1408,6 +1408,34 @@
       "rss": "https://rcs.mako.co.il/rss/c827a3ef43336410VgnVCM2000002a0c10acRCRD.xml",
       "logo": "N12",
       "lastValidatedItems": 20
+    },
+    {
+      "name": "BBC World",
+      "categoryHint": "ביטחון",
+      "rss": "http://feeds.bbci.co.uk/news/world/rss.xml",
+      "logo": "BBC",
+      "lastValidatedItems": 29,
+      "language": "en",
+      "official": true
+    },
+    {
+      "name": "Sky News World",
+      "categoryHint": "ביטחון",
+      "rss": "https://feeds.skynews.com/feeds/rss/world.xml",
+      "logo": "Sky News",
+      "lastValidatedItems": 10,
+      "language": "en",
+      "official": true
+    },
+    {
+      "name": "CNN World דרך Google News",
+      "categoryHint": "ביטחון",
+      "rss": "https://news.google.com/rss/search?q=site%3Acnn.com+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "logo": "CNN",
+      "lastValidatedItems": 100,
+      "language": "en",
+      "official": false,
+      "note": "Official CNN RSS checked but appears stale; using Google News RSS fallback restricted to recent CNN items for freshness."
     }
   ],
   "excluded_for_now": [
