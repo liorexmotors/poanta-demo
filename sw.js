@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v41-more-release-prep';
+const CACHE_NAME = 'poanta-demo-v43-engagement-score';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
