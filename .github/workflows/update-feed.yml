@@ -1,6 +1,8 @@
-name: Manual Update Poanta Feed
+name: Update Poanta Feed Every 2 Hours
 
 on:
+  schedule:
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -11,19 +13,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Update feed
+      - name: Update feed snapshot
         run: python scripts/update_feed.py
-      - name: Commit feed update
+      - name: Commit source feed update
         run: |
-          if git diff --quiet feed.json .poanta-state.json; then
-            echo "No feed changes"
-            exit 0
+          if git diff --quiet feed.json .poanta-state.json .poanta-seen.json; then
+            echo "No source feed changes"
+          else
+            git config user.name "poanta-feed-bot"
+            git config user.email "poanta-feed-bot@users.noreply.github.com"
+            git add feed.json .poanta-state.json .poanta-seen.json
+            git commit -m "Auto-update Poanta feed snapshot"
+            git push
           fi
+      - name: Build static bundle
+        run: npm run build
+      - name: Deploy updated static feed to gh-pages
+        run: |
           git config user.name "poanta-feed-bot"
           git config user.email "poanta-feed-bot@users.noreply.github.com"
-          git add feed.json .poanta-state.json
-          git commit -m "Auto-update Poanta feed"
-          git push
+          rm -rf /tmp/poanta-gh-pages
+          git worktree add /tmp/poanta-gh-pages origin/gh-pages
+          rsync -av --delete --exclude .git dist/ /tmp/poanta-gh-pages/
+          cd /tmp/poanta-gh-pages
+          if git diff --quiet; then
+            echo "No gh-pages changes"
+            exit 0
+          fi
+          git add -A
+          git commit -m "Deploy auto-updated Poanta feed snapshot"
+          git push origin HEAD:gh-pages

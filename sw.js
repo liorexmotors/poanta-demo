@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v25-design-tweaks';
+const CACHE_NAME = 'poanta-demo-v26-rss-readstate';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {

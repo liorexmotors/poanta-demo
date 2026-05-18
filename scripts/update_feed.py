@@ -19,6 +19,7 @@ import sys
 import argparse
 import time
 import html
+from email.utils import parsedate_to_datetime
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -35,6 +36,8 @@ FEED_PATH = ROOT / "feed.json"
 STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
 SEEN_PATH = ROOT / ".poanta-seen.json"
+MAX_FEED_ITEMS = 200
+FEED_RETENTION_DAYS = 7
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
 EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
 
@@ -172,6 +175,7 @@ class Candidate:
     score: int = 0
     image_url: str = ""
     original_title: str = ""
+    published_at: str = ""
 
 
 def clean_text(text: str) -> str:
@@ -191,6 +195,14 @@ def source_logo(source: str) -> str:
         return "ynet"
     if "גלובס" in source:
         return "גלובס"
+    if "הארץ" in source:
+        return "הארץ"
+    if "ישראל היום" in source:
+        return "ישראל היום"
+    if "מעריב" in source:
+        return "מעריב"
+    if "דה מרקר" in source or "themarker" in s:
+        return "דה מרקר"
     if "14" in source:
         return "14"
     return source.split()[0] if source else "מקור"
@@ -270,6 +282,12 @@ def extract_rss(source: dict) -> list[Candidate]:
         title = sanitize_title(''.join(item.findtext('title') or ''))
         link = clean_text(item.findtext('link') or '')
         desc = clean_text(re.sub(r'<[^>]+>', ' ', item.findtext('description') or ''))
+        published_at = clean_text(item.findtext('pubDate') or item.findtext('published') or item.findtext('updated') or '')
+        if published_at:
+            try:
+                published_at = parsedate_to_datetime(published_at).astimezone(timezone(timedelta(hours=3))).isoformat(timespec='seconds')
+            except Exception:
+                pass
         image = ""
         for child in item.iter():
             local = child.tag.split('}')[-1].lower()
@@ -286,7 +304,7 @@ def extract_rss(source: dict) -> list[Candidate]:
         score = score_title(title + ' ' + desc)
         if score <= 0:
             continue
-        out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score, image_url=image, original_title=title))
+        out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
     return sorted(out, key=lambda c: c.score, reverse=True)[:12]
 
 
@@ -1036,6 +1054,7 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "sourceLogo": source_logo(c.source),
             "sourceUrl": c.url,
             "imageUrl": c.image_url,
+            "publishedAt": c.published_at,
             "time": "עודכן אוטומטית",
             "headline": headline,
             "originalTitle": c.original_title or c.title,
@@ -1043,12 +1062,58 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "takeaway": takeaway,
         })
     tz = timezone(timedelta(hours=3))
-    payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items[:12]}
+    payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items[:MAX_FEED_ITEMS]}
     if experimental:
         payload["mode"] = "pointa-summary-experimental"
         payload["version"] = EXPERIMENTAL_VERSION
     return payload
 
+
+
+def feed_item_key(item: dict) -> str:
+    url = item.get("sourceUrl") or ""
+    if url:
+        return canonical_url_key(url)
+    return normalized_key((item.get("originalTitle") or item.get("headline") or "") + "|" + (item.get("source") or ""))
+
+def item_datetime(item: dict, fallback: datetime) -> datetime:
+    raw = item.get("publishedAt") or item.get("updatedAt") or ""
+    if raw:
+        try:
+            d = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+            if d.tzinfo is None:
+                d = d.replace(tzinfo=timezone(timedelta(hours=3)))
+            return d.astimezone(timezone(timedelta(hours=3)))
+        except Exception:
+            pass
+    return fallback
+
+def merge_with_existing_feed(new_feed: dict) -> dict:
+    tz = timezone(timedelta(hours=3))
+    now = datetime.now(tz)
+    cutoff = now - timedelta(days=FEED_RETENTION_DAYS)
+    merged = []
+    seen_keys = set()
+    for feed in [new_feed, json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"items": []}]:
+        fallback = now
+        try:
+            fallback = datetime.fromisoformat(str(feed.get("updatedAt", "")).replace("Z", "+00:00")).astimezone(tz)
+        except Exception:
+            pass
+        for item in feed.get("items", []):
+            key = feed_item_key(item)
+            if not key or key in seen_keys:
+                continue
+            d = item_datetime(item, fallback)
+            if d < cutoff:
+                continue
+            item.setdefault("publishedAt", d.isoformat(timespec="seconds"))
+            merged.append(item)
+            seen_keys.add(key)
+    merged.sort(key=lambda item: item_datetime(item, now), reverse=True)
+    new_feed["items"] = merged[:MAX_FEED_ITEMS]
+    new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
+    return new_feed
 
 def empty_draft_payload(status: str, message: str = "") -> dict:
     tz = timezone(timedelta(hours=3))
@@ -1099,7 +1164,7 @@ def main() -> int:
             c.title = sanitize_title(c.title)
             if len(c.title) < 18 or bad_description(c.description):
                 continue
-            if candidate_seen(c, seen):
+            if args.draft and candidate_seen(c, seen):
                 continue
             picked.append(c)
             used_urls.add(c.url)
@@ -1136,6 +1201,7 @@ def main() -> int:
         STATE_PATH.write_text(json.dumps({"lastDraftRun": feed["updatedAt"], "draftCount": len(feed["items"])}), encoding="utf-8")
         print(f"Wrote {len(feed['items'])} approval candidates to {CANDIDATES_PATH}")
     else:
+        feed = merge_with_existing_feed(feed)
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")
