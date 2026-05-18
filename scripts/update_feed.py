@@ -460,6 +460,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "צרכנות", "money"
     if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
         return "רכב", "real"
+    if is_avihu_pinchasov_genesis_story(title, desc) or is_amos_luzon_relationship_story(title, desc):
+        return "תרבות", "real"
     if any(x in source for x in ["ספורט", "כדורגל", "כדורסל", "NBA", "טניס"]):
         return "ספורט", "real"
     if any(x in source for x in ["רכב", "דו-גלגלי", "ביטוח רכב", "בטיחות"]):
@@ -1392,10 +1394,13 @@ def refresh_item_pointa(item: dict) -> dict:
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
     category = str(item.get("category") or "חדשות")
-    if is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc):
+    if is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc) or is_avihu_pinchasov_genesis_story(title, desc):
         item["headline"] = story_headline(title, desc, str(item.get("source") or ""))
         item["context"] = story_context(title, desc, str(item.get("source") or ""))
         item["takeaway"] = story_takeaway(category, title, desc)
+        new_category, new_cls = categorize_item(title, desc, str(item.get("source") or ""))
+        item["category"] = new_category
+        item["categoryClass"] = new_cls
     headline = str(item.get("headline") or "")
     context = str(item.get("context") or "")
     if 'הפך רגע במה לסיפור המרכזי' in headline:
