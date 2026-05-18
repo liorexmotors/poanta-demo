@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v35-topic-unread-tabs';
+const CACHE_NAME = 'poanta-demo-v36-saved-archive';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
