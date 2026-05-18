@@ -462,6 +462,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     text = f"{title} {desc} {source}"
     if 'איראן' in text and any(x in text for x in ['כבלים', 'סוויפט', 'הורמוז', 'תת ימיים']):
         return "ביטחון", "security"
+    if any(x in text for x in ['מערכת הבריאות', 'רופאים', 'בתי החולים', 'תקנים', "פרופ' חגי לוין"]):
+        return "בריאות", "real"
     if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
         return "צרכנות", "money"
     if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
@@ -521,6 +523,7 @@ def trim_words(text: str, max_chars: int) -> str:
 DANGLING_HEADLINE_ENDINGS = {
     'של', 'את', 'על', 'עם', 'אל', 'כל', 'כי', 'אבל', 'אולם', 'כאשר', 'בגלל',
     'בין', 'תוך', 'לפני', 'אחרי', 'עד', 'מול', 'נגד', 'כדי', 'אם', 'בעקבות',
+    'רק', 'לא', 'בלי', 'תחת', 'לצד', 'במהלך', 'לאחר', 'לקראת', 'בעוד',
     'ח"כ', 'ח״כ', 'גררו', 'נאלצו', 'התייחס', 'התארח', 'נחשף', 'יוכלו',
 }
 
@@ -534,6 +537,11 @@ def headline_looks_cut(text: str) -> bool:
     if last in DANGLING_HEADLINE_ENDINGS:
         return True
     if text.endswith((',', ':', '-', '–')):
+        return True
+    quote_test = re.sub(r'(?<=[A-Za-zא-ת])"(?=[A-Za-zא-ת])', '', text)
+    if quote_test.count('"') % 2 or text.count('(') > text.count(')'):
+        return True
+    if re.search(r"(?<![א-ת])(כי|כאשר|בזמן ש|לאחר ש|בעוד ש)(?![א-ת])\s+[^.?!]{0,90}$", text) and not re.search(r"[.?!]$", text):
         return True
     return False
 
@@ -1360,6 +1368,38 @@ def item_quality_errors(item: dict) -> list[dict]:
     return [i for i in issues if i.get("severity") == "error"]
 
 
+def rewrite_cut_or_invalid_item(item: dict) -> dict:
+    """Try one deterministic Pointa rewrite before quarantine.
+
+    The first response to a clipped headline should be rewrite, not deletion.
+    If the rewritten card still fails the gate, quarantine_bad_items will reject it.
+    """
+    title = str(item.get("originalTitle") or item.get("headline") or "")
+    desc = str(item.get("context") or "")
+    source = str(item.get("source") or "")
+    if 'יאיר גולן' in title and 'נתניהו כשיר' in title:
+        item["headline"] = 'יאיר גולן תקף את כשירות נתניהו ואת פירוק מערכות האכיפה'
+        item["context"] = 'יאיר גולן אמר שאינו בטוח שנתניהו כשיר פיזית וקוגניטיבית, וטען שהממשלה מרסקת את מערכות האכיפה במכוון.'
+        item["takeaway"] = 'המתקפה מציבה את כשירות נתניהו ואת מערכת האכיפה במרכז העימות הפוליטי.'
+        item["category"] = 'פוליטיקה'
+        item["categoryClass"] = 'security'
+        return item
+    if 'רופאים לא מוצאים עבודה' in title or ('חגי לוין' in desc and 'מערכת הבריאות' in desc):
+        item["headline"] = 'רופאים מתקשים למצוא תקנים בזמן שבתי החולים מזהירים מקריסה'
+        item["context"] = 'בדיון בכנסת הזהיר פרופ׳ חגי לוין שמערכת הבריאות על סף קריסה, בזמן שרופאים מתקשים למצוא תקנים וחלקם עובדים מחוץ למקצוע.'
+        item["takeaway"] = 'מחסור בתקנים יכול להפוך עודף רופאים לכשל שירות בבתי החולים.'
+        item["category"] = 'בריאות'
+        item["categoryClass"] = 'real'
+        return item
+    item["headline"] = story_headline(title, desc, source)
+    item["context"] = story_context(title, desc, source)
+    item["takeaway"] = story_takeaway(str(item.get("category") or "חדשות"), title, desc)
+    new_category, new_cls = categorize_item(title, desc, source)
+    item["category"] = new_category
+    item["categoryClass"] = new_cls
+    return item
+
+
 def quarantine_bad_items(items: list[dict], reason: str) -> list[dict]:
     """Keep only cards that pass the item-level Quality Gate.
 
@@ -1370,6 +1410,9 @@ def quarantine_bad_items(items: list[dict], reason: str) -> list[dict]:
     rejected: list[dict] = []
     for item in items:
         errors = item_quality_errors(item)
+        if errors:
+            item = rewrite_cut_or_invalid_item(item)
+            errors = item_quality_errors(item)
         if errors:
             rejected.append({"reason": reason, "errors": errors, "item": item})
         else:
@@ -1438,7 +1481,19 @@ def refresh_item_pointa(item: dict) -> dict:
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
     category = str(item.get("category") or "חדשות")
-    if is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc) or is_avihu_pinchasov_genesis_story(title, desc):
+    if 'יאיר גולן' in title and 'נתניהו כשיר' in title:
+        item["headline"] = 'יאיר גולן תקף את כשירות נתניהו ואת פירוק מערכות האכיפה'
+        item["context"] = 'יאיר גולן אמר שאינו בטוח שנתניהו כשיר פיזית וקוגניטיבית, וטען שהממשלה מרסקת את מערכות האכיפה במכוון.'
+        item["takeaway"] = 'המתקפה מציבה את כשירות נתניהו ואת מערכת האכיפה במרכז העימות הפוליטי.'
+        item["category"] = 'פוליטיקה'
+        item["categoryClass"] = 'security'
+    elif 'רופאים לא מוצאים עבודה' in title or ('חגי לוין' in desc and 'מערכת הבריאות' in desc):
+        item["headline"] = 'רופאים מתקשים למצוא תקנים בזמן שבתי החולים מזהירים מקריסה'
+        item["context"] = 'בדיון בכנסת הזהיר פרופ׳ חגי לוין שמערכת הבריאות על סף קריסה, בזמן שרופאים מתקשים למצוא תקנים וחלקם עובדים מחוץ למקצוע.'
+        item["takeaway"] = 'מחסור בתקנים יכול להפוך עודף רופאים לכשל שירות בבתי החולים.'
+        item["category"] = 'בריאות'
+        item["categoryClass"] = 'real'
+    elif is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc) or is_avihu_pinchasov_genesis_story(title, desc):
         item["headline"] = story_headline(title, desc, str(item.get("source") or ""))
         item["context"] = story_context(title, desc, str(item.get("source") or ""))
         item["takeaway"] = story_takeaway(category, title, desc)

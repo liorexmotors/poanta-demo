@@ -26,6 +26,7 @@ ORPHAN_PREFIX_RE = re.compile(r"^\s*[-–—]+\s*|^\s*(ואז|אבל|אולם|כ
 DANGLING_ENDINGS = {
     "של", "את", "על", "עם", "אל", "כל", "כי", "אבל", "אולם", "כאשר", "בגלל",
     "בין", "תוך", "לפני", "אחרי", "עד", "מול", "נגד", "כדי", "אם", "בעקבות",
+    "רק", "לא", "בלי", "תחת", "לצד", "במהלך", "לאחר", "לקראת", "בעוד",
     "ח\"כ", "ח״כ", "גררו", "נאלצו", "התייחס", "התארח", "נחשף", "יוכלו",
 }
 GENERIC_HEADLINE_PATTERNS = [
@@ -107,7 +108,20 @@ def looks_cut(headline: str) -> bool:
     if not h:
         return True
     last = h.split()[-1].strip('"׳״.,;:!?()[]')
-    return last in DANGLING_ENDINGS or bool(re.search(r"[,;:–—-]\s*$", headline or ""))
+    if last in DANGLING_ENDINGS or bool(re.search(r"[,;:–—-]\s*$", headline or "")):
+        return True
+    # Mechanical cuts often leave an opened quote/parenthesis or end right after a
+    # subordinating phrase. A headline must be a complete thought, not a clipped
+    # source sentence.
+    # ASCII quotes are usually paired; Hebrew gereshayim (״) also appears inside abbreviations
+    # such as ח״כ/ארה״ב, so only treat a gereshayim as an open quote when the headline
+    # contains source-style quoted speech marks around a phrase.
+    quote_test = re.sub(r'(?<=[A-Za-zא-ת])"(?=[A-Za-zא-ת])', '', h)
+    if quote_test.count('"') % 2 or h.count('(') > h.count(')'):
+        return True
+    if re.search(r"(?<![א-ת])(כי|כאשר|בזמן ש|לאחר ש|בעוד ש)(?![א-ת])\s+[^.?!]{0,90}$", h) and not re.search(r"[.?!]$", h):
+        return True
+    return False
 
 
 def card_blob(item: dict[str, Any]) -> str:
