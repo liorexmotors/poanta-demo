@@ -31,11 +31,17 @@ from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 from html.parser import HTMLParser
 
+try:
+    from pointa_quality_gate import validate_item as quality_validate_item
+except Exception:  # pragma: no cover - feed updater should still be importable standalone
+    quality_validate_item = None
+
 ROOT = Path(__file__).resolve().parents[1]
 FEED_PATH = ROOT / "feed.json"
 STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
 SEEN_PATH = ROOT / ".poanta-seen.json"
+QUARANTINE_PATH = ROOT / "pointa_quarantine.json"
 MAX_FEED_ITEMS = 200
 FEED_RETENTION_DAYS = 7
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
@@ -1037,7 +1043,7 @@ def fallback_context_from_title(title: str, category: str = '') -> str:
         'ספורט': 'האירוע משנה את תמונת ההמשך סביב הקבוצה, הסגל או המומנטום.',
         'בריאות': 'המידע עשוי להשפיע על החלטות בריאותיות או על הבנת סיכון אישי.',
     }
-    return fallbacks.get(category, 'הידיעה חשובה בגלל ההשפעה המעשית שלה, לא בגלל ניסוח הכותרת.')
+    return fallbacks.get(category, 'הפרטים הזמינים אינם מספיקים עדיין לתובנה נקודתית אמינה.')
 
 
 def compact_context(text: str, category: str = '', title: str = '') -> str:
@@ -1073,7 +1079,7 @@ def story_context(title: str, desc: str, source: str) -> str:
     if is_amos_luzon_relationship_story(title, desc):
         return 'עמוס לוזון נמצא בזוגיות חדשה, והופעה משותפת בחתונה הפכה את פער הגילים ביניהם לסיפור המרכזי. זו ידיעת סלבס, לא סיפור פוליטי או ציבורי.'
     if is_avihu_pinchasov_genesis_story(title, desc):
-        return '12 שעות בפסטיבל ג׳נסיס ליד עין חרוד הפכו לחוויה של עשרות אלפי צעירים, עם פופ, רוק, טראנס ותחושת חופש זמנית מהמלחמה ומהשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע אסקפיסטי וסוחף.'
+        return 'פסטיבל ג׳נסיס ליד עין חרוד הציע 12 שעות של מוזיקה, קהל צעיר ואסקפיזם מהמלחמה והשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע סוחף.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'המסחר בתל אביב צפוי להיפתח בלחץ אחרי ירידות בוול סטריט ופערי ארביטראז׳ שליליים במניות דואליות.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -1093,7 +1099,7 @@ def story_context(title: str, desc: str, source: str) -> str:
         'תחבורה': 'העדכון עשוי להשפיע על נסיעה, זמינות שירות או החלטה לפני יציאה.',
         'ספורט': 'האירוע משנה את תמונת ההמשך סביב הקבוצה, הסגל או המומנטום.',
     }
-    return fallbacks.get(cat, 'הידיעה חשובה בגלל ההשפעה המעשית שלה, לא בגלל ניסוח הכותרת.')
+    return fallbacks.get(cat, 'הפרטים הזמינים אינם מספיקים עדיין לתובנה נקודתית אמינה.')
 
 
 def takeaway_subject(title: str, max_chars: int = 38) -> str:
@@ -1237,24 +1243,24 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return specific
     subject = takeaway_subject(title)
     if category == 'כלכלה':
-        return f'השאלה היא מי משלם את המחיר של {subject}.'
+        return f'{subject} מסמן מי עלול לשלם יותר או לקחת סיכון גדול יותר.'
     if category == 'צרכנות':
-        return f'הפרטים הקטנים סביב {subject} קובעים את המחיר האמיתי.'
+        return f'{subject} קובע את המחיר האמיתי יותר מהכותרת השיווקית.'
     if category == 'טכנולוגיה':
-        return f'השאלה היא איך {subject} משנה שימוש, פרטיות או אמון.'
+        return f'{subject} משנה שימוש, פרטיות או אמון במוצר.'
     if category == 'תחבורה':
-        return f'ההחלטה סביב {subject} תלויה בעלות, בטיחות ואמון.'
+        return f'{subject} משפיע על עלות, בטיחות או זמינות נסיעה.'
     if category == 'ספורט':
-        return f'החשיבות של {subject} היא ההשפעה על ההמשך.'
+        return f'{subject} משנה את המשך העונה או את מאזן הכוחות.'
     if category == 'ביטחון':
-        return f'הסיכון סביב {subject} הוא שינוי מעשי בשגרה או בהיערכות.'
+        return f'{subject} עשוי לשנות היערכות, שגרה או מרחב פעולה.'
     if category == 'בריאות':
-        return f'המשמעות של {subject} היא הבנת הסיכון לפני החלטה בריאותית.'
+        return f'{subject} מחייב להבין את הסיכון לפני החלטה בריאותית.'
     if category == 'תרבות':
-        return f'הסיפור סביב {subject} חושף איך בונים דימוי ציבורי.'
+        return f'{subject} מראה איך רגע פרטי הופך לדימוי ציבורי.'
     if category == 'דעות':
-        return f'הטיעון סביב {subject} חשוב יותר מהניסוח החריף.'
-    return f'השאלה היא איך {subject} משנה את תמונת המצב.'
+        return f'{subject} חושף את קו הטיעון, לא רק את הטון החריף.'
+    return f'{subject} הוא הפרט שקובע מה באמת השתנה.'
 
 def poanta_headline(title: str, desc: str, source: str = "") -> str:
     return story_headline(title, desc, source)
@@ -1342,6 +1348,42 @@ def remember_feed(feed: dict) -> None:
     }
     SEEN_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+
+def item_quality_errors(item: dict) -> list[dict]:
+    if quality_validate_item is None:
+        return []
+    issues: list[dict] = []
+    try:
+        quality_validate_item(item, -1, issues)
+    except Exception as exc:
+        return [{"severity": "error", "code": "quality_exception", "message": str(exc)}]
+    return [i for i in issues if i.get("severity") == "error"]
+
+
+def quarantine_bad_items(items: list[dict], reason: str) -> list[dict]:
+    """Keep only cards that pass the item-level Quality Gate.
+
+    A thin or generic card is worse than no card. Invalid cards are written to a
+    local quarantine file for editorial review instead of being shipped.
+    """
+    kept: list[dict] = []
+    rejected: list[dict] = []
+    for item in items:
+        errors = item_quality_errors(item)
+        if errors:
+            rejected.append({"reason": reason, "errors": errors, "item": item})
+        else:
+            kept.append(item)
+    if rejected:
+        payload = {"updatedAt": datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds"), "rejected": rejected}
+        try:
+            QUARANTINE_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        except Exception:
+            pass
+        print(f"Quarantined {len(rejected)} Pointa cards that failed item quality", file=sys.stderr)
+    return kept
+
+
 def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> dict:
     items = []
     seen_titles = set()
@@ -1359,7 +1401,7 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             headline = poanta_headline(c.title, c.description, c.source)
             context = context_text(c.title, c.description, c.source)
             takeaway = takeaway_text(category, c.title, c.description)
-        items.append({
+        item = {
             "category": category,
             "categoryClass": cls,
             "source": c.source,
@@ -1373,7 +1415,9 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "originalTitle": c.original_title or c.title,
             "context": context,
             "takeaway": takeaway,
-        })
+        }
+        if not item_quality_errors(item):
+            items.append(item)
     tz = timezone(timedelta(hours=3))
     payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items}
     if experimental:
@@ -1466,6 +1510,7 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
             merged.append(item)
             seen_keys.add(key)
     merged.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
+    merged = quarantine_bad_items(merged, "merge_quality_gate")
     new_feed["items"] = merged[:MAX_FEED_ITEMS]
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed
