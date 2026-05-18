@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v44-search-fixed-panel';
+const CACHE_NAME = 'poanta-demo-v45-saved-feed-polish';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
