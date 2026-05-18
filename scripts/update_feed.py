@@ -473,6 +473,9 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     if any(x in source for x in ["תרבות", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
         return "תרבות", "real"
     if any(x in source for x in ["CNN", "BBC", "Sky News", "סקיי"]):
+        fp = foreign_pointa_tuple(title, desc)
+        if fp:
+            return fp[3], fp[4]
         return categorize(text)
     if any(x in source for x in ["דעות", "פרשנויות"]):
         return "דעות", "security"
@@ -741,6 +744,96 @@ def is_protection_insurance_story(title: str, desc: str) -> bool:
     )
 
 
+def has_latin_text(text: str) -> bool:
+    return len(re.findall(r"[A-Za-z]", text or "")) > 8
+
+
+def foreign_story_key(title: str, desc: str) -> str:
+    text = f"{title} {desc}".lower()
+    if 'ebola' in text:
+        return 'ebola'
+    if 'everest' in text or 'mountain queen' in text or 'kami rita' in text or 'lhakpa' in text:
+        return 'everest'
+    if 'fighter jets' in text and ('collide' in text or 'collision' in text):
+        return 'idaho_jets'
+    if 'mexico shooting' in text or ('gunmen' in text and 'mexico' in text):
+        return 'mexico_shooting'
+    if 'hantavirus' in text:
+        return 'hantavirus'
+    if 'taiwan' in text:
+        return 'taiwan'
+    if 'nigeria' in text and ('kidnapped' in text or 'schoolchildren' in text or 'children' in text):
+        return 'nigeria_kidnap'
+    if 'black americans jailed in china' in text or ('jailed in china' in text and 'trump' in text):
+        return 'china_prisoners'
+    if 'train driver' in text and 'thailand' in text:
+        return 'thailand_train'
+    return ''
+
+
+FOREIGN_POINTA = {
+    'ebola': (
+        'זן נדיר של אבולה מעלה חשש מהתפשטות מעבר לאזור ההתפרצות',
+        'רשויות בריאות בוחנות אם זן נדיר של אבולה עלול להתפשט מעבר למוקד המקומי. החשש המרכזי הוא לא רק מספר החולים כעת, אלא היכולת לזהות ולבודד מגעים לפני שההתפרצות יוצאת משליטה.',
+        'באבולה, חלון הזמן בין זיהוי לבידוד קובע אם אירוע מקומי הופך לסיכון בינלאומי.',
+        'בריאות', 'real'
+    ),
+    'everest': (
+        'שני מטפסי שרפה שברו שוב את שיאי האוורסט שלהם',
+        'קאמי ריטה שרפה הגיע לפסגת האוורסט בפעם ה־32, ולחקפה שרפה שברה את שיא הנשים עם הטיפוס ה־11 שלה. מאחורי השיאים האישיים עומדת גם התלות העמוקה של תעשיית האוורסט במדריכי השרפה המקומיים.',
+        'התהילה על האוורסט נשענת על מקצוענות של מדריכים מקומיים שלרוב נשארים ברקע.',
+        'ספורט', 'real'
+    ),
+    'idaho_jets': (
+        'שני מטוסי קרב התנגשו במהלך מופע אווירי באיידהו',
+        'שני מטוסי קרב התנגשו במופע אווירי באיידהו, באירוע שמדגיש את הסיכון המובנה בתצוגות טיסה צפופות מול קהל. גם כשמדובר במופע בידורי, מרווח טעות קטן באוויר עלול להפוך לתאונה חמורה.',
+        'מופעי ראווה באוויר מוכרים אדרנלין, אבל תלויים במשמעת בטיחות כמעט צבאית.',
+        'ביטחון', 'security'
+    ),
+    'mexico_shooting': (
+        'עשרה בני אדם נהרגו בירי במרכז־מזרח מקסיקו',
+        'חמושים הרגו לפחות עשרה בני אדם במדינת פואבלה שבמקסיקו, לפי הרשויות המקומיות. האירוע מצטרף לדפוס של אלימות חמושה שמערערת את תחושת הביטחון גם באזורים אזרחיים.',
+        'כשירי המוני הופך לשגרה אזורית, הבעיה היא כבר לא אירוע נקודתי אלא כשל ביטחון ציבורי.',
+        'פלילים', 'security'
+    ),
+    'hantavirus': (
+        'תשעה בריטים שנחשפו להנטווירוס חוזרים לממלכה למעקב רפואי',
+        'תשעה אזרחים בריטים שהיו קשורים לספינת הקרוז MV Hondius חוזרים לבריטניה לאחר חשיפה להתפרצות הנטווירוס. הדגש הוא על מעקב מהיר ובידוד סיכונים לפני שהחשיפה הופכת לשרשרת הדבקה.',
+        'במחלות נדירות, ניהול המגעים חשוב כמעט כמו הטיפול בחולה עצמו.',
+        'בריאות', 'real'
+    ),
+    'taiwan': (
+        'עתיד טאיוואן נשאר מבחן הלחץ המרכזי בין סין לארה״ב',
+        'הדיון סביב טאיוואן מתמקד בשאלה איך ייראה מאזן הכוחות מול סין בשנים הקרובות. כל שינוי בעמדה האמריקאית או בלחץ הסיני עלול להשפיע על ביטחון האזור ועל שרשראות אספקה עולמיות.',
+        'טאיוואן היא לא רק מחלוקת טריטוריאלית — היא נקודת מבחן לסדר העולמי ולתעשיית השבבים.',
+        'ביטחון', 'security'
+    ),
+    'nigeria_kidnap': (
+        'יותר מ־50 ילדים נחטפו משלושה בתי ספר בצפון־מזרח ניגריה',
+        'חמושים חטפו יותר מ־50 ילדים משלושה בתי ספר בעיירה מוסה שבמדינת בורנו, ורוב הנעדרים הם בני שנתיים עד חמש. עדים סיפרו שהחוטפים השתמשו בילדים כמגן אנושי בזמן הבריחה, ותושבים באזור כבר נמלטים מחשש להמשך האלימות.',
+        'כאשר ילדים קטנים הופכים למגן אנושי, הכשל הביטחוני הופך למשבר קהילתי מתמשך.',
+        'ביטחון', 'security'
+    ),
+    'china_prisoners': (
+        'משפחות אמריקאים שכלואים בסין מנסות להפוך ביקור של טראמפ ללחץ דיפלומטי',
+        'קרובי משפחה של שני אמריקאים שחורים הכלואים בסין הגיבו לביקור טראמפ ומנסים להעלות את המקרה לסדר היום המדיני. מבחינתם, החשיפה הציבורית היא דרך להפוך סיפור אישי לקלף לחץ ביחסי וושינגטון־בייג׳ינג.',
+        'במאבקי אסירים בין מעצמות, תשומת לב פוליטית יכולה להיות ההבדל בין תיק נשכח למנוף מיקוח.',
+        'פוליטיקה', 'security'
+    ),
+    'thailand_train': (
+        'נהג רכבת הואשם ברשלנות אחרי תאונה קטלנית בתאילנד',
+        'נהג רכבת בתאילנד הואשם ברשלנות לאחר תאונה קטלנית. החקירה מעבירה את הסיפור משאלת התאונה עצמה לשאלה מי אחראי לכשלי בטיחות במערכת תחבורה ציבורית.',
+        'בתאונות תחבורה, כתב אישום נגד הנהג לא תמיד עונה על השאלה אם המערכת כולה בטוחה.',
+        'רכב', 'real'
+    ),
+}
+
+
+def foreign_pointa_tuple(title: str, desc: str):
+    key = foreign_story_key(title, desc)
+    return FOREIGN_POINTA.get(key)
+
+
 def is_avihu_pinchasov_genesis_story(title: str, desc: str) -> bool:
     text = f"{title} {desc}"
     return 'פסטיבל ג' in text and 'נסיס' in text and any(x in text for x in ['אביהו פנחסוב', 'עשרים אלף', 'התקווה 6', 'הדג נחש', 'בניה ברבי', 'נונו'])
@@ -779,6 +872,9 @@ def culture_headline_from_context(title: str, desc: str) -> str:
 
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
+    fp = foreign_pointa_tuple(title, desc)
+    if fp:
+        return fp[0]
     if is_trump_phone_story(title, desc):
         return 'הטלפון של טראמפ הגיע - והלקוחות גילו שזה כנראה מכשיר סיני ממותג'
     if is_lieberman_succession_story(title, desc):
@@ -863,6 +959,9 @@ def compact_context(text: str, category: str = '', title: str = '') -> str:
 
 
 def story_context(title: str, desc: str, source: str) -> str:
+    fp = foreign_pointa_tuple(title, desc)
+    if fp:
+        return fp[1]
     if is_trump_phone_story(title, desc):
         return 'אחרי חודשים של עיכובים, טראמפ מובייל החלה לשלוח את מכשיר ה-T1, אך אנליסטים טוענים שמדובר בסמארטפון סיני בסיסי עם מיתוג מוזהב ומחיר מנופח. במקביל החברה עדכנה את התקנון כך שגם תשלום מקדמה לא מבטיח אספקת מכשיר.'
     if is_lieberman_succession_story(title, desc):
@@ -1006,6 +1105,9 @@ def specific_takeaway(title: str, desc: str) -> str:
 
 
 def story_takeaway(category: str, title: str, desc: str) -> str:
+    fp = foreign_pointa_tuple(title, desc)
+    if fp:
+        return fp[2]
     specific = specific_takeaway(title, desc)
     if specific:
         return specific
@@ -1171,6 +1273,19 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
 
 
 
+def refresh_item_pointa(item: dict) -> dict:
+    title = str(item.get("originalTitle") or item.get("headline") or "")
+    desc = str(item.get("context") or "")
+    fp = foreign_pointa_tuple(title, desc)
+    if fp:
+        item["headline"] = fp[0]
+        item["context"] = fp[1]
+        item["takeaway"] = fp[2]
+        item["category"] = fp[3]
+        item["categoryClass"] = fp[4]
+    return item
+
+
 def feed_item_key(item: dict) -> str:
     url = item.get("sourceUrl") or ""
     if url:
@@ -1217,6 +1332,7 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
                 continue
             if item.get("hasSourceDate") and not item.get("publishedAt"):
                 item["publishedAt"] = d.isoformat(timespec="seconds")
+            item = refresh_item_pointa(item)
             merged.append(item)
             seen_keys.add(key)
     merged.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
