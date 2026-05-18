@@ -861,10 +861,6 @@ def culture_headline_from_context(title: str, desc: str) -> str:
         return 'פסטיבל ג׳נסיס הפך ל־12 שעות של אסקפיזם מוזיקלי מהמציאות'
     if 'האח הגדול' in text and any(x in text for x in ['הדחה', 'הדחות', 'מודח']):
         return 'האח הגדול משתמש בהדחות כדי לייצר דרמה ולהחזיק את הצופים'
-    if any(x in text for x in ['פסטיבל', 'הופעה', 'במה', 'קהל']):
-        who = re.split(r'[.:–-]', dequote_headline(title))[0].strip()
-        who = trim_words(who, 34).strip(' ,;:-–')
-        return f'{who} הפך רגע במה לסיפור המרכזי של האירוע' if who else 'רגע במה אחד הפך לסיפור המרכזי של האירוע'
     if any(x in text for x in ['סדרה', 'טלוויזיה', 'נטפליקס', 'קשת', 'רשת']):
         return 'הסיפור הטלוויזיוני מוכר לצופים דרמה מעבר למסך'
     return ''
@@ -1146,8 +1142,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return f'הטיעון סביב {subject} חשוב יותר מהניסוח החריף.'
     return f'השאלה היא איך {subject} משנה את תמונת המצב.'
 
-def poanta_headline(title: str, desc: str) -> str:
-    return story_headline(title, desc, "")
+def poanta_headline(title: str, desc: str, source: str = "") -> str:
+    return story_headline(title, desc, source)
 
 
 def context_text(title: str, desc: str, source: str) -> str:
@@ -1246,7 +1242,7 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             context = experimental_summary(c.title, c.description, c.source)
             takeaway = experimental_insight(category, c.title, c.description)
         else:
-            headline = poanta_headline(c.title, c.description)
+            headline = poanta_headline(c.title, c.description, c.source)
             context = context_text(c.title, c.description, c.source)
             takeaway = takeaway_text(category, c.title, c.description)
         items.append({
@@ -1283,6 +1279,8 @@ def refresh_item_pointa(item: dict) -> dict:
         item["takeaway"] = fp[2]
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
+    if 'הפך רגע במה לסיפור המרכזי' in str(item.get("headline") or ""):
+        item["headline"] = trim_words(dequote_headline(title), 62)
     return item
 
 

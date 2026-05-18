@@ -72,7 +72,7 @@ h2{margin:0 0 10px;font-size:22px;line-height:1.14;font-weight:900;letter-spacin
 </section>
 </main>
 <script>
-const POANTA_FEED_VERSION = '20260518-smart-search-local-v1';
+const POANTA_FEED_VERSION = '20260518-smart-search-show-local-v1';
 const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
 const host = document.getElementById('feedCards');
 const updatedAt = document.getElementById('updatedAt');
@@ -143,7 +143,7 @@ function visibleItems(){ ensurePrefs(); const items=(currentFeed&&Array.isArray(
 
 function searchText(item){ return [item.headline,item.context,item.takeaway,item.originalTitle,topicFor(item),sourceName(item),rawSourceName(item)].join(' ').toLowerCase(); }
 const SEARCH_CONCEPTS=[
-  {keys:['הופעה','הופעות','רוק','מוזיקה','פסטיבל','במה','להקה','קהל','זמר','טראנס','פופ'],terms:['הופעה','הופעות','רוק','מוזיקה','פסטיבל','במה','קהל','זמר','טראנס','פופ','ג׳נסיס','פנחסוב','נונו','הדג נחש','התקווה 6']},
+  {keys:['מופע','מופעים','הופעה','הופעות','רוק','מוזיקה','פסטיבל','במה','להקה','קהל','זמר','טראנס','פופ'],terms:['מופע','מופעים','הופעה','הופעות','רוק','מוזיקה','פסטיבל','במה','קהל','זמר','טראנס','פופ','ג׳נסיס','פנחסוב','נונו','הדג נחש','התקווה 6']},
   {keys:['מחאה','פוליטי','פוליטיקה','ממשלה','כנסת'],terms:['מחאה','פוליטיקה','ממשלה','כנסת','קואליציה','אופוזיציה','טראמפ','נתניהו']},
   {keys:['מלחמה','ביטחון','איראן','טילים','חטופים','צבא'],terms:['מלחמה','ביטחון','איראן','טילים','צבא','חמאס','חיזבאללה','כטב','חטופים']},
   {keys:['בריאות','מחלה','וירוס','רפואה'],terms:['בריאות','מחלה','וירוס','רפואה','אבולה','הנטווירוס','חולים']},
@@ -152,7 +152,7 @@ const SEARCH_CONCEPTS=[
 ];
 function expandSearchTerms(query){ const q=String(query||'').toLowerCase(); const words=q.split(/[^0-9a-zA-Z\u0590-\u05ff]+/).filter(Boolean); const terms=new Set(words); SEARCH_CONCEPTS.forEach(c=>{ if(c.keys.some(k=>q.includes(k))) c.terms.forEach(t=>terms.add(t.toLowerCase())); }); return [...terms].filter(t=>t.length>1); }
 function searchCorpus(){ const map=new Map(); (currentFeed?.items||[]).forEach(item=>{ const key=itemKey(item); if(key) map.set(key,{item,origin:savedItems[key]?'שמור':'פיד כללי',saved:!!savedItems[key]}); }); savedList().forEach(item=>{ const key=itemKey(item); if(key) map.set(key,{item,origin:'שמור',saved:true}); }); return [...map.values()]; }
-function smartSearch(query){ const q=String(query||'').trim(); if(q.length<2) return []; const terms=expandSearchTerms(q); return searchCorpus().map(row=>{ const text=searchText(row.item); let score=0; terms.forEach(term=>{ if(!term)return; const hit=text.includes(term); if(hit) score += q.toLowerCase().includes(term)?5:2; if(String(row.item.headline||'').toLowerCase().includes(term)) score += 4; if(String(row.item.takeaway||'').toLowerCase().includes(term)) score += 2; if(String(topicFor(row.item)||'').toLowerCase().includes(term)) score += 3; }); if(q.includes('הופ') && /פסטיבל|מוזיקה|במה|קהל|זמר|רוק|טראנס|פופ/.test(text)) score += 8; if(q.includes('רוק') && /פסטיבל|מוזיקה|במה|קהל|זמר|רוק|טראנס|פופ/.test(text)) score += 8; if(row.saved) score += .6; return {...row,score}; }).filter(r=>r.score>0).sort((a,b)=>b.score-a.score).slice(0,30).map(r=>({...r.item,_originLabel:r.origin})); }
+function smartSearch(query){ const q=String(query||'').trim(); if(q.length<2) return []; const terms=expandSearchTerms(q); return searchCorpus().map(row=>{ const text=searchText(row.item); let score=0; terms.forEach(term=>{ if(!term)return; const hit=text.includes(term); if(hit) score += q.toLowerCase().includes(term)?5:2; if(String(row.item.headline||'').toLowerCase().includes(term)) score += 4; if(String(row.item.takeaway||'').toLowerCase().includes(term)) score += 2; if(String(topicFor(row.item)||'').toLowerCase().includes(term)) score += 3; }); if(/מופע|הופ|רוק/.test(q) && /פסטיבל|מוזיקה|במה|קהל|זמר|רוק|טראנס|פופ|ג׳נסיס|פנחסוב|נונו|הדג נחש|התקווה 6/.test(text)) score += 14; if(/מופע|הופ|רוק/.test(q) && topicFor(row.item)==='תרבות') score += 7; if(/מופע|הופ|רוק/.test(q) && /חוק|משפט|כתב אישום|העמדה לדין/.test(text) && topicFor(row.item)!=='תרבות') score -= 8; if(row.saved) score += .6; return {...row,score}; }).filter(r=>r.score>0).sort((a,b)=>b.score-a.score).slice(0,30).map(r=>({...r.item,_originLabel:r.origin})); }
 function currentLang(){ ensurePrefs(); return LANGUAGES.find(l=>l.code===userPrefs.language)||LANGUAGES[0]; }
 function cacheTranslations(){ try{ localStorage.setItem(TRANSLATE_CACHE_KEY, JSON.stringify(translationCache)); }catch{} }
 function looksMostlyLatin(text){ const s=String(text||''); const latin=(s.match(/[A-Za-z]/g)||[]).length; const heb=(s.match(/[\u0590-\u05ff]/g)||[]).length; return latin>8 && latin>heb; }
