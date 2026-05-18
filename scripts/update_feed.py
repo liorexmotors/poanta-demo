@@ -743,7 +743,7 @@ def is_protection_insurance_story(title: str, desc: str) -> bool:
 
 def is_avihu_pinchasov_genesis_story(title: str, desc: str) -> bool:
     text = f"{title} {desc}"
-    return 'אביהו פנחסוב' in text and any(x in text for x in ["ג'נסיס", 'פסטיבל', 'עירום', 'במה', 'קהל'])
+    return 'פסטיבל ג' in text and 'נסיס' in text and any(x in text for x in ['אביהו פנחסוב', 'עשרים אלף', 'התקווה 6', 'הדג נחש', 'בניה ברבי', 'נונו'])
 
 
 def is_weak_source_headline(title: str, headline: str) -> bool:
@@ -765,7 +765,7 @@ def is_weak_source_headline(title: str, headline: str) -> bool:
 def culture_headline_from_context(title: str, desc: str) -> str:
     text = f'{title} {desc}'
     if is_avihu_pinchasov_genesis_story(title, desc):
-        return 'ההופעה של אביהו פנחסוב הפכה לרגע הפרובוקטיבי של פסטיבל ג׳נסיס'
+        return 'פסטיבל ג׳נסיס הפך ל־12 שעות של אסקפיזם מוזיקלי מהמציאות'
     if 'האח הגדול' in text and any(x in text for x in ['הדחה', 'הדחות', 'מודח']):
         return 'האח הגדול משתמש בהדחות כדי לייצר דרמה ולהחזיק את הצופים'
     if any(x in text for x in ['פסטיבל', 'הופעה', 'במה', 'קהל']):
@@ -872,7 +872,7 @@ def story_context(title: str, desc: str, source: str) -> str:
     if is_protection_insurance_story(title, desc):
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
     if is_avihu_pinchasov_genesis_story(title, desc):
-        return 'בפסטיבל ג׳נסיס אביהו פנחסוב משך את תשומת הלב כשהופיע בעירום על הבמה, והכתב מתאר את הקהל כמגיב באקסטזה חריגה. הסיפור הוא פחות ביקורת מוזיקה ויותר דוגמה לאופן שבו פרובוקציה הופכת לרגע הוויראלי של אירוע תרבות.'
+        return 'הכתב מתאר 12 שעות בפסטיבל ג׳נסיס ליד עין חרוד, עם עשרות אלפי צעירים, פופ, רוק, טראנס ותחושת חופש זמנית מהמלחמה ומהשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע אסקפיסטי וסוחף.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'המסחר בתל אביב צפוי להיפתח בלחץ אחרי ירידות בוול סטריט ופערי ארביטראז׳ שליליים במניות דואליות.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
@@ -1018,7 +1018,7 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
     if is_protection_insurance_story(title, desc):
         return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
     if is_avihu_pinchasov_genesis_story(title, desc):
-        return 'בתרבות פופולרית, פרובוקציה על הבמה יכולה לגנוב את הסיפור מהמוזיקה עצמה.'
+        return 'הפואנטה היא שהפסטיבל הצליח למכור לדור צעיר רגע נדיר של חופש, גם כשהמציאות בחוץ נשארת כבדה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
         return 'שבוע המסחר נפתח בעצבנות, ולכן מניות צמיחה ושבבים עלולות להיות הראשונות להיפגע.'
     if 'אבא לא היה עושה לנו את זה' in title or 'הסוד שנחשף אחרי השבעה' in title:
