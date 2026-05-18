@@ -5,7 +5,8 @@
   "scripts": {
     "start": "vite --host 0.0.0.0",
     "build": "rm -rf dist && mkdir -p dist && cp index.html studio.html feed.json candidates.json rss_sources.json sw.js manifest.webmanifest icon-192.png icon-512.png dist/",
-    "quality": "python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md"
+    "quality": "python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md",
+    "engagement": "python3 scripts/editor_engagement_score.py"
   },
   "devDependencies": {}
 }
