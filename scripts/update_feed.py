@@ -185,6 +185,35 @@ def clean_text(text: str) -> str:
     return text[:500]
 
 
+
+def child_text_by_local(item, names: set[str]) -> str:
+    for child in item.iter():
+        local = child.tag.split('}')[-1].lower()
+        if local in names and child.text:
+            return clean_text(child.text)
+    return ""
+
+def parse_feed_datetime(raw: str) -> str:
+    raw = clean_text(raw)
+    if not raw:
+        return ""
+    tz = timezone(timedelta(hours=3))
+    try:
+        dt = parsedate_to_datetime(raw)
+    except Exception:
+        try:
+            dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        except Exception:
+            return ""
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=tz)
+    dt = dt.astimezone(tz)
+    now = datetime.now(tz)
+    # Some feeds publish slightly future-dated items; do not let that break sorting.
+    if dt > now + timedelta(minutes=5):
+        dt = now
+    return dt.isoformat(timespec='seconds')
+
 def source_logo(source: str) -> str:
     s = source.lower()
     if "n12" in s or "mako" in s:
@@ -282,12 +311,7 @@ def extract_rss(source: dict) -> list[Candidate]:
         title = sanitize_title(''.join(item.findtext('title') or ''))
         link = clean_text(item.findtext('link') or '')
         desc = clean_text(re.sub(r'<[^>]+>', ' ', item.findtext('description') or ''))
-        published_at = clean_text(item.findtext('pubDate') or item.findtext('published') or item.findtext('updated') or '')
-        if published_at:
-            try:
-                published_at = parsedate_to_datetime(published_at).astimezone(timezone(timedelta(hours=3))).isoformat(timespec='seconds')
-            except Exception:
-                pass
+        published_at = parse_feed_datetime(child_text_by_local(item, {'pubdate', 'published', 'updated', 'date', 'dc:date', 'created'}))
         image = ""
         for child in item.iter():
             local = child.tag.split('}')[-1].lower()
@@ -1055,6 +1079,7 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "sourceUrl": c.url,
             "imageUrl": c.image_url,
             "publishedAt": c.published_at,
+            "hasSourceDate": bool(c.published_at),
             "time": "עודכן אוטומטית",
             "headline": headline,
             "originalTitle": c.original_title or c.title,
@@ -1077,13 +1102,18 @@ def feed_item_key(item: dict) -> str:
     return normalized_key((item.get("originalTitle") or item.get("headline") or "") + "|" + (item.get("source") or ""))
 
 def item_datetime(item: dict, fallback: datetime) -> datetime:
+    tz = timezone(timedelta(hours=3))
     raw = item.get("publishedAt") or item.get("updatedAt") or ""
     if raw:
         try:
             d = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
             if d.tzinfo is None:
-                d = d.replace(tzinfo=timezone(timedelta(hours=3)))
-            return d.astimezone(timezone(timedelta(hours=3)))
+                d = d.replace(tzinfo=tz)
+            d = d.astimezone(tz)
+            now = datetime.now(tz)
+            if d > now + timedelta(minutes=5):
+                return now
+            return d
         except Exception:
             pass
     return fallback
@@ -1104,13 +1134,16 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
             key = feed_item_key(item)
             if not key or key in seen_keys:
                 continue
+            if "hasSourceDate" not in item:
+                item["hasSourceDate"] = bool(item.get("publishedAt") and item.get("sourceUrl") and False)
             d = item_datetime(item, fallback)
             if d < cutoff:
                 continue
-            item.setdefault("publishedAt", d.isoformat(timespec="seconds"))
+            if item.get("hasSourceDate") and not item.get("publishedAt"):
+                item["publishedAt"] = d.isoformat(timespec="seconds")
             merged.append(item)
             seen_keys.add(key)
-    merged.sort(key=lambda item: item_datetime(item, now), reverse=True)
+    merged.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
     new_feed["items"] = merged[:MAX_FEED_ITEMS]
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed

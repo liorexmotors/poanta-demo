@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v27-sticky-unread-sort';
+const CACHE_NAME = 'poanta-demo-v28-date-time-sort';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
