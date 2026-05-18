@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v37-smart-search';
+const CACHE_NAME = 'poanta-demo-v39-sticky-search';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
