@@ -216,6 +216,8 @@ class Candidate:
 
 def clean_text(text: str) -> str:
     text = html.unescape(text or "")
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\b(?:border|width|height|src|alt|class|style)=['\"][^'\"]*['\"]", " ", text, flags=re.I)
     text = re.sub(r"\s+", " ", text).strip()
     text = re.sub(r"^[|\-–:•\s]+", "", text)
     return text[:500]

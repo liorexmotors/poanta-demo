@@ -153,6 +153,10 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     category = norm(item.get("category", ""))
     source = norm(item.get("source", ""))
 
+    visible_blob = " | ".join([headline, context, takeaway])
+    if re.search(r"<[^>]+>|\b(?:border|width|height|src|alt|class|style)=['\"]", visible_blob, flags=re.I):
+        add_issue(issues, "error", idx, "html_artifact", "Visible card text contains HTML/attribute artifacts", item)
+
     if not headline:
         add_issue(issues, "error", idx, "headline_missing", "Headline is empty", item)
     if len(headline) > HEADLINE_MAX:
