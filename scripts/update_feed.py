@@ -82,6 +82,9 @@ def load_sync_profiles() -> dict:
 
 def source_sync_profile(source: dict, profiles: dict | None = None) -> str:
     profiles = profiles or load_sync_profiles()
+    explicit = source.get("syncProfile") or source.get("profile")
+    if explicit in {"fast", "medium", "slow"}:
+        return explicit
     category = source.get("categoryHint") or "חדשות"
     return profiles.get("categoryProfile", {}).get(category, "fast")
 
@@ -117,6 +120,8 @@ def load_sources(sync_profile: str = "all") -> list[dict]:
                 "categoryHint": src.get("categoryHint", "חדשות"),
                 "logo": src.get("logo") or src["name"],
                 "language": src.get("language", "he"),
+                "profile": src.get("profile"),
+                "syncProfile": src.get("syncProfile"),
             }
             source["syncProfile"] = source_sync_profile(source, profiles)
             if sync_profile != "all" and source["syncProfile"] != sync_profile:
@@ -271,6 +276,8 @@ def source_logo(source: str) -> str:
         return "Sky News"
     if "n12" in s or "mako" in s:
         return "N12"
+    if "כאן" in source or "kan" in s:
+        return "כאן"
     if "וואלה" in source:
         return "וואלה"
     if "ynet" in s:
@@ -1894,7 +1901,9 @@ def main() -> int:
         # preserve source-local ranking while dropping duplicate URLs
         local_seen = set()
         candidates = [x for x in candidates if not (x.url in local_seen or local_seen.add(x.url))]
-        if source.get("telegram"):
+        if args.sync_profile == "fast" or source.get("telegram"):
+            # Fast-lane feeds must feel alive: prefer newer qualified items over
+            # older items that merely score higher on keyword density.
             candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
         else:
             candidates = sorted(candidates, key=lambda x: x.score, reverse=True)
@@ -1914,7 +1923,10 @@ def main() -> int:
                 break
         selected.extend(picked)
 
-    selected = sorted(selected, key=lambda x: x.score, reverse=True)
+    if args.sync_profile == "fast":
+        selected = sorted(selected, key=lambda x: (x.published_at, x.score), reverse=True)
+    else:
+        selected = sorted(selected, key=lambda x: x.score, reverse=True)
 
     # The experimental prompt depends on article-specific substance. Enrich the
     # top pool before writing so insights are derived from article metadata/body,
