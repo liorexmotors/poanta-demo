@@ -1547,18 +1547,23 @@ def normalize_police_item(item: dict) -> dict:
     headline = title.split(" - ")[0].split(" – ")[0]
     headline = headline.split(",")[0]
     context = desc
+    takeaway = "עדכון משטרתי צריך להבהיר מה השתנה באירוע, לא רק שהוא הגיע ממקור רשמי."
     if "סיגריות" in title and "לאיו" in title:
         headline = "סוכלה הברחת סיגריות בשווי 20 מיליון שקל לאיו״ש"
         context = "החשד: מכולות סיגריות מטורקיה הובאו דרך נמל אשדוד בהצהרה כוזבת ונועדו להגיע לאיו״ש."
+        takeaway = "החשד מצביע על נתיב הברחה מאורגן דרך נמל רשמי, לא על תפיסה נקודתית במעבר."
     elif "אשקלון" in title and "קטינים" in title and "סכין" in title:
         headline = "קטינים באשקלון עוכבו לאחר שנתפסו סכין וגז פלפל בחוף"
         context = "באזור החופים באשקלון עוכבו שלושה קטינים; נתפסו סכין באורך 42 ס״מ, גז פלפל ובקבוקי וודקה."
+        takeaway = "נוכחות קטינים עם סכין וגז פלפל בחוף הופכת בילוי רגיל לאירוע פלילי מסוכן."
     elif "ירי בשפרעם" in title and "נפגע" in title:
         headline = "תושב שפרעם נפצע קשה באירוע ירי בעיר"
         context = "תושב שפרעם בן 23 נפצע באורח קשה מירי בעיר; המשטרה פתחה בחקירה ובסריקות אחר חשודים."
+        takeaway = "ירי עם פצוע קשה משאיר את שפרעם תחת חקירה פתוחה וסריקות אחר חשודים."
     elif "מרלין אלטורי" in title and "כתב אישום" in title:
         headline = "כתב אישום צפוי נגד בן זוגה ואחיו ברצח מרלין אלטורי"
         context = "משטרת מחוז מרכז הודיעה שפענחה את רצח מרלין אלטורי, שנמצאה שרופה ברכבה; כתב אישום צפוי נגד בן זוגה ואחיו."
+        takeaway = "פענוח הרצח מעביר את החשד אל המעגל הקרוב ביותר של הקורבן."
     if len(headline) < 28:
         headline = title
     headline = trim_words(headline, 88)
@@ -1568,7 +1573,7 @@ def normalize_police_item(item: dict) -> dict:
         context = title.replace(" - ", ", ", 1)
     item["headline"] = trim_words(headline, 88)
     item["context"] = trim_words(context, 180)
-    item["takeaway"] = "זהו עדכון רשמי של המשטרה — שימושי במיוחד למעקב אחר אירועי ביטחון פנים ופלילים."
+    item["takeaway"] = trim_words(takeaway, 95)
     item["category"] = "פלילים"
     item["categoryClass"] = "security"
     item["sourceLogo"] = "משטרה"
