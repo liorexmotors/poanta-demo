@@ -1173,6 +1173,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'שאלה של סמוטריץ׳ לדני אלגרט הציתה עימות בוועדה'
     if is_amos_luzon_relationship_story(title, desc):
         return 'פער הגילים הפך את הזוגיות של עמוס לוזון לכותרת סלבס'
+    if 'מרלין' in text and ('דרס' in text or 'דקר' in text or 'הצית' in text):
+        return 'מרלין אלטורי חששה מבעלה לפני שנדרסה, נדקרה ונשרפה'
     if 'רוכב אופניים חשמליים בן 10' in text and 'עכו' in text:
         return 'ילד בן 10 נפצע בינוני מפגיעת רכב בעכו'
     culture_h = culture_headline_from_context(title, desc)
@@ -1271,6 +1273,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'דיון בכנסת הידרדר לעימות לאחר שסמוטריץ׳ שאל את דני אלגרט “מי אדוני?”. השאלה הציתה תגובה חריפה והפכה את הדיון ממחלוקת עניינית לעימות אישי ופוליטי.'
     if is_amos_luzon_relationship_story(title, desc):
         return 'עמוס לוזון נמצא בזוגיות חדשה, והופעה משותפת בחתונה הפכה את פער הגילים ביניהם לסיפור המרכזי. זו ידיעת סלבס, לא סיפור פוליטי או ציבורי.'
+    if 'מרלין' in text and ('דרס' in text or 'דקר' in text or 'הצית' in text):
+        return 'מרלין אלטורי הגיעה עם בעלה לשטח פתוח ליד נחשונים, שהתה שם שעות ופנתה לחברה בחשש לפני שלפי החשד נדרסה, נדקרה ונשרפה ברכב.'
     if 'רוכב אופניים חשמליים בן 10' in text and 'עכו' in text:
         return 'ילד בן 10 שרכב על אופניים חשמליים נפצע באורח בינוני מפגיעת רכב ברחוב האורן בעכו.'
     if is_avihu_pinchasov_genesis_story(title, desc):
@@ -1428,6 +1432,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'שאלה מזלזלת אחת יכולה להפוך דיון ציבורי לזירת עימות פוליטית.'
     if is_amos_luzon_relationship_story(title, desc):
         return 'כאן הפואנטה היא עצם מנגנון הסלבס: פער גיל הופך זוגיות פרטית לכותרת.'
+    if 'מרלין' in text and ('דרס' in text or 'דקר' in text or 'הצית' in text):
+        return 'האזהרה ששלחה לחברה הופכת את הרצח לכשל התרעה סביב אלימות זוגית.'
     if 'רוכב אופניים חשמליים בן 10' in text and 'עכו' in text:
         return 'בעכו מדובר בפגיעת רכב בילד על אופניים חשמליים — לא בעדכון פוליטי.'
     if is_avihu_pinchasov_genesis_story(title, desc):
@@ -1773,7 +1779,7 @@ def refresh_item_pointa(item: dict) -> dict:
         item["takeaway"] = 'מחסור בתקנים יכול להפוך עודף רופאים לכשל שירות בבתי החולים.'
         item["category"] = 'בריאות'
         item["categoryClass"] = 'real'
-    elif is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc) or is_avihu_pinchasov_genesis_story(title, desc):
+    elif ('מרלין' in f'{title} {desc}' and any(x in f'{title} {desc}' for x in ['דרס', 'דקר', 'הצית'])) or is_malinovsky_oct7_law_story(title, desc) or is_helium_iran_war_story(title, desc) or is_smotrich_elgart_hearing_story(title, desc) or is_amos_luzon_relationship_story(title, desc) or is_avihu_pinchasov_genesis_story(title, desc):
         item["headline"] = story_headline(title, desc, str(item.get("source") or ""))
         item["context"] = story_context(title, desc, str(item.get("source") or ""))
         item["takeaway"] = story_takeaway(category, title, desc)
