@@ -195,11 +195,16 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
 
 def validate_golden(items: list[dict[str, Any]], issues: list[dict[str, Any]]) -> None:
     for case in GOLDEN_CASES:
-        matches = [it for it in items if any(term in card_blob(it) for term in case["match_any"])]
-        if not matches:
+        scored = []
+        for it in items:
+            blob = card_blob(it)
+            score = sum(1 for term in case["match_any"] if term in blob)
+            if score:
+                scored.append((score, it))
+        if not scored:
             issues.append({"severity": "error", "index": -1, "code": "golden_missing", "message": f"Missing golden case: {case['name']}", "headline": "", "originalTitle": "", "source": "", "url": ""})
             continue
-        best = matches[0]
+        best = max(scored, key=lambda row: row[0])[1]
         if case.get("headline_contains") and case["headline_contains"] not in norm(best.get("headline", "")):
             add_issue(issues, "error", -1, "golden_headline", f"Golden case failed: {case['name']}", best)
         if case.get("takeaway_contains") and case["takeaway_contains"] not in norm(best.get("takeaway", "")):
