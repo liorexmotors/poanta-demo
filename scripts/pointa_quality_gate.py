@@ -26,7 +26,7 @@ ORPHAN_PREFIX_RE = re.compile(r"^\s*[-–—]+\s*|^\s*(ואז|אבל|אולם|כ
 DANGLING_ENDINGS = {
     "של", "את", "על", "עם", "אל", "כל", "כי", "אבל", "אולם", "כאשר", "בגלל",
     "בין", "תוך", "לפני", "אחרי", "עד", "מול", "נגד", "כדי", "אם", "בעקבות",
-    "רק", "לא", "בלי", "תחת", "לצד", "במהלך", "לאחר", "לקראת", "בעוד",
+    "רק", "לא", "בלי", "בלתי", "תחת", "לצד", "במהלך", "לאחר", "לקראת", "בעוד",
     "ח\"כ", "ח״כ", "גררו", "נאלצו", "התייחס", "התארח", "נחשף", "יוכלו",
 }
 GENERIC_HEADLINE_PATTERNS = [
@@ -163,6 +163,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_generic", "Headline contains generic/clickbait framing", item)
     if original and (headline in original or original in headline or overlap_ratio(original, headline) >= 0.72):
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
+    if context and headline == context:
+        add_issue(issues, "warning", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)
 
     if not context:
         add_issue(issues, "error", idx, "summary_missing", "Summary/context is empty", item)
