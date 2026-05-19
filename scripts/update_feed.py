@@ -1994,6 +1994,7 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
         "originalTitle": f"תחזית לירושלים - {forecast.get('date', '')}".strip(),
         "context": trim_words(context, 180),
         "takeaway": trim_words(takeaway, 95),
+        "noSourceLink": True,
         "weather": {
             "city": city,
             "defaultCity": True,
