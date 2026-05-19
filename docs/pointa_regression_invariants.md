@@ -20,3 +20,9 @@ These are production rules created from user-reported regressions. A fix is not 
 
 - Reusable lines such as `הוא הפרט שקובע מה באמת השתנה` are unacceptable when a specific article-level conclusion exists.
 - If a generic fallback appears in a user-visible bad card, add a deterministic rewrite or QA guard for that class before release.
+
+## QA hard block for known generic fallback
+
+- `הפרט שקובע מה באמת השתנה` is a known-bad fallback, not a valid insight.
+- Quality Gate must fail/quarantine cards that still contain this phrase after rewrite attempts.
+- If this lowers volume, prefer lower volume over shipping weak cards.
