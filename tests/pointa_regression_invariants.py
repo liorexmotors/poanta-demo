@@ -33,11 +33,20 @@ def test_akko_ebike_accident():
 def test_weather_card_default_jerusalem():
     sample = '''<?xml version='1.0' encoding='us-ascii'?><rss version="2.0"><channel><title>תחזית לירושלים</title><item><description><![CDATA[עדכון אחרון: 2026-05-20 04:55<br/><br/>טמפ. המינימום בלילה: 16°<br/>:20/05 יום רביעי<br/>מעונן חלקית, 24°-13°]]></description></item></channel></rss>'''
     from datetime import datetime, timezone, timedelta
-    card = build_daily_weather_card(datetime(2026, 5, 20, 6, 5, tzinfo=timezone(timedelta(hours=3))), fetcher=lambda url, timeout=15: sample)
+    
+    radiation = '''<?xml version='1.0'?><rss><channel><item><description><![CDATA[ירושלים:<br/>נמוך: מ-00:00 עד 01:00<br/>גבוה מאד: מ-10:00 עד 11:00 , מ-11:00 עד 12:00 , מ-12:00 עד 13:00 , מ-13:00 עד 14:00]]></description></item></channel></rss>'''
+    country = '''<?xml version='1.0'?><rss><channel><item><description><![CDATA[מחר: מעונן חלקית עם ירידה קלה בטמפרטורות. צפוי טפטוף עד גשם מקומי קל בעיקר בצפון הארץ. ינשבו רוחות ערות ברוב אזורי הארץ.]]></description></item></channel></rss>'''
+    def fetcher(url, timeout=15):
+        if 'forecast_radiation' in url: return radiation
+        if 'forecast_country' in url: return country
+        return sample
+    card = build_daily_weather_card(datetime(2026, 5, 20, 6, 5, tzinfo=timezone(timedelta(hours=3))), fetcher=fetcher)
     assert card, 'Weather card should be generated after 06:00'
     assert_eq(card['category'], 'מזג אוויר', 'Weather card category')
     assert_in('ירושלים', card['headline'], 'Weather headline city')
     assert_in('13°–24°', card['headline'], 'Weather headline min-max')
+    assert_in('UV גבוה מאוד', card['headline'], 'Weather headline UV')
+    assert_in('טפטוף/גשם קל', card['context'], 'Weather context national highlight')
     assert_eq(card['weather']['dailyHour'], 6, 'Weather daily hour')
 
 

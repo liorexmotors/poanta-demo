@@ -1809,6 +1809,8 @@ WEATHER_DEFAULT_CITY_ID = "510"
 WEATHER_DAILY_HOUR = 6
 WEATHER_SOURCE = "השירות המטאורולוגי"
 WEATHER_CITY_RSS = f"https://ims.gov.il/sites/default/files/ims_data/rss/forecast_city/rssForecastCity_{WEATHER_DEFAULT_CITY_ID}_he.xml"
+WEATHER_COUNTRY_RSS = "https://ims.gov.il/sites/default/files/ims_data/rss/forecast_country/rssForecastCountry_he.xml"
+WEATHER_RADIATION_RSS = "https://ims.gov.il/sites/default/files/ims_data/rss/forecast_radiation/rssForecastRadiation_he.xml"
 
 
 def strip_tags(text: str) -> str:
@@ -1850,6 +1852,58 @@ def parse_ims_city_forecast(xml_text: str) -> dict:
     return {"city": city, "nightMin": night_min, **forecast}
 
 
+
+def parse_ims_country_highlights(xml_text: str) -> dict:
+    root = ET.fromstring(xml_text)
+    desc = strip_tags(root.findtext("./channel/item/description") or "")
+    tomorrow = ""
+    m = re.search(r"מחר:\s*(.+?)(?:\n|$)", desc)
+    if m:
+        tomorrow = clean_text(m.group(1))
+    highlights = []
+    if any(x in tomorrow for x in ["טפטוף", "גשם"]):
+        highlights.append("טפטוף/גשם קל בעיקר בצפון")
+    if "רוחות ערות" in tomorrow:
+        highlights.append("רוחות ערות ברוב האזורים")
+    if "ירידה" in tomorrow and "טמפרטורות" in tomorrow:
+        highlights.append("ירידה קלה בטמפרטורות")
+    return {"tomorrow": tomorrow, "highlights": highlights[:2]}
+
+
+def parse_ims_uv_for_city(xml_text: str, city: str = WEATHER_DEFAULT_CITY) -> dict:
+    root = ET.fromstring(xml_text)
+    desc = strip_tags(root.findtext("./channel/item/description") or "")
+    start = desc.find(city + ":")
+    if start < 0:
+        return {}
+    block = desc[start:]
+    next_city = re.search(r"\n\s*[א-ת][א-ת\s\-׳\"\']{1,30}:\s*\n", block[len(city)+1:])
+    if next_city:
+        block = block[:len(city)+1 + next_city.start()]
+    levels = []
+    for level in ["קיצוני", "גבוה מאד", "גבוה מאוד", "גבוה", "בינוני", "נמוך"]:
+        if level in block:
+            m = re.search(re.escape(level) + r":\s*(.+?)(?=\n\s*(?:קיצוני|גבוה מאד|גבוה מאוד|גבוה|בינוני|נמוך):|$)", block, flags=re.S)
+            times = re.findall(r"מ-(\d{2}:\d{2}) עד (\d{2}:\d{2})", m.group(1) if m else "")
+            if times:
+                levels.append((level.replace("מאד", "מאוד"), times))
+    if not levels:
+        return {}
+    order = {"קיצוני": 5, "גבוה מאוד": 4, "גבוה": 3, "בינוני": 2, "נמוך": 1}
+    level, times = max(levels, key=lambda row: order.get(row[0], 0))
+    return {"level": level, "from": times[0][0], "to": times[-1][1]}
+
+
+def weather_cloud_phrase(condition: str) -> str:
+    if "מעונן חלקית" in condition:
+        return "עננות חלקית"
+    if "מעונן" in condition:
+        return "עננות גבוהה"
+    if "בהיר" in condition:
+        return "שמיים בהירים"
+    return condition
+
+
 def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: bool = False) -> dict | None:
     tz = timezone(timedelta(hours=3))
     now = (now or datetime.now(tz)).astimezone(tz)
@@ -1860,6 +1914,14 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
     except Exception as exc:
         print(f"Weather card skipped: {exc}", file=sys.stderr)
         return None
+    try:
+        country = parse_ims_country_highlights(fetcher(WEATHER_COUNTRY_RSS, timeout=15))
+    except Exception:
+        country = {}
+    try:
+        uv = parse_ims_uv_for_city(fetcher(WEATHER_RADIATION_RSS, timeout=15), WEATHER_DEFAULT_CITY)
+    except Exception:
+        uv = {}
     forecast_date = now.date()
     raw_date = forecast.get("date") or ""
     m = re.match(r"(\d{2})/(\d{2})", raw_date)
@@ -1877,9 +1939,26 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
     day_start = datetime(forecast_date.year, forecast_date.month, forecast_date.day, WEATHER_DAILY_HOUR, tzinfo=tz)
     if force:
         day_start = now.replace(microsecond=0)
-    headline = f"מזג האוויר בירושלים: {temp_range}, {condition}" if temp_range else f"מזג האוויר בירושלים: {condition}"
-    context = f"השירות המטאורולוגי צופה בירושלים {condition} וטמפרטורות של {temp_range} במהלך היום." if temp_range else f"השירות המטאורולוגי צופה בירושלים {condition}."
-    takeaway = f"כדאי לתכנן את היום סביב טווח של {temp_range}: בוקר קריר יותר ושיא חום מתון בצהריים." if temp_range else "כדאי לבדוק את התחזית לפני יציאה ולתכנן לבוש ונסיעות בהתאם."
+    cloud = weather_cloud_phrase(condition)
+    uv_text = f"UV {uv.get('level')} {uv.get('from')}–{uv.get('to')}" if uv.get("level") and uv.get("from") and uv.get("to") else ""
+    headline_bits = [f"מזג האוויר בירושלים: {temp_range}" if temp_range else "מזג האוויר בירושלים", cloud]
+    if uv.get("level") in {"גבוה", "גבוה מאוד", "קיצוני"}:
+        headline_bits.append(f"UV {uv['level']} בצהריים")
+    headline = "; ".join([b for b in headline_bits if b])
+    highlight_text = "; ".join(country.get("highlights") or [])
+    context_parts = []
+    context_parts.append(f"בירושלים צפויה {cloud} וטווח של {temp_range}." if temp_range else f"בירושלים צפויה {cloud}.")
+    if uv_text:
+        context_parts.append(f"מדד הקרינה: {uv_text}.")
+    if highlight_text:
+        context_parts.append(f"ברקע הארצי: {highlight_text}.")
+    context = " ".join(context_parts)
+    if uv.get("level") in {"גבוה", "גבוה מאוד", "קיצוני"}:
+        takeaway = f"גם עם {cloud}, הקרינה בצהריים משמעותית — כובע/קרם הגנה חשובים יותר ממעיל."
+    elif "טפטוף" in highlight_text or "גשם" in highlight_text:
+        takeaway = "היום נראה מתון, אבל כדאי להשאיר מקום למטרייה קלה או שינוי תכנית בחוץ."
+    else:
+        takeaway = f"כדאי לתכנן את היום סביב {temp_range}: שכבה קלה בבוקר ונוחות יחסית בצהריים." if temp_range else "כדאי לבדוק את התחזית לפני יציאה ולתכנן לבוש ונסיעות בהתאם."
     return {
         "category": "מזג אוויר",
         "categoryClass": "real",
@@ -1901,6 +1980,9 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
             "min": min_temp,
             "max": max_temp,
             "condition": condition,
+            "cloud": cloud,
+            "uv": uv,
+            "countryHighlights": country.get("highlights") or [],
             "forecastDate": forecast.get("date", ""),
         },
     }

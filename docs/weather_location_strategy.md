@@ -33,3 +33,14 @@ Do not require system/browser location permission for the app to function. Weath
 - IMS city RSS feeds are keyed by city feed ids, e.g. Jerusalem uses `rssForecastCity_510_he.xml`.
 - Add a mapping layer: coordinates/user selection → IMS city rss id.
 - The 06:00 cron/feed refresh should use the resolved city per user/device when user-specific feeds exist. Until then, global static feed uses Jerusalem.
+
+## Weather card content quality
+
+The daily card should not be only a temperature line. When IMS data is available, include:
+
+- cloudiness/sky condition;
+- min-max temperature range;
+- UV level and time window;
+- one useful national context signal, such as wind or light rain risk.
+
+Keep the card compact, but make it actionable enough that the user understands what to wear or watch for without opening the source.
