@@ -30,6 +30,22 @@ def test_akko_ebike_accident():
     assert 'הפרט שקובע' not in takeaway, 'Akko e-bike accident takeaway must not be generic'
 
 
+def test_el_nino_weather_not_consumer():
+    title = 'סופר אל ניניו מתקרב: התחממות הים התיכון מדאיגה - גשמים עזים ושיטפונות בדרך'
+    desc = 'מחקר חדש מצביע על קשר בין עוצמת אל ניניו לבין חורפים גשומים במיוחד, לצד סיכון גובר לאירועי מזג אוויר קיצוניים.'
+    source = 'וואלה חדשות'
+    category, _ = categorize_item(title, desc, source)
+    assert_eq(category, 'מזג אוויר', 'El Nino/weather story category')
+    headline = story_headline(title, desc, source)
+    context = story_context(title, desc, source)
+    takeaway = story_takeaway(category, title, desc)
+    assert_in('חורף', headline, 'El Nino headline should be weather-focused')
+    assert_in('שיטפונות', context, 'El Nino context should preserve flood risk')
+    assert_in('היערכות לחורף', takeaway, 'El Nino takeaway should be practical and specific')
+    assert 'צרכנות' != category
+    assert 'המחיר האמיתי' not in takeaway
+
+
 def test_vance_iran_nuclear_card():
     title = 'סגן הנשיא האמריקני הבהיר: "איראן לעולם לא תוכל להחזיק בנשק גרעיני"'
     desc = 'סגן הנשיא האמריקני, ג׳יי די ואנס, הבהיר כי איראן לעולם לא תוכל להחזיק בנשק גרעיני משום שהדבר יגרום למדינות המפרץ לרצות נשק גרעיני משלהן.'
@@ -88,6 +104,7 @@ def test_marlin_al_turi_card():
 
 if __name__ == '__main__':
     test_akko_ebike_accident()
+    test_el_nino_weather_not_consumer()
     test_vance_iran_nuclear_card()
     test_weather_card_default_jerusalem()
     test_weather_card_force_preview()

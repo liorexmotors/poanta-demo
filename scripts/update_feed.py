@@ -648,6 +648,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "ביטחון", "security"
     if any(x in text for x in ['מערכת הבריאות', 'רופאים', 'בתי החולים', 'תקנים', "פרופ' חגי לוין"]):
         return "בריאות", "real"
+    if any(x in text for x in ['אל ניניו', 'אל-ניניו', 'לה ניניה', 'גשמים עזים', 'שיטפונות', 'מזג אוויר קיצוני', 'התחממות הים', 'אקלים']):
+        return "מזג אוויר", "real"
     if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
         return "צרכנות", "money"
     if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
@@ -1154,6 +1156,11 @@ def culture_headline_from_context(title: str, desc: str) -> str:
     return ''
 
 
+def is_el_nino_weather_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return any(x in text for x in ['אל ניניו', 'אל-ניניו']) and any(x in text for x in ['גשמים', 'שיטפונות', 'מזג אוויר', 'התחממות הים', 'אקלים'])
+
+
 def is_vance_iran_nuclear_story(title: str, desc: str) -> bool:
     text = f"{title} {desc}"
     return ("ואנס" in text or "סגן הנשיא האמריקני" in text or "ג׳יי די" in text or "ג'יי" in text) and "איראן" in text and "נשק גרעיני" in text
@@ -1172,6 +1179,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'ארה״ב חוששת שקובה הופכת לבסיס כטב"מים איראני ליד הגבול'
     if is_vance_iran_nuclear_story(title, desc):
         return 'ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ'
+    if is_el_nino_weather_story(title, desc):
+        return 'אל ניניו חריג עלול להביא חורף גשום ושיטפונות בישראל'
     if is_protection_insurance_story(title, desc):
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
     if is_malinovsky_oct7_law_story(title, desc):
@@ -1274,6 +1283,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'דיווחים בארה״ב טוענים שאיראן שלחה יועצים צבאיים לקובה כדי לסייע בהפעלת כטב"מים וטכנולוגיות צבאיות מתקדמות. ברקע גובר החשש בוושינגטון מהעמקת שיתוף הפעולה בין איראן, רוסיה וקובה סמוך לשטח האמריקאי.'
     if is_vance_iran_nuclear_story(title, desc):
         return 'סגן נשיא ארה״ב ג׳יי די ואנס אמר שאיראן לא תוכל להחזיק בנשק גרעיני, כי נשק כזה ידחוף מדינות במפרץ לרצות יכולת גרעינית משלהן.'
+    if is_el_nino_weather_story(title, desc):
+        return 'מחקר חדש קושר בין אל ניניו חזק והתחממות הים התיכון לבין חורפים עם גשמים עזים יותר וסיכון גבוה יותר לשיטפונות.'
     if is_protection_insurance_story(title, desc):
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
     if is_malinovsky_oct7_law_story(title, desc):
@@ -1435,6 +1446,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'מבחינת ארה״ב, איראן כבר לא מאיימת רק מהמזרח התיכון - אלא מתקרבת פיזית לחצר האחורית שלה.'
     if is_vance_iran_nuclear_story(title, desc):
         return 'המסר של ואנס מסמן שוושינגטון מציגה את עצירת איראן כבלימת אפקט דומינו גרעיני, לא רק כהגנה על ישראל.'
+    if is_el_nino_weather_story(title, desc):
+        return 'זו אזהרת היערכות לחורף: ניקוז, נסיעות ואזורים מועדי הצפה חשובים יותר מהמונח המטאורולוגי עצמו.'
     if is_protection_insurance_story(title, desc):
         return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
     if is_malinovsky_oct7_law_story(title, desc):
