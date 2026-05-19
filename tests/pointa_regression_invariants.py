@@ -48,6 +48,7 @@ def test_weather_card_default_jerusalem():
     assert_in('UV גבוה מאוד', card['headline'], 'Weather headline UV')
     assert_in('טפטוף/גשם קל', card['context'], 'Weather context national highlight')
     assert_eq(card['weather']['dailyHour'], 6, 'Weather daily hour')
+    assert_eq(card['imageUrl'], 'assets/weather/uv-high.svg', 'Weather image asset')
 
 
 def test_weather_card_force_preview():

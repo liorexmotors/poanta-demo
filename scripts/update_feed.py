@@ -1894,6 +1894,27 @@ def parse_ims_uv_for_city(xml_text: str, city: str = WEATHER_DEFAULT_CITY) -> di
     return {"level": level, "from": times[0][0], "to": times[-1][1]}
 
 
+def weather_image_asset(condition: str, uv: dict | None = None, highlights: list[str] | None = None) -> str:
+    uv = uv or {}
+    highlights = highlights or []
+    text = f"{condition} {' '.join(highlights)}"
+    if uv.get("level") in {"גבוה", "גבוה מאוד", "קיצוני"}:
+        return "assets/weather/uv-high.svg"
+    if any(x in text for x in ["גשם", "טפטוף"]):
+        return "assets/weather/light-rain.svg"
+    if "רוחות" in text or "רוח" in text:
+        return "assets/weather/wind.svg"
+    if "אובך" in text or "ראות" in text:
+        return "assets/weather/hazy.svg"
+    if "מעונן חלקית" in condition:
+        return "assets/weather/partly-cloudy.svg"
+    if "מעונן" in condition:
+        return "assets/weather/cloudy.svg"
+    if "בהיר" in condition:
+        return "assets/weather/sunny.svg"
+    return "assets/weather/partly-cloudy.svg"
+
+
 def weather_cloud_phrase(condition: str) -> str:
     if "מעונן חלקית" in condition:
         return "עננות חלקית"
@@ -1965,7 +1986,7 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
         "source": WEATHER_SOURCE,
         "sourceLogo": "IMS",
         "sourceUrl": WEATHER_CITY_RSS,
-        "imageUrl": "",
+        "imageUrl": weather_image_asset(condition, uv, country.get("highlights") or []),
         "publishedAt": day_start.isoformat(timespec="seconds"),
         "hasSourceDate": True,
         "time": "06:00",
