@@ -2,59 +2,52 @@
 
 Items checked: 144
 Errors: 0
-Warnings: 21
+Warnings: 20
 
 ## Category distribution
 
 - ספורט: 36
 - כלכלה: 32
 - בריאות: 19
-- ביטחון: 14
+- ביטחון: 17
 - טכנולוגיה: 9
-- פלילים: 7
 - תרבות: 7
 - דעות: 6
+- פלילים: 5
 - רכב: 4
 - פוליטיקה: 3
 - צרכנות: 3
-- חדשות: 2
 - משפט: 1
+- חדשות: 1
 - נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 19
+- takeaway_long: 18
 - summary_long: 2
 
 ## Issues
 
-### WARNING · takeaway_long · item 4
-- Takeaway length 98 > 95
-- Headline: `שני נרצחים בשפרעם וליד פתח תקווה בתוך שעתיים`
+### WARNING · takeaway_long · item 6
+- Takeaway length 99 > 95
+- Headline: `שני נרצחים בתוך שעתיים בשפרעם וליד פתח תקווה`
 - Original: `בירי בצפון, ובמבנה שהוצת ליד פתח תקווה: שני נרצחים תוך שעתיים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1ncm11c1gl
 
-### WARNING · takeaway_long · item 6
+### WARNING · takeaway_long · item 8
 - Takeaway length 100 > 95
 - Headline: `גיהוקים תכופים עשויים לרמוז על בעיית עיכול`
 - Original: `מגהקים יותר מ-13 פעמים ביום? זה מה שהגוף אולי מנסה להגיד לכם`
 - Source: וואלה בריאות - הבריאות שלי
 - URL: https://healthy.walla.co.il/item/3839349
 
-### WARNING · takeaway_long · item 10
-- Takeaway length 101 > 95
+### WARNING · takeaway_long · item 11
+- Takeaway length 108 > 95
 - Headline: `אונר״א חילצה ארכיוני פליטים מעזה וממזרח ירושלים`
 - Original: `בשיא המלחמה, אונר"א חילצה מיליוני מסמכים על פליטים פלסטינים מעזה וממזרח ירושלים`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/world/middle-east/2026-05-19/ty-article-magazine/.premium/0000019e-4047-dab3-adfe-d87730a00000
-
-### WARNING · takeaway_long · item 11
-- Takeaway length 101 > 95
-- Headline: `צה״ל השמיד מחסן אמל״ח ופיר רקטות בצפון עזה`
-- Original: `דובר צה"ל:`
-- Source: דובר צה״ל - טלגרם רשמי
-- URL: https://t.me/idf_telegram/23742
 
 ### WARNING · takeaway_long · item 19
 - Takeaway length 115 > 95

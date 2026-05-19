@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scripts.update_feed import categorize_item, story_headline, story_context, story_takeaway
+from scripts.update_feed import categorize_item, story_headline, story_context, story_takeaway, build_daily_weather_card
 
 
 def assert_eq(actual, expected, label):
@@ -30,6 +30,17 @@ def test_akko_ebike_accident():
     assert 'הפרט שקובע' not in takeaway, 'Akko e-bike accident takeaway must not be generic'
 
 
+def test_weather_card_default_jerusalem():
+    sample = '''<?xml version='1.0' encoding='us-ascii'?><rss version="2.0"><channel><title>תחזית לירושלים</title><item><description><![CDATA[עדכון אחרון: 2026-05-20 04:55<br/><br/>טמפ. המינימום בלילה: 16°<br/>:20/05 יום רביעי<br/>מעונן חלקית, 24°-13°]]></description></item></channel></rss>'''
+    from datetime import datetime, timezone, timedelta
+    card = build_daily_weather_card(datetime(2026, 5, 20, 6, 5, tzinfo=timezone(timedelta(hours=3))), fetcher=lambda url, timeout=15: sample)
+    assert card, 'Weather card should be generated after 06:00'
+    assert_eq(card['category'], 'מזג אוויר', 'Weather card category')
+    assert_in('ירושלים', card['headline'], 'Weather headline city')
+    assert_in('13°–24°', card['headline'], 'Weather headline min-max')
+    assert_eq(card['weather']['dailyHour'], 6, 'Weather daily hour')
+
+
 def test_marlin_al_turi_card():
     title = 'מרלין חשדה שמשהו רע יקרה. הבעל דרס, דקר - והצית ברכב'
     desc = 'מרלין אלטורי (30) הגיעה עם בעלה לשטח פתוח באזור נחשונים. היא הייתה איתו שם כמה שעות - ואז פנתה לחברתה בחשש.'
@@ -46,5 +57,6 @@ def test_marlin_al_turi_card():
 
 if __name__ == '__main__':
     test_akko_ebike_accident()
+    test_weather_card_default_jerusalem()
     test_marlin_al_turi_card()
     print('Pointa regression invariants: OK')

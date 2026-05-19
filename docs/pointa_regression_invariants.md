@@ -26,3 +26,10 @@ These are production rules created from user-reported regressions. A fix is not 
 - `הפרט שקובע מה באמת השתנה` is a known-bad fallback, not a valid insight.
 - Quality Gate must fail/quarantine cards that still contain this phrase after rewrite attempts.
 - If this lowers volume, prefer lower volume over shipping weak cards.
+
+## Daily weather card invariant
+
+- A daily weather card should be generated after 06:00 Israel time.
+- Default location is Jerusalem until a user-specific location is configured.
+- The card must include a min-max temperature range (`מ-עד`) in the headline/context when IMS provides it.
+- Use the official Israel Meteorological Service RSS, not a secondary news/weather article, for the deterministic daily card.

@@ -269,6 +269,8 @@ def source_logo(source: str) -> str:
         return "משטרה"
     if "פיקוד העורף" in source:
         return "פיקוד העורף"
+    if "מטאורולוג" in source or "ims" in s:
+        return "IMS"
     if "cnn" in s:
         return "CNN"
     if "bbc" in s:
@@ -1801,6 +1803,107 @@ def refresh_item_pointa(item: dict) -> dict:
     return item
 
 
+
+WEATHER_DEFAULT_CITY = "ירושלים"
+WEATHER_DEFAULT_CITY_ID = "510"
+WEATHER_DAILY_HOUR = 6
+WEATHER_SOURCE = "השירות המטאורולוגי"
+WEATHER_CITY_RSS = f"https://ims.gov.il/sites/default/files/ims_data/rss/forecast_city/rssForecastCity_{WEATHER_DEFAULT_CITY_ID}_he.xml"
+
+
+def strip_tags(text: str) -> str:
+    text = html.unescape(text or "")
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n\s*\n+", "\n", text)
+    return text.strip()
+
+
+def parse_ims_city_forecast(xml_text: str) -> dict:
+    """Extract a compact daily forecast from an IMS city RSS feed."""
+    root = ET.fromstring(xml_text)
+    channel = root.find("./channel")
+    title = clean_text(channel.findtext("title") if channel is not None else "")
+    desc_html = root.findtext("./channel/item/description") or ""
+    desc = strip_tags(desc_html)
+    night_min = ""
+    m = re.search(r"טמפ\.\s*המינימום\s*בלילה:\s*(\d{1,2})°", desc)
+    if m:
+        night_min = m.group(1)
+    forecast = None
+    for line in [ln.strip() for ln in desc.splitlines() if ln.strip()]:
+        m = re.match(r":?(\d{2}/\d{2})\s+יום\s+([^\n]+)", line)
+        if m:
+            forecast = {"date": m.group(1), "weekday": m.group(2).strip()}
+            continue
+        if forecast and "condition" not in forecast:
+            m = re.match(r"(.+?),\s*(\d{1,2})°-(\d{0,2})°", line)
+            if m:
+                forecast["condition"] = clean_text(m.group(1))
+                forecast["max"] = m.group(2)
+                forecast["min"] = m.group(3) or night_min
+                break
+    if not forecast or not forecast.get("condition"):
+        raise ValueError("IMS city forecast RSS did not include a daily min/max forecast")
+    city = title.replace("תחזית ל", "").strip() or WEATHER_DEFAULT_CITY
+    return {"city": city, "nightMin": night_min, **forecast}
+
+
+def build_daily_weather_card(now: datetime | None = None, fetcher=fetch) -> dict | None:
+    tz = timezone(timedelta(hours=3))
+    now = (now or datetime.now(tz)).astimezone(tz)
+    if now.hour < WEATHER_DAILY_HOUR:
+        return None
+    try:
+        forecast = parse_ims_city_forecast(fetcher(WEATHER_CITY_RSS, timeout=15))
+    except Exception as exc:
+        print(f"Weather card skipped: {exc}", file=sys.stderr)
+        return None
+    forecast_date = now.date()
+    raw_date = forecast.get("date") or ""
+    m = re.match(r"(\d{2})/(\d{2})", raw_date)
+    if m:
+        forecast_date = datetime(now.year, int(m.group(2)), int(m.group(1)), tzinfo=tz).date()
+        # IMS may publish tomorrow's first day in the evening. The daily card is
+        # a 06:00 morning item, so do not surface tomorrow's card tonight.
+        if forecast_date > now.date():
+            return None
+    min_temp = forecast.get("min") or forecast.get("nightMin") or ""
+    max_temp = forecast.get("max") or ""
+    temp_range = f"{min_temp}°–{max_temp}°" if min_temp and max_temp else (f"עד {max_temp}°" if max_temp else "")
+    condition = forecast.get("condition") or "תחזית מתעדכנת"
+    city = WEATHER_DEFAULT_CITY
+    day_start = datetime(forecast_date.year, forecast_date.month, forecast_date.day, WEATHER_DAILY_HOUR, tzinfo=tz)
+    headline = f"מזג האוויר בירושלים: {temp_range}, {condition}" if temp_range else f"מזג האוויר בירושלים: {condition}"
+    context = f"השירות המטאורולוגי צופה בירושלים {condition} וטמפרטורות של {temp_range} במהלך היום." if temp_range else f"השירות המטאורולוגי צופה בירושלים {condition}."
+    takeaway = f"כדאי לתכנן את היום סביב טווח של {temp_range}: בוקר קריר יותר ושיא חום מתון בצהריים." if temp_range else "כדאי לבדוק את התחזית לפני יציאה ולתכנן לבוש ונסיעות בהתאם."
+    return {
+        "category": "מזג אוויר",
+        "categoryClass": "real",
+        "source": WEATHER_SOURCE,
+        "sourceLogo": "IMS",
+        "sourceUrl": WEATHER_CITY_RSS,
+        "imageUrl": "",
+        "publishedAt": day_start.isoformat(timespec="seconds"),
+        "hasSourceDate": True,
+        "time": "06:00",
+        "headline": trim_words(headline, 75),
+        "originalTitle": f"תחזית לירושלים - {forecast.get('date', '')}".strip(),
+        "context": trim_words(context, 180),
+        "takeaway": trim_words(takeaway, 95),
+        "weather": {
+            "city": city,
+            "defaultCity": True,
+            "dailyHour": WEATHER_DAILY_HOUR,
+            "min": min_temp,
+            "max": max_temp,
+            "condition": condition,
+            "forecastDate": forecast.get("date", ""),
+        },
+    }
+
+
 def feed_item_key(item: dict) -> str:
     url = item.get("sourceUrl") or ""
     if url:
@@ -1858,6 +1961,11 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
                     item["imageUrl"] = image
             merged.append(item)
             seen_keys.add(key)
+    weather_card = build_daily_weather_card(now)
+    if weather_card:
+        weather_key = feed_item_key(weather_card)
+        merged = [item for item in merged if feed_item_key(item) != weather_key]
+        merged.append(weather_card)
     # Final deterministic pass catches retained existing cards and new bridge
     # sources that should not go through generic Pointa rewrites.
     merged = [refresh_item_pointa(item) for item in merged]
