@@ -454,6 +454,27 @@ def summarize_oref_telegram(text: str) -> tuple[str, str, int]:
     return title, desc, score
 
 
+def summarize_idf_telegram(text: str) -> tuple[str, str, int]:
+    lines = [x.strip() for x in text.splitlines() if x.strip()]
+    if not lines:
+        return "", "", 0
+    if lines[0].replace("״", '"') == 'דובר צה"ל:':
+        lines = lines[1:]
+    # Drop call-to-action link rows; keep the substance of the Telegram post.
+    lines = [x for x in lines if not x.startswith("לכתבה המלאה") and not x.startswith("http")]
+    if not lines:
+        return "", "", 0
+    title = clean_text(lines[0])
+    if len(title) < 18 and len(lines) > 1:
+        title = clean_text(f"{lines[0]} {lines[1]}")
+    body_lines = lines[1:] if len(lines) > 1 else []
+    desc = clean_text(" ".join(body_lines[:3]))
+    if not desc:
+        desc = title
+    score = 95 if any(w in f"{title} {desc}" for w in ["חיסל", "יירט", "תקף", "התרעות", "לבנון", "עזה", "חמאס", "חיזבאללה", "כטב", "רחפן"]) else 70
+    return title, desc, score
+
+
 def extract_telegram_channel(source: dict) -> list[Candidate]:
     url = source.get("telegram")
     if not url:
@@ -473,7 +494,10 @@ def extract_telegram_channel(source: dict) -> list[Candidate]:
         time_m = re.search(r'<time datetime="([^"]+)"', block)
         post_path = post.group(1) if post else ""
         link = f"https://t.me/{post_path}" if post_path else url
-        title, desc, score = summarize_oref_telegram(text)
+        if source.get("telegramKind") == "oref":
+            title, desc, score = summarize_oref_telegram(text)
+        else:
+            title, desc, score = summarize_idf_telegram(text)
         title = sanitize_title(title)
         if len(title) < 18:
             continue
