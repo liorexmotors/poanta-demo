@@ -119,9 +119,9 @@ html[data-theme="light"] .wifi:before,html[data-theme="light"] .wifi:after{borde
 <main class="phone">
 <div class="safe-top"></div><div class="safe-bottom"></div>
 <section class="screen">
-  <div class="topbar"><header class="header"><div class="brand"><div class="mark"><i></i><i></i><i></i></div><div class="logo-text">Pointa</div></div><div class="bell"><svg viewBox="0 0 24 24"><path d="M15 17H9"/><path d="M18 14v-3a6 6 0 0 0-12 0v3l-2 3h16l-2-3Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div></header>
-  <div class="tabline"><nav class="tabs" id="tabs"><button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="בארץ">חדשות בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button></nav></div>
-  <button class="updates" id="refreshBtn"><div id="updatedAt">טוען עדכונים…</div><div class="chev"></div><span class="update-progress" id="unreadProgress"></span></button></div>
+  <div class="topbar"><header class="header"><div class="brand"><div class="mark"><i></i><i></i><i></i></div><div class="logo-text">Pointa</div></div></header>
+  <button class="updates" id="refreshBtn"><div id="updatedAt">טוען עדכונים…</div><div class="chev"></div><span class="update-progress" id="unreadProgress"></span></button>
+  <div class="tabline"><nav class="tabs" id="tabs"><button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="בארץ">חדשות בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button></nav></div></div>
   <section class="pointa-panel search-panel hidden" id="searchPanel" aria-label="חיפוש Pointa">
     <section class="settings-card"><div class="settings-head"><div><h2>חיפוש</h2><p>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</p></div></div><input class="search-input" id="searchInput" type="search" placeholder="מה לחפש? למשל הופעות רוק" autocomplete="off"><div class="translation-note" id="searchHint">התוצאות יופיעו כמו פיד רגיל, כולל אפשרות שמירה.</div></section>
   </section>
@@ -147,7 +147,7 @@ html[data-theme="light"] .wifi:before,html[data-theme="light"] .wifi:after{borde
 </section>
 </main>
 <script>
-const POANTA_FEED_VERSION = '20260519-topic-badges-v1';
+const POANTA_FEED_VERSION = '20260519-filter-above-topics-v1';
 const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
 const host = document.getElementById('feedCards');
 const updatedAt = document.getElementById('updatedAt');
