@@ -36,7 +36,7 @@ if [[ -z "$ready" ]]; then
   exit 0
 fi
 
-python3 scripts/pointa_editor_pipeline.py qa --run-dir "$ready"
+python3 scripts/pointa_editor_pipeline.py qa --run-dir "$ready" --auto-reject-failed
 python3 scripts/pointa_editor_pipeline.py apply --run-dir "$ready"
 ./scripts/deploy_current_feed.sh
 

@@ -489,6 +489,34 @@ def write_report(run_dir: Path, editor_input: list[dict[str, Any]], results: lis
     return len(errors_by_index), rejects
 
 
+def auto_reject_failed_results(run_dir: Path, editor_input: list[dict[str, Any]]) -> int:
+    """Turn invalid pass results into rejects so one bad card does not stale a whole run."""
+    by_input = {int(x["index"]): x for x in editor_input}
+    changed = 0
+    for path in sorted(run_dir.glob("batch_*_results.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        file_changed = False
+        for result in data:
+            idx = int(result.get("index", -1))
+            if result.get("status") != "pass":
+                continue
+            errors = validate_result(result, by_input.get(idx, {}))
+            if not errors:
+                continue
+            result["status"] = "reject"
+            result["rejectReason"] = "QA auto-rejected: " + "; ".join(errors)
+            result["headline"] = ""
+            result["summary"] = ""
+            result["takeaway"] = ""
+            result.setdefault("qualityNotes", [])
+            result.setdefault("currentProblems", [])
+            changed += 1
+            file_changed = True
+        if file_changed:
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return changed
+
+
 def command_qa(args: argparse.Namespace) -> int:
     run_dir = Path(args.run_dir)
     feed = load_feed(Path(args.feed))
@@ -497,6 +525,11 @@ def command_qa(args: argparse.Namespace) -> int:
     if not results:
         print(f"No batch_*_results.json files found in {run_dir}", file=sys.stderr)
         return 2
+    if args.auto_reject_failed:
+        changed = auto_reject_failed_results(run_dir, editor_input)
+        if changed:
+            print(f"Auto-rejected {changed} invalid editor result(s)", file=sys.stderr)
+            results = read_results(run_dir)
     errors, rejects = write_report(run_dir, editor_input, results)
     preview = build_preview_feed(feed, editor_input, results)
     (run_dir / "feed_editor_preview.json").write_text(json.dumps(preview, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -567,6 +600,7 @@ def build_parser() -> argparse.ArgumentParser:
     q = sub.add_parser("qa", help="Validate editor result batches and build preview feed")
     q.add_argument("--run-dir", required=True)
     q.add_argument("--feed", default=str(DEFAULT_FEED))
+    q.add_argument("--auto-reject-failed", action="store_true", help="Convert invalid pass results to rejects before building preview")
     q.set_defaults(func=command_qa)
 
     a = sub.add_parser("apply", help="Apply a QA-passing editor preview to feed.json")
