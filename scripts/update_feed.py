@@ -640,6 +640,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # Prefer it over incidental keywords in the title/description so sports,
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
     text = f"{title} {desc} {source}"
+    if any(x in text for x in ['רוכב אופניים', 'אופניים חשמליים', 'תאונת דרכים', 'נפצע בתאונה']) and any(x in text for x in ['רכב', 'כביש', 'רחוב', 'תאונה']):
+        return "רכב", "real"
     if 'איראן' in text and any(x in text for x in ['כבלים', 'סוויפט', 'הורמוז', 'תת ימיים']):
         return "ביטחון", "security"
     if any(x in text for x in ['מערכת הבריאות', 'רופאים', 'בתי החולים', 'תקנים', "פרופ' חגי לוין"]):
@@ -1171,6 +1173,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'שאלה של סמוטריץ׳ לדני אלגרט הציתה עימות בוועדה'
     if is_amos_luzon_relationship_story(title, desc):
         return 'פער הגילים הפך את הזוגיות של עמוס לוזון לכותרת סלבס'
+    if 'רוכב אופניים חשמליים בן 10' in text and 'עכו' in text:
+        return 'ילד בן 10 נפצע בינוני מפגיעת רכב בעכו'
     culture_h = culture_headline_from_context(title, desc)
     if culture_h:
         return culture_h
@@ -1247,6 +1251,7 @@ def compact_context(text: str, category: str = '', title: str = '') -> str:
 
 
 def story_context(title: str, desc: str, source: str) -> str:
+    text = f'{title} {desc}'
     fp = foreign_pointa_tuple(title, desc)
     if fp:
         return fp[1]
@@ -1266,6 +1271,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'דיון בכנסת הידרדר לעימות לאחר שסמוטריץ׳ שאל את דני אלגרט “מי אדוני?”. השאלה הציתה תגובה חריפה והפכה את הדיון ממחלוקת עניינית לעימות אישי ופוליטי.'
     if is_amos_luzon_relationship_story(title, desc):
         return 'עמוס לוזון נמצא בזוגיות חדשה, והופעה משותפת בחתונה הפכה את פער הגילים ביניהם לסיפור המרכזי. זו ידיעת סלבס, לא סיפור פוליטי או ציבורי.'
+    if 'רוכב אופניים חשמליים בן 10' in text and 'עכו' in text:
+        return 'ילד בן 10 שרכב על אופניים חשמליים נפצע באורח בינוני מפגיעת רכב ברחוב האורן בעכו.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return 'פסטיבל ג׳נסיס ליד עין חרוד הציע 12 שעות של מוזיקה, קהל צעיר ואסקפיזם מהמלחמה והשגרה. אביהו פנחסוב סיפק רגע פרובוקטיבי עם כיסוי מינימלי, אבל הוא רק חלק מסיפור רחב יותר על אירוע סוחף.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
@@ -1401,6 +1408,7 @@ def specific_takeaway(title: str, desc: str) -> str:
 
 
 def story_takeaway(category: str, title: str, desc: str) -> str:
+    text = f'{title} {desc}'
     fp = foreign_pointa_tuple(title, desc)
     if fp:
         return fp[2]
@@ -1420,6 +1428,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'שאלה מזלזלת אחת יכולה להפוך דיון ציבורי לזירת עימות פוליטית.'
     if is_amos_luzon_relationship_story(title, desc):
         return 'כאן הפואנטה היא עצם מנגנון הסלבס: פער גיל הופך זוגיות פרטית לכותרת.'
+    if 'רוכב אופניים חשמליים בן 10' in text and 'עכו' in text:
+        return 'בעכו מדובר בפגיעת רכב בילד על אופניים חשמליים — לא בעדכון פוליטי.'
     if is_avihu_pinchasov_genesis_story(title, desc):
         return 'הפואנטה היא שהפסטיבל הצליח למכור לדור צעיר רגע נדיר של חופש, גם כשהמציאות בחוץ נשארת כבדה.'
     if 'המניות שייפלו' in title and 'סקטור השבבים' in title:
@@ -1572,6 +1582,10 @@ def normalize_police_item(item: dict) -> dict:
         headline = "כתב אישום צפוי נגד בן זוגה ואחיו ברצח מרלין אלטורי"
         context = "משטרת מחוז מרכז הודיעה שפענחה את רצח מרלין אלטורי, שנמצאה שרופה ברכבה; כתב אישום צפוי נגד בן זוגה ואחיו."
         takeaway = "פענוח הרצח מעביר את החשד אל המעגל הקרוב ביותר של הקורבן."
+    elif "שריפה בשטח פתוח" in title and "פתח תקוה" in title and "ללא רוח חיים" in title:
+        headline = "גופה אותרה בשריפה ליד פתח תקווה; המשטרה חושדת ברצח"
+        context = "כוחות משטרה וחירום שהוזעקו לשריפה בשטח פתוח ליד פתח תקווה איתרו במקום אדם ללא רוח חיים; החקירה נפתחה בחשד לרצח."
+        takeaway = "השריפה הפכה מזירת חירום לזירת רצח אפשרית, ולכן החקירה הפלילית היא לב הסיפור."
     if len(headline) < 28:
         headline = title
     headline = trim_words(headline, 88)
