@@ -42,7 +42,7 @@ rm -rf "$WORKTREE"
 git worktree add "$WORKTREE" origin/gh-pages
 rsync -a --delete --exclude .git dist/ "$WORKTREE/"
 cd "$WORKTREE"
-if ! git diff --quiet; then
+if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
   git add -A
