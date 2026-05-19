@@ -2,7 +2,7 @@
 
 Items checked: 143
 Errors: 0
-Warnings: 17
+Warnings: 19
 
 ## Category distribution
 
@@ -11,18 +11,18 @@ Warnings: 17
 - בריאות: 18
 - ביטחון: 9
 - טכנולוגיה: 9
-- רכב: 8
+- רכב: 7
 - תרבות: 7
 - דעות: 6
+- פלילים: 5
 - פוליטיקה: 5
-- פלילים: 4
 - חדשות: 4
 - צרכנות: 3
 - נדל״ן: 2
 
 ## Issue counts
 
-- takeaway_long: 15
+- takeaway_long: 17
 - summary_long: 2
 
 ## Issues
@@ -33,6 +33,13 @@ Warnings: 17
 - Original: `מגהקים יותר מ-13 פעמים ביום? זה מה שהגוף אולי מנסה להגיד לכם`
 - Source: וואלה בריאות - הבריאות שלי
 - URL: https://healthy.walla.co.il/item/3839349
+
+### WARNING · takeaway_long · item 9
+- Takeaway length 112 > 95
+- Headline: `התפרצות אבולה נדירה בקונגו הוכרזה כחירום בינלאומי`
+- Original: `What is Ebola and why is stopping the latest outbreak so difficult?`
+- Source: BBC World
+- URL: https://www.bbc.com/news/articles/cz72p75zg4qo?at_medium=RSS&at_campaign=rss
 
 ### WARNING · takeaway_long · item 12
 - Takeaway length 115 > 95
@@ -47,6 +54,13 @@ Warnings: 17
 - Original: `מה הכי מפריע לילדים בבית החולים? סקר ראשון מסוגו מגלה. וזה לא מה שחשבתם`
 - Source: וואלה בריאות
 - URL: https://healthy.walla.co.il/item/3839270
+
+### WARNING · takeaway_long · item 17
+- Takeaway length 104 > 95
+- Headline: `איום פרוטקשן משבית חברת הסעות בגליל תוך 48 שעות`
+- Original: `רכבו הוצת לאחר שסירב לשלם דמי חסות - וכעת העסק שלו בסכנת סגירה`
+- Source: וואלה חדשות - חדשות בארץ
+- URL: https://news.walla.co.il/item/3839274
 
 ### WARNING · takeaway_long · item 18
 - Takeaway length 126 > 95
