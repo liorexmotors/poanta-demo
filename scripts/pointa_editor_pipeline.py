@@ -368,6 +368,12 @@ def read_results(run_dir: Path) -> list[dict[str, Any]]:
             data = json.load(f)
         if not isinstance(data, list):
             raise ValueError(f"{path} must contain a JSON array")
+        for result in data:
+            # categoryClass is derived UI metadata. Let the editor decide the
+            # category, but normalize this field before QA/apply so minor class
+            # mismatches do not block otherwise good editorial work.
+            if result.get("status") == "pass" and result.get("category") in CATEGORY_CLASS:
+                result["categoryClass"] = CATEGORY_CLASS[result["category"]]
         results.extend(data)
     return results
 
