@@ -45,6 +45,7 @@ QUARANTINE_PATH = ROOT / "pointa_quarantine.json"
 MAX_FEED_ITEMS = 200
 FEED_RETENTION_DAYS = 7
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
+SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
 
 HEADERS = {
@@ -71,7 +72,20 @@ SOURCES = [
 ]
 
 
-def load_sources() -> list[dict]:
+def load_sync_profiles() -> dict:
+    try:
+        return json.loads(SYNC_PROFILES_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {"profiles": {}, "categoryProfile": {}}
+
+
+def source_sync_profile(source: dict, profiles: dict | None = None) -> str:
+    profiles = profiles or load_sync_profiles()
+    category = source.get("categoryHint") or "חדשות"
+    return profiles.get("categoryProfile", {}).get(category, "fast")
+
+
+def load_sources(sync_profile: str = "all") -> list[dict]:
     """Load approved RSS-only sources.
 
     Poanta's first production automation phase is intentionally RSS-only:
@@ -83,10 +97,11 @@ def load_sources() -> list[dict]:
         data = json.loads(RSS_SOURCES_PATH.read_text(encoding="utf-8"))
         active = data.get("active", [])
         sources = []
+        profiles = load_sync_profiles()
         for src in active:
             if not src.get("rss"):
                 continue
-            sources.append({
+            source = {
                 "name": src["name"],
                 "url": src.get("rss"),
                 "rss": src["rss"],
@@ -94,7 +109,11 @@ def load_sources() -> list[dict]:
                 "categoryHint": src.get("categoryHint", "חדשות"),
                 "logo": src.get("logo") or src["name"],
                 "language": src.get("language", "he"),
-            })
+            }
+            source["syncProfile"] = source_sync_profile(source, profiles)
+            if sync_profile != "all" and source["syncProfile"] != sync_profile:
+                continue
+            sources.append(source)
         if sources:
             return sources
     except Exception as e:
@@ -1646,6 +1665,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Update or draft Poanta feed cards")
     ap.add_argument("--draft", action="store_true", help="Write candidates.json for approval instead of publishing feed.json")
     ap.add_argument("--experimental-prompt", action="store_true", help="Use Lior's experimental Pointa conclusion-feed prompt")
+    ap.add_argument(
+        "--sync-profile",
+        choices=["all", "fast", "medium", "slow"],
+        default="all",
+        help="Limit RSS scan to the category-speed profile from pointa_sync_profiles.json",
+    )
     args = ap.parse_args()
 
     # Never leave a previous approval batch in candidates.json during a new draft.
@@ -1657,7 +1682,14 @@ def main() -> int:
     selected: list[Candidate] = []
     used_urls: set[str] = set()
     seen = load_seen()
-    for source in load_sources():
+    sources = load_sources(args.sync_profile)
+    if not sources:
+        msg = f"No RSS sources matched sync profile: {args.sync_profile}"
+        print(f"ERROR {msg}", file=sys.stderr)
+        if args.draft:
+            write_empty_draft("failed_no_matching_sources", msg)
+        return 2
+    for source in sources:
         picked = []
         # RSS-only phase: do not scrape homepages and do not use fallback readers.
         candidates = extract_rss(source)
@@ -1702,6 +1734,7 @@ def main() -> int:
         return 2
 
     feed = build_feed(selected, experimental=args.experimental_prompt)
+    feed["syncProfile"] = args.sync_profile
     if args.draft:
         feed["status"] = "draft"
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -1710,6 +1743,7 @@ def main() -> int:
         print(f"Wrote {len(feed['items'])} approval candidates to {CANDIDATES_PATH}")
     else:
         feed = merge_with_existing_feed(feed)
+        feed["mode"] = f"rss_sync_{args.sync_profile}"
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")

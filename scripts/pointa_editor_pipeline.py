@@ -33,6 +33,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FEED = ROOT / "feed.json"
 RUNS_DIR = ROOT / "tmp" / "editor-runs"
+SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PointaEditorPipeline/0.1)",
@@ -56,6 +57,18 @@ CATEGORY_CLASS = {
     "חדשות": "",
     "דעות": "",
 }
+
+
+def load_sync_profiles() -> dict[str, Any]:
+    try:
+        return json.loads(SYNC_PROFILES_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {"profiles": {}, "categoryProfile": {}}
+
+
+def category_profile(category: str, profiles: dict[str, Any] | None = None) -> str:
+    profiles = profiles or load_sync_profiles()
+    return profiles.get("categoryProfile", {}).get(category or "חדשות", "fast")
 
 FORBIDDEN_MEDIATION = [
     "פורסם", "דיווח", "בדיווח", "לפי הדיווח", "הכתב", "המקור", "הכתבה",
@@ -194,17 +207,20 @@ def load_feed(path: Path) -> dict[str, Any]:
         return json.load(f)
 
 
-def select_items(feed: dict[str, Any], limit: int, max_per_source: int, max_per_category: int) -> list[dict[str, Any]]:
+def select_items(feed: dict[str, Any], limit: int, max_per_source: int, max_per_category: int, sync_profile: str = "all") -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     by_source: dict[str, int] = {}
     by_cat: dict[str, int] = {}
     seen_urls: set[str] = set()
+    profiles = load_sync_profiles()
     for item in feed.get("items", []):
         url = item.get("sourceUrl") or ""
         if not url or url in seen_urls:
             continue
         source = item.get("source") or urlparse(url).netloc
         category = item.get("category") or "חדשות"
+        if sync_profile != "all" and category_profile(category, profiles) != sync_profile:
+            continue
         if by_source.get(source, 0) >= max_per_source:
             continue
         if by_cat.get(category, 0) >= max_per_category:
@@ -284,7 +300,7 @@ Each result object must include:
 
 def command_prepare(args: argparse.Namespace) -> int:
     feed = load_feed(Path(args.feed))
-    selected = select_items(feed, args.limit, args.max_per_source, args.max_per_category)
+    selected = select_items(feed, args.limit, args.max_per_source, args.max_per_category, args.sync_profile)
     run_id = args.run_id or datetime.now().strftime("%Y%m%d-%H%M%S")
     run_dir = RUNS_DIR / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -301,6 +317,7 @@ def command_prepare(args: argparse.Namespace) -> int:
         "runId": run_id,
         "createdAt": datetime.now().isoformat(timespec="seconds"),
         "feed": str(Path(args.feed).resolve()),
+        "syncProfile": args.sync_profile,
         "items": len(editor_input),
         "usableArticleText": sum(1 for x in editor_input if x.get("articleTextChars", 0) >= args.min_article_chars),
         "batchSize": args.batch_size,
@@ -542,6 +559,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--batch-size", type=int, default=8)
     p.add_argument("--max-per-source", type=int, default=3)
     p.add_argument("--max-per-category", type=int, default=4)
+    p.add_argument("--sync-profile", choices=["all", "fast", "medium", "slow"], default="all")
     p.add_argument("--min-article-chars", type=int, default=350)
     p.add_argument("--run-id", default="")
     p.set_defaults(func=command_prepare)

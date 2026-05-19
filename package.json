@@ -7,8 +7,14 @@
     "build": "rm -rf dist && mkdir -p dist && cp index.html studio.html feed.json candidates.json rss_sources.json sw.js manifest.webmanifest icon-192.png icon-512.png dist/",
     "quality": "python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md",
     "editor:prepare": "python3 scripts/pointa_editor_pipeline.py prepare",
+    "editor:prepare:fast": "python3 scripts/pointa_editor_pipeline.py prepare --sync-profile fast --limit 18 --batch-size 6 --max-per-category 6",
+    "editor:prepare:medium": "python3 scripts/pointa_editor_pipeline.py prepare --sync-profile medium --limit 18 --batch-size 6 --max-per-category 6",
+    "editor:prepare:slow": "python3 scripts/pointa_editor_pipeline.py prepare --sync-profile slow --limit 16 --batch-size 8 --max-per-category 5",
     "editor:qa": "python3 scripts/pointa_editor_pipeline.py qa",
     "editor:apply": "python3 scripts/pointa_editor_pipeline.py apply",
+    "sync:fast": "python3 scripts/update_feed.py --sync-profile fast",
+    "sync:medium": "python3 scripts/update_feed.py --sync-profile medium",
+    "sync:slow": "python3 scripts/update_feed.py --sync-profile slow",
     "engagement": "python3 scripts/editor_engagement_score.py"
   },
   "devDependencies": {}
