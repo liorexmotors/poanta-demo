@@ -1553,6 +1553,12 @@ def normalize_police_item(item: dict) -> dict:
     elif "אשקלון" in title and "קטינים" in title and "סכין" in title:
         headline = "קטינים באשקלון עוכבו לאחר שנתפסו סכין וגז פלפל בחוף"
         context = "באזור החופים באשקלון עוכבו שלושה קטינים; נתפסו סכין באורך 42 ס״מ, גז פלפל ובקבוקי וודקה."
+    elif "ירי בשפרעם" in title and "נפגע" in title:
+        headline = "תושב שפרעם נפצע קשה באירוע ירי בעיר"
+        context = "תושב שפרעם בן 23 נפצע באורח קשה מירי בעיר; המשטרה פתחה בחקירה ובסריקות אחר חשודים."
+    elif "מרלין אלטורי" in title and "כתב אישום" in title:
+        headline = "כתב אישום צפוי נגד בן זוגה ואחיו ברצח מרלין אלטורי"
+        context = "משטרת מחוז מרכז הודיעה שפענחה את רצח מרלין אלטורי, שנמצאה שרופה ברכבה; כתב אישום צפוי נגד בן זוגה ואחיו."
     if len(headline) < 28:
         headline = title
     headline = trim_words(headline, 88)
