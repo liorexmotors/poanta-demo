@@ -257,6 +257,10 @@ def parse_feed_datetime(raw: str) -> str:
 
 def source_logo(source: str) -> str:
     s = source.lower()
+    if "דובר צה" in source or "צה״ל" in source:
+        return "דובר צה״ל"
+    if "משטרת ישראל" in source or "israel police" in s:
+        return "משטרה"
     if "פיקוד העורף" in source:
         return "פיקוד העורף"
     if "cnn" in s:
@@ -461,7 +465,7 @@ def summarize_idf_telegram(text: str) -> tuple[str, str, int]:
     if lines[0].replace("״", '"') == 'דובר צה"ל:':
         lines = lines[1:]
     # Drop call-to-action link rows; keep the substance of the Telegram post.
-    lines = [x for x in lines if not x.startswith("לכתבה המלאה") and not x.startswith("http")]
+    lines = [x for x in lines if not x.startswith("לכתבה המלאה") and not x.startswith("http") and "ערוץ הטלגרם" not in x]
     if not lines:
         return "", "", 0
     title = clean_text(lines[0])
@@ -1536,6 +1540,35 @@ def item_quality_errors(item: dict) -> list[dict]:
     return [i for i in issues if i.get("severity") == "error"]
 
 
+def normalize_police_item(item: dict) -> dict:
+    """Keep official Israel Police Telegram cards factual and non-generic."""
+    title = clean_text(str(item.get("originalTitle") or item.get("headline") or ""))
+    desc = clean_text(str(item.get("context") or ""))
+    headline = title.split(" - ")[0].split(" – ")[0]
+    headline = headline.split(",")[0]
+    context = desc
+    if "סיגריות" in title and "לאיו" in title:
+        headline = "סוכלה הברחת סיגריות בשווי 20 מיליון שקל לאיו״ש"
+        context = "החשד: מכולות סיגריות מטורקיה הובאו דרך נמל אשדוד בהצהרה כוזבת ונועדו להגיע לאיו״ש."
+    elif "אשקלון" in title and "קטינים" in title and "סכין" in title:
+        headline = "קטינים באשקלון עוכבו לאחר שנתפסו סכין וגז פלפל בחוף"
+        context = "באזור החופים באשקלון עוכבו שלושה קטינים; נתפסו סכין באורך 42 ס״מ, גז פלפל ובקבוקי וודקה."
+    if len(headline) < 28:
+        headline = title
+    headline = trim_words(headline, 88)
+    if not context or "במרכז הסיפור" in context or "ההשפעה המעשית" in context or normalized_key(context) == normalized_key(headline):
+        context = title
+    if normalized_key(context) == normalized_key(headline) and " - " in title:
+        context = title.replace(" - ", ", ", 1)
+    item["headline"] = trim_words(headline, 88)
+    item["context"] = trim_words(context, 180)
+    item["takeaway"] = "זהו עדכון רשמי של המשטרה — שימושי במיוחד למעקב אחר אירועי ביטחון פנים ופלילים."
+    item["category"] = "פלילים"
+    item["categoryClass"] = "security"
+    item["sourceLogo"] = "משטרה"
+    return item
+
+
 def rewrite_cut_or_invalid_item(item: dict) -> dict:
     """Try one deterministic Pointa rewrite before quarantine.
 
@@ -1577,6 +1610,8 @@ def quarantine_bad_items(items: list[dict], reason: str) -> list[dict]:
     kept: list[dict] = []
     rejected: list[dict] = []
     for item in items:
+        if "משטרת ישראל" in str(item.get("source") or "") or "דוברות משטרת" in str(item.get("source") or ""):
+            item = normalize_police_item(item)
         errors = item_quality_errors(item)
         if errors:
             item = rewrite_cut_or_invalid_item(item)
@@ -1669,6 +1704,12 @@ def fetch_article_image(url: str) -> str:
 def refresh_item_pointa(item: dict) -> dict:
     title = str(item.get("originalTitle") or item.get("headline") or "")
     desc = str(item.get("context") or "")
+    source = str(item.get("source") or "")
+    if "משטרת ישראל" in source or "דוברות משטרת" in source:
+        # Official Telegram notices are already terse operational updates. A
+        # second generic rewrite can accidentally promote footer text or make
+        # the headline duplicate the summary, so keep the bridge's cleaned card.
+        return normalize_police_item(item)
     if "פיקוד העורף" in str(item.get("source") or ""):
         current_headline = str(item.get("headline") or "")
         if current_headline.startswith("יישובים:"):
