@@ -1850,10 +1850,10 @@ def parse_ims_city_forecast(xml_text: str) -> dict:
     return {"city": city, "nightMin": night_min, **forecast}
 
 
-def build_daily_weather_card(now: datetime | None = None, fetcher=fetch) -> dict | None:
+def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: bool = False) -> dict | None:
     tz = timezone(timedelta(hours=3))
     now = (now or datetime.now(tz)).astimezone(tz)
-    if now.hour < WEATHER_DAILY_HOUR:
+    if now.hour < WEATHER_DAILY_HOUR and not force:
         return None
     try:
         forecast = parse_ims_city_forecast(fetcher(WEATHER_CITY_RSS, timeout=15))
@@ -1867,7 +1867,7 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch) -> dict
         forecast_date = datetime(now.year, int(m.group(2)), int(m.group(1)), tzinfo=tz).date()
         # IMS may publish tomorrow's first day in the evening. The daily card is
         # a 06:00 morning item, so do not surface tomorrow's card tonight.
-        if forecast_date > now.date():
+        if forecast_date > now.date() and not force:
             return None
     min_temp = forecast.get("min") or forecast.get("nightMin") or ""
     max_temp = forecast.get("max") or ""
@@ -1875,6 +1875,8 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch) -> dict
     condition = forecast.get("condition") or "תחזית מתעדכנת"
     city = WEATHER_DEFAULT_CITY
     day_start = datetime(forecast_date.year, forecast_date.month, forecast_date.day, WEATHER_DAILY_HOUR, tzinfo=tz)
+    if force:
+        day_start = now.replace(microsecond=0)
     headline = f"מזג האוויר בירושלים: {temp_range}, {condition}" if temp_range else f"מזג האוויר בירושלים: {condition}"
     context = f"השירות המטאורולוגי צופה בירושלים {condition} וטמפרטורות של {temp_range} במהלך היום." if temp_range else f"השירות המטאורולוגי צופה בירושלים {condition}."
     takeaway = f"כדאי לתכנן את היום סביב טווח של {temp_range}: בוקר קריר יותר ושיא חום מתון בצהריים." if temp_range else "כדאי לבדוק את התחזית לפני יציאה ולתכנן לבוש ונסיעות בהתאם."
@@ -1927,7 +1929,7 @@ def item_datetime(item: dict, fallback: datetime) -> datetime:
             pass
     return fallback
 
-def merge_with_existing_feed(new_feed: dict) -> dict:
+def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -> dict:
     tz = timezone(timedelta(hours=3))
     now = datetime.now(tz)
     cutoff = now - timedelta(days=FEED_RETENTION_DAYS)
@@ -1961,7 +1963,7 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
                     item["imageUrl"] = image
             merged.append(item)
             seen_keys.add(key)
-    weather_card = build_daily_weather_card(now)
+    weather_card = build_daily_weather_card(now, force=force_weather_card)
     if weather_card:
         weather_key = feed_item_key(weather_card)
         merged = [item for item in merged if feed_item_key(item) != weather_key]
@@ -1999,6 +2001,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Update or draft Poanta feed cards")
     ap.add_argument("--draft", action="store_true", help="Write candidates.json for approval instead of publishing feed.json")
     ap.add_argument("--experimental-prompt", action="store_true", help="Use Lior's experimental Pointa conclusion-feed prompt")
+    ap.add_argument("--force-weather-card", action="store_true", help="Add the daily Jerusalem weather card immediately for a one-off preview/update")
     ap.add_argument(
         "--sync-profile",
         choices=["all", "fast", "medium", "slow"],
@@ -2084,7 +2087,7 @@ def main() -> int:
         STATE_PATH.write_text(json.dumps({"lastDraftRun": feed["updatedAt"], "draftCount": len(feed["items"])}), encoding="utf-8")
         print(f"Wrote {len(feed['items'])} approval candidates to {CANDIDATES_PATH}")
     else:
-        feed = merge_with_existing_feed(feed)
+        feed = merge_with_existing_feed(feed, force_weather_card=args.force_weather_card)
         feed["mode"] = f"rss_sync_{args.sync_profile}"
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)

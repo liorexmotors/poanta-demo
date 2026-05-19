@@ -41,6 +41,15 @@ def test_weather_card_default_jerusalem():
     assert_eq(card['weather']['dailyHour'], 6, 'Weather daily hour')
 
 
+def test_weather_card_force_preview():
+    sample = """<?xml version='1.0' encoding='us-ascii'?><rss version="2.0"><channel><title>תחזית לירושלים</title><item><description><![CDATA[עדכון אחרון: 2026-05-19 17:43<br/><br/>טמפ. המינימום בלילה: 16°<br/>:20/05 יום רביעי<br/>מעונן חלקית, 24°-13°]]></description></item></channel></rss>"""
+    from datetime import datetime, timezone, timedelta
+    card = build_daily_weather_card(datetime(2026, 5, 19, 21, 30, tzinfo=timezone(timedelta(hours=3))), fetcher=lambda url, timeout=15: sample, force=True)
+    assert card, 'Forced weather card should be available for an exceptional preview update'
+    assert_in('ירושלים', card['headline'], 'Forced weather card city')
+    assert_in('13°–24°', card['headline'], 'Forced weather card min-max')
+
+
 def test_marlin_al_turi_card():
     title = 'מרלין חשדה שמשהו רע יקרה. הבעל דרס, דקר - והצית ברכב'
     desc = 'מרלין אלטורי (30) הגיעה עם בעלה לשטח פתוח באזור נחשונים. היא הייתה איתו שם כמה שעות - ואז פנתה לחברתה בחשש.'
@@ -58,5 +67,6 @@ def test_marlin_al_turi_card():
 if __name__ == '__main__':
     test_akko_ebike_accident()
     test_weather_card_default_jerusalem()
+    test_weather_card_force_preview()
     test_marlin_al_turi_card()
     print('Pointa regression invariants: OK')
