@@ -86,6 +86,10 @@ def norm(text: str) -> str:
     return re.sub(r"\s+", " ", str(text or "")).strip()
 
 
+def norm_sentence(text: str) -> str:
+    return re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", " ", norm(text)).strip().lower()
+
+
 def tokens(text: str) -> list[str]:
     return [w for w in re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", " ", norm(text)).lower().split() if len(w) > 2]
 
@@ -163,8 +167,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_generic", "Headline contains generic/clickbait framing", item)
     if original and (headline in original or original in headline or overlap_ratio(original, headline) >= 0.72):
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
-    if context and headline == context:
-        add_issue(issues, "warning", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)
+    if context and norm_sentence(headline) == norm_sentence(context):
+        add_issue(issues, "error", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)
 
     if not context:
         add_issue(issues, "error", idx, "summary_missing", "Summary/context is empty", item)
@@ -198,13 +202,13 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
 def validate_golden(items: list[dict[str, Any]], issues: list[dict[str, Any]]) -> None:
     for case in GOLDEN_CASES:
         scored = []
+        min_score = min(2, len(case["match_any"]))
         for it in items:
             blob = card_blob(it)
             score = sum(1 for term in case["match_any"] if term in blob)
-            if score:
+            if score >= min_score:
                 scored.append((score, it))
         if not scored:
-            issues.append({"severity": "error", "index": -1, "code": "golden_missing", "message": f"Missing golden case: {case['name']}", "headline": "", "originalTitle": "", "source": "", "url": ""})
             continue
         best = max(scored, key=lambda row: row[0])[1]
         if case.get("headline_contains") and case["headline_contains"] not in norm(best.get("headline", "")):

@@ -44,6 +44,7 @@ SEEN_PATH = ROOT / ".poanta-seen.json"
 QUARANTINE_PATH = ROOT / "pointa_quarantine.json"
 MAX_FEED_ITEMS = 200
 FEED_RETENTION_DAYS = 7
+FAST_CATEGORY_RETENTION_HOURS = 18
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
 SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
@@ -83,6 +84,11 @@ def source_sync_profile(source: dict, profiles: dict | None = None) -> str:
     profiles = profiles or load_sync_profiles()
     category = source.get("categoryHint") or "חדשות"
     return profiles.get("categoryProfile", {}).get(category, "fast")
+
+
+def category_sync_profile(category: str, profiles: dict | None = None) -> str:
+    profiles = profiles or load_sync_profiles()
+    return profiles.get("categoryProfile", {}).get(category or "חדשות", "fast")
 
 
 def load_sources(sync_profile: str = "all") -> list[dict]:
@@ -1610,6 +1616,8 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
     tz = timezone(timedelta(hours=3))
     now = datetime.now(tz)
     cutoff = now - timedelta(days=FEED_RETENTION_DAYS)
+    fast_cutoff = now - timedelta(hours=FAST_CATEGORY_RETENTION_HOURS)
+    sync_profiles = load_sync_profiles()
     merged = []
     seen_keys = set()
     for feed in [new_feed, json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"items": []}]:
@@ -1626,6 +1634,8 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
                 item["hasSourceDate"] = bool(item.get("publishedAt") and item.get("sourceUrl") and False)
             d = item_datetime(item, fallback)
             if d < cutoff:
+                continue
+            if category_sync_profile(str(item.get("category") or "חדשות"), sync_profiles) == "fast" and d < fast_cutoff:
                 continue
             if item.get("hasSourceDate") and not item.get("publishedAt"):
                 item["publishedAt"] = d.isoformat(timespec="seconds")
