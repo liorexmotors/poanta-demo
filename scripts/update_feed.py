@@ -227,6 +227,7 @@ def clean_text(text: str) -> str:
     text = re.sub(r"\b(?:border|width|height|src|alt|class|style)=['\"][^'\"]*['\"]", " ", text, flags=re.I)
     text = re.sub(r"['\"]?\s*/?>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
+    text = text.replace("Bundibugyo", "בונדיבוגיו")
     text = re.sub(r"^[|\-–:•\s]+", "", text)
     return text[:500]
 

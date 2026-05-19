@@ -2,7 +2,7 @@
 
 Items checked: 158
 Errors: 0
-Warnings: 18
+Warnings: 19
 
 ## Category distribution
 
@@ -23,7 +23,7 @@ Warnings: 18
 
 ## Issue counts
 
-- takeaway_long: 16
+- takeaway_long: 17
 - summary_long: 2
 
 ## Issues
@@ -34,6 +34,13 @@ Warnings: 18
 - Original: `מגהקים יותר מ-13 פעמים ביום? זה מה שהגוף אולי מנסה להגיד לכם`
 - Source: וואלה בריאות - הבריאות שלי
 - URL: https://healthy.walla.co.il/item/3839349
+
+### WARNING · takeaway_long · item 20
+- Takeaway length 112 > 95
+- Headline: `התפרצות אבולה נדירה בקונגו הוכרזה כחירום בינלאומי`
+- Original: `What is Ebola and why is stopping the latest outbreak so difficult?`
+- Source: BBC World
+- URL: https://www.bbc.com/news/articles/cz72p75zg4qo?at_medium=RSS&at_campaign=rss
 
 ### WARNING · takeaway_long · item 25
 - Takeaway length 115 > 95
