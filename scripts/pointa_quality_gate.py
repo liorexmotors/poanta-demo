@@ -154,7 +154,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     source = norm(item.get("source", ""))
 
     visible_blob = " | ".join([headline, context, takeaway])
-    if re.search(r"<[^>]+>|\b(?:border|width|height|src|alt|class|style)=['\"]", visible_blob, flags=re.I):
+    if re.search(r"<[^>]+>|['\"]\s*>|\b(?:border|width|height|src|alt|class|style)=['\"]", visible_blob, flags=re.I):
         add_issue(issues, "error", idx, "html_artifact", "Visible card text contains HTML/attribute artifacts", item)
 
     if not headline:
@@ -169,7 +169,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_source_style", "Headline is question/quote/source style", item)
     if any(p in headline for p in GENERIC_HEADLINE_PATTERNS):
         add_issue(issues, "error", idx, "headline_generic", "Headline contains generic/clickbait framing", item)
-    if original and (headline in original or original in headline or overlap_ratio(original, headline) >= 0.72):
+    official_alert_source = "פיקוד העורף" in source
+    if original and not official_alert_source and (headline in original or original in headline or overlap_ratio(original, headline) >= 0.72):
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
     if context and norm_sentence(headline) == norm_sentence(context):
         add_issue(issues, "error", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)

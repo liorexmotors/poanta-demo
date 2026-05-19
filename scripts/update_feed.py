@@ -105,13 +105,15 @@ def load_sources(sync_profile: str = "all") -> list[dict]:
         sources = []
         profiles = load_sync_profiles()
         for src in active:
-            if not src.get("rss"):
+            source_url = src.get("rss") or src.get("telegram")
+            if not source_url:
                 continue
             source = {
                 "name": src["name"],
-                "url": src.get("rss"),
-                "rss": src["rss"],
-                "host": urlparse(src["rss"]).netloc,
+                "url": source_url,
+                "rss": src.get("rss"),
+                "telegram": src.get("telegram"),
+                "host": urlparse(source_url).netloc,
                 "categoryHint": src.get("categoryHint", "חדשות"),
                 "logo": src.get("logo") or src["name"],
                 "language": src.get("language", "he"),
@@ -218,6 +220,7 @@ def clean_text(text: str) -> str:
     text = html.unescape(text or "")
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\b(?:border|width|height|src|alt|class|style)=['\"][^'\"]*['\"]", " ", text, flags=re.I)
+    text = re.sub(r"['\"]?\s*/?>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     text = re.sub(r"^[|\-–:•\s]+", "", text)
     return text[:500]
@@ -254,6 +257,8 @@ def parse_feed_datetime(raw: str) -> str:
 
 def source_logo(source: str) -> str:
     s = source.lower()
+    if "פיקוד העורף" in source:
+        return "פיקוד העורף"
     if "cnn" in s:
         return "CNN"
     if "bbc" in s:
@@ -402,6 +407,92 @@ def extract_rss(source: dict) -> list[Candidate]:
             continue
         out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
     return sorted(out, key=lambda c: c.score, reverse=True)[:12]
+
+
+def telegram_text_from_block(block: str) -> str:
+    m = re.search(r'<div class="tgme_widget_message_text[^>]*>(.*?)</div>', block, re.S)
+    if not m:
+        return ""
+    text = re.sub(r"<br\s*/?>", "\n", m.group(1), flags=re.I)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    lines = [clean_text(x) for x in text.splitlines()]
+    return "\n".join(x for x in lines if x)
+
+
+def summarize_oref_telegram(text: str) -> tuple[str, str, int]:
+    lines = [x.strip() for x in text.splitlines() if x.strip()]
+    if not lines:
+        return "", "", 0
+    alert_type = re.sub(r"^[^\u0590-\u05ffA-Za-z0-9]+", "", lines[0])
+    alert_type = re.sub(r"\s*\([^)]*\)", "", alert_type).strip()
+    alert_type = re.sub(r"\s+\d{1,2}:\d{2}\s*$", "", alert_type).strip()
+    areas: list[str] = []
+    cities: list[str] = []
+    instructions: list[str] = []
+    for i, line in enumerate(lines[1:], start=1):
+        if line.startswith("אזור "):
+            areas.append(line.replace("אזור ", "", 1))
+            if i + 1 < len(lines) and not lines[i + 1].startswith("אזור "):
+                cities.extend([x.strip() for x in re.split(r",", lines[i + 1]) if x.strip()])
+        elif any(w in line for w in ["היכנסו", "האירוע הסתיים", "יכולים לצאת", "הנחיות פיקוד העורף"]):
+            instructions.append(line)
+    area = ", ".join(dict.fromkeys(areas)) or "אזורי התרעה"
+    city_list = ", ".join(dict.fromkeys(cities[:8]))
+    if "האירוע הסתיים" in text:
+        title = f"פיקוד העורף: האירוע הסתיים ב{area}"
+        score = 65
+    else:
+        title = f"פיקוד העורף: {alert_type} ב{area}"
+        score = 95
+    desc_parts = []
+    if city_list:
+        desc_parts.append(f"יישובים: {city_list}.")
+    if instructions:
+        desc_parts.append(instructions[0])
+    desc = " ".join(desc_parts) or clean_text(" ".join(lines[1:]))
+    return title, desc, score
+
+
+def extract_telegram_channel(source: dict) -> list[Candidate]:
+    url = source.get("telegram")
+    if not url:
+        return []
+    try:
+        raw = fetch(url, timeout=15)
+    except Exception as e:
+        print(f"WARN telegram fetch failed {source['name']}: {e}", file=sys.stderr)
+        return []
+    out: list[Candidate] = []
+    blocks = re.findall(r'<div class="tgme_widget_message_wrap[^>]*>.*?(?=<div class="tgme_widget_message_wrap|</main>|</body>)', raw, re.S)
+    for block in blocks:
+        text = telegram_text_from_block(block)
+        if not text:
+            continue
+        post = re.search(r'data-post="([^"]+)"', block)
+        time_m = re.search(r'<time datetime="([^"]+)"', block)
+        post_path = post.group(1) if post else ""
+        link = f"https://t.me/{post_path}" if post_path else url
+        title, desc, score = summarize_oref_telegram(text)
+        title = sanitize_title(title)
+        if len(title) < 18:
+            continue
+        out.append(Candidate(
+            source=source["name"],
+            url=link,
+            title=title,
+            description=desc,
+            score=score,
+            original_title=clean_text(text.splitlines()[0] if text.splitlines() else title),
+            published_at=parse_feed_datetime(time_m.group(1) if time_m else ""),
+        ))
+    return sorted(out, key=lambda c: (c.published_at, c.score), reverse=True)[:12]
+
+
+def extract_source(source: dict) -> list[Candidate]:
+    if source.get("telegram"):
+        return extract_telegram_channel(source)
+    return extract_rss(source)
 
 
 def extract_links(source: dict) -> list[Candidate]:
@@ -1489,7 +1580,12 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             continue
         seen_titles.add(key)
         category, cls = categorize_item(c.title, c.description, c.source)
-        if experimental:
+        if "פיקוד העורף" in c.source:
+            headline = c.title
+            context = c.description or "יש לפעול לפי הנחיות פיקוד העורף."
+            takeaway = "זו התרעה רשמית — ההנחיות חשובות יותר מהכותרת."
+            category, cls = "ביטחון", "security"
+        elif experimental:
             headline = experimental_headline(c.title, c.description)
             context = experimental_summary(c.title, c.description, c.source)
             takeaway = experimental_insight(category, c.title, c.description)
@@ -1549,6 +1645,16 @@ def fetch_article_image(url: str) -> str:
 def refresh_item_pointa(item: dict) -> dict:
     title = str(item.get("originalTitle") or item.get("headline") or "")
     desc = str(item.get("context") or "")
+    if "פיקוד העורף" in str(item.get("source") or ""):
+        current_headline = str(item.get("headline") or "")
+        if current_headline.startswith("יישובים:"):
+            repaired_title, _, _ = summarize_oref_telegram("\n".join([title, desc]))
+            if repaired_title:
+                item["headline"] = repaired_title
+        item["category"] = "ביטחון"
+        item["categoryClass"] = "security"
+        item["takeaway"] = "זו התרעה רשמית — ההנחיות חשובות יותר מהכותרת."
+        return item
     fp = foreign_pointa_tuple(title, desc)
     if fp:
         item["headline"] = fp[0]
@@ -1648,8 +1754,12 @@ def merge_with_existing_feed(new_feed: dict) -> dict:
                     item["imageUrl"] = image
             merged.append(item)
             seen_keys.add(key)
+    # Final deterministic pass catches retained existing cards and new bridge
+    # sources that should not go through generic Pointa rewrites.
+    merged = [refresh_item_pointa(item) for item in merged]
     merged.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
     merged = quarantine_bad_items(merged, "merge_quality_gate")
+    merged = [refresh_item_pointa(item) for item in merged]
     new_feed["items"] = merged[:MAX_FEED_ITEMS]
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed
@@ -1703,12 +1813,15 @@ def main() -> int:
         return 2
     for source in sources:
         picked = []
-        # RSS-only phase: do not scrape homepages and do not use fallback readers.
-        candidates = extract_rss(source)
+        # Source-only phase: do not scrape homepages and do not use fallback readers.
+        candidates = extract_source(source)
         # preserve source-local ranking while dropping duplicate URLs
         local_seen = set()
         candidates = [x for x in candidates if not (x.url in local_seen or local_seen.add(x.url))]
-        candidates = sorted(candidates, key=lambda x: x.score, reverse=True)
+        if source.get("telegram"):
+            candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
+        else:
+            candidates = sorted(candidates, key=lambda x: x.score, reverse=True)
         for c in candidates:
             if c.url in used_urls:
                 continue
