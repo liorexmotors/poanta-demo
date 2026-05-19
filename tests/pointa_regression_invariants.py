@@ -30,6 +30,18 @@ def test_akko_ebike_accident():
     assert 'הפרט שקובע' not in takeaway, 'Akko e-bike accident takeaway must not be generic'
 
 
+def test_vance_iran_nuclear_card():
+    title = 'סגן הנשיא האמריקני הבהיר: "איראן לעולם לא תוכל להחזיק בנשק גרעיני"'
+    desc = 'סגן הנשיא האמריקני, ג׳יי די ואנס, הבהיר כי איראן לעולם לא תוכל להחזיק בנשק גרעיני משום שהדבר יגרום למדינות המפרץ לרצות נשק גרעיני משלהן.'
+    headline = story_headline(title, desc, 'וואלה חדשות - מבזקים')
+    context = story_context(title, desc, 'וואלה חדשות - מבזקים')
+    takeaway = story_takeaway('ביטחון', title, desc)
+    assert_in('מרוץ חימוש', headline, 'Vance/Iran headline should state the point')
+    assert_in('מדינות במפרץ', context, 'Vance/Iran context should explain why')
+    assert_in('אפקט דומינו גרעיני', takeaway, 'Vance/Iran takeaway should add meaning')
+    assert 'עשוי לשנות היערכות' not in takeaway
+
+
 def test_weather_card_default_jerusalem():
     sample = '''<?xml version='1.0' encoding='us-ascii'?><rss version="2.0"><channel><title>תחזית לירושלים</title><item><description><![CDATA[עדכון אחרון: 2026-05-20 04:55<br/><br/>טמפ. המינימום בלילה: 16°<br/>:20/05 יום רביעי<br/>מעונן חלקית, 24°-13°]]></description></item></channel></rss>'''
     from datetime import datetime, timezone, timedelta
@@ -76,6 +88,7 @@ def test_marlin_al_turi_card():
 
 if __name__ == '__main__':
     test_akko_ebike_accident()
+    test_vance_iran_nuclear_card()
     test_weather_card_default_jerusalem()
     test_weather_card_force_preview()
     test_marlin_al_turi_card()

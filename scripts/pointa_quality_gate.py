@@ -42,7 +42,10 @@ GENERIC_TAKEAWAY_PATTERNS = [
     "החשיבות של", "המשמעות של", "הסיכון סביב", "הסיפור סביב", "הפרטים הקטנים סביב",
     "חשוב יותר מהניסוח", "נקודת ההשלכה המרכזית", "אין פואנטה אמינה",
     "עדכון רשמי של המשטרה", "שימושי במיוחד למעקב", "מקור רשמי",
-    "הפרט שקובע מה באמת השתנה",
+    "הפרט שקובע מה באמת השתנה", "עשוי לשנות היערכות", "מרחב פעולה",
+    "קובע את המחיר האמיתי", "מסמן מי עלול לשלם", "משנה שימוש, פרטיות או אמון",
+    "משפיע על עלות, בטיחות", "משנה את המשך העונה", "מחייב להבין את הסיכון",
+    "מראה איך רגע פרטי", "חושף את קו הטיעון",
 ]
 SOURCE_MEDIATION = ["הכתב מתאר", "הכתבה עוסקת", "המקור מדווח", "פורסם כי", "דווח כי"]
 ALLOWED_LATIN = {
@@ -190,6 +193,10 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "warning", idx, "takeaway_long", f"Takeaway length {len(takeaway)} > {TAKEAWAY_MAX}", item)
     if any(p in takeaway for p in GENERIC_TAKEAWAY_PATTERNS):
         add_issue(issues, "error", idx, "takeaway_generic", "Takeaway is generic/reusable", item)
+    if takeaway and context and overlap_ratio(takeaway, context) >= 0.72:
+        add_issue(issues, "error", idx, "takeaway_duplicates_context", "Takeaway repeats the summary instead of adding a point", item)
+    if takeaway and headline and overlap_ratio(takeaway, headline) >= 0.72:
+        add_issue(issues, "error", idx, "takeaway_duplicates_headline", "Takeaway repeats the headline instead of adding a point", item)
 
     if "סלבס" in source and category != "תרבות":
         add_issue(issues, "error", idx, "category_celebs", "Celebs source must be תרבות", item)

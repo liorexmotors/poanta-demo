@@ -1154,6 +1154,11 @@ def culture_headline_from_context(title: str, desc: str) -> str:
     return ''
 
 
+def is_vance_iran_nuclear_story(title: str, desc: str) -> bool:
+    text = f"{title} {desc}"
+    return ("ואנס" in text or "סגן הנשיא האמריקני" in text or "ג׳יי די" in text or "ג'יי" in text) and "איראן" in text and "נשק גרעיני" in text
+
+
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
     fp = foreign_pointa_tuple(title, desc)
@@ -1165,6 +1170,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו'
     if is_iran_cuba_drone_story(title, desc):
         return 'ארה״ב חוששת שקובה הופכת לבסיס כטב"מים איראני ליד הגבול'
+    if is_vance_iran_nuclear_story(title, desc):
+        return 'ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ'
     if is_protection_insurance_story(title, desc):
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
     if is_malinovsky_oct7_law_story(title, desc):
@@ -1265,6 +1272,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'במאמר פרשנות בוואלה נטען כי ליברמן בונה עצמו כאלטרנטיבה ימנית מנוסה לליכוד, עם קו תקיף מול איראן, תמיכה בגיוס חרדים ונכונות לשבת עם הליכוד - אך בלי נתניהו. לפי הכותב, הוא מנסה למשוך מאוכזבי ליכוד ולהתכונן ליום שאחרי עידן ביבי.'
     if is_iran_cuba_drone_story(title, desc):
         return 'דיווחים בארה״ב טוענים שאיראן שלחה יועצים צבאיים לקובה כדי לסייע בהפעלת כטב"מים וטכנולוגיות צבאיות מתקדמות. ברקע גובר החשש בוושינגטון מהעמקת שיתוף הפעולה בין איראן, רוסיה וקובה סמוך לשטח האמריקאי.'
+    if is_vance_iran_nuclear_story(title, desc):
+        return 'סגן נשיא ארה״ב ג׳יי די ואנס אמר שאיראן לא תוכל להחזיק בנשק גרעיני, כי נשק כזה ידחוף מדינות במפרץ לרצות יכולת גרעינית משלהן.'
     if is_protection_insurance_story(title, desc):
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
     if is_malinovsky_oct7_law_story(title, desc):
@@ -1424,6 +1433,8 @@ def story_takeaway(category: str, title: str, desc: str) -> str:
         return 'ליברמן כבר לא מכוון להיות שותף בממשלה - אלא להוביל את מחנה הימין שאחרי נתניהו.'
     if is_iran_cuba_drone_story(title, desc):
         return 'מבחינת ארה״ב, איראן כבר לא מאיימת רק מהמזרח התיכון - אלא מתקרבת פיזית לחצר האחורית שלה.'
+    if is_vance_iran_nuclear_story(title, desc):
+        return 'המסר של ואנס מסמן שוושינגטון מציגה את עצירת איראן כבלימת אפקט דומינו גרעיני, לא רק כהגנה על ישראל.'
     if is_protection_insurance_story(title, desc):
         return 'כשהמדינה לא מצליחה להגן מפשע - גם שוק הביטוח מתחיל לקרוס אחריה.'
     if is_malinovsky_oct7_law_story(title, desc):
@@ -2078,6 +2089,16 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     merged.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
     merged = quarantine_bad_items(merged, "merge_quality_gate")
     merged = [refresh_item_pointa(item) for item in merged]
+    deduped = []
+    final_seen_signatures = set()
+    for item in merged:
+        sig = normalized_key(f"{item.get('headline','')}|{item.get('context','')}")
+        if sig and sig in final_seen_signatures:
+            continue
+        if sig:
+            final_seen_signatures.add(sig)
+        deduped.append(item)
+    merged = deduped
     new_feed["items"] = merged[:MAX_FEED_ITEMS]
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed
