@@ -395,34 +395,69 @@ def read_results(run_dir: Path) -> list[dict[str, Any]]:
     return results
 
 
+def editor_source_item(row: dict[str, Any]) -> dict[str, Any]:
+    if isinstance(row.get("feedItem"), dict):
+        return dict(row["feedItem"])
+    return {
+        "source": row.get("source", ""),
+        "sourceGroup": row.get("sourceGroup", ""),
+        "sourceUrl": row.get("sourceUrl", ""),
+        "originalTitle": row.get("originalTitle", ""),
+        "publishedAt": row.get("publishedAt", ""),
+        "category": row.get("suggestedCard", {}).get("category", row.get("currentCard", {}).get("category", "")),
+        "categoryClass": row.get("suggestedCard", {}).get("categoryClass", row.get("currentCard", {}).get("categoryClass", "")),
+        "headline": row.get("currentCard", {}).get("headline", ""),
+        "context": row.get("currentCard", {}).get("summary", row.get("description", "")),
+        "takeaway": row.get("currentCard", {}).get("takeaway", ""),
+        "image": row.get("image", ""),
+        "rescueSource": row.get("rescue", {}).get("source", ""),
+    }
+
+
 def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]], results: list[dict[str, Any]]) -> dict[str, Any]:
-    by_url = {x["feedItem"].get("sourceUrl"): x["feedItem"] for x in editor_input}
     by_index = {int(r["index"]): r for r in results if "index" in r}
     input_by_index = {int(x["index"]): x for x in editor_input}
-    rejects = {input_by_index[i]["feedItem"].get("sourceUrl") for i, r in by_index.items() if r.get("status") == "reject" and i in input_by_index}
+    rejects = {editor_source_item(input_by_index[i]).get("sourceUrl") for i, r in by_index.items() if r.get("status") == "reject" and i in input_by_index}
     rewritten: dict[str, dict[str, Any]] = {}
-    for i, r in by_index.items():
+    ordered_new: list[dict[str, Any]] = []
+    feed_urls = {item.get("sourceUrl") for item in feed.get("items", [])}
+    for i, r in sorted(by_index.items()):
         if r.get("status") != "pass" or i not in input_by_index:
             continue
-        item = dict(input_by_index[i]["feedItem"])
+        item = editor_source_item(input_by_index[i])
         item["category"] = r.get("category", item.get("category", ""))
         item["categoryClass"] = r.get("categoryClass", item.get("categoryClass", ""))
         item["headline"] = r.get("headline", item.get("headline", ""))
         item["context"] = r.get("summary", item.get("context", ""))
         item["takeaway"] = r.get("takeaway", item.get("takeaway", ""))
         item["editorStatus"] = "pass"
-        rewritten[item.get("sourceUrl")] = item
+        item["editorAddedAt"] = datetime.now().isoformat(timespec="seconds")
+        url = item.get("sourceUrl")
+        rewritten[url] = item
+        if url and url not in feed_urls:
+            ordered_new.append(item)
     preview = dict(feed)
     preview_items = []
+    seen_urls: set[str] = set()
+    for item in ordered_new:
+        url = item.get("sourceUrl")
+        if not url or url in seen_urls or url in rejects:
+            continue
+        preview_items.append(item)
+        seen_urls.add(url)
     for item in feed.get("items", []):
         url = item.get("sourceUrl")
-        if url in rejects:
+        if url in rejects or url in seen_urls:
             continue
         preview_items.append(rewritten.get(url, item))
+        if url:
+            seen_urls.add(url)
     preview["items"] = preview_items
+    preview["updatedAt"] = datetime.now().astimezone().isoformat(timespec="seconds")
     preview["editorPreview"] = {
         "createdAt": datetime.now().isoformat(timespec="seconds"),
         "rewritten": len(rewritten),
+        "added": len(ordered_new),
         "rejected": len(rejects),
         "note": "Preview only; feed.json was not changed.",
     }
