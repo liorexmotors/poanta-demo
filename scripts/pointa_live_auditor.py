@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Post-publish live auditor for Poanta/Pointa.
+"""Continuous live auditor for Poanta/Pointa.
 
-This is "המבקר": it checks the actual public feed after publication, not just
-local build artifacts. It is intentionally conservative: warnings are useful,
-failures mean the feed should be reviewed or fixed before the next automatic
-publish cycle keeps reinforcing the issue.
+This is "המבקר": it checks the actual public feed on a fixed schedule,
+independently of whether a publish just happened. That way it catches both bad
+publishes and missing/stuck publishes. It is intentionally conservative:
+warnings are useful; failures mean the feed should be reviewed or fixed before
+the next automatic publish cycle keeps reinforcing the issue.
 """
 from __future__ import annotations
 
