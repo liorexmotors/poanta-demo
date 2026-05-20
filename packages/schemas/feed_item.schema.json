@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/feed_item.schema.json",
+  "title": "Pointa/Poanta Feed Item",
+  "type": "object",
+  "required": ["id", "headline", "context", "takeaway", "source", "sourceUrl", "publishedAt", "category"],
+  "properties": {
+    "id": {"type": "string"},
+    "headline": {"type": "string"},
+    "context": {"type": "string"},
+    "takeaway": {"type": "string"},
+    "originalTitle": {"type": "string"},
+    "source": {"type": "string"},
+    "sourceLogo": {"type": "string"},
+    "sourceUrl": {"type": "string"},
+    "imageUrl": {"type": "string"},
+    "publishedAt": {"type": "string", "format": "date-time"},
+    "updatedAt": {"type": "string", "format": "date-time"},
+    "category": {"type": "string"},
+    "score": {"type": "number"},
+    "language": {"type": "string", "default": "he"}
+  },
+  "additionalProperties": true
+}
