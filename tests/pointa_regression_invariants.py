@@ -58,6 +58,22 @@ def test_vance_iran_nuclear_card():
     assert 'עשוי לשנות היערכות' not in takeaway
 
 
+def test_stolen_idf_weapon_restaurant_card():
+    title = 'מסעדנית תואשם בגניבת M-16 מקצין צה"ל: "נקלעה לחובות וספגה איומים על חייה"'
+    desc = 'הקצין שבילה עם חייליו ברמת הגולן, נדהם לגלות בסוף הארוחה כי הנשק האישי שלו נעלם. בתום חקירה מהירה, בעלת המקום הובילה את השוטרים אל הנשק שהוחבא ברכב של עובד במסעדה.'
+    source = 'ynet - כל ערוץ החדשות'
+    category, _ = categorize_item(title, desc, source)
+    headline = story_headline(title, desc, source)
+    context = story_context(title, desc, source)
+    takeaway = story_takeaway(category, title, desc)
+    assert_in('מסעדנית', headline, 'Stolen weapon headline should identify suspect')
+    assert_in('M-16', headline, 'Stolen weapon headline should identify weapon')
+    assert_in('נשק', context, 'Stolen weapon context should preserve weapon facts')
+    assert_in('ביטחוני', takeaway, 'Stolen weapon takeaway should explain security/legal severity')
+    assert 'מוסד אהוב' not in takeaway
+    assert 'אוכל בטיסה' not in takeaway
+
+
 def test_weather_card_default_jerusalem():
     sample = '''<?xml version='1.0' encoding='us-ascii'?><rss version="2.0"><channel><title>תחזית לירושלים</title><item><description><![CDATA[עדכון אחרון: 2026-05-20 04:55<br/><br/>טמפ. המינימום בלילה: 16°<br/>:20/05 יום רביעי<br/>מעונן חלקית, 24°-13°]]></description></item></channel></rss>'''
     from datetime import datetime, timezone, timedelta
@@ -106,6 +122,7 @@ if __name__ == '__main__':
     test_akko_ebike_accident()
     test_el_nino_weather_not_consumer()
     test_vance_iran_nuclear_card()
+    test_stolen_idf_weapon_restaurant_card()
     test_weather_card_default_jerusalem()
     test_weather_card_force_preview()
     test_marlin_al_turi_card()
