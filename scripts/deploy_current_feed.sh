@@ -28,6 +28,9 @@ export GIT_TERMINAL_PROMPT=0
 
 git fetch origin main gh-pages
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
+python3 scripts/pointa_publication_events.py record --gatekeeper deploy-current --run-id "${POANTA_RUN_ID:-deploy-current}" || true
+python3 scripts/pointa_quality_auditor.py || true
+python3 scripts/pointa_timing_auditor.py || true
 npm run build
 
 if ! git diff --quiet feed.json .poanta-state.json .poanta-seen.json; then

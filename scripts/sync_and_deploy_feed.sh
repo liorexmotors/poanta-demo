@@ -32,6 +32,9 @@ git pull --ff-only origin main
 
 python3 scripts/update_feed.py
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
+python3 scripts/pointa_publication_events.py record --gatekeeper sync-deploy --run-id "${POANTA_RUN_ID:-sync-deploy}" || true
+python3 scripts/pointa_quality_auditor.py || true
+python3 scripts/pointa_timing_auditor.py || true
 npm run build
 
 if ! git diff --quiet feed.json .poanta-state.json .poanta-seen.json; then

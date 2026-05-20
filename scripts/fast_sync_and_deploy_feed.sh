@@ -73,6 +73,9 @@ if before.exists() and feed_path.exists():
         feed_path.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
+python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run-id "${POANTA_RUN_ID:-fast-sync}" || true
+python3 scripts/pointa_quality_auditor.py || true
+python3 scripts/pointa_timing_auditor.py || true
 npm run build
 
 if ! git diff --quiet -- feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; then
