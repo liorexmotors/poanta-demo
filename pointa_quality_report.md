@@ -31,7 +31,7 @@ Warnings: 37
 
 ## Issues
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 0
 - Takeaway length 98 > 95
 - Headline: `ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ`
 - Original: `על סף הכרעה: טראמפ ונתניהו קיימו הלילה שיחת טלפון שהוגדרה "ממושכת ודרמטית"`
