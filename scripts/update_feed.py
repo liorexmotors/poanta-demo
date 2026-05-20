@@ -2151,7 +2151,12 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
             if not key or key in seen_keys:
                 continue
             if "hasSourceDate" not in item:
-                item["hasSourceDate"] = bool(item.get("publishedAt") and item.get("sourceUrl") and False)
+                # Retained/editor-rescue cards must keep normal chronological
+                # ordering. A previous defensive fallback forced retained items
+                # to hasSourceDate=false, which pushed fresh rescue cards below
+                # older generated cards and made the UI look stale even after a
+                # successful rescue.
+                item["hasSourceDate"] = bool(item.get("publishedAt") and item.get("sourceUrl"))
             d = item_datetime(item, fallback)
             if d < cutoff:
                 continue
