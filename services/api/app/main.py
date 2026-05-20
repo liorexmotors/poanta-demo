@@ -17,6 +17,12 @@ from services.worker.worker.feedback_report import build_report as build_feedbac
 ROOT = Path(__file__).resolve().parents[3]
 LEGACY_FEED = ROOT / "feed.json"
 DEFAULT_SQLITE = ROOT / "var" / "poanta_feedback.sqlite3"
+OPS_REPORTS = {
+    "liveAuditor": ROOT / "tmp" / "pointa_live_auditor_last.json",
+    "timingAuditor": ROOT / "tmp" / "pointa_timing_auditor_last.json",
+    "qualityAuditor": ROOT / "tmp" / "pointa_quality_auditor_last.json",
+    "publicationState": ROOT / "tmp" / "publication_events_state.json",
+}
 
 app = FastAPI(title="Poanta API", version="0.1.0")
 app.add_middleware(
@@ -49,6 +55,54 @@ def load_legacy_feed() -> dict[str, Any]:
     if not LEGACY_FEED.exists():
         return {"updatedAt": datetime.now(timezone.utc).isoformat(), "items": []}
     return json.loads(LEGACY_FEED.read_text(encoding="utf-8"))
+
+
+def load_json_file(path: Path) -> dict[str, Any] | None:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else None
+    except Exception:
+        return None
+
+
+def parse_dt(raw: Any) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        d = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+        return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+    except Exception:
+        return None
+
+
+def feed_freshness(data: dict[str, Any]) -> dict[str, Any]:
+    latest: datetime | None = None
+    latest_item: dict[str, Any] | None = None
+    for item in data.get("items") or []:
+        if not isinstance(item, dict):
+            continue
+        d = parse_dt(item.get("publishedAt"))
+        if d and (latest is None or d > latest):
+            latest = d
+            latest_item = item
+    now = datetime.now(latest.tzinfo if latest else timezone.utc)
+    age_min = int((now - latest).total_seconds() // 60) if latest else None
+    if age_min is None:
+        color = "red"
+    elif age_min < 15:
+        color = "green"
+    elif age_min < 30:
+        color = "yellow"
+    else:
+        color = "red"
+    return {
+        "latestPublishedAt": latest.isoformat() if latest else None,
+        "ageMinutes": max(age_min, 0) if age_min is not None else None,
+        "color": color,
+        "headline": latest_item.get("headline") if latest_item else None,
+        "source": latest_item.get("source") if latest_item else None,
+        "sourceUrl": latest_item.get("sourceUrl") if latest_item else None,
+    }
 
 
 def sqlite_path() -> Path:
@@ -161,6 +215,76 @@ def feed() -> dict[str, Any]:
         "mode": data.get("mode", "legacy-feed-json"),
         "items": data.get("items", []),
         "source": "legacy-feed-json",
+    }
+
+
+@app.get("/v1/ops/status")
+def ops_status() -> dict[str, Any]:
+    """Operational dashboard state for Poanta control agents.
+
+    This endpoint intentionally exposes summarized status only: enough for the
+    dashboard to show whether האספן/העורך/השוער/המבקר are healthy, without
+    streaming noisy internal logs to users.
+    """
+    feed_data = load_db_feed() or load_legacy_feed()
+    reports = {name: load_json_file(path) for name, path in OPS_REPORTS.items()}
+    live = reports.get("liveAuditor") or {}
+    timing = reports.get("timingAuditor") or {}
+    quality = reports.get("qualityAuditor") or {}
+    pub_state = reports.get("publicationState") or {}
+    agents = [
+        {
+            "id": "collector",
+            "name": "האספן",
+            "status": "ok" if feed_data.get("items") else "fail",
+            "summary": f"{len(feed_data.get('items') or [])} כרטיסים זמינים בפיד",
+        },
+        {
+            "id": "editor",
+            "name": "העורך",
+            "status": "ok" if (feed_data.get("editorRun") or pub_state.get("lastEventAt")) else "idle",
+            "summary": "ריצת עריכה/פרסום אחרונה זמינה" if (feed_data.get("editorRun") or pub_state.get("lastEventAt")) else "אין ריצת עריכה אחרונה מזוהה",
+        },
+        {
+            "id": "gatekeeper",
+            "name": "השוער",
+            "status": "ok" if quality.get("status") == "ok" else "fail" if quality.get("status") == "fail" else "unknown",
+            "summary": f"Quality auditor: {quality.get('status') or 'unknown'} · שגיאות {len(quality.get('errors') or [])}",
+        },
+        {
+            "id": "timing",
+            "name": "מבקר תזמון",
+            "status": "ok" if timing.get("status") == "ok" else "fail" if timing.get("status") == "fail" else "unknown",
+            "summary": f"Timing: {timing.get('status') or 'unknown'} · שגיאות {len(timing.get('errors') or [])}",
+            "findings": (timing.get("errors") or timing.get("warnings") or [])[:3],
+        },
+        {
+            "id": "live",
+            "name": "מבקר חי",
+            "status": "ok" if live.get("status") == "ok" else "fail" if live.get("status") == "fail" else "unknown",
+            "summary": f"Live auditor: {live.get('status') or 'unknown'} · שגיאות {len(live.get('errors') or [])}",
+            "findings": (live.get("errors") or live.get("warnings") or [])[:3],
+        },
+    ]
+    return {
+        "ok": True,
+        "checkedAt": datetime.now(timezone.utc).isoformat(),
+        "feed": {
+            "updatedAt": feed_data.get("updatedAt"),
+            "itemCount": len(feed_data.get("items") or []),
+            "freshness": feed_freshness(feed_data),
+        },
+        "publication": {
+            "lastEventAt": pub_state.get("lastEventAt"),
+            "lastPublishedAt": pub_state.get("lastPublishedAt"),
+            "eventCount": pub_state.get("eventCount"),
+        },
+        "agents": agents,
+        "reports": {
+            "liveAuditor": {"status": live.get("status"), "checkedAt": live.get("checkedAt"), "errors": live.get("errors") or [], "warnings": live.get("warnings") or []},
+            "timingAuditor": {"status": timing.get("status"), "checkedAt": timing.get("checkedAt"), "errors": timing.get("errors") or [], "warnings": timing.get("warnings") or []},
+            "qualityAuditor": {"status": quality.get("status"), "checkedAt": quality.get("checkedAt"), "errors": quality.get("errors") or [], "warnings": quality.get("warnings") or []},
+        },
     }
 
 
