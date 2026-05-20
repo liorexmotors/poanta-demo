@@ -2,21 +2,21 @@
 
 Items checked: 148
 Errors: 0
-Warnings: 105
+Warnings: 102
 
 ## Category distribution
 
 - ביטחון: 40
 - כלכלה: 23
 - ספורט: 21
-- פוליטיקה: 16
+- פוליטיקה: 17
 - בריאות: 9
 - תרבות: 7
 - טכנולוגיה: 6
 - צרכנות: 6
 - רכב: 5
-- משפט: 4
 - פלילים: 3
+- משפט: 3
 - עולם: 3
 - דעות: 3
 - נדל״ן: 1
@@ -24,30 +24,30 @@ Warnings: 105
 
 ## Issue counts
 
-- takeaway_long: 90
+- takeaway_long: 88
 - summary_long: 7
-- headline_near_duplicate_summary: 7
+- headline_near_duplicate_summary: 6
 - category_sport_source: 1
 
 ## Issues
 
 ### WARNING · takeaway_long · item 0
-- Takeaway length 112 > 95
-- Headline: `טענות להתעללות בעצורי המשט הפכו למשבר דיפלומטי`
+- Takeaway length 113 > 95
+- Headline: `טענות להתעללות בעצורי המשט הציתו משבר דיפלומטי`
 - Original: `מאות עצורי המשט לעזה טוענים: "חווינו אלימות קיצונית והשפלה קשה"`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839772
 
 ### WARNING · summary_long · item 1
 - Summary length 228 > 220
-- Headline: `שי גולדן מתאר איך ערוץ 14 דחק קול ביקורתי מבפנים`
+- Headline: `שי גולדן מתאר איך ערוץ 14 דחק ביקורת מבפנים`
 - Original: `"הוא במסע צלב נגד מדינת ישראל": שי גולדן פותח הכל על נתניהו, ערוץ 14 והחרטה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20592014
 
 ### WARNING · takeaway_long · item 1
-- Takeaway length 124 > 95
-- Headline: `שי גולדן מתאר איך ערוץ 14 דחק קול ביקורתי מבפנים`
+- Takeaway length 117 > 95
+- Headline: `שי גולדן מתאר איך ערוץ 14 דחק ביקורת מבפנים`
 - Original: `"הוא במסע צלב נגד מדינת ישראל": שי גולדן פותח הכל על נתניהו, ערוץ 14 והחרטה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20592014
@@ -67,15 +67,15 @@ Warnings: 105
 - URL: https://www.ynet.co.il/news/article/hykysookme
 
 ### WARNING · takeaway_long · item 4
-- Takeaway length 120 > 95
-- Headline: `ישראל נערכת לסבבי לחימה חוזרים מול איראן`
+- Takeaway length 114 > 95
+- Headline: `ישראל נערכת לעוד סבבי לחימה מול איראן`
 - Original: `גורם ביטחוני בכיר: "זה לא יהיה הסבב האחרון באיראן"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14777502
 
 ### WARNING · takeaway_long · item 5
-- Takeaway length 114 > 95
-- Headline: `רחפני חיזבאללה ממשיכים לאיים על שגרת זרעית`
+- Takeaway length 117 > 95
+- Headline: `רחפני חיזבאללה משבשים את שגרת זרעית ללא התרעה`
 - Original: `לוחמת נפצעה קשה מרחפן בלבנון, לתושבי הצפון נמאס: "הפסקת אש? הילדים בטראומה"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hjeh6mskmx
@@ -116,8 +116,8 @@ Warnings: 105
 - URL: https://sports.walla.co.il/item/3839743
 
 ### WARNING · takeaway_long · item 11
-- Takeaway length 104 > 95
-- Headline: `התקדמות במו״מ עם איראן דוחה בינתיים אפשרות לתקיפה`
+- Takeaway length 106 > 95
+- Headline: `התקדמות במו״מ עם איראן דוחה תקיפה מיידית`
 - Original: `דריכות השיא, עליית המדרגה במו"מ - ושאלת העיתוי לתקיפה באיראן`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839742
@@ -151,8 +151,8 @@ Warnings: 105
 - URL: https://sports.walla.co.il/item/3839168
 
 ### WARNING · takeaway_long · item 17
-- Takeaway length 131 > 95
-- Headline: `מילואימניקים קיבלו צווי 8 לקיץ בלי אופק לחוק גיוס`
+- Takeaway length 120 > 95
+- Headline: `מילואימניקים קיבלו צווי 8 לקיץ בלי אופק גיוס`
 - Original: `אין חוק גיוס - ומילואימניקים כבר קיבלו עוד צווי 8: "זו נקודת שבר, אין עם מי לדבר"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1afhvsjzl
@@ -388,13 +388,6 @@ Warnings: 105
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/us-palestinian-authority-united-nations-vice-presidency
 
-### WARNING · takeaway_long · item 54
-- Takeaway length 126 > 95
-- Headline: `חוק פיזור הכנסת עבר טרומית בלי מתנגדים`
-- Original: `אושר בקריאה טרומית במליאה החוק לפיזור הכנסת שהגישה האופוזיציה`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/bjyf5vskgx
-
 ### WARNING · summary_long · item 55
 - Summary length 225 > 220
 - Headline: `ננו־קו גייסה 12 מיליון דולר לכלי לניהול סוכני AI`
@@ -459,18 +452,11 @@ Warnings: 105
 - URL: https://www.ynet.co.il/news/article/ski5hrqkzl
 
 ### WARNING · takeaway_long · item 65
-- Takeaway length 104 > 95
-- Headline: `נעצר חשוד ברצח אברך שלמד עם בנו בבני ברק`
+- Takeaway length 106 > 95
+- Headline: `נעצר חשוד ברצח אברך לעיני בנו בבני ברק`
 - Original: `גבר נדקר לעיני בנו מחוץ לבית כנסת בבני ברק - החשוד נמלט`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3839649
-
-### WARNING · takeaway_long · item 67
-- Takeaway length 103 > 95
-- Headline: `תושב ירושלים נאשם בהצתות ותקיפת שוטרים בשומרון`
-- Original: `ישראל גרוסמן מירושלים נאשם בהצתות, תקיפה וסיכון כוחות משטרה בשומרון`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/bjsaz4s1fg
 
 ### WARNING · takeaway_long · item 68
 - Takeaway length 105 > 95
@@ -570,9 +556,9 @@ Warnings: 105
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3839547
 
-### WARNING · headline_near_duplicate_summary · item 93
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `הכנסת אישרה את פיזורה בקריאה טרומית`
+### WARNING · takeaway_long · item 93
+- Takeaway length 118 > 95
+- Headline: `החרדים מציבים לנתניהו מבחן סביב חוק הגיוס`
 - Original: `בלי פיליבסטר ובלי מתנגדים - החוק לפיזור הכנסת עבר בקריאה טרומית בתוך 10 דקות`
 - Source: מעריב - פוליטי מדיני
 - URL: https://www.maariv.co.il/news/politics/article-1323676
@@ -744,13 +730,6 @@ Warnings: 105
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
-
-### WARNING · takeaway_long · item 145
-- Takeaway length 100 > 95
-- Headline: `טלפון טראמפ הגיע ללקוחות והתגלה כמכשיר ממותג`
-- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
-- Source: ynet - כל ערוץ המחשבים
-- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
 ### WARNING · headline_near_duplicate_summary · item 146
 - Headline is a clipped/near-duplicate version of the summary
