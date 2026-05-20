@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v48-feedback-api';
+const CACHE_NAME = 'poanta-demo-v49-usage-dashboard';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
