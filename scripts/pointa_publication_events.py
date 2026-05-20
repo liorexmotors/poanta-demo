@@ -76,7 +76,24 @@ def record(feed_path: Path, events_path: Path, state_path: Path, gatekeeper: str
     state = load_json(state_path, {})
     if not isinstance(state, dict):
         state = {}
-    seen = set(state.get("seenItemKeys") or [])
+    # A URL can legitimately receive a newer source timestamp when an article is
+    # updated or when the collector previously saw a stale bridge timestamp.
+    # The timing auditor needs that to count as a fresh publication event.  The
+    # old state keyed only by itemKey suppressed those updates and made the
+    # watchdog look "ok" while no fresh events were emitted.  Track eventId
+    # (itemKey + publishedAt) instead, and migrate from the existing JSONL so we
+    # do not replay the whole historical feed after the change.
+    seen_events = set(state.get("seenEventIds") or [])
+    if not seen_events and events_path.exists():
+        for line in events_path.read_text(encoding="utf-8").splitlines():
+            try:
+                ev = json.loads(line)
+            except Exception:
+                continue
+            event_id = ev.get("eventId")
+            if event_id:
+                seen_events.add(str(event_id))
+    seen_items = set(state.get("seenItemKeys") or [])
     events_path.parent.mkdir(parents=True, exist_ok=True)
     state_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -85,11 +102,13 @@ def record(feed_path: Path, events_path: Path, state_path: Path, gatekeeper: str
         if not isinstance(item, dict):
             continue
         key = canonical_key(item)
-        if not replay_all and key in seen:
-            continue
         ev = event_from_item(item, feed, gatekeeper=gatekeeper, run_id=run_id)
+        event_id = str(ev.get("eventId") or "")
+        if not replay_all and event_id in seen_events:
+            continue
         new_events.append(ev)
-        seen.add(key)
+        seen_events.add(event_id)
+        seen_items.add(key)
 
     if new_events:
         with events_path.open("a", encoding="utf-8") as fh:
@@ -99,13 +118,14 @@ def record(feed_path: Path, events_path: Path, state_path: Path, gatekeeper: str
     state.update({
         "updatedAt": now_iso(),
         "feedUpdatedAt": feed.get("updatedAt"),
-        "seenItemKeys": sorted(seen),
+        "seenItemKeys": sorted(seen_items),
+        "seenEventIds": sorted(seen_events),
         "lastEventAt": new_events[-1]["seenAt"] if new_events else state.get("lastEventAt"),
         "lastPublishedAt": max([str(ev.get("publishedAt") or "") for ev in new_events] or [state.get("lastPublishedAt", "")]),
         "eventCount": int(state.get("eventCount") or 0) + len(new_events),
     })
     state_path.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return {"status": "ok", "newEvents": len(new_events), "totalSeen": len(seen), "eventsPath": str(events_path), "statePath": str(state_path)}
+    return {"status": "ok", "newEvents": len(new_events), "totalSeen": len(seen_items), "totalSeenEvents": len(seen_events), "eventsPath": str(events_path), "statePath": str(state_path)}
 
 
 def main() -> int:

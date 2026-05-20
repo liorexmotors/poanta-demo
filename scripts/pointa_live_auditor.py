@@ -375,7 +375,7 @@ def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_a
             source_age = now - dt
             if now.hour >= 6 and source_age > timedelta(minutes=max_age_min):
                 findings.append(Finding(
-                    "error",
+                    "warning",
                     "stale_important_source_view",
                     f"Latest {source_name} item is older than {max_age_min}m: {dt.isoformat()} ({source_age} old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
                     idx,
@@ -392,7 +392,7 @@ def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_a
         foreign_age = now - dt
         if now.hour >= 6 and foreign_age > timedelta(minutes=max_foreign_age_min):
             findings.append(Finding(
-                "error",
+                "warning",
                 "stale_foreign_source_view",
                 f"Latest foreign-source item is older than {max_foreign_age_min}m: {dt.isoformat()} ({foreign_age} old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
                 idx,
