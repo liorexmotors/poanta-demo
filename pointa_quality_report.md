@@ -110,7 +110,7 @@ Warnings: 101
 
 ### WARNING · takeaway_long · item 10
 - Takeaway length 103 > 95
-- Headline: `אבי לוזון מציב תקרת מכירה למכבי פתח תקוה אחרי העלייה`
+- Headline: `אבי לוזון מגביל את מכירת כוכבי מכבי פתח תקוה`
 - Original: `אבי לוזון: "אמכור כוכב אחד בלבד, לא שניים או שלושה"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839743
@@ -130,8 +130,8 @@ Warnings: 101
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
 ### WARNING · takeaway_long · item 13
-- Takeaway length 112 > 95
-- Headline: `מכבי פתח תקוה עלתה ליגה וכבר מחליפה כיוון בסגל`
+- Takeaway length 105 > 95
+- Headline: `זיו אריה מוביל במרוץ לאימון מכבי פתח תקוה`
 - Original: `זיו אריה המועמד המוביל לאמן את מכבי פתח תקוה בליגת העל`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839739
@@ -145,7 +145,7 @@ Warnings: 101
 
 ### WARNING · takeaway_long · item 15
 - Takeaway length 106 > 95
-- Headline: `תיקו 2:2 הספיק למכבי פתח תקוה לחזור לליגת העל`
+- Headline: `תיקו 2:2 החזיר את מכבי פתח תקוה לליגת העל`
 - Original: `ושוב איתכם: מכבי פתח תקוה חזרה לליגת העל אחרי עונה אחת`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839168
@@ -156,13 +156,6 @@ Warnings: 101
 - Original: `אין חוק גיוס - ומילואימניקים כבר קיבלו עוד צווי 8: "זו נקודת שבר, אין עם מי לדבר"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1afhvsjzl
-
-### WARNING · takeaway_long · item 18
-- Takeaway length 122 > 95
-- Headline: `אנבידיה שוב עקפה תחזיות בזכות זינוק בביקוש ל-AI`
-- Original: `אנבידיה הכתה התחזיות רבעון 11 ברצף; הכנסות מרכזי הנתונים זינקו ב-92%`
-- Source: דה מרקר - גלובל
-- URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article/.premium/0000019e-45e4-d0ff-afbe-47e4fac90000
 
 ### WARNING · takeaway_long · item 19
 - Takeaway length 99 > 95
@@ -186,7 +179,7 @@ Warnings: 101
 - URL: https://sports.walla.co.il/item/3839734
 
 ### WARNING · takeaway_long · item 23
-- Takeaway length 111 > 95
+- Takeaway length 106 > 95
 - Headline: `תקוות לפתיחת הורמוז הפילו את הנפט והקפיצו את וול סטריט`
 - Original: `נאסד"ק עלה ב-1.5%; הנפט צנח ב-6% על רקע תקוות לפתיחת מצר הורמוז`
 - Source: דה מרקר - גלובל
@@ -312,7 +305,7 @@ Warnings: 101
 - URL: https://www.aljazeera.com/news/2026/5/20/iran-says-it-coordinated-crossing-of-26-vessels-out-of-strait-of-hormuz?traffic_source=rss
 
 ### WARNING · takeaway_long · item 43
-- Takeaway length 120 > 95
+- Takeaway length 117 > 95
 - Headline: `וואטסאפ בוחנת מחיקה רק אחרי שהנמען קרא את ההודעה`
 - Original: `השדרוג החדש של וואטסאפ יקשה על מי שמנסה למחוק עקבות בצ'אט`
 - Source: וואלה TECH - כל הכתבות
@@ -388,15 +381,8 @@ Warnings: 101
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/us-palestinian-authority-united-nations-vice-presidency
 
-### WARNING · summary_long · item 55
-- Summary length 225 > 220
-- Headline: `ננו־קו גייסה 12 מיליון דולר לכלי לניהול סוכני AI`
-- Original: `בזכות כלי ויראלי שפיתחו: האחים גבריאל ולייזר כהן גייסו 12 מיליון דולר`
-- Source: דה מרקר - TechNation
-- URL: https://www.themarker.com/technation/2026-05-20/ty-article/.highlight/0000019e-4591-d394-addf-ffbb4bc40000
-
 ### WARNING · takeaway_long · item 55
-- Takeaway length 122 > 95
+- Takeaway length 97 > 95
 - Headline: `ננו־קו גייסה 12 מיליון דולר לכלי לניהול סוכני AI`
 - Original: `בזכות כלי ויראלי שפיתחו: האחים גבריאל ולייזר כהן גייסו 12 מיליון דולר`
 - Source: דה מרקר - TechNation
@@ -473,7 +459,7 @@ Warnings: 101
 - URL: https://www.aljazeera.com/news/2026/5/20/us-imposes-sanctions-on-gaza-flotilla-organisers-why-it-matters?traffic_source=rss
 
 ### WARNING · takeaway_long · item 71
-- Takeaway length 115 > 95
+- Takeaway length 103 > 95
 - Headline: `ת״א ננעלה בעליות; טאואר זינקה ועזריאלי צנחה`
 - Original: `עליות בבורסה; מניית עזריאלי נופלת ב-7%, טאואר מזנקת`
 - Source: גלובס - שוק ההון
@@ -723,6 +709,20 @@ Warnings: 101
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
+
+### WARNING · summary_long · item 144
+- Summary length 221 > 220
+- Headline: `אנליסטים: הטלפון של טראמפ הוא מכשיר סיני ממותג`
+- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
+- Source: ynet - כל ערוץ המחשבים
+- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
+
+### WARNING · takeaway_long · item 144
+- Takeaway length 129 > 95
+- Headline: `אנליסטים: הטלפון של טראמפ הוא מכשיר סיני ממותג`
+- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
+- Source: ynet - כל ערוץ המחשבים
+- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
 ### WARNING · headline_near_duplicate_summary · item 145
 - Headline is a clipped/near-duplicate version of the summary
