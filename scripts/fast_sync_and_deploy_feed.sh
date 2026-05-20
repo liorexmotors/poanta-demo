@@ -36,7 +36,42 @@ chmod 700 "$ASKPASS"
 export GIT_ASKPASS="$ASKPASS"
 export GIT_TERMINAL_PROMPT=0
 
+if [[ -f feed.json ]]; then cp feed.json /tmp/poanta-fast-sync-before.json; fi
 python3 scripts/update_feed.py --sync-profile fast
+python3 - <<'PY'
+import json
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+before = Path('/tmp/poanta-fast-sync-before.json')
+feed_path = Path('feed.json')
+if before.exists() and feed_path.exists():
+    old = json.loads(before.read_text(encoding='utf-8'))
+    new = json.loads(feed_path.read_text(encoding='utf-8'))
+    existing = {it.get('sourceUrl') for it in new.get('items', [])}
+    now = datetime.now(timezone(timedelta(hours=3)))
+    keep = []
+    for it in old.get('items', []):
+        if it.get('sourceUrl') in existing:
+            continue
+        if it.get('editorStatus') not in {'rescue-manual-pass', 'rescue-editor-pass'}:
+            continue
+        try:
+            published = datetime.fromisoformat(str(it.get('publishedAt')).replace('Z', '+00:00'))
+            if published.tzinfo is None:
+                published = published.replace(tzinfo=timezone(timedelta(hours=3)))
+            published = published.astimezone(timezone(timedelta(hours=3)))
+        except Exception:
+            continue
+        if now - published <= timedelta(hours=6):
+            keep.append(it)
+    if keep:
+        new['items'].extend(keep)
+        new['items'].sort(key=lambda x: x.get('publishedAt') or '', reverse=True)
+        rr = dict(new.get('rescueRetention') or {})
+        rr.update({'preservedRecentRescueCards': len(keep), 'updatedAt': now.isoformat(timespec='seconds')})
+        new['rescueRetention'] = rr
+        feed_path.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 npm run build
 
