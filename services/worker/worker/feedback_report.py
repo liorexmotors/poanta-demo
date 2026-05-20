@@ -60,30 +60,39 @@ def build_sqlite_report(path: Path, hours: int, limit: int) -> dict[str, Any]:
     since_modifier = f"-{int(hours)} hours"
     with sqlite3.connect(path) as conn:
         init_sqlite(conn)
-        totals = _sqlite_rows(conn, """
+        active_cte = """
+            WITH ranked AS (
+              SELECT *, row_number() OVER (
+                PARTITION BY coalesce(device_id, 'anon'), card_key
+                ORDER BY datetime(received_at) DESC, id DESC
+              ) AS rn
+              FROM feedback_events
+              WHERE datetime(received_at) >= datetime('now', ?)
+            ), active AS (
+              SELECT * FROM ranked WHERE rn = 1 AND feedback <> 'clear'
+            )
+        """
+        totals = _sqlite_rows(conn, active_cte + """
             SELECT feedback, count(*) AS count
-            FROM feedback_events
-            WHERE datetime(received_at) >= datetime('now', ?)
+            FROM active
             GROUP BY feedback
             ORDER BY feedback
         """, (since_modifier,))
-        by_source = _sqlite_rows(conn, """
+        by_source = _sqlite_rows(conn, active_cte + """
             SELECT coalesce(nullif(source_name, ''), 'unknown') AS source_name,
                    feedback, count(*) AS count
-            FROM feedback_events
-            WHERE datetime(received_at) >= datetime('now', ?)
+            FROM active
             GROUP BY coalesce(nullif(source_name, ''), 'unknown'), feedback
             ORDER BY source_name, feedback
         """, (since_modifier,))
-        by_category = _sqlite_rows(conn, """
+        by_category = _sqlite_rows(conn, active_cte + """
             SELECT coalesce(nullif(category, ''), 'unknown') AS category,
                    feedback, count(*) AS count
-            FROM feedback_events
-            WHERE datetime(received_at) >= datetime('now', ?)
+            FROM active
             GROUP BY coalesce(nullif(category, ''), 'unknown'), feedback
             ORDER BY category, feedback
         """, (since_modifier,))
-        cards = _sqlite_rows(conn, """
+        cards = _sqlite_rows(conn, active_cte + """
             SELECT card_key,
                    max(headline) AS headline,
                    max(source_name) AS source_name,
@@ -92,10 +101,9 @@ def build_sqlite_report(path: Path, hours: int, limit: int) -> dict[str, Any]:
                    max(received_at) AS last_feedback_at,
                    sum(CASE WHEN feedback = 'down' THEN 1 ELSE 0 END) AS down_count,
                    sum(CASE WHEN feedback = 'up' THEN 1 ELSE 0 END) AS up_count,
-                   sum(CASE WHEN feedback = 'clear' THEN 1 ELSE 0 END) AS clear_count,
+                   0 AS clear_count,
                    count(*) AS total_count
-            FROM feedback_events
-            WHERE datetime(received_at) >= datetime('now', ?)
+            FROM active
             GROUP BY card_key
             ORDER BY down_count DESC, up_count ASC, total_count DESC, last_feedback_at DESC
             LIMIT ?
@@ -179,11 +187,23 @@ def build_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
     from psycopg.rows import dict_row
 
     with psycopg.connect(database_url(), row_factory=dict_row) as conn:
+        active_cte = """
+            WITH ranked AS (
+              SELECT *, row_number() OVER (
+                PARTITION BY coalesce(device_id, 'anon'), card_key
+                ORDER BY received_at DESC, id DESC
+              ) AS rn
+              FROM feedback_events
+              WHERE received_at >= now() - (%s || ' hours')::interval
+            ), active AS (
+              SELECT * FROM ranked WHERE rn = 1 AND feedback <> 'clear'
+            )
+        """
         totals = conn.execute(
             """
+            """ + active_cte + """
             SELECT feedback, count(*) AS count
-            FROM feedback_events
-            WHERE received_at >= now() - (%s || ' hours')::interval
+            FROM active
             GROUP BY feedback
             ORDER BY feedback
             """,
@@ -191,10 +211,10 @@ def build_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
         ).fetchall()
         by_source = conn.execute(
             """
+            """ + active_cte + """
             SELECT coalesce(nullif(source_name, ''), 'unknown') AS source_name,
                    feedback, count(*) AS count
-            FROM feedback_events
-            WHERE received_at >= now() - (%s || ' hours')::interval
+            FROM active
             GROUP BY coalesce(nullif(source_name, ''), 'unknown'), feedback
             ORDER BY source_name, feedback
             """,
@@ -202,10 +222,10 @@ def build_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
         ).fetchall()
         by_category = conn.execute(
             """
+            """ + active_cte + """
             SELECT coalesce(nullif(category, ''), 'unknown') AS category,
                    feedback, count(*) AS count
-            FROM feedback_events
-            WHERE received_at >= now() - (%s || ' hours')::interval
+            FROM active
             GROUP BY coalesce(nullif(category, ''), 'unknown'), feedback
             ORDER BY category, feedback
             """,
@@ -213,6 +233,7 @@ def build_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
         ).fetchall()
         cards = conn.execute(
             """
+            """ + active_cte + """
             SELECT card_key,
                    max(headline) AS headline,
                    max(source_name) AS source_name,
@@ -221,10 +242,9 @@ def build_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
                    max(received_at) AS last_feedback_at,
                    count(*) FILTER (WHERE feedback = 'down') AS down_count,
                    count(*) FILTER (WHERE feedback = 'up') AS up_count,
-                   count(*) FILTER (WHERE feedback = 'clear') AS clear_count,
+                   0 AS clear_count,
                    count(*) AS total_count
-            FROM feedback_events
-            WHERE received_at >= now() - (%s || ' hours')::interval
+            FROM active
             GROUP BY card_key
             ORDER BY down_count DESC, up_count ASC, total_count DESC, last_feedback_at DESC
             LIMIT %s
