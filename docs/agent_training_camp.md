@@ -50,7 +50,7 @@ Outputs:
 - Duplicate stories.
 - Manual correction overwrite.
 - Build/deploy/QA failure handling.
-- Option 2 limited autonomy: one safe repair attempt, then ask Lior.
+- Feed-publication autonomy: act under hard gates; if gates fail, do not publish and keep deterministic repair internal instead of asking Lior to choose.
 
 ## Enforcement principle
 
