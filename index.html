@@ -172,7 +172,7 @@ const ENGAGEMENT_PENDING_KEY = 'pointa:pending-source-open:v1';
 const FEEDBACK_KEY = 'pointa:item-feedback:v1';
 const FEEDBACK_PENDING_KEY = 'pointa:pending-feedback-events:v1';
 const DEVICE_KEY = 'pointa:device-id:v1';
-const FEEDBACK_API_URL = localStorage.getItem('pointa:feedback-api-url') || '';
+const FEEDBACK_API_URL = localStorage.getItem('pointa:feedback-api-url') || 'https://203259678.clawbud.ai/poanta-api';
 let sourceCatalog = [];
 let translationCache = (()=>{try{return JSON.parse(localStorage.getItem(TRANSLATE_CACHE_KEY)||'{}')||{};}catch{return{};}})();
 let activeView = 'home';

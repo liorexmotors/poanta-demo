@@ -60,8 +60,9 @@
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const params=new URLSearchParams(location.search);
+const DEFAULT_API_BASE='https://203259678.clawbud.ai/poanta-api';
 const stored=localStorage.getItem('pointa:feedback-api-url')||'';
-$('#apiBase').value=params.get('api')||stored||'';
+$('#apiBase').value=params.get('api')||stored||DEFAULT_API_BASE;
 function endpoint(){const base=$('#apiBase').value.trim().replace(/\/$/,'');return base?`${base}/v1/feedback/report?hours=${$('#hours').value}&limit=30`:`/v1/feedback/report?hours=${$('#hours').value}&limit=30`;}
 function counts(rows){const out={up:0,down:0,clear:0};(rows||[]).forEach(r=>{out[r.feedback]=(out[r.feedback]||0)+Number(r.count||0)});return out;}
 function grouped(rows,key){const m={};(rows||[]).forEach(r=>{const name=r[key]||r.name||'unknown';m[name]=m[name]||{name,up:0,down:0,clear:0};m[name][r.feedback]=(m[name][r.feedback]||0)+Number(r.count||0)});return Object.values(m).map(x=>({...x,total:x.up+x.down+x.clear,ratio:(x.down/(x.up+x.down||1))})).sort((a,b)=>b.down-a.down||b.ratio-a.ratio||a.name.localeCompare(b.name));}
