@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v47-smart-image-crop';
+const CACHE_NAME = 'poanta-demo-v48-feedback-api';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
