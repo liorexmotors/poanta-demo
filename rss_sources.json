@@ -1,6 +1,6 @@
 {
   "mode": "rss_only_all_official_feeds",
-  "notes": "Expanded and trimmed locally 2026-05-18 after Lior approval: official RSS sources added for Maariv, TheMarker, expanded Globes, and N12/mako; culture trimmed to a lean default set. RSS is pulled by us; no HTML scraping. Aggregator feeds are tracked as fallback candidates only, not active by default.\n2026-05-18 local: added international RSS sources for BBC World and Sky News World; CNN uses Google News RSS fallback because official CNN RSS feeds tested stale/old. Also refined topic taxonomy from broad בארץ/עולם buckets into פוליטיקה/ביטחון/משפט/פלילים etc.\n2026-05-19 local: added official Home Front Command Telegram channel as a FAST security source because no official RSS feed is available.\n2026-05-19 local: added official IDF Spokesperson Telegram channel as a FAST security source.\n2026-05-19 local: removed Home Front Command Telegram source after Lior clarified the intended source was IDF Spokesperson Telegram only.\n2026-05-19 local: added official Israel Police spokesperson Telegram channel as a FAST source for crime/security/public-safety updates.",
+  "notes": "Expanded and trimmed locally 2026-05-18 after Lior approval: official RSS sources added for Maariv, TheMarker, expanded Globes, and N12/mako; culture trimmed to a lean default set. RSS is pulled by us; no HTML scraping. Aggregator feeds are tracked as fallback candidates only, not active by default.\n2026-05-18 local: added international RSS sources for BBC World and Sky News World; CNN uses Google News RSS fallback because official CNN RSS feeds tested stale/old. Also refined topic taxonomy from broad בארץ/עולם buckets into פוליטיקה/ביטחון/משפט/פלילים etc.\n2026-05-19 local: added official Home Front Command Telegram channel as a FAST security source because no official RSS feed is available.\n2026-05-19 local: added official IDF Spokesperson Telegram channel as a FAST security source.\n2026-05-19 local: removed Home Front Command Telegram source after Lior clarified the intended source was IDF Spokesperson Telegram only.\n2026-05-19 local: added official Israel Police spokesperson Telegram channel as a FAST source for crime/security/public-safety updates.\n2026-05-20 local: Lior clarified foreign sources should contribute only Israel/Middle East-relevant stories. Added stronger foreign RSS/fallback sources (NYT Middle East, Guardian Middle East, Reuters/AP/Axios/Politico/Bloomberg filtered Google News, Al Jazeera all-feed with relevance filter) and tightened English-source filtering.",
   "active": [
     {
       "name": "דובר צה״ל - טלגרם רשמי",
@@ -1487,6 +1487,94 @@
       "language": "en",
       "official": false,
       "note": "Official CNN RSS checked but appears stale; using Google News RSS fallback restricted to recent CNN items for freshness."
+    },
+    {
+      "name": "New York Times Middle East",
+      "categoryHint": "ביטחון",
+      "rss": "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
+      "logo": "NYT",
+      "lastValidatedItems": 35,
+      "language": "en",
+      "official": true,
+      "syncProfile": "fast",
+      "note": "Foreign source: keep only Israel/Middle East relevant items."
+    },
+    {
+      "name": "The Guardian Middle East",
+      "categoryHint": "ביטחון",
+      "rss": "https://www.theguardian.com/world/middleeast/rss",
+      "logo": "Guardian",
+      "lastValidatedItems": 20,
+      "language": "en",
+      "official": true,
+      "syncProfile": "fast",
+      "note": "Foreign source: keep only Israel/Middle East relevant items."
+    },
+    {
+      "name": "Reuters Middle East דרך Google News",
+      "categoryHint": "ביטחון",
+      "rss": "https://news.google.com/rss/search?q=site%3Areuters.com%2Fworld%2Fmiddle-east+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "logo": "Reuters",
+      "lastValidatedItems": 27,
+      "language": "en",
+      "official": false,
+      "syncProfile": "fast",
+      "note": "Reuters does not expose a stable official RSS endpoint here; Google News fallback restricted to Reuters Middle East and filtered for regional relevance."
+    },
+    {
+      "name": "AP Middle East דרך Google News",
+      "categoryHint": "ביטחון",
+      "rss": "https://news.google.com/rss/search?q=site%3Aapnews.com%2Fhub%2Fmiddle-east+OR+site%3Aapnews.com+%28Israel+OR+Iran+OR+Gaza+OR+Lebanon+OR+Syria%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "logo": "AP",
+      "lastValidatedItems": 100,
+      "language": "en",
+      "official": false,
+      "syncProfile": "fast",
+      "note": "AP Middle East/Israel/Iran fallback via Google News; filtered for regional relevance."
+    },
+    {
+      "name": "Axios Israel/Iran דרך Google News",
+      "categoryHint": "ביטחון",
+      "rss": "https://news.google.com/rss/search?q=site%3Aaxios.com+%28Israel+OR+Iran+OR+Gaza+OR+Lebanon+OR+Hamas+OR+Hezbollah%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "logo": "Axios",
+      "lastValidatedItems": 27,
+      "language": "en",
+      "official": false,
+      "syncProfile": "fast",
+      "note": "US policy scoops relevant to Israel/Iran/Middle East only."
+    },
+    {
+      "name": "Politico Israel/Iran דרך Google News",
+      "categoryHint": "פוליטיקה",
+      "rss": "https://news.google.com/rss/search?q=site%3Apolitico.com+%28Israel+OR+Iran+OR+Gaza+OR+Lebanon+OR+Hamas+OR+Hezbollah%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "logo": "Politico",
+      "lastValidatedItems": 100,
+      "language": "en",
+      "official": false,
+      "syncProfile": "fast",
+      "note": "Foreign source: US politics/policy items only when tied to Israel/Iran/Middle East."
+    },
+    {
+      "name": "Bloomberg Israel/Iran דרך Google News",
+      "categoryHint": "כלכלה",
+      "rss": "https://news.google.com/rss/search?q=site%3Abloomberg.com+%28Israel+OR+Iran+OR+Gaza+OR+Lebanon+OR+Hamas+OR+Hezbollah+OR+Hormuz%29+when%3A2d&hl=en-US&gl=US&ceid=US%3Aen",
+      "logo": "Bloomberg",
+      "lastValidatedItems": 100,
+      "language": "en",
+      "official": false,
+      "syncProfile": "fast",
+      "note": "Business/geopolitics impact items tied to Israel/Iran/Middle East only."
+    },
+    {
+      "name": "Al Jazeera RSS מסונן מזרח תיכון",
+      "categoryHint": "ביטחון",
+      "rss": "https://www.aljazeera.com/xml/rss/all.xml",
+      "logo": "Al Jazeera",
+      "lastValidatedItems": 25,
+      "language": "en",
+      "official": true,
+      "syncProfile": "fast",
+      "note": "All-feed source; only Israel/Middle East relevant items may pass the foreign relevance filter."
     },
     {
       "name": "כאן דרך Google News",
