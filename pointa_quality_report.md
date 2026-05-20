@@ -1,15 +1,15 @@
 # Pointa Quality Gate Report
 
-Items checked: 150
+Items checked: 149
 Errors: 0
-Warnings: 97
+Warnings: 96
 
 ## Category distribution
 
 - ביטחון: 41
 - כלכלה: 22
 - ספורט: 19
-- פוליטיקה: 17
+- פוליטיקה: 16
 - פלילים: 9
 - בריאות: 9
 - טכנולוגיה: 6
@@ -24,7 +24,7 @@ Warnings: 97
 
 ## Issue counts
 
-- takeaway_long: 82
+- takeaway_long: 81
 - summary_long: 9
 - headline_near_duplicate_summary: 6
 
@@ -576,133 +576,126 @@ Warnings: 97
 - Source: N12 - בארץ
 - URL: https://www.mako.co.il/news-israel/2026_q2/Article-216bf8dec7f3e91027.htm
 
-### WARNING · takeaway_long · item 108
+### WARNING · takeaway_long · item 107
 - Takeaway length 102 > 95
 - Headline: `גיהוקים קבועים עם סימני אזהרה מצדיקים בירור`
 - Original: `מגהקים יותר מ-13 פעמים ביום? זה מה שהגוף אולי מנסה להגיד לכם`
 - Source: וואלה בריאות - הבריאות שלי
 - URL: https://healthy.walla.co.il/item/3839349
 
-### WARNING · takeaway_long · item 109
+### WARNING · takeaway_long · item 108
 - Takeaway length 108 > 95
 - Headline: `מחקר קושר אכילת ביצים לירידה בסיכון קוגניטיבי`
 - Original: `כמה ביצים צריך לאכול בשבוע כדי להוריד סיכון לדמנציה ב-27%?`
 - Source: וואלה בריאות
 - URL: https://healthy.walla.co.il/item/3839261
 
-### WARNING · takeaway_long · item 111
+### WARNING · takeaway_long · item 110
 - Takeaway length 113 > 95
 - Headline: `מכבי תל אביב צפויה לפתוח חזק מול באר שבע`
 - Original: `זה ההרכב המסתמן של מילר מול הפועל באר שבע, בליץ' ב-21`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839217
 
-### WARNING · takeaway_long · item 113
+### WARNING · takeaway_long · item 112
 - Takeaway length 100 > 95
 - Headline: `חידוש תקיפה באיראן עלול להפוך למלכודת התשה`
 - Original: `הטעות שעלולה להפוך לקטסטרופה אסטרטגית לישראל`
 - Source: מעריב - דעות
 - URL: https://www.maariv.co.il/news/opinions/article-1322927
 
-### WARNING · takeaway_long · item 114
+### WARNING · takeaway_long · item 113
 - Takeaway length 104 > 95
 - Headline: `ערוץ 4 הסיר פרקי ריאליטי אחרי טענות לאונס`
 - Original: `סערה ב"חתונה ממבט ראשון" בריטניה: שתי משתתפות טוענות שנאנסו בצילומים`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839163
 
-### WARNING · takeaway_long · item 115
+### WARNING · takeaway_long · item 114
 - Takeaway length 105 > 95
 - Headline: `גווארדיולה צפוי לסיים עשור במנצ׳סטר סיטי`
 - Original: `דיווח דרמטי: פפ גווארדיולה יעזוב את מנצ'סטר סיטי, אנצו מארסקה יחליפו`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839155
 
-### WARNING · takeaway_long · item 116
+### WARNING · takeaway_long · item 115
 - Takeaway length 104 > 95
 - Headline: `רטנר ופיינגזיכט קיבלו אישור לשחק מול הפועל ת״א`
 - Original: `בשורה טובה למכבי חיפה: רטנר ופיינגזיכט שוחררו ויעמדו לרשות בכר`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3838949
 
-### WARNING · takeaway_long · item 117
+### WARNING · takeaway_long · item 116
 - Takeaway length 125 > 95
 - Headline: `תדהר יוצאת להנפקה גדולה בשוק נדל״ן לחוץ`
 - Original: `חברת הנדל"ן הפרטית הגדולה בישראל נחשפת. האם תקבל שווי של מעל 7 מיליארד שקל?`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543305#utm_source=RSS
 
-### WARNING · takeaway_long · item 118
+### WARNING · takeaway_long · item 117
 - Takeaway length 112 > 95
 - Headline: `מודריץ׳ נכלל בסגל קרואטיה למונדיאל חמישי`
 - Original: `בדרך להופעה ה-200 בנבחרת: מונדיאל חמישי ללוקה מודריץ'`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839049
 
-### WARNING · takeaway_long · item 119
+### WARNING · takeaway_long · item 118
 - Takeaway length 130 > 95
 - Headline: `ריינאייר מציעה לאו׳לירי עוד בונוס ענק במניות`
 - Original: `מנכ"ל חברת התעופה הפרובוקטיבי עשוי לקבל בונוס של 100 מיליון יורו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/aviation/article/20567101
 
-### WARNING · headline_near_duplicate_summary · item 123
+### WARNING · headline_near_duplicate_summary · item 122
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הזינוק במחירי האנרגיה גורר קנס ממוצע של 316 דולר לכל משק בית בארה"ב`
 - Original: `המחירים זינקו: כמה שילם כל אמריקאי בגלל המלחמה עם איראן?`
 - Source: וואלה כסף - כסף עולמי
 - URL: https://finance.walla.co.il/item/3838964
 
-### WARNING · takeaway_long · item 124
+### WARNING · takeaway_long · item 123
 - Takeaway length 96 > 95
 - Headline: `ליברה פתחה ביטוח רכב יומי לכל הנהגים בישראל`
 - Original: `ביטוח רכב ב-24 שקל ליום גם לנהגים בוגרים: משתלם?`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/bjetzdujgg
 
-### WARNING · takeaway_long · item 126
+### WARNING · takeaway_long · item 125
 - Takeaway length 116 > 95
 - Headline: `חתונמי פתחה עונה עם ליהוק שמכוון לשואו ולא לזוגיות שקטה`
 - Original: `נועה באה לחתונמי לתת שואו. תכף ייפול לה אסימון ותבוא התרסקות מפוארת`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3838914
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 130
 - Takeaway length 110 > 95
 - Headline: `ישראלים מזמינים חופשות מוקדם יותר בגלל החשש מאיראן`
 - Original: `על רקע האיומים לחידוש התקיפה: "מזהים שינוי בהזמנות החופשה של הישראלים"`
 - Source: N12 - כלכלה וצרכנות
 - URL: https://www.mako.co.il/news-money/consumer/Article-d8620f85d473e91027.htm
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 131
 - Takeaway length 116 > 95
 - Headline: `פז תחלק קפה ומאפה ב־yellow כפיצוי על עישון בתחנות`
 - Original: `שוב קפה ומאפה חינם ב-yellow: האם הפעם ישתלטו על הבלגן?`
 - Source: ynet - כל ערוץ הצרכנות
 - URL: https://www.ynet.co.il/economy/article/sjrrtrvkze
 
-### WARNING · takeaway_long · item 139
+### WARNING · takeaway_long · item 138
 - Takeaway length 103 > 95
 - Headline: `עמוד אינסטגרם חושף את הבימוי מאחורי הפיד`
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
 
-### WARNING · takeaway_long · item 147
-- Takeaway length 120 > 95
-- Headline: `טלפון טראמפ הגיע, והלקוחות מצאו מכשיר סיני ממותג`
-- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
-- Source: ynet - כל ערוץ המחשבים
-- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
-
-### WARNING · headline_near_duplicate_summary · item 148
+### WARNING · headline_near_duplicate_summary · item 147
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המדד רשם עלייה חדה, בעיקר בשל הזינוק במחירי האנרגיה והתייקרות חופשות`
 - Original: `מדד המחירים לצרכן זינק ב-1.2%, מחירי הדירות עלו`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3838349
 
-### WARNING · headline_near_duplicate_summary · item 149
+### WARNING · headline_near_duplicate_summary · item 148
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `מסמך פנימי, מאות תגובות ממנכ"לים וביקוש שיא לסניורים`
 - Original: `אקזיט מסוג אחר: כך הפכו 300 מפוטרים לסחורה הכי חמה בשוק ההייטק הישראלי`
