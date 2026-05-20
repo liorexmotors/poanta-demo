@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import os
+import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -14,6 +16,7 @@ from services.worker.worker.feedback_report import build_report as build_feedbac
 
 ROOT = Path(__file__).resolve().parents[3]
 LEGACY_FEED = ROOT / "feed.json"
+DEFAULT_SQLITE = ROOT / "var" / "poanta_feedback.sqlite3"
 
 app = FastAPI(title="Poanta API", version="0.1.0")
 app.add_middleware(
@@ -46,6 +49,43 @@ def load_legacy_feed() -> dict[str, Any]:
     if not LEGACY_FEED.exists():
         return {"updatedAt": datetime.now(timezone.utc).isoformat(), "items": []}
     return json.loads(LEGACY_FEED.read_text(encoding="utf-8"))
+
+
+def sqlite_path() -> Path:
+    return Path(os.getenv("POANTA_SQLITE_PATH") or DEFAULT_SQLITE)
+
+
+def sqlite_available() -> bool:
+    return bool(os.getenv("POANTA_SQLITE_PATH")) or not db_available()
+
+
+def sqlite_connect() -> sqlite3.Connection:
+    path = sqlite_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(path)
+    conn.row_factory = sqlite3.Row
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS feedback_events (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          device_id TEXT,
+          card_key TEXT NOT NULL,
+          source_url TEXT,
+          source_name TEXT,
+          category TEXT,
+          headline TEXT,
+          feedback TEXT NOT NULL CHECK (feedback IN ('up', 'down', 'clear')),
+          client_ts TEXT,
+          received_at TEXT NOT NULL DEFAULT (datetime('now')),
+          metadata TEXT NOT NULL DEFAULT '{}'
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_received_at ON feedback_events (received_at DESC)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_card_key ON feedback_events (card_key)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_source_name ON feedback_events (source_name)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_feedback_received_at ON feedback_events (feedback, received_at DESC)")
+    return conn
 
 
 def load_db_feed() -> dict[str, Any] | None:
@@ -107,7 +147,7 @@ def load_db_feed() -> dict[str, Any] | None:
 
 @app.get("/health")
 def health() -> dict[str, Any]:
-    return {"ok": True, "service": "api", "checkedAt": datetime.now(timezone.utc).isoformat()}
+    return {"ok": True, "service": "api", "checkedAt": datetime.now(timezone.utc).isoformat(), "feedbackStore": "postgres" if db_available() else "sqlite", "sqlitePath": str(sqlite_path()) if not db_available() else None}
 
 
 @app.get("/v1/feed")
@@ -147,14 +187,35 @@ def register_device(req: DeviceRegisterRequest) -> dict[str, Any]:
 @app.post("/v1/feedback")
 def feedback(req: FeedbackRequest) -> dict[str, Any]:
     value = req.feedback if req.feedback in {"up", "down", "clear"} else "clear"
-    if not db_available():
-        return {"ok": False, "stored": False, "reason": "database_not_configured"}
     client_ts = None
     if req.clientTs:
         try:
             client_ts = datetime.fromisoformat(req.clientTs.replace("Z", "+00:00"))
         except Exception:
             client_ts = None
+    if not db_available():
+        with sqlite_connect() as conn:
+            conn.execute(
+                """
+                INSERT INTO feedback_events (
+                  device_id, card_key, source_url, source_name, category,
+                  headline, feedback, client_ts, metadata
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    req.deviceId,
+                    req.cardKey,
+                    req.sourceUrl,
+                    req.source,
+                    req.category,
+                    req.headline,
+                    value,
+                    client_ts.isoformat() if client_ts else None,
+                    json.dumps(req.metadata or {}, ensure_ascii=False),
+                ),
+            )
+            conn.commit()
+        return {"ok": True, "stored": True, "feedback": value, "store": "sqlite"}
     with connect() as conn:
         conn.execute(
             """
@@ -185,8 +246,6 @@ def feedback_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
     This is the machine-readable חיווי Aliza/מבקר איכות should consume:
     recent 👍👎 events, worst cards, source/category patterns, and action items.
     """
-    if not db_available():
-        return {"ok": False, "status": "unavailable", "reason": "database_not_configured", "items": []}
     safe_hours = max(1, min(int(hours), 24 * 30))
     safe_limit = max(1, min(int(limit), 100))
     report = build_feedback_report(hours=safe_hours, limit=safe_limit)
