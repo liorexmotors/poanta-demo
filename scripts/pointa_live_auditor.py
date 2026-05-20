@@ -323,7 +323,7 @@ def latest_matching_item(items: list[dict[str, Any]], predicate) -> tuple[int, d
     return best
 
 
-def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_age_min: int, max_top_age_hours: int, max_foreign_age_min: int, top_limit: int) -> list[Finding]:
+def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_age_min: int, max_top_age_hours: int, max_foreign_age_min: int, top_limit: int, recent_window_min: int, min_recent_items: int, min_recent_sources: int) -> list[Finding]:
     findings: list[Finding] = []
     now = datetime.now(TZ)
     items = feed.get("items") or []
@@ -384,12 +384,31 @@ def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_a
         findings.append(Finding("error", "weather_on_top", "Weather is the top live item; this usually means fresh news did not publish", 0, top.get("headline", ""), top.get("source", ""), top.get("sourceUrl", "")))
 
     fresh_count = 0
+    recent_count = 0
+    recent_sources: set[str] = set()
     for item in items[:top_limit]:
         d = parse_dt(str(item.get("publishedAt") or ""))
         if d and now - d <= timedelta(hours=max_top_age_hours):
             fresh_count += 1
+        if d and now - d <= timedelta(minutes=recent_window_min):
+            recent_count += 1
+            label = canonical_hebrew_source_label(item) or canonical_source_label(item) or str(item.get("source") or "")
+            if label:
+                recent_sources.add(label)
     if now.hour >= 6 and fresh_count < 3:
         findings.append(Finding("error", "too_few_fresh_top_items", f"Only {fresh_count} of top {top_limit} items are fresh within {max_top_age_hours}h"))
+    if now.hour >= 6 and recent_count < min_recent_items:
+        findings.append(Finding(
+            "error",
+            "too_few_recent_items_sla",
+            f"Quantity SLA failed: only {recent_count} of top {top_limit} items are newer than {recent_window_min}m; minimum is {min_recent_items}. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+        ))
+    if now.hour >= 6 and len(recent_sources) < min_recent_sources:
+        findings.append(Finding(
+            "error",
+            "too_few_recent_sources_sla",
+            f"Quantity SLA failed: only {len(recent_sources)} distinct recent source groups in top {top_limit} within {recent_window_min}m; minimum is {min_recent_sources}. Feed may look narrow even if items are fresh.",
+        ))
 
     for idx, item in enumerate(items[:top_limit]):
         headline = str(item.get("headline") or "")
@@ -423,6 +442,9 @@ def main() -> int:
     ap.add_argument("--max-update-age-min", type=int, default=25)
     ap.add_argument("--max-top-age-hours", type=int, default=2)
     ap.add_argument("--max-foreign-age-min", type=int, default=60)
+    ap.add_argument("--recent-window-min", type=int, default=60, help="Quantity SLA window for fresh visible volume")
+    ap.add_argument("--min-recent-items", type=int, default=5, help="Minimum top items newer than recent-window-min")
+    ap.add_argument("--min-recent-sources", type=int, default=3, help="Minimum distinct recent source groups in the top slice")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
@@ -432,7 +454,7 @@ def main() -> int:
         raw = fetch_json(args.raw_url)
     except Exception:
         raw = None
-    findings = audit(live, raw, max_update_age_min=args.max_update_age_min, max_top_age_hours=args.max_top_age_hours, max_foreign_age_min=args.max_foreign_age_min, top_limit=args.top)
+    findings = audit(live, raw, max_update_age_min=args.max_update_age_min, max_top_age_hours=args.max_top_age_hours, max_foreign_age_min=args.max_foreign_age_min, top_limit=args.top, recent_window_min=args.recent_window_min, min_recent_items=args.min_recent_items, min_recent_sources=args.min_recent_sources)
     errors = [f for f in findings if f.severity == "error"]
     warnings = [f for f in findings if f.severity == "warning"]
     result = {
