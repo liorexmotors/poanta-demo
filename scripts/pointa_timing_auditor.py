@@ -20,13 +20,14 @@ DEFAULT_EVENTS = ROOT / "tmp" / "publication_events.jsonl"
 DEFAULT_REPORT = ROOT / "tmp" / "pointa_timing_auditor_last.json"
 
 DEFAULT_GROUP_THRESHOLDS_MIN = {
-    "all": 90,
+    "all": 30,
     "important": 120,
     "foreign": 90,
     "דה מרקר": 240,
     "הארץ": 180,
     "מעריב": 180,
 }
+DEFAULT_ALL_WARNING_MIN = 15
 IMPORTANT_SOURCES = ["הארץ", "ynet", "וואלה", "מעריב", "גלובס", "ישראל היום", "דה מרקר"]
 FOREIGN_SOURCES = ["Reuters", "AP", "NYT", "Axios", "Al Jazeera", "Bloomberg", "BBC", "CNN", "Sky", "Guardian", "Politico"]
 
@@ -79,7 +80,7 @@ def event_time(ev: dict[str, Any], use_seen_at: bool) -> datetime | None:
     return parse_dt(ev.get("publishedAt")) or parse_dt(ev.get("seenAt"))
 
 
-def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at: bool = False) -> dict[str, Any]:
+def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at: bool = False, all_warning_min: int = DEFAULT_ALL_WARNING_MIN) -> dict[str, Any]:
     now = now_dt()
     latest_by_group: dict[str, dict[str, Any]] = {}
     latest_all: dict[str, Any] | None = None
@@ -115,18 +116,35 @@ def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at:
             findings.append({"severity": "error", "code": "no_publication_events", "group": name, "message": f"No publication event found for {name}"})
             return
         age = now - ev["_time"]
+        age_min = int(age.total_seconds() // 60)
+        if name == "all" and 6 <= now.hour < 23 and age > timedelta(minutes=all_warning_min) and age <= timedelta(minutes=threshold_min):
+            findings.append({
+                "severity": "warning",
+                "code": "publication_silence_warning",
+                "group": name,
+                "thresholdMinutes": threshold_min,
+                "warningMinutes": all_warning_min,
+                "ageMinutes": age_min,
+                "latestAt": ev["_time"].isoformat(timespec="seconds"),
+                "headline": ev.get("headline"),
+                "source": ev.get("source"),
+                "message": f"No new publication event for {age_min} minutes; warn Aliza now. At {threshold_min} minutes this becomes an operational problem.",
+                "recommendedAction": "alert_aliza_monitor_until_fast_rescue_threshold",
+                "escalateTo": "aliza",
+            })
         if age > timedelta(minutes=threshold_min):
             findings.append({
                 "severity": "error",
                 "code": "publication_timing_sla",
                 "group": name,
                 "thresholdMinutes": threshold_min,
-                "ageMinutes": int(age.total_seconds() // 60),
+                "ageMinutes": age_min,
                 "latestAt": ev["_time"].isoformat(timespec="seconds"),
                 "headline": ev.get("headline"),
                 "source": ev.get("source"),
-                "message": f"No fresh {name} publication event for {int(age.total_seconds() // 60)} minutes; threshold is {threshold_min} minutes.",
-                "recommendedAction": "trigger_source_rescue" if name != "all" else "trigger_fast_rescue",
+                "message": f"No fresh {name} publication event for {age_min} minutes; threshold is {threshold_min} minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+                "recommendedAction": "trigger_source_rescue_and_alert_aliza" if name != "all" else "trigger_fast_rescue_and_alert_aliza",
+                "escalateTo": "aliza",
             })
 
     check("all", latest_all, thresholds.get("all", 90))
@@ -152,6 +170,7 @@ def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at:
         "eventsChecked": len(events),
         "clock": "seenAt" if use_seen_at else "publishedAt_fallback_seenAt",
         "thresholdsMinutes": thresholds,
+        "warningMinutes": {"all": all_warning_min},
         "recentItems60m": recent_items,
         "recentSourceGroups60m": sorted(recent_sources),
         "latestByGroup": latest_summary,
@@ -178,11 +197,12 @@ def main() -> int:
     ap.add_argument("--report", default=str(DEFAULT_REPORT))
     ap.add_argument("--threshold", default="", help="Comma list, e.g. all=90,foreign=60,דה מרקר=240")
     ap.add_argument("--use-seen-at", action="store_true", help="Measure publication pipeline silence rather than source publication time")
+    ap.add_argument("--all-warning-min", type=int, default=DEFAULT_ALL_WARNING_MIN, help="Warn Aliza after this many minutes without any new publication event")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--fail-on-error", action="store_true")
     args = ap.parse_args()
     events = read_events(Path(args.events))
-    result = audit(events, parse_thresholds(args.threshold), use_seen_at=args.use_seen_at)
+    result = audit(events, parse_thresholds(args.threshold), use_seen_at=args.use_seen_at, all_warning_min=args.all_warning_min)
     report = Path(args.report)
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
