@@ -2,7 +2,7 @@
 
 Items checked: 139
 Errors: 0
-Warnings: 100
+Warnings: 98
 
 ## Category distribution
 
@@ -24,8 +24,8 @@ Warnings: 100
 
 ## Issue counts
 
-- takeaway_long: 84
-- summary_long: 9
+- takeaway_long: 83
+- summary_long: 8
 - headline_near_duplicate_summary: 6
 - category_sport_source: 1
 
@@ -702,20 +702,6 @@ Warnings: 100
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
-
-### WARNING · summary_long · item 136
-- Summary length 221 > 220
-- Headline: `אנליסטים: הטלפון של טראמפ הוא מכשיר סיני ממותג`
-- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
-- Source: ynet - כל ערוץ המחשבים
-- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
-
-### WARNING · takeaway_long · item 136
-- Takeaway length 129 > 95
-- Headline: `אנליסטים: הטלפון של טראמפ הוא מכשיר סיני ממותג`
-- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
-- Source: ynet - כל ערוץ המחשבים
-- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
 ### WARNING · headline_near_duplicate_summary · item 137
 - Headline is a clipped/near-duplicate version of the summary
