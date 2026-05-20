@@ -277,6 +277,22 @@ def source_logo(source: str) -> str:
         return "BBC"
     if "sky" in s or "סקיי" in source:
         return "Sky News"
+    if "reuters" in s:
+        return "Reuters"
+    if "ap" in s or "associated press" in s:
+        return "AP"
+    if "guardian" in s:
+        return "Guardian"
+    if "new york times" in s or "nyt" in s:
+        return "NYT"
+    if "axios" in s:
+        return "Axios"
+    if "politico" in s:
+        return "Politico"
+    if "bloomberg" in s:
+        return "Bloomberg"
+    if "al jazeera" in s:
+        return "Al Jazeera"
     if "n12" in s or "mako" in s:
         return "N12"
     if "כאן" in source or "kan" in s:
@@ -1036,6 +1052,36 @@ def is_amos_luzon_relationship_story(title: str, desc: str) -> bool:
 
 def has_latin_text(text: str) -> bool:
     return len(re.findall(r"[A-Za-z]", text or "")) > 8
+
+
+FOREIGN_RELEVANCE_KEYWORDS = [
+    # Israel / Jewish / antisemitism
+    "israel", "israeli", "jerusalem", "tel aviv", "jewish", "jews", "antisemit", "zionist", "zionism",
+    # War / regional actors
+    "iran", "iranian", "tehran", "khamenei", "ahmadinejad", "gaza", "hamas", "hezbollah", "lebanon",
+    "syria", "iraq", "yemen", "houthi", "houthis", "qatar", "uae", "emirates", "saudi", "riyadh",
+    "jordan", "egypt", "sinai", "west bank", "palestinian", "palestinians", "rafah", "strait of hormuz",
+    "hormuz", "middle east", "mideast", "persian gulf", "red sea",
+    # Named regional/political hooks; avoid generic world-war terms like drone/missile unless a region keyword is present.
+    "idf", "netanyahu",
+]
+
+def is_foreign_relevant(title: str, desc: str) -> bool:
+    """Foreign feeds are allowed only for Israel / Middle East relevance.
+
+    Lior's rule: international sources should not fill Poanta with general world
+    news. They are useful when they add outside reporting about Israel, Iran,
+    Gaza, Lebanon, the region, Jews/antisemitism, or direct policy/security
+    implications for Israel/the Middle East.
+    """
+    text = f"{title} {desc}".lower()
+    if any(k in text for k in FOREIGN_RELEVANCE_KEYWORDS):
+        return True
+    # Keep a very small safety escape hatch for headlines where the regional
+    # hook is in source metadata but not the RSS title/description.
+    if "middle east" in text or "mideast" in text:
+        return True
+    return False
 
 
 def foreign_story_key(title: str, desc: str) -> str:
@@ -2182,6 +2228,8 @@ def main() -> int:
                 continue
             c.original_title = c.original_title or c.title
             c.title = sanitize_title(c.title)
+            if source.get("language") == "en" and not is_foreign_relevant(c.original_title or c.title, c.description):
+                continue
             if len(c.title) < 18 or bad_description(c.description):
                 continue
             if args.draft and candidate_seen(c, seen):
