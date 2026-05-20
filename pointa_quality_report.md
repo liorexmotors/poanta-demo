@@ -1,143 +1,137 @@
 # Pointa Quality Gate Report
 
-Items checked: 76
+Items checked: 75
 Errors: 0
-Warnings: 31
+Warnings: 30
 
 ## Category distribution
 
-- ביטחון: 16
 - כלכלה: 15
+- ביטחון: 14
 - ספורט: 9
 - עולם: 6
 - בריאות: 5
 - תרבות: 4
 - טכנולוגיה: 4
 - צרכנות: 4
-- פוליטיקה: 3
 - פלילים: 3
+- פוליטיקה: 3
 - דעות: 3
 - מזג אוויר: 2
 - רכב: 2
+- משפט: 1
 
 ## Issue counts
 
-- takeaway_long: 29
+- takeaway_long: 28
 - summary_long: 2
 
 ## Issues
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 3
+- Takeaway length 98 > 95
+- Headline: `ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ`
+- Original: `על סף הכרעה: טראמפ ונתניהו קיימו הלילה שיחת טלפון שהוגדרה "ממושכת ודרמטית"`
+- Source: גלובס - בארץ
+- URL: https://www.globes.co.il/news/article.aspx?did=1001543491#utm_source=RSS
+
+### WARNING · takeaway_long · item 6
 - Takeaway length 113 > 95
 - Headline: `ישראל וארה״ב בחנו את אחמדינג׳אד כיורש לחמינאי`
 - Original: `המהלך החשאי שנחשף: ישראל וארה"ב סימנו את אחמדינג'אד כיורש אפשרי לחמינאי`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839476
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 8
 - Takeaway length 100 > 95
 - Headline: `הרשקוביץ פרש והמרוץ למבקר המדינה הצטמצם לשניים`
 - Original: `בדקה ה-90: הפרופסור פרש מהמרוץ, אלו שני המועמדים שנותרו למבקר המדינה הבא`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839490
 
-### WARNING · takeaway_long · item 5
-- Takeaway length 98 > 95
-- Headline: `ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ`
-- Original: `ישראל וארה"ב תכננו להציב את אחמדינז'אד כמנהיג איראן`
-- Source: גלובס - בארץ
-- URL: https://www.globes.co.il/news/article.aspx?did=1001543491#utm_source=RSS
-
-### WARNING · takeaway_long · item 7
+### WARNING · takeaway_long · item 10
 - Takeaway length 97 > 95
 - Headline: `מועמדת דמוקרטית בטקסס הסעירה את ארה״ב באמירות אנטישמיות`
 - Original: `"מחנה מעצר עבור ציונים אמריקנים": דמוקרטית אנטישמית מסעירה את ארה"ב`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1gkbnckme
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 11
 - Takeaway length 98 > 95
 - Headline: `פוטין ושי תקפו את ההגמוניה האמריקנית בפגישה משותפת`
 - Original: `"העולם במצב של הגמוניה חד-צדדית משתוללת" - פוטין ושי ג'ינפינג בפגישה דרמטית`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323541
 
-### WARNING · takeaway_long · item 10
+### WARNING · takeaway_long · item 13
 - Takeaway length 103 > 95
 - Headline: `בלבנון מתוסכלים מארה״ב שלא מצליחה לרסן את ישראל`
 - Original: `"לא משכנעים את ישראל": אכזבה בלבנון מארה"ב`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20582161
 
-### WARNING · takeaway_long · item 11
+### WARNING · takeaway_long · item 14
 - Takeaway length 98 > 95
 - Headline: `חלון המו״מ עם איראן החליף תקיפה אמריקאית מיידית`
 - Original: `ארה"ב חיכתה, איראן התחמשה: הדרמה שמדאיגה את וושינגטון`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323494
 
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 15
 - Takeaway length 98 > 95
 - Headline: `צה״ל הופתע מטראמפ ונערך לאפשרות תקיפה קרובה באיראן`
 - Original: `צה"ל הופתע כשטראמפ אמר שעמד לתקוף באיראן, ולא שולל את האפשרות של תקיפה אמריקאית טרם הדד־ליין`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-05-20/ty-article/.highlight/0000019e-4146-d394-addf-fb7e54970000
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 16
 - Takeaway length 108 > 95
 - Headline: `מעצר חשודים בניסיון חיסול ראש מועצת ג׳דיידה-מכר הוארך`
 - Original: `האזהרה הדרמטית אחרי ניסיון החיסול: "יש מלחמה בתוך מדינת ישראל"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/law/article-1323448
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 18
 - Takeaway length 114 > 95
 - Headline: `בקריית שמונה מזהירים מנטישה של עד חצי מהתושבים`
 - Original: `העיר המרכזית בצפון בדרך לאבד חצי מתושביה: "חיים ברולטה רוסית"`
 - Source: מעריב - חדשות בארץ
 - URL: https://www.maariv.co.il/news/israel/article-1323446
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 19
 - Takeaway length 112 > 95
 - Headline: `מדינות המפרץ דוחפות בשקט לתקיפה באיראן`
 - Original: `כמו אישה מוכה: מתחת לשולחן - מדינות המפרץ מתחננות בפני טראמפ לתקוף באירן`
 - Source: מעריב - צבא וביטחון
 - URL: https://www.maariv.co.il/news/military/article-1323410
 
-### WARNING · summary_long · item 17
+### WARNING · summary_long · item 20
 - Summary length 222 > 220
 - Headline: `תושבת מעיין ברוך מפרידה בין ילדיה בגלל איום הירי`
 - Original: `תושבת הצפון שמפרידה בין ילדיה: "אם אחד ייפגע, יישאר לי עוד אחד"`
 - Source: N12 - בארץ
 - URL: https://www.mako.co.il/news-israel/2026_q2/Article-216bf8dec7f3e91027.htm
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 20
 - Takeaway length 111 > 95
 - Headline: `תושבת מעיין ברוך מפרידה בין ילדיה בגלל איום הירי`
 - Original: `תושבת הצפון שמפרידה בין ילדיה: "אם אחד ייפגע, יישאר לי עוד אחד"`
 - Source: N12 - בארץ
 - URL: https://www.mako.co.il/news-israel/2026_q2/Article-216bf8dec7f3e91027.htm
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 26
 - Takeaway length 107 > 95
 - Headline: `ואנס: גרעין איראני יפתח מרוץ חימוש במפרץ`
 - Original: `סגן הנשיא האמריקני הבהיר: "איראן לעולם לא תוכל להחזיק בנשק גרעיני"`
 - Source: וואלה חדשות - מבזקים
 - URL: https://news.walla.co.il/break/3839431
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 29
 - Takeaway length 99 > 95
 - Headline: `שני גברים נרצחו בשפרעם וליד פתח תקווה בתוך שעתיים`
 - Original: `בירי בצפון, ובמבנה שהוצת ליד פתח תקווה: שני נרצחים תוך שעתיים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1ncm11c1gl
-
-### WARNING · takeaway_long · item 29
-- Takeaway length 103 > 95
-- Headline: `פערי הגרעין מקרבים אפשרות לחידוש תקיפה באיראן`
-- Original: `גורמים מדיניים: "אנחנו בנקודה הקרובה ביותר לחידוש המלחמה עם איראן"`
-- Source: וואלה חדשות - צבא וביטחון
-- URL: https://news.walla.co.il/item/3839326
 
 ### WARNING · takeaway_long · item 31
 - Takeaway length 108 > 95
