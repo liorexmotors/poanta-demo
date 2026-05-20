@@ -1228,6 +1228,11 @@ def is_vance_iran_nuclear_story(title: str, desc: str) -> bool:
     return ("ואנס" in text or "סגן הנשיא האמריקני" in text or "ג׳יי די" in text or "ג'יי" in text) and "איראן" in text and "נשק גרעיני" in text
 
 
+def is_stolen_idf_weapon_restaurant_story(title: str, desc: str) -> bool:
+    text = f'{title} {desc}'
+    return all(x in text for x in ['מסעדנית', 'M-16']) and any(x in text for x in ['קצין צה"ל', 'קצין צה״ל', 'נשק האישי', 'גניבת'])
+
+
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
     fp = foreign_pointa_tuple(title, desc)
@@ -1245,6 +1250,8 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'אל ניניו חריג עלול להביא חורף גשום ושיטפונות בישראל'
     if is_protection_insurance_story(title, desc):
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
+    if is_stolen_idf_weapon_restaurant_story(title, desc):
+        return 'מסעדנית בגולן תואשם בגניבת M-16 מקצין צה״ל'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'ח״כ מלינובסקי מאיימת לשבש הצבעות עד שימומן חוק מחבלי 7 באוקטובר'
     if is_helium_iran_war_story(title, desc):
@@ -1349,6 +1356,8 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'מחקר חדש קושר בין אל ניניו חזק והתחממות הים התיכון לבין חורפים עם גשמים עזים יותר וסיכון גבוה יותר לשיטפונות.'
     if is_protection_insurance_story(title, desc):
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
+    if is_stolen_idf_weapon_restaurant_story(title, desc):
+        return 'לפי המשטרה, קצין שאכל עם חייליו במסעדה בגולן גילה בסוף הארוחה שנשקו האישי נעלם. בעלת המסעדה חשודה שנטלה את ה-M-16 על רקע חובות ואיומים, והובילה את החוקרים לנשק שהוסלק ברכב עובד.'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'ח״כ יוליה מלינובסקי קוראת לחברי הכנסת להשבית הצבעות עד שהממשלה תסיים את המימון לחוק העמדת מחבלי 7 באוקטובר לדין. המהלך הופך מחלוקת תקציבית לניסיון לחץ פרלמנטרי סביב טיפול במחבלים.'
     if is_helium_iran_war_story(title, desc):
@@ -1418,7 +1427,9 @@ def specific_takeaway(title: str, desc: str) -> str:
         return 'אי־ודאות ביטחונית שוחקת את הציבור גם בלי הכרזה רשמית.'
     if any(x in text for x in ['מט גאלה', 'פטמות', 'נשף']):
         return 'אופנה על השטיח האדום מוכרת דימוי לפני שהיא מוכרת בגד.'
-    if any(x in text for x in ['מסעדה', 'תיסגר', 'סגירה מפתיעה']):
+    if is_stolen_idf_weapon_restaurant_story(title, desc):
+        return 'גניבת נשק צבאי מתוך סביבה אזרחית הופכת הסתבכות כלכלית לאירוע ביטחוני ומשפטי חמור.'
+    if ('מסעדה' in text or 'מסעדן' in text or 'מסעדנית' in text) and any(x in text for x in ['תיסגר', 'סגירה מפתיעה', 'נסגרת', 'סגירת']) and not any(x in text for x in ['M-16', 'נשק', 'גניבת']):
         return 'גם מוסד אהוב לא חסין מעלויות, שחיקה ושינויי קהל.'
     if any(x in text for x in ['תאונת עבודה', 'ביטוח לאומי', 'נפגע בדרך']):
         return 'המסלול והעיתוי יכולים לקבוע אם פגיעה תקבל כיסוי מלא.'

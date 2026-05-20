@@ -46,6 +46,7 @@ GENERIC_TAKEAWAY_PATTERNS = [
     "קובע את המחיר האמיתי", "מסמן מי עלול לשלם", "משנה שימוש, פרטיות או אמון",
     "משפיע על עלות, בטיחות", "משנה את המשך העונה", "מחייב להבין את הסיכון",
     "מראה איך רגע פרטי", "חושף את קו הטיעון",
+    "גם מוסד אהוב לא חסין מעלויות", "גם אוכל בטיסה הפך לכלי תחרות",
 ]
 SOURCE_MEDIATION = ["הכתב מתאר", "הכתבה עוסקת", "המקור מדווח", "פורסם כי", "דווח כי"]
 ALLOWED_LATIN = {
@@ -179,6 +180,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
     if context and norm_sentence(headline) == norm_sentence(context):
         add_issue(issues, "error", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)
+    if context and overlap_ratio(headline, context) >= 0.88 and (len(headline) >= 58 or len(context) <= 120):
+        add_issue(issues, "warning", idx, "headline_near_duplicate_summary", "Headline is a clipped/near-duplicate version of the summary", item)
 
     if not context:
         add_issue(issues, "error", idx, "summary_missing", "Summary/context is empty", item)
@@ -193,6 +196,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "warning", idx, "takeaway_long", f"Takeaway length {len(takeaway)} > {TAKEAWAY_MAX}", item)
     if any(p in takeaway for p in GENERIC_TAKEAWAY_PATTERNS):
         add_issue(issues, "error", idx, "takeaway_generic", "Takeaway is generic/reusable", item)
+    if any(x in card_blob(item) for x in ["M-16", "נשק", "גניבת נשק"]) and any(x in takeaway for x in ["מוסד אהוב", "אוכל בטיסה", "חוויית הנוסע"]):
+        add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to restaurant/travel template, not a weapon/crime story", item)
     if takeaway and context and overlap_ratio(takeaway, context) >= 0.72:
         add_issue(issues, "error", idx, "takeaway_duplicates_context", "Takeaway repeats the summary instead of adding a point", item)
     if takeaway and headline and overlap_ratio(takeaway, headline) >= 0.72:
