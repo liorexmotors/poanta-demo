@@ -31,28 +31,28 @@ Warnings: 37
 
 ## Issues
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 15
 - Takeaway length 98 > 95
 - Headline: `ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ`
 - Original: `על סף הכרעה: טראמפ ונתניהו קיימו הלילה שיחת טלפון שהוגדרה "ממושכת ודרמטית"`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543491#utm_source=RSS
 
-### WARNING · headline_near_duplicate_summary · item 18
+### WARNING · headline_near_duplicate_summary · item 19
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הכנסת אישרה בקריאה טרומית את פיזורה ברוב חריג של 110 תומכים וללא`
 - Original: `פיזור הכנסת בלי מתנגדים: הקואליציה נכנסה למלכוד של עצמה`
 - Source: מעריב - פוליטי מדיני
 - URL: https://www.maariv.co.il/news/politics/article-1323710
 
-### WARNING · headline_near_duplicate_summary · item 20
+### WARNING · headline_near_duplicate_summary · item 21
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `עצירת הטיסות ל-40 יום עלתה לאל על 145 מיליון דולר ובהפסד רבעוני ראשון`
 - Original: `המלחמה באיראן העבירה את אל על להפסד, אבל תסדר לה רווחי שיא בקיץ`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3839547
 
-### WARNING · headline_near_duplicate_summary · item 21
+### WARNING · headline_near_duplicate_summary · item 22
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הכנסת אישרה את פיזורה בקריאה טרומית`
 - Original: `בלי פיליבסטר ובלי מתנגדים - החוק לפיזור הכנסת עבר בקריאה טרומית בתוך 10 דקות`
