@@ -2,7 +2,7 @@
 
 Items checked: 153
 Errors: 0
-Warnings: 84
+Warnings: 83
 
 ## Category distribution
 
@@ -15,28 +15,21 @@ Warnings: 84
 - צרכנות: 7
 - טכנולוגיה: 7
 - משפט: 7
+- תרבות: 5
 - עולם: 4
-- תרבות: 4
-- חדשות: 3
 - דעות: 3
 - רכב: 2
+- חדשות: 2
 - מזג אוויר: 2
 - נדל״ן: 1
 
 ## Issue counts
 
 - takeaway_long: 68
-- headline_near_duplicate_summary: 8
 - summary_long: 8
+- headline_near_duplicate_summary: 7
 
 ## Issues
-
-### WARNING · headline_near_duplicate_summary · item 0
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `המופע אמור היה להיערך ב-18 ביוני בפארק הירקון`
-- Original: `בגלל התנגשות עם אייל גולן ואושר כהן: אביב גפן מקדים ביום את "נשף רוק"`
-- Source: וואלה חדשות
-- URL: https://e.walla.co.il/item/3839740
 
 ### WARNING · takeaway_long · item 4
 - Takeaway length 97 > 95
