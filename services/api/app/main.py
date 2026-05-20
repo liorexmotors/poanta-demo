@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from .db import connect, db_available
+from services.worker.worker.feedback_report import build_report as build_feedback_report
 
 ROOT = Path(__file__).resolve().parents[3]
 LEGACY_FEED = ROOT / "feed.json"
@@ -175,3 +176,19 @@ def feedback(req: FeedbackRequest) -> dict[str, Any]:
             ),
         )
     return {"ok": True, "stored": True, "feedback": value}
+
+
+@app.get("/v1/feedback/report")
+def feedback_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
+    """Operational report for Poanta card markings.
+
+    This is the machine-readable חיווי Aliza/מבקר איכות should consume:
+    recent 👍👎 events, worst cards, source/category patterns, and action items.
+    """
+    if not db_available():
+        return {"ok": False, "status": "unavailable", "reason": "database_not_configured", "items": []}
+    safe_hours = max(1, min(int(hours), 24 * 30))
+    safe_limit = max(1, min(int(limit), 100))
+    report = build_feedback_report(hours=safe_hours, limit=safe_limit)
+    report["ok"] = True
+    return report

@@ -18,5 +18,7 @@ Initial endpoints:
 - `GET /v1/sources`
 - `GET /v1/topics`
 - `POST /v1/device/register`
+- `POST /v1/feedback`
+- `GET /v1/feedback/report?hours=24&limit=20`
 
 Current mode: reads legacy `feed.json`. Next step is Postgres-backed feed versions.

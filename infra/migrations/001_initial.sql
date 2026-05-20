@@ -77,3 +77,5 @@ CREATE TABLE IF NOT EXISTS feedback_events (
 CREATE INDEX IF NOT EXISTS idx_feedback_events_received_at ON feedback_events (received_at DESC);
 CREATE INDEX IF NOT EXISTS idx_feedback_events_card_key ON feedback_events (card_key);
 CREATE INDEX IF NOT EXISTS idx_feedback_events_source_name ON feedback_events (source_name);
+CREATE INDEX IF NOT EXISTS idx_feedback_events_feedback_received_at ON feedback_events (feedback, received_at DESC);
+CREATE INDEX IF NOT EXISTS idx_feedback_events_source_url ON feedback_events (source_url);

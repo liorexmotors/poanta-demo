@@ -68,3 +68,14 @@ The released 👍/👎 UI is currently client-local only (`localStorage`). Produ
 - Added client-side queueing and retry from the web UI. The live GitHub Pages build keeps feedback locally and can forward it once `localStorage['pointa:feedback-api-url']` is configured to the production API base URL.
 - Added daily/report-only aggregator: `services/worker/worker/feedback_report.py`; output is intended for מבקר איכות and העורך.
 - Guardrail: feedback is a quality signal, not an automatic publication rule. It can lower source/card priority or guide editor training only after repeated evidence.
+
+## Open task — card feedback visibility
+
+Need an operational view/report for feed-card markings (`סימוני מודעות`): collect 👍👎 feedback events, surface recent marked cards to Aliza, aggregate patterns by item/source/category, and feed the results into editorial QA/accountability. Backend endpoint and worker skeleton exist; remaining work is reliable visibility/reporting and closing the loop into editor/gatekeeper improvements.
+
+## Feedback visibility implementation — 2026-05-20
+
+- Added machine-readable report endpoint: `GET /v1/feedback/report?hours=24&limit=20`.
+- Expanded `services/worker/worker/feedback_report.py` into an actionable report: totals, recent events, worst cards, source/category breakdowns, and action items routed to `המבקר`, `העורך`, and `השוער`.
+- Added operator CLI: `scripts/pointa_feedback_report.py --format text --only-actionable` for Aliza/cron reporting.
+- Current blocker for real live signals: production DB/API must be configured and the live web app must know the production feedback API base URL. Until then, the static GitHub Pages app stores feedback locally and queues it client-side.
