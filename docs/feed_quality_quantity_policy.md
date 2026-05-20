@@ -54,3 +54,12 @@ A healthy feed is:
 - Fresh at the top.
 - Broad enough to feel alive.
 - Strict enough that every visible card is trustworthy.
+
+## Source-view freshness decision
+
+Lior selected Option 2 for stale source views:
+
+- Do not weaken source-view freshness thresholds just to reduce failures.
+- A stale important/foreign source view must trigger source-targeted rescue preparation.
+- Source-targeted rescue must still obey all quality/relevance gates.
+- If the rescue queue has no usable candidates for the stale source, or the editor cannot produce QG=0 cards after one safe attempt, escalate to Lior with blocker + max 2 options + recommendation.
