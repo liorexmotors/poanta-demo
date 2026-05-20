@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 154
+Items checked: 153
 Errors: 0
 Warnings: 84
 
@@ -15,21 +15,28 @@ Warnings: 84
 - צרכנות: 7
 - טכנולוגיה: 7
 - משפט: 7
-- תרבות: 5
 - עולם: 4
-- רכב: 3
+- תרבות: 4
+- חדשות: 3
 - דעות: 3
-- חדשות: 2
+- רכב: 2
 - מזג אוויר: 2
 - נדל״ן: 1
 
 ## Issue counts
 
 - takeaway_long: 68
-- summary_long: 8
 - headline_near_duplicate_summary: 8
+- summary_long: 8
 
 ## Issues
+
+### WARNING · headline_near_duplicate_summary · item 0
+- Headline is a clipped/near-duplicate version of the summary
+- Headline: `המופע אמור היה להיערך ב-18 ביוני בפארק הירקון`
+- Original: `בגלל התנגשות עם אייל גולן ואושר כהן: אביב גפן מקדים ביום את "נשף רוק"`
+- Source: וואלה חדשות
+- URL: https://e.walla.co.il/item/3839740
 
 ### WARNING · takeaway_long · item 4
 - Takeaway length 97 > 95
@@ -611,10 +618,3 @@ Warnings: 84
 - Original: `דווקא אחרי עונת השיא: נורת האזהרה המפתיעה לדני אבדיה`
 - Source: וואלה ספורט - ישראלים ב-NBA
 - URL: https://sports.walla.co.il/item/3837899
-
-### WARNING · headline_near_duplicate_summary · item 153
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `דור שישי לקרוסאובר הפופולרי: היברידי עם הבטחה לשיפור בצריכת דלק ועדכוני`
-- Original: `טויוטה ראב4 נחת בישראל וממשיך להתייקר: מ-220 אלף שקל`
-- Source: וואלה רכב - חדשות רכב
-- URL: https://cars.walla.co.il/item/3837894
