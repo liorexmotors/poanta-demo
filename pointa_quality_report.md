@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 117
+Items checked: 116
 Errors: 0
 Warnings: 59
 
@@ -15,7 +15,7 @@ Warnings: 59
 - משפט: 5
 - פלילים: 5
 - צרכנות: 5
-- עולם: 5
+- עולם: 4
 - תרבות: 4
 - דעות: 3
 - חדשות: 2
@@ -304,140 +304,140 @@ Warnings: 59
 - Source: N12 - בארץ
 - URL: https://www.mako.co.il/news-israel/2026_q2/Article-216bf8dec7f3e91027.htm
 
-### WARNING · takeaway_long · item 73
+### WARNING · takeaway_long · item 72
 - Takeaway length 108 > 95
 - Headline: `מחקר קושר אכילת ביצים לירידה בסיכון קוגניטיבי`
 - Original: `כמה ביצים צריך לאכול בשבוע כדי להוריד סיכון לדמנציה ב-27%?`
 - Source: וואלה בריאות
 - URL: https://healthy.walla.co.il/item/3839261
 
-### WARNING · summary_long · item 74
+### WARNING · summary_long · item 73
 - Summary length 225 > 220
 - Headline: `פאודה החדשה הופכת את 7 באוקטובר למסע נקמה`
 - Original: `אפלה יותר, כועסת יותר ויצרית יותר: אולי זו תהיה העונה הכי טובה של "פאודה"`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839246
 
-### WARNING · takeaway_long · item 75
+### WARNING · takeaway_long · item 74
 - Takeaway length 113 > 95
 - Headline: `מכבי תל אביב צפויה לפתוח חזק מול באר שבע`
 - Original: `זה ההרכב המסתמן של מילר מול הפועל באר שבע, בליץ' ב-21`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839217
 
-### WARNING · takeaway_long · item 77
+### WARNING · takeaway_long · item 76
 - Takeaway length 100 > 95
 - Headline: `חידוש תקיפה באיראן עלול להרחיק הסכם ולהחליש את ישראל`
 - Original: `הטעות שעלולה להפוך לקטסטרופה אסטרטגית לישראל`
 - Source: מעריב - דעות
 - URL: https://www.maariv.co.il/news/opinions/article-1322927
 
-### WARNING · takeaway_long · item 78
+### WARNING · takeaway_long · item 77
 - Takeaway length 103 > 95
 - Headline: `ערוץ 4 הסיר את חתונמי בריטניה אחרי טענות לאונס`
 - Original: `סערה ב"חתונה ממבט ראשון" בריטניה: שתי משתתפות טוענות שנאנסו בצילומים`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839163
 
-### WARNING · takeaway_long · item 79
+### WARNING · takeaway_long · item 78
 - Takeaway length 105 > 95
 - Headline: `גווארדיולה צפוי לסיים עשור במנצ׳סטר סיטי`
 - Original: `דיווח דרמטי: פפ גווארדיולה יעזוב את מנצ'סטר סיטי, אנצו מארסקה יחליפו`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839155
 
-### WARNING · takeaway_long · item 80
+### WARNING · takeaway_long · item 79
 - Takeaway length 104 > 95
 - Headline: `רטנר ופיינגזיכט קיבלו אישור לשחק מול הפועל ת״א`
 - Original: `בשורה טובה למכבי חיפה: רטנר ופיינגזיכט שוחררו ויעמדו לרשות בכר`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3838949
 
-### WARNING · takeaway_long · item 81
+### WARNING · takeaway_long · item 80
 - Takeaway length 125 > 95
 - Headline: `תדהר יוצאת להנפקה גדולה בשוק נדל״ן לחוץ`
 - Original: `חברת הנדל"ן הפרטית הגדולה בישראל נחשפת. האם תקבל שווי של מעל 7 מיליארד שקל?`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543305#utm_source=RSS
 
-### WARNING · takeaway_long · item 82
+### WARNING · takeaway_long · item 81
 - Takeaway length 112 > 95
 - Headline: `מודריץ׳ נכלל בסגל קרואטיה למונדיאל חמישי`
 - Original: `בדרך להופעה ה-200 בנבחרת: מונדיאל חמישי ללוקה מודריץ'`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839049
 
-### WARNING · takeaway_long · item 83
+### WARNING · takeaway_long · item 82
 - Takeaway length 130 > 95
 - Headline: `ריינאייר מציעה לאו׳לירי עוד בונוס ענק במניות`
 - Original: `מנכ"ל חברת התעופה הפרובוקטיבי עשוי לקבל בונוס של 100 מיליון יורו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/aviation/article/20567101
 
-### WARNING · headline_near_duplicate_summary · item 87
+### WARNING · headline_near_duplicate_summary · item 86
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הזינוק במחירי האנרגיה גורר קנס ממוצע של 316 דולר לכל משק בית בארה"ב`
 - Original: `המחירים זינקו: כמה שילם כל אמריקאי בגלל המלחמה עם איראן?`
 - Source: וואלה כסף - כסף עולמי
 - URL: https://finance.walla.co.il/item/3838964
 
-### WARNING · takeaway_long · item 88
+### WARNING · takeaway_long · item 87
 - Takeaway length 96 > 95
 - Headline: `ליברה פתחה ביטוח רכב יומי לכל הנהגים בישראל`
 - Original: `ביטוח רכב ב-24 שקל ליום גם לנהגים בוגרים: משתלם?`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/bjetzdujgg
 
-### WARNING · takeaway_long · item 90
+### WARNING · takeaway_long · item 89
 - Takeaway length 116 > 95
 - Headline: `חתונמי פתחה עונה עם ליהוק שמכוון לשואו ולא לזוגיות שקטה`
 - Original: `נועה באה לחתונמי לתת שואו. תכף ייפול לה אסימון ותבוא התרסקות מפוארת`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3838914
 
-### WARNING · takeaway_long · item 95
+### WARNING · takeaway_long · item 94
 - Takeaway length 110 > 95
 - Headline: `ישראלים מזמינים חופשות מוקדם יותר בגלל החשש מאיראן`
 - Original: `על רקע האיומים לחידוש התקיפה: "מזהים שינוי בהזמנות החופשה של הישראלים"`
 - Source: N12 - כלכלה וצרכנות
 - URL: https://www.mako.co.il/news-money/consumer/Article-d8620f85d473e91027.htm
 
-### WARNING · takeaway_long · item 96
+### WARNING · takeaway_long · item 95
 - Takeaway length 116 > 95
 - Headline: `פז תחלק קפה ומאפה ב־yellow כפיצוי על עישון בתחנות`
 - Original: `שוב קפה ומאפה חינם ב-yellow: האם הפעם ישתלטו על הבלגן?`
 - Source: ynet - כל ערוץ הצרכנות
 - URL: https://www.ynet.co.il/economy/article/sjrrtrvkze
 
-### WARNING · takeaway_long · item 103
+### WARNING · takeaway_long · item 102
 - Takeaway length 97 > 95
 - Headline: `עמוד אינסטגרם חושף את הבימוי מאחורי הפיד המושלם`
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
 
-### WARNING · headline_near_duplicate_summary · item 112
+### WARNING · headline_near_duplicate_summary · item 111
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המדד רשם עלייה חדה, בעיקר בשל הזינוק במחירי האנרגיה והתייקרות חופשות`
 - Original: `מדד המחירים לצרכן זינק ב-1.2%, מחירי הדירות עלו`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3838349
 
-### WARNING · headline_near_duplicate_summary · item 113
+### WARNING · headline_near_duplicate_summary · item 112
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `מסמך פנימי, מאות תגובות ממנכ"לים וביקוש שיא לסניורים`
 - Original: `אקזיט מסוג אחר: כך הפכו 300 מפוטרים לסחורה הכי חמה בשוק ההייטק הישראלי`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3838184
 
-### WARNING · headline_near_duplicate_summary · item 115
+### WARNING · headline_near_duplicate_summary · item 114
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `באחד הבלוגים המסקרים את פורטלנד טענו ש"אי אפשר להסתמך עליו כאופציה`
 - Original: `דווקא אחרי עונת השיא: נורת האזהרה המפתיעה לדני אבדיה`
 - Source: וואלה ספורט - ישראלים ב-NBA
 - URL: https://sports.walla.co.il/item/3837899
 
-### WARNING · headline_near_duplicate_summary · item 116
+### WARNING · headline_near_duplicate_summary · item 115
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `דור שישי לקרוסאובר הפופולרי: היברידי עם הבטחה לשיפור בצריכת דלק ועדכוני`
 - Original: `טויוטה ראב4 נחת בישראל וממשיך להתייקר: מ-220 אלף שקל`
