@@ -1084,6 +1084,22 @@ def is_foreign_relevant(title: str, desc: str) -> bool:
     return False
 
 
+FOREIGN_SOURCE_LABELS = [
+    "bbc", "cnn", "sky news", "skynews", "reuters", "associated press", "ap middle east", "guardian",
+    "new york times", "nyt", "axios", "politico", "bloomberg", "al jazeera", "jazeera",
+]
+
+
+def is_foreign_source_label(source: str) -> bool:
+    low = str(source or "").lower()
+    return any(label in low for label in FOREIGN_SOURCE_LABELS)
+
+
+def is_retained_foreign_item_relevant(item: dict) -> bool:
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle", "context", "takeaway", "source", "sourceUrl"])
+    return is_foreign_relevant(text, "")
+
+
 def foreign_story_key(title: str, desc: str) -> str:
     text = f"{title} {desc}".lower()
     if 'ebola' in text:
@@ -2127,6 +2143,8 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
             if d < cutoff:
                 continue
             if category_sync_profile(str(item.get("category") or "חדשות"), sync_profiles) == "fast" and d < fast_cutoff:
+                continue
+            if is_foreign_source_label(str(item.get("source") or item.get("sourceLogo") or "")) and not is_retained_foreign_item_relevant(item):
                 continue
             if item.get("hasSourceDate") and not item.get("publishedAt"):
                 item["publishedAt"] = d.isoformat(timespec="seconds")
