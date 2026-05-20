@@ -199,7 +199,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     if any(x in card_blob(item) for x in ["M-16", "נשק", "גניבת נשק"]) and any(x in takeaway for x in ["מוסד אהוב", "אוכל בטיסה", "חוויית הנוסע"]):
         add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to restaurant/travel template, not a weapon/crime story", item)
     if any(x in takeaway for x in ["אופנה על השטיח האדום", "מוכרת דימוי לפני שהיא מוכרת בגד"]):
-        if not any(x in card_blob(item) for x in ["שטיח אדום", "אופנה", "שמלה", "לבוש", "מעצב", "מט גאלה"]):
+        non_takeaway_blob = " | ".join([headline, context, original, source, norm(item.get("sourceUrl", ""))])
+        if not any(x in non_takeaway_blob for x in ["שטיח אדום", "אופנה", "שמלה", "לבוש", "מעצב", "מט גאלה"]):
             add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to fashion/red-carpet template, not this story", item)
     if takeaway and context and overlap_ratio(takeaway, context) >= 0.72:
         add_issue(issues, "error", idx, "takeaway_duplicates_context", "Takeaway repeats the summary instead of adding a point", item)
