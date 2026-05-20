@@ -193,7 +193,7 @@ def main() -> int:
     ap.add_argument("--raw-url", default=RAW_GHPAGES_URL)
     ap.add_argument("--top", type=int, default=12)
     ap.add_argument("--max-update-age-min", type=int, default=25)
-    ap.add_argument("--max-top-age-hours", type=int, default=4)
+    ap.add_argument("--max-top-age-hours", type=int, default=2)
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
