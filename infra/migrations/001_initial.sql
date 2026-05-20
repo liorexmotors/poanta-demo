@@ -79,3 +79,17 @@ CREATE INDEX IF NOT EXISTS idx_feedback_events_card_key ON feedback_events (card
 CREATE INDEX IF NOT EXISTS idx_feedback_events_source_name ON feedback_events (source_name);
 CREATE INDEX IF NOT EXISTS idx_feedback_events_feedback_received_at ON feedback_events (feedback, received_at DESC);
 CREATE INDEX IF NOT EXISTS idx_feedback_events_source_url ON feedback_events (source_url);
+
+CREATE TABLE IF NOT EXISTS usage_events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  device_id TEXT,
+  event_type TEXT NOT NULL CHECK (event_type IN ('page_view', 'refresh', 'dashboard_view', 'dashboard_refresh')),
+  path TEXT,
+  client_ts TIMESTAMPTZ,
+  received_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  metadata JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX IF NOT EXISTS idx_usage_events_received_at ON usage_events (received_at DESC);
+CREATE INDEX IF NOT EXISTS idx_usage_events_device_received ON usage_events (device_id, received_at DESC);
+CREATE INDEX IF NOT EXISTS idx_usage_events_type_received ON usage_events (event_type, received_at DESC);

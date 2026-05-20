@@ -200,6 +200,8 @@ function deviceId(){ try{ let id=localStorage.getItem(DEVICE_KEY); if(!id){ id='
 function pendingFeedbackEvents(){ try{ const data=JSON.parse(localStorage.getItem(FEEDBACK_PENDING_KEY)||'[]'); return Array.isArray(data)?data:[]; }catch{return[];} }
 function savePendingFeedbackEvents(events){ try{ localStorage.setItem(FEEDBACK_PENDING_KEY, JSON.stringify(events.slice(-500))); }catch{} }
 function feedbackEndpoint(){ const base=String(FEEDBACK_API_URL||'').replace(/\/$/,''); return base?base+'/v1/feedback':''; }
+function usageEndpoint(){ const base=String(FEEDBACK_API_URL||'').replace(/\/$/,''); return base?base+'/v1/usage':''; }
+function submitUsageEvent(type,extra={}){ const url=usageEndpoint(); if(!url||!navigator.onLine)return; try{ fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({deviceId:deviceId(),eventType:type,path:location.pathname,clientTs:new Date().toISOString(),metadata:{app:'poanta-web',...extra}}),keepalive:true}).catch(()=>{}); }catch{} }
 function queueFeedbackEvent(event){ const events=pendingFeedbackEvents(); events.push(event); savePendingFeedbackEvents(events); flushFeedbackEvents(); }
 function flushFeedbackEvents(){ const url=feedbackEndpoint(); if(!url || !navigator.onLine) return; const events=pendingFeedbackEvents(); if(!events.length) return; const rest=events.slice(); const next=rest.shift(); fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(next),keepalive:true}).then(r=>{ if(!r.ok) throw new Error('feedback failed'); savePendingFeedbackEvents(rest); if(rest.length) setTimeout(flushFeedbackEvents,250); }).catch(()=>savePendingFeedbackEvents(events)); }
 function submitFeedbackEvent(item,key,value){ queueFeedbackEvent({deviceId:deviceId(),cardKey:key,sourceUrl:item?.sourceUrl||'',source:item?sourceName(item):'',category:item?topicFor(item):'',headline:item?.headline||'',feedback:value,clientTs:new Date().toISOString(),metadata:{publishedAt:item?.publishedAt||item?.updatedAt||'',app:'poanta-web'}}); }
@@ -312,8 +314,9 @@ document.getElementById('pointaPanel').addEventListener('input',ev=>{ if(ev.targ
 document.getElementById('refreshBtn').addEventListener('click',ev=>{ const filter=ev.target.closest('[data-feed-filter]'); if(filter){ ev.preventDefault(); ev.stopPropagation(); feedFilter=filter.dataset.feedFilter||'all'; render(currentFeed); return; } fetchFeed(true); });
 document.getElementById('refreshBtn').addEventListener('keydown',ev=>{ if((ev.key==='Enter'||ev.key===' ') && ev.target.matches('[data-feed-filter]')){ ev.preventDefault(); feedFilter=ev.target.dataset.feedFilter||'all'; render(currentFeed); } });
 function fetchSourceCatalog(){ return fetch('rss_sources.json?v='+encodeURIComponent(POANTA_FEED_VERSION),{cache:'reload'}).then(r=>r.ok?r.json():null).then(data=>{ sourceCatalog=Array.isArray(data?.active)?data.active:[]; render(currentFeed); }).catch(()=>{}); }
-function fetchFeed(force=false){ const v=force?Date.now():POANTA_FEED_VERSION; return fetch('feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedFeed).then(render).catch(()=>render(embeddedFeed)); }
+function fetchFeed(force=false){ if(force)submitUsageEvent('refresh'); const v=force?Date.now():POANTA_FEED_VERSION; return fetch('feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedFeed).then(render).catch(()=>render(embeddedFeed)); }
 try{ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change',()=>{ if(userPrefs.appearance==='system') applyAppearance(); }); }catch{}
+submitUsageEvent('page_view');
 fetchFeed().then(fetchSourceCatalog).then(flushFeedbackEvents);
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>null);
 </script>

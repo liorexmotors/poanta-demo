@@ -51,6 +51,14 @@ class FeedbackRequest(BaseModel):
     metadata: dict[str, Any] | None = None
 
 
+class UsageRequest(BaseModel):
+    deviceId: str | None = None
+    eventType: str = "page_view"
+    path: str | None = None
+    clientTs: str | None = None
+    metadata: dict[str, Any] | None = None
+
+
 def load_legacy_feed() -> dict[str, Any]:
     if not LEGACY_FEED.exists():
         return {"updatedAt": datetime.now(timezone.utc).isoformat(), "items": []}
@@ -139,6 +147,22 @@ def sqlite_connect() -> sqlite3.Connection:
     conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_card_key ON feedback_events (card_key)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_source_name ON feedback_events (source_name)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_feedback_events_feedback_received_at ON feedback_events (feedback, received_at DESC)")
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS usage_events (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          device_id TEXT,
+          event_type TEXT NOT NULL,
+          path TEXT,
+          client_ts TEXT,
+          received_at TEXT NOT NULL DEFAULT (datetime('now')),
+          metadata TEXT NOT NULL DEFAULT '{}'
+        )
+        """
+    )
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_usage_events_received_at ON usage_events (received_at DESC)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_usage_events_device_received ON usage_events (device_id, received_at DESC)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_usage_events_type_received ON usage_events (event_type, received_at DESC)")
     return conn
 
 
@@ -363,6 +387,97 @@ def feedback(req: FeedbackRequest) -> dict[str, Any]:
     return {"ok": True, "stored": True, "feedback": value}
 
 
+def parse_client_ts(raw: str | None) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
+def build_usage_report(hours: int = 24) -> dict[str, Any]:
+    safe_hours = max(1, min(int(hours), 24 * 30))
+    if db_available():
+        return {"status": "unavailable", "reason": "usage report is not wired to postgres yet", "windowHours": safe_hours}
+    with sqlite_connect() as conn:
+        totals = conn.execute(
+            """
+            SELECT
+              COUNT(*) AS events,
+              COUNT(DISTINCT COALESCE(NULLIF(device_id,''), 'anon-' || id)) AS users,
+              SUM(CASE WHEN event_type IN ('page_view','refresh') THEN 1 ELSE 0 END) AS visits,
+              SUM(CASE WHEN event_type='refresh' THEN 1 ELSE 0 END) AS refreshes,
+              SUM(CASE WHEN event_type='page_view' THEN 1 ELSE 0 END) AS page_views
+            FROM usage_events
+            WHERE received_at >= datetime('now', ?)
+            """,
+            (f"-{safe_hours} hours",),
+        ).fetchone()
+        by_type = [dict(r) for r in conn.execute(
+            """
+            SELECT event_type, COUNT(*) AS count, COUNT(DISTINCT COALESCE(NULLIF(device_id,''), 'anon-' || id)) AS users
+            FROM usage_events
+            WHERE received_at >= datetime('now', ?)
+            GROUP BY event_type
+            ORDER BY count DESC, event_type ASC
+            """,
+            (f"-{safe_hours} hours",),
+        ).fetchall()]
+        recent = [dict(r) for r in conn.execute(
+            """
+            SELECT device_id, event_type, path, received_at
+            FROM usage_events
+            WHERE received_at >= datetime('now', ?)
+            ORDER BY received_at DESC
+            LIMIT 20
+            """,
+            (f"-{safe_hours} hours",),
+        ).fetchall()]
+    return {
+        "status": "ok",
+        "windowHours": safe_hours,
+        "users": int(totals["users"] or 0),
+        "events": int(totals["events"] or 0),
+        "visits": int(totals["visits"] or 0),
+        "pageViews": int(totals["page_views"] or 0),
+        "refreshes": int(totals["refreshes"] or 0),
+        "byType": by_type,
+        "recentEvents": recent,
+    }
+
+
+@app.post("/v1/usage")
+def usage(req: UsageRequest) -> dict[str, Any]:
+    event_type = req.eventType if req.eventType in {"page_view", "refresh", "dashboard_view", "dashboard_refresh"} else "page_view"
+    client_ts = parse_client_ts(req.clientTs)
+    if not db_available():
+        with sqlite_connect() as conn:
+            conn.execute(
+                """
+                INSERT INTO usage_events (device_id, event_type, path, client_ts, metadata)
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (
+                    req.deviceId,
+                    event_type,
+                    req.path,
+                    client_ts.isoformat() if client_ts else None,
+                    json.dumps(req.metadata or {}, ensure_ascii=False),
+                ),
+            )
+            conn.commit()
+        return {"ok": True, "stored": True, "eventType": event_type, "store": "sqlite"}
+    return {"ok": False, "stored": False, "reason": "usage postgres storage is not enabled yet"}
+
+
+@app.get("/v1/usage/report")
+def usage_report(hours: int = 24) -> dict[str, Any]:
+    report = build_usage_report(hours=hours)
+    report["ok"] = report.get("status") == "ok"
+    return report
+
+
 @app.get("/v1/feedback/report")
 def feedback_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
     """Operational report for Poanta card markings.
@@ -373,5 +488,6 @@ def feedback_report(hours: int = 24, limit: int = 20) -> dict[str, Any]:
     safe_hours = max(1, min(int(hours), 24 * 30))
     safe_limit = max(1, min(int(limit), 100))
     report = build_feedback_report(hours=safe_hours, limit=safe_limit)
+    report["usage"] = build_usage_report(hours=safe_hours)
     report["ok"] = True
     return report
