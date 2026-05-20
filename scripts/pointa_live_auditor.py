@@ -323,7 +323,7 @@ def latest_matching_item(items: list[dict[str, Any]], predicate) -> tuple[int, d
     return best
 
 
-def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_age_min: int, max_top_age_hours: int, max_foreign_age_min: int, top_limit: int, recent_window_min: int, min_recent_items: int, min_recent_sources: int) -> list[Finding]:
+def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_age_min: int, max_top_age_hours: int, max_foreign_age_min: int, top_limit: int, recent_window_min: int, min_recent_items: int, min_recent_sources: int, no_new_warning_min: int, no_new_error_min: int) -> list[Finding]:
     findings: list[Finding] = []
     now = datetime.now(TZ)
     items = feed.get("items") or []
@@ -341,8 +341,31 @@ def audit(feed: dict[str, Any], raw_feed: dict[str, Any] | None, *, max_update_a
     first_dt = parse_dt(str(items[0].get("publishedAt") or ""))
     if not first_dt:
         findings.append(Finding("error", "top_missing_published_at", "Top item has no valid publishedAt", 0, items[0].get("headline", ""), items[0].get("source", ""), items[0].get("sourceUrl", "")))
-    elif now.hour >= 6 and now - first_dt > timedelta(hours=max_top_age_hours):
-        findings.append(Finding("error", "stale_top_item", f"Top item is too old for live feed: {first_dt.isoformat()}", 0, items[0].get("headline", ""), items[0].get("source", ""), items[0].get("sourceUrl", "")))
+    elif now.hour >= 6:
+        top_age = now - first_dt
+        active_news_hours = 6 <= now.hour < 23
+        if active_news_hours and top_age > timedelta(minutes=no_new_error_min):
+            findings.append(Finding(
+                "error",
+                "no_new_top_item_sla",
+                f"No new top feed item for more than {no_new_error_min}m: latest is {first_dt.isoformat()} ({top_age} old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+                0,
+                items[0].get("headline", ""),
+                items[0].get("source", ""),
+                items[0].get("sourceUrl", ""),
+            ))
+        elif active_news_hours and top_age > timedelta(minutes=no_new_warning_min):
+            findings.append(Finding(
+                "warning",
+                "no_new_top_item_warning",
+                f"No new top feed item for more than {no_new_warning_min}m: latest is {first_dt.isoformat()} ({top_age} old). Warning only; if it reaches {no_new_error_min}m, treat as operational problem.",
+                0,
+                items[0].get("headline", ""),
+                items[0].get("source", ""),
+                items[0].get("sourceUrl", ""),
+            ))
+        if top_age > timedelta(hours=max_top_age_hours):
+            findings.append(Finding("error", "stale_top_item", f"Top item is too old for live feed: {first_dt.isoformat()}", 0, items[0].get("headline", ""), items[0].get("source", ""), items[0].get("sourceUrl", "")))
 
     top = items[0]
     for source_name, max_age_min in IMPORTANT_SOURCE_MAX_AGE_MIN.items():
@@ -445,6 +468,8 @@ def main() -> int:
     ap.add_argument("--recent-window-min", type=int, default=60, help="Quantity SLA window for fresh visible volume")
     ap.add_argument("--min-recent-items", type=int, default=5, help="Minimum top items newer than recent-window-min")
     ap.add_argument("--min-recent-sources", type=int, default=3, help="Minimum distinct recent source groups in the top slice")
+    ap.add_argument("--no-new-warning-min", type=int, default=15, help="Warning threshold for no new top item during active news hours")
+    ap.add_argument("--no-new-error-min", type=int, default=30, help="Error threshold for no new top item during active news hours")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
@@ -454,7 +479,7 @@ def main() -> int:
         raw = fetch_json(args.raw_url)
     except Exception:
         raw = None
-    findings = audit(live, raw, max_update_age_min=args.max_update_age_min, max_top_age_hours=args.max_top_age_hours, max_foreign_age_min=args.max_foreign_age_min, top_limit=args.top, recent_window_min=args.recent_window_min, min_recent_items=args.min_recent_items, min_recent_sources=args.min_recent_sources)
+    findings = audit(live, raw, max_update_age_min=args.max_update_age_min, max_top_age_hours=args.max_top_age_hours, max_foreign_age_min=args.max_foreign_age_min, top_limit=args.top, recent_window_min=args.recent_window_min, min_recent_items=args.min_recent_items, min_recent_sources=args.min_recent_sources, no_new_warning_min=args.no_new_warning_min, no_new_error_min=args.no_new_error_min)
     errors = [f for f in findings if f.severity == "error"]
     warnings = [f for f in findings if f.severity == "warning"]
     result = {

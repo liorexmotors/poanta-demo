@@ -29,6 +29,13 @@ The auditor/repair path may run quietly when the feed is weak, stale, or an impo
 - No freshness-threshold weakening.
 - No QA bypass.
 
+## Freshness SLA
+
+- During active news hours, 15 minutes without a new top feed item is a warning.
+- During active news hours, 25–30 minutes without a new top feed item is an operational problem and must trigger deterministic diagnosis/rescue across collection, editor, QA, deploy, and cache.
+- 45–60 minutes without a new top feed item is a definite incident, even if the feed technically loads.
+- This SLA never authorizes publishing weak cards. If no suitable article exists, keep quality strict; if sources are active and the feed stays unchanged for about 30 minutes, repair the machine.
+
 ## If hard gates fail
 
 Do not publish. Continue deterministic rescue/repair internally where possible, or log/report the outcome. Do **not** send Lior decision/options messages for feed-card publication/quality.
