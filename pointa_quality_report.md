@@ -2,7 +2,7 @@
 
 Items checked: 141
 Errors: 0
-Warnings: 89
+Warnings: 91
 
 ## Category distribution
 
@@ -24,9 +24,9 @@ Warnings: 89
 
 ## Issue counts
 
-- takeaway_long: 75
+- takeaway_long: 76
+- summary_long: 8
 - headline_near_duplicate_summary: 7
-- summary_long: 7
 
 ## Issues
 
@@ -107,13 +107,6 @@ Warnings: 89
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/19/us/politics/iran-israel-us-leader-ahmadinejad.html
 
-### WARNING · takeaway_long · item 10
-- Takeaway length 104 > 95
-- Headline: `וול סטריט עלתה כשהנפט צנח על תקוות להסכם עם איראן`
-- Original: `עליות בוול סטריט; הנפט צונח ב-6% על רקע תקוות לפתיחת מצר הורמוז`
-- Source: דה מרקר - גלובל
-- URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article-live/0000019e-3457-d6c6-a99e-767fb26a0000
-
 ### WARNING · takeaway_long · item 11
 - Takeaway length 100 > 95
 - Headline: `דובדבן עצרה מבוקש שתכנן פיגוע מיידי בקבאטיה`
@@ -122,8 +115,8 @@ Warnings: 89
 - URL: https://www.maariv.co.il/breaking-news/article-1323918
 
 ### WARNING · takeaway_long · item 13
-- Takeaway length 100 > 95
-- Headline: `אסטון וילה עלתה ל-0:3 בגמר הליגה האירופית`
+- Takeaway length 113 > 95
+- Headline: `אסטון וילה זכתה בליגה האירופית אחרי 0:3 על פרייבורג`
 - Original: `אמרי רוצה עוד גביע: אסטון וילה ופרייבורג בגמר הליגה האירופית`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839720
@@ -148,6 +141,13 @@ Warnings: 89
 - Original: `Trump may see himself in Ahmadinejad but having him lead Iran was a perplexing idea`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/mahmoud-ahmadinejad-the-us-and-israels-unlikely-choice-to-lead-iran
+
+### WARNING · takeaway_long · item 21
+- Takeaway length 98 > 95
+- Headline: `הפועל ת״א ניצחה את ראשל״צ והבטיחה את המקום השני`
+- Original: `רבע 2, 09:51: הפועל ת"א - ראשל"צ`
+- Source: ynet - כל ערוץ הספורט
+- URL: https://www.ynet.co.il/sport/article/one523275
 
 ### WARNING · takeaway_long · item 23
 - Takeaway length 101 > 95
@@ -192,8 +192,8 @@ Warnings: 89
 - URL: https://www.aljazeera.com/news/2026/5/20/iran-says-it-coordinated-crossing-of-26-vessels-out-of-strait-of-hormuz?traffic_source=rss
 
 ### WARNING · takeaway_long · item 29
-- Takeaway length 106 > 95
-- Headline: `וואטסאפ בוחנת מחיקה שמתחילה רק אחרי קריאה`
+- Takeaway length 118 > 95
+- Headline: `וואטסאפ בוחנת טיימר מחיקה שמתחיל רק אחרי קריאה`
 - Original: `השדרוג החדש של וואטסאפ יקשה על מי שמנסה למחוק עקבות בצ'אט`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3839687
@@ -254,9 +254,16 @@ Warnings: 89
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/world/middle-east/2026-05-20/ty-article-magazine/.premium/0000019e-45ef-d394-addf-ffff2fd50000
 
+### WARNING · summary_long · item 39
+- Summary length 223 > 220
+- Headline: `הפועל ירושלים שחררה את לאמב רגע לפני הפלייאוף`
+- Original: `אנתוני לאמב שוחרר מהפועל ירושלים`
+- Source: ynet - כל ערוץ הספורט
+- URL: https://www.ynet.co.il/sport/israelibasketball/article/hysgybjkml
+
 ### WARNING · takeaway_long · item 39
-- Takeaway length 101 > 95
-- Headline: `הפועל ירושלים שחררה את אנתוני לאמב לפני הפלייאוף`
+- Takeaway length 128 > 95
+- Headline: `הפועל ירושלים שחררה את לאמב רגע לפני הפלייאוף`
 - Original: `אנתוני לאמב שוחרר מהפועל ירושלים`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelibasketball/article/hysgybjkml
@@ -297,8 +304,8 @@ Warnings: 89
 - URL: https://www.ynet.co.il/news/article/bjyf5vskgx
 
 ### WARNING · takeaway_long · item 45
-- Takeaway length 96 > 95
-- Headline: `ננו־קו גייסה 12 מיליון דולר לסוכני AI`
+- Takeaway length 109 > 95
+- Headline: `ננו־קו גייסה 12 מיליון דולר לניהול סוכני AI`
 - Original: `בזכות כלי ויראלי שפיתחו: האחים גבריאל ולייזר כהן גייסו 12 מיליון דולר`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/technation/2026-05-20/ty-article/.highlight/0000019e-4591-d394-addf-ffbb4bc40000
@@ -381,8 +388,8 @@ Warnings: 89
 - URL: https://www.aljazeera.com/news/2026/5/20/us-imposes-sanctions-on-gaza-flotilla-organisers-why-it-matters?traffic_source=rss
 
 ### WARNING · takeaway_long · item 63
-- Takeaway length 104 > 95
-- Headline: `ת״א ננעלה בעליות למרות נפילות בעזריאלי ופריון`
+- Takeaway length 125 > 95
+- Headline: `ת״א ננעלה בעליות כששבבים משכו מעלה ועזריאלי נפלה`
 - Original: `עליות בבורסה; מניית עזריאלי נופלת ב-7%, טאואר מזנקת`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543465#utm_source=RSS
@@ -395,8 +402,8 @@ Warnings: 89
 - URL: https://www.haaretz.co.il/news/politics/2026-05-20/ty-article/.premium/0000019e-44de-d856-a7de-dede319a0000
 
 ### WARNING · takeaway_long · item 67
-- Takeaway length 107 > 95
-- Headline: `220 מיליון שקל הועברו למענקי חקלאות בעוטף`
+- Takeaway length 104 > 95
+- Headline: `220 מיליון שקל חולקו למענקי חקלאות בעוטף`
 - Original: `נתוני מנהלת תקומה לקראת שבועות: כ-420 משקים בעוטף קיבלו מענקים בהיקף 220 מיליון ש"ח`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323771
@@ -409,7 +416,7 @@ Warnings: 89
 - URL: https://www.maariv.co.il/economy/consumerism/article-1323770
 
 ### WARNING · takeaway_long · item 69
-- Takeaway length 115 > 95
+- Takeaway length 124 > 95
 - Headline: `מטא צפויה לפטר יותר מ־100 עובדים בישראל`
 - Original: `מטא הכריזה על גל הפיטורים האכזרי - וכעת הוא מגיע לישראל`
 - Source: מעריב - כלכלה
@@ -437,7 +444,7 @@ Warnings: 89
 - URL: https://www.maariv.co.il/news/military/article-1323745
 
 ### WARNING · takeaway_long · item 78
-- Takeaway length 116 > 95
+- Takeaway length 114 > 95
 - Headline: `בריטניה מרככת סנקציות על דלק מנפט רוסי`
 - Original: `שלום פוטין, להתראות נטילת אחריות: סערה בבריטניה בעקבות ההקלות "המטורפות" על הנפט הרוסי`
 - Source: מעריב - חדשות
@@ -638,6 +645,13 @@ Warnings: 89
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
+
+### WARNING · takeaway_long · item 138
+- Takeaway length 98 > 95
+- Headline: `הטלפון של טראמפ הגיע, והתגלה כמכשיר סיני ממותג`
+- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
+- Source: ynet - כל ערוץ המחשבים
+- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
 ### WARNING · headline_near_duplicate_summary · item 139
 - Headline is a clipped/near-duplicate version of the summary
