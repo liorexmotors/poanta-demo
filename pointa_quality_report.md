@@ -6,7 +6,7 @@ Warnings: 163
 
 ## Category distribution
 
-- ביטחון: 71
+- ביטחון: 72
 - ספורט: 49
 - כלכלה: 17
 - חדשות: 12
@@ -14,7 +14,7 @@ Warnings: 163
 - טכנולוגיה: 10
 - פלילים: 7
 - רכב: 6
-- פוליטיקה: 5
+- פוליטיקה: 4
 - בריאות: 4
 - נדל״ן: 3
 - צרכנות: 2
@@ -25,9 +25,9 @@ Warnings: 163
 
 ## Issue counts
 
-- takeaway_long: 143
-- summary_long: 13
-- headline_near_duplicate_summary: 5
+- takeaway_long: 142
+- summary_long: 15
+- headline_near_duplicate_summary: 4
 - category_sport_source: 2
 
 ## Issues
@@ -130,28 +130,35 @@ Warnings: 163
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/21/poll-finds-nearly-three-quarters-of-democratic-voters-oppose-aid-to-israel?traffic_source=rss
 
-### WARNING · headline_near_duplicate_summary · item 19
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `ניתוח של חברת Soar מראה את הנזק בכמה מבסיסי צה"ל בחודש מרץ`
+### WARNING · takeaway_long · item 19
+- Takeaway length 104 > 95
+- Headline: `תמונות לוויין חשפו פגיעות בבסיסי צה״ל במרץ`
 - Original: `התיעוד מהלוויין חשף: בסיסי צה"ל שנפגעו במלחמה עם איראן`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hyswuk2jme
 
-### WARNING · takeaway_long · item 21
+### WARNING · summary_long · item 20
+- Summary length 235 > 220
+- Headline: `ארה״ב הטילה סנקציות על רשת מסייעי חיזבאללה בלבנון`
+- Original: `יחד עם שגריר איראן בלבנון: סנקציות אמריקאיות הוטלו על תשעה בני אדם`
+- Source: מעריב - חדשות
+- URL: https://www.maariv.co.il/news/politics/article-1324175
+
+### WARNING · takeaway_long · item 22
 - Takeaway length 97 > 95
 - Headline: `מחבל שחצה את הקו הצהוב בעזה חוסל בידי צה״ל`
 - Original: `צה"ל: חוסל מחבל שחצה את הקו הצהוב ברצועת עזה`
 - Source: וואלה חדשות - מבזקים
 - URL: https://news.walla.co.il/break/3839876
 
-### WARNING · takeaway_long · item 22
-- Takeaway length 100 > 95
-- Headline: `וושינגטון מכוונת לסייעני חיזבאללה במוסדות לבנון`
+### WARNING · summary_long · item 23
+- Summary length 234 > 220
+- Headline: `ארה״ב הטילה סנקציות על מסייעי חיזבאללה בלבנון`
 - Original: `ארה"ב הטילה סנקציות על 9 אישים שסייעו לחיזבאללה - בהם חברי פרלמנט לבנונים`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/hkdyth3yfe
 
-### WARNING · headline_near_duplicate_summary · item 24
+### WARNING · headline_near_duplicate_summary · item 25
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `איראן מקדמת עם עומאן מנגנון לגביית תשלום מכלי שיט במצר הורמוז`
 - Original: `דרך מצר הורמוז: איראן מצאה דרך חדשה לסחוט את העולם`
@@ -206,13 +213,6 @@ Warnings: 163
 - Original: `עקב התפרצות האבולה: ארה"ב הורתה שטיסות מאפריקה ינחתו בשדה אחד בלבד`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skhydi21gx
-
-### WARNING · takeaway_long · item 42
-- Takeaway length 102 > 95
-- Headline: `סרטון בן גביר עם פעילי המשט עורר גינוי עולמי`
-- Original: `The far-right Israeli minister taunting detained Gaza activists – The Latest`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/news/audio/2026/may/21/the-far-right-israeli-minister-taunting-detained-gaza-activists-the-latest
 
 ### WARNING · takeaway_long · item 43
 - Takeaway length 105 > 95
