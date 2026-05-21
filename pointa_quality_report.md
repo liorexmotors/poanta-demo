@@ -2,7 +2,7 @@
 
 Items checked: 138
 Errors: 0
-Warnings: 99
+Warnings: 102
 
 ## Category distribution
 
@@ -23,8 +23,8 @@ Warnings: 99
 
 ## Issue counts
 
-- takeaway_long: 84
-- summary_long: 8
+- takeaway_long: 86
+- summary_long: 9
 - headline_near_duplicate_summary: 6
 - category_sport_source: 1
 
@@ -143,7 +143,7 @@ Warnings: 99
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
 ### WARNING · takeaway_long · item 14
-- Takeaway length 105 > 95
+- Takeaway length 112 > 95
 - Headline: `זיו אריה מוביל במרוץ לאימון מכבי פתח תקוה`
 - Original: `זיו אריה המועמד המוביל לאמן את מכבי פתח תקוה בליגת העל`
 - Source: וואלה ספורט
@@ -185,8 +185,8 @@ Warnings: 99
 - URL: https://sports.walla.co.il/item/3839734
 
 ### WARNING · takeaway_long · item 23
-- Takeaway length 106 > 95
-- Headline: `תקוות לפתיחת הורמוז הפילו את הנפט והקפיצו את וול סטריט`
+- Takeaway length 110 > 95
+- Headline: `תקוות לפתיחת הורמוז הורידו את הנפט והעלו את וול סטריט`
 - Original: `נאסד"ק עלה ב-1.5%; הנפט צנח ב-6% על רקע תקוות לפתיחת מצר הורמוז`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article-live/0000019e-3457-d6c6-a99e-767fb26a0000
@@ -332,7 +332,7 @@ Warnings: 99
 - URL: https://www.aljazeera.com/news/2026/5/20/iran-says-it-coordinated-crossing-of-26-vessels-out-of-strait-of-hormuz?traffic_source=rss
 
 ### WARNING · takeaway_long · item 44
-- Takeaway length 117 > 95
+- Takeaway length 119 > 95
 - Headline: `וואטסאפ בוחנת מחיקה רק אחרי שהנמען קרא את ההודעה`
 - Original: `השדרוג החדש של וואטסאפ יקשה על מי שמנסה למחוק עקבות בצ'אט`
 - Source: וואלה TECH - כל הכתבות
@@ -409,7 +409,7 @@ Warnings: 99
 - URL: https://www.theguardian.com/world/2026/may/20/us-palestinian-authority-united-nations-vice-presidency
 
 ### WARNING · takeaway_long · item 56
-- Takeaway length 97 > 95
+- Takeaway length 96 > 95
 - Headline: `ננו־קו גייסה 12 מיליון דולר לכלי לניהול סוכני AI`
 - Original: `בזכות כלי ויראלי שפיתחו: האחים גבריאל ולייזר כהן גייסו 12 מיליון דולר`
 - Source: דה מרקר - TechNation
@@ -499,6 +499,13 @@ Warnings: 99
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/consumerism/article-1323770
 
+### WARNING · takeaway_long · item 77
+- Takeaway length 109 > 95
+- Headline: `מטא תפטר יותר מ־100 עובדים בישראל ותעביר אחרים ל-AI`
+- Original: `מטא הכריזה על גל הפיטורים האכזרי - וכעת הוא מגיע לישראל`
+- Source: מעריב - כלכלה
+- URL: https://www.maariv.co.il/economy/israel/article-1323768
+
 ### WARNING · takeaway_long · item 78
 - Takeaway length 107 > 95
 - Headline: `איראן שרדה את החיסולים וכפתה קיפאון מול ארה״ב וישראל`
@@ -528,7 +535,7 @@ Warnings: 99
 - URL: https://www.maariv.co.il/news/world/article-1323746
 
 ### WARNING · takeaway_long · item 86
-- Takeaway length 112 > 95
+- Takeaway length 119 > 95
 - Headline: `בריטניה מקלה בסנקציות על דלק שמקורו בנפט רוסי`
 - Original: `שלום פוטין, להתראות נטילת אחריות: סערה בבריטניה בעקבות ההקלות "המטורפות" על הנפט הרוסי`
 - Source: מעריב - חדשות
@@ -708,6 +715,20 @@ Warnings: 99
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
+
+### WARNING · summary_long · item 135
+- Summary length 225 > 220
+- Headline: `הטלפון של טראמפ הגיע - ואנליסטים מזהים מכשיר סיני ממותג`
+- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
+- Source: ynet - כל ערוץ המחשבים
+- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
+
+### WARNING · takeaway_long · item 135
+- Takeaway length 125 > 95
+- Headline: `הטלפון של טראמפ הגיע - ואנליסטים מזהים מכשיר סיני ממותג`
+- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
+- Source: ynet - כל ערוץ המחשבים
+- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
 ### WARNING · headline_near_duplicate_summary · item 136
 - Headline is a clipped/near-duplicate version of the summary
