@@ -2,7 +2,7 @@
 
 Items checked: 200
 Errors: 0
-Warnings: 168
+Warnings: 170
 
 ## Category distribution
 
@@ -25,30 +25,30 @@ Warnings: 168
 
 ## Issue counts
 
-- takeaway_long: 146
-- summary_long: 17
+- takeaway_long: 147
+- summary_long: 18
 - headline_near_duplicate_summary: 4
 - category_sport_source: 1
 
 ## Issues
 
 ### WARNING · takeaway_long · item 0
-- Takeaway length 119 > 95
-- Headline: `ישראל מגיעה לאליפות אירופה בהתעמלות אחרי פתיחת עונה חזקה`
+- Takeaway length 97 > 95
+- Headline: `ישראל יוצאת לאליפות אירופה בהתעמלות אחרי פתיחה חזקה`
 - Original: `נבחרת ישראל בהתעמלות אמנותית יוצאת לאליפות אירופה בבולגריה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839874
 
 ### WARNING · takeaway_long · item 1
-- Takeaway length 105 > 95
-- Headline: `פיב״א אירופה ספדה לרז אדם אחרי מותו בתאונת דרכים`
+- Takeaway length 99 > 95
+- Headline: `פיב״א אירופה ספדה לרז אדם אחרי התאונה הקטלנית`
 - Original: `חורחה גרבאחוסה: "רז אדם הספיק להשיג רבות בזמן כה קצר"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839872
 
 ### WARNING · takeaway_long · item 2
-- Takeaway length 111 > 95
-- Headline: `סאגת הריגול עלולה לעלות לסאות׳המפטון עד 250 מיליון ליש״ט`
+- Takeaway length 109 > 95
+- Headline: `סאגת הריגול עלולה לעלות לסאות׳המפטון 250 מיליון ליש״ט`
 - Original: `המרגל שתקע אותי: המחיר הכואב ששילמה סאות'המפטון`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839840
@@ -131,14 +131,14 @@ Warnings: 168
 - URL: https://www.ynet.co.il/news/article/hjarjjnyge
 
 ### WARNING · takeaway_long · item 13
-- Takeaway length 103 > 95
-- Headline: `עבדולאי סק זומן לסגל סנגל למונדיאל 2026`
+- Takeaway length 102 > 95
+- Headline: `עבדולאי סק נכלל בסגל סנגל למונדיאל 2026`
 - Original: `עבדולאי סק בפנים: סגל נבחרת סנגל למונדיאל 2026`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839867
 
 ### WARNING · takeaway_long · item 17
-- Takeaway length 96 > 95
+- Takeaway length 99 > 95
 - Headline: `טראמפ מכין בדיקות ממשלתיות למודלי AI חזקים`
 - Original: `הסעיף החדש של טראמפ - שמטלטל את קלוד ו-ChatGPT`
 - Source: ישראל היום - כל הכתבות
@@ -157,6 +157,13 @@ Warnings: 168
 - Original: `צה"ל חיסל מחבל שחצה את הקו הצהוב בצפון הרצועה`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/bjwob5nkme
+
+### WARNING · takeaway_long · item 20
+- Takeaway length 96 > 95
+- Headline: `אנתרופיק תשלם ל-SpaceX 15 מיליארד דולר בשנה`
+- Original: `יותר ממילארד דולר בחודש: סכום העתק שיצרנית קלוד תשלם לאילון מאסק`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/tech/tech-news/article/20594891
 
 ### WARNING · takeaway_long · item 22
 - Takeaway length 109 > 95
@@ -319,9 +326,16 @@ Warnings: 168
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324091
 
+### WARNING · summary_long · item 47
+- Summary length 230 > 220
+- Headline: `השוק מתמחר סיכוי גבוה להורדת ריבית ביום שני`
+- Original: `כל עוד הפסקת האש נשמרת: בשוק צופים הורדת ריבית ביום שני`
+- Source: גלובס - שוק ההון
+- URL: https://www.globes.co.il/news/article.aspx?did=1001543709#utm_source=RSS
+
 ### WARNING · takeaway_long · item 47
-- Takeaway length 97 > 95
-- Headline: `ספקות מול איראן הקפיצו את הנפט מעל 100 דולר`
+- Takeaway length 127 > 95
+- Headline: `השוק מתמחר סיכוי גבוה להורדת ריבית ביום שני`
 - Original: `כל עוד הפסקת האש נשמרת: בשוק צופים הורדת ריבית ביום שני`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543709#utm_source=RSS
