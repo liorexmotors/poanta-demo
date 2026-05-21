@@ -2,7 +2,7 @@
 
 Items checked: 181
 Errors: 0
-Warnings: 131
+Warnings: 137
 
 ## Category distribution
 
@@ -24,111 +24,125 @@ Warnings: 131
 
 ## Issue counts
 
-- takeaway_long: 112
-- summary_long: 13
-- headline_near_duplicate_summary: 6
+- takeaway_long: 116
+- summary_long: 14
+- headline_near_duplicate_summary: 7
 
 ## Issues
 
-### WARNING · takeaway_long · item 0
+### WARNING · headline_near_duplicate_summary · item 0
+- Headline is a clipped/near-duplicate version of the summary
+- Headline: `שחקן גליל עליון ונבחרת ישראל הלך לעולמו בתאונת דרכים`
+- Original: `"אסון לכדורסל הישראלי": המאמנים והחברים נפרדים מרז אדם`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3839773
+
+### WARNING · takeaway_long · item 1
 - Takeaway length 112 > 95
 - Headline: `קאן 2026 נוטה השנה לסרטים כבדים ומדכאים`
 - Original: `עם עינויים קשים לצפייה, מצאתי בקאן את הגרסה הכבדה של "ממזרים חסרי כבוד"`
 - Source: וואלה תרבות - קולנוע
 - URL: https://e.walla.co.il/item/3839802
 
-### WARNING · takeaway_long · item 1
+### WARNING · takeaway_long · item 2
 - Takeaway length 107 > 95
 - Headline: `שיי החזיר את אוקלהומה ל-1:1 בגמר המערב`
 - Original: `ה-MVP כאן: שיי החזיר את הת'אנדר לסדרה מול הספרס`
 - Source: וואלה ספורט - NBA
 - URL: https://sports.walla.co.il/item/3839787
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 3
 - Takeaway length 104 > 95
 - Headline: `סאות'המפטון הודחה מהפלייאוף בגלל פרשת ריגול`
 - Original: `הלם, זעם וחשש לעתיד: סערת הריגול מטלטלת את סאות'המפטון`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839792
 
-### WARNING · takeaway_long · item 3
-- Takeaway length 123 > 95
-- Headline: `טראמפ הקפיא תקיפות באיראן ונתניהו לחץ לחדשן`
-- Original: `טראמפ עצר את התקיפות - נתניהו מאוכזב: השיחה המתוחה בין הנשיא לרה"מ`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3839794
-
 ### WARNING · takeaway_long · item 4
-- Takeaway length 99 > 95
-- Headline: `צה״ל מתקרב להרחבת התמרון מול רחפני חיזבאללה`
-- Original: `איום הרחפנים ופציעת מח"ט 401: ההערכה בצה"ל - מתקרבים להרחבת התמרון`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3839744
-
-### WARNING · takeaway_long · item 6
 - Takeaway length 100 > 95
 - Headline: `יריעות תורה ספרדיות בנות 700 שנה נחשפות באנו`
 - Original: `בן כ-700 שנה: יריעות מספר תורה ספרדי נדיר נחשפים לראשונה`
 - Source: ynet - כל ערוץ היהדות
 - URL: https://www.ynet.co.il/judaism/article/rye0ibsyml
 
+### WARNING · takeaway_long · item 7
+- Takeaway length 133 > 95
+- Headline: `טראמפ הקפיא תקיפות באיראן ונתניהו לחץ לחדשן`
+- Original: `השיחה המתוחה בין טראמפ לנתניהו סביב המשך המלחמה באיראן`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839794
+
+### WARNING · takeaway_long · item 8
+- Takeaway length 121 > 95
+- Headline: `צה״ל מתקרב להרחבת התמרון מול רחפני חיזבאללה`
+- Original: `איום הרחפנים ופציעת מח"ט 401: ההערכה בצה"ל - מתקרבים להרחבת התמרון`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839744
+
 ### WARNING · takeaway_long · item 9
+- Takeaway length 107 > 95
+- Headline: `גשם ורוחות ילוו את ערב שבועות בצפון ובמרכז`
+- Original: `חג שבועות חורפי: גשם מקומי ורוחות ערות ברחבי הארץ`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839781
+
+### WARNING · takeaway_long · item 10
 - Takeaway length 117 > 95
-- Headline: `חיזבאללה מעביר כסף דרך חוואלה וזהב אחרי הפגיעות`
+- Headline: `חיזבאללה עובר לכלכלת מזומן וחוואלה תחת לחץ`
 - Original: `אחרי הפגיעות ב"אל-קרד אל-חסן": הקרב הכלכלי שמכרסם בחיזבאללה מבפנים`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1323984
 
-### WARNING · takeaway_long · item 10
+### WARNING · takeaway_long · item 11
 - Takeaway length 103 > 95
 - Headline: `התעשיות הביטחוניות מחפשות מענה לרחפני נפץ`
 - Original: `מרוץ החימוש בשיאו: התעשייה האווירית והמערכות הביטחוניות נגד השעון`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323985
 
-### WARNING · takeaway_long · item 11
+### WARNING · takeaway_long · item 12
 - Takeaway length 100 > 95
 - Headline: `ברק חירם מוביל במרוץ למזכיר הצבאי של נתניהו`
 - Original: `ברק חירם במוקד: קרב הענק בין נתניהו, כ"ץ וזמיר בשיאו`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323982
 
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 13
 - Takeaway length 107 > 95
 - Headline: `נתניהו וטראמפ חלוקים על קצב הלחץ מול איראן`
 - Original: `דיווחים בארה"ב: נתניהו אמר לטראמפ שהמתנה באיראן היא טעות, הנשיא ביקש עוד זמן`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/sjmxmz21ze
 
-### WARNING · summary_long · item 13
+### WARNING · summary_long · item 14
 - Summary length 222 > 220
 - Headline: `סרט המנדלוריאן החדש נראה כמו עונה מנופחת`
 - Original: `"המנדלוריאן וגרוגו": האם העולם באמת היה זקוק לעוד סרט "סטאר וורז" בינוני?`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bycysejjgg
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 14
 - Takeaway length 115 > 95
 - Headline: `סרט המנדלוריאן החדש נראה כמו עונה מנופחת`
 - Original: `"המנדלוריאן וגרוגו": האם העולם באמת היה זקוק לעוד סרט "סטאר וורז" בינוני?`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bycysejjgg
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 15
 - Takeaway length 102 > 95
 - Headline: `בית״ר פותחת מו״מ מהיר להשארת ברק יצחקי`
 - Original: `בבית"ר ירושלים ייפגשו עם ברק יצחקי מיד לאחר המשחק מול הפועל ת"א`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelisoccer/article/h1o0ab31gg
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 16
 - Takeaway length 115 > 95
 - Headline: `SpaceX מכוונת להנפקה בשווי 1.5 טריליון דולר`
 - Original: `SpaceX הגישה תשקיף לקראת הנפקה ואילון מאסק בדרך להפוך לטריליונר הראשון בעולם`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543706#utm_source=RSS
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 17
 - Takeaway length 112 > 95
 - Headline: `בן גביר הפך עצירת משט שקטה לזירה פוליטית`
 - Original: `שר הילדותיות והטמטום: איתמר בן גביר העניק לחמאס את המתנה הגדולה`
@@ -141,6 +155,20 @@ Warnings: 131
 - Original: `עליות במסחר באסיה: הבורסה בסיאול מזנקת בכ-8%, טוקיו בכ-4%`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-21/ty-article-live/0000019e-3457-d6c6-a99e-767fb26a0000
+
+### WARNING · takeaway_long · item 19
+- Takeaway length 115 > 95
+- Headline: `טראמפ עוצר את התקיפות באיראן למרות לחץ מנתניהו`
+- Original: `נתניהו: תחדש את האש, ההמתנה היא טעות; טראמפ: עדיף הסכם, ההחלטה שלי`
+- Source: ynet - כל ערוץ החדשות
+- URL: https://www.ynet.co.il/news/article/rji0ewhygl
+
+### WARNING · takeaway_long · item 22
+- Takeaway length 101 > 95
+- Headline: `צה״ל נערך לחידוש הלחימה סביב החלטת טראמפ על איראן`
+- Original: `הדריכות לחידוש המלחמה בישראל, וההבהרה של טראמפ: "נותן לאיראן כמה ימים"`
+- Source: גלובס - בארץ
+- URL: https://www.globes.co.il/news/article.aspx?did=1001543705#utm_source=RSS
 
 ### WARNING · takeaway_long · item 24
 - Takeaway length 114 > 95
@@ -324,33 +352,47 @@ Warnings: 131
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20592183
 
-### WARNING · summary_long · item 58
+### WARNING · summary_long · item 57
 - Summary length 239 > 220
 - Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
 - Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3838594
 
-### WARNING · takeaway_long · item 58
+### WARNING · takeaway_long · item 57
 - Takeaway length 97 > 95
 - Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
 - Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3838594
 
-### WARNING · summary_long · item 59
+### WARNING · summary_long · item 58
 - Summary length 238 > 220
 - Headline: `סרטון בן גביר על עצורי המשט הצית משבר דיפלומטי`
 - Original: `Israeli security minister stirs diplomatic outrage with flotilla activist abuse video`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/israeli-security-minister-itamar-ben-gvir-stirs-diplomatic-outrage-with-flotilla-activist-abuse-video
 
-### WARNING · takeaway_long · item 60
+### WARNING · takeaway_long · item 59
 - Takeaway length 119 > 95
 - Headline: `עדויות על עצורי המשט הציתו משבר דיפלומטי`
 - Original: `מאות עצורי המשט לעזה טוענים: "חווינו אלימות קיצונית והשפלה קשה"`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839772
+
+### WARNING · summary_long · item 60
+- Summary length 221 > 220
+- Headline: `שי גולדן מתאר איך ערוץ 14 דחק קול ביקורתי מבפנים`
+- Original: `"הוא במסע צלב נגד מדינת ישראל": שי גולדן פותח הכל על נתניהו, ערוץ 14 והחרטה`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/politics/article/20592014
+
+### WARNING · takeaway_long · item 60
+- Takeaway length 112 > 95
+- Headline: `שי גולדן מתאר איך ערוץ 14 דחק קול ביקורתי מבפנים`
+- Original: `"הוא במסע צלב נגד מדינת ישראל": שי גולדן פותח הכל על נתניהו, ערוץ 14 והחרטה`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/politics/article/20592014
 
 ### WARNING · takeaway_long · item 61
 - Takeaway length 121 > 95
@@ -585,7 +627,7 @@ Warnings: 131
 
 ### WARNING · takeaway_long · item 95
 - Takeaway length 115 > 95
-- Headline: `מסמך פנימי חשף איסוף מידע על יועץ שביקר את הממשלה`
+- Headline: `מסמך פנימי חשף איסוף מידע על יועץ שביקר ממשלה`
 - Original: `ועדה חשאית בהובלת איש שב"כ לשעבר מרגלת אחרי מורים שמבקרים את הממשלה. תחקיר`
 - Source: הארץ - סוף שבוע
 - URL: https://www.haaretz.co.il/magazine/2026-05-20/ty-article-magazine/.highlight/0000019e-3fd6-d394-addf-fffe4f020000
@@ -696,8 +738,8 @@ Warnings: 131
 - URL: https://www.ynet.co.il/news/article/skocrhikze
 
 ### WARNING · takeaway_long · item 111
-- Takeaway length 119 > 95
-- Headline: `ארה״ב לוחצת על הרשות לוותר על תפקיד באו״ם`
+- Takeaway length 109 > 95
+- Headline: `ארה״ב מאיימת על הרשות בגלל תפקיד באו״ם`
 - Original: `US puts pressure on Palestinian leaders to withdraw bid for UN vice-presidency role`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/us-palestinian-authority-united-nations-vice-presidency
