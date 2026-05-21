@@ -108,7 +108,13 @@ def stale_groups_from_auditor(path: Path) -> set[str]:
     except Exception:
         return set()
     groups: set[str] = set()
-    for issue in data.get("errors", []):
+    # Live auditor treats stale source-view findings as warnings by design: they
+    # must not block an otherwise fresh feed.  For rescue prioritization they are
+    # still important signals, otherwise the rescue queue can miss exactly the
+    # sources that made the app look stuck (for example foreign/דה מרקר views)
+    # while the top feed is already repaired.
+    findings = list(data.get("errors", [])) + list(data.get("warnings", []))
+    for issue in findings:
         code = issue.get("code")
         if code == "stale_foreign_source_view":
             groups.update(FOREIGN_SOURCES)
