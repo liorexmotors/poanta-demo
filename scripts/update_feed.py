@@ -1607,6 +1607,66 @@ def normalized_key(text: str) -> str:
     return text[:70]
 
 
+def duplicate_story_words(item: dict) -> set[str]:
+    stop = set(
+        "של על את עם זה זו הוא היא הם הן כי אשר אבל או אם גם יותר פחות לתוך מתוך "
+        "אחרי לפני כדי כמו בין לפי ללא מול תחת מעל כל כבר עוד אותו אותה אותם אותן "
+        "יש אין היה היתה היו יהיה תהיה להיות מה למה איך מי לא כן"
+        .split()
+    )
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context"])
+    words = re.findall(r"[A-Za-z0-9\u0590-\u05ff]+", text.lower().replace("׳", "").replace('"', ""))
+    return {w for w in words if len(w) > 2 and w not in stop}
+
+
+def duplicate_word_overlap(a: set[str], b: set[str]) -> float:
+    if not a or not b:
+        return 0.0
+    return len(a & b) / max(1, min(len(a), len(b)))
+
+
+def weather_event_tokens(item: dict) -> set[str]:
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"גשם|גשמים|טפטופ|מטר", text):
+        tokens.add("rain")
+    if re.search(r"רוח|רוחות|סוער|ערות", text):
+        tokens.add("wind")
+    if re.search(r"שבועות|ערב החג|חג השבועות", text):
+        tokens.add("shavuot")
+    if re.search(r"צפון|בצפון", text):
+        tokens.add("north")
+    if re.search(r"מרכז|במרכז|חוף|שפלה", text):
+        tokens.add("center")
+    if re.search(r"ירידה|נמוכות|קריר|חורפי|קור", text):
+        tokens.add("cool")
+    if {"rain", "wind"}.issubset(tokens) and ("shavuot" in tokens or len(tokens & {"north", "center"}) >= 2):
+        return tokens
+    return set()
+
+
+def likely_duplicate_story(a: dict, b: dict) -> bool:
+    if str(a.get("sourceUrl") or "") == str(b.get("sourceUrl") or ""):
+        return False
+    if str(a.get("source") or "") == str(b.get("source") or ""):
+        return False
+    aw = weather_event_tokens(a)
+    bw = weather_event_tokens(b)
+    if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
+        return True
+    if str(a.get("category") or "") == str(b.get("category") or "") and duplicate_word_overlap(duplicate_story_words(a), duplicate_story_words(b)) >= 0.62:
+        return True
+    return False
+
+
+def preferred_duplicate_item(a: dict, b: dict) -> dict:
+    def score(item: dict) -> tuple[int, int, str]:
+        detail = len(" ".join(str(item.get(k) or "") for k in ["context", "takeaway", "headline", "originalTitle"]))
+        image = 1 if item.get("imageUrl") else 0
+        return (image, detail, str(item.get("publishedAt") or ""))
+    return a if score(a) >= score(b) else b
+
+
 def load_seen() -> dict:
     try:
         data = json.loads(SEEN_PATH.read_text(encoding="utf-8"))
@@ -2215,6 +2275,10 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     for item in merged:
         sig = normalized_key(f"{item.get('headline','')}|{item.get('context','')}")
         if sig and sig in final_seen_signatures:
+            continue
+        duplicate_index = next((idx for idx, existing in enumerate(deduped) if likely_duplicate_story(item, existing)), None)
+        if duplicate_index is not None:
+            deduped[duplicate_index] = preferred_duplicate_item(deduped[duplicate_index], item)
             continue
         if sig:
             final_seen_signatures.add(sig)

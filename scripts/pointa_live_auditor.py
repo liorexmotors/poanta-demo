@@ -149,6 +149,39 @@ def story_words(item: dict[str, Any]) -> set[str]:
     return set(list(duplicate_words(text))[:48])
 
 
+def weather_event_tokens(item: dict[str, Any]) -> set[str]:
+    """Semantic duplicate key for weather cards.
+
+    Weather articles from different Israeli sources often use very different
+    headlines for the same small forecast event (for example ערב שבועות +
+    rain + winds + north/center). Plain word overlap is too weak because one
+    source may say ``גשם מקומי`` and another ``גשמים`` or ``שינוי במזג האוויר``.
+    Return a compact event fingerprint only when enough forecast-specific
+    anchors exist; otherwise return an empty set so generic weather mentions do
+    not collapse unrelated cards.
+    """
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"גשם|גשמים|טפטופ|מטר", text):
+        tokens.add("rain")
+    if re.search(r"רוח|רוחות|סוער|ערות", text):
+        tokens.add("wind")
+    if re.search(r"שבועות|ערב החג|חג השבועות", text):
+        tokens.add("shavuot")
+    if re.search(r"צפון|בצפון", text):
+        tokens.add("north")
+    if re.search(r"מרכז|במרכז|חוף|שפלה", text):
+        tokens.add("center")
+    if re.search(r"ירידה|נמוכות|קריר|חורפי|קור", text):
+        tokens.add("cool")
+    # A weather duplicate needs the meteorological phenomenon plus either the
+    # same date/occasion or the same affected area. This catches the Shavuot
+    # rain/wind duplicate without merging unrelated daily city forecasts.
+    if {"rain", "wind"}.issubset(tokens) and ("shavuot" in tokens or len(tokens & {"north", "center"}) >= 2):
+        return tokens
+    return set()
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -198,6 +231,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return False
     if topic_for_item(a) != topic_for_item(b):
         return False
+    aw = weather_event_tokens(a)
+    bw = weather_event_tokens(b)
+    if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
+        return True
     if word_overlap(story_words(a), story_words(b)) >= 0.62:
         return True
     at = " ".join(sorted(duplicate_words(str(a.get("originalTitle") or a.get("headline") or ""))))
