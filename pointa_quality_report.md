@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 135
+Items checked: 134
 Errors: 0
-Warnings: 98
+Warnings: 96
 
 ## Category distribution
 
-- ביטחון: 36
+- ביטחון: 35
 - כלכלה: 24
 - ספורט: 20
 - פוליטיקה: 14
@@ -23,8 +23,8 @@ Warnings: 98
 
 ## Issue counts
 
-- takeaway_long: 82
-- summary_long: 9
+- takeaway_long: 81
+- summary_long: 8
 - headline_near_duplicate_summary: 6
 - category_sport_source: 1
 
@@ -562,154 +562,140 @@ Warnings: 98
 - Source: מעריב - פוליטי מדיני
 - URL: https://www.maariv.co.il/news/politics/article-1323676
 
-### WARNING · summary_long · item 93
-- Summary length 232 > 220
-- Headline: `איטליה זימנה את שגריר ישראל אחרי סרטון בן גביר`
-- Original: `Italy summons Israel’s envoy after Ben-Gvir taunts flotilla activists`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/5/20/at-least-87-gaza-aid-flotilla-activists-abducted-by-israel-on-hunger-strike?traffic_source=rss
-
 ### WARNING · takeaway_long · item 93
-- Takeaway length 118 > 95
-- Headline: `איטליה זימנה את שגריר ישראל אחרי סרטון בן גביר`
-- Original: `Italy summons Israel’s envoy after Ben-Gvir taunts flotilla activists`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/5/20/at-least-87-gaza-aid-flotilla-activists-abducted-by-israel-on-hunger-strike?traffic_source=rss
-
-### WARNING · takeaway_long · item 94
 - Takeaway length 118 > 95
 - Headline: `האו״ם הוריד תחזית צמיחה בגלל משבר הורמוז`
 - Original: `UN cuts global growth forecast, blaming Middle East crisis`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/economy/2026/5/20/un-cuts-global-growth-forecast-blaming-middle-east-crisis?traffic_source=rss
 
-### WARNING · summary_long · item 96
+### WARNING · summary_long · item 95
 - Summary length 221 > 220
 - Headline: `פאודה החדשה הופכת את 7 באוקטובר למסע נקמה`
 - Original: `אפלה יותר, כועסת יותר ויצרית יותר: אולי זו תהיה העונה הכי טובה של "פאודה"`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839246
 
-### WARNING · takeaway_long · item 97
+### WARNING · takeaway_long · item 96
 - Takeaway length 106 > 95
 - Headline: `מכבי תל אביב צפויה לשמור על ההרכב מול באר שבע`
 - Original: `זה ההרכב המסתמן של מילר מול הפועל באר שבע, בליץ' ב-21`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839217
 
-### WARNING · takeaway_long · item 99
+### WARNING · takeaway_long · item 98
 - Takeaway length 100 > 95
 - Headline: `חידוש תקיפה באיראן עלול להרחיק הסכם ולהחליש את ישראל`
 - Original: `הטעות שעלולה להפוך לקטסטרופה אסטרטגית לישראל`
 - Source: מעריב - דעות
 - URL: https://www.maariv.co.il/news/opinions/article-1322927
 
-### WARNING · takeaway_long · item 100
+### WARNING · takeaway_long · item 99
 - Takeaway length 113 > 95
 - Headline: `ערוץ 4 הסיר פרקי חתונמי בריטניה אחרי טענות לאונס`
 - Original: `סערה ב"חתונה ממבט ראשון" בריטניה: שתי משתתפות טוענות שנאנסו בצילומים`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839163
 
-### WARNING · takeaway_long · item 101
+### WARNING · takeaway_long · item 100
 - Takeaway length 105 > 95
 - Headline: `גווארדיולה צפוי לסיים עשור במנצ׳סטר סיטי`
 - Original: `דיווח דרמטי: פפ גווארדיולה יעזוב את מנצ'סטר סיטי, אנצו מארסקה יחליפו`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839155
 
-### WARNING · takeaway_long · item 102
+### WARNING · takeaway_long · item 101
 - Takeaway length 104 > 95
 - Headline: `רטנר ופיינגזיכט קיבלו אישור לשחק מול הפועל ת״א`
 - Original: `בשורה טובה למכבי חיפה: רטנר ופיינגזיכט שוחררו ויעמדו לרשות בכר`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3838949
 
-### WARNING · takeaway_long · item 103
+### WARNING · takeaway_long · item 102
 - Takeaway length 125 > 95
 - Headline: `תדהר יוצאת להנפקה גדולה בשוק נדל״ן לחוץ`
 - Original: `חברת הנדל"ן הפרטית הגדולה בישראל נחשפת. האם תקבל שווי של מעל 7 מיליארד שקל?`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543305#utm_source=RSS
 
-### WARNING · takeaway_long · item 104
+### WARNING · takeaway_long · item 103
 - Takeaway length 112 > 95
 - Headline: `מודריץ׳ נכלל בסגל קרואטיה למונדיאל חמישי`
 - Original: `בדרך להופעה ה-200 בנבחרת: מונדיאל חמישי ללוקה מודריץ'`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839049
 
-### WARNING · takeaway_long · item 105
+### WARNING · takeaway_long · item 104
 - Takeaway length 130 > 95
 - Headline: `ריינאייר מציעה לאו׳לירי עוד בונוס ענק במניות`
 - Original: `מנכ"ל חברת התעופה הפרובוקטיבי עשוי לקבל בונוס של 100 מיליון יורו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/aviation/article/20567101
 
-### WARNING · takeaway_long · item 106
+### WARNING · takeaway_long · item 105
 - Takeaway length 99 > 95
 - Headline: `תמונות ה-AI של טראמפ הפכו תעמולה לבדיחה`
 - Original: `טראמפ שלף תמונת AI נגד איראן - והרשת מצאה את הפדיחות`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1322870
 
-### WARNING · headline_near_duplicate_summary · item 109
+### WARNING · headline_near_duplicate_summary · item 108
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הזינוק במחירי האנרגיה גורר קנס ממוצע של 316 דולר לכל משק בית בארה"ב`
 - Original: `המחירים זינקו: כמה שילם כל אמריקאי בגלל המלחמה עם איראן?`
 - Source: וואלה כסף - כסף עולמי
 - URL: https://finance.walla.co.il/item/3838964
 
-### WARNING · takeaway_long · item 110
+### WARNING · takeaway_long · item 109
 - Takeaway length 105 > 95
 - Headline: `ליברה פתחה ביטוח רכב יומי גם לנהגים מעל גיל 24`
 - Original: `ביטוח רכב ב-24 שקל ליום גם לנהגים בוגרים: משתלם?`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/bjetzdujgg
 
-### WARNING · takeaway_long · item 112
+### WARNING · takeaway_long · item 111
 - Takeaway length 97 > 95
 - Headline: `חתונמי פתחה עונה עם דגש על דמויות שמייצרות שואו`
 - Original: `נועה באה לחתונמי לתת שואו. תכף ייפול לה אסימון ותבוא התרסקות מפוארת`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3838914
 
-### WARNING · takeaway_long · item 116
+### WARNING · takeaway_long · item 115
 - Takeaway length 109 > 95
 - Headline: `החשש מאיראן גורם לישראלים לשריין חופשות מוקדם`
 - Original: `על רקע האיומים לחידוש התקיפה: "מזהים שינוי בהזמנות החופשה של הישראלים"`
 - Source: N12 - כלכלה וצרכנות
 - URL: https://www.mako.co.il/news-money/consumer/Article-d8620f85d473e91027.htm
 
-### WARNING · takeaway_long · item 117
+### WARNING · takeaway_long · item 116
 - Takeaway length 116 > 95
 - Headline: `פז תחלק קפה ומאפה ב־yellow כפיצוי על עישון בתחנות`
 - Original: `שוב קפה ומאפה חינם ב-yellow: האם הפעם ישתלטו על הבלגן?`
 - Source: ynet - כל ערוץ הצרכנות
 - URL: https://www.ynet.co.il/economy/article/sjrrtrvkze
 
-### WARNING · takeaway_long · item 124
+### WARNING · takeaway_long · item 123
 - Takeaway length 114 > 95
 - Headline: `חשבון אינסטגרם חושף את הבימוי שמאחורי המשפיענים`
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 131
 - Takeaway length 111 > 95
 - Headline: `טלפון טראמפ הגיע עם חשד למכשיר סיני ממותג`
 - Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
-### WARNING · headline_near_duplicate_summary · item 133
+### WARNING · headline_near_duplicate_summary · item 132
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המדד רשם עלייה חדה, בעיקר בשל הזינוק במחירי האנרגיה והתייקרות חופשות`
 - Original: `מדד המחירים לצרכן זינק ב-1.2%, מחירי הדירות עלו`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3838349
 
-### WARNING · headline_near_duplicate_summary · item 134
+### WARNING · headline_near_duplicate_summary · item 133
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `מסמך פנימי, מאות תגובות ממנכ"לים וביקוש שיא לסניורים`
 - Original: `אקזיט מסוג אחר: כך הפכו 300 מפוטרים לסחורה הכי חמה בשוק ההייטק הישראלי`
