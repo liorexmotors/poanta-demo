@@ -243,8 +243,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     if takeaway and headline and overlap_ratio(takeaway, headline) >= 0.72:
         add_issue(issues, "error", idx, "takeaway_duplicates_headline", "Takeaway repeats the headline instead of adding a point", item)
 
-    if "סלבס" in source and category != "תרבות":
-        add_issue(issues, "error", idx, "category_celebs", "Celebs source must be תרבות", item)
+    if any(x in source for x in ["סלבס", "TMI", "פפראצי", "פפארצי"]) and category != "רכילות":
+        add_issue(issues, "error", idx, "category_celebs", "Celebs/gossip source must be רכילות", item)
     if any(x in source for x in ["ספורט", "NBA", "כדורגל", "כדורסל"]) and category != "ספורט":
         add_issue(issues, "warning", idx, "category_sport_source", "Sport source should usually be ספורט", item)
 

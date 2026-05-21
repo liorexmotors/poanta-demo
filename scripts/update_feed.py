@@ -141,7 +141,7 @@ CLICKBAIT_WORDS = [
 IMPORTANT_WORDS = [
     "איראן", "מלחמה", "פיקוד העורף", "ריבית", "מס", "מחירים", "פיצויים", "שכר",
     "נדל", "דירות", "משרד התחבורה", "AI", "סייבר", "וואטסאפ", "בריאות", "טיסות",
-    "דלק", "ממשלה", "ביטוח", "צרכנים", "הייטק", "בורסה", "רכב", "כביש", "תחבורה", "ספורט", "כדורגל", "נבחרת", "ליגת", "בחירות", "כנסת", "תקציב",
+    "דלק", "ממשלה", "ביטוח", "צרכנים", "הייטק", "בורסה", "רכב", "כביש", "תחבורה", "ספורט", "כדורגל", "נבחרת", "ליגת", "בחירות", "כנסת", "תקציב", "סלבס", "רכילות", "פפראצי", "פפארצי", "ריאליטי", "האח הגדול",
 ]
 CATEGORY_RULES = [
     # Order matters: prefer specific practical topics over broad local/world buckets.
@@ -155,6 +155,7 @@ CATEGORY_RULES = [
     ("טכנולוגיה", "tech", ["AI", "סייבר", "וואטסאפ", "אפל", "גוגל", "אפליקציה", "טכנולוג", "סטארטאפ", "GPT", "tech", "cyber", "apple", "google", "openai"]),
     ("רכב", "real", ["טיסות", "רכבת", "כביש", "רכב", "תחבורה", "דלק", "נתבג", "דובאי", "פקקים", "נהגים", "car", "vehicle", "transport", "flight"]),
     ("בריאות", "real", ["בריאות", "רפואה", "מחקר", "חולים", "תרופה", "תזונה", "כושר", "health", "medical", "medicine", "disease"]),
+    ("רכילות", "real", ["רכילות", "סלבס", "סלב", "צהוב", "פפראצי", "פפארצי", "ריאליטי", "האח הגדול", "celebs", "celebrity", "gossip", "paparazzi"]),
     ("תרבות", "real", ["תרבות", "טלוויזיה", "סרט", "סדרה", "מוזיקה", "קולנוע", "ספר", "אוכל", "אופנה", "culture", "movie", "music", "tv"]),
     ("ספורט", "real", ["ספורט", "כדורגל", "כדורסל", "נבחרת", "ליגה", "ליגת", "מכבי", "הפועל", "ביתר", "אליפות", "מסי", "סוארס", "ניימאר", "יורוליג", "football", "soccer", "basketball", "league"]),
 ]
@@ -431,6 +432,10 @@ def extract_rss(source: dict) -> list[Candidate]:
         if source.get("name", "").startswith("גלובס") and "en.globes.co.il" in link:
             continue
         score = score_title(title + ' ' + desc)
+        if source.get("categoryHint") == "רכילות":
+            # Gossip/celebs is now an explicit domain. Do not let the old
+            # celebrity-noise penalty erase validated RSS items from it.
+            score = max(score + 10, 3)
         if source.get("language") == "en" or any(x in source.get("name", "") for x in ["BBC", "CNN", "Sky"]):
             score += 20
         if score <= 0:
@@ -682,7 +687,9 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "בריאות", "real"
     if any(x in source for x in ["כלכלה", "כסף", "שוק ההון", "גלובס", "צרכנות", "קריפטו", "קריירה"]):
         return "כלכלה", "money"
-    if any(x in source for x in ["תרבות", "סלבס", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
+    if any(x in source for x in ["רכילות", "סלבס", "TMI", "פפראצי", "פפארצי", "ריאליטי", "צהוב"]):
+        return "רכילות", "real"
+    if any(x in source for x in ["תרבות", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
         return "תרבות", "real"
     if any(x in source for x in ["CNN", "BBC", "Sky News", "סקיי"]):
         fp = foreign_pointa_tuple(title, desc)
