@@ -55,6 +55,41 @@ def select_rescue_items(queue: dict[str, Any], limit: int) -> list[dict[str, Any
     return selected
 
 
+def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_chars: int, oversample_factor: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Select rescue rows after article extraction, not before it.
+
+    The 2026-05-21 stuck-feed incident exposed a repeat failure mode: the first
+    rescue batch could be consumed by stale-source or premium/thin candidates
+    that looked important in RSS but did not have enough extractable article
+    text for a trustworthy Pointa card.  That made the project wait for editor
+    work that was likely to reject the items anyway, while fresh usable
+    candidates remained below the cutoff.
+
+    To prevent that, we oversample the queue, extract article text, then fill the
+    editor run with usable candidates first while preserving queue order.  Thin
+    rows are still kept as fallback only when there are not enough usable rows,
+    so quality remains strict and the editor can explicitly reject them.
+    """
+    oversample_factor = max(1, oversample_factor)
+    candidates = select_rescue_items(queue, max(limit, limit * oversample_factor))
+    all_input = make_editor_input(candidates, min_article_chars)
+    usable = [x for x in all_input if x.get("articleTextChars", 0) >= min_article_chars]
+    thin = [x for x in all_input if x.get("articleTextChars", 0) < min_article_chars]
+    selected = (usable + thin)[:limit]
+    for new_index, item in enumerate(selected):
+        item["index"] = new_index
+    stats = {
+        "queueItemsConsidered": len(candidates),
+        "usableConsidered": len(usable),
+        "thinConsidered": len(thin),
+        "selectedUsable": sum(1 for x in selected if x.get("articleTextChars", 0) >= min_article_chars),
+        "selectedThin": sum(1 for x in selected if x.get("articleTextChars", 0) < min_article_chars),
+        "oversampleFactor": oversample_factor,
+        "selectionMode": "adaptive_extract_then_select",
+    }
+    return selected, stats
+
+
 def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int) -> dict[str, Any]:
     url = row.get("sourceUrl") or ""
     extraction = editor_pipeline.extract_article(url)
@@ -147,12 +182,11 @@ Each result object must include:
 def command_prepare(args: argparse.Namespace) -> int:
     queue_path = Path(args.queue)
     queue = load_queue(queue_path)
-    selected = select_rescue_items(queue, args.limit)
     run_id = args.run_id or "rescue-" + datetime.now().strftime("%Y%m%d-%H%M%S")
     run_dir = RUNS_DIR / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
 
-    editor_input = make_editor_input(selected, args.min_article_chars)
+    editor_input, selection_stats = select_editor_input_adaptive(queue, args.limit, args.min_article_chars, args.oversample_factor)
     (run_dir / "editor_input.json").write_text(
         json.dumps(editor_input, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -176,6 +210,7 @@ def command_prepare(args: argparse.Namespace) -> int:
         "queueRecommendedAction": "send_to_full_editor_rescue_queue",
         "items": len(editor_input),
         "usableArticleText": sum(1 for x in editor_input if x.get("articleTextChars", 0) >= args.min_article_chars),
+        "selection": selection_stats,
         "minArticleChars": args.min_article_chars,
         "batchSize": args.batch_size,
         "batches": [p.name for p in batch_files],
@@ -195,6 +230,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--limit", type=int, default=24)
     p.add_argument("--batch-size", type=int, default=8)
     p.add_argument("--min-article-chars", type=int, default=350)
+    p.add_argument("--oversample-factor", type=int, default=3, help="Extract up to limit*N queue rows, then pick usable article-text rows first")
     p.add_argument("--run-id", default="")
     p.set_defaults(func=command_prepare)
     return parser

@@ -116,6 +116,18 @@ def stale_groups_from_auditor(path: Path) -> set[str]:
     findings = list(data.get("errors", [])) + list(data.get("warnings", []))
     for issue in findings:
         code = issue.get("code")
+        group_name = str(issue.get("group") or "")
+        # Timing auditor errors are dashboard-red incidents even when the live
+        # feed itself looks fresh.  They must feed the same rescue
+        # prioritization path; otherwise the auditor can declare live OK while
+        # the timing agent keeps flashing red for foreign/important sources.
+        if code == "publication_timing_sla":
+            if group_name == "foreign":
+                groups.update(FOREIGN_SOURCES)
+                continue
+            if group_name in IMPORTANT_SOURCES or group_name in FOREIGN_SOURCES:
+                groups.add(group_name)
+                continue
         if code == "stale_foreign_source_view":
             groups.update(FOREIGN_SOURCES)
             continue
@@ -146,7 +158,7 @@ def freshness_sla_failing_from_auditor(path: Path) -> bool:
     except Exception:
         return False
     for issue in list(data.get("errors", [])) + list(data.get("warnings", [])):
-        if issue.get("code") in {"no_new_top_item_sla", "low_recent_top_volume", "low_recent_feed_volume"}:
+        if issue.get("code") in {"no_new_top_item_sla", "too_few_recent_items_sla", "too_few_recent_sources_sla", "low_recent_top_volume", "low_recent_feed_volume"}:
             return True
     return False
 

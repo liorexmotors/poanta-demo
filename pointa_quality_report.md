@@ -2,7 +2,7 @@
 
 Items checked: 177
 Errors: 0
-Warnings: 140
+Warnings: 137
 
 ## Category distribution
 
@@ -24,7 +24,7 @@ Warnings: 140
 
 ## Issue counts
 
-- takeaway_long: 118
+- takeaway_long: 115
 - summary_long: 16
 - headline_near_duplicate_summary: 6
 
@@ -177,26 +177,12 @@ Warnings: 140
 - Source: ynet - כל ערוץ היהדות
 - URL: https://www.ynet.co.il/judaism/discourse/article/hjoibvokgg
 
-### WARNING · takeaway_long · item 20
-- Takeaway length 116 > 95
-- Headline: `מוזיאון הקומוניזם בפראג הופך בטור לאזהרה פוליטית`
-- Original: `לא רק היסטוריה: האזהרה שמסתתרת במוזיאון היפה בפראג`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/opinions/article-1323921
-
-### WARNING · takeaway_long · item 21
-- Takeaway length 120 > 95
-- Headline: `הטור מאשים את הממשלה בדיבורים בלי תוצאות בשלושה תחומים`
-- Original: `הרבה דיבורים - אפס תוצאות: הממשלה מסיימת קדנציה של כישלון מוחלט`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/opinions/article-1323900
-
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 22
 - Takeaway length 102 > 95
-- Headline: `הטור מזהיר מקריסת נורמות סביב שלטון, גיוס ובחירות`
-- Original: `אמת קשה שצריכה להאמר: אנחנו חוזים בקריסת הבית השלישי - ואלו האשמים`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/opinions/article-1323916
+- Headline: `גיא בוסי מזהיר מהתרחבות משפטית לתוך החלטות ביטחון`
+- Original: `“אין שטח מת”: הסיכון הביטחוני של ישראל מגיע ממערכת המשפט`
+- Source: מעריב - דעות
+- URL: https://www.maariv.co.il/news/opinions/article-1323855
 
 ### WARNING · takeaway_long · item 24
 - Takeaway length 119 > 95
@@ -897,13 +883,6 @@ Warnings: 140
 - Original: `זה ההרכב המסתמן של מילר מול הפועל באר שבע, בליץ' ב-21`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839217
-
-### WARNING · takeaway_long · item 141
-- Takeaway length 100 > 95
-- Headline: `חידוש תקיפה באיראן עלול להרחיק הסכם ולהחליש את ישראל`
-- Original: `הטעות שעלולה להפוך לקטסטרופה אסטרטגית לישראל`
-- Source: מעריב - דעות
-- URL: https://www.maariv.co.il/news/opinions/article-1322927
 
 ### WARNING · takeaway_long · item 142
 - Takeaway length 113 > 95

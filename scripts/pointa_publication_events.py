@@ -48,9 +48,15 @@ def canonical_key(item: dict[str, Any]) -> str:
 
 
 def event_from_item(item: dict[str, Any], feed: dict[str, Any], gatekeeper: str, run_id: str) -> dict[str, Any]:
+    # A publication event represents what the gatekeeper actually exposed to
+    # users.  If the same source URL is republished with corrected Pointa text,
+    # that must count as a new pipeline event for the timing/quality auditors.
+    # Otherwise a repaired foreign/source card can remain invisible to timing
+    # because the old eventId was based only on URL + source publishedAt.
+    visible_fingerprint = "|".join(str(item.get(k) or "") for k in ["headline", "context", "takeaway", "category", "categoryClass", "editorStatus"])
     return {
         "eventType": "card_published",
-        "eventId": hashlib.sha1((canonical_key(item) + "|" + str(item.get("publishedAt") or "")).encode("utf-8")).hexdigest(),
+        "eventId": hashlib.sha1((canonical_key(item) + "|" + str(item.get("publishedAt") or "") + "|" + visible_fingerprint).encode("utf-8")).hexdigest(),
         "seenAt": now_iso(),
         "feedUpdatedAt": feed.get("updatedAt"),
         "gatekeeper": gatekeeper,

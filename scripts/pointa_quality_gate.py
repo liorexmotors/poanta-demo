@@ -138,6 +138,29 @@ def card_blob(item: dict[str, Any]) -> str:
     return " | ".join(norm(item.get(k, "")) for k in ["headline", "context", "takeaway", "originalTitle", "source", "sourceUrl"])
 
 
+def opinion_author_from_item(item: dict[str, Any]) -> str:
+    for key in ["author", "byline", "writer"]:
+        val = norm(item.get(key, ""))
+        if val:
+            return val
+    original = norm(item.get("originalTitle", ""))
+    if "|" in original:
+        candidate = original.rsplit("|", 1)[-1].strip()
+        if 2 <= len(candidate) <= 40 and not any(x in candidate for x in ["מעריב", "וואלה", "ynet", "חדשות"]):
+            return candidate
+    return ""
+
+
+def author_visible(author: str, blob: str) -> bool:
+    if not author:
+        return True
+    variants = {author}
+    variants.add(re.sub(r"^(?:עו[״\"]?ד|ד[״\"]?ר|פרופ[׳']?)\s+", "", author).strip())
+    variants.add(author.replace('"', '״'))
+    variants.add(author.replace('״', '"'))
+    return any(v and v in blob for v in variants)
+
+
 def add_issue(issues: list[dict[str, Any]], severity: str, idx: int, code: str, msg: str, item: dict[str, Any]) -> None:
     issues.append({
         "severity": severity,
@@ -158,6 +181,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     original = norm(item.get("originalTitle", ""))
     category = norm(item.get("category", ""))
     source = norm(item.get("source", ""))
+    source_url = norm(item.get("sourceUrl", item.get("url", "")))
 
     visible_blob = " | ".join([headline, context, takeaway])
     if re.search(r"<[^>]+>|['\"]\s*>|\b(?:border|width|height|src|alt|class|style)=['\"]", visible_blob, flags=re.I):
@@ -171,6 +195,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_orphan_prefix", "Headline starts with an orphan suffix/connective", item)
     if looks_cut(headline):
         add_issue(issues, "error", idx, "headline_looks_cut", "Headline appears mechanically cut", item)
+    if "|" in headline:
+        add_issue(issues, "error", idx, "headline_pipe_artifact", "Headline contains a source-list pipe artifact", item)
     if headline.endswith("?") or headline.startswith(('"', "׳", "״", "“", "”")):
         add_issue(issues, "error", idx, "headline_source_style", "Headline is question/quote/source style", item)
     if any(p in headline for p in GENERIC_HEADLINE_PATTERNS):
@@ -185,10 +211,20 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
 
     if not context:
         add_issue(issues, "error", idx, "summary_missing", "Summary/context is empty", item)
+    if "|" in context:
+        add_issue(issues, "error", idx, "summary_pipe_artifact", "Summary contains a source-list pipe artifact", item)
     if len(context) > SUMMARY_MAX:
         add_issue(issues, "warning", idx, "summary_long", f"Summary length {len(context)} > {SUMMARY_MAX}", item)
     if any(p in context for p in GENERIC_SUMMARY_PATTERNS + SOURCE_MEDIATION):
         add_issue(issues, "error", idx, "summary_generic_or_mediated", "Summary is generic or source-mediated", item)
+
+    is_maariv_opinion = "מעריב" in source and ("דעות" in source or "דעות" in category or "/opinions/" in source_url)
+    if is_maariv_opinion:
+        author = opinion_author_from_item(item)
+        if any(x in visible_blob for x in ["הטור", "הכותבת טוענת", "הכותב טוען", "לטענת הכותבת", "לטענת הכותב", "בעיני הכותבת", "בעיני הכותב"]):
+            add_issue(issues, "error", idx, "opinion_generic_author_reference", "Opinion card uses generic writer/tour framing instead of the columnist's name", item)
+        if author and not author_visible(author, visible_blob):
+            add_issue(issues, "error", idx, "opinion_author_missing", f"Maariv opinion card must mention columnist by name: {author}", item)
 
     if not takeaway:
         add_issue(issues, "error", idx, "takeaway_missing", "Takeaway is empty", item)

@@ -216,6 +216,7 @@
 - הסרת/דחיית פריט שנכשל בבירור ואין לו מספיק חומר לעריכה.
 - תיקון stale run / פיד שנתקע / mismatch בין live ל־gh-pages כשסיבת התקלה ברורה.
 - הפעלת rescue queue על אזהרות מקור תקועות, גם אם הן warnings ולא errors, כדי למנוע פיד שנראה חי רק טכנית.
+- אם אותו שלב נתקע שוב על כתבות thin/premium/מקורות ישנים: לא להריץ שוב את אותו batch בעיוורון. המתקן חייב להשתמש במסלול adaptive rescue — oversample, חילוץ articleText, בחירת מועמדים שמישים קודם, ורק אז שליחה לעורך. freshness של ראש הפיד קודם לתיקון source-view ישן, בלי להוריד איכות.
 
 **מה לא מפרסמים אוטומטית:**
 - כתיבה עריכתית חדשה שלא מבוססת על articleText.
@@ -228,6 +229,7 @@
 - המבקר התריע עם תיקון ברור ולא בוצע תיקון.
 - בוצע תיקון בלי QA.
 - בוצע תיקון אבל המבקר לא הורץ שוב.
+- rescue חוזר נתקע על אותן כתבות דקות/חסומות במקום להתקדם למועמדים טריים ושמישים.
 
 ---
 
@@ -340,3 +342,8 @@
 - `scripts/pointa_live_auditor.py` קיים ורץ על הפיד החי.
 - Cron המבקר: `Poanta המבקר live feed audit every 10m`.
 - חוק הרגרסיה שנוסף: לא לפרסם כרטיס טרי עם כותרת שהיא שבר תקציר/ניסוח מקור, ולא להעביר פואנטה גנרית בשביל רעננות.
+
+### Opinion attribution responsibility — 2026-05-21
+- **העורך**: when editing opinion columns, extract the byline/columnist and write the card around the named opinion owner, not around “the column/writer”.
+- **השוער**: block cards that contain generic opinion mediation (`הטור`, `הכותבת טוענת`, `הכותב טוען`) when a byline is available.
+- **המבקר**: if user feedback flags a recurring opinion/source pattern, treat it as an editorial invariant failure and create a training/QA regression case.
