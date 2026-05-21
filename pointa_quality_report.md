@@ -2,12 +2,12 @@
 
 Items checked: 157
 Errors: 0
-Warnings: 117
+Warnings: 119
 
 ## Category distribution
 
 - ביטחון: 42
-- כלכלה: 26
+- כלכלה: 25
 - ספורט: 24
 - פוליטיקה: 14
 - טכנולוגיה: 8
@@ -15,16 +15,16 @@ Warnings: 117
 - צרכנות: 7
 - בריאות: 7
 - חדשות: 4
+- נדל״ן: 4
 - משפט: 4
 - רכב: 4
-- נדל״ן: 3
 - דעות: 3
 - פלילים: 2
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 96
+- takeaway_long: 98
 - summary_long: 14
 - headline_near_duplicate_summary: 7
 
@@ -87,8 +87,8 @@ Warnings: 117
 - URL: https://www.maariv.co.il/economy/israel/article-1323807
 
 ### WARNING · summary_long · item 8
-- Summary length 244 > 220
-- Headline: `מדריך AI מסמן: הכלי הנכון תלוי בסוג התמונה והטקסט`
+- Summary length 293 > 220
+- Headline: `יצירת תמונות AI דורשת התאמת הכלי למשימה`
 - Original: `כולם יודעים ליצור תמונות עם AI? ככה תעשו את זה יותר טוב`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/article/s1oiogjkmg
@@ -136,7 +136,7 @@ Warnings: 117
 - URL: https://www.ynet.co.il/economy/article/s1mgn011yzl
 
 ### WARNING · takeaway_long · item 12
-- Takeaway length 98 > 95
+- Takeaway length 120 > 95
 - Headline: `המשכנתאות גדלות בלי התאוששות אמיתית בדיור`
 - Original: `הריבית, המשכנתה ומחירי הדירות`
 - Source: ynet - כל ערוץ הכלכלה
@@ -226,6 +226,13 @@ Warnings: 117
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20592014
 
+### WARNING · takeaway_long · item 26
+- Takeaway length 121 > 95
+- Headline: `רז אדם נהרג בתאונה בכביש 90 בדרך לאירוע קבוצתי`
+- Original: `כדורסלן נבחרת ישראל רז אדם נהרג בתאונת דרכים`
+- Source: ynet - כל ערוץ החדשות
+- URL: https://www.ynet.co.il/news/article/rji8vdo1fl
+
 ### WARNING · takeaway_long · item 27
 - Takeaway length 97 > 95
 - Headline: `10 נפצעו בתאונת משאית ומיניבוס בכביש 7`
@@ -262,21 +269,21 @@ Warnings: 117
 - URL: https://www.ynet.co.il/news/article/hjeh6mskmx
 
 ### WARNING · takeaway_long · item 32
-- Takeaway length 99 > 95
+- Takeaway length 115 > 95
 - Headline: `נאתכו יפרוש בשבת במשחק פרידה מפרטיזן`
 - Original: `ביברס נאתכו הודיע על פרישה: "המסע שלי מגיע לסיומו"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839753
 
 ### WARNING · takeaway_long · item 33
-- Takeaway length 111 > 95
+- Takeaway length 112 > 95
 - Headline: `רז אדם נהרג בתאונה בדרך לארוחת ערב קבוצתית`
 - Original: `טרגדיה: רז אדם, שחקן גליל עליון ונבחרת ישראל, נהרג בתאונה`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839746
 
 ### WARNING · takeaway_long · item 34
-- Takeaway length 109 > 95
+- Takeaway length 97 > 95
 - Headline: `אסטון וילה זכתה בתואר אירופי ראשון מאז 1982`
 - Original: `בסטייל של אלופה: אסטון וילה זכתה בליגה האירופית`
 - Source: וואלה ספורט - כדורגל עולמי
@@ -297,7 +304,7 @@ Warnings: 117
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
 ### WARNING · takeaway_long · item 36
-- Takeaway length 106 > 95
+- Takeaway length 114 > 95
 - Headline: `התעשייה האווירית מקדמת הנפקה על גל הזמנות הנשק`
 - Original: `"הייתי דרוך כמו קפיץ, הבנתי שמתחיל הדבר האמיתי. ראיתי את היירוטים בשמיים והרגשתי איך 30 שנות עבודה מתנקזות לרגע אחד"`
 - Source: ynet - כל ערוץ הכלכלה
@@ -316,6 +323,13 @@ Warnings: 117
 - Original: `בגלל התנגשות עם אייל גולן ואושר כהן: אביב גפן מקדים ביום את "נשף רוק"`
 - Source: וואלה חדשות
 - URL: https://e.walla.co.il/item/3839740
+
+### WARNING · takeaway_long · item 40
+- Takeaway length 97 > 95
+- Headline: `אנבידיה עקפה תחזיות שוב בזכות ביקוש ל-AI`
+- Original: `אנבידיה הכתה התחזיות רבעון 11 ברצף; הכנסות מרכזי הנתונים זינקו ב-92%`
+- Source: דה מרקר - גלובל
+- URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article/.premium/0000019e-45e4-d0ff-afbe-47e4fac90000
 
 ### WARNING · takeaway_long · item 41
 - Takeaway length 99 > 95
