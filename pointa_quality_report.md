@@ -2,7 +2,7 @@
 
 Items checked: 134
 Errors: 0
-Warnings: 95
+Warnings: 94
 
 ## Category distribution
 
@@ -23,7 +23,7 @@ Warnings: 95
 
 ## Issue counts
 
-- takeaway_long: 80
+- takeaway_long: 79
 - summary_long: 9
 - headline_near_duplicate_summary: 6
 
@@ -672,13 +672,6 @@ Warnings: 95
 - Original: `חשבון האינסטגרם שחושף את האמת המביכה מאחורי החיים היפים של המשפיענים`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3838834
-
-### WARNING · takeaway_long · item 131
-- Takeaway length 111 > 95
-- Headline: `טלפון טראמפ הגיע עם חשד למכשיר סיני ממותג`
-- Original: `הסמארטפון המוזהב של טראמפ סוף סוף הגיע ללקוחות, וכמובן מעורר סערה`
-- Source: ynet - כל ערוץ המחשבים
-- URL: https://www.ynet.co.il/digital/technews/article/h1vqkgw1ze
 
 ### WARNING · headline_near_duplicate_summary · item 132
 - Headline is a clipped/near-duplicate version of the summary
