@@ -415,6 +415,11 @@ def extract_rss(source: dict) -> list[Candidate]:
         return []
     try:
         raw = fetch(rss_url)
+        if "maariv.co.il/rss/rssfeedstmi" in rss_url or "maariv.co.il/rss/rssfeedstm" in rss_url:
+            # Some TMI/Maariv RSS channels contain literal ampersands in
+            # channel metadata (for example "OMG & WOW"). Recover those feeds
+            # instead of dropping an otherwise valid official source.
+            raw = re.sub(r"&(?!#\d+;|#x[0-9A-Fa-f]+;|[A-Za-z][A-Za-z0-9]+;)", "&amp;", raw)
         root = ET.fromstring(raw)
     except Exception as e:
         print(f"WARN rss fetch failed {source['name']}: {e}", file=sys.stderr)
