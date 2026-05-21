@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v51-gossip-sources-visible';
+const CACHE_NAME = 'poanta-demo-v52-p0-image-gate';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
