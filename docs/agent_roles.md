@@ -376,3 +376,7 @@ Owner failures if this recurs:
 Cron jobs:
 - `Poanta המעורר flow watchdog every 10m` — status reporting.
 - `Poanta המתקן flow repair responder every 10m` — repair responder for watchdog failures.
+
+### המעורר as agent awakener — 2026-05-21
+
+Lior clarified that **המעורר** is responsible not only for reporting flow status, but also for waking/checking the control room. Every watchdog pass must verify that the main role jobs are present, enabled, and not stuck: האספן, העורך, השוער, המבקר, מבקר התזמון, המתקן, and המעורר. If any role is not ready, the watchdog report must say so and route repair ownership to המתקן/עליזה. המעורר still must not run long repair chains itself; it wakes, verifies readiness, reports, and escalates.

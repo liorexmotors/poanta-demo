@@ -19,6 +19,24 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 LIVE_FEED = "https://liorexmotors.github.io/poanta-demo/feed.json"
 TZ = timezone(timedelta(hours=3))
+CRON_JOBS_PATH = Path.home() / ".openclaw" / "cron" / "jobs.json"
+
+
+AGENT_JOB_NAMES = {
+    "האספן": [
+        "Poanta editor prepare FAST every 10m",
+        "Poanta quiet FAST feed sync/deploy every 10m",
+    ],
+    "העורך": [
+        "Poanta editor prepare FAST every 10m",
+        "Poanta editor prepare MEDIUM every 30m",
+        "Poanta editor prepare SLOW every 4h",
+    ],
+    "השוער": ["Poanta editor finalize every 10m"],
+    "המבקר": ["Poanta המבקר live feed audit every 10m"],
+    "המעורר": ["Poanta המעורר flow watchdog every 10m"],
+    "המתקן": ["Poanta המתקן flow repair responder every 10m"],
+}
 
 
 def run_json(cmd: list[str]) -> tuple[int, dict[str, Any] | None, str]:
@@ -40,6 +58,62 @@ def fetch_live_feed() -> dict[str, Any]:
     req = urllib.request.Request(url, headers={"User-Agent": "PointaFlowWatchdog/1.0", "Cache-Control": "no-cache"})
     with urllib.request.urlopen(req, timeout=20) as resp:
         return json.loads(resp.read().decode("utf-8"))
+
+
+def agent_readiness_findings() -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Verify the control-room agents are awake and ready for action.
+
+    המעורר is responsible for waking the room, not for running long repairs.
+    In practice this means every watchdog pass checks that each role has its
+    scheduled job enabled and not obviously stuck. Failures are routed to
+    המתקן / עליזה instead of being hidden behind a generic OK.
+    """
+    readiness: dict[str, Any] = {}
+    errors: list[dict[str, Any]] = []
+    warnings: list[dict[str, Any]] = []
+    try:
+        payload = json.loads(CRON_JOBS_PATH.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return {}, [{"code": "agent_roster_unreadable", "owner": "המעורר", "message": str(exc)}], []
+
+    jobs = payload.get("jobs") if isinstance(payload, dict) else payload
+    if not isinstance(jobs, list):
+        return {}, [{"code": "agent_roster_invalid", "owner": "המעורר", "message": "cron jobs file has no jobs list"}], []
+    by_name = {str(job.get("name") or ""): job for job in jobs if isinstance(job, dict)}
+    now_ms = int(datetime.now(TZ).timestamp() * 1000)
+    for role, names in AGENT_JOB_NAMES.items():
+        role_entries = []
+        role_ok = True
+        for name in names:
+            job = by_name.get(name)
+            if not job:
+                role_ok = False
+                role_entries.append({"name": name, "ready": False, "reason": "missing"})
+                errors.append({"code": "agent_job_missing", "owner": role, "message": f"{name} is missing"})
+                continue
+            state = job.get("state") or {}
+            enabled = bool(job.get("enabled"))
+            running_at = int(state.get("runningAtMs") or 0)
+            running_age_min = round((now_ms - running_at) / 60000, 1) if running_at else 0
+            stuck = bool(running_at and running_age_min > 20)
+            ready = enabled and not stuck
+            role_ok = role_ok and ready
+            role_entries.append({
+                "name": name,
+                "ready": ready,
+                "enabled": enabled,
+                "lastRunStatus": state.get("lastRunStatus"),
+                "nextRunAtMs": state.get("nextRunAtMs"),
+                "runningAgeMin": running_age_min if running_at else None,
+            })
+            if not enabled:
+                errors.append({"code": "agent_job_disabled", "owner": role, "message": f"{name} is disabled"})
+            elif stuck:
+                errors.append({"code": "agent_job_stuck", "owner": role, "message": f"{name} appears stuck for {running_age_min} minutes"})
+            elif state.get("lastRunStatus") == "error":
+                warnings.append({"code": "agent_last_run_error", "owner": role, "message": f"{name} last run ended with error"})
+        readiness[role] = {"ready": role_ok, "jobs": role_entries}
+    return readiness, errors, warnings
 
 
 def image_presence_findings(feed: dict[str, Any], top_n: int = 40) -> list[dict[str, Any]]:
@@ -69,6 +143,9 @@ def main() -> int:
     quality_code, quality, quality_err = run_json([sys.executable, "scripts/pointa_quality_auditor.py", "--json"])
     drill_code, drill, drill_err = run_json([sys.executable, "scripts/poanta_p0_stuck_feed_drill.py"])
     qg_code, qg_text = run_text([sys.executable, "scripts/pointa_quality_gate.py", "--report", "tmp/flow_watchdog_quality_gate.md"])
+    agent_readiness, agent_errors, agent_warnings = agent_readiness_findings()
+    errors.extend(agent_errors)
+    warnings.extend(agent_warnings)
 
     if not live:
         errors.append({"code": "live_auditor_unreadable", "message": live_err.strip()})
@@ -131,6 +208,7 @@ def main() -> int:
             "quality": quality.get("status") if quality else None,
             "qualityGateExit": qg_code,
             "p0Drill": drill,
+            "agentReadiness": agent_readiness,
         },
     }
     out = ROOT / "tmp" / "pointa_flow_watchdog_last.json"

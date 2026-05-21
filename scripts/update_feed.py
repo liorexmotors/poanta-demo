@@ -2371,7 +2371,11 @@ def main() -> int:
                 continue
             c.original_title = c.original_title or c.title
             c.title = sanitize_title(c.title)
-            if source.get("language") == "en" and not is_foreign_relevant(c.original_title or c.title, c.description):
+            if (
+                source.get("language") == "en"
+                and source.get("categoryHint") != "רכילות"
+                and not is_foreign_relevant(c.original_title or c.title, c.description)
+            ):
                 continue
             if len(c.title) < 18 or bad_description(c.description):
                 continue
