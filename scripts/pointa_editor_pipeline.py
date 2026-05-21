@@ -35,6 +35,11 @@ DEFAULT_FEED = ROOT / "feed.json"
 RUNS_DIR = ROOT / "tmp" / "editor-runs"
 SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 
+try:
+    from update_feed import fetch_article_image  # type: ignore
+except Exception:  # pragma: no cover
+    fetch_article_image = None
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PointaEditorPipeline/0.1)",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -410,7 +415,7 @@ def editor_source_item(row: dict[str, Any]) -> dict[str, Any]:
         "headline": row.get("currentCard", {}).get("headline", ""),
         "context": row.get("currentCard", {}).get("summary", row.get("description", "")),
         "takeaway": row.get("currentCard", {}).get("takeaway", ""),
-        "image": row.get("image", ""),
+        "imageUrl": row.get("imageUrl") or row.get("image") or row.get("feedItem", {}).get("imageUrl") or "",
         "rescueSource": row.get("rescue", {}).get("source", ""),
     }
 
@@ -431,6 +436,10 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
         item["headline"] = r.get("headline", item.get("headline", ""))
         item["context"] = r.get("summary", item.get("context", ""))
         item["takeaway"] = r.get("takeaway", item.get("takeaway", ""))
+        if not str(item.get("imageUrl") or "").strip() and fetch_article_image:
+            image = fetch_article_image(str(item.get("sourceUrl") or ""))
+            if image:
+                item["imageUrl"] = image
         item["editorStatus"] = "pass"
         item["editorAddedAt"] = datetime.now().isoformat(timespec="seconds")
         url = item.get("sourceUrl")
