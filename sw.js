@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v49-usage-dashboard';
+const CACHE_NAME = 'poanta-demo-v50-image-loading-fix';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -15,7 +15,16 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) {
+    event.respondWith(fetch(request));
+    return;
+  }
   if (new URL(request.url).pathname.endsWith('/feed.json')) {
+    event.respondWith(fetch(request).catch(() => caches.match(request)));
+    return;
+  }
+  if (request.destination === 'image') {
     event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
@@ -24,7 +33,7 @@ self.addEventListener('fetch', event => {
       const copy = response.clone();
       caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
       return response;
-    }).catch(() => caches.match(request).then(cached => cached || caches.match('./index.html')))
+    }).catch(() => caches.match(request).then(cached => cached || (request.mode === 'navigate' ? caches.match('./index.html') : undefined)))
   );
 });
 
