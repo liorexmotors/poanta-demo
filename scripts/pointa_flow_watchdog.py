@@ -100,10 +100,29 @@ def main() -> int:
     except Exception as exc:
         errors.append({"code": "live_feed_fetch_failed", "owner": "המבקר", "message": str(exc)})
 
+    status = "fail" if errors else "ok"
+    state_path = ROOT / "tmp" / "pointa_flow_watchdog_state.json"
+    previous: dict[str, Any] = {}
+    if state_path.exists():
+        try:
+            previous = json.loads(state_path.read_text(encoding="utf-8"))
+        except Exception:
+            previous = {}
+    previous_status = str(previous.get("status") or "")
+    recovered = previous_status == "fail" and status == "ok"
+    still_failing = previous_status == "fail" and status == "fail"
+    newly_failing = previous_status != "fail" and status == "fail"
+
     result = {
         "watchdog": "pointa_flow_watchdog",
         "checkedAt": checked_at,
-        "status": "fail" if errors else "ok",
+        "status": status,
+        "previousStatus": previous_status or None,
+        "transition": {
+            "recovered": recovered,
+            "stillFailing": still_failing,
+            "newlyFailing": newly_failing,
+        },
         "errors": errors,
         "warnings": warnings,
         "summary": {
@@ -117,6 +136,11 @@ def main() -> int:
     out = ROOT / "tmp" / "pointa_flow_watchdog_last.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    state_path.write_text(json.dumps({
+        "status": status,
+        "checkedAt": checked_at,
+        "lastErrors": errors[:5],
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 1 if errors else 0
 
