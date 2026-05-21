@@ -2,12 +2,12 @@
 
 Items checked: 138
 Errors: 0
-Warnings: 98
+Warnings: 99
 
 ## Category distribution
 
 - ביטחון: 36
-- כלכלה: 23
+- כלכלה: 24
 - ספורט: 21
 - פוליטיקה: 16
 - תרבות: 7
@@ -20,11 +20,10 @@ Warnings: 98
 - פלילים: 2
 - נדל״ן: 1
 - חדשות: 1
-- עולם: 1
 
 ## Issue counts
 
-- takeaway_long: 83
+- takeaway_long: 84
 - summary_long: 8
 - headline_near_duplicate_summary: 6
 - category_sport_source: 1
@@ -466,7 +465,7 @@ Warnings: 98
 - URL: https://www.ynet.co.il/news/article/ski5hrqkzl
 
 ### WARNING · takeaway_long · item 68
-- Takeaway length 102 > 95
+- Takeaway length 103 > 95
 - Headline: `כתב אישום: תושב ירושלים הצית ותקף שומר בשומרון`
 - Original: `ישראל גרוסמן מירושלים נאשם בהצתות, תקיפה וסיכון כוחות משטרה בשומרון`
 - Source: ynet - מבזקי החדשות
@@ -590,6 +589,13 @@ Warnings: 98
 - Original: `Italy summons Israel’s envoy after Ben-Gvir taunts flotilla activists`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/20/at-least-87-gaza-aid-flotilla-activists-abducted-by-israel-on-hunger-strike?traffic_source=rss
+
+### WARNING · takeaway_long · item 97
+- Takeaway length 118 > 95
+- Headline: `האו״ם הוריד תחזית צמיחה בגלל משבר הורמוז`
+- Original: `UN cuts global growth forecast, blaming Middle East crisis`
+- Source: Al Jazeera RSS מסונן מזרח תיכון
+- URL: https://www.aljazeera.com/economy/2026/5/20/un-cuts-global-growth-forecast-blaming-middle-east-crisis?traffic_source=rss
 
 ### WARNING · summary_long · item 99
 - Summary length 221 > 220
