@@ -1,24 +1,24 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 198
 Errors: 0
-Warnings: 160
+Warnings: 159
 
 ## Category distribution
 
-- ביטחון: 49
-- ספורט: 41
-- כלכלה: 31
+- ביטחון: 48
+- ספורט: 42
+- כלכלה: 32
 - תרבות: 16
-- חדשות: 10
-- טכנולוגיה: 10
-- בריאות: 8
+- חדשות: 9
+- בריאות: 9
+- טכנולוגיה: 8
 - פלילים: 7
 - צרכנות: 7
 - רכב: 6
 - פוליטיקה: 4
-- דעות: 4
 - נדל״ן: 4
+- דעות: 3
 - משפט: 1
 - מזג אוויר: 1
 - רכילות: 1
@@ -27,878 +27,871 @@ Warnings: 160
 
 - takeaway_long: 138
 - summary_long: 15
-- headline_near_duplicate_summary: 6
+- headline_near_duplicate_summary: 5
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · summary_long · item 1
-- Summary length 223 > 220
-- Headline: `מכבי ת״א תפגוש את הפועל פ״ת בשבת לפני גמר הגביע`
-- Original: `עידו שחר: "לא היה נעים להפסיד בב"ש. צריך לתת פוש אחרון"`
+### WARNING · takeaway_long · item 0
+- Takeaway length 99 > 95
+- Headline: `נוייר חוזר כשוער ראשון בסגל גרמניה למונדיאל`
+- Original: `בלי טר סטגן, עם סאנה וקארל: סגל נבחרת גרמניה למונדיאל 2026`
 - Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3839866
+- URL: https://sports.walla.co.il/item/3839865
 
-### WARNING · takeaway_long · item 1
+### WARNING · takeaway_long · item 3
+- Takeaway length 99 > 95
+- Headline: `משחקי הסימום ייפתחו בלאס וגאס עם פרסי ענק`
+- Original: `משחקי המסוממים יוצאים לדרך עם כסף גדול והרבה סימני שאלה`
+- Source: הארץ - כל הכתבות
+- URL: https://www.haaretz.co.il/2026-05-21/ty-article/0000019e-4769-d637-a99f-67fbe0d30000
+
+### WARNING · takeaway_long · item 5
 - Takeaway length 103 > 95
 - Headline: `מכבי ת״א תפגוש את הפועל פ״ת בשבת לפני גמר הגביע`
 - Original: `עידו שחר: "לא היה נעים להפסיד בב"ש. צריך לתת פוש אחרון"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839866
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 10
+- Takeaway length 98 > 95
+- Headline: `בריטניה זימנה נציג ישראלי בעקבות סרטון בן גביר`
+- Original: `UK summons Israel’s chargé d’affaires over video of minister taunting activists`
+- Source: The Guardian Middle East
+- URL: https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir
+
+### WARNING · takeaway_long · item 11
 - Takeaway length 99 > 95
 - Headline: `אטארי בונה קאמבק עסקי סביב נוסטלגיית גיימינג`
 - Original: `הקונסולה שחוזרת מן העבר: מותג הגיימינג הוותיק עושה קאמבק מפתיע`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/tech/article-1324100
 
-### WARNING · takeaway_long · item 10
-- Takeaway length 99 > 95
-- Headline: `ישראל החלה לגרש מאות פעילי משט לעזה`
+### WARNING · takeaway_long · item 12
+- Takeaway length 98 > 95
+- Headline: `ישראל החלה לגרש פעילי משט בזמן גל גינויים`
 - Original: `Israel begins deporting Gaza aid flotilla activists amid global outcry`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/21/israel-begins-deporting-gaza-aid-flotilla-activists-amid-global-outcry?traffic_source=rss
 
-### WARNING · takeaway_long · item 12
-- Takeaway length 103 > 95
-- Headline: `שני נערים נהרגו כשמיניבוס פגע במשאית בכביש 7`
-- Original: `הטיול שהסתיים באסון: אהרון ושירה נהרגו בתאונה קטלנית בכביש 7`
-- Source: וואלה חדשות - חדשות בארץ
-- URL: https://news.walla.co.il/item/3839839
-
-### WARNING · summary_long · item 13
-- Summary length 240 > 220
-- Headline: `מעצר החשוד ברצח הרב ישי פור הוארך בשבעה ימים`
-- Original: `"לא תשלים את שנתך": האיום, הדקירות והבריחה לבית שמש - פרטים חדשים מחקירת הרצח בבני ברק`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3839836
-
-### WARNING · takeaway_long · item 13
-- Takeaway length 101 > 95
-- Headline: `מעצר החשוד ברצח הרב ישי פור הוארך בשבעה ימים`
-- Original: `"לא תשלים את שנתך": האיום, הדקירות והבריחה לבית שמש - פרטים חדשים מחקירת הרצח בבני ברק`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3839836
-
-### WARNING · takeaway_long · item 14
-- Takeaway length 123 > 95
-- Headline: `שלושה הרוגים בתוך שנה באותו צומת בכביש 90`
-- Original: `שלושה הרוגים בשנה: על הצומת המסוכן בו נהרג רז אדם`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3839834
-
-### WARNING · category_sport_source · item 14
-- Sport source should usually be ספורט
-- Headline: `שלושה הרוגים בתוך שנה באותו צומת בכביש 90`
-- Original: `שלושה הרוגים בשנה: על הצומת המסוכן בו נהרג רז אדם`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3839834
+### WARNING · summary_long · item 15
+- Summary length 252 > 220
+- Headline: `רטטרוטייד מציגה ירידה חריגה במשקל בניסוי שלב 3`
+- Original: `זריקת ההרזיה ששברה שיא: ירידה של עד 38.5 ק"ג בתוך שנתיים`
+- Source: מעריב - חדשות
+- URL: https://www.maariv.co.il/news/health/article-1324097
 
 ### WARNING · takeaway_long · item 15
+- Takeaway length 137 > 95
+- Headline: `רטטרוטייד מציגה ירידה חריגה במשקל בניסוי שלב 3`
+- Original: `זריקת ההרזיה ששברה שיא: ירידה של עד 38.5 ק"ג בתוך שנתיים`
+- Source: מעריב - חדשות
+- URL: https://www.maariv.co.il/news/health/article-1324097
+
+### WARNING · summary_long · item 16
+- Summary length 222 > 220
+- Headline: `מעצר החשוד ברצח הרב ישי פור הוארך בשבעה ימים`
+- Original: `"לא תשלים את שנתך": האיום, הדקירות והבריחה לבית שמש - פרטים חדשים מחקירת הרצח בבני ברק`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839836
+
+### WARNING · takeaway_long · item 16
+- Takeaway length 105 > 95
+- Headline: `מעצר החשוד ברצח הרב ישי פור הוארך בשבעה ימים`
+- Original: `"לא תשלים את שנתך": האיום, הדקירות והבריחה לבית שמש - פרטים חדשים מחקירת הרצח בבני ברק`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839836
+
+### WARNING · takeaway_long · item 17
+- Takeaway length 108 > 95
+- Headline: `מות רז אדם מציף מחדש צומת קטלני בכביש 90`
+- Original: `שלושה הרוגים בשנה: על הצומת המסוכן בו נהרג רז אדם`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3839834
+
+### WARNING · category_sport_source · item 17
+- Sport source should usually be ספורט
+- Headline: `מות רז אדם מציף מחדש צומת קטלני בכביש 90`
+- Original: `שלושה הרוגים בשנה: על הצומת המסוכן בו נהרג רז אדם`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3839834
+
+### WARNING · takeaway_long · item 18
 - Takeaway length 114 > 95
 - Headline: `מכבי חיפה החתימה את יאיר מרדכי לשלוש שנים`
 - Original: `יאיר מרדכי חתם במכבי חיפה: "אני מגשים חלום ילדות"`
 - Source: ynet - כדורגל ישראלי
 - URL: https://www.ynet.co.il/sport/israelisoccer/article/h1okrphyfl
 
-### WARNING · takeaway_long · item 16
-- Takeaway length 120 > 95
-- Headline: `טורקיה הציגה תרגיל אמפיבי כחלק ממאבק הובלה בנאט״ו`
+### WARNING · takeaway_long · item 19
+- Takeaway length 123 > 95
+- Headline: `טורקיה מציגה בתרגיל אמפיבי שאפתנות חדשה בנאט״ו`
 - Original: `21 מסוקים, F-16 ותקיפה אמפיבית: התרגיל הטורקי שמדאיג את נאט"ו`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324086
 
-### WARNING · takeaway_long · item 17
-- Takeaway length 120 > 95
-- Headline: `ארה״ב האשימה את ראול קסטרו ברצח אזרחים אמריקאים`
-- Original: `צדק משפטי או עילה לפלישה: ממשל טראמפ נגד הנשיא המיתולוגי של קובה`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/world/article-1324091
-
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 21
 - Takeaway length 123 > 95
 - Headline: `השוק מתמחר סיכוי של כ-60% להורדת ריבית ביום שני`
 - Original: `כל עוד הפסקת האש נשמרת: בשוק צופים הורדת ריבית ביום שני`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543709#utm_source=RSS
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 22
 - Takeaway length 114 > 95
 - Headline: `ספקות מול איראן הקפיצו את הנפט מעל 100 דולר`
 - Original: `החוזים על נאסד"ק יורדים ב-0.5% והנפט קופץ ב-2% על רקע ספקות לגבי הסכם עם איראן`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-21/ty-article-live/0000019e-3457-d6c6-a99e-767fb26a0000
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 23
 - Takeaway length 107 > 95
-- Headline: `קריסת בניין בפאס הרגה 4 ופינתה שכנים מבתיהם`
-- Original: `מרוקו: 4 נהרגו בקריסת בניין בעיר פאס`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/hkwidpnjge
-
-### WARNING · takeaway_long · item 21
-- Takeaway length 141 > 95
-- Headline: `תרופת ההרזיה רטטרוטייד חצתה בניסוי את רף ה-30%`
+- Headline: `רטטרוטייד הורידה עד כ-30% במשקל בניסוי שלב 3`
 - Original: `זריקת ההרזיה החדשה שהובילה לירידה של יותר מ-30% במשקל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/health/article/20594158
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 24
 - Takeaway length 114 > 95
 - Headline: `התפרצות אבולה מסכנת את הכנות קונגו למונדיאל`
 - Original: `בדרך החוצה מהמונדיאל? נגיף האבולה מאיים על ר.ד. קונגו`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839829
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 25
 - Takeaway length 120 > 95
 - Headline: `משרד האוצר מקים חטיבת מוצר לשירותים דיגיטליים`
 - Original: `המהפכה הדיגיטלית מגיעה לממשלה: משרד האוצר מאמץ את מודל ההייטק ומקים "חטיבת מוצר"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/business/article/20594212
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 26
 - Takeaway length 108 > 95
 - Headline: `איראן מקשיחה עמדה: האורניום לא ייצא מהמדינה`
 - Original: `בכירים איראנים: ההוראה ממוג'תבא חמינאי - האורניום יישאר בשטחנו`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/syqfcbnkgx
 
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 27
 - Takeaway length 98 > 95
 - Headline: `מעצר החשוד ברצח האברך בבני ברק הוארך בשבוע`
 - Original: `"הוא אמר לו 'לא תשלים את שנתך' - סירבנו להאמין": הרצח שמטלטל את בני ברק`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/law/article-1324077
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 28
 - Takeaway length 110 > 95
 - Headline: `חברות סיניות מעמיקות אחיזה באזורים הכבושים באוקראינה`
 - Original: `How Chinese, Iranian companies profit in Russia-occupied Ukrainian regions`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/21/how-chinese-iranian-companies-profit-in-russia-occupied-ukrainian-regions?traffic_source=rss
 
-### WARNING · summary_long · item 27
+### WARNING · summary_long · item 29
 - Summary length 265 > 220
 - Headline: `תקציב החלל הזעום מאיים להשאיר את ישראל מאחור`
 - Original: `"ישראל היא חוד החנית של העולם": המחמאה של מאסק והאיום שמסתתר מאחוריה`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3839828
 
-### WARNING · takeaway_long · item 27
+### WARNING · takeaway_long · item 29
 - Takeaway length 105 > 95
 - Headline: `תקציב החלל הזעום מאיים להשאיר את ישראל מאחור`
 - Original: `"ישראל היא חוד החנית של העולם": המחמאה של מאסק והאיום שמסתתר מאחוריה`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3839828
 
-### WARNING · summary_long · item 29
+### WARNING · summary_long · item 31
 - Summary length 228 > 220
 - Headline: `גוגל הופכת את Gemini לסוכן שמבצע משימות ברקע`
 - Original: `יוטיוב פרימיום מתנה? כל מה שפספסתם מצונאמי ההכרזות של גוגל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/tech-news/article/20594043
 
-### WARNING · takeaway_long · item 29
-- Takeaway length 132 > 95
+### WARNING · takeaway_long · item 31
+- Takeaway length 99 > 95
 - Headline: `גוגל הופכת את Gemini לסוכן שמבצע משימות ברקע`
 - Original: `יוטיוב פרימיום מתנה? כל מה שפספסתם מצונאמי ההכרזות של גוגל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/tech-news/article/20594043
 
-### WARNING · takeaway_long · item 30
+### WARNING · takeaway_long · item 32
 - Takeaway length 106 > 95
 - Headline: `איראן מתעקשת להשאיר את האורניום המועשר בשטחה`
 - Original: `מוג'תבא חמינאי מתעקש: האורניום המועשר נשאר באיראן`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324074
 
-### WARNING · takeaway_long · item 31
+### WARNING · takeaway_long · item 33
 - Takeaway length 103 > 95
 - Headline: `איראן משקמת כטב״מים וטילים מהר מהצפוי`
 - Original: `איראן משקמת במהירות את מערך הכטב"מים והטילים שנפגע במלחמה`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839826
 
-### WARNING · takeaway_long · item 32
+### WARNING · takeaway_long · item 34
 - Takeaway length 111 > 95
 - Headline: `אוקלהומה איזנה את הסדרה דרך שמירה פיזית על וומבניאמה`
 - Original: `איך עוצרים את את ה"חייזר" של הספרס? שולחים אליו "קיר גרמני"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839813
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 35
 - Takeaway length 97 > 95
 - Headline: `ישראל דורשת מהאו״ם לעצור סיוע ל-IHH בעזה`
 - Original: `ישראל לאו"ם: הפסיקו מיידית את הסיוע לארגון הטורקי שמקדם את המשטים לעזה`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839824
 
-### WARNING · takeaway_long · item 34
+### WARNING · takeaway_long · item 36
 - Takeaway length 119 > 95
 - Headline: `תורג׳מן השאיר את חיפה בליגה אבל לא מרגיש אלוף בבאר שבע`
 - Original: `"אני לא מרגיש חלק מהאליפות של הפועל באר שבע"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/israeli-soccer/article/20593921
 
-### WARNING · takeaway_long · item 36
-- Takeaway length 114 > 95
-- Headline: `צה״ל הקים יחידת AI לפיתוח מידע לשדה הקרב`
+### WARNING · takeaway_long · item 38
+- Takeaway length 102 > 95
+- Headline: `צה״ל הקים יחידת AI להנגשת מידע ללוחמים`
 - Original: `יחידה טכנולוגית חדשה הוקמה באגף התקשוב וההגנה בסייבר בצה"ל - יחידת 'אלומות'`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1324066
 
-### WARNING · takeaway_long · item 38
+### WARNING · takeaway_long · item 40
 - Takeaway length 106 > 95
 - Headline: `יועץ נשיא האמירויות תוקף את הניטרליות מול איראן`
 - Original: `החברים הפכו למתווכים: יועץ נשיא איחוד האמירויות במתקפה חריפה על מדינות המפרץ`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324061
 
-### WARNING · takeaway_long · item 39
+### WARNING · takeaway_long · item 41
 - Takeaway length 119 > 95
 - Headline: `איראן מתעקשת להשאיר אצלה אורניום מועשר`
 - Original: `דיווח באיראן: דיונים בטהרן על ניסוח תגובה להצעה האמריקאית`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543705#utm_source=RSS
 
-### WARNING · takeaway_long · item 42
+### WARNING · takeaway_long · item 44
 - Takeaway length 112 > 95
 - Headline: `גוגל משנה אייקונים ומקשיחה מכסות ב-AI Pro`
 - Original: `נפרדים מהסמל הישן? גוגל מחליפה עיצוב`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/tech-news/article/20593737
 
-### WARNING · takeaway_long · item 43
+### WARNING · takeaway_long · item 45
 - Takeaway length 116 > 95
 - Headline: `יוון מכוונת לייצור מיליון כטב״מים בשנה`
 - Original: `החשש הטורקי והאיום האיראני: שר ההגנה היווני חושף תוכנית מטורפת`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324060
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 46
 - Takeaway length 114 > 95
 - Headline: `מכבי פ״ת עלתה לליגת העל וכבר מחפשת מאמן חדש`
 - Original: `שאלת המאמן, החיזוק - והרצון לתקוע יתד: מכבי פ"ת חוזרת לליגת העל`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelisoccer/article/r121k42jze
 
-### WARNING · takeaway_long · item 45
+### WARNING · takeaway_long · item 47
 - Takeaway length 110 > 95
 - Headline: `מוג׳תבא חמינאי נשען על גרעין ותיק במשמרות המהפכה`
 - Original: `הסיפור הזה התחיל לפני כ-40 שנה - ומשפיע ישירות על איראן היום`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1324056
 
-### WARNING · takeaway_long · item 46
+### WARNING · takeaway_long · item 48
 - Takeaway length 98 > 95
 - Headline: `רז אדם נהרג בתאונת דרכים בגיל 26`
 - Original: `רז אדם היה יוצא דופן בכדורסל הישראלי, הרבה יותר מספורטאי בשיאו`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/basketball/2026-05-21/ty-article-magazine/.premium/0000019e-498f-dab3-adfe-d9ff38670000
 
-### WARNING · takeaway_long · item 47
-- Takeaway length 97 > 95
-- Headline: `המשטרה תפעיל כטב״ם נגד פשיעה חמורה בדרום`
-- Original: `חשיפה: לראשונה יופעל כטב"מ מבצעי מתקדם במאבק בפשיעה בדרום`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3839812
-
-### WARNING · takeaway_long · item 48
+### WARNING · takeaway_long · item 49
 - Takeaway length 109 > 95
 - Headline: `שלושה נהרגו בפחות משנה בצומת בכביש 90`
 - Original: `שלושה הרוגים בפחות משנה: למה הצומת שבו נהרג רז אדם נחשב למסוכן כל כך?`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839807
 
-### WARNING · takeaway_long · item 49
-- Takeaway length 120 > 95
-- Headline: `OpenAI נערכת להנפקה בזמן שמרוץ ה-AI מתייקר`
+### WARNING · takeaway_long · item 50
+- Takeaway length 97 > 95
+- Headline: `המשטרה תפעיל כטב״ם נגד פשיעה חמורה בדרום`
+- Original: `חשיפה: לראשונה יופעל כטב"מ מבצעי מתקדם במאבק בפשיעה בדרום`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839812
+
+### WARNING · takeaway_long · item 51
+- Takeaway length 105 > 95
+- Headline: `OpenAI נערכת להנפקה כשמרוץ ה-AI מתייקר`
 - Original: `קרב הטריליונים: OpenAI בדרך להנפקה מטורפת - ואפילו מאסק בהלם`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/tech/article-1324049
 
-### WARNING · takeaway_long · item 51
+### WARNING · takeaway_long · item 53
 - Takeaway length 101 > 95
 - Headline: `סלאח יוביל את מצרים במונדיאל, מוסטפא מוחמד בחוץ`
 - Original: `Mohamed Salah to captain Egypt as squad announced for FIFA World Cup 2026`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/sports/2026/5/21/mohamed-salah-to-captain-egypt-as-squad-announced-for-fifa-world-cup-2026?traffic_source=rss
 
-### WARNING · takeaway_long · item 52
+### WARNING · takeaway_long · item 54
 - Takeaway length 108 > 95
 - Headline: `סוריה עשויה להשתתף לראשונה בפסגת G7`
 - Original: `דיווח: סוריה תשתתף לראשונה בפסגת ה-G7, א-שרע יגיע לצרפת`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/bk1rpv3ygl
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 55
 - Takeaway length 102 > 95
 - Headline: `קאן 2026 מסתמנת כתחרות כבדה וקודרת במיוחד`
 - Original: `עם עינויים קשים לצפייה, מצאתי בקאן את הגרסה הכבדה של "ממזרים חסרי כבוד"`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3839802
 
-### WARNING · takeaway_long · item 54
+### WARNING · takeaway_long · item 56
 - Takeaway length 111 > 95
 - Headline: `טראמפ מקפיא תקיפות באיראן ונתניהו לוחץ להמשיך`
 - Original: `טראמפ עצר את התקיפות - נתניהו מאוכזב: השיחה המתוחה בין הנשיא לרה"מ`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839794
 
-### WARNING · takeaway_long · item 55
+### WARNING · takeaway_long · item 57
 - Takeaway length 127 > 95
 - Headline: `26 אקדחים ומחסניות נתפסו בגבול ירדן`
 - Original: `סוכל ניסיון הברחה בגבול ירדן: כמעט 30 אקדחים נתפסו`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/sj11fseh1mx
 
-### WARNING · takeaway_long · item 62
+### WARNING · takeaway_long · item 64
 - Takeaway length 121 > 95
 - Headline: `26 אקדחים נתפסו בשק ליד גדר הגבול המזרחית`
 - Original: `כוחות צה"ל ומג"ב סיכלו ניסיון הברחה של 26 אקדחים בגבול המזרחי`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1324032
 
-### WARNING · takeaway_long · item 63
+### WARNING · takeaway_long · item 65
 - Takeaway length 126 > 95
 - Headline: `ישראל דורשת מהאו״ם לעצור סיוע ל-IHH בעזה`
 - Original: `אחרי שקידם את המשט לרצועת עזה: ישראל בדרישה חריגה לאו"ם נגד הארגון הטורקי`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1324028
 
-### WARNING · takeaway_long · item 64
+### WARNING · takeaway_long · item 66
 - Takeaway length 100 > 95
 - Headline: `קבלן נרצח ברכבו ברמלה; קרוב משפחתו נפצע קשה`
 - Original: `רצח לאור יום ברמלה: בן 40 נורה למוות בתוך רכבו, גבר נוסף נפצע קשה`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3839790
 
-### WARNING · takeaway_long · item 66
-- Takeaway length 104 > 95
-- Headline: `אינטואיט מפטרת 3,000 עובדים ומסיטה משאבים ל-AI`
+### WARNING · takeaway_long · item 68
+- Takeaway length 118 > 95
+- Headline: `אינטואיט מפטרת 3,000 עובדים וממקדת תקציב ב-AI`
 - Original: `חברת התוכנה האמריקנית אינטואיט תפטר 3,000 עובדים, כולל ממרכז המו"פ בישראל`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/bkezp7njme
 
-### WARNING · takeaway_long · item 68
+### WARNING · takeaway_long · item 70
 - Takeaway length 116 > 95
 - Headline: `צבעי דגלי אפריקה נולדו מסמלי עצמאות ופאן־אפריקאיות`
 - Original: `מאתיופיה ועד גאנה: הסיבה המפתיעה לכך שכל הדגלים באפריקה נראים דומים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/other/article/20584199
 
-### WARNING · takeaway_long · item 70
+### WARNING · takeaway_long · item 72
 - Takeaway length 96 > 95
 - Headline: `איראן בוחנת תשובה אמריקאית ומקשיחה את הורמוז`
 - Original: `Iran war day 83: Tehran ‘reviewing’ latest US response to end conflict`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/21/iran-war-day-83-tehran-reviewing-latest-us-response-to-end-conflict?traffic_source=rss
 
-### WARNING · takeaway_long · item 72
+### WARNING · takeaway_long · item 74
 - Takeaway length 111 > 95
 - Headline: `רז אדם נהרג בתאונה; הכדורסל הישראלי מתאבל`
 - Original: `"אסון לכדורסל הישראלי": המאמנים והחברים נפרדים מרז אדם`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839773
 
-### WARNING · takeaway_long · item 73
+### WARNING · takeaway_long · item 75
 - Takeaway length 106 > 95
 - Headline: `נתניהו וטראמפ התעמתו על דחיית תקיפה באיראן`
 - Original: `דיווח: השיחה בין נתניהו לטראמפ הייתה מתוחה, רה"מ הביע אכזבה מדחיית התקיפה באיראן`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-05-21/ty-article/.premium/0000019e-48fe-dab3-adfe-d8fe6a980000
 
-### WARNING · takeaway_long · item 74
+### WARNING · takeaway_long · item 76
 - Takeaway length 119 > 95
 - Headline: `שיי ואוקלהומה השוו ל-1:1 בגמר המערב`
 - Original: `ה-MVP כאן: שיי החזיר את הת'אנדר לסדרה מול הספרס`
 - Source: וואלה ספורט - NBA
 - URL: https://sports.walla.co.il/item/3839787
 
-### WARNING · takeaway_long · item 75
+### WARNING · takeaway_long · item 77
 - Takeaway length 104 > 95
 - Headline: `סאות'המפטון הודחה מהפלייאוף בגלל פרשת ריגול`
 - Original: `הלם, זעם וחשש לעתיד: סערת הריגול מטלטלת את סאות'המפטון`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839792
 
-### WARNING · takeaway_long · item 76
+### WARNING · takeaway_long · item 78
 - Takeaway length 107 > 95
 - Headline: `יריעות תורה ספרדיות בנות 700 שנה מוצגות לראשונה`
 - Original: `בן כ-700 שנה: יריעות מספר תורה ספרדי נדיר נחשפים לראשונה`
 - Source: ynet - כל ערוץ היהדות
 - URL: https://www.ynet.co.il/judaism/article/rye0ibsyml
 
-### WARNING · takeaway_long · item 77
+### WARNING · takeaway_long · item 79
 - Takeaway length 110 > 95
 - Headline: `טרויצקי יאמן את ג׳וקוביץ׳ לקראת רולאן גארוס`
 - Original: `חדשות ספורט, 21 במאי`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/news/2026-05-21/ty-article-live/0000019e-4901-d0ff-afbe-4b417b5e0000
 
-### WARNING · takeaway_long · item 78
+### WARNING · takeaway_long · item 80
 - Takeaway length 106 > 95
 - Headline: `עלי אלשמלי נרצח ברמלה בסכסוך דמים`
 - Original: `חלון הנהג התנפץ מירי: בן 40 נרצח ברמלה, גבר נוסף נפצע קשה`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rkdskf31gg
 
-### WARNING · takeaway_long · item 79
+### WARNING · takeaway_long · item 81
 - Takeaway length 118 > 95
 - Headline: `צה״ל מתקרב להרחבת התמרון מול רחפני חיזבאללה`
 - Original: `איום הרחפנים ופציעת מח"ט 401: ההערכה בצה"ל - מתקרבים להרחבת התמרון`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839744
 
-### WARNING · takeaway_long · item 80
+### WARNING · takeaway_long · item 82
 - Takeaway length 107 > 95
 - Headline: `גשם ורוחות ילוו את ערב שבועות בצפון ובמרכז`
 - Original: `חג שבועות חורפי: גשם מקומי ורוחות ערות ברחבי הארץ`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839781
 
-### WARNING · takeaway_long · item 81
+### WARNING · takeaway_long · item 83
 - Takeaway length 117 > 95
 - Headline: `חיזבאללה עובר לכלכלת מזומן וחוואלה תחת לחץ`
 - Original: `אחרי הפגיעות ב"אל-קרד אל-חסן": הקרב הכלכלי שמכרסם בחיזבאללה מבפנים`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1323984
 
-### WARNING · takeaway_long · item 82
+### WARNING · takeaway_long · item 84
 - Takeaway length 110 > 95
 - Headline: `ברק חירם מסתמן כמועמד המועדף למזכיר הצבאי`
 - Original: `ברק חירם במוקד: קרב הענק בין נתניהו, כ"ץ וזמיר בשיאו`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323982
 
-### WARNING · takeaway_long · item 83
+### WARNING · takeaway_long · item 85
 - Takeaway length 107 > 95
 - Headline: `נתניהו וטראמפ חלוקים על קצב הלחץ מול איראן`
 - Original: `דיווחים בארה"ב: נתניהו אמר לטראמפ שהמתנה באיראן היא טעות, הנשיא ביקש עוד זמן`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/sjmxmz21ze
 
-### WARNING · summary_long · item 84
+### WARNING · summary_long · item 86
 - Summary length 224 > 220
 - Headline: `סרט המנדלוריאן החדש נראה כמו עונה מנופחת`
 - Original: `"המנדלוריאן וגרוגו": האם העולם באמת היה זקוק לעוד סרט "סטאר וורז" בינוני?`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bycysejjgg
 
-### WARNING · takeaway_long · item 84
+### WARNING · takeaway_long · item 86
 - Takeaway length 101 > 95
 - Headline: `סרט המנדלוריאן החדש נראה כמו עונה מנופחת`
 - Original: `"המנדלוריאן וגרוגו": האם העולם באמת היה זקוק לעוד סרט "סטאר וורז" בינוני?`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bycysejjgg
 
-### WARNING · takeaway_long · item 86
-- Takeaway length 125 > 95
-- Headline: `SpaceX מבקשת הנפקה לפי שווי של 1.5 טריליון דולר`
+### WARNING · takeaway_long · item 88
+- Takeaway length 126 > 95
+- Headline: `SpaceX מבקשת לגייס 80 מיליארד דולר בהנפקת ענק`
 - Original: `SpaceX הגישה תשקיף לקראת הנפקה ואילון מאסק בדרך להפוך לטריליונר הראשון בעולם`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543706#utm_source=RSS
 
-### WARNING · takeaway_long · item 87
+### WARNING · takeaway_long · item 89
 - Takeaway length 112 > 95
 - Headline: `בן גביר הפך עצירת משט שקטה לזירה פוליטית`
 - Original: `שר הילדותיות והטמטום: איתמר בן גביר העניק לחמאס את המתנה הגדולה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/military/article-1323976
 
-### WARNING · takeaway_long · item 88
+### WARNING · takeaway_long · item 90
 - Takeaway length 115 > 95
 - Headline: `טראמפ עוצר את התקיפות באיראן למרות לחץ מנתניהו`
 - Original: `נתניהו: תחדש את האש, ההמתנה היא טעות; טראמפ: עדיף הסכם, ההחלטה שלי`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rji0ewhygl
 
-### WARNING · takeaway_long · item 90
+### WARNING · takeaway_long · item 92
 - Takeaway length 121 > 95
 - Headline: `המאקרו הישראלי חזק, אבל משקי הבית עדיין נשחקים`
 - Original: `עשירים על הנייר, נחנקים בבנק: הדיסוננס של כלכלת ישראל`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543670#utm_source=RSS
 
-### WARNING · takeaway_long · item 91
+### WARNING · takeaway_long · item 93
 - Takeaway length 98 > 95
 - Headline: `מוש בן ארי ואברהם טל השיקו וידאו־פודקאסט משותף`
 - Original: `"השקט והמלחמה ביחד יוצרים משהו באמנות שרוצה להתפרץ"`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bkymgjojze
 
-### WARNING · takeaway_long · item 92
+### WARNING · takeaway_long · item 94
 - Takeaway length 104 > 95
 - Headline: `עלות ״כיפת הזהב״ של טראמפ מוערכת ב-1.2 טריליון דולר`
 - Original: `סכום העתק שארה"ב תשלם כדי לבנות את "כיפת הזהב" של טראמפ`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543401#utm_source=RSS
 
-### WARNING · summary_long · item 93
+### WARNING · summary_long · item 95
 - Summary length 265 > 220
 - Headline: `ישראל חזקה בחלל, אבל התקציב משאיר אותה מאחור`
 - Original: `“ישראל היא חוד החנית של העולם”: המחמאה של מאסק והאיום שמסתתר מאחוריה`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/israel/article-1323789
 
-### WARNING · takeaway_long · item 93
+### WARNING · takeaway_long · item 95
 - Takeaway length 133 > 95
 - Headline: `ישראל חזקה בחלל, אבל התקציב משאיר אותה מאחור`
 - Original: `“ישראל היא חוד החנית של העולם”: המחמאה של מאסק והאיום שמסתתר מאחוריה`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/israel/article-1323789
 
-### WARNING · takeaway_long · item 94
+### WARNING · takeaway_long · item 96
 - Takeaway length 112 > 95
 - Headline: `לוחמת שגדלה כיהודייה עוברת גיור במהלך השירות`
 - Original: `הלוחמת שמתגיירת: "כשהבנתי שאני לא יהודייה לפי ההלכה, זה היה מטלטל"`
 - Source: ynet - כל ערוץ היהדות
 - URL: https://www.ynet.co.il/judaism/discourse/article/hjoibvokgg
 
-### WARNING · takeaway_long · item 95
+### WARNING · takeaway_long · item 97
 - Takeaway length 99 > 95
 - Headline: `דניאל רוט אבנרי: משפט נתניהו יהפוך לקמפיין`
 - Original: `נתניהו נאלץ להיות הדמות המרכזית בקרקס לענייני לו"ז - וגם את זה הוא יתרגם למנדטים`
 - Source: מעריב - דעות
 - URL: https://www.maariv.co.il/news/opinions/article-1323835
 
-### WARNING · headline_near_duplicate_summary · item 96
+### WARNING · headline_near_duplicate_summary · item 98
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המאמר קושר בין חוק הגיוס, מינויים, חקיקה והבחירות הקרובות`
 - Original: `אמת קשה שצריכה להאמר: אנחנו חוזים בקריסת הבית השלישי - ואלו האשמים`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/opinions/article-1323916
 
-### WARNING · takeaway_long · item 97
+### WARNING · takeaway_long · item 99
 - Takeaway length 119 > 95
 - Headline: `ישראל מתנהלת כאילו חידוש הלחימה באיראן קרוב`
 - Original: `ישראל מצפה לחידוש הלחימה באיראן בעודה שוקעת בבוץ של לבנון`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/politics/2026-05-21/ty-article/.highlight/0000019e-46d3-dab3-adfe-def7f9800000
 
-### WARNING · takeaway_long · item 98
+### WARNING · takeaway_long · item 100
 - Takeaway length 122 > 95
 - Headline: `הצעת אחמדינג׳אד חושפת את סיכוני הנדסת השלטון באיראן`
 - Original: `הלחץ מופעל על טראמפ, שנדרש להגיש לאיראן הצעה שלא תוכל לסרב לה`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/world/middle-east/2026-05-21/ty-article/.premium/0000019e-46c5-dab3-adfe-def5efae0000
 
-### WARNING · takeaway_long · item 99
+### WARNING · takeaway_long · item 101
 - Takeaway length 103 > 95
 - Headline: `טראמפ מאיים על איראן, אך נמנע מחידוש הלחימה`
 - Original: `טראמפ אינו מצליח בחזית מול איראן ומעדיף לנקום ברפובליקאים שמורדים בו`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/world/america/2026-05-21/ty-article/.premium/0000019e-4671-d637-a99f-66fb8b440000
 
-### WARNING · summary_long · item 100
+### WARNING · summary_long · item 102
 - Summary length 222 > 220
 - Headline: `זמיר מקדם את ברק חירם למזכיר הצבאי של נתניהו`
 - Original: `הרמטכ"ל אייל זמיר דוחף: האם תא"ל ברק חירם בדרך ללשכת נתניהו?`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1323882
 
-### WARNING · takeaway_long · item 100
+### WARNING · takeaway_long · item 102
 - Takeaway length 131 > 95
 - Headline: `זמיר מקדם את ברק חירם למזכיר הצבאי של נתניהו`
 - Original: `הרמטכ"ל אייל זמיר דוחף: האם תא"ל ברק חירם בדרך ללשכת נתניהו?`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1323882
 
-### WARNING · takeaway_long · item 101
+### WARNING · takeaway_long · item 103
 - Takeaway length 127 > 95
 - Headline: `טראמפ דוחה תקיפה באיראן והופך דד־ליין לכלי לחץ`
 - Original: `קו ישר הוא זיגזג: המהלך של טראמפ שמבלבל את כולם - בכוונה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1323834
 
-### WARNING · takeaway_long · item 104
+### WARNING · takeaway_long · item 106
 - Takeaway length 130 > 95
 - Headline: `שוק השכירות גדל בלי מספיק דירות מנוהלות`
 - Original: `שוק השכירות בישראל סובל מכשל מבני מתמשך`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/ryvau6zyzl
 
-### WARNING · takeaway_long · item 105
+### WARNING · takeaway_long · item 107
 - Takeaway length 105 > 95
 - Headline: `רוכשי דירות בודקים מי אחראי לפרויקט, לא רק מחיר`
 - Original: `"הטעות הכי יקרה שרוכשי דירות עושים, והיא לא קשורה למחיר"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/hkx11kxqjze
 
-### WARNING · takeaway_long · item 106
+### WARNING · takeaway_long · item 108
 - Takeaway length 100 > 95
 - Headline: `רוכשי דירות צעירים דורשים ממ״ד, גמישות וקהילה`
 - Original: `הדור החדש של רוכשי הדירות`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/rkjqec11kfg
 
-### WARNING · takeaway_long · item 107
+### WARNING · takeaway_long · item 109
 - Takeaway length 112 > 95
 - Headline: `ברודווי שוברת קופות, אבל מחזות הזמר מפסידים`
 - Original: `ברודווי במשבר כלכלי - וזאת הזדמנות מצוינת לישראלים לא לקרוע את הכיס`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/hkuboeeyml
 
-### WARNING · takeaway_long · item 108
+### WARNING · takeaway_long · item 110
 - Takeaway length 98 > 95
 - Headline: `התחדשות עירונית האטה למרות הצורך הדחוף במיגון`
 - Original: `במקום למגן המערכת נחנקת מבירוקרטיה`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/s1mgn011yzl
 
-### WARNING · takeaway_long · item 109
+### WARNING · takeaway_long · item 111
 - Takeaway length 114 > 95
 - Headline: `הורדות הריבית עדיין לא העירו את שוק הדיור`
 - Original: `הריבית, המשכנתה ומחירי הדירות`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/r1aecpzjzl
 
-### WARNING · takeaway_long · item 110
+### WARNING · takeaway_long · item 112
 - Takeaway length 111 > 95
 - Headline: `אסון במלדיביים מדגיש את הסיכון בצלילת מערות`
 - Original: `סכנה במעמקים: המערות התת-ימיות שעלולות להיות מלכודת מוות`
 - Source: ynet - כל ערוץ מדע וטבע
 - URL: https://www.ynet.co.il/environment-science/article/rjmj53f1zx
 
-### WARNING · takeaway_long · item 113
-- Takeaway length 116 > 95
+### WARNING · takeaway_long · item 115
+- Takeaway length 127 > 95
 - Headline: `ניו ג׳רזי מקימה מסלול כניסה לסטארטאפים זרים`
 - Original: `ניו ג'רזי מצטרפת למרוץ ה-AI: מקימה מרכז חדשנות עם חברה ישראלית`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839777
 
-### WARNING · summary_long · item 115
+### WARNING · summary_long · item 117
 - Summary length 236 > 220
 - Headline: `ארה״ב ביטלה סנקציות ממומחית האו״ם לזכויות פלסטינים`
 - Original: `US lifts sanctions on Francesca Albanese, UN expert on Palestinian rights`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/21/us-lifts-sanctions-on-francesca-albanese-un-expert-on-palestinian-rights?traffic_source=rss
 
-### WARNING · takeaway_long · item 116
+### WARNING · takeaway_long · item 118
 - Takeaway length 99 > 95
 - Headline: `שני צעירים נהרגו בתאונה קשה בכביש 7`
 - Original: `הקטל בכבישים לא עוצר: בן 15 ובת 20 נהרגו סמוך למחלף שורק, שבעה נוספים נפצעו`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839774
 
-### WARNING · takeaway_long · item 118
+### WARNING · takeaway_long · item 120
 - Takeaway length 120 > 95
 - Headline: `ממשל טראמפ מאיים בתקציבים על ערים מול אנטישמיות`
 - Original: `"הערים הגדולות נכשלו": האיש של טראמפ למאבק באנטישמיות חושף תוכנית חדשה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20592183
 
-### WARNING · summary_long · item 119
+### WARNING · summary_long · item 121
 - Summary length 239 > 220
 - Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
 - Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3838594
 
-### WARNING · takeaway_long · item 119
+### WARNING · takeaway_long · item 121
 - Takeaway length 97 > 95
 - Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
 - Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3838594
 
-### WARNING · summary_long · item 120
+### WARNING · summary_long · item 122
 - Summary length 238 > 220
 - Headline: `סרטון בן גביר על עצורי המשט הצית משבר דיפלומטי`
 - Original: `Israeli security minister stirs diplomatic outrage with flotilla activist abuse video`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/israeli-security-minister-itamar-ben-gvir-stirs-diplomatic-outrage-with-flotilla-activist-abuse-video
 
-### WARNING · takeaway_long · item 121
+### WARNING · takeaway_long · item 123
 - Takeaway length 119 > 95
 - Headline: `עדויות על עצורי המשט הציתו משבר דיפלומטי`
 - Original: `מאות עצורי המשט לעזה טוענים: "חווינו אלימות קיצונית והשפלה קשה"`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839772
 
-### WARNING · summary_long · item 122
+### WARNING · summary_long · item 124
 - Summary length 221 > 220
 - Headline: `שי גולדן מתאר איך ערוץ 14 דחק קול ביקורתי מבפנים`
 - Original: `"הוא במסע צלב נגד מדינת ישראל": שי גולדן פותח הכל על נתניהו, ערוץ 14 והחרטה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20592014
 
-### WARNING · takeaway_long · item 122
+### WARNING · takeaway_long · item 124
 - Takeaway length 112 > 95
 - Headline: `שי גולדן מתאר איך ערוץ 14 דחק קול ביקורתי מבפנים`
 - Original: `"הוא במסע צלב נגד מדינת ישראל": שי גולדן פותח הכל על נתניהו, ערוץ 14 והחרטה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20592014
 
-### WARNING · takeaway_long · item 123
+### WARNING · takeaway_long · item 125
 - Takeaway length 121 > 95
 - Headline: `רז אדם נהרג בתאונה בכביש 90 בדרך לאירוע קבוצתי`
 - Original: `כדורסלן נבחרת ישראל רז אדם נהרג בתאונת דרכים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rji8vdo1fl
 
-### WARNING · takeaway_long · item 124
+### WARNING · takeaway_long · item 126
 - Takeaway length 97 > 95
 - Headline: `10 נפצעו בתאונת משאית ומיניבוס בכביש 7`
 - Original: `10 פצועים בתאונה בין משאית למיניבוס סמוך למחלף שורק`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/hykysookme
 
-### WARNING · takeaway_long · item 125
+### WARNING · takeaway_long · item 127
 - Takeaway length 132 > 95
 - Headline: `התקדמות במגעים דוחה בינתיים תקיפה באיראן`
 - Original: `דריכות השיא, עליית המדרגה במו"מ - ושאלת העיתוי לתקיפה באיראן`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839742
 
-### WARNING · takeaway_long · item 126
+### WARNING · takeaway_long · item 128
 - Takeaway length 131 > 95
 - Headline: `מערכת הביטחון נערכת לעימות מתמשך עם איראן`
 - Original: `גורם ביטחוני בכיר: "זה לא יהיה הסבב האחרון באיראן"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14777502
 
-### WARNING · takeaway_long · item 127
+### WARNING · takeaway_long · item 129
 - Takeaway length 112 > 95
 - Headline: `צווי 8 לקיץ מחריפים את משבר האמון במילואים`
 - Original: `אין חוק גיוס - ומילואימניקים כבר קיבלו עוד צווי 8: "זו נקודת שבר, אין עם מי לדבר"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1afhvsjzl
 
-### WARNING · takeaway_long · item 128
+### WARNING · takeaway_long · item 130
 - Takeaway length 110 > 95
 - Headline: `רחפני חיזבאללה משבשים את שגרת זרעית`
 - Original: `לוחמת נפצעה קשה מרחפן בלבנון, לתושבי הצפון נמאס: "הפסקת אש? הילדים בטראומה"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hjeh6mskmx
 
-### WARNING · headline_near_duplicate_summary · item 129
+### WARNING · headline_near_duplicate_summary · item 131
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `שחקן הפועל גליל עליון ונבחרת ישראל עשה את דרכו לאירוע קבוצתי כשנפגע`
 - Original: `הכדורסל הישראלי בהלם ממותו הטרגי של רז אדם: "אסון גדול"`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelibasketball/article/bk3gooiyzx
 
-### WARNING · takeaway_long · item 130
+### WARNING · takeaway_long · item 132
 - Takeaway length 115 > 95
 - Headline: `נאתכו יפרוש בשבת במשחק פרידה מפרטיזן`
 - Original: `ביברס נאתכו הודיע על פרישה: "המסע שלי מגיע לסיומו"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839753
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 133
 - Takeaway length 112 > 95
 - Headline: `רז אדם נהרג בתאונה בדרך לארוחת ערב קבוצתית`
 - Original: `טרגדיה: רז אדם, שחקן גליל עליון ונבחרת ישראל, נהרג בתאונה`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839746
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 134
 - Takeaway length 97 > 95
 - Headline: `אסטון וילה זכתה בתואר אירופי ראשון מאז 1982`
 - Original: `בסטייל של אלופה: אסטון וילה זכתה בליגה האירופית`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839720
 
-### WARNING · takeaway_long · item 133
+### WARNING · takeaway_long · item 135
 - Takeaway length 110 > 95
 - Headline: `לוזון מצהיר: מכבי פתח תקוה תמכור רק כוכב אחד`
 - Original: `אבי לוזון: "אמכור כוכב אחד בלבד, לא שניים או שלושה"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839743
 
-### WARNING · summary_long · item 134
+### WARNING · summary_long · item 136
 - Summary length 239 > 220
 - Headline: `התעשייה האווירית מקדמת הנפקה על גל הזמנות הנשק`
 - Original: `"הייתי דרוך כמו קפיץ, הבנתי שמתחיל הדבר האמיתי. ראיתי את היירוטים בשמיים והרגשתי איך 30 שנות עבודה מתנקזות לרגע אחד"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
-### WARNING · takeaway_long · item 134
+### WARNING · takeaway_long · item 136
 - Takeaway length 114 > 95
 - Headline: `התעשייה האווירית מקדמת הנפקה על גל הזמנות הנשק`
 - Original: `"הייתי דרוך כמו קפיץ, הבנתי שמתחיל הדבר האמיתי. ראיתי את היירוטים בשמיים והרגשתי איך 30 שנות עבודה מתנקזות לרגע אחד"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
-### WARNING · takeaway_long · item 135
+### WARNING · takeaway_long · item 137
 - Takeaway length 109 > 95
 - Headline: `זיו אריה מוביל להחליף את שוהם במכבי פתח תקוה`
 - Original: `זיו אריה המועמד המוביל לאמן את מכבי פתח תקוה בליגת העל`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839739
 
-### WARNING · takeaway_long · item 137
+### WARNING · takeaway_long · item 139
 - Takeaway length 112 > 95
 - Headline: `אנבידיה עקפה תחזיות, אך לא הרגיעה את כל המשקיעים`
 - Original: `אנבידיה הכתה התחזיות רבעון 11 ברצף; הכנסות מרכזי הנתונים זינקו ב-92%`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article/.premium/0000019e-45e4-d0ff-afbe-47e4fac90000
 
-### WARNING · takeaway_long · item 138
+### WARNING · takeaway_long · item 140
 - Takeaway length 99 > 95
 - Headline: `10 לוחמים וקצינים נפצעו מרחפני נפץ של חיזבאללה`
 - Original: `עם נשק ומצלמה: הלוחמת שנפצעה קשה בלבנון מרחפן, והאיום שעדיין אין לו פתרון`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/h13scfskfg
 
-### WARNING · takeaway_long · item 139
+### WARNING · takeaway_long · item 141
 - Takeaway length 117 > 95
 - Headline: `מפקדי מילואים הפכו לאבות בין סבבי הלחימה`
 - Original: `החזית המשפחתית: לוחמי המילואים שהפכו לאבות במהלך המלחמה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20591669
 
-### WARNING · takeaway_long · item 140
+### WARNING · takeaway_long · item 142
 - Takeaway length 102 > 95
 - Headline: `אבו פאני מתקרב לפרידה מפרנצווארוש`
 - Original: `בפרנצווארוש מאשרים: אבו פאני עשוי לעזוב לכוכב האדום`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839734
 
-### WARNING · takeaway_long · item 141
+### WARNING · takeaway_long · item 143
 - Takeaway length 110 > 95
 - Headline: `תקוות לפתיחת הורמוז הפילו את הנפט והעלו את וול סטריט`
 - Original: `נאסד"ק עלה ב-1.5%; הנפט צנח ב-6% על רקע תקוות לפתיחת מצר הורמוז`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article-live/0000019e-3457-d6c6-a99e-767fb26a0000
 
-### WARNING · takeaway_long · item 142
+### WARNING · takeaway_long · item 144
 - Takeaway length 100 > 95
 - Headline: `צה״ל חיזק כוננות בעזה אחרי חיסול אל-חדאד`
 - Original: `"הוא היה שונה מהאחרים": מאחורי הקלעים של חיסול היעד מספר 1 בחמאס`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3838870
 
-### WARNING · takeaway_long · item 143
+### WARNING · takeaway_long · item 145
 - Takeaway length 114 > 95
 - Headline: `סקר בלבנון: 58% בעד פירוק חיזבאללה מנשקו`
 - Original: `חיזבאללה מאבד את לבנון? זה מה שהעם חושב על פירוק הארגון מנשקו`
 - Source: מעריב - חדשות בעולם
 - URL: https://www.maariv.co.il/news/world/article-1323483
 
-### WARNING · takeaway_long · item 144
+### WARNING · takeaway_long · item 146
 - Takeaway length 108 > 95
 - Headline: `צעיר נהרג בתאונה בין שני רכבים בכביש 90`
 - Original: `הקטל בדרכים: צעיר בשנות ה-20 נהרג בסמוך לשדה אליעזר`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839729
-
-### WARNING · takeaway_long · item 145
-- Takeaway length 101 > 95
-- Headline: `רחפן נפץ פצע שבעה חיילים בדרום לבנון`
-- Original: `7 נפצעו בדרום לבנון, בהם לוחמת שמצבה קשה`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/Byewwtjyze
-
-### WARNING · headline_near_duplicate_summary · item 146
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `שמונה לוחמי צה"ל נפצעו מפיצוץ רחפן נפץ על כח של גדוד הנדסה הקרבית 601`
-- Original: `בעקבות פגיעת רחפן נפץ בלבנון: שמונה לוחמי צה"ל נפגעו - אחת באורח קשה`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/military/article-1323917
 
 ### WARNING · summary_long · item 148
 - Summary length 248 > 220
