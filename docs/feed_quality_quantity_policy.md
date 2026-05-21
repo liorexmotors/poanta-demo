@@ -79,3 +79,9 @@ Lior selected Option 2 for stale source views:
 - Cards must not say “הטור...”, “הכותבת טוענת...”, “הכותב טוען...”, or similar generic source mediation.
 - Quality Gate blocks Maariv opinion cards when the author is identifiable but not visible in the card text.
 - A user 👎 on this pattern is treated as `category/editorial attribution mismatch` and must become a repair/training case, not only passive feedback.
+
+## Semantic duplicate invariant — 2026-05-21
+- The feed must not show two cards for the same event merely because two publishers used different wording.
+- Duplicate logic must consider semantic anchors: event, timing, affected place/group, named actors, and topic-specific signals.
+- Example regression fixed: Walla and Maariv both published the same Shavuot rain/wind forecast; only one card should remain.
+- המבקר owns live duplicate detection; האספן/update pipeline owns pre-publish dedupe; השוער must treat duplicate clusters as publish-quality warnings requiring repair.
