@@ -1,8 +1,8 @@
 # Pointa Quality Gate Report
 
-Items checked: 201
+Items checked: 200
 Errors: 0
-Warnings: 162
+Warnings: 161
 
 ## Category distribution
 
@@ -10,8 +10,8 @@ Warnings: 162
 - ספורט: 44
 - כלכלה: 25
 - חדשות: 11
-- תרבות: 11
 - טכנולוגיה: 10
+- תרבות: 10
 - בריאות: 7
 - רכב: 7
 - פלילים: 7
@@ -25,70 +25,70 @@ Warnings: 162
 
 ## Issue counts
 
-- takeaway_long: 139
+- takeaway_long: 138
 - summary_long: 18
 - headline_near_duplicate_summary: 4
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 3
 - Takeaway length 102 > 95
 - Headline: `רז אדם נהרג רגע לפני ציון 1,000 נקודות בליגה`
 - Original: `החיוך, הלב, הקריירה שנקטעה בשיא: הכדורסל הישראלי נפרד מרז אדם`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelibasketball/article/skptqynjmg
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 7
 - Takeaway length 101 > 95
 - Headline: `סוכנות האנרגיה מזהירה ממשבר נפט בקיץ`
 - Original: `Oil markets nearing ‘red zone’ as summer travel season nears, warns IEA chief`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/21/oil-markets-nearing-red-zone-as-holiday-season-nears-warns-iea-chief
 
-### WARNING · summary_long · item 9
+### WARNING · summary_long · item 8
 - Summary length 228 > 220
 - Headline: `בריטניה ופולין זימנו דיפלומטים ישראלים בגלל בן גביר`
 - Original: `Gaza flotilla activists deported from Israel as backlash over treatment grows`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 8
 - Takeaway length 110 > 95
 - Headline: `בריטניה ופולין זימנו דיפלומטים ישראלים בגלל בן גביר`
 - Original: `Gaza flotilla activists deported from Israel as backlash over treatment grows`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/c9d3v2d6p1eo?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 11
 - Takeaway length 97 > 95
 - Headline: `ישראל יוצאת לאליפות אירופה בהתעמלות אחרי פתיחה חזקה`
 - Original: `נבחרת ישראל בהתעמלות אמנותית יוצאת לאליפות אירופה בבולגריה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839874
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 12
 - Takeaway length 110 > 95
 - Headline: `רוביו: יש התקדמות בשיחות עם איראן, אך לא מובטח הסכם`
 - Original: `הסכם או תרגיל הטעייה? שר החוץ רוביו: "הושגה התקדמות בשיחה עם איראן"`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839885
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 13
 - Takeaway length 110 > 95
 - Headline: `ארה״ב מרכזת טיסות ממדינות אבולה בשדה דאלס בלבד`
 - Original: `עקב התפרצות האבולה: ארה"ב הורתה שטיסות מאפריקה ינחתו בשדה אחד בלבד`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skhydi21gx
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 15
 - Takeaway length 99 > 95
 - Headline: `ישראל גירשה את פעילי המשט אחרי סערת בן גביר`
 - Original: `Israel deports foreign Gaza-bound flotilla activists after global outcry`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/21/uk-israel-video-itama-ben-gvir
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 16
 - Takeaway length 105 > 95
 - Headline: `רוביו מזהה התקדמות בשיחות עם איראן`
 - Original: `מרקו רוביו: "הושגה התקדמות עם איראן - יש סימנים להסכם"`
@@ -1158,10 +1158,3 @@ Warnings: 162
 - Original: `בגלל סלפי: מילי בובי בראון חשפה בטעות את שם בתה?`
 - Source: mako סלבס - עולמי
 - URL: https://www.mako.co.il/entertainment-celebs/world-2026/Article-c1f0336263f3e91026.htm
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 113 > 95
-- Headline: `ערוץ 4 הסיר פרקי חתונמי בריטניה אחרי טענות לאונס`
-- Original: `סערה ב"חתונה ממבט ראשון" בריטניה: שתי משתתפות טוענות שנאנסו בצילומים`
-- Source: וואלה תרבות - טלוויזיה
-- URL: https://e.walla.co.il/item/3839163
