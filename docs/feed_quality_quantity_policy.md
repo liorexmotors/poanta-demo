@@ -22,6 +22,11 @@ Never publish:
 
 If the feed is technically valid but weak, stale, or thin, that is a production issue.
 
+Do not confuse automation activity with health. A cron run marked `ok` and a fresh
+`updatedAt` timestamp are only implementation signals. The product signal is the
+user-visible result: a fresh top item, enough fresh top-card volume, enough recent
+source diversity, and live/raw/cache agreement.
+
 The auditor must track separately:
 
 1. Overall feed top freshness.
@@ -29,6 +34,7 @@ The auditor must track separately:
 3. Freshness by important source view.
 4. Rescue queue size and age.
 5. Whether fresh candidates are being rejected before editor review.
+6. Whether source-view stale warnings are being routed into rescue prioritization.
 
 ## Repair ladder when quantity is low but quality is protected
 
@@ -38,7 +44,8 @@ The auditor must track separately:
 4. Prepare full-article editor rescue batches.
 5. Expand to additional approved sources/profiles if still thin.
 6. Publish only QG=0 feed-only updates.
-7. If one safe attempt still fails the freshness/volume SLA, ask Lior with blocker + max 2 options + recommendation.
+7. If FAST sync produces only a partial technical refresh, continue immediately to full rescue/editor/QA rather than stopping.
+8. If hard gates still cannot be met, do not publish weak cards and do not ask Lior to decide inside feed-card scope; keep deterministic repair internal and report only true blockers/outcomes.
 
 ## What not to do
 
@@ -46,6 +53,7 @@ The auditor must track separately:
 - Do not recycle old articles as “new”.
 - Do not fill the feed with evergreen/lifestyle noise in FAST.
 - Do not hide stale-source failures by weakening the auditor.
+- Do not treat source-view stale warnings as noise. They may be non-blocking warnings, but they are rescue-prioritization signals.
 
 ## Target state
 
@@ -60,6 +68,6 @@ A healthy feed is:
 Lior selected Option 2 for stale source views:
 
 - Do not weaken source-view freshness thresholds just to reduce failures.
-- A stale important/foreign source view must trigger source-targeted rescue preparation.
+- A stale important/foreign source view warning must trigger source-targeted rescue preparation/prioritization, even when it is not a blocking error.
 - Source-targeted rescue must still obey all quality/relevance gates.
-- If the rescue queue has no usable candidates for the stale source, or the editor cannot produce QG=0 cards after one safe attempt, escalate to Lior with blocker + max 2 options + recommendation.
+- If the rescue queue has no usable candidates for the stale source, or the editor cannot produce QG=0 cards after one safe attempt, keep repairing deterministically or report the blocker/outcome; do not lower standards and do not transfer feed-card decisions back to Lior.
