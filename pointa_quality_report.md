@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 194
+Items checked: 193
 Errors: 0
-Warnings: 161
+Warnings: 160
 
 ## Category distribution
 
-- ביטחון: 70
+- ביטחון: 69
 - ספורט: 48
 - כלכלה: 18
 - טכנולוגיה: 12
@@ -25,7 +25,7 @@ Warnings: 161
 
 ## Issue counts
 
-- takeaway_long: 134
+- takeaway_long: 133
 - summary_long: 19
 - headline_near_duplicate_summary: 6
 - category_sport_source: 2
@@ -865,294 +865,287 @@ Warnings: 161
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1323984
 
-### WARNING · takeaway_long · item 149
-- Takeaway length 107 > 95
-- Headline: `נתניהו וטראמפ חלוקים על קצב הלחץ מול איראן`
-- Original: `דיווחים בארה"ב: נתניהו אמר לטראמפ שהמתנה באיראן היא טעות, הנשיא ביקש עוד זמן`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/sjmxmz21ze
-
-### WARNING · summary_long · item 150
+### WARNING · summary_long · item 149
 - Summary length 228 > 220
 - Headline: `סרט המנדלוריאן החדש מרגיש כמו עונה מנופחת`
 - Original: `"המנדלוריאן וגרוגו": האם העולם באמת היה זקוק לעוד סרט "סטאר וורז" בינוני?`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bycysejjgg
 
-### WARNING · takeaway_long · item 150
+### WARNING · takeaway_long · item 149
 - Takeaway length 110 > 95
 - Headline: `סרט המנדלוריאן החדש מרגיש כמו עונה מנופחת`
 - Original: `"המנדלוריאן וגרוגו": האם העולם באמת היה זקוק לעוד סרט "סטאר וורז" בינוני?`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bycysejjgg
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 151
 - Takeaway length 131 > 95
 - Headline: `SpaceX מבקשת לגייס 80 מיליארד דולר בהנפקת ענק`
 - Original: `SpaceX הגישה תשקיף לקראת הנפקה ואילון מאסק בדרך להפוך לטריליונר הראשון בעולם`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543706#utm_source=RSS
 
-### WARNING · takeaway_long · item 154
+### WARNING · takeaway_long · item 153
 - Takeaway length 121 > 95
 - Headline: `המאקרו הישראלי חזק, אבל משקי הבית עדיין נשחקים`
 - Original: `עשירים על הנייר, נחנקים בבנק: הדיסוננס של כלכלת ישראל`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543670#utm_source=RSS
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 154
 - Takeaway length 98 > 95
 - Headline: `מוש בן ארי ואברהם טל השיקו וידאו־פודקאסט משותף`
 - Original: `"השקט והמלחמה ביחד יוצרים משהו באמנות שרוצה להתפרץ"`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bkymgjojze
 
-### WARNING · summary_long · item 156
+### WARNING · summary_long · item 155
 - Summary length 265 > 220
 - Headline: `ישראל חזקה בחלל, אבל התקציב משאיר אותה מאחור`
 - Original: `“ישראל היא חוד החנית של העולם”: המחמאה של מאסק והאיום שמסתתר מאחוריה`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/israel/article-1323789
 
-### WARNING · takeaway_long · item 156
+### WARNING · takeaway_long · item 155
 - Takeaway length 133 > 95
 - Headline: `ישראל חזקה בחלל, אבל התקציב משאיר אותה מאחור`
 - Original: `“ישראל היא חוד החנית של העולם”: המחמאה של מאסק והאיום שמסתתר מאחוריה`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/israel/article-1323789
 
-### WARNING · takeaway_long · item 157
+### WARNING · takeaway_long · item 156
 - Takeaway length 121 > 95
 - Headline: `טור: נתניהו ינסה להפוך את משפטו לקמפיין`
 - Original: `נתניהו נאלץ להיות הדמות המרכזית בקרקס לענייני לו"ז - וגם את זה הוא יתרגם למנדטים`
 - Source: מעריב - דעות
 - URL: https://www.maariv.co.il/news/opinions/article-1323835
 
-### WARNING · takeaway_long · item 158
+### WARNING · takeaway_long · item 157
 - Takeaway length 104 > 95
 - Headline: `אפליקציית כספנו מדרגת מזון לפי בריאות ועיבוד`
 - Original: `"כספנו": המיזם שיעשה מהפכה באיךש ישראלים קונים ברשתות`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/israel/article-1323807
 
-### WARNING · takeaway_long · item 159
+### WARNING · takeaway_long · item 158
 - Takeaway length 130 > 95
 - Headline: `שוק השכירות גדל בלי מספיק דירות מנוהלות`
 - Original: `שוק השכירות בישראל סובל מכשל מבני מתמשך`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/ryvau6zyzl
 
-### WARNING · takeaway_long · item 160
+### WARNING · takeaway_long · item 159
 - Takeaway length 108 > 95
 - Headline: `רוכשי דירות בודקים מי אחראי לפרויקט, לא רק מחיר`
 - Original: `"הטעות הכי יקרה שרוכשי דירות עושים, והיא לא קשורה למחיר"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/hkx11kxqjze
 
-### WARNING · takeaway_long · item 161
+### WARNING · takeaway_long · item 160
 - Takeaway length 105 > 95
 - Headline: `רוכשי דירות צעירים דורשים ממ״ד, גמישות וקהילה`
 - Original: `הדור החדש של רוכשי הדירות`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/rkjqec11kfg
 
-### WARNING · takeaway_long · item 162
+### WARNING · takeaway_long · item 161
 - Takeaway length 112 > 95
 - Headline: `ברודווי שוברת קופות, אבל מחזות הזמר מפסידים`
 - Original: `ברודווי במשבר כלכלי - וזאת הזדמנות מצוינת לישראלים לא לקרוע את הכיס`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/hkuboeeyml
 
-### WARNING · takeaway_long · item 163
+### WARNING · takeaway_long · item 162
 - Takeaway length 98 > 95
 - Headline: `התחדשות עירונית האטה למרות הצורך הדחוף במיגון`
 - Original: `במקום למגן המערכת נחנקת מבירוקרטיה`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/s1mgn011yzl
 
-### WARNING · takeaway_long · item 164
+### WARNING · takeaway_long · item 163
 - Takeaway length 114 > 95
 - Headline: `הורדות הריבית עדיין לא העירו את שוק הדיור`
 - Original: `הריבית, המשכנתה ומחירי הדירות`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/r1aecpzjzl
 
-### WARNING · takeaway_long · item 167
+### WARNING · takeaway_long · item 166
 - Takeaway length 134 > 95
 - Headline: `ניו ג׳רזי מקימה מסלול כניסה לסטארטאפים זרים`
 - Original: `ניו ג'רזי מצטרפת למרוץ ה-AI: מקימה מרכז חדשנות עם חברה ישראלית`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839777
 
-### WARNING · takeaway_long · item 168
+### WARNING · takeaway_long · item 167
 - Takeaway length 99 > 95
 - Headline: `שני צעירים נהרגו בתאונה קשה בכביש 7`
 - Original: `הקטל בכבישים לא עוצר: בן 15 ובת 20 נהרגו סמוך למחלף שורק, שבעה נוספים נפצעו`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839774
 
-### WARNING · summary_long · item 170
+### WARNING · summary_long · item 169
 - Summary length 239 > 220
+- Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
+- Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
+- Source: וואלה תרבות
+- URL: https://e.walla.co.il/item/3838594
+
+### WARNING · takeaway_long · item 169
+- Takeaway length 97 > 95
 - Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
 - Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3838594
 
 ### WARNING · takeaway_long · item 170
-- Takeaway length 97 > 95
-- Headline: `זיפרשטיין מציג את פיליפ רות כרלוונטי לעידן טראמפ`
-- Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
-- Source: וואלה תרבות
-- URL: https://e.walla.co.il/item/3838594
-
-### WARNING · takeaway_long · item 171
 - Takeaway length 121 > 95
 - Headline: `רז אדם נהרג בתאונה בכביש 90 בדרך לאירוע קבוצתי`
 - Original: `כדורסלן נבחרת ישראל רז אדם נהרג בתאונת דרכים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rji8vdo1fl
 
-### WARNING · takeaway_long · item 172
+### WARNING · takeaway_long · item 171
 - Takeaway length 97 > 95
 - Headline: `10 נפצעו בתאונת משאית ומיניבוס בכביש 7`
 - Original: `10 פצועים בתאונה בין משאית למיניבוס סמוך למחלף שורק`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/hykysookme
 
-### WARNING · headline_near_duplicate_summary · item 173
+### WARNING · headline_near_duplicate_summary · item 172
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `שחקן הפועל גליל עליון ונבחרת ישראל עשה את דרכו לאירוע קבוצתי כשנפגע`
 - Original: `הכדורסל הישראלי בהלם ממותו הטרגי של רז אדם: "אסון גדול"`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelibasketball/article/bk3gooiyzx
 
-### WARNING · takeaway_long · item 174
+### WARNING · takeaway_long · item 173
 - Takeaway length 115 > 95
 - Headline: `נאתכו יפרוש בשבת במשחק פרידה מפרטיזן`
 - Original: `ביברס נאתכו הודיע על פרישה: "המסע שלי מגיע לסיומו"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839753
 
-### WARNING · takeaway_long · item 175
+### WARNING · takeaway_long · item 174
 - Takeaway length 112 > 95
 - Headline: `רז אדם נהרג בתאונה בדרך לארוחת ערב קבוצתית`
 - Original: `טרגדיה: רז אדם, שחקן גליל עליון ונבחרת ישראל, נהרג בתאונה`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839746
 
-### WARNING · takeaway_long · item 176
+### WARNING · takeaway_long · item 175
 - Takeaway length 97 > 95
 - Headline: `אסטון וילה זכתה בתואר אירופי ראשון מאז 1982`
 - Original: `בסטייל של אלופה: אסטון וילה זכתה בליגה האירופית`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839720
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 176
 - Takeaway length 110 > 95
 - Headline: `לוזון מצהיר: מכבי פתח תקוה תמכור רק כוכב אחד`
 - Original: `אבי לוזון: "אמכור כוכב אחד בלבד, לא שניים או שלושה"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839743
 
-### WARNING · summary_long · item 178
+### WARNING · summary_long · item 177
 - Summary length 239 > 220
 - Headline: `התעשייה האווירית מקדמת הנפקה על גל הזמנות הנשק`
 - Original: `"הייתי דרוך כמו קפיץ, הבנתי שמתחיל הדבר האמיתי. ראיתי את היירוטים בשמיים והרגשתי איך 30 שנות עבודה מתנקזות לרגע אחד"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
-### WARNING · takeaway_long · item 178
+### WARNING · takeaway_long · item 177
 - Takeaway length 114 > 95
 - Headline: `התעשייה האווירית מקדמת הנפקה על גל הזמנות הנשק`
 - Original: `"הייתי דרוך כמו קפיץ, הבנתי שמתחיל הדבר האמיתי. ראיתי את היירוטים בשמיים והרגשתי איך 30 שנות עבודה מתנקזות לרגע אחד"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/yokra14772729
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 109 > 95
 - Headline: `זיו אריה מוביל להחליף את שוהם במכבי פתח תקוה`
 - Original: `זיו אריה המועמד המוביל לאמן את מכבי פתח תקוה בליגת העל`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839739
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 180
 - Takeaway length 112 > 95
 - Headline: `אנבידיה עקפה תחזיות, אך לא הרגיעה את כל המשקיעים`
 - Original: `אנבידיה הכתה התחזיות רבעון 11 ברצף; הכנסות מרכזי הנתונים זינקו ב-92%`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article/.premium/0000019e-45e4-d0ff-afbe-47e4fac90000
 
-### WARNING · takeaway_long · item 182
+### WARNING · takeaway_long · item 181
 - Takeaway length 102 > 95
 - Headline: `אבו פאני מתקרב לפרידה מפרנצווארוש`
 - Original: `בפרנצווארוש מאשרים: אבו פאני עשוי לעזוב לכוכב האדום`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839734
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 182
 - Takeaway length 110 > 95
 - Headline: `תקוות לפתיחת הורמוז הפילו את הנפט והעלו את וול סטריט`
 - Original: `נאסד"ק עלה ב-1.5%; הנפט צנח ב-6% על רקע תקוות לפתיחת מצר הורמוז`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-05-20/ty-article-live/0000019e-3457-d6c6-a99e-767fb26a0000
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 183
 - Takeaway length 108 > 95
 - Headline: `צעיר נהרג בתאונה בין שני רכבים בכביש 90`
 - Original: `הקטל בדרכים: צעיר בשנות ה-20 נהרג בסמוך לשדה אליעזר`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839729
 
-### WARNING · summary_long · item 186
+### WARNING · summary_long · item 185
 - Summary length 248 > 220
 - Headline: `נשף רוק הוקדם בגלל שלוש הופעות ענק בגוש דן`
 - Original: `בגלל אייל גולן ואושר כהן: אביב גפן מקדים את נשף רוק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20590837
 
-### WARNING · takeaway_long · item 186
+### WARNING · takeaway_long · item 185
 - Takeaway length 123 > 95
 - Headline: `נשף רוק הוקדם בגלל שלוש הופעות ענק בגוש דן`
 - Original: `בגלל אייל גולן ואושר כהן: אביב גפן מקדים את נשף רוק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20590837
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 186
 - Takeaway length 98 > 95
 - Headline: `הפועל ת״א ניצחה את ראשל״צ והבטיחה את המקום השני`
 - Original: `רבע 2, 09:51: הפועל ת"א - ראשל"צ`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/one523275
 
-### WARNING · takeaway_long · item 188
+### WARNING · takeaway_long · item 187
 - Takeaway length 113 > 95
 - Headline: `וואטסאפ בוחנת מחיקה שמתחילה רק אחרי הקריאה`
 - Original: `השדרוג החדש של וואטסאפ יקשה על מי שמנסה למחוק עקבות בצ'אט`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3839687
 
-### WARNING · takeaway_long · item 189
+### WARNING · takeaway_long · item 188
 - Takeaway length 125 > 95
 - Headline: `התפרצות אבולה נדירה גבתה 139 מתים חשודים`
 - Original: `כבר 139 מתים בהתפרצות האבולה באפריקה: "המספר צפוי לעלות"`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://news.walla.co.il/item/3839711
 
-### WARNING · headline_near_duplicate_summary · item 190
+### WARNING · headline_near_duplicate_summary · item 189
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `עצירת הטיסות ל-40 יום עלתה לאל על 145 מיליון דולר ובהפסד רבעוני ראשון`
 - Original: `המלחמה באיראן העבירה את אל על להפסד, אבל תסדר לה רווחי שיא בקיץ`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3839547
 
-### WARNING · headline_near_duplicate_summary · item 191
+### WARNING · headline_near_duplicate_summary · item 190
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הזינוק במחירי האנרגיה גורר קנס ממוצע של 316 דולר לכל משק בית בארה"ב`
 - Original: `המחירים זינקו: כמה שילם כל אמריקאי בגלל המלחמה עם איראן?`
 - Source: וואלה כסף - כסף עולמי
 - URL: https://finance.walla.co.il/item/3838964
 
-### WARNING · headline_near_duplicate_summary · item 193
+### WARNING · headline_near_duplicate_summary · item 192
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המדד רשם עלייה חדה, בעיקר בשל הזינוק במחירי האנרגיה והתייקרות חופשות`
 - Original: `מדד המחירים לצרכן זינק ב-1.2%, מחירי הדירות עלו`
