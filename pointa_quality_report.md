@@ -291,7 +291,7 @@ Warnings: 99
 
 ### WARNING · takeaway_long · item 38
 - Takeaway length 115 > 95
-- Headline: `מסמך פנימי תיעד איסוף מידע על יועץ בית ספר`
+- Headline: `מסמך פנימי חשף איסוף מידע על יועץ שביקר את הממשלה`
 - Original: `ועדה חשאית בהובלת איש שב"כ לשעבר מרגלת אחרי מורים שמבקרים את הממשלה. תחקיר`
 - Source: הארץ - סוף שבוע
 - URL: https://www.haaretz.co.il/magazine/2026-05-20/ty-article-magazine/.highlight/0000019e-3fd6-d394-addf-fffe4f020000
@@ -402,8 +402,8 @@ Warnings: 99
 - URL: https://www.ynet.co.il/news/article/skocrhikze
 
 ### WARNING · takeaway_long · item 54
-- Takeaway length 133 > 95
-- Headline: `ארה״ב מאיימת על הרשות בגלל מועמדות לתפקיד באו״ם`
+- Takeaway length 119 > 95
+- Headline: `ארה״ב לוחצת על הרשות לוותר על תפקיד באו״ם`
 - Original: `US puts pressure on Palestinian leaders to withdraw bid for UN vice-presidency role`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/20/us-palestinian-authority-united-nations-vice-presidency
@@ -463,13 +463,6 @@ Warnings: 99
 - Original: `צה"ל הזהיר מ"90 אלף משתמטים" בדיון על קידום חוק הגיוס, בנט תקף: "רגעי שפל"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/ski5hrqkzl
-
-### WARNING · takeaway_long · item 68
-- Takeaway length 103 > 95
-- Headline: `כתב אישום: תושב ירושלים הצית ותקף שומר בשומרון`
-- Original: `ישראל גרוסמן מירושלים נאשם בהצתות, תקיפה וסיכון כוחות משטרה בשומרון`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/bjsaz4s1fg
 
 ### WARNING · takeaway_long · item 69
 - Takeaway length 105 > 95
@@ -561,6 +554,13 @@ Warnings: 99
 - Original: `פיזור הכנסת בלי מתנגדים: הקואליציה נכנסה למלכוד של עצמה`
 - Source: מעריב - פוליטי מדיני
 - URL: https://www.maariv.co.il/news/politics/article-1323710
+
+### WARNING · takeaway_long · item 92
+- Takeaway length 98 > 95
+- Headline: `כתב אישום: בן זוגה לשעבר רצח את מרלין אלטורי`
+- Original: `הווידוי, הדריסה, הדקירות וההצתה - כתב אישום מזעזע נגד בעלה לשעבר של מרלין אלטורי`
+- Source: וואלה חדשות - חדשות בארץ
+- URL: https://news.walla.co.il/item/3839560
 
 ### WARNING · headline_near_duplicate_summary · item 93
 - Headline is a clipped/near-duplicate version of the summary
