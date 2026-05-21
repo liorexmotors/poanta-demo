@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 193
+Items checked: 192
 Errors: 0
-Warnings: 153
+Warnings: 152
 
 ## Category distribution
 
-- ביטחון: 48
+- ביטחון: 47
 - ספורט: 37
 - כלכלה: 31
 - תרבות: 15
@@ -24,7 +24,7 @@ Warnings: 153
 
 ## Issue counts
 
-- takeaway_long: 128
+- takeaway_long: 127
 - summary_long: 16
 - headline_near_duplicate_summary: 8
 - category_sport_source: 1
@@ -829,273 +829,266 @@ Warnings: 153
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323918
 
-### WARNING · takeaway_long · item 137
-- Takeaway length 123 > 95
-- Headline: `צה״ל: חוק הגיוס לא יסגור את מחסור הלוחמים בלי חטיבה חרדית`
-- Original: `הקרב של צה"ל מול חוק הגיוס: "המחסור בלוחמים הולך ומחריף"`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3839589
-
-### WARNING · summary_long · item 138
+### WARNING · summary_long · item 137
 - Summary length 248 > 220
 - Headline: `נשף רוק הוקדם בגלל שלוש הופעות ענק בגוש דן`
 - Original: `בגלל אייל גולן ואושר כהן: אביב גפן מקדים את נשף רוק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20590837
 
-### WARNING · takeaway_long · item 138
+### WARNING · takeaway_long · item 137
 - Takeaway length 123 > 95
 - Headline: `נשף רוק הוקדם בגלל שלוש הופעות ענק בגוש דן`
 - Original: `בגלל אייל גולן ואושר כהן: אביב גפן מקדים את נשף רוק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20590837
 
-### WARNING · takeaway_long · item 139
+### WARNING · takeaway_long · item 138
 - Takeaway length 98 > 95
 - Headline: `הפועל ת״א ניצחה את ראשל״צ והבטיחה את המקום השני`
 - Original: `רבע 2, 09:51: הפועל ת"א - ראשל"צ`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/one523275
 
-### WARNING · takeaway_long · item 140
+### WARNING · takeaway_long · item 139
 - Takeaway length 113 > 95
 - Headline: `וואטסאפ בוחנת מחיקה שמתחילה רק אחרי הקריאה`
 - Original: `השדרוג החדש של וואטסאפ יקשה על מי שמנסה למחוק עקבות בצ'אט`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3839687
 
-### WARNING · takeaway_long · item 141
+### WARNING · takeaway_long · item 140
 - Takeaway length 125 > 95
 - Headline: `התפרצות אבולה נדירה גבתה 139 מתים חשודים`
 - Original: `כבר 139 מתים בהתפרצות האבולה באפריקה: "המספר צפוי לעלות"`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://news.walla.co.il/item/3839711
 
-### WARNING · takeaway_long · item 142
+### WARNING · takeaway_long · item 141
 - Takeaway length 111 > 95
 - Headline: `שי ברדה מזהיר שקריית שמונה עדיין בלי בית לכדורגל`
 - Original: `שי ברדה תוקף: "העיר ק"ש גוססת. מנרמלים במדינה את המצב"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839710
 
-### WARNING · takeaway_long · item 143
+### WARNING · takeaway_long · item 142
 - Takeaway length 102 > 95
 - Headline: `ניימאר חוזר לסגל ברזיל למונדיאל אחרי פציעת ברך קשה`
 - Original: `ניימאר: "בכיתי במשך שעות כששמעתי שאני בסגל למונדיאל"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839680
 
-### WARNING · takeaway_long · item 144
+### WARNING · takeaway_long · item 143
 - Takeaway length 99 > 95
 - Headline: `קו חיפה־כרתים נפתח, אך המחיר קופץ עם כבודה`
 - Original: `החל מ-99 דולר לכיוון? לא בדיוק. אייר חיפה החלה לטוס לכרתים`
 - Source: וואלה חדשות
 - URL: https://travel.walla.co.il/item/3839692
 
-### WARNING · takeaway_long · item 145
+### WARNING · takeaway_long · item 144
 - Takeaway length 113 > 95
 - Headline: `באר שבע זכתה באליפות עם שער סמלי של מיגל ויטור`
 - Original: `סוף טוב, הכול טוב: מסכמים מחזור עם האליפות של הפועל באר שבע`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839530
 
-### WARNING · takeaway_long · item 147
+### WARNING · takeaway_long · item 146
 - Takeaway length 111 > 95
 - Headline: `לקראת שבועות: טביעה היא הסכנה המרכזית בנופש ילדים`
 - Original: `חופשת שבועות בפתח - ואלו הסכנות מהם ההורים חוששים מכל`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/health/article-1323790
 
-### WARNING · takeaway_long · item 148
+### WARNING · takeaway_long · item 147
 - Takeaway length 102 > 95
 - Headline: `פלייאוף הכדורסל ייפתח ב־31 במאי ויימשך עד סוף יוני`
 - Original: `חדשות ספורט, 20 במאי`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/news/2026-05-20/ty-article-live/0000019e-4597-d637-a99f-67bfb33c0000
 
-### WARNING · takeaway_long · item 149
+### WARNING · takeaway_long · item 148
 - Takeaway length 105 > 95
 - Headline: `זן נדיר של אבולה התפשט מקונגו לאוגנדה`
 - Original: `ארגון הבריאות העולמי מזהיר: הנגיף הקטלני שהרג אלפים ממשיך להתפשט`
 - Source: מעריב - בריאות
 - URL: https://www.maariv.co.il/news/health/article-1323785
 
-### WARNING · takeaway_long · item 150
+### WARNING · takeaway_long · item 149
 - Takeaway length 103 > 95
 - Headline: `ת״א ננעלה בעליות; טאואר זינקה ועזריאלי צנחה`
 - Original: `עליות בבורסה; מניית עזריאלי נופלת ב-7%, טאואר מזנקת`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543465#utm_source=RSS
 
-### WARNING · takeaway_long · item 151
+### WARNING · takeaway_long · item 150
 - Takeaway length 112 > 95
 - Headline: `מענקי תקומה הזרימו 220 מיליון שקל למשקי העוטף`
 - Original: `נתוני מנהלת תקומה לקראת שבועות: כ-420 משקים בעוטף קיבלו מענקים בהיקף 220 מיליון ש"ח`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1323771
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 151
 - Takeaway length 121 > 95
 - Headline: `מורי אשמורת יצברו נקודות חופשה בכרטיס האשראי`
 - Original: `בשורה למורים לקראת הקיץ: כך תוכלו לצבור חופשות דרך כרטיס האשראי`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/consumerism/article-1323770
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 154
 - Takeaway length 106 > 95
 - Headline: `אושרה תוכנית ליישוב אשל הנשיא בנגב`
 - Original: `יישוב חדש בנגב: מצטרף לחמישה יישובים נוספים שבדרך`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/municipal/article/20586870
 
-### WARNING · summary_long · item 156
+### WARNING · summary_long · item 155
 - Summary length 241 > 220
 - Headline: `בריטניה מקלה בסנקציות על דלק שמקורו בנפט רוסי`
 - Original: `שלום פוטין, להתראות נטילת אחריות: סערה בבריטניה בעקבות ההקלות "המטורפות" על הנפט הרוסי`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1323746
 
-### WARNING · takeaway_long · item 156
+### WARNING · takeaway_long · item 155
 - Takeaway length 112 > 95
 - Headline: `בריטניה מקלה בסנקציות על דלק שמקורו בנפט רוסי`
 - Original: `שלום פוטין, להתראות נטילת אחריות: סערה בבריטניה בעקבות ההקלות "המטורפות" על הנפט הרוסי`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1323746
 
-### WARNING · takeaway_long · item 157
+### WARNING · takeaway_long · item 156
 - Takeaway length 120 > 95
 - Headline: `אנבידיה הופכת למבחן האמון של ראלי ה-AI`
 - Original: `החוזים בוול סטריט עולים לקראת דוחות אנבידיה; אירופה במגמה מעורבת`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543518#utm_source=RSS
 
-### WARNING · headline_near_duplicate_summary · item 159
+### WARNING · headline_near_duplicate_summary · item 158
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `עצירת הטיסות ל-40 יום עלתה לאל על 145 מיליון דולר ובהפסד רבעוני ראשון`
 - Original: `המלחמה באיראן העבירה את אל על להפסד, אבל תסדר לה רווחי שיא בקיץ`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3839547
 
-### WARNING · takeaway_long · item 160
+### WARNING · takeaway_long · item 159
 - Takeaway length 118 > 95
 - Headline: `האו״ם הוריד תחזית צמיחה בגלל משבר הורמוז`
 - Original: `UN cuts global growth forecast, blaming Middle East crisis`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/economy/2026/5/20/un-cuts-global-growth-forecast-blaming-middle-east-crisis?traffic_source=rss
 
-### WARNING · summary_long · item 162
+### WARNING · summary_long · item 161
 - Summary length 221 > 220
 - Headline: `פאודה החדשה הופכת את 7 באוקטובר למסע נקמה`
 - Original: `אפלה יותר, כועסת יותר ויצרית יותר: אולי זו תהיה העונה הכי טובה של "פאודה"`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839246
 
-### WARNING · takeaway_long · item 163
+### WARNING · takeaway_long · item 162
 - Takeaway length 106 > 95
 - Headline: `מכבי תל אביב צפויה לשמור על ההרכב מול באר שבע`
 - Original: `זה ההרכב המסתמן של מילר מול הפועל באר שבע, בליץ' ב-21`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839217
 
-### WARNING · headline_near_duplicate_summary · item 164
+### WARNING · headline_near_duplicate_summary · item 163
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `באוגוסט האחרון אימצה כוכבת "דברים מוזרים" את בתה הבכורה יחד עם בן זוגה`
 - Original: `בגלל סלפי: מילי בובי בראון חשפה בטעות את שם בתה?`
 - Source: mako סלבס - עולמי
 - URL: https://www.mako.co.il/entertainment-celebs/world-2026/Article-c1f0336263f3e91026.htm
 
-### WARNING · takeaway_long · item 167
+### WARNING · takeaway_long · item 166
 - Takeaway length 113 > 95
 - Headline: `ערוץ 4 הסיר פרקי חתונמי בריטניה אחרי טענות לאונס`
 - Original: `סערה ב"חתונה ממבט ראשון" בריטניה: שתי משתתפות טוענות שנאנסו בצילומים`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3839163
 
-### WARNING · takeaway_long · item 168
+### WARNING · takeaway_long · item 167
 - Takeaway length 105 > 95
 - Headline: `גווארדיולה צפוי לסיים עשור במנצ׳סטר סיטי`
 - Original: `דיווח דרמטי: פפ גווארדיולה יעזוב את מנצ'סטר סיטי, אנצו מארסקה יחליפו`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839155
 
-### WARNING · takeaway_long · item 169
+### WARNING · takeaway_long · item 168
 - Takeaway length 104 > 95
 - Headline: `רטנר ופיינגזיכט קיבלו אישור לשחק מול הפועל ת״א`
 - Original: `בשורה טובה למכבי חיפה: רטנר ופיינגזיכט שוחררו ויעמדו לרשות בכר`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3838949
 
-### WARNING · takeaway_long · item 170
+### WARNING · takeaway_long · item 169
 - Takeaway length 125 > 95
 - Headline: `תדהר יוצאת להנפקה גדולה בשוק נדל״ן לחוץ`
 - Original: `חברת הנדל"ן הפרטית הגדולה בישראל נחשפת. האם תקבל שווי של מעל 7 מיליארד שקל?`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543305#utm_source=RSS
 
-### WARNING · takeaway_long · item 171
+### WARNING · takeaway_long · item 170
 - Takeaway length 112 > 95
 - Headline: `מודריץ׳ נכלל בסגל קרואטיה למונדיאל חמישי`
 - Original: `בדרך להופעה ה-200 בנבחרת: מונדיאל חמישי ללוקה מודריץ'`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839049
 
-### WARNING · takeaway_long · item 172
+### WARNING · takeaway_long · item 171
 - Takeaway length 130 > 95
 - Headline: `ריינאייר מציעה לאו׳לירי עוד בונוס ענק במניות`
 - Original: `מנכ"ל חברת התעופה הפרובוקטיבי עשוי לקבל בונוס של 100 מיליון יורו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/aviation/article/20567101
 
-### WARNING · takeaway_long · item 173
+### WARNING · takeaway_long · item 172
 - Takeaway length 99 > 95
 - Headline: `תמונות ה-AI של טראמפ הפכו תעמולה למבוכה`
 - Original: `טראמפ שלף תמונת AI נגד איראן - והרשת מצאה את הפדיחות`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1322870
 
-### WARNING · headline_near_duplicate_summary · item 176
+### WARNING · headline_near_duplicate_summary · item 175
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `הזינוק במחירי האנרגיה גורר קנס ממוצע של 316 דולר לכל משק בית בארה"ב`
 - Original: `המחירים זינקו: כמה שילם כל אמריקאי בגלל המלחמה עם איראן?`
 - Source: וואלה כסף - כסף עולמי
 - URL: https://finance.walla.co.il/item/3838964
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 176
 - Takeaway length 105 > 95
 - Headline: `ליברה פתחה ביטוח רכב יומי גם לנהגים מעל גיל 24`
 - Original: `ביטוח רכב ב-24 שקל ליום גם לנהגים בוגרים: משתלם?`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/bjetzdujgg
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 97 > 95
 - Headline: `חתונמי פתחה עונה עם דגש על דמויות שמייצרות שואו`
 - Original: `נועה באה לחתונמי לתת שואו. תכף ייפול לה אסימון ותבוא התרסקות מפוארת`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3838914
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 182
 - Takeaway length 109 > 95
 - Headline: `החשש מאיראן גורם לישראלים לשריין חופשות מוקדם`
 - Original: `על רקע האיומים לחידוש התקיפה: "מזהים שינוי בהזמנות החופשה של הישראלים"`
 - Source: N12 - כלכלה וצרכנות
 - URL: https://www.mako.co.il/news-money/consumer/Article-d8620f85d473e91027.htm
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 183
 - Takeaway length 116 > 95
 - Headline: `פז תחלק קפה ומאפה ב־yellow כפיצוי על עישון בתחנות`
 - Original: `שוב קפה ומאפה חינם ב-yellow: האם הפעם ישתלטו על הבלגן?`
 - Source: ynet - כל ערוץ הצרכנות
 - URL: https://www.ynet.co.il/economy/article/sjrrtrvkze
 
-### WARNING · headline_near_duplicate_summary · item 191
+### WARNING · headline_near_duplicate_summary · item 190
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המדד רשם עלייה חדה, בעיקר בשל הזינוק במחירי האנרגיה והתייקרות חופשות`
 - Original: `מדד המחירים לצרכן זינק ב-1.2%, מחירי הדירות עלו`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3838349
 
-### WARNING · headline_near_duplicate_summary · item 192
+### WARNING · headline_near_duplicate_summary · item 191
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `מסמך פנימי, מאות תגובות ממנכ"לים וביקוש שיא לסניורים`
 - Original: `אקזיט מסוג אחר: כך הפכו 300 מפוטרים לסחורה הכי חמה בשוק ההייטק הישראלי`
