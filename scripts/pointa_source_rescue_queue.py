@@ -128,6 +128,29 @@ def stale_groups_from_auditor(path: Path) -> set[str]:
     return groups
 
 
+def freshness_sla_failing_from_auditor(path: Path) -> bool:
+    """Return true when the live feed itself is stale/thin, not just one source view.
+
+    This is intentionally separate from stale source-view prioritization.  The
+    2026-05-21 stuck-feed incident exposed a bad failure mode: when the auditor
+    reports both a top-feed freshness SLA error and stale source-view warnings,
+    the rescue queue can spend its first editor slots on old stale-source cards
+    instead of the newest candidates that would actually move the visible top
+    feed forward.  In that state, freshness must win; source-view repair still
+    matters, but it must not block the top-feed rescue lane.
+    """
+    if not path.exists():
+        return False
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return False
+    for issue in list(data.get("errors", [])) + list(data.get("warnings", [])):
+        if issue.get("code") in {"no_new_top_item_sla", "low_recent_top_volume", "low_recent_feed_volume"}:
+            return True
+    return False
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-age-min", type=int, default=180)
@@ -140,6 +163,7 @@ def main() -> int:
     now = datetime.now(TZ)
     cutoff = now - timedelta(minutes=args.max_age_min)
     stale_groups = stale_groups_from_auditor(Path(args.auditor))
+    freshness_sla_failing = freshness_sla_failing_from_auditor(Path(args.auditor))
     rows: list[dict[str, Any]] = []
 
     for source in update_feed.load_sources(args.sync_profile):
@@ -172,21 +196,39 @@ def main() -> int:
                     "deterministicContext": item["context"],
                     "deterministicTakeaway": item["takeaway"],
                     "qaErrors": errors,
-                    "priority": "high" if group in stale_groups else "normal",
+                    "priority": "freshness" if freshness_sla_failing else ("high" if group in stale_groups else "normal"),
                     "staleSourceView": group in stale_groups,
                     "recommendedAction": "send_to_full_editor_rescue_queue",
                 })
 
-    rows.sort(key=lambda r: (0 if r.get("priority") == "high" else 1, r.get("publishedAt") or ""), reverse=False)
-    high = sorted([r for r in rows if r.get("priority") == "high"], key=lambda r: r.get("publishedAt") or "", reverse=True)
-    normal = sorted([r for r in rows if r.get("priority") != "high"], key=lambda r: r.get("publishedAt") or "", reverse=True)
-    rows = high + normal
+    if freshness_sla_failing:
+        # Top-feed freshness incidents need the newest valid candidates first.
+        # Stale source-view rows remain present and marked, but do not consume
+        # the first rescue-editor batch ahead of newer cards that can make the
+        # app visibly fresh again.
+        rows = sorted(rows, key=lambda r: r.get("publishedAt") or "", reverse=True)
+    else:
+        high = sorted([r for r in rows if r.get("priority") == "high"], key=lambda r: r.get("publishedAt") or "", reverse=True)
+        normal = sorted([r for r in rows if r.get("priority") != "high"], key=lambda r: r.get("publishedAt") or "", reverse=True)
+        rows = high + normal
+
+    deduped: list[dict[str, Any]] = []
+    seen_urls: set[str] = set()
+    for row in rows:
+        url = row.get("sourceUrl") or ""
+        if url and url in seen_urls:
+            continue
+        if url:
+            seen_urls.add(url)
+        deduped.append(row)
+    rows = deduped
 
     report = {
         "name": "Pointa source rescue queue",
         "mode": "shadow-report-only",
         "checkedAt": now.isoformat(timespec="seconds"),
         "maxAgeMin": args.max_age_min,
+        "freshnessSlaFailing": freshness_sla_failing,
         "items": rows,
         "staleSourceGroups": sorted(stale_groups),
         "itemsNeedingRescueForStaleViews": sum(1 for r in rows if r.get("staleSourceView")),
@@ -194,12 +236,12 @@ def main() -> int:
             "total": len(rows),
             "bySource": {s: sum(1 for r in rows if r.get("sourceGroup") == s) for s in QUEUE_GROUPS},
         },
-        "note": "Report only. Does not modify feed.json or publish. Under Option 2, stale source view rows are prioritized for full-editor rescue while quality gates remain strict.",
+        "note": "Report only. Does not modify feed.json or publish. If the top-feed freshness SLA is failing, newest candidates are prioritized first; otherwise stale source-view rows are prioritized for full-editor rescue while quality gates remain strict.",
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"items": len(rows), "staleSourceGroups": sorted(stale_groups), "staleViewRescueItems": report["itemsNeedingRescueForStaleViews"], "out": str(out), "bySource": report["counts"]["bySource"]}, ensure_ascii=False))
+    print(json.dumps({"items": len(rows), "freshnessSlaFailing": freshness_sla_failing, "staleSourceGroups": sorted(stale_groups), "staleViewRescueItems": report["itemsNeedingRescueForStaleViews"], "out": str(out), "bySource": report["counts"]["bySource"]}, ensure_ascii=False))
     return 0
 
 
