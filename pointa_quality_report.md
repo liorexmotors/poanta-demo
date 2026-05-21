@@ -161,7 +161,7 @@ Warnings: 162
 ### WARNING · headline_near_duplicate_summary · item 27
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `איראן מקדמת עם עומאן מנגנון לגביית תשלום מכלי שיט במצר הורמוז`
-- Original: `דרך מצר הורמוז: איראן מצאה דרך חדשה לסחוט את העולם`
+- Original: `הקרב על הורמוז: איראן מצאה דרך חדשה לסחוט את העולם`
 - Source: מעריב - צבא וביטחון
 - URL: https://www.maariv.co.il/news/military/article-1324172
 
