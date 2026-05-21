@@ -2,19 +2,19 @@
 
 Items checked: 134
 Errors: 0
-Warnings: 96
+Warnings: 95
 
 ## Category distribution
 
 - ביטחון: 35
 - כלכלה: 24
-- ספורט: 20
+- ספורט: 22
 - פוליטיקה: 14
 - תרבות: 7
 - בריאות: 7
 - טכנולוגיה: 6
 - צרכנות: 6
-- רכב: 5
+- רכב: 3
 - משפט: 3
 - דעות: 3
 - פלילים: 2
@@ -23,10 +23,9 @@ Warnings: 96
 
 ## Issue counts
 
-- takeaway_long: 81
-- summary_long: 8
+- takeaway_long: 80
+- summary_long: 9
 - headline_near_duplicate_summary: 6
-- category_sport_source: 1
 
 ## Issues
 
@@ -51,15 +50,8 @@ Warnings: 96
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20592014
 
-### WARNING · takeaway_long · item 2
-- Takeaway length 103 > 95
-- Headline: `רז אדם נהרג בתאונה בכביש 90 בדרך לאירוע קבוצתי`
-- Original: `כדורסלן נבחרת ישראל רז אדם נהרג בתאונת דרכים`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/rji8vdo1fl
-
 ### WARNING · takeaway_long · item 3
-- Takeaway length 115 > 95
+- Takeaway length 97 > 95
 - Headline: `10 נפצעו בתאונת משאית ומיניבוס בכביש 7`
 - Original: `10 פצועים בתאונה בין משאית למיניבוס סמוך למחלף שורק`
 - Source: ynet - מבזקי החדשות
@@ -93,8 +85,15 @@ Warnings: 96
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hjeh6mskmx
 
+### WARNING · summary_long · item 8
+- Summary length 223 > 220
+- Headline: `ביוגרף פיליפ רות מגיע לירושלים עם מסר פוליטי־ספרותי`
+- Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
+- Source: וואלה תרבות
+- URL: https://e.walla.co.il/item/3838594
+
 ### WARNING · takeaway_long · item 8
-- Takeaway length 100 > 95
+- Takeaway length 98 > 95
 - Headline: `ביוגרף פיליפ רות מגיע לירושלים עם מסר פוליטי־ספרותי`
 - Original: `"היה לי חשוב לכתוב את הספר הזה בעידן של מנהיגים אנטי-אינטלקטואלים כמו טראמפ וביבי"`
 - Source: וואלה תרבות
@@ -108,14 +107,7 @@ Warnings: 96
 - URL: https://sports.walla.co.il/item/3839753
 
 ### WARNING · takeaway_long · item 10
-- Takeaway length 103 > 95
-- Headline: `רז אדם נהרג בתאונה בדרך לארוחת ערב קבוצתית`
-- Original: `טרגדיה: רז אדם, שחקן גליל עליון ונבחרת ישראל, נהרג בתאונה`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3839746
-
-### WARNING · category_sport_source · item 10
-- Sport source should usually be ספורט
+- Takeaway length 111 > 95
 - Headline: `רז אדם נהרג בתאונה בדרך לארוחת ערב קבוצתית`
 - Original: `טרגדיה: רז אדם, שחקן גליל עליון ונבחרת ישראל, נהרג בתאונה`
 - Source: וואלה ספורט - כדורסל
@@ -157,7 +149,7 @@ Warnings: 96
 - URL: https://sports.walla.co.il/item/3839739
 
 ### WARNING · takeaway_long · item 15
-- Takeaway length 108 > 95
+- Takeaway length 111 > 95
 - Headline: `נשף רוק של אביב גפן הוקדם ל־17 ביוני`
 - Original: `בגלל התנגשות עם אייל גולן ואושר כהן: אביב גפן מקדים ביום את "נשף רוק"`
 - Source: וואלה חדשות
@@ -206,7 +198,7 @@ Warnings: 96
 - URL: https://www.maariv.co.il/news/world/article-1323483
 
 ### WARNING · takeaway_long · item 25
-- Takeaway length 103 > 95
+- Takeaway length 108 > 95
 - Headline: `צעיר נהרג בתאונה בין שני רכבים בכביש 90`
 - Original: `הקטל בדרכים: צעיר בשנות ה-20 נהרג בסמוך לשדה אליעזר`
 - Source: וואלה חדשות
@@ -269,14 +261,14 @@ Warnings: 96
 - URL: https://www.theguardian.com/world/2026/may/20/mahmoud-ahmadinejad-the-us-and-israels-unlikely-choice-to-lead-iran
 
 ### WARNING · summary_long · item 34
-- Summary length 267 > 220
+- Summary length 248 > 220
 - Headline: `נשף רוק הוקדם בגלל שלוש הופעות ענק בגוש דן`
 - Original: `בגלל אייל גולן ואושר כהן: אביב גפן מקדים את נשף רוק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20590837
 
 ### WARNING · takeaway_long · item 34
-- Takeaway length 125 > 95
+- Takeaway length 123 > 95
 - Headline: `נשף רוק הוקדם בגלל שלוש הופעות ענק בגוש דן`
 - Original: `בגלל אייל גולן ואושר כהן: אביב גפן מקדים את נשף רוק`
 - Source: ישראל היום - כל הכתבות
@@ -332,8 +324,8 @@ Warnings: 96
 - URL: https://tech.walla.co.il/item/3839687
 
 ### WARNING · takeaway_long · item 43
-- Takeaway length 131 > 95
-- Headline: `התפרצות אבולה נדירה בקונגו ובאוגנדה גבתה 139 מתים חשודים`
+- Takeaway length 125 > 95
+- Headline: `התפרצות אבולה נדירה גבתה 139 מתים חשודים`
 - Original: `כבר 139 מתים בהתפרצות האבולה באפריקה: "המספר צפוי לעלות"`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://news.walla.co.il/item/3839711
