@@ -1940,6 +1940,11 @@ def refresh_item_pointa(item: dict) -> dict:
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
     category = str(item.get("category") or "חדשות")
+    is_gossip_source = any(x in source for x in ["סלבס", "TMI", "Pplus", "פנאי פלוס", "פפראצי", "פפארצי", "רכילות"])
+    if is_gossip_source:
+        item["category"] = "רכילות"
+        item["categoryClass"] = "real"
+        category = "רכילות"
     if 'יאיר גולן' in title and 'נתניהו כשיר' in title:
         item["headline"] = 'יאיר גולן תקף את כשירות נתניהו ואת פירוק מערכות האכיפה'
         item["context"] = 'יאיר גולן אמר שאינו בטוח שנתניהו כשיר פיזית וקוגניטיבית, וטען שהממשלה מרסקת את מערכות האכיפה במכוון.'

@@ -73,6 +73,9 @@ if before.exists() and feed_path.exists():
         feed_path.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
+# P0 guard: FAST is only successful if the candidate feed is visibly fresh.
+# Never record a publication event or return OK for a stale/thin feed.
+python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/fast_candidate_health_gate.json
 python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run-id "${POANTA_RUN_ID:-fast-sync}" || true
 python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true

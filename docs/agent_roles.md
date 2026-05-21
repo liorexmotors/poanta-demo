@@ -347,3 +347,22 @@
 - **העורך**: when editing opinion columns, extract the byline/columnist and write the card around the named opinion owner, not around “the column/writer”.
 - **השוער**: block cards that contain generic opinion mediation (`הטור`, `הכותבת טוענת`, `הכותב טוען`) when a byline is available.
 - **המבקר**: if user feedback flags a recurring opinion/source pattern, treat it as an editorial invariant failure and create a training/QA regression case.
+
+## P0 stuck-feed disaster invariant — 2026-05-21
+
+This incident class is defined as a project disaster: any agent reporting success while the visible Pointa feed has no fresh top cards for the active-news SLA.
+
+Mandatory code guard now shared by האספן, השוער, המבקר, and המתקן:
+
+- `scripts/pointa_publication_health_gate.py` is the hard outcome gate.
+- `FAST_SYNC_OK`, finalize success, deploy success, or `AUDITOR_OK` are forbidden unless the feed passes visible freshness/quantity checks, not just technical build/commit checks.
+- Publication events must not be recorded for stale/thin candidate feeds, because that fakes timing freshness.
+- Gossip/celebs cards from sources such as וואלה סלבס, TMI, Pplus, פנאי פלוס must be categorized as `רכילות` and must not publish without an article image.
+- Regression drill: `scripts/poanta_p0_stuck_feed_drill.py` must pass after changes touching sync/finalize/auditor/source/editor code.
+
+Owner failures if this recurs:
+
+- האספן failed if it says FAST success without actual fresh visible cards.
+- המתקן failed if rescue stalls at extraction/editor/apply without alternate adaptive path.
+- המבקר failed if it detects stale feed but does not trigger/continue deterministic repair.
+- השוער failed if it lets a stale/thin candidate or broken gossip card pass publication gates.

@@ -85,3 +85,15 @@ Lior selected Option 2 for stale source views:
 - Duplicate logic must consider semantic anchors: event, timing, affected place/group, named actors, and topic-specific signals.
 - Example regression fixed: Walla and Maariv both published the same Shavuot rain/wind forecast; only one card should remain.
 - המבקר owns live duplicate detection; האספן/update pipeline owns pre-publish dedupe; השוער must treat duplicate clusters as publish-quality warnings requiring repair.
+
+## P0 stuck-feed disaster rule — 2026-05-21
+
+A feed that technically updates but still shows no fresh top Pointa cards is a failed product state. It is not acceptable to report success based on cron status, git commit, `updatedAt`, or build success.
+
+Required guards:
+
+- Candidate feeds must pass `scripts/pointa_publication_health_gate.py --mode candidate` before publication events are recorded or deploy proceeds.
+- FAST sync must fail closed when the candidate feed remains stale/thin.
+- Finalizer/deploy must fail closed when editor output does not restore visible freshness.
+- `scripts/poanta_p0_stuck_feed_drill.py` is the regression test for this class.
+- Gossip/celebs cards are visual content; missing article images from gossip sources are Quality Gate errors, not cosmetic warnings.

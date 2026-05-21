@@ -32,6 +32,7 @@ DANGLING_ENDINGS = {
 GENERIC_HEADLINE_PATTERNS = [
     "במרכז הסיפור", "הידיעה חשובה", "הסיפור חשוב", "השאלה היא", "החשיבות היא",
     "מה מסתתר", "זה מה", "כל מה", "לא תאמינו", "סערה", "דרמה", "טירוף",
+    "מגייס פרעון", "מגייס פרשן פוליטי",
 ]
 GENERIC_SUMMARY_PATTERNS = [
     "פורסם", "דיווח", "המקור", "הכתב", "כתבה בנושא", "הידיעה חשובה בגלל",
@@ -83,7 +84,7 @@ GOLDEN_CASES = [
         "name": "Amos Luzon celebrity classification",
         "match_any": ["עמוס לוזון", "פער של 33 שנה"],
         "headline_contains": "פער הגילים הפך את הזוגיות של עמוס לוזון לכותרת סלבס",
-        "category": "תרבות",
+        "category": "רכילות",
     },
 ]
 
@@ -243,8 +244,13 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     if takeaway and headline and overlap_ratio(takeaway, headline) >= 0.72:
         add_issue(issues, "error", idx, "takeaway_duplicates_headline", "Takeaway repeats the headline instead of adding a point", item)
 
-    if any(x in source for x in ["סלבס", "TMI", "פפראצי", "פפארצי"]) and category != "רכילות":
+    is_gossip_source = any(x in source for x in ["סלבס", "TMI", "Pplus", "פנאי פלוס", "פפראצי", "פפארצי", "רכילות"])
+    if is_gossip_source and category != "רכילות":
         add_issue(issues, "error", idx, "category_celebs", "Celebs/gossip source must be רכילות", item)
+    if is_gossip_source and not str(item.get("imageUrl") or "").strip():
+        add_issue(issues, "error", idx, "gossip_missing_image", "Celebs/gossip cards must not publish without an article image", item)
+    if "וואלה סלבס" in source and any(x in visible_blob for x in ["פרעון פוליטי", "מגייס פרעון", "מגייס פרשן פוליטי"]):
+        add_issue(issues, "error", idx, "known_bad_gossip_headline", "Walla Celebs regression: bad/typo headline framing", item)
     if any(x in source for x in ["ספורט", "NBA", "כדורגל", "כדורסל"]) and category != "ספורט":
         add_issue(issues, "warning", idx, "category_sport_source", "Sport source should usually be ספורט", item)
 

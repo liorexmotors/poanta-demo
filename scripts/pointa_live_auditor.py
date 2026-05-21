@@ -114,6 +114,11 @@ def fetch_json(url: str) -> dict[str, Any]:
         return json.loads(resp.read().decode("utf-8"))
 
 
+def read_feed_file(path: str) -> dict[str, Any]:
+    """Read a local/candidate feed for pre-publish outcome checks."""
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
 def parse_dt(raw: str) -> datetime | None:
     if not raw:
         return None
@@ -498,6 +503,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Audit the public Poanta feed after publish")
     ap.add_argument("--url", default=LIVE_FEED_URL)
     ap.add_argument("--raw-url", default=RAW_GHPAGES_URL)
+    ap.add_argument("--feed-file", default="", help="Audit a local/candidate feed.json instead of fetching --url")
+    ap.add_argument("--raw-file", default="", help="Compare against a local raw feed file instead of --raw-url")
     ap.add_argument("--top", type=int, default=12)
     ap.add_argument("--max-update-age-min", type=int, default=25)
     ap.add_argument("--max-top-age-hours", type=int, default=2)
@@ -510,19 +517,25 @@ def main() -> int:
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
-    live = fetch_json(args.url)
+    live = read_feed_file(args.feed_file) if args.feed_file else fetch_json(args.url)
     raw = None
-    try:
-        raw = fetch_json(args.raw_url)
-    except Exception:
-        raw = None
+    if args.raw_file:
+        try:
+            raw = read_feed_file(args.raw_file)
+        except Exception:
+            raw = None
+    elif not args.feed_file:
+        try:
+            raw = fetch_json(args.raw_url)
+        except Exception:
+            raw = None
     findings = audit(live, raw, max_update_age_min=args.max_update_age_min, max_top_age_hours=args.max_top_age_hours, max_foreign_age_min=args.max_foreign_age_min, top_limit=args.top, recent_window_min=args.recent_window_min, min_recent_items=args.min_recent_items, min_recent_sources=args.min_recent_sources, no_new_warning_min=args.no_new_warning_min, no_new_error_min=args.no_new_error_min)
     errors = [f for f in findings if f.severity == "error"]
     warnings = [f for f in findings if f.severity == "warning"]
     result = {
         "status": "fail" if errors else "ok",
         "checkedAt": datetime.now(TZ).isoformat(timespec="seconds"),
-        "url": args.url,
+        "url": args.feed_file or args.url,
         "updatedAt": live.get("updatedAt"),
         "items": len(live.get("items") or []),
         "top": [
