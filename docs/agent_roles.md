@@ -366,3 +366,13 @@ Owner failures if this recurs:
 - המתקן failed if rescue stalls at extraction/editor/apply without alternate adaptive path.
 - המבקר failed if it detects stale feed but does not trigger/continue deterministic repair.
 - השוער failed if it lets a stale/thin candidate or broken gossip card pass publication gates.
+
+## Flow control split — 2026-05-21
+
+- **המעורר** reports the full control-room status every 10 minutes. It does not own long repairs.
+- **המתקן** repairs watchdog-detected flow failures. It reads `tmp/pointa_flow_watchdog_last.json`, runs deterministic repair/rescue under hard gates, and reports back only when the flow is fixed or when repair is blocked/in progress.
+- **עליזה** owns the whole system: if המעורר reports repeated failure or המתקן stalls, Aliza intervenes directly and strengthens the responsible agent/process.
+
+Cron jobs:
+- `Poanta המעורר flow watchdog every 10m` — status reporting.
+- `Poanta המתקן flow repair responder every 10m` — repair responder for watchdog failures.
