@@ -1932,8 +1932,34 @@ def parse_ims_city_forecast(xml_text: str) -> dict:
     m = re.search(r"טמפ\.\s*המינימום\s*בלילה:\s*(\d{1,2})°", desc)
     if m:
         night_min = m.group(1)
+    lines = [ln.strip() for ln in desc.splitlines() if ln.strip()]
+
+    # IMS city RSS exposes two shapes: a same-day block (condition + max/min)
+    # followed by the upcoming-days table, or only the table. Prefer the
+    # same-day block so the 06:00 weather card does not accidentally skip today
+    # just because the first dated row is tomorrow.
+    today_max = ""
+    m = re.search(r"טמפ\.\s*המקסימום\s*ביום:\s*(\d{1,2})°", desc)
+    if m:
+        today_max = m.group(1)
+    m = re.search(r"עדכון\s+אחרון:\s*(\d{4})-(\d{2})-(\d{2})", desc)
+    today_date = f"{m.group(3)}/{m.group(2)}" if m else ""
+    if today_max and night_min:
+        condition = ""
+        for line in lines:
+            if line.startswith("עדכון אחרון") or line.startswith("טמפ.") or "תחזית ל" in line:
+                continue
+            if "תחזית להיום" in line or "תחזית לימים" in line:
+                continue
+            condition = clean_text(line.split(",")[0]) if "," in line else clean_text(line)
+            if condition:
+                break
+        if condition:
+            city = title.replace("תחזית ל", "").strip() or WEATHER_DEFAULT_CITY
+            return {"city": city, "nightMin": night_min, "date": today_date, "condition": condition, "max": today_max, "min": night_min}
+
     forecast = None
-    for line in [ln.strip() for ln in desc.splitlines() if ln.strip()]:
+    for line in lines:
         m = re.match(r":?(\d{2}/\d{2})\s+יום\s+([^\n]+)", line)
         if m:
             forecast = {"date": m.group(1), "weekday": m.group(2).strip()}
