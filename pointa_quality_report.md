@@ -2,12 +2,12 @@
 
 Items checked: 185
 Errors: 0
-Warnings: 152
+Warnings: 154
 
 ## Category distribution
 
-- ביטחון: 61
-- ספורט: 50
+- ביטחון: 62
+- ספורט: 48
 - כלכלה: 18
 - טכנולוגיה: 11
 - תרבות: 10
@@ -16,16 +16,16 @@ Warnings: 152
 - פלילים: 6
 - בריאות: 3
 - נדל״ן: 3
+- משפט: 2
 - פוליטיקה: 2
 - רכילות: 2
-- משפט: 1
 - דעות: 1
 - צרכנות: 1
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 126
+- takeaway_long: 128
 - summary_long: 18
 - headline_near_duplicate_summary: 7
 - category_sport_source: 1
@@ -39,33 +39,40 @@ Warnings: 152
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839911
 
-### WARNING · takeaway_long · item 3
+### WARNING · takeaway_long · item 2
+- Takeaway length 96 > 95
+- Headline: `רוביו יעלה בנאט״ו את סירוב ספרד לבסיסים`
+- Original: `רוביו: "טראמפ מאוכזב ממדינות נאט"ו בעקבות המלחמה מול איראן"`
+- Source: מעריב - מבזקים
+- URL: https://www.maariv.co.il/breaking-news/article-1324202
+
+### WARNING · takeaway_long · item 4
 - Takeaway length 99 > 95
 - Headline: `הפערים בין איראן לארה״ב הצטמצמו אך אין עסקה`
 - Original: `יותר מ-500 מנהיגים יהודים בארה"ב בדרישה מהשגריר לייטר: "התנצל בפניי ארגון ג'יי סטריט"`
 - Source: וואלה חדשות - מבזקים
 - URL: https://news.walla.co.il/break/3839903
 
-### WARNING · takeaway_long · item 4
-- Takeaway length 97 > 95
-- Headline: `קריצ׳אק רוצה להמשיך בהפועל חיפה אך מחכה ליואב כץ`
+### WARNING · summary_long · item 5
+- Summary length 221 > 220
+- Headline: `ארה״ב מטילה סנקציות על מסייעי חיזבאללה בלבנון`
 - Original: `ממשל טראמפ בסנקציות נגד בכירים "המסייעים לחיזבאללה". ביניהם - שגריר איראן בלבנון`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839898
 
-### WARNING · takeaway_long · item 6
+### WARNING · takeaway_long · item 5
+- Takeaway length 101 > 95
+- Headline: `ארה״ב מטילה סנקציות על מסייעי חיזבאללה בלבנון`
+- Original: `ממשל טראמפ בסנקציות נגד בכירים "המסייעים לחיזבאללה". ביניהם - שגריר איראן בלבנון`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3839898
+
+### WARNING · takeaway_long · item 7
 - Takeaway length 103 > 95
 - Headline: `אוניון מכוונת למכור את חלאילי ביותר מ־25 מיליון יורו`
 - Original: `תג המחיר החדש של ענאן חלאילי - וההשוואה המחמיאה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839894
-
-### WARNING · takeaway_long · item 7
-- Takeaway length 109 > 95
-- Headline: `ארה״ב הטילה סנקציות על שגריר איראן בלבנון`
-- Original: `ממשל טראמפ בסנקציות נגד בכירים "המסייעים לחיזבאללה". ביניהם - שגריר איראן בלבנון`
-- Source: וואלה חדשות - מבזקים
-- URL: https://news.walla.co.il/break/3839901
 
 ### WARNING · takeaway_long · item 8
 - Takeaway length 106 > 95
@@ -73,6 +80,13 @@ Warnings: 152
 - Original: `יהיה חם: הכל לקראת פיינל פור היורוליג`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839893
+
+### WARNING · takeaway_long · item 9
+- Takeaway length 112 > 95
+- Headline: `בית משפט בארה״ב עצר סנקציות על בכירת או״ם`
+- Original: `U.N. Official Who Says U.S. Punished Her for Speech Wins a Round in Court`
+- Source: New York Times Middle East
+- URL: https://www.nytimes.com/2026/05/21/world/middleeast/sanctions-albanese-free-speech.html
 
 ### WARNING · takeaway_long · item 10
 - Takeaway length 109 > 95
@@ -123,16 +137,16 @@ Warnings: 152
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839885
 
-### WARNING · summary_long · item 23
-- Summary length 223 > 220
-- Headline: `סקר: רוב גדול בדמוקרטים מתנגד לסיוע צבאי לישראל`
-- Original: `Poll finds nearly three-quarters of Democratic voters oppose aid to Israel`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/5/21/poll-finds-nearly-three-quarters-of-democratic-voters-oppose-aid-to-israel?traffic_source=rss
+### WARNING · takeaway_long · item 21
+- Takeaway length 116 > 95
+- Headline: `מטולה חגגה 130 שנה סמוך למרחבים מוגנים`
+- Original: `130 שנה למטולה: חגיגות שבועות לצד מציאות של איום מתמשך`
+- Source: מעריב - חדשות
+- URL: https://www.maariv.co.il/news/israel/article-1324178
 
 ### WARNING · takeaway_long · item 23
-- Takeaway length 117 > 95
-- Headline: `סקר: רוב גדול בדמוקרטים מתנגד לסיוע צבאי לישראל`
+- Takeaway length 109 > 95
+- Headline: `רוב גדול מהדמוקרטים מתנגד לסיוע צבאי לישראל`
 - Original: `Poll finds nearly three-quarters of Democratic voters oppose aid to Israel`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/21/poll-finds-nearly-three-quarters-of-democratic-voters-oppose-aid-to-israel?traffic_source=rss
@@ -321,14 +335,14 @@ Warnings: 152
 
 ### WARNING · summary_long · item 61
 - Summary length 224 > 220
-- Headline: `בעלות הברית של ארה״ב עוקפות את הערוצים הרשמיים`
+- Headline: `בעלות הברית עוקפות את הדיפלומטיה הרשמית של ארה״ב`
 - Original: `הרטוריקה החריפה מעלה תהיות: האם טראמפ שוקל שימוש בנשק גרעיני?`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324125
 
 ### WARNING · takeaway_long · item 61
-- Takeaway length 111 > 95
-- Headline: `בעלות הברית של ארה״ב עוקפות את הערוצים הרשמיים`
+- Takeaway length 114 > 95
+- Headline: `בעלות הברית עוקפות את הדיפלומטיה הרשמית של ארה״ב`
 - Original: `הרטוריקה החריפה מעלה תהיות: האם טראמפ שוקל שימוש בנשק גרעיני?`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324125
