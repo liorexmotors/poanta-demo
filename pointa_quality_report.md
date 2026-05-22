@@ -2,21 +2,21 @@
 
 Items checked: 200
 Errors: 0
-Warnings: 159
+Warnings: 161
 
 ## Category distribution
 
 - ספורט: 72
-- ביטחון: 47
+- ביטחון: 46
 - כלכלה: 18
 - תרבות: 13
 - רכב: 12
 - טכנולוגיה: 11
 - בריאות: 6
 - חדשות: 5
+- פלילים: 4
 - דעות: 4
 - פוליטיקה: 3
-- פלילים: 3
 - משפט: 2
 - צרכנות: 2
 - מזג אוויר: 1
@@ -24,7 +24,7 @@ Warnings: 159
 
 ## Issue counts
 
-- takeaway_long: 138
+- takeaway_long: 140
 - summary_long: 14
 - headline_near_duplicate_summary: 5
 - category_sport_source: 2
@@ -59,23 +59,37 @@ Warnings: 159
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3840027
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 7
 - Takeaway length 103 > 95
 - Headline: `איראן דורשת הפסקת אש לפני שיחות הגרעין`
 - Original: `מאמץ אחרון לפני מלחמה? "המו"מ המייסר" - והנתון שממנו הבית הלבן "בפאניקה"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/byx3s7c1fe
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 10
 - Takeaway length 104 > 95
-- Headline: `טראמפ יישאר בבית הלבן במקום להגיע לחתונת בנו`
-- Original: `בצל המתיחות עם איראן - טראמפ ייעדר מחתונת בנו`
-- Source: וואלה חדשות - מבזקים
-- URL: https://news.walla.co.il/break/3840035
+- Headline: `ארה״ב הטילה סנקציות על תשעה לבנונים הקשורים לחיזבאללה`
+- Original: `What are the implications of US sanctions in Lebanon?`
+- Source: Al Jazeera RSS מסונן מזרח תיכון
+- URL: https://www.aljazeera.com/video/inside-story/2026/5/22/us-lebanon-sanctions-implications?traffic_source=rss
 
-### WARNING · summary_long · item 17
-- Summary length 222 > 220
-- Headline: `מחוקקים בניו יורק חידשו הצעה נגד מימון פעילות ביו״ש`
+### WARNING · takeaway_long · item 12
+- Takeaway length 107 > 95
+- Headline: `רוביו: פקיסטן נשארת ערוץ התיווך המרכזי מול איראן`
+- Original: `שר החוץ האמריקני רוביו: "פקיסטן ממשיכה להיות המתווכת המרכזית"`
+- Source: וואלה חדשות - מבזקים
+- URL: https://news.walla.co.il/break/3840019
+
+### WARNING · takeaway_long · item 13
+- Takeaway length 121 > 95
+- Headline: `פקיסטן וקטאר מאיצות תיווך להצלת הפסקת האש`
+- Original: `Regional Mediators Rush to Save U.S.-Iran Cease-Fire`
+- Source: New York Times Middle East
+- URL: https://www.nytimes.com/2026/05/22/world/middleeast/iran-ceasefire-us-qatar-pakistan.html
+
+### WARNING · takeaway_long · item 17
+- Takeaway length 107 > 95
+- Headline: `מחוקקים בניו יורק חידשו חוק נגד מימון פעילות ביו״ש`
 - Original: `סנקציות על יו"ש? החוק של ממדאני חוזר: "לא נממן פשעי מלחמה"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20597901
@@ -87,16 +101,16 @@ Warnings: 159
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3574676
 
-### WARNING · takeaway_long · item 21
-- Takeaway length 102 > 95
-- Headline: `התפטרות גבארד מטלטלת את צמרת המודיעין של טראמפ`
-- Original: `"מסיבה אישית ורפואית": הבכירה הנאמנה של דונלד טראמפ התפטרה`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/world/article-1324388
+### WARNING · summary_long · item 22
+- Summary length 229 > 220
+- Headline: `ישראל מקימה טריבונל צבאי לנאשמי 7 באוקטובר`
+- Original: `Israel’s October 7 tribunal: Show trial of Palestinians or justice?`
+- Source: Al Jazeera RSS מסונן מזרח תיכון
+- URL: https://www.aljazeera.com/news/2026/5/22/israel-october-7-tribunal-show-trial-palestinians?traffic_source=rss
 
 ### WARNING · takeaway_long · item 22
-- Takeaway length 116 > 95
-- Headline: `טריבונל 7 באוקטובר יקבל סמכות לעונש מוות`
+- Takeaway length 112 > 95
+- Headline: `ישראל מקימה טריבונל צבאי לנאשמי 7 באוקטובר`
 - Original: `Israel’s October 7 tribunal: Show trial of Palestinians or justice?`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/22/israel-october-7-tribunal-show-trial-palestinians?traffic_source=rss
@@ -116,29 +130,29 @@ Warnings: 159
 - URL: https://www.ynet.co.il/news/article/HJkavM0yMl
 
 ### WARNING · summary_long · item 25
-- Summary length 231 > 220
+- Summary length 223 > 220
 - Headline: `גבארד פורשת; סגנה ינהל זמנית את מודיעין ארה״ב`
 - Original: `טלטלה בממשל טראמפ: ראש המודיעין הלאומי של ארה"ב טולסי גבארד התפטרה`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840022
 
 ### WARNING · takeaway_long · item 25
-- Takeaway length 106 > 95
+- Takeaway length 96 > 95
 - Headline: `גבארד פורשת; סגנה ינהל זמנית את מודיעין ארה״ב`
 - Original: `טלטלה בממשל טראמפ: ראש המודיעין הלאומי של ארה"ב טולסי גבארד התפטרה`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840022
 
 ### WARNING · takeaway_long · item 26
-- Takeaway length 106 > 95
-- Headline: `ראש המודיעין של טראמפ פורשת אחרי מתיחות סביב איראן`
+- Takeaway length 115 > 95
+- Headline: `גבארד פורשת מהמודיעין אחרי מתיחות עם טראמפ`
 - Original: `דיווח: ראש המודיעין הלאומי האמריקני התפטרה מתפקידה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20597640
 
 ### WARNING · takeaway_long · item 27
-- Takeaway length 125 > 95
-- Headline: `בני זוג נמצאו ירויים ברכב באזור גזר`
+- Takeaway length 115 > 95
+- Headline: `גבר ואישה נמצאו ירויים ברכב ליד משמר איילון`
 - Original: `חשד לרצח והתאבדות במרכז: גבר ואישה נמצאו ירויים ברכבם`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/law/article-1324379
@@ -194,7 +208,7 @@ Warnings: 159
 
 ### WARNING · takeaway_long · item 35
 - Takeaway length 112 > 95
-- Headline: `הצעת חוק בניו יורק מכוונת למימון פעילות באיו״ש`
+- Headline: `בניו יורק מנסים לחסום מימון לפעילות באיו״ש`
 - Original: `מחוקקים בניו יורק הגישו הצעת חוק האוסרת להעביר כספים לפעילות באיו"ש`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skgnsgryme
@@ -263,8 +277,8 @@ Warnings: 159
 - URL: https://news.walla.co.il/item/3839966
 
 ### WARNING · takeaway_long · item 53
-- Takeaway length 105 > 95
-- Headline: `120 אלף טיילו בשמורות ובגנים הלאומיים בשבועות`
+- Takeaway length 130 > 95
+- Headline: `120 אלף מטיילים הגיעו לשמורות ולגנים בשבועות`
 - Original: `במהלך החג: כ-120 אלף מטיילים פקדו את שמורות הטבע והגנים הלאומיים`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skpuz101zx
@@ -438,8 +452,8 @@ Warnings: 159
 - URL: https://www.haaretz.co.il/sport/basketball/2026-05-22/ty-article-magazine/.premium/0000019e-4bd7-dc0d-a99e-cfff5a060000
 
 ### WARNING · takeaway_long · item 77
-- Takeaway length 118 > 95
-- Headline: `כתב אישום: עקיפה בכביש הובילה למארב בחתונה`
+- Takeaway length 122 > 95
+- Headline: `כתב אישום: עקיפה בכביש הובילה לתקיפה בחתונה`
 - Original: `עקף רכב בכביש - והותקף בגרזן וסכינים בחתונה: ארבעה בני משפחה נאשמים`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839953
@@ -452,8 +466,8 @@ Warnings: 159
 - URL: https://www.themarker.com/wallstreet/2026-05-22/ty-article/.premium/0000019e-4ecc-dc0d-a99e-ceec51140000
 
 ### WARNING · takeaway_long · item 79
-- Takeaway length 103 > 95
-- Headline: `מחקר: כך הפירמידה הגדולה בולמת רעידות`
+- Takeaway length 111 > 95
+- Headline: `מחקר: מבנה הפירמידה מסייע לה לבלום רעידות`
 - Original: `תגלית ארכיאולוגית מדהימה: זו הסיבה שהפירמידה הגדולה שרדה 4,600 שנה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/viral/article-1324308
