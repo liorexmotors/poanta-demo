@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v52-p0-image-gate';
+const CACHE_NAME = 'poanta-demo-v53-breaking-feed';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -20,7 +20,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(request));
     return;
   }
-  if (new URL(request.url).pathname.endsWith('/feed.json')) {
+  if (/\/(feed|breaking_feed)\.json$/.test(new URL(request.url).pathname)) {
     event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
