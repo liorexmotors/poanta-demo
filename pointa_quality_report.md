@@ -74,152 +74,152 @@ Warnings: 172
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/22/world/middleeast/iran-ceasefire-us-qatar-pakistan.html
 
-### WARNING · takeaway_long · item 7
-- Takeaway length 96 > 95
-- Headline: `שני הרוגים בתאונות בכביש 9 ובכביש 77`
-- Original: `שבוע מדמם בכבישים: אישה בת 51 ורוכב אופנוע בן כ-20 נהרגו היום בתאונות דרכים`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/israel/article-1324357
-
-### WARNING · summary_long · item 8
+### WARNING · summary_long · item 7
 - Summary length 239 > 220
 - Headline: `טראמפ ישלח 5,000 חיילים לפולין אחרי ביטול פריסה`
 - Original: `מסר מרגיע לאירופה: טראמפ ישלח 5,000 חיילים נוספים לפולין`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3839995
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 7
 - Takeaway length 119 > 95
 - Headline: `טראמפ ישלח 5,000 חיילים לפולין אחרי ביטול פריסה`
 - Original: `מסר מרגיע לאירופה: טראמפ ישלח 5,000 חיילים נוספים לפולין`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3839995
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 8
 - Takeaway length 121 > 95
 - Headline: `ארה״ב לוחצת על נאט״ו לסייע מול איראן והורמוז`
 - Original: `Marco Rubio: Trump ‘disappointment’ with Nato will be discussed at summit`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/22/marco-rubio-trump-disappointment-with-nato-will-be-discussed-at-summit
 
-### WARNING · summary_long · item 10
+### WARNING · summary_long · item 9
 - Summary length 229 > 220
 - Headline: `הצעת חוק בניו יורק מכוונת למימון פעילות באיו״ש`
 - Original: `מחוקקים בניו יורק הגישו הצעת חוק האוסרת להעביר כספים לפעילות באיו"ש`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skgnsgryme
 
-### WARNING · takeaway_long · item 10
+### WARNING · takeaway_long · item 9
 - Takeaway length 116 > 95
 - Headline: `הצעת חוק בניו יורק מכוונת למימון פעילות באיו״ש`
 - Original: `מחוקקים בניו יורק הגישו הצעת חוק האוסרת להעביר כספים לפעילות באיו"ש`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skgnsgryme
 
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 11
 - Takeaway length 111 > 95
 - Headline: `טראמפ מציג את התקיפה באיראן כמנוף להסכם`
 - Original: `טראמפ: "איראן מתה להגיע להסכם, פגענו בהם חזק"`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/hkghaxajze
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 12
 - Takeaway length 103 > 95
 - Headline: `קוז׳וך ישמור כוחות מול חיפה לפני גמר הגביע`
 - Original: `רן קוז'וך: "הגמר מתחיל בשבת. חשוב שנבין את הרגע שעומד לבוא"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839997
 
-### WARNING · summary_long · item 14
+### WARNING · summary_long · item 13
 - Summary length 246 > 220
 - Headline: `המשחקים המשופרים יפתחו תחרות עם שימוש מפוקח בחומרים`
 - Original: `תשנה את הספורט העולמי? התחרות בה רצוי להשתמש בסמים יוצאת לדרך`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/other-sports/article/20597139
 
-### WARNING · headline_near_duplicate_summary · item 15
+### WARNING · headline_near_duplicate_summary · item 14
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `רוכב אופנוע כבן 20 נהרג בתאונה בכביש 77 סמוך לטוראען לאחר שנמצא בשול`
 - Original: `לאחר פעולות החייאה בשטח: נקבע מותו של גבר בן כ-20 שנפגע בתאונת אופנוע בכביש 77`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1324366
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 14
 - Takeaway length 108 > 95
 - Headline: `רוכב אופנוע כבן 20 נהרג בתאונה בכביש 77 סמוך לטוראען לאחר שנמצא בשול`
 - Original: `לאחר פעולות החייאה בשטח: נקבע מותו של גבר בן כ-20 שנפגע בתאונת אופנוע בכביש 77`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1324366
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 15
 - Takeaway length 109 > 95
 - Headline: `עיראק הופכת מעומק איראני למרחב לחץ נגדי`
 - Original: `עיראק כבר לא של איראן: הסהר השיעי נסדק`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3839978
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 16
 - Takeaway length 129 > 95
 - Headline: `קטאר נכנסה למגעים על פתיחת מצר הורמוז`
 - Original: `Qatar sends mediators to Tehran in sign talks to reopen strait of Hormuz are reaching climax`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/22/uranium-strait-of-hormuz-us-iran-war-talks-pakistan
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 17
 - Takeaway length 115 > 95
 - Headline: `צבא בריטניה מחזיק מלאי רחפנים שיספיק רק לכמה ימי לחימה`
 - Original: `המעצמה באירופה חוששת: הצבא עלול לקרוס תוך ימים מול פלישה רוסית`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324364
 
-### WARNING · summary_long · item 20
+### WARNING · summary_long · item 19
 - Summary length 255 > 220
 - Headline: `פעילי המשט טוענים להתעללות במעצר בישראל`
 - Original: `Gaza flotilla activists allege sexual assault and rape in Israeli detention`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/22/gaza-flotilla-activists-allege-sexual-assault-and-in-israeli-detention
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 19
 - Takeaway length 116 > 95
 - Headline: `פעילי המשט טוענים להתעללות במעצר בישראל`
 - Original: `Gaza flotilla activists allege sexual assault and rape in Israeli detention`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/22/gaza-flotilla-activists-allege-sexual-assault-and-in-israeli-detention
 
-### WARNING · summary_long · item 21
+### WARNING · summary_long · item 20
 - Summary length 225 > 220
 - Headline: `צרפת שוקלת להצטרף לפרויקט טילי העומק של בריטניה וגרמניה`
 - Original: `צרפת מצטרפת למהלך הדרמטי: טילים שיוכלו לפגוע בלב רוסיה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324362
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 20
 - Takeaway length 122 > 95
 - Headline: `צרפת שוקלת להצטרף לפרויקט טילי העומק של בריטניה וגרמניה`
 - Original: `צרפת מצטרפת למהלך הדרמטי: טילים שיוכלו לפגוע בלב רוסיה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1324362
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 21
 - Takeaway length 100 > 95
 - Headline: `נטע לביא חזר להרכב ומצ׳ידה סיימה שלישית במזרח`
 - Original: `נטע לביא חזר להרכב מצ'ידה זלביה וניצח במחזור הסיום`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839987
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 23
 - Takeaway length 103 > 95
 - Headline: `לואיס אנריקה רומז שיפרוש מאימון סביב גיל 60`
 - Original: `פ.ס.ז' תהיה קבוצתו האחרונה? לואיס אנריקה: "לא אסיים כזקן נרגן"`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839991
 
-### WARNING · takeaway_long · item 27
+### WARNING · takeaway_long · item 26
 - Takeaway length 112 > 95
 - Headline: `דור פרץ יפתח כדי לזכות במלכות השערים`
 - Original: `קודם מלכות שערים, בהמשך גמר וחוזה חדש: הימים הגורליים של דור פרץ`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839989
+
+### WARNING · takeaway_long · item 27
+- Takeaway length 96 > 95
+- Headline: `שני הרוגים בתאונות בכביש 9 ובכביש 77`
+- Original: `שבוע מדמם בכבישים: אישה בת 51 ורוכב אופנוע בן כ-20 נהרגו היום בתאונות דרכים`
+- Source: מעריב - חדשות
+- URL: https://www.maariv.co.il/news/israel/article-1324357
 
 ### WARNING · takeaway_long · item 28
 - Takeaway length 119 > 95
