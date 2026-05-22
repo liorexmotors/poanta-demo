@@ -102,18 +102,18 @@ Warnings: 159
 - URL: https://www.aljazeera.com/news/2026/5/22/israel-october-7-tribunal-show-trial-palestinians?traffic_source=rss
 
 ### WARNING · takeaway_long · item 23
-- Takeaway length 104 > 95
-- Headline: `טליה חיה טימסית מתה אחרי תאונת האוטובוס בת״א`
-- Original: `נקבע מותה של טליה חיה בת ה-11 שנפגעה בתאונת האוטובוס בתל אביב`
-- Source: ynet - מבזקי החדשות
-- URL: https://www.ynet.co.il/news/article/HJkavM0yMl
-
-### WARNING · takeaway_long · item 24
 - Takeaway length 118 > 95
 - Headline: `חסידה פעיל, חלוצת תיאטרון הבובות, מתה בגיל 96`
 - Original: `לוחמת פלמ"ח ובובנאית חלוצה: חסידה פעיל הלכה לעולמה בגיל 96`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3840010
+
+### WARNING · takeaway_long · item 24
+- Takeaway length 104 > 95
+- Headline: `טליה חיה טימסית מתה אחרי תאונת האוטובוס בת״א`
+- Original: `נקבע מותה של טליה חיה בת ה-11 שנפגעה בתאונת האוטובוס בתל אביב`
+- Source: ynet - מבזקי החדשות
+- URL: https://www.ynet.co.il/news/article/HJkavM0yMl
 
 ### WARNING · summary_long · item 25
 - Summary length 231 > 220
