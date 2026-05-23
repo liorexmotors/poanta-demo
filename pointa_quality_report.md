@@ -24,68 +24,68 @@ Warnings: 156
 
 ## Issue counts
 
-- takeaway_long: 138
+- takeaway_long: 137
 - summary_long: 12
-- headline_near_duplicate_summary: 4
+- headline_near_duplicate_summary: 5
 - category_sport_source: 2
 
 ## Issues
 
-### WARNING · takeaway_long · item 1
+### WARNING · headline_near_duplicate_summary · item 0
+- Headline is a clipped/near-duplicate version of the summary
+- Headline: `ראש צבא פקיסטן, אסים מוניר, הגיע לטהרן במסגרת מאמצי התיווך`
+- Original: `ראש צוות המו"מ של איראן: "כוחותינו השתקמו, אם תחודש המלחמה - ההשלכות יהיו מרות יותר"`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3840102
+
+### WARNING · takeaway_long · item 2
 - Takeaway length 118 > 95
 - Headline: `גיא מלמד מתקרב לעונה שביעית כמלך שערי קבוצתו`
 - Original: `היציע לא עצר אותו: האם גיא מלמד ישמור על הרצף הנדיר?`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840108
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 3
 - Takeaway length 135 > 95
 - Headline: `מכבי תל אביב זכתה באליפות הנוער אחרי שמונה שנים`
 - Original: `אחרי שמונה שנים: מכבי תל אביב אלופת המדינה לנוער`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840090
 
-### WARNING · takeaway_long · item 3
+### WARNING · takeaway_long · item 4
 - Takeaway length 118 > 95
 - Headline: `קינגס קאנגווה נבחר לשחקן העונה בליגת העל`
 - Original: `רשמית: קינגס קאנגווה נבחר לשחקן העונה של מנהלת הליגות`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840103
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 5
 - Takeaway length 129 > 95
 - Headline: `23 ישראלים חולצו משכם אחרי שנכנסו לשטח A`
 - Original: `23 ישראלים חולצו ממרכז העיר שכם: "הגיעו לארוחה בביתו של פלסטיני תושב העיר"`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3840106
 
-### WARNING · takeaway_long · item 6
+### WARNING · takeaway_long · item 7
 - Takeaway length 109 > 95
 - Headline: `טי ג׳יי שורטס בדרך להפועל תל אביב`
 - Original: `דיווח: טי ג'יי שורטס סיכם בהפועל תל אביב לעונה הבאה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840093
 
-### WARNING · takeaway_long · item 7
+### WARNING · takeaway_long · item 8
 - Takeaway length 106 > 95
 - Headline: `כללי NCAA חדשים מסבכים מעברי שחקנים מאירופה`
 - Original: `דיווח דרמטי בארה"ב: המעברים של מדר וסנטוס למכללות בספק`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840092
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 9
 - Takeaway length 96 > 95
 - Headline: `23 ישראלים חירשים נכנסו לשכם והועברו למשטרה`
 - Original: `"הוזמנו לארוחה": 23 חירשים ישראלים נתפסו בלב שכם`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/syl1xmklml
-
-### WARNING · takeaway_long · item 10
-- Takeaway length 109 > 95
-- Headline: `פקיסטן מתווכת, איראן מאותתת שלא תיסוג במו״מ`
-- Original: `ראש צוות המו"מ של איראן: "כוחותינו השתקמו, אם תחודש המלחמה - ההשלכות יהיו מרות יותר"`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3840102
 
 ### WARNING · takeaway_long · item 13
 - Takeaway length 125 > 95
