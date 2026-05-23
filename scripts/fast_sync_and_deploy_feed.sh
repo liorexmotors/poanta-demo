@@ -38,6 +38,10 @@ export GIT_TERMINAL_PROMPT=0
 
 if [[ -f feed.json ]]; then cp feed.json /tmp/poanta-fast-sync-before.json; fi
 python3 scripts/update_feed.py --sync-profile fast
+# Keep the separate breaking-news rail fresh as part of the same FAST cadence.
+# It is not covered by update_feed.py, so without this it can silently go stale
+# while the main feed keeps publishing.
+python3 scripts/update_breaking_feed.py
 python3 - <<'PY'
 import json
 from datetime import datetime, timezone, timedelta
@@ -81,10 +85,10 @@ python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
 
-if ! git diff --quiet -- feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; then
+if ! git diff --quiet -- feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git commit -m "Auto-refresh Poanta FAST feed"
   git push origin main
 fi
@@ -93,11 +97,12 @@ git fetch origin gh-pages
 rm -rf "$WORKTREE"
 git worktree add "$WORKTREE" origin/gh-pages
 cp feed.json "$WORKTREE/feed.json"
+cp breaking_feed.json "$WORKTREE/breaking_feed.json"
 cd "$WORKTREE"
-if ! git diff --quiet -- feed.json; then
+if ! git diff --quiet -- feed.json breaking_feed.json; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json
+  git add feed.json breaking_feed.json
   git commit -m "Deploy refreshed Poanta FAST feed"
   git push origin HEAD:gh-pages
 fi
