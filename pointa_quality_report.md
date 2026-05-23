@@ -2,7 +2,7 @@
 
 Items checked: 196
 Errors: 0
-Warnings: 155
+Warnings: 163
 
 ## Category distribution
 
@@ -25,180 +25,229 @@ Warnings: 155
 
 ## Issue counts
 
-- takeaway_long: 138
-- summary_long: 13
+- takeaway_long: 143
+- summary_long: 16
 - category_sport_source: 2
 - headline_near_duplicate_summary: 2
 
 ## Issues
 
-### WARNING · takeaway_long · item 0
-- Takeaway length 136 > 95
-- Headline: `אוקלהומה עלתה ל-1:2, וומבניאמה לקח אחריות`
-- Original: `וומבניאמה מתוסכל: "מתקשה להפוך את החברים שלי לטובים יותר"`
-- Source: וואלה ספורט - NBA
-- URL: https://sports.walla.co.il/item/3840066
-
-### WARNING · takeaway_long · item 3
-- Takeaway length 101 > 95
-- Headline: `82 נהרגו בפיצוץ גז במכרה פחם בצפון סין`
+### WARNING · takeaway_long · item 2
+- Takeaway length 112 > 95
+- Headline: `82 נהרגו בפיצוץ במכרה פחם בצפון סין`
 - Original: `מספר ההרוגים ממשיך לזנק: כ-90 בני אדם נספו כתוצאה מפיצוץ גז במכרה פחם בסין`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840073
 
-### WARNING · takeaway_long · item 6
-- Takeaway length 114 > 95
-- Headline: `ישראל נדחקה ממגעי ארה״ב-איראן`
+### WARNING · takeaway_long · item 3
+- Takeaway length 138 > 95
+- Headline: `בית משפט בטורקיה הדיח את מנהיג האופוזיציה`
+- Original: `ארדואן מהדק שליטה: מנהיג האופוזיציה הודח, אוניברסיטה ליברלית נסגרה`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3840068
+
+### WARNING · takeaway_long · item 4
+- Takeaway length 131 > 95
+- Headline: `פעילי המשט לעזה טוענים שהותקפו במעצר בישראל`
+- Original: `Gaza flotilla activists allege abuse by Israeli forces while detained`
+- Source: BBC World
+- URL: https://www.bbc.com/news/articles/cglp5z63k9no?at_medium=RSS&at_campaign=rss
+
+### WARNING · takeaway_long · item 5
+- Takeaway length 119 > 95
+- Headline: `ישראל כמעט לא מעורבת במגעי טראמפ עם איראן`
 - Original: `ניו יורק טיימס: "ישראל נדחקה מהשיחות, מתעדכנת דרך מדינות זרות"`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skodj1kxge
 
-### WARNING · takeaway_long · item 7
-- Takeaway length 119 > 95
-- Headline: `תאורת רחוב גורמת לכדרוריות להסתחרר למלכודת קטלנית`
+### WARNING · takeaway_long · item 6
+- Takeaway length 115 > 95
+- Headline: `תאורת רחוב לוכדת כדרוריות בתנועה מעגלית`
 - Original: `השפעתה הקטלנית של תאורת הרחוב על ה"אורי-כדורי"`
 - Source: ynet - בעלי חיים
 - URL: https://www.ynet.co.il/environment-science/article/hkt00gqfyfx
 
-### WARNING · takeaway_long · item 8
-- Takeaway length 125 > 95
-- Headline: `צה״ל מתקרב לחידוש התמרון בדרום לבנון`
+### WARNING · summary_long · item 7
+- Summary length 221 > 220
+- Headline: `צה״ל קרוב לחידוש התמרון בדרום לבנון`
 - Original: `הסרת החסינות מביירות תלויה בטהרן: נקודת התורפה של צה"ל בלבנון`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3840040
 
-### WARNING · takeaway_long · item 9
-- Takeaway length 138 > 95
-- Headline: `תחקיר טוען: 51 מדינות המשיכו לחמש את ישראל במלחמה`
+### WARNING · takeaway_long · item 7
+- Takeaway length 125 > 95
+- Headline: `צה״ל קרוב לחידוש התמרון בדרום לבנון`
+- Original: `הסרת החסינות מביירות תלויה בטהרן: נקודת התורפה של צה"ל בלבנון`
+- Source: וואלה חדשות - צבא וביטחון
+- URL: https://news.walla.co.il/item/3840040
+
+### WARNING · takeaway_long · item 8
+- Takeaway length 116 > 95
+- Headline: `51 מדינות סיפקו ציוד צבאי לישראל במלחמה`
 - Original: `Not just the US: India to Brazil, 51 nations armed Israel amid Gaza war`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/longform/2026/5/23/not-just-the-us-india-to-brazil-51-nations-armed-israel-amid-gaza-war?traffic_source=rss
 
-### WARNING · takeaway_long · item 10
-- Takeaway length 107 > 95
-- Headline: `איראן מנסה לגבות תשלום על מעבר במצר הורמוז`
-- Original: `The Risks of Iran’s Threat to Control the Strait of Hormuz`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/2026/05/23/business/iran-toll-strait-hormuz.html
-
-### WARNING · takeaway_long · item 11
-- Takeaway length 110 > 95
-- Headline: `ספסל אוקלהומה שבר שיא והעלה אותה ל-1:2 במערב`
-- Original: `מהפך ושיא מהספסל: אוקלהומה סיטי עלתה ל-1:2 בגמר המערב`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3840060
-
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 9
 - Takeaway length 122 > 95
 - Headline: `ישראל נדחקה משיחות ארה״ב-איראן ומלקטת מידע מבחוץ`
 - Original: `גורמי ביטחון: "ישראל נדחקה מהשיחות, מתעדכנת דרך מדינות זרות"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/syx9g001fg
 
-### WARNING · summary_long · item 13
+### WARNING · summary_long · item 10
 - Summary length 223 > 220
 - Headline: `צה״ל בכוננות מחשש שטראמפ יתקוף באיראן בקרוב`
 - Original: `כוננות עליונה בצה"ל: חוששים שטראמפ יתקוף באיראן בזמן הקרוב`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543714#utm_source=RSS
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 10
 - Takeaway length 130 > 95
 - Headline: `צה״ל בכוננות מחשש שטראמפ יתקוף באיראן בקרוב`
 - Original: `כוננות עליונה בצה"ל: חוששים שטראמפ יתקוף באיראן בזמן הקרוב`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543714#utm_source=RSS
 
-### WARNING · takeaway_long · item 15
-- Takeaway length 98 > 95
-- Headline: `איראן מצננת ציפיות להסכם מהיר עם ארה״ב`
+### WARNING · takeaway_long · item 11
+- Takeaway length 118 > 95
+- Headline: `90 נהרגו בפיצוץ במכרה פחם בסין`
+- Original: `אסון בסין: לפחות 90 הרוגים בפיצוץ גז במכרה`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/world-news/article/20598655
+
+### WARNING · takeaway_long · item 12
+- Takeaway length 114 > 95
+- Headline: `איראן מצננת ציפיות להסכם בזמן שפקיסטן מגבירה תיווך`
 - Original: `Iran war day 85: Tehran says major gaps remain in US talks`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/23/iran-war-day-85-tehran-says-major-gaps-remain-in-us-talks?traffic_source=rss
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 13
 - Takeaway length 96 > 95
-- Headline: `חילוץ נמשך אחרי פיצוץ קטלני במכרה בסין`
+- Headline: `90 נהרגו בפיצוץ גז במכרה פחם בסין`
 - Original: `אסון במכרה פחם בצפון סין: 90 בני אדם נהרגו בעקבות פיצוץ גז`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543716#utm_source=RSS
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 14
 - Takeaway length 109 > 95
 - Headline: `מקסיקו ניצחה את גאנה בהכנה למונדיאל`
 - Original: `חדשות ספורט, 23 במאי`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/hayom/2026-05-23/ty-article-live/0000019e-537d-df61-a3ff-d3ff54ec0000
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 15
 - Takeaway length 119 > 95
 - Headline: `ה-FDA אישר טיפול ראשון להפטיטיס D`
 - Original: `לראשונה: ה-FDA אישר תרופה נגד הפטיטיס D - דלקת כבד שגורמת לסרטן`
 - Source: ynet - כל ערוץ הבריאות
 - URL: https://www.ynet.co.il/health/article/sk5dw201mx
 
-### WARNING · takeaway_long · item 19
-- Takeaway length 99 > 95
-- Headline: `יישובי הצפון דורשים ציוד נגד רחפני חיזבאללה`
+### WARNING · summary_long · item 16
+- Summary length 228 > 220
+- Headline: `יישובי הצפון דורשים מצה״ל מענה לרחפני סיב אופטי`
 - Original: `ראשי רשויות בצפון דורשים מצה"ל ציוד מתקדם נגד איום הרחפנים`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3840058
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 16
+- Takeaway length 108 > 95
+- Headline: `יישובי הצפון דורשים מצה״ל מענה לרחפני סיב אופטי`
+- Original: `ראשי רשויות בצפון דורשים מצה"ל ציוד מתקדם נגד איום הרחפנים`
+- Source: וואלה חדשות - צבא וביטחון
+- URL: https://news.walla.co.il/item/3840058
+
+### WARNING · takeaway_long · item 17
 - Takeaway length 96 > 95
 - Headline: `פוקס בוחנת פרסומות בהפסקות השתייה במונדיאל`
 - Original: `רשת הטלוויזיה פוקס בדיונים על השימוש בהפסקות השתייה במונדיאל לפרסומות`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-05-23/ty-article/.premium/0000019e-5361-d637-a99f-77fb3d240000
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 18
 - Takeaway length 119 > 95
 - Headline: `פוקס ופיפ״א בוחנות פרסומות בהפסקות שתייה במונדיאל`
 - Original: `רשת הטלוויזיה פוקס בדיונים על השימוש בהפסקות השתייה במונדיאל לפרסומות`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-05-23/ty-article/0000019e-5361-d637-a99f-77fb3d240000
 
-### WARNING · takeaway_long · item 22
-- Takeaway length 103 > 95
-- Headline: `עשרה רחפני נפץ שוגרו לצפון למרות הפסקת האש`
-- Original: `ישראל תקפה בלבנון, רחפנים התפוצצו באזור הגבול: "אש בלי הפסקה"`
+### WARNING · takeaway_long · item 19
+- Takeaway length 107 > 95
+- Headline: `וומבניאמה לקח אחריות אחרי הפסד סן אנטוניו`
+- Original: `וומבניאמה מתוסכל: "מתקשה להפוך את החברים שלי לטובים יותר"`
+- Source: וואלה ספורט - NBA
+- URL: https://sports.walla.co.il/item/3840066
+
+### WARNING · takeaway_long · item 20
+- Takeaway length 115 > 95
+- Headline: `ספסל אוקלהומה שבר שיא והעלה אותה ל-1:2`
+- Original: `מהפך ושיא מהספסל: אוקלהומה סיטי עלתה ל-1:2 בגמר המערב`
+- Source: וואלה ספורט - NBA
+- URL: https://sports.walla.co.il/item/3840060
+
+### WARNING · takeaway_long · item 21
+- Takeaway length 105 > 95
+- Headline: `כ-10 רחפני נפץ שוגרו לגליל למרות הפסקת האש`
+- Original: `רחפנים התפוצצו באזור הגבול: "אש בלי הפסקה"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/r13ranajfl
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 25
 - Takeaway length 106 > 95
 - Headline: `ישראל נדחקה משיחות ההפוגה בין ארה״ב לאיראן`
 - Original: `Once Trump’s Co-Pilot Against Iran, Netanyahu Is Now a Mere Passenger`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/23/world/middleeast/israel-trump-iran.html
 
-### WARNING · takeaway_long · item 29
+### WARNING · takeaway_long · item 28
 - Takeaway length 116 > 95
 - Headline: `המונדיאל מכר כרטיסים, אבל מלונות בארה״ב נותרו ריקים`
 - Original: `5 מיליון כרטיסים נמכרו למונדיאל - אבל המלונות עדיין ריקים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/tourism-news/article/20597763
 
-### WARNING · takeaway_long · item 30
-- Takeaway length 109 > 95
-- Headline: `איפא״ק עוברת למאבקי פריימריז יקרים בארה״ב`
+### WARNING · takeaway_long · item 29
+- Takeaway length 98 > 95
+- Headline: `איפא״ק יוצאת למלחמת פריימריז על התמיכה בישראל`
 - Original: `משבר ענק - ומאבק: איפא"ק מסירה את הכפפות לקראת בחירות האמצע בארה"ב`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rjjkhxjyfe
 
-### WARNING · summary_long · item 31
+### WARNING · summary_long · item 30
 - Summary length 252 > 220
 - Headline: `מאמן לשעבר של מקגרגור שיתף סרטון אנטישמי קיצוני`
 - Original: `"פתרון סופי ליהודים": מאמנו לשעבר של קונור מקגרגור - והסערה האנטישמית`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/sk11a1n0jzx
 
-### WARNING · takeaway_long · item 31
+### WARNING · takeaway_long · item 30
 - Takeaway length 96 > 95
 - Headline: `מאמן לשעבר של מקגרגור שיתף סרטון אנטישמי קיצוני`
 - Original: `"פתרון סופי ליהודים": מאמנו לשעבר של קונור מקגרגור - והסערה האנטישמית`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/sk11a1n0jzx
+
+### WARNING · takeaway_long · item 31
+- Takeaway length 102 > 95
+- Headline: `יותר מ־1.6 מיליון עולי רגל הגיעו לסעודיה לחג׳`
+- Original: `Over 1.6 million pilgrims arrive in Saudi Arabia for hajj pilgrimage`
+- Source: Al Jazeera RSS מסונן מזרח תיכון
+- URL: https://www.aljazeera.com/video/newsfeed/2026/5/23/over-1-6-million-pilgrims-arrive-in-saudi-arabia-for-hajj-pilgrimage?traffic_source=rss
+
+### WARNING · summary_long · item 32
+- Summary length 237 > 220
+- Headline: `איראן מנסה לגבות אגרה על מעבר בהורמוז`
+- Original: `The Risks of Iran’s Threat to Control the Strait of Hormuz`
+- Source: New York Times Middle East
+- URL: https://www.nytimes.com/2026/05/23/business/iran-toll-strait-hormuz.html
+
+### WARNING · takeaway_long · item 32
+- Takeaway length 120 > 95
+- Headline: `איראן מנסה לגבות אגרה על מעבר בהורמוז`
+- Original: `The Risks of Iran’s Threat to Control the Strait of Hormuz`
+- Source: New York Times Middle East
+- URL: https://www.nytimes.com/2026/05/23/business/iran-toll-strait-hormuz.html
 
 ### WARNING · takeaway_long · item 33
 - Takeaway length 104 > 95
@@ -349,6 +398,13 @@ Warnings: 155
 
 ### WARNING · summary_long · item 61
 - Summary length 222 > 220
+- Headline: `מחוקקים בניו יורק חידשו הצעה נגד מימון ביו״ש`
+- Original: `סנקציות על יו"ש? החוק של ממדאני חוזר: "לא נממן פשעי מלחמה"`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/world-news/usa/article/20597901
+
+### WARNING · takeaway_long · item 61
+- Takeaway length 96 > 95
 - Headline: `מחוקקים בניו יורק חידשו הצעה נגד מימון ביו״ש`
 - Original: `סנקציות על יו"ש? החוק של ממדאני חוזר: "לא נממן פשעי מלחמה"`
 - Source: ישראל היום - כל הכתבות
