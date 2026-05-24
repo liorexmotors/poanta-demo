@@ -75,7 +75,42 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
     all_input = make_editor_input(candidates, min_article_chars)
     usable = [x for x in all_input if x.get("articleTextChars", 0) >= min_article_chars]
     thin = [x for x in all_input if x.get("articleTextChars", 0) < min_article_chars]
-    selected = (usable + thin)[:limit]
+    def group_key(item: dict[str, Any]) -> str:
+        rescue = item.get("rescue") or {}
+        row = rescue.get("sourceQueueRow") or {}
+        return (item.get("sourceGroup") or row.get("sourceGroup") or item.get("source") or "").strip()
+
+    # Stuck-feed rescue is judged by visible freshness *and* source diversity.
+    # A recurring failure mode was queue order: one very chatty publisher
+    # (usually Walla) filled the first editor batch, so the final feed still
+    # failed the recent-source SLA even after good editing.  Keep quality strict,
+    # but select usable article-text rows with a soft per-source cap first, then
+    # fill remaining slots.  This makes the rescue batch capable of satisfying
+    # the publication health gate without lowering editorial standards.
+    per_group_cap = max(2, limit // 6)
+    selected: list[dict[str, Any]] = []
+    selected_ids: set[int] = set()
+    group_counts: dict[str, int] = {}
+
+    def consider(rows: list[dict[str, Any]], *, enforce_cap: bool) -> None:
+        for item in rows:
+            if len(selected) >= limit:
+                return
+            ident = id(item)
+            if ident in selected_ids:
+                continue
+            key = group_key(item)
+            if enforce_cap and group_counts.get(key, 0) >= per_group_cap:
+                continue
+            selected.append(item)
+            selected_ids.add(ident)
+            group_counts[key] = group_counts.get(key, 0) + 1
+
+    consider(usable, enforce_cap=True)
+    consider(usable, enforce_cap=False)
+    consider(thin, enforce_cap=True)
+    consider(thin, enforce_cap=False)
+    selected = selected[:limit]
     for new_index, item in enumerate(selected):
         item["index"] = new_index
     stats = {
@@ -84,8 +119,10 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
         "thinConsidered": len(thin),
         "selectedUsable": sum(1 for x in selected if x.get("articleTextChars", 0) >= min_article_chars),
         "selectedThin": sum(1 for x in selected if x.get("articleTextChars", 0) < min_article_chars),
+        "selectedSourceGroups": sorted({group_key(x) for x in selected}),
+        "perSourceGroupSoftCap": per_group_cap,
         "oversampleFactor": oversample_factor,
-        "selectionMode": "adaptive_extract_then_select",
+        "selectionMode": "adaptive_extract_then_select_diverse_sources_first",
     }
     return selected, stats
 
