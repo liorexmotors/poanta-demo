@@ -60,7 +60,7 @@ export default function App() {
   return <SafeAreaView style={styles.safe}>
     <StatusBar style="light" />
     <View style={styles.header}>
-      <View style={styles.brand}><LogoMark /><Text style={styles.logoText}>Pointa</Text></View>
+      <View style={styles.brand}><LogoMark /><Text style={styles.logoText}>Poenta</Text></View>
       <View style={styles.badge}><Text style={styles.badgeText}>MVP</Text></View>
     </View>
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
