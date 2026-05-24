@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v62-prefs-scroll-state-fix';
+const CACHE_NAME = 'poenta-v63-branding-logo';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
