@@ -122,6 +122,7 @@ def load_sources(sync_profile: str = "all") -> list[dict]:
                 "language": src.get("language", "he"),
                 "profile": src.get("profile"),
                 "syncProfile": src.get("syncProfile"),
+                "telegramKind": src.get("telegramKind"),
             }
             source["syncProfile"] = source_sync_profile(source, profiles)
             if sync_profile != "all" and source["syncProfile"] != sync_profile:
@@ -263,6 +264,57 @@ def parse_feed_datetime(raw: str) -> str:
         dt = now
     return dt.isoformat(timespec='seconds')
 
+def source_timing_key(source: str) -> str:
+    s = str(source or "")
+    low = s.lower()
+    if "דובר צה" in s or "צה״ל" in s or "צה\"ל" in s:
+        return "דובר צה״ל"
+    if "משטרת ישראל" in s or "דוברות משטרת" in s or "israel police" in low:
+        return "דוברות משטרת ישראל"
+    if "cnn" in low:
+        return "CNN"
+    if "bbc" in low:
+        return "BBC"
+    if "sky news" in low or "sky" in low:
+        return "Sky News"
+    if "reuters" in low:
+        return "Reuters"
+    if low == "ap" or "ap middle east" in low or "associated press" in low:
+        return "AP"
+    if "guardian" in low:
+        return "Guardian"
+    if "new york times" in low or "nyt" in low:
+        return "NYT"
+    if "axios" in low:
+        return "Axios"
+    if "politico" in low:
+        return "Politico"
+    if "bloomberg" in low:
+        return "Bloomberg"
+    if "al jazeera" in low:
+        return "Al Jazeera"
+    if "jerusalem post" in low or "jpost" in low:
+        return "Jerusalem Post"
+    if "מטאורולוג" in s or "ims" in low:
+        return "השירות המטאורולוגי"
+    if "וואלה" in s or "walla" in low:
+        return "וואלה"
+    if "ynet" in low:
+        return "ynet"
+    if "גלובס" in s:
+        return "גלובס"
+    if "הארץ" in s or "haaretz" in low:
+        return "הארץ"
+    if "ישראל היום" in s:
+        return "ישראל היום"
+    if "מעריב" in s or "maariv" in low:
+        return "מעריב"
+    if "דה מרקר" in s or "TheMarker" in s or "themarker" in low:
+        return "דה מרקר"
+    if "N12" in s or "mako" in low:
+        return "N12"
+    return s.split(" - ")[0].strip() or "מקור"
+
 def source_logo(source: str) -> str:
     s = source.lower()
     if "דובר צה" in source or "צה״ל" in source:
@@ -295,6 +347,8 @@ def source_logo(source: str) -> str:
         return "Bloomberg"
     if "al jazeera" in s:
         return "Al Jazeera"
+    if "jerusalem post" in s or "jpost" in s:
+        return "The Jerusalem Post"
     if "n12" in s or "mako" in s:
         return "N12"
     if "כאן" in source or "kan" in s:
@@ -410,6 +464,49 @@ def image_from_rss_item(item: ET.Element, link: str, raw_desc: str) -> str:
         return urljoin(link, url)
     return ""
 
+
+
+def parse_maariv_jina_rss(markdown: str, source: dict) -> list[Candidate]:
+    """Recover official Maariv RSS through Jina Reader when Cloudflare blocks direct XML.
+
+    Jina preserves the official RSS item order, links, images, descriptions, and
+    pubDate lines as markdown.  Use it only as a read-through fallback for the
+    same approved maariv.co.il/rss/* endpoints; do not broaden source scope.
+    """
+    out: list[Candidate] = []
+    blocks = re.split(r"(?m)^### \[", markdown or "")
+    for block in blocks[1:]:
+        block = "[" + block
+        m = re.match(r"\[(.*?)\]\((https?://www\.maariv\.co\.il/[^)]+)\)", block, flags=re.S)
+        if not m:
+            continue
+        title = sanitize_title(m.group(1))
+        link = clean_text(m.group(2))
+        img_m = re.search(r"!\[[^\]]*\]\((https?://[^)]+)\)", block)
+        image = clean_text(img_m.group(1)) if img_m else ""
+        date_m = re.search(r"(?m)^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+\d{1,2}\s+\w+\s+\d{4}\s+\d{2}:\d{2}:\d{2}\s+GMT\s*$", block)
+        published_at = parse_feed_datetime(date_m.group(0)) if date_m else ""
+        before_date = block[:date_m.start()] if date_m else block
+        paras = []
+        for line in before_date.splitlines()[1:]:
+            line = line.strip()
+            if not line or line.startswith("![") or line.startswith("[") or line.startswith("http"):
+                continue
+            paras.append(line)
+        desc = clean_text(" ".join(paras))
+        if len(title) < 18 or not link:
+            continue
+        score = score_title(title + " " + desc)
+        if score <= 0:
+            continue
+        out.append(Candidate(source=source["name"], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
+    return sorted(out, key=lambda c: (c.published_at or "", c.score), reverse=True)[:12]
+
+def fetch_maariv_jina_rss(rss_url: str) -> str:
+    normalized = re.sub(r"^https?://", "", rss_url or "")
+    jina_url = "https://r.jina.ai/http://" + normalized
+    return fetch(jina_url, timeout=25)
+
 def extract_rss(source: dict) -> list[Candidate]:
     rss_url = source.get("rss")
     if not rss_url:
@@ -423,6 +520,12 @@ def extract_rss(source: dict) -> list[Candidate]:
             raw = re.sub(r"&(?!#\d+;|#x[0-9A-Fa-f]+;|[A-Za-z][A-Za-z0-9]+;)", "&amp;", raw)
         root = ET.fromstring(raw)
     except Exception as e:
+        if "maariv.co.il/rss/" in rss_url:
+            try:
+                return parse_maariv_jina_rss(fetch_maariv_jina_rss(rss_url), source)
+            except Exception as fallback_exc:
+                print(f"WARN rss fetch failed {source['name']}: {e}; maariv jina fallback failed: {fallback_exc}", file=sys.stderr)
+                return []
         print(f"WARN rss fetch failed {source['name']}: {e}", file=sys.stderr)
         return []
     out = []
@@ -2243,6 +2346,63 @@ def item_datetime(item: dict, fallback: datetime) -> datetime:
             pass
     return fallback
 
+def source_diversity_group(item: dict) -> str:
+    """Canonical group used for visible top-feed diversity.
+
+    The feed can receive many equally fresh cards from one RSS family in a
+    single run (especially Walla/JPost). Without a small deterministic
+    interleave the top slice looks stuck even when the underlying sync is
+    healthy. Keep this grouping intentionally coarse and product-facing.
+    """
+    raw = str(item.get("sourceLogo") or item.get("source") or "")
+    low = raw.lower()
+    if "וואלה" in raw or "walla" in low:
+        return "וואלה"
+    if "jerusalem post" in low or "jpost" in low:
+        return "The Jerusalem Post"
+    if "ynet" in low:
+        return "ynet"
+    if "ישראל היום" in raw or "israel hayom" in low:
+        return "ישראל היום"
+    if "הארץ" in raw or "haaretz" in low:
+        return "הארץ"
+    if "גלובס" in raw or "globes" in low:
+        return "גלובס"
+    if "guardian" in low:
+        return "Guardian"
+    if "משטרת ישראל" in raw or "משטרה" in raw or "israel police" in low:
+        return "משטרה"
+    return raw or str(item.get("source") or "מקור")
+
+def diversify_visible_top(items: list[dict], *, top_limit: int = 12, max_per_group: int = 5) -> list[dict]:
+    """Reorder only the leading slice so the app opens on multiple sources.
+
+    This preserves every card and its real source timestamp; it only prevents
+    one dominant RSS family from occupying nearly all of the first screen.
+    """
+    if len(items) <= top_limit:
+        return items
+    chosen: list[dict] = []
+    deferred: list[dict] = []
+    counts: dict[str, int] = {}
+    for item in items:
+        group = source_diversity_group(item)
+        if len(chosen) < top_limit and counts.get(group, 0) < max_per_group:
+            chosen.append(item)
+            counts[group] = counts.get(group, 0) + 1
+        else:
+            deferred.append(item)
+    if len(chosen) < top_limit:
+        need = top_limit - len(chosen)
+        chosen.extend(deferred[:need])
+        deferred = deferred[need:]
+    return chosen + deferred
+
+def assign_display_rank(items: list[dict]) -> list[dict]:
+    for idx, item in enumerate(items):
+        item["displayRank"] = idx
+    return items
+
 def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -> dict:
     tz = timezone(timedelta(hours=3))
     now = datetime.now(tz)
@@ -2284,11 +2444,38 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
                     item["imageUrl"] = image
             merged.append(item)
             seen_keys.add(key)
+    # Source timing diagnostics must outlive a single sync profile. Fast runs
+    # should refresh fast sources without erasing medium/slow source activity
+    # collected by the last all/medium/slow run. Otherwise the dashboard marks
+    # sources as missing even though the current cron simply did not scan them.
+    merged_activity = {}
+    for feed in [json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"sourceActivity": []}, new_feed]:
+        for row in feed.get("sourceActivity", []) or []:
+            key = (row.get("source") or "", row.get("subSource") or "")
+            if not key[0]:
+                continue
+            old = merged_activity.get(key)
+            if not old or (row.get("publishedAt") or "") > (old.get("publishedAt") or ""):
+                merged_activity[key] = row
+    if merged_activity:
+        new_feed["sourceActivity"] = sorted(merged_activity.values(), key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
+
     weather_card = build_daily_weather_card(now, force=force_weather_card)
     if weather_card:
         weather_key = feed_item_key(weather_card)
         merged = [item for item in merged if feed_item_key(item) != weather_key]
         merged.append(weather_card)
+        activity = new_feed.setdefault("sourceActivity", [])
+        activity = [row for row in activity if row.get("source") != "השירות המטאורולוגי"]
+        activity.append({
+            "source": "השירות המטאורולוגי",
+            "subSource": WEATHER_SOURCE,
+            "category": "מזג אוויר",
+            "publishedAt": weather_card.get("publishedAt"),
+            "title": weather_card.get("headline") or weather_card.get("originalTitle") or "תחזית השירות המטאורולוגי",
+            "url": weather_card.get("sourceUrl") or WEATHER_CITY_RSS,
+        })
+        new_feed["sourceActivity"] = sorted(activity, key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
     # Final deterministic pass catches retained existing cards and new bridge
     # sources that should not go through generic Pointa rewrites.
     merged = [refresh_item_pointa(item) for item in merged]
@@ -2308,7 +2495,7 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
         if sig:
             final_seen_signatures.add(sig)
         deduped.append(item)
-    merged = deduped
+    merged = assign_display_rank(diversify_visible_top(deduped))
     new_feed["items"] = merged[:MAX_FEED_ITEMS]
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed
@@ -2352,6 +2539,7 @@ def main() -> int:
         write_empty_draft("generating", "Draft generation in progress; do not send this file.")
 
     selected: list[Candidate] = []
+    source_activity: list[dict] = []
     used_urls: set[str] = set()
     seen = load_seen()
     sources = load_sources(args.sync_profile)
@@ -2374,19 +2562,33 @@ def main() -> int:
         # red even when the source had newer RSS items. Keep recency primary for
         # every profile; score is only the tie-breaker.
         candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
-        for c in candidates:
-            if c.url in used_urls:
-                continue
-            c.original_title = c.original_title or c.title
-            c.title = sanitize_title(c.title)
+        valid_for_activity = []
+        for raw_c in candidates:
+            title = sanitize_title(raw_c.title)
             if (
                 source.get("language") == "en"
                 and source.get("categoryHint") != "רכילות"
-                and not is_foreign_relevant(c.original_title or c.title, c.description)
+                and not is_foreign_relevant(raw_c.original_title or raw_c.title, raw_c.description)
             ):
                 continue
-            if len(c.title) < 18 or bad_description(c.description):
+            if len(title) < 18 or bad_description(raw_c.description):
                 continue
+            valid_for_activity.append((raw_c, title))
+        if valid_for_activity:
+            activity_c, activity_title = valid_for_activity[0]
+            source_activity.append({
+                "source": source_timing_key(source.get("logo") or source.get("name") or activity_c.source),
+                "subSource": source.get("name") or activity_c.source,
+                "category": source.get("categoryHint") or "חדשות",
+                "publishedAt": activity_c.published_at,
+                "title": activity_title,
+                "url": activity_c.url,
+            })
+        for c, sanitized_title in valid_for_activity:
+            if c.url in used_urls:
+                continue
+            c.original_title = c.original_title or c.title
+            c.title = sanitized_title
             if args.draft and candidate_seen(c, seen):
                 continue
             picked.append(c)
@@ -2417,6 +2619,7 @@ def main() -> int:
         return 2
 
     feed = build_feed(selected, experimental=args.experimental_prompt)
+    feed["sourceActivity"] = sorted(source_activity, key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
     feed["syncProfile"] = args.sync_profile
     if args.draft:
         feed["status"] = "draft"
