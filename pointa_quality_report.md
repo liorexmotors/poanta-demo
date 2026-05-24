@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 199
 Errors: 0
-Warnings: 134
+Warnings: 132
 
 ## Category distribution
 
-- ביטחון: 43
+- ביטחון: 42
 - ספורט: 33
 - כלכלה: 25
 - אקטואליה בעולם: 22
@@ -26,8 +26,8 @@ Warnings: 134
 
 ## Issue counts
 
-- takeaway_long: 115
-- summary_long: 19
+- takeaway_long: 114
+- summary_long: 18
 
 ## Issues
 
@@ -941,28 +941,14 @@ Warnings: 134
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/health/article/20602508
 
-### WARNING · summary_long · item 195
-- Summary length 224 > 220
-- Headline: `טראמפ: הסכם עם איראן כמעט סגור ויפתח את הורמוז`
-- Original: `Trump says Iran deal 'largely negotiated' including reopening Strait of Hormuz`
-- Source: BBC World
-- URL: https://www.bbc.com/news/articles/crmp121z3z8o?at_medium=RSS&at_campaign=rss
-
 ### WARNING · takeaway_long · item 195
-- Takeaway length 106 > 95
-- Headline: `טראמפ: הסכם עם איראן כמעט סגור ויפתח את הורמוז`
-- Original: `Trump says Iran deal 'largely negotiated' including reopening Strait of Hormuz`
-- Source: BBC World
-- URL: https://www.bbc.com/news/articles/crmp121z3z8o?at_medium=RSS&at_campaign=rss
-
-### WARNING · takeaway_long · item 196
 - Takeaway length 101 > 95
 - Headline: `ג׳ירונה ומאיורקה ירדו, חטאפה לקונפרנס ליג`
 - Original: `הכרעות בספרד: ג'ירונה ומאיורקה ירדו ליגה, חטאפה באירופה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839905
 
-### WARNING · takeaway_long · item 199
+### WARNING · takeaway_long · item 198
 - Takeaway length 101 > 95
 - Headline: `הקריפטו נפל בגלל איראן, אבל שורי הביטקוין עדיין מהמרים על זינוק`
 - Original: `אפקט מטורף: המתיחות מול איראן ריסקה את המטבע הפופולרי`
