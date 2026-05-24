@@ -334,28 +334,41 @@ function fetchBreakingFeed(force=false){ if(force)submitUsageEvent('refresh_brea
 function setupPullToRefresh(){
   const el=document.getElementById('pullRefresh');
   const txt=document.getElementById('pullRefreshText');
-  if(!el||!txt||!window.PointerEvent)return;
+  if(!el||!txt)return;
   let startY=0,pulling=false,ready=false,refreshing=false,lastY=0;
-  const threshold=78;
-  const canStart=ev=>ev.pointerType!=='mouse' && window.scrollY<=0 && !ev.target.closest('button,a,input,select,textarea,.source-list,.tabs');
+  const threshold=72;
+  const topOffset=()=>Math.max(window.scrollY||0, document.documentElement.scrollTop||0, document.body.scrollTop||0);
+  const ignoredTarget=target=>target.closest('button,a,input,select,textarea,.source-list,.tabs,.nav');
   const reset=()=>{ pulling=false; ready=false; startY=0; lastY=0; el.classList.remove('visible','ready','refreshing'); txt.textContent='משוך לרענון'; };
-  window.addEventListener('pointerdown',ev=>{ if(refreshing||!canStart(ev))return; startY=ev.clientY; pulling=true; ready=false; },{passive:true});
-  window.addEventListener('pointermove',ev=>{
+  const start=y=>{ if(refreshing||topOffset()>2)return false; startY=y; pulling=true; ready=false; return true; };
+  const move=(y,ev)=>{
     if(!pulling||refreshing)return;
-    lastY=Math.max(0,ev.clientY-startY);
-    if(lastY<10)return;
+    if(topOffset()>2){ reset(); return; }
+    lastY=Math.max(0,y-startY);
+    if(lastY<8)return;
+    if(ev&&ev.cancelable) ev.preventDefault();
     ready=lastY>=threshold;
-    el.classList.toggle('visible',true);
+    el.classList.add('visible');
     el.classList.toggle('ready',ready);
+    el.style.transform=`translate(-50%,${Math.min(lastY*.28,26)}px) scale(${ready?1:.98})`;
     txt.textContent=ready?'שחרר לרענון':'משוך לרענון';
-  },{passive:true});
-  window.addEventListener('pointerup',()=>{
+  };
+  const end=()=>{
     if(!pulling||refreshing)return;
     if(!ready){ reset(); return; }
-    pulling=false; refreshing=true; el.classList.add('visible','refreshing'); el.classList.remove('ready'); txt.textContent='מרענן…';
-    refreshCurrentFeed(true).finally(()=>{ refreshing=false; setTimeout(reset,220); });
-  },{passive:true});
-  window.addEventListener('pointercancel',()=>{ if(!refreshing) reset(); },{passive:true});
+    pulling=false; refreshing=true; el.style.transform='translate(-50%,0) scale(1)'; el.classList.add('visible','refreshing'); el.classList.remove('ready'); txt.textContent='מרענן…';
+    refreshCurrentFeed(true).finally(()=>{ refreshing=false; el.style.transform=''; setTimeout(reset,220); });
+  };
+  window.addEventListener('touchstart',ev=>{ const t=ev.touches&&ev.touches[0]; if(!t||ignoredTarget(ev.target))return; start(t.clientY); },{passive:true});
+  window.addEventListener('touchmove',ev=>{ const t=ev.touches&&ev.touches[0]; if(t)move(t.clientY,ev); },{passive:false});
+  window.addEventListener('touchend',end,{passive:true});
+  window.addEventListener('touchcancel',()=>{ if(!refreshing) reset(); },{passive:true});
+  if(window.PointerEvent){
+    window.addEventListener('pointerdown',ev=>{ if(ev.pointerType==='mouse'||ignoredTarget(ev.target))return; start(ev.clientY); },{passive:true});
+    window.addEventListener('pointermove',ev=>{ if(ev.pointerType!=='mouse')move(ev.clientY,ev); },{passive:false});
+    window.addEventListener('pointerup',ev=>{ if(ev.pointerType!=='mouse')end(); },{passive:true});
+    window.addEventListener('pointercancel',()=>{ if(!refreshing) reset(); },{passive:true});
+  }
 }
 try{ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change',()=>{ if(userPrefs.appearance==='system') applyAppearance(); }); }catch{}
 submitUsageEvent('page_view');

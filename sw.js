@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v54-pull-refresh';
+const CACHE_NAME = 'poanta-demo-v55-touch-pull-refresh';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
