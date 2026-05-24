@@ -145,6 +145,7 @@ IMPORTANT_WORDS = [
 ]
 CATEGORY_RULES = [
     # Order matters: prefer specific practical topics over broad local/world buckets.
+    ("אקטואליה בעולם", "security", ["קובה", "סנקציות", "רוסיה", "אוקראינה", "פקיסטן", "הודו", "סין", "טייוואן", "אירופה", "אירופי", "נאטו", "ארה\"ב", "ארצות הברית", "ממשל טראמפ", "white house", "sanctions", "cuba", "ukraine", "russia", "china", "taiwan", "pakistan", "india"]),
     ("משפט", "security", ["בגץ", "בג\"ץ", "בית המשפט", "עליון", "שופט", "שופטים", "יועמ\"ש", "פרקליטות", "כתב אישום", "עתירה", "חוק", "חקיקה", "משפטי", "legal", "court", "supreme court", "trial"]),
     ("פלילים", "security", ["רצח", "ירי", "דקירה", "חשד", "נעצר", "מעצר", "משטרה", "חקירה", "עבריין", "פשע", "פלילי", "סמים", "אלימות", "אונס", "crime", "police", "shooting", "murder", "arrest"]),
     ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "פוטין", "קרמלין", "התנקשות", "ביון", "צבא", "טרור", "war", "iran", "russia", "ukraine", "gaza", "israel", "military", "terror"]),
@@ -446,7 +447,7 @@ def extract_rss(source: dict) -> list[Candidate]:
         if score <= 0:
             continue
         out.append(Candidate(source=source['name'], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
-    return sorted(out, key=lambda c: c.score, reverse=True)[:12]
+    return sorted(out, key=lambda c: (c.published_at or '', c.score), reverse=True)[:12]
 
 
 def telegram_text_from_block(block: str) -> str:
@@ -701,6 +702,11 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         if fp:
             return fp[3], fp[4]
         return categorize(text)
+    if any(x in source for x in ["חדשות בעולם", "World", "Middle East", "Al Jazeera", "Guardian", "Reuters", "AP", "Axios", "Politico", "Bloomberg", "New York Times", "NYT"]):
+        cat, cls = categorize(text)
+        if cat in {"חדשות", "פוליטיקה", "ביטחון"}:
+            return "אקטואליה בעולם", "security"
+        return cat, cls
     if any(x in source for x in ["דעות", "פרשנויות"]):
         return "דעות", "security"
     cat, cls = categorize(title)
@@ -1435,8 +1441,10 @@ def specific_takeaway(title: str, desc: str) -> str:
         return 'בעומס תוכן, הסינון עצמו חשוב כמעט כמו הסדרה.'
     if any(x in text for x in ['עשיתי כל מה שאני יכולה', 'עזרה כלכלית', 'מפרץ האהבה']):
         return 'חשיפה טלוויזיונית לא מבטיחה יציבות אחרי שהמצלמות כבות.'
+    if any(x in text for x in ['טייוואן', 'חבילת נשק', 'עסקת ענק']) and any(x in text for x in ['איראן', 'המלחמה']):
+        return 'עצירת עסקת הנשק לטייוואן מראה שהמלחמה באיראן מתחילה לשנות גם סדרי עדיפויות באסיה.'
     if 'מלחמה עם איראן' in text or 'אין מלחמה עם איראן' in text:
-        return 'אי־ודאות ביטחונית שוחקת את הציבור גם בלי הכרזה רשמית.'
+        return 'הפער בין ניסוחים רשמיים למציאות בשטח מקשה על הציבור להבין לאן המשבר מול איראן הולך.'
     if any(x in text for x in ['מט גאלה', 'פטמות', 'נשף']):
         return 'אופנה על השטיח האדום מוכרת דימוי לפני שהיא מוכרת בגד.'
     if is_stolen_idf_weapon_restaurant_story(title, desc):

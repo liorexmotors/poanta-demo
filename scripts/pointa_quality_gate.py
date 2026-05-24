@@ -249,6 +249,17 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "category_celebs", "Celebs/gossip source must be רכילות", item)
     if is_gossip_source and not str(item.get("imageUrl") or "").strip():
         add_issue(issues, "error", idx, "gossip_missing_image", "Celebs/gossip cards must not publish without an article image", item)
+    if category == "משפט":
+        legal_terms = ["בית משפט", "בגץ", "בג\"ץ", "עליון", "שופט", "פרקליטות", "כתב אישום", "עתירה", "תביעה", "פסק דין", "הרשעה", "אישום"]
+        sanctions_policy_terms = ["סנקציות", "קובה", "ממשל טראמפ", "ממשל", "מדינה", "מדיני", "פוליטי", "משלחת"]
+        if any(x in visible_blob + " | " + original + " | " + source_url for x in sanctions_policy_terms) and not any(x in visible_blob + " | " + original for x in legal_terms):
+            add_issue(issues, "error", idx, "category_law_without_legal_proceeding", "Do not classify sanctions/diplomatic-policy stories as משפט unless there is a concrete court/indictment/legal-proceeding angle", item)
+    world_current_terms = ["סנקציות", "קובה", "ממשל טראמפ", "הבית הלבן", "ארה\"ב", "ארצות הברית", "רוסיה", "אוקראינה", "סין", "טייוואן", "נאטו"]
+    is_world_current_story = any(x in visible_blob + " | " + original + " | " + source_url for x in world_current_terms) or "/news/world/" in source_url
+    if is_world_current_story and category in {"משפט", "פוליטיקה"}:
+        local_or_legal_terms = ["ישראל", "הכנסת", "ממשלה", "בגץ", "בג\"ץ", "בית משפט", "כתב אישום", "עתירה", "תביעה", "פסק דין"]
+        if not any(x in visible_blob + " | " + original for x in local_or_legal_terms):
+            add_issue(issues, "error", idx, "category_world_current_affairs", "Global sanctions/diplomacy/current-affairs stories should be אקטואליה בעולם, not משפט/פוליטיקה, unless the Israeli/local/legal angle is concrete", item)
     if "וואלה סלבס" in source and any(x in visible_blob for x in ["פרעון פוליטי", "מגייס פרעון", "מגייס פרשן פוליטי"]):
         add_issue(issues, "error", idx, "known_bad_gossip_headline", "Walla Celebs regression: bad/typo headline framing", item)
     if any(x in source for x in ["ספורט", "NBA", "כדורגל", "כדורסל"]) and category != "ספורט":

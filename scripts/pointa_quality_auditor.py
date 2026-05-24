@@ -122,7 +122,9 @@ def audit(events: list[dict[str, Any]], current_feed_by_url: dict[str, dict[str,
         if is_foreign_source_label and is_retained_foreign_item_relevant:
             label = str(item.get("source") or item.get("sourceLogo") or "")
             if is_foreign_source_label(label) and not is_retained_foreign_item_relevant(item):
-                findings.append({
+                url = item_url(item)
+                current_item = current_feed_by_url.get(url) if url else None
+                issue = {
                     "severity": "error",
                     "code": "foreign_item_not_relevant",
                     "message": "Foreign-source publication event is not Israel/Middle-East/Jews/security relevant",
@@ -130,7 +132,19 @@ def audit(events: list[dict[str, Any]], current_feed_by_url: dict[str, dict[str,
                     "source": item.get("source"),
                     "url": item.get("sourceUrl"),
                     "eventId": ev.get("eventId"),
-                })
+                }
+                if current_feed_by_url and url and current_item is None:
+                    issue["severity"] = "warning"
+                    issue["resolvedHistorical"] = True
+                    issue["historicalRemovedFromCurrentFeed"] = True
+                    issue["message"] = "Resolved historical foreign relevance issue removed from current feed"
+                    resolved_historical.append(issue)
+                elif current_item is not None and is_retained_foreign_item_relevant(current_item):
+                    issue["severity"] = "warning"
+                    issue["resolvedHistorical"] = True
+                    issue["message"] = "Resolved historical foreign relevance issue corrected in current feed"
+                    resolved_historical.append(issue)
+                findings.append(issue)
     errors = [f for f in findings if f.get("severity") == "error"]
     warnings = [f for f in findings if f.get("severity") == "warning"]
     return {

@@ -49,6 +49,7 @@ HEADERS = {
 CATEGORY_CLASS = {
     "ביטחון": "security",
     "פוליטיקה": "security",
+    "אקטואליה בעולם": "security",
     "משפט": "security",
     "פלילים": "security",
     "כלכלה": "money",

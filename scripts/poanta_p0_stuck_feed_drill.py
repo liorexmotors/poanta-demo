@@ -52,7 +52,8 @@ def make_feed(path: Path, *, fresh: bool, gossip_ok: bool = True) -> None:
             "headline": "ריאליטי הבישול מגייס פרעון פוליטי ובנו",
             "imageUrl": None,
         })
-    path.write_text(json.dumps({"updatedAt": now.isoformat(timespec="seconds"), "items": items}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    updated_at = now if fresh else now - timedelta(hours=4)
+    path.write_text(json.dumps({"updatedAt": updated_at.isoformat(timespec="seconds"), "items": items}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -68,7 +69,7 @@ def main() -> int:
         fresh_gate = run([sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(fresh), "--json"])
         bad_qg = run([sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(bad_gossip), "--report", str(Path(td) / "qg.md")])
 
-        stale_ok = stale_gate.returncode != 0 and "no_new_top_item_sla" in stale_gate.stdout
+        stale_ok = stale_gate.returncode != 0 and ("no_new_top_item_sla" in stale_gate.stdout or "stale_updated_at" in stale_gate.stdout)
         fresh_ok = fresh_gate.returncode == 0
         gossip_blocked = bad_qg.returncode != 0 and "gossip_missing_image" in (Path(td) / "qg.md").read_text(encoding="utf-8") and "category_celebs" in (Path(td) / "qg.md").read_text(encoding="utf-8")
 

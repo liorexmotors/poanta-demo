@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#061014">
 <title>Poenta</title>
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="icon" href="./favicon.ico?v=poenta-v70-jpost-local-source" sizes="32x32">
-<link rel="icon" type="image/png" href="./favicon-32.png?v=poenta-v70-jpost-local-source" sizes="32x32">
-<link rel="apple-touch-icon" href="./icon-192.png?v=poenta-v70-jpost-local-source">
+<link rel="icon" href="./favicon.ico?v=poenta-v71-world-actuality" sizes="32x32">
+<link rel="icon" type="image/png" href="./favicon-32.png?v=poenta-v71-world-actuality" sizes="32x32">
+<link rel="apple-touch-icon" href="./icon-192.png?v=poenta-v71-world-actuality">
 <script>
 (function(){
   try{
@@ -128,7 +128,7 @@ html[data-theme="light"] .wifi:before,html[data-theme="light"] .wifi:after{borde
 <main class="phone">
 <div class="safe-top"></div><div class="safe-bottom"></div>
 <section class="screen">
-  <div class="topbar"><header class="header"><div class="brand"><img class="brand-logo brand-logo-dark" src="./assets/poenta-logo.png?v=poenta-v70-jpost-local-source" alt="Poenta"><img class="brand-logo brand-logo-light" src="./assets/poenta-logo-light.png?v=poenta-v70-jpost-local-source" alt="Poenta"></div></header>
+  <div class="topbar"><header class="header"><div class="brand"><img class="brand-logo brand-logo-dark" src="./assets/poenta-logo.png?v=poenta-v71-world-actuality" alt="Poenta"><img class="brand-logo brand-logo-light" src="./assets/poenta-logo-light.png?v=poenta-v71-world-actuality" alt="Poenta"></div></header>
   <button class="updates" id="refreshBtn"><div id="updatedAt">טוען עדכונים…</div><div class="chev"></div><span class="update-progress" id="unreadProgress"></span></button>
   <div class="tabline"><nav class="tabs" id="tabs"><button class="tab active" data-filter="all">הכל</button><button class="tab" data-filter="בארץ">חדשות בארץ</button><button class="tab" data-filter="עולם">עולם</button><button class="tab" data-filter="כלכלה">כלכלה</button><button class="tab" data-filter="טכנולוגיה">טכנולוגיה</button><button class="tab" data-filter="ספורט">ספורט</button></nav></div></div>
   <section class="poenta-panel search-panel hidden" id="searchPanel" aria-label="חיפוש Poenta">
@@ -170,7 +170,7 @@ let activeFilter = 'all';
 let feedMode = 'main';
 
 const PREF_KEY = 'poenta:user-preferences:v1';
-const DEFAULT_TOPICS = ['פוליטיקה','ביטחון','משפט','פלילים','כלכלה','טכנולוגיה','ספורט','רכב','מזג אוויר','בריאות','תרבות','רכילות'];
+const DEFAULT_TOPICS = ['פוליטיקה','אקטואליה בעולם','ביטחון','משפט','פלילים','כלכלה','טכנולוגיה','ספורט','רכב','מזג אוויר','בריאות','תרבות','רכילות'];
 const APPEARANCE_OPTIONS = [{code:'dark',name:'כהה',hint:'מצב דרק קבוע'},{code:'light',name:'בהיר',hint:'מצב לייט קבוע'},{code:'system',name:'לפי מערכת',hint:'מתאים אוטומטית למכשיר'}];
 const LANGUAGES = [{name:'עברית',code:'he',dir:'rtl'},{name:'English',code:'en',dir:'ltr'},{name:'Русский',code:'ru',dir:'ltr'},{name:'العربية',code:'ar',dir:'rtl'},{name:'Français',code:'fr',dir:'ltr'},{name:'Español',code:'es',dir:'ltr'},{name:'Italiano',code:'it',dir:'ltr'},{name:'中文',code:'zh-CN',dir:'ltr'},{name:'Deutsch',code:'de',dir:'ltr'},{name:'Português',code:'pt',dir:'ltr'}];
 const TRANSLATE_CACHE_KEY = 'poenta:translation-cache:v1';
@@ -243,7 +243,7 @@ function normalizeTopicName(name){ return String(name||'').replace(/\s+/g,' ').t
 function customTopics(){ return Array.isArray(userPrefs.customTopics)?userPrefs.customTopics.map(normalizeTopicName).filter(Boolean):[]; }
 function systemTopics(){ const set=new Set(DEFAULT_TOPICS); (currentFeed?.items||embeddedFeed.items||[]).forEach(i=>set.add(topicFor(i))); return [...set].filter(Boolean); }
 function allTopics(){ return [...new Set([...systemTopics(),...customTopics()])].filter(Boolean); }
-function ensurePrefs(){ const sources=allSources(); const topics=allTopics(); if(!Array.isArray(userPrefs.sources)) userPrefs.sources=sources; userPrefs.sources=[...new Set(userPrefs.sources.map(canonicalSource).filter(Boolean))]; const known=Array.isArray(userPrefs.knownSources)?userPrefs.knownSources.map(canonicalSource).filter(Boolean):sources; const knownSet=new Set(known); const newlyAdded=sources.filter(src=>!knownSet.has(src)); if(newlyAdded.length){ userPrefs.sources=[...new Set([...userPrefs.sources,...newlyAdded])]; userPrefs.knownSources=[...new Set([...known,...sources])]; try{localStorage.setItem(PREF_KEY, JSON.stringify(userPrefs));}catch{} } else if(!Array.isArray(userPrefs.knownSources)){ userPrefs.knownSources=sources; } userPrefs.customTopics=[...new Set(customTopics())]; if(!Array.isArray(userPrefs.topics)) userPrefs.topics=topics.slice(0,6); userPrefs.topics=[...new Set(userPrefs.topics.map(normalizeTopicName).filter(Boolean))]; if(!APPEARANCE_OPTIONS.some(o=>o.code===userPrefs.appearance)) userPrefs.appearance='light'; applyAppearance(); if(!userPrefs.language) userPrefs.language='he'; if(!LANGUAGES.some(l=>l.code===userPrefs.language)){ const found=LANGUAGES.find(l=>l.name===userPrefs.language); userPrefs.language=found?found.code:'he'; } userPrefs.days=Number(userPrefs.days||3); if(!Number.isFinite(userPrefs.days)||userPrefs.days<1||userPrefs.days>7) userPrefs.days=3; const visibleTopics=userPrefs.topics.filter(t=>topics.includes(t)); if(feedMode!=='breaking' && !visibleTopics.includes(activeFilter)&&activeFilter!=='all') activeFilter='all'; }
+function ensurePrefs(){ const sources=allSources(); const topics=allTopics(); if(!Array.isArray(userPrefs.sources)) userPrefs.sources=sources; userPrefs.sources=[...new Set(userPrefs.sources.map(canonicalSource).filter(Boolean))]; const known=Array.isArray(userPrefs.knownSources)?userPrefs.knownSources.map(canonicalSource).filter(Boolean):sources; const knownSet=new Set(known); const newlyAdded=sources.filter(src=>!knownSet.has(src)); if(newlyAdded.length){ userPrefs.sources=[...new Set([...userPrefs.sources,...newlyAdded])]; userPrefs.knownSources=[...new Set([...known,...sources])]; try{localStorage.setItem(PREF_KEY, JSON.stringify(userPrefs));}catch{} } else if(!Array.isArray(userPrefs.knownSources)){ userPrefs.knownSources=sources; } userPrefs.customTopics=[...new Set(customTopics())]; if(!Array.isArray(userPrefs.topics)) userPrefs.topics=topics.slice(0,6); userPrefs.topics=[...new Set(userPrefs.topics.map(normalizeTopicName).filter(Boolean))]; if(!Array.isArray(userPrefs.topicMigrations)) userPrefs.topicMigrations=[]; if(!userPrefs.topicMigrations.includes('world-current-affairs-v1')){ if(topics.includes('אקטואליה בעולם')&&!userPrefs.topics.includes('אקטואליה בעולם')) userPrefs.topics.splice(Math.min(1,userPrefs.topics.length),0,'אקטואליה בעולם'); userPrefs.topicMigrations.push('world-current-affairs-v1'); try{localStorage.setItem(PREF_KEY, JSON.stringify(userPrefs));}catch{} } if(!APPEARANCE_OPTIONS.some(o=>o.code===userPrefs.appearance)) userPrefs.appearance='light'; applyAppearance(); if(!userPrefs.language) userPrefs.language='he'; if(!LANGUAGES.some(l=>l.code===userPrefs.language)){ const found=LANGUAGES.find(l=>l.name===userPrefs.language); userPrefs.language=found?found.code:'he'; } userPrefs.days=Number(userPrefs.days||3); if(!Number.isFinite(userPrefs.days)||userPrefs.days<1||userPrefs.days>7) userPrefs.days=3; const visibleTopics=userPrefs.topics.filter(t=>topics.includes(t)); if(feedMode!=='breaking' && !visibleTopics.includes(activeFilter)&&activeFilter!=='all') activeFilter='all'; }
 function forcedFaviconDomain(name){ const target=canonicalSource(name); const domains={'רוטר':'rotter.net','Poenta':'liorexmotors.github.io','CNN':'cnn.com','N12':'n12.co.il','Pplus':'pplus.ynet.co.il','TMI':'tmi.maariv.co.il','BBC':'bbc.com','Sky News':'news.sky.com','Reuters':'reuters.com','AP':'apnews.com','Guardian':'theguardian.com','NYT':'nytimes.com','Axios':'axios.com','Politico':'politico.com','Bloomberg':'bloomberg.com','Al Jazeera':'aljazeera.com','IMS':'ims.gov.il','השירות המטאורולוגי':'ims.gov.il'}; return domains[target]||''; }
 function faviconFromDomain(domain){ return domain ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=64` : ''; }
 function sourceIconHtml(name){ const forced=forcedFaviconDomain(name); const src=sourceUrlForName(name); const icon=forced?faviconFromDomain(forced):(src?faviconUrl({sourceUrl:src,source:name,sourceLogo:name}):''); return icon ? `<img src="${esc(icon)}" alt="" loading="lazy">` : `<span>${esc(String(name).trim().slice(0,1)||'P')}</span>`; }
@@ -278,7 +278,7 @@ function persistViewInUrl(view){
 }
 
 function esc(value){ return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
-function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='תחבורה') return 'רכב'; if(c==='חדשות') return 'פוליטיקה'; if(c==='עולם') return 'ביטחון'; return c; }
+function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='תחבורה') return 'רכב'; if(c==='חדשות') return 'פוליטיקה'; if(c==='עולם') return 'אקטואליה בעולם'; return c; }
 function timeFor(item,index){ if(item.hasSourceDate===false) return 'תאריך לא זמין'; const d=itemDate(item,index); const date=d.toLocaleDateString('he-IL',{day:'numeric',month:'numeric'}); const time=d.toLocaleTimeString('he-IL',{hour:'numeric',minute:'2-digit'}); return `${date} · ${time}`; }
 function sourceName(item){ return canonicalSource(item.source || item.sourceLogo || 'מקור'); }
 function rawSourceName(item){ return String(item.source || item.sourceLogo || 'מקור'); }
