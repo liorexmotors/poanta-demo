@@ -2,7 +2,7 @@
 
 Items checked: 200
 Errors: 0
-Warnings: 118
+Warnings: 119
 
 ## Category distribution
 
@@ -25,45 +25,52 @@ Warnings: 118
 
 ## Issue counts
 
-- takeaway_long: 101
+- takeaway_long: 102
 - summary_long: 17
 
 ## Issues
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 13
 - Takeaway length 116 > 95
 - Headline: `בישראל חוששים שהסכם עם איראן יגביל פעולה אזורית`
 - Original: `במערכת הביטחון מזהירים: הסרת הסנקציות מאיראן תזרים מיליארדים לציר הטרור האזורי`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840452
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 18
 - Takeaway length 103 > 95
 - Headline: `רעידה בעוצמה 3.5 הורגשה בכנרת בלי נזק`
 - Original: `לא שקט בצפון: רעידת אדמה בעוצמה 3.5 הורגשה באזור הכנרת`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20609246
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 21
 - Takeaway length 105 > 95
 - Headline: `זברב פתח את רולאן גארוס בניצחון חלק`
 - Original: `רולאן גארוס יצא לדרך, זברב לא התקשה לדלג לסיבוב השני`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840139
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 22
 - Takeaway length 106 > 95
 - Headline: `סמסונג מכניסה את Gemini למשקפי Galaxy`
 - Original: `סמסונג מציגה הצצה ראשונה למשקפיים החכמים הראשונים שלה`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3840455
 
-### WARNING · summary_long · item 24
+### WARNING · summary_long · item 23
 - Summary length 223 > 220
 - Headline: `נפילה ראשונה בגיל מבוגר דורשת בירור רפואי רחב`
 - Original: `"הם לא נפלו במקרה": מה מסתתר מאחורי נפילות בגיל מבוגר`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3840466
+
+### WARNING · takeaway_long · item 25
+- Takeaway length 103 > 95
+- Headline: `עסקת איראן נתקעת סביב לבנון ונכסים מוקפאים`
+- Original: `Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress`
+- Source: The Guardian Middle East
+- URL: https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live
 
 ### WARNING · takeaway_long · item 27
 - Takeaway length 114 > 95
@@ -107,12 +114,12 @@ Warnings: 118
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-basketball/article/20608685
 
-### WARNING · takeaway_long · item 35
-- Takeaway length 100 > 95
-- Headline: `הסכם ארה״ב־איראן מתעכב סביב אישור ושחרור נכסים`
-- Original: `פרטי ההסכם המתגבש בין ארה"ב לאיראן נחשפים`
-- Source: גלובס - בארץ
-- URL: https://www.globes.co.il/news/article.aspx?did=1001543720#utm_source=RSS
+### WARNING · takeaway_long · item 33
+- Takeaway length 106 > 95
+- Headline: `גבר נפצע קשה באירוע אלימות ליד דרך ענתות`
+- Original: `אירוע אלימות סמוך לירושלים, גבר כבן 25 נפצע קשה`
+- Source: מעריב - מבזקים
+- URL: https://www.maariv.co.il/breaking-news/article-1325000
 
 ### WARNING · takeaway_long · item 37
 - Takeaway length 114 > 95
@@ -143,7 +150,7 @@ Warnings: 118
 - URL: https://sports.walla.co.il/item/3840421
 
 ### WARNING · takeaway_long · item 44
-- Takeaway length 100 > 95
+- Takeaway length 113 > 95
 - Headline: `רוסיה תקפה את אוקראינה במאות טילים וכטב״מים`
 - Original: `Large-scale Russian attack on Ukraine leaves four dead and dozens injured`
 - Source: BBC World
