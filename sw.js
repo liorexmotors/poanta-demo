@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v63-branding-logo';
+const CACHE_NAME = 'poenta-v64-light-logo-fix';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
