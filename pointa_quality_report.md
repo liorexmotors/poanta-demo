@@ -161,89 +161,89 @@ Warnings: 134
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20602319
 
-### WARNING · takeaway_long · item 21
-- Takeaway length 120 > 95
-- Headline: `ברצלונה השלימה טרבל עם 0:4 על ליון בגמר האלופות`
-- Original: `ברצלונה זכתה בליגת האלופות לנשים בפעם הרביעית אחרי שהביסה את ליון 0:4`
-- Source: הארץ - ספורט
-- URL: https://www.haaretz.co.il/sport/world-soccer/2026-05-23/ty-article/0000019e-55f4-d154-a5de-7ffcfda50000
-
-### WARNING · headline_near_duplicate_summary · item 28
+### WARNING · headline_near_duplicate_summary · item 27
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `בנק ישראל עומד בפני החלטה קשה: האם להוריד מחר את הריבית, אפילו בחצי אחוז`
 - Original: `ציפיות במשק להורדת הריבית: דילמת הנגיד וההסתערות על הדולר`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/yokra14778075
 
-### WARNING · summary_long · item 35
+### WARNING · summary_long · item 34
 - Summary length 239 > 220
 - Headline: `19 אזעקות בצפון הובילו לדרישה למיגון נגד רחפנים`
 - Original: `הלבן של שבועות התחלף בצבע אדום: אש בלתי פוסקת בצפון וחשש לחדירת מחבלים`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3840161
 
-### WARNING · takeaway_long · item 35
+### WARNING · takeaway_long · item 34
 - Takeaway length 108 > 95
 - Headline: `19 אזעקות בצפון הובילו לדרישה למיגון נגד רחפנים`
 - Original: `הלבן של שבועות התחלף בצבע אדום: אש בלתי פוסקת בצפון וחשש לחדירת מחבלים`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3840161
 
-### WARNING · takeaway_long · item 39
+### WARNING · takeaway_long · item 38
 - Takeaway length 120 > 95
 - Headline: `אדרי נדל״ן עוברת להשקעות מוקדמות בקרקעות פרטיות`
 - Original: `אדרי נדל”ן מתרחבת לתחום הקרקעות הפרטיות`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/mumlazim/article/20601645
 
-### WARNING · takeaway_long · item 41
+### WARNING · takeaway_long · item 40
 - Takeaway length 116 > 95
 - Headline: `מילר הזהיר משערים מאוחרים לפני גמר הגביע`
 - Original: `מילר: "שער מאוחר עלה ביוקר, צריך לוודא שזה לא יקרה בשלישי"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3840160
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 43
 - Takeaway length 114 > 95
 - Headline: `גרהאם מזהיר שהסכם רך יחזק את מעמד איראן`
 - Original: `הסנאטור המקורב לטראמפ: התפישה שאיראן היא כוח דומיננטי תהיה סיוט לישראל`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/bja9kuygzl
 
-### WARNING · takeaway_long · item 45
+### WARNING · takeaway_long · item 44
 - Takeaway length 108 > 95
 - Headline: `כאלפיים הפגינו נגד הממשלה ברחבי הארץ`
 - Original: `הפגנות נגד הממשלה התקיימו ברחבי הארץ: "הטבח הוא תוצאה של שנים של מדיניות כושלת"`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politi/2026-05-23/ty-article/.premium/0000019e-55d9-df61-a3ff-d5ff3a930000
 
-### WARNING · takeaway_long · item 46
+### WARNING · takeaway_long · item 45
 - Takeaway length 102 > 95
 - Headline: `ארה״ב ואיראן מתקרבות למזכר שימנע חידוש מלחמה`
 - Original: `Iran and U.S. Officials Signal Progress as Cease-Fire Hangs in Balance`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/23/world/middleeast/iran-us-israel-ceasefire-talks.html
 
-### WARNING · takeaway_long · item 47
+### WARNING · takeaway_long · item 46
 - Takeaway length 96 > 95
 - Headline: `נאתכו נפרד מפרטיזן עם שער במשחק האחרון בקריירה`
 - Original: `צפו: טקס מרגש לכבוד ביברס נאתכו, שכבש במשחק האחרון בקריירה`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3840140
 
-### WARNING · takeaway_long · item 49
+### WARNING · takeaway_long · item 48
 - Takeaway length 111 > 95
 - Headline: `רולאן גארוס נפתח כשמחאת הפרסים מגיעה לגרנד סלאמים`
 - Original: `פריז מתעוררת: רולאן גארוס יוצא לדרך עם ג'וקוביץ', והמאבק שמסעיר את הטניס`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3840139
 
-### WARNING · takeaway_long · item 50
+### WARNING · takeaway_long · item 49
 - Takeaway length 126 > 95
 - Headline: `ברקשייר חזרה לדלתא ומייסיס ומעלה שאלות על עידן אחרי באפט`
 - Original: `תעלומה בשווי 2.6 מיליארד דולר: מי חוזר על הטעות של וורן באפט?`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543719#utm_source=RSS
+
+### WARNING · takeaway_long · item 50
+- Takeaway length 120 > 95
+- Headline: `ברצלונה השלימה טרבל עם 0:4 על ליון בגמר האלופות`
+- Original: `ברצלונה זכתה בליגת האלופות לנשים בפעם הרביעית אחרי שהביסה את ליון 0:4`
+- Source: הארץ - ספורט
+- URL: https://www.haaretz.co.il/sport/world-soccer/2026-05-23/ty-article/0000019e-55f4-d154-a5de-7ffcfda50000
 
 ### WARNING · takeaway_long · item 52
 - Takeaway length 116 > 95
