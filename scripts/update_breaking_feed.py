@@ -14,11 +14,13 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCES = ROOT / "breaking_sources.json"
 DEFAULT_OUTPUT = ROOT / "breaking_feed.json"
 USER_AGENT = "PoantaBreakingFeed/1.0 (+https://liorexmotors.github.io/poanta-demo/)"
+ISRAEL_TZ = ZoneInfo("Asia/Jerusalem")
 
 DROP_PATTERNS = [
     r"פרסומת", r"תוכן שיווקי", r"בשיתוף", r"התחזית", r"מזג האוויר",
@@ -38,14 +40,25 @@ def clean_text(value: str | None) -> str:
     return value
 
 
-def parse_date(value: str | None) -> str:
+def parse_date(value: str | None, source: dict[str, Any] | None = None) -> str:
     if not value:
         return ""
     value = clean_text(value)
+    source = source or {}
+    treat_gmt_as_israel_local = bool(source.get("treatGmtAsIsraelLocal"))
     try:
         dt = email.utils.parsedate_to_datetime(value)
         if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
+            # Israeli breaking-news feeds that omit an offset normally publish
+            # local Israel wall-clock time.  Treating it as UTC creates future
+            # timestamps that look suspiciously "now" in the app.
+            dt = dt.replace(tzinfo=ISRAEL_TZ)
+        elif treat_gmt_as_israel_local and re.search(r"\b(?:GMT|UTC)\b|[+-]0000", value, re.I):
+            # Walla's breaking RSS currently labels local Israel time as GMT.
+            # Example: "15:20 GMT" arrives while Israel is 15:23, but parsing
+            # it literally makes the item 3 hours in the future.  Preserve the
+            # wall-clock components and attach Asia/Jerusalem instead.
+            dt = dt.replace(tzinfo=ISRAEL_TZ)
         return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
     except Exception:
         pass
@@ -53,7 +66,7 @@ def parse_date(value: str | None) -> str:
         try:
             dt = datetime.strptime(value, fmt)
             if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
+                dt = dt.replace(tzinfo=ISRAEL_TZ)
             return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
         except Exception:
             continue
@@ -93,7 +106,7 @@ def parse_rss(text: str, source: dict[str, Any]) -> list[dict[str, Any]]:
             continue
         link = clean_text(fields.get("link") or fields.get("guid"))
         desc = clean_text(fields.get("description"))
-        published = parse_date(fields.get("pubdate") or fields.get("published") or fields.get("updated") or fields.get("dc:date"))
+        published = parse_date(fields.get("pubdate") or fields.get("published") or fields.get("updated") or fields.get("dc:date"), source)
         rows.append(
             {
                 "id": hashlib.sha1((link or title).encode("utf-8")).hexdigest()[:16],
