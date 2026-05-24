@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v64-light-logo-fix';
+const CACHE_NAME = 'poenta-v68-exact-source-logo';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -43,8 +43,8 @@ self.addEventListener('push', event => {
   const title = data.title || 'פואנטה חדשה';
   const options = {
     body: data.body || 'יש עדכון חדש בפיד פואנטה',
-    icon: './icon-192.png',
-    badge: './icon-192.png',
+    icon: './icon-192.png?v=poenta-v68-exact-source-logo',
+    badge: './icon-192.png?v=poenta-v68-exact-source-logo',
     data: { url: data.url || './index.html' },
     dir: 'rtl',
     lang: 'he-IL',
