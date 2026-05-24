@@ -1191,19 +1191,42 @@ FOREIGN_RELEVANCE_KEYWORDS = [
     "idf", "netanyahu",
 ]
 
-def is_foreign_relevant(title: str, desc: str) -> bool:
-    """Foreign feeds are allowed only for Israel / Middle East relevance.
+WORLD_CURRENT_AFFAIRS_KEYWORDS = [
+    "united states", "u.s.", " us ", "america", "american", "white house", "trump", "biden",
+    "president", "government", "parliament", "election", "minister", "court", "supreme court",
+    "sanctions", "cuba", "china", "beijing", "taiwan", "russia", "ukraine", "nato", "europe",
+    "france", "germany", "britain", "uk", "mexico", "nigeria", "thailand", "fukushima",
+    "war", "conflict", "military", "shooting", "gunmen", "killed", "dead", "attack", "protest",
+    "earthquake", "flood", "wildfire", "storm", "outbreak", "ebola", "hantavirus", "nuclear",
+    "climate", "schoolchildren", "kidnapped", "hostage", "prisoners",
+]
 
-    Lior's rule: international sources should not fill Poanta with general world
-    news. They are useful when they add outside reporting about Israel, Iran,
-    Gaza, Lebanon, the region, Jews/antisemitism, or direct policy/security
-    implications for Israel/the Middle East.
+FOREIGN_NOISE_KEYWORDS = [
+    "celebrity", "celebrities", "gossip", "red carpet", "fashion", "recipe", "restaurant",
+    "movie", "film festival", "tv show", "music", "album", "premiere", "travel tips", "shopping",
+    "football", "soccer", "basketball", "tennis", "nba", "nfl", "mlb", "olympics",
+]
+
+def is_foreign_relevant(title: str, desc: str) -> bool:
+    """Foreign feeds may include important world current-affairs stories.
+
+    Updated 2026-05-24 per Lior: אקטואליה בעולם is allowed to carry world
+    stories even without a direct Israel/Middle-East angle. Keep filtering out
+    lifestyle/entertainment/sports noise from broad English feeds, but do not
+    reject serious global politics, diplomacy, security, disasters, public
+    health, sanctions, or major legal/government stories just because Israel is
+    not mentioned.
     """
     text = f"{title} {desc}".lower()
     if any(k in text for k in FOREIGN_RELEVANCE_KEYWORDS):
         return True
-    # Keep a very small safety escape hatch for headlines where the regional
-    # hook is in source metadata but not the RSS title/description.
+    if foreign_pointa_tuple(title, desc):
+        return True
+    if any(k in text for k in WORLD_CURRENT_AFFAIRS_KEYWORDS):
+        # Major-world-current-affairs terms override generic source scope, but
+        # not soft culture/sports/lifestyle items that would make the feed noisy.
+        if not any(k in text for k in FOREIGN_NOISE_KEYWORDS):
+            return True
     if "middle east" in text or "mideast" in text:
         return True
     return False

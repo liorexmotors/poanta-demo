@@ -15,7 +15,7 @@ Never publish:
 - Generic/reusable takeaways.
 - Copied source headlines.
 - Source/reporter-mediated summaries.
-- Foreign-source items without Israel/Middle East/Jews/antisemitism/regional-security relevance.
+- Foreign-source lifestyle/entertainment/sports noise from broad English feeds. Important world current-affairs stories are allowed in `אקטואליה בעולם` even without a direct Israel/Middle-East angle.
 - Rescue cards with editorial uncertainty.
 
 ## Quantity / freshness obligation
