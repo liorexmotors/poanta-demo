@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v60-hide-nonofficial-fallback-sources';
+const CACHE_NAME = 'poanta-demo-v62-prefs-scroll-state-fix';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
