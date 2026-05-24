@@ -25,13 +25,34 @@ Warnings: 149
 
 ## Issue counts
 
-- takeaway_long: 133
-- summary_long: 16
+- takeaway_long: 134
+- summary_long: 15
 
 ## Issues
 
+### WARNING · takeaway_long · item 1
+- Takeaway length 97 > 95
+- Headline: `קלסי שתה בירה במשחק NBA וסוויפט הפכה לרגע הוויראלי`
+- Original: `צפו: מה כל כך הביך את טיילור סוויפט במשחק ה-NBA?`
+- Source: וואלה ספורט - טראש טוק
+- URL: https://sports.walla.co.il/item/3840444
+
+### WARNING · takeaway_long · item 2
+- Takeaway length 102 > 95
+- Headline: `אולימפיאקוס ניצחה את ריאל וזכתה ביורוליג אחרי 13 שנה`
+- Original: `הנקמה המושלמת: אולימפיאקוס אלופת אירופה בפעם הרביעית`
+- Source: וואלה ספורט - כדורסל
+- URL: https://sports.walla.co.il/item/3840194
+
+### WARNING · takeaway_long · item 3
+- Takeaway length 99 > 95
+- Headline: `ריאל פספסה הארכה בגמר היורוליג ויצאה בלי התואר ה-12`
+- Original: `סקאריולו החמיא לשחקניו והצהיר: "ריאל מדריד עוד תחזור"`
+- Source: וואלה ספורט - כדורסל
+- URL: https://sports.walla.co.il/item/3840495
+
 ### WARNING · takeaway_long · item 4
-- Takeaway length 98 > 95
+- Takeaway length 107 > 95
 - Headline: `מילאן קרסה במחזור הסיום; רומא וקומו עלו לאלופות`
 - Original: `דרמה במחזור הסיום באיטליה: רומא וקומו בליגת האלופות, לצ'ה וגאנדלמן שרדו`
 - Source: וואלה ספורט
@@ -115,7 +136,7 @@ Warnings: 149
 - URL: https://www.theguardian.com/world/2026/may/24/iran-leader-and-security-council-still-need-to-approve-peace-deal-with-us
 
 ### WARNING · takeaway_long · item 16
-- Takeaway length 123 > 95
+- Takeaway length 117 > 95
 - Headline: `לצ׳ה וגאנדלמן נשארו בסרייה א׳ במחזור הסיום`
 - Original: `לצ'ה נשארה בליגה אחרי שניצחה את גנואה`
 - Source: ynet - כל ערוץ הספורט
@@ -185,8 +206,8 @@ Warnings: 149
 - URL: https://news.walla.co.il/break/3840478
 
 ### WARNING · takeaway_long · item 26
-- Takeaway length 110 > 95
-- Headline: `ווטסאפ לא תהפוך לחובה בתשלום, אבל תכניס פרסומות`
+- Takeaway length 124 > 95
+- Headline: `ווטסאפ נשארת חינמית, הפרסומות ייכנסו לעדכונים`
 - Original: `מתי וואטסאפ תתחיל לגבות מכם תשלום? השמועות ברשת מלחיצות את הישראלים`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/tech/article-1325031
@@ -261,20 +282,6 @@ Warnings: 149
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20609298
 
-### WARNING · summary_long · item 39
-- Summary length 237 > 220
-- Headline: `הדחת יו״ר האופוזיציה בטורקיה מטלטלת את הלירה`
-- Original: `ארדואן מנצל את הכאוס? טורקיה רועדת בין מתקפה על האופוזיציה למשבר כלכלי`
-- Source: מעריב - כלכלה
-- URL: https://www.maariv.co.il/news/world/article-1324609
-
-### WARNING · takeaway_long · item 39
-- Takeaway length 100 > 95
-- Headline: `הדחת יו״ר האופוזיציה בטורקיה מטלטלת את הלירה`
-- Original: `ארדואן מנצל את הכאוס? טורקיה רועדת בין מתקפה על האופוזיציה למשבר כלכלי`
-- Source: מעריב - כלכלה
-- URL: https://www.maariv.co.il/news/world/article-1324609
-
 ### WARNING · takeaway_long · item 40
 - Takeaway length 105 > 95
 - Headline: `חד״ש, תע״ל ובל״ד מוכנות לרשימה טכנית עם רע״מ`
@@ -311,8 +318,8 @@ Warnings: 149
 - URL: https://sports.walla.co.il/item/3840139
 
 ### WARNING · takeaway_long · item 46
-- Takeaway length 116 > 95
-- Headline: `סמסונג מציגה משקפי AI עם Gemini ותרגום חי`
+- Takeaway length 114 > 95
+- Headline: `סמסונג חושפת משקפי AI עם Gemini ותרגום חי`
 - Original: `סמסונג מציגה הצצה ראשונה למשקפיים החכמים הראשונים שלה`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3840455
@@ -368,14 +375,14 @@ Warnings: 149
 
 ### WARNING · summary_long · item 54
 - Summary length 231 > 220
-- Headline: `תל אביב נפתחת בין ריבית, איראן ודחיפה מהדואליות`
+- Headline: `תל אביב נפתחת בין החלטת ריבית לסיכון איראן`
 - Original: `המניות שיזנקו בת"א מחר, והנתונים שמאותתים - וול סטריט בדרך לפסגה`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543753#utm_source=RSS
 
 ### WARNING · takeaway_long · item 54
-- Takeaway length 116 > 95
-- Headline: `תל אביב נפתחת בין ריבית, איראן ודחיפה מהדואליות`
+- Takeaway length 122 > 95
+- Headline: `תל אביב נפתחת בין החלטת ריבית לסיכון איראן`
 - Original: `המניות שיזנקו בת"א מחר, והנתונים שמאותתים - וול סטריט בדרך לפסגה`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543753#utm_source=RSS
@@ -437,15 +444,15 @@ Warnings: 149
 - URL: https://www.jpost.com/middle-east/isis-threat/article-897147
 
 ### WARNING · summary_long · item 70
-- Summary length 253 > 220
-- Headline: `האקרים איראניים הפעילו כלי RAT חדשים נגד ישראל וארה״ב`
+- Summary length 257 > 220
+- Headline: `קבוצת סייבר איראנית תקפה יעדים בישראל ובארה״ב`
 - Original: `Iran-linked hackers targeted US, Israel and UAE, Palo Alto Networks says`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-897154
 
 ### WARNING · takeaway_long · item 70
-- Takeaway length 150 > 95
-- Headline: `האקרים איראניים הפעילו כלי RAT חדשים נגד ישראל וארה״ב`
+- Takeaway length 125 > 95
+- Headline: `קבוצת סייבר איראנית תקפה יעדים בישראל ובארה״ב`
 - Original: `Iran-linked hackers targeted US, Israel and UAE, Palo Alto Networks says`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-897154
@@ -507,8 +514,8 @@ Warnings: 149
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/lebanon-hezbollah-us-iran-israel.html
 
 ### WARNING · takeaway_long · item 79
-- Takeaway length 119 > 95
-- Headline: `מחירי הנפט דוחפים את טראמפ לעסקה עם איראן`
+- Takeaway length 98 > 95
+- Headline: `מחירי הנפט מצמצמים את מרחב הפעולה מול איראן`
 - Original: `התלהבנו מצימר זוגי עם ארוחת בוקר ב-300 שקל, עד שנכנסנו לתחנת הדלק`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/news/internal-info/2026-05-24/ty-article/0000019e-5a9a-d6a0-abde-fa9ec6440000
@@ -549,32 +556,25 @@ Warnings: 149
 - URL: https://sports.walla.co.il/item/3840441
 
 ### WARNING · takeaway_long · item 86
-- Takeaway length 101 > 95
-- Headline: `יועצי משכנתאות יוכלו לקבל תגמול רק מהלקוח`
+- Takeaway length 110 > 95
+- Headline: `הרשות רוצה לנתק יועצי משכנתאות מתמריצי מלווים`
 - Original: `נחשף בגלובס: רשות שוק ההון רוצה לאסור על חברות אשראי לתת טיסות ופרסים ליועצי משכנתאות`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543816#utm_source=RSS
 
 ### WARNING · takeaway_long · item 88
-- Takeaway length 117 > 95
-- Headline: `המשקיעים המוקדמים ב־SpaceX בדרך לרווחי ענק`
+- Takeaway length 118 > 95
+- Headline: `ההנפקה של SpaceX צפויה להציף רווחי ענק למוקדמים`
 - Original: `הוא השקיע ב־SpaceX לפני שהיא שיגרה את הרקטה הראשונה שלה. עכשיו הוא ירוויח מיליארדים`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543799#utm_source=RSS
 
 ### WARNING · takeaway_long · item 90
 - Takeaway length 111 > 95
-- Headline: `קלאודפלייר מפטרת אנשי בקרה ומגייסת לבנייה ומכירות`
+- Headline: `קלאודפלייר קיצצה אנשי בקרה כדי להשקיע בבנייה ומכירות`
 - Original: `כיצד אני מחליט אילו עובדים ניתן להחליף כבר עכשיו בבינה מלאכותית`
 - Source: גלובס - טכנולוגיה
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543763#utm_source=RSS
-
-### WARNING · takeaway_long · item 93
-- Takeaway length 98 > 95
-- Headline: `בית המשפט בצרפת פוגע בסיכוי של גאוזי לשלם לעובדים`
-- Original: `אחרי חמישה חודשים ללא שכר: התקווה של עובדי גאוזי הולכת ומתפוגגת`
-- Source: דה מרקר - שוק ההון
-- URL: https://www.themarker.com/markets/2026-05-24/ty-article/.premium/0000019e-5a72-d02b-a19f-5bf2e6a60000
 
 ### WARNING · takeaway_long · item 94
 - Takeaway length 106 > 95
@@ -815,7 +815,7 @@ Warnings: 149
 - URL: https://www.israelhayom.co.il/business/article/20606672
 
 ### WARNING · takeaway_long · item 139
-- Takeaway length 118 > 95
+- Takeaway length 117 > 95
 - Headline: `מומחה מדעי המחשב: כל מקצוע יצטרך להסתגל ל־AI`
 - Original: `האזהרה הנוקבת של הפרופסור: "המהפכה כבר כאן"`
 - Source: ישראל היום - כל הכתבות
@@ -977,7 +977,7 @@ Warnings: 149
 
 ### WARNING · takeaway_long · item 174
 - Takeaway length 105 > 95
-- Headline: `רישום FCC חושף אוזניות אפל חדשות בלי שם מסחרי`
+- Headline: `רישום FCC מצביע על אוזניות אפל חדשות ומסתוריות`
 - Original: `מוצר מסתורי של אפל הופיע ברשומות בארה"ב - והרשת מנסה לפענח מה זה`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technews/article/rjebxrlxzl
