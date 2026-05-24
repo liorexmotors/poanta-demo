@@ -101,6 +101,7 @@ def parse_rss(text: str, source: dict[str, Any]) -> list[dict[str, Any]]:
                 "source": source.get("source") or source.get("logo") or source.get("name") or "מקור",
                 "sourceLogo": source.get("logo") or source.get("source") or source.get("name") or "מקור",
                 "sourceUrl": link,
+                "sourceLinks": [{"name": source.get("source") or source.get("logo") or source.get("name") or "מקור", "url": link}],
                 "headline": title,
                 "originalTitle": title,
                 "context": desc or title,
@@ -161,6 +162,9 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
             sources = match.setdefault("sources", [match.get("source")])
             if row.get("source") not in sources:
                 sources.append(row.get("source"))
+            links = match.setdefault("sourceLinks", [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}])
+            if row.get("source") and not any(link.get("name") == row.get("source") for link in links):
+                links.append({"name": row.get("source"), "url": row.get("sourceUrl") or ""})
             continue
         deduped.append(row)
         if len(deduped) >= limit:
