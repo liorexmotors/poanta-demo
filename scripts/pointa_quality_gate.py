@@ -207,8 +207,18 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
     if context and norm_sentence(headline) == norm_sentence(context):
         add_issue(issues, "error", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)
+    if context and len(headline) >= 24 and norm(context).startswith(norm(headline)):
+        add_issue(issues, "error", idx, "headline_is_summary_prefix", "Headline is just the opening fragment of the summary", item)
     if context and overlap_ratio(headline, context) >= 0.88 and (len(headline) >= 58 or len(context) <= 120):
         add_issue(issues, "warning", idx, "headline_near_duplicate_summary", "Headline is a clipped/near-duplicate version of the summary", item)
+
+    blob = " ".join([headline, context, takeaway, original, source])
+    if category == "פוליטיקה" and any(x in blob for x in ["איראן", "הורמוז", "גרעין", "אורניום"]) and any(x in blob for x in ["מו\"מ", "משא ומתן", "עסקה", "הסכם", "טראמפ"]):
+        add_issue(issues, "error", idx, "category_iran_deal_security", "Iran nuclear/deal/Hormuz cards must be ביטחון, not פוליטיקה", item)
+    if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"} and any(x in blob for x in ["קובה", "פוקושימה", "הבית הלבן", "White House"]):
+        add_issue(issues, "error", idx, "category_world_story", "Cuba/Fukushima/White House stories must be אקטואליה בעולם", item)
+    if any(x in headline for x in ["לפי אחד הבלוגים", "הגרסה החסכונית", "הקרוסאובר המוערך", "הקבוצה מאמסטרדם"]):
+        add_issue(issues, "error", idx, "headline_missing_core_entity", "Headline is a summary fragment and misses the core entity/model/team", item)
 
     if not context:
         add_issue(issues, "error", idx, "summary_missing", "Summary/context is empty", item)

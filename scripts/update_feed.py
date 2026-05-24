@@ -772,6 +772,10 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # Prefer it over incidental keywords in the title/description so sports,
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
     text = f"{title} {desc} {source}"
+    if any(x in text for x in ['איראן', 'הורמוז', 'גרעין', 'אורניום']) and any(x in text for x in ['טראמפ', 'ארצות הברית', 'ארה"ב', 'מו"מ', 'משא ומתן', 'מזכר הבנות', 'עסקה', 'הסכם']):
+        return "ביטחון", "security"
+    if any(x in text for x in ['קובה', 'פוקושימה', 'הבית הלבן', 'White House', 'חמוש ירה ליד הבית הלבן', 'ממשל טראמפ נגד']) and not any(x in source for x in ['ספורט', 'רכב', 'סלבס', 'רכילות']):
+        return "אקטואליה בעולם", "security"
     if any(x in text for x in ['רוכב אופניים', 'אופניים חשמליים', 'תאונת דרכים', 'נפצע בתאונה']) and any(x in text for x in ['רכב', 'כביש', 'רחוב', 'תאונה']):
         return "רכב", "real"
     if 'איראן' in text and any(x in text for x in ['כבלים', 'סוויפט', 'הורמוז', 'תת ימיים']):
