@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 197
+Items checked: 196
 Errors: 0
 Warnings: 118
 
 ## Category distribution
 
 - ספורט: 80
-- ביטחון: 46
+- ביטחון: 45
 - כלכלה: 18
 - תרבות: 8
 - טכנולוגיה: 8
@@ -542,315 +542,315 @@ Warnings: 118
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/23/turkish-and-syrian-officials-detain-10-individuals-with-alleged-isil-ties?traffic_source=rss
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 131
 - Takeaway length 118 > 95
 - Headline: `גיא מלמד מתקרב לעונה שביעית כמלך שערי קבוצתו`
 - Original: `היציע לא עצר אותו: האם גיא מלמד ישמור על הרצף הנדיר?`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840108
 
-### WARNING · takeaway_long · item 137
+### WARNING · takeaway_long · item 136
 - Takeaway length 106 > 95
 - Headline: `מכבי ת״א הנוער לקחה אליפות אחרי שמונה שנים`
 - Original: `אחרי 8 שנים: מכבי ת"א זכתה באליפות הנוער`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/one523505
 
-### WARNING · takeaway_long · item 138
+### WARNING · takeaway_long · item 137
 - Takeaway length 101 > 95
 - Headline: `פיורנטינה מתלבטת אם להשאיר את מנור סולומון`
 - Original: `סולומון יישאר בפיורנטינה? "יהיה קשה למצוא שחקן טוב ממנו"`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3840078
 
-### WARNING · takeaway_long · item 141
+### WARNING · takeaway_long · item 140
 - Takeaway length 104 > 95
 - Headline: `אוקלהומה עלתה ל-1:2, וומבניאמה לקח אחריות`
 - Original: `וומבניאמה מתוסכל: "מתקשה להפוך את החברים שלי לטובים יותר"`
 - Source: וואלה ספורט - NBA
 - URL: https://sports.walla.co.il/item/3840066
 
-### WARNING · summary_long · item 142
+### WARNING · summary_long · item 141
 - Summary length 231 > 220
 - Headline: `איראן מנסה לגבות אגרה במצר הורמוז`
 - Original: `The Risks of Iran’s Threat to Control the Strait of Hormuz`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/23/business/iran-toll-strait-hormuz.html
 
-### WARNING · takeaway_long · item 142
+### WARNING · takeaway_long · item 141
 - Takeaway length 102 > 95
 - Headline: `איראן מנסה לגבות אגרה במצר הורמוז`
 - Original: `The Risks of Iran’s Threat to Control the Strait of Hormuz`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/23/business/iran-toll-strait-hormuz.html
 
-### WARNING · takeaway_long · item 144
+### WARNING · takeaway_long · item 143
 - Takeaway length 104 > 95
 - Headline: `סקוטלנד הודתה שסלטיק קיבלה פנדל שגוי במאבק האליפות`
 - Original: `חדשות ספורט, 23 במאי`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/hayom/2026-05-23/ty-article-live/0000019e-537d-df61-a3ff-d3ff54ec0000
 
-### WARNING · takeaway_long · item 146
+### WARNING · takeaway_long · item 145
 - Takeaway length 119 > 95
 - Headline: `פוקס ופיפ״א בוחנות פרסומות בהפסקות שתייה במונדיאל`
 - Original: `רשת הטלוויזיה פוקס בדיונים על השימוש בהפסקות השתייה במונדיאל לפרסומות`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-05-23/ty-article/0000019e-5361-d637-a99f-77fb3d240000
 
-### WARNING · summary_long · item 147
+### WARNING · summary_long · item 146
 - Summary length 235 > 220
 - Headline: `דירת 4 חדרים ביקנעם נמכרה ב־1.72 מיליון שקל`
 - Original: `משופצת ועם חניה: בכמה נמכרה דירת 4 חדרים ביקנעם?`
 - Source: גלובס - נדל״ן ותשתיות
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543514#utm_source=RSS
 
-### WARNING · takeaway_long · item 147
+### WARNING · takeaway_long · item 146
 - Takeaway length 98 > 95
 - Headline: `דירת 4 חדרים ביקנעם נמכרה ב־1.72 מיליון שקל`
 - Original: `משופצת ועם חניה: בכמה נמכרה דירת 4 חדרים ביקנעם?`
 - Source: גלובס - נדל״ן ותשתיות
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543514#utm_source=RSS
 
-### WARNING · takeaway_long · item 148
+### WARNING · takeaway_long · item 147
 - Takeaway length 133 > 95
 - Headline: `מאמר מציע שהכנסת תבחר את נשיא העליון`
 - Original: `הדרך ליציאה מהכאוס`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14776359
 
-### WARNING · summary_long · item 151
+### WARNING · summary_long · item 150
 - Summary length 226 > 220
 - Headline: `המונדיאל מכר כרטיסים, אבל מלונות בארה״ב נשארים ריקים`
 - Original: `5 מיליון כרטיסים נמכרו למונדיאל - אבל המלונות עדיין ריקים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/tourism-news/article/20597763
 
-### WARNING · takeaway_long · item 151
+### WARNING · takeaway_long · item 150
 - Takeaway length 117 > 95
 - Headline: `המונדיאל מכר כרטיסים, אבל מלונות בארה״ב נשארים ריקים`
 - Original: `5 מיליון כרטיסים נמכרו למונדיאל - אבל המלונות עדיין ריקים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/tourism-news/article/20597763
 
-### WARNING · summary_long · item 152
+### WARNING · summary_long · item 151
 - Summary length 252 > 220
 - Headline: `מאמן לשעבר של מקגרגור שיתף סרטון אנטישמי קיצוני`
 - Original: `"פתרון סופי ליהודים": מאמנו לשעבר של קונור מקגרגור - והסערה האנטישמית`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/sk11a1n0jzx
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 151
 - Takeaway length 96 > 95
 - Headline: `מאמן לשעבר של מקגרגור שיתף סרטון אנטישמי קיצוני`
 - Original: `"פתרון סופי ליהודים": מאמנו לשעבר של קונור מקגרגור - והסערה האנטישמית`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/sk11a1n0jzx
 
-### WARNING · takeaway_long · item 154
+### WARNING · takeaway_long · item 153
 - Takeaway length 115 > 95
 - Headline: `Starship V3 השלימה טיסת בכורה ונחתה באוקיינוס`
 - Original: `SpaceX השלימה טיסת בכורה מוצלחת של חללית Starship V3`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/skpjjw0kml
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 154
 - Takeaway length 107 > 95
 - Headline: `נטע לביא חזר להרכב ומצ׳ידה סיימה שלישית במזרח`
 - Original: `נטע לביא חזר להרכב מצ'ידה זלביה וניצח במחזור הסיום`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839987
 
-### WARNING · takeaway_long · item 156
+### WARNING · takeaway_long · item 155
 - Takeaway length 108 > 95
 - Headline: `יום קטלני בכבישים: חמישה הרוגים בכמה תאונות`
 - Original: `הרוג ו-6 פצועים בתאונה קטלנית בעמק יזרעאל, בן 10 במצב קשה`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hygyypakze
 
-### WARNING · takeaway_long · item 157
+### WARNING · takeaway_long · item 156
 - Takeaway length 121 > 95
 - Headline: `ריאל ניצחה 90:105 ועלתה לגמר היורוליג מול אולימפיאקוס`
 - Original: `בדרך לזכייה ה-12 שלה? ריאל גברה על ולנסיה והעפילה לגמר`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839916
 
-### WARNING · takeaway_long · item 158
+### WARNING · takeaway_long · item 157
 - Takeaway length 117 > 95
 - Headline: `רונאלדו הכניס 300 מיליון דולר ושווה את שיא פורבס`
 - Original: `הספורטאי המרוויח בעולם: רונאלדו בפסגה בפעם הרביעית ברציפות`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840031
 
-### WARNING · takeaway_long · item 159
+### WARNING · takeaway_long · item 158
 - Takeaway length 109 > 95
 - Headline: `בת 11 מתה אחרי תאונת אוטובוס בדיזנגוף`
 - Original: `הטרגדיה בדיזנגוף: נקבע מותה של טליה חיה טימסית בת ה-11, שנפגעה בתאונת אוטובוס`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3840027
 
-### WARNING · takeaway_long · item 161
+### WARNING · takeaway_long · item 160
 - Takeaway length 109 > 95
 - Headline: `אולימפיאקוס עלתה לגמר היורוליג אחרי 61:79 על פנרבחצ׳ה`
 - Original: `בשלה לתואר: אולימפיאקוס בגמר יורוליג עשירי בתולדותיה`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839915
 
-### WARNING · takeaway_long · item 163
+### WARNING · takeaway_long · item 162
 - Takeaway length 99 > 95
 - Headline: `מדריך מאי מרכז סדרות חדשות לפי שירות צפייה`
 - Original: `סדרות מומלצות לחודש מאי 2026: כל מה ששווה לראות בטלוויזיה`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3574676
 
-### WARNING · takeaway_long · item 166
+### WARNING · takeaway_long · item 165
 - Takeaway length 98 > 95
 - Headline: `בלו בירד פותחת קו נתב״ג–אמסטרדם מ־199 דולר`
 - Original: `החל ממחר: קו טיסות חדש לאמסטרדם - במחיר שלא נראה שנים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/aviation/article/20597594
 
-### WARNING · takeaway_long · item 167
+### WARNING · takeaway_long · item 166
 - Takeaway length 106 > 95
 - Headline: `אינייסטה יתחיל לאמן בגולף יונייטד בדובאי`
 - Original: `מפתיע: אנדרס אינייסטה מתחיל את קריירת האימון בדובאי`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840005
 
-### WARNING · takeaway_long · item 168
+### WARNING · takeaway_long · item 167
 - Takeaway length 115 > 95
 - Headline: `ספוטיפיי תפתח מכירת כרטיסים מוקדמת למעריצים`
 - Original: `מהיום: ספוטיפיי תשיג לכם כרטיסים להופעות - לפני כולם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/apps/article/20597492
 
-### WARNING · takeaway_long · item 169
+### WARNING · takeaway_long · item 168
 - Takeaway length 97 > 95
 - Headline: `בית״ר והפועל ת״א יסגרו עונה בשבת 21:00 בטדי`
 - Original: `הרכבים משניים בטדי: בית"ר והפועל תל אביב סוגרות עונה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839855
 
-### WARNING · takeaway_long · item 170
+### WARNING · takeaway_long · item 169
 - Takeaway length 109 > 95
 - Headline: `שני בני אדם נהרגו בתאונות בכביש 9 ובכביש 77`
 - Original: `הקטל בדרכים: בת 51 נהרגה סמוך למחלף חביבה, בן 20 נהרג באזור טבריה`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840001
 
-### WARNING · takeaway_long · item 172
+### WARNING · takeaway_long · item 171
 - Takeaway length 117 > 95
 - Headline: `מכבי תל אביב תעלה ברוטציה לפני גמר הגביע`
 - Original: `מכבי תל אביב חושבת על הגמר, גם הפועל פתח תקוה בהרכב משני`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3839856
 
-### WARNING · takeaway_long · item 178
+### WARNING · takeaway_long · item 177
 - Takeaway length 106 > 95
 - Headline: `עיתון באוקלהומה הסיר טור שהשווה את הת'אנדר לישראל`
 - Original: `איומים, הטרדות ואנטישמיות: ההשוואה בין ישראל לאלופת ה-NBA - והסערה בעקבותיה`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldbasketball/article/ryvjzaa1fg
 
-### WARNING · summary_long · item 179
+### WARNING · summary_long · item 178
 - Summary length 269 > 220
 - Headline: `פיינל פור היורוליג שם לחץ חריג על שלושה מאמנים אפורים`
 - Original: `כריזמה זה אוברייטד: המאמנים שינסו לקחת לשאראס את התואר`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839847
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 117 > 95
 - Headline: `פיינל פור היורוליג שם לחץ חריג על שלושה מאמנים אפורים`
 - Original: `כריזמה זה אוברייטד: המאמנים שינסו לקחת לשאראס את התואר`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3839847
 
-### WARNING · takeaway_long · item 180
+### WARNING · takeaway_long · item 179
 - Takeaway length 106 > 95
 - Headline: `תאונת כביש 9 ליד באקה הפכה לקטלנית`
 - Original: `נקבע מותה של הפצועה בתאונה בכביש 9 סמוך לבאקה אל-גרבייה`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/hy11gc0a1fe
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 180
 - Takeaway length 110 > 95
 - Headline: `הפועל פ״ת תלבש רטרו מול מכבי ת״א בשבת`
 - Original: `הפועל פתח תקוה תעלה למשחק האחרון עם מדי רטרו מעונת 1999/00`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3839977
 
-### WARNING · takeaway_long · item 182
+### WARNING · takeaway_long · item 181
 - Takeaway length 117 > 95
 - Headline: `ארבלואה נפרד מריאל לפני מחזור הסיום מול בילבאו`
 - Original: `"יודע מה היה כאן כשהגעתי. עוזב את ריאל עם הכרת תודה עצומה"`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839969
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 182
 - Takeaway length 113 > 95
 - Headline: `טוכל ניפה את פודן ופאלמר מסגל אנגליה למונדיאל`
 - Original: `טוכל לאחר פרסום הסגל: "זה קשור לחיבור ואמון. היו שיחות קשות"`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839965
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 183
 - Takeaway length 121 > 95
 - Headline: `אנגליה פרסמה סגל למונדיאל בלי פודן, פאלמר ומגווייר`
 - Original: `"הטוב אי פעם": אחרי הדרמה, אנגליה פרסמה את הסגל למונדיאל`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839943
 
-### WARNING · takeaway_long · item 185
+### WARNING · takeaway_long · item 184
 - Takeaway length 106 > 95
 - Headline: `ענאן חלאילי מתקרב לנאפולי, הפער הכספי עדיין פתוח`
 - Original: `"זה קרוב מאוד": בנאפולי אופטימיים לגבי עסקת ענאן חלאילי`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3839963
 
-### WARNING · summary_long · item 186
+### WARNING · summary_long · item 185
 - Summary length 238 > 220
 - Headline: `חמש דקות תנועה ביום נקשרו לפחות תמותה מוקדמת`
 - Original: `רק 5 דקות ביום: ההרגל הפשוט שעשוי להאריך לכם את החיים`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/health/article-1324327
 
-### WARNING · takeaway_long · item 186
+### WARNING · takeaway_long · item 185
 - Takeaway length 118 > 95
 - Headline: `חמש דקות תנועה ביום נקשרו לפחות תמותה מוקדמת`
 - Original: `רק 5 דקות ביום: ההרגל הפשוט שעשוי להאריך לכם את החיים`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/health/article-1324327
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 186
 - Takeaway length 103 > 95
 - Headline: `שי ברדה סגר עונה מוצלחת בקריית שמונה בלי בית`
 - Original: `"ראיתי את אבא גוסס מול העיניים. הראש לא היה במקום"`
 - Source: וואלה ספורט - אבא של שבת
 - URL: https://sports.walla.co.il/item/3839958
 
-### WARNING · takeaway_long · item 188
+### WARNING · takeaway_long · item 187
 - Takeaway length 129 > 95
 - Headline: `The Late Show ירדה מהמסך אחרי 33 שנות שידור`
 - Original: `עם פול מקרטני וירידות על טראמפ: סטיבן קולבר נפרד מ"הלייט שואו"`
 - Source: וואלה חדשות
 - URL: https://e.walla.co.il/item/3839960
 
-### WARNING · takeaway_long · item 189
+### WARNING · takeaway_long · item 188
 - Takeaway length 111 > 95
 - Headline: `הודו פונה לנפט ונצואלי כשמצר הורמוז חסום`
 - Original: `Can Venezuelan oil save India amid the Hormuz energy crisis?`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/22/can-venezuelan-oil-save-india-amid-the-hormuz-energy-crisis?traffic_source=rss
 
-### WARNING · takeaway_long · item 191
+### WARNING · takeaway_long · item 190
 - Takeaway length 108 > 95
 - Headline: `קליקאפ מקצצת 22% ומבטיחה תגמול לעובדי AI`
 - Original: `קליקאפ תפטר חמישית מהעובדים שלה – ותציע שכר שנתי של מיליון דולר לטובים ביותר`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/wallstreet/2026-05-22/ty-article/.premium/0000019e-4ecc-dc0d-a99e-ceec51140000
 
-### WARNING · takeaway_long · item 194
+### WARNING · takeaway_long · item 193
 - Takeaway length 98 > 95
 - Headline: `המלחמה באיראן מערערת את רשת החילוץ של מצרים`
 - Original: `מה קורה בכלכלה המצרית מאז המלחמה באיראן?`
