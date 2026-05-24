@@ -2,39 +2,38 @@
 
 Items checked: 189
 Errors: 0
-Warnings: 126
+Warnings: 125
 
 ## Category distribution
 
 - ביטחון: 40
 - ספורט: 27
-- כלכלה: 25
-- אקטואליה בעולם: 20
+- כלכלה: 24
+- אקטואליה בעולם: 21
 - תרבות: 10
 - טכנולוגיה: 9
 - פוליטיקה: 9
+- צרכנות: 8
 - פלילים: 7
 - בריאות: 7
-- צרכנות: 7
 - רכילות: 6
 - משפט: 5
-- חדשות: 5
 - דעות: 5
+- חדשות: 4
 - רכב: 3
 - נדל״ן: 3
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 103
+- takeaway_long: 106
 - summary_long: 19
-- headline_near_duplicate_summary: 4
 
 ## Issues
 
-### WARNING · headline_near_duplicate_summary · item 0
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `לפי אחד הבלוגים המסקרים את פורטלנד`
+### WARNING · takeaway_long · item 0
+- Takeaway length 97 > 95
+- Headline: `דני אבדיה סומן כמפתח לקפיצה הבאה של פורטלנד`
 - Original: `בארה"ב משוכנעים: דני אבדיה בדרך לעוד קפיצת מדרגה - וכך זה יקרה`
 - Source: וואלה ספורט - ישראלים ב-NBA
 - URL: https://sports.walla.co.il/item/3840421
@@ -767,13 +766,6 @@ Warnings: 126
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3840215
 
-### WARNING · headline_near_duplicate_summary · item 161
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `בנק ישראל עומד בפני החלטה קשה: האם להוריד מחר את הריבית, אפילו בחצי אחוז`
-- Original: `ציפיות במשק להורדת הריבית: דילמת הנגיד וההסתערות על הדולר`
-- Source: ynet - כל ערוץ הכלכלה
-- URL: https://www.ynet.co.il/economy/article/yokra14778075
-
 ### WARNING · takeaway_long · item 163
 - Takeaway length 111 > 95
 - Headline: `חומר אפל מסביר למה גלקסיות אינן מתפרקות`
@@ -900,16 +892,16 @@ Warnings: 126
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3840195
 
-### WARNING · headline_near_duplicate_summary · item 187
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `יו"ר BitMine ואחד האנליסטים השוריים ביותר בשוק הקריפטו טוען כי העלייה`
+### WARNING · takeaway_long · item 187
+- Takeaway length 101 > 95
+- Headline: `הקריפטו נפל בגלל איראן, אבל שורי הביטקוין עדיין מהמרים על זינוק`
 - Original: `אפקט מטורף: המתיחות מול איראן ריסקה את המטבע הפופולרי`
 - Source: וואלה כסף - קריפטו
 - URL: https://finance.walla.co.il/item/3839059
 
-### WARNING · headline_near_duplicate_summary · item 188
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `חברת הביטוח ליברה הרחיבה את ביטוח הרכב היומי מנהגים צעירים עד גיל 24`
+### WARNING · takeaway_long · item 188
+- Takeaway length 99 > 95
+- Headline: `ליברה מרחיבה ביטוח רכב יומי גם לנהגים עד גיל 24`
 - Original: `ביטוח רכב ב-24 שקל ליום גם לנהגים בוגרים: משתלם?`
 - Source: ynet - כל ערוץ הצרכנות
 - URL: https://www.ynet.co.il/economy/article/bjetzdujgg
