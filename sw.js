@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v70-jpost-local-source';
+const CACHE_NAME = 'poenta-v71-world-actuality';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -43,8 +43,8 @@ self.addEventListener('push', event => {
   const title = data.title || 'פואנטה חדשה';
   const options = {
     body: data.body || 'יש עדכון חדש בפיד פואנטה',
-    icon: './icon-192.png?v=poenta-v70-jpost-local-source',
-    badge: './icon-192.png?v=poenta-v70-jpost-local-source',
+    icon: './icon-192.png?v=poenta-v71-world-actuality',
+    badge: './icon-192.png?v=poenta-v71-world-actuality',
     data: { url: data.url || './index.html' },
     dir: 'rtl',
     lang: 'he-IL',
