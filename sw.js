@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v56-ios-home-pull-refresh';
+const CACHE_NAME = 'poanta-demo-v58-breaking-separate-source-links';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
