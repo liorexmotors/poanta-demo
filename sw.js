@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v53-breaking-feed';
+const CACHE_NAME = 'poanta-demo-v54-pull-refresh';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
