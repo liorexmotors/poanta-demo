@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v58-breaking-separate-source-links';
+const CACHE_NAME = 'poanta-demo-v60-hide-nonofficial-fallback-sources';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
