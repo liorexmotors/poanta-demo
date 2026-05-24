@@ -34,24 +34,24 @@ Warnings: 123
 
 ### WARNING · headline_near_duplicate_summary · item 0
 - Headline is a clipped/near-duplicate version of the summary
+- Headline: `הגרסה החסכונית של הקרוסאובר המוערך הושקה במחיר של החל מ-280 אלף שקל`
+- Original: `סובארו פורסטר היברידי בישראל: צריכת הדלק ירדה, המחיר זינק`
+- Source: וואלה רכב
+- URL: https://cars.walla.co.il/item/3840407
+
+### WARNING · headline_near_duplicate_summary · item 1
+- Headline is a clipped/near-duplicate version of the summary
 - Headline: `הקבוצה מאמסטרדם גירדה 3:4 מהנקודה הלבנה אחרי 1:1 מול אוטרכט בתום 120`
 - Original: `אייאקס עלתה לאירופה אחרי ניצחון בפנדלים, גלוך לא שותף`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3840402
 
-### WARNING · headline_near_duplicate_summary · item 1
+### WARNING · headline_near_duplicate_summary · item 2
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `לפי אחד הבלוגים המסקרים את פורטלנד`
 - Original: `בארה"ב משוכנעים: דני אבדיה בדרך לעוד קפיצת מדרגה - וכך זה יקרה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840421
-
-### WARNING · headline_near_duplicate_summary · item 2
-- Headline is a clipped/near-duplicate version of the summary
-- Headline: `הגרסה החסכונית של הקרוסאובר המוערך הושקה במחיר של החל מ-280 אלף שקל`
-- Original: `סובארו פורסטר היברידי בישראל: צריכת הדלק ירדה, המחיר זינק`
-- Source: וואלה רכב
-- URL: https://cars.walla.co.il/item/3840407
 
 ### WARNING · takeaway_long · item 4
 - Takeaway length 125 > 95
