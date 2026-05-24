@@ -11,8 +11,8 @@ Warnings: 137
 - אקטואליה בעולם: 25
 - כלכלה: 21
 - תרבות: 10
-- דעות: 8
 - בריאות: 8
+- דעות: 8
 - פוליטיקה: 8
 - פלילים: 7
 - רכב: 6
@@ -32,28 +32,28 @@ Warnings: 137
 
 ## Issues
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 5
 - Takeaway length 100 > 95
 - Headline: `מאמן התעמלות נעצר בחשד לעבירות מין במתאמנת`
 - Original: `מאמן בכיר בהתעמלות קרקע חשוד בעבירות מין בצעירה במשך עשור`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3840488
 
-### WARNING · takeaway_long · item 5
+### WARNING · takeaway_long · item 6
 - Takeaway length 116 > 95
 - Headline: `ארה״ב ואיראן קרובות להסכם אך מתווכחות על האורניום`
 - Original: `בלי זה - אין עסקה: המוקש האחרון בדרך להסכם עם איראן`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3840487
 
-### WARNING · takeaway_long · item 6
+### WARNING · takeaway_long · item 7
 - Takeaway length 124 > 95
 - Headline: `משבר האמון במערכת החינוך עובר מהישגים לפיקוח פוליטי`
 - Original: `קורסת מחוסר אמון: כך נשקם את מערכת החינוך`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840471
 
-### WARNING · takeaway_long · item 7
+### WARNING · takeaway_long · item 8
 - Takeaway length 114 > 95
 - Headline: `הימין הקיצוני בקפריסין הפך לכוח השלישי בפרלמנט`
 - Original: `מפלגת הימין הקיצוני בקפריסין התחזקה בבחירות לפרלמנט והפכה לשלישית בגודלה`
