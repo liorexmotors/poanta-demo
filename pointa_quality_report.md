@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 199
 Errors: 0
-Warnings: 136
+Warnings: 134
 
 ## Category distribution
 
-- ביטחון: 41
+- ביטחון: 40
 - ספורט: 34
 - אקטואליה בעולם: 27
 - כלכלה: 21
@@ -27,8 +27,8 @@ Warnings: 136
 
 ## Issue counts
 
-- takeaway_long: 119
-- summary_long: 17
+- takeaway_long: 118
+- summary_long: 16
 
 ## Issues
 
@@ -969,17 +969,3 @@ Warnings: 136
 - Original: `מול שקיעת תכניות הלייט נייט בטלוויזיה, הפודקאסטים צוחקים אחרונים`
 - Source: וואלה תרבות
 - URL: https://e.walla.co.il/item/3840211
-
-### WARNING · summary_long · item 196
-- Summary length 235 > 220
-- Headline: `מקורבי טראמפ מציגים הסכם מדורג מול איראן`
-- Original: `בסביבת טראמפ תוקפים: זה לא הסכם כניעה - ארה"ב תפקח על איראן ותשמור על האופציה הצבאית`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3840215
-
-### WARNING · takeaway_long · item 196
-- Takeaway length 101 > 95
-- Headline: `מקורבי טראמפ מציגים הסכם מדורג מול איראן`
-- Original: `בסביבת טראמפ תוקפים: זה לא הסכם כניעה - ארה"ב תפקח על איראן ותשמור על האופציה הצבאית`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3840215
