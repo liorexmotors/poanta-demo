@@ -2368,12 +2368,12 @@ def main() -> int:
         # preserve source-local ranking while dropping duplicate URLs
         local_seen = set()
         candidates = [x for x in candidates if not (x.url in local_seen or local_seen.add(x.url))]
-        if args.sync_profile == "fast" or source.get("telegram"):
-            # Fast-lane feeds must feel alive: prefer newer qualified items over
-            # older items that merely score higher on keyword density.
-            candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
-        else:
-            candidates = sorted(candidates, key=lambda x: x.score, reverse=True)
+        # Feed/source timing must reflect fresh source activity. Previously the
+        # non-fast profiles re-sorted each source by score here, undoing the RSS
+        # recency sort from extract_rss() and leaving many dashboard source rows
+        # red even when the source had newer RSS items. Keep recency primary for
+        # every profile; score is only the tie-breaker.
+        candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
         for c in candidates:
             if c.url in used_urls:
                 continue
@@ -2396,10 +2396,7 @@ def main() -> int:
                 break
         selected.extend(picked)
 
-    if args.sync_profile == "fast":
-        selected = sorted(selected, key=lambda x: (x.published_at, x.score), reverse=True)
-    else:
-        selected = sorted(selected, key=lambda x: x.score, reverse=True)
+    selected = sorted(selected, key=lambda x: (x.published_at, x.score), reverse=True)
 
     # The experimental prompt depends on article-specific substance. Enrich the
     # top pool before writing so insights are derived from article metadata/body,
