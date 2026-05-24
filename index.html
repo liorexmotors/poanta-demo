@@ -329,6 +329,14 @@ document.getElementById('refreshBtn').addEventListener('click',ev=>{ const filte
 document.getElementById('refreshBtn').addEventListener('keydown',ev=>{ if((ev.key==='Enter'||ev.key===' ') && ev.target.matches('[data-feed-filter]')){ ev.preventDefault(); feedFilter=ev.target.dataset.feedFilter||'all'; render(currentFeed); } });
 function fetchSourceCatalog(){ return fetch('rss_sources.json?v='+encodeURIComponent(POANTA_FEED_VERSION),{cache:'reload'}).then(r=>r.ok?r.json():null).then(data=>{ sourceCatalog=Array.isArray(data?.active)?data.active:[]; render(currentFeed); }).catch(()=>{}); }
 function refreshCurrentFeed(force=true){ return feedMode==='breaking'?fetchBreakingFeed(force):fetchFeed(force); }
+function refreshPageFromPull(){
+  submitUsageEvent(feedMode==='breaking'?'pull_refresh_breaking':'pull_refresh_page');
+  try{ if(navigator.serviceWorker?.controller) navigator.serviceWorker.controller.postMessage({type:'SKIP_WAITING'}); }catch{}
+  const url=new URL(window.location.href);
+  url.searchParams.set('v', String(Date.now()));
+  window.location.replace(url.toString());
+  return Promise.resolve();
+}
 function fetchFeed(force=false){ if(force)submitUsageEvent('refresh'); const v=force?Date.now():POANTA_FEED_VERSION; return fetch('feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedFeed).then(render).catch(()=>render(embeddedFeed)); }
 function fetchBreakingFeed(force=false){ if(force)submitUsageEvent('refresh_breaking'); const v=force?Date.now():POANTA_FEED_VERSION; return fetch('breaking_feed.json?v='+encodeURIComponent(v),{cache:'reload'}).then(r=>r.ok?r.json():embeddedBreakingFeed).then(data=>{ currentBreakingFeed=data||embeddedBreakingFeed; render(currentFeed); }).catch(()=>{ currentBreakingFeed=embeddedBreakingFeed; render(currentFeed); }); }
 function setupPullToRefresh(){
@@ -336,9 +344,9 @@ function setupPullToRefresh(){
   const txt=document.getElementById('pullRefreshText');
   if(!el||!txt)return;
   let startY=0,pulling=false,ready=false,refreshing=false,lastY=0;
-  const threshold=72;
-  const topOffset=()=>Math.max(window.scrollY||0, document.documentElement.scrollTop||0, document.body.scrollTop||0);
-  const ignoredTarget=target=>target.closest('button,a,input,select,textarea,.source-list,.tabs,.nav');
+  const threshold=64;
+  const topOffset=()=>Math.max(window.scrollY||0, document.documentElement.scrollTop||0, document.body.scrollTop||0, document.scrollingElement?.scrollTop||0);
+  const ignoredTarget=target=>target.closest('button,input,select,textarea,.source-list,.tabs,.nav');
   const reset=()=>{ pulling=false; ready=false; startY=0; lastY=0; el.classList.remove('visible','ready','refreshing'); txt.textContent='משוך לרענון'; };
   const start=y=>{ if(refreshing||topOffset()>2)return false; startY=y; pulling=true; ready=false; return true; };
   const move=(y,ev)=>{
@@ -357,13 +365,14 @@ function setupPullToRefresh(){
     if(!pulling||refreshing)return;
     if(!ready){ reset(); return; }
     pulling=false; refreshing=true; el.style.transform='translate(-50%,0) scale(1)'; el.classList.add('visible','refreshing'); el.classList.remove('ready'); txt.textContent='מרענן…';
-    refreshCurrentFeed(true).finally(()=>{ refreshing=false; el.style.transform=''; setTimeout(reset,220); });
+    refreshPageFromPull().finally(()=>{ refreshing=false; el.style.transform=''; setTimeout(reset,220); });
   };
+  const touchCapable='ontouchstart' in window || navigator.maxTouchPoints>0;
   window.addEventListener('touchstart',ev=>{ const t=ev.touches&&ev.touches[0]; if(!t||ignoredTarget(ev.target))return; start(t.clientY); },{passive:true});
   window.addEventListener('touchmove',ev=>{ const t=ev.touches&&ev.touches[0]; if(t)move(t.clientY,ev); },{passive:false});
   window.addEventListener('touchend',end,{passive:true});
   window.addEventListener('touchcancel',()=>{ if(!refreshing) reset(); },{passive:true});
-  if(window.PointerEvent){
+  if(window.PointerEvent&&!touchCapable){
     window.addEventListener('pointerdown',ev=>{ if(ev.pointerType==='mouse'||ignoredTarget(ev.target))return; start(ev.clientY); },{passive:true});
     window.addEventListener('pointermove',ev=>{ if(ev.pointerType!=='mouse')move(ev.clientY,ev); },{passive:false});
     window.addEventListener('pointerup',ev=>{ if(ev.pointerType!=='mouse')end(); },{passive:true});

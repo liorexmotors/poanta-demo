@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poanta-demo-v55-touch-pull-refresh';
+const CACHE_NAME = 'poanta-demo-v56-ios-home-pull-refresh';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -66,3 +66,5 @@ self.addEventListener('notificationclick', event => {
     })
   );
 });
+
+self.addEventListener('message', event => { if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting(); });
