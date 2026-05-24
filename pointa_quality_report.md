@@ -7,10 +7,10 @@ Warnings: 128
 ## Category distribution
 
 - ספורט: 87
-- ביטחון: 42
+- ביטחון: 41
 - כלכלה: 19
+- פוליטיקה: 10
 - רכב: 10
-- פוליטיקה: 9
 - טכנולוגיה: 7
 - תרבות: 7
 - בריאות: 4
@@ -311,8 +311,8 @@ Warnings: 128
 
 ### WARNING · headline_near_duplicate_summary · item 73
 - Headline is a clipped/near-duplicate version of the summary
-- Headline: `לאחר שיחת ועידה עם מנהיגים מהמזרח התיכון ומהעולם המוסלמי`
-- Original: `טראמפ: "ההסכם גובש ברובו, הפרטים האחרונים יוכרזו בקרוב"`
+- Headline: `לאחר שיחת ועידה עם מנהיגים מהמזה"ת ומהאזור`
+- Original: `טראמפ: "הפרטים האחרונים בהסכם יוכרזו בקרוב; דיווח: טהרן הסכימה לוותר על האורניום המועשר`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3840102
 
