@@ -13,8 +13,8 @@ Warnings: 139
 - בריאות: 12
 - נדל״ן: 9
 - אקטואליה בעולם: 7
-- פוליטיקה: 6
 - רכב: 6
+- פוליטיקה: 6
 - צרכנות: 6
 - משפט: 6
 - רכילות: 5
@@ -30,26 +30,33 @@ Warnings: 139
 
 ## Issues
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 0
 - Takeaway length 110 > 95
 - Headline: `גמר איסטנבול נכתב מחדש דרך צעיף וזיכרון אישי`
 - Original: `אגדת הצעיף הקדוש: כך ניצחתי בגמר הצ'מפיונס הגדול בכל הזמנים`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840594
 
-### WARNING · takeaway_long · item 3
+### WARNING · takeaway_long · item 1
 - Takeaway length 98 > 95
 - Headline: `ערכת CBT חדשה מעבירה טיפול בחרדות אל הבית`
 - Original: `ערכת CBT שמסייעת להורים ולילדים להתמודד עם חרדות בבית`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3840728
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 2
 - Takeaway length 109 > 95
 - Headline: `ברקוביץ׳ תקף את סרטון החג של הליכוד`
 - Original: `אייל ברקוביץ' נגד ינון מגל: "זה סרטון של גועל"`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3840722
+
+### WARNING · takeaway_long · item 4
+- Takeaway length 114 > 95
+- Headline: `ביטן בלם את רפורמת הטסטים ודרש בדיקת קילומטראז׳`
+- Original: `האם נעבור לבצע טסט בכל שנתיים? בכנסת מתנגדים`
+- Source: וואלה רכב - כל הכתבות
+- URL: https://cars.walla.co.il/item/3840713
 
 ### WARNING · takeaway_long · item 7
 - Takeaway length 105 > 95
@@ -86,42 +93,35 @@ Warnings: 139
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20616359
 
-### WARNING · takeaway_long · item 13
-- Takeaway length 114 > 95
-- Headline: `ביטן בלם את רפורמת הטסטים ודרש בדיקת קילומטראז׳`
-- Original: `האם נעבור לבצע טסט בכל שנתיים? בכנסת מתנגדים`
-- Source: וואלה רכב - כל הכתבות
-- URL: https://cars.walla.co.il/item/3840713
-
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 16
 - Takeaway length 96 > 95
 - Headline: `מילאן פיטרה את אלגרי וההנהלה אחרי איבוד האלופות`
 - Original: `זעזוע ענק במילאן, וזלאטן איברהימוביץ' היחיד ששרד`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3840737
 
-### WARNING · summary_long · item 19
+### WARNING · summary_long · item 18
 - Summary length 222 > 220
 - Headline: `נגיד בנק ישראל מאותת שלא ימהר להתערב בדולר`
 - Original: `הקריסה של הדולר, המסר ליצואנים והסיכויים שיתערב: נגיד בנק ישראל בראיון`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543909#utm_source=RSS
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 18
 - Takeaway length 130 > 95
 - Headline: `נגיד בנק ישראל מאותת שלא ימהר להתערב בדולר`
 - Original: `הקריסה של הדולר, המסר ליצואנים והסיכויים שיתערב: נגיד בנק ישראל בראיון`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543909#utm_source=RSS
 
-### WARNING · summary_long · item 21
+### WARNING · summary_long · item 20
 - Summary length 234 > 220
 - Headline: `בנק ישראל הוריד ריבית כשסיום המלחמה נכנס לשיקול`
 - Original: `נגיד בנק ישראל: "אפשרות סיום המלחמה השפיעה על ההחלטה להוריד את הריבית"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/syduna11lzl
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 20
 - Takeaway length 100 > 95
 - Headline: `בנק ישראל הוריד ריבית כשסיום המלחמה נכנס לשיקול`
 - Original: `נגיד בנק ישראל: "אפשרות סיום המלחמה השפיעה על ההחלטה להוריד את הריבית"`

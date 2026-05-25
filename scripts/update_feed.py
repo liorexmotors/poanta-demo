@@ -2480,9 +2480,11 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     cutoff = now - timedelta(days=FEED_RETENTION_DAYS)
     fast_cutoff = now - timedelta(hours=FAST_CATEGORY_RETENTION_HOURS)
     sync_profiles = load_sync_profiles()
+    existing_feed = json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"items": []}
+    existing_by_key = {feed_item_key(item): item for item in existing_feed.get("items", []) if feed_item_key(item)}
     merged = []
     seen_keys = set()
-    for feed in [new_feed, json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"items": []}]:
+    for feed in [new_feed, existing_feed]:
         fallback = now
         try:
             fallback = datetime.fromisoformat(str(feed.get("updatedAt", "")).replace("Z", "+00:00")).astimezone(tz)
@@ -2506,7 +2508,28 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
                 continue
             if is_foreign_source_label(str(item.get("source") or item.get("sourceLogo") or "")) and not is_retained_foreign_item_relevant(item):
                 continue
-            if item.get("hasSourceDate") and not item.get("publishedAt"):
+            previous_item = existing_by_key.get(key)
+            previous_published_at = str(previous_item.get("publishedAt") or "") if previous_item else ""
+            previous_titles = {
+                normalized_key(str(previous_item.get("originalTitle") or "")),
+                normalized_key(str(previous_item.get("headline") or "")),
+            } if previous_item else set()
+            current_titles = {
+                normalized_key(str(item.get("originalTitle") or "")),
+                normalized_key(str(item.get("headline") or "")),
+            }
+            previous_titles.discard("")
+            current_titles.discard("")
+            same_story_as_previous = bool(previous_titles and current_titles and previous_titles.intersection(current_titles))
+            if previous_published_at and same_story_as_previous:
+                # Some RSS sources (notably Walla live/breaking rows) keep moving
+                # the same story's pubDate forward on every refresh.  The UI label
+                # must reflect when this card/story first entered our feed, not a
+                # synthetic refreshed RSS timestamp for the same URL.
+                item["publishedAt"] = previous_published_at
+                item["hasSourceDate"] = previous_item.get("hasSourceDate", item.get("hasSourceDate", True))
+                d = item_datetime(item, fallback)
+            elif item.get("hasSourceDate") and not item.get("publishedAt"):
                 item["publishedAt"] = d.isoformat(timespec="seconds")
             item = refresh_item_pointa(item)
             if not str(item.get("imageUrl") or "").strip():
@@ -2520,7 +2543,7 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     # collected by the last all/medium/slow run. Otherwise the dashboard marks
     # sources as missing even though the current cron simply did not scan them.
     merged_activity = {}
-    for feed in [json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"sourceActivity": []}, new_feed]:
+    for feed in [existing_feed, new_feed]:
         for row in feed.get("sourceActivity", []) or []:
             key = (row.get("source") or "", row.get("subSource") or "")
             if not key[0]:
