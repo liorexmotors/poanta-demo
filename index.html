@@ -278,7 +278,18 @@ function persistViewInUrl(view){
 
 function esc(value){ return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
 function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='תחבורה') return 'רכב'; if(c==='חדשות') return 'פוליטיקה'; if(c==='עולם') return 'אקטואליה בעולם'; return c; }
-function timeFor(item,index){ if(item.hasSourceDate===false) return 'תאריך לא זמין'; const d=itemDate(item,index); const date=d.toLocaleDateString('he-IL',{day:'numeric',month:'numeric'}); const time=d.toLocaleTimeString('he-IL',{hour:'numeric',minute:'2-digit'}); return `${date} · ${time}`; }
+function timeFor(item,index){
+  if(item.hasSourceDate===false) return 'תאריך לא זמין';
+  const d=itemDate(item,index);
+  const diffMs=Math.max(0, Date.now()-d.getTime());
+  const minutes=Math.floor(diffMs/60000);
+  if(minutes<1) return 'עכשיו';
+  if(minutes<60) return `לפני ${minutes} דקות`;
+  const hours=Math.floor(minutes/60);
+  if(hours<24) return hours===1?'לפני שעה':`לפני ${hours} שעות`;
+  const days=Math.floor(hours/24);
+  return days===1?'לפני יום':`לפני ${days} ימים`;
+}
 function sourceName(item){ return canonicalSource(item.source || item.sourceLogo || 'מקור'); }
 function rawSourceName(item){ return String(item.source || item.sourceLogo || 'מקור'); }
 function sourceClass(item){ const s=sourceName(item).toLowerCase(); if(s.includes('ynet'))return'ynet'; if(s.includes('marker'))return'marker'; if(s.includes('tech'))return'tech'; if(s.includes('וואלה')||s.includes('walla'))return'walla'; if(s.includes('n12')||s.includes('mako'))return'n12'; if(s.includes('מעריב'))return'maariv'; if(s.includes('דה'))return'marker'; if(s.includes('ישראל'))return'israel'; return'other'; }
@@ -350,6 +361,16 @@ document.getElementById('refreshBtn').addEventListener('click',ev=>{ const filte
 document.getElementById('refreshBtn').addEventListener('keydown',ev=>{ if((ev.key==='Enter'||ev.key===' ') && ev.target.matches('[data-feed-filter]')){ ev.preventDefault(); feedFilter=ev.target.dataset.feedFilter||'all'; render(currentFeed); } });
 function fetchSourceCatalog(){ return fetch('rss_sources.json?v='+encodeURIComponent(POANTA_FEED_VERSION),{cache:'reload'}).then(r=>r.ok?r.json():null).then(data=>{ sourceCatalog=Array.isArray(data?.active)?data.active:[]; render(currentFeed); }).catch(()=>{}); }
 function refreshCurrentFeed(force=true){ return feedMode==='breaking'?fetchBreakingFeed(force):fetchFeed(force); }
+function refreshVisibleTimes(){
+  document.querySelectorAll('.card').forEach((card,idx)=>{
+    const meta=card.querySelector('.time-meta');
+    const item=findItemByKey(card.dataset.key||'');
+    if(!meta||!item)return;
+    const value=timeFor(item,idx);
+    if(meta.firstChild&&meta.firstChild.nodeType===Node.TEXT_NODE) meta.firstChild.nodeValue=value;
+    else meta.insertBefore(document.createTextNode(value), meta.firstChild||null);
+  });
+}
 function refreshPageFromPull(){
   submitUsageEvent(feedMode==='breaking'?'pull_refresh_breaking':'pull_refresh_page');
   try{ if(navigator.serviceWorker?.controller) navigator.serviceWorker.controller.postMessage({type:'SKIP_WAITING'}); }catch{}
@@ -406,6 +427,7 @@ try{ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change
 submitUsageEvent('page_view');
 setView(viewFromUrl(),{skipUrl:true});
 setupPullToRefresh();
+setInterval(refreshVisibleTimes, 60000);
 Promise.all([fetchFeed(),fetchBreakingFeed(),fetchSourceCatalog()]).then(flushFeedbackEvents);
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>null);
 </script>
