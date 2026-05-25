@@ -9,7 +9,7 @@ Warnings: 144
 - ספורט: 44
 - אקטואליה בעולם: 35
 - כלכלה: 25
-- ביטחון: 24
+- ביטחון: 23
 - תרבות: 12
 - בריאות: 11
 - פלילים: 8
@@ -17,8 +17,8 @@ Warnings: 144
 - רכב: 7
 - נדל״ן: 6
 - משפט: 5
+- טכנולוגיה: 5
 - פוליטיקה: 4
-- טכנולוגיה: 4
 - רכילות: 3
 - דעות: 3
 - צרכנות: 1
@@ -949,91 +949,91 @@ Warnings: 144
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3840434
 
-### WARNING · takeaway_long · item 189
+### WARNING · takeaway_long · item 188
 - Takeaway length 99 > 95
 - Headline: `משפחות אוסטרליות מקושרות לדאעש עזבו את מחנות סוריה`
 - Original: `Last of Australian ISIS linked families leave Syrian camps`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/isis-threat/article-897147
 
-### WARNING · summary_long · item 190
+### WARNING · summary_long · item 189
 - Summary length 256 > 220
 - Headline: `האקרים איראניים תקפו יעדים בישראל, בארה״ב ובאמירויות`
 - Original: `Iran-linked hackers targeted US, Israel and UAE, Palo Alto Networks says`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-897154
 
-### WARNING · takeaway_long · item 190
+### WARNING · takeaway_long · item 189
 - Takeaway length 107 > 95
 - Headline: `האקרים איראניים תקפו יעדים בישראל, בארה״ב ובאמירויות`
 - Original: `Iran-linked hackers targeted US, Israel and UAE, Palo Alto Networks says`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-897154
 
-### WARNING · summary_long · item 191
+### WARNING · summary_long · item 190
 - Summary length 230 > 220
 - Headline: `הצעה איראנית על הורמוז עלולה להקל לחץ בלי בלימת הגרעין`
 - Original: `Control over Strait of Hormuz is ‘lifeline’ for the regime, experts tell ‘Post’`
 - Source: The Jerusalem Post - Iran
 - URL: https://www.jpost.com/middle-east/iran-news/article-897162
 
-### WARNING · takeaway_long · item 191
+### WARNING · takeaway_long · item 190
 - Takeaway length 106 > 95
 - Headline: `הצעה איראנית על הורמוז עלולה להקל לחץ בלי בלימת הגרעין`
 - Original: `Control over Strait of Hormuz is ‘lifeline’ for the regime, experts tell ‘Post’`
 - Source: The Jerusalem Post - Iran
 - URL: https://www.jpost.com/middle-east/iran-news/article-897162
 
-### WARNING · takeaway_long · item 192
+### WARNING · takeaway_long · item 191
 - Takeaway length 111 > 95
 - Headline: `קליפורניה הכריזה חירום מחשש לפיצוץ מכל כימיקלים`
 - Original: `חשש מאסון סביבתי בקליפורניה: מכל עם כימיקלים מסוכנים על סף קריסה`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3840443
 
-### WARNING · takeaway_long · item 193
+### WARNING · takeaway_long · item 192
 - Takeaway length 96 > 95
 - Headline: `גרהאם קושר דיל עם איראן להצטרפות להסכמי אברהם`
 - Original: `מקורבו של טראמפ מגלה: הדרישה של הנשיא ממדינות האזור בתמורה להסכם עם איראן`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840454
 
-### WARNING · takeaway_long · item 194
+### WARNING · takeaway_long · item 193
 - Takeaway length 102 > 95
 - Headline: `לבנון ממתינה לעסקת ארה״ב-איראן כדי להרגיע את חיזבאללה`
 - Original: `Fate of War in Lebanon Rests Mostly With Outside Powers`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/lebanon-hezbollah-us-iran-israel.html
 
-### WARNING · takeaway_long · item 195
+### WARNING · takeaway_long · item 194
 - Takeaway length 105 > 95
 - Headline: `מחירי הנפט דוחפים את טראמפ לעסקה עם איראן`
 - Original: `התלהבנו מצימר זוגי עם ארוחת בוקר ב-300 שקל, עד שנכנסנו לתחנת הדלק`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/news/internal-info/2026-05-24/ty-article/0000019e-5a9a-d6a0-abde-fa9ec6440000
 
-### WARNING · takeaway_long · item 196
+### WARNING · takeaway_long · item 195
 - Takeaway length 121 > 95
 - Headline: `המשטרה בטורקיה השתלטה על מטה מפלגת האופוזיציה המרכזית`
 - Original: `Turkish police storm main opposition CHP’s party headquarters`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/newsfeed/2026/5/24/turkish-police-storm-main-opposition-chps-party-headquarters?traffic_source=rss
 
-### WARNING · takeaway_long · item 197
+### WARNING · takeaway_long · item 196
 - Takeaway length 105 > 95
 - Headline: `ברונו פרננדש קבע שיא בישולים חדש בפרמייר-ליג`
 - Original: `ברונו פרננדש שבר את שיא הבישולים לעונה בפרמייר-ליג`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-soccer/2026-05-24/ty-article/0000019e-5ab7-da4f-adff-dfb776d80000
 
-### WARNING · takeaway_long · item 198
+### WARNING · takeaway_long · item 197
 - Takeaway length 100 > 95
 - Headline: `איראן מגייסת היסטוריה כדי למסגר הסכם כניצחון`
 - Original: `Iran recounts historic battles in response to Trump’s talk of agreement`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/24/iran-recounts-historic-battles-in-response-to-trumps-talk-of-agreement?traffic_source=rss
 
-### WARNING · takeaway_long · item 199
+### WARNING · takeaway_long · item 198
 - Takeaway length 121 > 95
 - Headline: `שביונטק תפתח בשני בפריז מול אמרסון ג׳ונס`
 - Original: `שביונטק פותחת את המסע בפריז, מונפיס ו-ואוורינקה נפרדים`
