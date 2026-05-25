@@ -68,263 +68,263 @@ Warnings: 140
 - URL: https://www.israelhayom.co.il/news/defense/article/20615804
 
 ### WARNING · takeaway_long · item 27
+- Takeaway length 101 > 95
+- Headline: `האופוזיציה תוקפת את ניהול איראן ולבנון`
+- Original: `יאיר גולן תוקף: "כולם מבינים שטראמפ ומנהיגי האזור לא סופרים את נתניהו"`
+- Source: וואלה חדשות - פוליטי-מדיני
+- URL: https://news.walla.co.il/item/3840664
+
+### WARNING · takeaway_long · item 28
+- Takeaway length 99 > 95
+- Headline: `לוחמי הטנ״א עברו לתיקונים ליליים בלבנון`
+- Original: `מסביב לשעון, בעומק לבנון: סיפורי הגבורה של לוחמי הטכנולוגיה והאחזקה ברקע איום הרחפנים`
+- Source: וואלה חדשות - צבא וביטחון
+- URL: https://news.walla.co.il/item/3840661
+
+### WARNING · takeaway_long · item 29
 - Takeaway length 135 > 95
 - Headline: `הימין הקיצוני בקפריסין הכפיל כוח ומקשה על הנשיא`
 - Original: `הבחירות בקפריסין: הישג לימין הקיצוני, היוטיובר האנטישמי - והמכה לנשיא`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20615612
 
-### WARNING · summary_long · item 28
+### WARNING · summary_long · item 30
 - Summary length 229 > 220
-- Headline: `הסכם ארה״ב-איראן מתקרב, אבל הגרעין עדיין במחלוקת`
-- Original: `Trump pressured Iran to change its terms for a deal, but had little success.`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/live/2026/05/23/world/us-iran-war-trump/trump-pressured-iran-to-change-its-terms-for-a-deal-but-had-little-success
-
-### WARNING · takeaway_long · item 28
-- Takeaway length 111 > 95
 - Headline: `הסכם ארה״ב-איראן מתקרב, אבל הגרעין עדיין במחלוקת`
 - Original: `Trump pressured Iran to change its terms for a deal, but had little success.`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/live/2026/05/23/world/us-iran-war-trump/trump-pressured-iran-to-change-its-terms-for-a-deal-but-had-little-success
 
 ### WARNING · takeaway_long · item 30
+- Takeaway length 111 > 95
+- Headline: `הסכם ארה״ב-איראן מתקרב, אבל הגרעין עדיין במחלוקת`
+- Original: `Trump pressured Iran to change its terms for a deal, but had little success.`
+- Source: New York Times Middle East
+- URL: https://www.nytimes.com/live/2026/05/23/world/us-iran-war-trump/trump-pressured-iran-to-change-its-terms-for-a-deal-but-had-little-success
+
+### WARNING · takeaway_long · item 32
 - Takeaway length 118 > 95
 - Headline: `ארה״ב ואיראן מסכימות עקרונית לפתיחת מצר הורמוז`
 - Original: `What to Know About the Potential U.S.-Iran Peace Deal`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/us-iran-peace-deal-proposal.html
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 35
 - Takeaway length 108 > 95
 - Headline: `בטנריף מזהירים מתרמיות פארם, כספומטים ואובר`
 - Original: `"עוקץ הפארם" והמחיר הגבוה של אובר: 5 תרמיות ביעד הנחשק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/tourism-news/article/20615548
 
-### WARNING · takeaway_long · item 35
+### WARNING · takeaway_long · item 37
 - Takeaway length 98 > 95
 - Headline: `הפער בין וושינגטון לטהרן מאיים על הסכם השלום`
 - Original: `Each side spins a different story about the US-Iran peace talks – but Tehran may have the last word`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/commentisfree/2026/may/25/us-iran-peace-talks-tehran-donald-trump
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 46
 - Takeaway length 101 > 95
 - Headline: `איראן וארה״ב מצננות ציפיות להסכם מהיר בקטאר`
 - Original: `A deal with the U.S. would be preliminary and focused on ending the war, an Iranian official says.`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/live/2026/05/25/world/iran-war-trump/a-deal-with-the-us-would-be-preliminary-and-focused-on-ending-war-iranian-official-says
 
-### WARNING · takeaway_long · item 49
+### WARNING · takeaway_long · item 51
 - Takeaway length 103 > 95
 - Headline: `הריבית בישראל ירדה ל-3.75% בפעם השנייה השנה`
 - Original: `בנק ישראל הוריד את הריבית במשק ל-3.75%`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/h1vzo6zegx
 
-### WARNING · takeaway_long · item 51
+### WARNING · takeaway_long · item 53
 - Takeaway length 104 > 95
 - Headline: `בנק ישראל מזהיר מסיכוני אינפלציה אחרי הורדת הריבית`
 - Original: `בנק ישראל הוריד את הריבית במשק ב-0.25%; "קיימים סיכונים לעלייה מחודשת של האינפלציה"`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/news/macroeconomics/2026-05-25/ty-article/0000019e-5ee0-d121-a5df-5fedbfda0000
 
-### WARNING · summary_long · item 52
+### WARNING · summary_long · item 54
 - Summary length 223 > 220
 - Headline: `לוחמים בלבנון מגייסים לבד רשתות נגד רחפני נפץ`
 - Original: `לוחמים מאלתרים בעצמם: רשתות משערי כדורגל וממטעי בננות מול רחפני הנפץ`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rynmtizlze
 
-### WARNING · takeaway_long · item 52
+### WARNING · takeaway_long · item 54
 - Takeaway length 114 > 95
 - Headline: `לוחמים בלבנון מגייסים לבד רשתות נגד רחפני נפץ`
 - Original: `לוחמים מאלתרים בעצמם: רשתות משערי כדורגל וממטעי בננות מול רחפני הנפץ`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rynmtizlze
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 55
 - Takeaway length 115 > 95
 - Headline: `התוצר לנפש מזנק, כוח הקנייה בישראל נשאר מאחור`
 - Original: `התוצר לנפש גבוה מצרפת וגרמניה, אבל המשכורת בישראל קונה הרבה פחות`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543760#utm_source=RSS
 
-### WARNING · takeaway_long · item 54
+### WARNING · takeaway_long · item 56
 - Takeaway length 104 > 95
 - Headline: `איראן מצננת ציפיות להסכם מהיר עם ארה״ב`
 - Original: `Iran denies deal with US is imminent despite some progress`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/25/iran-denies-deal-us-imminent-israel-oman-strait-of-hormuz
 
-### WARNING · takeaway_long · item 55
+### WARNING · takeaway_long · item 57
 - Takeaway length 107 > 95
 - Headline: `דור חי חמו הכחיש בשידור שבגד במעיין אשכנזי`
 - Original: `בשידור חי ליד מעיין אשכנזי: דור מ''האח הגדול'' נשאל אם בגד בה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/lifestyle/relationship/article/20614796
 
-### WARNING · summary_long · item 56
+### WARNING · summary_long · item 58
 - Summary length 229 > 220
 - Headline: `שואבי Tineco S9 הושקו בישראל עם ניקוי עצמי`
 - Original: `מותג הניקיון המוביל בעולם מנחית בישראל את הדור הבא`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/tech-news/article/20614351
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 58
 - Takeaway length 126 > 95
 - Headline: `שואבי Tineco S9 הושקו בישראל עם ניקוי עצמי`
 - Original: `מותג הניקיון המוביל בעולם מנחית בישראל את הדור הבא`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/tech-news/article/20614351
 
-### WARNING · takeaway_long · item 57
+### WARNING · takeaway_long · item 59
 - Takeaway length 114 > 95
 - Headline: `תקוות להסכם עם איראן הורידו את הנפט והקפיצו את אירופה`
 - Original: `עליות באירופה; מחירי הנפט יורדים`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001543819#utm_source=RSS
 
-### WARNING · takeaway_long · item 58
+### WARNING · takeaway_long · item 60
 - Takeaway length 111 > 95
 - Headline: `הגרלת מחיר מטרה נפתחה עם עדיפות רחבה למילואימניקים`
 - Original: `כולל ערים מבוקשות: הגרלת הדירות יצאה היום לדרך - בלי משתמטים מגיוס`
 - Source: דה מרקר - נדל״ן
 - URL: https://www.themarker.com/realestate/2026-05-25/ty-article/.highlight/0000019e-5eed-d66e-a99f-7efdbb8d0000
 
-### WARNING · takeaway_long · item 59
+### WARNING · takeaway_long · item 61
 - Takeaway length 102 > 95
 - Headline: `טראמפ קושר הסכם עם איראן להצטרפות להסכמי אברהם`
 - Original: `טראמפ: אחרי העבודה שארה"ב עשתה על ההסכם, סעודיה וקטאר צריכות להצטרף להסכמי אברהם`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-05-25/ty-article/0000019e-5f1e-d6cc-a79e-dfbed3d60000
 
-### WARNING · takeaway_long · item 60
+### WARNING · takeaway_long · item 62
 - Takeaway length 108 > 95
 - Headline: `בלנדר תשווק בישראל את מערכת הליבה הפיננסית של Q2`
 - Original: `מהבנקים ועד הפינטק: בלנדר מביאה את ענקית הענן האמריקאית לישראל`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3840618
 
-### WARNING · summary_long · item 61
+### WARNING · summary_long · item 63
 - Summary length 240 > 220
 - Headline: `שחיין קיבל מיליון דולר על שיא שלא יוכר רשמית`
 - Original: `שיא עולם לא חוקי ומיליון דולר: קרקס "המשחקים המשופרים"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840620
 
-### WARNING · summary_long · item 62
+### WARNING · summary_long · item 64
 - Summary length 246 > 220
 - Headline: `הרצוג בירך את אלופת אירופה בגלישת רוח`
 - Original: `הנשיא הרצוג בירך את תמר שטיינברג: "הבאתן כבוד גדול"`
 - Source: וואלה ספורט - ענפים נוספים
 - URL: https://sports.walla.co.il/item/3840627
 
-### WARNING · takeaway_long · item 63
+### WARNING · takeaway_long · item 65
 - Takeaway length 102 > 95
 - Headline: `כרטיסים לגמר ניקס אפשרי נמכרו ב-279 אלף דולר`
 - Original: `לקרוא ולא להאמין: מחירי הכרטיסים המשוגעים בניו יורק`
 - Source: וואלה ספורט - NBA
 - URL: https://sports.walla.co.il/item/3840489
 
-### WARNING · takeaway_long · item 65
+### WARNING · takeaway_long · item 67
 - Takeaway length 98 > 95
 - Headline: `ספרד פרסמה סגל למונדיאל בלי אף שחקן מריאל מדריד`
 - Original: `לראשונה אי פעם: ספרד תגיע למונדיאל בלי נציגים מריאל מדריד`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3840612
 
-### WARNING · takeaway_long · item 66
+### WARNING · takeaway_long · item 68
 - Takeaway length 122 > 95
 - Headline: `ליגת העל שברה שיא עם 2.28 מיליון צופים בעונת 2025/26`
 - Original: `שיא חדש ביציעים: עלייה של חצי מיליון אוהדים במגרשי ליגת העל`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840659
 
-### WARNING · summary_long · item 68
+### WARNING · summary_long · item 70
 - Summary length 226 > 220
 - Headline: `לאומי נותן ריבית 4% למי שיפתח תיק ניירות ערך`
 - Original: `מתחרים על הסוחרים בני"ע: בנק לאומי מציע הטבת ריבית בפיקדון`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-05-25/ty-article/.premium/0000019e-5edb-da86-af9f-dedfe8c70000
 
-### WARNING · takeaway_long · item 68
+### WARNING · takeaway_long · item 70
 - Takeaway length 97 > 95
 - Headline: `לאומי נותן ריבית 4% למי שיפתח תיק ניירות ערך`
 - Original: `מתחרים על הסוחרים בני"ע: בנק לאומי מציע הטבת ריבית בפיקדון`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-05-25/ty-article/.premium/0000019e-5edb-da86-af9f-dedfe8c70000
 
-### WARNING · summary_long · item 69
+### WARNING · summary_long · item 71
 - Summary length 279 > 220
 - Headline: `קבוצת אביב מקדמת הנפקה לפי שווי של 1.5 מיליארד שקל`
 - Original: `האחים אביב רכשו קרקעות ב-850 מיליון שקל ומנסים לגייס מהציבור מאות מיליונים`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-05-25/ty-article/.premium/0000019e-5ee3-da86-af9f-def7de410000
 
-### WARNING · takeaway_long · item 70
+### WARNING · takeaway_long · item 72
 - Takeaway length 97 > 95
 - Headline: `כאבי שרירים אחרי אימון מגיעים לשיא סביב 48 שעות`
 - Original: `למה כאבי שרירים יומיים אחרי אימון לא תמיד מעידים על אימון טוב`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3840626
 
-### WARNING · takeaway_long · item 71
+### WARNING · takeaway_long · item 73
 - Takeaway length 105 > 95
 - Headline: `מנהל שקט יכול להשתיק עובדים גם בלי לצעוק`
 - Original: `הבוס צועק? הסכנה האמיתית היא דווקא המנהל השקט`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3840600
 
-### WARNING · takeaway_long · item 72
+### WARNING · takeaway_long · item 74
 - Takeaway length 98 > 95
 - Headline: `ה-ILO קושר 840 אלף מקרי מוות בשנה ללחץ בעבודה`
 - Original: `תראו את זה לבוס: 840 אלף מקרי מוות בשנה קשורים ללחץ בעבודה`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3840610
 
-### WARNING · takeaway_long · item 73
+### WARNING · takeaway_long · item 75
 - Takeaway length 123 > 95
 - Headline: `באר שבע נערכת לגמר עם בלטקסה וזלאטנוביץ' כשיר`
 - Original: `שידור חי: מסיבת העיתונאים של הפועל ב"ש לקראת גמר הגביע`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3840663
 
-### WARNING · takeaway_long · item 74
+### WARNING · takeaway_long · item 76
 - Takeaway length 98 > 95
 - Headline: `הפועל רמת גן צריכה תיקו כדי לחזור לליגת העל`
 - Original: `הפועל רמת גן דרוכה: "נשאר עוד צעד אחד קטן"`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3840660
 
-### WARNING · takeaway_long · item 75
+### WARNING · takeaway_long · item 77
 - Takeaway length 123 > 95
 - Headline: `באר שבע מחזירה את ההרכב החזק לגמר הגביע`
 - Original: `תשכחו מהחגיגות: הפועל באר שבע תחזור להרכב הקלאסי שלה בגמר`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3840651
 
-### WARNING · takeaway_long · item 76
+### WARNING · takeaway_long · item 78
 - Takeaway length 116 > 95
 - Headline: `עתיד דור פרץ במכבי יוכרע אחרי גמר הגביע`
 - Original: `דרושה פריצת דרך. האם דור פרץ ישאר במכבי תל אביב?`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3840601
-
-### WARNING · takeaway_long · item 77
-- Takeaway length 97 > 95
-- Headline: `ליברמן וגנץ דורשים קו התקפי מול איום הרחפנים`
-- Original: `ליברמן: "עניין של זמן עד שרחפני הנפץ יגיעו לתל אביב ולירושלים"`
-- Source: וואלה חדשות - פוליטי-מדיני
-- URL: https://news.walla.co.il/item/3840664
-
-### WARNING · takeaway_long · item 78
-- Takeaway length 106 > 95
-- Headline: `צה״ל מעביר תיקוני כלים בלבנון ללילה בגלל הרחפנים`
-- Original: `מסביב לשעון, בעומק לבנון: סיפורי הגבורה של לוחמי הטכנולוגיה והאחזקה ברקע איום הרחפנים`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3840661
 
 ### WARNING · summary_long · item 79
 - Summary length 221 > 220
