@@ -229,6 +229,116 @@ class PointaAutopilotTests(unittest.TestCase):
         self.assertFalse(report["mutatesFeed"])
         self.assertFalse(report["deploys"])
 
+    def test_stage3_prepares_worker_but_does_not_apply_without_editor_results(self):
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            run_dir = Path(td) / "tmp" / "editor-runs" / "autopilot-test"
+            lock_path = Path(td) / "stage3.lock"
+
+            def fake_run(cmd, timeout=120):
+                calls.append(cmd)
+                if any("pointa_rescue_editor_pipeline.py" in part for part in cmd):
+                    run_dir.mkdir(parents=True, exist_ok=True)
+                    return 0, str(run_dir) + "\n{}"
+                return 0, "queue ok"
+
+            incident = {
+                "status": "repair_needed",
+                "incidentType": "top_feed_stale_or_thin",
+                "recommendedStage": "stage_3_general_rescue",
+                "automaticAction": "prepare_general_rescue_worker",
+                "incidentKey": "stale-1",
+            }
+            actions, post_incident, state = autopilot.execute_stage3_repair(
+                incident, {}, now="2026-05-25T10:00:00+03:00", run_func=fake_run, lock_path=lock_path
+            )
+
+        self.assertEqual(actions[0]["action"], "stage3_prepare_source_rescue_queue")
+        self.assertEqual(actions[1]["action"], "stage3_prepare_editor_run")
+        self.assertEqual(actions[2]["action"], "stage3_wait_for_editor_results")
+        self.assertEqual(post_incident["incidentType"], "stage3_waiting_for_editor_results")
+        self.assertEqual(state["lastStage3IncidentKey"], "stale-1")
+        self.assertFalse(any("pointa_editor_pipeline.py" in cmd for cmd in calls))
+        self.assertFalse(any("deploy_current_feed.sh" in cmd for cmd in calls))
+
+    def test_stage3_respects_cooldown_for_same_incident(self):
+        incident = {
+            "status": "repair_needed",
+            "incidentType": "top_feed_stale_or_thin",
+            "recommendedStage": "stage_3_general_rescue",
+            "automaticAction": "prepare_general_rescue_worker",
+            "incidentKey": "same",
+        }
+        state = {"lastStage3StartedAt": "2026-05-25T10:00:00+03:00", "lastStage3IncidentKey": "same"}
+        actions, post_incident, _ = autopilot.execute_stage3_repair(
+            incident, state, now="2026-05-25T10:05:00+03:00", run_func=lambda *a, **k: self.fail("must not run")
+        )
+
+        self.assertEqual(actions, [{"action": "stage3_skip_cooldown", "cooldownMinutes": autopilot.STAGE3_COOLDOWN_MINUTES}])
+        self.assertEqual(post_incident["incidentType"], "stage3_cooldown_active")
+
+    def test_stage3_full_path_applies_only_after_gates_then_deploys(self):
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            run_dir = base / "tmp" / "editor-runs" / "autopilot-ready"
+            run_dir.mkdir(parents=True)
+            (run_dir / "batch_1_results.json").write_text("[]", encoding="utf-8")
+            lock_path = base / "stage3.lock"
+
+            def fake_run(cmd, timeout=120):
+                calls.append(cmd)
+                if any("pointa_rescue_editor_pipeline.py" in part for part in cmd):
+                    return 0, str(run_dir) + "\n{}"
+                return 0, "ok"
+
+            def fake_collect():
+                return autopilot.HealthSnapshot(
+                    public_health={"status": "ok", "blockers": []},
+                    live={"status": "ok", "errors": [], "warnings": []},
+                    timing={"status": "ok", "errors": [], "warnings": []},
+                    raw_health={"status": "ok", "blockers": []},
+                    local_health={"status": "ok", "blockers": []},
+                    local_quality={"exit": 0, "summary": "Pointa quality gate: 12 items, 0 errors"},
+                    feed_signature={"updatedAt": "new", "items": 12, "topHeadline": "חדש"},
+                )
+
+            incident = {
+                "status": "repair_needed",
+                "incidentType": "top_feed_stale_or_thin",
+                "recommendedStage": "stage_3_general_rescue",
+                "automaticAction": "prepare_general_rescue_worker",
+                "incidentKey": "stale-ready",
+            }
+            actions, post_incident, _ = autopilot.execute_stage3_repair(
+                incident, {}, now="2026-05-25T10:00:00+03:00", run_func=fake_run, collect_func=fake_collect, lock_path=lock_path
+            )
+
+        action_names = [a["action"] for a in actions]
+        self.assertIn("stage3_qa_editor_results", action_names)
+        self.assertIn("stage3_apply_editor_preview", action_names)
+        self.assertIn("stage3_quality_gate", action_names)
+        self.assertIn("stage3_deploy_current_feed", action_names)
+        self.assertEqual(post_incident["status"], "ok")
+        self.assertEqual(calls[-1], ["bash", "scripts/deploy_current_feed.sh"])
+
+    def test_stage3_report_marks_mutation_and_deploy_after_execution(self):
+        report = autopilot.build_report(
+            mode="auto-repair",
+            snapshot={"publicHealth": {"status": "fail"}},
+            incident={"status": "ok", "incidentType": "healthy", "automaticAction": "none"},
+            state={"currentIncidentRepeatCount": 1},
+            started_at="2026-05-25T10:00:00+03:00",
+            executed_actions=[
+                {"action": "stage3_apply_editor_preview", "exit": 0},
+                {"action": "stage3_deploy_current_feed", "exit": 0},
+            ],
+        )
+
+        self.assertTrue(report["mutatesFeed"])
+        self.assertTrue(report["deploys"])
+        self.assertEqual(report["version"], 3)
+
 
 if __name__ == "__main__":
     unittest.main()

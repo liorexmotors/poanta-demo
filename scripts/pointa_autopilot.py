@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import urllib.request
@@ -24,11 +25,13 @@ ROOT = Path(__file__).resolve().parents[1]
 TMP = ROOT / "tmp"
 STATE_PATH = TMP / "pointa_autopilot_state.json"
 REPORT_PATH = TMP / "pointa_autopilot_report.json"
+WORKER_LOCK_PATH = TMP / "pointa_autopilot_stage3.lock"
 PUBLIC_FEED_URL = "https://liorexmotors.github.io/poanta-demo/feed.json"
 RAW_GHPAGES_URL = "https://raw.githubusercontent.com/liorexmotors/poanta-demo/gh-pages/feed.json"
 TZ = timezone(timedelta(hours=3))
 TOP_STALE_CODES = {"stale_updated_at", "no_new_top_item_sla", "stale_top_item", "too_few_fresh_top_items", "too_few_recent_items_sla", "too_few_recent_sources_sla"}
 QUALITY_BLOCK_CODES = {"summary_fragment_headline", "headline_too_close_to_source", "generic_takeaway_regression", "weather_on_top"}
+STAGE3_COOLDOWN_MINUTES = 20
 
 
 @dataclass
@@ -76,6 +79,68 @@ def run_json(cmd: list[str], timeout: int = 120) -> tuple[int, dict[str, Any], s
         return code, json.loads(text), text
     except Exception:
         return code, {"status": "error", "parseError": True, "exit": code, "tail": text[-2000:]}, text
+
+
+def parse_iso(raw: Any) -> datetime | None:
+    try:
+        dt = datetime.fromisoformat(str(raw or "").replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=TZ)
+        return dt.astimezone(TZ)
+    except Exception:
+        return None
+
+
+def extract_first_path(text: str) -> Path | None:
+    for line in (text or "").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith(str(ROOT)) or line.startswith("tmp/") or line.startswith("/tmp/"):
+            return (ROOT / line).resolve() if not line.startswith("/") else Path(line)
+    return None
+
+
+def lock_is_active(path: Path = WORKER_LOCK_PATH, max_age_minutes: int = 45) -> bool:
+    if not path.exists():
+        return False
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        created = parse_iso(data.get("createdAt"))
+        pid = int(data.get("pid") or 0)
+        if created and datetime.now(TZ) - created > timedelta(minutes=max_age_minutes):
+            return False
+        if pid:
+            try:
+                os.kill(pid, 0)
+                return True
+            except ProcessLookupError:
+                return False
+            except PermissionError:
+                return True
+        return bool(created)
+    except Exception:
+        return True
+
+
+def acquire_lock(path: Path = WORKER_LOCK_PATH) -> bool:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if lock_is_active(path):
+        return False
+    try:
+        fd = os.open(str(path), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        return False
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        json.dump({"pid": os.getpid(), "createdAt": now_iso(), "purpose": "pointa_autopilot_stage3"}, f, ensure_ascii=False)
+    return True
+
+
+def release_lock(path: Path = WORKER_LOCK_PATH) -> None:
+    try:
+        path.unlink()
+    except FileNotFoundError:
+        pass
 
 
 def fetch_feed_signature(url: str) -> dict[str, Any]:
@@ -268,6 +333,117 @@ def execute_stage2_repair(
     return actions, verified_incident
 
 
+
+def stage3_cooldown_active(state: dict[str, Any], incident: dict[str, Any], *, now: str | None = None) -> bool:
+    last = state.get("lastStage3StartedAt")
+    last_key = state.get("lastStage3IncidentKey")
+    if not last or last_key != incident.get("incidentKey"):
+        return False
+    last_dt = parse_iso(last)
+    now_dt = parse_iso(now or now_iso())
+    if not last_dt or not now_dt:
+        return False
+    return now_dt - last_dt < timedelta(minutes=STAGE3_COOLDOWN_MINUTES)
+
+
+def execute_stage3_repair(
+    incident: dict[str, Any],
+    state: dict[str, Any],
+    *,
+    now: str | None = None,
+    run_func=run,
+    collect_func=collect_snapshot,
+    lock_path: Path = WORKER_LOCK_PATH,
+) -> tuple[list[dict[str, Any]], dict[str, Any], dict[str, Any]]:
+    """Run Stage-3 general top-feed rescue as a bounded worker lane.
+
+    The worker has its own lock and cooldown. It prepares an adaptive rescue run,
+    then only applies/deploys if editor result files exist and every hard gate
+    passes. If a previous run is waiting and results were written, it resumes that
+    run even during cooldown instead of preparing another batch.
+    """
+    now = now or now_iso()
+    if incident.get("recommendedStage") != "stage_3_general_rescue" or incident.get("automaticAction") != "prepare_general_rescue_worker":
+        return [], incident, state
+
+    resume_run_dir = Path(str(state.get("lastStage3RunDir") or "")) if state.get("lastStage3RunDir") else None
+    resume_has_results = bool(resume_run_dir and resume_run_dir.exists() and sorted(resume_run_dir.glob("batch_*_results.json")))
+
+    if stage3_cooldown_active(state, incident, now=now) and not resume_has_results:
+        skipped = {**incident, "status": "degraded", "incidentType": "stage3_cooldown_active", "automaticAction": "wait_for_cooldown"}
+        return [{"action": "stage3_skip_cooldown", "cooldownMinutes": STAGE3_COOLDOWN_MINUTES}], skipped, state
+    if not acquire_lock(lock_path):
+        locked = {**incident, "status": "degraded", "incidentType": "stage3_worker_already_running", "automaticAction": "wait_for_worker"}
+        return [{"action": "stage3_skip_lock_active", "lock": str(lock_path)}], locked, state
+
+    actions: list[dict[str, Any]] = []
+    new_state = {**state, "lastStage3StartedAt": now, "lastStage3IncidentKey": incident.get("incidentKey")}
+    try:
+        if resume_has_results and resume_run_dir is not None:
+            run_dir = resume_run_dir
+            run_id = run_dir.name
+            actions.append({"action": "stage3_resume_editor_run", "runDir": str(run_dir), "resultFiles": len(sorted(run_dir.glob("batch_*_results.json")))})
+        else:
+            queue_cmd = [sys.executable, "scripts/pointa_source_rescue_queue.py", "--max-age-min", "180", "--sync-profile", "all", "--per-source", "8"]
+            code, text = run_func(queue_cmd, timeout=240)
+            actions.append({"action": "stage3_prepare_source_rescue_queue", "exit": code, "tail": text[-3000:]})
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": "stage3_source_queue_failed", "automaticAction": "do_not_publish"}, new_state
+
+            run_id = "autopilot-" + datetime.now(TZ).strftime("%Y%m%d-%H%M%S")
+            prepare_cmd = [sys.executable, "scripts/pointa_rescue_editor_pipeline.py", "prepare", "--run-id", run_id, "--limit", "18", "--batch-size", "6", "--oversample-factor", "4"]
+            code, text = run_func(prepare_cmd, timeout=420)
+            run_dir = extract_first_path(text) or (ROOT / "tmp" / "editor-runs" / run_id)
+            actions.append({"action": "stage3_prepare_editor_run", "exit": code, "runDir": str(run_dir), "tail": text[-3000:]})
+            new_state["lastStage3RunDir"] = str(run_dir)
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": "stage3_editor_prepare_failed", "automaticAction": "do_not_publish"}, new_state
+
+            result_files = sorted(run_dir.glob("batch_*_results.json")) if run_dir.exists() else []
+            if not result_files:
+                waiting = {**incident, "status": "repair_needed", "incidentType": "stage3_waiting_for_editor_results", "automaticAction": "write_batch_results_then_rerun_stage3"}
+                actions.append({"action": "stage3_wait_for_editor_results", "runDir": str(run_dir), "resultFiles": 0})
+                return actions, waiting, new_state
+
+        qa_cmd = [sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"]
+        code, text = run_func(qa_cmd, timeout=240)
+        actions.append({"action": "stage3_qa_editor_results", "exit": code, "tail": text[-3000:]})
+        if code != 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage3_editor_qa_failed", "automaticAction": "do_not_publish"}, new_state
+
+        apply_cmd = [sys.executable, "scripts/pointa_editor_pipeline.py", "apply", "--run-dir", str(run_dir)]
+        code, text = run_func(apply_cmd, timeout=180)
+        actions.append({"action": "stage3_apply_editor_preview", "exit": code, "tail": text[-3000:]})
+        if code != 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage3_apply_failed", "automaticAction": "do_not_publish"}, new_state
+
+        for name, cmd in [
+            ("stage3_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"]),
+            ("stage3_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py"]),
+            ("stage3_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--json"]),
+        ]:
+            code, text = run_func(cmd, timeout=180)
+            actions.append({"action": name, "exit": code, "tail": text[-3000:]})
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": f"{name}_failed", "automaticAction": "do_not_publish"}, new_state
+
+        code, text = run_func([sys.executable, "scripts/pointa_publication_events.py", "record", "--gatekeeper", "pointa-autopilot-stage3", "--run-id", run_id, "--json"], timeout=120)
+        actions.append({"action": "stage3_record_publication_event", "exit": code, "tail": text[-3000:]})
+        if code != 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage3_publication_event_failed", "automaticAction": "do_not_publish"}, new_state
+
+        code, text = run_func(["bash", "scripts/deploy_current_feed.sh"], timeout=300)
+        actions.append({"action": "stage3_deploy_current_feed", "exit": code, "tail": text[-3000:]})
+        if code != 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage3_deploy_failed", "automaticAction": "do_not_publish"}, new_state
+
+        verified_snapshot = collect_func()
+        verified_incident = classify_incident(verified_snapshot)
+        actions.append({"action": "stage3_verify_public_after_deploy", "status": verified_incident.get("status"), "incidentType": verified_incident.get("incidentType")})
+        return actions, verified_incident, new_state
+    finally:
+        release_lock(lock_path)
+
 def build_report(
     *,
     mode: str,
@@ -281,9 +457,11 @@ def build_report(
     executed_actions = executed_actions or []
     would_run = [] if action in (None, "", "none", "do_not_publish") or executed_actions else [action]
     deploys = any(a.get("action") == "deploy_current_feed" for a in executed_actions)
+    stage3_deploys = any(a.get("action") == "stage3_deploy_current_feed" for a in executed_actions)
+    mutates_feed = any(a.get("action") == "stage3_apply_editor_preview" and a.get("exit") == 0 for a in executed_actions)
     return {
         "autopilot": "pointa_autopilot",
-        "version": 2,
+        "version": 3,
         "mode": mode,
         "checkedAt": started_at,
         "status": incident.get("status"),
@@ -292,12 +470,12 @@ def build_report(
         "automaticAction": action,
         "wouldRun": would_run,
         "executedActions": executed_actions,
-        "mutatesFeed": False,
-        "deploys": deploys,
+        "mutatesFeed": mutates_feed,
+        "deploys": deploys or stage3_deploys,
         "snapshot": snapshot,
         "incident": incident,
         "state": state,
-        "policy": "Stage 2 may only deploy an already-healthy local feed and verify public health. No feed edits or rescue preparation.",
+        "policy": "Stage 3 may prepare a separate top-feed rescue worker. It applies/deploys only after editor results exist and Quality/Publication/Live hard gates pass; otherwise it stops without publishing.",
     }
 
 
@@ -319,10 +497,14 @@ def main() -> int:
     snapshot = collect_snapshot()
     incident = classify_incident(snapshot)
     executed_actions: list[dict[str, Any]] = []
+    state_path = Path(args.state)
+    loaded_state = read_json(state_path)
     if args.mode == "auto-repair":
         executed_actions, incident = execute_stage2_repair(incident)
-    state_path = Path(args.state)
-    state = update_state(read_json(state_path), incident, now=started_at)
+        if incident.get("recommendedStage") == "stage_3_general_rescue":
+            stage3_actions, incident, loaded_state = execute_stage3_repair(incident, loaded_state, now=started_at)
+            executed_actions.extend(stage3_actions)
+    state = update_state(loaded_state, incident, now=started_at)
     report = build_report(
         mode=args.mode,
         snapshot=asdict(snapshot),
