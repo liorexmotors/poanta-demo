@@ -233,12 +233,57 @@ def update_state(state: dict[str, Any], incident: dict[str, Any], *, now: str | 
     return new_state
 
 
-def build_report(*, mode: str, snapshot: dict[str, Any], incident: dict[str, Any], state: dict[str, Any], started_at: str) -> dict[str, Any]:
+def execute_stage2_repair(
+    incident: dict[str, Any],
+    *,
+    run_func=run,
+    collect_func=collect_snapshot,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Execute only Stage-2 safe deploy, then reclassify public health.
+
+    Stage 2 is deliberately narrow: if the local candidate has already passed
+    the hard gates and the public feed is stale, deploy the current feed and
+    verify the public outcome. It must not prepare rescue queues, edit the feed,
+    or touch domain repair.
+    """
+    if incident.get("automaticAction") != "deploy_current_feed_then_verify_public":
+        return [], incident
+    if incident.get("recommendedStage") != "stage_2_safe_deploy":
+        return [], incident
+
+    actions: list[dict[str, Any]] = []
+    code, text = run_func(["bash", "scripts/deploy_current_feed.sh"], timeout=300)
+    actions.append({"action": "deploy_current_feed", "exit": code, "tail": text[-3000:]})
+    if code != 0:
+        failed = {**incident, "status": "blocked", "incidentType": "safe_deploy_failed", "automaticAction": "do_not_publish"}
+        return actions, failed
+
+    verified_snapshot = collect_func()
+    verified_incident = classify_incident(verified_snapshot)
+    actions.append({
+        "action": "verify_public_after_deploy",
+        "status": verified_incident.get("status"),
+        "incidentType": verified_incident.get("incidentType"),
+    })
+    return actions, verified_incident
+
+
+def build_report(
+    *,
+    mode: str,
+    snapshot: dict[str, Any],
+    incident: dict[str, Any],
+    state: dict[str, Any],
+    started_at: str,
+    executed_actions: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     action = incident.get("automaticAction")
-    would_run = [] if action in (None, "", "none", "do_not_publish") else [action]
+    executed_actions = executed_actions or []
+    would_run = [] if action in (None, "", "none", "do_not_publish") or executed_actions else [action]
+    deploys = any(a.get("action") == "deploy_current_feed" for a in executed_actions)
     return {
         "autopilot": "pointa_autopilot",
-        "version": 1,
+        "version": 2,
         "mode": mode,
         "checkedAt": started_at,
         "status": incident.get("status"),
@@ -246,13 +291,13 @@ def build_report(*, mode: str, snapshot: dict[str, Any], incident: dict[str, Any
         "recommendedStage": incident.get("recommendedStage"),
         "automaticAction": action,
         "wouldRun": would_run,
-        "executedActions": [],
+        "executedActions": executed_actions,
         "mutatesFeed": False,
-        "deploys": False,
+        "deploys": deploys,
         "snapshot": snapshot,
         "incident": incident,
         "state": state,
-        "policy": "Stage 1 is diagnose/report only. No feed edits, no rescue preparation, no deploy.",
+        "policy": "Stage 2 may only deploy an already-healthy local feed and verify public health. No feed edits or rescue preparation.",
     }
 
 
@@ -263,8 +308,8 @@ def exit_code_for_mode(mode: str, incident: dict[str, Any]) -> int:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Pointa autopilot stage 1 dry-run")
-    ap.add_argument("--mode", choices=["dry-run"], default="dry-run")
+    ap = argparse.ArgumentParser(description="Pointa autopilot staged self-healing")
+    ap.add_argument("--mode", choices=["dry-run", "auto-repair"], default="dry-run")
     ap.add_argument("--state", default=str(STATE_PATH))
     ap.add_argument("--out", default=str(REPORT_PATH))
     ap.add_argument("--json", action="store_true")
@@ -273,9 +318,19 @@ def main() -> int:
     started_at = now_iso()
     snapshot = collect_snapshot()
     incident = classify_incident(snapshot)
+    executed_actions: list[dict[str, Any]] = []
+    if args.mode == "auto-repair":
+        executed_actions, incident = execute_stage2_repair(incident)
     state_path = Path(args.state)
     state = update_state(read_json(state_path), incident, now=started_at)
-    report = build_report(mode=args.mode, snapshot=asdict(snapshot), incident=incident, state=state, started_at=started_at)
+    report = build_report(
+        mode=args.mode,
+        snapshot=asdict(snapshot),
+        incident=incident,
+        state=state,
+        started_at=started_at,
+        executed_actions=executed_actions,
+    )
     write_json(state_path, state)
     write_json(Path(args.out), report)
     if args.json:

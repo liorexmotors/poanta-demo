@@ -130,6 +130,83 @@ class PointaAutopilotTests(unittest.TestCase):
 
         self.assertEqual(autopilot.exit_code_for_mode("dry-run", incident), 0)
 
+    def test_stage2_executes_only_safe_deploy_and_verifies_public(self):
+        calls = []
+
+        def fake_run(cmd, timeout=120):
+            calls.append(cmd)
+            return 0, "deployed"
+
+        def fake_collect():
+            return autopilot.HealthSnapshot(
+                public_health={"status": "ok", "blockers": []},
+                live={"status": "ok", "errors": [], "warnings": []},
+                timing={"status": "ok", "errors": [], "warnings": []},
+                raw_health={"status": "ok", "blockers": []},
+                local_health={"status": "ok", "blockers": []},
+                local_quality={"exit": 0, "summary": "Pointa quality gate: 11 items, 0 errors"},
+                feed_signature={"updatedAt": "new", "items": 11, "topHeadline": "חדש"},
+            )
+
+        incident = {
+            "status": "repair_needed",
+            "incidentType": "deploy_public_stale_local_candidate_healthy",
+            "recommendedStage": "stage_2_safe_deploy",
+            "automaticAction": "deploy_current_feed_then_verify_public",
+            "incidentKey": "deploy-needed",
+        }
+
+        actions, post_incident = autopilot.execute_stage2_repair(incident, run_func=fake_run, collect_func=fake_collect)
+
+        self.assertEqual(calls, [["bash", "scripts/deploy_current_feed.sh"]])
+        self.assertEqual(actions[0]["action"], "deploy_current_feed")
+        self.assertEqual(actions[0]["exit"], 0)
+        self.assertEqual(actions[1]["action"], "verify_public_after_deploy")
+        self.assertEqual(post_incident["status"], "ok")
+        self.assertEqual(post_incident["incidentType"], "healthy")
+
+    def test_stage2_refuses_general_rescue_or_quality_blocked_actions(self):
+        calls = []
+
+        def fake_run(cmd, timeout=120):
+            calls.append(cmd)
+            return 0, "should not run"
+
+        incident = {
+            "status": "repair_needed",
+            "incidentType": "top_feed_stale_or_thin",
+            "recommendedStage": "stage_3_general_rescue",
+            "automaticAction": "prepare_general_rescue_worker",
+            "incidentKey": "stale",
+        }
+
+        actions, post_incident = autopilot.execute_stage2_repair(incident, run_func=fake_run, collect_func=lambda: None)
+
+        self.assertEqual(calls, [])
+        self.assertEqual(actions, [])
+        self.assertIs(post_incident, incident)
+
+    def test_auto_repair_report_marks_deploy_only_after_execution(self):
+        incident = {
+            "status": "repair_needed",
+            "incidentType": "deploy_public_stale_local_candidate_healthy",
+            "recommendedStage": "stage_2_safe_deploy",
+            "automaticAction": "deploy_current_feed_then_verify_public",
+            "incidentKey": "deploy-needed",
+        }
+        report = autopilot.build_report(
+            mode="auto-repair",
+            snapshot={"publicHealth": {"status": "fail"}},
+            incident=incident,
+            state={"currentIncidentRepeatCount": 1},
+            started_at="2026-05-25T10:00:00+03:00",
+            executed_actions=[{"action": "deploy_current_feed", "exit": 0}],
+        )
+
+        self.assertEqual(report["executedActions"][0]["action"], "deploy_current_feed")
+        self.assertTrue(report["deploys"])
+        self.assertFalse(report["mutatesFeed"])
+
     def test_dry_run_report_never_contains_write_or_deploy_action(self):
         incident = {
             "status": "repair_needed",
