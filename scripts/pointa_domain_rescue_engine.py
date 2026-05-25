@@ -86,17 +86,20 @@ def reserve_counts(path: Path, domain: str, now: datetime) -> dict[str, int]:
             rows = [r for r in raw if isinstance(r, dict)]
         elif isinstance(data.get("cards"), list):
             rows = [r for r in data["cards"] if isinstance(r, dict) and r.get("domain") == domain]
-    ready = expired = used = 0
+    ready = near_ready = expired = used = 0
     for row in rows:
         if row.get("usedAt"):
             used += 1
             continue
         exp = parse_dt(row.get("expiresAt"))
-        if row.get("status") == "ready" and exp and exp >= now:
+        status = str(row.get("status") or "")
+        if status == "ready" and exp and exp >= now:
             ready += 1
+        elif status in {"near_ready", "near_ready_editor_required"} and exp and exp >= now:
+            near_ready += 1
         else:
             expired += 1
-    return {"total": len(rows), "ready": ready, "expired": expired, "used": used}
+    return {"total": len(rows), "ready": ready, "nearReady": near_ready, "expired": expired, "used": used}
 
 
 def state_for(age: int | None, warn: int, fail: int) -> str:
@@ -175,6 +178,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "recommendedAction": recommended_action(st, reserve["ready"]),
             "candidateCount": 0,
             "reserveReadyCount": reserve["ready"],
+            "reserveNearReadyCount": reserve.get("nearReady", 0),
             "reserveExpiredCount": reserve["expired"],
             "qualityBlocked": False,
             "maxCandidateAgeMinutes": max_age,

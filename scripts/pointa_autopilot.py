@@ -32,7 +32,8 @@ TZ = timezone(timedelta(hours=3))
 TOP_STALE_CODES = {"stale_updated_at", "no_new_top_item_sla", "stale_top_item", "too_few_fresh_top_items", "too_few_recent_items_sla", "too_few_recent_sources_sla"}
 QUALITY_BLOCK_CODES = {"summary_fragment_headline", "headline_too_close_to_source", "generic_takeaway_regression", "weather_on_top"}
 STAGE3_COOLDOWN_MINUTES = 20
-DOMAIN_RESCUE_AUTOPILOT_GROUPS = {"ביטחון"}
+DOMAIN_RESCUE_AUTOPILOT_GROUPS = {"ביטחון", "פוליטיקה", "חדשות", "פלילים", "משפט", "כלכלה", "רכב", "ספורט", "אקטואליה בעולם", "צרכנות", "דעות", "טכנולוגיה", "בריאות", "תרבות", "רכילות", "נדל״ן", "מזג אוויר", "מקורות זרים"}
+DOMAIN_PRIORITY_ORDER = {"critical": 0, "high": 1, "medium": 2, "low": 3}
 
 
 
@@ -204,11 +205,25 @@ def _status(data: dict[str, Any]) -> str:
 
 
 def domain_rescue_timing_error(snapshot: HealthSnapshot) -> dict[str, Any] | None:
+    """Return the highest-priority domain timing breach eligible for Stage 4.
+
+    Stage 4 started as a ביטחון-only lane. Lior approved extending feed
+    self-healing across all dashboard domains, so any explicit domain timing SLA
+    breach may prepare a domain-filtered rescue worker. We still ignore aggregate
+    `all` errors here so top-feed incidents keep using Stage 3.
+    """
+    candidates: list[dict[str, Any]] = []
     for err in snapshot.timing.get("errors") or []:
         group = str(err.get("group") or "")
-        if group in DOMAIN_RESCUE_AUTOPILOT_GROUPS and int(err.get("thresholdMinutes") or 0) <= 25:
-            return err
-    return None
+        if group in DOMAIN_RESCUE_AUTOPILOT_GROUPS:
+            candidates.append(err)
+    if not candidates:
+        return None
+    def rank(err: dict[str, Any]) -> tuple[int, int]:
+        priority = str(err.get("priority") or "medium")
+        threshold = int(err.get("thresholdMinutes") or 9999)
+        return (DOMAIN_PRIORITY_ORDER.get(priority, 9), threshold)
+    return sorted(candidates, key=rank)[0]
 
 def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
     public_blockers = snapshot.public_health.get("blockers") or []
@@ -226,9 +241,9 @@ def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
         group = str(domain_err.get("group") or "")
         return {
             "status": "repair_needed",
-            "incidentType": "domain_security_sla_breach",
+            "incidentType": "domain_sla_breach",
             "recommendedStage": "stage_4_domain_rescue",
-            "automaticAction": "prepare_security_domain_rescue_worker",
+            "automaticAction": "prepare_domain_rescue_worker",
             "incidentKey": f"domain_sla|{group}|{domain_err.get('latestAt')}|{domain_err.get('headline')}",
             "domain": group,
             "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
@@ -478,14 +493,14 @@ def execute_stage4_domain_rescue(
 ) -> tuple[list[dict[str, Any]], dict[str, Any], dict[str, Any]]:
     """Prepare/resume a domain-specific rescue lane for critical SLA breaches.
 
-    The first implementation is intentionally narrow: ביטחון only. It prepares a
-    domain-filtered queue and editor run, then waits for editor result files. If
+    It prepares a domain-filtered queue and editor run for the breached dashboard
+    domain, then waits for editor result files. If
     results are already present on a later run, it resumes through the same hard
     gates as Stage 3: editor QA, apply, Quality Gate, publication health, local
     live auditor, publication event recording, deploy, and public verification.
     """
     now = now or now_iso()
-    if incident.get("recommendedStage") != "stage_4_domain_rescue" or incident.get("automaticAction") != "prepare_security_domain_rescue_worker":
+    if incident.get("recommendedStage") != "stage_4_domain_rescue" or incident.get("automaticAction") not in {"prepare_domain_rescue_worker", "prepare_security_domain_rescue_worker"}:
         return [], incident, state
     domain = str(incident.get("domain") or "ביטחון")
     if domain not in DOMAIN_RESCUE_AUTOPILOT_GROUPS:
@@ -512,7 +527,8 @@ def execute_stage4_domain_rescue(
             if code != 0:
                 return actions, {**incident, "status": "blocked", "incidentType": "stage4_source_queue_failed", "automaticAction": "do_not_publish"}, new_state
 
-            run_id = "domain-security-" + datetime.now(TZ).strftime("%Y%m%d-%H%M%S")
+            safe_domain = "".join(ch if ch.isalnum() else "-" for ch in domain).strip("-") or "domain"
+            run_id = f"domain-{safe_domain}-" + datetime.now(TZ).strftime("%Y%m%d-%H%M%S")
             prepare_cmd = [sys.executable, "scripts/pointa_rescue_editor_pipeline.py", "prepare", "--queue", str(queue_out), "--run-id", run_id, "--limit", "8", "--batch-size", "4", "--oversample-factor", "4"]
             code, text = run_func(prepare_cmd, timeout=420)
             run_dir = extract_first_path(text) or (ROOT / "tmp" / "editor-runs" / run_id)
@@ -578,7 +594,7 @@ def build_report(
         "snapshot": snapshot,
         "incident": incident,
         "state": state,
-        "policy": "Stage 3 may prepare a separate top-feed rescue worker. It applies/deploys only after editor results exist and Quality/Publication/Live hard gates pass; otherwise it stops without publishing.",
+        "policy": "Stage 3 may prepare a separate top-feed rescue worker. Stage 4 may prepare a domain-filtered rescue worker for dashboard SLA breaches. Apply/deploy happens only after editor results exist and Quality/Publication/Live hard gates pass; otherwise it stops without publishing.",
     }
 
 

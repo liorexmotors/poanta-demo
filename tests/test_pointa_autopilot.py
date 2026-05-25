@@ -32,7 +32,7 @@ class PointaAutopilotTests(unittest.TestCase):
         self.assertEqual(incident["automaticAction"], "none")
 
 
-    def test_classifies_security_domain_sla_breach_even_when_public_feed_loads(self):
+    def test_classifies_domain_sla_breach_even_when_public_feed_loads(self):
         snapshot = autopilot.HealthSnapshot(
             public_health={"status": "ok", "blockers": []},
             live={"status": "ok", "errors": [], "warnings": []},
@@ -46,10 +46,29 @@ class PointaAutopilotTests(unittest.TestCase):
         incident = autopilot.classify_incident(snapshot)
 
         self.assertEqual(incident["status"], "repair_needed")
-        self.assertEqual(incident["incidentType"], "domain_security_sla_breach")
+        self.assertEqual(incident["incidentType"], "domain_sla_breach")
         self.assertEqual(incident["recommendedStage"], "stage_4_domain_rescue")
-        self.assertEqual(incident["automaticAction"], "prepare_security_domain_rescue_worker")
+        self.assertEqual(incident["automaticAction"], "prepare_domain_rescue_worker")
         self.assertEqual(incident["domain"], "ביטחון")
+
+    def test_classifies_non_security_domain_sla_breach(self):
+        snapshot = autopilot.HealthSnapshot(
+            public_health={"status": "ok", "blockers": []},
+            live={"status": "ok", "errors": [], "warnings": []},
+            timing={"status": "fail", "errors": [{"group": "כלכלה", "code": "publication_timing_sla", "thresholdMinutes": 45, "priority": "high", "latestAt": "2026-05-25T15:00:00+03:00", "headline": "ישן"}], "warnings": []},
+            raw_health={"status": "ok", "blockers": []},
+            local_health={"status": "ok", "blockers": []},
+            local_quality={"exit": 0, "summary": "Pointa quality gate: 10 items, 0 errors"},
+            feed_signature={"updatedAt": "2026-05-25T16:00:00+03:00", "items": 10, "topHeadline": "חדשה"},
+        )
+
+        incident = autopilot.classify_incident(snapshot)
+
+        self.assertEqual(incident["status"], "repair_needed")
+        self.assertEqual(incident["incidentType"], "domain_sla_breach")
+        self.assertEqual(incident["recommendedStage"], "stage_4_domain_rescue")
+        self.assertEqual(incident["automaticAction"], "prepare_domain_rescue_worker")
+        self.assertEqual(incident["domain"], "כלכלה")
 
     def test_classifies_pages_lag_when_public_fails_but_raw_is_ok(self):
         snapshot = autopilot.HealthSnapshot(
@@ -343,7 +362,7 @@ class PointaAutopilotTests(unittest.TestCase):
         self.assertEqual(calls[-1], ["bash", "scripts/deploy_current_feed.sh"])
 
 
-    def test_stage4_prepares_security_domain_worker_and_waits_for_editor_results(self):
+    def test_stage4_prepares_domain_worker_and_waits_for_editor_results(self):
         calls = []
         with tempfile.TemporaryDirectory() as td:
             run_dir = Path(td) / "tmp" / "editor-runs" / "domain-security-test"
@@ -358,9 +377,9 @@ class PointaAutopilotTests(unittest.TestCase):
 
             incident = {
                 "status": "repair_needed",
-                "incidentType": "domain_security_sla_breach",
+                "incidentType": "domain_sla_breach",
                 "recommendedStage": "stage_4_domain_rescue",
-                "automaticAction": "prepare_security_domain_rescue_worker",
+                "automaticAction": "prepare_domain_rescue_worker",
                 "incidentKey": "security-domain",
                 "domain": "ביטחון",
             }
