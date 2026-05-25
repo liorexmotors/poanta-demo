@@ -18,6 +18,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_EVENTS = ROOT / "tmp" / "publication_events.jsonl"
 DEFAULT_REPORT = ROOT / "tmp" / "pointa_timing_auditor_last.json"
+DEFAULT_SLA_CONFIG = ROOT / "config" / "pointa_freshness_sla.json"
 
 DEFAULT_GROUP_THRESHOLDS_MIN = {
     # Overall publication silence: same top-feed SLA used by the live auditor.
@@ -206,8 +207,32 @@ def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at:
     }
 
 
-def parse_thresholds(raw: str) -> dict[str, int]:
+def thresholds_from_config(path: Path = DEFAULT_SLA_CONFIG) -> dict[str, int]:
+    """Load SLA fail thresholds from the shared dashboard/ops config.
+
+    The hard-coded defaults stay as a safe fallback so a broken/missing config
+    cannot disable the timing auditor.
+    """
     out = dict(DEFAULT_GROUP_THRESHOLDS_MIN)
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return out
+    top = data.get("topFeed") or {}
+    if isinstance(top.get("failMinutes"), int):
+        out["all"] = int(top["failMinutes"])
+    for group_name in ("domains", "sources"):
+        group_data = data.get(group_name) or {}
+        if not isinstance(group_data, dict):
+            continue
+        for name, spec in group_data.items():
+            if isinstance(spec, dict) and isinstance(spec.get("failMinutes"), int):
+                out[str(name)] = int(spec["failMinutes"])
+    return out
+
+
+def parse_thresholds(raw: str, config_path: Path = DEFAULT_SLA_CONFIG) -> dict[str, int]:
+    out = thresholds_from_config(config_path)
     if raw:
         for part in raw.split(","):
             if not part.strip() or "=" not in part:
@@ -222,13 +247,14 @@ def main() -> int:
     ap.add_argument("--events", default=str(DEFAULT_EVENTS))
     ap.add_argument("--report", default=str(DEFAULT_REPORT))
     ap.add_argument("--threshold", default="", help="Comma list, e.g. all=90,foreign=60,דה מרקר=240")
+    ap.add_argument("--sla-config", default=str(DEFAULT_SLA_CONFIG), help="Shared freshness SLA config JSON")
     ap.add_argument("--use-seen-at", action="store_true", help="Measure publication pipeline silence rather than source publication time")
     ap.add_argument("--all-warning-min", type=int, default=DEFAULT_ALL_WARNING_MIN, help="Warn Aliza after this many minutes without any new publication event")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--fail-on-error", action="store_true")
     args = ap.parse_args()
     events = read_events(Path(args.events))
-    result = audit(events, parse_thresholds(args.threshold), use_seen_at=args.use_seen_at, all_warning_min=args.all_warning_min)
+    result = audit(events, parse_thresholds(args.threshold, Path(args.sla_config)), use_seen_at=args.use_seen_at, all_warning_min=args.all_warning_min)
     report = Path(args.report)
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

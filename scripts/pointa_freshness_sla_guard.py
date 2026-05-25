@@ -26,6 +26,7 @@ LOCK = Path("/tmp/pointa-freshness-sla-guard.lock")
 TZ = timezone(timedelta(hours=3))
 AGENT_COOLDOWN_SEC = 20 * 60
 RAW_GHPAGES_URL = "https://raw.githubusercontent.com/liorexmotors/poanta-demo/gh-pages/feed.json"
+DOMAIN_RESCUE_REPORT = TMP / "pointa_domain_rescue_status.json"
 
 
 def now_iso() -> str:
@@ -105,6 +106,17 @@ Required action:
 """
 
 
+def run_domain_rescue_report(prepare: bool = False) -> dict[str, Any] | None:
+    cmd = [sys.executable, "scripts/pointa_domain_rescue_engine.py", "--dry-run", "--json"]
+    if prepare:
+        cmd.append("--prepare-editor-run")
+    code, data, raw = run_json(cmd, timeout=300)
+    if data:
+        return data
+    log_event({"status": "domain_rescue_report_error", "exit": code, "tail": raw[-1000:]})
+    return None
+
+
 def fallback_prepare_rescue() -> dict[str, Any]:
     """Prepare an editor rescue run if the sentinel failed before returning one.
 
@@ -158,10 +170,11 @@ def main() -> int:
         if not audit:
             log_event({"status": "audit_error", "exit": code, "tail": raw[-1000:]})
             return 2
+        domain_report = run_domain_rescue_report(prepare=True)
         if audit.get("status") == "ok":
             state["lastOkAt"] = now_iso()
             save_state(state)
-            log_event({"status": "ok", "updatedAt": audit.get("updatedAt"), "top": (audit.get("top") or [{}])[0]})
+            log_event({"status": "ok", "updatedAt": audit.get("updatedAt"), "top": (audit.get("top") or [{}])[0], "domainStatus": (domain_report or {}).get("status")})
             return 0
 
         # If GitHub Pages/CDN is briefly serving an older feed while the gh-pages
@@ -195,6 +208,12 @@ def main() -> int:
                 "liveErrors": [e.get("code") for e in audit.get("errors") or []],
             })
             return 0
+
+        # Domain-level rescue was already prepared above. Log the failing domains
+        # before continuing to the general sentinel path.
+        if domain_report:
+            bad_domains = [d.get("domain") for d in domain_report.get("domains") or [] if d.get("state") in {"warning", "fail", "missing"}]
+            log_event({"status": "domain_rescue_checked", "domainStatus": domain_report.get("status"), "domains": bad_domains[:12]})
 
         # Safe deterministic repair first. It deploys only when existing hard gates pass;
         # otherwise it prepares a rescue editor run.

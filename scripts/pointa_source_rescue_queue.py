@@ -26,6 +26,7 @@ FOREIGN_SOURCES = ["BBC", "CNN", "Sky News", "Reuters", "AP", "Guardian", "NYT",
 QUEUE_GROUPS = IMPORTANT_SOURCES + FOREIGN_SOURCES
 DEFAULT_OUT = ROOT / "tmp" / "pointa_source_rescue_queue.json"
 DEFAULT_AUDITOR = ROOT / "tmp" / "pointa_live_auditor_last.json"
+DEFAULT_DOMAIN_SOURCES = ROOT / "config" / "pointa_domain_sources.json"
 
 
 def source_group(name: str) -> str:
@@ -140,6 +141,20 @@ def stale_groups_from_auditor(path: Path) -> set[str]:
     return groups
 
 
+def load_domain_source_groups(domain: str, path: Path = DEFAULT_DOMAIN_SOURCES) -> set[str]:
+    if not domain:
+        return set()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return set()
+    spec = data.get(domain) if isinstance(data, dict) else None
+    if not isinstance(spec, dict):
+        return set()
+    groups = {source_group(str(src)) or str(src) for src in spec.get("sources") or []}
+    return {g for g in groups if g}
+
+
 def freshness_sla_failing_from_auditor(path: Path) -> bool:
     """Return true when the live feed itself is stale/thin, not just one source view.
 
@@ -170,17 +185,23 @@ def main() -> int:
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     ap.add_argument("--auditor", default=str(DEFAULT_AUDITOR), help="Auditor JSON used to prioritize stale source views")
     ap.add_argument("--per-source", type=int, default=8, help="Candidates scanned per source; stale groups use this full budget")
+    ap.add_argument("--domain", default="", help="Limit rescue queue to sources mapped for this domain/category")
+    ap.add_argument("--domain-sources", default=str(DEFAULT_DOMAIN_SOURCES), help="Domain-to-source mapping JSON")
     args = ap.parse_args()
 
     now = datetime.now(TZ)
     cutoff = now - timedelta(minutes=args.max_age_min)
     stale_groups = stale_groups_from_auditor(Path(args.auditor))
+    domain_groups = load_domain_source_groups(args.domain, Path(args.domain_sources))
     freshness_sla_failing = freshness_sla_failing_from_auditor(Path(args.auditor))
     rows: list[dict[str, Any]] = []
 
     for source in update_feed.load_sources(args.sync_profile):
         group = source_group(source.get("name", ""))
-        if group not in QUEUE_GROUPS:
+        if domain_groups:
+            if group not in domain_groups:
+                continue
+        elif group not in QUEUE_GROUPS:
             continue
         try:
             candidates = update_feed.extract_source(source)
@@ -235,18 +256,21 @@ def main() -> int:
         deduped.append(row)
     rows = deduped
 
+    active_groups = sorted(domain_groups) if domain_groups else QUEUE_GROUPS
     report = {
         "name": "Pointa source rescue queue",
         "mode": "shadow-report-only",
         "checkedAt": now.isoformat(timespec="seconds"),
         "maxAgeMin": args.max_age_min,
+        "domain": args.domain or None,
+        "domainSourceGroups": sorted(domain_groups),
         "freshnessSlaFailing": freshness_sla_failing,
         "items": rows,
         "staleSourceGroups": sorted(stale_groups),
         "itemsNeedingRescueForStaleViews": sum(1 for r in rows if r.get("staleSourceView")),
         "counts": {
             "total": len(rows),
-            "bySource": {s: sum(1 for r in rows if r.get("sourceGroup") == s) for s in QUEUE_GROUPS},
+            "bySource": {s: sum(1 for r in rows if r.get("sourceGroup") == s) for s in active_groups},
         },
         "note": "Report only. Does not modify feed.json or publish. If the top-feed freshness SLA is failing, newest candidates are prioritized first; otherwise stale source-view rows are prioritized for full-editor rescue while quality gates remain strict.",
     }
