@@ -214,6 +214,18 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "warning", idx, "headline_near_duplicate_summary", "Headline is a clipped/near-duplicate version of the summary", item)
 
     blob = " ".join([headline, context, takeaway, original, source])
+    content_blob = " ".join([headline, context, takeaway, original])
+    me_or_israel_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "מזרח תיכון", "עזה", "gaza", "חמאס", "חיזבאללה", "לבנון", "איראן", "iran", "הורמוז", "סעודיה", "קטאר", "מצרים", "ירדן", "טורקיה", "פלסטיני"]
+    world_only_terms = ["קובה", "cuba", "פוקושימה", "fukushima"]
+    strong_local_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "עזה", "gaza"]
+    content_low = content_blob.lower()
+    source_low = source.lower()
+    is_me_or_israel = (
+        any(x.lower() in content_low for x in me_or_israel_terms)
+        and (not any(x.lower() in content_low for x in world_only_terms) or any(x.lower() in content_low for x in strong_local_terms))
+    ) or any(x in source_low for x in ["middle east", "mideast", "מזרח תיכון"])
+    if category == "אקטואליה בעולם" and is_me_or_israel:
+        add_issue(issues, "error", idx, "category_world_boundary", "Israel/Middle-East stories must use the regular news/security/politics domains, not אקטואליה בעולם", item)
     if category == "פוליטיקה" and any(x in blob for x in ["איראן", "הורמוז", "גרעין", "אורניום"]) and any(x in blob for x in ["מו\"מ", "משא ומתן", "עסקה", "הסכם", "טראמפ"]):
         add_issue(issues, "error", idx, "category_iran_deal_security", "Iran nuclear/deal/Hormuz cards must be ביטחון, not פוליטיקה", item)
     if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"} and any(x in blob for x in ["קובה", "פוקושימה", "הבית הלבן", "White House"]):

@@ -289,6 +289,7 @@ For every item:
 2. Do not summarize the RSS. Identify the real story, important facts, and bottom line.
 3. Return `reject` when the available text is too thin for a specific Pointa takeaway.
 4. Keep Hebrew output concise and follow the Pointa editor contract.
+5. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
 
 Write one result file per batch, named `batch_N_results.json`.
 Each result object must include:

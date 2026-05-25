@@ -146,7 +146,7 @@ IMPORTANT_WORDS = [
 ]
 CATEGORY_RULES = [
     # Order matters: prefer specific practical topics over broad local/world buckets.
-    ("אקטואליה בעולם", "security", ["קובה", "סנקציות", "רוסיה", "אוקראינה", "פקיסטן", "הודו", "סין", "טייוואן", "אירופה", "אירופי", "נאטו", "ארה\"ב", "ארצות הברית", "ממשל טראמפ", "white house", "sanctions", "cuba", "ukraine", "russia", "china", "taiwan", "pakistan", "india"]),
+    ("אקטואליה בעולם", "security", ["קובה", "סנקציות", "רוסיה", "אוקראינה", "פקיסטן", "הודו", "סין", "טייוואן", "אירופה", "אירופי", "נאטו", "ארה\"ב", "ארצות הברית", "ממשל טראמפ", "white house", "federal reserve", "fed rate", "us interest", "u.s.", "united states", "sanctions", "cuba", "ukraine", "russia", "china", "taiwan", "pakistan", "india"]),
     ("משפט", "security", ["בגץ", "בג\"ץ", "בית המשפט", "עליון", "שופט", "שופטים", "יועמ\"ש", "פרקליטות", "כתב אישום", "עתירה", "חוק", "חקיקה", "משפטי", "legal", "court", "supreme court", "trial"]),
     ("פלילים", "security", ["רצח", "ירי", "דקירה", "חשד", "נעצר", "מעצר", "משטרה", "חקירה", "עבריין", "פשע", "פלילי", "סמים", "אלימות", "אונס", "crime", "police", "shooting", "murder", "arrest"]),
     ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "פוטין", "קרמלין", "התנקשות", "ביון", "צבא", "טרור", "war", "iran", "russia", "ukraine", "gaza", "israel", "military", "terror"]),
@@ -767,11 +767,55 @@ def categorize(text: str) -> tuple[str, str]:
     return "חדשות", ""
 
 
+WORLD_ONLY_STORY_TERMS = ["קובה", "פוקושימה", "fukushima", "cuba"]
+MIDDLE_EAST_OR_ISRAEL_TERMS = [
+    "ישראל", "israel", "ישראלי", "הסכמי אברהם", "abraham accords", "recognising israel",
+    "middle east", "mideast", "מזרח תיכון", "המזרח התיכון", "עזה", "gaza", "חמאס", "hamas",
+    "חיזבאללה", "hezbollah", "לבנון", "lebanon", "סוריה", "syria", "החותים", "houthis",
+    "איראן", "iran", "טהרן", "tehran", "הורמוז", "hormuz", "סעודיה", "saudi",
+    "קטאר", "qatar", "מצרים", "egypt", "ירדן", "jordan", "טורקיה", "turkey",
+    "מדינות המפרץ", "המפרץ", "gulf states", "palestinian", "פלסטיני",
+]
+REGIONAL_SECURITY_TERMS = [
+    "איראן", "iran", "הורמוז", "hormuz", "גרעין", "nuclear", "מלחמה", "war",
+    "הסכם", "deal", "הסכמי אברהם", "abraham", "נורמליזציה", "normalization", "normalisation",
+    "חמאס", "חיזבאללה", "טילים", "צבא", "military", "terror", "hostage", "חטופים",
+]
+REGIONAL_POLITICS_TERMS = ["כנסת", "ממשלה", "נתניהו", "שר", "שרים", "בחירות", "קואליציה", "אופוזיציה", "minister", "government", "election"]
+
+
+def is_middle_east_or_israel_story(text: str, source: str = "") -> bool:
+    low = text.lower()
+    source_low = source.lower()
+    # A Cuba/Fukushima/etc. story can mention Iran/Trump without being Israel/Middle-East news.
+    if any(term.lower() in low for term in WORLD_ONLY_STORY_TERMS) and not any(term.lower() in low for term in ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "gaza", "עזה"]):
+        return False
+    if any(term.lower() in low for term in MIDDLE_EAST_OR_ISRAEL_TERMS):
+        return True
+    # Source labels can be a hint only for explicit Middle-East feeds; do not treat Hebrew outlet names
+    # like "ישראל היום" as an Israel-angle signal for unrelated world items.
+    return any(term in source_low for term in ["middle east", "mideast", "מזרח תיכון"])
+
+
+def regional_category(text: str) -> tuple[str, str]:
+    low = text.lower()
+    if any(term.lower() in low for term in REGIONAL_SECURITY_TERMS):
+        return "ביטחון", "security"
+    if any(term.lower() in low for term in REGIONAL_POLITICS_TERMS):
+        return "פוליטיקה", "security"
+    return "חדשות", ""
+
+
 def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # With many section RSS feeds enabled, the feed name is a strong signal.
     # Prefer it over incidental keywords in the title/description so sports,
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
-    text = f"{title} {desc} {source}"
+    content_text = f"{title} {desc}"
+    text = f"{content_text} {source}"
+    # Lior's boundary: אקטואליה בעולם is only for global stories with no Israel/Middle-East angle.
+    # Israel/Middle-East items from foreign sources still belong to the normal news/security/politics domains.
+    if is_middle_east_or_israel_story(content_text, source):
+        return regional_category(text)
     if any(x in text for x in ['איראן', 'הורמוז', 'גרעין', 'אורניום']) and any(x in text for x in ['טראמפ', 'ארצות הברית', 'ארה"ב', 'מו"מ', 'משא ומתן', 'מזכר הבנות', 'עסקה', 'הסכם']):
         return "ביטחון", "security"
     if any(x in text for x in ['קובה', 'פוקושימה', 'הבית הלבן', 'White House', 'חמוש ירה ליד הבית הלבן', 'ממשל טראמפ נגד']) and not any(x in source for x in ['ספורט', 'רכב', 'סלבס', 'רכילות']):
