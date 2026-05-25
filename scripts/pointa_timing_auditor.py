@@ -124,6 +124,14 @@ def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at:
             # surfaces as timing findings. Source groups are still tracked below.
             if category not in latest_by_group or t > latest_by_group[category]["_time"]:
                 latest_by_group[category] = ev2
+        if group in FOREIGN_SOURCES:
+            # The shared SLA config has a product-facing synthetic domain named
+            # "מקורות זרים". Foreign cards are usually categorized as
+            # "אקטואליה בעולם"/business/etc., so mirror their publication
+            # events into that synthetic group instead of reporting a false
+            # "no publication events" blocker.
+            if "מקורות זרים" not in latest_by_group or t > latest_by_group["מקורות זרים"]["_time"]:
+                latest_by_group["מקורות זרים"] = ev2
         if latest_all is None or t > latest_all["_time"]:
             latest_all = ev2
         if group in IMPORTANT_SOURCES and (latest_important is None or t > latest_important["_time"]):
