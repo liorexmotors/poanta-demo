@@ -32,7 +32,7 @@ DANGLING_ENDINGS = {
 GENERIC_HEADLINE_PATTERNS = [
     "במרכז הסיפור", "הידיעה חשובה", "הסיפור חשוב", "השאלה היא", "החשיבות היא",
     "מה מסתתר", "זה מה", "כל מה", "לא תאמינו", "סערה", "דרמה", "טירוף",
-    "מגייס פרעון", "מגייס פרשן פוליטי",
+    "מגייס פרעון", "מגייס פרשן פוליטי", "באותו אירוע בו",
 ]
 GENERIC_SUMMARY_PATTERNS = [
     "פורסם", "דיווח", "המקור", "הכתב", "כתבה בנושא", "הידיעה חשובה בגלל",
@@ -48,6 +48,7 @@ GENERIC_TAKEAWAY_PATTERNS = [
     "משפיע על עלות, בטיחות", "משנה את המשך העונה", "מחייב להבין את הסיכון",
     "מראה איך רגע פרטי", "חושף את קו הטיעון",
     "גם מוסד אהוב לא חסין מעלויות", "גם אוכל בטיסה הפך לכלי תחרות",
+    "אצל ליגיונרים, הזדמנות אחת יכולה לשנות את העונה הבאה",
 ]
 SOURCE_MEDIATION = ["הכתב מתאר", "הכתבה עוסקת", "המקור מדווח", "פורסם כי", "דווח כי"]
 ALLOWED_LATIN = {
@@ -243,6 +244,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "warning", idx, "takeaway_long", f"Takeaway length {len(takeaway)} > {TAKEAWAY_MAX}", item)
     if any(p in takeaway for p in GENERIC_TAKEAWAY_PATTERNS):
         add_issue(issues, "error", idx, "takeaway_generic", "Takeaway is generic/reusable", item)
+    if any(x in visible_blob + " | " + original for x in ["נפל בקרב", "לוחם", "רחפן נפץ", "דרום לבנון", "חיזבאללה"]) and any(x in takeaway for x in ["ליגיונרים", "העונה הבאה", "שחקן", "כדורגל", "NBA"]):
+        add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to a sports template, not a security/fallen-soldier story", item)
     if any(x in card_blob(item) for x in ["M-16", "נשק", "גניבת נשק"]) and any(x in takeaway for x in ["מוסד אהוב", "אוכל בטיסה", "חוויית הנוסע"]):
         add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to restaurant/travel template, not a weapon/crime story", item)
     if any(x in takeaway for x in ["אופנה על השטיח האדום", "מוכרת דימוי לפני שהיא מוכרת בגד"]):

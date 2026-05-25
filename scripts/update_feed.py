@@ -1625,7 +1625,7 @@ def specific_takeaway(title: str, desc: str) -> str:
         return 'זכאות אזרחית היא חלון הזדמנות — מי שמחכה עלול לאבד אותה.'
     if 'דירה' in text and any(x in text for x in ['טעות', 'לעלות לכם']):
         return 'בעסקת דירה, פרט קטן יכול להפוך להפסד גדול.'
-    if 'דסה' in text or 'גלוך' in text or 'למקין' in text:
+    if ('דסה' in text or 'גלוך' in text or 'למקין' in text) and any(x in text for x in ['כדורגל', 'נבחרת', 'ליגה', 'קבוצה', 'שחקן', 'מאמן', 'אירופה', 'ספורט']):
         return 'אצל ליגיונרים, הזדמנות אחת יכולה לשנות את העונה הבאה.'
     if 'טייסון פיורי' in text:
         return 'תהילה משפחתית לא מגינה ממשברים פרטיים שמגיעים לכותרות.'
