@@ -284,82 +284,82 @@ Warnings: 157
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/nba/2026-05-25/ty-article/.premium/0000019e-5d86-d515-afbf-7ddf29af0000
 
-### WARNING · takeaway_long · item 46
-- Takeaway length 105 > 95
-- Headline: `רחפן נפץ הרג את נהוראי לייזר בדרום לבנון`
-- Original: `הותר לפרסום: סמל נהוראי לייזר, בן 19 מאילת, נפל בקרב בדרום לבנון`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3840497
-
-### WARNING · takeaway_long · item 48
+### WARNING · takeaway_long · item 47
 - Takeaway length 106 > 95
 - Headline: `הציבור תומך בהמשך המלחמה כי אינו רואה חלופה`
 - Original: `מחקר חדש של ה-INSS: "הציבור פסימי מהמלחמה - אך לא מכיר משהו אחר"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1325076
 
-### WARNING · takeaway_long · item 50
+### WARNING · takeaway_long · item 49
 - Takeaway length 101 > 95
 - Headline: `הייסוף בשקל מעלה לחץ על בנק ישראל להתערב`
 - Original: `הדולר יורד ל-2.88 שקלים על רקע הציפייה להסכם בין ארה"ב לאיראן`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-05-25/ty-article-live/0000019e-5d8f-da4f-adff-ddbf67e40000
 
-### WARNING · takeaway_long · item 51
+### WARNING · takeaway_long · item 50
 - Takeaway length 101 > 95
 - Headline: `מעצר עריק הוביל לנזק לניידות ולעימותים בשתי ערים`
 - Original: `בגלל מעצר עריק: חרדים גרמו נזק לניידות בי-ם - וניסו להגיע לבית קצין באשקלון`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/ryahliblzx
 
-### WARNING · takeaway_long · item 52
+### WARNING · takeaway_long · item 51
 - Takeaway length 100 > 95
 - Headline: `17 תלונות נגד רב ממירון מגיעות לכתב אישום`
 - Original: `הבוקר: הרב יוסף שובלי ממירון יואשם בעבירות מין חמורות`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/rjblb8bgzg
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 52
 - Takeaway length 98 > 95
 - Headline: `ספשלטי קפה הופך בפריז משוליים לשוק יקר`
 - Original: `אחרי שתקראו את זה, כנראה יתחשק לכן לשתות קפה`
 - Source: ynet - קריירה
 - URL: https://www.ynet.co.il/laisha/article/bktlaeiyfl
 
-### WARNING · takeaway_long · item 54
+### WARNING · takeaway_long · item 53
 - Takeaway length 120 > 95
 - Headline: `הגיור הרפורמי בישראל הגיע לשיא אחרי 7 באוקטובר`
 - Original: `"עמך עמי": למה יותר ויותר גברים ונשים בוחרים להתגייר דווקא עכשיו?`
 - Source: ynet - כל ערוץ היהדות
 - URL: https://www.ynet.co.il/judaism/article/a2x0qzojx
 
-### WARNING · takeaway_long · item 55
+### WARNING · takeaway_long · item 54
 - Takeaway length 97 > 95
 - Headline: `רוסיה תקפה את אוקראינה במאות כטב״מים וטילים`
 - Original: `Large-scale Russian attack on Ukraine leaves four dead and dozens injured`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/clyp6831yp5o?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 55
 - Takeaway length 103 > 95
 - Headline: `טראמפ מאט את עסקת איראן סביב הורמוז והגרעין`
 - Original: `Trump tells US negotiators 'not to rush' into deal with Iran`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/clyp0040x7po?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 57
+### WARNING · takeaway_long · item 56
 - Takeaway length 122 > 95
 - Headline: `דני אבדיה נשאר מחוץ לחמישיות העונה למרות דירוג 16`
 - Original: `לא היה קרוב: דני אבדיה נותר מחוץ לחמישיות העונה של ה-NBA`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-basketball/article/20610223
 
-### WARNING · takeaway_long · item 58
+### WARNING · takeaway_long · item 57
 - Takeaway length 100 > 95
 - Headline: `עסקת איראן מעוררת התנגדות בתוך מחנה טראמפ`
 - Original: `"עסקה רעה?" - טראמפ נאבק לשווק את ההסכם עם איראן בתוך המפלגה הרפובליקנית`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3840510
+
+### WARNING · takeaway_long · item 58
+- Takeaway length 105 > 95
+- Headline: `רחפן נפץ הרג את נהוראי לייזר בדרום לבנון`
+- Original: `הותר לפרסום: סמל נהוראי לייזר, בן 19 מאילת, נפל בקרב בדרום לבנון`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3840497
 
 ### WARNING · takeaway_long · item 60
 - Takeaway length 100 > 95
