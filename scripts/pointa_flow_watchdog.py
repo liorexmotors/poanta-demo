@@ -139,7 +139,7 @@ def main() -> int:
     warnings: list[dict[str, Any]] = []
 
     live_code, live, live_err = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--json"])
-    timing_code, timing, timing_err = run_json([sys.executable, "scripts/pointa_timing_auditor.py", "--json"])
+    timing_code, timing, timing_err = run_json([sys.executable, "scripts/pointa_timing_auditor.py", "--json", "--use-seen-at"])
     quality_code, quality, quality_err = run_json([sys.executable, "scripts/pointa_quality_auditor.py", "--json"])
     drill_code, drill, drill_err = run_json([sys.executable, "scripts/poanta_p0_stuck_feed_drill.py"])
     qg_code, qg_text = run_text([sys.executable, "scripts/pointa_quality_gate.py", "--report", "tmp/flow_watchdog_quality_gate.md"])
