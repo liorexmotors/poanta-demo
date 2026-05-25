@@ -34,8 +34,14 @@ def now_iso() -> str:
 
 
 def run(cmd: list[str], timeout: int = 240) -> tuple[int, str]:
-    proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, timeout=timeout)
-    return proc.returncode, (proc.stdout or "") + (proc.stderr or "")
+    try:
+        proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, timeout=timeout)
+        return proc.returncode, (proc.stdout or "") + (proc.stderr or "")
+    except subprocess.TimeoutExpired as exc:
+        text = (exc.stdout or "") + (exc.stderr or "")
+        if isinstance(text, bytes):
+            text = text.decode("utf-8", errors="replace")
+        return 124, f"TIMEOUT after {timeout}s: {' '.join(cmd)}\n{text}"
 
 
 def run_json(cmd: list[str], timeout: int = 180) -> tuple[int, dict[str, Any] | None, str]:
@@ -106,11 +112,11 @@ Required action:
 """
 
 
-def run_domain_rescue_report(prepare: bool = False) -> dict[str, Any] | None:
+def run_domain_rescue_report(prepare: bool = False, timeout: int = 120) -> dict[str, Any] | None:
     cmd = [sys.executable, "scripts/pointa_domain_rescue_engine.py", "--dry-run", "--json"]
     if prepare:
         cmd.append("--prepare-editor-run")
-    code, data, raw = run_json(cmd, timeout=300)
+    code, data, raw = run_json(cmd, timeout=timeout)
     if data:
         return data
     log_event({"status": "domain_rescue_report_error", "exit": code, "tail": raw[-1000:]})
@@ -159,6 +165,9 @@ def main() -> int:
         try:
             if time.time() - LOCK.stat().st_mtime > 900:
                 LOCK.unlink()
+                fd = os.open(str(LOCK), os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o644)
+                os.write(fd, str(os.getpid()).encode())
+                os.close(fd)
             else:
                 log_event({"status": "skip", "reason": "locked"})
                 return 0
@@ -170,8 +179,13 @@ def main() -> int:
         if not audit:
             log_event({"status": "audit_error", "exit": code, "tail": raw[-1000:]})
             return 2
-        domain_report = run_domain_rescue_report(prepare=True)
+        domain_report: dict[str, Any] | None = None
         if audit.get("status") == "ok":
+            # Domain diagnostics are useful, but preparing every failing domain
+            # is expensive and previously held the guard lock until timeout.
+            # Keep the hot path non-blocking: report only, never prepare, while
+            # the general sentinel remains responsible for automatic repair.
+            domain_report = run_domain_rescue_report(prepare=False, timeout=90)
             state["lastOkAt"] = now_iso()
             save_state(state)
             log_event({"status": "ok", "updatedAt": audit.get("updatedAt"), "top": (audit.get("top") or [{}])[0], "domainStatus": (domain_report or {}).get("status")})
@@ -209,8 +223,12 @@ def main() -> int:
             })
             return 0
 
-        # Domain-level rescue was already prepared above. Log the failing domains
-        # before continuing to the general sentinel path.
+        # Domain-level rescue diagnostics are intentionally report-only here.
+        # Preparing editor runs for every stale domain can exceed the cron
+        # interval and starve the general top-feed repair path.  Manual/domain
+        # rescue can still be prepared through pointa_domain_rescue_engine when
+        # an operator asks for a specific domain.
+        domain_report = run_domain_rescue_report(prepare=False, timeout=90)
         if domain_report:
             bad_domains = [d.get("domain") for d in domain_report.get("domains") or [] if d.get("state") in {"warning", "fail", "missing"}]
             log_event({"status": "domain_rescue_checked", "domainStatus": domain_report.get("status"), "domains": bad_domains[:12]})
