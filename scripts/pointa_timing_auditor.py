@@ -20,12 +20,32 @@ DEFAULT_EVENTS = ROOT / "tmp" / "publication_events.jsonl"
 DEFAULT_REPORT = ROOT / "tmp" / "pointa_timing_auditor_last.json"
 
 DEFAULT_GROUP_THRESHOLDS_MIN = {
-    "all": 30,
-    "important": 120,
-    "foreign": 90,
-    "דה מרקר": 240,
-    "הארץ": 180,
-    "מעריב": 180,
+    # Overall publication silence: same top-feed SLA used by the live auditor.
+    "all": 25,
+    # Category/domain SLA, aligned with feedback-dashboard.html THRESHOLDS red limits.
+    "ביטחון": 25,
+    "פוליטיקה": 30,
+    "חדשות": 35,
+    "פלילים": 40,
+    "משפט": 45,
+    "כלכלה": 45,
+    "צרכנות": 60,
+    "רכב": 60,
+    "ספורט": 60,
+    "אקטואליה בעולם": 60,
+    "דעות": 90,
+    "טכנולוגיה": 90,
+    "בריאות": 90,
+    "תרבות": 120,
+    "רכילות": 120,
+    "נדל״ן": 120,
+    "מזג אוויר": 180,
+    # Source-view SLA remains less aggressive than domain SLA to avoid source-specific false alarms.
+    "important": 60,
+    "foreign": 60,
+    "דה מרקר": 120,
+    "הארץ": 90,
+    "מעריב": 90,
 }
 DEFAULT_ALL_WARNING_MIN = 15
 IMPORTANT_SOURCES = ["הארץ", "ynet", "וואלה", "מעריב", "גלובס", "ישראל היום", "דה מרקר"]
@@ -97,6 +117,12 @@ def audit(events: list[dict[str, Any]], thresholds: dict[str, int], use_seen_at:
         ev2["_time"] = t
         group = source_group(ev2)
         ev2["sourceGroup"] = group
+        category = str(ev2.get("category") or "").strip()
+        if category:
+            # Track domain/category freshness in the same report the dashboard
+            # surfaces as timing findings. Source groups are still tracked below.
+            if category not in latest_by_group or t > latest_by_group[category]["_time"]:
+                latest_by_group[category] = ev2
         if latest_all is None or t > latest_all["_time"]:
             latest_all = ev2
         if group in IMPORTANT_SOURCES and (latest_important is None or t > latest_important["_time"]):

@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-19-category-sync-mvp-v1",
+  "version": "2026-05-25-tightened-dashboard-refresh-sla-v1",
   "profiles": {
     "fast": {
       "label": "דחוף",
@@ -7,63 +7,63 @@
       "categories": [
         "ביטחון",
         "פוליטיקה",
-        "אקטואליה בעולם",
-        "משפט",
+        "חדשות",
         "פלילים",
-        "חדשות"
+        "משפט"
       ],
       "editorLimit": 18,
       "maxPerCategory": 6,
-      "description": "חדשות שמאבדות ערך מהר: פוליטיקה, ביטחון, משפט, פלילים ומבזקי חדשות."
+      "description": "תחומים קריטיים/מהירים: ביטחון, פוליטיקה, חדשות, פלילים ומשפט. נבדקים/נאספים בתדירות הכי גבוהה כדי לא להגיע לתקיעה של 25–45 דקות."
     },
     "medium": {
       "label": "שוטף",
       "intervalMinutes": 30,
       "categories": [
         "כלכלה",
-        "טכנולוגיה",
-        "ספורט"
+        "צרכנות",
+        "רכב",
+        "ספורט",
+        "אקטואליה בעולם",
+        "דעות"
       ],
       "editorLimit": 18,
       "maxPerCategory": 6,
-      "description": "תחומים דינמיים אבל פחות דחופים מריל-טיים."
+      "description": "תחומים שצריכים רענון שוטף בטווח 30–60 דקות: כלכלה, צרכנות, רכב, ספורט, עולם ודעות."
     },
     "slow": {
       "label": "רגוע",
-      "intervalMinutes": 240,
+      "intervalMinutes": 60,
       "categories": [
+        "טכנולוגיה",
+        "בריאות",
         "תרבות",
         "רכילות",
-        "דעות",
-        "בריאות",
-        "רכב",
-        "צרכנות",
         "נדל״ן",
         "מזג אוויר"
       ],
       "editorLimit": 16,
       "maxPerCategory": 5,
-      "description": "תוכן evergreen/מגזיני שיכול להתעדכן כל כמה שעות."
+      "description": "תחומים איטיים יותר אך לא ארבע שעות: טכנולוגיה/בריאות סביב שעה, תרבות/נדל״ן/מזג אוויר במעקב רגוע יותר."
     }
   },
   "categoryProfile": {
     "ביטחון": "fast",
     "פוליטיקה": "fast",
-    "אקטואליה בעולם": "fast",
-    "משפט": "fast",
-    "פלילים": "fast",
     "חדשות": "fast",
+    "פלילים": "fast",
+    "משפט": "fast",
     "כלכלה": "medium",
-    "טכנולוגיה": "medium",
+    "צרכנות": "medium",
+    "רכב": "medium",
     "ספורט": "medium",
-    "תרבות": "slow",
-    "דעות": "slow",
+    "אקטואליה בעולם": "medium",
+    "דעות": "medium",
+    "טכנולוגיה": "slow",
     "בריאות": "slow",
-    "רכב": "slow",
-    "צרכנות": "slow",
+    "תרבות": "slow",
+    "רכילות": "slow",
     "נדל״ן": "slow",
-    "מזג אוויר": "slow",
-    "רכילות": "slow"
+    "מזג אוויר": "slow"
   },
-  "notes": "MVP only: scripts can filter/prioritize by sync profile. Cron changes should be approved separately. 2026-05-21: רכילות/סלבס runs as slow-profile magazine content."
+  "notes": "2026-05-25: tightened Lior-approved dashboard freshness SLA and aligned feed refresh profiles. Actual scheduler jobs may still need live cron cadence updates if they do not read intervalMinutes directly."
 }

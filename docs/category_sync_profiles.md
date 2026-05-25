@@ -4,9 +4,9 @@ MVP for running different sync/editor cadences by content urgency.
 
 ## Profiles
 
-- `fast` — every ~10 minutes: ביטחון, פוליטיקה, משפט, פלילים, חדשות
-- `medium` — every ~30 minutes: כלכלה, טכנולוגיה, ספורט
-- `slow` — every ~4 hours: תרבות, דעות, בריאות, רכב, צרכנות, נדל״ן
+- `fast` — every ~10 minutes: ביטחון, פוליטיקה, חדשות, פלילים, משפט
+- `medium` — every ~30 minutes: כלכלה, צרכנות, רכב, ספורט, אקטואליה בעולם, דעות
+- `slow` — every ~60 minutes: טכנולוגיה, בריאות, תרבות, רכילות, נדל״ן, מזג אוויר
 
 The source of truth is `pointa_sync_profiles.json`.
 
@@ -41,4 +41,4 @@ npm run editor:prepare:slow
 
 ## Important
 
-This MVP adds local script/config support only. Cron cadence changes should be approved separately before live scheduling changes.
+This config aligns the dashboard freshness SLA with feed sync profiles. If the live scheduler does not read `intervalMinutes` directly, update the scheduler separately under the same rollback rules before changing production cadence.

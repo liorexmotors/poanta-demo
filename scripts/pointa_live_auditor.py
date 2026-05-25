@@ -513,7 +513,7 @@ def main() -> int:
     ap.add_argument("--min-recent-items", type=int, default=5, help="Minimum top items newer than recent-window-min")
     ap.add_argument("--min-recent-sources", type=int, default=3, help="Minimum distinct recent source groups in the top slice")
     ap.add_argument("--no-new-warning-min", type=int, default=15, help="Warning threshold for no new top item during active news hours")
-    ap.add_argument("--no-new-error-min", type=int, default=30, help="Error threshold for no new top item during active news hours")
+    ap.add_argument("--no-new-error-min", type=int, default=25, help="Error threshold for no new top item during active news hours")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
