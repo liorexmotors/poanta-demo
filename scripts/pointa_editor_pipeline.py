@@ -214,6 +214,13 @@ def load_feed(path: Path) -> dict[str, Any]:
         return json.load(f)
 
 
+def parse_dt_for_sort(raw: Any) -> datetime:
+    try:
+        return datetime.fromisoformat(str(raw or "").replace("Z", "+00:00"))
+    except Exception:
+        return datetime.min
+
+
 def select_items(feed: dict[str, Any], limit: int, max_per_source: int, max_per_category: int, sync_profile: str = "all") -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     by_source: dict[str, int] = {}
@@ -463,6 +470,7 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
         preview_items.append(rewritten.get(url, item))
         if url:
             seen_urls.add(url)
+    preview_items.sort(key=lambda item: parse_dt_for_sort(item.get("publishedAt")), reverse=True)
     preview["items"] = preview_items
     preview["updatedAt"] = datetime.now().astimezone().isoformat(timespec="seconds")
     preview["editorPreview"] = {
