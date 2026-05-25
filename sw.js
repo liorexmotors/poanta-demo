@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v72-time-sort-fix';
+const CACHE_NAME = 'poenta-v73-relative-time';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
