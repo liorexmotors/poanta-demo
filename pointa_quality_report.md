@@ -32,35 +32,35 @@ Warnings: 144
 
 ## Issues
 
-### WARNING · summary_long · item 4
+### WARNING · summary_long · item 5
 - Summary length 223 > 220
 - Headline: `גלית דיסטל אטבריאן פורשת מהחיים הפוליטיים`
 - Original: `גלית דיסטל אטבריאן פורשת: "לא ארוץ בפריימריז הקרובים"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rkjrbs11lfe
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 5
 - Takeaway length 105 > 95
 - Headline: `גלית דיסטל אטבריאן פורשת מהחיים הפוליטיים`
 - Original: `גלית דיסטל אטבריאן פורשת: "לא ארוץ בפריימריז הקרובים"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rkjrbs11lfe
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 16
 - Takeaway length 101 > 95
 - Headline: `סקודה בוחנת להביא לאירופה דגם זול מהודו`
 - Original: `תשובה לדאצ'יה: סקודה תייבא מכונית סופר-זולה מהודו`
 - Source: ynet - כל ערוץ הרכב
 - URL: https://icar.co.il/news/ryzviq31zx
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 20
 - Takeaway length 110 > 95
 - Headline: `רמת גן תמלג מדריכי נוער שיתמידו שנתיים`
 - Original: `רמת גן תעניק מלגות לאקדמיה למדריכי תנועות נוער`
 - Source: וואלה מקומי
 - URL: https://mekomi.walla.co.il/item/3840576
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 22
 - Takeaway length 100 > 95
 - Headline: `שעון ביולוגי מבדיקות דם נקשר לתמותה ואשפוזים`
 - Original: `מה הגיל האמיתי של הגוף שלכם? מחקר חדש בשיבא מספק תשובות`
