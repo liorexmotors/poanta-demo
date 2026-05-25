@@ -105,6 +105,26 @@ Required action:
 """
 
 
+def fallback_prepare_rescue() -> dict[str, Any]:
+    """Prepare an editor rescue run if the sentinel failed before returning one.
+
+    The guard's escalation message must not contain an empty `Prepared rescue
+    run:` field. If `pointa_silent_freshness_sentinel.py --repair` times out or
+    emits unparsable output, prepare the same adaptive rescue batch directly so
+    the agent receives a concrete run directory instead of having to rediscover
+    the next step.
+    """
+    run([sys.executable, "scripts/pointa_source_rescue_queue.py", "--sync-profile", "all", "--max-age-min", "180", "--per-source", "10"], timeout=180)
+    code, text = run([sys.executable, "scripts/pointa_rescue_editor_pipeline.py", "prepare", "--limit", "24", "--batch-size", "8", "--oversample-factor", "4"], timeout=240)
+    run_dir = ""
+    prefix = str(ROOT / "tmp" / "editor-runs")
+    for line in text.splitlines():
+        if line.startswith(prefix):
+            run_dir = line.strip()
+            break
+    return {"status": "rescue_prepared" if run_dir else "blocked_no_rescue_run", "actions": [{"action": "fallback_prepare_source_rescue_editor_run", "runDir": run_dir, "prepareExit": code, "prepareTail": text[-2000:]}]}
+
+
 def escalate_to_agent(audit: dict[str, Any], sentinel: dict[str, Any] | None) -> tuple[int, str]:
     msg = agent_message(audit, sentinel)
     return run([
@@ -182,6 +202,27 @@ def main() -> int:
         if sentinel and sentinel.get("status") == "ok":
             log_event({"status": "repaired", "actions": [a.get("action") for a in sentinel.get("actions") or []]})
             return 0
+
+        has_rescue_run = False
+        if sentinel:
+            has_rescue_run = any(
+                action.get("action") == "prepare_source_rescue_editor_run" and action.get("runDir")
+                for action in (sentinel.get("actions") or [])
+            )
+        if not has_rescue_run:
+            fallback = fallback_prepare_rescue()
+            if fallback.get("actions"):
+                if sentinel and isinstance(sentinel.get("actions"), list):
+                    sentinel["actions"].extend(fallback["actions"])
+                    sentinel["status"] = fallback.get("status") or sentinel.get("status")
+                else:
+                    sentinel = fallback
+            log_event({
+                "status": "fallback_rescue_prepare",
+                "sentinelExit": s_code,
+                "sentinelStatus": (sentinel or {}).get("status"),
+                "runDir": ((sentinel or {}).get("actions") or [{}])[-1].get("runDir"),
+            })
 
         key = incident_key(audit)
         if should_escalate(state, key):
