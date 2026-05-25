@@ -2,61 +2,40 @@
 
 Items checked: 200
 Errors: 0
-Warnings: 149
+Warnings: 147
 
 ## Category distribution
 
-- ספורט: 39
+- ספורט: 40
 - ביטחון: 38
-- אקטואליה בעולם: 32
-- כלכלה: 18
-- פוליטיקה: 10
+- אקטואליה בעולם: 31
+- כלכלה: 16
+- פלילים: 8
 - בריאות: 8
+- פוליטיקה: 8
+- טכנולוגיה: 8
 - תרבות: 7
-- פלילים: 7
 - דעות: 6
-- טכנולוגיה: 6
 - רכב: 6
 - רכילות: 6
 - צרכנות: 6
-- חדשות: 4
+- חדשות: 5
 - משפט: 4
 - נדל״ן: 3
 
 ## Issue counts
 
-- takeaway_long: 134
-- summary_long: 15
+- takeaway_long: 131
+- summary_long: 16
 
 ## Issues
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 5
 - Takeaway length 97 > 95
 - Headline: `קלסי שתה בירה במשחק NBA וסוויפט הפכה לרגע הוויראלי`
 - Original: `צפו: מה כל כך הביך את טיילור סוויפט במשחק ה-NBA?`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3840444
-
-### WARNING · takeaway_long · item 3
-- Takeaway length 102 > 95
-- Headline: `אולימפיאקוס ניצחה את ריאל וזכתה ביורוליג אחרי 13 שנה`
-- Original: `הנקמה המושלמת: אולימפיאקוס אלופת אירופה בפעם הרביעית`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3840194
-
-### WARNING · takeaway_long · item 4
-- Takeaway length 99 > 95
-- Headline: `ריאל פספסה הארכה בגמר היורוליג ויצאה בלי התואר ה-12`
-- Original: `סקאריולו החמיא לשחקניו והצהיר: "ריאל מדריד עוד תחזור"`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3840495
-
-### WARNING · takeaway_long · item 5
-- Takeaway length 107 > 95
-- Headline: `מילאן קרסה במחזור הסיום; רומא וקומו עלו לאלופות`
-- Original: `דרמה במחזור הסיום באיטליה: רומא וקומו בליגת האלופות, לצ'ה וגאנדלמן שרדו`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3840113
 
 ### WARNING · summary_long · item 6
 - Summary length 232 > 220
@@ -73,221 +52,228 @@ Warnings: 149
 - URL: https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live
 
 ### WARNING · takeaway_long · item 7
-- Takeaway length 98 > 95
-- Headline: `הסתתרות חמינאי מעכבת את המגעים בין איראן לארה״ב`
+- Takeaway length 99 > 95
+- Headline: `הבידוד של חמינאי מעכב תשובה איראנית לארה״ב`
 - Original: `המנהיג העליון מסתתר בבונקר? הכאוס בצמרת איראן חוצה כל גבול`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1325044
 
 ### WARNING · takeaway_long · item 8
-- Takeaway length 119 > 95
-- Headline: `מוג'תבא חמינאי מסתתר ומתקשר דרך שליחים`
+- Takeaway length 100 > 95
+- Headline: `חמינאי מבודד ומתקשר עם סביבתו דרך שליחים`
 - Original: `במיקום סודי ובלי יכולת לתקשר ישירות: מוג'תבא חמינאי עדיין מסתתר`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1325043
 
 ### WARNING · takeaway_long · item 9
-- Takeaway length 123 > 95
-- Headline: `ארה״ב מוכנה לשיחות גרעין אם הורמוז ייפתח`
-- Original: `Rubio Says Details on Iran Nuclear Program Still to Be Negotiated`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/2026/05/24/world/middleeast/rubio-iran-nuclear.html
-
-### WARNING · takeaway_long · item 10
-- Takeaway length 104 > 95
-- Headline: `קובה קיבלה משלוח אורז ראשון מסין בעיצומו של משבר`
+- Takeaway length 97 > 95
+- Headline: `קובה קיבלה משלוח אורז ראשון מסין בזמן משבר`
 - Original: `Cuba thanks China for rice shipment amid worsening humanitarian conditions`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/24/cuba-thanks-china-for-rice-shipment-amid-worsening-humanitarian-conditions?traffic_source=rss
 
-### WARNING · takeaway_long · item 11
-- Takeaway length 105 > 95
-- Headline: `מוסלמים בארה״ב הופכים את הירי בסן דייגו לפעולה פוליטית`
+### WARNING · takeaway_long · item 10
+- Takeaway length 99 > 95
+- Headline: `מוסלמים בארה״ב מתארגנים פוליטית אחרי הירי בסן דייגו`
 - Original: `After San Diego shooting, Muslim Americans aim to turn grief into action`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/24/after-san-diego-shooting-muslim-americans-want-to-turn-grief-into-action?traffic_source=rss
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 11
 - Takeaway length 110 > 95
 - Headline: `ג'סי ג'יי הודיעה שבדיקת ה-MRI יצאה נקייה מסרטן`
 - Original: `הזמרת הבריטית תומכת ישראל מעדכנת: "אני נקייה מסרטן"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/forreal/global/article/20609717
 
+### WARNING · takeaway_long · item 12
+- Takeaway length 102 > 95
+- Headline: `אולימפיאקוס ניצחה את ריאל וזכתה ביורוליג אחרי 13 שנה`
+- Original: `הנקמה המושלמת: אולימפיאקוס אלופת אירופה בפעם הרביעית`
+- Source: וואלה ספורט - כדורסל
+- URL: https://sports.walla.co.il/item/3840194
+
+### WARNING · takeaway_long · item 13
+- Takeaway length 99 > 95
+- Headline: `ריאל פספסה הארכה בגמר היורוליג ויצאה בלי התואר ה-12`
+- Original: `סקאריולו החמיא לשחקניו והצהיר: "ריאל מדריד עוד תחזור"`
+- Source: וואלה ספורט - כדורסל
+- URL: https://sports.walla.co.il/item/3840495
+
 ### WARNING · takeaway_long · item 14
-- Takeaway length 118 > 95
-- Headline: `מקורבי נתניהו בוחנים הוצאה של רע״מ מחוץ לחוק`
+- Takeaway length 107 > 95
+- Headline: `מילאן קרסה במחזור הסיום; רומא וקומו עלו לאלופות`
+- Original: `דרמה במחזור הסיום באיטליה: רומא וקומו בליגת האלופות, לצ'ה וגאנדלמן שרדו`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3840113
+
+### WARNING · takeaway_long · item 16
+- Takeaway length 114 > 95
+- Headline: `מקורבי נתניהו בוחנים מהלך נגד תנועת האם של רע״מ`
 - Original: `רע"מ - מחוץ לחוק? מקורבי נתניהו החלו בקידום המהלך הדרמטי`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1325041
 
-### WARNING · summary_long · item 15
-- Summary length 226 > 220
-- Headline: `טראמפ מתקרב להסכם עם איראן ומסתבך מול ניצי המפלגה`
+### WARNING · summary_long · item 17
+- Summary length 252 > 220
+- Headline: `הסכם ארה״ב-איראן מחכה לאישור בטהרן`
 - Original: `US and Iran inch closer to peace deal as Trump faces criticism from GOP hawks`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/24/iran-leader-and-security-council-still-need-to-approve-peace-deal-with-us
 
-### WARNING · takeaway_long · item 15
-- Takeaway length 138 > 95
-- Headline: `טראמפ מתקרב להסכם עם איראן ומסתבך מול ניצי המפלגה`
+### WARNING · takeaway_long · item 17
+- Takeaway length 133 > 95
+- Headline: `הסכם ארה״ב-איראן מחכה לאישור בטהרן`
 - Original: `US and Iran inch closer to peace deal as Trump faces criticism from GOP hawks`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/24/iran-leader-and-security-council-still-need-to-approve-peace-deal-with-us
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 18
 - Takeaway length 117 > 95
 - Headline: `לצ׳ה וגאנדלמן נשארו בסרייה א׳ במחזור הסיום`
 - Original: `לצ'ה נשארה בליגה אחרי שניצחה את גנואה`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://livegame.ynet.co.il/games/523667
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 19
 - Takeaway length 104 > 95
 - Headline: `טורנסה מהליגה השנייה זכתה לראשונה בגביע הפורטוגלי`
 - Original: `טורנסה מליגת המשנה בפורטוגל זכתה בגביע עם ניצחון על ספורטינג בדקה ה-113`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-soccer/2026-05-24/ty-article/0000019e-5b98-d6a0-abde-fb9ca0fc0000
 
-### WARNING · takeaway_long · item 18
-- Takeaway length 130 > 95
-- Headline: `הרצוג תקף את נרמול האלימות בחברה הישראלית`
+### WARNING · summary_long · item 20
+- Summary length 223 > 220
+- Headline: `הרצוג הזהיר מנרמול אלימות בחברה הישראלית`
 - Original: `Israel’s President, Isaac Herzog, Denounces Israeli Violence`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/israel-herzog-violence.html
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 20
+- Takeaway length 130 > 95
+- Headline: `הרצוג הזהיר מנרמול אלימות בחברה הישראלית`
+- Original: `Israel’s President, Isaac Herzog, Denounces Israeli Violence`
+- Source: New York Times Middle East
+- URL: https://www.nytimes.com/2026/05/24/world/middleeast/israel-herzog-violence.html
+
+### WARNING · takeaway_long · item 21
 - Takeaway length 115 > 95
 - Headline: `גרסיה צפוי להישאר בהיידוק ולא להגיע למכבי ת״א`
 - Original: `המועמד למכבי תל אביב קיבל החלטה: "יהיו הרבה שינויים"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/israeli-soccer/article/20609634
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 22
 - Takeaway length 105 > 95
 - Headline: `טראמפ מעכב הסכם עם איראן למרות התקדמות בשיחות`
 - Original: `Trump tells US negotiators 'not to rush' into deal with Iran`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/clyp0040x7po?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 23
 - Takeaway length 115 > 95
 - Headline: `אולימפיאקוס חזרה לזכות ביורוליג אחרי 13 שנה`
 - Original: `אולימפיאקוס זכתה ביורוליג בפעם הרביעית בתולדותיה עם ניצחון על ריאל מדריד`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/basketball/2026-05-24/ty-article/0000019e-5b92-da4f-adff-dfb3aefb0000
 
-### WARNING · takeaway_long · item 22
-- Takeaway length 100 > 95
+### WARNING · takeaway_long · item 24
+- Takeaway length 119 > 95
 - Headline: `מאמן התעמלות נעצר בחשד לעבירות מין במתאמנת`
 - Original: `מאמן בכיר בהתעמלות קרקע חשוד בעבירות מין בצעירה במשך עשור`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3840488
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 25
 - Takeaway length 116 > 95
 - Headline: `ארה״ב ואיראן קרובות להסכם אך מתווכחות על האורניום`
 - Original: `בלי זה - אין עסקה: המוקש האחרון בדרך להסכם עם איראן`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3840487
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 26
 - Takeaway length 124 > 95
 - Headline: `משבר האמון במערכת החינוך עובר מהישגים לפיקוח פוליטי`
 - Original: `קורסת מחוסר אמון: כך נשקם את מערכת החינוך`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840471
 
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 27
 - Takeaway length 99 > 95
 - Headline: `רוביו מאשים את חיזבאללה בניסיון להפיל את ממשלת לבנון`
 - Original: `מרקו רוביו נגד חיזבאללה: "מנסה להפיל את השלטון הלגיטימי בלבנון"`
 - Source: וואלה חדשות - מבזקים
 - URL: https://news.walla.co.il/break/3840478
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 28
 - Takeaway length 124 > 95
 - Headline: `ווטסאפ נשארת חינמית, הפרסומות ייכנסו לעדכונים`
 - Original: `מתי וואטסאפ תתחיל לגבות מכם תשלום? השמועות ברשת מלחיצות את הישראלים`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/tech/article-1325031
 
-### WARNING · takeaway_long · item 28
+### WARNING · takeaway_long · item 30
 - Takeaway length 107 > 95
 - Headline: `עסקת איראן תלויה בחמישה מוקדי מחלוקת פתוחים`
 - Original: `These Are 5 of the Main Issues to Be Resolved in an Iran-U.S. Peace Deal`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/five-main-issues-iran-israel-nuclear.html
 
-### WARNING · summary_long · item 29
+### WARNING · summary_long · item 31
 - Summary length 227 > 220
 - Headline: `ביקורת מימין: קמפיין הליכוד מפספס בוחרים חדשים`
 - Original: `קמפיין הליכוד נפתח בגול עצמי מפואר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20609492
 
-### WARNING · takeaway_long · item 29
+### WARNING · takeaway_long · item 31
 - Takeaway length 99 > 95
 - Headline: `ביקורת מימין: קמפיין הליכוד מפספס בוחרים חדשים`
 - Original: `קמפיין הליכוד נפתח בגול עצמי מפואר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20609492
 
-### WARNING · takeaway_long · item 30
+### WARNING · takeaway_long · item 32
 - Takeaway length 104 > 95
 - Headline: `טורנסה זכתה בגביע פורטוגל ולקחה לפמליקאו את אירופה`
 - Original: `קבוצה מהליגה השנייה זכתה בגביע - והרסה למיליארדר הישראלי`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20609417
 
-### WARNING · takeaway_long · item 31
+### WARNING · takeaway_long · item 33
 - Takeaway length 118 > 95
 - Headline: `המדורג 148 הדיח את טיילור פריץ ברולאן גארוס`
 - Original: `טיילור פריץ הודח מול המדורג 148 בעולם; היילי בפטיסט ניצחה את ברבורה קרייצ'יקובה`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/other/2026-05-24/ty-article/0000019e-5b6c-da4f-adff-dfffd02b0000
 
-### WARNING · takeaway_long · item 32
-- Takeaway length 101 > 95
-- Headline: `ישראל תקפה בלבנון למרות הפסקת האש`
+### WARNING · takeaway_long · item 34
+- Takeaway length 137 > 95
+- Headline: `ישראל המשיכה לתקוף בלבנון למרות הפסקת האש`
 - Original: `Israeli strikes pound Lebanon despite signs US and Iran are close to peace deal`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/24/israeli-strikes-pound-lebanon
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 35
 - Takeaway length 104 > 95
 - Headline: `איראן מאיימת לא לחתום על ההסכם בנוסחו הנוכחי`
 - Original: `גורם איראני בכיר מאשים: "ארה"ב נסוגה מהסכמות, לא נחתום"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20609412
 
-### WARNING · takeaway_long · item 35
-- Takeaway length 117 > 95
-- Headline: `בישראל חוששים שהסכם איראן יכבול פעולה אזורית`
+### WARNING · takeaway_long · item 37
+- Takeaway length 134 > 95
+- Headline: `בישראל חוששים מהסכם איראן בלי חופש פעולה`
 - Original: `במערכת הביטחון מזהירים: הסרת הסנקציות מאיראן תזרים מיליארדים לציר הטרור האזורי`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3840452
 
-### WARNING · takeaway_long · item 36
+### WARNING · takeaway_long · item 38
 - Takeaway length 109 > 95
 - Headline: `מלחמת איראן נכנסת לקמפיין האמצע בארה״ב`
 - Original: `How will Iran war fallout impact upcoming US elections?`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/the-bottom-line/2026/5/24/how-will-iran-war-fallout-impact-upcoming-us-elections?traffic_source=rss
-
-### WARNING · takeaway_long · item 38
-- Takeaway length 109 > 95
-- Headline: `המפלגות החרדיות נערכות לרענון הרשימות`
-- Original: `משחק הכיסאות של החרדים: הח"כ הנוסף מש"ס שצפוי לעזוב - ומי יחליף את גפני?`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/politics/article/20609298
-
-### WARNING · takeaway_long · item 40
-- Takeaway length 105 > 95
-- Headline: `חד״ש, תע״ל ובל״ד מוכנות לרשימה טכנית עם רע״מ`
-- Original: `חד״ש, תע״ל ובל״ד מודיעות: מוכנים לאיחוד מפלגות - עכשיו הכל בידיים של מנסור עבאס`
-- Source: מעריב - מבזקים
-- URL: https://www.maariv.co.il/breaking-news/article-1325023
 
 ### WARNING · takeaway_long · item 42
 - Takeaway length 102 > 95
@@ -304,7 +290,7 @@ Warnings: 149
 - URL: https://www.aljazeera.com/news/2026/5/24/israeli-strikes-kill-six-in-southern-lebanon-amid-fresh-evacuation-orders?traffic_source=rss
 
 ### WARNING · takeaway_long · item 44
-- Takeaway length 104 > 95
+- Takeaway length 113 > 95
 - Headline: `ישראל חוששת שהסכם ארה״ב-איראן יהיה רך מדי`
 - Original: `Israeli Leader Says He and Trump Agree On Blocking an Iranian Nuclear Weapon`
 - Source: New York Times Middle East
