@@ -157,7 +157,7 @@ html[data-theme="light"] .wifi:before,html[data-theme="light"] .wifi:after{borde
 </section>
 </main>
 <script>
-const POANTA_FEED_VERSION = '20260521-p0-image-gate-v1';
+const POANTA_FEED_VERSION = '20260525-saved-independent-v1';
 const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
 const embeddedBreakingFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","mode":"breaking","ttlHours":12,"items":[{"category":"מבזקים","source":"Poenta","sourceLogo":"Poenta","headline":"טוען מבזקים…","context":"המבזקים יופיעו כאן כפיד נפרד מהכתבות הערוכות.","publishedAt":"2026-05-11T21:20:00+03:00","breaking":true}]};
 const host = document.getElementById('feedCards');
@@ -223,7 +223,7 @@ function saveSavedStores(){ try{localStorage.setItem(SAVED_KEY, JSON.stringify(s
 function savedList(){ return Object.values(savedItems).filter(v=>v&&v.item).sort((a,b)=>Number(b.savedAt||0)-Number(a.savedAt||0)).map(v=>v.item); }
 function removedSavedList(){ removedSavedItems=loadRemovedSavedItems(); return Object.values(removedSavedItems).filter(v=>v&&v.item).sort((a,b)=>Number(b.removedAt||0)-Number(a.removedAt||0)).map(v=>v.item); }
 function updateSavedNavState(){ const nav=document.querySelector('.navitem[data-view="saved"]'); if(!nav)return; const count=Object.values(savedItems||{}).filter(v=>v&&v.item).length; const hasSaved=count>0; nav.classList.toggle('has-saved', hasSaved); nav.dataset.savedCount=String(count); nav.setAttribute('aria-label', hasSaved?'שמור — יש פריטים שמורים':'שמור'); }
-function savedTopicFiltered(items){ ensurePrefs(); return items.filter(item=>itemMatchesSelectedTopics(item) && (activeFilter==='all' || itemMatchesTopic(item,activeFilter))); }
+function savedTopicFiltered(items){ return items; }
 function findItemByKey(key){ return [...visibleItems(),...smartSearch(searchQuery),...savedList(),...removedSavedList(),...(currentFeed?.items||[])].find(x=>itemKey(x)===key); }
 function engagementEvents(){ try{ const data=JSON.parse(localStorage.getItem(ENGAGEMENT_KEY)||'[]'); return Array.isArray(data)?data:[]; }catch{return [];} }
 function saveEngagementEvents(events){ try{ localStorage.setItem(ENGAGEMENT_KEY, JSON.stringify(events.slice(-5000))); }catch{} }
