@@ -32,6 +32,8 @@ TZ = timezone(timedelta(hours=3))
 TOP_STALE_CODES = {"stale_updated_at", "no_new_top_item_sla", "stale_top_item", "too_few_fresh_top_items", "too_few_recent_items_sla", "too_few_recent_sources_sla"}
 QUALITY_BLOCK_CODES = {"summary_fragment_headline", "headline_too_close_to_source", "generic_takeaway_regression", "weather_on_top"}
 STAGE3_COOLDOWN_MINUTES = 20
+DOMAIN_RESCUE_AUTOPILOT_GROUPS = {"ביטחון"}
+
 
 
 @dataclass
@@ -201,6 +203,13 @@ def _status(data: dict[str, Any]) -> str:
     return str(data.get("status") or "unknown")
 
 
+def domain_rescue_timing_error(snapshot: HealthSnapshot) -> dict[str, Any] | None:
+    for err in snapshot.timing.get("errors") or []:
+        group = str(err.get("group") or "")
+        if group in DOMAIN_RESCUE_AUTOPILOT_GROUPS and int(err.get("thresholdMinutes") or 0) <= 25:
+            return err
+    return None
+
 def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
     public_blockers = snapshot.public_health.get("blockers") or []
     public_codes = _codes(public_blockers) | _codes(snapshot.live.get("errors") or [])
@@ -211,6 +220,19 @@ def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
     public_ok = _status(snapshot.public_health) == "ok" and _status(snapshot.live) == "ok"
     raw_ok = _status(snapshot.raw_health) == "ok"
     local_ok = _status(snapshot.local_health) == "ok" and int(snapshot.local_quality.get("exit") or 0) == 0
+    domain_err = domain_rescue_timing_error(snapshot)
+
+    if domain_err:
+        group = str(domain_err.get("group") or "")
+        return {
+            "status": "repair_needed",
+            "incidentType": "domain_security_sla_breach",
+            "recommendedStage": "stage_4_domain_rescue",
+            "automaticAction": "prepare_security_domain_rescue_worker",
+            "incidentKey": f"domain_sla|{group}|{domain_err.get('latestAt')}|{domain_err.get('headline')}",
+            "domain": group,
+            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
+        }
 
     if public_ok:
         incident_type = "healthy" if _status(snapshot.timing) == "ok" else "healthy_with_domain_timing_debt"
@@ -444,6 +466,86 @@ def execute_stage3_repair(
     finally:
         release_lock(lock_path)
 
+
+def execute_stage4_domain_rescue(
+    incident: dict[str, Any],
+    state: dict[str, Any],
+    *,
+    now: str | None = None,
+    run_func=run,
+    collect_func=collect_snapshot,
+    lock_path: Path = WORKER_LOCK_PATH,
+) -> tuple[list[dict[str, Any]], dict[str, Any], dict[str, Any]]:
+    """Prepare/resume a domain-specific rescue lane for critical SLA breaches.
+
+    The first implementation is intentionally narrow: ביטחון only. It prepares a
+    domain-filtered queue and editor run, then waits for editor result files. If
+    results are already present on a later run, it resumes through the same hard
+    gates as Stage 3: editor QA, apply, Quality Gate, publication health, local
+    live auditor, publication event recording, deploy, and public verification.
+    """
+    now = now or now_iso()
+    if incident.get("recommendedStage") != "stage_4_domain_rescue" or incident.get("automaticAction") != "prepare_security_domain_rescue_worker":
+        return [], incident, state
+    domain = str(incident.get("domain") or "ביטחון")
+    if domain not in DOMAIN_RESCUE_AUTOPILOT_GROUPS:
+        return [], {**incident, "status": "blocked", "incidentType": "stage4_domain_not_allowed", "automaticAction": "do_not_publish"}, state
+
+    resume_run_dir = Path(str(state.get("lastStage4RunDir") or "")) if state.get("lastStage4RunDir") else None
+    resume_has_results = bool(resume_run_dir and resume_run_dir.exists() and sorted(resume_run_dir.glob("batch_*_results.json")))
+    if not acquire_lock(lock_path):
+        locked = {**incident, "status": "degraded", "incidentType": "stage4_worker_already_running", "automaticAction": "wait_for_worker"}
+        return [{"action": "stage4_skip_lock_active", "lock": str(lock_path)}], locked, state
+
+    actions: list[dict[str, Any]] = []
+    new_state = {**state, "lastStage4StartedAt": now, "lastStage4IncidentKey": incident.get("incidentKey")}
+    try:
+        if resume_has_results and resume_run_dir is not None:
+            run_dir = resume_run_dir
+            run_id = run_dir.name
+            actions.append({"action": "stage4_resume_domain_editor_run", "domain": domain, "runDir": str(run_dir), "resultFiles": len(sorted(run_dir.glob("batch_*_results.json")))})
+        else:
+            queue_out = ROOT / "tmp" / f"pointa_source_rescue_queue_{domain}.json"
+            queue_cmd = [sys.executable, "scripts/pointa_source_rescue_queue.py", "--domain", domain, "--max-age-min", "180", "--per-source", "12", "--out", str(queue_out)]
+            code, text = run_func(queue_cmd, timeout=300)
+            actions.append({"action": "stage4_prepare_domain_source_queue", "domain": domain, "exit": code, "out": str(queue_out), "tail": text[-3000:]})
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": "stage4_source_queue_failed", "automaticAction": "do_not_publish"}, new_state
+
+            run_id = "domain-security-" + datetime.now(TZ).strftime("%Y%m%d-%H%M%S")
+            prepare_cmd = [sys.executable, "scripts/pointa_rescue_editor_pipeline.py", "prepare", "--queue", str(queue_out), "--run-id", run_id, "--limit", "8", "--batch-size", "4", "--oversample-factor", "4"]
+            code, text = run_func(prepare_cmd, timeout=420)
+            run_dir = extract_first_path(text) or (ROOT / "tmp" / "editor-runs" / run_id)
+            actions.append({"action": "stage4_prepare_domain_editor_run", "domain": domain, "exit": code, "runDir": str(run_dir), "tail": text[-3000:]})
+            new_state["lastStage4RunDir"] = str(run_dir)
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": "stage4_editor_prepare_failed", "automaticAction": "do_not_publish"}, new_state
+            result_files = sorted(run_dir.glob("batch_*_results.json")) if run_dir.exists() else []
+            if not result_files:
+                waiting = {**incident, "status": "repair_needed", "incidentType": "stage4_waiting_for_editor_results", "automaticAction": "write_batch_results_then_rerun_stage4"}
+                actions.append({"action": "stage4_wait_for_editor_results", "domain": domain, "runDir": str(run_dir), "resultFiles": 0})
+                return actions, waiting, new_state
+
+        for name, cmd in [
+            ("stage4_qa_editor_results", [sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"]),
+            ("stage4_apply_editor_preview", [sys.executable, "scripts/pointa_editor_pipeline.py", "apply", "--run-dir", str(run_dir)]),
+            ("stage4_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"]),
+            ("stage4_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py"]),
+            ("stage4_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--json"]),
+            ("stage4_record_publication_event", [sys.executable, "scripts/pointa_publication_events.py", "record", "--gatekeeper", "pointa-autopilot-stage4-domain", "--run-id", run_id, "--json"]),
+            ("stage4_deploy_current_feed", ["bash", "scripts/deploy_current_feed.sh"]),
+        ]:
+            code, text = run_func(cmd, timeout=300)
+            actions.append({"action": name, "domain": domain, "exit": code, "tail": text[-3000:]})
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": f"{name}_failed", "automaticAction": "do_not_publish"}, new_state
+        verified_snapshot = collect_func()
+        verified_incident = classify_incident(verified_snapshot)
+        actions.append({"action": "stage4_verify_public_after_deploy", "domain": domain, "status": verified_incident.get("status"), "incidentType": verified_incident.get("incidentType")})
+        return actions, verified_incident, new_state
+    finally:
+        release_lock(lock_path)
+
 def build_report(
     *,
     mode: str,
@@ -458,7 +560,8 @@ def build_report(
     would_run = [] if action in (None, "", "none", "do_not_publish") or executed_actions else [action]
     deploys = any(a.get("action") == "deploy_current_feed" for a in executed_actions)
     stage3_deploys = any(a.get("action") == "stage3_deploy_current_feed" for a in executed_actions)
-    mutates_feed = any(a.get("action") == "stage3_apply_editor_preview" and a.get("exit") == 0 for a in executed_actions)
+    stage4_deploys = any(a.get("action") == "stage4_deploy_current_feed" for a in executed_actions)
+    mutates_feed = any(a.get("action") in {"stage3_apply_editor_preview", "stage4_apply_editor_preview"} and a.get("exit") == 0 for a in executed_actions)
     return {
         "autopilot": "pointa_autopilot",
         "version": 3,
@@ -471,7 +574,7 @@ def build_report(
         "wouldRun": would_run,
         "executedActions": executed_actions,
         "mutatesFeed": mutates_feed,
-        "deploys": deploys or stage3_deploys,
+        "deploys": deploys or stage3_deploys or stage4_deploys,
         "snapshot": snapshot,
         "incident": incident,
         "state": state,
@@ -504,6 +607,9 @@ def main() -> int:
         if incident.get("recommendedStage") == "stage_3_general_rescue":
             stage3_actions, incident, loaded_state = execute_stage3_repair(incident, loaded_state, now=started_at)
             executed_actions.extend(stage3_actions)
+        if incident.get("recommendedStage") == "stage_4_domain_rescue":
+            stage4_actions, incident, loaded_state = execute_stage4_domain_rescue(incident, loaded_state, now=started_at)
+            executed_actions.extend(stage4_actions)
     state = update_state(loaded_state, incident, now=started_at)
     report = build_report(
         mode=args.mode,

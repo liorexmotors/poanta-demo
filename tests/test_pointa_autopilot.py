@@ -31,6 +31,26 @@ class PointaAutopilotTests(unittest.TestCase):
         self.assertEqual(incident["recommendedStage"], "none")
         self.assertEqual(incident["automaticAction"], "none")
 
+
+    def test_classifies_security_domain_sla_breach_even_when_public_feed_loads(self):
+        snapshot = autopilot.HealthSnapshot(
+            public_health={"status": "ok", "blockers": []},
+            live={"status": "ok", "errors": [], "warnings": []},
+            timing={"status": "fail", "errors": [{"group": "ביטחון", "code": "publication_timing_sla", "thresholdMinutes": 25, "latestAt": "2026-05-25T15:00:00+03:00", "headline": "ישן"}], "warnings": []},
+            raw_health={"status": "ok", "blockers": []},
+            local_health={"status": "ok", "blockers": []},
+            local_quality={"exit": 0, "summary": "Pointa quality gate: 10 items, 0 errors"},
+            feed_signature={"updatedAt": "2026-05-25T16:00:00+03:00", "items": 10, "topHeadline": "חדשה"},
+        )
+
+        incident = autopilot.classify_incident(snapshot)
+
+        self.assertEqual(incident["status"], "repair_needed")
+        self.assertEqual(incident["incidentType"], "domain_security_sla_breach")
+        self.assertEqual(incident["recommendedStage"], "stage_4_domain_rescue")
+        self.assertEqual(incident["automaticAction"], "prepare_security_domain_rescue_worker")
+        self.assertEqual(incident["domain"], "ביטחון")
+
     def test_classifies_pages_lag_when_public_fails_but_raw_is_ok(self):
         snapshot = autopilot.HealthSnapshot(
             public_health={"status": "fail", "blockers": [{"code": "stale_updated_at"}]},
@@ -321,6 +341,40 @@ class PointaAutopilotTests(unittest.TestCase):
         self.assertIn("stage3_deploy_current_feed", action_names)
         self.assertEqual(post_incident["status"], "ok")
         self.assertEqual(calls[-1], ["bash", "scripts/deploy_current_feed.sh"])
+
+
+    def test_stage4_prepares_security_domain_worker_and_waits_for_editor_results(self):
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            run_dir = Path(td) / "tmp" / "editor-runs" / "domain-security-test"
+            lock_path = Path(td) / "stage4.lock"
+
+            def fake_run(cmd, timeout=120):
+                calls.append(cmd)
+                if any("pointa_rescue_editor_pipeline.py" in part for part in cmd):
+                    run_dir.mkdir(parents=True, exist_ok=True)
+                    return 0, str(run_dir) + "\n{}"
+                return 0, "queue ok"
+
+            incident = {
+                "status": "repair_needed",
+                "incidentType": "domain_security_sla_breach",
+                "recommendedStage": "stage_4_domain_rescue",
+                "automaticAction": "prepare_security_domain_rescue_worker",
+                "incidentKey": "security-domain",
+                "domain": "ביטחון",
+            }
+            actions, post_incident, state = autopilot.execute_stage4_domain_rescue(
+                incident, {}, now="2026-05-25T10:00:00+03:00", run_func=fake_run, lock_path=lock_path
+            )
+
+        self.assertEqual(actions[0]["action"], "stage4_prepare_domain_source_queue")
+        self.assertEqual(actions[1]["action"], "stage4_prepare_domain_editor_run")
+        self.assertEqual(actions[2]["action"], "stage4_wait_for_editor_results")
+        self.assertEqual(post_incident["incidentType"], "stage4_waiting_for_editor_results")
+        self.assertEqual(state["lastStage4IncidentKey"], "security-domain")
+        self.assertTrue(any("--domain" in cmd and "ביטחון" in cmd for cmd in calls))
+        self.assertFalse(any("deploy_current_feed.sh" in cmd for cmd in calls))
 
     def test_stage3_report_marks_mutation_and_deploy_after_execution(self):
         report = autopilot.build_report(

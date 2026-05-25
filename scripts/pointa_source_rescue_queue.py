@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -27,6 +28,69 @@ QUEUE_GROUPS = IMPORTANT_SOURCES + FOREIGN_SOURCES
 DEFAULT_OUT = ROOT / "tmp" / "pointa_source_rescue_queue.json"
 DEFAULT_AUDITOR = ROOT / "tmp" / "pointa_live_auditor_last.json"
 DEFAULT_DOMAIN_SOURCES = ROOT / "config" / "pointa_domain_sources.json"
+
+EDITORIAL_REPAIR_CODES = {
+    "headline_missing", "headline_too_long", "headline_orphan_prefix", "headline_looks_cut",
+    "headline_pipe_artifact", "headline_source_style", "headline_generic", "headline_copies_source",
+    "headline_duplicates_summary", "headline_is_summary_prefix", "headline_missing_core_entity",
+    "summary_missing", "summary_pipe_artifact", "summary_generic_or_mediated",
+    "takeaway_missing", "takeaway_generic", "takeaway_topic_mismatch",
+    "takeaway_duplicates_context", "takeaway_duplicates_headline",
+    "category_iran_deal_security", "category_world_story",
+    "opinion_generic_author_reference", "opinion_author_missing",
+}
+
+HARD_REJECT_CODES = {
+    "html_artifact", "quality_exception",
+}
+
+DOMAIN_KEYWORDS = {
+    "ביטחון": [
+        "צה\"ל", "צה״ל", "צהל", "פיקוד העורף", "חיזבאללה", "חמאס", "איראן", "כטב", "רחפן",
+        "טיל", "טילים", "רקטה", "רקטות", "לבנון", "עזה", "צבא", "לוחם", "לוחמים", "מילואים", "טרור", "מחבל",
+        "מלחמה", "גבול", "יירוט", "אוויריות חשודות", "כלי טיס עוין", "איום הרחפנים",
+    ],
+    "פוליטיקה": ["כנסת", "ממשלה", "קואליציה", "אופוזיציה", "בחירות", "נתניהו", "ח״כ", "ח\"כ", "שר ", "שרים"],
+    "חדשות": ["משרד", "ועדה", "עירייה", "תושבים", "ישראל", "בארץ"],
+    "פלילים": ["רצח", "ירי", "דקירה", "נעצר", "מעצר", "משטרה", "חשוד", "חקירה", "פיצוץ רכב"],
+    "משפט": ["בית המשפט", "בגץ", "בג\"ץ", "עליון", "שופט", "כתב אישום", "עתירה", "פרקליטות"],
+}
+
+def qa_error_codes(errors: list[dict[str, Any]]) -> set[str]:
+    return {str(e.get("code") or "") for e in errors if isinstance(e, dict)}
+
+def rescue_disposition(errors: list[dict[str, Any]]) -> str:
+    """Classify deterministic QA failures for rescue.
+
+    Most item-level QA errors mean the candidate is newsworthy but the deterministic
+    card is bad.  Those must go to the full editor for repair, not disappear as
+    final rejects.  Only explicitly hard/sanitation failures are report-only.
+    """
+    codes = qa_error_codes(errors)
+    if codes and codes <= HARD_REJECT_CODES:
+        return "hard_reject_report_only"
+    return "repair_editorial_soft_fail"
+
+def domain_candidate_matches(domain: str, item: dict[str, Any], candidate: Any) -> bool:
+    if not domain:
+        return True
+    text = " ".join(str(x or "") for x in [
+        item.get("category"), item.get("headline"), item.get("context"), item.get("takeaway"),
+        item.get("originalTitle"), item.get("source"), getattr(candidate, "title", ""),
+        getattr(candidate, "original_title", ""), getattr(candidate, "description", ""),
+    ])
+    if str(item.get("category") or "").strip() == domain:
+        return True
+    if domain == "חדשות" and str(item.get("category") or "").strip() in {"חדשות", "בארץ"}:
+        return True
+    return any(keyword_in_text(k, text) for k in DOMAIN_KEYWORDS.get(domain, []))
+
+def keyword_in_text(keyword: str, text: str) -> bool:
+    # Avoid Hebrew substring false positives: רקט in הפרקט, צהל in צהלה, etc.
+    if not keyword:
+        return False
+    pattern = r"(?<![0-9A-Za-z\u0590-\u05ff])" + re.escape(keyword) + r"(?![0-9A-Za-z\u0590-\u05ff])"
+    return re.search(pattern, text) is not None
 
 
 def source_group(name: str) -> str:
@@ -217,8 +281,15 @@ def main() -> int:
             if group in FOREIGN_SOURCES and not update_feed.is_foreign_relevant(c.original_title or c.title, c.description):
                 continue
             item = candidate_to_item(c)
+            if not domain_candidate_matches(args.domain, item, c):
+                continue
             errors = update_feed.item_quality_errors(item)
             if errors:
+                disposition = rescue_disposition(errors)
+                if disposition == "hard_reject_report_only":
+                    recommended = "hard_reject_report_only"
+                else:
+                    recommended = "send_to_full_editor_rescue_queue"
                 rows.append({
                     "sourceGroup": group,
                     "source": c.source,
@@ -228,10 +299,13 @@ def main() -> int:
                     "deterministicHeadline": item["headline"],
                     "deterministicContext": item["context"],
                     "deterministicTakeaway": item["takeaway"],
+                    "deterministicCategory": item.get("category", ""),
                     "qaErrors": errors,
+                    "qaErrorCodes": sorted(qa_error_codes(errors)),
+                    "rescueDisposition": disposition,
                     "priority": "freshness" if freshness_sla_failing else ("high" if group in stale_groups else "normal"),
                     "staleSourceView": group in stale_groups,
-                    "recommendedAction": "send_to_full_editor_rescue_queue",
+                    "recommendedAction": recommended,
                 })
 
     if freshness_sla_failing:
@@ -270,9 +344,11 @@ def main() -> int:
         "itemsNeedingRescueForStaleViews": sum(1 for r in rows if r.get("staleSourceView")),
         "counts": {
             "total": len(rows),
+            "repairableEditorial": sum(1 for r in rows if r.get("rescueDisposition") == "repair_editorial_soft_fail"),
+            "hardRejectReportOnly": sum(1 for r in rows if r.get("rescueDisposition") == "hard_reject_report_only"),
             "bySource": {s: sum(1 for r in rows if r.get("sourceGroup") == s) for s in active_groups},
         },
-        "note": "Report only. Does not modify feed.json or publish. If the top-feed freshness SLA is failing, newest candidates are prioritized first; otherwise stale source-view rows are prioritized for full-editor rescue while quality gates remain strict.",
+        "note": "Report only. Does not modify feed.json or publish. Editorial QA failures are repairable soft failures and go to full-editor rescue; only hard sanitation/exception failures are report-only rejects. If the top-feed freshness SLA is failing, newest candidates are prioritized first; otherwise stale source-view rows are prioritized while quality gates remain strict.",
     }
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
