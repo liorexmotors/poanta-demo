@@ -355,13 +355,49 @@ class PointaAutopilotTests(unittest.TestCase):
 
         action_names = [a["action"] for a in actions]
         self.assertIn("stage3_qa_editor_results", action_names)
+        self.assertIn("stage3_candidate_quality_gate", action_names)
+        self.assertIn("stage3_candidate_publication_health_gate", action_names)
         self.assertIn("stage3_apply_editor_preview", action_names)
         self.assertIn("stage3_quality_gate", action_names)
         self.assertIn("stage3_deploy_current_feed", action_names)
+        self.assertLess(action_names.index("stage3_candidate_quality_gate"), action_names.index("stage3_apply_editor_preview"))
+        self.assertLess(action_names.index("stage3_candidate_publication_health_gate"), action_names.index("stage3_apply_editor_preview"))
         self.assertEqual(post_incident["status"], "ok")
         self.assertEqual(calls[-1], ["bash", "scripts/deploy_current_feed.sh"])
 
+    def test_stage3_stops_before_apply_when_candidate_gate_fails(self):
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            run_dir = base / "tmp" / "editor-runs" / "autopilot-ready"
+            run_dir.mkdir(parents=True)
+            (run_dir / "batch_1_results.json").write_text("[]", encoding="utf-8")
+            lock_path = base / "stage3.lock"
 
+            def fake_run(cmd, timeout=120):
+                calls.append(cmd)
+                if any("pointa_rescue_editor_pipeline.py" in part for part in cmd):
+                    return 0, str(run_dir) + "\n{}"
+                if any("pointa_publication_health_gate.py" in part for part in cmd) and str(run_dir / "feed_editor_preview.json") in cmd:
+                    return 1, "candidate stale"
+                return 0, "ok"
+
+            incident = {
+                "status": "repair_needed",
+                "incidentType": "top_feed_stale_or_thin",
+                "recommendedStage": "stage_3_general_rescue",
+                "automaticAction": "prepare_general_rescue_worker",
+                "incidentKey": "stale-ready",
+            }
+            actions, post_incident, _ = autopilot.execute_stage3_repair(
+                incident, {}, now="2026-05-25T10:00:00+03:00", run_func=fake_run, lock_path=lock_path
+            )
+
+        action_names = [a["action"] for a in actions]
+        self.assertEqual(post_incident["incidentType"], "stage3_candidate_publication_health_gate_failed")
+        self.assertIn("stage3_candidate_publication_health_gate", action_names)
+        self.assertNotIn("stage3_apply_editor_preview", action_names)
+        self.assertFalse(any("deploy_current_feed.sh" in cmd for cmd in calls))
     def test_stage4_prepares_domain_worker_and_waits_for_editor_results(self):
         calls = []
         with tempfile.TemporaryDirectory() as td:
@@ -393,6 +429,89 @@ class PointaAutopilotTests(unittest.TestCase):
         self.assertEqual(post_incident["incidentType"], "stage4_waiting_for_editor_results")
         self.assertEqual(state["lastStage4IncidentKey"], "security-domain")
         self.assertTrue(any("--domain" in cmd and "ביטחון" in cmd for cmd in calls))
+        self.assertFalse(any("deploy_current_feed.sh" in cmd for cmd in calls))
+
+    def test_stage4_gates_candidate_before_apply_and_deploy(self):
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            run_dir = base / "tmp" / "editor-runs" / "domain-security-ready"
+            run_dir.mkdir(parents=True)
+            (run_dir / "batch_1_results.json").write_text("[]", encoding="utf-8")
+            lock_path = base / "stage4.lock"
+
+            def fake_run(cmd, timeout=120):
+                calls.append(cmd)
+                return 0, "ok"
+
+            def fake_collect():
+                return autopilot.HealthSnapshot(
+                    public_health={"status": "ok", "blockers": []},
+                    live={"status": "ok", "errors": [], "warnings": []},
+                    timing={"status": "ok", "errors": [], "warnings": []},
+                    raw_health={"status": "ok", "blockers": []},
+                    local_health={"status": "ok", "blockers": []},
+                    local_quality={"exit": 0, "summary": "Pointa quality gate: 12 items, 0 errors"},
+                    feed_signature={"updatedAt": "new", "items": 12, "topHeadline": "חדש"},
+                )
+
+            incident = {
+                "status": "repair_needed",
+                "incidentType": "domain_sla_breach",
+                "recommendedStage": "stage_4_domain_rescue",
+                "automaticAction": "prepare_domain_rescue_worker",
+                "incidentKey": "security-domain-ready",
+                "domain": "ביטחון",
+            }
+            state = {"lastStage4RunDir": str(run_dir)}
+            actions, post_incident, _ = autopilot.execute_stage4_domain_rescue(
+                incident, state, now="2026-05-25T10:00:00+03:00", run_func=fake_run, collect_func=fake_collect, lock_path=lock_path
+            )
+
+        action_names = [a["action"] for a in actions]
+        self.assertIn("stage4_resume_domain_editor_run", action_names)
+        self.assertIn("stage4_qa_editor_results", action_names)
+        self.assertIn("stage4_candidate_quality_gate", action_names)
+        self.assertIn("stage4_candidate_publication_health_gate", action_names)
+        self.assertIn("stage4_apply_editor_preview", action_names)
+        self.assertIn("stage4_deploy_current_feed", action_names)
+        self.assertLess(action_names.index("stage4_candidate_quality_gate"), action_names.index("stage4_apply_editor_preview"))
+        self.assertLess(action_names.index("stage4_candidate_publication_health_gate"), action_names.index("stage4_apply_editor_preview"))
+        self.assertEqual(post_incident["status"], "ok")
+        self.assertEqual(calls[-1], ["bash", "scripts/deploy_current_feed.sh"])
+
+    def test_stage4_stops_before_apply_when_candidate_gate_fails(self):
+        calls = []
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            run_dir = base / "tmp" / "editor-runs" / "domain-security-ready"
+            run_dir.mkdir(parents=True)
+            (run_dir / "batch_1_results.json").write_text("[]", encoding="utf-8")
+            lock_path = base / "stage4.lock"
+
+            def fake_run(cmd, timeout=120):
+                calls.append(cmd)
+                if any("pointa_publication_health_gate.py" in part for part in cmd) and str(run_dir / "feed_editor_preview.json") in cmd:
+                    return 1, "candidate stale"
+                return 0, "ok"
+
+            incident = {
+                "status": "repair_needed",
+                "incidentType": "domain_sla_breach",
+                "recommendedStage": "stage_4_domain_rescue",
+                "automaticAction": "prepare_domain_rescue_worker",
+                "incidentKey": "security-domain-ready",
+                "domain": "ביטחון",
+            }
+            state = {"lastStage4RunDir": str(run_dir)}
+            actions, post_incident, _ = autopilot.execute_stage4_domain_rescue(
+                incident, state, now="2026-05-25T10:00:00+03:00", run_func=fake_run, lock_path=lock_path
+            )
+
+        action_names = [a["action"] for a in actions]
+        self.assertEqual(post_incident["incidentType"], "stage4_candidate_publication_health_gate_failed")
+        self.assertIn("stage4_candidate_publication_health_gate", action_names)
+        self.assertNotIn("stage4_apply_editor_preview", action_names)
         self.assertFalse(any("deploy_current_feed.sh" in cmd for cmd in calls))
 
     def test_stage3_report_marks_mutation_and_deploy_after_execution(self):

@@ -448,6 +448,16 @@ def execute_stage3_repair(
         if code != 0:
             return actions, {**incident, "status": "blocked", "incidentType": "stage3_editor_qa_failed", "automaticAction": "do_not_publish"}, new_state
 
+        preview_feed = run_dir / "feed_editor_preview.json"
+        for name, cmd in [
+            ("stage3_candidate_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(preview_feed)]),
+            ("stage3_candidate_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(preview_feed)]),
+        ]:
+            code, text = run_func(cmd, timeout=180)
+            actions.append({"action": name, "exit": code, "tail": text[-3000:]})
+            if code != 0:
+                return actions, {**incident, "status": "blocked", "incidentType": f"{name}_failed", "automaticAction": "do_not_publish"}, new_state
+
         apply_cmd = [sys.executable, "scripts/pointa_editor_pipeline.py", "apply", "--run-dir", str(run_dir)]
         code, text = run_func(apply_cmd, timeout=180)
         actions.append({"action": "stage3_apply_editor_preview", "exit": code, "tail": text[-3000:]})
@@ -457,7 +467,7 @@ def execute_stage3_repair(
         for name, cmd in [
             ("stage3_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"]),
             ("stage3_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py"]),
-            ("stage3_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--json"]),
+            ("stage3_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--feed-file", "feed.json", "--json"]),
         ]:
             code, text = run_func(cmd, timeout=180)
             actions.append({"action": name, "exit": code, "tail": text[-3000:]})
@@ -542,12 +552,19 @@ def execute_stage4_domain_rescue(
                 actions.append({"action": "stage4_wait_for_editor_results", "domain": domain, "runDir": str(run_dir), "resultFiles": 0})
                 return actions, waiting, new_state
 
+        code, text = run_func([sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"], timeout=300)
+        actions.append({"action": "stage4_qa_editor_results", "domain": domain, "exit": code, "tail": text[-3000:]})
+        if code != 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage4_qa_editor_results_failed", "automaticAction": "do_not_publish"}, new_state
+
+        preview_feed = run_dir / "feed_editor_preview.json"
         for name, cmd in [
-            ("stage4_qa_editor_results", [sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"]),
+            ("stage4_candidate_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(preview_feed)]),
+            ("stage4_candidate_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(preview_feed)]),
             ("stage4_apply_editor_preview", [sys.executable, "scripts/pointa_editor_pipeline.py", "apply", "--run-dir", str(run_dir)]),
             ("stage4_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"]),
             ("stage4_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py"]),
-            ("stage4_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--json"]),
+            ("stage4_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--feed-file", "feed.json", "--json"]),
             ("stage4_record_publication_event", [sys.executable, "scripts/pointa_publication_events.py", "record", "--gatekeeper", "pointa-autopilot-stage4-domain", "--run-id", run_id, "--json"]),
             ("stage4_deploy_current_feed", ["bash", "scripts/deploy_current_feed.sh"]),
         ]:
