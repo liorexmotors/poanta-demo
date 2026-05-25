@@ -30,70 +30,70 @@ Warnings: 149
 
 ## Issues
 
-### WARNING · takeaway_long · item 1
+### WARNING · takeaway_long · item 2
 - Takeaway length 97 > 95
 - Headline: `קלסי שתה בירה במשחק NBA וסוויפט הפכה לרגע הוויראלי`
 - Original: `צפו: מה כל כך הביך את טיילור סוויפט במשחק ה-NBA?`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3840444
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 3
 - Takeaway length 102 > 95
 - Headline: `אולימפיאקוס ניצחה את ריאל וזכתה ביורוליג אחרי 13 שנה`
 - Original: `הנקמה המושלמת: אולימפיאקוס אלופת אירופה בפעם הרביעית`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3840194
 
-### WARNING · takeaway_long · item 3
+### WARNING · takeaway_long · item 4
 - Takeaway length 99 > 95
 - Headline: `ריאל פספסה הארכה בגמר היורוליג ויצאה בלי התואר ה-12`
 - Original: `סקאריולו החמיא לשחקניו והצהיר: "ריאל מדריד עוד תחזור"`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3840495
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 5
 - Takeaway length 107 > 95
 - Headline: `מילאן קרסה במחזור הסיום; רומא וקומו עלו לאלופות`
 - Original: `דרמה במחזור הסיום באיטליה: רומא וקומו בליגת האלופות, לצ'ה וגאנדלמן שרדו`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840113
 
-### WARNING · summary_long · item 5
+### WARNING · summary_long · item 6
 - Summary length 232 > 220
 - Headline: `המו״מ בין ארה״ב לאיראן נתקע על נכסים ולבנון`
 - Original: `Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live
 
-### WARNING · takeaway_long · item 5
+### WARNING · takeaway_long · item 6
 - Takeaway length 115 > 95
 - Headline: `המו״מ בין ארה״ב לאיראן נתקע על נכסים ולבנון`
 - Original: `Middle East crisis live: Trump claims ‘I don’t make bad deals’ as questions remain over negotiation progress`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/may/24/iran-deal-strait-of-hormuz-trump-middle-east-crisis-live
 
-### WARNING · takeaway_long · item 6
+### WARNING · takeaway_long · item 7
 - Takeaway length 98 > 95
 - Headline: `הסתתרות חמינאי מעכבת את המגעים בין איראן לארה״ב`
 - Original: `המנהיג העליון מסתתר בבונקר? הכאוס בצמרת איראן חוצה כל גבול`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1325044
 
-### WARNING · takeaway_long · item 7
+### WARNING · takeaway_long · item 8
 - Takeaway length 119 > 95
 - Headline: `מוג'תבא חמינאי מסתתר ומתקשר דרך שליחים`
 - Original: `במיקום סודי ובלי יכולת לתקשר ישירות: מוג'תבא חמינאי עדיין מסתתר`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1325043
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 9
 - Takeaway length 123 > 95
 - Headline: `ארה״ב מוכנה לשיחות גרעין אם הורמוז ייפתח`
 - Original: `Rubio Says Details on Iran Nuclear Program Still to Be Negotiated`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/rubio-iran-nuclear.html
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 10
 - Takeaway length 104 > 95
 - Headline: `קובה קיבלה משלוח אורז ראשון מסין בעיצומו של משבר`
 - Original: `Cuba thanks China for rice shipment amid worsening humanitarian conditions`
