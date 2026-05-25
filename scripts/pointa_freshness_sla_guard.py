@@ -25,6 +25,7 @@ LOG = TMP / "pointa_freshness_sla_guard.jsonl"
 LOCK = Path("/tmp/pointa-freshness-sla-guard.lock")
 TZ = timezone(timedelta(hours=3))
 AGENT_COOLDOWN_SEC = 20 * 60
+RAW_GHPAGES_URL = "https://raw.githubusercontent.com/liorexmotors/poanta-demo/gh-pages/feed.json"
 
 
 def now_iso() -> str:
@@ -141,6 +142,38 @@ def main() -> int:
             state["lastOkAt"] = now_iso()
             save_state(state)
             log_event({"status": "ok", "updatedAt": audit.get("updatedAt"), "top": (audit.get("top") or [{}])[0]})
+            return 0
+
+        # If GitHub Pages/CDN is briefly serving an older feed while the gh-pages
+        # branch already contains a healthy fresh feed, do not prepare another
+        # editor rescue run. This exact race can happen right after a successful
+        # deploy: the public Pages URL lags for a minute, the raw gh-pages file is
+        # already fresh, and blindly escalating creates duplicate rescue batches
+        # for an incident that is already repaired. The next guard tick will check
+        # the live URL again and escalate only if the public outcome remains bad.
+        r_code, raw_audit, r_text = run_json([
+            sys.executable,
+            "scripts/pointa_live_auditor.py",
+            "--url",
+            RAW_GHPAGES_URL,
+            "--raw-url",
+            RAW_GHPAGES_URL,
+            "--json",
+        ], timeout=120)
+        if raw_audit and raw_audit.get("status") == "ok":
+            state["lastRawHealthyAt"] = now_iso()
+            state["lastRawHealthyWhileLiveFailed"] = {
+                "liveUpdatedAt": audit.get("updatedAt"),
+                "rawUpdatedAt": raw_audit.get("updatedAt"),
+                "liveErrors": [e.get("code") for e in audit.get("errors") or []],
+            }
+            save_state(state)
+            log_event({
+                "status": "github_pages_propagation_lag",
+                "liveUpdatedAt": audit.get("updatedAt"),
+                "rawUpdatedAt": raw_audit.get("updatedAt"),
+                "liveErrors": [e.get("code") for e in audit.get("errors") or []],
+            })
             return 0
 
         # Safe deterministic repair first. It deploys only when existing hard gates pass;
