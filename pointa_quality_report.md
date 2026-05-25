@@ -2,62 +2,55 @@
 
 Items checked: 200
 Errors: 0
-Warnings: 144
+Warnings: 139
 
 ## Category distribution
 
 - ביטחון: 55
-- ספורט: 45
-- כלכלה: 27
+- ספורט: 43
+- כלכלה: 26
 - תרבות: 12
 - בריאות: 11
 - אקטואליה בעולם: 6
-- טכנולוגיה: 6
+- רכב: 6
+- צרכנות: 6
 - נדל״ן: 6
+- טכנולוגיה: 5
 - רכילות: 5
-- רכב: 5
-- צרכנות: 5
 - חדשות: 4
 - פלילים: 4
 - דעות: 4
-- פוליטיקה: 2
-- משפט: 2
+- משפט: 3
+- פוליטיקה: 3
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 123
-- summary_long: 21
+- takeaway_long: 119
+- summary_long: 20
 
 ## Issues
 
-### WARNING · takeaway_long · item 0
+### WARNING · takeaway_long · item 2
 - Takeaway length 112 > 95
 - Headline: `פיקוד העורף מצמצם התקהלות בקו העימות`
 - Original: `צמצום התקהלות ולימודים בממ"דים: צה"ל מעדכן את מדיניות ההתגוננות`
 - Source: וואלה חדשות - מבזקים
 - URL: https://news.walla.co.il/break/3840771
 
-### WARNING · takeaway_long · item 1
+### WARNING · takeaway_long · item 3
 - Takeaway length 114 > 95
 - Headline: `שחקן NFL שילם הון להסרת סרטון אינטימי שנגנב`
 - Original: `שחקן הפוטבול שילם "סכום עתק" כדי להסיר את קלטת הסקס מהרשת`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3840778
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 4
 - Takeaway length 129 > 95
 - Headline: `מונפיס וואוורינקה נפרדו מרולאן גארוס; שביונטק טיילה`
 - Original: `הקאמבק הגדול של מונפיס לא הספיק. גם ואוורינקה נפרד, שביונטק ניצחה`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3840441
-
-### WARNING · takeaway_long · item 3
-- Takeaway length 134 > 95
-- Headline: `פורטלנד מוזכרת כשותפה בטרייד אפשרי על יאניס`
-- Original: `טרייד משולש על יאניס אנטטוקומפו עשוי לסדר לדני אבדיה חבר חדש ונוצץ`
-- Source: וואלה ספורט - NBA
-- URL: https://sports.walla.co.il/item/3840776
 
 ### WARNING · takeaway_long · item 5
 - Takeaway length 106 > 95
@@ -95,95 +88,74 @@ Warnings: 144
 - URL: https://www.bbc.com/news/articles/c1e22n55zn4o?at_medium=RSS&at_campaign=rss
 
 ### WARNING · takeaway_long · item 12
+- Takeaway length 134 > 95
+- Headline: `פורטלנד מוזכרת כשותפה בטרייד אפשרי על יאניס`
+- Original: `טרייד משולש על יאניס אנטטוקומפו עשוי לסדר לדני אבדיה חבר חדש ונוצץ`
+- Source: וואלה ספורט - NBA
+- URL: https://sports.walla.co.il/item/3840776
+
+### WARNING · takeaway_long · item 14
 - Takeaway length 109 > 95
 - Headline: `סרטוני ״נוסע בזמן״ התגלו כתוכן AI דיסטופי`
 - Original: `נוסע בזמן משנת 2050 מציג תיעוד מחריד: כך ייראה העולם אחרי המלחמה`
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3839576
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 15
 - Takeaway length 133 > 95
 - Headline: `אי מלאכותי בסקוטלנד תוארך ליותר מ־5,000 שנה`
 - Original: `הסוד התת-ימי שנחשף באגם המרוחק עתיק בהרבה ממה שמישהו דמיין`
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3839057
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 16
 - Takeaway length 107 > 95
 - Headline: `מכבי תל אביב קבעה שיאי ליגה ב-75:137 על הרצליה`
 - Original: `שיא מדד היסטורי ועוד: המספרים מהניצחון של מכבי תל אביב`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3840769
 
-### WARNING · summary_long · item 15
-- Summary length 240 > 220
-- Headline: `המועמדות של פראטיצ׳י למילאן מסבכת את עתיד סולומון`
-- Original: `משחק הכיסאות באיטליה ישפיע גם על עתידו של מנור סולומון?`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3840765
-
-### WARNING · takeaway_long · item 15
-- Takeaway length 98 > 95
-- Headline: `המועמדות של פראטיצ׳י למילאן מסבכת את עתיד סולומון`
-- Original: `משחק הכיסאות באיטליה ישפיע גם על עתידו של מנור סולומון?`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3840765
-
-### WARNING · summary_long · item 16
+### WARNING · summary_long · item 18
 - Summary length 224 > 220
 - Headline: `התקהלויות בקו העימות יוגבלו מ-06:00`
 - Original: `פיקוד העורף: הגבלות התקהלות בסמוך לגבול לבנון - מ`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rk0kreflze
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 18
 - Takeaway length 109 > 95
 - Headline: `התקהלויות בקו העימות יוגבלו מ-06:00`
 - Original: `פיקוד העורף: הגבלות התקהלות בסמוך לגבול לבנון - מ`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rk0kreflze
 
-### WARNING · takeaway_long · item 17
-- Takeaway length 124 > 95
-- Headline: `הורדת הריבית בישראל צפויה להשפיע מעט על הציבור`
-- Original: `להורדת הריבית צפוי להיות אפקט מוגבל`
-- Source: ynet - כל ערוץ הכלכלה
-- URL: https://www.ynet.co.il/economy/article/yokra14781212
-
-### WARNING · summary_long · item 18
+### WARNING · summary_long · item 19
 - Summary length 229 > 220
 - Headline: `פיקוד העורף מגביל התקהלות בקו העימות בצפון`
 - Original: `ממחר ב-06:00: מגבלת התקהלות ביישובי הצפון`
 - Source: ynet - מבזקי החדשות
 - URL: https://www.ynet.co.il/news/article/rjpqseglmg
 
-### WARNING · summary_long · item 20
+### WARNING · summary_long · item 21
 - Summary length 221 > 220
 - Headline: `גל חום חריג במאי מכה במערב אירופה`
 - Original: `"כיפת חום" קטלנית באירופה, שיא נשבר בבריטניה: "כמו מיני-גיהינום"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/bk4a00mmgzg
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 21
 - Takeaway length 110 > 95
 - Headline: `גל חום חריג במאי מכה במערב אירופה`
 - Original: `"כיפת חום" קטלנית באירופה, שיא נשבר בבריטניה: "כמו מיני-גיהינום"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/bk4a00mmgzg
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 23
 - Takeaway length 122 > 95
 - Headline: `אנה ארונוב מאשימה את אסף גרניט בניסיון לגייס עובד מהבר שלה`
 - Original: `אנה ארונוב נגד האקס אסף גרניט: "אתה חוצפן, איכס"`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3840754
-
-### WARNING · takeaway_long · item 23
-- Takeaway length 122 > 95
-- Headline: `פציעת הגב פגעה בסיכוי של דני אבדיה להיכנס לחמישיות העונה`
-- Original: `בארה"ב מנתחים: זו הסיבה שדני אבדיה נותר מחוץ לחמישיות העונה`
-- Source: וואלה ספורט - ישראלים ב-NBA
-- URL: https://sports.walla.co.il/item/3840748
 
 ### WARNING · takeaway_long · item 26
 - Takeaway length 106 > 95
@@ -332,19 +304,12 @@ Warnings: 144
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/25/mexico-says-it-will-host-iranian-team-during-2026-fifa-world-cup?traffic_source=rss
 
-### WARNING · summary_long · item 52
+### WARNING · summary_long · item 53
 - Summary length 222 > 220
 - Headline: `אל־ג׳זירה: הפסקת האש בעזה הפכה לכיסוי למבצעי צה״ל`
 - Original: `Israel escalates Gaza attacks as Netanyahu stalls ceasefire for polls`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/25/israel-escalates-gaza-attacks-as-netanyahu-stalls-ceasefire-for-polls?traffic_source=rss
-
-### WARNING · takeaway_long · item 53
-- Takeaway length 132 > 95
-- Headline: `ביטן מעכב את רפורמת הטסטים ודורש מודל לפי קילומטראז׳`
-- Original: `האם נעבור לבצע טסט בכל שנתיים? בכנסת מתנגדים`
-- Source: וואלה רכב - כל הכתבות
-- URL: https://cars.walla.co.il/item/3840713
 
 ### WARNING · takeaway_long · item 56
 - Takeaway length 98 > 95
