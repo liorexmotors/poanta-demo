@@ -327,46 +327,46 @@ Warnings: 151
 - URL: https://www.aljazeera.com/video/the-bottom-line/2026/5/24/how-will-iran-war-fallout-impact-upcoming-us-elections?traffic_source=rss
 
 ### WARNING · takeaway_long · item 52
-- Takeaway length 114 > 95
-- Headline: `רעידה בעוצמה 3.5 הורגשה בכנרת בלי נזק`
-- Original: `רעידת אדמה הורגשה הערב באזור הכנרת`
-- Source: גלובס - בארץ
-- URL: https://www.globes.co.il/news/article.aspx?did=1001543817#utm_source=RSS
-
-### WARNING · takeaway_long · item 53
 - Takeaway length 129 > 95
 - Headline: `שישה נהרגו בתקיפות בדרום לבנון והפינויים הורחבו`
 - Original: `Israeli strikes kill six in southern Lebanon amid fresh evacuation orders`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/5/24/israeli-strikes-kill-six-in-southern-lebanon-amid-fresh-evacuation-orders?traffic_source=rss
 
-### WARNING · takeaway_long · item 54
+### WARNING · takeaway_long · item 53
 - Takeaway length 113 > 95
 - Headline: `ישראל חוששת שהסכם ארה״ב-איראן יהיה רך מדי`
 - Original: `Israeli Leader Says He and Trump Agree On Blocking an Iranian Nuclear Weapon`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/05/24/world/middleeast/iran-deal-israel-reaction.html
 
-### WARNING · takeaway_long · item 55
+### WARNING · takeaway_long · item 54
 - Takeaway length 108 > 95
 - Headline: `זברב עלה חלק, פריץ הודח בהפתעה בפריז`
 - Original: `רולאן גארוס יצא לדרך, זברב לא התקשה לדלג לסיבוב השני`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3840139
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 55
 - Takeaway length 114 > 95
 - Headline: `סמסונג חושפת משקפי AI עם Gemini ותרגום חי`
 - Original: `סמסונג מציגה הצצה ראשונה למשקפיים החכמים הראשונים שלה`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3840455
 
-### WARNING · summary_long · item 57
+### WARNING · summary_long · item 56
 - Summary length 223 > 220
 - Headline: `נפילה ראשונה בגיל מבוגר דורשת בירור רפואי רחב`
 - Original: `"הם לא נפלו במקרה": מה מסתתר מאחורי נפילות בגיל מבוגר`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3840466
+
+### WARNING · takeaway_long · item 57
+- Takeaway length 114 > 95
+- Headline: `רעידה בעוצמה 3.5 הורגשה בכנרת בלי נזק`
+- Original: `רעידת אדמה הורגשה הערב באזור הכנרת`
+- Source: גלובס - בארץ
+- URL: https://www.globes.co.il/news/article.aspx?did=1001543817#utm_source=RSS
 
 ### WARNING · takeaway_long · item 58
 - Takeaway length 98 > 95
