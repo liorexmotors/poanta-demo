@@ -269,6 +269,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         non_takeaway_blob = " | ".join([headline, context, original, source, norm(item.get("sourceUrl", ""))])
         if not any(x in non_takeaway_blob for x in ["שטיח אדום", "אופנה", "שמלה", "לבוש", "מעצב", "מט גאלה"]):
             add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to fashion/red-carpet template, not this story", item)
+    if any(x in takeaway for x in ["האירוע מעלה סיכון להסלמה", "חשיבות ההנחיות הרשמיות", "הנתונים משפיעים על תמחור סיכון", "מניות והחלטות תקציב קרובות"]):
+        add_issue(issues, "error", idx, "takeaway_generic_wrong_template", "Takeaway is a generic/wrong-topic template and not article-specific", item)
     if takeaway and context and overlap_ratio(takeaway, context) >= 0.72:
         add_issue(issues, "error", idx, "takeaway_duplicates_context", "Takeaway repeats the summary instead of adding a point", item)
     if takeaway and headline and overlap_ratio(takeaway, headline) >= 0.72:
@@ -303,6 +305,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
 
     if any(x in headline for x in ["מלחמה במפרץ והפגיעה", "הדיון יצא משליטה", "עמוס לוזון בזוגיות חדשה"]):
         add_issue(issues, "error", idx, "known_bad_regression", "Known bad headline regression", item)
+    if any(x in headline for x in ["אמר הבוקר בריאיון", "חוקרים בתחום תולדות האמנות חושדים זה זמן רב", "ללא פרסומות ותמונות"]):
+        add_issue(issues, "error", idx, "headline_source_fragment_regression", "Headline is a copied/source-fragment sentence, not a Pointa event headline", item)
 
 
 def validate_golden(items: list[dict[str, Any]], issues: list[dict[str, Any]]) -> None:
