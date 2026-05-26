@@ -138,6 +138,8 @@ def find_active_rescue_run(max_age_sec: int = 30 * 60) -> dict[str, Any] | None:
     candidates = sorted(base.glob("rescue-*"), key=lambda p: p.stat().st_mtime, reverse=True)
     now = time.time()
     for run_dir in candidates[:20]:
+        if (run_dir / "SKIPPED_DUPLICATE.md").exists():
+            continue
         try:
             age = now - run_dir.stat().st_mtime
         except OSError:
