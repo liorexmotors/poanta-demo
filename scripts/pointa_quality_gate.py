@@ -302,6 +302,11 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
             leaks = has_latin_leak(norm(item.get(field, "")))
             if leaks:
                 add_issue(issues, "error", idx, "foreign_latin_leak", f"Latin leak in {field}: {', '.join(leaks[:5])}", item)
+    if any(x in source.lower() for x in ["al jazeera", "jazeera", "bbc", "cnn", "sky news", "reuters", "guardian", "new york times", "nyt", "axios", "politico", "bloomberg"]):
+        foreign_text = " | ".join([headline, context, takeaway, original, source_url]).lower()
+        foreign_required = ["israel", "israeli", "jerusalem", "jewish", "jews", "antisemit", "zion", "iran", "tehran", "gaza", "hamas", "hezbollah", "lebanon", "syria", "iraq", "yemen", "houthi", "qatar", "saudi", "jordan", "egypt", "west bank", "palestinian", "rafah", "hormuz", "middle east", "mideast", "idf", "netanyahu", "ישראל", "ישראלי", "ירושלים", "יהודים", "אנטישמ", "איראן", "טהראן", "עזה", "חמאס", "חיזבאללה", "לבנון", "סוריה", "עיראק", "תימן", "חותים", "קטאר", "סעודיה", "ירדן", "מצרים", "הגדה", "פלסטינ", "רפיח", "הורמוז", "מזרח תיכון", "צה״ל", "צה\"ל", "נתניהו"]
+        if not any(x in foreign_text for x in foreign_required):
+            add_issue(issues, "error", idx, "foreign_item_not_middle_east_relevant", "Foreign-source item lacks Israel/Middle-East relevance", item)
 
     if any(x in headline for x in ["מלחמה במפרץ והפגיעה", "הדיון יצא משליטה", "עמוס לוזון בזוגיות חדשה"]):
         add_issue(issues, "error", idx, "known_bad_regression", "Known bad headline regression", item)

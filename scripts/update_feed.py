@@ -1272,28 +1272,19 @@ FOREIGN_NOISE_KEYWORDS = [
 ]
 
 def is_foreign_relevant(title: str, desc: str) -> bool:
-    """Foreign feeds may include important world current-affairs stories.
+    """Foreign feeds must stay relevant to Israel/Middle East.
 
-    Updated 2026-05-24 per Lior: אקטואליה בעולם is allowed to carry world
-    stories even without a direct Israel/Middle-East angle. Keep filtering out
-    lifestyle/entertainment/sports noise from broad English feeds, but do not
-    reject serious global politics, diplomacy, security, disasters, public
-    health, sanctions, or major legal/government stories just because Israel is
-    not mentioned.
+    Lior's current invariant: foreign-source items are allowed only when they
+    relate to Israel, Iran, Gaza, Lebanon, the Middle East, regional
+    security/policy, Jews/antisemitism, or direct Israel/Middle-East
+    implications. General world current-affairs stories such as Taiwan/China,
+    Russia/Ukraine, disasters, or broad US politics must not fill the feed just
+    because they are serious news.
     """
     text = f"{title} {desc}".lower()
-    if any(k in text for k in FOREIGN_RELEVANCE_KEYWORDS):
-        return True
-    if foreign_pointa_tuple(title, desc):
-        return True
-    if any(k in text for k in WORLD_CURRENT_AFFAIRS_KEYWORDS):
-        # Major-world-current-affairs terms override generic source scope, but
-        # not soft culture/sports/lifestyle items that would make the feed noisy.
-        if not any(k in text for k in FOREIGN_NOISE_KEYWORDS):
-            return True
-    if "middle east" in text or "mideast" in text:
-        return True
-    return False
+    if any(k in text for k in FOREIGN_NOISE_KEYWORDS):
+        return False
+    return any(k in text for k in FOREIGN_RELEVANCE_KEYWORDS) or "middle east" in text or "mideast" in text
 
 
 FOREIGN_SOURCE_LABELS = [
