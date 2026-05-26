@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poenta · מראה RSS קריא</title>
+  <link rel="icon" href="./favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="./favicon-32.png" sizes="32x32">
+  <style>
+    :root{--bg:#071015;--surface:#0d171d;--card:#101d24;--text:#f4f6f7;--muted:rgba(255,255,255,.58);--line:rgba(255,255,255,.09);--yellow:#ffc400;--red:#ff6b6b;--green:#52d273;--blue:#7fc8ff;--shadow:0 24px 70px rgba(0,0,0,.42)}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#020608;color:var(--text);font-family:"Heebo",Arial,sans-serif;-webkit-font-smoothing:antialiased}body{display:flex;justify-content:center;padding:18px}a{color:inherit}.wrap{width:min(980px,100%);min-height:92vh;border-radius:32px;overflow:hidden;background:linear-gradient(180deg,#081217 0%,var(--bg) 58%,#050b0f 100%);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06);padding:0 18px 34px}.top{position:sticky;top:0;z-index:10;margin:0 -18px 16px;padding:12px 18px;background:#071015;border-bottom:1px solid var(--line);box-shadow:0 10px 22px rgba(0,0,0,.34)}.brandline{height:40px;display:flex;align-items:center;justify-content:space-between;gap:12px;direction:ltr}.brand-logo{height:36px;width:auto;display:block}.brand-logo-light{display:none}.back{border:1px solid rgba(255,196,0,.22);background:rgba(255,196,0,.08);color:var(--yellow);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:950;text-decoration:none}.hero{padding-top:10px}h1{margin:0;font-size:25px;line-height:1.1;font-weight:950;letter-spacing:-.35px}.sub{margin:7px 0 0;color:var(--muted);font-size:13px;font-weight:700;line-height:1.45}.panel{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:22px;padding:14px;margin:12px 0;box-shadow:0 8px 22px rgba(0,0,0,.16)}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.label{font-size:11px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.05em}.value{font-weight:900;line-height:1.35}.meta{color:var(--muted);font-size:12px;font-weight:650;line-height:1.45}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:950;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05)}.ok{color:var(--green)}.warn{color:var(--yellow)}.fail{color:var(--red)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.btn{border:0;border-radius:999px;padding:10px 13px;font-size:12px;font-weight:950;background:var(--yellow);color:#141414;text-decoration:none;cursor:pointer}.btn.secondary{background:rgba(255,255,255,.07);color:#fff;border:1px solid var(--line)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px}.item h3{margin:0 0 7px;font-size:18px;line-height:1.22;letter-spacing:-.2px}.item p{margin:6px 0;color:rgba(255,255,255,.78);font-size:13px;line-height:1.5}.item .link{display:inline-flex;margin-top:8px;color:var(--yellow);font-size:12px;font-weight:900;text-decoration:none}.raw{direction:ltr;text-align:left;white-space:pre-wrap;overflow:auto;max-height:520px;background:#03080b;border:1px solid var(--line);border-radius:16px;padding:12px;color:#d7e3e8;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.source-url{direction:ltr;text-align:left;display:block;overflow-wrap:anywhere;color:rgba(255,255,255,.7)}.empty{padding:18px;text-align:center;color:var(--muted);font-weight:800}.error{border-color:rgba(255,107,107,.35);background:rgba(255,107,107,.08)}details summary{cursor:pointer;color:var(--yellow);font-weight:950;margin-bottom:10px}.kv{display:grid;grid-template-columns:140px 1fr;gap:8px 12px}.kv div:nth-child(odd){color:var(--muted);font-weight:900}.kv div:nth-child(even){font-weight:750}.source-select{width:100%;border-radius:14px;border:1px solid var(--line);background:#071015;color:#fff;padding:10px;font-weight:800}.tiny{font-size:11px;color:var(--muted)}
+    @media(max-width:680px){body{padding:0;background:var(--bg)}.wrap{border-radius:0;border:0;min-height:100vh}.grid{grid-template-columns:1fr}.kv{grid-template-columns:1fr}.top{border-radius:0 0 18px 18px}.row{align-items:flex-start}.brand-logo{height:32px}}
+    @media(prefers-color-scheme:light){.brand-logo-dark{display:none}.brand-logo-light{display:block}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="top">
+      <div class="brandline">
+        <div class="brand"><img class="brand-logo brand-logo-dark" src="./assets/poenta-logo.png" alt="Poenta"><img class="brand-logo brand-logo-light" src="./assets/poenta-logo-light.png" alt="Poenta"></div>
+        <a class="back" href="./feedback-dashboard.html">חזרה לדשבורד</a>
+      </div>
+      <div class="hero">
+        <h1>מראה RSS קריא</h1>
+        <p class="sub">דף פנימי שמביא את ה־XML של המקור ומציג אותו ככרטיסים קריאים: כותרת, זמן, קישור ותיאור — בלי לקרוא XML גולמי.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="sourcePanel">
+      <div class="label">מקור</div>
+      <div class="value" id="sourceTitle">טוען…</div>
+      <span class="source-url" id="sourceUrl"></span>
+      <div class="actions">
+        <a class="btn" id="openOriginal" href="#" target="_blank" rel="noopener">פתח XML מקורי</a>
+        <button class="btn secondary" id="reload">רענון</button>
+      </div>
+      <div class="meta" id="fetchHint"></div>
+    </section>
+
+    <section class="panel" id="catalogPanel" hidden>
+      <div class="label">בחירת מקור מהרשימה</div>
+      <select id="catalogSelect" class="source-select"><option value="">בחר מקור RSS…</option></select>
+      <p class="tiny">אפשר להגיע לדף הזה גם ישירות מהקישור “מראה RSS” בדשבורד.</p>
+    </section>
+
+    <section class="panel" id="summaryPanel">
+      <div class="kv" id="summaryKv"></div>
+    </section>
+
+    <section class="panel">
+      <div class="row"><div><div class="label">פריטים אחרונים</div><div class="meta" id="itemCount">—</div></div><span class="pill" id="statusPill">טוען</span></div>
+      <div class="grid" id="items"></div>
+    </section>
+
+    <section class="panel">
+      <details>
+        <summary>הצג XML גולמי למי שצריך בדיקה טכנית</summary>
+        <pre class="raw" id="rawXml">—</pre>
+      </details>
+    </section>
+  </main>
+<script>
+const $=s=>document.querySelector(s);
+const params=new URLSearchParams(location.search);
+const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const text=(node,sel)=>node?.querySelector(sel)?.textContent?.trim()||'';
+function fmtDate(value){if(!value)return '—';const d=new Date(value);return Number.isNaN(d.getTime())?value:new Intl.DateTimeFormat('he-IL',{timeZone:'Asia/Jerusalem',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(d)}
+function decodeHtml(html){const t=document.createElement('textarea');t.innerHTML=html||'';return t.value.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}
+function sourceUrl(){return params.get('url')||params.get('rss')||''}
+function sourceName(){return params.get('name')||params.get('source')||'מקור RSS'}
+function proxyUrl(url){return 'https://api.allorigins.win/raw?url='+encodeURIComponent(url)}
+async function fetchText(url){try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return {text:await r.text(),via:'direct'}}catch(firstError){const r=await fetch(proxyUrl(url),{cache:'no-store'});if(!r.ok)throw new Error('proxy HTTP '+r.status+'; direct: '+firstError.message);return {text:await r.text(),via:'proxy'}}}
+function parseFeed(xmlText){const doc=new DOMParser().parseFromString(xmlText,'application/xml');const parseError=doc.querySelector('parsererror');if(parseError)throw new Error(parseError.textContent.replace(/\s+/g,' ').slice(0,220));const channel=doc.querySelector('channel')||doc.querySelector('feed')||doc.documentElement;const atom=doc.documentElement?.localName==='feed';const rawItems=[...doc.querySelectorAll(atom?'entry':'item')];const items=rawItems.slice(0,40).map(it=>{const linkEl=it.querySelector('link');const link=atom?(linkEl?.getAttribute('href')||linkEl?.textContent||''):text(it,'link');return {title:text(it,'title')||'ללא כותרת',link,description:decodeHtml(text(it,'description')||text(it,'summary')||text(it,'content')),date:text(it,'pubDate')||text(it,'published')||text(it,'updated')||text(it,'dc\\:date')||'',guid:text(it,'guid')||text(it,'id')||''};});return {title:text(channel,'title')||sourceName(),link:text(channel,'link')||'',description:decodeHtml(text(channel,'description')||text(channel,'subtitle')),updated:text(channel,'lastBuildDate')||text(channel,'updated')||text(channel,'pubDate'),items}}
+function render(feed,xml,via){$('#statusPill').textContent='נטען';$('#statusPill').className='pill ok';$('#fetchHint').textContent=via==='proxy'?'המקור לא איפשר קריאה ישירה מהדפדפן; נטען דרך proxy ציבורי להצגה בלבד.':'נטען ישירות מהמקור.';$('#summaryKv').innerHTML=`<div>שם הפיד</div><div>${esc(feed.title)}</div><div>תיאור</div><div>${esc(feed.description||'—')}</div><div>עודכן במקור</div><div>${esc(fmtDate(feed.updated))}</div><div>קישור מקור</div><div>${feed.link?`<a href="${esc(feed.link)}" target="_blank" rel="noopener">${esc(feed.link)}</a>`:'—'}</div>`;$('#itemCount').textContent=`${feed.items.length} פריטים מוצגים`;$('#items').innerHTML=feed.items.length?feed.items.map((it,i)=>`<article class="item"><div class="meta">#${i+1} · ${esc(fmtDate(it.date))}</div><h3>${esc(it.title)}</h3>${it.description?`<p>${esc(it.description).slice(0,420)}${it.description.length>420?'…':''}</p>`:''}<div class="meta">${esc(it.guid||'')}</div>${it.link?`<a class="link" href="${esc(it.link)}" target="_blank" rel="noopener">פתח כתבה מקורית</a>`:''}</article>`).join(''):'<div class="empty">לא נמצאו פריטים ב־XML.</div>';$('#rawXml').textContent=xml.slice(0,200000)}
+async function loadCatalog(){try{const data=await fetch('rss_sources.json',{cache:'no-store'}).then(r=>r.json());const sources=(data.active||[]).filter(s=>s.rss);if(!sources.length)return;$('#catalogPanel').hidden=false;$('#catalogSelect').innerHTML='<option value="">בחר מקור RSS…</option>'+sources.map(s=>`<option value="${esc(s.rss)}" data-name="${esc(s.name)}">${esc(s.logo||s.name)} · ${esc(s.name)}</option>`).join('');$('#catalogSelect').addEventListener('change',e=>{const opt=e.target.selectedOptions[0];if(!e.target.value)return;location.href='rss-viewer.html?url='+encodeURIComponent(e.target.value)+'&name='+encodeURIComponent(opt.dataset.name||opt.textContent)});}catch{}}
+async function load(){const url=sourceUrl();$('#sourceTitle').textContent=sourceName();$('#sourceUrl').textContent=url||'לא נבחר מקור';$('#openOriginal').href=url||'#';if(!url){$('#statusPill').textContent='בחר מקור';$('#statusPill').className='pill warn';$('#items').innerHTML='<div class="empty">אין URL. בחר מקור מהרשימה או חזור לדשבורד.</div>';$('#summaryKv').innerHTML='';$('#rawXml').textContent='—';await loadCatalog();return;}$('#statusPill').textContent='טוען';$('#statusPill').className='pill warn';$('#items').innerHTML='<div class="empty">מביא XML וממיר לתצוגה קריאה…</div>';try{const result=await fetchText(url);const feed=parseFeed(result.text);render(feed,result.text,result.via)}catch(e){$('#statusPill').textContent='שגיאה';$('#statusPill').className='pill fail';$('#items').innerHTML=`<div class="empty error"><strong>לא הצלחתי להציג את המקור.</strong><br><span class="meta">${esc(e.message)}</span><br><br><a class="btn secondary" href="${esc(url)}" target="_blank" rel="noopener">פתח XML מקורי</a></div>`;$('#summaryKv').innerHTML='';$('#rawXml').textContent='—';}}
+$('#reload').addEventListener('click',load);
+load();
+</script>
+</body>
+</html>
