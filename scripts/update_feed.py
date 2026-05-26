@@ -714,6 +714,24 @@ def score_title(title: str) -> int:
     return score
 
 
+def should_replace_source_description(existing: str, enriched: str) -> bool:
+    """Return whether article-page enrichment should replace source-feed text.
+
+    Source RSS/telegram text is the durable fallback.  Article pages are often
+    blocked, empty, or return WAF/login boilerplate; a failed enrichment must not
+    turn a usable source candidate into a thin card for any publisher.
+    """
+    enriched = clean_text(enriched)
+    if not enriched or bad_description(enriched):
+        return False
+    existing = clean_text(existing)
+    # If the source feed already supplied substantive text, do not replace it
+    # with a very short/low-information metadata fragment.
+    if len(existing) >= 40 and len(enriched) < 30:
+        return False
+    return True
+
+
 def enrich(candidate: Candidate) -> Candidate:
     try:
         raw = fetch(candidate.url, timeout=12)
@@ -742,14 +760,12 @@ def enrich(candidate: Candidate) -> Candidate:
     if not desc:
         ps = [clean_text(p) for p in parser.paragraphs]
         desc = clean_text(" ".join(p for p in ps if len(p) > 40)[:450])
-    if bad_description(desc):
-        desc = ""
-    # Some publishers (notably ynet) expose useful RSS descriptions but block
-    # article-page metadata/body fetches.  Do not erase the RSS description with
-    # an empty enrichment result; otherwise fresh source rows reach the rescue
-    # queue with only a title and get filtered out as thin/generic.
-    if desc:
-        candidate.description = desc
+    # Preserve the source/RSS/telegram description unless enrichment produced a
+    # clearly useful replacement.  This is source-agnostic by design: Ynet was
+    # the first visible failure, but the same WAF/empty-page pattern can hit any
+    # publisher.
+    if should_replace_source_description(candidate.description, desc):
+        candidate.description = clean_text(desc)
     return candidate
 
 
