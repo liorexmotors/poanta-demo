@@ -192,7 +192,8 @@ For every item:
 2. Use `rescue.qaErrors` and `currentCard` only to understand why the deterministic card failed; do not preserve bad generic wording.
 3. Return `reject` when the available text is too thin for a specific Pointa headline, summary, and takeaway.
 4. Keep Hebrew output concise and follow the Pointa editor contract.
-5. Do not publish, deploy, or apply results from this directory directly.
+5. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, Lebanon, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
+6. Do not publish, deploy, or apply results from this directory directly.
 
 Write one result file per batch, named `batch_N_results.json`.
 Each result object must include:

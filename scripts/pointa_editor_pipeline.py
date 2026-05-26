@@ -387,6 +387,17 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
         errors.append("takeaway has generic banned pattern")
     if category not in CATEGORY_CLASS:
         errors.append("unknown category")
+    me_or_israel_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "מזרח תיכון", "עזה", "gaza", "חמאס", "חיזבאללה", "לבנון", "איראן", "iran", "הורמוז", "סעודיה", "קטאר", "מצרים", "ירדן", "טורקיה", "פלסטיני"]
+    world_only_terms = ["קובה", "cuba", "פוקושימה", "fukushima"]
+    strong_local_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "עזה", "gaza"]
+    content_low = " ".join([headline, summary, takeaway, source.get("originalTitle", "")]).lower()
+    source_low = str(source.get("source", "")).lower()
+    is_me_or_israel = (
+        any(x.lower() in content_low for x in me_or_israel_terms)
+        and (not any(x.lower() in content_low for x in world_only_terms) or any(x.lower() in content_low for x in strong_local_terms))
+    ) or any(x in source_low for x in ["middle east", "mideast", "מזרח תיכון"])
+    if category == "אקטואליה בעולם" and is_me_or_israel:
+        errors.append("category_world_boundary")
     expected_class = CATEGORY_CLASS.get(category, "")
     if result.get("categoryClass", "") != expected_class:
         errors.append(f"categoryClass should be {expected_class!r}")
