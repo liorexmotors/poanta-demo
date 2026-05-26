@@ -540,9 +540,16 @@ def execute_stage3_repair(
 
         qa_cmd = [sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"]
         code, text = run_func(qa_cmd, timeout=240)
-        actions.append({"action": "stage3_qa_editor_results", "exit": code, "tail": text[-3000:]})
+        qa_summary = {}
+        try:
+            qa_summary = json.loads(text)
+        except Exception:
+            qa_summary = {}
+        actions.append({"action": "stage3_qa_editor_results", "exit": code, "pass": qa_summary.get("pass"), "reject": qa_summary.get("reject"), "tail": text[-3000:]})
         if code != 0:
             return actions, {**incident, "status": "blocked", "incidentType": "stage3_editor_qa_failed", "automaticAction": "do_not_publish"}, new_state
+        if int(qa_summary.get("pass") or 0) <= 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage3_no_publishable_editor_cards", "automaticAction": "do_not_publish", "editorQa": qa_summary}, new_state
 
         preview_feed = run_dir / "feed_editor_preview.json"
         for name, cmd in [
@@ -667,9 +674,16 @@ def execute_stage4_domain_rescue(
                 return actions, waiting, new_state
 
         code, text = run_func([sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"], timeout=300)
-        actions.append({"action": "stage4_qa_editor_results", "domain": domain, "exit": code, "tail": text[-3000:]})
+        qa_summary = {}
+        try:
+            qa_summary = json.loads(text)
+        except Exception:
+            qa_summary = {}
+        actions.append({"action": "stage4_qa_editor_results", "domain": domain, "exit": code, "pass": qa_summary.get("pass"), "reject": qa_summary.get("reject"), "tail": text[-3000:]})
         if code != 0:
             return actions, {**incident, "status": "blocked", "incidentType": "stage4_qa_editor_results_failed", "automaticAction": "do_not_publish"}, new_state
+        if int(qa_summary.get("pass") or 0) <= 0:
+            return actions, {**incident, "status": "blocked", "incidentType": "stage4_no_publishable_editor_cards", "automaticAction": "do_not_publish", "editorQa": qa_summary}, new_state
 
         preview_feed = run_dir / "feed_editor_preview.json"
         for name, cmd in [
