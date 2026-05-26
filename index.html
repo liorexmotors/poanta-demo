@@ -321,6 +321,8 @@ function semanticStoryKey(item){
   const hasStrike=hasAny(text,['תקיפ','תקפה','תקיפות','הפצצ','strikes','strike','attacks','launches strikes','carries out']);
   const hasSouth=hasAny(text,['דרום איראן','בדרום איראן','southern iran','south iran']);
   const hasStrikeContext=hasAny(text,['missile sites','missile','טילים','סירות','boats','self-defence','self defense','הגנה עצמית','qatar','קטאר','שיחות','talks']);
+  const hasMarketImpact=hasAny(text,['נפט','ברנט','שווקים','מחיר הנפט','מחירי הנפט','גז','זרימת נפט','oil','brent','markets','market impact','energy prices']);
+  if(hasMarketImpact) return '';
   if(hasIran && hasUs && hasStrike && (hasSouth || hasStrikeContext)) return 'event:us-strikes-iran-20260526';
   const hasDeal=hasAny(text,['הסכם','עסקה','deal','peace deal','ceasefire','הפסקת אש','מו״מ','מו"מ','negotiation','talks']);
   const hasHormuz=hasAny(text,['הורמוז','hormuz']);
