@@ -29,6 +29,7 @@ import update_feed  # type: ignore
 
 DEFAULT_QUEUE = ROOT / "tmp" / "pointa_source_rescue_queue.json"
 RUNS_DIR = ROOT / "tmp" / "editor-runs"
+FEED_FILE = ROOT / "feed.json"
 
 
 def load_queue(path: Path) -> dict[str, Any]:
@@ -39,14 +40,43 @@ def load_queue(path: Path) -> dict[str, Any]:
     return data
 
 
+def load_existing_feed_urls(feed_file: Path = FEED_FILE) -> set[str]:
+    """Return source URLs already visible in feed.json.
+
+    Stage-3 rescue must not create artificial freshness by selecting a row whose
+    exact article URL is already in the public/local feed. Re-publishing the same
+    URL with a newer rescue timestamp makes the top feed look fresh without a new
+    story and repeatedly wastes editor batches on duplicates.
+    """
+    if not feed_file.exists():
+        return set()
+    try:
+        with feed_file.open(encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return set()
+    items = data.get("items") if isinstance(data, dict) else data
+    if not isinstance(items, list):
+        return set()
+    urls: set[str] = set()
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        url = (item.get("url") or item.get("sourceUrl") or "").strip()
+        if url:
+            urls.add(url)
+    return urls
+
+
 def select_rescue_items(queue: dict[str, Any], limit: int) -> list[dict[str, Any]]:
     selected: list[dict[str, Any]] = []
     seen_urls: set[str] = set()
+    existing_feed_urls = load_existing_feed_urls()
     for row in queue.get("items", []):
         if row.get("recommendedAction") != "send_to_full_editor_rescue_queue":
             continue
-        url = row.get("sourceUrl") or ""
-        if not url or url in seen_urls:
+        url = (row.get("sourceUrl") or "").strip()
+        if not url or url in seen_urls or url in existing_feed_urls:
             continue
         selected.append(row)
         seen_urls.add(url)
