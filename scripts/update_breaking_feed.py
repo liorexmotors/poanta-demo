@@ -126,22 +126,77 @@ def parse_rss(text: str, source: dict[str, Any]) -> list[dict[str, Any]]:
     return rows
 
 
+DUPE_STOPWORDS = {
+    "של", "את", "על", "עם", "אל", "כי", "לא", "יש", "הוא", "היא", "זה", "זו", "עד", "ב", "ל", "ה",
+    "היום", "הלילה", "דיווח", "דווח", "לאחר", "בשל", "חשש", "חדש", "חדשה", "חדשות",
+    "the", "and", "for", "from", "with", "after", "amid", "says", "report",
+}
+
+# Terms that are too generic to prove two flashes describe the same event by
+# themselves.  They still participate in the overlap score, but the lower
+# threshold below requires shared distinctive tokens as well.
+GENERIC_BREAKING_TOKENS = {
+    "משטרה", "צה", "ישראל", "איראן", "ארה", "חמאס", "חיזבאללה", "לבנון",
+    "תוקפים", "תקף", "תקיפה", "תקיפות", "נעצר", "נפצע", "פיגוע", "אזעקות",
+    "police", "israel", "iran", "strike", "strikes", "attack", "attacks",
+}
+
+
+def normalize_token(token: str) -> str:
+    token = token.strip()
+    if len(token) > 3 and token[0] in "בלוהמ":
+        token = token[1:]
+    if len(token) > 3 and token.startswith("ה"):
+        token = token[1:]
+    return token
+
+
 def normalize_for_dupe(title: str) -> str:
-    text = re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", " ", title.lower())
-    stop = {"של", "את", "על", "עם", "אל", "כי", "לא", "יש", "הוא", "היא", "זה", "זו", "עד", "ב", "ל", "ה"}
-    return " ".join(w for w in text.split() if len(w) > 1 and w not in stop)
+    text = re.sub(r"[\"'׳״`]+", "", title.lower())
+    text = re.sub(r"כטב[\"׳״]?ם", "כטבם", text)
+    text = re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", " ", text)
+    words = [normalize_token(w) for w in text.split()]
+    return " ".join(w for w in words if len(w) > 1 and w not in DUPE_STOPWORDS)
 
 
 def token_set(title: str) -> set[str]:
     return set(normalize_for_dupe(title).split())
 
 
+def distinctive_overlap(ta: set[str], tb: set[str]) -> set[str]:
+    return {t for t in (ta & tb) if t not in GENERIC_BREAKING_TOKENS and len(t) > 2}
+
+
 def near_duplicate(a: str, b: str) -> bool:
+    """Conservative semantic dedupe for breaking-news flashes.
+
+    Breaking items are intentionally terse, so exact-title/URL dedupe misses the
+    common case where Walla/Ynet/Rotter publish the same event with slightly
+    different wording.  Use a high normal overlap first, then a lower threshold
+    only when several distinctive tokens match.  This collapses same-event
+    multi-source flashes while preserving adjacent developments.
+    """
     ta, tb = token_set(a), token_set(b)
     if not ta or not tb:
         return False
-    overlap = len(ta & tb) / max(1, min(len(ta), len(tb)))
-    return overlap >= 0.72
+    shared = ta & tb
+    overlap = len(shared) / max(1, min(len(ta), len(tb)))
+    if overlap >= 0.72:
+        return True
+    distinct = distinctive_overlap(ta, tb)
+    if overlap >= 0.58 and len(distinct) >= 3:
+        return True
+    if overlap >= 0.44 and len(distinct) >= 4:
+        return True
+    # Very short alert wording: one source may say "אזעקות בגליל המערבי" while
+    # another adds the suspected drone and locality.  Shared location + alert
+    # intent is enough, but only for this narrow alert/drone class.
+    alert_terms = {"אזעק", "אזעקה", "אזעקות", "כטבם", "חדירת", "גליל", "מערבי", "נטועה"}
+    if len(shared & alert_terms) >= 2 and ({"אזעק", "אזעקה", "אזעקות"} & shared):
+        return True
+    if ({"אזעק", "אזעקה", "אזעקות"} & shared) and ({"גליל", "מערבי"} <= ta or {"גליל", "מערבי"} <= tb) and ("נטועה" in ta or "נטועה" in tb or "כטבם" in ta or "כטבם" in tb):
+        return True
+    return False
 
 
 def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
@@ -169,8 +224,19 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
 
     items.sort(key=lambda r: r.get("publishedAt") or "", reverse=True)
     deduped: list[dict[str, Any]] = []
+    def dupe_text(row: dict[str, Any]) -> str:
+        return " ".join(str(row.get(key, "")) for key in ("headline", "context", "originalTitle"))
+
     for row in items:
-        match = next((x for x in deduped if near_duplicate(row["headline"], x["headline"])), None)
+        row_dupe_text = dupe_text(row)
+        match = next(
+            (
+                x
+                for x in deduped
+                if x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x))
+            ),
+            None,
+        )
         if match:
             sources = match.setdefault("sources", [match.get("source")])
             if row.get("source") not in sources:
