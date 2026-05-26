@@ -1867,6 +1867,8 @@ def security_event_tokens(item: dict) -> set[str]:
     is_strike = bool(re.search(r"strike|strikes|attack|attacks|תקיפ|תקף|תקפה|תקפו|השמיד", main))
     if not (is_us and is_iran and is_strike):
         return set()
+    if re.search(r"נפט|ברנט|שווקים|מחיר הנפט|מחירי הנפט|גז|זרימת נפט|\boil\b|\bbrent\b|\bmarkets?\b|energy prices", text):
+        return set()
     tokens = {"us_iran_strike"}
     if re.search(r"southern iran|south(?:ern)?|דרום|בדרום", text):
         tokens.add("south")

@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Regression drill for Poanta visible/personal-feed semantic dedupe.
+
+The law this protects: after user personalization/preferences and the active top
+filter are applied, the rendered feed may show only one visible card from the
+same semantic story cluster. This is separate from raw/global feed dedupe.
+"""
+from __future__ import annotations
+
+from datetime import datetime, timezone
+from pathlib import Path
+import re
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from pointa_live_auditor import likely_duplicate_story  # noqa: E402
+
+
+def dt(value: str) -> datetime:
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def topic_for(item: dict) -> str:
+    category = str(item.get("category") or "חדשות")
+    if category == "תחבורה":
+        return "רכב"
+    if category == "חדשות":
+        return "פוליטיקה"
+    if category == "עולם":
+        return "אקטואליה בעולם"
+    return category
+
+
+def semantic_text(item: dict) -> str:
+    return " ".join(str(item.get(k) or "") for k in ["headline", "context", "takeaway", "originalTitle", "source"]).lower()
+
+
+def has_any(text: str, terms: list[str]) -> bool:
+    return any(term in text for term in terms)
+
+
+def semantic_story_key(item: dict) -> str:
+    text = semantic_text(item)
+    has_iran = has_any(text, ["איראן", "איראני", "iran", "iranian", "tehran"])
+    has_us = has_any(text, ["ארה״ב", "ארה\"ב", "אמריק", "u.s.", "u.s", "us ", " us ", "united states", "american"])
+    has_strike = has_any(text, ["תקיפ", "תקפה", "תקיפות", "הפצצ", "strikes", "strike", "attacks", "launches strikes", "carries out"])
+    has_south = has_any(text, ["דרום איראן", "בדרום איראן", "southern iran", "south iran"])
+    has_context = has_any(text, ["missile sites", "missile", "טילים", "סירות", "boats", "self-defence", "self defense", "הגנה עצמית", "qatar", "קטאר", "שיחות", "talks"])
+    has_market = has_any(text, ["נפט", "ברנט", "שווקים", "מחיר הנפט", "מחירי הנפט", "גז", "זרימת נפט", "oil", "brent", "markets", "market impact", "energy prices"])
+    if has_market:
+        return ""
+    if has_iran and has_us and has_strike and (has_south or has_context):
+        return "event:us-strikes-iran-20260526"
+    return ""
+
+
+FIXTURE = [
+    {
+        "source": "וואלה",
+        "category": "ביטחון",
+        "headline": "ארה״ב מאשרת תקיפות הגנתיות בתוך איראן",
+        "originalTitle": "ארה\"ב אישרה כי כוחותיה ביצעו הלילה תקיפות \"להגנה עצמית\" בשטח איראן",
+        "context": "פיקוד המרכז האמריקני אישר שכוחות ארה״ב תקפו אתרי שיגור טילים וסירות איראניות בזמן הפסקת האש.",
+        "publishedAt": "2026-05-26T06:00:00+03:00",
+        "sourceUrl": "https://news.walla.co.il/iran-strikes",
+    },
+    {
+        "source": "NYT",
+        "category": "ביטחון",
+        "headline": "ארה״ב ביצעה תקיפות הגנה עצמית בדרום איראן",
+        "originalTitle": "U.S. Carries Out Renewed Strikes in Southern Iran",
+        "context": "U.S. forces struck missile sites and boats near Bandar Abbas amid talks in Qatar.",
+        "publishedAt": "2026-05-26T06:08:00+03:00",
+        "sourceUrl": "https://www.nytimes.com/iran-strikes",
+    },
+    {
+        "source": "Al Jazeera",
+        "category": "פוליטיקה",
+        "headline": "ארה״ב תקפה בדרום איראן בזמן שהמשא ומתן עבר לדוחא",
+        "originalTitle": "US military launches strikes on southern Iran amid talks in Qatar",
+        "context": "התקיפות בדרום איראן פגעו באתרי טילים וסירות בזמן שיחות בדוחא על הסכם והפסקת אש.",
+        "publishedAt": "2026-05-26T06:10:00+03:00",
+        "sourceUrl": "https://www.aljazeera.com/iran-strikes",
+    },
+    {
+        "source": "BBC",
+        "category": "אקטואליה בעולם",
+        "headline": "ארה״ב תקפה מטרות באיראן בזמן שיחות על הסכם",
+        "originalTitle": "US strikes Iranian targets during Qatar talks",
+        "context": "American strikes hit Iranian missile targets and boats while negotiators met in Qatar.",
+        "publishedAt": "2026-05-26T06:05:00+03:00",
+        "sourceUrl": "https://www.bbc.com/iran-strikes",
+    },
+    {
+        "source": "Guardian",
+        "category": "ביטחון",
+        "headline": "רוביו מזהיר שאיום הורמוז יכול לשנות את קצב השיחות",
+        "originalTitle": "Rubio warns Hormuz crisis could reshape Iran talks",
+        "context": "הסיפור מתמקד בהשלכות הדיפלומטיות ובשיחות, לא בתקיפה עצמה.",
+        "publishedAt": "2026-05-26T06:12:00+03:00",
+        "sourceUrl": "https://www.theguardian.com/hormuz-talks",
+    },
+    {
+        "source": "וואלה כסף",
+        "category": "כלכלה",
+        "headline": "תקיפות ארה״ב באיראן החזירו את הנפט לעליות חדות",
+        "originalTitle": "מחיר הנפט מזנק בעקבות התקיפות האמריקניות",
+        "context": "מחיר הברנט קפץ אחרי תקיפות אמריקאיות בדרום איראן, והשווקים חוששים מפגיעה בזרימת נפט וגז דרך הורמוז.",
+        "publishedAt": "2026-05-26T06:14:00+03:00",
+        "sourceUrl": "https://finance.walla.co.il/oil-iran-strikes",
+    },
+]
+
+
+def visible_personalized(items: list[dict], *, active_filter: str = "all", selected_topics: set[str] | None = None) -> list[dict]:
+    selected_topics = selected_topics or {"ביטחון", "פוליטיקה", "אקטואליה בעולם"}
+    rows = [item for item in items if topic_for(item) in selected_topics]
+    if active_filter != "all":
+        rows = [item for item in rows if topic_for(item) == active_filter]
+    rows.sort(key=lambda item: dt(item["publishedAt"]), reverse=True)
+    seen: set[str] = set()
+    out: list[dict] = []
+    for item in rows:
+        key = semantic_story_key(item)
+        if key and key in seen:
+            continue
+        if key:
+            seen.add(key)
+        out.append(item)
+    return out
+
+
+def main() -> int:
+    failures: list[str] = []
+    strike_items = FIXTURE[:4]
+    pairs = [(a, b) for i, a in enumerate(strike_items) for b in strike_items[i + 1 :]]
+    if not all(likely_duplicate_story(a, b) for a, b in pairs):
+        failures.append("live auditor did not flag all cross-source/cross-category Iran strike variants")
+    if likely_duplicate_story(FIXTURE[1], FIXTURE[4]):
+        failures.append("live auditor collapsed adjacent Hormuz diplomacy story into strike story")
+    if likely_duplicate_story(FIXTURE[1], FIXTURE[5]) or semantic_story_key(FIXTURE[5]):
+        failures.append("market/oil-impact card was incorrectly collapsed into the operational strike story")
+
+    all_visible = visible_personalized(FIXTURE, active_filter="all", selected_topics={"ביטחון", "פוליטיקה", "אקטואליה בעולם", "כלכלה"})
+    strike_visible = [item for item in all_visible if semantic_story_key(item)]
+    if len(strike_visible) != 1:
+        failures.append(f"personal all-feed expected 1 visible strike card, got {len(strike_visible)}")
+    if strike_visible and strike_visible[0]["source"] != "Al Jazeera":
+        failures.append(f"personal all-feed did not keep freshest strike card: {strike_visible[0]['source']}")
+
+    security_visible = visible_personalized(FIXTURE, active_filter="ביטחון")
+    security_strikes = [item for item in security_visible if semantic_story_key(item)]
+    if len(security_strikes) != 1:
+        failures.append(f"active ביטחון tab expected 1 visible strike card after tab filter, got {len(security_strikes)}")
+    if not any("הורמוז" in item["headline"] for item in security_visible):
+        failures.append("distinct adjacent Hormuz story was incorrectly removed")
+
+    index = (ROOT / "index.html").read_text(encoding="utf-8")
+    if "const applyActive=options.applyActiveFilter!==false" not in index or "return dedupeVisibleItems(rows);" not in index:
+        failures.append("index.html selector must apply active filter before dedupeVisibleItems and return deduped rows")
+    if not re.search(r"POANTA_FEED_VERSION\s*=\s*'[^']*dedupe-v2'", index):
+        failures.append("POANTA_FEED_VERSION was not bumped for personal dedupe v2")
+
+    if failures:
+        print("Personal-feed semantic dedupe drill failed:")
+        for failure in failures:
+            print("-", failure)
+        return 1
+    print("Personal-feed semantic dedupe drill passed: 4 source variants collapse to one, active tab stays lawful, adjacent story remains")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

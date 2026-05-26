@@ -237,6 +237,19 @@ def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
     local_ok = _status(snapshot.local_health) == "ok" and int(snapshot.local_quality.get("exit") or 0) == 0
     domain_err = domain_rescue_timing_error(snapshot)
 
+    # Visible top-feed freshness is higher priority than per-domain SLA debt.
+    # If both fail, Stage 3 must repair the public/top feed first; otherwise the
+    # domain lane can loop on a candidate that still fails no_new_top_item_sla.
+    if public_codes & TOP_STALE_CODES or any(e.get("group") == "all" for e in timing_errors):
+        return {
+            "status": "repair_needed",
+            "incidentType": "top_feed_stale_or_thin",
+            "recommendedStage": "stage_3_general_rescue",
+            "automaticAction": "prepare_general_rescue_worker",
+            "incidentKey": f"top_stale|{','.join(sorted(public_codes))}|{snapshot.feed_signature.get('updatedAt')}|{snapshot.feed_signature.get('topUrl')}",
+            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
+        }
+
     if domain_err:
         group = str(domain_err.get("group") or "")
         return {
@@ -287,16 +300,6 @@ def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
             "recommendedStage": "stage_2_safe_deploy",
             "automaticAction": "deploy_current_feed_then_verify_public",
             "incidentKey": f"deploy_needed|{snapshot.local_signature or {}}|{snapshot.feed_signature.get('updatedAt')}",
-            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
-        }
-
-    if public_codes & TOP_STALE_CODES or any(e.get("group") == "all" for e in timing_errors):
-        return {
-            "status": "repair_needed",
-            "incidentType": "top_feed_stale_or_thin",
-            "recommendedStage": "stage_3_general_rescue",
-            "automaticAction": "prepare_general_rescue_worker",
-            "incidentKey": f"top_stale|{','.join(sorted(public_codes))}|{snapshot.feed_signature.get('updatedAt')}|{snapshot.feed_signature.get('topUrl')}",
             "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
         }
 
@@ -404,7 +407,13 @@ def execute_stage3_repair(
         return [], incident, state
 
     resume_run_dir = Path(str(state.get("lastStage3RunDir") or "")) if state.get("lastStage3RunDir") else None
-    resume_has_results = bool(resume_run_dir and resume_run_dir.exists() and sorted(resume_run_dir.glob("batch_*_results.json")))
+    resume_matches_incident = state.get("lastStage3IncidentKey") == incident.get("incidentKey")
+    resume_has_results = bool(
+        resume_matches_incident
+        and resume_run_dir
+        and resume_run_dir.exists()
+        and sorted(resume_run_dir.glob("batch_*_results.json"))
+    )
 
     if stage3_cooldown_active(state, incident, now=now) and not resume_has_results:
         skipped = {**incident, "status": "degraded", "incidentType": "stage3_cooldown_active", "automaticAction": "wait_for_cooldown"}
@@ -517,7 +526,13 @@ def execute_stage4_domain_rescue(
         return [], {**incident, "status": "blocked", "incidentType": "stage4_domain_not_allowed", "automaticAction": "do_not_publish"}, state
 
     resume_run_dir = Path(str(state.get("lastStage4RunDir") or "")) if state.get("lastStage4RunDir") else None
-    resume_has_results = bool(resume_run_dir and resume_run_dir.exists() and sorted(resume_run_dir.glob("batch_*_results.json")))
+    resume_matches_incident = state.get("lastStage4IncidentKey") == incident.get("incidentKey")
+    resume_has_results = bool(
+        resume_matches_incident
+        and resume_run_dir
+        and resume_run_dir.exists()
+        and sorted(resume_run_dir.glob("batch_*_results.json"))
+    )
     if not acquire_lock(lock_path):
         locked = {**incident, "status": "degraded", "incidentType": "stage4_worker_already_running", "automaticAction": "wait_for_worker"}
         return [{"action": "stage4_skip_lock_active", "lock": str(lock_path)}], locked, state

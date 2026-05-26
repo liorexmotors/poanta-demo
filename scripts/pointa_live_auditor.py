@@ -201,6 +201,8 @@ def security_event_tokens(item: dict[str, Any]) -> set[str]:
     is_strike = bool(re.search(r"strike|strikes|attack|attacks|תקיפ|תקף|תקפה|תקפו|השמיד", main))
     if not (is_us and is_iran and is_strike):
         return set()
+    if re.search(r"נפט|ברנט|שווקים|מחיר הנפט|מחירי הנפט|גז|זרימת נפט|\boil\b|\bbrent\b|\bmarkets?\b|energy prices", text):
+        return set()
     tokens = {"us_iran_strike"}
     if re.search(r"southern iran|south(?:ern)?|דרום|בדרום", text):
         tokens.add("south")
@@ -268,8 +270,6 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return False
     if str(a.get("source") or "") == str(b.get("source") or ""):
         return False
-    if topic_for_item(a) != topic_for_item(b):
-        return False
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
@@ -278,6 +278,8 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     bw = security_event_tokens(b)
     if aw and bw and "us_iran_strike" in aw and "us_iran_strike" in bw and len((aw & bw) - {"us_iran_strike"}) >= 2:
         return True
+    if topic_for_item(a) != topic_for_item(b):
+        return False
     if word_overlap(story_words(a), story_words(b)) >= 0.62:
         return True
     at = " ".join(sorted(duplicate_words(str(a.get("originalTitle") or a.get("headline") or ""))))
