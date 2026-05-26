@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v80-personal-dedupe-v2';
+const CACHE_NAME = 'poenta-v81-breaking-dedupe-v1';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
