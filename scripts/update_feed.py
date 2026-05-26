@@ -744,7 +744,12 @@ def enrich(candidate: Candidate) -> Candidate:
         desc = clean_text(" ".join(p for p in ps if len(p) > 40)[:450])
     if bad_description(desc):
         desc = ""
-    candidate.description = desc
+    # Some publishers (notably ynet) expose useful RSS descriptions but block
+    # article-page metadata/body fetches.  Do not erase the RSS description with
+    # an empty enrichment result; otherwise fresh source rows reach the rescue
+    # queue with only a title and get filtered out as thin/generic.
+    if desc:
+        candidate.description = desc
     return candidate
 
 
