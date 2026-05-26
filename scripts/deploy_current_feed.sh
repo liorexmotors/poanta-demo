@@ -32,8 +32,12 @@ python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # stale/thin to a user. This is deliberately before recording publication
 # events so a failed candidate cannot fake timing freshness.
 python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json
+# P0 guard: the quality auditor catches cross-card/source-policy failures that
+# the per-card quality gate may miss. Never publish if it reports an error.
+python3 scripts/pointa_quality_auditor.py
 python3 scripts/pointa_publication_events.py record --gatekeeper deploy-current --run-id "${POANTA_RUN_ID:-deploy-current}" || true
-python3 scripts/pointa_quality_auditor.py || true
+# Timing warnings/errors are operational signals for follow-up rescue, not a
+# candidate-content correctness gate for this deploy path.
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
 
