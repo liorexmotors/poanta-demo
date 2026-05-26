@@ -1,6 +1,6 @@
 {
   "mode": "rss_only_all_official_feeds",
-  "notes": "Expanded and trimmed locally 2026-05-18 after Lior approval: official RSS sources added for Maariv, TheMarker, expanded Globes, and N12/mako; culture trimmed to a lean default set. RSS is pulled by us; no HTML scraping. Aggregator feeds are tracked as fallback candidates only, not active by default.\n2026-05-18 local: added international RSS sources for BBC World and Sky News World; CNN uses Google News RSS fallback because official CNN RSS feeds tested stale/old. Also refined topic taxonomy from broad בארץ/עולם buckets into פוליטיקה/ביטחון/משפט/פלילים etc.\n2026-05-19 local: added official Home Front Command Telegram channel as a FAST security source because no official RSS feed is available.\n2026-05-19 local: added official IDF Spokesperson Telegram channel as a FAST security source.\n2026-05-19 local: removed Home Front Command Telegram source after Lior clarified the intended source was IDF Spokesperson Telegram only.\n2026-05-19 local: added official Israel Police spokesperson Telegram channel as a FAST source for crime/security/public-safety updates.\n2026-05-20 local: Lior clarified foreign sources should contribute only Israel/Middle East-relevant stories. Added stronger foreign RSS/fallback sources (NYT Middle East, Guardian Middle East, Reuters/AP/Axios/Politico/Bloomberg filtered Google News, Al Jazeera all-feed with relevance filter) and tightened English-source filtering.\n2026-05-21 local: added a dedicated רכילות domain/category with validated RSS feeds from וואלה סלבס, mako סלבס, and TMI/מעריב. Pplus/ynet has no usable RSS found; one malformed TMI feed and weak aggregator feeds remain excluded/fallback only.\n2026-05-21 release request: Lior approved adding all gossip sources including Pplus and TMI and publishing. Pplus is active through a Google News RSS query scoped to pplus.ynet.co.il because direct Pplus pages/RSS are blocked or unavailable; TMI malformed XML is recovered in update_feed.py.\n2026-05-24 local: per Lior, add only official RSS for now and no Google News fallback for the new requested sources. Added official Jerusalem Post Israel/Middle East/Iran RSS feeds; left Makor Rishon excluded until a direct official RSS XML endpoint is found.\n2026-05-24 local: classify Jerusalem Post as an Israeli/local source (בארץ) despite English language.",
+  "notes": "Expanded and trimmed locally 2026-05-18 after Lior approval: official RSS sources added for Maariv, TheMarker, expanded Globes, and N12/mako; culture trimmed to a lean default set. RSS is pulled by us; no HTML scraping. Aggregator feeds are tracked as fallback candidates only, not active by default.\n2026-05-18 local: added international RSS sources for BBC World and Sky News World; CNN uses Google News RSS fallback because official CNN RSS feeds tested stale/old. Also refined topic taxonomy from broad בארץ/עולם buckets into פוליטיקה/ביטחון/משפט/פלילים etc.\n2026-05-19 local: added official Home Front Command Telegram channel as a FAST security source because no official RSS feed is available.\n2026-05-19 local: added official IDF Spokesperson Telegram channel as a FAST security source.\n2026-05-19 local: removed Home Front Command Telegram source after Lior clarified the intended source was IDF Spokesperson Telegram only.\n2026-05-19 local: added official Israel Police spokesperson Telegram channel as a FAST source for crime/security/public-safety updates.\n2026-05-20 local: Lior clarified foreign sources should contribute only Israel/Middle East-relevant stories. Added stronger foreign RSS/fallback sources (NYT Middle East, Guardian Middle East, Reuters/AP/Axios/Politico/Bloomberg filtered Google News, Al Jazeera all-feed with relevance filter) and tightened English-source filtering.\n2026-05-21 local: added a dedicated רכילות domain/category with validated RSS feeds from וואלה סלבס, mako סלבס, and TMI/מעריב. Pplus/ynet has no usable RSS found; one malformed TMI feed and weak aggregator feeds remain excluded/fallback only.\n2026-05-21 release request: Lior approved adding all gossip sources including Pplus and TMI and publishing. Pplus is active through a Google News RSS query scoped to pplus.ynet.co.il because direct Pplus pages/RSS are blocked or unavailable; TMI malformed XML is recovered in update_feed.py.\n2026-05-24 local: per Lior, add only official RSS for now and no Google News fallback for the new requested sources. Added official Jerusalem Post Israel/Middle East/Iran RSS feeds; left Makor Rishon excluded until a direct official RSS XML endpoint is found.\n2026-05-24 local: classify Jerusalem Post as an Israeli/local source (בארץ) despite English language.\n2026-05-26 approved by Lior: broad general N12 - חדשות feed disabled because it can inject off-domain/category-noise items; keep precise N12 section feeds active and preserve N12 visible label for mako/rcs.mako infrastructure.",
   "active": [
     {
       "name": "דובר צה״ל - טלגרם רשמי",
@@ -1398,13 +1398,6 @@
       "lastValidatedItems": 15
     },
     {
-      "name": "N12 - חדשות",
-      "categoryHint": "חדשות",
-      "rss": "https://rcs.mako.co.il/rss/31750a2610f26110VgnVCM1000005201000aRCRD.xml",
-      "logo": "N12",
-      "lastValidatedItems": 20
-    },
-    {
       "name": "N12 - ביטחוני ופוליטי",
       "categoryHint": "חדשות",
       "rss": "https://rcs.mako.co.il/rss/news-military.xml",
@@ -1815,6 +1808,14 @@
       "name": "וואלה אוכל - טעמים מקומיים",
       "rss": "https://rss.walla.co.il/feed/12012",
       "reason": "no items"
+    },
+    {
+      "name": "N12 - חדשות",
+      "categoryHint": "חדשות",
+      "rss": "https://rcs.mako.co.il/rss/31750a2610f26110VgnVCM1000005201000aRCRD.xml",
+      "logo": "N12",
+      "lastValidatedItems": 20,
+      "reason": "Disabled 2026-05-26 with Lior approval: broad/general N12 news feed can include off-domain/category-noise items (e.g. sports/general); precise N12 section feeds remain active."
     }
   ],
   "fallback_candidates": {
