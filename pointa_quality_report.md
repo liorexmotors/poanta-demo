@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 198
+Items checked: 196
 Errors: 0
-Warnings: 141
+Warnings: 139
 
 ## Category distribution
 
-- ביטחון: 62
+- ביטחון: 61
 - ספורט: 39
 - כלכלה: 25
 - תרבות: 10
 - בריאות: 10
+- טכנולוגיה: 6
 - רכב: 6
 - אקטואליה בעולם: 6
 - צרכנות: 6
 - נדל״ן: 6
 - חדשות: 5
-- טכנולוגיה: 5
 - רכילות: 5
 - פלילים: 4
 - דעות: 4
-- משפט: 3
 - מזג אוויר: 1
+- משפט: 1
 - פוליטיקה: 1
 
 ## Issue counts
 
-- takeaway_long: 121
+- takeaway_long: 119
 - summary_long: 20
 
 ## Issues
@@ -983,35 +983,21 @@ Warnings: 141
 - Source: וואלה רכב - כל הכתבות
 - URL: https://cars.walla.co.il/item/3840553
 
-### WARNING · takeaway_long · item 189
-- Takeaway length 109 > 95
-- Headline: `פסילת מצלמות LPR לא מבטלת קנסות אוטומטית`
-- Original: `ביהמ"ש פסל את מצלמות החניה, אך הדרך לביטול הקנס כמעט בלתי אפשרית`
-- Source: גלובס - משפט
-- URL: https://www.globes.co.il/news/article.aspx?did=1001543775#utm_source=RSS
-
-### WARNING · takeaway_long · item 190
-- Takeaway length 114 > 95
-- Headline: `פצוע 7 באוקטובר חזר ללכת, לנגן ולהרצות`
-- Original: `הלוחם שנפצע אנושות ב-7 באוקטובר - והפך להשראה: "לא בחרתי להיות גיבור"`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/judaism/judaism-news/article/20611683
-
-### WARNING · takeaway_long · item 194
+### WARNING · takeaway_long · item 191
 - Takeaway length 114 > 95
 - Headline: `בנק ישראל צפוי להוריד ריבית, אבל האינפלציה מעכבת`
 - Original: `שעות להחלטת הריבית: כך זה ישפיע על תשלום המשכנתא שלכם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/business/article/20611099
 
-### WARNING · takeaway_long · item 195
+### WARNING · takeaway_long · item 192
 - Takeaway length 98 > 95
 - Headline: `מסי נפצע במיאמי שבועות לפני מונדיאל 2026`
 - Original: `ליאו מסי נפצע בניצחון אינטר מיאמי, שבועיים וחצי לפני מונדיאל 2026`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-soccer/2026-05-25/ty-article/.premium/0000019e-5dc8-db4a-a9bf-fdc979800000
 
-### WARNING · takeaway_long · item 197
+### WARNING · takeaway_long · item 194
 - Takeaway length 97 > 95
 - Headline: `שגרת בוקר קטנה יכולה להשפיע על הבריאות לאורך זמן`
 - Original: `פשוט וקל: 7 הרגלי בוקר שיכולים להאריך את החיים שלכם`
