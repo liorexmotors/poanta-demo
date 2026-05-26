@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v77-feed-scale-v5';
+const CACHE_NAME = 'poenta-v78-feed-scale-v6';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
