@@ -26,6 +26,7 @@ LOCK = Path("/tmp/pointa-freshness-sla-guard.lock")
 TZ = timezone(timedelta(hours=3))
 AGENT_COOLDOWN_SEC = 20 * 60
 RAW_GHPAGES_URL = "https://raw.githubusercontent.com/liorexmotors/poanta-demo/gh-pages/feed.json"
+LIVE_GHPAGES_URL = "https://liorexmotors.github.io/poanta-demo/feed.json"
 DOMAIN_RESCUE_REPORT = TMP / "pointa_domain_rescue_status.json"
 
 
@@ -232,6 +233,38 @@ def main() -> int:
         if domain_report:
             bad_domains = [d.get("domain") for d in domain_report.get("domains") or [] if d.get("state") in {"warning", "fail", "missing"}]
             log_event({"status": "domain_rescue_checked", "domainStatus": domain_report.get("status"), "domains": bad_domains[:12]})
+
+        # GitHub Pages can serve an old feed on the plain URL for a few minutes
+        # after a successful deploy while the cache-busted Pages URL already has
+        # the fresh public outcome. Do not prepare/escalate another editor rescue
+        # in that window; it creates duplicate rescue runs for an incident that is
+        # already repaired. Raw GitHub may also lag independently, so Pages with a
+        # cache-busting query is the authoritative propagation check here.
+        cache_busted_url = f"{LIVE_GHPAGES_URL}?v={int(time.time())}"
+        p_code, pages_audit, p_text = run_json([
+            sys.executable,
+            "scripts/pointa_live_auditor.py",
+            "--url",
+            cache_busted_url,
+            "--raw-url",
+            cache_busted_url,
+            "--json",
+        ], timeout=120)
+        if pages_audit and pages_audit.get("status") == "ok":
+            state["lastPagesCacheBustedHealthyAt"] = now_iso()
+            state["lastPagesCacheBustedHealthyWhileLiveFailed"] = {
+                "liveUpdatedAt": audit.get("updatedAt"),
+                "pagesUpdatedAt": pages_audit.get("updatedAt"),
+                "liveErrors": [e.get("code") for e in audit.get("errors") or []],
+            }
+            save_state(state)
+            log_event({
+                "status": "github_pages_cache_lag",
+                "liveUpdatedAt": audit.get("updatedAt"),
+                "pagesUpdatedAt": pages_audit.get("updatedAt"),
+                "liveErrors": [e.get("code") for e in audit.get("errors") or []],
+            })
+            return 0
 
         # Safe deterministic repair first. It deploys only when existing hard gates pass;
         # otherwise it prepares a rescue editor run.
