@@ -33,8 +33,21 @@ python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # events so a failed candidate cannot fake timing freshness.
 python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json
 # P0 guard: the quality auditor catches cross-card/source-policy failures that
-# the per-card quality gate may miss. Never publish if it reports an error.
-python3 scripts/pointa_quality_auditor.py
+# the per-card quality gate may miss. Its CLI can print "fail" while exiting 0,
+# so gate on the JSON status explicitly before recording or publishing.
+python3 scripts/pointa_quality_auditor.py --json > tmp/deploy_quality_auditor.json
+python3 - <<'PY'
+import json, sys
+report = json.load(open('tmp/deploy_quality_auditor.json', encoding='utf-8'))
+status = report.get('status')
+errors = report.get('errors') or []
+warnings = report.get('warnings') or []
+print(f"Pointa quality auditor: {status} · errors={len(errors)} · warnings={len(warnings)}")
+if status != 'ok' or errors:
+    for issue in errors[:5]:
+        print(f"BLOCKER {issue.get('code')}: {issue.get('headline') or issue.get('message')}", file=sys.stderr)
+    sys.exit(1)
+PY
 python3 scripts/pointa_publication_events.py record --gatekeeper deploy-current --run-id "${POANTA_RUN_ID:-deploy-current}" || true
 # Timing warnings/errors are operational signals for follow-up rescue, not a
 # candidate-content correctness gate for this deploy path.

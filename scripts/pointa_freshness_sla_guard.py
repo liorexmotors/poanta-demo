@@ -124,6 +124,43 @@ def run_domain_rescue_report(prepare: bool = False, timeout: int = 120) -> dict[
     return None
 
 
+def find_active_rescue_run(max_age_sec: int = 30 * 60) -> dict[str, Any] | None:
+    """Return a recent unfinished rescue editor run to avoid duplicate alerts.
+
+    A second guard tick can fire while an agent is still editing/applying the
+    previous rescue. Preparing another run then creates duplicate work and may
+    race the publish path. Treat a recent run as active until all batch result
+    files exist and editor QA has produced its report.
+    """
+    base = TMP / "editor-runs"
+    if not base.exists():
+        return None
+    candidates = sorted(base.glob("rescue-*"), key=lambda p: p.stat().st_mtime, reverse=True)
+    now = time.time()
+    for run_dir in candidates[:20]:
+        try:
+            age = now - run_dir.stat().st_mtime
+        except OSError:
+            continue
+        if age > max_age_sec:
+            continue
+        batches = sorted(run_dir.glob("batch_*.json"))
+        batches = [p for p in batches if not p.name.endswith("_results.json")]
+        if not batches:
+            continue
+        missing_results = [p.name for p in batches if not (run_dir / p.name.replace(".json", "_results.json")).exists()]
+        qa_missing = not (run_dir / "qa_report.md").exists()
+        if missing_results or qa_missing:
+            return {
+                "runDir": str(run_dir),
+                "ageSec": int(age),
+                "batchCount": len(batches),
+                "missingResults": missing_results,
+                "qaMissing": qa_missing,
+            }
+    return None
+
+
 def fallback_prepare_rescue() -> dict[str, Any]:
     """Prepare an editor rescue run if the sentinel failed before returning one.
 
@@ -264,6 +301,13 @@ def main() -> int:
                 "pagesUpdatedAt": pages_audit.get("updatedAt"),
                 "liveErrors": [e.get("code") for e in audit.get("errors") or []],
             })
+            return 0
+
+        active_rescue = find_active_rescue_run()
+        if active_rescue:
+            state["lastActiveRescueSuppression"] = {"at": now_iso(), **active_rescue}
+            save_state(state)
+            log_event({"status": "active_rescue_in_progress", **active_rescue})
             return 0
 
         # Safe deterministic repair first. It deploys only when existing hard gates pass;
