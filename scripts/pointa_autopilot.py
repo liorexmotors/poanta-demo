@@ -21,6 +21,11 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+try:
+    from update_feed import categorize_item
+except Exception:  # pragma: no cover - autopilot must still diagnose if import fails
+    categorize_item = None
+
 ROOT = Path(__file__).resolve().parents[1]
 TMP = ROOT / "tmp"
 STATE_PATH = TMP / "pointa_autopilot_state.json"
@@ -174,6 +179,88 @@ def local_feed_signature() -> dict[str, Any]:
         return feed_signature(json.loads((ROOT / "feed.json").read_text(encoding="utf-8")))
     except Exception as exc:
         return {"error": str(exc)}
+
+
+def validate_domain_editor_run(run_dir: Path, domain: str) -> dict[str, Any]:
+    """Verify Stage-4 editor input is actually about the breached domain.
+
+    Domain queues can be polluted by broad RSS groups. Before waiting for editor
+    result files (or resuming/applying them), re-categorize extracted rows with
+    the same feed categorizer. If most selected rows are not in the requested
+    domain, block instead of preparing/publishing wrong-domain cards.
+    """
+    rows: list[dict[str, Any]] = []
+    for path in sorted(run_dir.glob("batch_*.json")):
+        if path.name.endswith("_results.json"):
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if isinstance(data, list):
+            rows.extend(x for x in data if isinstance(x, dict))
+    if not rows:
+        return {"ok": False, "reason": "no_batch_items", "total": 0, "offDomain": []}
+    if categorize_item is None:
+        return {"ok": False, "reason": "categorizer_unavailable", "total": len(rows), "offDomain": []}
+    off: list[dict[str, Any]] = []
+    on_count = 0
+    for item in rows:
+        title = str(item.get("originalTitle") or item.get("title") or item.get("headline") or "")
+        desc = " ".join(str(item.get(k) or "") for k in ("description", "summary", "articleText"))
+        source = str(item.get("source") or "")
+        cat, cls = categorize_item(title, desc, source)
+        if cat == domain:
+            on_count += 1
+        else:
+            off.append({
+                "index": item.get("index"),
+                "source": source,
+                "title": title[:160],
+                "categorizedAs": cat,
+                "class": cls,
+                "url": item.get("sourceUrl") or item.get("url"),
+            })
+    off_ratio = len(off) / max(len(rows), 1)
+    ok = off_ratio < 0.5 and on_count > 0
+    return {
+        "ok": ok,
+        "reason": "ok" if ok else "domain_rescue_off_domain_selection",
+        "domain": domain,
+        "total": len(rows),
+        "onDomain": on_count,
+        "offDomainCount": len(off),
+        "offDomainRatio": round(off_ratio, 3),
+        "offDomain": off[:20],
+    }
+
+
+def write_domain_blocked_report(run_dir: Path, domain: str, validation: dict[str, Any]) -> str:
+    incident_dir = ROOT / "docs" / "incidents"
+    incident_dir.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(TZ).strftime("%Y%m%d-%H%M%S")
+    path = incident_dir / f"stage4-domain-off-domain-{stamp}.md"
+    lines = [
+        f"# Stage 4 domain rescue blocked — {domain}",
+        "",
+        f"- זמן: {now_iso()}",
+        f"- run dir: `{run_dir}`",
+        "- סטטוס: חסום — domain_rescue_off_domain_selection",
+        f"- סיבה: נבחרו {validation.get('offDomainCount')} פריטים מחוץ לדומיין מתוך {validation.get('total')}.",
+        "- דיפלוי: לא",
+        "- שינוי feed.json: לא",
+        "",
+        "## פריטים מחוץ לדומיין",
+    ]
+    for row in validation.get("offDomain") or []:
+        lines.append(f"- #{row.get('index')} · {row.get('source')} · {row.get('categorizedAs')} · {row.get('title')} · {row.get('url')}")
+    lines.extend([
+        "",
+        "## פעולה נדרשת",
+        "לתקן את בחירת תור ה-rescue כך שתסנן/תקטלג מחדש אחרי חילוץ טקסט, לפני פתיחת batch לעורך.",
+    ])
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return str(path)
 
 
 def collect_snapshot() -> HealthSnapshot:
@@ -544,6 +631,12 @@ def execute_stage4_domain_rescue(
             run_dir = resume_run_dir
             run_id = run_dir.name
             actions.append({"action": "stage4_resume_domain_editor_run", "domain": domain, "runDir": str(run_dir), "resultFiles": len(sorted(run_dir.glob("batch_*_results.json")))})
+            validation = validate_domain_editor_run(run_dir, domain)
+            actions.append({"action": "stage4_validate_domain_editor_run", "domain": domain, "runDir": str(run_dir), **validation})
+            if not validation.get("ok"):
+                report_path = write_domain_blocked_report(run_dir, domain, validation)
+                actions.append({"action": "stage4_write_blocked_report", "path": report_path})
+                return actions, {**incident, "status": "blocked", "incidentType": "domain_rescue_off_domain_selection", "automaticAction": "do_not_publish", "validation": validation, "blockedReport": report_path}, new_state
         else:
             queue_out = ROOT / "tmp" / f"pointa_source_rescue_queue_{domain}.json"
             queue_cmd = [sys.executable, "scripts/pointa_source_rescue_queue.py", "--domain", domain, "--max-age-min", "180", "--per-source", "12", "--out", str(queue_out)]
@@ -561,6 +654,12 @@ def execute_stage4_domain_rescue(
             new_state["lastStage4RunDir"] = str(run_dir)
             if code != 0:
                 return actions, {**incident, "status": "blocked", "incidentType": "stage4_editor_prepare_failed", "automaticAction": "do_not_publish"}, new_state
+            validation = validate_domain_editor_run(run_dir, domain)
+            actions.append({"action": "stage4_validate_domain_editor_run", "domain": domain, "runDir": str(run_dir), **validation})
+            if not validation.get("ok"):
+                report_path = write_domain_blocked_report(run_dir, domain, validation)
+                actions.append({"action": "stage4_write_blocked_report", "path": report_path})
+                return actions, {**incident, "status": "blocked", "incidentType": "domain_rescue_off_domain_selection", "automaticAction": "do_not_publish", "validation": validation, "blockedReport": report_path}, new_state
             result_files = sorted(run_dir.glob("batch_*_results.json")) if run_dir.exists() else []
             if not result_files:
                 waiting = {**incident, "status": "repair_needed", "incidentType": "stage4_waiting_for_editor_results", "automaticAction": "write_batch_results_then_rerun_stage4"}
