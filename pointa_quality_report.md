@@ -2,7 +2,7 @@
 
 Items checked: 200
 Errors: 0
-Warnings: 148
+Warnings: 147
 
 ## Category distribution
 
@@ -12,8 +12,8 @@ Warnings: 148
 - תרבות: 11
 - בריאות: 10
 - טכנולוגיה: 6
-- רכב: 6
 - אקטואליה בעולם: 6
+- רכב: 6
 - צרכנות: 6
 - נדל״ן: 6
 - פלילים: 5
@@ -25,7 +25,7 @@ Warnings: 148
 
 ## Issue counts
 
-- takeaway_long: 128
+- takeaway_long: 127
 - summary_long: 20
 
 ## Issues
@@ -66,116 +66,116 @@ Warnings: 148
 - URL: https://news.walla.co.il/item/3839576
 
 ### WARNING · takeaway_long · item 5
-- Takeaway length 100 > 95
-- Headline: `ארה״ב תקפה סירות ואתרי טילים בדרום איראן`
-- Original: `תקיפה אמריקנית באיראן: "השמדנו סירות ואתרי טילים כהגנה עצמית"`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3840794
-
-### WARNING · takeaway_long · item 6
-- Takeaway length 135 > 95
-- Headline: `פורטלנד בוחנת טרייד שיביא את ג׳יילן בראון לאבדיה`
-- Original: `טרייד משולש על יאניס אנטטוקומפו עשוי לסדר לדני אבדיה חבר חדש ונוצץ`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3840776
-
-### WARNING · takeaway_long · item 7
 - Takeaway length 123 > 95
 - Headline: `איראן מכחישה שהסכם עם ארה״ב קרוב`
 - Original: `Iran denies deal with US is imminent despite some progress`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/may/25/iran-denies-deal-us-imminent-israel-oman-strait-of-hormuz
 
-### WARNING · takeaway_long · item 8
-- Takeaway length 109 > 95
-- Headline: `משפיענית ואביה מואשמים במזימת רצח בארה״ב`
-- Original: `כוכבת הרשת רצתה לחסל את האקס המפורסם - ונפלה ברשת של סוכן סמוי`
-- Source: וואלה חדשות - אסור לפספס
-- URL: https://news.walla.co.il/item/3840574
-
-### WARNING · takeaway_long · item 9
-- Takeaway length 132 > 95
-- Headline: `יישובי עוטף עזה נאבקים בקיצוץ תקציבי הביטחון`
-- Original: `זעם בעוטף עזה: דנו עם השר - וגילו על קיצוץ בביטחון`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3840791
-
-### WARNING · takeaway_long · item 10
-- Takeaway length 103 > 95
-- Headline: `פיקוד העורף מצמצם התקהלות בקו העימות`
-- Original: `צמצום התקהלות ולימודים בממ"דים: צה"ל מעדכן את מדיניות ההתגוננות`
-- Source: וואלה חדשות - צבא וביטחון
-- URL: https://news.walla.co.il/item/3840775
-
-### WARNING · takeaway_long · item 11
-- Takeaway length 115 > 95
-- Headline: `פיקוד העורף מחמיר הגבלות בקו העימות`
-- Original: `צמצום התקהלות ולימודים בממ"דים: צה"ל מעדכן את מדיניות ההתגוננות`
-- Source: וואלה חדשות - מבזקים
-- URL: https://news.walla.co.il/break/3840771
-
-### WARNING · takeaway_long · item 12
-- Takeaway length 131 > 95
-- Headline: `אי מלאכותי בסקוטלנד תוארך ליותר מ־5,000 שנה`
-- Original: `הסוד התת-ימי שנחשף באגם המרוחק עתיק בהרבה ממה שמישהו דמיין`
-- Source: וואלה חדשות - אסור לפספס
-- URL: https://news.walla.co.il/item/3839057
-
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 6
 - Takeaway length 124 > 95
 - Headline: `ארה״ב תקפה בדרום איראן בזמן הפסקת האש`
 - Original: `Middle East crisis live: Trump suggests countries in region should sign Abraham accords recognising Israel under any deal`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/may/25/iran-war-news-middle-east-crisis-oil-price-us-tehran-peace-talks-deal-strait-hormuz
 
-### WARNING · summary_long · item 14
+### WARNING · summary_long · item 7
 - Summary length 235 > 220
 - Headline: `באר שבע נחה לדאבל, מכבי ת״א משחקת על הצלת עונה`
 - Original: `ההיסטוריה מול הרעב: מי תרצה יותר בגמר הגביע?`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/h100s67fxfe
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 7
 - Takeaway length 116 > 95
 - Headline: `באר שבע נחה לדאבל, מכבי ת״א משחקת על הצלת עונה`
 - Original: `ההיסטוריה מול הרעב: מי תרצה יותר בגמר הגביע?`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/h100s67fxfe
 
-### WARNING · takeaway_long · item 15
-- Takeaway length 107 > 95
-- Headline: `מכבי תל אביב קבעה שיאי ליגה ב-75:137 על הרצליה`
-- Original: `שיא מדד היסטורי ועוד: המספרים מהניצחון של מכבי תל אביב`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3840769
-
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 8
 - Takeaway length 105 > 95
 - Headline: `איראן מזהירה שתקיפה בביירות תפגע במגעים`
 - Original: `איראן מזהירה את ארה"ב: תקיפה ישראלית בביירות - תפגע במו"מ לסיום המלחמה`
 - Source: מעריב - מבזקים
 - URL: https://www.maariv.co.il/breaking-news/article-1325505
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 9
 - Takeaway length 107 > 95
 - Headline: `איראן מצננת ציפיות להסכם מהיר עם ארה״ב`
 - Original: `Deal with US not imminent, Iran says`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/cglpp2yk336o?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 10
 - Takeaway length 121 > 95
 - Headline: `טראמפ מנסה להפוך הסכם עם איראן לציר אזורי`
 - Original: `טראמפ דרש - במדינות הערביות לא התלהבו: "רק עם נתיב למדינה פלסטינית"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s1pb9cwlfx
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 11
 - Takeaway length 118 > 95
 - Headline: `רוסיה מאיימת בגל תקיפות חדש על קייב`
 - Original: `Russia threatens more Kyiv strikes and tells foreign nationals to leave`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/c1e22n55zn4o?at_medium=RSS&at_campaign=rss
+
+### WARNING · takeaway_long · item 12
+- Takeaway length 100 > 95
+- Headline: `ארה״ב תקפה סירות ואתרי טילים בדרום איראן`
+- Original: `תקיפה אמריקנית באיראן: "השמדנו סירות ואתרי טילים כהגנה עצמית"`
+- Source: וואלה חדשות - חדשות בעולם
+- URL: https://news.walla.co.il/item/3840794
+
+### WARNING · takeaway_long · item 13
+- Takeaway length 135 > 95
+- Headline: `פורטלנד בוחנת טרייד שיביא את ג׳יילן בראון לאבדיה`
+- Original: `טרייד משולש על יאניס אנטטוקומפו עשוי לסדר לדני אבדיה חבר חדש ונוצץ`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3840776
+
+### WARNING · takeaway_long · item 14
+- Takeaway length 109 > 95
+- Headline: `משפיענית ואביה מואשמים במזימת רצח בארה״ב`
+- Original: `כוכבת הרשת רצתה לחסל את האקס המפורסם - ונפלה ברשת של סוכן סמוי`
+- Source: וואלה חדשות - אסור לפספס
+- URL: https://news.walla.co.il/item/3840574
+
+### WARNING · takeaway_long · item 15
+- Takeaway length 132 > 95
+- Headline: `יישובי עוטף עזה נאבקים בקיצוץ תקציבי הביטחון`
+- Original: `זעם בעוטף עזה: דנו עם השר - וגילו על קיצוץ בביטחון`
+- Source: וואלה חדשות
+- URL: https://news.walla.co.il/item/3840791
+
+### WARNING · takeaway_long · item 16
+- Takeaway length 103 > 95
+- Headline: `פיקוד העורף מצמצם התקהלות בקו העימות`
+- Original: `צמצום התקהלות ולימודים בממ"דים: צה"ל מעדכן את מדיניות ההתגוננות`
+- Source: וואלה חדשות - צבא וביטחון
+- URL: https://news.walla.co.il/item/3840775
+
+### WARNING · takeaway_long · item 17
+- Takeaway length 115 > 95
+- Headline: `פיקוד העורף מחמיר הגבלות בקו העימות`
+- Original: `צמצום התקהלות ולימודים בממ"דים: צה"ל מעדכן את מדיניות ההתגוננות`
+- Source: וואלה חדשות - מבזקים
+- URL: https://news.walla.co.il/break/3840771
+
+### WARNING · takeaway_long · item 18
+- Takeaway length 131 > 95
+- Headline: `אי מלאכותי בסקוטלנד תוארך ליותר מ־5,000 שנה`
+- Original: `הסוד התת-ימי שנחשף באגם המרוחק עתיק בהרבה ממה שמישהו דמיין`
+- Source: וואלה חדשות - אסור לפספס
+- URL: https://news.walla.co.il/item/3839057
+
+### WARNING · takeaway_long · item 19
+- Takeaway length 107 > 95
+- Headline: `מכבי תל אביב קבעה שיאי ליגה ב-75:137 על הרצליה`
+- Original: `שיא מדד היסטורי ועוד: המספרים מהניצחון של מכבי תל אביב`
+- Source: וואלה ספורט - כדורסל
+- URL: https://sports.walla.co.il/item/3840769
 
 ### WARNING · takeaway_long · item 23
 - Takeaway length 107 > 95
@@ -484,13 +484,6 @@ Warnings: 148
 - Original: `נגיד בנק ישראל: "אפשרות סיום המלחמה השפיעה על ההחלטה להוריד את הריבית"`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/syduna11lzl
-
-### WARNING · takeaway_long · item 77
-- Takeaway length 101 > 95
-- Headline: `ש״ס מסמנת את 15 בספטמבר כמועד בחירות מועדף`
-- Original: `בש"ס מתכוננים - ומסמנים תאריך אידיאלי לבחירות: "הגוש האמוני מתעורר בימים האלה"`
-- Source: וואלה חדשות - פוליטי-מדיני
-- URL: https://news.walla.co.il/item/3840715
 
 ### WARNING · takeaway_long · item 79
 - Takeaway length 104 > 95
