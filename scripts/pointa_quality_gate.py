@@ -230,6 +230,9 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "category_iran_deal_security", "Iran nuclear/deal/Hormuz cards must be ביטחון, not פוליטיקה", item)
     if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"} and any(x in blob for x in ["קובה", "פוקושימה", "הבית הלבן", "White House"]):
         add_issue(issues, "error", idx, "category_world_story", "Cuba/Fukushima/White House stories must be אקטואליה בעולם", item)
+    weather_blob = " ".join([headline, context, takeaway, original, source]).lower()
+    if category in {"חדשות", "פוליטיקה"} and any(x.lower() in weather_blob for x in ["תחזית מזג אוויר", "מזג האוויר", "מזג אוויר", "טמפרטורות", "מעלות", "מעונן", "גשם", "שרב", "רוחות"]):
+        add_issue(issues, "error", idx, "category_weather_forecast", "Weather forecast cards must be מזג אוויר, not חדשות/פוליטיקה", item)
     if any(x in headline for x in ["לפי אחד הבלוגים", "הגרסה החסכונית", "הקרוסאובר המוערך", "הקבוצה מאמסטרדם"]):
         add_issue(issues, "error", idx, "headline_missing_core_entity", "Headline is a summary fragment and misses the core entity/model/team", item)
 

@@ -187,6 +187,40 @@ def weather_event_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def security_event_tokens(item: dict[str, Any]) -> set[str]:
+    """Semantic duplicate key for the same security event across sources.
+
+    This catches cross-language duplicates such as the current U.S. strikes in
+    southern Iran cluster, while avoiding adjacent diplomatic-analysis cards
+    that merely mention the strikes in background context.
+    """
+    main = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline"]).lower()
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    is_us = bool(re.search(r"\b(?:u\.?s\.?|us|united states|america|american)\b|ארה[״\"]?ב|אמריק", main))
+    is_iran = bool(re.search(r"iran|איראן|טהראן", main))
+    is_strike = bool(re.search(r"strike|strikes|attack|attacks|תקיפ|תקף|תקפה|תקפו|השמיד", main))
+    if not (is_us and is_iran and is_strike):
+        return set()
+    tokens = {"us_iran_strike"}
+    if re.search(r"southern iran|south(?:ern)?|דרום|בדרום", text):
+        tokens.add("south")
+    if re.search(r"missile|missiles|טיל|טילים|שיגור|נ[״\"]?מ", text):
+        tokens.add("missiles")
+    if re.search(r"boat|boats|vessel|vessels|סיר|סירות|כלי שיט", text):
+        tokens.add("boats")
+    if re.search(r"mine|mines|laying|minelaying|מוקש|מוקשים", text):
+        tokens.add("mines")
+    if re.search(r"hormuz|הורמוז", text):
+        tokens.add("hormuz")
+    if re.search(r"bandar|abbas|בנדר|עבאס", text):
+        tokens.add("bandar_abbas")
+    if re.search(r"self[- ]?defen[cs]e|הגנה עצמית|כהגנה", text):
+        tokens.add("self_defense")
+    if re.search(r"doha|qatar|דוחא|קטאר", text):
+        tokens.add("qatar_talks")
+    return tokens if len(tokens) >= 3 else set()
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -239,6 +273,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
+        return True
+    aw = security_event_tokens(a)
+    bw = security_event_tokens(b)
+    if aw and bw and "us_iran_strike" in aw and "us_iran_strike" in bw and len((aw & bw) - {"us_iran_strike"}) >= 2:
         return True
     if word_overlap(story_words(a), story_words(b)) >= 0.62:
         return True

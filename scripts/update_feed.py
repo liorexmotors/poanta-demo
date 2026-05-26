@@ -806,12 +806,32 @@ def regional_category(text: str) -> tuple[str, str]:
     return "חדשות", ""
 
 
+def is_weather_forecast_story(title: str, desc: str, source: str = "") -> bool:
+    text = f"{title} {desc} {source}"
+    low = text.lower()
+    weather_markers = [
+        "תחזית מזג אוויר", "מזג האוויר", "מזג אוויר", "תחזית", "טמפרטורות",
+        "מעלות", "מעונן", "בהיר", "גשם", "גשמים", "שרב", "רוחות", "אובך",
+        "weather", "forecast", "temperatures",
+    ]
+    # A bare seasonal word is too weak, but forecast/source markers plus concrete
+    # temperature or sky-condition terms are enough to keep weather out of politics.
+    has_weather = any(marker.lower() in low for marker in weather_markers)
+    has_forecast_detail = any(detail.lower() in low for detail in [
+        "טמפרטורות", "מעלות", "מעונן", "בהיר", "גשם", "גשמים", "שרב", "רוחות",
+        "אובך", "סוף מאי", "העונתי", "temperatures",
+    ])
+    return has_weather and has_forecast_detail
+
+
 def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # With many section RSS feeds enabled, the feed name is a strong signal.
     # Prefer it over incidental keywords in the title/description so sports,
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
     content_text = f"{title} {desc}"
     text = f"{content_text} {source}"
+    if is_weather_forecast_story(title, desc, source):
+        return "מזג אוויר", "real"
     # Lior's boundary: אקטואליה בעולם is only for global stories with no Israel/Middle-East angle.
     # Israel/Middle-East items from foreign sources still belong to the normal news/security/politics domains.
     if is_middle_east_or_israel_story(content_text, source):
@@ -1839,6 +1859,44 @@ def weather_event_tokens(item: dict) -> set[str]:
     return set()
 
 
+def security_event_tokens(item: dict) -> set[str]:
+    """Semantic duplicate key for the same security event across sources.
+
+    Foreign and Hebrew wires often describe the same military incident with very
+    different headlines. The generic word-overlap threshold misses cases like
+    ``US strikes southern Iran`` vs. Hebrew cards about self-defense strikes,
+    boats, Bandar Abbas and Hormuz. Build a compact fingerprint only for a
+    specific event family; otherwise return empty so adjacent Iran/Hormuz talks
+    stories do not collapse into the strike card.
+    """
+    main = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline"]).lower()
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    is_us = bool(re.search(r"\b(?:u\.?s\.?|us|united states|america|american)\b|ארה[״\"]?ב|אמריק", main))
+    is_iran = bool(re.search(r"iran|איראן|טהראן", main))
+    is_strike = bool(re.search(r"strike|strikes|attack|attacks|תקיפ|תקף|תקפה|תקפו|השמיד", main))
+    if not (is_us and is_iran and is_strike):
+        return set()
+    tokens = {"us_iran_strike"}
+    if re.search(r"southern iran|south(?:ern)?|דרום|בדרום", text):
+        tokens.add("south")
+    if re.search(r"missile|missiles|טיל|טילים|שיגור|נ[״\"]?מ", text):
+        tokens.add("missiles")
+    if re.search(r"boat|boats|vessel|vessels|סיר|סירות|כלי שיט", text):
+        tokens.add("boats")
+    if re.search(r"mine|mines|laying|minelaying|מוקש|מוקשים", text):
+        tokens.add("mines")
+    if re.search(r"hormuz|הורמוז", text):
+        tokens.add("hormuz")
+    if re.search(r"bandar|abbas|בנדר|עבאס", text):
+        tokens.add("bandar_abbas")
+    if re.search(r"self[- ]?defen[cs]e|הגנה עצמית|כהגנה", text):
+        tokens.add("self_defense")
+    if re.search(r"doha|qatar|דוחא|קטאר", text):
+        tokens.add("qatar_talks")
+    # Require concrete shared details, not only the broad US/Iran/strike frame.
+    return tokens if len(tokens) >= 3 else set()
+
+
 def likely_duplicate_story(a: dict, b: dict) -> bool:
     if str(a.get("sourceUrl") or "") == str(b.get("sourceUrl") or ""):
         return False
@@ -1848,16 +1906,24 @@ def likely_duplicate_story(a: dict, b: dict) -> bool:
     bw = weather_event_tokens(b)
     if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
         return True
+    aw = security_event_tokens(a)
+    bw = security_event_tokens(b)
+    if aw and bw and "us_iran_strike" in aw and "us_iran_strike" in bw and len((aw & bw) - {"us_iran_strike"}) >= 2:
+        return True
     if str(a.get("category") or "") == str(b.get("category") or "") and duplicate_word_overlap(duplicate_story_words(a), duplicate_story_words(b)) >= 0.62:
         return True
     return False
 
 
 def preferred_duplicate_item(a: dict, b: dict) -> dict:
-    def score(item: dict) -> tuple[int, int, str]:
+    def score(item: dict) -> tuple[str, int, int]:
+        # Lior's personal-feed rule: when similar stories arrive from different
+        # sources, keep the freshest card and use editorial depth as the tie-breaker.
+        # Image availability is only a final UI tie-breaker; it must not beat recency.
+        published = str(item.get("publishedAt") or "")
         detail = len(" ".join(str(item.get(k) or "") for k in ["context", "takeaway", "headline", "originalTitle"]))
         image = 1 if item.get("imageUrl") else 0
-        return (image, detail, str(item.get("publishedAt") or ""))
+        return (published, detail, image)
     return a if score(a) >= score(b) else b
 
 
@@ -2372,7 +2438,10 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
         "sourceUrl": WEATHER_CITY_RSS,
         "imageUrl": weather_image_asset(condition, uv, country.get("highlights") or []),
         "publishedAt": day_start.isoformat(timespec="seconds"),
-        "hasSourceDate": True,
+        # Daily service weather is a utility card, not a breaking/live news
+        # publication. Keep its timestamp for display, but do not let it sort
+        # above fresh news or trip the live-feed weather_on_top guard.
+        "hasSourceDate": False,
         "time": "06:00",
         "headline": trim_words(headline, 75),
         "originalTitle": f"תחזית לירושלים - {forecast.get('date', '')}".strip(),

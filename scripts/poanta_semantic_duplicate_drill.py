@@ -14,9 +14,50 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from pointa_live_auditor import likely_duplicate_story  # noqa: E402
+import update_feed  # noqa: E402
 
 
 CASES = [
+    (
+        "us_southern_iran_strikes_cross_language",
+        True,
+        {
+            "source": "New York Times Middle East",
+            "category": "ביטחון",
+            "headline": "ארה״ב ביצעה תקיפות הגנה עצמית בדרום איראן",
+            "originalTitle": "U.S. Carries Out Renewed Strikes in Southern Iran",
+            "context": "פיקוד המרכז האמריקני מסר כי תקף אתרי שיגור טילים וסירות איראניות שניסו להניח מוקשים, כדי להגן על כוחותיו בזמן הפסקת האש. התקיפות ליד בנדר עבאס הגיעו במקביל לשיחות בדוחא על סיום המלחמה ועל פתיחת מצר הורמוז.",
+            "sourceUrl": "https://www.nytimes.com/example-us-iran-strikes",
+        },
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "headline": "ארה״ב אישרה תקיפות הגנתיות בתוך איראן",
+            "originalTitle": "ארה\"ב אישרה כי כוחותיה ביצעו הלילה תקיפות \"להגנה עצמית\" בשטח איראן",
+            "context": "פיקוד המרכז האמריקני אישר שכוחות ארה״ב תקפו בתוך איראן אתרי שיגור טילים וסירות שניסו להניח מוקשים. הפיקוד הציג את הפעולה כהגנה עצמית במהלך הפסקת האש.",
+            "sourceUrl": "https://news.walla.co.il/break/example-us-iran-strikes",
+        },
+    ),
+    (
+        "hormuz_talks_background_not_same_as_strike",
+        False,
+        {
+            "source": "The Guardian Middle East",
+            "category": "ביטחון",
+            "headline": "רוביו מאיים לפתוח את הורמוז בזמן שיחות עם איראן",
+            "originalTitle": "Tehran expresses ‘resolute support’ for Hezbollah – as it happened",
+            "context": "שר החוץ האמריקני מרקו רוביו אמר שמצר הורמוז חייב להיפתח כך או אחרת, אחרי תקיפות אמריקניות בדרום איראן. במקביל, נציגים איראניים הגיעו לדוחא לשיחות על הסכם אפשרי.",
+            "sourceUrl": "https://www.theguardian.com/example-hormuz-talks",
+        },
+        {
+            "source": "New York Times Middle East",
+            "category": "ביטחון",
+            "headline": "ארה״ב ביצעה תקיפות הגנה עצמית בדרום איראן",
+            "originalTitle": "U.S. Carries Out Renewed Strikes in Southern Iran",
+            "context": "פיקוד המרכז האמריקני מסר כי תקף אתרי שיגור טילים וסירות איראניות שניסו להניח מוקשים ליד בנדר עבאס.",
+            "sourceUrl": "https://www.nytimes.com/example-us-iran-strikes",
+        },
+    ),
     (
         "weather_shavuot_rain_wind",
         True,
@@ -87,7 +128,30 @@ def main() -> int:
         for failure in failures:
             print("-", failure)
         return 1
-    print(f"Semantic duplicate drill passed: {len(CASES)}/{len(CASES)}")
+
+    older_detailed = {
+        "source": "מקור א",
+        "publishedAt": "2026-05-26T06:00:00+03:00",
+        "headline": "ארה״ב תקפה בדרום איראן",
+        "context": "פירוט ארוך מאוד על התקיפה, השיחות, הורמוז ובנדר עבאס " * 5,
+        "takeaway": "טייקאוויי מפורט",
+        "sourceUrl": "https://example.com/older",
+    }
+    newer_shorter = {
+        "source": "מקור ב",
+        "publishedAt": "2026-05-26T07:00:00+03:00",
+        "headline": "ארה״ב תקפה באיראן",
+        "context": "עדכון קצר אך מאוחר יותר",
+        "takeaway": "",
+        "sourceUrl": "https://example.com/newer",
+    }
+    preferred = update_feed.preferred_duplicate_item(older_detailed, newer_shorter)
+    if preferred is not newer_shorter:
+        print("Semantic duplicate drill failed:")
+        print("- preferred_duplicate_item: expected freshest duplicate to win over older detailed card")
+        return 1
+
+    print(f"Semantic duplicate drill passed: {len(CASES)}/{len(CASES)} + freshest-preferred")
     return 0
 
 
