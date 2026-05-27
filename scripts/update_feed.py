@@ -518,6 +518,16 @@ def extract_rss(source: dict) -> list[Candidate]:
             # channel metadata (for example "OMG & WOW"). Recover those feeds
             # instead of dropping an otherwise valid official source.
             raw = re.sub(r"&(?!#\d+;|#x[0-9A-Fa-f]+;|[A-Za-z][A-Za-z0-9]+;)", "&amp;", raw)
+        if source.get("name") == "ICE - ראשי" and "xmlns:media" not in raw[:500] and "media:" in raw:
+            # ICE exposes a useful RSS feed but omits common namespace
+            # declarations while using atom:/dc:/media: tags. ElementTree
+            # rejects that as "unbound prefix"; declare the standard namespaces
+            # so the source can be parsed without weakening quality gates.
+            raw = raw.replace(
+                '<rss version="2.0">',
+                '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">',
+                1,
+            )
         root = ET.fromstring(raw)
     except Exception as e:
         if "maariv.co.il/rss/" in rss_url:
@@ -894,7 +904,7 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         if fp:
             return fp[3], fp[4]
         return categorize(text)
-    if any(x in source for x in ["חדשות בעולם", "World", "Middle East", "Al Jazeera", "Guardian", "Reuters", "AP", "Axios", "Politico", "Bloomberg", "New York Times", "NYT"]):
+    if any(x in source for x in ["חדשות בעולם", "World", "Middle East", "Al Jazeera", "Guardian", "Reuters", "AP", "Axios", "Politico", "Bloomberg", "New York Times", "NYT", "JNS", "Jewish News Syndicate", "France24", "France 24", "The Media Line"]):
         cat, cls = categorize(text)
         if cat in {"חדשות", "פוליטיקה", "ביטחון"}:
             return "אקטואליה בעולם", "security"
@@ -1311,6 +1321,7 @@ def is_foreign_relevant(title: str, desc: str) -> bool:
 FOREIGN_SOURCE_LABELS = [
     "bbc", "cnn", "sky news", "skynews", "reuters", "associated press", "ap middle east", "guardian",
     "new york times", "nyt", "axios", "politico", "bloomberg", "al jazeera", "jazeera",
+    "jns", "jewish news syndicate", "france24", "france 24", "the media line",
 ]
 
 
