@@ -349,6 +349,12 @@ def source_logo(source: str) -> str:
         return "Al Jazeera"
     if "jerusalem post" in s or "jpost" in s:
         return "The Jerusalem Post"
+    if "daily mail" in s or "dailymail" in s:
+        return "Daily Mail"
+    if "page six" in s or "pagesix" in s:
+        return "Page Six"
+    if "mirror" in s:
+        return "Mirror"
     if "n12" in s or "mako" in s:
         return "N12"
     if "כאן" in source or "kan" in s:
