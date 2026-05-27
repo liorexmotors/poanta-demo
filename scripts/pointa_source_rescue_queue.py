@@ -22,9 +22,10 @@ sys.path.insert(0, str(SCRIPTS))
 import update_feed  # type: ignore
 
 TZ = timezone(timedelta(hours=3))
-IMPORTANT_SOURCES = ["הארץ", "ynet", "וואלה", "מעריב", "גלובס", "ישראל היום", "דה מרקר"]
+IMPORTANT_SOURCES = ["הארץ", "ynet", "וואלה", "מעריב", "גלובס", "ישראל היום", "דה מרקר", "N12", "Jerusalem Post", "דובר צה״ל", "דוברות משטרת ישראל"]
 FOREIGN_SOURCES = ["BBC", "CNN", "Sky News", "Reuters", "AP", "Guardian", "NYT", "Axios", "Politico", "Bloomberg", "Al Jazeera"]
-QUEUE_GROUPS = IMPORTANT_SOURCES + FOREIGN_SOURCES
+GOSSIP_SOURCES = ["Pplus", "TMI", "Daily Mail", "Mirror", "Page Six"]
+QUEUE_GROUPS = IMPORTANT_SOURCES + FOREIGN_SOURCES + GOSSIP_SOURCES
 DEFAULT_OUT = ROOT / "tmp" / "pointa_source_rescue_queue.json"
 DEFAULT_AUDITOR = ROOT / "tmp" / "pointa_live_auditor_last.json"
 DEFAULT_DOMAIN_SOURCES = ROOT / "config" / "pointa_domain_sources.json"
@@ -124,6 +125,24 @@ def source_group(name: str) -> str:
         return "ישראל היום"
     if "bbc" in low:
         return "BBC"
+    if "n12" in low or "mako" in low:
+        return "N12"
+    if "jerusalem post" in low or "jpost" in low:
+        return "Jerusalem Post"
+    if "דובר צה" in name or "idf" in low:
+        return "דובר צה״ל"
+    if "משטרת ישראל" in name or "israel_police" in low:
+        return "דוברות משטרת ישראל"
+    if "pplus" in low or "פנאי פלוס" in name:
+        return "Pplus"
+    if "tmi" in low:
+        return "TMI"
+    if "daily mail" in low or "dailymail" in low:
+        return "Daily Mail"
+    if "mirror" in low:
+        return "Mirror"
+    if "page six" in low or "pagesix" in low:
+        return "Page Six"
     if "cnn" in low:
         return "CNN"
     if "sky" in low:

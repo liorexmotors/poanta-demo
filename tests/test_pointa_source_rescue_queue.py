@@ -50,6 +50,22 @@ class PointaSourceRescueQueueTests(unittest.TestCase):
         self.assertFalse(queue.keyword_in_text("צהל", "בית בצהלה נמכר"))
         self.assertTrue(queue.keyword_in_text("רקטה", "רקטה שוגרה לצפון"))
 
+    def test_personal_source_view_sources_are_rescuable_groups(self) -> None:
+        cases = {
+            "N12 - בעולם": "N12",
+            "The Jerusalem Post - Israel News": "Jerusalem Post",
+            "Pplus / פנאי פלוס דרך Google News": "Pplus",
+            "Daily Mail TVShowbiz רכילות חו״ל": "Daily Mail",
+            "Mirror Celebs רכילות חו״ל": "Mirror",
+            "Page Six רכילות חו״ל": "Page Six",
+            "דובר צה״ל - טלגרם רשמי": "דובר צה״ל",
+            "דוברות משטרת ישראל - טלגרם רשמי": "דוברות משטרת ישראל",
+        }
+        for source_name, expected_group in cases.items():
+            with self.subTest(source_name=source_name):
+                self.assertEqual(queue.source_group(source_name), expected_group)
+                self.assertIn(expected_group, queue.QUEUE_GROUPS)
+
 
 if __name__ == "__main__":
     unittest.main()

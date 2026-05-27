@@ -484,6 +484,39 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
             seen_urls.add(url)
     preview_items.sort(key=lambda item: parse_dt_for_sort(item.get("publishedAt")), reverse=True)
     preview["items"] = preview_items
+
+    # Source-filter dashboards and personal source views are driven by
+    # sourceActivity, not only by the visible item list.  When the editor rescues
+    # a source whose deterministic card was dropped, record that fresh activity
+    # in the same preview/apply artifact so a selected source no longer appears
+    # stale or empty after publication.
+    activity_by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    for row in preview.get("sourceActivity", []) or []:
+        if not isinstance(row, dict):
+            continue
+        key = (str(row.get("source") or ""), str(row.get("subSource") or ""))
+        if key[0]:
+            activity_by_key[key] = dict(row)
+    for item in ordered_new:
+        source = str(item.get("sourceGroup") or item.get("sourceLogo") or item.get("source") or "")
+        sub_source = str(item.get("source") or source)
+        if not source:
+            continue
+        row = {
+            "source": source,
+            "subSource": sub_source,
+            "category": item.get("category") or "חדשות",
+            "publishedAt": item.get("publishedAt") or "",
+            "title": item.get("headline") or item.get("originalTitle") or "",
+            "url": item.get("sourceUrl") or "",
+        }
+        key = (source, sub_source)
+        old = activity_by_key.get(key)
+        if not old or (row.get("publishedAt") or "") >= (old.get("publishedAt") or ""):
+            activity_by_key[key] = row
+    if activity_by_key:
+        preview["sourceActivity"] = sorted(activity_by_key.values(), key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
+
     preview["updatedAt"] = datetime.now().astimezone().isoformat(timespec="seconds")
     preview["editorPreview"] = {
         "createdAt": datetime.now().isoformat(timespec="seconds"),
