@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v84-card-hero';
+const CACHE_NAME = 'poenta-v85-image-static-source-only';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
