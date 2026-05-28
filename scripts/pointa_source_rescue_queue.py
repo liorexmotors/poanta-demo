@@ -22,7 +22,7 @@ sys.path.insert(0, str(SCRIPTS))
 import update_feed  # type: ignore
 
 TZ = timezone(timedelta(hours=3))
-IMPORTANT_SOURCES = ["הארץ", "ynet", "וואלה", "מעריב", "גלובס", "ישראל היום", "דה מרקר", "N12", "Jerusalem Post", "דובר צה״ל", "דוברות משטרת ישראל"]
+IMPORTANT_SOURCES = ["הארץ", "ynet", "וואלה", "מעריב", "גלובס", "ישראל היום", "דה מרקר", "N12", "Jerusalem Post", "דובר צה״ל", "דוברות משטרת ישראל", "סרוגים", "ערוץ 14", "C14", "ערוץ 7 / INN", "ערוץ 7", "INN", "Israel National News", "כיפה", "בשבע", "מקור ראשון"]
 FOREIGN_SOURCES = ["BBC", "CNN", "Sky News", "Reuters", "AP", "Guardian", "NYT", "Axios", "Politico", "Bloomberg", "Al Jazeera"]
 GOSSIP_SOURCES = ["Pplus", "TMI", "Daily Mail", "Mirror", "Page Six"]
 QUEUE_GROUPS = IMPORTANT_SOURCES + FOREIGN_SOURCES + GOSSIP_SOURCES
@@ -129,6 +129,18 @@ def source_group(name: str) -> str:
         return "N12"
     if "jerusalem post" in low or "jpost" in low:
         return "Jerusalem Post"
+    if "סרוגים" in name:
+        return "סרוגים"
+    if "ערוץ 14" in name or "c14" in low or "now14" in low:
+        return "ערוץ 14"
+    if "ערוץ 7" in name or "israel national news" in low or "inn" in low:
+        return "ערוץ 7 / INN"
+    if "כיפה" in name or "kipa" in low:
+        return "כיפה"
+    if "בשבע" in name or "besheva" in low:
+        return "בשבע"
+    if "מקור ראשון" in name or "makorrishon" in low:
+        return "מקור ראשון"
     if "דובר צה" in name or "idf" in low:
         return "דובר צה״ל"
     if "משטרת ישראל" in name or "israel_police" in low:

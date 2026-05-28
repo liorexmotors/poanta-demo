@@ -267,6 +267,14 @@ def parse_feed_datetime(raw: str) -> str:
 def source_timing_key(source: str) -> str:
     s = str(source or "")
     low = s.lower()
+    if "ערוץ 7" in s or "israel national news" in low or "inn" in low:
+        return "ערוץ 7 / INN"
+    if "כיפה" in s or "kipa" in low:
+        return "כיפה"
+    if "בשבע" in s or "besheva" in low:
+        return "בשבע"
+    if "מקור ראשון" in s or "makorrishon" in low:
+        return "מקור ראשון"
     if "דובר צה" in s or "צה״ל" in s or "צה\"ל" in s:
         return "דובר צה״ל"
     if "משטרת ישראל" in s or "דוברות משטרת" in s or "israel police" in low:
@@ -357,6 +365,14 @@ def source_logo(source: str) -> str:
         return "Mirror"
     if "n12" in s or "mako" in s:
         return "N12"
+    if "ערוץ 7" in source or "israel national news" in s or "inn" in s:
+        return "ערוץ 7"
+    if "כיפה" in source or "kipa" in s:
+        return "כיפה"
+    if "בשבע" in source or "besheva" in s:
+        return "בשבע"
+    if "מקור ראשון" in source or "makorrishon" in s:
+        return "מקור ראשון"
     if "כאן" in source or "kan" in s:
         return "כאן"
     if "וואלה" in source:
@@ -381,7 +397,7 @@ def source_logo(source: str) -> str:
 
 def sanitize_title(title: str) -> str:
     title = clean_text(title)
-    title = re.sub(r"\s*[-–|]\s*(N12|mako|וואלה|ynet|גלובס|ערוץ 14|CNN|BBC|Sky News).*$", "", title, flags=re.I).strip()
+    title = re.sub(r"\s*[-–|]\s*(N12|mako|וואלה|ynet|גלובס|ערוץ 14|C14|כיפה|מקור ראשון|CNN|BBC|Sky News).*$", "", title, flags=re.I).strip()
     title = re.sub(r"\s*\|\s*[^|]{2,45}\s*$", "", title).strip()
     title = re.sub(r"^\d{1,2}:\d{2}\s*", "", title).strip()
     title = re.sub(r"\d{1,2}:\d{2}\s*$", "", title).strip()
@@ -513,6 +529,34 @@ def fetch_maariv_jina_rss(rss_url: str) -> str:
     jina_url = "https://r.jina.ai/http://" + normalized
     return fetch(jina_url, timeout=25)
 
+def google_news_noise_candidate(source: dict, title: str, link: str, published_at: str) -> bool:
+    """Drop generic Google News result pages before they can become feed cards."""
+    name = source.get("name", "")
+    rss_url = source.get("rss", "")
+    if "Google News" not in name and "news.google.com/rss" not in rss_url:
+        return False
+    low = f"{title} {link}".lower()
+    if any(x in low for x in [
+        "הרשמה", "פרסום", "תשדירים", "חסויות", "קהל הפתוח", "שידור חי",
+        "מגזין 14", "חדשות בזמן אמת", "homepage", "עמוד הבית",
+    ]):
+        return True
+    if re.fullmatch(r"(?:חדשות|מבזקים|שידור חי|מגזין|כלכלה|ספורט|פוליטיקה)(?:\s*[-–|].*)?", title.strip(), flags=re.I):
+        return True
+    dt = None
+    if published_at:
+        try:
+            dt = datetime.fromisoformat(published_at.replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone(timedelta(hours=3)))
+            dt = dt.astimezone(timezone(timedelta(hours=3)))
+        except Exception:
+            dt = None
+    if dt and datetime.now(timezone(timedelta(hours=3))) - dt > timedelta(days=14):
+        return True
+    return False
+
+
 def extract_rss(source: dict) -> list[Candidate]:
     rss_url = source.get("rss")
     if not rss_url:
@@ -551,6 +595,8 @@ def extract_rss(source: dict) -> list[Candidate]:
         raw_desc = item.findtext('description') or ''
         desc = clean_text(re.sub(r'<[^>]+>', ' ', raw_desc))
         published_at = parse_feed_datetime(child_text_by_local(item, {'pubdate', 'published', 'updated', 'date', 'dc:date', 'created'}))
+        if google_news_noise_candidate(source, title, link, published_at):
+            continue
         image = image_from_rss_item(item, link, raw_desc)
         if len(title) < 18 or not link:
             continue
