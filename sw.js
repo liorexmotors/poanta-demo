@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v83-share-links';
+const CACHE_NAME = 'poenta-v84-card-hero';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
