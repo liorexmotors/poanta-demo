@@ -1474,6 +1474,24 @@ def is_stolen_idf_weapon_restaurant_story(title: str, desc: str) -> bool:
     return all(x in text for x in ['מסעדנית', 'M-16']) and any(x in text for x in ['קצין צה"ל', 'קצין צה״ל', 'נשק האישי', 'גניבת'])
 
 
+def is_turkey_air_missile_story(title: str, desc: str) -> bool:
+    text = f'{title} {desc}'
+    return (
+        'טורקיה' in text
+        and any(x in text for x in ['גוקדואן', 'בוזדואן', 'טילי האוויר', 'טילי אוויר'])
+        and any(x in text for x in ['ישראל', 'F-16', 'עצמאותה הביטחונית', 'חימוש חיצוני'])
+    )
+
+
+def is_idf_lebanon_evacuation_warning_story(title: str, desc: str) -> bool:
+    text = f'{title} {desc}'
+    return (
+        any(x in text for x in ['אזהרת פינוי', 'פרסם אזהרת פינוי'])
+        and any(x in text for x in ['דרום לבנון', 'אל-בקאע', 'אל־בקאע'])
+        and any(x in text for x in ['צה"ל', 'צה״ל'])
+    )
+
+
 def story_headline(title: str, desc: str, source: str) -> str:
     text = f'{title} {desc}'
     fp = foreign_pointa_tuple(title, desc)
@@ -1493,6 +1511,10 @@ def story_headline(title: str, desc: str, source: str) -> str:
         return 'עסקים בצפון נשארים בלי ביטוח בגלל איומי פרוטקשן'
     if is_stolen_idf_weapon_restaurant_story(title, desc):
         return 'מסעדנית בגולן תואשם בגניבת M-16 מקצין צה״ל'
+    if is_turkey_air_missile_story(title, desc):
+        return 'טורקיה ניסתה טילי אוויר־אוויר שיחזקו את עצמאותה מול ישראל'
+    if is_idf_lebanon_evacuation_warning_story(title, desc):
+        return 'צה״ל הזהיר שישה כפרים בדרום לבנון להתפנות לפני תקיפה'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'ח״כ מלינובסקי מאיימת לשבש הצבעות עד שימומן חוק מחבלי 7 באוקטובר'
     if is_helium_iran_war_story(title, desc):
@@ -1599,6 +1621,10 @@ def story_context(title: str, desc: str, source: str) -> str:
         return 'בעלי עסקים טוענים שחברות הביטוח מבטלות פוליסות מיד לאחר איומי סחיטה או הצתות, בטענה שהסיכון הפך כמעט ודאי. בוועדת הכלכלה הזהירו שהמצב עלול להפיל עסקים, לעצור אשראי בנקאי ולהשאיר בעלי עסקים מול ארגוני הפשיעה ללא הגנה.'
     if is_stolen_idf_weapon_restaurant_story(title, desc):
         return 'לפי המשטרה, קצין שאכל עם חייליו במסעדה בגולן גילה בסוף הארוחה שנשקו האישי נעלם. בעלת המסעדה חשודה שנטלה את ה-M-16 על רקע חובות ואיומים, והובילה את החוקרים לנשק שהוסלק ברכב עובד.'
+    if is_turkey_air_missile_story(title, desc):
+        return 'טורקיה השלימה ניסויי ירי בטילי גוקדואן ובוזדואן, שמיועדים להשתלב במטוסי F-16 ולהחליף תלות בחימוש אמריקני. המהלך מחזק את התעשייה הביטחונית שלה ומוסיף שכבת לחץ אסטרטגית מול ישראל.'
+    if is_idf_lebanon_evacuation_warning_story(title, desc):
+        return 'צה״ל פרסם אזהרת פינוי לשישה כפרים בדרום לבנון ובאזור אל־בקאע המערבי. ההודעה מסמנת פעילות צבאית קרובה בגזרה ומרחיבה את אזור הסיכון מעבר לקו הגבול המיידי.'
     if is_malinovsky_oct7_law_story(title, desc):
         return 'ח״כ יוליה מלינובסקי קוראת לחברי הכנסת להשבית הצבעות עד שהממשלה תסיים את המימון לחוק העמדת מחבלי 7 באוקטובר לדין. המהלך הופך מחלוקת תקציבית לניסיון לחץ פרלמנטרי סביב טיפול במחבלים.'
     if is_helium_iran_war_story(title, desc):
@@ -1672,6 +1698,10 @@ def specific_takeaway(title: str, desc: str) -> str:
         return 'אופנה על השטיח האדום מוכרת דימוי לפני שהיא מוכרת בגד.'
     if is_stolen_idf_weapon_restaurant_story(title, desc):
         return 'גניבת נשק צבאי מתוך סביבה אזרחית הופכת הסתבכות כלכלית לאירוע ביטחוני ומשפטי חמור.'
+    if is_turkey_air_missile_story(title, desc):
+        return 'אנקרה בונה יכולת אווירית עצמאית שמצמצמת את מנופי הלחץ של וושינגטון.'
+    if is_idf_lebanon_evacuation_warning_story(title, desc):
+        return 'אזהרת פינוי היא סימן מקדים להסלמה נקודתית ולא רק עדכון שגרתי.'
     if ('מסעדה' in text or 'מסעדן' in text or 'מסעדנית' in text) and any(x in text for x in ['תיסגר', 'סגירה מפתיעה', 'נסגרת', 'סגירת']) and not any(x in text for x in ['M-16', 'נשק', 'גניבת']):
         return 'גם מוסד אהוב לא חסין מעלויות, שחיקה ושינויי קהל.'
     if any(x in text for x in ['תאונת עבודה', 'ביטוח לאומי', 'נפגע בדרך']):
@@ -2784,6 +2814,12 @@ def main() -> int:
             c.original_title = c.original_title or c.title
             c.title = sanitized_title
             if args.draft and candidate_seen(c, seen):
+                continue
+            # Do not let the first two raw RSS rows from a source block fresher
+            # usable rows underneath them.  Core sources such as YNET/Maariv
+            # often lead with thin flashes that deterministic QA correctly
+            # rejects; continue scanning the source until we find QA-clean cards.
+            if not args.experimental_prompt and not build_feed([c]).get("items"):
                 continue
             picked.append(c)
             used_urls.add(c.url)
