@@ -1,5 +1,5 @@
 {
-  "version": "2026-05-25-tightened-dashboard-refresh-sla-v1",
+  "version": "2026-05-28-all-profiles-10m-refresh-v1",
   "profiles": {
     "fast": {
       "label": "דחוף",
@@ -17,7 +17,7 @@
     },
     "medium": {
       "label": "שוטף",
-      "intervalMinutes": 30,
+      "intervalMinutes": 10,
       "categories": [
         "כלכלה",
         "צרכנות",
@@ -28,11 +28,11 @@
       ],
       "editorLimit": 18,
       "maxPerCategory": 6,
-      "description": "תחומים שצריכים רענון שוטף בטווח 30–60 דקות: כלכלה, צרכנות, רכב, ספורט, עולם ודעות."
+      "description": "תחומים שוטפים שנבדקים/נאספים כעת כל ~10 דקות כדי למנוע פערי 30–40 דקות בפיד הראשי; פרסום עדיין כפוף לאיכות ולשערי QA."
     },
     "slow": {
       "label": "רגוע",
-      "intervalMinutes": 60,
+      "intervalMinutes": 10,
       "categories": [
         "טכנולוגיה",
         "בריאות",
@@ -43,7 +43,7 @@
       ],
       "editorLimit": 16,
       "maxPerCategory": 5,
-      "description": "תחומים איטיים יותר אך לא ארבע שעות: טכנולוגיה/בריאות סביב שעה, תרבות/נדל״ן/מזג אוויר במעקב רגוע יותר."
+      "description": "תחומים איטיים יותר שנבדקים/נאספים כעת גם הם כל ~10 דקות כניסוי תפעולי; פרסום רק כשיש חומר איכותי שעובר QA."
     }
   },
   "categoryProfile": {
@@ -65,5 +65,5 @@
     "נדל״ן": "slow",
     "מזג אוויר": "slow"
   },
-  "notes": "2026-05-25: tightened Lior-approved dashboard freshness SLA and aligned feed refresh profiles. Actual scheduler jobs may still need live cron cadence updates if they do not read intervalMinutes directly."
+  "notes": "2026-05-28: Lior requested trying 10-minute cadence across all feed categories. All sync profile intervalMinutes set to 10; live Hermes משה scheduler also updated separately to every 10m. Publication remains quality-gated."
 }
