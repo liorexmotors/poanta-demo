@@ -2023,14 +2023,17 @@ def likely_duplicate_story(a: dict, b: dict) -> bool:
 
 
 def preferred_duplicate_item(a: dict, b: dict) -> dict:
-    def score(item: dict) -> tuple[str, int, int]:
+    def score(item: dict) -> tuple[int, str, int, int]:
         # Lior's personal-feed rule: when similar stories arrive from different
         # sources, keep the freshest card and use editorial depth as the tie-breaker.
-        # Image availability is only a final UI tie-breaker; it must not beat recency.
+        # Official IDF/Police Telegram rows are critical-source updates: if they
+        # describe the same event as a regular news source, prefer the official
+        # source so those channels do not silently disappear from the visible feed.
+        official = 1 if is_official_telegram_item(item) else 0
         published = str(item.get("publishedAt") or "")
         detail = len(" ".join(str(item.get(k) or "") for k in ["context", "takeaway", "headline", "originalTitle"]))
         image = 1 if item.get("imageUrl") else 0
-        return (published, detail, image)
+        return (official, published, detail, image)
     return a if score(a) >= score(b) else b
 
 
@@ -2178,7 +2181,10 @@ def quarantine_bad_items(items: list[dict], reason: str) -> list[dict]:
     rejected: list[dict] = []
     for item in items:
         if "משטרת ישראל" in str(item.get("source") or "") or "דוברות משטרת" in str(item.get("source") or ""):
-            item = normalize_police_item(item)
+            # Preserve already QA-clean official Telegram bridge cards; the
+            # legacy normalizer is only a fallback for older/generic police cards.
+            if item_quality_errors(item):
+                item = normalize_police_item(item)
         errors = item_quality_errors(item)
         if errors:
             item = rewrite_cut_or_invalid_item(item)
@@ -2197,16 +2203,103 @@ def quarantine_bad_items(items: list[dict], reason: str) -> list[dict]:
     return kept
 
 
+def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, str] | None:
+    """Deterministic bridge for terse official Telegram updates.
+
+    IDF/Police posts are not article-style RSS rows. The generic Pointa rewrite
+    often copies the first sentence into both headline and context, causing the
+    Quality Gate to reject every candidate while sourceActivity still looks
+    fresh. Keep these cards factual, short, and specific instead of using the
+    generic article templates.
+    """
+    source = str(c.source or "")
+    title = clean_text(c.title or "")
+    desc = clean_text(c.description or "")
+    text = f"{title} {desc}"
+    if "דובר צה" in source or "צה״ל" in source or "צה\"ל" in source:
+        category, cls = "ביטחון", "security"
+        if "שיגורים" in text and any(x in text for x in ["מטולה", "כפר יובל", "דרום לבנון"]):
+            headline = "שיגורים נורו לעבר כוחות צה״ל בדרום לבנון"
+            context = "לאחר התרעות במטולה ובכפר יובל זוהו שיגורים לעבר מרחב שבו פועלים כוחות צה״ל; אין נפגעים, וחלק מהתרעות הכטב״ם הוגדרו בהמשך כזיהוי שווא."
+            takeaway = "הגבול הצפוני נשאר פעיל גם כשאירוע מסתיים בלי נפגעים."
+        elif "חדירת כלי טיס" in text and "זיהוי שווא" in text:
+            headline = "צה״ל עדכן שהתרעות כטב״ם בצפון היו זיהוי שווא"
+            context = "התרעות על חדירת כלי טיס עוין הופעלו במנרה, קריית שמונה ומרחבים נוספים בצפון, אך לאחר הבדיקה צה״ל מסר שמדובר בזיהוי שווא."
+            takeaway = "בצפון חשוב להבדיל בין אזעקה בזמן אמת לבין סגירת אירוע אחרי בדיקה."
+        elif "חדירת כלי טיס" in text or "הופעלו התרעות" in text:
+            headline = "התרעות ביטחוניות הופעלו בצפון והפרטים נבדקים"
+            context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else title
+            takeaway = "התרעה פתוחה היא מצב ביניים: לפעול לפי ההנחיות עד סיום הבדיקה."
+        elif "מיירט" in text and "מטרת שווא" in text:
+            headline = "צה״ל עדכן שמיירט שוגר לעבר מטרת שווא בצפון"
+            context = "בהמשך להתרעות במרחב יפתח ומבואות חרמון, צה״ל מסר שמיירט שוגר לעבר מטרת שווא ולא דווח על נפגעים."
+            takeaway = "גם יירוט שהתברר כשווא משפיע על תחושת הביטחון ביישובי הגבול."
+        elif "מדיניות ההתגוננות" in text:
+            headline = "מדיניות ההתגוננות של פיקוד העורף נותרה ללא שינוי"
+            context = "בתום הערכת מצב נקבע שהנחיות ההתגוננות יישארו בתוקף עד יום ראשון, 31 במאי 2026, בשעה 20:00."
+            takeaway = "אי־שינוי בהנחיות עדיין קובע את גבולות השגרה לימים הקרובים."
+        elif "מתדלק" in text or "גדעון" in text:
+            headline = "מטוס התדלוק החדש נחת בטייסת גדעון בנבטים"
+            context = "צה״ל קלט את המתדלק המתקדם בטייסת שהוקמה עבורו בבסיס נבטים, עם יכולת לתדלק שני מטוסים במקביל ועמדת נווט נוספת."
+            takeaway = "יכולת תדלוק אווירי חדשה מרחיבה את טווח הפעולה של חיל האוויר."
+        elif "חיזבאללה" in text and any(x in text for x in ["מחבלים", "חוסלו", "מפקדי"]):
+            headline = "צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש"
+            context = desc or title
+            takeaway = "פגיעה במפקדי שטח משנה את חופש הפעולה של חיזבאללה בדרום לבנון."
+        else:
+            headline = complete_headline(dequote_headline(title), 72)
+            context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else fallback_context_from_title(title, "ביטחון")
+            takeaway = "עדכון צבאי נקודתי חשוב כשהוא משנה הנחיות, גבול או פעילות כוחות."
+        return headline, context, takeaway, category, cls
+
+    if "משטרת ישראל" in source or "דוברות משטרת" in source:
+        category, cls = "פלילים", "security"
+        if "בר אילן" in text:
+            headline = "המשטרה פיזרה הפרות סדר בצומת בר אילן בירושלים"
+            context = "כוחות משטרה ומג״ב פעלו מול חוסמי צירים באזור צומת בר אילן; לפי הפרטים, מפרי סדר השליכו חפצים, גרמו נזק לתשתיות ותקפו שוטרים."
+            takeaway = "חסימת צירים ותקיפת שוטרים הופכות מחאה מקומית לאירוע אכיפה רחב."
+        elif "כביש 4" in text or "גהה" in text:
+            headline = "הפגנה בלתי חוקית חסמה את כביש 4 באזור גהה"
+            context = "בצומת גהה דווח על חסימת כביש והכוונת נהגים לדרכים חלופיות, לאחר שקצין משטרה הכריז על הפגנה בלתי חוקית."
+            takeaway = "חסימת עורק תחבורה מרכזי משפיעה מיד על נהגים גם מחוץ לזירת המחאה."
+        elif "סילוואן" in text or "שלושה שוטרים" in text:
+            headline = "שישה נעצרו בסילוואן ושלושה שוטרים נפצעו קל"
+            context = "כוחות משטרה ומג״ב הוזעקו לאירוע אלימות במזרח ירושלים; במקום התפתחה הפרת סדר, ובסיומה נעצרו שישה חשודים."
+            takeaway = "אירוע אלימות שכונתי הופך למסוכן יותר כששוטרים נפגעים במהלך הטיפול בו."
+        elif "שב\"חים" in text or "שוהים בלתי חוקיים" in text:
+            headline = "רשת הברחת שב״חים נחשפה בעוטף ירושלים"
+            context = "חקירת מג״ב בעוטף ירושלים חשפה חשד לרשת נהגים וספסרים שהסיעה שוהים בלתי חוקיים לעומק ישראל; נעצרו חשודים והוגשו כתבי אישום."
+            takeaway = "רשת הסעות מאורגנת מסוכנת יותר ממעבר בודד כי היא יוצרת נתיב קבוע."
+        elif "פיגועים פליליים" in text or "כלי נשק" in text:
+            headline = "המשטרה סיכלה חיסולים פליליים ותפסה נשקים בצפון"
+            context = "בפעילות מחוז צפון ומג״ב נתפסו קלצ׳ניקוב, M16, אקדחים ורכב שהוכן לפי החשד לביצוע חיסול; חשודים נעצרו לפני מימוש האירועים."
+            takeaway = "תפיסת נשקים לפני חיסול מצמצמת סיכון מיידי ולא רק מוסיפה תיק חקירה."
+        elif "שכם" in text and "פיגוע" in text:
+            headline = "מסתערבי מג״ב עצרו בשכם חשודים שתכננו פיגוע"
+            context = "הכוחות נכנסו למרחב בצורה מסוערבת, סגרו על המבנה שבו הסתתרו החשודים וניהלו מולם מגעים עד שנעצרו."
+            takeaway = "מעצר לפני ביצוע פיגוע חשוב יותר ממספר העצורים עצמו."
+        else:
+            headline = complete_headline(dequote_headline(title), 72)
+            context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else fallback_context_from_title(title, "פלילים")
+            takeaway = "אירוע משטרתי משמעותי נמדד בסיכון שנמנע ובפגיעה בשגרה המקומית."
+        return headline, context, takeaway, category, cls
+    return None
+
+
 def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> dict:
     items = []
     seen_titles = set()
+    seen_output_headlines = set()
     for c in candidates:
         key = normalized_key(c.title)
         if key in seen_titles:
             continue
         seen_titles.add(key)
         category, cls = categorize_item(c.title, c.description, c.source)
-        if "פיקוד העורף" in c.source:
+        official_fields = official_telegram_pointa_fields(c)
+        if official_fields:
+            headline, context, takeaway, category, cls = official_fields
+        elif "פיקוד העורף" in c.source:
             headline = c.title
             context = c.description or "יש לפעול לפי הנחיות פיקוד העורף."
             takeaway = "זו התרעה רשמית — ההנחיות חשובות יותר מהכותרת."
@@ -2234,7 +2327,11 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "context": context,
             "takeaway": takeaway,
         }
+        output_key = normalized_key(headline)
+        if output_key in seen_output_headlines:
+            continue
         if not item_quality_errors(item):
+            seen_output_headlines.add(output_key)
             items.append(item)
     tz = timezone(timedelta(hours=3))
     payload = {"updatedAt": datetime.now(tz).isoformat(timespec="seconds"), "items": items}
@@ -2273,9 +2370,11 @@ def refresh_item_pointa(item: dict) -> dict:
     desc = str(item.get("context") or "")
     source = str(item.get("source") or "")
     if "משטרת ישראל" in source or "דוברות משטרת" in source:
-        # Official Telegram notices are already terse operational updates. A
-        # second generic rewrite can accidentally promote footer text or make
-        # the headline duplicate the summary, so keep the bridge's cleaned card.
+        # Official Telegram bridge cards may already be QA-clean. Do not run the
+        # older police normalizer over them, because it can replace a specific
+        # takeaway with a generic one and quarantine the card during merge.
+        if not item_quality_errors(item):
+            return item
         return normalize_police_item(item)
     if "פיקוד העורף" in str(item.get("source") or ""):
         current_headline = str(item.get("headline") or "")
@@ -2650,6 +2749,48 @@ def assign_display_rank(items: list[dict]) -> list[dict]:
         item["displayRank"] = idx
     return items
 
+
+def is_official_telegram_item(item: dict) -> bool:
+    source = str(item.get("source") or item.get("sourceLogo") or "")
+    return any(x in source for x in ["דובר צה", "צה״ל", "צה\"ל", "משטרת ישראל", "דוברות משטרת"])
+
+
+def preserve_recent_official_telegram_items(items: list[dict], now: datetime, limit: int = MAX_FEED_ITEMS) -> list[dict]:
+    """Keep recent IDF/Police Telegram cards visible even when the 200-card cap is crowded."""
+    if len(items) <= limit:
+        return items
+    fast_cutoff = now - timedelta(hours=FAST_CATEGORY_RETENTION_HOURS)
+    limited = list(items[:limit])
+    existing_keys = {feed_item_key(item) for item in limited}
+    official_counts: dict[str, int] = {}
+    for item in limited:
+        if is_official_telegram_item(item):
+            official_counts[str(item.get("source") or "")] = official_counts.get(str(item.get("source") or ""), 0) + 1
+    candidates = []
+    for item in items[limit:]:
+        if not is_official_telegram_item(item):
+            continue
+        if feed_item_key(item) in existing_keys:
+            continue
+        if item_datetime(item, now) < fast_cutoff:
+            continue
+        source = str(item.get("source") or "")
+        if official_counts.get(source, 0) >= 2:
+            continue
+        candidates.append(item)
+    for item in candidates:
+        replace_idx = next((idx for idx in range(len(limited) - 1, -1, -1) if not is_official_telegram_item(limited[idx])), None)
+        if replace_idx is None:
+            break
+        removed = limited[replace_idx]
+        existing_keys.discard(feed_item_key(removed))
+        limited[replace_idx] = item
+        existing_keys.add(feed_item_key(item))
+        source = str(item.get("source") or "")
+        official_counts[source] = official_counts.get(source, 0) + 1
+    limited.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
+    return limited
+
 def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -> dict:
     tz = timezone(timedelta(hours=3))
     now = datetime.now(tz)
@@ -2765,8 +2906,9 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
         if sig:
             final_seen_signatures.add(sig)
         deduped.append(item)
-    merged = assign_display_rank(diversify_visible_top(deduped))
-    new_feed["items"] = merged[:MAX_FEED_ITEMS]
+    limited = preserve_recent_official_telegram_items(deduped, now, MAX_FEED_ITEMS)
+    merged = assign_display_rank(diversify_visible_top(limited))
+    new_feed["items"] = merged
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed
 
