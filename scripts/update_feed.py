@@ -499,7 +499,7 @@ def parse_maariv_jina_rss(markdown: str, source: dict) -> list[Candidate]:
     blocks = re.split(r"(?m)^### \[", markdown or "")
     for block in blocks[1:]:
         block = "[" + block
-        m = re.match(r"\[(.*?)\]\((https?://www\.maariv\.co\.il/[^)]+)\)", block, flags=re.S)
+        m = re.match(r"\[(.*?)\]\((https?://(?:www\.)?(?:maariv|tmi\.maariv)\.co\.il/[^)]+)\)", block, flags=re.S)
         if not m:
             continue
         title = sanitize_title(m.group(1))
@@ -524,10 +524,91 @@ def parse_maariv_jina_rss(markdown: str, source: dict) -> list[Candidate]:
         out.append(Candidate(source=source["name"], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
     return sorted(out, key=lambda c: (c.published_at or "", c.score), reverse=True)[:12]
 
+_MAARIV_JINA_LAST_FETCH = 0.0
+
+
 def fetch_maariv_jina_rss(rss_url: str) -> str:
+    """Fetch Maariv/TMI RSS through Jina with throttling.
+
+    The direct official RSS endpoints are Cloudflare-blocked in automation, and
+    Jina rate-limits bursts across the many Maariv/TMI section feeds.  Keep this
+    fallback deliberately narrow and slow enough so later section feeds do not
+    silently return no candidates.
+    """
+    global _MAARIV_JINA_LAST_FETCH
     normalized = re.sub(r"^https?://", "", rss_url or "")
     jina_url = "https://r.jina.ai/http://" + normalized
+    last_error: Exception | None = None
+    for attempt in range(3):
+        wait = max(0.0, 1.2 - (time.time() - _MAARIV_JINA_LAST_FETCH))
+        if wait:
+            time.sleep(wait)
+        try:
+            _MAARIV_JINA_LAST_FETCH = time.time()
+            return fetch(jina_url, timeout=25)
+        except HTTPError as exc:
+            last_error = exc
+            if getattr(exc, "code", None) == 429 and attempt < 2:
+                time.sleep(3.0 * (attempt + 1))
+                continue
+            raise
+    if last_error:
+        raise last_error
     return fetch(jina_url, timeout=25)
+
+
+
+TMI_HTML_SECTION_FALLBACKS = {
+    "rssfeedstmistyle": "https://tmi.maariv.co.il/style",
+    "rssfeedstmifashion": "https://tmi.maariv.co.il/fashion-tmf",
+}
+
+
+def parse_tmi_html_section(section_url: str, source: dict) -> list[Candidate]:
+    """Recover TMI style/fashion sections from public HTML when RSS/Jina is rate-limited.
+
+    These are the same official TMI sections represented by the configured RSS
+    rows.  We only use article metadata from tmi.maariv.co.il and keep normal
+    Pointa scoring/QA downstream.
+    """
+    try:
+        raw = fetch(section_url, timeout=20)
+    except Exception:
+        return []
+    links = []
+    for m in re.finditer(r"https?://tmi\.maariv\.co\.il/[^\"'<> ]*article-\d+", raw):
+        link = clean_text(html.unescape(m.group(0)))
+        if link not in links:
+            links.append(link)
+    out: list[Candidate] = []
+    for link in links[:12]:
+        try:
+            article = fetch(link, timeout=15)
+        except Exception:
+            continue
+        title_m = re.search(r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)["\']', article, flags=re.I)
+        desc_m = re.search(r'<meta[^>]+property=["\']og:description["\'][^>]+content=["\']([^"\']*)["\']', article, flags=re.I)
+        date_m = re.search(r'"datePublished"\s*:\s*"([^"]+)"', article)
+        image_m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', article, flags=re.I)
+        title = sanitize_title(html.unescape(title_m.group(1))) if title_m else ""
+        title = re.sub(r"\s*\|\s*TMI\s*$", "", title).strip()
+        desc = clean_text(html.unescape(desc_m.group(1))) if desc_m else ""
+        published_at = parse_feed_datetime(date_m.group(1)) if date_m else ""
+        image = clean_text(html.unescape(image_m.group(1))) if image_m else ""
+        if len(title) < 18:
+            continue
+        score = max(score_title(title + " " + desc) + 10, 3)
+        out.append(Candidate(source=source["name"], url=link, title=title, description=desc, score=score, image_url=image, original_title=title, published_at=published_at))
+    return sorted(out, key=lambda c: (c.published_at or "", c.score), reverse=True)[:12]
+
+
+def parse_tmi_html_fallback_for_rss(rss_url: str, source: dict) -> list[Candidate]:
+    low = (rss_url or "").lower()
+    for key, section_url in TMI_HTML_SECTION_FALLBACKS.items():
+        if key in low:
+            return parse_tmi_html_section(section_url, source)
+    return []
+
 
 def google_news_noise_candidate(source: dict, title: str, link: str, published_at: str) -> bool:
     """Drop generic Google News result pages before they can become feed cards."""
@@ -584,6 +665,9 @@ def extract_rss(source: dict) -> list[Candidate]:
             try:
                 return parse_maariv_jina_rss(fetch_maariv_jina_rss(rss_url), source)
             except Exception as fallback_exc:
+                tmi_fallback = parse_tmi_html_fallback_for_rss(rss_url, source)
+                if tmi_fallback:
+                    return tmi_fallback
                 print(f"WARN rss fetch failed {source['name']}: {e}; maariv jina fallback failed: {fallback_exc}", file=sys.stderr)
                 return []
         print(f"WARN rss fetch failed {source['name']}: {e}", file=sys.stderr)
