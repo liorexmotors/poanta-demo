@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v85-image-static-source-only';
+const CACHE_NAME = 'poenta-v86-personal-dedupe-v3';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {

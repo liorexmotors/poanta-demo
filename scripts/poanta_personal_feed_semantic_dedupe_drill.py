@@ -54,6 +54,12 @@ def semantic_story_key(item: dict) -> str:
         return ""
     if has_iran and has_us and has_strike and (has_south or has_context):
         return "event:us-strikes-iran-20260526"
+    has_actor = has_us or has_any(text, ["טראמפ", "trump", "וושינגטון", "white house"])
+    has_deal = has_any(text, ["הסכם", "עסקה", "מו״מ", "מו\"מ", "מגעים", "הבנות", "גרעין", "deal", "agreement", "talks", "negotiation"])
+    has_decision_delay = has_any(text, ["דחה", "לא החליט", "בלי החלטה", "ללא הכרעה", "לא קיבל החלטה", "הכרעה", "אישור", "קרובים להבנות", "מחלוקות", "כספים מוקפאים", "שחרור הכספים", "אורניום מועשר", "הורמוז"])
+    is_sanctions = has_any(text, ["סנקציות", "רשת רכש", "ציוד סייבר", "הטיל סנקציות", "sanctions"])
+    if has_iran and has_actor and has_deal and has_decision_delay and not is_sanctions:
+        return "event:us-iran-deal-decision-20260530"
     return ""
 
 
@@ -112,6 +118,36 @@ FIXTURE = [
         "publishedAt": "2026-05-26T06:14:00+03:00",
         "sourceUrl": "https://finance.walla.co.il/oil-iran-strikes",
     },
+    {
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "ביטחון",
+        "headline": "טראמפ שוב דחה הכרעה על הסכם עם איראן",
+        "originalTitle": "אופטימיות בארה\"ב, אך טראמפ שוב לא החליט: מחלוקת על שחרור הכספים המוקפאים",
+        "context": "טראמפ כינס דיון בחדר המצב על הסכם מול איראן אך לא קיבל החלטה סופית. המחלוקות נוגעות בין היתר לשחרור כספים מוקפאים, לפתיחת הורמוז ולמסגרת הגרעין האיראנית.",
+        "takeaway": "גם כשוושינגטון משדרת אופטימיות, הכסף האיראני והורמוז עדיין יכולים להפיל את ההסכם.",
+        "publishedAt": "2026-05-30T00:57:05+03:00",
+        "sourceUrl": "https://www.ynet.co.il/news/article/s1bveddxzg",
+    },
+    {
+        "source": "וואלה חדשות - חדשות בעולם",
+        "category": "ביטחון",
+        "headline": "טראמפ דחה שוב הכרעה על הסכם איראן למרות התקדמות במגעים",
+        "originalTitle": "הסתיימה פגישת טראמפ על סוגיית ההסכם עם איראן - ללא הכרעה",
+        "context": "טראמפ סיים דיון בחדר המצב בלי החלטה סופית על הסכם עם איראן, אף שבממשל מעריכים שהצדדים קרובים להבנות. המחלוקות שנותרו נוגעות לכספים מוקפאים, מצרי הורמוז והאורניום המועשר.",
+        "takeaway": "ההכרעה על ההסכם האיראני תלויה עכשיו בעיקר בטראמפ, לא בלחץ הישראלי.",
+        "publishedAt": "2026-05-30T00:03:59+03:00",
+        "sourceUrl": "https://news.walla.co.il/item/3841771",
+    },
+    {
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ביטחון",
+        "headline": "ארה״ב הטילה סנקציות על רשת רכש איראנית לטכנולוגיה צבאית",
+        "originalTitle": "ברקע מתיחות השיא: המהלך החדש של וושינגטון נגד טהרן",
+        "context": "משרד האוצר האמריקני הטיל סנקציות על רשת שהתחזתה לחברות אמריקניות כדי להשיג לאיראן ציוד סייבר וחומרה מתקדמת.",
+        "takeaway": "וושינגטון ממשיכה ללחוץ על יכולות הרכש של איראן גם כשהמסלול הדיפלומטי עדיין פתוח.",
+        "publishedAt": "2026-05-30T00:12:01+03:00",
+        "sourceUrl": "https://www.israelhayom.co.il/news/world-news/usa/article/20647849",
+    },
 ]
 
 
@@ -143,16 +179,28 @@ def main() -> int:
         failures.append("live auditor collapsed adjacent Hormuz diplomacy story into strike story")
     if likely_duplicate_story(FIXTURE[1], FIXTURE[5]) or semantic_story_key(FIXTURE[5]):
         failures.append("market/oil-impact card was incorrectly collapsed into the operational strike story")
+    deal_ynet, deal_walla, sanctions = FIXTURE[6], FIXTURE[7], FIXTURE[8]
+    if not likely_duplicate_story(deal_ynet, deal_walla):
+        failures.append("live auditor did not flag the cross-source Trump/Iran deal-decision duplicate")
+    if likely_duplicate_story(deal_ynet, sanctions):
+        failures.append("Iran sanctions story was incorrectly collapsed into the Trump/Iran deal-decision duplicate")
 
     all_visible = visible_personalized(FIXTURE, active_filter="all", selected_topics={"ביטחון", "פוליטיקה", "אקטואליה בעולם", "כלכלה"})
-    strike_visible = [item for item in all_visible if semantic_story_key(item)]
+    strike_visible = [item for item in all_visible if semantic_story_key(item) == "event:us-strikes-iran-20260526"]
     if len(strike_visible) != 1:
         failures.append(f"personal all-feed expected 1 visible strike card, got {len(strike_visible)}")
     if strike_visible and strike_visible[0]["source"] != "Al Jazeera":
         failures.append(f"personal all-feed did not keep freshest strike card: {strike_visible[0]['source']}")
+    deal_visible = [item for item in all_visible if "טראמפ" in item.get("headline", "") and "איראן" in item.get("headline", "")]
+    if len(deal_visible) != 1:
+        failures.append(f"personal all-feed expected 1 visible Trump/Iran deal-decision card, got {len(deal_visible)}")
+    if deal_visible and deal_visible[0]["source"] != "ynet - כל ערוץ החדשות":
+        failures.append(f"personal all-feed did not keep freshest Trump/Iran deal-decision card: {deal_visible[0]['source']}")
+    if not any("סנקציות" in item["headline"] for item in all_visible):
+        failures.append("distinct Iran sanctions story was incorrectly removed")
 
     security_visible = visible_personalized(FIXTURE, active_filter="ביטחון")
-    security_strikes = [item for item in security_visible if semantic_story_key(item)]
+    security_strikes = [item for item in security_visible if semantic_story_key(item) == "event:us-strikes-iran-20260526"]
     if len(security_strikes) != 1:
         failures.append(f"active ביטחון tab expected 1 visible strike card after tab filter, got {len(security_strikes)}")
     if not any("הורמוז" in item["headline"] for item in security_visible):
@@ -161,8 +209,8 @@ def main() -> int:
     index = (ROOT / "index.html").read_text(encoding="utf-8")
     if "const applyActive=options.applyActiveFilter!==false" not in index or "return dedupeVisibleItems(rows);" not in index:
         failures.append("index.html selector must apply active filter before dedupeVisibleItems and return deduped rows")
-    if not re.search(r"POANTA_FEED_VERSION\s*=\s*'[^']*dedupe-v2'", index):
-        failures.append("POANTA_FEED_VERSION was not bumped for personal dedupe v2")
+    if not re.search(r"POANTA_FEED_VERSION\s*=\s*'[^']*dedupe-v3'", index):
+        failures.append("POANTA_FEED_VERSION was not bumped for personal dedupe v3")
 
     if failures:
         print("Personal-feed semantic dedupe drill failed:")

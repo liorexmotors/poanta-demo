@@ -223,6 +223,40 @@ def security_event_tokens(item: dict[str, Any]) -> set[str]:
     return tokens if len(tokens) >= 3 else set()
 
 
+def iran_deal_decision_tokens(item: dict[str, Any]) -> set[str]:
+    """Semantic duplicate key for the same Trump/U.S.-Iran deal decision story.
+
+    This catches the visible regression where two Hebrew sources publish the
+    same White House meeting / no-final-decision story with different wording.
+    It intentionally requires decision/delay anchors so separate sanctions,
+    market, or military stories that only mention Iran talks in background are
+    not collapsed.
+    """
+    main = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline"]).lower()
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_actor = bool(re.search(r"טראמפ|trump|ארה[״\"]?ב|אמריק|וושינגטון|white house", text))
+    has_iran = bool(re.search(r"איראן|איראני|טהראן|\biran\b|iranian", text))
+    has_deal = bool(re.search(r"הסכם|עסקה|מו[״\"]?מ|מגעים|הבנות|גרעין|deal|agreement|talks|negotiation", text))
+    has_decision_delay = bool(re.search(
+        r"דחה|לא החליט|בלי החלטה|ללא הכרעה|לא קיבל החלטה|הכרעה|אישור|קרובים להבנות|מחלוקות|כספים מוקפאים|שחרור הכספים|אורניום מועשר|הורמוז",
+        text,
+    ))
+    if not (has_actor and has_iran and has_deal and has_decision_delay):
+        return set()
+    if re.search(r"סנקציות|רשת רכש|ציוד סייבר|הטיל סנקציות|sanctions", main):
+        return set()
+    tokens = {"us_iran_deal_decision"}
+    if re.search(r"טראמפ|trump|white house|חדר המצב", text):
+        tokens.add("white_house_meeting")
+    if re.search(r"כספים מוקפאים|שחרור הכספים|frozen funds", text):
+        tokens.add("frozen_funds")
+    if re.search(r"הורמוז|hormuz", text):
+        tokens.add("hormuz")
+    if re.search(r"אורניום מועשר|גרעין|nuclear|uranium", text):
+        tokens.add("nuclear_terms")
+    return tokens
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -254,14 +288,18 @@ def detail_score(item: dict[str, Any]) -> int:
 def preferred_duplicate_item(a: tuple[int, dict[str, Any]], b: tuple[int, dict[str, Any]]) -> tuple[int, dict[str, Any]]:
     _, ai = a
     _, bi = b
+    # User-visible duplicate law: keep the freshest card first. Source language,
+    # detail, and image are only tie-breakers after recency.
+    adt = parse_dt(str(ai.get("publishedAt") or "")) or datetime.min.replace(tzinfo=TZ)
+    bdt = parse_dt(str(bi.get("publishedAt") or "")) or datetime.min.replace(tzinfo=TZ)
+    if adt != bdt:
+        return a if adt >= bdt else b
     ah, bh = is_hebrew_source(ai), is_hebrew_source(bi)
     if ah != bh:
         return a if ah else b
     ad, bd = detail_score(ai), detail_score(bi)
     if abs(ad - bd) > 20:
         return a if ad > bd else b
-    adt = parse_dt(str(ai.get("publishedAt") or "")) or datetime.min.replace(tzinfo=TZ)
-    bdt = parse_dt(str(bi.get("publishedAt") or "")) or datetime.min.replace(tzinfo=TZ)
     return a if adt >= bdt else b
 
 
@@ -277,6 +315,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = security_event_tokens(a)
     bw = security_event_tokens(b)
     if aw and bw and "us_iran_strike" in aw and "us_iran_strike" in bw and len((aw & bw) - {"us_iran_strike"}) >= 2:
+        return True
+    aw = iran_deal_decision_tokens(a)
+    bw = iran_deal_decision_tokens(b)
+    if aw and bw and "us_iran_deal_decision" in aw and "us_iran_deal_decision" in bw and len(aw & bw) >= 2:
         return True
     if topic_for_item(a) != topic_for_item(b):
         return False
