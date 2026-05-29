@@ -160,7 +160,7 @@ html[data-theme="light"] .wifi:before,html[data-theme="light"] .wifi:after{borde
 </section>
 </main>
 <script>
-const POANTA_FEED_VERSION = '20260526-breaking-dedupe-v1-personal-dedupe-v2';
+const POANTA_FEED_VERSION = '20260530-breaking-dedupe-v1-personal-dedupe-v3';
 const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
 const embeddedBreakingFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","mode":"breaking","ttlHours":12,"items":[{"category":"מבזקים","source":"Poenta","sourceLogo":"Poenta","headline":"טוען מבזקים…","context":"המבזקים יופיעו כאן כפיד נפרד מהכתבות הערוכות.","publishedAt":"2026-05-11T21:20:00+03:00","breaking":true}]};
 const host = document.getElementById('feedCards');
@@ -341,9 +341,13 @@ function semanticStoryKey(item){
   const hasMarketImpact=hasAny(text,['נפט','ברנט','שווקים','מחיר הנפט','מחירי הנפט','גז','זרימת נפט','oil','brent','markets','market impact','energy prices']);
   if(hasMarketImpact) return '';
   if(hasIran && hasUs && hasStrike && (hasSouth || hasStrikeContext)) return 'event:us-strikes-iran-20260526';
-  const hasDeal=hasAny(text,['הסכם','עסקה','deal','peace deal','ceasefire','הפסקת אש','מו״מ','מו"מ','negotiation','talks']);
+  const hasDeal=hasAny(text,['הסכם','עסקה','deal','peace deal','ceasefire','הפסקת אש','מו״מ','מו"מ','negotiation','talks','מגעים','הבנות','גרעין']);
   const hasHormuz=hasAny(text,['הורמוז','hormuz']);
+  const hasTrumpOrUs=hasAny(text,['טראמפ','trump','ארה״ב','ארה"ב','אמריק','וושינגטון','white house']);
+  const hasDecisionDelay=hasAny(text,['דחה','לא החליט','בלי החלטה','ללא הכרעה','לא קיבל החלטה','הכרעה','אישור','קרובים להבנות','מחלוקות','כספים מוקפאים','שחרור הכספים','אורניום מועשר','הורמוז']);
+  const isSanctionsStory=hasAny(text,['סנקציות','רשת רכש','ציוד סייבר','הטיל סנקציות','sanctions']);
   if(hasIran && hasUs && hasDeal && hasHormuz) return 'event:us-iran-deal-hormuz-20260526';
+  if(hasIran && hasTrumpOrUs && hasDeal && hasDecisionDelay && !isSanctionsStory) return 'event:us-iran-deal-decision-20260530';
   return '';
 }
 function dedupeVisibleItems(items){ const seen=new Map(); return items.filter(item=>{ const cluster=semanticStoryKey(item); if(!cluster) return true; const src=sourceName(item); const prev=seen.get(cluster); if(!prev){ seen.set(cluster,{source:src,key:itemKey(item)}); return true; } if(prev.source===src) return true; return false; }); }
