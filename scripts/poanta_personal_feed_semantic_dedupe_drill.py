@@ -56,7 +56,7 @@ def semantic_story_key(item: dict) -> str:
         return "event:us-strikes-iran-20260526"
     has_actor = has_us or has_any(text, ["טראמפ", "trump", "וושינגטון", "white house"])
     has_deal = has_any(text, ["הסכם", "עסקה", "מו״מ", "מו\"מ", "מגעים", "הבנות", "גרעין", "deal", "agreement", "talks", "negotiation"])
-    has_decision_delay = has_any(text, ["דחה", "לא החליט", "בלי החלטה", "ללא הכרעה", "לא קיבל החלטה", "הכרעה", "אישור", "קרובים להבנות", "מחלוקות", "כספים מוקפאים", "שחרור הכספים", "אורניום מועשר", "הורמוז"])
+    has_decision_delay = has_any(text, ["דחה", "לא החליט", "בלי החלטה", "ללא הכרעה", "לא קיבל החלטה", "בלי מסר ברור", "הסתיימה פגישת", "סיימו דיון", "חדר המצב", "הכרעה", "אישור", "קרובים להבנות", "מחלוקות", "כספים מוקפאים", "שחרור הכספים", "אורניום מועשר", "הורמוז"])
     is_sanctions = has_any(text, ["סנקציות", "רשת רכש", "ציוד סייבר", "הטיל סנקציות", "sanctions"])
     if has_iran and has_actor and has_deal and has_decision_delay and not is_sanctions:
         return "event:us-iran-deal-decision-20260530"

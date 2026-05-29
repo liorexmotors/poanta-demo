@@ -344,7 +344,7 @@ function semanticStoryKey(item){
   const hasDeal=hasAny(text,['הסכם','עסקה','deal','peace deal','ceasefire','הפסקת אש','מו״מ','מו"מ','negotiation','talks','מגעים','הבנות','גרעין']);
   const hasHormuz=hasAny(text,['הורמוז','hormuz']);
   const hasTrumpOrUs=hasAny(text,['טראמפ','trump','ארה״ב','ארה"ב','אמריק','וושינגטון','white house']);
-  const hasDecisionDelay=hasAny(text,['דחה','לא החליט','בלי החלטה','ללא הכרעה','לא קיבל החלטה','הכרעה','אישור','קרובים להבנות','מחלוקות','כספים מוקפאים','שחרור הכספים','אורניום מועשר','הורמוז']);
+  const hasDecisionDelay=hasAny(text,['דחה','לא החליט','בלי החלטה','ללא הכרעה','לא קיבל החלטה','בלי מסר ברור','הסתיימה פגישת','סיימו דיון','חדר המצב','הכרעה','אישור','קרובים להבנות','מחלוקות','כספים מוקפאים','שחרור הכספים','אורניום מועשר','הורמוז']);
   const isSanctionsStory=hasAny(text,['סנקציות','רשת רכש','ציוד סייבר','הטיל סנקציות','sanctions']);
   if(hasIran && hasUs && hasDeal && hasHormuz) return 'event:us-iran-deal-hormuz-20260526';
   if(hasIran && hasTrumpOrUs && hasDeal && hasDecisionDelay && !isSanctionsStory) return 'event:us-iran-deal-decision-20260530';
