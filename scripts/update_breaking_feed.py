@@ -148,6 +148,18 @@ def normalize_token(token: str) -> str:
         token = token[1:]
     if len(token) > 3 and token.startswith("ה"):
         token = token[1:]
+    # Normalize common terse-breaking synonyms so same diplomatic flashes from
+    # Rotter/Ynet/Walla collapse even when one headline says "מו״מ" and another
+    # says "עסקה", or "אקבל" vs "לקבל".  Keep this narrow to avoid merging
+    # adjacent Iran/Trump analysis items such as oil-market or Hormuz impacts.
+    synonym_map = {
+        "אקבל": "קבל",
+        "אקיים": "קיים",
+        "לקבל": "קבל",
+        "עסקה": "מומ",
+        "העסקה": "מומ",
+    }
+    token = synonym_map.get(token, token)
     return token
 
 
