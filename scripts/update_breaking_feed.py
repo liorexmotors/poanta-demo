@@ -158,6 +158,13 @@ def normalize_token(token: str) -> str:
         "לקבל": "קבל",
         "עסקה": "מומ",
         "העסקה": "מומ",
+        # Breaking accident flashes often disagree on municipality wording or
+        # early age reports.  Hosen is adjacent to Ma'alot-Tarshiha, and Hebrew
+        # prefix stripping turns "מעלות" into "עלות"; normalize the locality so
+        # updates from Ynet/Walla/Rotter about the same ATV incident collapse.
+        "חוסן": "מעלות_חוסן",
+        "תרשיחא": "מעלות_חוסן",
+        "עלות": "מעלות_חוסן",
     }
     token = synonym_map.get(token, token)
     return token
@@ -199,6 +206,11 @@ def near_duplicate(a: str, b: str) -> bool:
     if overlap >= 0.58 and len(distinct) >= 3:
         return True
     if overlap >= 0.44 and len(distinct) >= 4:
+        return True
+    # Same breaking accident updates can change from "injured" to "death" and
+    # disagree on age/local municipality while preserving the concrete event.
+    # Keep it narrow: exact vehicle class + accident + same normalized locality.
+    if {"תאונת", "טרקטורון", "מעלות_חוסן"} <= shared and "בן" in shared:
         return True
     # Very short alert wording: one source may say "אזעקות בגליל המערבי" while
     # another adds the suspected drone and locality.  Shared location + alert
