@@ -228,7 +228,10 @@ def near_duplicate(a: str, b: str) -> bool:
     # and the concrete siren/drone/rocket wording.  Collapse only when the city
     # and alert+fire signal are both shared, so unrelated northern-security
     # analysis is not merged.
-    city_alert_terms = {"אזעק", "אזעקה", "אזעקות", "תרעות", "חדירת", "כטבם", "כטבמים", "רקטות"}
+    city_alert_terms = {"אזעק", "אזעקה", "אזעקות", "תרעות", "התרעות", "חדירת", "כטבם", "כטבמים", "רקטות"}
+    northern_alert_cities = {"צפת", "נהריה", "משגב", "מטולה", "שלומי", "קריית", "שמונה"}
+    if (shared & northern_alert_cities) and (ta & city_alert_terms) and (tb & city_alert_terms):
+        return True
     if "צפת" in shared and "ירי" in shared and (ta & city_alert_terms) and (tb & city_alert_terms):
         return True
     fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
