@@ -219,10 +219,17 @@ def near_duplicate(a: str, b: str) -> bool:
     # Very short alert wording: one source may say "אזעקות בגליל המערבי" while
     # another adds the suspected drone and locality.  Shared location + alert
     # intent is enough, but only for this narrow alert/drone class.
-    alert_terms = {"אזעק", "אזעקה", "אזעקות", "כטבם", "חדירת", "גליל", "מערבי", "נטועה"}
+    alert_terms = {"אזעק", "אזעקה", "אזעקות", "תרעות", "כטבם", "כטבמים", "חדירת", "גליל", "מערבי", "נטועה", "צפת"}
     if len(shared & alert_terms) >= 2 and ({"אזעק", "אזעקה", "אזעקות"} & shared):
         return True
     if ({"אזעק", "אזעקה", "אזעקות"} & shared) and ({"גליל", "מערבי"} <= ta or {"גליל", "מערבי"} <= tb) and ("נטועה" in ta or "נטועה" in tb or "כטבם" in ta or "כטבם" in tb):
+        return True
+    # Same-location northern alert updates can vary between "צה״ל נערך לירי"
+    # and the concrete siren/drone/rocket wording.  Collapse only when the city
+    # and alert+fire signal are both shared, so unrelated northern-security
+    # analysis is not merged.
+    city_alert_terms = {"אזעק", "אזעקה", "אזעקות", "תרעות", "חדירת", "כטבם", "כטבמים", "רקטות"}
+    if "צפת" in shared and "ירי" in shared and (ta & city_alert_terms) and (tb & city_alert_terms):
         return True
     fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
     if "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms)):
