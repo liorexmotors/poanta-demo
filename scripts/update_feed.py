@@ -2398,6 +2398,10 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
             headline = "מטוס התדלוק החדש נחת בטייסת גדעון בנבטים"
             context = "צה״ל קלט את המתדלק המתקדם בטייסת שהוקמה עבורו בבסיס נבטים, עם יכולת לתדלק שני מטוסים במקביל ועמדת נווט נוספת."
             takeaway = "יכולת תדלוק אווירי חדשה מרחיבה את טווח הפעולה של חיל האוויר."
+        elif "חיזבאללה" in text and any(x in text for x in ["מפקדת ארטילריה", "פיצוצי משנה", "אמצעי לחימה"]):
+            headline = complete_headline(dequote_headline(title), 72)
+            context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else title
+            takeaway = "פיצוצי המשנה מעידים שחיזבאללה עדיין מחזיק אמצעי לחימה במבנים צבאיים בדרום לבנון."
         elif "חיזבאללה" in text and any(x in text for x in ["מחבלים", "חוסלו", "מפקדי"]):
             headline = "צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש"
             context = desc or title
@@ -2910,6 +2914,20 @@ def diversify_visible_top(
             category_counts[category] = category_counts.get(category, 0) + 1
         else:
             deferred.append(item)
+    if len(chosen) < top_limit:
+        still_deferred: list[dict] = []
+        for item in deferred:
+            if len(chosen) >= top_limit:
+                still_deferred.append(item)
+                continue
+            category = str(item.get("category") or "חדשות")
+            low_priority_cap = LOW_PRIORITY_FEED_CATEGORY_CAPS.get(category)
+            if low_priority_cap is not None and category_counts.get(category, 0) >= max_per_low_priority_category:
+                still_deferred.append(item)
+                continue
+            chosen.append(item)
+            category_counts[category] = category_counts.get(category, 0) + 1
+        deferred = still_deferred
     if len(chosen) < top_limit:
         need = top_limit - len(chosen)
         chosen.extend(deferred[:need])

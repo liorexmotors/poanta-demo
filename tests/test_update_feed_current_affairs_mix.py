@@ -31,6 +31,22 @@ def test_balance_feed_category_mix_caps_sports_and_gossip():
     assert sum(1 for x in balanced if x["category"] == "ביטחון") == 40
 
 
+def test_official_idf_artillery_update_has_specific_takeaway():
+    c = update_feed.Candidate(
+        source="דובר צה״ל - טלגרם רשמי",
+        url="https://t.me/idf_telegram/example",
+        title='דובר צה"ל: צה"ל השמיד מפקדת ארטילריה מאוישת של חיזבאללה',
+        description="לאחר התקיפה זוהו פיצוצי משנה המעידים על הימצאות אמצעי לחימה בתוך המבנה.",
+        published_at="2026-05-30T12:00:00+03:00",
+    )
+
+    fields = update_feed.official_telegram_pointa_fields(c)
+
+    assert fields is not None
+    assert fields[2] == "פיצוצי המשנה מעידים שחיזבאללה עדיין מחזיק אמצעי לחימה במבנים צבאיים בדרום לבנון."
+    assert "עדכון צבאי נקודתי" not in fields[2]
+
+
 def test_diversify_visible_top_limits_low_priority_categories():
     items = []
     # Newest low-priority items arrive first, followed by enough current-affairs
