@@ -946,7 +946,8 @@ MIDDLE_EAST_OR_ISRAEL_TERMS = [
 REGIONAL_SECURITY_TERMS = [
     "איראן", "iran", "הורמוז", "hormuz", "גרעין", "nuclear", "מלחמה", "war",
     "הסכם", "deal", "הסכמי אברהם", "abraham", "נורמליזציה", "normalization", "normalisation",
-    "חמאס", "חיזבאללה", "טילים", "צבא", "military", "terror", "hostage", "חטופים",
+    "חמאס", "חיזבאללה", "טילים", "צבא", "צה\"ל", "צה״ל", "דובר צה\"ל", "דובר צה״ל",
+    "תקיפה", "פינוי", "התפנות", "כפרים בדרום לבנון", "military", "terror", "hostage", "חטופים",
 ]
 REGIONAL_POLITICS_TERMS = ["כנסת", "ממשלה", "נתניהו", "שר", "שרים", "בחירות", "קואליציה", "אופוזיציה", "minister", "government", "election"]
 
