@@ -165,6 +165,10 @@ def normalize_token(token: str) -> str:
         "חוסן": "מעלות_חוסן",
         "תרשיחא": "מעלות_חוסן",
         "עלות": "מעלות_חוסן",
+        # Building-fire flashes often split between rescue count and smoke-injury
+        # count.  Normalize the inflected fire token so same-location building
+        # fires collapse into one breaking card with source links.
+        "שריפת": "שריפה",
     }
     token = synonym_map.get(token, token)
     return token
@@ -220,7 +224,17 @@ def near_duplicate(a: str, b: str) -> bool:
         return True
     if ({"אזעק", "אזעקה", "אזעקות"} & shared) and ({"גליל", "מערבי"} <= ta or {"גליל", "מערבי"} <= tb) and ("נטועה" in ta or "נטועה" in tb or "כטבם" in ta or "כטבם" in tb):
         return True
+    fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
+    if "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms)):
+        return True
     return False
+
+
+def same_source_building_fire_update(a: str, b: str) -> bool:
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
+    return "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms))
 
 
 def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
@@ -257,7 +271,11 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
             (
                 x
                 for x in deduped
-                if x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x))
+                if x.get("sourceUrl") != row.get("sourceUrl")
+                and (
+                    (x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x)))
+                    or same_source_building_fire_update(row_dupe_text, dupe_text(x))
+                )
             ),
             None,
         )
@@ -266,8 +284,9 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
             if row.get("source") not in sources:
                 sources.append(row.get("source"))
             links = match.setdefault("sourceLinks", [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}])
-            if row.get("source") and not any(link.get("name") == row.get("source") for link in links):
-                links.append({"name": row.get("source"), "url": row.get("sourceUrl") or ""})
+            row_url = row.get("sourceUrl") or ""
+            if row.get("source") and not any(link.get("url") == row_url for link in links):
+                links.append({"name": row.get("source"), "url": row_url})
             continue
         deduped.append(row)
         if len(deduped) >= limit:
