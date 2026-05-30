@@ -999,6 +999,15 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     text = f"{content_text} {source}"
     if is_weather_forecast_story(title, desc, source):
         return "מזג אוויר", "real"
+    # Local emergency/crime flashes must not fall back to generic "חדשות",
+    # because the public app maps generic news to the politics tab/chip. Keep
+    # shootings, murders and rescue/fire emergencies out of visible politics.
+    local_emergency_terms = [
+        "נורה", "ירי", "נרצח", "רצח", "דקירה", "נדקר", "פצוע קשה",
+        "שריפה", "חולצו", "לכודים", "כיבוי", "כבאות",
+    ]
+    if any(x in content_text for x in local_emergency_terms) and not any(x in content_text for x in ["כנסת", "ממשלה", "נתניהו", "בחירות", "קואליציה"]):
+        return "פלילים", "security"
     # Lior's boundary: אקטואליה בעולם is only for global stories with no Israel/Middle-East angle.
     # Israel/Middle-East items from foreign sources still belong to the normal news/security/politics domains.
     if is_middle_east_or_israel_story(content_text, source):
