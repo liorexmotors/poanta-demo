@@ -177,6 +177,26 @@ CASES = [
         },
     ),
     (
+        "zaporizhzhia_drone_nuclear_plant_cross_category",
+        True,
+        {
+            "source": "מעריב - מבזקים",
+            "category": "אקטואליה בעולם",
+            "headline": "כטב״ם פגע במבנה טורבינה בתחנת הכוח הגרעינית זפוריז׳יה",
+            "originalTitle": "הסוכנות הבינלאומית לאנרגיה אטומית: כטב\"ם פגע במבנה טורבינה בתחנת כוח גרעינית באוקראינה",
+            "context": "סבא״א קיבלה עדכון מתחנת הכוח הגרעינית זפוריז׳יה באוקראינה שלפיו כטב״ם פגע במבנה טורבינה וגרם לחור בקיר.",
+            "sourceUrl": "https://www.maariv.co.il/breaking-news/article-1327267",
+        },
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "headline": "כטב״ם אוקראיני פגע בתחנת הכוח הגרעינית בזפוריז׳יה",
+            "originalTitle": "כטב\"ם אוקראיני פגע בתחנת כוח רוסית",
+            "context": "כטב״ם אוקראיני פגע בתחנת הכוח הגרעינית בזפוריז׳יה והעלה חשש סביב בטיחות המתקן.",
+            "sourceUrl": "https://news.walla.co.il/break/3841879",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {

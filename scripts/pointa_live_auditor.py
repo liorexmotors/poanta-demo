@@ -231,6 +231,25 @@ def northern_rocket_event_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def nuclear_facility_strike_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same nuclear-facility strike/safety incident across sources."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"זפוריז|zaporizh|zaporizhzhia", text):
+        tokens.add("zaporizhzhia")
+    if re.search(r"גרעינ|nuclear|סבא[״\"]?א|iaea|אנרגיה אטומית", text):
+        tokens.add("nuclear_facility")
+    if re.search(r"כטב[״\"]?ם|רחפן|drone|uav", text):
+        tokens.add("drone")
+    if re.search(r"טורבינה|תחנת כוח|power plant|turbine|מבנה", text):
+        tokens.add("plant_structure")
+    if re.search(r"פגע|פגיעה|תקיפ|חור בקיר|hit|strike|attack", text):
+        tokens.add("impact")
+    if {"zaporizhzhia", "nuclear_facility", "drone", "impact"}.issubset(tokens):
+        return tokens
+    return set()
+
+
 def security_event_tokens(item: dict[str, Any]) -> set[str]:
     """Semantic duplicate key for the same security event across sources.
 
@@ -389,6 +408,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return True
     aw = northern_rocket_event_tokens(a)
     bw = northern_rocket_event_tokens(b)
+    if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
+        return True
+    aw = nuclear_facility_strike_tokens(a)
+    bw = nuclear_facility_strike_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
         return True
     aw = security_event_tokens(a)
