@@ -157,6 +157,26 @@ CASES = [
         },
     ),
     (
+        "iran_hardliners_against_us_deal_cross_source",
+        True,
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "ביטחון",
+            "headline": "הקיצונים באיראן לוחצים על חמינאי לבלום הסכם עם ארה״ב",
+            "originalTitle": "עצרות המונים ומכתב מתריס למנהיג העליון: הקיצונים באיראן שפועלים נגד ההסכם",
+            "context": "פלג קיצוני בהנהגה האיראנית מפעיל לחץ על חמינאי נגד הסכם עם ארה״ב, כולל עצרות ומכתב שמאשים את צוות המשא ומתן בפיוס יתר.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/example-iran-hardliners",
+        },
+        {
+            "source": "N12 - בעולם",
+            "category": "ביטחון",
+            "headline": "המחנה הקיצוני באיראן לוחץ נגד הסכם עם ארה״ב",
+            "originalTitle": "המאבק בתוך איראן נגד ההסכם: טראמפ חייב לדעת, טהראן קובעת את התנאים",
+            "context": "גורמים במחנה הקיצוני בטהראן דורשים להקשיח תנאים מול טראמפ ולמנוע פשרה מהירה במשא ומתן עם ארה״ב.",
+            "sourceUrl": "https://www.mako.co.il/news-world/example-iran-hardliners",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {

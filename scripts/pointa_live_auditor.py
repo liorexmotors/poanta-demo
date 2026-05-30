@@ -301,6 +301,33 @@ def iran_deal_decision_tokens(item: dict[str, Any]) -> set[str]:
     return tokens
 
 
+def iran_hardliner_deal_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same Iranian hardliners-vs-U.S.-deal story.
+
+    Hebrew sources often split this story between the external deal frame
+    (Trump/U.S. terms) and the internal Tehran power-struggle frame
+    (hardliners pressuring Khamenei). The user-visible feed should show one
+    card for the same live event, not one per source angle.
+    """
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_iran = bool(re.search(r"איראן|איראני|טהראן|חמינאי|\biran\b|iranian|khamenei", text))
+    has_deal = bool(re.search(r"הסכם|עסקה|מו[״\"]?מ|משא ומתן|מגעים|גרעין|deal|agreement|talks|negotiation", text))
+    has_hardliners = bool(re.search(r"קיצוני|קיצונים|קשיחים|מחנה קיצוני|פלג קיצוני|hardliner|hardliners", text))
+    has_pressure = bool(re.search(r"לוחץ|לחץ|מתנגד|נגד ההסכם|לבלום|למנוע|מכתב|עצרות|קובעת את התנאים|תנאים", text))
+    if not (has_iran and has_deal and has_hardliners and has_pressure):
+        return set()
+    tokens = {"iran_hardliners_deal"}
+    if re.search(r"חמינאי|khamenei", text):
+        tokens.add("khamenei")
+    if re.search(r"טראמפ|trump|ארה[״\"]?ב|אמריק|וושינגטון", text):
+        tokens.add("us_trump")
+    if re.search(r"מכתב|עצרות", text):
+        tokens.add("internal_campaign")
+    if re.search(r"תנאים|קובעת את התנאים|מגבלות|נוקשות", text):
+        tokens.add("terms_pressure")
+    return tokens
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -371,6 +398,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = iran_deal_decision_tokens(a)
     bw = iran_deal_decision_tokens(b)
     if aw and bw and "us_iran_deal_decision" in aw and "us_iran_deal_decision" in bw and len(aw & bw) >= 2:
+        return True
+    aw = iran_hardliner_deal_tokens(a)
+    bw = iran_hardliner_deal_tokens(b)
+    if aw and bw and "iran_hardliners_deal" in aw and "iran_hardliners_deal" in bw and len(aw & bw) >= 2:
         return True
     if topic_for_item(a) != topic_for_item(b):
         return False
