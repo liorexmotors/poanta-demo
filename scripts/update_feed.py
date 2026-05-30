@@ -49,6 +49,20 @@ RSS_SOURCES_PATH = ROOT / "rss_sources.json"
 SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
 
+CURRENT_AFFAIRS_CATEGORIES = {"חדשות", "ביטחון", "פוליטיקה", "פלילים", "משפט", "אקטואליה בעולם"}
+LOW_PRIORITY_FEED_CATEGORY_CAPS = {
+    # Lior reported that the feed feels short on current-affairs/news material.
+    # Sports and gossip have many parallel RSS sections, so without a global cap
+    # they can fill a disproportionate share of the retained feed even though
+    # each individual source contributes only two rows.
+    "רכילות": 24,
+    "ספורט": 28,
+}
+LOW_PRIORITY_SYNC_SELECTION_CAPS = {
+    "רכילות": 10,
+    "ספורט": 12,
+}
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PoantaRSS/0.1)",
     "Accept": "application/rss+xml, application/xml, text/xml, */*;q=0.8",
@@ -2862,22 +2876,38 @@ def source_diversity_group(item: dict) -> str:
         return "משטרה"
     return raw or str(item.get("source") or "מקור")
 
-def diversify_visible_top(items: list[dict], *, top_limit: int = 12, max_per_group: int = 5) -> list[dict]:
-    """Reorder only the leading slice so the app opens on multiple sources.
+def diversify_visible_top(
+    items: list[dict],
+    *,
+    top_limit: int = 20,
+    max_per_group: int = 5,
+    max_per_low_priority_category: int = 2,
+) -> list[dict]:
+    """Reorder only the leading slice so the app opens on newsy source/category mix.
 
-    This preserves every card and its real source timestamp; it only prevents
-    one dominant RSS family from occupying nearly all of the first screen.
+    This preserves every card and its real source timestamp; it prevents one
+    dominant RSS family or low-priority vertical (sports/gossip) from occupying
+    nearly all of the first screens when current-affairs sources are available.
     """
     if len(items) <= top_limit:
         return items
     chosen: list[dict] = []
     deferred: list[dict] = []
     counts: dict[str, int] = {}
+    category_counts: dict[str, int] = {}
     for item in items:
         group = source_diversity_group(item)
-        if len(chosen) < top_limit and counts.get(group, 0) < max_per_group:
+        category = str(item.get("category") or "חדשות")
+        low_priority_cap = LOW_PRIORITY_FEED_CATEGORY_CAPS.get(category)
+        category_blocked = (
+            low_priority_cap is not None
+            and len(chosen) < top_limit
+            and category_counts.get(category, 0) >= max_per_low_priority_category
+        )
+        if len(chosen) < top_limit and counts.get(group, 0) < max_per_group and not category_blocked:
             chosen.append(item)
             counts[group] = counts.get(group, 0) + 1
+            category_counts[category] = category_counts.get(category, 0) + 1
         else:
             deferred.append(item)
     if len(chosen) < top_limit:
@@ -2890,6 +2920,32 @@ def assign_display_rank(items: list[dict]) -> list[dict]:
     for idx, item in enumerate(items):
         item["displayRank"] = idx
     return items
+
+
+def balance_feed_category_mix(items: list[dict]) -> list[dict]:
+    """Prevent low-priority verticals from crowding out current affairs.
+
+    The source registry intentionally contains many sports/gossip subsections.
+    Per-source limits are not enough: 20+ subsections can still dominate the
+    retained feed and make the app feel light on actual news.  Keep the newest
+    cards from those verticals, but cap them globally after chronological merge
+    so more public-affairs/security/politics/local-news cards remain visible.
+    """
+    counts: dict[str, int] = {}
+    balanced: list[dict] = []
+    for item in items:
+        category = str(item.get("category") or "חדשות")
+        cap = LOW_PRIORITY_FEED_CATEGORY_CAPS.get(category)
+        if cap is not None and counts.get(category, 0) >= cap:
+            continue
+        balanced.append(item)
+        counts[category] = counts.get(category, 0) + 1
+    return balanced
+
+
+def sync_selection_limit_for_source(source: dict) -> int | None:
+    category = str(source.get("categoryHint") or "חדשות")
+    return LOW_PRIORITY_SYNC_SELECTION_CAPS.get(category)
 
 
 def is_official_telegram_item(item: dict) -> bool:
@@ -3048,6 +3104,7 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
         if sig:
             final_seen_signatures.add(sig)
         deduped.append(item)
+    deduped = balance_feed_category_mix(deduped)
     limited = preserve_recent_official_telegram_items(deduped, now, MAX_FEED_ITEMS)
     merged = assign_display_rank(diversify_visible_top(limited))
     new_feed["items"] = merged
@@ -3093,6 +3150,7 @@ def main() -> int:
         write_empty_draft("generating", "Draft generation in progress; do not send this file.")
 
     selected: list[Candidate] = []
+    selected_by_category: dict[str, int] = {}
     source_activity: list[dict] = []
     used_urls: set[str] = set()
     seen = load_seen()
@@ -3151,7 +3209,12 @@ def main() -> int:
             # rejects; continue scanning the source until we find QA-clean cards.
             if not args.experimental_prompt and not build_feed([c]).get("items"):
                 continue
+            category_limit = sync_selection_limit_for_source(source)
+            source_category = str(source.get("categoryHint") or "חדשות")
+            if category_limit is not None and selected_by_category.get(source_category, 0) >= category_limit:
+                continue
             picked.append(c)
+            selected_by_category[source_category] = selected_by_category.get(source_category, 0) + 1
             used_urls.add(c.url)
             time.sleep(0.2)
             if len(picked) >= 2:
