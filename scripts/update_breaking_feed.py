@@ -169,6 +169,16 @@ def normalize_token(token: str) -> str:
         # count.  Normalize the inflected fire token so same-location building
         # fires collapse into one breaking card with source links.
         "שריפת": "שריפה",
+        # Home Front Command education/activity restriction flashes can be
+        # phrased as "אין לימודים" by one source and "ביטול פעילות חינוכית"
+        # by another.  Normalize the education/action words so the narrow rule
+        # below can merge same-event northern-front instruction updates.
+        "לימודים": "חינוך_קו_עימות",
+        "ימודים": "חינוך_קו_עימות",
+        "פעיליות": "חינוך_קו_עימות",
+        "פעילויות": "חינוך_קו_עימות",
+        "חינוכית": "חינוך_קו_עימות",
+        "חינוך": "חינוך_קו_עימות",
     }
     token = synonym_map.get(token, token)
     return token
@@ -234,6 +244,10 @@ def near_duplicate(a: str, b: str) -> bool:
         return True
     if "צפת" in shared and "ירי" in shared and (ta & city_alert_terms) and (tb & city_alert_terms):
         return True
+    # Same Home Front Command restriction update can appear as schools canceled
+    # in conflict-line towns vs educational activity canceled after escalation.
+    if {"פיקוד", "עורף", "עימות", "חינוך_קו_עימות"} <= shared:
+        return True
     # Same public-figure reaction to a northern-front escalation can arrive as
     # two terse flashes: one source quotes the accusation ("תושבי הצפון
     # מופקרים") and another quotes the demanded response ("הדאחייה צריכה
@@ -291,7 +305,9 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                 for x in deduped
                 if x.get("sourceUrl") != row.get("sourceUrl")
                 and (
-                    (x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x)))
+                    near_duplicate(row_dupe_text, dupe_text(x))
+                    if normalize_for_dupe(str(row.get("headline", ""))) == normalize_for_dupe(str(x.get("headline", "")))
+                    else (x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x)))
                     or same_source_building_fire_update(row_dupe_text, dupe_text(x))
                 )
             ),
@@ -299,12 +315,14 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
         )
         if match:
             sources = match.setdefault("sources", [match.get("source")])
-            if row.get("source") not in sources:
+            if row.get("source") and row.get("source") not in sources:
                 sources.append(row.get("source"))
-            links = match.setdefault("sourceLinks", [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}])
-            row_url = row.get("sourceUrl") or ""
-            if row.get("source") and not any(link.get("url") == row_url for link in links):
-                links.append({"name": row.get("source"), "url": row_url})
+                links = match.setdefault("sourceLinks", [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}])
+                row_url = row.get("sourceUrl") or ""
+                if not any(link.get("url") == row_url for link in links):
+                    links.append({"name": row.get("source"), "url": row_url})
+            elif not match.get("sourceLinks"):
+                match["sourceLinks"] = [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}]
             continue
         deduped.append(row)
         if len(deduped) >= limit:
