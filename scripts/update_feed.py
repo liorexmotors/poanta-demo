@@ -2057,6 +2057,29 @@ def weather_event_tokens(item: dict) -> set[str]:
     return set()
 
 
+def local_emergency_event_tokens(item: dict) -> set[str]:
+    """Fingerprint concrete local emergency incidents across category labels.
+
+    The public UI can show the same fire/rescue/accident story under different
+    topics (for example generic חדשות vs. פלילים). Word overlap alone misses
+    those when the category differs, so use narrow event+location tokens only
+    for concrete local emergency reports.
+    """
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"שריפה|אש|דליק|כבאות|חולצו|חילוץ|לכודים|דיירים", text):
+        tokens.add("fire_rescue")
+    if re.search(r"לוד|lod", text):
+        tokens.add("lod")
+    if re.search(r"בניין|מגורים|דירה|apartment", text):
+        tokens.add("residential_building")
+    if re.search(r"18|שמונה עשר|eighteen", text):
+        tokens.add("eighteen_people")
+    if "fire_rescue" in tokens and "lod" in tokens and ("residential_building" in tokens or "eighteen_people" in tokens):
+        return tokens
+    return set()
+
+
 def security_event_tokens(item: dict) -> set[str]:
     """Semantic duplicate key for the same security event across sources.
 
@@ -2104,6 +2127,10 @@ def likely_duplicate_story(a: dict, b: dict) -> bool:
         return False
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
+    if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
+        return True
+    aw = local_emergency_event_tokens(a)
+    bw = local_emergency_event_tokens(b)
     if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
         return True
     aw = security_event_tokens(a)

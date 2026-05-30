@@ -97,6 +97,26 @@ CASES = [
         },
     ),
     (
+        "lod_residential_fire_cross_category",
+        True,
+        {
+            "source": "חדשות 12",
+            "category": "חדשות",
+            "headline": "18 דיירים חולצו משריפה בבניין בלוד",
+            "originalTitle": "18 דיירים חולצו משריפה בבניין מגורים בלוד",
+            "context": "צוותי כבאות חילצו 18 דיירים מבניין מגורים בלוד לאחר שפרצה בו שריפה.",
+            "sourceUrl": "https://www.mako.co.il/news-example-lod-fire",
+        },
+        {
+            "source": "מעריב - חדשות",
+            "category": "פלילים",
+            "headline": "שריפה בבניין בלוד הסתיימה בחילוץ דיירים",
+            "originalTitle": "שריפה פרצה בבניין מגורים בלוד; דיירים חולצו מהמקום",
+            "context": "כוחות הכיבוי פינו דיירים מבניין בלוד בעקבות שריפה שפרצה במקום.",
+            "sourceUrl": "https://www.maariv.co.il/news/israel/example-lod-fire",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {
