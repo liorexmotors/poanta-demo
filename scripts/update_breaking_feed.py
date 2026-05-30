@@ -234,6 +234,14 @@ def near_duplicate(a: str, b: str) -> bool:
         return True
     if "צפת" in shared and "ירי" in shared and (ta & city_alert_terms) and (tb & city_alert_terms):
         return True
+    # Same public-figure reaction to a northern-front escalation can arrive as
+    # two terse flashes: one source quotes the accusation ("תושבי הצפון
+    # מופקרים") and another quotes the demanded response ("הדאחייה צריכה
+    # לרעוד").  Collapse only this narrow Bennett+north reaction shape so
+    # unrelated political items by the same actor remain separate.
+    north_terms = {"צפון", "צפוני", "צפונית"}
+    if "בנט" in shared and (ta & north_terms) and (tb & north_terms):
+        return True
     fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
     if "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms)):
         return True
