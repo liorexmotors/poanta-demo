@@ -117,6 +117,46 @@ CASES = [
         },
     ),
     (
+        "kiryat_shmona_rocket_cross_source",
+        True,
+        {
+            "source": "וואלה חדשות",
+            "category": "ביטחון",
+            "headline": "רקטה פגעה במרכז קריית שמונה וגרמה נזק כבד לעסקים",
+            "originalTitle": "לילה לא שקט בצפון: פגיעה ישירה בקריית שמונה - נזק כבד לעסקים, אין נפגעים",
+            "context": "במהלך הלילה נורו עשרה שיגורים מלבנון לעבר קריית שמונה והגליל העליון, ותשעה מהם יורטו.",
+            "sourceUrl": "https://news.walla.co.il/item/example-k8",
+        },
+        {
+            "source": "הארץ - חדשות",
+            "category": "ביטחון",
+            "headline": "רקטה נפלה במרכז קריית שמונה אחרי מטח מלבנון",
+            "originalTitle": "ירי בלתי פוסק לעבר הצפון: רקטה נפלה בקריית שמונה",
+            "context": "רקטה ששוגרה מלבנון נפלה בקריית שמונה וגרמה נזק לחנויות ולעסקים, ללא נפגעים.",
+            "sourceUrl": "https://www.haaretz.co.il/example-k8",
+        },
+    ),
+    (
+        "yirka_samer_halabi_murder_cross_source",
+        True,
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "פלילים",
+            "headline": "סאמר חלבי בן ה־24 נרצח בירכא במהלך חגיגת יום הולדת",
+            "originalTitle": "הנרצח בירכא: תושב היישוב סאמר חלבי",
+            "context": "סאמר חלבי, בן 24 מירכא, נורה למוות במהלך חגיגת יום הולדת ביישוב.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/example-yirka",
+        },
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "פלילים",
+            "headline": "בן 24 נרצח בירכא והירי נשאר ללא חשודים",
+            "originalTitle": "בן 24 נורה למוות בירכא; המשטרה פתחה בחקירה",
+            "context": "גבר בן 24 מירכא נורה למוות, והמשטרה טרם איתרה חשודים בירי.",
+            "sourceUrl": "https://news.walla.co.il/break/example-yirka",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {

@@ -2080,6 +2080,23 @@ def local_emergency_event_tokens(item: dict) -> set[str]:
     return set()
 
 
+def northern_rocket_event_tokens(item: dict) -> set[str]:
+    """Fingerprint the same northern rocket-impact event across sources."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"קריית שמונה|ק\"ש|kiryat shmona", text):
+        tokens.add("kiryat_shmona")
+    if re.search(r"רקט|טיל|שיגור|מטח|אזעק", text):
+        tokens.add("rocket_fire")
+    if re.search(r"לבנון|חיזבאללה|צפון|גליל", text):
+        tokens.add("north_lebanon")
+    if re.search(r"פגיעה ישירה|נפלה|פגע|נזק כבד|עסקים|חנויות", text):
+        tokens.add("direct_hit_damage")
+    if "kiryat_shmona" in tokens and "rocket_fire" in tokens and ("north_lebanon" in tokens or "direct_hit_damage" in tokens):
+        return tokens
+    return set()
+
+
 def security_event_tokens(item: dict) -> set[str]:
     """Semantic duplicate key for the same security event across sources.
 
@@ -2131,6 +2148,10 @@ def likely_duplicate_story(a: dict, b: dict) -> bool:
         return True
     aw = local_emergency_event_tokens(a)
     bw = local_emergency_event_tokens(b)
+    if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
+        return True
+    aw = northern_rocket_event_tokens(a)
+    bw = northern_rocket_event_tokens(b)
     if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
         return True
     aw = security_event_tokens(a)

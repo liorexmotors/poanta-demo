@@ -193,13 +193,40 @@ def local_emergency_event_tokens(item: dict[str, Any]) -> set[str]:
     tokens: set[str] = set()
     if re.search(r"שריפה|אש|דליק|כבאות|חולצו|חילוץ|לכודים|דיירים", text):
         tokens.add("fire_rescue")
+    if re.search(r"רצח|נרצח|נרצחה|ירי|נורה|נורתה|הרוג|נהרג|murder|killed|shot", text):
+        tokens.add("violent_death")
     if re.search(r"לוד|lod", text):
         tokens.add("lod")
+    if re.search(r"ירכא|yarka|yirka", text):
+        tokens.add("yirka")
+    if re.search(r"סאמר\s+חלבי|חלבי|samer", text):
+        tokens.add("samer_halabi")
+    if re.search(r"בן\s*24|בן ה[־-]?24|24", text):
+        tokens.add("age_24")
     if re.search(r"בניין|מגורים|דירה|apartment", text):
         tokens.add("residential_building")
     if re.search(r"18|שמונה עשר|eighteen", text):
         tokens.add("eighteen_people")
     if "fire_rescue" in tokens and "lod" in tokens and ("residential_building" in tokens or "eighteen_people" in tokens):
+        return tokens
+    if "violent_death" in tokens and "yirka" in tokens and ("samer_halabi" in tokens or "age_24" in tokens):
+        return tokens
+    return set()
+
+
+def northern_rocket_event_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same northern rocket-impact event across sources."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"קריית שמונה|ק\"ש|kiryat shmona", text):
+        tokens.add("kiryat_shmona")
+    if re.search(r"רקט|טיל|שיגור|מטח|אזעק", text):
+        tokens.add("rocket_fire")
+    if re.search(r"לבנון|חיזבאללה|צפון|גליל", text):
+        tokens.add("north_lebanon")
+    if re.search(r"פגיעה ישירה|נפלה|פגע|נזק כבד|עסקים|חנויות", text):
+        tokens.add("direct_hit_damage")
+    if "kiryat_shmona" in tokens and "rocket_fire" in tokens and ("north_lebanon" in tokens or "direct_hit_damage" in tokens):
         return tokens
     return set()
 
@@ -331,6 +358,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return True
     aw = local_emergency_event_tokens(a)
     bw = local_emergency_event_tokens(b)
+    if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
+        return True
+    aw = northern_rocket_event_tokens(a)
+    bw = northern_rocket_event_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
         return True
     aw = security_event_tokens(a)
