@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050608">
+  <meta name="description" content="Poenta — פיד חדשות חכם בעברית שמוציא מכל ידיעה את מה שבאמת חשוב להבין.">
+  <title>Poenta — להבין מהר. להישאר בעניינים.</title>
+  <style>
+    :root{
+      --bg:#050608;
+      --panel:#0b0d12;
+      --panel-2:#11141b;
+      --text:#f7f7f8;
+      --muted:rgba(247,247,248,.68);
+      --soft:rgba(247,247,248,.42);
+      --line:rgba(255,255,255,.105);
+      --yellow:#ffc400;
+      --yellow-2:#f0ac00;
+      --black:#07080b;
+      --max:1120px;
+      color-scheme:dark;
+    }
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 16% 8%, rgba(255,196,0,.16), transparent 28rem),
+        radial-gradient(circle at 86% 0%, rgba(255,255,255,.08), transparent 24rem),
+        linear-gradient(180deg,#050608 0%,#070910 48%,#050608 100%);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      text-rendering:geometricPrecision;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .site-shell{overflow:hidden;position:relative;min-height:100vh}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:soft-light;background-image:linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(180deg,#000,transparent 72%)}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(180%) blur(22px);
+      background:rgba(5,6,8,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{max-width:var(--max);margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.04em;font-size:25px}
+    .logo-mark{width:38px;height:38px;border-radius:14px 14px 14px 5px;background:linear-gradient(135deg,#ffe26a 0%,var(--yellow) 64%,#d89500 100%);position:relative;box-shadow:0 14px 36px rgba(255,196,0,.2)}
+    .logo-mark:after{content:"";position:absolute;left:0;bottom:-7px;border-top:13px solid var(--yellow-2);border-right:13px solid transparent}
+    .logo-mark i{position:absolute;right:9px;height:3px;background:#07080b;border-radius:99px}
+    .logo-mark i:nth-child(1){top:10px;width:20px}.logo-mark i:nth-child(2){top:18px;width:20px}.logo-mark i:nth-child(3){top:26px;width:14px}
+    .nav-links{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px;font-weight:700}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{height:40px;padding:0 17px;border-radius:999px;background:var(--text);color:#08090c;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;box-shadow:0 14px 34px rgba(255,255,255,.08)}
+    .section{max-width:var(--max);margin:0 auto;padding:0 22px}
+    .hero{min-height:calc(100vh - 69px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr);align-items:center;gap:54px;padding-top:58px;padding-bottom:72px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,196,0,.28);background:rgba(255,196,0,.08);color:#ffe086;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:900;margin-bottom:24px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 6px rgba(255,196,0,.12)}
+    h1{margin:0;font-size:clamp(46px,8vw,92px);line-height:.94;letter-spacing:-.075em;font-weight:950;max-width:850px}
+    .hero-text{margin:28px 0 0;max-width:690px;color:rgba(247,247,248,.76);font-size:clamp(19px,2vw,25px);line-height:1.45;font-weight:650;letter-spacing:-.025em}
+    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .button{height:50px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:950;letter-spacing:-.015em;border:1px solid transparent;transition:.18s ease}
+    .button.primary{background:var(--yellow);color:#08090c;box-shadow:0 18px 48px rgba(255,196,0,.18)}
+    .button.secondary{background:rgba(255,255,255,.05);border-color:var(--line);color:var(--text)}
+    .button:hover{transform:translateY(-1px)}
+    .trust-row{margin-top:28px;display:flex;align-items:center;gap:11px;flex-wrap:wrap;color:var(--soft);font-size:13px;font-weight:800}
+    .trust-row span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.035)}
+    .product-card{position:relative;border-radius:38px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.13);box-shadow:0 40px 100px rgba(0,0,0,.42);isolation:isolate}
+    .product-card:before{content:"";position:absolute;inset:-50px -26px auto auto;width:150px;height:150px;border-radius:50%;background:rgba(255,196,0,.18);filter:blur(38px);z-index:-1}
+    .feed-preview{border-radius:28px;background:linear-gradient(180deg,#10131a 0%,#07090e 100%);border:1px solid rgba(255,255,255,.09);padding:18px;min-height:575px;display:flex;flex-direction:column;gap:13px;overflow:hidden}
+    .preview-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+    .preview-title{font-size:28px;font-weight:950;letter-spacing:-.05em}.preview-time{color:var(--soft);font-size:12px;font-weight:800}
+    .scale{height:34px;border-radius:999px;background:rgba(255,196,0,.13);border:1px solid rgba(255,196,0,.18);position:relative;overflow:hidden;margin-bottom:6px}
+    .scale:before{content:"";position:absolute;right:0;top:0;bottom:0;width:67%;border-radius:999px;background:linear-gradient(90deg,var(--yellow-2),var(--yellow))}
+    .scale span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#050608;font-size:12px;font-weight:950;mix-blend-mode:screen}
+    .mini-card{border:1px solid rgba(255,255,255,.085);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.024));padding:12px;display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;align-items:stretch;box-shadow:0 12px 34px rgba(0,0,0,.16)}
+    .example-img{width:112px;height:112px;border-radius:18px;object-fit:cover;background:#11141c;border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
+    .mini-copy{display:grid;gap:8px;align-content:start;min-width:0}
+    .mini-meta{display:flex;align-items:center;justify-content:space-between;color:var(--soft);font-size:12px;font-weight:850}.mini-meta b{color:var(--yellow);font-weight:950}
+    .mini-card h3{margin:0;color:#fff;font-size:21px;line-height:1.12;letter-spacing:-.035em;font-weight:950}
+    .mini-card p{margin:0;color:rgba(247,247,248,.7);font-size:14.5px;line-height:1.45;font-weight:650}
+    .point{border-top:1px solid rgba(255,196,0,.16);padding-top:9px;color:#ffd55a;font-size:13.5px;font-weight:900;line-height:1.32}
+    .section-title{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.065em;margin:0 0 16px;font-weight:950;text-align:center}
+    .section-lead{max-width:760px;margin:0 auto 34px;color:var(--muted);font-size:20px;line-height:1.48;font-weight:650;text-align:center;letter-spacing:-.02em}
+    .features{padding-top:78px;padding-bottom:88px}
+    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .feature{min-height:335px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.026));border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;position:relative;overflow:hidden}
+    .feature-img{width:100%;aspect-ratio:1.68/1;border-radius:22px;object-fit:cover;border:1px solid rgba(255,255,255,.09);background:#10141c;box-shadow:0 16px 36px rgba(0,0,0,.18)}
+    .feature:after{content:"";position:absolute;left:-50px;bottom:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,196,0,.06)}
+    .feature-num{color:var(--yellow);font-size:13px;font-weight:950;letter-spacing:.08em}.feature h3{margin:0;font-size:25px;line-height:1.05;letter-spacing:-.045em}.feature p{margin:12px 0 0;color:var(--muted);font-size:15.5px;line-height:1.46;font-weight:650}
+    .screenshots{padding-top:86px;padding-bottom:92px}
+    .live-feed-wrap{margin:40px auto 0;max-width:980px;border:1px solid rgba(255,255,255,.12);border-radius:42px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.028));padding:16px;box-shadow:0 38px 92px rgba(0,0,0,.36);position:relative;overflow:hidden}
+    .live-feed-wrap:before{content:"";position:absolute;inset:auto -80px -110px auto;width:260px;height:260px;border-radius:50%;background:rgba(255,196,0,.12);filter:blur(42px);pointer-events:none}
+    .live-frame-head{height:44px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 10px 12px;color:var(--muted);font-size:13px;font-weight:850;position:relative;z-index:1}
+    .live-frame-head b{color:#fff;font-size:15px;font-weight:950}.live-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,196,0,.22);background:rgba(255,196,0,.09);color:#ffe08a;border-radius:999px;padding:7px 11px;font-weight:950}.live-badge:before{content:"";width:8px;height:8px;border-radius:50%;background:#35e27c;box-shadow:0 0 0 5px rgba(53,226,124,.12)}
+    .live-device{height:min(76vh,820px);min-height:620px;border-radius:31px;background:#050608;border:1px solid rgba(255,255,255,.12);overflow:hidden;position:relative;z-index:1;box-shadow:inset 0 0 0 1px rgba(255,255,255,.035)}
+    .live-device iframe{width:100%;height:100%;border:0;display:block;background:#050608;color-scheme:dark}
+    .live-help{margin:14px 8px 0;color:var(--muted);font-size:14px;line-height:1.45;font-weight:700;text-align:center;position:relative;z-index:1}.live-help a{color:#ffd45a;text-decoration:underline;text-underline-offset:3px}
+    .comparison{padding:88px 22px;background:#f5f5f7;color:#1d1d1f;max-width:none;margin:0}
+    .comparison-inner{max-width:var(--max);margin:0 auto}.comparison .section-lead{color:rgba(29,29,31,.68)}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}.compare-box{border-radius:34px;padding:32px;background:#fff;box-shadow:0 22px 54px rgba(0,0,0,.08);min-height:310px}.compare-box.dark{background:#0a0d12;color:#fff}.compare-label{display:inline-flex;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:950;background:rgba(0,0,0,.06);color:rgba(29,29,31,.55);margin-bottom:22px}.compare-box.dark .compare-label{background:rgba(255,196,0,.13);color:#ffd45a}.compare-box h3{font-size:31px;line-height:1.06;margin:0 0 18px;letter-spacing:-.05em}.compare-box p{font-size:18px;line-height:1.5;margin:0;color:rgba(29,29,31,.68);font-weight:650}.compare-box.dark p{color:rgba(255,255,255,.74)}
+    .final{padding-top:90px;padding-bottom:96px;text-align:center}.final-card{border:1px solid var(--line);border-radius:40px;padding:58px 28px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.028));box-shadow:0 40px 90px rgba(0,0,0,.28)}.final-card h2{font-size:clamp(38px,6vw,72px);line-height:.98;letter-spacing:-.07em;margin:0 0 18px}.final-card p{max-width:700px;margin:0 auto;color:var(--muted);font-size:20px;line-height:1.5;font-weight:650}.final-card .hero-actions{justify-content:center}
+    footer{border-top:1px solid var(--line);padding:24px 22px;color:var(--soft);font-size:13px;font-weight:750}.footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media (max-width:1050px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;gap:38px;min-height:auto}.product-card{max-width:520px;margin:0 auto;width:100%}.compare-grid{grid-template-columns:1fr}.screen-grid{grid-template-columns:1fr;max-width:430px;margin-inline:auto}.screen-shot:nth-child(2),.screen-shot:nth-child(3){margin-top:0}.nav-links a{display:none}.nav-inner{padding-inline:16px}.section{padding-inline:16px}.comparison{padding-inline:16px}}
+    @media (max-width:620px){.feature-grid{grid-template-columns:1fr}.mini-card{grid-template-columns:92px minmax(0,1fr)}.example-img{width:92px;height:104px}}
+    @media (max-width:520px){.nav-cta{display:none}.brand{font-size:22px}.logo-mark{width:34px;height:34px}.hero{padding-top:42px}.button{width:100%}.hero-actions{align-items:stretch}.feed-preview{min-height:520px;padding:14px}.mini-card h3{font-size:18px}.feature{min-height:270px;padding:18px}.compare-box{padding:25px}.final-card{padding:42px 20px;border-radius:30px}}
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <div class="noise"></div>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Poenta">
+          <span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Poenta</span>
+        </a>
+        <div class="nav-links">
+          <a href="#why">למה זה שונה</a>
+          <a href="#screens">פיד חי</a>
+          <a href="#product">מה מקבלים</a>
+          <a href="#start">מתחילים</a>
+        </div>
+        <a class="nav-cta" href="./index.html">כניסה לאפליקציה</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="section hero" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> חדשות בלי רעש. רק הפואנטה.</div>
+          <h1 id="hero-title">להבין מהר<br>מה באמת חשוב.</h1>
+          <p class="hero-text">Poenta הופכת עומס של כותרות לפיד חד, קצר ואישי: בוחרים מקורות, בוחרים תחומי עניין, והפיד מדבר בשפה שלך — גם כשהמקור בשפה אחרת.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="./index.html">פתחו את Poenta</a>
+            <a class="button secondary" href="#why">איך זה עובד</a>
+          </div>
+          <div class="trust-row" aria-label="עקרונות המוצר">
+            <span>בחירת מקורות</span>
+            <span>תחומי עניין</span>
+            <span>שפת פיד אישית</span>
+            <span>מדד החדשים</span>
+          </div>
+        </div>
+
+        <aside class="product-card" aria-label="תצוגת פיד לדוגמה ללא תמונות">
+          <div class="feed-preview">
+            <div class="preview-top">
+              <div class="preview-title">הפיד שלך</div>
+              <div class="preview-time">עודכן עכשיו</div>
+            </div>
+            <div class="scale"><span>מדד החדשים שלך</span></div>
+            <article class="mini-card">
+              <img class="example-img" src="./assets/home-sources.svg" alt="איור בחירת מקורות">
+              <div class="mini-copy">
+                <div class="mini-meta"><b>מקורות</b><span>בחירה חופשית</span></div>
+                <h3>אתה בוחר מאיפה החדשות מגיעות</h3>
+                <p>אפשר להפעיל ולכבות מקורות, בלי שהפיד יכפה עליך רעש שלא ביקשת.</p>
+                <div class="point">הפואנטה: המקורות בשליטה שלך.</div>
+              </div>
+            </article>
+            <article class="mini-card">
+              <img class="example-img" src="./assets/home-topics.svg" alt="איור בחירת תחומי עניין">
+              <div class="mini-copy">
+                <div class="mini-meta"><b>תחומי עניין</b><span>מותאם לך</span></div>
+                <h3>הפיד נבנה לפי מה שמעניין אותך</h3>
+                <p>חדשות, רכב, כסף, ספורט, רכילות או טכנולוגיה — הבחירה נשארת אצלך.</p>
+                <div class="point">הפואנטה: פחות כללי, יותר אישי.</div>
+              </div>
+            </article>
+            <article class="mini-card">
+              <img class="example-img" src="./assets/home-language.svg" alt="איור שפת הפיד">
+              <div class="mini-copy">
+                <div class="mini-meta"><b>שפת הפיד</b><span>ללא תלות במקור</span></div>
+                <h3>המקור יכול להיות בכל שפה — הפיד בשפה שלך</h3>
+                <p>כתבה באנגלית, ערבית או צרפתית יכולה להפוך לכרטיס ברור בעברית.</p>
+                <div class="point">הפואנטה: מבינים בלי מחסום שפה.</div>
+              </div>
+            </article>
+            <article class="mini-card">
+              <img class="example-img" src="./assets/home-freshness.svg" alt="איור מדד החדשים">
+              <div class="mini-copy">
+                <div class="mini-meta"><b>מדד החדשים</b><span>חי</span></div>
+                <h3>רואים מיד כמה חדש באמת מחכה לך</h3>
+                <p>מדד החדשים מראה כמה עדכונים טריים נוספו לפיד האישי שלך.</p>
+                <div class="point">הפואנטה: נכנסים רק כשיש מה לראות.</div>
+              </div>
+            </article>
+          </div>
+        </aside>
+      </section>
+
+      <section id="why" class="section features" aria-labelledby="why-title">
+        <h2 id="why-title" class="section-title">הפיד שלך, לפי הכללים שלך.</h2>
+        <p class="section-lead">העמוד מדגיש את ארבעת הדברים שחייבים להבין מיד: מקורות, תחומי עניין, שפה אישית ומדד החדשים.</p>
+        <div class="feature-grid">
+          <article class="feature">
+            <img class="feature-img" src="./assets/home-sources.svg" alt="בחירת מקורות בפיד">
+            <div class="feature-num">01</div>
+            <div><h3>בחירת מקורות</h3><p>המשתמש בוחר אילו מקורות ייכנסו לפיד ואילו יישארו בחוץ. אין מקור שנכפה עליו.</p></div>
+          </article>
+          <article class="feature">
+            <img class="feature-img" src="./assets/home-topics.svg" alt="בחירת תחומי עניין">
+            <div class="feature-num">02</div>
+            <div><h3>בחירת תחומי עניין</h3><p>חדשות, רכב, כסף, ספורט, רכילות, טכנולוגיה ועוד — הפיד נבנה לפי מה שהמשתמש באמת רוצה.</p></div>
+          </article>
+          <article class="feature">
+            <img class="feature-img" src="./assets/home-language.svg" alt="שפת הפיד בהתאם לשפת המשתמש">
+            <div class="feature-num">03</div>
+            <div><h3>שפת הפיד שלך</h3><p>המקור יכול להיות בכל שפה, אבל הכרטיס יוצג בשפה של המשתמש — ברור, קצר ומובן.</p></div>
+          </article>
+          <article class="feature">
+            <img class="feature-img" src="./assets/home-freshness.svg" alt="מדד החדשים שלך">
+            <div class="feature-num">04</div>
+            <div><h3>מדד החדשים</h3><p>במקום לנחש אם יש מה לקרוא, המדד מראה כמה עדכונים חדשים באמת מחכים בפיד האישי.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="screens" class="section screenshots" aria-labelledby="screens-title">
+        <h2 id="screens-title" class="section-title">הפיד עצמו — חי ופעיל בתוך העמוד.</h2>
+        <p class="section-lead">במקום צילומי מסך סטטיים, זה פריים אמיתי של אפליקציית Poenta: נטען מאותו `feed.json`, אפשר לגלול, ללחוץ ולעבוד עם הפיד בלי לצאת מהעמוד.</p>
+        <div class="live-feed-wrap">
+          <div class="live-frame-head">
+            <b>תצוגה חיה של Poenta</b>
+            <span class="live-badge">חי · interactive</span>
+          </div>
+          <div class="live-device">
+            <iframe title="Poenta feed live interactive frame" src="./index.html?embed=home&resetPoenta=1" loading="lazy"></iframe>
+          </div>
+          <p class="live-help">זה לא צילום מסך: זה הפיד הפעיל עצמו. אם רוצים מסך מלא — <a href="./index.html">פותחים את האפליקציה</a>.</p>
+        </div>
+      </section>
+
+      <section id="product" class="comparison" aria-labelledby="product-title">
+        <div class="comparison-inner">
+          <h2 id="product-title" class="section-title">ההבדל מורגש מיד.</h2>
+          <p class="section-lead">המשתמש רואה את המוצר עצמו — פיד חי, גלילה אמיתית וכניסה מלאה לאפליקציה — בלי וידאו ובלי עומס שמסיט את הפוקוס.</p>
+          <div class="compare-grid">
+            <article class="compare-box">
+              <span class="compare-label">פיד רגיל</span>
+              <h3>הרבה כותרות, מעט הבנה.</h3>
+              <p>אותן ידיעות חוזרות, כותרות רגשיות, קישורים שדורשים לפתוח עוד ועוד כתבות כדי להבין מה בעצם קרה.</p>
+            </article>
+            <article class="compare-box dark">
+              <span class="compare-label">Poenta</span>
+              <h3>כרטיס אחד שמסביר את האירוע.</h3>
+              <p>האירוע, ההקשר והשורה התחתונה מופיעים במקום אחד — קצר, אישי, ובלי קליקבייט.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="start" class="section final" aria-labelledby="start-title">
+        <div class="final-card">
+          <h2 id="start-title">להיכנס, לבחור תחומים, להבין.</h2>
+          <p>זה עמוד בית שמראה מיד את הערך: המקורות שלך, התחומים שלך, השפה שלך, והמדד שמספר כמה חדש באמת מחכה לך.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="./index.html">כניסה לאפליקציה</a>
+            <a class="button secondary" href="#top">חזרה למעלה</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© Poenta</span>
+        <span>חדשות חכמות בעברית · פיד חי ופעיל · ללא וידאו</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
