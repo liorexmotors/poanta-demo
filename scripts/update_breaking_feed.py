@@ -259,10 +259,17 @@ def near_duplicate(a: str, b: str) -> bool:
         return True
     if overlap >= 0.44 and len(distinct) >= 4:
         return True
-    # Same breaking accident updates can change from "injured" to "death" and
-    # disagree on age/local municipality while preserving the concrete event.
-    # Keep it narrow: exact vehicle class + accident + same normalized locality.
+    # Same breaking accident/attack updates can change from an initial terse
+    # alert to MDA casualty counts while preserving the concrete event.
+    # Keep these narrow: shared locality + same event class + injury signal.
     if {"תאונת", "טרקטורון", "מעלות_חוסן"} <= shared and "בן" in shared:
+        return True
+    gush_terms = {"גוש", "עציון", "צומת"}
+    injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל"}
+    ramming_terms = {"פיגוע", "דריסה"}
+    if "גוש" in shared and (ta & ramming_terms) and (tb & ramming_terms) and (ta & injury_terms) and (tb & injury_terms):
+        return True
+    if "פיגוע" in shared and "גוש" in shared and ((ta & {"עציון", "צומת"}) or (tb & {"עציון", "צומת"})) and (ta & injury_terms) and (tb & injury_terms):
         return True
     # Very short alert wording: one source may say "אזעקות בגליל המערבי" while
     # another adds the suspected drone and locality.  Shared location + alert
@@ -307,6 +314,14 @@ def same_source_building_fire_update(a: str, b: str) -> bool:
     return "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms))
 
 
+def same_source_gush_etzion_attack_update(a: str, b: str) -> bool:
+    """Collapse same-source status updates for the Gush Etzion ramming attack."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל"}
+    return "פיגוע" in shared and "גוש" in shared and (ta & injury_terms) and (tb & injury_terms)
+
+
 def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
     text = f"{row.get('headline','')} {row.get('context','')}"
     if any(re.search(p, text, re.I) for p in DROP_PATTERNS):
@@ -347,6 +362,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     if normalize_for_dupe(str(row.get("headline", ""))) == normalize_for_dupe(str(x.get("headline", "")))
                     else (x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x)))
                     or same_source_building_fire_update(row_dupe_text, dupe_text(x))
+                    or same_source_gush_etzion_attack_update(row_dupe_text, dupe_text(x))
                 )
             ),
             None,

@@ -61,6 +61,10 @@ DUPLICATE_CASES = [
         'פיקוד העורף עדכן, אחרי יום של אש: אין לימודים מחר בכל יישובי קו העימות',
         'בעקבות ההסלמה בצפון: פיקוד העורף הודיע על ביטול הפעיליות החינוכית בקו העימות',
     ),
+    (
+        'מד"א: 4 פצועים בפיגוע בצומת הגוש, שניים מהם במצב קשה',
+        'ראשוני: חשד לפיגוע דריסה בגוש עציון, אישה נפצעה',
+    ),
 ]
 
 DISTINCT_CASES = [
@@ -87,6 +91,11 @@ def main() -> int:
     for left, right in DISTINCT_CASES:
         if mod.near_duplicate(left, right):
             failures.append(f"expected distinct: {left!r} <=> {right!r}")
+    if not mod.same_source_gush_etzion_attack_update(
+        'מד"א: 4 פצועים בפיגוע בצומת הגוש, שניים מהם במצב קשה',
+        'ראשוני: חשד לפיגוע דריסה בגוש עציון, אישה נפצעה',
+    ):
+        failures.append("expected same-source Gush Etzion attack update collapse")
     if failures:
         for failure in failures:
             print("FAIL", failure)
