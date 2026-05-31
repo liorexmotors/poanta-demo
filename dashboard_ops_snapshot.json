@@ -1,13 +1,13 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-05-31T15:50:00+03:00",
+  "generatedAt": "2026-05-31T15:55:20+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "ok",
-      "checkedAt": "2026-05-31T15:49:59+03:00",
-      "url": "feed.json",
+      "checkedAt": "2026-05-31T15:50:29+03:00",
+      "url": "https://liorexmotors.github.io/poanta-demo/feed.json",
       "updatedAt": "2026-05-31T14:49:53+02:00",
       "items": 257,
       "top": [
@@ -101,18 +101,27 @@
         {
           "severity": "warning",
           "code": "stale_foreign_source_view",
-          "message": "Latest foreign-source item is older than 60m: 2026-05-31T11:49:53+03:00 (4:00:05.504414 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "message": "Latest foreign-source item is older than 60m: 2026-05-31T11:49:53+03:00 (4:00:36.051713 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
           "item": 69,
           "headline": "ישראל הרחיבה פינוי בדרום לבנון וכבשה מחדש את מבצר הבופור",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "url": "https://www.aljazeera.com/news/2026/5/31/israel-issues-more-displacement-orders-in-lebanon-seizes-strategic-castle?traffic_source=rss"
+        },
+        {
+          "severity": "warning",
+          "code": "live_raw_mismatch",
+          "message": "GitHub Pages and raw gh-pages differ: live=2026-05-31T14:49:53+02:00 raw=2026-05-31T15:27:12+03:00",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
         }
       ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-05-31T15:50:00+03:00",
+      "checkedAt": "2026-05-31T15:50:30+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -437,11 +446,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 39,
+          "ageMinutes": 40,
           "latestAt": "2026-05-31T15:10:13+03:00",
           "headline": "שיטפונות מחליפים את הבצורת סביב הפרת בסוריה ובעיראק",
           "source": "The Jerusalem Post - Middle East",
-          "message": "No fresh פוליטיקה publication event for 39 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 40 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -502,11 +511,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 209,
+          "ageMinutes": 210,
           "latestAt": "2026-05-31T12:20:09+03:00",
           "headline": "פרשנות בהארץ רואה בטראמפ גורם שלא יציל את נתניהו",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 209 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 210 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -541,11 +550,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 91,
+          "ageMinutes": 92,
           "latestAt": "2026-05-31T14:18:08+03:00",
           "headline": "שיקום הקרקע בשמורת עברונה יחל 11 שנים אחרי דליפת הנפט",
           "source": "הארץ - סביבה ואקלים",
-          "message": "No fresh הארץ publication event for 91 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 92 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -596,11 +605,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 39,
+          "ageMinutes": 40,
           "latestAt": "2026-05-31T15:10:13+03:00",
           "headline": "שיטפונות מחליפים את הבצורת סביב הפרת בסוריה ובעיראק",
           "source": "The Jerusalem Post - Middle East",
-          "message": "No fresh פוליטיקה publication event for 39 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 40 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -661,11 +670,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 209,
+          "ageMinutes": 210,
           "latestAt": "2026-05-31T12:20:09+03:00",
           "headline": "פרשנות בהארץ רואה בטראמפ גורם שלא יציל את נתניהו",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 209 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 210 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -700,11 +709,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 91,
+          "ageMinutes": 92,
           "latestAt": "2026-05-31T14:18:08+03:00",
           "headline": "שיקום הקרקע בשמורת עברונה יחל 11 שנים אחרי דליפת הנפט",
           "source": "הארץ - סביבה ואקלים",
-          "message": "No fresh הארץ publication event for 91 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 92 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -725,7 +734,7 @@
     },
     "publicationHealthGate": {
       "gate": "pointa_publication_health_gate",
-      "mode": "candidate",
+      "mode": "public",
       "status": "ok",
       "liveStatus": "ok",
       "timingStatus": null,
@@ -772,22 +781,22 @@
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastCheckedAt": "2026-05-31T15:47:45+03:00",
-      "lastStatus": "blocked",
-      "lastIncidentType": "stage3_candidate_publication_health_gate_failed",
+      "lastCheckedAt": "2026-05-31T15:49:42+03:00",
+      "lastStatus": "repair_needed",
+      "lastIncidentType": "top_feed_stale_or_thin",
       "currentIncidentKey": "top_stale|no_new_top_item_sla|2026-05-31T15:27:12+03:00|https://news.walla.co.il/item/3842027",
-      "currentIncidentRepeatCount": 3,
-      "lastAutomaticAction": "do_not_publish",
+      "currentIncidentRepeatCount": 4,
+      "lastAutomaticAction": "prepare_general_rescue_worker",
       "loopProtection": {
         "active": true,
         "reason": "same_incident_repeated",
-        "repeatCount": 3
+        "repeatCount": 4
       },
       "lastOkAt": "2026-05-25T17:38:06+03:00",
       "lastStage4StartedAt": "2026-05-31T15:20:06+03:00",
       "lastStage4IncidentKey": "domain_sla|משפט|2026-05-31T13:30:48+03:00|בית הדין חילץ גט מבעל סרבן לאחר טיפול בכלא",
       "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-משפט-20260531-152137",
-      "lastStage3StartedAt": "2026-05-31T15:47:45+03:00",
+      "lastStage3StartedAt": "2026-05-31T15:49:42+03:00",
       "lastStage3IncidentKey": "top_stale|no_new_top_item_sla|2026-05-31T15:27:12+03:00|https://news.walla.co.il/item/3842027",
       "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260531-154119"
     }
@@ -797,17 +806,26 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-05-31T15:49:59+03:00",
-      "checkedAt": "2026-05-31T15:49:59+03:00",
+      "summary": "תקין בבדיקה האחרונה 2026-05-31T15:50:29+03:00",
+      "checkedAt": "2026-05-31T15:50:29+03:00",
       "findings": [
         {
           "severity": "warning",
           "code": "stale_foreign_source_view",
-          "message": "Latest foreign-source item is older than 60m: 2026-05-31T11:49:53+03:00 (4:00:05.504414 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "message": "Latest foreign-source item is older than 60m: 2026-05-31T11:49:53+03:00 (4:00:36.051713 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
           "item": 69,
           "headline": "ישראל הרחיבה פינוי בדרום לבנון וכבשה מחדש את מבצר הבופור",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "url": "https://www.aljazeera.com/news/2026/5/31/israel-issues-more-displacement-orders-in-lebanon-seizes-strategic-castle?traffic_source=rss"
+        },
+        {
+          "severity": "warning",
+          "code": "live_raw_mismatch",
+          "message": "GitHub Pages and raw gh-pages differ: live=2026-05-31T14:49:53+02:00 raw=2026-05-31T15:27:12+03:00",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
         }
       ]
     },
@@ -816,7 +834,7 @@
       "name": "מבקר תזמון",
       "status": "fail",
       "summary": "No fresh foreign publication event for 240 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-05-31T15:50:00+03:00",
+      "checkedAt": "2026-05-31T15:50:30+03:00",
       "findings": [
         {
           "severity": "error",
@@ -849,11 +867,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 39,
+          "ageMinutes": 40,
           "latestAt": "2026-05-31T15:10:13+03:00",
           "headline": "שיטפונות מחליפים את הבצורת סביב הפרת בסוריה ובעיראק",
           "source": "The Jerusalem Post - Middle East",
-          "message": "No fresh פוליטיקה publication event for 39 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 40 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -914,11 +932,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 209,
+          "ageMinutes": 210,
           "latestAt": "2026-05-31T12:20:09+03:00",
           "headline": "פרשנות בהארץ רואה בטראמפ גורם שלא יציל את נתניהו",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 209 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 210 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
