@@ -228,6 +228,17 @@ def normalize_token(token: str) -> str:
         "תפטר": "התפטרות",
         "סיים": "התפטרות",
         "תפקידו": "תפקיד",
+        # Crime flashes around the same village can vary between the local
+        # authority and the nearby city.  Normalize Kaabiya/Shfar'am so a terse
+        # Walla/Rotter murder flash and a Ynet vehicle-shooting update collapse.
+        "כעביה": "כעביה_שפרעם",
+        "שפרעם": "כעביה_שפרעם",
+        # Tiberias/northern-front alert follow-ups can shift from a siren alert
+        # to MDA/no-casualty or rocket-impact status wording.  Normalize the
+        # inflected launch terms for the narrow city-alert rule below.
+        "שיגור": "שיגור",
+        "שיגורים": "שיגור",
+        "השיגורים": "שיגור",
     }
     token = synonym_map.get(token, token)
     return token
@@ -330,6 +341,19 @@ def near_duplicate(a: str, b: str) -> bool:
     fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
     if "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms)):
         return True
+    # Same local murder/shooting near Kaabiya/Shfar'am can appear as a named
+    # village death, a murder, or a nearby-city vehicle shooting.  Require the
+    # normalized locality plus death/shooting terms so unrelated crime flashes
+    # in the Galilee are not merged.
+    death_terms = {"נהרג", "נרצח", "נורה", "מוות"}
+    if "כעביה_שפרעם" in shared and (ta & death_terms) and (tb & death_terms):
+        return True
+    # Tiberias rocket/siren waves often arrive first as an alert and then as an
+    # MDA/no-casualty or impact-status flash.  Collapse only same-city northern
+    # launch/alert updates, preserving separate analysis about Lebanon.
+    tiberias_alert_terms = {"אזעק", "אזעקה", "אזעקות", "שיגור", "נפגעים", "מדא"}
+    if "טבריה" in shared and (ta & tiberias_alert_terms) and (tb & tiberias_alert_terms):
+        return True
     return False
 
 
@@ -347,6 +371,14 @@ def same_source_gush_etzion_attack_update(a: str, b: str) -> bool:
     injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל", "נטרל"}
     attack_terms = {"פיגוע", "דריסה", "מחבל", "נטרל", "נוטרל"}
     return "גוש" in shared and (ta & {"צומת", "עציון"}) and (tb & {"צומת", "עציון"}) and (ta & attack_terms) and (tb & attack_terms) and (ta & injury_terms) and (tb & injury_terms)
+
+
+def same_source_tiberias_alert_update(a: str, b: str) -> bool:
+    """Collapse same-source Tiberias alert/status updates for the same siren wave."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    tiberias_alert_terms = {"אזעק", "אזעקה", "אזעקות", "שיגור", "נפגעים", "מדא"}
+    return "טבריה" in shared and (ta & tiberias_alert_terms) and (tb & tiberias_alert_terms)
 
 
 def weak_speaker_only_title(title: str, context: str) -> bool:
@@ -410,6 +442,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     else (x.get("source") != row.get("source") and near_duplicate(row_dupe_text, dupe_text(x)))
                     or same_source_building_fire_update(row_dupe_text, dupe_text(x))
                     or same_source_gush_etzion_attack_update(row_dupe_text, dupe_text(x))
+                    or same_source_tiberias_alert_update(row_dupe_text, dupe_text(x))
                 )
             ),
             None,
