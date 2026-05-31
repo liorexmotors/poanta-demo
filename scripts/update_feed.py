@@ -2548,10 +2548,10 @@ def fetch_article_image(url: str) -> str:
         image = image_from_html_fragment(raw)
     if not image:
         return ""
-    low = image.lower()
-    if low.startswith("data:") or ".svg" in low or "logo" in low:
+    joined = urljoin(url, image)
+    if is_rejected_source_image(joined, url):
         return ""
-    return urljoin(url, image)
+    return joined
 
 def refresh_item_pointa(item: dict) -> dict:
     title = str(item.get("originalTitle") or item.get("headline") or "")
@@ -3053,8 +3053,11 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
             elif item.get("hasSourceDate") and not item.get("publishedAt"):
                 item["publishedAt"] = d.isoformat(timespec="seconds")
             item = refresh_item_pointa(item)
+            source_url = str(item.get("sourceUrl") or "")
+            if is_rejected_source_image(str(item.get("imageUrl") or ""), source_url):
+                item["imageUrl"] = ""
             if not str(item.get("imageUrl") or "").strip():
-                image = fetch_article_image(str(item.get("sourceUrl") or ""))
+                image = fetch_article_image(source_url)
                 if image:
                     item["imageUrl"] = image
             merged.append(item)
