@@ -457,12 +457,35 @@ def fetch_jina_metadata(url: str) -> tuple[str, str]:
 
 
 
+def is_rejected_source_image(url: str, source_url: str = "") -> bool:
+    """Drop known publisher placeholder/misassigned images before feed publication."""
+    low = (url or "").lower()
+    source_low = (source_url or "").lower()
+    if not low:
+        return True
+    if low.startswith("data:") or ".svg" in low or "logo" in low:
+        return True
+    # Maariv article pages are often Cloudflare-blocked in automation.  The RSS
+    # / Jina fallback repeatedly assigns unrelated images.maariv.co.il assets to
+    # different www.maariv.co.il stories (for example reserve-order, Trump,
+    # Hatzalah Argentina, Hezbollah, horse/traffic-injury cards).  A neutral
+    # placeholder is safer than a wrong face/event image.  Keep TMI images out of
+    # this broad block because those section pages are parsed separately and have
+    # a different visual contract.
+    if (
+        "images.maariv.co.il" in low
+        and "maariv.co.il" in source_low
+        and "tmi.maariv.co.il" not in source_low
+    ):
+        return True
+    return False
+
+
 def image_from_html_fragment(fragment: str) -> str:
     fragment = html.unescape(fragment or "")
     for m in re.finditer(r"<img\b[^>]*\bsrc=[\"']([^\"']+)[\"']", fragment, flags=re.I):
         url = clean_text(m.group(1))
-        low = url.lower()
-        if not url or low.startswith("data:") or ".svg" in low or "logo" in low:
+        if is_rejected_source_image(url):
             continue
         return url
     return ""
@@ -482,10 +505,10 @@ def image_from_rss_item(item: ET.Element, link: str, raw_desc: str) -> str:
         candidates.append(desc_img)
     for url in candidates:
         url = clean_text(html.unescape(url))
-        low = url.lower()
-        if not url or low.startswith("data:") or ".svg" in low or "logo" in low:
+        joined = urljoin(link, url)
+        if is_rejected_source_image(joined, link):
             continue
-        return urljoin(link, url)
+        return joined
     return ""
 
 
@@ -508,6 +531,8 @@ def parse_maariv_jina_rss(markdown: str, source: dict) -> list[Candidate]:
         link = clean_text(m.group(2))
         img_m = re.search(r"!\[[^\]]*\]\((https?://[^)]+)\)", block)
         image = clean_text(img_m.group(1)) if img_m else ""
+        if is_rejected_source_image(image, link):
+            image = ""
         date_m = re.search(r"(?m)^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+\d{1,2}\s+\w+\s+\d{4}\s+\d{2}:\d{2}:\d{2}\s+GMT\s*$", block)
         published_at = parse_feed_datetime(date_m.group(0)) if date_m else ""
         before_date = block[:date_m.start()] if date_m else block
@@ -597,6 +622,8 @@ def parse_tmi_html_section(section_url: str, source: dict) -> list[Candidate]:
         desc = clean_text(html.unescape(desc_m.group(1))) if desc_m else ""
         published_at = parse_feed_datetime(date_m.group(1)) if date_m else ""
         image = clean_text(html.unescape(image_m.group(1))) if image_m else ""
+        if is_rejected_source_image(image, link):
+            image = ""
         if len(title) < 18:
             continue
         score = max(score_title(title + " " + desc) + 10, 3)
@@ -898,6 +925,8 @@ def enrich(candidate: Candidate) -> Candidate:
         jina_title, jina_image = fetch_jina_metadata(candidate.url)
         exact_title = jina_title or exact_title
         image = image or jina_image
+    if is_rejected_source_image(image, candidate.url):
+        image = ""
 
     if exact_title and len(exact_title) >= 18:
         candidate.original_title = exact_title
@@ -1000,6 +1029,17 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # car, tech, health and culture feeds are not mislabeled as politics/real estate.
     content_text = f"{title} {desc}"
     text = f"{content_text} {source}"
+    # Security/war flashes must be categorized before weather/crime fallbacks.
+    # Otherwise words such as "רוחות" in unrelated context or bare "ירי" can
+    # misroute Lebanon/rocket/IDF items to weather or local crime during Stage-4
+    # domain rescue validation.
+    security_conflict_terms = [
+        "חיזבאללה", "לבנון", "צה\"ל", "צה״ל", "פיקוד העורף", "רקטה", "רקטות",
+        "כטב\"ם", "כטב״ם", "יירוט", "יורטו", "חצו", "אזעקות", "התרעות",
+        "טילים", "טיל", "חמאס", "עזה", "איראן", "זפוריז'יה", "זפוריז׳יה",
+    ]
+    if any(x in content_text for x in security_conflict_terms):
+        return "ביטחון", "security"
     if is_weather_forecast_story(title, desc, source):
         return "מזג אוויר", "real"
     # Local emergency/crime flashes must not fall back to generic "חדשות",

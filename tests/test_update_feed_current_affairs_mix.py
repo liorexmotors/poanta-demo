@@ -47,6 +47,30 @@ def test_official_idf_artillery_update_has_specific_takeaway():
     assert "עדכון צבאי נקודתי" not in fields[2]
 
 
+def test_rejects_maariv_article_fallback_images_but_not_tmi_images():
+    # www.maariv.co.il frequently serves mismatched images through the blocked
+    # RSS/Jina fallback path.  The user-visible failure was article-1327358
+    # (reserve orders) showing an unrelated face image /673516; repeated bad
+    # assets such as /1081654 also appeared on unrelated injury, economy and
+    # Lebanon cards.  For Maariv proper, prefer the neutral UI placeholder.
+    assert update_feed.is_rejected_source_image(
+        "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_250,w_250/673516",
+        "https://www.maariv.co.il/news/politics/article-1327358",
+    )
+    assert update_feed.is_rejected_source_image(
+        "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_250,w_250/1081654",
+        "https://www.maariv.co.il/breaking-news/article-1327178",
+    )
+    assert update_feed.is_rejected_source_image(
+        "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/h_100,w_120/929146",
+        "https://www.maariv.co.il/news/world/article-1327319",
+    )
+    assert not update_feed.is_rejected_source_image(
+        "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,w_1200/1102976",
+        "https://tmi.maariv.co.il/celebs-news/article-1327354",
+    )
+
+
 def test_diversify_visible_top_limits_low_priority_categories():
     items = []
     # Newest low-priority items arrive first, followed by enough current-affairs
