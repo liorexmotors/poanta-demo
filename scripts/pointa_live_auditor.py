@@ -231,6 +231,27 @@ def northern_rocket_event_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def hezbollah_drone_casualty_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same IDF casualty from a Hezbollah drone across sources."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    tokens: set[str] = set()
+    if re.search(r"מיכאל\s+טיוקין|טיוקין", text):
+        tokens.add("michael_tyukin")
+    if re.search(r"גבעתי|סיירת גבעתי|givati", text):
+        tokens.add("givati")
+    if re.search(r"רחפן|כטב[״\"]?ם|drone|uav", text):
+        tokens.add("drone")
+    if re.search(r"חיזבאללה|hezbollah", text):
+        tokens.add("hezbollah")
+    if re.search(r"דרום לבנון|לבנון|זוטר א[־-]?שרקיה|south lebanon", text):
+        tokens.add("south_lebanon")
+    if re.search(r"נהרג|נפל|חלל|killed|fallen", text):
+        tokens.add("fatality")
+    if {"drone", "hezbollah", "south_lebanon", "fatality"}.issubset(tokens) and ("michael_tyukin" in tokens or "givati" in tokens):
+        return tokens
+    return set()
+
+
 def nuclear_facility_strike_tokens(item: dict[str, Any]) -> set[str]:
     """Fingerprint the same nuclear-facility strike/safety incident across sources."""
     text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
@@ -408,6 +429,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return True
     aw = northern_rocket_event_tokens(a)
     bw = northern_rocket_event_tokens(b)
+    if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
+        return True
+    aw = hezbollah_drone_casualty_tokens(a)
+    bw = hezbollah_drone_casualty_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
         return True
     aw = nuclear_facility_strike_tokens(a)

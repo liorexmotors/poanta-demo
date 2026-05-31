@@ -60,6 +60,13 @@ def semantic_story_key(item: dict) -> str:
     is_sanctions = has_any(text, ["סנקציות", "רשת רכש", "ציוד סייבר", "הטיל סנקציות", "sanctions"])
     if has_iran and has_actor and has_deal and has_decision_delay and not is_sanctions:
         return "event:us-iran-deal-decision-20260530"
+    has_givati = has_any(text, ["גבעתי", "סיירת גבעתי", "givati"])
+    has_tyukin = has_any(text, ["טיוקין", "מיכאל טיוקין"])
+    has_hezbollah_drone = has_any(text, ["רחפן", "כטב\"ם", "כטב״ם", "drone", "חיזבאללה", "hezbollah"])
+    has_south_lebanon = has_any(text, ["דרום לבנון", "לבנון", "זוטר א-שרקיה", "south lebanon"])
+    has_fatality = has_any(text, ["נהרג", "נפל", "חלל", "killed", "fallen"])
+    if (has_givati or has_tyukin) and has_hezbollah_drone and has_south_lebanon and has_fatality:
+        return "event:givati-tyukin-hezbollah-drone-20260531"
     return ""
 
 
@@ -148,6 +155,26 @@ FIXTURE = [
         "publishedAt": "2026-05-30T00:12:01+03:00",
         "sourceUrl": "https://www.israelhayom.co.il/news/world-news/usa/article/20647849",
     },
+    {
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ביטחון",
+        "headline": "לוחם גבעתי מיכאל טיוקין נהרג מרחפן חיזבאללה",
+        "originalTitle": "הותר לפרסום: סמ\"ר מיכאל טיוקין נפל מפגיעת רחפן נפץ בדרום לבנון",
+        "context": "צה\"ל התיר לפרסום כי סמ\"ר מיכאל טיוקין, בן 21 מאשקלון ולוחם בסיירת גבעתי, נפל בדרום לבנון מפגיעת רחפן נפץ של חיזבאללה.",
+        "takeaway": "האירוע מצביע על איום רחפני לילה מדויק של חיזבאללה גם מצפון לליטני.",
+        "publishedAt": "2026-05-31T07:27:29+03:00",
+        "sourceUrl": "https://www.israelhayom.co.il/news/defense/article/20652116",
+    },
+    {
+        "source": "וואלה חדשות - צבא וביטחון",
+        "category": "ביטחון",
+        "headline": "לוחם גבעתי נהרג מפגיעת רחפן חיזבאללה בדרום לבנון",
+        "originalTitle": "הותר לפרסום: סמ\"ר מיכאל טיוקין מסיירת גבעתי נפל בדרום לבנון",
+        "context": "רחפן נפץ של חיזבאללה פגע בכוח סיירת גבעתי בדרום לבנון והרג את סמ״ר מיכאל טיוקין מאשקלון; ארבעה לוחמים נוספים נפצעו קל.",
+        "takeaway": "איום הרחפנים של חיזבאללה ממשיך לגבות מחיר גם אחרי הפסקת האש.",
+        "publishedAt": "2026-05-31T08:43:23+03:00",
+        "sourceUrl": "https://news.walla.co.il/item/3841922",
+    },
 ]
 
 
@@ -198,6 +225,11 @@ def main() -> int:
         failures.append(f"personal all-feed did not keep freshest Trump/Iran deal-decision card: {deal_visible[0]['source']}")
     if not any("סנקציות" in item["headline"] for item in all_visible):
         failures.append("distinct Iran sanctions story was incorrectly removed")
+    givati_visible = [item for item in all_visible if semantic_story_key(item) == "event:givati-tyukin-hezbollah-drone-20260531"]
+    if len(givati_visible) != 1:
+        failures.append(f"personal all-feed expected 1 visible Givati/Tyukin Hezbollah-drone card, got {len(givati_visible)}")
+    if givati_visible and givati_visible[0]["source"] != "וואלה חדשות - צבא וביטחון":
+        failures.append(f"personal all-feed did not keep freshest Givati/Tyukin card: {givati_visible[0]['source']}")
 
     security_visible = visible_personalized(FIXTURE, active_filter="ביטחון")
     security_strikes = [item for item in security_visible if semantic_story_key(item) == "event:us-strikes-iran-20260526"]
@@ -221,7 +253,7 @@ def main() -> int:
         for failure in failures:
             print("-", failure)
         return 1
-    print("Personal-feed semantic dedupe drill passed: 4 source variants collapse to one, active tab stays lawful, adjacent story remains")
+    print("Personal-feed semantic dedupe drill passed: source variants collapse to one, including Givati/Tyukin Hezbollah-drone cluster; active tab stays lawful, adjacent story remains")
     return 0
 
 
