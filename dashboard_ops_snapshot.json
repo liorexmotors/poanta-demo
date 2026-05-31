@@ -1,7 +1,7 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-05-31T07:21:53+03:00",
+  "generatedAt": "2026-05-31T07:25:19+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
@@ -851,24 +851,24 @@
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastCheckedAt": "2026-05-31T07:13:58+03:00",
+      "lastCheckedAt": "2026-05-31T07:18:05+03:00",
       "lastStatus": "repair_needed",
-      "lastIncidentType": "stage4_waiting_for_editor_results",
-      "currentIncidentKey": "domain_sla|פוליטיקה|2026-05-31T01:33:50+03:00|עליזה בלוך שוקלת כניסה לכנסת עם תוכנית לשילוב חרדים",
-      "currentIncidentRepeatCount": 2,
-      "lastAutomaticAction": "write_batch_results_then_rerun_stage4",
+      "lastIncidentType": "stage3_waiting_for_editor_results",
+      "currentIncidentKey": "top_stale|no_new_top_item_sla|2026-05-31T05:56:31+02:00|https://news.walla.co.il/item/3841918",
+      "currentIncidentRepeatCount": 1,
+      "lastAutomaticAction": "write_batch_results_then_rerun_stage3",
       "loopProtection": {
         "active": false,
         "reason": "",
-        "repeatCount": 2
+        "repeatCount": 1
       },
       "lastOkAt": "2026-05-25T17:38:06+03:00",
       "lastStage4StartedAt": "2026-05-31T07:13:58+03:00",
       "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-05-31T01:33:50+03:00|עליזה בלוך שוקלת כניסה לכנסת עם תוכנית לשילוב חרדים",
       "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260531-071520",
-      "lastStage3StartedAt": "2026-05-31T06:56:23+03:00",
-      "lastStage3IncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at|2026-05-31T05:15:07+02:00|https://www.haaretz.co.il/gallery/literature/2026-05-31/ty-article-magazine/.premium/0000019e-5ab9-d1af-a7de-faff12f80000",
-      "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260531-065112"
+      "lastStage3StartedAt": "2026-05-31T07:18:05+03:00",
+      "lastStage3IncidentKey": "top_stale|no_new_top_item_sla|2026-05-31T05:56:31+02:00|https://news.walla.co.il/item/3841918",
+      "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260531-072005"
     }
   },
   "agents": [
