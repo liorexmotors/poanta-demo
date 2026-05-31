@@ -308,6 +308,11 @@ def near_duplicate(a: str, b: str) -> bool:
         return True
     if "צפת" in shared and "ירי" in shared and (ta & city_alert_terms) and (tb & city_alert_terms):
         return True
+    # "קריית שמונה" alerts and broader "אצבע הגליל" alerts often describe
+    # the same siren wave minutes apart.  Collapse only when both sides are
+    # alert flashes, not general northern-front analysis.
+    if ({"אזעק", "אזעקה", "אזעקות"} & shared) and (({"קריית", "שמונה"} <= ta and {"אצבע", "גליל"} <= tb) or ({"קריית", "שמונה"} <= tb and {"אצבע", "גליל"} <= ta)):
+        return True
     # Same Home Front Command restriction update can appear as schools canceled
     # in conflict-line towns vs educational activity canceled after escalation.
     if {"פיקוד", "עורף", "עימות", "חינוך_קו_עימות"} <= shared:
@@ -344,8 +349,28 @@ def same_source_gush_etzion_attack_update(a: str, b: str) -> bool:
     return "גוש" in shared and (ta & {"צומת", "עציון"}) and (tb & {"צומת", "עציון"}) and (ta & attack_terms) and (tb & attack_terms) and (ta & injury_terms) and (tb & injury_terms)
 
 
+def weak_speaker_only_title(title: str, context: str) -> bool:
+    """Drop breaking rows that name only a speaker, without the actual update.
+
+    Some feeds, especially Rotter, occasionally emit a title like
+    ``*השר לביטחון לאומי, איתמר בן גביר:*`` and put no useful body in the RSS
+    row. Publishing that as the top breaking card creates a broken-looking
+    headline rather than news.
+    """
+    clean = clean_text(title).strip(" *\u200f\u200e")
+    if context.strip():
+        return False
+    if clean.endswith(":") and len(clean) <= 90:
+        return True
+    if re.search(r"^(?:השר|חה.?כ|ראש הממשלה|שר(?:ת)?|דובר|יו.?ר)\b", clean) and len(clean.split()) <= 8 and not re.search(r"(אמר|הודיע|קרא|תקף|דרש|הזהיר|מסר)", clean):
+        return True
+    return False
+
+
 def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
     text = f"{row.get('headline','')} {row.get('context','')}"
+    if weak_speaker_only_title(str(row.get("headline", "")), str(row.get("context", ""))):
+        return False
     if any(re.search(p, text, re.I) for p in DROP_PATTERNS):
         return False
     if source.get("needsStrictFiltering") and not ROTTER_KEEP.search(text):
