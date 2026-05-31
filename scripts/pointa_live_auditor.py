@@ -368,6 +368,22 @@ def iran_hardliner_deal_tokens(item: dict[str, Any]) -> set[str]:
     return tokens
 
 
+def unetcredit_kahlon_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same Moshe Kahlon / UnetCredit conviction story.
+
+    The story can render as ``משפט`` from an Israeli business source or as
+    ``כלכלה`` from an English source. User-visible dedupe must still collapse it
+    because the event is the same plea/conviction/reporting-offense case.
+    """
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_kahlon = bool(re.search(r"כחלון|kahlon", text))
+    has_unet = bool(re.search(r"יונט\s*קרדיט|unet\s*credit|unetcredit", text))
+    has_legal_event = bool(re.search(r"הורשע|הרשעה|הסדר טיעון|עבירת דיווח|הסתרת מידע|convicted|plea|reporting offense", text))
+    if has_kahlon and has_unet and has_legal_event:
+        return {"unetcredit_kahlon_conviction"}
+    return set()
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -450,6 +466,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = iran_hardliner_deal_tokens(a)
     bw = iran_hardliner_deal_tokens(b)
     if aw and bw and "iran_hardliners_deal" in aw and "iran_hardliners_deal" in bw and len(aw & bw) >= 2:
+        return True
+    aw = unetcredit_kahlon_tokens(a)
+    bw = unetcredit_kahlon_tokens(b)
+    if aw and bw and "unetcredit_kahlon_conviction" in aw and "unetcredit_kahlon_conviction" in bw:
         return True
     if topic_for_item(a) != topic_for_item(b):
         return False

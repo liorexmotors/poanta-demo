@@ -217,6 +217,25 @@ CASES = [
         },
     ),
     (
+        "kahlon_unetcredit_conviction_cross_category",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "כלכלה",
+            "headline": "משה כחלון הורשע בעבירת דיווח בפרשת יונט קרדיט",
+            "originalTitle": "Former finance minister Kahlon convicted of reporting offense in UnetCredit collapse case",
+            "context": "משה כחלון הורשע במסגרת הסדר טיעון בכך שלא דאג שחריגות כספיות חמורות ביונט קרדיט ידווחו לציבור כשכיהן כיו״ר החברה.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-897837",
+        },
+        {
+            "source": "דה מרקר - כל הכתבות",
+            "category": "משפט",
+            "headline": "משה כחלון הורשע בהסתרת מידע בפרשת יונט קרדיט",
+            "context": "גם שר אוצר לשעבר נבחן כחוסם מידע לציבור כשהוא יושב בראש חברה ציבורית.",
+            "sourceUrl": "https://www.themarker.com/law/example-unetcredit-kahlon",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {
