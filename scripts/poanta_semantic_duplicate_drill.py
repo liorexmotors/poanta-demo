@@ -197,6 +197,26 @@ CASES = [
         },
     ),
     (
+        "trump_iran_nuclear_agreement_terms_cross_source",
+        True,
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "ביטחון",
+            "headline": "טראמפ עצר את הסכם איראן ודרש פיקוח גרעיני הדוק יותר",
+            "originalTitle": "בלם את ההסכם ברגע האחרון: הדרישות החדשות שהציב טראמפ לאיראנים",
+            "context": "טראמפ בלם את החתימה על מזכר ההבנות עם איראן ודרש להקשיח סעיפים על פיקוח גרעיני ועל פתיחת מצר הורמוז.",
+            "sourceUrl": "https://www.israelhayom.co.il/example-trump-iran-terms",
+        },
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "headline": "טראמפ טוען שאיראן הסכימה לוותר על נשק גרעיני",
+            "originalTitle": "טראמפ לרשת פוקס: איראן הסכימה לא לפתח ולא לרכוש נשק גרעיני",
+            "context": "טראמפ אמר שהסכם איראן יתקדם רק אם טהרן תוותר גם על רכישה עתידית של נשק גרעיני ותעמוד בתנאי הגרעין האמריקניים.",
+            "sourceUrl": "https://news.walla.co.il/break/example-trump-iran-nuclear",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {
