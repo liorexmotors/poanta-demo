@@ -207,7 +207,11 @@ def main() -> int:
         failures.append("distinct adjacent Hormuz story was incorrectly removed")
 
     index = (ROOT / "index.html").read_text(encoding="utf-8")
-    if "const applyActive=options.applyActiveFilter!==false" not in index or "return dedupeVisibleItems(rows);" not in index:
+    returns_deduped_rows = (
+        "return dedupeVisibleItems(rows);" in index
+        or "return dedupeVisibleItems(rows.map(row=>row.item));" in index
+    )
+    if "const applyActive=options.applyActiveFilter!==false" not in index or not returns_deduped_rows:
         failures.append("index.html selector must apply active filter before dedupeVisibleItems and return deduped rows")
     if not re.search(r"POANTA_FEED_VERSION\s*=\s*'[^']*dedupe-v3'", index):
         failures.append("POANTA_FEED_VERSION was not bumped for personal dedupe v3")
