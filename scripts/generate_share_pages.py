@@ -84,7 +84,7 @@ def page_html(item: dict, sid: str, app_base: str, share_url: str) -> str:
     title = display_headline(item)
     desc = description(item)
     image = str(item.get("imageUrl") or DEFAULT_IMAGE).strip()
-    redirect = f"./../../index.html?share={sid}&view=saved"
+    redirect = f"./../../app/?share={sid}&view=saved"
     canonical = share_url
     return f"""<!doctype html>
 <html lang=\"he\" dir=\"rtl\">
