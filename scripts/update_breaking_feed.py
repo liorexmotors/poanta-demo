@@ -217,6 +217,17 @@ def normalize_token(token: str) -> str:
         "פעילויות": "חינוך_קו_עימות",
         "חינוכית": "חינוך_קו_עימות",
         "חינוך": "חינוך_קו_עימות",
+        # Iranian-president resignation flashes vary between transliteration,
+        # first name, and verb forms (ביקש/מבקש/להתפטר/לסיים תפקיד).
+        "פזשכיאן": "נשיא_איראן",
+        "מסעוד": "נשיא_איראן",
+        "איראן": "איראן",
+        "איראנית": "איראן",
+        "בקש": "התפטרות",
+        "יקש": "התפטרות",
+        "תפטר": "התפטרות",
+        "סיים": "התפטרות",
+        "תפקידו": "תפקיד",
     }
     token = synonym_map.get(token, token)
     return token
@@ -271,6 +282,14 @@ def near_duplicate(a: str, b: str) -> bool:
         return True
     if "פיגוע" in shared and "גוש" in shared and ((ta & {"עציון", "צומת"}) or (tb & {"עציון", "צומת"})) and (ta & injury_terms) and (tb & injury_terms):
         return True
+    # Follow-up Gush Etzion ramming flashes can split the event wording: one
+    # source says the soldier neutralized the terrorist at ``צומת הגוש`` and a
+    # second source gives the MDA injury status under ``פיגוע דריסה בגוש עציון``.
+    # Treat shared Gush + terrorist/attack + casualty/status tokens as one live
+    # incident, otherwise the breaking feed shows the same attack twice.
+    attack_terms = {"פיגוע", "דריסה", "מחבל", "נטרל", "נוטרל"}
+    if "גוש" in shared and (ta & {"צומת", "עציון"}) and (tb & {"צומת", "עציון"}) and (ta & attack_terms) and (tb & attack_terms) and (ta & injury_terms) and (tb & injury_terms):
+        return True
     # Very short alert wording: one source may say "אזעקות בגליל המערבי" while
     # another adds the suspected drone and locality.  Shared location + alert
     # intent is enough, but only for this narrow alert/drone class.
@@ -301,6 +320,8 @@ def near_duplicate(a: str, b: str) -> bool:
     north_terms = {"צפון", "צפוני", "צפונית"}
     if "בנט" in shared and (ta & north_terms) and (tb & north_terms):
         return True
+    if {"נשיא", "איראן", "התפטרות"} <= (ta & tb) and ("תפקיד" in ta or "תפקיד" in tb):
+        return True
     fire_terms = {"שריפה", "עשן", "לכודים", "נפגעים"}
     if "בניין" in shared and "לוד" in shared and bool((ta & fire_terms) and (tb & fire_terms)):
         return True
@@ -318,8 +339,9 @@ def same_source_gush_etzion_attack_update(a: str, b: str) -> bool:
     """Collapse same-source status updates for the Gush Etzion ramming attack."""
     ta, tb = token_set(a), token_set(b)
     shared = ta & tb
-    injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל"}
-    return "פיגוע" in shared and "גוש" in shared and (ta & injury_terms) and (tb & injury_terms)
+    injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל", "נטרל"}
+    attack_terms = {"פיגוע", "דריסה", "מחבל", "נטרל", "נוטרל"}
+    return "גוש" in shared and (ta & {"צומת", "עציון"}) and (tb & {"צומת", "עציון"}) and (ta & attack_terms) and (tb & attack_terms) and (ta & injury_terms) and (tb & injury_terms)
 
 
 def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
