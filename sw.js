@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v93-current-affairs-v5-dedupe-v3';
+const CACHE_NAME = 'poenta-v94-current-affairs-v6-reset-dedupe-v3';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
