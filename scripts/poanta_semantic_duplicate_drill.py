@@ -236,6 +236,26 @@ CASES = [
         },
     ),
     (
+        "kahlon_unetcredit_walla_jpost_live_duplicate",
+        True,
+        {
+            "source": "וואלה חדשות",
+            "category": "משפט",
+            "headline": "משה כחלון הורשע בפרשת יונט קרדיט",
+            "originalTitle": "משה כחלון הורשע במסגרת הסדר טיעון: \"לא הביא את מלוא המידע לידיעת הדירקטוריון והציבור\"",
+            "context": "משה כחלון הודה והורשע לפי חוק ניירות ערך על תקופתו כיו״ר יונט קרדיט. ההסדר מבקש מאסר על תנאי, קנס של 180 אלף שקל והגבלת כהונה בחברה ציבורית ל־18 חודשים.",
+            "sourceUrl": "https://news.walla.co.il/item/3841967",
+        },
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "כלכלה",
+            "headline": "משה כחלון הורשע בעבירת דיווח בפרשת יונט קרדיט",
+            "originalTitle": "Former finance minister Kahlon convicted of reporting offense in UnetCredit collapse case",
+            "context": "משה כחלון הורשע במסגרת הסדר טיעון על הסתרת מידע מיונט קרדיט מציבור המשקיעים בזמן שכיהן כיו״ר החברה.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-897837",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {
