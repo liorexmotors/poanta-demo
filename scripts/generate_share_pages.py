@@ -10,7 +10,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
 APP_NAME = "Poenta"
-DEFAULT_IMAGE = "https://liorexmotors.github.io/poanta-demo/icon-512.png"
+DEFAULT_IMAGE = "https://poenta.app/icon-512.png"
 TRACKING_PREFIXES = ("utm_",)
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid", "ref", "ref_src"}
 
@@ -84,7 +84,7 @@ def page_html(item: dict, sid: str, app_base: str, share_url: str) -> str:
     title = display_headline(item)
     desc = description(item)
     image = str(item.get("imageUrl") or DEFAULT_IMAGE).strip()
-    redirect = f"./../../?share={sid}&view=saved"
+    redirect = f"./../../index.html?share={sid}&view=saved"
     canonical = share_url
     return f"""<!doctype html>
 <html lang=\"he\" dir=\"rtl\">
@@ -141,7 +141,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--feed", default="feed.json", type=Path)
     parser.add_argument("--out", default="dist", type=Path)
-    parser.add_argument("--app-base", default="https://liorexmotors.github.io/poanta-demo/")
+    parser.add_argument("--app-base", default="https://poenta.app/")
     args = parser.parse_args()
     count = generate(args.feed, args.out, args.app_base)
     print(f"Generated {count} share pages")
