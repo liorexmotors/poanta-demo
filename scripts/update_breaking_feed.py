@@ -40,6 +40,43 @@ def clean_text(value: str | None) -> str:
     return value
 
 
+def visible_text_key(value: str | None) -> str:
+    """Normalize text for user-visible duplicate checks."""
+    text = clean_text(value).lower()
+    text = re.sub(r"[\"'׳״`]+", "", text)
+    text = re.sub(r"[^0-9A-Za-z\u0590-\u05ff]+", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def useful_context(title: str, description: str) -> str:
+    """Return description only when it adds information beyond the title.
+
+    Many breaking RSS feeds repeat the title in <description>. Showing that as
+    a second line creates a fake "content" row.  If there is no extra detail,
+    leave context empty and let the UI omit the row.
+    """
+    desc = clean_text(description)
+    if not desc:
+        return ""
+    title_key = visible_text_key(title)
+    desc_key = visible_text_key(desc)
+    if not desc_key or desc_key == title_key:
+        return ""
+    if title_key and (desc_key.startswith(title_key) or title_key.startswith(desc_key)):
+        return ""
+    # Very short descriptions rarely add useful context in a breaking feed.
+    if len(desc_key) < 18:
+        return ""
+    # Keep breaking context compact: more information, not a full article body.
+    if len(desc) > 320:
+        cut = max(desc.rfind(".", 0, 300), desc.rfind(";", 0, 300), desc.rfind(". ", 0, 300))
+        if cut >= 90:
+            desc = desc[: cut + 1]
+        else:
+            desc = desc[:300].rstrip()
+    return desc
+
+
 def parse_date(value: str | None, source: dict[str, Any] | None = None) -> str:
     if not value:
         return ""
@@ -106,6 +143,7 @@ def parse_rss(text: str, source: dict[str, Any]) -> list[dict[str, Any]]:
             continue
         link = clean_text(fields.get("link") or fields.get("guid"))
         desc = clean_text(fields.get("description"))
+        context = useful_context(title, desc)
         published = parse_date(fields.get("pubdate") or fields.get("published") or fields.get("updated") or fields.get("dc:date"), source)
         rows.append(
             {
@@ -117,7 +155,7 @@ def parse_rss(text: str, source: dict[str, Any]) -> list[dict[str, Any]]:
                 "sourceLinks": [{"name": source.get("source") or source.get("logo") or source.get("name") or "מקור", "url": link}],
                 "headline": title,
                 "originalTitle": title,
-                "context": desc or title,
+                "context": context,
                 "publishedAt": published,
                 "hasSourceDate": bool(published),
                 "breaking": True,
