@@ -1,7 +1,7 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-05-31T15:10:28+03:00",
+  "generatedAt": "2026-05-31T15:14:57+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
@@ -955,24 +955,24 @@
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastCheckedAt": "2026-05-31T15:08:09+03:00",
+      "lastCheckedAt": "2026-05-31T15:08:41+03:00",
       "lastStatus": "repair_needed",
-      "lastIncidentType": "top_feed_stale_or_thin",
+      "lastIncidentType": "stage3_waiting_for_editor_results",
       "currentIncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at|2026-05-31T13:43:12+02:00|https://news.walla.co.il/item/3841996",
-      "currentIncidentRepeatCount": 1,
-      "lastAutomaticAction": "prepare_general_rescue_worker",
+      "currentIncidentRepeatCount": 2,
+      "lastAutomaticAction": "write_batch_results_then_rerun_stage3",
       "loopProtection": {
         "active": false,
         "reason": "",
-        "repeatCount": 1
+        "repeatCount": 2
       },
       "lastOkAt": "2026-05-25T17:38:06+03:00",
       "lastStage4StartedAt": "2026-05-31T14:55:41+03:00",
       "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-05-31T14:19:11+03:00|ועדת השרים אישרה החמרת אכיפה על כריזה במסגדים",
       "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260531-145705",
-      "lastStage3StartedAt": "2026-05-31T14:35:15+03:00",
-      "lastStage3IncidentKey": "top_stale|no_new_top_item_sla|2026-05-31T13:15:39+02:00|https://www.jpost.com/middle-east/article-897868",
-      "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260531-143722"
+      "lastStage3StartedAt": "2026-05-31T15:08:41+03:00",
+      "lastStage3IncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at|2026-05-31T13:43:12+02:00|https://news.walla.co.il/item/3841996",
+      "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260531-151045"
     }
   },
   "agents": [
