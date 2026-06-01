@@ -61,11 +61,11 @@ export default function App() {
     <StatusBar style="light" />
     <View style={styles.header}>
       <View style={styles.brand}><LogoMark /><Text style={styles.logoText}>Poenta</Text></View>
-      <View style={styles.badge}><Text style={styles.badgeText}>MVP</Text></View>
+      <View style={styles.badge}><Text style={styles.badgeText}>חי</Text></View>
     </View>
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
       <Text style={styles.title}>פיד פואנטה</Text>
-      <Text style={styles.subtitle}>שלד אפליקציה ראשון לחנויות — מחובר לפיד החי, בעיצוב קרוב לדמו.</Text>
+      <Text style={styles.subtitle}>חדשות בעברית, תקציר ברור והמקור ליד כל ידיעה — כדי להבין מהר מה חשוב עכשיו.</Text>
       {loading && <ActivityIndicator color={theme.yellow} style={{ marginTop: 28 }} />}
       {error && <Text style={styles.error}>שגיאה בטעינת הפיד: {error}</Text>}
       {items.map((item, index) => <Card key={`${item.id || item.sourceUrl || item.headline}-${index}`} item={item} index={index} />)}

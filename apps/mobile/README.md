@@ -1,27 +1,37 @@
 # Poanta Mobile App
 
-Expo / React Native skeleton for the production Poanta app.
+Expo / React Native app for the production Poenta / פואנטה store release.
 
-Working name only. The public store name is not final.
-
-Principles:
+## Locked v1 decisions
+- Public name: `Poenta / פואנטה`.
+- Bundle/package ID: `app.poenta`.
 - Hebrew + RTL first.
-- Anonymous device id in v1.
-- No push notifications in first public MVP unless explicitly added later.
-- UI should stay visually aligned with the live Poanta feed: dark premium cards, yellow accent, compact news-first reading.
+- No login/auth in v1.
+- No push notifications in v1.
+- No sensitive permissions: location, camera, microphone, contacts, calendar, photos.
+- Public feed: `https://poenta.app/feed.json`.
+- Support/policy pages must be live under `https://poenta.app`.
 
-Commands:
+## Commands
 ```bash
 npm install
-npm run start
-npm run android
-npm run ios
-npm run web
+npm run typecheck
+npm run doctor
+npm run export:web
+npx expo config --type public
 ```
 
-Store path:
-1. Build local Expo MVP.
-2. Connect to staging feed API.
-3. Internal Android test build.
-4. TestFlight build.
-5. Privacy policy / support URL / store screenshots / data safety forms.
+## EAS build path
+```bash
+npx eas-cli whoami
+npx eas build --profile preview --platform android
+npx eas build --profile preview --platform ios
+```
+
+If `whoami` returns `Not logged in`, stop and connect Expo/EAS credentials before attempting real builds.
+
+## Store preparation docs
+See `docs/store/`:
+- `hebrew-listing.md`
+- `privacy-data-safety.md`
+- `screenshot-plan.md`
