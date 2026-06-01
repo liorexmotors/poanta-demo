@@ -34,7 +34,7 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
   - observed `updatedAt`: `2026-06-01T18:56:39+02:00`
 
 ## Open gates / blockers before final store submission
-1. Android EAS build must finish successfully, then inspect the produced APK/AAB permissions and runtime behavior.
+1. Android EAS build must finish successfully, then inspect the produced APK/AAB permissions and runtime behavior with `apps/mobile/scripts/inspect_android_artifact.py`.
 2. Temporary support email changed to `tsach@care.co.il`; DNS for `care.co.il` has Microsoft/Outlook MX. Later switch to `support@poenta.app` only after MX/routing and inbound delivery are configured and tested.
 3. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after native build artifact inspection.
 

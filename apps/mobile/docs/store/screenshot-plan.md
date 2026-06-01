@@ -8,7 +8,7 @@ First screenshots must explain the product in Hebrew within 2–3 seconds: a cle
 ### Apple App Store
 - iPhone 6.7 inch screenshots.
 - iPhone 6.5 inch screenshots if required by current App Store Connect flow.
-- iPad only if we keep `supportsTablet: true`; otherwise consider disabling tablet support before first submission to reduce screenshot/review scope.
+- iPad screenshots are intentionally out of scope for v1 because `ios.supportsTablet` is disabled.
 
 ### Google Play
 - Android phone screenshots.

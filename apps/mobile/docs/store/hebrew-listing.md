@@ -31,11 +31,13 @@ News / חדשות
 ## דירוג גיל מוצע
 12+ / Teen — בגלל תוכן חדשותי שעשוי לכלול אקטואליה, פוליטיקה, ביטחון, תאונות או אירועים רגישים.
 
-## URLs לחנויות
+## URLs ופרטי קשר לחנויות
 - אתר: https://poenta.app
 - מדיניות פרטיות: https://poenta.app/privacy
 - תנאי שימוש: https://poenta.app/terms
 - תמיכה: https://poenta.app/support
+- דוא״ל תמיכה זמני: tsach@care.co.il
+- בהמשך ניתן להחליף לדוא״ל בדומיין Poenta אחרי הפעלת תיבה/ניתוב ובדיקת קבלה.
 
 ## הערת סקירה לחנויות
 Poenta is a Hebrew news feed app. Version 1 does not require login, account creation, push notifications, location, contacts, camera, microphone, or payment. The app displays public news-feed items and links/context from public sources.
