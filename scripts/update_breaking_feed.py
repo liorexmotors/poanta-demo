@@ -381,6 +381,22 @@ def same_source_tiberias_alert_update(a: str, b: str) -> bool:
     return "טבריה" in shared and (ta & tiberias_alert_terms) and (tb & tiberias_alert_terms)
 
 
+def same_source_reordered_title_update(a: str, b: str) -> bool:
+    """Collapse same-source flashes that contain the same distinctive words in a different order.
+
+    Rotter and similar breaking feeds sometimes publish the same quote/update twice
+    with only attribution order changed (for example adding/removing parentheses
+    around the speaker's role).  Cross-source semantic dedupe already handles this,
+    but same-source rows were intentionally conservative; this guard only collapses
+    near-identical same-source wording when the normalized token sets are equal and
+    sufficiently specific.
+    """
+    ta, tb = token_set(a), token_set(b)
+    if len(ta) < 6 or len(tb) < 6:
+        return False
+    return ta == tb and len(distinctive_overlap(ta, tb)) >= 5
+
+
 def weak_speaker_only_title(title: str, context: str) -> bool:
     """Drop breaking rows that name only a speaker, without the actual update.
 
@@ -443,6 +459,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_building_fire_update(row_dupe_text, dupe_text(x))
                     or same_source_gush_etzion_attack_update(row_dupe_text, dupe_text(x))
                     or same_source_tiberias_alert_update(row_dupe_text, dupe_text(x))
+                    or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
                 )
             ),
             None,

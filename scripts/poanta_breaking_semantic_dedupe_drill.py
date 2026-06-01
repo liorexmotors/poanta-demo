@@ -129,6 +129,11 @@ def main() -> int:
         'מד"א על השיגורים מלבנון: לא ידוע על נפגעים באזור טבריה',
     ):
         failures.append("expected same-source Tiberias alert update collapse")
+    if not mod.same_source_reordered_title_update(
+        "''אתם לא יהודים, אלוהים ישלם לכם'': יו''ר פורום קו העימות (משה דוידוביץ') תקף את חברי הכנסת",
+        "''אתם לא יהודים, אלוהים ישלם לכם'': משה דוידוביץ', יו''ר פורום קו העימות תקף את חברי הכנסת",
+    ):
+        failures.append("expected same-source reordered Rotter quote update collapse")
     if failures:
         for failure in failures:
             print("FAIL", failure)
