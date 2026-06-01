@@ -15,8 +15,9 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
   - iOS bundle ID `app.poenta`
   - iOS tablet support disabled for v1 (`supportsTablet: false`) to avoid iPad screenshot/review scope
   - Android package `app.poenta`
-  - Android permissions `[]`
-- Android EAS preview build started: `71c931c6-9592-48c5-b65a-c2bf72a7c624`.
+  - Android permissions `[]` and `android.blockedPermissions` blocks legacy storage/overlay permissions observed in the first APK inspection.
+- First Android EAS preview build finished: `71c931c6-9592-48c5-b65a-c2bf72a7c624`; inspection found unwanted `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, and `SYSTEM_ALERT_WINDOW` permissions from native/template output.
+- Follow-up Android EAS preview build started after adding `blockedPermissions`: `0d84d083-6526-40e1-8b74-f4da82b1e564`.
 - Store-facing text scan in `apps/mobile` found no `demo`, `MVP`, `skeleton`, `שלד`, `דמו`, or `mockup` wording.
 - Web export smoke passed: `npm run export:web`.
 - Public pages are real HTTPS pages, not home fallbacks:
@@ -34,8 +35,8 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
   - observed `updatedAt`: `2026-06-01T18:56:39+02:00`
 
 ## Open gates / blockers before final store submission
-1. Android EAS build must finish successfully, then inspect the produced APK/AAB permissions and runtime behavior with `apps/mobile/scripts/inspect_android_artifact.py`.
-2. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after native build artifact inspection.
+1. Follow-up Android EAS build `0d84d083-6526-40e1-8b74-f4da82b1e564` must finish successfully, then inspect the produced APK permissions and runtime behavior. If clean, run a production Android AAB build for Google Play.
+2. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after clean native build artifact inspection.
 3. For TestFlight/App Store (not simulator preview), connect Apple Developer / App Store Connect credentials and run a non-simulator iOS build.
 
 ## Support mailbox decision
@@ -43,11 +44,20 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
 - Later switch public pages/store metadata to `support@poenta.app` only after MX/routing and inbound delivery are configured and tested.
 
 ## Current EAS builds
-### Android preview
+### Android preview — first build
 - Build ID: `71c931c6-9592-48c5-b65a-c2bf72a7c624`
 - Platform: Android
 - Profile: preview
 - Logs: https://expo.dev/accounts/poenta.app/projects/poenta/builds/71c931c6-9592-48c5-b65a-c2bf72a7c624
+- Status: finished
+- Artifact inspected: `https://expo.dev/artifacts/eas/f3WMQdgmewiXP7Pv1yyyAQ.apk`
+- Inspection result: package `app.poenta`, version `0.1.0`, versionCode `1`, minSdk `24`, targetSdk `36`; unwanted permissions found and fixed in follow-up config (`READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, `SYSTEM_ALERT_WINDOW`).
+
+### Android preview — permission-fix build
+- Build ID: `0d84d083-6526-40e1-8b74-f4da82b1e564`
+- Platform: Android
+- Profile: preview
+- Logs: https://expo.dev/accounts/poenta.app/projects/poenta/builds/0d84d083-6526-40e1-8b74-f4da82b1e564
 - Status at last check: in queue
 
 ### iOS simulator preview
