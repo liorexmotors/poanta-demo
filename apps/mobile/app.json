@@ -1,23 +1,42 @@
 {
   "expo": {
-    "name": "Poanta",
-    "slug": "poanta",
+    "name": "Poenta",
+    "slug": "poenta",
     "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "scheme": "poanta",
+    "scheme": "poenta",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "ai.poanta.app"
+      "bundleIdentifier": "app.poenta",
+      "associatedDomains": [
+        "applinks:poenta.app"
+      ]
     },
     "android": {
-      "package": "ai.poanta.app",
+      "package": "app.poenta",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#071015"
-      }
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "poenta.app"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

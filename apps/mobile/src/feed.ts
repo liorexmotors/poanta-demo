@@ -1,6 +1,6 @@
 import { FeedResponse } from './types';
 
-export const DEFAULT_FEED_URL = 'https://liorexmotors.github.io/poanta-demo/feed.json';
+export const DEFAULT_FEED_URL = 'https://poenta.app/feed.json';
 
 export async function fetchFeed(url = DEFAULT_FEED_URL): Promise<FeedResponse> {
   const res = await fetch(`${url}?v=${Date.now()}`, { headers: { Accept: 'application/json' } });
