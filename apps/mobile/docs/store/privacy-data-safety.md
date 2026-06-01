@@ -15,7 +15,7 @@ Android permissions should remain empty/minimal. The cleaned preview APK `e7c48d
 - `android.permission.VIBRATE`
 - `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
 
-The earlier legacy storage/overlay permissions are absent. Re-check the production AAB before final Play submission.
+The earlier legacy storage/overlay permissions are absent in both the cleaned preview APK and the production AAB `add92129-12a1-4fa7-adf2-961e7474b19f`, inspected with `bundletool`.
 
 ## Apple Privacy Nutrition draft
 Subject to final SDK/build inspection before submission.

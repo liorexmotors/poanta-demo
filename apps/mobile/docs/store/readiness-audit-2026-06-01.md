@@ -36,8 +36,8 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
 
 ## Open gates / blockers before final store submission
 1. Android permission-fix preview APK `e7c48df6-09e8-48b5-bdd0-ed602f34eb85` finished and was inspected with `androguard`: legacy storage/overlay permissions are gone. Remaining manifest permissions are `INTERNET`, `VIBRATE`, and `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`.
-2. Android production AAB build for Google Play has been started: `add92129-12a1-4fa7-adf2-961e7474b19f`. It must finish successfully, then the produced AAB should be inspected before Play upload/submission.
-3. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after clean production artifacts are inspected.
+2. Android production AAB build for Google Play `add92129-12a1-4fa7-adf2-961e7474b19f` finished and was inspected with `bundletool` manifest dump. The production AAB has the same clean permission set as the preview APK.
+3. Final Apple Privacy Nutrition / Google Play Data Safety answers can use the cleaned Android production artifact inspection below; keep iOS answers gated on the non-simulator iOS production artifact.
 4. For TestFlight/App Store (not simulator preview), complete Apple Developer / App Store Connect credentials in EAS, then run a non-simulator iOS production build. A non-interactive production attempt currently fails because the Distribution Certificate/provisioning setup is not completed; see `ios-testflight-handoff.md`.
 
 ## Support mailbox decision
@@ -72,8 +72,17 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
 - Build ID: `add92129-12a1-4fa7-adf2-961e7474b19f`
 - Platform: Android
 - Profile: production
-- Started after the clean preview APK inspection.
-- Status at last check: monitor running; inspect produced AAB when it finishes.
+- Status: finished
+- Artifact inspected: `https://expo.dev/artifacts/eas/nt7HffKF1CLBSvymM53u9P.aab`
+- Local inspection path: `/tmp/poenta-add92129.aab`
+- Inspection tool: `bundletool 1.18.1` manifest dump for base module
+- Inspection result: package `app.poenta`, version `0.1.0`, versionCode `2`, minSdk `24`, targetSdk `36`.
+- Manifest permissions found:
+  - `android.permission.INTERNET`
+  - `android.permission.VIBRATE`
+  - `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
+- Regression check passed: `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, and `SYSTEM_ALERT_WINDOW` are absent.
+- This is the current Google Play upload candidate, pending Play Console account/track/submission steps.
 
 ### iOS simulator preview
 - Finished build ID: `e57f9f9c-f08f-4a94-bb70-6b9d3fd4372d`
