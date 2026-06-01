@@ -203,6 +203,18 @@ def normalize_token(token: str) -> str:
         "חוסן": "מעלות_חוסן",
         "תרשיחא": "מעלות_חוסן",
         "עלות": "מעלות_חוסן",
+        # Fatal road-crash flashes around the same incident can move from
+        # "Kochav Michael" to the nearby Givati junction and from "critically
+        # injured" to "death determined".  Normalize the locality/status words
+        # so מבזקים keeps one updated live card instead of parallel same-crash
+        # cards from Ynet/Walla/Rotter.
+        "כוכב": "כוכב_מיכאל_גבעתי",
+        "מיכאל": "כוכב_מיכאל_גבעתי",
+        "גבעתי": "כוכב_מיכאל_גבעתי",
+        "מותה": "מוות",
+        "מותו": "מוות",
+        "נהרגה": "מוות",
+        "הרוגה": "מוות",
         # Building-fire flashes often split between rescue count and smoke-injury
         # count.  Normalize the inflected fire token so same-location building
         # fires collapse into one breaking card with source links.
@@ -297,6 +309,10 @@ def near_duplicate(a: str, b: str) -> bool:
     # alert to MDA casualty counts while preserving the concrete event.
     # Keep these narrow: shared locality + same event class + injury signal.
     if {"תאונת", "טרקטורון", "מעלות_חוסן"} <= shared and "בן" in shared:
+        return True
+    road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "צומת"}
+    casualty_update_terms = {"נפצעה", "נפצע", "נפצעו", "אנוש", "קשה", "מוות", "הרוגה", "פצועים"}
+    if "כוכב_מיכאל_גבעתי" in shared and (ta & road_crash_terms) and (tb & road_crash_terms) and (ta & casualty_update_terms) and (tb & casualty_update_terms):
         return True
     gush_terms = {"גוש", "עציון", "צומת"}
     injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל"}
@@ -400,6 +416,15 @@ def same_source_tiberias_alert_update(a: str, b: str) -> bool:
     return "טבריה" in shared and (ta & tiberias_alert_terms) and (tb & tiberias_alert_terms)
 
 
+def same_source_road_crash_status_update(a: str, b: str) -> bool:
+    """Collapse same-source fatality/status updates for one road crash."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "צומת"}
+    casualty_update_terms = {"נפצעה", "נפצע", "נפצעו", "אנוש", "קשה", "מוות", "הרוגה", "פצועים"}
+    return "כוכב_מיכאל_גבעתי" in shared and (ta & road_crash_terms) and (tb & road_crash_terms) and (ta & casualty_update_terms) and (tb & casualty_update_terms)
+
+
 def same_source_reordered_title_update(a: str, b: str) -> bool:
     """Collapse same-source flashes that contain the same distinctive words in a different order.
 
@@ -478,6 +503,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_building_fire_update(row_dupe_text, dupe_text(x))
                     or same_source_gush_etzion_attack_update(row_dupe_text, dupe_text(x))
                     or same_source_tiberias_alert_update(row_dupe_text, dupe_text(x))
+                    or same_source_road_crash_status_update(row_dupe_text, dupe_text(x))
                     or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
                 )
             ),
