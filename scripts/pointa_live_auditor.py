@@ -30,7 +30,10 @@ try:
 except Exception:  # pragma: no cover
     validate_item = None
 
-LIVE_FEED_URL = "https://liorexmotors.github.io/poanta-demo/feed.json"
+# Public feed is served from Cloudflare Pages. The old GitHub Pages project-path
+# URL 404s after the custom-domain/Cloudflare migration, so it must not be the
+# default source of truth for public health checks.
+LIVE_FEED_URL = "https://poanta-demo.pages.dev/feed.json"
 RAW_GHPAGES_URL = "https://raw.githubusercontent.com/liorexmotors/poanta-demo/gh-pages/feed.json"
 TZ = timezone(timedelta(hours=3))
 
