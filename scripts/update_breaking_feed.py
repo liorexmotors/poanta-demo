@@ -239,6 +239,18 @@ def normalize_token(token: str) -> str:
         "שיגור": "שיגור",
         "שיגורים": "שיגור",
         "השיגורים": "שיגור",
+        # Dahieh/Beirut evacuation warnings are often published as several
+        # terse flashes within minutes: one says "אזהרת פינוי", another says
+        # "קורא להתפנות", and Rotter/Walla disagree on דאחיה/דאחייה spelling.
+        # Normalize these anchors so the breaking feed shows one live incident
+        # with source links instead of three same-event cards.
+        "דאחיה": "דאחייה_ביירות",
+        "דאחייה": "דאחייה_ביירות",
+        "ביירות": "דאחייה_ביירות",
+        "פינוי": "פינוי",
+        "לפינוי": "פינוי",
+        "להתפנות": "פינוי",
+        "תפנות": "פינוי",
     }
     token = synonym_map.get(token, token)
     return token
@@ -353,6 +365,13 @@ def near_duplicate(a: str, b: str) -> bool:
     # launch/alert updates, preserving separate analysis about Lebanon.
     tiberias_alert_terms = {"אזעק", "אזעקה", "אזעקות", "שיגור", "נפגעים", "מדא"}
     if "טבריה" in shared and (ta & tiberias_alert_terms) and (tb & tiberias_alert_terms):
+        return True
+    # Same IDF/Dahieh evacuation warning: collapse Walla/Ynet/Rotter variants
+    # and same-source Rotter repeats while preserving later concrete strike or
+    # casualty updates as separate flashes.
+    dahiya_terms = {"דאחייה_ביירות", "פינוי"}
+    idf_warning_terms = {"צה", "דובר", "אזהרת", "מזהיר", "קורא", "לראשונה", "הודעת"}
+    if dahiya_terms <= shared and (ta & idf_warning_terms) and (tb & idf_warning_terms):
         return True
     return False
 
