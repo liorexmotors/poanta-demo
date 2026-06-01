@@ -40,8 +40,8 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
 3. For TestFlight/App Store (not simulator preview), complete Apple Developer / App Store Connect credentials in EAS, then run a non-simulator iOS production build. A non-interactive production attempt currently fails because the Distribution Certificate/provisioning setup is not completed; see `ios-testflight-handoff.md`.
 
 ## Support mailbox decision
-- Temporary support email: `tsach@care.co.il`; DNS for `care.co.il` has Microsoft/Outlook MX.
-- Later switch public pages/store metadata to `support@poenta.app` only after MX/routing and inbound delivery are configured and tested.
+- Store support email: `support@poenta.app`.
+- DNS for `poenta.app` has Google MX/SPF configured, and inbound delivery was reported tested successfully before switching public pages/store metadata from the temporary mailbox.
 
 ## Current EAS builds
 ### Android preview — first build

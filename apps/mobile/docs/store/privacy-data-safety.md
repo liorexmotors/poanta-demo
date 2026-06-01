@@ -69,7 +69,7 @@ Infrastructure processors may serve app/feed content.
    - Android manifest permissions.
    - iOS Info.plist permission usage strings.
 2. Verify whether EAS/Expo build includes crash reporting or analytics by default.
-3. Temporary support mailbox for store submission: `tsach@care.co.il` (domain has MX). Switch to `support@poenta.app` only after Poenta-domain mailbox/routing is active and tested.
+3. Store support mailbox: `support@poenta.app` (Poenta-domain Google MX configured; inbound delivery tested).
 4. Confirm public pages are real and reachable:
    - `https://poenta.app/privacy`
    - `https://poenta.app/terms`

@@ -8,7 +8,7 @@ Last updated: 2026-06-01
 - Bundle ID: `app.poenta`
 - Version: `0.1.0`
 - v1 scope: iPhone only (`ios.supportsTablet=false`)
-- Support email for store submission: `tsach@care.co.il`
+- Support email for store submission: `support@poenta.app`
 - Privacy policy: `https://poenta.app/privacy`
 - Terms: `https://poenta.app/terms`
 - Support URL: `https://poenta.app/support`
@@ -80,7 +80,7 @@ In App Store Connect:
 4. Category: News.
 5. Privacy policy URL: `https://poenta.app/privacy`.
 6. Support URL: `https://poenta.app/support`.
-7. Support email: `tsach@care.co.il`.
+7. Support email: `support@poenta.app`.
 8. Export compliance: app uses standard HTTPS only; `ITSAppUsesNonExemptEncryption=false` is set in `app.json`.
 
 ## Next verification after a real iOS build finishes
