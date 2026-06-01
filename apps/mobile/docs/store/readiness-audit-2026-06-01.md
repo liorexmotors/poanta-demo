@@ -37,7 +37,7 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
 ## Open gates / blockers before final store submission
 1. Follow-up Android EAS build `0d84d083-6526-40e1-8b74-f4da82b1e564` must finish successfully, then inspect the produced APK permissions and runtime behavior. If clean, run a production Android AAB build for Google Play.
 2. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after clean native build artifact inspection.
-3. For TestFlight/App Store (not simulator preview), connect Apple Developer / App Store Connect credentials and run a non-simulator iOS build.
+3. For TestFlight/App Store (not simulator preview), complete Apple Developer / App Store Connect credentials in EAS, then run a non-simulator iOS production build. A non-interactive production attempt currently fails because the Distribution Certificate/provisioning setup is not completed; see `ios-testflight-handoff.md`.
 
 ## Support mailbox decision
 - Temporary support email: `tsach@care.co.il`; DNS for `care.co.il` has Microsoft/Outlook MX.
