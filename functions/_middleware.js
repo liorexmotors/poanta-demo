@@ -10,6 +10,9 @@ function isProtectedPath(pathname) {
   if (pathname === '/feedback-dashboard') return true;
   if (pathname === '/rss-dashboard') return true;
   if (pathname === '/rss-viewer') return true;
+  if (pathname === '/dashboard') return true;
+  if (pathname === '/dashboard/') return true;
+  if (pathname.startsWith('/dashboard/')) return true;
   return false;
 }
 

@@ -10,6 +10,9 @@ Protected paths:
 - `/rss-dashboard`
 - `/rss-viewer.html`
 - `/rss-viewer`
+- `/dashboard`
+- `/dashboard/`
+- `/dashboard/*`
 - `/dashboard_ops_snapshot.json`
 
 Required Cloudflare Pages environment variables/secrets:
