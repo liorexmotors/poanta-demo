@@ -10,7 +10,12 @@ Last prepared: 2026-06-01
 - Public news feed is fetched from `https://poenta.app/feed.json`.
 
 ## App permissions expectation
-Android permissions should remain empty/minimal. iOS should not request sensitive permission prompts.
+Android permissions should remain empty/minimal. The cleaned preview APK `e7c48df6-09e8-48b5-bdd0-ed602f34eb85` was inspected and contains only:
+- `android.permission.INTERNET`
+- `android.permission.VIBRATE`
+- `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
+
+The earlier legacy storage/overlay permissions are absent. Re-check the production AAB before final Play submission.
 
 ## Apple Privacy Nutrition draft
 Subject to final SDK/build inspection before submission.

@@ -35,9 +35,10 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
   - observed `updatedAt`: `2026-06-01T18:56:39+02:00`
 
 ## Open gates / blockers before final store submission
-1. Follow-up Android EAS build `0d84d083-6526-40e1-8b74-f4da82b1e564` must finish successfully, then inspect the produced APK permissions and runtime behavior. If clean, run a production Android AAB build for Google Play.
-2. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after clean native build artifact inspection.
-3. For TestFlight/App Store (not simulator preview), complete Apple Developer / App Store Connect credentials in EAS, then run a non-simulator iOS production build. A non-interactive production attempt currently fails because the Distribution Certificate/provisioning setup is not completed; see `ios-testflight-handoff.md`.
+1. Android permission-fix preview APK `e7c48df6-09e8-48b5-bdd0-ed602f34eb85` finished and was inspected with `androguard`: legacy storage/overlay permissions are gone. Remaining manifest permissions are `INTERNET`, `VIBRATE`, and `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`.
+2. Android production AAB build for Google Play has been started: `add92129-12a1-4fa7-adf2-961e7474b19f`. It must finish successfully, then the produced AAB should be inspected before Play upload/submission.
+3. Final Apple Privacy Nutrition / Google Play Data Safety answers should be locked only after clean production artifacts are inspected.
+4. For TestFlight/App Store (not simulator preview), complete Apple Developer / App Store Connect credentials in EAS, then run a non-simulator iOS production build. A non-interactive production attempt currently fails because the Distribution Certificate/provisioning setup is not completed; see `ios-testflight-handoff.md`.
 
 ## Support mailbox decision
 - Store support email: `support@poenta.app`.
@@ -54,11 +55,25 @@ Expo / React Native app at `apps/mobile`, Android preview EAS build, and public 
 - Inspection result: package `app.poenta`, version `0.1.0`, versionCode `1`, minSdk `24`, targetSdk `36`; unwanted permissions found and fixed in follow-up config (`READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, `SYSTEM_ALERT_WINDOW`).
 
 ### Android preview — permission-fix build
-- Build ID: `0d84d083-6526-40e1-8b74-f4da82b1e564`
+- Build ID: `e7c48df6-09e8-48b5-bdd0-ed602f34eb85`
 - Platform: Android
 - Profile: preview
-- Logs: https://expo.dev/accounts/poenta.app/projects/poenta/builds/0d84d083-6526-40e1-8b74-f4da82b1e564
-- Status at last check: in queue
+- Status: finished
+- Artifact inspected: `https://expo.dev/artifacts/eas/uBWA1SQn8Rt5wjdmd4Krct.apk`
+- Inspection tool: `androguard` on `/tmp/poenta-e7c48df6.apk`
+- Inspection result: package `app.poenta`, version `0.1.0`, versionCode `1`, minSdk `24`, targetSdk `36`.
+- Manifest permissions found:
+  - `android.permission.INTERNET`
+  - `android.permission.VIBRATE`
+  - `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
+- Regression check passed: `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, and `SYSTEM_ALERT_WINDOW` are absent.
+
+### Android production — Google Play AAB
+- Build ID: `add92129-12a1-4fa7-adf2-961e7474b19f`
+- Platform: Android
+- Profile: production
+- Started after the clean preview APK inspection.
+- Status at last check: monitor running; inspect produced AAB when it finishes.
 
 ### iOS simulator preview
 - Finished build ID: `e57f9f9c-f08f-4a94-bb70-6b9d3fd4372d`
