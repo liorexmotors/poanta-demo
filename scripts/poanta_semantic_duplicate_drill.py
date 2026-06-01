@@ -217,6 +217,24 @@ CASES = [
         },
     ),
     (
+        "us_iran_hormuz_base_attacks_cross_source",
+        True,
+        {
+            "source": "BBC World",
+            "category": "ביטחון",
+            "headline": "ארה״ב תקפה מכ״מים איראניים אחרי ירי באזור הורמוז",
+            "context": "ארה״ב תקפה מכ״מים וסוללות באזור הורמוז לאחר ירי לעבר כוחות אמריקניים במפרץ.",
+            "sourceUrl": "https://www.bbc.com/news/articles/crlpy8n7pr6o",
+        },
+        {
+            "source": "The Guardian Middle East",
+            "category": "ביטחון",
+            "headline": "איראן טוענת שתקפה בסיס אמריקאי באזור המפרץ",
+            "context": "איראן הציגה את הירי באזור המפרץ כתגובה לעימות עם ארה״ב סביב הורמוז והתקיפות האמריקניות.",
+            "sourceUrl": "https://www.theguardian.com/world/2026/jun/01/iran-strikes-us-military-base-kuwait-iranian-air-defences",
+        },
+    ),
+    (
         "kahlon_unetcredit_conviction_cross_category",
         True,
         {
