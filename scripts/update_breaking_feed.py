@@ -259,6 +259,29 @@ def normalize_token(token: str) -> str:
         "דאחיה": "דאחייה_ביירות",
         "דאחייה": "דאחייה_ביירות",
         "ביירות": "דאחייה_ביירות",
+        "יירות": "דאחייה_ביירות",
+        # Trump/Iran ceasefire-agreement flashes can arrive as ``הסכם עם איראן``
+        # in one source and ``הארכת הפסקת האש עם איראן`` in another.  Normalize
+        # only the agreement/ceasefire anchors; the near-duplicate rule below
+        # still requires Trump + Iran + near-term timing so oil/sanctions/strike
+        # items are not collapsed into the same live event.
+        "הסכם": "הסכם_הפסקת_אש",
+        "הסכמים": "הסכם_הפסקת_אש",
+        "ארכת": "הסכם_הפסקת_אש",
+        "הארכת": "הסכם_הפסקת_אש",
+        "הפסקת": "הסכם_הפסקת_אש",
+        # Trump/Netanyahu/Beirut flashes vary between the direct quote, a
+        # paraphrase, and Bibi/Netanyahu naming.  Normalize the actors/action so
+        # the same diplomatic update is shown once with multiple source links.
+        "ביבי": "נתניהו",
+        "יבי": "נתניהו",
+        "פשיטה": "תקיפה_ביירות",
+        "לתקוף": "תקיפה_ביירות",
+        "תקיפה": "תקיפה_ביירות",
+        "תקוף": "תקיפה_ביירות",
+        "כניסה": "תקיפה_ביירות",
+        "יקשתי": "ביקשתי",
+        "פנה": "הפנה",
         "פינוי": "פינוי",
         "לפינוי": "פינוי",
         "להתפנות": "פינוי",
@@ -389,6 +412,17 @@ def near_duplicate(a: str, b: str) -> bool:
     idf_warning_terms = {"צה", "דובר", "אזהרת", "מזהיר", "קורא", "לראשונה", "הודעת"}
     if dahiya_terms <= shared and (ta & idf_warning_terms) and (tb & idf_warning_terms):
         return True
+    # Same Trump/Iran near-term ceasefire/agreement flash: one source can report
+    # ``הסכם עם איראן בשבוע הבא`` while another says ``הארכת הפסקת האש``.
+    # Require Trump + Iran + the agreement anchor + near-term timing to avoid
+    # collapsing distinct sanctions, oil-market, or military-strike developments.
+    near_time_terms = {"שבוע", "הבא", "בקרוב"}
+    if {"טראמפ", "איראן", "הסכם_הפסקת_אש"} <= shared and (ta & near_time_terms) and (tb & near_time_terms):
+        return True
+    # Same Trump/Netanyahu Beirut de-escalation flash, phrased as a direct quote
+    # by Rotter and as a paraphrased Walla/Ynet-style headline/context elsewhere.
+    if {"טראמפ", "נתניהו", "דאחייה_ביירות"} <= shared and ((ta & {"ביקשתי", "ביקש", "שוחחתי", "שוחח"}) or (tb & {"ביקשתי", "ביקש", "שוחחתי", "שוחח"})) and ((ta & {"תקיפה_ביירות", "כוחותיו", "הפנה"}) or (tb & {"תקיפה_ביירות", "כוחותיו", "הפנה"})):
+        return True
     return False
 
 
@@ -423,6 +457,15 @@ def same_source_road_crash_status_update(a: str, b: str) -> bool:
     road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "צומת"}
     casualty_update_terms = {"נפצעה", "נפצע", "נפצעו", "אנוש", "קשה", "מוות", "הרוגה", "פצועים"}
     return "כוכב_מיכאל_גבעתי" in shared and (ta & road_crash_terms) and (tb & road_crash_terms) and (ta & casualty_update_terms) and (tb & casualty_update_terms)
+
+
+def same_source_trump_iran_agreement_update(a: str, b: str) -> bool:
+    """Collapse same-source Trump/Iran agreement/ceasefire near-term updates."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    near_time_terms = {"שבוע", "הבא", "בקרוב"}
+    agreement_terms = {"הסכם_הפסקת_אש", "סכם", "פסקת", "האש", "אש"}
+    return {"טראמפ", "איראן"} <= shared and (ta & near_time_terms) and (tb & near_time_terms) and (ta & agreement_terms) and (tb & agreement_terms)
 
 
 def same_source_reordered_title_update(a: str, b: str) -> bool:
@@ -504,6 +547,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_gush_etzion_attack_update(row_dupe_text, dupe_text(x))
                     or same_source_tiberias_alert_update(row_dupe_text, dupe_text(x))
                     or same_source_road_crash_status_update(row_dupe_text, dupe_text(x))
+                    or same_source_trump_iran_agreement_update(row_dupe_text, dupe_text(x))
                     or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
                 )
             ),
