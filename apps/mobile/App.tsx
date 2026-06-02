@@ -33,6 +33,9 @@ const STORAGE_KEYS = {
   saved: 'poenta.native.saved.v1',
   read: 'poenta.native.read.v1',
   appearance: 'poenta.native.appearance.v1',
+  feedCache: 'poenta.native.feedCache.v1',
+  breakingCache: 'poenta.native.breakingCache.v1',
+  lastSync: 'poenta.native.lastSync.v1',
 };
 
 function canonicalSource(name?: string) {
@@ -271,7 +274,7 @@ function PoentaApp() {
   const insets = useSafeAreaInsets();
   const topInset = Math.max(insets.top, 18);
   const bottomInset = Math.max(insets.bottom, 10);
-  const topbarHeight = 142 + topInset;
+  const topbarHeight = 150 + topInset;
   const navHeight = 58 + bottomInset;
   const [items, setItems] = useState<FeedItem[]>([]);
   const [breaking, setBreaking] = useState<FeedItem[]>([]);
@@ -286,6 +289,7 @@ function PoentaApp() {
   const [refreshing, setRefreshing] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [prefs, setPrefs] = useState<Prefs>({ topics: DEFAULT_TOPICS.slice(0, 7), sources: [], days: 3, feedFilter: 'all' });
   const storageReady = useRef(false);
 
@@ -297,11 +301,14 @@ function PoentaApp() {
     let alive = true;
     (async () => {
       try {
-        const [prefsRaw, savedRaw, readRaw, appearanceRaw] = await Promise.all([
+        const [prefsRaw, savedRaw, readRaw, appearanceRaw, feedRaw, breakingRaw, syncRaw] = await Promise.all([
           AsyncStorage.getItem(STORAGE_KEYS.prefs),
           AsyncStorage.getItem(STORAGE_KEYS.saved),
           AsyncStorage.getItem(STORAGE_KEYS.read),
           AsyncStorage.getItem(STORAGE_KEYS.appearance),
+          AsyncStorage.getItem(STORAGE_KEYS.feedCache),
+          AsyncStorage.getItem(STORAGE_KEYS.breakingCache),
+          AsyncStorage.getItem(STORAGE_KEYS.lastSync),
         ]);
         if (!alive) return;
         if (prefsRaw) {
@@ -318,6 +325,15 @@ function PoentaApp() {
         if (savedRaw) setSavedKeys(JSON.parse(savedRaw).filter((x: unknown) => typeof x === 'string').slice(0, 500));
         if (readRaw) setReadKeys(JSON.parse(readRaw).filter((x: unknown) => typeof x === 'string').slice(0, 1200));
         if (appearanceRaw === 'dark' || appearanceRaw === 'light' || appearanceRaw === 'system') setAppearance(appearanceRaw);
+        if (feedRaw) {
+          const cachedFeed = JSON.parse(feedRaw);
+          if (Array.isArray(cachedFeed)) setItems(cachedFeed);
+        }
+        if (breakingRaw) {
+          const cachedBreaking = JSON.parse(breakingRaw);
+          if (Array.isArray(cachedBreaking)) setBreaking(dedupeItems(cachedBreaking));
+        }
+        if (syncRaw) setLastSyncedAt(syncRaw);
       } catch {
         // Keep the app usable if device storage contains invalid stale data.
       } finally {
@@ -341,6 +357,13 @@ function PoentaApp() {
       const breakingItems = Array.isArray(breakingFeed.items) ? breakingFeed.items : [];
       setItems(feedItems);
       setBreaking(dedupeItems(breakingItems));
+      const syncStamp = new Date().toISOString();
+      setLastSyncedAt(syncStamp);
+      AsyncStorage.multiSet([
+        [STORAGE_KEYS.feedCache, JSON.stringify(feedItems.slice(0, 300))],
+        [STORAGE_KEYS.breakingCache, JSON.stringify(breakingItems.slice(0, 150))],
+        [STORAGE_KEYS.lastSync, syncStamp],
+      ]).catch(() => null);
       setPrefs(prev => ({
         ...prev,
         sources: prev.sources.length ? [...new Set([...prev.sources, ...allSources(feedItems).filter(src => !prev.sources.includes(src)).slice(0, 0)])] : allSources([...feedItems, ...breakingItems]),
@@ -495,7 +518,7 @@ function PoentaApp() {
     <Text style={styles.subtitle}>תחומי עניין, מקורות וסינון אישי — כמו בגרסת ה־web שפיתחנו.</Text>
 
     <View style={styles.settingsCard}>
-      <View style={styles.settingsHead}><Text style={styles.settingsTitle}>תחומי עניין</Text><Text style={styles.savedPill}>נשמר בסשן</Text></View>
+      <View style={styles.settingsHead}><Text style={styles.settingsTitle}>תחומי עניין</Text><Text style={styles.savedPill}>נשמר במכשיר</Text></View>
       <View style={styles.bulkRow}>
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, topics: knownTopics }))}><Text style={styles.bulkText}>סמן הכל</Text></TouchableOpacity>
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, topics: [] }))}><Text style={styles.bulkText}>בטל הכל</Text></TouchableOpacity>
@@ -545,6 +568,7 @@ function PoentaApp() {
 
   const list = view === 'breaking' ? visibleBreaking : view === 'saved' ? savedItems : view === 'search' ? searchResults : visibleMain;
   const unreadCount = visibleMain.filter(i => !readKeys.includes(itemKey(i))).length;
+  const syncLabel = lastSyncedAt ? `עודכן ${timeLabel({ publishedAt: lastSyncedAt } as FeedItem)}` : 'משוך לרענון';
 
   return <SafeAreaView style={styles.safe}>
     <StatusBar style="light" />
@@ -556,6 +580,7 @@ function PoentaApp() {
       <TouchableOpacity style={styles.updates} onPress={loadAll}>
         <View style={styles.updatePill}><Text style={styles.updatePillText}>{unreadCount || visibleMain.length}</Text></View>
         <View style={styles.updateTrack}><View style={styles.updateFill} /><Text style={styles.updateText}>מדד החדשים שלך</Text></View>
+        <Text style={styles.syncText}>{syncLabel}</Text>
       </TouchableOpacity>
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
@@ -603,12 +628,13 @@ const styles = StyleSheet.create({
   topMore: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
   topMoreText: { color: 'rgba(255,255,255,0.82)', fontSize: 25, fontWeight: '900', lineHeight: 30 },
   logoImage: { height: 38, width: 164 },
-  updates: { height: 44, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: 'rgba(255,255,255,0.07)', backgroundColor: 'rgba(255,255,255,0.025)', justifyContent: 'center' },
-  updatePill: { position: 'absolute', left: 18, top: 3, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.28)', borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.035)', alignItems: 'center', justifyContent: 'center', zIndex: 2 },
+  updates: { height: 52, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: 'rgba(255,255,255,0.07)', backgroundColor: 'rgba(255,255,255,0.025)', justifyContent: 'center' },
+  updatePill: { position: 'absolute', left: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.28)', borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.035)', alignItems: 'center', justifyContent: 'center', zIndex: 2 },
   updatePillText: { color: 'rgba(255,196,0,0.88)', fontSize: 12, fontWeight: '900' },
-  updateTrack: { height: 16, marginTop: 20, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,196,0,0.16)', borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', alignItems: 'center', justifyContent: 'center' },
+  updateTrack: { height: 16, marginTop: 14, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,196,0,0.16)', borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', alignItems: 'center', justifyContent: 'center' },
   updateFill: { position: 'absolute', right: 0, top: 0, bottom: 0, width: '68%', backgroundColor: '#FFC400' },
   updateText: { color: '#071015', fontSize: 10.8, fontWeight: '900', letterSpacing: -0.05 },
+  syncText: { color: 'rgba(255,255,255,0.42)', textAlign: 'center', fontSize: 10.5, fontWeight: '800', marginTop: 3 },
   tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center' },
   scroll: { flex: 1 },
   content: { paddingHorizontal: 16 },
