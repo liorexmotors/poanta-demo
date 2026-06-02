@@ -14,6 +14,7 @@ import {
   View,
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
+import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { fetchBreakingFeed, fetchFeed } from './src/feed';
 import { FeedItem } from './src/types';
 import { theme } from './src/theme';
@@ -256,7 +257,12 @@ function NavButton({ label, icon, active, onPress, logo }: { label: string; icon
   </TouchableOpacity>;
 }
 
-export default function App() {
+function PoentaApp() {
+  const insets = useSafeAreaInsets();
+  const topInset = Math.max(insets.top, 18);
+  const bottomInset = Math.max(insets.bottom, 10);
+  const topbarHeight = 142 + topInset;
+  const navHeight = 58 + bottomInset;
   const [items, setItems] = useState<FeedItem[]>([]);
   const [breaking, setBreaking] = useState<FeedItem[]>([]);
   const [view, setView] = useState<ViewMode>('home');
@@ -425,7 +431,7 @@ export default function App() {
 
   return <SafeAreaView style={styles.safe}>
     <StatusBar style="light" />
-    <View style={styles.topbar}>
+    <View style={[styles.topbar, { height: topbarHeight, paddingTop: topInset }]}>
       <View style={styles.header}>
         <Image source={POENTA_LOGO} style={styles.logoImage as any} resizeMode="contain" />
         <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד"><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
@@ -437,7 +443,7 @@ export default function App() {
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
 
-    <ScrollView style={styles.scroll} contentContainerStyle={styles.content} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={theme.yellow} />}>
+    <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={theme.yellow} />}>
       {view === 'search' && <>
         <Text style={styles.title}>חיפוש</Text>
         <Text style={styles.subtitle}>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</Text>
@@ -459,7 +465,7 @@ export default function App() {
       </>}
     </ScrollView>
 
-    <View style={styles.nav}>
+    <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
       <NavButton label="שמור" icon="bookmark" active={view === 'saved'} onPress={() => switchView('saved')} />
       <NavButton label="חיפוש" icon="search" active={view === 'search'} onPress={() => switchView('search')} />
       <NavButton label="הגדרות" icon="settings" active={view === 'settings'} onPress={() => switchView('settings')} />
@@ -469,10 +475,14 @@ export default function App() {
   </SafeAreaView>;
 }
 
+
+export default function App() {
+  return <SafeAreaProvider><PoentaApp /></SafeAreaProvider>;
+}
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: '#071015', direction: 'rtl' },
-  topbar: { position: 'absolute', top: 0, left: 0, right: 0, height: 142, zIndex: 50, backgroundColor: '#071015', borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.07)', borderBottomLeftRadius: 18, borderBottomRightRadius: 18, shadowColor: '#000', shadowOpacity: 0.34, shadowRadius: 22, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
-  header: { height: 52, paddingHorizontal: 16, paddingTop: 10, flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between' },
+  topbar: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: '#071015', borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.07)', borderBottomLeftRadius: 18, borderBottomRightRadius: 18, shadowColor: '#000', shadowOpacity: 0.34, shadowRadius: 22, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
+  header: { height: 52, paddingHorizontal: 16, paddingTop: 4, flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between' },
   topMore: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
   topMoreText: { color: 'rgba(255,255,255,0.82)', fontSize: 25, fontWeight: '900', lineHeight: 30 },
   logoImage: { height: 38, width: 164 },
@@ -484,7 +494,7 @@ const styles = StyleSheet.create({
   updateText: { color: '#071015', fontSize: 10.8, fontWeight: '900', letterSpacing: -0.05 },
   tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center' },
   scroll: { flex: 1 },
-  content: { paddingHorizontal: 16, paddingTop: 146, paddingBottom: 86 },
+  content: { paddingHorizontal: 16 },
   title: { color: theme.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right' },
   subtitle: { color: theme.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', marginTop: 7, marginBottom: 12 },
   tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center' },
@@ -525,7 +535,7 @@ const styles = StyleSheet.create({
   sourceAccent: { position: 'absolute', right: 0, top: 12, bottom: 12, width: 3, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.74)' },
   sourceHead: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
   sourceLabel: { color: theme.yellow, backgroundColor: 'rgba(255,196,0,0.13)', borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden' },
-  sourceBrand: { flexDirection: 'row-reverse', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
+  sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
   sourceNameText: { color: 'rgba(255,255,255,0.74)', fontSize: 11.5, fontWeight: '900', flexShrink: 1 },
   sourceIconImage: { width: 22, height: 22, borderRadius: 7, backgroundColor: 'rgba(255,255,255,0.08)' },
   sourceIconFallback: { width: 22, height: 22, borderRadius: 7, backgroundColor: 'rgba(255,255,255,0.08)', alignItems: 'center', justifyContent: 'center' },
@@ -544,9 +554,9 @@ const styles = StyleSheet.create({
   input: { flex: 1, height: 45, borderRadius: 14, borderWidth: 1, borderColor: 'rgba(255,255,255,0.07)', color: theme.text, backgroundColor: '#0b151a', paddingHorizontal: 12, textAlign: 'right', fontWeight: '700' },
   addBtn: { borderRadius: 14, backgroundColor: theme.yellow, paddingHorizontal: 15, alignItems: 'center', justifyContent: 'center' },
   addText: { color: '#091016', fontWeight: '900' },
-  sourceRow: { borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.07)', paddingVertical: 12, flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
+  sourceRow: { borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.07)', paddingVertical: 12, flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
   sourceRowOn: { backgroundColor: 'rgba(255,196,0,0.04)' },
-  sourceRowLabel: { flex: 1, flexDirection: 'row-reverse', alignItems: 'center', gap: 9, minWidth: 0 },
+  sourceRowLabel: { flex: 1, flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 9, minWidth: 0 },
   sourceMiniImage: { width: 24, height: 24, borderRadius: 8, backgroundColor: 'rgba(255,255,255,0.08)' },
   sourceMiniFallback: { width: 24, height: 24, borderRadius: 8, backgroundColor: 'rgba(255,255,255,0.08)', alignItems: 'center', justifyContent: 'center' },
   sourceMiniFallbackText: { color: theme.yellow, fontSize: 10, fontWeight: '900' },
@@ -561,7 +571,7 @@ const styles = StyleSheet.create({
   searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.10)', backgroundColor: '#0b151a', color: theme.text, paddingHorizontal: 14, textAlign: 'right', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   empty: { color: theme.muted, textAlign: 'center', marginTop: 34, fontWeight: '800' },
   error: { color: theme.red, textAlign: 'right', marginTop: 18, fontWeight: '800' },
-  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 68, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.05)', borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: '#050b0f', flexDirection: 'row', direction: 'ltr', paddingBottom: 10, justifyContent: 'space-around', shadowColor: '#000', shadowOpacity: 0.38, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
+  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.05)', borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: '#050b0f', flexDirection: 'row', direction: 'ltr', paddingBottom: 10, justifyContent: 'space-around', shadowColor: '#000', shadowOpacity: 0.38, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
   navButton: { flex: 1, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
   navActive: {},
   navIcon: { color: 'rgba(255,255,255,0.48)', fontSize: 28, fontWeight: '800', lineHeight: 30 },
