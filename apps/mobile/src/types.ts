@@ -1,20 +1,40 @@
 export type FeedItem = {
   id?: string;
   headline: string;
+  originalTitle?: string;
   summary?: string;
   context?: string;
+  description?: string;
   takeaway?: string;
   category?: string;
+  categoryClass?: string;
   topic?: string;
   sourceName?: string;
   source?: string;
+  sourceLogo?: string;
+  sourceGroup?: string;
   sourceUrl?: string;
+  sourceLinks?: Array<{ name?: string; url?: string }>;
+  sources?: string[];
   imageUrl?: string;
   publishedAt?: string;
   updatedAt?: string;
+  pubDate?: string;
+  isoDate?: string;
+  date?: string;
+  hasSourceDate?: boolean;
+  breaking?: boolean;
+  displayRank?: number;
+  semanticClusterKey?: string;
+  storyClusterKey?: string;
+  clusterKey?: string;
+  dedupeKey?: string;
+  _originLabel?: string;
 };
 
 export type FeedResponse = {
   items: FeedItem[];
   updatedAt?: string;
+  ttlHours?: number;
+  mode?: string;
 };
