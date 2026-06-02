@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
   Image,
@@ -27,6 +28,12 @@ const DEFAULT_TOPICS = ['ביטחון', 'פוליטיקה', 'אקטואליה ב
 const APP_SHARE_TEXT = 'מצאתי אפליקציית חדשות מעולה — Poenta.\nחדשות בעברית עם תקציר ברור, הקשר והפואנטה.\nhttps://poenta.app/';
 const POENTA_LOGO = require('./assets/poenta-logo.png');
 const POENTA_NAV_ICON = require('./assets/poenta-icon-64.png');
+const STORAGE_KEYS = {
+  prefs: 'poenta.native.prefs.v1',
+  saved: 'poenta.native.saved.v1',
+  read: 'poenta.native.read.v1',
+  appearance: 'poenta.native.appearance.v1',
+};
 
 function canonicalSource(name?: string) {
   const s = String(name || '').trim();
@@ -207,13 +214,15 @@ function SourceThumb({ item }: { item: FeedItem }) {
   return <View style={styles.placeholder}><Text style={styles.placeholderText}>{label}</Text></View>;
 }
 
-function ArticleCard({ item, index, saved, onSave }: { item: FeedItem; index: number; saved: boolean; onSave: () => void }) {
-  const open = () => { if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
+function ArticleCard({ item, index, saved, onSave, onOpen }: { item: FeedItem; index: number; saved: boolean; onSave: () => void; onOpen: () => void }) {
+  const shareText = `${displayHeadline(item)}\n${item.sourceUrl || 'https://poenta.app/'}`;
+  const open = () => { onOpen(); if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
+  const share = () => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(shareText)}`).catch(() => null);
   return <View style={[styles.card, index < 3 && styles.unreadCard]}>
     <View style={styles.metaRow}>
       <View style={styles.metaActions}>
         <TouchableOpacity onPress={onSave} style={styles.iconAction} accessibilityLabel={saved ? 'הסר משמור' : 'שמור'}><WebIcon name="bookmark" active={saved} size={15} /></TouchableOpacity>
-        <TouchableOpacity style={styles.iconAction} accessibilityLabel="שתף"><WebIcon name="share" active={false} size={15} /></TouchableOpacity>
+        <TouchableOpacity onPress={share} style={styles.iconAction} accessibilityLabel="שתף"><WebIcon name="share" active={false} size={15} /></TouchableOpacity>
         <Text style={styles.star}>✧</Text>
         <Text style={styles.catText}>{topicFor(item)}</Text>
       </View>
@@ -278,10 +287,50 @@ function PoentaApp() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [prefs, setPrefs] = useState<Prefs>({ topics: DEFAULT_TOPICS.slice(0, 7), sources: [], days: 3, feedFilter: 'all' });
+  const storageReady = useRef(false);
 
   const knownTopics = useMemo(() => allTopics(items), [items]);
   const knownSources = useMemo(() => allSources([...items, ...breaking]), [items, breaking]);
   const savedItems = useMemo(() => items.filter(item => savedKeys.includes(itemKey(item))), [items, savedKeys]);
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const [prefsRaw, savedRaw, readRaw, appearanceRaw] = await Promise.all([
+          AsyncStorage.getItem(STORAGE_KEYS.prefs),
+          AsyncStorage.getItem(STORAGE_KEYS.saved),
+          AsyncStorage.getItem(STORAGE_KEYS.read),
+          AsyncStorage.getItem(STORAGE_KEYS.appearance),
+        ]);
+        if (!alive) return;
+        if (prefsRaw) {
+          const parsed = JSON.parse(prefsRaw) as Partial<Prefs>;
+          setPrefs(prev => ({
+            ...prev,
+            ...parsed,
+            topics: Array.isArray(parsed.topics) ? parsed.topics : prev.topics,
+            sources: Array.isArray(parsed.sources) ? parsed.sources : prev.sources,
+            days: typeof parsed.days === 'number' ? parsed.days : prev.days,
+            feedFilter: parsed.feedFilter === 'unread' ? 'unread' : 'all',
+          }));
+        }
+        if (savedRaw) setSavedKeys(JSON.parse(savedRaw).filter((x: unknown) => typeof x === 'string').slice(0, 500));
+        if (readRaw) setReadKeys(JSON.parse(readRaw).filter((x: unknown) => typeof x === 'string').slice(0, 1200));
+        if (appearanceRaw === 'dark' || appearanceRaw === 'light' || appearanceRaw === 'system') setAppearance(appearanceRaw);
+      } catch {
+        // Keep the app usable if device storage contains invalid stale data.
+      } finally {
+        storageReady.current = true;
+      }
+    })();
+    return () => { alive = false; };
+  }, []);
+
+  useEffect(() => { if (storageReady.current) AsyncStorage.setItem(STORAGE_KEYS.prefs, JSON.stringify(prefs)).catch(() => null); }, [prefs]);
+  useEffect(() => { if (storageReady.current) AsyncStorage.setItem(STORAGE_KEYS.saved, JSON.stringify(savedKeys.slice(-500))).catch(() => null); }, [savedKeys]);
+  useEffect(() => { if (storageReady.current) AsyncStorage.setItem(STORAGE_KEYS.read, JSON.stringify(readKeys.slice(-1200))).catch(() => null); }, [readKeys]);
+  useEffect(() => { if (storageReady.current) AsyncStorage.setItem(STORAGE_KEYS.appearance, appearance).catch(() => null); }, [appearance]);
 
   const loadAll = async () => {
     setRefreshing(true);
@@ -479,6 +528,15 @@ function PoentaApp() {
     </View>
 
     <View style={styles.settingsCard}>
+      <Text style={styles.settingsTitle}>סינון קריאה</Text>
+      <View style={styles.wrap}>
+        <Chip label="כל הכתבות" active={prefs.feedFilter === 'all'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'all' }))} />
+        <Chip label="רק לא נקראו" active={prefs.feedFilter === 'unread'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'unread' }))} count={unreadCount} />
+        <TouchableOpacity style={styles.bulkBtn} onPress={() => setReadKeys([])}><Text style={styles.bulkText}>אפס נקראו</Text></TouchableOpacity>
+      </View>
+    </View>
+
+    <View style={styles.settingsCard}>
       <Text style={styles.settingsTitle}>עוד</Text>
       <TouchableOpacity style={styles.sourceRow} onPress={() => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(APP_SHARE_TEXT)}`).catch(() => null)}><Text style={styles.sourceRowName}>שתף את Poenta בווטסאפ</Text><Text style={styles.switchText}>›</Text></TouchableOpacity>
       <Text style={styles.about}>Poenta מרכזת חדשות ממגוון מקורות ומזקקת כל ידיעה לכותרת, התמצית והפואנטה — בלי רעש ובלי קליקבייט.</Text>
@@ -520,7 +578,7 @@ function PoentaApp() {
         {!loading && !list.length && <Text style={styles.empty}>{view === 'search' && search.trim().length < 2 ? 'הקלד לפחות 2 אותיות לחיפוש.' : 'אין אייטמים להצגה כרגע.'}</Text>}
         {list.map((item, index) => view === 'breaking'
           ? <BreakingCard key={`${itemKey(item)}-${index}`} item={item} index={index} />
-          : <ArticleCard key={`${itemKey(item)}-${index}`} item={item} index={index} saved={savedKeys.includes(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} />)}
+          : <ArticleCard key={`${itemKey(item)}-${index}`} item={item} index={index} saved={savedKeys.includes(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />)}
       </>}
     </ScrollView>
 
