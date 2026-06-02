@@ -219,7 +219,7 @@ function SourceThumb({ item }: { item: FeedItem }) {
 
 function ArticleCard({ item, index, saved, onSave, onOpen }: { item: FeedItem; index: number; saved: boolean; onSave: () => void; onOpen: () => void }) {
   const shareText = `${displayHeadline(item)}\n${item.sourceUrl || 'https://poenta.app/'}`;
-  const open = () => { onOpen(); if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
+  const openSource = () => { onOpen(); if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
   const share = () => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(shareText)}`).catch(() => null);
   return <View style={[styles.card, index < 3 && styles.unreadCard]}>
     <View style={styles.metaRow}>
@@ -231,14 +231,14 @@ function ArticleCard({ item, index, saved, onSave, onOpen }: { item: FeedItem; i
       </View>
       <Text style={styles.time}>{timeLabel(item, index)}</Text>
     </View>
-    <TouchableOpacity onPress={open} activeOpacity={item.sourceUrl ? 0.78 : 1}>
-      <View style={styles.heroBox}>
-        <SourceThumb item={item} />
-        <View style={styles.heroShade} />
-        <Text style={styles.headline}>{displayHeadline(item)}</Text>
-      </View>
-      {!!summaryFor(item) && <Text style={styles.summary}>{summaryFor(item)}</Text>}
-      {!!item.takeaway && <View style={styles.takeawayBox}><Text style={styles.takeaway}>■ {String(item.takeaway).replace(/^💡\s*/, '')}</Text></View>}
+    <View style={styles.heroBox}>
+      <SourceThumb item={item} />
+      <View style={styles.heroShade} />
+      <Text style={styles.headline}>{displayHeadline(item)}</Text>
+    </View>
+    {!!summaryFor(item) && <Text style={styles.summary}>{summaryFor(item)}</Text>}
+    {!!item.takeaway && <View style={styles.takeawayBox}><Text style={styles.takeaway}>■ {String(item.takeaway).replace(/^💡\s*/, '')}</Text></View>}
+    <TouchableOpacity onPress={openSource} activeOpacity={item.sourceUrl ? 0.78 : 1} accessibilityLabel="פתח את כתבת המקור">
       <View style={styles.sourceBox}>
         <View style={styles.sourceAccent} />
         <View style={styles.sourceHead}>
