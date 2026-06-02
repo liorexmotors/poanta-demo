@@ -4,20 +4,20 @@ Last updated: 2026-06-02
 
 ## Current Android artifact
 - Package name: `app.poenta`
-- App version: `0.1.0`
-- Version code: `2`
-- EAS production build ID: `add92129-12a1-4fa7-adf2-961e7474b19f`
-- AAB artifact: `https://expo.dev/artifacts/eas/nt7HffKF1CLBSvymM53u9P.aab`
-- Local inspected artifact: `/tmp/poenta-add92129.aab`
-- Local submission pack: `/tmp/poenta-google-play-submission-pack.zip`
+- App version: `0.3.1`
+- Version code: `8`
+- EAS production build ID: `8eda8a17-1555-44da-b62e-42b4a9befa45`
+- AAB artifact: `https://expo.dev/artifacts/eas/iD8yPYM9kk1WGun4Wpvb4X.aab`
+- Local inspected artifact: `/tmp/poenta-0.3.1-vc8-production.aab`
+- Local submission pack: `/tmp/poenta-google-play-submission-pack-v0.3.1-vc8.zip`
 
 ## Native manifest inspection
 Inspected the production AAB base manifest with `bundletool 1.18.1`.
 
 Result:
 - Package: `app.poenta`
-- Version name: `0.1.0`
-- Version code: `2`
+- Version name: `0.3.1`
+- Version code: `8`
 - minSdk: `24`
 - targetSdk: `36`
 
@@ -74,7 +74,7 @@ Prepared under `apps/mobile/store-assets/google-play/`:
   - `screenshots/04.png`
   - `screenshots/05.png`
 
-Visual QA: first screenshot reviewed after regeneration; it shows real feed content, correct Hebrew RTL, no loading spinner, and no white/cut-off bottom artifact.
+Visual QA: screenshots reviewed after regeneration; they show real feed content, correct Hebrew RTL, no loading spinner, and no white/cut-off bottom artifact. Latest code also keeps source-article opening limited to the source area in the card.
 
 ## Additional launch handoff docs
 Prepared under `apps/mobile/docs/store/`:
@@ -104,9 +104,9 @@ Prepared under `apps/mobile/docs/store/`:
    - Data safety: see draft below.
 5. Testing/release:
    - Prefer Internal testing first.
-   - Upload AAB `versionCode 2`.
+   - Upload AAB `versionCode 8`.
    - Add release notes in Hebrew from `docs/store/release-notes.md`:
-     `גרסה ראשונה לבדיקה: פיד חדשות בעברית, תקציר ברור, מקור והקשר לכל ידיעה, ועיצוב כהה לקריאה מהירה ונוחה.`
+     `גרסת בדיקה מעודכנת: פיד חדשות בעברית, תקציר ברור, מקור והקשר לכל ידיעה, פתיחת המקור רק מאזור המקור, ועיצוב כהה לקריאה מהירה ונוחה.`
    - Review errors/warnings before rollout.
 
 ## Data Safety draft

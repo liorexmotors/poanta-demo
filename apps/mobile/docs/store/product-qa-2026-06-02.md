@@ -9,13 +9,13 @@ QA pass for the store-ready mobile app preparation while Google Play and Apple a
 - Store-facing app name: `Poenta` / `Poenta — פואנטה` in listing.
 - Package/bundle ID: `app.poenta`.
 - v1 scope: phone app, no iPad, no login, no push notifications, no camera/microphone/location/payment prompts.
-- Android production AAB `versionCode 2` already inspected and has only expected permissions: `INTERNET`, `VIBRATE`, and app-scoped dynamic receiver permission.
+- Android production AAB `version 0.3.1 / versionCode 8` inspected after the latest source-area-open fix; it has only expected permissions: `INTERNET`, `VIBRATE`, and app-scoped dynamic receiver permission.
 - Google Play assets exist: 5 phone screenshots and 1024×500 feature graphic.
 - First screenshot visually reviewed after regeneration: Hebrew RTL is readable, no white bottom strip, no loading spinner.
 
 ## Runtime/build checks run
-- `npm run typecheck` — passed on 2026-06-02.
-- `npm run export:web` — passed on 2026-06-02; Expo web export generated `dist-web` successfully.
+- `npm run typecheck` — passed on 2026-06-02 after source-area-open fix.
+- `npm run export:web` — passed on 2026-06-02 after source-area-open fix; Expo web export generated `dist-web` successfully.
 - Local browser smoke at `http://127.0.0.1:19006` — passed; page title `Poenta`, real feed cards visible, no spinner/blank state.
 - Visual browser QA — passed; Hebrew RTL readable, no visible reversed/cut text, dark premium news-app look acceptable. Minor note: mixed Hebrew/English source names should be watched during tester QA, and summary contrast can be improved later if needed.
 - Google Play asset dimensions — passed: feature graphic `1024×500`, screenshots `1080×1920`.
@@ -29,6 +29,11 @@ QA pass for the store-ready mobile app preparation while Google Play and Apple a
 5. No obvious repeated stories in top feed items.
 6. No permission prompt appears on launch.
 7. Errors show a readable Hebrew message instead of a broken screen.
+
+## Latest build artifacts
+- Android preview APK: build `ef52f67a-9393-42fa-bfaf-31cd4329ebab`, version `0.3.1`, versionCode `7`, local artifact `/tmp/poenta-0.3.1-vc7-preview.apk`.
+- Android production AAB: build `8eda8a17-1555-44da-b62e-42b4a9befa45`, version `0.3.1`, versionCode `8`, local artifact `/tmp/poenta-0.3.1-vc8-production.aab`.
+- Production AAB manifest verified with bundletool: package `app.poenta`, minSdk `24`, targetSdk `36`, permissions only `INTERNET`, `VIBRATE`, `app.poenta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`; no sensitive permission markers.
 
 ## Current blockers
 - Actual Google Play upload/internal-test release requires Play Console access after Google completes developer/account verification.
