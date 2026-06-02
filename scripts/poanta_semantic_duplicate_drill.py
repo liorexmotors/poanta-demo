@@ -19,6 +19,26 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "trump_netanyahu_beirut_strike_cancelled_cross_source",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "פוליטיקה",
+            "headline": "נתניהו ביטל תקיפה בביירות בלחץ טראמפ ועורר ביקורת בישראל",
+            "originalTitle": "'Time to say no to Trump': Israeli officials condemn Netanyahu's decision to cancel Lebanon strike",
+            "context": "נתניהו ביטל תוכנית לתקיפה ישראלית בביירות לאחר שטראמפ דרש לעצור את המהלך. פוליטיקאים ואנשי ביטחון בישראל טענו שההחלטה מצמצמת את חופש הפעולה מול חיזבאללה ומחזקת תלות בוושינגטון.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898056",
+        },
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "ביטחון",
+            "headline": "טראמפ בלם תוכנית ישראלית לתקוף בביירות",
+            "originalTitle": "\"אתה משוגע וכפוי טובה\": שיחת הקללות בין טראמפ לנתניהו",
+            "context": "טראמפ גער בנתניהו בשיחה חריפה על רקע ההסלמה בלבנון והחשש מפגיעה במגעים עם איראן. בעקבות הלחץ האמריקני, ישראל ויתרה בשלב זה על תקיפה שתוכננה בביירות.",
+            "sourceUrl": "https://news.walla.co.il/item/3842531",
+        },
+    ),
+    (
         "attorney_general_split_bill_cross_source",
         True,
         {
