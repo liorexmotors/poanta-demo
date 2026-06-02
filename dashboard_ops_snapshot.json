@@ -1,16 +1,30 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-06-03T02:28:50+03:00",
+  "generatedAt": "2026-06-03T02:45:27+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "ok",
-      "checkedAt": "2026-06-03T02:28:49+03:00",
+      "checkedAt": "2026-06-03T02:45:25+03:00",
       "url": "feed.json",
-      "updatedAt": "2026-06-03T01:28:43+02:00",
-      "items": 289,
+      "updatedAt": "2026-06-03T01:45:19+02:00",
+      "items": 292,
       "top": [
+        {
+          "publishedAt": "2026-06-03T02:36:52+03:00",
+          "source": "The Guardian Middle East",
+          "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
+          "takeaway": "העימות סביב הורמוז כבר עבר מאכיפת מצור ימי לפגיעה ישירה בכלי שיט ולתגובה איראנית במדינות המפרץ.",
+          "url": "https://www.theguardian.com/world/2026/jun/03/us-fires-missile-tanker-strait-of-hormuz"
+        },
+        {
+          "publishedAt": "2026-06-03T02:31:22+03:00",
+          "source": "מעריב - חדשות",
+          "headline": "איראן הרחיבה את תגובת המפרץ לכווית ולבחריין",
+          "takeaway": "מדינות המפרץ כבר אינן רק מסדרון ימי במשבר איראן; הן הופכות לזירת תגובה ישירה מול וושינגטון וטהרן.",
+          "url": "https://www.maariv.co.il/news/world/article-1328648"
+        },
         {
           "publishedAt": "2026-06-03T02:23:08+03:00",
           "source": "וואלה סלבס - כל הכתבות",
@@ -80,20 +94,6 @@
           "headline": "הממשלה אישרה תוכנית מיגון ושיקום של 13 מיליארד שקל לצפון",
           "takeaway": "שיקום הצפון תלוי לא רק בתקציב, אלא ביכולת להפוך מיגון ותשתיות לתחושת ביטחון קבועה.",
           "url": "https://news.walla.co.il/item/3842802"
-        },
-        {
-          "publishedAt": "2026-06-03T01:26:10+03:00",
-          "source": "וואלה ספורט - כדורגל עולמי",
-          "headline": "באיירן מינכן מתקרבת לצירוף איסמעיל סייבארי",
-          "takeaway": "באיירן סגרה את רצון השחקן, אבל כוח המיקוח של PSV יקבע אם העסקה תושלם.",
-          "url": "https://sports.walla.co.il/item/3842801"
-        },
-        {
-          "publishedAt": "2026-06-03T01:26:10+03:00",
-          "source": "וואלה ספורט - כדורסל",
-          "headline": "הפועל תל אביב כפתה משחק הכרעה מול ראשון לציון",
-          "takeaway": "הסדרה חזרה לשליטת הפועל רק אם תדע לשחזר את האגרסיביות גם במשחק ההכרעה.",
-          "url": "https://sports.walla.co.il/item/3842788"
         }
       ],
       "errors": [],
@@ -102,17 +102,26 @@
           "severity": "warning",
           "code": "headline_duplicates_summary",
           "message": "Headline is too close to the summary",
-          "item": 2,
+          "item": 4,
           "headline": "פיבו ברייסון מת בגיל 75 אחרי שבץ",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "url": "https://www.dailymail.com/tvshowbiz/article-15869037/peabo-bryson-death-disney-songs-stroke.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+        },
+        {
+          "severity": "warning",
+          "code": "duplicate_story_cluster",
+          "message": "Similar live-feed stories from different sources. Recommended keep: #1 מעריב - חדשות — איראן הרחיבה את תגובת המפרץ לכווית ולבחריין. Filter out: #7 מעריב - מבזקים — איראן קשרה את מתקפת כווית לתקיפה אמריקנית בקשם",
+          "item": 1,
+          "headline": "איראן הרחיבה את תגובת המפרץ לכווית ולבחריין",
+          "source": "מעריב - חדשות",
+          "url": "https://www.maariv.co.il/news/world/article-1328648"
         }
       ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-06-03T02:28:50+03:00",
+      "checkedAt": "2026-06-03T02:45:26+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -147,6 +156,7 @@
       "recentItems60m": 10,
       "recentSourceGroups60m": [
         "Daily Mail TVShowbiz רכילות חו״ל",
+        "Guardian",
         "Page Six רכילות חו״ל",
         "וואלה",
         "מעריב"
@@ -168,8 +178,8 @@
           "source": "Daily Mail TVShowbiz רכילות חו״ל"
         },
         "Guardian": {
-          "latestAt": "2026-06-02T21:44:32+03:00",
-          "headline": "דמוקרטים בניו יורק מתנערים מהשתתפות סמוטריץ׳ במצעד",
+          "latestAt": "2026-06-03T02:36:52+03:00",
+          "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
           "source": "The Guardian Middle East"
         },
         "IMS": {
@@ -238,9 +248,9 @@
           "source": "ישראל היום - כל הכתבות"
         },
         "ביטחון": {
-          "latestAt": "2026-06-03T02:10:20+03:00",
-          "headline": "איראן קשרה את מתקפת כווית לתקיפה אמריקנית בקשם",
-          "source": "מעריב - מבזקים"
+          "latestAt": "2026-06-03T02:36:52+03:00",
+          "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
+          "source": "The Guardian Middle East"
         },
         "בריאות": {
           "latestAt": "2026-06-02T19:15:59+03:00",
@@ -293,8 +303,8 @@
           "source": "וואלה חדשות - אסור לפספס"
         },
         "ישראל היום": {
-          "latestAt": "2026-06-03T01:09:27+03:00",
-          "headline": "רצח נער בסאות׳המפטון הצית עימותים עם המשטרה",
+          "latestAt": "2026-06-03T01:38:03+03:00",
+          "headline": "טראמפ דורש מאיראן התחייבויות גרעין כתובות לפני הסכם",
           "source": "ישראל היום - כל הכתבות"
         },
         "כיפה": {
@@ -313,9 +323,9 @@
           "source": "השירות המטאורולוגי"
         },
         "מעריב": {
-          "latestAt": "2026-06-03T02:10:20+03:00",
-          "headline": "איראן קשרה את מתקפת כווית לתקיפה אמריקנית בקשם",
-          "source": "מעריב - מבזקים"
+          "latestAt": "2026-06-03T02:31:22+03:00",
+          "headline": "איראן הרחיבה את תגובת המפרץ לכווית ולבחריין",
+          "source": "מעריב - חדשות"
         },
         "מקור ראשון": {
           "latestAt": "2026-05-30T17:01:05+03:00",
@@ -323,9 +333,9 @@
           "source": "מקור ראשון דרך Google News"
         },
         "מקורות זרים": {
-          "latestAt": "2026-06-03T00:51:20+03:00",
-          "headline": "ישראל ממשיכה לתקוף בדרום לבנון בזמן שההבנה על ביירות מחזיקה",
-          "source": "BBC World"
+          "latestAt": "2026-06-03T02:36:52+03:00",
+          "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
+          "source": "The Guardian Middle East"
         },
         "משטרה": {
           "latestAt": "2026-06-01T20:45:41+03:00",
@@ -392,26 +402,13 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
-          "group": "foreign",
-          "thresholdMinutes": 60,
-          "ageMinutes": 97,
-          "latestAt": "2026-06-03T00:51:20+03:00",
-          "headline": "ישראל ממשיכה לתקוף בדרום לבנון בזמן שההבנה על ביירות מחזיקה",
-          "source": "BBC World",
-          "message": "No fresh foreign publication event for 97 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 110,
+          "ageMinutes": 127,
           "latestAt": "2026-06-03T00:38:03+03:00",
           "headline": "הכנסת פיצלה את חוק השידורים כדי לקדם סעיפים בנפרד",
           "source": "Israel National News English",
-          "message": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 127 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -420,11 +417,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 280,
+          "ageMinutes": 297,
           "latestAt": "2026-06-02T21:48:17+03:00",
           "headline": "המנהל האזרחי מפקיע אדמות סביב ההרודיון",
           "source": "הארץ - חדשות",
-          "message": "No fresh חדשות publication event for 280 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 297 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -433,11 +430,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 629,
+          "ageMinutes": 646,
           "latestAt": "2026-06-02T15:59:00+03:00",
           "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh פלילים publication event for 629 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 646 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -446,11 +443,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 119,
+          "ageMinutes": 136,
           "latestAt": "2026-06-03T00:29:22+03:00",
           "headline": "המרוץ למבקר המדינה נכנס להצבעה חשאית בכנסת",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh משפט publication event for 119 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 136 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -459,11 +456,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 168,
+          "ageMinutes": 185,
           "latestAt": "2026-06-02T23:40:13+03:00",
           "headline": "ישראלים נמשכים למניות טכנולוגיה למרות תנודתיות חדה",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh כלכלה publication event for 168 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 185 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -472,11 +469,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 264,
+          "ageMinutes": 280,
           "latestAt": "2026-06-02T22:04:29+03:00",
           "headline": "הונג קונג מגבילה מכונות בובות שהפכו להתמכרות",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh צרכנות publication event for 264 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 280 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -485,11 +482,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 80,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 80 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -498,11 +495,11 @@
           "code": "publication_timing_sla",
           "group": "ספורט",
           "thresholdMinutes": 60,
-          "ageMinutes": 62,
+          "ageMinutes": 79,
           "latestAt": "2026-06-03T01:26:10+03:00",
           "headline": "באיירן מינכן מתקרבת לצירוף איסמעיל סייבארי",
           "source": "וואלה ספורט - כדורגל עולמי",
-          "message": "No fresh ספורט publication event for 62 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ספורט publication event for 79 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -511,11 +508,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 79,
+          "ageMinutes": 95,
           "latestAt": "2026-06-03T01:09:27+03:00",
           "headline": "רצח נער בסאות׳המפטון הצית עימותים עם המשטרה",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 79 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 95 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -524,11 +521,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 147,
+          "ageMinutes": 164,
           "latestAt": "2026-06-03T00:01:00+03:00",
           "headline": "מערכת הארץ מאשימה את צבי סוכות בהפיכת קבר יוסף למבצע צבאי",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 147 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 164 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -537,11 +534,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 432,
+          "ageMinutes": 449,
           "latestAt": "2026-06-02T19:15:59+03:00",
           "headline": "קפה עלול לפגוע בספיגת תוספי תזונה נפוצים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh בריאות publication event for 432 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 449 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -550,11 +547,11 @@
           "code": "publication_timing_sla",
           "group": "תרבות",
           "thresholdMinutes": 120,
-          "ageMinutes": 132,
+          "ageMinutes": 149,
           "latestAt": "2026-06-03T00:16:19+03:00",
           "headline": "טום הארדי עוזב את MobLand אחרי מאבק כוח מאחורי הקלעים",
           "source": "וואלה תרבות - טלוויזיה",
-          "message": "No fresh תרבות publication event for 132 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh תרבות publication event for 149 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -563,11 +560,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 530,
+          "ageMinutes": 547,
           "latestAt": "2026-06-02T17:38:00+03:00",
           "headline": "אלטו מילאה מרכז מסחרי באטלנטה עם Lidl",
           "source": "וואלה כסף",
-          "message": "No fresh נדל״ן publication event for 530 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 547 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -576,11 +573,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 2668,
+          "ageMinutes": 2685,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 2668 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 2685 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -589,11 +586,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 264,
+          "ageMinutes": 281,
           "latestAt": "2026-06-02T22:04:17+03:00",
           "headline": "ברזיל מסרבת להתרגש מאיום המכסים של טראמפ",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh דה מרקר publication event for 264 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 281 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -602,24 +599,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 147,
+          "ageMinutes": 164,
           "latestAt": "2026-06-03T00:01:00+03:00",
           "headline": "מערכת הארץ מאשימה את צבי סוכות בהפיכת קבר יוסף למבצע צבאי",
           "source": "הארץ - דעות",
-          "message": "No fresh הארץ publication event for 147 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "מקורות זרים",
-          "thresholdMinutes": 60,
-          "ageMinutes": 97,
-          "latestAt": "2026-06-03T00:51:20+03:00",
-          "headline": "ישראל ממשיכה לתקוף בדרום לבנון בזמן שההבנה על ביירות מחזיקה",
-          "source": "BBC World",
-          "message": "No fresh מקורות זרים publication event for 97 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 164 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -629,26 +613,13 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
-          "group": "foreign",
-          "thresholdMinutes": 60,
-          "ageMinutes": 97,
-          "latestAt": "2026-06-03T00:51:20+03:00",
-          "headline": "ישראל ממשיכה לתקוף בדרום לבנון בזמן שההבנה על ביירות מחזיקה",
-          "source": "BBC World",
-          "message": "No fresh foreign publication event for 97 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 110,
+          "ageMinutes": 127,
           "latestAt": "2026-06-03T00:38:03+03:00",
           "headline": "הכנסת פיצלה את חוק השידורים כדי לקדם סעיפים בנפרד",
           "source": "Israel National News English",
-          "message": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 127 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -657,11 +628,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 280,
+          "ageMinutes": 297,
           "latestAt": "2026-06-02T21:48:17+03:00",
           "headline": "המנהל האזרחי מפקיע אדמות סביב ההרודיון",
           "source": "הארץ - חדשות",
-          "message": "No fresh חדשות publication event for 280 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 297 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -670,11 +641,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 629,
+          "ageMinutes": 646,
           "latestAt": "2026-06-02T15:59:00+03:00",
           "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh פלילים publication event for 629 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 646 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -683,11 +654,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 119,
+          "ageMinutes": 136,
           "latestAt": "2026-06-03T00:29:22+03:00",
           "headline": "המרוץ למבקר המדינה נכנס להצבעה חשאית בכנסת",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh משפט publication event for 119 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 136 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -696,11 +667,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 168,
+          "ageMinutes": 185,
           "latestAt": "2026-06-02T23:40:13+03:00",
           "headline": "ישראלים נמשכים למניות טכנולוגיה למרות תנודתיות חדה",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh כלכלה publication event for 168 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 185 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -709,11 +680,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 264,
+          "ageMinutes": 280,
           "latestAt": "2026-06-02T22:04:29+03:00",
           "headline": "הונג קונג מגבילה מכונות בובות שהפכו להתמכרות",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh צרכנות publication event for 264 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 280 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -722,11 +693,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 80,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 80 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -735,11 +706,11 @@
           "code": "publication_timing_sla",
           "group": "ספורט",
           "thresholdMinutes": 60,
-          "ageMinutes": 62,
+          "ageMinutes": 79,
           "latestAt": "2026-06-03T01:26:10+03:00",
           "headline": "באיירן מינכן מתקרבת לצירוף איסמעיל סייבארי",
           "source": "וואלה ספורט - כדורגל עולמי",
-          "message": "No fresh ספורט publication event for 62 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ספורט publication event for 79 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -748,11 +719,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 79,
+          "ageMinutes": 95,
           "latestAt": "2026-06-03T01:09:27+03:00",
           "headline": "רצח נער בסאות׳המפטון הצית עימותים עם המשטרה",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 79 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 95 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -761,11 +732,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 147,
+          "ageMinutes": 164,
           "latestAt": "2026-06-03T00:01:00+03:00",
           "headline": "מערכת הארץ מאשימה את צבי סוכות בהפיכת קבר יוסף למבצע צבאי",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 147 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 164 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -774,11 +745,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 432,
+          "ageMinutes": 449,
           "latestAt": "2026-06-02T19:15:59+03:00",
           "headline": "קפה עלול לפגוע בספיגת תוספי תזונה נפוצים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh בריאות publication event for 432 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 449 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -787,11 +758,11 @@
           "code": "publication_timing_sla",
           "group": "תרבות",
           "thresholdMinutes": 120,
-          "ageMinutes": 132,
+          "ageMinutes": 149,
           "latestAt": "2026-06-03T00:16:19+03:00",
           "headline": "טום הארדי עוזב את MobLand אחרי מאבק כוח מאחורי הקלעים",
           "source": "וואלה תרבות - טלוויזיה",
-          "message": "No fresh תרבות publication event for 132 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh תרבות publication event for 149 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -800,11 +771,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 530,
+          "ageMinutes": 547,
           "latestAt": "2026-06-02T17:38:00+03:00",
           "headline": "אלטו מילאה מרכז מסחרי באטלנטה עם Lidl",
           "source": "וואלה כסף",
-          "message": "No fresh נדל״ן publication event for 530 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 547 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -813,11 +784,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 2668,
+          "ageMinutes": 2685,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 2668 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 2685 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -826,11 +797,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 264,
+          "ageMinutes": 281,
           "latestAt": "2026-06-02T22:04:17+03:00",
           "headline": "ברזיל מסרבת להתרגש מאיום המכסים של טראמפ",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh דה מרקר publication event for 264 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 281 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -839,24 +810,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 147,
+          "ageMinutes": 164,
           "latestAt": "2026-06-03T00:01:00+03:00",
           "headline": "מערכת הארץ מאשימה את צבי סוכות בהפיכת קבר יוסף למבצע צבאי",
           "source": "הארץ - דעות",
-          "message": "No fresh הארץ publication event for 147 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "מקורות זרים",
-          "thresholdMinutes": 60,
-          "ageMinutes": 97,
-          "latestAt": "2026-06-03T00:51:20+03:00",
-          "headline": "ישראל ממשיכה לתקוף בדרום לבנון בזמן שההבנה על ביירות מחזיקה",
-          "source": "BBC World",
-          "message": "No fresh מקורות זרים publication event for 97 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 164 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -872,6 +830,20 @@
       "liveErrors": [],
       "timingErrors": [],
       "top": [
+        {
+          "publishedAt": "2026-06-03T02:36:52+03:00",
+          "source": "The Guardian Middle East",
+          "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
+          "takeaway": "העימות סביב הורמוז כבר עבר מאכיפת מצור ימי לפגיעה ישירה בכלי שיט ולתגובה איראנית במדינות המפרץ.",
+          "url": "https://www.theguardian.com/world/2026/jun/03/us-fires-missile-tanker-strait-of-hormuz"
+        },
+        {
+          "publishedAt": "2026-06-03T02:31:22+03:00",
+          "source": "מעריב - חדשות",
+          "headline": "איראן הרחיבה את תגובת המפרץ לכווית ולבחריין",
+          "takeaway": "מדינות המפרץ כבר אינן רק מסדרון ימי במשבר איראן; הן הופכות לזירת תגובה ישירה מול וושינגטון וטהרן.",
+          "url": "https://www.maariv.co.il/news/world/article-1328648"
+        },
         {
           "publishedAt": "2026-06-03T02:23:08+03:00",
           "source": "וואלה סלבס - כל הכתבות",
@@ -892,41 +864,27 @@
           "headline": "פיבו ברייסון מת בגיל 75 אחרי שבץ",
           "takeaway": "ברייסון הותיר חותם תרבותי רחב דווקא דרך דואטים קולנועיים שהפכו לפסקול של דור שלם.",
           "url": "https://www.dailymail.com/tvshowbiz/article-15869037/peabo-bryson-death-disney-songs-stroke.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-        },
-        {
-          "publishedAt": "2026-06-03T02:20:11+03:00",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "headline": "טד דנסון הופתע ממעמד סמל המין שקיבל ב־Cheers",
-          "takeaway": "הסיפור חושף פער בין דימוי ציבורי נוצץ לבין תחושת עצמי מבולבלת.",
-          "url": "https://www.dailymail.com/tvshowbiz/article-15868645/ted-danson-cheers-sex-symbol-status-surprised-reaction.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-        },
-        {
-          "publishedAt": "2026-06-03T02:19:40+03:00",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "headline": "ג׳ורדן בארט חשף מאבק בדימוי גוף בתעשיית הדוגמנות",
-          "takeaway": "גם מי שנחשב אידיאל יופי בתעשייה יכול להיפגע מהסטנדרטים הגופניים שהיא עצמה מייצרת.",
-          "url": "https://www.dailymail.com/tvshowbiz/article-15867293/Supermodel-Jordan-Barrett-admits-body-dysmorphia-concerning-images-surfaced-gaunt-frame.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
         }
       ],
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastCheckedAt": "2026-06-03T02:27:45+03:00",
-      "lastStatus": "blocked",
-      "lastIncidentType": "stage3_candidate_quality_gate_failed",
-      "currentIncidentKey": "top_stale|stale_updated_at|2026-06-03T00:42:00+02:00|https://news.walla.co.il/item/3842812",
+      "lastCheckedAt": "2026-06-03T02:41:35+03:00",
+      "lastStatus": "repair_needed",
+      "lastIncidentType": "stage4_waiting_for_editor_results",
+      "currentIncidentKey": "domain_sla|ביטחון|2026-06-03T02:10:20+03:00|איראן קשרה את מתקפת כווית לתקיפה אמריקנית בקשם",
       "currentIncidentRepeatCount": 3,
-      "lastAutomaticAction": "do_not_publish",
+      "lastAutomaticAction": "write_batch_results_then_rerun_stage4",
       "loopProtection": {
         "active": true,
         "reason": "same_incident_repeated",
         "repeatCount": 3
       },
       "lastOkAt": "2026-05-25T17:38:06+03:00",
-      "lastStage4StartedAt": "2026-06-03T02:03:19+03:00",
-      "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-06-03T00:38:03+03:00|הכנסת פיצלה את חוק השידורים כדי לקדם סעיפים בנפרד",
-      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260603-020420",
-      "lastStage3StartedAt": "2026-06-03T02:27:45+03:00",
+      "lastStage4StartedAt": "2026-06-03T02:41:35+03:00",
+      "lastStage4IncidentKey": "domain_sla|ביטחון|2026-06-03T02:10:20+03:00|איראן קשרה את מתקפת כווית לתקיפה אמריקנית בקשם",
+      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-ביטחון-20260603-024236",
+      "lastStage3StartedAt": "2026-06-03T02:28:34+03:00",
       "lastStage3IncidentKey": "top_stale|stale_updated_at|2026-06-03T00:42:00+02:00|https://news.walla.co.il/item/3842812",
       "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260603-022426"
     }
@@ -936,17 +894,26 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-06-03T02:28:49+03:00",
-      "checkedAt": "2026-06-03T02:28:49+03:00",
+      "summary": "תקין בבדיקה האחרונה 2026-06-03T02:45:25+03:00",
+      "checkedAt": "2026-06-03T02:45:25+03:00",
       "findings": [
         {
           "severity": "warning",
           "code": "headline_duplicates_summary",
           "message": "Headline is too close to the summary",
-          "item": 2,
+          "item": 4,
           "headline": "פיבו ברייסון מת בגיל 75 אחרי שבץ",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "url": "https://www.dailymail.com/tvshowbiz/article-15869037/peabo-bryson-death-disney-songs-stroke.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+        },
+        {
+          "severity": "warning",
+          "code": "duplicate_story_cluster",
+          "message": "Similar live-feed stories from different sources. Recommended keep: #1 מעריב - חדשות — איראן הרחיבה את תגובת המפרץ לכווית ולבחריין. Filter out: #7 מעריב - מבזקים — איראן קשרה את מתקפת כווית לתקיפה אמריקנית בקשם",
+          "item": 1,
+          "headline": "איראן הרחיבה את תגובת המפרץ לכווית ולבחריין",
+          "source": "מעריב - חדשות",
+          "url": "https://www.maariv.co.il/news/world/article-1328648"
         }
       ]
     },
@@ -954,32 +921,19 @@
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh foreign publication event for 97 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-06-03T02:28:50+03:00",
+      "summary": "No fresh פוליטיקה publication event for 127 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-06-03T02:45:26+03:00",
       "findings": [
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "foreign",
-          "thresholdMinutes": 60,
-          "ageMinutes": 97,
-          "latestAt": "2026-06-03T00:51:20+03:00",
-          "headline": "ישראל ממשיכה לתקוף בדרום לבנון בזמן שההבנה על ביירות מחזיקה",
-          "source": "BBC World",
-          "message": "No fresh foreign publication event for 97 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 110,
+          "ageMinutes": 127,
           "latestAt": "2026-06-03T00:38:03+03:00",
           "headline": "הכנסת פיצלה את חוק השידורים כדי לקדם סעיפים בנפרד",
           "source": "Israel National News English",
-          "message": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 127 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -988,11 +942,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 280,
+          "ageMinutes": 297,
           "latestAt": "2026-06-02T21:48:17+03:00",
           "headline": "המנהל האזרחי מפקיע אדמות סביב ההרודיון",
           "source": "הארץ - חדשות",
-          "message": "No fresh חדשות publication event for 280 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 297 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1001,11 +955,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 629,
+          "ageMinutes": 646,
           "latestAt": "2026-06-02T15:59:00+03:00",
           "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh פלילים publication event for 629 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 646 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1014,11 +968,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 119,
+          "ageMinutes": 136,
           "latestAt": "2026-06-03T00:29:22+03:00",
           "headline": "המרוץ למבקר המדינה נכנס להצבעה חשאית בכנסת",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh משפט publication event for 119 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 136 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1027,11 +981,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 168,
+          "ageMinutes": 185,
           "latestAt": "2026-06-02T23:40:13+03:00",
           "headline": "ישראלים נמשכים למניות טכנולוגיה למרות תנודתיות חדה",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh כלכלה publication event for 168 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 185 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1040,11 +994,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 264,
+          "ageMinutes": 280,
           "latestAt": "2026-06-02T22:04:29+03:00",
           "headline": "הונג קונג מגבילה מכונות בובות שהפכו להתמכרות",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh צרכנות publication event for 264 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 280 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1053,11 +1007,24 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 80,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 80 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ספורט",
+          "thresholdMinutes": 60,
+          "ageMinutes": 79,
+          "latestAt": "2026-06-03T01:26:10+03:00",
+          "headline": "באיירן מינכן מתקרבת לצירוף איסמעיל סייבארי",
+          "source": "וואלה ספורט - כדורגל עולמי",
+          "message": "No fresh ספורט publication event for 79 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
