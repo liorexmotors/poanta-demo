@@ -36,20 +36,23 @@ Permissions absent / regression fixed:
 Poenta — פואנטה
 
 ### Short description
-פואנטה מרכזת עדכוני חדשות בעברית ממקורות ציבוריים, מציגה את הפואנטה בכל ידיעה, ומאפשרת לעבור מהר בין כותרות, הקשר ומקור.
+חדשות בעברית עם תקציר ברור, הקשר ומקור לכל ידיעה — בלי הרשמה ובלי רעש.
 
 ### Full description
-פואנטה היא אפליקציית חדשות בעברית שמיועדת לקריאה מהירה וברורה.
-במקום לגלול בין עשרות כותרות כפולות, פואנטה מציגה פיד מסודר עם כותרת, תקציר, מקור והקשר — כדי להבין מהר מה קרה ולמה זה חשוב.
+פואנטה היא אפליקציית חדשות בעברית לקריאה מהירה, נקייה וברורה.
 
-מה יש באפליקציה:
+במקום לגלול בין כותרות כפולות וידיעות מפוזרות, פואנטה מרכזת עדכונים ממקורות ציבוריים ומציגה לכל ידיעה את מה שחשוב לדעת: כותרת, תקציר, מקור והקשר.
+
+מה מקבלים בפואנטה:
 - פיד חדשות בעברית ממקורות ציבוריים
-- כרטיסי ידיעה קצרים וברורים
-- הצגת מקור הידיעה לצד התקציר
-- עיצוב כהה ונוח לקריאה
-- ללא הרשמה וללא התחברות בגרסה הראשונה
+- תקציר קצר וברור לכל ידיעה
+- מקור והקשר לצד כל עדכון
+- עיצוב כהה ונוח לקריאה בטלפון
+- חוויית שימוש פשוטה — ללא הרשמה וללא התחברות בגרסה הראשונה
 
-פואנטה אינה גוף חדשות ואינה מחליפה את המקורות המקוריים. האפליקציה מסייעת לארגן, לתמצת ולהציג ידיעות ממקורות ציבוריים, עם הפניה למקור כאשר רלוונטי.
+פואנטה מיועדת למי שרוצה להבין מהר מה קורה עכשיו, בלי לפתוח עשרות כתבות ובלי להתפזר בין מקורות.
+
+חשוב לדעת: פואנטה אינה גוף חדשות ואינה מחליפה את מערכות החדשות או המקורות המקוריים. האפליקציה מארגנת ומציגה ידיעות ועדכונים ממקורות ציבוריים, ומסייעת להבין את הפואנטה וההקשר של כל ידיעה.
 
 ### Category
 News & Magazines / חדשות
@@ -73,6 +76,13 @@ Prepared under `apps/mobile/store-assets/google-play/`:
 
 Visual QA: first screenshot reviewed after regeneration; it shows real feed content, correct Hebrew RTL, no loading spinner, and no white/cut-off bottom artifact.
 
+## Additional launch handoff docs
+Prepared under `apps/mobile/docs/store/`:
+- `hebrew-listing.md` — ASO-improved Hebrew listing, Google Play short/full description, App Store draft, keyword directions.
+- `internal-testing-plan.md` — tester list template, acceptance checklist, and invite message.
+- `release-notes.md` — final v0.1.0 release notes for Google Play Internal testing and TestFlight draft.
+- `product-qa-2026-06-02.md` — product QA pass with build/export/browser/visual checks.
+
 ## Play Console setup steps
 1. Open Google Play Console.
 2. Create app:
@@ -95,8 +105,8 @@ Visual QA: first screenshot reviewed after regeneration; it shows real feed cont
 5. Testing/release:
    - Prefer Internal testing first.
    - Upload AAB `versionCode 2`.
-   - Add release notes in Hebrew:
-     `גרסה ראשונה לבדיקה: פיד חדשות בעברית, כרטיסי תקציר, מקור והקשר לכל ידיעה.`
+   - Add release notes in Hebrew from `docs/store/release-notes.md`:
+     `גרסה ראשונה לבדיקה: פיד חדשות בעברית, תקציר ברור, מקור והקשר לכל ידיעה, ועיצוב כהה לקריאה מהירה ונוחה.`
    - Review errors/warnings before rollout.
 
 ## Data Safety draft
