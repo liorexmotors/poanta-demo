@@ -314,6 +314,26 @@ CASES = [
         },
     ),
     (
+        "trump_cancelled_beirut_strike_cross_source",
+        True,
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "ביטחון",
+            "headline": "טראמפ בלם תוכנית ישראלית לתקוף בביירות",
+            "originalTitle": "\"אתה משוגע וכפוי טובה\": שיחת הקללות בין טראמפ לנתניהו",
+            "context": "טראמפ עצר תוכנית ישראלית לתקוף בביירות במסגרת העימות מול חיזבאללה, אחרי שיחה קשה עם נתניהו ועל רקע המו״מ האמריקני עם איראן.",
+            "sourceUrl": "https://news.walla.co.il/item/3842531",
+        },
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "headline": "בכירים בישראל תקפו את ביטול התקיפה בביירות בלחץ טראמפ",
+            "originalTitle": "Time to say no to Trump: Israeli officials condemn Netanyahu's decision to cancel Lebanon strike",
+            "context": "בכירים בישראל מתחו ביקורת על החלטת נתניהו לבטל תקיפה בביירות בעקבות לחץ מטראמפ, כחלק מאותו אירוע ביטול תקיפה מול חיזבאללה.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898056",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {

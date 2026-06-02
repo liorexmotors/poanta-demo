@@ -411,6 +411,23 @@ def unetcredit_kahlon_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def cancelled_beirut_strike_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same cancelled Israeli strike in Beirut after Trump pressure."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_beirut = bool(re.search(r"ביירות|beirut", text))
+    has_cancel_or_block = bool(re.search(r"בלם|ביטל|ביטול|לעצור|עצר|cancel|cancelled|canceled|hold off", text))
+    has_strike = bool(re.search(r"תקיפה|לתקוף|strike|military action", text))
+    has_trump = bool(re.search(r"טראמפ|trump", text))
+    has_israel = bool(re.search(r"ישראל|נתניהו|israel|netanyahu", text))
+    has_hezbollah_or_lebanon = bool(re.search(r"חיזבאללה|לבנון|lebanon|hezbollah", text))
+    if has_beirut and has_cancel_or_block and has_strike and has_trump and has_israel:
+        tokens = {"cancelled_beirut_strike"}
+        if has_hezbollah_or_lebanon:
+            tokens.add("lebanon_hezbollah")
+        return tokens
+    return set()
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -505,6 +522,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = unetcredit_kahlon_tokens(a)
     bw = unetcredit_kahlon_tokens(b)
     if aw and bw and "unetcredit_kahlon_conviction" in aw and "unetcredit_kahlon_conviction" in bw:
+        return True
+    aw = cancelled_beirut_strike_tokens(a)
+    bw = cancelled_beirut_strike_tokens(b)
+    if aw and bw and "cancelled_beirut_strike" in aw and "cancelled_beirut_strike" in bw:
         return True
     if topic_for_item(a) != topic_for_item(b):
         return False
