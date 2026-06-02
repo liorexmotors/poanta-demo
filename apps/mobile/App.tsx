@@ -219,7 +219,7 @@ function SourceThumb({ item }: { item: FeedItem }) {
 
 function ArticleCard({ item, index, saved, onSave, onOpen }: { item: FeedItem; index: number; saved: boolean; onSave: () => void; onOpen: () => void }) {
   const shareText = `${displayHeadline(item)}\n${item.sourceUrl || 'https://poenta.app/'}`;
-  const open = () => { onOpen(); if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
+  const open = () => { onOpen(); };
   const share = () => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(shareText)}`).catch(() => null);
   return <View style={[styles.card, index < 3 && styles.unreadCard]}>
     <View style={styles.metaRow}>
@@ -284,6 +284,7 @@ function PoentaApp() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [savedKeys, setSavedKeys] = useState<string[]>([]);
   const [readKeys, setReadKeys] = useState<string[]>([]);
+  const [selectedItem, setSelectedItem] = useState<FeedItem | null>(null);
   const [search, setSearch] = useState('');
   const [customTopic, setCustomTopic] = useState('');
   const [refreshing, setRefreshing] = useState(false);
@@ -446,6 +447,7 @@ function PoentaApp() {
 
   function switchView(next: ViewMode) {
     setView(next);
+    setSelectedItem(null);
     if (next !== 'more') setMoreScreen('menu');
     setActiveFilter('all');
   }
@@ -509,6 +511,39 @@ function PoentaApp() {
         <MoreRow title="תנאי שימוש" subtitle="המסמך הרשמי לשימוש באפליקציה" onPress={() => setMoreScreen('terms')} />
         <MoreRow title="מדיניות פרטיות" subtitle="נוסח מדיניות הפרטיות של Poenta" onPress={() => setMoreScreen('privacy')} />
         <MoreRow title="צור קשר" subtitle="פרטי קשר ותמיכה" onPress={() => setMoreScreen('contact')} />
+      </View>
+    </View>;
+  };
+
+  const renderArticleDetail = (item: FeedItem) => {
+    const saved = savedKeys.includes(itemKey(item));
+    const shareText = `${displayHeadline(item)}\n${item.sourceUrl || 'https://poenta.app/'}`;
+    const share = () => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(shareText)}`).catch(() => null);
+    const openSource = () => { if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
+    return <View style={styles.detailPanel}>
+      <View style={styles.detailTopRow}>
+        <TouchableOpacity style={styles.moreBack} onPress={() => setSelectedItem(null)}><Text style={styles.moreBackText}>חזרה לפיד</Text></TouchableOpacity>
+        <View style={styles.detailTopic}><Text style={styles.catText}>{topicFor(item)}</Text><Text style={styles.time}>{timeLabel(item)}</Text></View>
+      </View>
+      <View style={styles.heroBox}>
+        <SourceThumb item={item} />
+        <View style={styles.heroShade} />
+        <Text style={styles.headline}>{displayHeadline(item)}</Text>
+      </View>
+      {!!summaryFor(item) && <Text style={styles.detailSummary}>{summaryFor(item)}</Text>}
+      {!!item.takeaway && <View style={styles.takeawayBox}><Text style={styles.takeaway}>■ {String(item.takeaway).replace(/^💡\s*/, '')}</Text></View>}
+      <View style={styles.sourceBox}>
+        <View style={styles.sourceAccent} />
+        <View style={styles.sourceHead}>
+          <Text style={styles.sourceLabel}>כותרת המקור</Text>
+          <View style={styles.sourceBrand}><SourceIcon name={sourceName(item)} item={item} /><Text style={styles.sourceNameText}>{sourceName(item)}</Text></View>
+        </View>
+        <Text style={styles.sourceText}>{String(item.originalTitle || sourceName(item))}</Text>
+      </View>
+      <View style={styles.detailActions}>
+        <TouchableOpacity style={[styles.detailBtn, saved && styles.detailBtnActive]} onPress={() => toggleSaved(item)}><Text style={[styles.detailBtnText, saved && styles.detailBtnTextActive]}>{saved ? 'נשמר' : 'שמור'}</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.detailBtn} onPress={share}><Text style={styles.detailBtnText}>שתף</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.detailBtnPrimary} onPress={openSource}><Text style={styles.detailBtnPrimaryText}>לכתבה המקורית</Text></TouchableOpacity>
       </View>
     </View>;
   };
@@ -599,11 +634,11 @@ function PoentaApp() {
 
       {loading && <ActivityIndicator color={theme.yellow} style={{ marginTop: 28 }} />}
       {error && <Text style={styles.error}>שגיאה בטעינת הפיד: {error}</Text>}
-      {view === 'settings' ? renderSettings() : view === 'more' ? renderMore() : <>
+      {selectedItem ? renderArticleDetail(selectedItem) : view === 'settings' ? renderSettings() : view === 'more' ? renderMore() : <>
         {!loading && !list.length && <Text style={styles.empty}>{view === 'search' && search.trim().length < 2 ? 'הקלד לפחות 2 אותיות לחיפוש.' : 'אין אייטמים להצגה כרגע.'}</Text>}
         {list.map((item, index) => view === 'breaking'
           ? <BreakingCard key={`${itemKey(item)}-${index}`} item={item} index={index} />
-          : <ArticleCard key={`${itemKey(item)}-${index}`} item={item} index={index} saved={savedKeys.includes(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />)}
+          : <ArticleCard key={`${itemKey(item)}-${index}`} item={item} index={index} saved={savedKeys.includes(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => { markRead(item); setSelectedItem(item); }} />)}
       </>}
     </ScrollView>
 
@@ -711,6 +746,17 @@ const styles = StyleSheet.create({
   switchKnob: { width: 18, height: 18, borderRadius: 999, backgroundColor: '#fff' },
   switchKnobOn: { backgroundColor: '#071015' },
   about: { color: theme.secondary, textAlign: 'right', lineHeight: 21, marginTop: 12, fontWeight: '600' },
+  detailPanel: { borderWidth: 1, borderColor: 'rgba(255,196,0,0.16)', borderRadius: 24, backgroundColor: 'rgba(255,255,255,0.035)', padding: 12, marginBottom: 18 },
+  detailTopRow: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, gap: 10 },
+  detailTopic: { flex: 1, alignItems: 'flex-start', gap: 3 },
+  detailSummary: { color: theme.text, fontSize: 17, lineHeight: 27, fontWeight: '800', textAlign: 'right', marginTop: 14 },
+  detailActions: { flexDirection: 'row-reverse', flexWrap: 'wrap', gap: 10, marginTop: 14 },
+  detailBtn: { minHeight: 42, borderRadius: 999, borderWidth: 1, borderColor: 'rgba(255,196,0,0.28)', paddingHorizontal: 16, alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(255,196,0,0.08)' },
+  detailBtnActive: { backgroundColor: theme.yellow, borderColor: theme.yellow },
+  detailBtnText: { color: theme.yellow, fontSize: 13, fontWeight: '900' },
+  detailBtnTextActive: { color: '#071015' },
+  detailBtnPrimary: { minHeight: 42, borderRadius: 999, paddingHorizontal: 17, alignItems: 'center', justifyContent: 'center', backgroundColor: theme.yellow },
+  detailBtnPrimaryText: { color: '#071015', fontSize: 13, fontWeight: '900' },
   moreHead: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 },
   moreHeadText: { flex: 1, alignItems: 'flex-start' },
   moreHeadSub: { color: 'rgba(255,255,255,0.55)', fontSize: 13, fontWeight: '700', lineHeight: 18, textAlign: 'right', marginTop: 5 },
