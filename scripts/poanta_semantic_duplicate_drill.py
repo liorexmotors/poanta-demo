@@ -59,6 +59,26 @@ CASES = [
         },
     ),
     (
+        "attorney_general_split_bill_ynet_jpost_live_regression",
+        True,
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "פוליטיקה",
+            "headline": "הכנסת אישרה בקריאה ראשונה את פיצול תפקיד היועמ״ש",
+            "originalTitle": "הכנסת אישרה בקריאה ראשונה את פיצול תפקיד היועמ\"ש",
+            "context": "הכנסת אישרה בקריאה ראשונה את פיצול תפקיד היועץ המשפטי לממשלה ליועץ משפטי ולתובע כללי. המהלך הוא נדבך מרכזי בתוכנית הקואליציה לשינוי יחסי הממשלה ומערכת המשפט.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/hjmply3efe",
+        },
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "פוליטיקה",
+            "headline": "חוק פיצול היועמ״שית עבר בקריאה ראשונה בכנסת",
+            "originalTitle": "Bill that would split role of attorney-general passes first Knesset reading",
+            "context": "הכנסת אישרה בקריאה ראשונה הצעה לפצל את תפקיד היועץ המשפטי לממשלה ליועץ משפטי ולתובע כללי, ולהרחיב את יכולת הממשלה לקבוע מינוי וייצוג משפטי.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898054",
+        },
+    ),
+    (
         "us_southern_iran_strikes_cross_language",
         True,
         {
