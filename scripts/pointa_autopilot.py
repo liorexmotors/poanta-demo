@@ -81,10 +81,28 @@ def run(cmd: list[str], timeout: int = 120) -> tuple[int, str]:
         return 124, f"TIMEOUT after {timeout}s: {' '.join(cmd)}\n{text}"
 
 
+def parse_json_prefix(text: str) -> dict[str, Any]:
+    """Parse the first JSON object from command output that may add log lines.
+
+    Some pipeline commands print a JSON summary and then append human-readable
+    notes (for example auto-reject counts). Autopilot decisions must use the JSON
+    summary instead of treating the extra note as an empty/zero result.
+    """
+    try:
+        return json.loads(text)
+    except Exception:
+        decoder = json.JSONDecoder()
+        stripped = (text or "").lstrip()
+        obj, _end = decoder.raw_decode(stripped)
+        if not isinstance(obj, dict):
+            raise ValueError("first JSON value is not an object")
+        return obj
+
+
 def run_json(cmd: list[str], timeout: int = 120) -> tuple[int, dict[str, Any], str]:
     code, text = run(cmd, timeout=timeout)
     try:
-        return code, json.loads(text), text
+        return code, parse_json_prefix(text), text
     except Exception:
         return code, {"status": "error", "parseError": True, "exit": code, "tail": text[-2000:]}, text
 
@@ -542,7 +560,7 @@ def execute_stage3_repair(
         code, text = run_func(qa_cmd, timeout=240)
         qa_summary = {}
         try:
-            qa_summary = json.loads(text)
+            qa_summary = parse_json_prefix(text)
         except Exception:
             qa_summary = {}
         actions.append({"action": "stage3_qa_editor_results", "exit": code, "pass": qa_summary.get("pass"), "reject": qa_summary.get("reject"), "tail": text[-3000:]})
@@ -676,7 +694,7 @@ def execute_stage4_domain_rescue(
         code, text = run_func([sys.executable, "scripts/pointa_editor_pipeline.py", "qa", "--run-dir", str(run_dir), "--auto-reject-failed"], timeout=300)
         qa_summary = {}
         try:
-            qa_summary = json.loads(text)
+            qa_summary = parse_json_prefix(text)
         except Exception:
             qa_summary = {}
         actions.append({"action": "stage4_qa_editor_results", "domain": domain, "exit": code, "pass": qa_summary.get("pass"), "reject": qa_summary.get("reject"), "tail": text[-3000:]})
