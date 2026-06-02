@@ -2100,6 +2100,17 @@ def weather_event_tokens(item: dict) -> set[str]:
     return set()
 
 
+def knesset_dissolution_tokens(item: dict) -> set[str]:
+    """Fingerprint the same Knesset dissolution/election-advance vote story."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_knesset = bool(re.search(r"כנסת|knesset", text))
+    has_dissolution = bool(re.search(r"פיזור|פיזורה|לפזר|dissolv|election|בחירות", text))
+    has_vote_stage = bool(re.search(r"קריאה ראשונה|first reading|106|ללא מתנגדים|בלי מתנגדים|הצעת חוק", text))
+    if has_knesset and has_dissolution and has_vote_stage:
+        return {"knesset_dissolution_first_reading"}
+    return set()
+
+
 def local_emergency_event_tokens(item: dict) -> set[str]:
     """Fingerprint concrete local emergency incidents across category labels.
 
@@ -2188,6 +2199,10 @@ def likely_duplicate_story(a: dict, b: dict) -> bool:
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
     if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:
+        return True
+    aw = knesset_dissolution_tokens(a)
+    bw = knesset_dissolution_tokens(b)
+    if aw and bw and "knesset_dissolution_first_reading" in aw and "knesset_dissolution_first_reading" in bw:
         return True
     aw = local_emergency_event_tokens(a)
     bw = local_emergency_event_tokens(b)

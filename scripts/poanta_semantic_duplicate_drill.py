@@ -274,6 +274,26 @@ CASES = [
         },
     ),
     (
+        "knesset_dissolution_first_reading_cross_source",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "פוליטיקה",
+            "headline": "פיזור הכנסת עבר בקריאה ראשונה ללא מתנגדים",
+            "originalTitle": "Bill to dissolve Knesset passes first reading, advancing process to move up elections",
+            "context": "הצעת הקואליציה לפיזור הכנסת אושרה במליאה ברוב של 106 מול 0, על רקע המשבר מול המפלגות החרדיות סביב חוק הגיוס. מועד הבחירות ייקבע לפני הקריאות השנייה והשלישית.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898048",
+        },
+        {
+            "source": "הארץ - חדשות",
+            "category": "פוליטיקה",
+            "headline": "הכנסת אישרה בקריאה ראשונה את חוק פיזורה",
+            "originalTitle": "הכנסת אישרה בקריאה ראשונה את הצעת החוק לפיזורה",
+            "context": "הכנסת אישרה בקריאה ראשונה את הצעת חוק פיזורה ברוב של 106 תומכים וללא מתנגדים. מועד הבחירות האפשרי נע בין 8 בספטמבר ל־20 באוקטובר, והקואליציה תקבע תאריך סופי לפני הקריאות הבאות.",
+            "sourceUrl": "https://www.haaretz.co.il/news/politi/2026-06-02/ty-article/0000019e-8470-da5c-a9bf-df7e038a0000",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {

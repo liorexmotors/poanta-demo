@@ -190,6 +190,17 @@ def weather_event_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def knesset_dissolution_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same Knesset dissolution/election-advance vote story."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_knesset = bool(re.search(r"כנסת|knesset", text))
+    has_dissolution = bool(re.search(r"פיזור|פיזורה|לפזר|dissolv|election|בחירות", text))
+    has_vote_stage = bool(re.search(r"קריאה ראשונה|first reading|106|ללא מתנגדים|בלי מתנגדים|הצעת חוק", text))
+    if has_knesset and has_dissolution and has_vote_stage:
+        return {"knesset_dissolution_first_reading"}
+    return set()
+
+
 def local_emergency_event_tokens(item: dict[str, Any]) -> set[str]:
     """Fingerprint concrete local emergency incidents across category labels."""
     text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
@@ -284,7 +295,7 @@ def security_event_tokens(item: dict[str, Any]) -> set[str]:
     main = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline"]).lower()
     text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
     is_us = bool(re.search(r"\b(?:u\.?s\.?|us|united states|america|american)\b|ארה[״\"]?ב|אמריק", main))
-    is_iran = bool(re.search(r"iran|איראן|טהראן", main))
+    is_iran = bool(re.search(r"iran|iranian|איראן|איראני|טהראן", main))
     is_strike = bool(re.search(r"strike|strikes|attack|attacks|תקיפ|תקף|תקפה|תקפו|השמיד", main))
     if not (is_us and is_iran and is_strike):
         return set()
@@ -299,8 +310,10 @@ def security_event_tokens(item: dict[str, Any]) -> set[str]:
         tokens.add("boats")
     if re.search(r"mine|mines|laying|minelaying|מוקש|מוקשים", text):
         tokens.add("mines")
-    if re.search(r"hormuz|הורמוז", text):
+    if re.search(r"hormuz|הורמוז|gulf|מפרץ", text):
         tokens.add("hormuz")
+    if re.search(r"ירי|אש|בסיס|מכ[״\"]?ם|מכמים|radar|base|fire", text):
+        tokens.add("military_exchange")
     if re.search(r"bandar|abbas|בנדר|עבאס", text):
         tokens.add("bandar_abbas")
     if re.search(r"self[- ]?defen[cs]e|הגנה עצמית|כהגנה", text):
@@ -441,6 +454,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
+        return True
+    aw = knesset_dissolution_tokens(a)
+    bw = knesset_dissolution_tokens(b)
+    if aw and bw and "knesset_dissolution_first_reading" in aw and "knesset_dissolution_first_reading" in bw:
         return True
     aw = local_emergency_event_tokens(a)
     bw = local_emergency_event_tokens(b)
