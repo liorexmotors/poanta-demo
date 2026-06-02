@@ -19,6 +19,66 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "us_iran_tanker_hellfire_live_regression_20260603",
+        True,
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "ביטחון",
+            "headline": "ארה״ב השביתה מכלית בדרך לאיראן בטיל הלפייר",
+            "originalTitle": "המתיחות נמשכת: ארה\"ב ניטרלה מכלית נפט שהייתה בדרכה לאיראן",
+            "context": "כוחות אמריקניים השביתו במפרץ הפרסי את מכלית M/T Lexie אחרי שהתעלמה במשך יממה מהוראות בדרכה למסוף הנפט ח׳ארג באיראן.",
+            "sourceUrl": "https://news.walla.co.il/item/3842812",
+        },
+        {
+            "source": "BBC World",
+            "category": "ביטחון",
+            "headline": "ארה״ב שיתקה מכלית בדרך לאיראן כחלק מהמצור במצר הורמוז",
+            "originalTitle": "US says it fired missile at Iran-bound oil tanker",
+            "context": "הכוחות האמריקניים ירו על מכלית שהייתה בדרכה לאיראן כחלק מאכיפת המצור הימי במצר הורמוז.",
+            "sourceUrl": "https://www.bbc.com/news/articles/c5yx135yg53o",
+        },
+    ),
+    (
+        "us_iran_tanker_guardian_walla_live_regression_20260603",
+        True,
+        {
+            "source": "The Guardian Middle East",
+            "category": "ביטחון",
+            "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
+            "originalTitle": "Guardian US fires missile at tanker attempting to reach Iran amid strait of Hormuz standoff",
+            "context": "כוחות אמריקניים ירו על מכלית שניסתה להגיע לאיראן במסגרת העימות סביב מצר הורמוז.",
+            "sourceUrl": "https://www.theguardian.com/world/2026/jun/03/us-fires-missile-tanker-strait-of-hormuz",
+        },
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "ביטחון",
+            "headline": "ארה״ב השביתה מכלית בדרך לאיראן בטיל הלפייר",
+            "originalTitle": "המתיחות נמשכת: ארה\"ב ניטרלה מכלית נפט שהייתה בדרכה לאיראן",
+            "context": "כוחות אמריקניים השביתו במפרץ הפרסי מכלית שהייתה בדרכה למסוף הנפט ח׳ארג באיראן.",
+            "sourceUrl": "https://news.walla.co.il/item/3842812",
+        },
+    ),
+    (
+        "north_reconstruction_13b_live_regression_20260603",
+        True,
+        {
+            "source": "וואלה חדשות",
+            "category": "ביטחון",
+            "headline": "הממשלה אישרה תוכנית מיגון ושיקום של 13 מיליארד שקל לצפון",
+            "originalTitle": "הממשלה אישרה 13 מיליארד ש\"ח לשיקום הצפון",
+            "context": "הממשלה אישרה תוכנית מיגון ושיקום ליישובי קו העימות בצפון, כולל ממ״דים, מקלטים, כבישים ושירותי רפואה.",
+            "sourceUrl": "https://news.walla.co.il/item/3842802",
+        },
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "headline": "הממשלה אישרה תוספת של 13 מיליארד שקל ליישובי הצפון",
+            "originalTitle": "Gov't greenlights NIS 13b. for shelters, infrastructure in Israel's North",
+            "context": "הממשלה אישרה תוספת של 13 מיליארד שקל למקלטים, תשתיות ושיקום יישובי הצפון סמוך לגבול לבנון.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898166",
+        },
+    ),
+    (
         "trump_netanyahu_beirut_strike_cancelled_cross_source",
         True,
         {

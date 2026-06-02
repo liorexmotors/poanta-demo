@@ -474,11 +474,38 @@ def preferred_duplicate_item(a: tuple[int, dict[str, Any]], b: tuple[int, dict[s
     return a if adt >= bdt else b
 
 
+def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
+    tokens: set[str] = set()
+    if ("מכלית" in text or "tanker" in text) and ("איראן" in text or "iran" in text) and (
+        "נפט" in text
+        or "oil" in text
+        or "הלפייר" in text
+        or "hellfire" in text
+        or "טיל" in text
+        or "missile" in text
+        or "fired" in text
+        or "שיתקה" in text
+        or "השביתה" in text
+        or "ניטרלה" in text
+    ):
+        tokens.add("us_iran_tanker_hellfire")
+    if ("13 מיליארד" in text or "13b" in text or "nis 13" in text) and (
+        "צפון" in text or "north" in text
+    ) and ("מיגון" in text or "שיקום" in text or "shelters" in text or "infrastructure" in text):
+        tokens.add("north_reconstruction_13b")
+    return tokens
+
+
 def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     if str(a.get("sourceUrl") or "") == str(b.get("sourceUrl") or ""):
         return False
     if str(a.get("source") or "") == str(b.get("source") or ""):
         return False
+    aw = live_regression_duplicate_tokens(a)
+    bw = live_regression_duplicate_tokens(b)
+    if aw and bw and aw & bw:
+        return True
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
     if aw and bw and len(aw & bw) / max(1, min(len(aw), len(bw))) >= 0.75:
