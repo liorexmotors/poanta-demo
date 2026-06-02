@@ -254,7 +254,7 @@ function BreakingCard({ item, index }: { item: FeedItem; index: number }) {
 
 function NavButton({ label, icon, active, onPress, logo }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean }) {
   return <TouchableOpacity style={styles.navButton} onPress={onPress} accessibilityLabel={label}>
-    {logo ? <Image source={POENTA_NAV_ICON} style={[styles.navLogo as any, active && (styles.navLogoActive as any)]} /> : icon ? <WebIcon name={icon} active={active} size={28} /> : null}
+    {logo ? <View style={[styles.navLogoBadge, active && styles.navLogoBadgeActive]}><Image source={POENTA_NAV_ICON} style={styles.navLogo as any} /></View> : icon ? <WebIcon name={icon} active={active} size={28} /> : null}
   </TouchableOpacity>;
 }
 
@@ -639,8 +639,8 @@ const styles = StyleSheet.create({
   moreTitle: { color: theme.text, fontSize: 16, fontWeight: '900', textAlign: 'right' },
   moreSub: { color: 'rgba(255,255,255,0.52)', fontSize: 12.5, fontWeight: '700', lineHeight: 17, textAlign: 'right', marginTop: 4 },
   moreArrow: { color: theme.yellow, fontSize: 28, fontWeight: '800', lineHeight: 30 },
-  shareActionIcon: { width: 34, height: 34, borderRadius: 12, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', backgroundColor: 'rgba(255,196,0,0.10)', alignItems: 'center', justifyContent: 'center' },
-  shareActionImage: { width: 24, height: 24, borderRadius: 8 },
+  shareActionIcon: { width: 38, height: 38, borderRadius: 14, borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.55)', backgroundColor: '#f7f1df', alignItems: 'center', justifyContent: 'center', shadowColor: '#FFC400', shadowOpacity: 0.16, shadowRadius: 10, shadowOffset: { width: 0, height: 0 }, elevation: 4 },
+  shareActionImage: { width: 27, height: 27, borderRadius: 9 },
   aboutContent: { borderWidth: 1, borderColor: 'rgba(255,255,255,0.07)', borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.03)', padding: 16 },
   moreSectionTitle: { color: theme.text, fontSize: 17, fontWeight: '900', textAlign: 'right', marginTop: 14, marginBottom: 2 },
   translationNote: { color: theme.secondary, textAlign: 'right', lineHeight: 20, marginTop: 12, fontWeight: '700' },
@@ -651,8 +651,9 @@ const styles = StyleSheet.create({
   navButton: { flex: 1, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
   navActive: {},
   navIcon: { color: 'rgba(255,255,255,0.48)', fontSize: 28, fontWeight: '800', lineHeight: 30 },
-  navLogo: { width: 28, height: 28, borderRadius: 9 },
-  navLogoActive: { borderWidth: 2, borderColor: 'rgba(255,196,0,0.45)' },
+  navLogoBadge: { width: 36, height: 36, borderRadius: 14, backgroundColor: '#f7f1df', borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.38)', alignItems: 'center', justifyContent: 'center' },
+  navLogoBadgeActive: { borderColor: theme.yellow, shadowColor: '#FFC400', shadowOpacity: 0.22, shadowRadius: 12, shadowOffset: { width: 0, height: 0 }, elevation: 5 },
+  navLogo: { width: 27, height: 27, borderRadius: 9 },
   navText: { display: 'none' },
   navTextActive: { color: theme.yellow },
 });
