@@ -85,6 +85,32 @@ def select_rescue_items(queue: dict[str, Any], limit: int) -> list[dict[str, Any
     return selected
 
 
+def editor_item_matches_domain(domain: str, item: dict[str, Any]) -> bool:
+    """Return whether an extracted editor item still belongs to a Stage-4 domain.
+
+    The source rescue queue classifies rows from RSS snippets.  After full article
+    extraction, titles/descriptions can change enough that a row no longer belongs
+    to the breached domain.  Stage-4 must filter here, before writing editor
+    batches, instead of preparing work that the autopilot hard gate will block as
+    off-domain.
+    """
+    domain = (domain or "").strip()
+    if not domain:
+        return True
+    # Match pointa_autopilot.validate_domain_editor_run exactly: validate against
+    # the extracted title + description/article text that will be sent to the
+    # editor, not against the RSS-snippet current card.
+    title = str(item.get("originalTitle") or item.get("title") or item.get("headline") or "")
+    desc = " ".join(str(item.get(k) or "") for k in ("description", "summary", "articleText"))
+    source = str(item.get("source") or "")
+    category, _category_class = update_feed.categorize_item(title, desc, source)
+    if category == domain:
+        return True
+    if domain == "חדשות" and category in {"חדשות", "בארץ"}:
+        return True
+    return False
+
+
 def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_chars: int, oversample_factor: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Select rescue rows after article extraction, not before it.
 
@@ -103,6 +129,10 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
     oversample_factor = max(1, oversample_factor)
     candidates = select_rescue_items(queue, max(limit, limit * oversample_factor))
     all_input = make_editor_input(candidates, min_article_chars)
+    domain = str(queue.get("domain") or "").strip()
+    domain_filtered_input = [x for x in all_input if editor_item_matches_domain(domain, x)]
+    domain_filtered_out = len(all_input) - len(domain_filtered_input)
+    all_input = domain_filtered_input
     usable = [x for x in all_input if x.get("articleTextChars", 0) >= min_article_chars]
     thin = [x for x in all_input if x.get("articleTextChars", 0) < min_article_chars]
     def group_key(item: dict[str, Any]) -> str:
@@ -153,6 +183,8 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
         "perSourceGroupSoftCap": per_group_cap,
         "oversampleFactor": oversample_factor,
         "selectionMode": "adaptive_extract_then_select_diverse_sources_first",
+        "domain": domain or None,
+        "domainFilteredOutAfterExtraction": domain_filtered_out,
     }
     return selected, stats
 
