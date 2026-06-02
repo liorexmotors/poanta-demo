@@ -39,6 +39,26 @@ CASES = [
         },
     ),
     (
+        "trump_netanyahu_beirut_strike_cancelled_be7_ynet_live_regression",
+        True,
+        {
+            "source": "בשבע - מגזין ודעות",
+            "category": "ביטחון",
+            "headline": "טראמפ בלם תקיפה ישראלית בדאחייה אחרי איום איראני",
+            "originalTitle": "טראמפ מנע תקיפה ישראלית בדאחייה בעקבות איומי איראן",
+            "context": "איראן איימה להפסיק את השיחות עם ארה״ב ולשקול חסימת מצרים ימיים; בעקבות זאת טראמפ דרש מנתניהו לעצור את הפעולה בביירות.",
+            "sourceUrl": "https://be7.co.il/23947",
+        },
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "ביטחון",
+            "headline": "ביקורת בליכוד על ביטול התקיפה בביירות",
+            "originalTitle": "ביקורת בליכוד על ביטול התקיפה בביירות",
+            "context": "ח״כ משה סעדה תקף את ביטול התקיפות בדאחייה בעקבות הנחיית דונלד טראמפ, וטען כי מדיניות ההכלה מול האיום בלבנון מסוכנת לישראל.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/hjwesghlge",
+        },
+    ),
+    (
         "attorney_general_split_bill_cross_source",
         True,
         {
