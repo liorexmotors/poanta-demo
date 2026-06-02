@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
+  FlatList,
   Image,
   Linking,
   RefreshControl,
@@ -130,9 +131,12 @@ function faviconForSource(name?: string, item?: FeedItem) {
 }
 
 function SourceIcon({ name, item, small = false }: { name: string; item?: FeedItem; small?: boolean }) {
+  // In dense settings lists, loading dozens of remote favicons blocks the JS/UI thread on older Android devices.
+  // Keep full favicons in article cards, but use instant local initials for compact source rows.
+  if (small) return <View style={styles.sourceMiniFallback}><Text style={styles.sourceMiniFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
   const icon = faviconForSource(name, item);
-  if (icon) return <Image source={{ uri: icon }} style={(small ? styles.sourceMiniImage : styles.sourceIconImage) as any} />;
-  return <View style={small ? styles.sourceMiniFallback : styles.sourceIconFallback}><Text style={small ? styles.sourceMiniFallbackText : styles.sourceIconFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
+  if (icon) return <Image source={{ uri: icon }} style={styles.sourceIconImage as any} />;
+  return <View style={styles.sourceIconFallback}><Text style={styles.sourceIconFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
 }
 
 type IconName = 'bookmark' | 'share' | 'breaking' | 'settings' | 'search';
@@ -328,7 +332,11 @@ function PoentaApp() {
 
   const knownTopics = useMemo(() => allTopics(items), [items]);
   const knownSources = useMemo(() => allSources([...items, ...breaking]), [items, breaking]);
-  const savedItems = useMemo(() => items.filter(item => savedKeys.includes(itemKey(item))), [items, savedKeys]);
+  const savedKeySet = useMemo(() => new Set(savedKeys), [savedKeys]);
+  const readKeySet = useMemo(() => new Set(readKeys), [readKeys]);
+  const prefTopicSet = useMemo(() => new Set(prefs.topics), [prefs.topics]);
+  const prefSourceSet = useMemo(() => new Set(prefs.sources.length ? prefs.sources : knownSources), [prefs.sources, knownSources]);
+  const savedItems = useMemo(() => items.filter(item => savedKeySet.has(itemKey(item))), [items, savedKeySet]);
 
   useEffect(() => {
     let alive = true;
@@ -413,27 +421,24 @@ function PoentaApp() {
   useEffect(() => { loadAll(); }, []);
 
   const visibleMain = useMemo(() => {
-    const selectedTopics = new Set(prefs.topics);
-    const selectedSources = new Set(prefs.sources.length ? prefs.sources : knownSources);
     const rows = items
       .map((item, index) => ({ item, index, date: itemDate(item, index) }))
-      .filter(row => selectedSources.has(sourceName(row.item)))
-      .filter(row => selectedTopics.has(topicFor(row.item)))
+      .filter(row => prefSourceSet.has(sourceName(row.item)))
+      .filter(row => prefTopicSet.has(topicFor(row.item)))
       .filter(row => withinDays(row.item, row.index, prefs.days))
       .filter(row => activeFilter === 'all' || topicFor(row.item) === activeFilter)
-      .filter(row => prefs.feedFilter === 'all' || !readKeys.includes(itemKey(row.item)))
+      .filter(row => prefs.feedFilter === 'all' || !readKeySet.has(itemKey(row.item)))
       .sort((a, b) => b.date.getTime() - a.date.getTime())
       .map(row => row.item);
     return dedupeItems(rows);
-  }, [items, prefs, knownSources, activeFilter, readKeys]);
+  }, [items, prefs.days, prefs.feedFilter, prefSourceSet, prefTopicSet, activeFilter, readKeySet]);
 
   const visibleBreaking = useMemo(() => {
-    const selectedSources = new Set(prefs.sources.length ? prefs.sources : knownSources);
     return breaking
-      .filter(item => selectedSources.has(sourceName(item)))
+      .filter(item => prefSourceSet.has(sourceName(item)))
       .filter(item => activeFilter === 'all' || sourceName(item) === activeFilter || item.sources?.includes(activeFilter))
       .sort((a, b) => itemDate(b).getTime() - itemDate(a).getTime());
-  }, [breaking, prefs.sources, knownSources, activeFilter]);
+  }, [breaking, prefSourceSet, activeFilter]);
 
   const searchResults = useMemo(() => {
     const q = normalizeText(search);
@@ -447,13 +452,12 @@ function PoentaApp() {
 
   const topicCounts = useMemo(() => {
     const counts: Record<string, number> = { all: visibleMain.length };
-    const selectedSources = new Set(prefs.sources.length ? prefs.sources : knownSources);
-    items.filter((item, index) => selectedSources.has(sourceName(item)) && withinDays(item, index, prefs.days)).forEach(item => {
+    items.filter((item, index) => prefSourceSet.has(sourceName(item)) && withinDays(item, index, prefs.days)).forEach(item => {
       const t = topicFor(item);
       counts[t] = (counts[t] || 0) + 1;
     });
     return counts;
-  }, [items, prefs.sources, prefs.days, knownSources, visibleMain.length]);
+  }, [items, prefSourceSet, prefs.days, visibleMain.length]);
 
   const breakingSources = useMemo(() => [...new Set(breaking.flatMap(item => item.sources?.length ? item.sources : [sourceName(item)]))].sort((a, b) => a.localeCompare(b, 'he')), [breaking]);
 
@@ -473,7 +477,10 @@ function PoentaApp() {
   }
 
   function toggleSource(source: string) {
-    setPrefs(prev => ({ ...prev, sources: prev.sources.includes(source) ? prev.sources.filter(s => s !== source) : [...prev.sources, source] }));
+    setPrefs(prev => {
+      const current = prev.sources.filter(s => s !== '__NONE__');
+      return { ...prev, sources: current.includes(source) ? current.filter(s => s !== source) : [...current, source] };
+    });
     if (activeFilter !== 'all' && activeFilter === source) setActiveFilter('all');
   }
 
@@ -564,13 +571,13 @@ function PoentaApp() {
     </View>
 
     <View style={styles.settingsCard}>
-      <View style={styles.settingsHead}><Text style={styles.settingsTitle}>מקורות</Text><Text style={styles.savedPill}>{prefs.sources.length}/{knownSources.length}</Text></View>
+      <View style={styles.settingsHead}><Text style={styles.settingsTitle}>מקורות</Text><Text style={styles.savedPill}>{prefs.sources.includes('__NONE__') ? 0 : (prefs.sources.filter(s => s !== '__NONE__').length || knownSources.length)}/{knownSources.length}</Text></View>
       <View style={styles.bulkRow}>
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, sources: knownSources }))}><Text style={styles.bulkText}>סמן הכל</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, sources: [] }))}><Text style={styles.bulkText}>בטל הכל</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, sources: ['__NONE__'] }))}><Text style={styles.bulkText}>בטל הכל</Text></TouchableOpacity>
       </View>
       {knownSources.map(src => {
-        const on = prefs.sources.includes(src);
+        const on = prefSourceSet.has(src);
         return <TouchableOpacity key={src} style={[styles.sourceRow, on && styles.sourceRowOn]} onPress={() => toggleSource(src)}>
           <View style={styles.sourceRowLabel}><SourceIcon name={src} small /><Text style={[styles.sourceRowName, on && styles.sourceRowNameOn]}>{src}</Text></View>
           <View style={[styles.switchTrack, on && styles.switchTrackOn]}><View style={[styles.switchKnob, on && styles.switchKnobOn]} /></View>
@@ -600,8 +607,26 @@ function PoentaApp() {
   </View>;
 
   const list = view === 'breaking' ? visibleBreaking : view === 'saved' ? savedItems : view === 'search' ? searchResults : visibleMain;
-  const unreadCount = visibleMain.filter(i => !readKeys.includes(itemKey(i))).length;
+  const unreadCount = visibleMain.filter(i => !readKeySet.has(itemKey(i))).length;
   const syncLabel = lastSyncedAt ? `עודכן ${timeLabel({ publishedAt: lastSyncedAt } as FeedItem)}` : 'משוך לרענון';
+
+  const renderListHeader = () => <>
+    {view === 'search' && <>
+      <Text style={styles.title}>חיפוש</Text>
+      <Text style={styles.subtitle}>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</Text>
+      <TextInput style={styles.searchInput} value={search} onChangeText={setSearch} placeholder="מה לחפש? למשל הופעות רוק" placeholderTextColor={colors.muted} />
+    </>}
+
+    {view === 'saved' && <>
+      <Text style={styles.title}>שמורים</Text>
+      <Text style={styles.subtitle}>{savedItems.length ? `${savedItems.length} כתבות שמורות` : 'אפשר לשמור כתבות מהפיד בלחיצה על שמור.'}</Text>
+    </>}
+
+    {loading && <ActivityIndicator color={colors.yellow} style={{ marginTop: 28 }} />}
+    {error && <Text style={styles.error}>שגיאה בטעינת הפיד: {error}</Text>}
+  </>;
+
+  const listEmptyText = view === 'search' && search.trim().length < 2 ? 'הקלד לפחות 2 אותיות לחיפוש.' : 'אין אייטמים להצגה כרגע.';
 
   return <SafeAreaView style={styles.safe}>
     <StatusBar style={isLight ? "dark" : "light"} />
@@ -618,27 +643,26 @@ function PoentaApp() {
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
 
-    <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />}>
-      {view === 'search' && <>
-        <Text style={styles.title}>חיפוש</Text>
-        <Text style={styles.subtitle}>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</Text>
-        <TextInput style={styles.searchInput} value={search} onChangeText={setSearch} placeholder="מה לחפש? למשל הופעות רוק" placeholderTextColor={colors.muted} />
-      </>}
-
-      {view === 'saved' && <>
-        <Text style={styles.title}>שמורים</Text>
-        <Text style={styles.subtitle}>{savedItems.length ? `${savedItems.length} כתבות שמורות` : 'אפשר לשמור כתבות מהפיד בלחיצה על שמור.'}</Text>
-      </>}
-
-      {loading && <ActivityIndicator color={colors.yellow} style={{ marginTop: 28 }} />}
-      {error && <Text style={styles.error}>שגיאה בטעינת הפיד: {error}</Text>}
-      {view === 'settings' ? renderSettings() : view === 'more' ? renderMore() : <>
-        {!loading && !list.length && <Text style={styles.empty}>{view === 'search' && search.trim().length < 2 ? 'הקלד לפחות 2 אותיות לחיפוש.' : 'אין אייטמים להצגה כרגע.'}</Text>}
-        {list.map((item, index) => view === 'breaking'
-          ? <BreakingCard key={`${itemKey(item)}-${index}`} item={item} index={index} />
-          : <ArticleCard key={`${itemKey(item)}-${index}`} item={item} index={index} saved={savedKeys.includes(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />)}
-      </>}
-    </ScrollView>
+    {view === 'settings' || view === 'more' ? <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />} keyboardShouldPersistTaps="handled">
+      {view === 'settings' ? renderSettings() : renderMore()}
+    </ScrollView> : <FlatList
+      style={styles.scroll}
+      contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]}
+      data={loading ? [] : list}
+      keyExtractor={(item, index) => `${itemKey(item)}-${index}`}
+      renderItem={({ item, index }) => view === 'breaking'
+        ? <BreakingCard item={item} index={index} />
+        : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />}
+      ListHeaderComponent={renderListHeader}
+      ListEmptyComponent={!loading ? <Text style={styles.empty}>{listEmptyText}</Text> : null}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />}
+      initialNumToRender={6}
+      maxToRenderPerBatch={6}
+      updateCellsBatchingPeriod={80}
+      windowSize={5}
+      removeClippedSubviews
+      keyboardShouldPersistTaps="handled"
+    />}
 
     <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
       <NavButton label="שמור" icon="bookmark" active={view === 'saved'} onPress={() => switchView('saved')} />
@@ -672,8 +696,8 @@ return StyleSheet.create({
   tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center' },
   scroll: { flex: 1 },
   content: { paddingHorizontal: 16 },
-  title: { color: c.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right' },
-  subtitle: { color: c.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', marginTop: 7, marginBottom: 12 },
+  title: { color: c.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl' },
+  subtitle: { color: c.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl', marginTop: 7, marginBottom: 12 },
   tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center' },
   chip: { height: 28, maxWidth: 132, borderWidth: 1, borderColor: c.faint, borderRadius: 999, backgroundColor: c.surfaceSoft, paddingHorizontal: 9, paddingVertical: 0, flexDirection: 'row-reverse', gap: 6, alignItems: 'center', justifyContent: 'center' },
   chipActive: { borderColor: c.yellow, backgroundColor: c.yellow },
@@ -695,15 +719,15 @@ return StyleSheet.create({
   catText: { color: c.muted, fontSize: 12, fontWeight: '800', textAlign: 'right', flexShrink: 1 },
   time: { color: c.muted, fontSize: 12, fontWeight: '700', textAlign: 'left' },
   heroBox: { position: 'relative', borderRadius: 22, overflow: 'hidden', backgroundColor: c.heroBg, minHeight: 214, justifyContent: 'flex-end', marginBottom: 11 },
-  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 118, backgroundColor: c.overlay },
+  heroShade: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.28)' },
   image: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg },
   placeholder: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg, alignItems: 'center', justifyContent: 'center' },
   placeholderText: { color: c.textOnYellow, backgroundColor: c.yellow, overflow: 'hidden', borderRadius: 15, width: 48, height: 48, lineHeight: 48, textAlign: 'center', fontSize: 22, fontWeight: '900' },
-  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', letterSpacing: -0.42, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
-  breakingHeadline: { color: c.text, fontSize: 21.5, lineHeight: 25, fontWeight: '900', textAlign: 'right', letterSpacing: -0.42, marginBottom: 8 },
-  summary: { color: c.secondary, fontSize: 14.8, lineHeight: 21.3, fontWeight: '500', textAlign: 'right' },
+  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', letterSpacing: -0.42, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
+  breakingHeadline: { color: c.text, fontSize: 21.5, lineHeight: 25, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', letterSpacing: -0.42, marginBottom: 8 },
+  summary: { color: c.secondary, fontSize: 14.8, lineHeight: 21.3, fontWeight: '500', textAlign: 'right', writingDirection: 'rtl' },
   takeawayBox: { marginTop: 9, paddingTop: 9, borderTopWidth: 1, borderTopColor: c.border },
-  takeaway: { color: c.yellowSoft, fontSize: 14, lineHeight: 17.5, fontWeight: '800', textAlign: 'right' },
+  takeaway: { color: c.yellowSoft, fontSize: 14, lineHeight: 17.5, fontWeight: '800', textAlign: 'right', writingDirection: 'rtl' },
   actionRow: { marginTop: 12, flexDirection: 'row-reverse', gap: 8, alignItems: 'stretch' },
   smallAction: { borderWidth: 1, borderColor: c.faint, borderRadius: 14, backgroundColor: c.surfaceSoft, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   smallActionOn: { borderColor: 'rgba(255,196,0,0.42)', backgroundColor: 'rgba(255,196,0,0.13)' },
