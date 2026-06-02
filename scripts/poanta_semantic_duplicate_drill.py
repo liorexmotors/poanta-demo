@@ -19,6 +19,26 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "attorney_general_split_bill_cross_source",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "פוליטיקה",
+            "headline": "חוק פיצול היועמ״שית עבר בקריאה ראשונה בכנסת",
+            "originalTitle": "Bill that would split role of attorney-general passes first Knesset reading",
+            "context": "הכנסת אישרה בקריאה ראשונה הצעה לפצל את תפקיד היועץ המשפטי לממשלה ליועץ משפטי ולתובע כללי, ולהרחיב את יכולת הממשלה לקבוע מינוי וייצוג משפטי.",
+            "sourceUrl": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898054",
+        },
+        {
+            "source": "וואלה חדשות - פוליטי-מדיני",
+            "category": "משפט",
+            "headline": "חוק פיצול היועמ״שית עבר בקריאה ראשונה למרות אזהרות מערכת המשפט",
+            "originalTitle": "בקריאה ראשונה: מליאת הכנסת אישרה את הצעת החוק לפיצול תפקיד היועמ\"שית",
+            "context": "מליאת הכנסת אישרה בקריאה ראשונה את הצעת החוק לפיצול תפקיד היועץ המשפטי לממשלה, ברוב של 65 תומכים מול 47 מתנגדים.",
+            "sourceUrl": "https://news.walla.co.il/item/3842526",
+        },
+    ),
+    (
         "us_southern_iran_strikes_cross_language",
         True,
         {

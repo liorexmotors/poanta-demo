@@ -201,6 +201,17 @@ def knesset_dissolution_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def attorney_general_split_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the attorney-general role-splitting first-reading bill."""
+    text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
+    has_ag = bool(re.search(r"יועמ[״\"]?ש|יועץ משפטי|attorney[- ]?general", text))
+    has_split = bool(re.search(r"פיצול|לפצל|split", text))
+    has_bill_vote = bool(re.search(r"קריאה ראשונה|first reading|מליאת הכנסת|הצעת החוק|bill", text))
+    if has_ag and has_split and has_bill_vote:
+        return {"attorney_general_split_first_reading"}
+    return set()
+
+
 def local_emergency_event_tokens(item: dict[str, Any]) -> set[str]:
     """Fingerprint concrete local emergency incidents across category labels."""
     text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
@@ -458,6 +469,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = knesset_dissolution_tokens(a)
     bw = knesset_dissolution_tokens(b)
     if aw and bw and "knesset_dissolution_first_reading" in aw and "knesset_dissolution_first_reading" in bw:
+        return True
+    aw = attorney_general_split_tokens(a)
+    bw = attorney_general_split_tokens(b)
+    if aw and bw and "attorney_general_split_first_reading" in aw and "attorney_general_split_first_reading" in bw:
         return True
     aw = local_emergency_event_tokens(a)
     bw = local_emergency_event_tokens(b)
