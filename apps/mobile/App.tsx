@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
 import { fetchBreakingFeed, fetchFeed } from './src/feed';
 import { FeedItem } from './src/types';
 import { theme } from './src/theme';
@@ -22,6 +23,8 @@ type Prefs = { topics: string[]; sources: string[]; days: number; feedFilter: 'a
 
 const DEFAULT_TOPICS = ['ביטחון', 'פוליטיקה', 'אקטואליה בעולם', 'כלכלה', 'רכב', 'טכנולוגיה', 'צרכנות', 'תרבות', 'ספורט', 'בריאות'];
 const APP_SHARE_TEXT = 'מצאתי אפליקציית חדשות מעולה — Poenta.\nחדשות בעברית עם תקציר ברור, הקשר והפואנטה.\nhttps://poenta.app/';
+const POENTA_LOGO = require('./assets/poenta-logo.png');
+const POENTA_NAV_ICON = require('./assets/poenta-icon-64.png');
 
 function canonicalSource(name?: string) {
   const s = String(name || '').trim();
@@ -50,6 +53,58 @@ function canonicalSource(name?: string) {
 
 function sourceName(item: FeedItem) {
   return canonicalSource(item.sourceName || item.sourceLogo || item.source || 'מקור');
+}
+
+function forcedFaviconDomain(name?: string) {
+  const target = canonicalSource(name);
+  const domains: Record<string, string> = {
+    'Poenta': 'poenta.app', 'CNN': 'cnn.com', 'N12': 'n12.co.il', 'BBC': 'bbc.com', 'Sky News': 'news.sky.com',
+    'Reuters': 'reuters.com', 'AP': 'apnews.com', 'Guardian': 'theguardian.com', 'NYT': 'nytimes.com',
+    'Axios': 'axios.com', 'Politico': 'politico.com', 'Bloomberg': 'bloomberg.com', 'Al Jazeera': 'aljazeera.com',
+    'ynet': 'ynet.co.il', 'וואלה': 'walla.co.il', 'גלובס': 'globes.co.il', 'הארץ': 'haaretz.co.il',
+    'ישראל היום': 'israelhayom.co.il', 'מעריב': 'maariv.co.il', 'דה מרקר': 'themarker.com',
+    'דובר צה״ל': 't.me', 'דוברות משטרת ישראל': 'police.gov.il', 'השירות המטאורולוגי': 'ims.gov.il',
+  };
+  return domains[target] || '';
+}
+
+function sourceUrlForName(name?: string) {
+  const target = canonicalSource(name);
+  const fallbacks: Record<string, string> = {
+    'ynet': 'https://www.ynet.co.il', 'וואלה': 'https://news.walla.co.il', 'גלובס': 'https://www.globes.co.il',
+    'הארץ': 'https://www.haaretz.co.il', 'ישראל היום': 'https://www.israelhayom.co.il', 'מעריב': 'https://www.maariv.co.il',
+    'דה מרקר': 'https://www.themarker.com', 'N12': 'https://www.n12.co.il', 'BBC': 'https://www.bbc.com/news/world',
+    'Sky News': 'https://news.sky.com/world', 'CNN': 'https://www.cnn.com/world', 'Reuters': 'https://www.reuters.com/world/middle-east/',
+    'AP': 'https://apnews.com/hub/middle-east', 'Guardian': 'https://www.theguardian.com/world/middleeast',
+    'NYT': 'https://www.nytimes.com/section/world/middleeast', 'Bloomberg': 'https://www.bloomberg.com',
+    'Al Jazeera': 'https://www.aljazeera.com/middle-east/', 'דובר צה״ל': 'https://t.me/idf_telegram',
+    'דוברות משטרת ישראל': 'https://t.me/Israel_Police_100',
+  };
+  return fallbacks[target] || '';
+}
+
+function faviconForSource(name?: string, item?: FeedItem) {
+  const forced = forcedFaviconDomain(name);
+  if (forced) return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(forced)}&sz=64`;
+  const url = item?.sourceUrl || sourceUrlForName(name);
+  try { return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(new URL(url).hostname)}&sz=64`; } catch { return ''; }
+}
+
+function SourceIcon({ name, item, small = false }: { name: string; item?: FeedItem; small?: boolean }) {
+  const icon = faviconForSource(name, item);
+  if (icon) return <Image source={{ uri: icon }} style={(small ? styles.sourceMiniImage : styles.sourceIconImage) as any} />;
+  return <View style={small ? styles.sourceMiniFallback : styles.sourceIconFallback}><Text style={small ? styles.sourceMiniFallbackText : styles.sourceIconFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
+}
+
+type IconName = 'bookmark' | 'share' | 'breaking' | 'settings' | 'search';
+function WebIcon({ name, active = false, size = 28 }: { name: IconName; active?: boolean; size?: number }) {
+  const color = active ? '#FFC400' : 'rgba(255,255,255,0.48)';
+  const fill = active && (name === 'bookmark' || name === 'breaking' || name === 'search') ? color : 'none';
+  if (name === 'bookmark') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M6 4h12v17l-6-4-6 4V4Z" stroke={color} fill={fill} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
+  if (name === 'share') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /><Path d="M12 16V4" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /><Path d="M7 9l5-5 5 5" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
+  if (name === 'breaking') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z" stroke={color} fill={fill} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
+  if (name === 'settings') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M6 4v16" stroke={color} strokeWidth={2} strokeLinecap="round" /><Path d="M12 4v16" stroke={color} strokeWidth={2} strokeLinecap="round" /><Path d="M18 4v16" stroke={color} strokeWidth={2} strokeLinecap="round" /><Circle cx="6" cy="9" r="2.15" stroke={color} fill="#050b0f" strokeWidth={2} /><Circle cx="12" cy="15" r="2.15" stroke={color} fill="#050b0f" strokeWidth={2} /><Circle cx="18" cy="7.5" r="2.15" stroke={color} fill="#050b0f" strokeWidth={2} /></Svg>;
+  return <Svg width={size} height={size} viewBox="0 0 24 24"><Circle cx="11" cy="11" r="7" stroke={color} fill={fill} strokeWidth={2} /><Path d="M20 20l-4.4-4.4" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" /></Svg>;
 }
 
 function topicFor(item: FeedItem) {
@@ -136,9 +191,6 @@ function allSources(items: FeedItem[]) {
   return [...new Set([...items.map(sourceName), ...defaults])].filter(Boolean).sort((a, b) => a.localeCompare(b, 'he'));
 }
 
-function LogoMark() {
-  return <View style={styles.mark}><View style={[styles.markLine, { top: 10, width: 20 }]} /><View style={[styles.markLine, { top: 18, width: 20 }]} /><View style={[styles.markLine, { top: 26, width: 14 }]} /></View>;
-}
 
 function Chip({ label, active, onPress, count }: { label: string; active: boolean; onPress: () => void; count?: number }) {
   return <TouchableOpacity style={[styles.chip, active && styles.chipActive]} onPress={onPress} activeOpacity={0.82}>
@@ -148,7 +200,7 @@ function Chip({ label, active, onPress, count }: { label: string; active: boolea
 }
 
 function SourceThumb({ item }: { item: FeedItem }) {
-  if (item.imageUrl) return <Image source={{ uri: item.imageUrl }} style={styles.image} />;
+  if (item.imageUrl) return <Image source={{ uri: item.imageUrl }} style={styles.image as any} />;
   const label = sourceName(item).slice(0, 2) || 'P';
   return <View style={styles.placeholder}><Text style={styles.placeholderText}>{label}</Text></View>;
 }
@@ -157,24 +209,31 @@ function ArticleCard({ item, index, saved, onSave }: { item: FeedItem; index: nu
   const open = () => { if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
   return <View style={[styles.card, index < 3 && styles.unreadCard]}>
     <View style={styles.metaRow}>
-      <View style={styles.cat}><Text style={styles.star}>✧</Text><Text style={styles.catText}>{topicFor(item)}</Text></View>
+      <View style={styles.metaActions}>
+        <TouchableOpacity onPress={onSave} style={styles.iconAction} accessibilityLabel={saved ? 'הסר משמור' : 'שמור'}><WebIcon name="bookmark" active={saved} size={15} /></TouchableOpacity>
+        <TouchableOpacity style={styles.iconAction} accessibilityLabel="שתף"><WebIcon name="share" active={false} size={15} /></TouchableOpacity>
+        <Text style={styles.star}>✧</Text>
+        <Text style={styles.catText}>{topicFor(item)}</Text>
+      </View>
       <Text style={styles.time}>{timeLabel(item, index)}</Text>
     </View>
     <TouchableOpacity onPress={open} activeOpacity={item.sourceUrl ? 0.78 : 1}>
       <View style={styles.heroBox}>
         <SourceThumb item={item} />
+        <View style={styles.heroShade} />
         <Text style={styles.headline}>{displayHeadline(item)}</Text>
       </View>
       {!!summaryFor(item) && <Text style={styles.summary}>{summaryFor(item)}</Text>}
-      {!!item.takeaway && <Text style={styles.takeaway}>💡 {String(item.takeaway).replace(/^💡\s*/, '')}</Text>}
+      {!!item.takeaway && <View style={styles.takeawayBox}><Text style={styles.takeaway}>■ {String(item.takeaway).replace(/^💡\s*/, '')}</Text></View>}
+      <View style={styles.sourceBox}>
+        <View style={styles.sourceAccent} />
+        <View style={styles.sourceHead}>
+          <Text style={styles.sourceLabel}>כותרת המקור</Text>
+          <View style={styles.sourceBrand}><SourceIcon name={sourceName(item)} item={item} /><Text style={styles.sourceNameText}>{sourceName(item)}</Text></View>
+        </View>
+        <Text style={styles.sourceText}>{String(item.originalTitle || sourceName(item))}</Text>
+      </View>
     </TouchableOpacity>
-    <View style={styles.actionRow}>
-      <TouchableOpacity style={[styles.smallAction, saved && styles.smallActionOn]} onPress={onSave}><Text style={styles.smallActionText}>{saved ? '★ שמור' : '☆ שמור'}</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.sourceBox} onPress={open} activeOpacity={item.sourceUrl ? 0.78 : 1}>
-        <Text style={styles.sourceLabel}>כותרת המקור</Text>
-        <Text style={styles.sourceText}>{sourceName(item)}</Text>
-      </TouchableOpacity>
-    </View>
   </View>;
 }
 
@@ -191,10 +250,9 @@ function BreakingCard({ item, index }: { item: FeedItem; index: number }) {
   </TouchableOpacity>;
 }
 
-function NavButton({ label, icon, active, onPress }: { label: string; icon: string; active: boolean; onPress: () => void }) {
-  return <TouchableOpacity style={[styles.navButton, active && styles.navActive]} onPress={onPress}>
-    <Text style={[styles.navIcon, active && styles.navTextActive]}>{icon}</Text>
-    <Text style={[styles.navText, active && styles.navTextActive]}>{label}</Text>
+function NavButton({ label, icon, active, onPress, logo }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean }) {
+  return <TouchableOpacity style={styles.navButton} onPress={onPress} accessibilityLabel={label}>
+    {logo ? <Image source={POENTA_NAV_ICON} style={[styles.navLogo as any, active && (styles.navLogoActive as any)]} /> : icon ? <WebIcon name={icon} active={active} size={28} /> : null}
   </TouchableOpacity>;
 }
 
@@ -341,9 +399,13 @@ export default function App() {
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, sources: knownSources }))}><Text style={styles.bulkText}>סמן הכל</Text></TouchableOpacity>
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setPrefs(prev => ({ ...prev, sources: [] }))}><Text style={styles.bulkText}>בטל הכל</Text></TouchableOpacity>
       </View>
-      {knownSources.map(src => <TouchableOpacity key={src} style={[styles.sourceRow, prefs.sources.includes(src) && styles.sourceRowOn]} onPress={() => toggleSource(src)}>
-        <Text style={styles.sourceRowName}>{src}</Text><Text style={styles.switchText}>{prefs.sources.includes(src) ? 'פעיל' : 'כבוי'}</Text>
-      </TouchableOpacity>)}
+      {knownSources.map(src => {
+        const on = prefs.sources.includes(src);
+        return <TouchableOpacity key={src} style={[styles.sourceRow, on && styles.sourceRowOn]} onPress={() => toggleSource(src)}>
+          <View style={styles.sourceRowLabel}><SourceIcon name={src} small /><Text style={[styles.sourceRowName, on && styles.sourceRowNameOn]}>{src}</Text></View>
+          <View style={[styles.switchTrack, on && styles.switchTrackOn]}><View style={[styles.switchKnob, on && styles.switchKnobOn]} /></View>
+        </TouchableOpacity>;
+      })}
     </View>
 
     <View style={styles.settingsCard}>
@@ -359,34 +421,26 @@ export default function App() {
   </View>;
 
   const list = view === 'breaking' ? visibleBreaking : view === 'saved' ? savedItems : view === 'search' ? searchResults : visibleMain;
+  const unreadCount = visibleMain.filter(i => !readKeys.includes(itemKey(i))).length;
 
   return <SafeAreaView style={styles.safe}>
     <StatusBar style="light" />
-    <View style={styles.header}>
-      <View style={styles.brand}><LogoMark /><Text style={styles.logoText}>Poenta</Text></View>
-      <View style={styles.badge}><Text style={styles.badgeText}>{view === 'breaking' ? 'מבזקים' : 'חי'}</Text></View>
+    <View style={styles.topbar}>
+      <View style={styles.header}>
+        <Image source={POENTA_LOGO} style={styles.logoImage as any} resizeMode="contain" />
+        <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד"><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
+      </View>
+      <TouchableOpacity style={styles.updates} onPress={loadAll}>
+        <View style={styles.updatePill}><Text style={styles.updatePillText}>{unreadCount || visibleMain.length}</Text></View>
+        <View style={styles.updateTrack}><View style={styles.updateFill} /><Text style={styles.updateText}>מדד החדשים שלך</Text></View>
+      </TouchableOpacity>
+      <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
 
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={theme.yellow} />}>
-      {view === 'home' && <>
-        <Text style={styles.title}>פיד פואנטה</Text>
-        <Text style={styles.subtitle}>חדשות בעברית, תקציר ברור, מקור והפואנטה — מותאם לתחומי העניין שלך.</Text>
-        <View style={styles.feedToggle}>
-          <Chip label="כל הידיעות" active={prefs.feedFilter === 'all'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'all' }))} count={visibleMain.length} />
-          <Chip label="חדשים" active={prefs.feedFilter === 'unread'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'unread' }))} count={visibleMain.filter(i => !readKeys.includes(itemKey(i))).length} />
-        </View>
-        {renderTabs()}
-      </>}
-
-      {view === 'breaking' && <>
-        <Text style={styles.title}>מבזקים</Text>
-        <Text style={styles.subtitle}>עדכונים קצרים בזמן אמת, עם איחוד מקורות כדי לצמצם כפילויות.</Text>
-        {renderTabs()}
-      </>}
-
       {view === 'search' && <>
         <Text style={styles.title}>חיפוש</Text>
-        <Text style={styles.subtitle}>חיפוש בכתבות מהפיד ומהשמורים.</Text>
+        <Text style={styles.subtitle}>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</Text>
         <TextInput style={styles.searchInput} value={search} onChangeText={setSearch} placeholder="מה לחפש? למשל הופעות רוק" placeholderTextColor="rgba(255,255,255,0.34)" />
       </>}
 
@@ -406,84 +460,113 @@ export default function App() {
     </ScrollView>
 
     <View style={styles.nav}>
-      <NavButton label="פיד" icon="⌂" active={view === 'home'} onPress={() => switchView('home')} />
-      <NavButton label="מבזקים" icon="⚡" active={view === 'breaking'} onPress={() => switchView('breaking')} />
-      <NavButton label="שמורים" icon="★" active={view === 'saved'} onPress={() => switchView('saved')} />
-      <NavButton label="חיפוש" icon="⌕" active={view === 'search'} onPress={() => switchView('search')} />
-      <NavButton label="הגדרות" icon="⚙" active={view === 'settings'} onPress={() => switchView('settings')} />
+      <NavButton label="שמור" icon="bookmark" active={view === 'saved'} onPress={() => switchView('saved')} />
+      <NavButton label="חיפוש" icon="search" active={view === 'search'} onPress={() => switchView('search')} />
+      <NavButton label="הגדרות" icon="settings" active={view === 'settings'} onPress={() => switchView('settings')} />
+      <NavButton label="מבזקים" icon="breaking" active={view === 'breaking'} onPress={() => switchView('breaking')} />
+      <NavButton label="Poenta" logo active={view === 'home'} onPress={() => switchView('home')} />
     </View>
   </SafeAreaView>;
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: theme.bg, direction: 'rtl' },
-  header: { height: 74, backgroundColor: theme.bg, borderBottomWidth: 1, borderBottomColor: theme.faint, paddingHorizontal: 18, flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between' },
-  brand: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  mark: { width: 38, height: 38, borderRadius: 13, backgroundColor: theme.yellow, position: 'relative' },
-  markLine: { position: 'absolute', right: 9, height: 3, borderRadius: 20, backgroundColor: '#0a0d0f' },
-  logoText: { color: theme.text, fontSize: 30, fontWeight: '900', letterSpacing: -0.8 },
-  badge: { borderColor: 'rgba(255,196,0,0.20)', borderWidth: 1, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.08)', paddingHorizontal: 10, paddingVertical: 6 },
-  badgeText: { color: theme.yellow, fontSize: 11, fontWeight: '900' },
+  safe: { flex: 1, backgroundColor: '#071015', direction: 'rtl' },
+  topbar: { position: 'absolute', top: 0, left: 0, right: 0, height: 142, zIndex: 50, backgroundColor: '#071015', borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.07)', borderBottomLeftRadius: 18, borderBottomRightRadius: 18, shadowColor: '#000', shadowOpacity: 0.34, shadowRadius: 22, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
+  header: { height: 52, paddingHorizontal: 16, paddingTop: 10, flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between' },
+  topMore: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
+  topMoreText: { color: 'rgba(255,255,255,0.82)', fontSize: 25, fontWeight: '900', lineHeight: 30 },
+  logoImage: { height: 38, width: 164 },
+  updates: { height: 44, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: 'rgba(255,255,255,0.07)', backgroundColor: 'rgba(255,255,255,0.025)', justifyContent: 'center' },
+  updatePill: { position: 'absolute', left: 18, top: 3, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.28)', borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.035)', alignItems: 'center', justifyContent: 'center', zIndex: 2 },
+  updatePillText: { color: 'rgba(255,196,0,0.88)', fontSize: 12, fontWeight: '900' },
+  updateTrack: { height: 16, marginTop: 20, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,196,0,0.16)', borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', alignItems: 'center', justifyContent: 'center' },
+  updateFill: { position: 'absolute', right: 0, top: 0, bottom: 0, width: '68%', backgroundColor: '#FFC400' },
+  updateText: { color: '#071015', fontSize: 10.8, fontWeight: '900', letterSpacing: -0.05 },
+  tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center' },
   scroll: { flex: 1 },
-  content: { padding: 16, paddingBottom: 104 },
+  content: { paddingHorizontal: 16, paddingTop: 146, paddingBottom: 86 },
   title: { color: theme.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right' },
   subtitle: { color: theme.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', marginTop: 7, marginBottom: 12 },
-  tabs: { flexDirection: 'row-reverse', gap: 8, paddingVertical: 7 },
+  tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center' },
+  chip: { height: 28, maxWidth: 132, borderWidth: 1, borderColor: 'rgba(255,255,255,0.055)', borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.035)', paddingHorizontal: 9, paddingVertical: 0, flexDirection: 'row-reverse', gap: 6, alignItems: 'center', justifyContent: 'center' },
+  chipActive: { borderColor: '#FFC400', backgroundColor: '#FFC400' },
+  chipText: { color: 'rgba(255,255,255,0.62)', fontSize: 13, fontWeight: '800' },
+  chipTextActive: { color: '#071015', fontWeight: '900' },
+  chipCount: { minWidth: 18, height: 18, lineHeight: 18, textAlign: 'center', color: '#FFC400', backgroundColor: 'rgba(255,196,0,0.16)', borderRadius: 999, overflow: 'hidden', paddingHorizontal: 5, fontSize: 10.5, fontWeight: '900' },
   feedToggle: { flexDirection: 'row-reverse', gap: 8, marginBottom: 3 },
-  chip: { borderWidth: 1, borderColor: theme.faint, borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.035)', paddingHorizontal: 13, paddingVertical: 8, flexDirection: 'row-reverse', gap: 7, alignItems: 'center' },
-  chipActive: { borderColor: 'rgba(255,196,0,0.62)', backgroundColor: 'rgba(255,196,0,0.14)' },
-  chipText: { color: theme.secondary, fontSize: 12.5, fontWeight: '900' },
-  chipTextActive: { color: theme.yellow },
-  chipCount: { color: theme.muted, fontSize: 11, fontWeight: '900' },
-  card: { borderWidth: 1, borderColor: theme.faint, borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.026)', padding: 14, marginTop: 11 },
+  card: { borderWidth: 1, borderColor: 'rgba(255,255,255,0.05)', borderRadius: 18, backgroundColor: 'rgba(255,255,255,0.022)', paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2 },
   unreadCard: { borderColor: 'rgba(255,196,0,0.18)' },
-  breakingCard: { backgroundColor: 'rgba(255,196,0,0.045)' },
-  metaRow: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between', marginBottom: 9, gap: 8 },
+  breakingCard: { borderColor: 'rgba(255,196,0,0.22)', backgroundColor: 'rgba(255,196,0,0.055)', paddingBottom: 14 },
+  metaRow: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
+  metaActions: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 7, flexShrink: 1 },
   cat: { flexDirection: 'row-reverse', alignItems: 'center', gap: 7, flex: 1 },
-  star: { color: theme.yellow, fontSize: 15, fontWeight: '900' },
+  iconAction: { width: 15, height: 15, alignItems: 'center', justifyContent: 'center', marginLeft: 1 },
+  iconActionText: { color: '#FFC400', fontSize: 14, fontWeight: '900', lineHeight: 16 },
+  iconActionOn: { color: '#FFC400' },
+  star: { color: theme.yellow, fontSize: 15, fontWeight: '900', lineHeight: 16 },
   bolt: { color: theme.yellow, fontSize: 16, fontWeight: '900' },
   catText: { color: theme.muted, fontSize: 12, fontWeight: '800', textAlign: 'right', flexShrink: 1 },
-  time: { color: theme.muted, fontSize: 12, fontWeight: '700' },
-  heroBox: { position: 'relative', borderRadius: 18, overflow: 'hidden', backgroundColor: '#111a20', minHeight: 156, justifyContent: 'flex-end', marginBottom: 11 },
-  image: { width: '100%', height: 176, borderRadius: 18, backgroundColor: '#111a20' },
-  placeholder: { width: '100%', height: 156, borderRadius: 18, backgroundColor: '#111a20', alignItems: 'center', justifyContent: 'center' },
-  placeholderText: { color: '#071015', backgroundColor: theme.yellow, overflow: 'hidden', borderRadius: 18, width: 58, height: 58, lineHeight: 58, textAlign: 'center', fontSize: 22, fontWeight: '900' },
-  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: theme.text, fontSize: 22, lineHeight: 27, fontWeight: '900', textAlign: 'right', letterSpacing: -0.45, padding: 13, paddingTop: 46, backgroundColor: 'rgba(0,0,0,0.48)' },
-  breakingHeadline: { color: theme.text, fontSize: 22, lineHeight: 27, fontWeight: '900', textAlign: 'right', letterSpacing: -0.45, marginBottom: 7 },
-  summary: { color: theme.secondary, fontSize: 14.5, lineHeight: 21, fontWeight: '500', textAlign: 'right' },
-  takeaway: { marginTop: 10, color: theme.yellowSoft, fontSize: 14, lineHeight: 19, fontWeight: '800', textAlign: 'right' },
+  time: { color: theme.muted, fontSize: 12, fontWeight: '700', textAlign: 'left' },
+  heroBox: { position: 'relative', borderRadius: 22, overflow: 'hidden', backgroundColor: '#111a20', minHeight: 214, justifyContent: 'flex-end', marginBottom: 11 },
+  heroShade: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 118, backgroundColor: 'rgba(0,0,0,0.42)' },
+  image: { width: '100%', height: 214, borderRadius: 0, backgroundColor: '#111a20' },
+  placeholder: { width: '100%', height: 214, borderRadius: 0, backgroundColor: '#111a20', alignItems: 'center', justifyContent: 'center' },
+  placeholderText: { color: '#071015', backgroundColor: theme.yellow, overflow: 'hidden', borderRadius: 15, width: 48, height: 48, lineHeight: 48, textAlign: 'center', fontSize: 22, fontWeight: '900' },
+  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', letterSpacing: -0.42, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
+  breakingHeadline: { color: theme.text, fontSize: 21.5, lineHeight: 25, fontWeight: '900', textAlign: 'right', letterSpacing: -0.42, marginBottom: 8 },
+  summary: { color: 'rgba(255,255,255,0.72)', fontSize: 14.8, lineHeight: 21.3, fontWeight: '500', textAlign: 'right' },
+  takeawayBox: { marginTop: 9, paddingTop: 9, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.07)' },
+  takeaway: { color: theme.yellowSoft, fontSize: 14, lineHeight: 17.5, fontWeight: '800', textAlign: 'right' },
   actionRow: { marginTop: 12, flexDirection: 'row-reverse', gap: 8, alignItems: 'stretch' },
   smallAction: { borderWidth: 1, borderColor: theme.faint, borderRadius: 14, backgroundColor: 'rgba(255,255,255,0.035)', paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   smallActionOn: { borderColor: 'rgba(255,196,0,0.42)', backgroundColor: 'rgba(255,196,0,0.13)' },
   smallActionText: { color: theme.yellow, fontSize: 12, fontWeight: '900' },
-  sourceBox: { flex: 1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', borderRadius: 15, backgroundColor: 'rgba(255,196,0,0.075)', padding: 10 },
-  sourceLabel: { alignSelf: 'flex-start', color: theme.yellow, backgroundColor: 'rgba(255,196,0,0.13)', borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden' },
-  sourceText: { marginTop: 7, color: 'rgba(255,255,255,0.84)', fontSize: 13.8, lineHeight: 19, fontWeight: '700', textAlign: 'right' },
+  sourceBox: { position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', borderRadius: 15, backgroundColor: 'rgba(255,196,0,0.07)', paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden' },
+  sourceAccent: { position: 'absolute', right: 0, top: 12, bottom: 12, width: 3, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.74)' },
+  sourceHead: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
+  sourceLabel: { color: theme.yellow, backgroundColor: 'rgba(255,196,0,0.13)', borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden' },
+  sourceBrand: { flexDirection: 'row-reverse', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
+  sourceNameText: { color: 'rgba(255,255,255,0.74)', fontSize: 11.5, fontWeight: '900', flexShrink: 1 },
+  sourceIconImage: { width: 22, height: 22, borderRadius: 7, backgroundColor: 'rgba(255,255,255,0.08)' },
+  sourceIconFallback: { width: 22, height: 22, borderRadius: 7, backgroundColor: 'rgba(255,255,255,0.08)', alignItems: 'center', justifyContent: 'center' },
+  sourceIconFallbackText: { color: '#fff', fontSize: 9.5, fontWeight: '900' },
+  sourceText: { color: 'rgba(255,255,255,0.84)', fontSize: 13.8, lineHeight: 18.5, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl' },
   panel: { gap: 12 },
-  settingsCard: { borderWidth: 1, borderColor: theme.faint, borderRadius: 18, backgroundColor: 'rgba(255,255,255,0.03)', padding: 13, marginTop: 8 },
-  settingsHead: { flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
-  settingsTitle: { color: theme.text, fontSize: 18, fontWeight: '900', textAlign: 'right' },
-  savedPill: { color: theme.yellow, fontSize: 11, fontWeight: '900', borderWidth: 1, borderColor: 'rgba(255,196,0,.25)', borderRadius: 999, paddingHorizontal: 8, paddingVertical: 4 },
-  bulkRow: { flexDirection: 'row-reverse', gap: 8, marginBottom: 8 },
-  bulkBtn: { borderWidth: 1, borderColor: theme.faint, borderRadius: 999, paddingHorizontal: 11, paddingVertical: 7 },
-  bulkText: { color: theme.secondary, fontSize: 12, fontWeight: '800' },
+  settingsCard: { borderWidth: 1, borderColor: 'rgba(255,255,255,0.07)', borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.03)', padding: 16, marginTop: 8 },
+  settingsHead: { flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12, gap: 12 },
+  settingsTitle: { color: theme.text, fontSize: 18, lineHeight: 19, fontWeight: '900', textAlign: 'right' },
+  savedPill: { color: theme.yellow, backgroundColor: 'rgba(255,196,0,0.13)', fontSize: 11, fontWeight: '900', borderWidth: 1, borderColor: 'rgba(255,196,0,.20)', borderRadius: 999, paddingHorizontal: 9, paddingVertical: 5, overflow: 'hidden' },
+  bulkRow: { flexDirection: 'row-reverse', gap: 8, marginBottom: 10 },
+  bulkBtn: { borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7, backgroundColor: 'rgba(255,196,0,0.08)' },
+  bulkText: { color: theme.yellow, fontSize: 12, fontWeight: '900' },
   wrap: { flexDirection: 'row-reverse', flexWrap: 'wrap', gap: 8 },
   inputRow: { flexDirection: 'row-reverse', gap: 8, marginTop: 10 },
-  input: { flex: 1, height: 45, borderRadius: 14, borderWidth: 1, borderColor: theme.faint, color: theme.text, backgroundColor: '#0b151a', paddingHorizontal: 12, textAlign: 'right', fontWeight: '700' },
+  input: { flex: 1, height: 45, borderRadius: 14, borderWidth: 1, borderColor: 'rgba(255,255,255,0.07)', color: theme.text, backgroundColor: '#0b151a', paddingHorizontal: 12, textAlign: 'right', fontWeight: '700' },
   addBtn: { borderRadius: 14, backgroundColor: theme.yellow, paddingHorizontal: 15, alignItems: 'center', justifyContent: 'center' },
   addText: { color: '#091016', fontWeight: '900' },
-  sourceRow: { borderWidth: 1, borderColor: theme.faint, borderRadius: 15, padding: 12, marginTop: 7, flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.022)' },
-  sourceRowOn: { borderColor: 'rgba(255,196,0,0.25)', backgroundColor: 'rgba(255,196,0,0.07)' },
-  sourceRowName: { color: theme.text, fontSize: 14, fontWeight: '800', textAlign: 'right' },
+  sourceRow: { borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.07)', paddingVertical: 12, flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
+  sourceRowOn: { backgroundColor: 'rgba(255,196,0,0.04)' },
+  sourceRowLabel: { flex: 1, flexDirection: 'row-reverse', alignItems: 'center', gap: 9, minWidth: 0 },
+  sourceMiniImage: { width: 24, height: 24, borderRadius: 8, backgroundColor: 'rgba(255,255,255,0.08)' },
+  sourceMiniFallback: { width: 24, height: 24, borderRadius: 8, backgroundColor: 'rgba(255,255,255,0.08)', alignItems: 'center', justifyContent: 'center' },
+  sourceMiniFallbackText: { color: theme.yellow, fontSize: 10, fontWeight: '900' },
+  sourceRowName: { color: theme.text, fontSize: 14, fontWeight: '800', textAlign: 'right', flexShrink: 1 },
+  sourceRowNameOn: { color: theme.yellow },
   switchText: { color: theme.yellow, fontSize: 12, fontWeight: '900' },
+  switchTrack: { width: 42, height: 24, borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.16)', padding: 3, justifyContent: 'center', alignItems: 'flex-start' },
+  switchTrackOn: { backgroundColor: theme.yellow, alignItems: 'flex-end' },
+  switchKnob: { width: 18, height: 18, borderRadius: 999, backgroundColor: '#fff' },
+  switchKnobOn: { backgroundColor: '#071015' },
   about: { color: theme.secondary, textAlign: 'right', lineHeight: 21, marginTop: 12, fontWeight: '600' },
-  searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: theme.faint, backgroundColor: '#0b151a', color: theme.text, paddingHorizontal: 14, textAlign: 'right', fontSize: 16, fontWeight: '800', marginBottom: 10 },
+  searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.10)', backgroundColor: '#0b151a', color: theme.text, paddingHorizontal: 14, textAlign: 'right', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   empty: { color: theme.muted, textAlign: 'center', marginTop: 34, fontWeight: '800' },
   error: { color: theme.red, textAlign: 'right', marginTop: 18, fontWeight: '800' },
-  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 78, borderTopWidth: 1, borderTopColor: theme.faint, backgroundColor: 'rgba(5,11,15,0.98)', flexDirection: 'row-reverse', paddingHorizontal: 6, paddingTop: 7, justifyContent: 'space-around' },
-  navButton: { flex: 1, alignItems: 'center', justifyContent: 'flex-start', gap: 2, paddingVertical: 6, borderRadius: 15 },
-  navActive: { backgroundColor: 'rgba(255,196,0,0.10)' },
-  navIcon: { color: theme.muted, fontSize: 18, fontWeight: '900' },
-  navText: { color: theme.muted, fontSize: 10.5, fontWeight: '900' },
+  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, height: 68, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.05)', borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: '#050b0f', flexDirection: 'row', direction: 'ltr', paddingBottom: 10, justifyContent: 'space-around', shadowColor: '#000', shadowOpacity: 0.38, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
+  navButton: { flex: 1, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
+  navActive: {},
+  navIcon: { color: 'rgba(255,255,255,0.48)', fontSize: 28, fontWeight: '800', lineHeight: 30 },
+  navLogo: { width: 28, height: 28, borderRadius: 9 },
+  navLogoActive: { borderWidth: 2, borderColor: 'rgba(255,196,0,0.45)' },
+  navText: { display: 'none' },
   navTextActive: { color: theme.yellow },
 });
