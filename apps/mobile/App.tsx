@@ -19,7 +19,8 @@ import { fetchBreakingFeed, fetchFeed } from './src/feed';
 import { FeedItem } from './src/types';
 import { theme } from './src/theme';
 
-type ViewMode = 'home' | 'breaking' | 'saved' | 'search' | 'settings';
+type ViewMode = 'home' | 'breaking' | 'saved' | 'search' | 'settings' | 'more';
+type MoreScreen = 'menu' | 'settings' | 'appearance' | 'about' | 'terms' | 'privacy' | 'contact';
 type Prefs = { topics: string[]; sources: string[]; days: number; feedFilter: 'all' | 'unread' };
 
 const DEFAULT_TOPICS = ['ביטחון', 'פוליטיקה', 'אקטואליה בעולם', 'כלכלה', 'רכב', 'טכנולוגיה', 'צרכנות', 'תרבות', 'ספורט', 'בריאות'];
@@ -266,6 +267,8 @@ function PoentaApp() {
   const [items, setItems] = useState<FeedItem[]>([]);
   const [breaking, setBreaking] = useState<FeedItem[]>([]);
   const [view, setView] = useState<ViewMode>('home');
+  const [moreScreen, setMoreScreen] = useState<MoreScreen>('menu');
+  const [appearance, setAppearance] = useState<'dark' | 'light' | 'system'>('dark');
   const [activeFilter, setActiveFilter] = useState('all');
   const [savedKeys, setSavedKeys] = useState<string[]>([]);
   const [readKeys, setReadKeys] = useState<string[]>([]);
@@ -371,6 +374,7 @@ function PoentaApp() {
 
   function switchView(next: ViewMode) {
     setView(next);
+    if (next !== 'more') setMoreScreen('menu');
     setActiveFilter('all');
   }
 
@@ -380,6 +384,61 @@ function PoentaApp() {
       <Chip label="הכל" active={activeFilter === 'all'} onPress={() => setActiveFilter('all')} count={view === 'breaking' ? visibleBreaking.length : topicCounts.all} />
       {tabs.map(t => <Chip key={t} label={t} active={activeFilter === t} onPress={() => setActiveFilter(t)} count={view === 'breaking' ? breaking.filter(i => sourceName(i) === t || i.sources?.includes(t)).length : topicCounts[t] || 0} />)}
     </ScrollView>;
+  };
+
+  const MoreBack = ({ to = 'menu' as MoreScreen }: { to?: MoreScreen }) => <TouchableOpacity style={styles.moreBack} onPress={() => setMoreScreen(to)}><Text style={styles.moreBackText}>חזרה</Text></TouchableOpacity>;
+
+  const MoreRow = ({ title, subtitle, onPress, disabled = false, icon }: { title: string; subtitle: string; onPress?: () => void; disabled?: boolean; icon?: 'share' | 'arrow' }) => <TouchableOpacity style={[styles.moreRow, disabled && styles.moreRowDisabled]} onPress={onPress} activeOpacity={disabled ? 1 : 0.82}>
+    <View style={styles.moreRowText}><Text style={styles.moreTitle}>{title}</Text><Text style={styles.moreSub}>{subtitle}</Text></View>
+    {icon === 'share' ? <View style={styles.shareActionIcon}><Image source={POENTA_NAV_ICON} style={styles.shareActionImage as any} /></View> : <Text style={styles.moreArrow}>›</Text>}
+  </TouchableOpacity>;
+
+  const renderMore = () => {
+    if (moreScreen === 'settings') return <View style={styles.panel}>
+      <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>הגדרות</Text><Text style={styles.moreHeadSub}>התאמה אישית של חוויית השימוש.</Text></View></View>
+      <View style={styles.moreList}><MoreRow title="מצב תצוגה" subtitle="כהה, בהיר או לפי מערכת" onPress={() => setMoreScreen('appearance')} /></View>
+    </View>;
+    if (moreScreen === 'appearance') return <View style={styles.panel}>
+      <View style={styles.moreHead}><MoreBack to="settings" /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>מצב תצוגה</Text><Text style={styles.moreHeadSub}>בחר איך Poenta תיראה אצלך.</Text></View><Text style={styles.savedPill}>נשמר</Text></View>
+      <View style={styles.wrap}>{[
+        { code: 'dark' as const, name: 'כהה' }, { code: 'light' as const, name: 'בהיר' }, { code: 'system' as const, name: 'לפי מערכת' },
+      ].map(o => <Chip key={o.code} label={o.name} active={appearance === o.code} onPress={() => setAppearance(o.code)} />)}</View>
+      <Text style={styles.translationNote}>“לפי מערכת” מחליף אוטומטית בין לייט לדרק לפי הגדרת המכשיר.</Text>
+    </View>;
+    if (moreScreen === 'about') return <View style={styles.panel}>
+      <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>אודות Poenta</Text><Text style={styles.moreHeadSub}>מה Poenta עושה ולמה היא נבנתה.</Text></View></View>
+      <View style={styles.aboutContent}>
+        <Text style={styles.about}>Poenta נבנתה בשביל אנשים שרוצים להבין מהר מה באמת קורה — בלי לבזבז זמן על כותרות מטעות, קליקבייט וכתבות ארוכות.</Text>
+        <Text style={styles.about}>האפליקציה מרכזת חדשות ממגוון מקורות ומזקקת כל ידיעה ל־3 דברים בלבד: הכותרת, התמצית והפואנטה.</Text>
+        <Text style={styles.moreSectionTitle}>מה מיוחד ב־Poenta?</Text>
+        <Text style={styles.about}>• פיד חדשות חכם ומותאם אישית\n• תמצות AI מהיר וברור\n• הסרת קליקבייט ורעש מיותר\n• בחירת תחומי עניין ומקורות מועדפים</Text>
+        <Text style={styles.moreSectionTitle}>גרסה</Text><Text style={styles.about}>Poenta Beta v1.0</Text>
+      </View>
+    </View>;
+    if (moreScreen === 'terms') return <View style={styles.panel}>
+      <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>תנאי שימוש</Text><Text style={styles.moreHeadSub}>המסמך המשפטי לשימוש ב־Poenta.</Text></View></View>
+      <View style={styles.aboutContent}><Text style={styles.about}>עודכן לאחרונה: 24.05.2026</Text><Text style={styles.about}>השימוש באפליקציה, באתר ובשירותי Poenta כפוף לתנאי השימוש. Poenta היא פלטפורמת תוכן מבוססת AI המרכזת, מנתחת ומתמצתת מידע ממקורות חיצוניים.</Text><Text style={styles.about}>השירות ניתן “כפי שהוא”. כל זכויות הקניין הרוחני באפליקציה שייכות ל־Poenta.</Text></View>
+    </View>;
+    if (moreScreen === 'privacy') return <View style={styles.panel}>
+      <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>מדיניות פרטיות</Text><Text style={styles.moreHeadSub}>איך Poenta מתייחסת למידע ולהעדפות המשתמש.</Text></View></View>
+      <View style={styles.aboutContent}><Text style={styles.about}>Poenta מכבדת את פרטיות המשתמשים ואינה מוכרת מידע אישי למפרסמים.</Text><Text style={styles.about}>המידע משמש להתאמה אישית של הפיד, שיפור השירות וניתוח שימוש בסיסי.</Text><Text style={styles.about}>יצירת קשר: support@poenta.app</Text></View>
+    </View>;
+    if (moreScreen === 'contact') return <View style={styles.panel}>
+      <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>צור קשר</Text><Text style={styles.moreHeadSub}>פניות, הצעות ושאלות על Poenta.</Text></View></View>
+      <View style={styles.aboutContent}><Text style={styles.about}>אפשר לפנות אלינו בכתובת:</Text><Text style={styles.moreSectionTitle}>support@poenta.app</Text></View>
+    </View>;
+    return <View style={styles.panel}>
+      <View style={styles.moreHead}><View style={styles.moreHeadText}><Text style={styles.title}>עוד</Text><Text style={styles.moreHeadSub}>הגדרות ומידע נוסף על Poenta.</Text></View></View>
+      <View style={styles.moreList}>
+        <MoreRow title="שיתוף לאפליקציה" subtitle="שלח קישור ל־Poenta ב־WhatsApp עם טקסט מוכן" icon="share" onPress={() => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(APP_SHARE_TEXT)}`).catch(() => null)} />
+        <MoreRow title="משתמש" subtitle="לא פעיל כרגע" disabled />
+        <MoreRow title="הגדרות" subtitle="מראה, מצב תצוגה והעדפות נוספות" onPress={() => setMoreScreen('settings')} />
+        <MoreRow title="אודות" subtitle="מה Poenta עושה, מקורות, פרטיות וגרסה" onPress={() => setMoreScreen('about')} />
+        <MoreRow title="תנאי שימוש" subtitle="המסמך הרשמי לשימוש באפליקציה" onPress={() => setMoreScreen('terms')} />
+        <MoreRow title="מדיניות פרטיות" subtitle="נוסח מדיניות הפרטיות של Poenta" onPress={() => setMoreScreen('privacy')} />
+        <MoreRow title="צור קשר" subtitle="פרטי קשר ותמיכה" onPress={() => setMoreScreen('contact')} />
+      </View>
+    </View>;
   };
 
   const renderSettings = () => <View style={styles.panel}>
@@ -434,7 +493,7 @@ function PoentaApp() {
     <View style={[styles.topbar, { height: topbarHeight, paddingTop: topInset }]}>
       <View style={styles.header}>
         <Image source={POENTA_LOGO} style={styles.logoImage as any} resizeMode="contain" />
-        <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד"><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד" onPress={() => switchView('more')}><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.updates} onPress={loadAll}>
         <View style={styles.updatePill}><Text style={styles.updatePillText}>{unreadCount || visibleMain.length}</Text></View>
@@ -457,7 +516,7 @@ function PoentaApp() {
 
       {loading && <ActivityIndicator color={theme.yellow} style={{ marginTop: 28 }} />}
       {error && <Text style={styles.error}>שגיאה בטעינת הפיד: {error}</Text>}
-      {view === 'settings' ? renderSettings() : <>
+      {view === 'settings' ? renderSettings() : view === 'more' ? renderMore() : <>
         {!loading && !list.length && <Text style={styles.empty}>{view === 'search' && search.trim().length < 2 ? 'הקלד לפחות 2 אותיות לחיפוש.' : 'אין אייטמים להצגה כרגע.'}</Text>}
         {list.map((item, index) => view === 'breaking'
           ? <BreakingCard key={`${itemKey(item)}-${index}`} item={item} index={index} />
@@ -568,6 +627,23 @@ const styles = StyleSheet.create({
   switchKnob: { width: 18, height: 18, borderRadius: 999, backgroundColor: '#fff' },
   switchKnobOn: { backgroundColor: '#071015' },
   about: { color: theme.secondary, textAlign: 'right', lineHeight: 21, marginTop: 12, fontWeight: '600' },
+  moreHead: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 },
+  moreHeadText: { flex: 1, alignItems: 'flex-start' },
+  moreHeadSub: { color: 'rgba(255,255,255,0.55)', fontSize: 13, fontWeight: '700', lineHeight: 18, textAlign: 'right', marginTop: 5 },
+  moreBack: { borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7, backgroundColor: 'rgba(255,196,0,0.08)' },
+  moreBackText: { color: theme.yellow, fontSize: 12, fontWeight: '900' },
+  moreList: { gap: 10 },
+  moreRow: { borderWidth: 1, borderColor: 'rgba(255,255,255,0.07)', borderRadius: 18, backgroundColor: 'rgba(255,255,255,0.03)', paddingHorizontal: 15, paddingVertical: 14, flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
+  moreRowDisabled: { opacity: 0.46 },
+  moreRowText: { flex: 1, alignItems: 'flex-start' },
+  moreTitle: { color: theme.text, fontSize: 16, fontWeight: '900', textAlign: 'right' },
+  moreSub: { color: 'rgba(255,255,255,0.52)', fontSize: 12.5, fontWeight: '700', lineHeight: 17, textAlign: 'right', marginTop: 4 },
+  moreArrow: { color: theme.yellow, fontSize: 28, fontWeight: '800', lineHeight: 30 },
+  shareActionIcon: { width: 34, height: 34, borderRadius: 12, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', backgroundColor: 'rgba(255,196,0,0.10)', alignItems: 'center', justifyContent: 'center' },
+  shareActionImage: { width: 24, height: 24, borderRadius: 8 },
+  aboutContent: { borderWidth: 1, borderColor: 'rgba(255,255,255,0.07)', borderRadius: 20, backgroundColor: 'rgba(255,255,255,0.03)', padding: 16 },
+  moreSectionTitle: { color: theme.text, fontSize: 17, fontWeight: '900', textAlign: 'right', marginTop: 14, marginBottom: 2 },
+  translationNote: { color: theme.secondary, textAlign: 'right', lineHeight: 20, marginTop: 12, fontWeight: '700' },
   searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: 'rgba(255,255,255,0.10)', backgroundColor: '#0b151a', color: theme.text, paddingHorizontal: 14, textAlign: 'right', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   empty: { color: theme.muted, textAlign: 'center', marginTop: 34, fontWeight: '800' },
   error: { color: theme.red, textAlign: 'right', marginTop: 18, fontWeight: '800' },
