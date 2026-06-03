@@ -7,6 +7,7 @@ import {
   Image,
   I18nManager,
   Linking,
+  Platform,
   RefreshControl,
   SafeAreaView,
   ScrollView,
@@ -23,6 +24,10 @@ import { fetchBreakingFeed, fetchFeed } from './src/feed';
 import { FeedItem } from './src/types';
 
 I18nManager.allowRTL(true);
+if (Platform.OS !== 'web') {
+  I18nManager.forceRTL(true);
+  I18nManager.swapLeftAndRightInRTL(false);
+}
 
 type ViewMode = 'home' | 'breaking' | 'saved' | 'search' | 'settings' | 'more';
 type MoreScreen = 'menu' | 'settings' | 'appearance' | 'about' | 'terms' | 'privacy' | 'contact';
@@ -329,6 +334,7 @@ function PoentaApp() {
   const storageReady = useRef(false);
   const viewRef = useRef<ViewMode>('home');
   const readKeysRef = useRef<string[]>([]);
+  const readFlushTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isLight = appearance === 'light' || (appearance === 'system' && colorScheme === 'light');
   const colors = isLight ? LIGHT_COLORS : DARK_COLORS;
@@ -427,19 +433,23 @@ function PoentaApp() {
   };
 
   useEffect(() => { loadAll(); }, []);
+  useEffect(() => () => { if (readFlushTimerRef.current) clearTimeout(readFlushTimerRef.current); }, []);
 
-  const visibleMain = useMemo(() => {
+  const visibleMainBase = useMemo(() => {
     const rows = items
       .map((item, index) => ({ item, index, date: itemDate(item, index) }))
       .filter(row => prefSourceSet.has(sourceName(row.item)))
       .filter(row => activeFilter !== 'all' || prefTopicSet.has(topicFor(row.item)))
       .filter(row => withinDays(row.item, row.index, prefs.days))
       .filter(row => activeFilter === 'all' || topicFor(row.item) === activeFilter)
-      .filter(row => prefs.feedFilter === 'all' || !readKeySet.has(itemKey(row.item)))
       .sort((a, b) => b.date.getTime() - a.date.getTime())
       .map(row => row.item);
     return dedupeItems(rows);
-  }, [items, prefs.days, prefs.feedFilter, prefSourceSet, prefTopicSet, activeFilter, readKeySet]);
+  }, [items, prefs.days, prefSourceSet, prefTopicSet, activeFilter]);
+
+  const visibleMain = useMemo(() => {
+    return prefs.feedFilter === 'all' ? visibleMainBase : visibleMainBase.filter(item => !readKeySet.has(itemKey(item)));
+  }, [visibleMainBase, prefs.feedFilter, readKeySet]);
 
   const visibleBreaking = useMemo(() => {
     return breaking
@@ -500,7 +510,7 @@ function PoentaApp() {
 
   const renderTabs = () => {
     const tabs = view === 'breaking' ? breakingSources : knownTopics;
-    return <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabsScroll} contentContainerStyle={styles.tabs} keyboardShouldPersistTaps="handled" nestedScrollEnabled>
+    return <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabsScroll} contentContainerStyle={styles.tabs} keyboardShouldPersistTaps="always" nestedScrollEnabled directionalLockEnabled>
       <Chip label="הכל" active={activeFilter === 'all'} onPress={() => setActiveFilter('all')} count={view === 'breaking' ? visibleBreaking.length : topicCounts.all} />
       {tabs.map(t => <Chip key={t} label={t} active={activeFilter === t} onPress={() => setActiveFilter(t)} count={view === 'breaking' ? breaking.filter(i => sourceName(i) === t || i.sources?.includes(t)).length : topicCounts[t] || 0} />)}
     </ScrollView>;
@@ -615,8 +625,8 @@ function PoentaApp() {
   </View>;
 
   const list = view === 'breaking' ? visibleBreaking : view === 'saved' ? savedItems : view === 'search' ? searchResults : visibleMain;
-  const unreadCount = visibleMain.filter(i => !readKeySet.has(itemKey(i))).length;
-  const totalMainCount = visibleMain.length;
+  const unreadCount = visibleMainBase.filter(i => !readKeySet.has(itemKey(i))).length;
+  const totalMainCount = visibleMainBase.length;
   const unreadPct = totalMainCount ? Math.max(0, Math.min(100, Math.round((unreadCount / totalMainCount) * 100))) : 0;
   const syncLabel = lastSyncedAt ? `עודכן ${timeLabel({ publishedAt: lastSyncedAt } as FeedItem)}` : 'משוך לרענון';
 
@@ -626,15 +636,21 @@ function PoentaApp() {
     : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />, [savedKeySet]);
   const viewabilityConfig = useRef({ itemVisiblePercentThreshold: 62, minimumViewTime: 450 }).current;
   const onViewableItemsChanged = useRef(({ viewableItems }: { viewableItems: Array<{ item?: FeedItem }> }) => {
-    if (viewRef.current === 'breaking') return;
+    if (viewRef.current !== 'home') return;
     const existing = new Set(readKeysRef.current);
     const nextKeys = viewableItems.map(v => v.item).filter((item): item is FeedItem => !!item).map(itemKey).filter(key => !existing.has(key));
     if (!nextKeys.length) return;
-    setReadKeys(prev => {
-      const merged = new Set(prev);
-      nextKeys.forEach(key => merged.add(key));
-      return merged.size === prev.length ? prev : [...merged].slice(-1200);
-    });
+    nextKeys.forEach(key => existing.add(key));
+    readKeysRef.current = [...existing].slice(-1200);
+    if (readFlushTimerRef.current) return;
+    readFlushTimerRef.current = setTimeout(() => {
+      readFlushTimerRef.current = null;
+      setReadKeys(prev => {
+        const merged = new Set(prev);
+        readKeysRef.current.forEach(key => merged.add(key));
+        return merged.size === prev.length ? prev : [...merged].slice(-1200);
+      });
+    }, 650);
   }).current;
 
   const listHeader = <>
@@ -693,10 +709,11 @@ function PoentaApp() {
       maxToRenderPerBatch={6}
       updateCellsBatchingPeriod={80}
       windowSize={5}
-      removeClippedSubviews
+      removeClippedSubviews={view !== 'search'}
       onViewableItemsChanged={onViewableItemsChanged}
       viewabilityConfig={viewabilityConfig}
       keyboardShouldPersistTaps="always"
+      keyboardDismissMode="none"
     />}
 
     <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
@@ -735,13 +752,13 @@ return StyleSheet.create({
   content: { paddingHorizontal: 16, direction: 'rtl', alignItems: 'stretch' },
   title: { color: c.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl' },
   subtitle: { color: c.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl', marginTop: 7, marginBottom: 12 },
-  tabsScroll: { flex: 1, alignSelf: 'stretch' },
-  tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center', paddingHorizontal: 1, flexGrow: 0 },
+  tabsScroll: { flex: 1, alignSelf: 'stretch', width: '100%', direction: 'ltr' },
+  tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center', paddingHorizontal: 1, paddingLeft: 28, paddingRight: 1, flexGrow: 0 },
   chip: { height: 28, maxWidth: 132, borderWidth: 1, borderColor: c.faint, borderRadius: 999, backgroundColor: c.surfaceSoft, paddingHorizontal: 9, paddingVertical: 0, flexDirection: 'row-reverse', gap: 6, alignItems: 'center', justifyContent: 'center' },
   chipActive: { borderColor: c.yellow, backgroundColor: c.yellow },
-  chipText: { color: c.secondary, fontSize: 13, fontWeight: '800', writingDirection: 'rtl', textAlign: 'right', flexShrink: 1 },
+  chipText: { color: c.secondary, fontSize: 13, fontWeight: '800', writingDirection: 'rtl', textAlign: 'right', flexShrink: 1, lineHeight: 18 },
   chipTextActive: { color: c.textOnYellow, fontWeight: '900' },
-  chipCount: { minWidth: 18, height: 18, lineHeight: 18, textAlign: 'center', color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, overflow: 'hidden', paddingHorizontal: 5, fontSize: 10.5, fontWeight: '900' },
+  chipCount: { minWidth: 18, height: 18, lineHeight: 18, textAlign: 'center', textAlignVertical: 'center', color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, overflow: 'hidden', paddingHorizontal: 5, fontSize: 10.5, fontWeight: '900' },
   chipCountActive: { color: c.textOnYellow, backgroundColor: 'rgba(7,16,21,0.18)', fontWeight: '900' },
   feedToggle: { flexDirection: 'row-reverse', gap: 8, marginBottom: 3 },
   card: { borderWidth: 1, borderColor: c.subtleBorder, borderRadius: 18, backgroundColor: c.card, paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: c.shadow, shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2, direction: 'rtl', alignSelf: 'stretch' },
@@ -762,11 +779,11 @@ return StyleSheet.create({
   image: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg },
   placeholder: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg, alignItems: 'center', justifyContent: 'center' },
   placeholderText: { color: c.textOnYellow, backgroundColor: c.yellow, overflow: 'hidden', borderRadius: 15, width: 48, height: 48, lineHeight: 48, textAlign: 'center', fontSize: 22, fontWeight: '900' },
-  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', letterSpacing: -0.42, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
-  breakingHeadline: { color: c.text, fontSize: 21.5, lineHeight: 25, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', letterSpacing: -0.42, marginBottom: 8 },
-  summary: { color: c.secondary, fontSize: 14.8, lineHeight: 21.3, fontWeight: '500', textAlign: 'right', writingDirection: 'rtl' },
+  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch', letterSpacing: -0.42, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
+  breakingHeadline: { color: c.text, fontSize: 21.5, lineHeight: 25, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch', letterSpacing: -0.42, marginBottom: 8 },
+  summary: { color: c.secondary, fontSize: 14.8, lineHeight: 21.3, fontWeight: '500', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch' },
   takeawayBox: { marginTop: 9, paddingTop: 9, borderTopWidth: 1, borderTopColor: c.border },
-  takeaway: { color: c.yellowSoft, fontSize: 14, lineHeight: 17.5, fontWeight: '800', textAlign: 'right', writingDirection: 'rtl' },
+  takeaway: { color: c.yellowSoft, fontSize: 14, lineHeight: 17.5, fontWeight: '800', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch' },
   actionRow: { marginTop: 12, flexDirection: 'row-reverse', gap: 8, alignItems: 'stretch' },
   smallAction: { borderWidth: 1, borderColor: c.faint, borderRadius: 14, backgroundColor: c.surfaceSoft, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   smallActionOn: { borderColor: 'rgba(255,196,0,0.42)', backgroundColor: 'rgba(255,196,0,0.13)' },
@@ -780,7 +797,7 @@ return StyleSheet.create({
   sourceIconImage: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint },
   sourceIconFallback: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint, alignItems: 'center', justifyContent: 'center' },
   sourceIconFallbackText: { color: c.text, fontSize: 9.5, fontWeight: '900' },
-  sourceText: { color: c.text, fontSize: 13.8, lineHeight: 18.5, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl' },
+  sourceText: { color: c.text, fontSize: 13.8, lineHeight: 18.5, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch' },
   panel: { gap: 12 },
   settingsCard: { borderWidth: 1, borderColor: c.border, borderRadius: 20, backgroundColor: c.surface, padding: 16, marginTop: 8 },
   settingsHead: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12, gap: 12 },
