@@ -1051,6 +1051,31 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     ]
     if any(x in content_text for x in local_emergency_terms) and not any(x in content_text for x in ["כנסת", "ממשלה", "נתניהו", "בחירות", "קואליציה"]):
         return "פלילים", "security"
+    if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
+        return "צרכנות", "money"
+    if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
+        return "רכב", "real"
+    if is_avihu_pinchasov_genesis_story(title, desc) or is_amos_luzon_relationship_story(title, desc):
+        return "תרבות", "real"
+    # Explicit vertical RSS sections are stronger than broad Israel/Middle-East
+    # regional heuristics. Otherwise local sports/culture items containing words
+    # such as "הבטחת"/"שריקה" can be routed to security/politics before the
+    # source-section guard below runs, and Stage-4 domain rescue opens off-domain
+    # editor batches.
+    if any(x in source for x in ["ספורט", "כדורגל", "כדורסל", "NBA", "טניס"]):
+        return "ספורט", "real"
+    if any(x in source for x in ["רכב", "דו-גלגלי", "ביטוח רכב", "בטיחות"]):
+        return "רכב", "real"
+    if any(x in source for x in ["TECH", "טכנולוג", "סייבר", "סטארטאפים", "סמארטפונים", "מחשבים", "מדע"]):
+        return "טכנולוגיה", "tech"
+    if any(x in source for x in ["בריאות", "תזונה", "כושר", "רפואה", "הריון"]):
+        return "בריאות", "real"
+    if any(x in source for x in ["כלכלה", "כסף", "שוק ההון", "גלובס", "צרכנות", "קריפטו", "קריירה"]):
+        return "כלכלה", "money"
+    if any(x in source for x in ["רכילות", "סלבס", "TMI", "פפראצי", "פפארצי", "ריאליטי", "צהוב"]):
+        return "רכילות", "real"
+    if any(x in source for x in ["תרבות", "טלוויזיה", "מוזיקה", "קולנוע", "ספרות", "אמנות", "אוכל", "תיירות", "טיולים", "אופנה", "בית ועיצוב"]):
+        return "תרבות", "real"
     # Lior's boundary: אקטואליה בעולם is only for global stories with no Israel/Middle-East angle.
     # Israel/Middle-East items from foreign sources still belong to the normal news/security/politics domains.
     if is_middle_east_or_israel_story(content_text, source):
@@ -2191,11 +2216,44 @@ def security_event_tokens(item: dict) -> set[str]:
     return tokens if len(tokens) >= 3 else set()
 
 
+def live_regression_duplicate_tokens(item: dict) -> set[str]:
+    primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle"]).lower()
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
+    tokens = set()
+    # Require the tanker itself to be the primary story, not merely background
+    # context for adjacent Kuwait/Bahrain air-defense alerts in the same crisis.
+    if ("מכלית" in primary or "מיכלית" in primary or "tanker" in primary) and ("איראן" in text or "iran" in text) and (
+        "הלפייר" in text or "hellfire" in text or "טיל" in text or "missile" in text or "שיתקה" in text or "ניטרלה" in text or "נטרלה" in text
+    ):
+        tokens.add("us_iran_tanker_hellfire")
+    if ("13 מיליארד" in text or "13b" in text or "nis 13" in text) and (
+        "צפון" in text or "north" in text
+    ) and ("מיגון" in text or "שיקום" in text or "shelters" in text or "infrastructure" in text):
+        tokens.add("north_reconstruction_13b")
+    return tokens
+
+
+def gulf_air_defense_only(item: dict) -> bool:
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
+    has_gulf_state = bool(re.search(r"כווית|בחריין|kuwait|bahrain", text))
+    has_air_defense = bool(re.search(r"הגנה אווירית|מערכות ההגנה|יירוט|טילים|כטב|missiles?|drones?|air defense", text))
+    has_tanker = bool(re.search(r"מכלית|מיכלית|tanker|lexie|הלפייר|hellfire", text))
+    return has_gulf_state and has_air_defense and not has_tanker
+
+
 def likely_duplicate_story(a: dict, b: dict) -> bool:
     if str(a.get("sourceUrl") or "") == str(b.get("sourceUrl") or ""):
         return False
     if str(a.get("source") or "") == str(b.get("source") or ""):
         return False
+    aw = live_regression_duplicate_tokens(a)
+    bw = live_regression_duplicate_tokens(b)
+    if ("us_iran_tanker_hellfire" in aw and gulf_air_defense_only(b)) or (
+        "us_iran_tanker_hellfire" in bw and gulf_air_defense_only(a)
+    ):
+        return False
+    if aw and bw and aw & bw:
+        return True
     aw = weather_event_tokens(a)
     bw = weather_event_tokens(b)
     if aw and bw and duplicate_word_overlap(aw, bw) >= 0.75:

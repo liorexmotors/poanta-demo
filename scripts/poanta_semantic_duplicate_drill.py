@@ -454,6 +454,46 @@ CASES = [
         },
     ),
     (
+        "us_iran_tanker_not_kuwait_air_defense_20260603",
+        False,
+        {
+            "source": "The Guardian Middle East",
+            "category": "ביטחון",
+            "headline": "ארה״ב השביתה מכלית בדרך לאיראן והחריפה את משבר הורמוז",
+            "originalTitle": "US fires missile at tanker attempting to reach Iran amid strait of Hormuz standoff",
+            "context": "כוחות אמריקניים ירו טיל הלפייר לעבר חדר המנוע של מכלית שניסתה להגיע לאיראן אחרי 24 שעות של אזהרות.",
+            "sourceUrl": "https://www.theguardian.com/world/2026/jun/03/us-fires-missile-tanker-strait-of-hormuz",
+        },
+        {
+            "source": "מעריב - מבזקים",
+            "category": "ביטחון",
+            "headline": "כווית הפעילה הגנה אווירית מול טילים וכטב״מים",
+            "originalTitle": "צבא כווית: מערכות ההגנה פועלות שוב ליירוט מתקפת טילים וכטב\"מים",
+            "context": "צבא כווית הודיע שמערכות ההגנה האווירית פועלות נגד טילים וכטב״מים עוינים כחלק מהסלמה אזורית במפרץ.",
+            "sourceUrl": "https://www.maariv.co.il/breaking-news/article-1328644",
+        },
+    ),
+    (
+        "trump_hormuz_leverage_not_written_nuclear_terms_20260603",
+        False,
+        {
+            "source": "New York Times Middle East",
+            "category": "ביטחון",
+            "headline": "טראמפ זלזל באיום האיראני לסגור את מצר הורמוז",
+            "originalTitle": "Trump Underestimated Iran’s Threat to Close the Strait of Hormuz",
+            "context": "ממשל טראמפ העריך בחסר את יכולת איראן להפוך את איום הורמוז למנוף אסטרטגי במגעים מול וושינגטון.",
+            "sourceUrl": "https://www.nytimes.com/2026/06/02/us/politics/trump-iran-strait-of-hormuz.html",
+        },
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "ביטחון",
+            "headline": "טראמפ דורש מאיראן התחייבויות גרעין כתובות לפני הסכם",
+            "originalTitle": "טראמפ דורש התחייבויות כתובות מאיראן לפני הסכם גרעין",
+            "context": "הבית הלבן דורש מאיראן ויתורים כתובים ומפורטים בנושא הגרעין לפני הסכם ראשוני ומסרב לשחרר נכסים לפני ביצוע התחייבויות.",
+            "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20677467",
+        },
+    ),
+    (
         "different_weather_city_forecast",
         False,
         {

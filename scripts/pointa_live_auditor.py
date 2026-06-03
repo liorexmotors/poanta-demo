@@ -363,7 +363,7 @@ def iran_deal_decision_tokens(item: dict[str, Any]) -> set[str]:
         tokens.add("frozen_funds")
     if re.search(r"הורמוז|hormuz", text):
         tokens.add("hormuz")
-    if re.search(r"אורניום מועשר|גרעין|nuclear|uranium", text):
+    if re.search(r"אורניום מועשר|גרעין|גרעיני|nuclear|uranium", text):
         tokens.add("nuclear_terms")
     return tokens
 
@@ -475,9 +475,12 @@ def preferred_duplicate_item(a: tuple[int, dict[str, Any]], b: tuple[int, dict[s
 
 
 def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
+    primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle"]).lower()
     text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
     tokens: set[str] = set()
-    if ("מכלית" in text or "tanker" in text) and ("איראן" in text or "iran" in text) and (
+    # Require the tanker itself to be the primary story, not merely background
+    # context for adjacent Kuwait/Bahrain air-defense alerts in the same crisis.
+    if ("מכלית" in primary or "מיכלית" in primary or "tanker" in primary) and ("איראן" in text or "iran" in text) and (
         "נפט" in text
         or "oil" in text
         or "הלפייר" in text
@@ -488,6 +491,7 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         or "שיתקה" in text
         or "השביתה" in text
         or "ניטרלה" in text
+        or "נטרלה" in text
     ):
         tokens.add("us_iran_tanker_hellfire")
     if ("13 מיליארד" in text or "13b" in text or "nis 13" in text) and (
@@ -497,6 +501,15 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
     return tokens
 
 
+def gulf_air_defense_only(item: dict[str, Any]) -> bool:
+    """True for Gulf air-defense/missile alerts adjacent to, but not the same as, the tanker story."""
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
+    has_gulf_state = bool(re.search(r"כווית|בחריין|kuwait|bahrain", text))
+    has_air_defense = bool(re.search(r"הגנה אווירית|מערכות ההגנה|יירוט|טילים|כטב|missiles?|drones?|air defense", text))
+    has_tanker = bool(re.search(r"מכלית|מיכלית|tanker|lexie|הלפייר|hellfire", text))
+    return has_gulf_state and has_air_defense and not has_tanker
+
+
 def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     if str(a.get("sourceUrl") or "") == str(b.get("sourceUrl") or ""):
         return False
@@ -504,6 +517,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return False
     aw = live_regression_duplicate_tokens(a)
     bw = live_regression_duplicate_tokens(b)
+    if ("us_iran_tanker_hellfire" in aw and gulf_air_defense_only(b)) or (
+        "us_iran_tanker_hellfire" in bw and gulf_air_defense_only(a)
+    ):
+        return False
     if aw and bw and aw & bw:
         return True
     aw = weather_event_tokens(a)
@@ -540,8 +557,12 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
         return True
     aw = iran_deal_decision_tokens(a)
     bw = iran_deal_decision_tokens(b)
-    if aw and bw and "us_iran_deal_decision" in aw and "us_iran_deal_decision" in bw and len(aw & bw) >= 2:
-        return True
+    if aw and bw and "us_iran_deal_decision" in aw and "us_iran_deal_decision" in bw:
+        # The broad Trump/U.S.-Iran negotiation frame is not enough by itself:
+        # Hormuz leverage analysis and written nuclear-terms demands are adjacent
+        # developments, not one visible story. Require a concrete shared sub-angle.
+        if (aw & bw) - {"us_iran_deal_decision", "white_house_meeting"}:
+            return True
     aw = iran_hardliner_deal_tokens(a)
     bw = iran_hardliner_deal_tokens(b)
     if aw and bw and "iran_hardliners_deal" in aw and "iran_hardliners_deal" in bw and len(aw & bw) >= 2:
