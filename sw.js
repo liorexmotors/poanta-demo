@@ -20,7 +20,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(request));
     return;
   }
-  if (/\/(feed|breaking_feed)\.json$/.test(new URL(request.url).pathname)) {
+  if (/\/(feed|breaking_feed|spy_trends)\.json$/.test(new URL(request.url).pathname)) {
     event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
