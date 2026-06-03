@@ -1,20 +1,20 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-06-03T14:27:44+03:00",
+  "generatedAt": "2026-06-03T14:31:19+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "ok",
-      "checkedAt": "2026-06-03T14:27:42+03:00",
+      "checkedAt": "2026-06-03T14:31:17+03:00",
       "url": "feed.json",
       "updatedAt": "2026-06-03T13:27:34+02:00",
-      "items": 263,
+      "items": 262,
       "top": [
         {
           "publishedAt": "2026-06-03T14:25:00+03:00",
           "source": "וואלה תרבות",
-          "headline": "פאר טסי הוציא אלבום ילדים אחרי פארק הירקון",
+          "headline": "ילדי השטח מרחיב את המותג של טסי לילדים",
           "takeaway": "המהלך מרחיב את הקטלוג של טסי ממוזיקה למבוגרים לאלבום ייעודי לילדים עם 14 שירים.",
           "url": "https://e.walla.co.il/item/3842895"
         },
@@ -42,7 +42,7 @@
         {
           "publishedAt": "2026-06-03T14:19:31+03:00",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "headline": "הוגו טיילור חגג באיטליה עם טבעת הנישואים",
+          "headline": "טיילור חזר לטבעת בעיצומם של הגירושים",
           "takeaway": "הטבעת בחופשת יום ההולדת מבליטה את הפער בין הפרידה הרשמית לבין הופעתו הציבורית של טיילור.",
           "url": "https://www.dailymail.com/tvshowbiz/article-15869775/Hugo-Taylor-wedding-ring-birthday-Millie-Mackintosh-moving-marital-home.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
         },
@@ -101,45 +101,18 @@
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest דה מרקר item is older than 240m: 2026-06-03T08:37:10+03:00 (5:50:30.990875 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
-          "item": 93,
+          "message": "Latest דה מרקר item is older than 240m: 2026-06-03T08:37:10+03:00 (5:54:06.461618 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "item": 92,
           "headline": "הדולר זינק מול השקל למרות העליות בוול סטריט",
           "source": "דה מרקר - שוק ההון",
           "url": "https://www.themarker.com/markets/2026-06-03/ty-article-live/0000019e-8bf7-da37-a19f-cfff33c70000"
-        },
-        {
-          "severity": "warning",
-          "code": "headline_duplicates_summary",
-          "message": "Headline is too close to the summary",
-          "item": 0,
-          "headline": "פאר טסי הוציא אלבום ילדים אחרי פארק הירקון",
-          "source": "וואלה תרבות",
-          "url": "https://e.walla.co.il/item/3842895"
-        },
-        {
-          "severity": "warning",
-          "code": "headline_duplicates_summary",
-          "message": "Headline is too close to the summary",
-          "item": 4,
-          "headline": "הוגו טיילור חגג באיטליה עם טבעת הנישואים",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "url": "https://www.dailymail.com/tvshowbiz/article-15869775/Hugo-Taylor-wedding-ring-birthday-Millie-Mackintosh-moving-marital-home.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-        },
-        {
-          "severity": "warning",
-          "code": "duplicate_story_cluster",
-          "message": "Similar live-feed stories from different sources. Recommended keep: #9 ישראל היום - כל הכתבות — סירוב הנחיתה בסלובניה מדאיג את חברות התעופה הישראליות. Filter out: #17 The Jerusalem Post - Israel News — טיסת ישראייר הוסטה לקרואטיה אחרי שסלובניה חסמה נחיתה",
-          "item": 9,
-          "headline": "סירוב הנחיתה בסלובניה מדאיג את חברות התעופה הישראליות",
-          "source": "ישראל היום - כל הכתבות",
-          "url": "https://www.israelhayom.co.il/travel/aviation/article/20680326"
         }
       ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-06-03T14:27:43+03:00",
+      "checkedAt": "2026-06-03T14:31:18+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -171,7 +144,7 @@
       "warningMinutes": {
         "all": 15
       },
-      "recentItems60m": 26,
+      "recentItems60m": 28,
       "recentSourceGroups60m": [
         "BBC",
         "Daily Mail TVShowbiz רכילות חו״ל",
@@ -425,13 +398,26 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
+          "group": "פוליטיקה",
+          "thresholdMinutes": 30,
+          "ageMinutes": 32,
+          "latestAt": "2026-06-03T13:58:59+03:00",
+          "headline": "מהומה בכנסת עצרה את בחירת מבקר המדינה",
+          "source": "ynet - כל ערוץ החדשות",
+          "message": "No fresh פוליטיקה publication event for 32 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 227,
+          "ageMinutes": 231,
           "latestAt": "2026-06-03T10:40:00+03:00",
           "headline": "הראל ויזל בוחן כניסה לשוק המזון דרך נוי השדה",
           "source": "גלובס - שוק ההון",
-          "message": "No fresh כלכלה publication event for 227 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 231 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -440,11 +426,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 782,
+          "ageMinutes": 785,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 782 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 785 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -453,11 +439,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 95,
+          "ageMinutes": 99,
           "latestAt": "2026-06-03T12:52:00+03:00",
           "headline": "אוקראינה תקפה את סנקט פטרבורג לפני פורום הדגל של פוטין",
           "source": "וואלה חדשות",
-          "message": "No fresh אקטואליה בעולם publication event for 95 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 99 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -466,11 +452,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 3387,
+          "ageMinutes": 3391,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 3387 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 3391 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -479,11 +465,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 300,
+          "ageMinutes": 303,
           "latestAt": "2026-06-03T09:27:34+03:00",
           "headline": "פוקס בוחנת רכישת רשת נוי השדה",
           "source": "דה מרקר - שוק ההון",
-          "message": "No fresh דה מרקר publication event for 300 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 303 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -492,11 +478,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 108,
+          "ageMinutes": 111,
           "latestAt": "2026-06-03T12:39:38+03:00",
           "headline": "סדרות טלוויזיה מציגות את אונליפאנס כחלק מהמיינסטרים",
           "source": "הארץ - תרבות",
-          "message": "No fresh הארץ publication event for 108 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 111 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -506,13 +492,26 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
+          "group": "פוליטיקה",
+          "thresholdMinutes": 30,
+          "ageMinutes": 32,
+          "latestAt": "2026-06-03T13:58:59+03:00",
+          "headline": "מהומה בכנסת עצרה את בחירת מבקר המדינה",
+          "source": "ynet - כל ערוץ החדשות",
+          "message": "No fresh פוליטיקה publication event for 32 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 227,
+          "ageMinutes": 231,
           "latestAt": "2026-06-03T10:40:00+03:00",
           "headline": "הראל ויזל בוחן כניסה לשוק המזון דרך נוי השדה",
           "source": "גלובס - שוק ההון",
-          "message": "No fresh כלכלה publication event for 227 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 231 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -521,11 +520,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 782,
+          "ageMinutes": 785,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 782 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 785 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -534,11 +533,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 95,
+          "ageMinutes": 99,
           "latestAt": "2026-06-03T12:52:00+03:00",
           "headline": "אוקראינה תקפה את סנקט פטרבורג לפני פורום הדגל של פוטין",
           "source": "וואלה חדשות",
-          "message": "No fresh אקטואליה בעולם publication event for 95 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 99 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -547,11 +546,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 3387,
+          "ageMinutes": 3391,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 3387 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 3391 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -560,11 +559,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 300,
+          "ageMinutes": 303,
           "latestAt": "2026-06-03T09:27:34+03:00",
           "headline": "פוקס בוחנת רכישת רשת נוי השדה",
           "source": "דה מרקר - שוק ההון",
-          "message": "No fresh דה מרקר publication event for 300 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 303 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -573,11 +572,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 108,
+          "ageMinutes": 111,
           "latestAt": "2026-06-03T12:39:38+03:00",
           "headline": "סדרות טלוויזיה מציגות את אונליפאנס כחלק מהמיינסטרים",
           "source": "הארץ - תרבות",
-          "message": "No fresh הארץ publication event for 108 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 111 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -596,7 +595,7 @@
         {
           "publishedAt": "2026-06-03T14:25:00+03:00",
           "source": "וואלה תרבות",
-          "headline": "פאר טסי הוציא אלבום ילדים אחרי פארק הירקון",
+          "headline": "ילדי השטח מרחיב את המותג של טסי לילדים",
           "takeaway": "המהלך מרחיב את הקטלוג של טסי ממוזיקה למבוגרים לאלבום ייעודי לילדים עם 14 שירים.",
           "url": "https://e.walla.co.il/item/3842895"
         },
@@ -624,7 +623,7 @@
         {
           "publishedAt": "2026-06-03T14:19:31+03:00",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "headline": "הוגו טיילור חגג באיטליה עם טבעת הנישואים",
+          "headline": "טיילור חזר לטבעת בעיצומם של הגירושים",
           "takeaway": "הטבעת בחופשת יום ההולדת מבליטה את הפער בין הפרידה הרשמית לבין הופעתו הציבורית של טיילור.",
           "url": "https://www.dailymail.com/tvshowbiz/article-15869775/Hugo-Taylor-wedding-ring-birthday-Millie-Mackintosh-moving-marital-home.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
         }
@@ -632,22 +631,22 @@
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastCheckedAt": "2026-06-03T14:19:30+03:00",
+      "lastCheckedAt": "2026-06-03T14:27:22+03:00",
       "lastStatus": "repair_needed",
-      "lastIncidentType": "stage3_waiting_for_editor_results",
+      "lastIncidentType": "top_feed_stale_or_thin",
       "currentIncidentKey": "top_stale|no_new_top_item_sla|2026-06-03T13:03:28+02:00|https://www.jpost.com/israel-news/article-898226",
-      "currentIncidentRepeatCount": 1,
-      "lastAutomaticAction": "write_batch_results_then_rerun_stage3",
+      "currentIncidentRepeatCount": 2,
+      "lastAutomaticAction": "prepare_general_rescue_worker",
       "loopProtection": {
         "active": false,
         "reason": "",
-        "repeatCount": 1
+        "repeatCount": 2
       },
       "lastOkAt": "2026-05-25T17:38:06+03:00",
       "lastStage4StartedAt": "2026-06-03T14:15:46+03:00",
       "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-06-03T13:36:10+03:00|טראמפ אישר שנזף בנתניהו אך הדגיש שהקשר ביניהם נמשך",
       "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260603-141709",
-      "lastStage3StartedAt": "2026-06-03T14:19:30+03:00",
+      "lastStage3StartedAt": "2026-06-03T14:27:22+03:00",
       "lastStage3IncidentKey": "top_stale|no_new_top_item_sla|2026-06-03T13:03:28+02:00|https://www.jpost.com/israel-news/article-898226",
       "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260603-142127"
     }
@@ -657,44 +656,17 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-06-03T14:27:42+03:00",
-      "checkedAt": "2026-06-03T14:27:42+03:00",
+      "summary": "תקין בבדיקה האחרונה 2026-06-03T14:31:17+03:00",
+      "checkedAt": "2026-06-03T14:31:17+03:00",
       "findings": [
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest דה מרקר item is older than 240m: 2026-06-03T08:37:10+03:00 (5:50:30.990875 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
-          "item": 93,
+          "message": "Latest דה מרקר item is older than 240m: 2026-06-03T08:37:10+03:00 (5:54:06.461618 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "item": 92,
           "headline": "הדולר זינק מול השקל למרות העליות בוול סטריט",
           "source": "דה מרקר - שוק ההון",
           "url": "https://www.themarker.com/markets/2026-06-03/ty-article-live/0000019e-8bf7-da37-a19f-cfff33c70000"
-        },
-        {
-          "severity": "warning",
-          "code": "headline_duplicates_summary",
-          "message": "Headline is too close to the summary",
-          "item": 0,
-          "headline": "פאר טסי הוציא אלבום ילדים אחרי פארק הירקון",
-          "source": "וואלה תרבות",
-          "url": "https://e.walla.co.il/item/3842895"
-        },
-        {
-          "severity": "warning",
-          "code": "headline_duplicates_summary",
-          "message": "Headline is too close to the summary",
-          "item": 4,
-          "headline": "הוגו טיילור חגג באיטליה עם טבעת הנישואים",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "url": "https://www.dailymail.com/tvshowbiz/article-15869775/Hugo-Taylor-wedding-ring-birthday-Millie-Mackintosh-moving-marital-home.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-        },
-        {
-          "severity": "warning",
-          "code": "duplicate_story_cluster",
-          "message": "Similar live-feed stories from different sources. Recommended keep: #9 ישראל היום - כל הכתבות — סירוב הנחיתה בסלובניה מדאיג את חברות התעופה הישראליות. Filter out: #17 The Jerusalem Post - Israel News — טיסת ישראייר הוסטה לקרואטיה אחרי שסלובניה חסמה נחיתה",
-          "item": 9,
-          "headline": "סירוב הנחיתה בסלובניה מדאיג את חברות התעופה הישראליות",
-          "source": "ישראל היום - כל הכתבות",
-          "url": "https://www.israelhayom.co.il/travel/aviation/article/20680326"
         }
       ]
     },
@@ -702,19 +674,32 @@
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh כלכלה publication event for 227 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-06-03T14:27:43+03:00",
+      "summary": "No fresh פוליטיקה publication event for 32 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-06-03T14:31:18+03:00",
       "findings": [
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "פוליטיקה",
+          "thresholdMinutes": 30,
+          "ageMinutes": 32,
+          "latestAt": "2026-06-03T13:58:59+03:00",
+          "headline": "מהומה בכנסת עצרה את בחירת מבקר המדינה",
+          "source": "ynet - כל ערוץ החדשות",
+          "message": "No fresh פוליטיקה publication event for 32 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 227,
+          "ageMinutes": 231,
           "latestAt": "2026-06-03T10:40:00+03:00",
           "headline": "הראל ויזל בוחן כניסה לשוק המזון דרך נוי השדה",
           "source": "גלובס - שוק ההון",
-          "message": "No fresh כלכלה publication event for 227 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 231 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -723,11 +708,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 782,
+          "ageMinutes": 785,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 782 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 785 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -736,11 +721,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 95,
+          "ageMinutes": 99,
           "latestAt": "2026-06-03T12:52:00+03:00",
           "headline": "אוקראינה תקפה את סנקט פטרבורג לפני פורום הדגל של פוטין",
           "source": "וואלה חדשות",
-          "message": "No fresh אקטואליה בעולם publication event for 95 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 99 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -749,11 +734,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 3387,
+          "ageMinutes": 3391,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 3387 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 3391 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -762,11 +747,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 300,
+          "ageMinutes": 303,
           "latestAt": "2026-06-03T09:27:34+03:00",
           "headline": "פוקס בוחנת רכישת רשת נוי השדה",
           "source": "דה מרקר - שוק ההון",
-          "message": "No fresh דה מרקר publication event for 300 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 303 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -775,11 +760,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 108,
+          "ageMinutes": 111,
           "latestAt": "2026-06-03T12:39:38+03:00",
           "headline": "סדרות טלוויזיה מציגות את אונליפאנס כחלק מהמיינסטרים",
           "source": "הארץ - תרבות",
-          "message": "No fresh הארץ publication event for 108 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 111 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
