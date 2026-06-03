@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
   FlatList,
   Image,
+  I18nManager,
   Linking,
   RefreshControl,
   SafeAreaView,
@@ -20,6 +21,8 @@ import Svg, { Circle, Path } from 'react-native-svg';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { fetchBreakingFeed, fetchFeed } from './src/feed';
 import { FeedItem } from './src/types';
+
+I18nManager.allowRTL(true);
 
 type ViewMode = 'home' | 'breaking' | 'saved' | 'search' | 'settings' | 'more';
 type MoreScreen = 'menu' | 'settings' | 'appearance' | 'about' | 'terms' | 'privacy' | 'contact';
@@ -237,13 +240,13 @@ function allSources(items: FeedItem[]) {
 
 function Chip({ label, active, onPress, count }: { label: string; active: boolean; onPress: () => void; count?: number }) {
   return <TouchableOpacity style={[styles.chip, active && styles.chipActive]} onPress={onPress} activeOpacity={0.82}>
-    <Text style={[styles.chipText, active && styles.chipTextActive]}>{label}</Text>
-    {typeof count === 'number' && <Text style={[styles.chipCount, active && styles.chipTextActive]}>{count}</Text>}
+    <Text style={[styles.chipText, active && styles.chipTextActive]} numberOfLines={1}>{label}</Text>
+    {typeof count === 'number' && <Text style={[styles.chipCount, active && styles.chipCountActive]}>{count}</Text>}
   </TouchableOpacity>;
 }
 
 function SourceThumb({ item }: { item: FeedItem }) {
-  if (item.imageUrl) return <Image source={{ uri: item.imageUrl }} style={styles.image as any} />;
+  if (item.imageUrl) return <Image source={{ uri: item.imageUrl }} style={styles.image as any} resizeMode="cover" fadeDuration={0} />;
   const label = sourceName(item).slice(0, 2) || 'P';
   return <View style={styles.placeholder}><Text style={styles.placeholderText}>{label}</Text></View>;
 }
@@ -324,6 +327,8 @@ function PoentaApp() {
   const [lastSyncedAt, setLastSyncedAt] = useState<string | null>(null);
   const [prefs, setPrefs] = useState<Prefs>({ topics: DEFAULT_TOPICS.slice(0, 7), sources: [], days: 3, feedFilter: 'all' });
   const storageReady = useRef(false);
+  const viewRef = useRef<ViewMode>('home');
+  const readKeysRef = useRef<string[]>([]);
 
   const isLight = appearance === 'light' || (appearance === 'system' && colorScheme === 'light');
   const colors = isLight ? LIGHT_COLORS : DARK_COLORS;
@@ -337,6 +342,9 @@ function PoentaApp() {
   const prefTopicSet = useMemo(() => new Set(prefs.topics), [prefs.topics]);
   const prefSourceSet = useMemo(() => new Set(prefs.sources.length ? prefs.sources : knownSources), [prefs.sources, knownSources]);
   const savedItems = useMemo(() => items.filter(item => savedKeySet.has(itemKey(item))), [items, savedKeySet]);
+
+  useEffect(() => { viewRef.current = view; }, [view]);
+  useEffect(() => { readKeysRef.current = readKeys; }, [readKeys]);
 
   useEffect(() => {
     let alive = true;
@@ -424,7 +432,7 @@ function PoentaApp() {
     const rows = items
       .map((item, index) => ({ item, index, date: itemDate(item, index) }))
       .filter(row => prefSourceSet.has(sourceName(row.item)))
-      .filter(row => prefTopicSet.has(topicFor(row.item)))
+      .filter(row => activeFilter !== 'all' || prefTopicSet.has(topicFor(row.item)))
       .filter(row => withinDays(row.item, row.index, prefs.days))
       .filter(row => activeFilter === 'all' || topicFor(row.item) === activeFilter)
       .filter(row => prefs.feedFilter === 'all' || !readKeySet.has(itemKey(row.item)))
@@ -491,8 +499,8 @@ function PoentaApp() {
   }
 
   const renderTabs = () => {
-    const tabs = view === 'breaking' ? breakingSources : prefs.topics.filter(t => knownTopics.includes(t));
-    return <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.tabs}>
+    const tabs = view === 'breaking' ? breakingSources : knownTopics;
+    return <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabsScroll} contentContainerStyle={styles.tabs} keyboardShouldPersistTaps="handled" nestedScrollEnabled>
       <Chip label="הכל" active={activeFilter === 'all'} onPress={() => setActiveFilter('all')} count={view === 'breaking' ? visibleBreaking.length : topicCounts.all} />
       {tabs.map(t => <Chip key={t} label={t} active={activeFilter === t} onPress={() => setActiveFilter(t)} count={view === 'breaking' ? breaking.filter(i => sourceName(i) === t || i.sources?.includes(t)).length : topicCounts[t] || 0} />)}
     </ScrollView>;
@@ -608,13 +616,32 @@ function PoentaApp() {
 
   const list = view === 'breaking' ? visibleBreaking : view === 'saved' ? savedItems : view === 'search' ? searchResults : visibleMain;
   const unreadCount = visibleMain.filter(i => !readKeySet.has(itemKey(i))).length;
+  const totalMainCount = visibleMain.length;
+  const unreadPct = totalMainCount ? Math.max(0, Math.min(100, Math.round((unreadCount / totalMainCount) * 100))) : 0;
   const syncLabel = lastSyncedAt ? `עודכן ${timeLabel({ publishedAt: lastSyncedAt } as FeedItem)}` : 'משוך לרענון';
 
-  const renderListHeader = () => <>
+  const keyExtractor = useCallback((item: FeedItem, index: number) => `${itemKey(item)}-${index}`, []);
+  const renderItem = useCallback(({ item, index }: { item: FeedItem; index: number }) => viewRef.current === 'breaking'
+    ? <BreakingCard item={item} index={index} />
+    : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />, [savedKeySet]);
+  const viewabilityConfig = useRef({ itemVisiblePercentThreshold: 62, minimumViewTime: 450 }).current;
+  const onViewableItemsChanged = useRef(({ viewableItems }: { viewableItems: Array<{ item?: FeedItem }> }) => {
+    if (viewRef.current === 'breaking') return;
+    const existing = new Set(readKeysRef.current);
+    const nextKeys = viewableItems.map(v => v.item).filter((item): item is FeedItem => !!item).map(itemKey).filter(key => !existing.has(key));
+    if (!nextKeys.length) return;
+    setReadKeys(prev => {
+      const merged = new Set(prev);
+      nextKeys.forEach(key => merged.add(key));
+      return merged.size === prev.length ? prev : [...merged].slice(-1200);
+    });
+  }).current;
+
+  const listHeader = <>
     {view === 'search' && <>
       <Text style={styles.title}>חיפוש</Text>
       <Text style={styles.subtitle}>חיפוש חכם בכתבות מהפיד ומהשמורים. אפשר לכתוב רעיון כמו “הופעות רוק”.</Text>
-      <TextInput style={styles.searchInput} value={search} onChangeText={setSearch} placeholder="מה לחפש? למשל הופעות רוק" placeholderTextColor={colors.muted} />
+      <TextInput style={styles.searchInput} value={search} onChangeText={setSearch} placeholder="מה לחפש? למשל הופעות רוק" placeholderTextColor={colors.muted} textAlign="right" autoCorrect={false} autoCapitalize="none" blurOnSubmit={false} returnKeyType="search" />
     </>}
 
     {view === 'saved' && <>
@@ -635,11 +662,19 @@ function PoentaApp() {
         <Image source={POENTA_LOGO} style={styles.logoImage as any} resizeMode="contain" />
         <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד" onPress={() => switchView('more')}><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.updates} onPress={loadAll}>
-        <View style={styles.updatePill}><Text style={styles.updatePillText}>{unreadCount || visibleMain.length}</Text></View>
-        <View style={styles.updateTrack}><View style={styles.updateFill} /><Text style={styles.updateText}>מדד החדשים שלך</Text></View>
+      <View style={styles.updates}>
+        <TouchableOpacity style={[styles.updatePill, prefs.feedFilter === 'unread' && styles.updatePillActive]} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: prev.feedFilter === 'unread' ? 'all' : 'unread' }))} activeOpacity={0.84} accessibilityLabel="סנן לחדשים">
+          <Text style={styles.updatePillText}>{unreadCount}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.updateTotalPill, prefs.feedFilter === 'all' && styles.updatePillActive]} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'all' }))} activeOpacity={0.84} accessibilityLabel="הצג את כל הידיעות">
+          <Text style={styles.updatePillText}>{totalMainCount}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.updateTrack} onPress={loadAll} activeOpacity={0.86} accessibilityLabel="רענן פיד">
+          <View style={[styles.updateFill, { width: `${unreadPct}%` }]} />
+          <Text style={styles.updateText}>מדד החדשים שלך</Text>
+        </TouchableOpacity>
         <Text style={styles.syncText}>{syncLabel}</Text>
-      </TouchableOpacity>
+      </View>
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
 
@@ -649,11 +684,9 @@ function PoentaApp() {
       style={styles.scroll}
       contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]}
       data={loading ? [] : list}
-      keyExtractor={(item, index) => `${itemKey(item)}-${index}`}
-      renderItem={({ item, index }) => view === 'breaking'
-        ? <BreakingCard item={item} index={index} />
-        : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />}
-      ListHeaderComponent={renderListHeader}
+      keyExtractor={keyExtractor}
+      renderItem={renderItem}
+      ListHeaderComponent={listHeader}
       ListEmptyComponent={!loading ? <Text style={styles.empty}>{listEmptyText}</Text> : null}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />}
       initialNumToRender={6}
@@ -661,7 +694,9 @@ function PoentaApp() {
       updateCellsBatchingPeriod={80}
       windowSize={5}
       removeClippedSubviews
-      keyboardShouldPersistTaps="handled"
+      onViewableItemsChanged={onViewableItemsChanged}
+      viewabilityConfig={viewabilityConfig}
+      keyboardShouldPersistTaps="always"
     />}
 
     <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
@@ -686,26 +721,30 @@ return StyleSheet.create({
   topMore: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
   topMoreText: { color: c.secondary, fontSize: 25, fontWeight: '900', lineHeight: 30 },
   logoImage: { height: 38, width: 164 },
-  updates: { height: 52, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.border, backgroundColor: c.surface, justifyContent: 'center' },
+  updates: { height: 52, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.border, backgroundColor: c.surface, justifyContent: 'center', direction: 'rtl' },
   updatePill: { position: 'absolute', left: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.34)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
+  updateTotalPill: { position: 'absolute', right: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
+  updatePillActive: { borderColor: c.yellow, backgroundColor: c.yellowBg },
   updatePillText: { color: c.yellowSoft, fontSize: 12, fontWeight: '900' },
   updateTrack: { height: 16, marginTop: 14, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,196,0,0.16)', borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', alignItems: 'center', justifyContent: 'center' },
-  updateFill: { position: 'absolute', right: 0, top: 0, bottom: 0, width: '68%', backgroundColor: c.yellow },
+  updateFill: { position: 'absolute', right: 0, top: 0, bottom: 0, backgroundColor: c.yellow },
   updateText: { color: c.textOnYellow, fontSize: 10.8, fontWeight: '900', letterSpacing: -0.05 },
   syncText: { color: c.muted, textAlign: 'center', fontSize: 10.5, fontWeight: '800', marginTop: 3 },
-  tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center' },
+  tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center', overflow: 'hidden' },
   scroll: { flex: 1 },
-  content: { paddingHorizontal: 16 },
+  content: { paddingHorizontal: 16, direction: 'rtl', alignItems: 'stretch' },
   title: { color: c.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl' },
   subtitle: { color: c.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl', marginTop: 7, marginBottom: 12 },
-  tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center' },
+  tabsScroll: { flex: 1, alignSelf: 'stretch' },
+  tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center', paddingHorizontal: 1, flexGrow: 0 },
   chip: { height: 28, maxWidth: 132, borderWidth: 1, borderColor: c.faint, borderRadius: 999, backgroundColor: c.surfaceSoft, paddingHorizontal: 9, paddingVertical: 0, flexDirection: 'row-reverse', gap: 6, alignItems: 'center', justifyContent: 'center' },
   chipActive: { borderColor: c.yellow, backgroundColor: c.yellow },
-  chipText: { color: c.secondary, fontSize: 13, fontWeight: '800' },
+  chipText: { color: c.secondary, fontSize: 13, fontWeight: '800', writingDirection: 'rtl', textAlign: 'right', flexShrink: 1 },
   chipTextActive: { color: c.textOnYellow, fontWeight: '900' },
   chipCount: { minWidth: 18, height: 18, lineHeight: 18, textAlign: 'center', color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, overflow: 'hidden', paddingHorizontal: 5, fontSize: 10.5, fontWeight: '900' },
+  chipCountActive: { color: c.textOnYellow, backgroundColor: 'rgba(7,16,21,0.18)', fontWeight: '900' },
   feedToggle: { flexDirection: 'row-reverse', gap: 8, marginBottom: 3 },
-  card: { borderWidth: 1, borderColor: c.subtleBorder, borderRadius: 18, backgroundColor: c.card, paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: c.shadow, shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2 },
+  card: { borderWidth: 1, borderColor: c.subtleBorder, borderRadius: 18, backgroundColor: c.card, paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: c.shadow, shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2, direction: 'rtl', alignSelf: 'stretch' },
   unreadCard: { borderColor: 'rgba(255,196,0,0.18)' },
   breakingCard: { borderColor: 'rgba(255,196,0,0.22)', backgroundColor: 'rgba(255,196,0,0.055)', paddingBottom: 14 },
   metaRow: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
@@ -716,7 +755,7 @@ return StyleSheet.create({
   iconActionOn: { color: c.yellow },
   star: { color: c.yellow, fontSize: 15, fontWeight: '900', lineHeight: 16 },
   bolt: { color: c.yellow, fontSize: 16, fontWeight: '900' },
-  catText: { color: c.muted, fontSize: 12, fontWeight: '800', textAlign: 'right', flexShrink: 1 },
+  catText: { color: c.muted, fontSize: 12, fontWeight: '800', textAlign: 'right', writingDirection: 'rtl', flexShrink: 1 },
   time: { color: c.muted, fontSize: 12, fontWeight: '700', textAlign: 'left' },
   heroBox: { position: 'relative', borderRadius: 22, overflow: 'hidden', backgroundColor: c.heroBg, minHeight: 214, justifyContent: 'flex-end', marginBottom: 11 },
   heroShade: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.28)' },
@@ -732,12 +771,12 @@ return StyleSheet.create({
   smallAction: { borderWidth: 1, borderColor: c.faint, borderRadius: 14, backgroundColor: c.surfaceSoft, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   smallActionOn: { borderColor: 'rgba(255,196,0,0.42)', backgroundColor: 'rgba(255,196,0,0.13)' },
   smallActionText: { color: c.yellow, fontSize: 12, fontWeight: '900' },
-  sourceBox: { position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', borderRadius: 15, backgroundColor: c.sourceBg, paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden' },
+  sourceBox: { position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', borderRadius: 15, backgroundColor: c.sourceBg, paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden', direction: 'rtl', alignSelf: 'stretch' },
   sourceAccent: { position: 'absolute', right: 0, top: 12, bottom: 12, width: 3, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.74)' },
   sourceHead: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
-  sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden' },
+  sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden', textAlign: 'right', writingDirection: 'rtl' },
   sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
-  sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 1 },
+  sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 1, textAlign: 'right', writingDirection: 'rtl' },
   sourceIconImage: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint },
   sourceIconFallback: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint, alignItems: 'center', justifyContent: 'center' },
   sourceIconFallbackText: { color: c.text, fontSize: 9.5, fontWeight: '900' },
@@ -745,14 +784,14 @@ return StyleSheet.create({
   panel: { gap: 12 },
   settingsCard: { borderWidth: 1, borderColor: c.border, borderRadius: 20, backgroundColor: c.surface, padding: 16, marginTop: 8 },
   settingsHead: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12, gap: 12 },
-  settingsTitle: { color: c.text, fontSize: 18, lineHeight: 19, fontWeight: '900', textAlign: 'right' },
+  settingsTitle: { color: c.text, fontSize: 18, lineHeight: 19, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl' },
   savedPill: { color: c.yellow, backgroundColor: 'rgba(255,196,0,0.13)', fontSize: 11, fontWeight: '900', borderWidth: 1, borderColor: 'rgba(255,196,0,.20)', borderRadius: 999, paddingHorizontal: 9, paddingVertical: 5, overflow: 'hidden' },
   bulkRow: { flexDirection: 'row', direction: 'rtl', justifyContent: 'flex-start', gap: 8, marginBottom: 10 },
   bulkBtn: { borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7, backgroundColor: 'rgba(255,196,0,0.08)' },
   bulkText: { color: c.yellowSoft, fontSize: 12, fontWeight: '900' },
   wrap: { flexDirection: 'row', direction: 'rtl', justifyContent: 'flex-start', flexWrap: 'wrap', gap: 8 },
   inputRow: { flexDirection: 'row', direction: 'rtl', gap: 8, marginTop: 10 },
-  input: { flex: 1, height: 45, borderRadius: 14, borderWidth: 1, borderColor: c.border, color: c.text, backgroundColor: c.inputBg, paddingHorizontal: 12, textAlign: 'right', fontWeight: '700' },
+  input: { flex: 1, height: 45, borderRadius: 14, borderWidth: 1, borderColor: c.border, color: c.text, backgroundColor: c.inputBg, paddingHorizontal: 12, textAlign: 'right', writingDirection: 'rtl', fontWeight: '700' },
   addBtn: { borderRadius: 14, backgroundColor: c.yellow, paddingHorizontal: 15, alignItems: 'center', justifyContent: 'center' },
   addText: { color: c.textOnYellow, fontWeight: '900' },
   sourceRow: { borderTopWidth: 1, borderTopColor: c.border, paddingVertical: 12, flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
@@ -768,25 +807,25 @@ return StyleSheet.create({
   switchTrackOn: { backgroundColor: c.yellow, alignItems: 'flex-end' },
   switchKnob: { width: 18, height: 18, borderRadius: 999, backgroundColor: '#fff' },
   switchKnobOn: { backgroundColor: c.textOnYellow },
-  about: { color: c.secondary, textAlign: 'right', lineHeight: 21, marginTop: 12, fontWeight: '600' },
+  about: { color: c.secondary, textAlign: 'right', writingDirection: 'rtl', lineHeight: 21, marginTop: 12, fontWeight: '600' },
   moreHead: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 },
-  moreHeadText: { flex: 1, alignItems: 'flex-start' },
-  moreHeadSub: { color: c.muted, fontSize: 13, fontWeight: '700', lineHeight: 18, textAlign: 'right', marginTop: 5 },
+  moreHeadText: { flex: 1, alignItems: 'flex-end' },
+  moreHeadSub: { color: c.muted, fontSize: 13, fontWeight: '700', lineHeight: 18, textAlign: 'right', writingDirection: 'rtl', marginTop: 5 },
   moreBack: { borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7, backgroundColor: 'rgba(255,196,0,0.08)' },
   moreBackText: { color: c.yellowSoft, fontSize: 12, fontWeight: '900' },
   moreList: { gap: 10 },
   moreRow: { borderWidth: 1, borderColor: c.border, borderRadius: 18, backgroundColor: c.surface, paddingHorizontal: 15, paddingVertical: 14, flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
   moreRowDisabled: { opacity: 0.46 },
-  moreRowText: { flex: 1, alignItems: 'flex-start' },
-  moreTitle: { color: c.text, fontSize: 16, fontWeight: '900', textAlign: 'right' },
-  moreSub: { color: c.muted, fontSize: 12.5, fontWeight: '700', lineHeight: 17, textAlign: 'right', marginTop: 4 },
+  moreRowText: { flex: 1, alignItems: 'flex-end' },
+  moreTitle: { color: c.text, fontSize: 16, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl' },
+  moreSub: { color: c.muted, fontSize: 12.5, fontWeight: '700', lineHeight: 17, textAlign: 'right', writingDirection: 'rtl', marginTop: 4 },
   moreArrow: { color: c.yellow, fontSize: 28, fontWeight: '800', lineHeight: 30 },
   shareActionIcon: { width: 38, height: 38, borderRadius: 14, borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.55)', backgroundColor: '#f7f1df', alignItems: 'center', justifyContent: 'center', shadowColor: c.yellow, shadowOpacity: 0.16, shadowRadius: 10, shadowOffset: { width: 0, height: 0 }, elevation: 4 },
   shareActionImage: { width: 27, height: 27, borderRadius: 9 },
   aboutContent: { borderWidth: 1, borderColor: c.border, borderRadius: 20, backgroundColor: c.surface, padding: 16 },
-  moreSectionTitle: { color: c.text, fontSize: 17, fontWeight: '900', textAlign: 'right', marginTop: 14, marginBottom: 2 },
-  translationNote: { color: c.secondary, textAlign: 'right', lineHeight: 20, marginTop: 12, fontWeight: '700' },
-  searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: c.border, backgroundColor: c.inputBg, color: c.text, paddingHorizontal: 14, textAlign: 'right', fontSize: 16, fontWeight: '800', marginBottom: 10 },
+  moreSectionTitle: { color: c.text, fontSize: 17, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', marginTop: 14, marginBottom: 2 },
+  translationNote: { color: c.secondary, textAlign: 'right', writingDirection: 'rtl', lineHeight: 20, marginTop: 12, fontWeight: '700' },
+  searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: c.border, backgroundColor: c.inputBg, color: c.text, paddingHorizontal: 14, textAlign: 'right', writingDirection: 'rtl', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   empty: { color: c.muted, textAlign: 'center', marginTop: 34, fontWeight: '800' },
   error: { color: c.red, textAlign: 'right', marginTop: 18, fontWeight: '800' },
   nav: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, borderTopColor: c.border, borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: c.bottom, flexDirection: 'row', direction: 'ltr', paddingBottom: 10, justifyContent: 'space-around', shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
