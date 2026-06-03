@@ -2230,6 +2230,14 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
         "צפון" in text or "north" in text
     ) and ("מיגון" in text or "שיקום" in text or "shelters" in text or "infrastructure" in text):
         tokens.add("north_reconstruction_13b")
+    if ("איראן" in text or "iran" in text) and ("ארה״ב" in text or "ארה\"ב" in text or "us " in text or "u.s" in text or "american" in text) and (
+        "הורמוז" in text or "hormuz" in text or "מפרץ" in text or "gulf" in text
+    ) and (
+        "כווית" in text or "בחריין" in text or "kuwait" in text or "bahrain" in text
+    ) and (
+        "מכלית" in text or "tanker" in text or "קשם" in text or "qeshm" in text or "תחנת שליטה" in text or "self-defense" in text
+    ):
+        tokens.add("us_iran_gulf_exchange_kuwait_bahrain")
     return tokens
 
 

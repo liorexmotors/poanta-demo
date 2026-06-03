@@ -59,6 +59,26 @@ CASES = [
         },
     ),
     (
+        "us_iran_gulf_exchange_kuwait_bahrain_20260603",
+        True,
+        {
+            "source": "BBC World",
+            "category": "ביטחון",
+            "headline": "ארה״ב תקפה עמדת שליטה איראנית בקשם אחרי ירי למפרץ",
+            "originalTitle": "US says it launched 'self-defense' strikes on Iranian island",
+            "context": "פיקוד המרכז האמריקני תקף באי קשם תחנת שליטה איראנית, לאחר שטילים וכטב״מים שוגרו לעבר כלי שיט ומדינות מפרץ כמו כווית ובחריין.",
+            "sourceUrl": "https://www.bbc.com/news/articles/c5yx135yg53o?at_medium=RSS&at_campaign=rss",
+        },
+        {
+            "source": "מעריב - חדשות",
+            "category": "ביטחון",
+            "headline": "איראן הרחיבה את תגובת המפרץ לכווית ולבחריין",
+            "originalTitle": "לילה סוער במפרץ: ארה\"ב פעלה בהורמוז - איראן תקפה בכווית ובחריין",
+            "context": "אחרי פעולה אמריקנית נגד מכלית שניסתה להגיע לאיראן, כווית ובחריין הפעילו מערכי הגנה והתרעות מפני טילים וכטב״מים.",
+            "sourceUrl": "https://www.maariv.co.il/news/world/article-1328648",
+        },
+    ),
+    (
         "north_reconstruction_13b_live_regression_20260603",
         True,
         {
