@@ -1,15 +1,15 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-06-03T08:14:15+03:00",
+  "generatedAt": "2026-06-03T08:18:06+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "ok",
-      "checkedAt": "2026-06-03T08:14:13+03:00",
+      "checkedAt": "2026-06-03T08:18:05+03:00",
       "url": "feed.json",
-      "updatedAt": "2026-06-03T07:14:07+02:00",
-      "items": 357,
+      "updatedAt": "2026-06-03T07:17:56+02:00",
+      "items": 358,
       "top": [
         {
           "publishedAt": "2026-06-03T08:01:00+03:00",
@@ -97,12 +97,22 @@
         }
       ],
       "errors": [],
-      "warnings": []
+      "warnings": [
+        {
+          "severity": "warning",
+          "code": "no_new_top_item_warning",
+          "message": "No new top feed item for more than 15m: latest is 2026-06-03T08:01:00+03:00 (0:17:04.052956 old). Warning only; if it reaches 25m, treat as operational problem.",
+          "item": 0,
+          "headline": "ניר ברדע מעניק למסאי דגו קרדיט על העלייה של הפועל רמת גן",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "url": "https://sports.walla.co.il/item/3842805"
+        }
+      ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-06-03T08:14:14+03:00",
+      "checkedAt": "2026-06-03T08:18:06+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -134,7 +144,7 @@
       "warningMinutes": {
         "all": 15
       },
-      "recentItems60m": 20,
+      "recentItems60m": 21,
       "recentSourceGroups60m": [
         "Daily Mail TVShowbiz רכילות חו״ל",
         "Guardian",
@@ -142,6 +152,7 @@
         "דה מרקר",
         "הארץ",
         "וואלה",
+        "ישראל היום",
         "כיפה",
         "מעריב",
         "ערוץ 7 / INN עברית"
@@ -288,8 +299,8 @@
           "source": "ynet - כל ערוץ מדע וטבע"
         },
         "ישראל היום": {
-          "latestAt": "2026-06-03T07:07:57+03:00",
-          "headline": "המטבח העיראקי חוזר למסעדות דרך פרשנות ישראלית חדשה",
+          "latestAt": "2026-06-03T07:30:53+03:00",
+          "headline": "נתניהו מתקשה להבטיח רוב לפרקליטו במרוץ למבקר המדינה",
           "source": "ישראל היום - כל הכתבות"
         },
         "כיפה": {
@@ -353,9 +364,9 @@
           "source": "ערוץ 7 / INN עברית"
         },
         "פוליטיקה": {
-          "latestAt": "2026-06-03T06:23:26+03:00",
-          "headline": "ציוץ על ביירות החריף את המתח עם טראמפ",
-          "source": "ערוץ 7 / INN עברית"
+          "latestAt": "2026-06-03T07:30:53+03:00",
+          "headline": "נתניהו מתקשה להבטיח רוב לפרקליטו במרוץ למבקר המדינה",
+          "source": "ישראל היום - כל הכתבות"
         },
         "פלילים": {
           "latestAt": "2026-06-03T07:44:08+03:00",
@@ -389,11 +400,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 110,
-          "latestAt": "2026-06-03T06:23:26+03:00",
-          "headline": "ציוץ על ביירות החריף את המתח עם טראמפ",
-          "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "ageMinutes": 47,
+          "latestAt": "2026-06-03T07:30:53+03:00",
+          "headline": "נתניהו מתקשה להבטיח רוב לפרקליטו במרוץ למבקר המדינה",
+          "source": "ישראל היום - כל הכתבות",
+          "message": "No fresh פוליטיקה publication event for 47 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -402,11 +413,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 71,
+          "ageMinutes": 75,
           "latestAt": "2026-06-03T07:03:00+03:00",
           "headline": "הכנסת מתקרבת להגבלת שכר טרחה בתביעות נכי צה״ל",
           "source": "גלובס - בארץ",
-          "message": "No fresh משפט publication event for 71 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 75 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -415,11 +426,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 74,
+          "ageMinutes": 78,
           "latestAt": "2026-06-03T07:00:00+03:00",
           "headline": "חיים לבד בישראל עולים יותר כמעט בכל חשבון",
           "source": "ynet - כל ערוץ יחסים",
-          "message": "No fresh צרכנות publication event for 74 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 78 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -428,11 +439,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 408,
+          "ageMinutes": 412,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 408 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 412 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -441,11 +452,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 94,
+          "ageMinutes": 97,
           "latestAt": "2026-06-03T06:40:14+03:00",
           "headline": "בינה מלאכותית פתרה חידה מתמטית בת 80 שנה",
           "source": "ynet - כל ערוץ מדע וטבע",
-          "message": "No fresh טכנולוגיה publication event for 94 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 97 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -454,11 +465,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 876,
+          "ageMinutes": 880,
           "latestAt": "2026-06-02T17:38:00+03:00",
           "headline": "אלטו מילאה מרכז מסחרי באטלנטה עם Lidl",
           "source": "וואלה כסף",
-          "message": "No fresh נדל״ן publication event for 876 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 880 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -467,27 +478,56 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 3014,
+          "ageMinutes": 3018,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 3014 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 3018 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
       ],
-      "warnings": [],
+      "warnings": [
+        {
+          "severity": "warning",
+          "code": "publication_silence_warning",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "warningMinutes": 15,
+          "ageMinutes": 17,
+          "latestAt": "2026-06-03T08:01:00+03:00",
+          "headline": "ניר ברדע מעניק למסאי דגו קרדיט על העלייה של הפועל רמת גן",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "message": "No new publication event for 17 minutes; warn Aliza now. At 25 minutes this becomes an operational problem.",
+          "recommendedAction": "alert_aliza_monitor_until_fast_rescue_threshold",
+          "escalateTo": "aliza"
+        }
+      ],
       "findings": [
+        {
+          "severity": "warning",
+          "code": "publication_silence_warning",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "warningMinutes": 15,
+          "ageMinutes": 17,
+          "latestAt": "2026-06-03T08:01:00+03:00",
+          "headline": "ניר ברדע מעניק למסאי דגו קרדיט על העלייה של הפועל רמת גן",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "message": "No new publication event for 17 minutes; warn Aliza now. At 25 minutes this becomes an operational problem.",
+          "recommendedAction": "alert_aliza_monitor_until_fast_rescue_threshold",
+          "escalateTo": "aliza"
+        },
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 110,
-          "latestAt": "2026-06-03T06:23:26+03:00",
-          "headline": "ציוץ על ביירות החריף את המתח עם טראמפ",
-          "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "ageMinutes": 47,
+          "latestAt": "2026-06-03T07:30:53+03:00",
+          "headline": "נתניהו מתקשה להבטיח רוב לפרקליטו במרוץ למבקר המדינה",
+          "source": "ישראל היום - כל הכתבות",
+          "message": "No fresh פוליטיקה publication event for 47 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -496,11 +536,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 71,
+          "ageMinutes": 75,
           "latestAt": "2026-06-03T07:03:00+03:00",
           "headline": "הכנסת מתקרבת להגבלת שכר טרחה בתביעות נכי צה״ל",
           "source": "גלובס - בארץ",
-          "message": "No fresh משפט publication event for 71 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 75 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -509,11 +549,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 74,
+          "ageMinutes": 78,
           "latestAt": "2026-06-03T07:00:00+03:00",
           "headline": "חיים לבד בישראל עולים יותר כמעט בכל חשבון",
           "source": "ynet - כל ערוץ יחסים",
-          "message": "No fresh צרכנות publication event for 74 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 78 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -522,11 +562,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 408,
+          "ageMinutes": 412,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 408 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 412 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -535,11 +575,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 94,
+          "ageMinutes": 97,
           "latestAt": "2026-06-03T06:40:14+03:00",
           "headline": "בינה מלאכותית פתרה חידה מתמטית בת 80 שנה",
           "source": "ynet - כל ערוץ מדע וטבע",
-          "message": "No fresh טכנולוגיה publication event for 94 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 97 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -548,11 +588,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 876,
+          "ageMinutes": 880,
           "latestAt": "2026-06-02T17:38:00+03:00",
           "headline": "אלטו מילאה מרכז מסחרי באטלנטה עם Lidl",
           "source": "וואלה כסף",
-          "message": "No fresh נדל״ן publication event for 876 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 880 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -561,11 +601,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 3014,
+          "ageMinutes": 3018,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 3014 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 3018 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -620,21 +660,21 @@
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastCheckedAt": "2026-06-03T08:13:37+03:00",
+      "lastCheckedAt": "2026-06-03T08:13:53+03:00",
       "lastStatus": "repair_needed",
       "lastIncidentType": "domain_sla_breach",
       "currentIncidentKey": "domain_sla|פוליטיקה|2026-06-03T06:23:26+03:00|ציוץ על ביירות החריף את המתח עם טראמפ",
-      "currentIncidentRepeatCount": 1,
+      "currentIncidentRepeatCount": 2,
       "lastAutomaticAction": "prepare_domain_rescue_worker",
       "loopProtection": {
         "active": false,
         "reason": "",
-        "repeatCount": 1
+        "repeatCount": 2
       },
       "lastOkAt": "2026-05-25T17:38:06+03:00",
-      "lastStage4StartedAt": "2026-06-03T07:07:08+03:00",
+      "lastStage4StartedAt": "2026-06-03T08:13:53+03:00",
       "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-06-03T06:23:26+03:00|ציוץ על ביירות החריף את המתח עם טראמפ",
-      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260603-070815",
+      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260603-0816",
       "lastStage3StartedAt": "2026-06-03T08:08:38+03:00",
       "lastStage3IncidentKey": "top_stale|no_new_top_item_sla|2026-06-03T06:45:42+02:00|https://www.kipa.co.il/1225391-0",
       "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260603-080240"
@@ -645,27 +685,37 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-06-03T08:14:13+03:00",
-      "checkedAt": "2026-06-03T08:14:13+03:00",
-      "findings": []
+      "summary": "תקין בבדיקה האחרונה 2026-06-03T08:18:05+03:00",
+      "checkedAt": "2026-06-03T08:18:05+03:00",
+      "findings": [
+        {
+          "severity": "warning",
+          "code": "no_new_top_item_warning",
+          "message": "No new top feed item for more than 15m: latest is 2026-06-03T08:01:00+03:00 (0:17:04.052956 old). Warning only; if it reaches 25m, treat as operational problem.",
+          "item": 0,
+          "headline": "ניר ברדע מעניק למסאי דגו קרדיט על העלייה של הפועל רמת גן",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "url": "https://sports.walla.co.il/item/3842805"
+        }
+      ]
     },
     {
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-06-03T08:14:14+03:00",
+      "summary": "No fresh פוליטיקה publication event for 47 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-06-03T08:18:06+03:00",
       "findings": [
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 110,
-          "latestAt": "2026-06-03T06:23:26+03:00",
-          "headline": "ציוץ על ביירות החריף את המתח עם טראמפ",
-          "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh פוליטיקה publication event for 110 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "ageMinutes": 47,
+          "latestAt": "2026-06-03T07:30:53+03:00",
+          "headline": "נתניהו מתקשה להבטיח רוב לפרקליטו במרוץ למבקר המדינה",
+          "source": "ישראל היום - כל הכתבות",
+          "message": "No fresh פוליטיקה publication event for 47 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -674,11 +724,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 71,
+          "ageMinutes": 75,
           "latestAt": "2026-06-03T07:03:00+03:00",
           "headline": "הכנסת מתקרבת להגבלת שכר טרחה בתביעות נכי צה״ל",
           "source": "גלובס - בארץ",
-          "message": "No fresh משפט publication event for 71 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 75 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -687,11 +737,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 74,
+          "ageMinutes": 78,
           "latestAt": "2026-06-03T07:00:00+03:00",
           "headline": "חיים לבד בישראל עולים יותר כמעט בכל חשבון",
           "source": "ynet - כל ערוץ יחסים",
-          "message": "No fresh צרכנות publication event for 74 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 78 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -700,11 +750,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 408,
+          "ageMinutes": 412,
           "latestAt": "2026-06-03T01:25:20+03:00",
           "headline": "איירבוס בחנה מטוס שיאפשר טיסות ישירות של 22 שעות",
           "source": "מעריב - מבזקים",
-          "message": "No fresh רכב publication event for 408 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 412 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -713,11 +763,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 94,
+          "ageMinutes": 97,
           "latestAt": "2026-06-03T06:40:14+03:00",
           "headline": "בינה מלאכותית פתרה חידה מתמטית בת 80 שנה",
           "source": "ynet - כל ערוץ מדע וטבע",
-          "message": "No fresh טכנולוגיה publication event for 94 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 97 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -726,11 +776,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 876,
+          "ageMinutes": 880,
           "latestAt": "2026-06-02T17:38:00+03:00",
           "headline": "אלטו מילאה מרכז מסחרי באטלנטה עם Lidl",
           "source": "וואלה כסף",
-          "message": "No fresh נדל״ן publication event for 876 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 880 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -739,12 +789,26 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 3014,
+          "ageMinutes": 3018,
           "latestAt": "2026-06-01T06:00:00+03:00",
           "headline": "מזג האוויר בירושלים: 13°–26°; עננות חלקית; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 3014 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 3018 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "warning",
+          "code": "publication_silence_warning",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "warningMinutes": 15,
+          "ageMinutes": 17,
+          "latestAt": "2026-06-03T08:01:00+03:00",
+          "headline": "ניר ברדע מעניק למסאי דגו קרדיט על העלייה של הפועל רמת גן",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "message": "No new publication event for 17 minutes; warn Aliza now. At 25 minutes this becomes an operational problem.",
+          "recommendedAction": "alert_aliza_monitor_until_fast_rescue_threshold",
           "escalateTo": "aliza"
         }
       ]
