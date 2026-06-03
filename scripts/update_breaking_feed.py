@@ -419,6 +419,14 @@ def near_duplicate(a: str, b: str) -> bool:
     near_time_terms = {"שבוע", "הבא", "בקרוב"}
     if {"טראמפ", "איראן", "הסכם_הפסקת_אש"} <= shared and (ta & near_time_terms) and (tb & near_time_terms):
         return True
+    # Israel/Lebanon ceasefire flashes can split between a concise Walla-style
+    # agreement headline and a Ynet-style condition headline about Hezbollah
+    # withdrawing/holding fire.  Collapse only when both sides share the Israel +
+    # Lebanon + ceasefire/agreement anchors so unrelated Lebanon fighting or
+    # diplomacy items remain separate.
+    lebanon_ceasefire_terms = {"הסכם_הפסקת_אש", "סכם", "סכימו", "פסקת", "האש", "אש"}
+    if {"ישראל", "לבנון"} <= shared and (ta & lebanon_ceasefire_terms) and (tb & lebanon_ceasefire_terms):
+        return True
     # Same Trump/Netanyahu Beirut de-escalation flash, phrased as a direct quote
     # by Rotter and as a paraphrased Walla/Ynet-style headline/context elsewhere.
     if {"טראמפ", "נתניהו", "דאחייה_ביירות"} <= shared and ((ta & {"ביקשתי", "ביקש", "שוחחתי", "שוחח"}) or (tb & {"ביקשתי", "ביקש", "שוחחתי", "שוחח"})) and ((ta & {"תקיפה_ביירות", "כוחותיו", "הפנה"}) or (tb & {"תקיפה_ביירות", "כוחותיו", "הפנה"})):
