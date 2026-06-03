@@ -628,7 +628,6 @@ function PoentaApp() {
   const unreadCount = visibleMainBase.filter(i => !readKeySet.has(itemKey(i))).length;
   const totalMainCount = visibleMainBase.length;
   const unreadPct = totalMainCount ? Math.max(0, Math.min(100, Math.round((unreadCount / totalMainCount) * 100))) : 0;
-  const syncLabel = lastSyncedAt ? `עודכן ${timeLabel({ publishedAt: lastSyncedAt } as FeedItem)}` : 'משוך לרענון';
 
   const keyExtractor = useCallback((item: FeedItem, index: number) => `${itemKey(item)}-${index}`, []);
   const renderItem = useCallback(({ item, index }: { item: FeedItem; index: number }) => viewRef.current === 'breaking'
@@ -689,7 +688,6 @@ function PoentaApp() {
           <View style={[styles.updateFill, { width: `${unreadPct}%` }]} />
           <Text style={styles.updateText}>מדד החדשים שלך</Text>
         </TouchableOpacity>
-        <Text style={styles.syncText}>{syncLabel}</Text>
       </View>
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
@@ -697,6 +695,7 @@ function PoentaApp() {
     {view === 'settings' || view === 'more' ? <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />} keyboardShouldPersistTaps="handled">
       {view === 'settings' ? renderSettings() : renderMore()}
     </ScrollView> : <FlatList
+      key={view === 'breaking' ? 'breaking-list' : view === 'home' ? 'home-list' : view === 'search' ? 'search-list' : 'saved-list'}
       style={styles.scroll}
       contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]}
       data={loading ? [] : list}
@@ -732,13 +731,13 @@ export default function App() {
 }
 function createStyles(c: AppColors) {
 return StyleSheet.create({
-  safe: { flex: 1, backgroundColor: c.bg, direction: 'rtl' },
-  topbar: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: c.topbar, borderBottomWidth: 1, borderBottomColor: c.border, borderBottomLeftRadius: 18, borderBottomRightRadius: 18, shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 22, shadowOffset: { width: 0, height: 10 }, elevation: 10 },
-  header: { height: 52, paddingHorizontal: 16, paddingTop: 4, flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between' },
+  safe: { flex: 1, backgroundColor: c.bg, direction: 'rtl', alignItems: 'stretch' },
+  topbar: { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 50, backgroundColor: c.topbar, borderBottomWidth: 1, borderBottomColor: c.border, borderBottomLeftRadius: 18, borderBottomRightRadius: 18, shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 22, shadowOffset: { width: 0, height: 10 }, elevation: 10, direction: 'rtl', alignItems: 'stretch' },
+  header: { height: 52, paddingHorizontal: 16, paddingTop: 4, flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', alignSelf: 'stretch' },
   topMore: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center' },
   topMoreText: { color: c.secondary, fontSize: 25, fontWeight: '900', lineHeight: 30 },
   logoImage: { height: 38, width: 164 },
-  updates: { height: 52, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.border, backgroundColor: c.surface, justifyContent: 'center', direction: 'rtl' },
+  updates: { height: 42, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.border, backgroundColor: c.surface, justifyContent: 'center', direction: 'rtl', alignSelf: 'stretch' },
   updatePill: { position: 'absolute', left: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.34)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
   updateTotalPill: { position: 'absolute', right: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
   updatePillActive: { borderColor: c.yellow, backgroundColor: c.yellowBg },
@@ -747,26 +746,26 @@ return StyleSheet.create({
   updateFill: { position: 'absolute', right: 0, top: 0, bottom: 0, backgroundColor: c.yellow },
   updateText: { color: c.textOnYellow, fontSize: 10.8, fontWeight: '900', letterSpacing: -0.05 },
   syncText: { color: c.muted, textAlign: 'center', fontSize: 10.5, fontWeight: '800', marginTop: 3 },
-  tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center', overflow: 'hidden' },
-  scroll: { flex: 1 },
-  content: { paddingHorizontal: 16, direction: 'rtl', alignItems: 'stretch' },
+  tabline: { height: 46, paddingHorizontal: 16, justifyContent: 'center', overflow: 'hidden', direction: 'rtl', alignSelf: 'stretch' },
+  scroll: { flex: 1, alignSelf: 'stretch', width: '100%', direction: 'rtl' },
+  content: { flexGrow: 1, width: '100%', paddingHorizontal: 16, direction: 'rtl', alignItems: 'stretch' },
   title: { color: c.text, fontSize: 25, lineHeight: 30, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl' },
   subtitle: { color: c.muted, fontSize: 13.5, lineHeight: 20, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl', marginTop: 7, marginBottom: 12 },
-  tabsScroll: { flex: 1, alignSelf: 'stretch', width: '100%', direction: 'ltr' },
-  tabs: { flexDirection: 'row-reverse', gap: 9, alignItems: 'center', paddingHorizontal: 1, paddingLeft: 28, paddingRight: 1, flexGrow: 0 },
-  chip: { height: 28, maxWidth: 132, borderWidth: 1, borderColor: c.faint, borderRadius: 999, backgroundColor: c.surfaceSoft, paddingHorizontal: 9, paddingVertical: 0, flexDirection: 'row-reverse', gap: 6, alignItems: 'center', justifyContent: 'center' },
+  tabsScroll: { flex: 1, alignSelf: 'stretch', width: '100%', direction: 'rtl' },
+  tabs: { flexDirection: 'row', direction: 'rtl', gap: 9, alignItems: 'center', paddingHorizontal: 1, paddingLeft: 28, paddingRight: 1, flexGrow: 0 },
+  chip: { height: 28, maxWidth: 132, borderWidth: 1, borderColor: c.faint, borderRadius: 999, backgroundColor: c.surfaceSoft, paddingHorizontal: 9, paddingVertical: 0, flexDirection: 'row', direction: 'rtl', gap: 6, alignItems: 'center', justifyContent: 'center' },
   chipActive: { borderColor: c.yellow, backgroundColor: c.yellow },
   chipText: { color: c.secondary, fontSize: 13, fontWeight: '800', writingDirection: 'rtl', textAlign: 'right', flexShrink: 1, lineHeight: 18 },
   chipTextActive: { color: c.textOnYellow, fontWeight: '900' },
   chipCount: { minWidth: 18, height: 18, lineHeight: 18, textAlign: 'center', textAlignVertical: 'center', color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, overflow: 'hidden', paddingHorizontal: 5, fontSize: 10.5, fontWeight: '900' },
   chipCountActive: { color: c.textOnYellow, backgroundColor: 'rgba(7,16,21,0.18)', fontWeight: '900' },
   feedToggle: { flexDirection: 'row-reverse', gap: 8, marginBottom: 3 },
-  card: { borderWidth: 1, borderColor: c.subtleBorder, borderRadius: 18, backgroundColor: c.card, paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: c.shadow, shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2, direction: 'rtl', alignSelf: 'stretch' },
+  card: { width: '100%', borderWidth: 1, borderColor: c.subtleBorder, borderRadius: 18, backgroundColor: c.card, paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: c.shadow, shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2, direction: 'rtl', alignSelf: 'stretch', alignItems: 'stretch' },
   unreadCard: { borderColor: 'rgba(255,196,0,0.18)' },
   breakingCard: { borderColor: 'rgba(255,196,0,0.22)', backgroundColor: 'rgba(255,196,0,0.055)', paddingBottom: 14 },
-  metaRow: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
-  breakingMetaRow: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', alignSelf: 'stretch', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
-  metaActions: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
+  metaRow: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingHorizontal: 2, gap: 8, alignSelf: 'stretch' },
+  breakingMetaRow: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', alignSelf: 'stretch', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
+  metaActions: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
   cat: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flex: 1 },
   breakingCat: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
   iconAction: { width: 15, height: 15, alignItems: 'center', justifyContent: 'center', marginLeft: 1 },
@@ -776,7 +775,7 @@ return StyleSheet.create({
   bolt: { color: c.yellow, fontSize: 16, fontWeight: '900' },
   catText: { color: c.muted, fontSize: 12, fontWeight: '800', textAlign: 'right', writingDirection: 'rtl', flexShrink: 1 },
   time: { color: c.muted, fontSize: 12, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl' },
-  heroBox: { position: 'relative', borderRadius: 22, overflow: 'hidden', backgroundColor: c.heroBg, minHeight: 214, justifyContent: 'flex-end', marginBottom: 11 },
+  heroBox: { width: '100%', alignSelf: 'stretch', position: 'relative', borderRadius: 22, overflow: 'hidden', backgroundColor: c.heroBg, minHeight: 214, justifyContent: 'flex-end', marginBottom: 11, direction: 'rtl' },
   heroShade: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.28)' },
   image: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg },
   placeholder: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg, alignItems: 'center', justifyContent: 'center' },
@@ -790,9 +789,9 @@ return StyleSheet.create({
   smallAction: { borderWidth: 1, borderColor: c.faint, borderRadius: 14, backgroundColor: c.surfaceSoft, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' },
   smallActionOn: { borderColor: 'rgba(255,196,0,0.42)', backgroundColor: 'rgba(255,196,0,0.13)' },
   smallActionText: { color: c.yellow, fontSize: 12, fontWeight: '900' },
-  sourceBox: { position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', borderRadius: 15, backgroundColor: c.sourceBg, paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden', direction: 'rtl', alignSelf: 'stretch' },
+  sourceBox: { width: '100%', alignSelf: 'stretch', position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', borderRadius: 15, backgroundColor: c.sourceBg, paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden', direction: 'rtl', alignItems: 'stretch' },
   sourceAccent: { position: 'absolute', right: 0, top: 12, bottom: 12, width: 3, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.74)' },
-  sourceHead: { flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
+  sourceHead: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
   sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden', textAlign: 'right', writingDirection: 'rtl' },
   sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
   sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 1, textAlign: 'right', writingDirection: 'rtl' },
@@ -847,7 +846,7 @@ return StyleSheet.create({
   searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: c.border, backgroundColor: c.inputBg, color: c.text, paddingHorizontal: 14, textAlign: 'right', writingDirection: 'rtl', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   empty: { color: c.muted, textAlign: 'center', marginTop: 34, fontWeight: '800' },
   error: { color: c.red, textAlign: 'right', marginTop: 18, fontWeight: '800' },
-  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, borderTopColor: c.border, borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: c.bottom, flexDirection: 'row', direction: 'ltr', paddingBottom: 10, justifyContent: 'space-around', shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
+  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, borderTopColor: c.border, borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: c.bottom, flexDirection: 'row', direction: 'rtl', paddingBottom: 10, justifyContent: 'space-around', shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
   navButton: { flex: 1, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
   navActive: {},
   navIcon: { color: c.iconMuted, fontSize: 28, fontWeight: '800', lineHeight: 30 },
