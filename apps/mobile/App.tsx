@@ -294,9 +294,9 @@ function BreakingCard({ item, index }: { item: FeedItem; index: number }) {
   const open = () => { if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
   const sources = item.sources?.length ? item.sources.join(' + ') : sourceName(item);
   return <TouchableOpacity style={[styles.card, styles.breakingCard]} onPress={open} activeOpacity={item.sourceUrl ? 0.78 : 1}>
-    <View style={styles.metaRow}>
-      <View style={styles.cat}><Text style={styles.bolt}>⚡</Text><Text style={styles.catText}>{sources}</Text></View>
+    <View style={styles.breakingMetaRow}>
       <Text style={styles.time}>{timeLabel(item, index)}</Text>
+      <View style={styles.breakingCat}><Text style={styles.bolt}>⚡</Text><Text style={styles.catText}>{sources}</Text></View>
     </View>
     <Text style={styles.breakingHeadline}>{displayHeadline(item)}</Text>
     {!!summaryFor(item) && <Text style={styles.summary}>{summaryFor(item)}</Text>}
@@ -764,16 +764,18 @@ return StyleSheet.create({
   card: { borderWidth: 1, borderColor: c.subtleBorder, borderRadius: 18, backgroundColor: c.card, paddingHorizontal: 14, paddingTop: 13, paddingBottom: 0, marginTop: 10, overflow: 'hidden', shadowColor: c.shadow, shadowOpacity: 0.12, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 2, direction: 'rtl', alignSelf: 'stretch' },
   unreadCard: { borderColor: 'rgba(255,196,0,0.18)' },
   breakingCard: { borderColor: 'rgba(255,196,0,0.22)', backgroundColor: 'rgba(255,196,0,0.055)', paddingBottom: 14 },
-  metaRow: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
-  metaActions: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 7, flexShrink: 1 },
-  cat: { flexDirection: 'row-reverse', alignItems: 'center', gap: 7, flex: 1 },
+  metaRow: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
+  breakingMetaRow: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', alignSelf: 'stretch', marginBottom: 8, paddingHorizontal: 2, gap: 8 },
+  metaActions: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
+  cat: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flex: 1 },
+  breakingCat: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
   iconAction: { width: 15, height: 15, alignItems: 'center', justifyContent: 'center', marginLeft: 1 },
   iconActionText: { color: c.yellow, fontSize: 14, fontWeight: '900', lineHeight: 16 },
   iconActionOn: { color: c.yellow },
   star: { color: c.yellow, fontSize: 15, fontWeight: '900', lineHeight: 16 },
   bolt: { color: c.yellow, fontSize: 16, fontWeight: '900' },
   catText: { color: c.muted, fontSize: 12, fontWeight: '800', textAlign: 'right', writingDirection: 'rtl', flexShrink: 1 },
-  time: { color: c.muted, fontSize: 12, fontWeight: '700', textAlign: 'left' },
+  time: { color: c.muted, fontSize: 12, fontWeight: '700', textAlign: 'right', writingDirection: 'rtl' },
   heroBox: { position: 'relative', borderRadius: 22, overflow: 'hidden', backgroundColor: c.heroBg, minHeight: 214, justifyContent: 'flex-end', marginBottom: 11 },
   heroShade: { position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.28)' },
   image: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg },
