@@ -59,6 +59,26 @@ CASES = [
         },
     ),
     (
+        "us_iran_tanker_guardian_current_headline_url_20260603",
+        True,
+        {
+            "source": "The Guardian Middle East",
+            "category": "ביטחון",
+            "headline": "ארה״ב ואיראן חידשו תקיפות סביב מצר הורמוז והמפרץ",
+            "originalTitle": "US and Iran launch fresh strikes amid stalled ceasefire talks",
+            "context": "ארה״ב השביתה מכלית שהתקרבה לאיראן, תקפה מטרות בקשם והדפה טילים וכטב״מים לעבר כוויית ובחריין.",
+            "sourceUrl": "https://www.theguardian.com/world/2026/jun/03/us-fires-missile-tanker-strait-of-hormuz",
+        },
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "headline": "מטוס אמריקני השבית מכלית בדרך למסוף הנפט באיראן",
+            "originalTitle": "פיקוד המרכז של ארה״ב: מכלית נפט שהייתה בדרכה לאיראן נוטרלה באמצעות טיל הלפייר",
+            "context": "המכלית M/T Lexie המשיכה לעבר האי ח'ארג אחרי אזהרות אמריקניות, וטיל הלפייר פגע בחדר המנוע והשבית את הספינה.",
+            "sourceUrl": "https://news.walla.co.il/break/3842815",
+        },
+    ),
+    (
         "us_iran_gulf_exchange_kuwait_bahrain_20260603",
         True,
         {

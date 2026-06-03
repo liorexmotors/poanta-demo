@@ -2217,8 +2217,8 @@ def security_event_tokens(item: dict) -> set[str]:
 
 
 def live_regression_duplicate_tokens(item: dict) -> set[str]:
-    primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle"]).lower()
-    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
+    primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle", "sourceUrl", "url"]).lower()
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source", "sourceUrl", "url"]).lower()
     tokens = set()
     # Require the tanker itself to be the primary story, not merely background
     # context for adjacent Kuwait/Bahrain air-defense alerts in the same crisis.

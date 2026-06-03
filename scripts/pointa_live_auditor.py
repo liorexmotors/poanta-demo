@@ -475,8 +475,8 @@ def preferred_duplicate_item(a: tuple[int, dict[str, Any]], b: tuple[int, dict[s
 
 
 def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
-    primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle"]).lower()
-    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source"]).lower()
+    primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle", "sourceUrl", "url"]).lower()
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source", "sourceUrl", "url"]).lower()
     tokens: set[str] = set()
     # Require the tanker itself to be the primary story, not merely background
     # context for adjacent Kuwait/Bahrain air-defense alerts in the same crisis.
