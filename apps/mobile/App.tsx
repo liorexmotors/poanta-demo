@@ -153,9 +153,9 @@ function SourceIcon({ name, item, small = false }: { name: string; item?: FeedIt
 }
 
 type IconName = 'bookmark' | 'share' | 'breaking' | 'settings' | 'search';
-function WebIcon({ name, active = false, size = 28 }: { name: IconName; active?: boolean; size?: number }) {
+function WebIcon({ name, active = false, filled = false, size = 28 }: { name: IconName; active?: boolean; filled?: boolean; size?: number }) {
   const color = active ? appColors.yellow : appColors.iconMuted;
-  const fill = active && (name === 'breaking' || name === 'search') ? color : 'none';
+  const fill = filled || (active && (name === 'breaking' || name === 'search')) ? color : 'none';
   if (name === 'bookmark') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M6 4h12v17l-6-4-6 4V4Z" stroke={color} fill={fill} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
   if (name === 'share') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /><Path d="M12 16V4" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /><Path d="M7 9l5-5 5 5" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
   if (name === 'breaking') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z" stroke={color} fill={fill} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
@@ -321,9 +321,9 @@ function BreakingCard({ item, index }: { item: FeedItem; index: number }) {
   </View>;
 }
 
-function NavButton({ label, icon, active, onPress, logo }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean }) {
+function NavButton({ label, icon, active, onPress, logo, filled = false }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean; filled?: boolean }) {
   return <TouchableOpacity style={styles.navButton} onPress={onPress} accessibilityLabel={label}>
-    {logo ? <View style={[styles.navLogoBadge, active && styles.navLogoBadgeActive]}><Image source={POENTA_NAV_ICON} style={styles.navLogo as any} /></View> : icon ? <WebIcon name={icon} active={active} size={28} /> : null}
+    {logo ? <View style={[styles.navLogoBadge, active && styles.navLogoBadgeActive]}><Image source={POENTA_NAV_ICON} style={styles.navLogo as any} /></View> : icon ? <WebIcon name={icon} active={active} filled={filled} size={28} /> : null}
   </TouchableOpacity>;
 }
 
@@ -521,6 +521,9 @@ function PoentaApp() {
   }
 
   function switchView(next: ViewMode) {
+    // Keep the imperative ref in sync before React's next render so viewability logic
+    // cannot mark breaking/search/saved rows as normal home-feed rows during tab changes.
+    viewRef.current = next;
     setView(next);
     if (next !== 'more') setMoreScreen('menu');
     setActiveFilter('all');
@@ -647,9 +650,9 @@ function PoentaApp() {
   const unreadMarkerLeftPct = totalMainCount ? Math.max(13, Math.min(86, 13 + (1 - unreadRatio) * 73)) : 13;
 
   const keyExtractor = useCallback((item: FeedItem, index: number) => `${itemKey(item)}-${index}`, []);
-  const renderItem = useCallback(({ item, index }: { item: FeedItem; index: number }) => viewRef.current === 'breaking'
+  const renderItem = useCallback(({ item, index }: { item: FeedItem; index: number }) => view === 'breaking'
     ? <BreakingCard item={item} index={index} />
-    : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />, [savedKeySet]);
+    : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} />, [view, savedKeySet]);
   const viewabilityConfig = useRef({ itemVisiblePercentThreshold: 62, minimumViewTime: 450 }).current;
   const onViewableItemsChanged = useRef(({ viewableItems }: { viewableItems: Array<{ item?: FeedItem }> }) => {
     if (viewRef.current !== 'home') return;
@@ -733,7 +736,7 @@ function PoentaApp() {
     />}
 
     <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
-      <NavButton label="שמור" icon="bookmark" active={view === 'saved' || savedKeys.length > 0} onPress={() => switchView('saved')} />
+      <NavButton label="שמור" icon="bookmark" active={view === 'saved' || savedKeys.length > 0} filled={view === 'saved'} onPress={() => switchView('saved')} />
       <NavButton label="חיפוש" icon="search" active={view === 'search'} onPress={() => switchView('search')} />
       <NavButton label="הגדרות" icon="settings" active={view === 'settings'} onPress={() => switchView('settings')} />
       <NavButton label="מבזקים" icon="breaking" active={view === 'breaking'} onPress={() => switchView('breaking')} />
@@ -818,7 +821,7 @@ return StyleSheet.create({
   sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
   sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
   sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 1, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
-  sourceIconImage: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint },
+  sourceIconImage: { width: 22, height: 22, borderRadius: 999, backgroundColor: 'transparent' },
   sourceIconFallback: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint, alignItems: 'center', justifyContent: 'center' },
   sourceIconFallbackText: { color: c.text, fontSize: 9.5, fontWeight: '900' },
   sourceText: { color: c.text, fontSize: 13.8, lineHeight: 18.5, fontWeight: '700', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch' },
@@ -847,7 +850,7 @@ return StyleSheet.create({
   sourceRow: { borderTopWidth: 1, borderTopColor: c.border, paddingVertical: 12, flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
   sourceRowOn: { backgroundColor: 'rgba(255,196,0,0.04)' },
   sourceRowLabel: { flex: 1, flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 9, minWidth: 0 },
-  sourceMiniImage: { width: 24, height: 24, borderRadius: 8, backgroundColor: c.faint, borderWidth: 1, borderColor: c.border },
+  sourceMiniImage: { width: 24, height: 24, borderRadius: 999, backgroundColor: 'transparent', borderWidth: 0 },
   sourceMiniFallback: { width: 24, height: 24, borderRadius: 8, backgroundColor: c.faint, alignItems: 'center', justifyContent: 'center' },
   sourceMiniFallbackText: { color: c.yellow, fontSize: 10, fontWeight: '900' },
   sourceRowName: { color: c.text, fontSize: 14, fontWeight: '800', textAlign: RTL_TEXT_ALIGN, flexShrink: 1 },
@@ -870,7 +873,7 @@ return StyleSheet.create({
   moreTitle: { color: c.text, fontSize: 16, fontWeight: '900', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
   moreSub: { color: c.muted, fontSize: 12.5, fontWeight: '700', lineHeight: 17, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', marginTop: 4 },
   moreArrow: { color: c.yellow, fontSize: 28, fontWeight: '800', lineHeight: 30 },
-  shareActionIcon: { width: 38, height: 38, borderRadius: 14, borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.55)', backgroundColor: '#f7f1df', alignItems: 'center', justifyContent: 'center', shadowColor: c.yellow, shadowOpacity: 0.16, shadowRadius: 10, shadowOffset: { width: 0, height: 0 }, elevation: 4 },
+  shareActionIcon: { width: 38, height: 38, borderRadius: 14, borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.55)', backgroundColor: 'rgba(255,196,0,0.14)', alignItems: 'center', justifyContent: 'center', shadowColor: c.yellow, shadowOpacity: 0.16, shadowRadius: 10, shadowOffset: { width: 0, height: 0 }, elevation: 4 },
   shareActionImage: { width: 27, height: 27, borderRadius: 9 },
   aboutContent: { borderWidth: 1, borderColor: c.border, borderRadius: 20, backgroundColor: c.surface, padding: 16 },
   moreSectionTitle: { color: c.text, fontSize: 17, fontWeight: '900', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', marginTop: 14, marginBottom: 2 },
@@ -882,7 +885,7 @@ return StyleSheet.create({
   navButton: { flex: 1, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
   navActive: {},
   navIcon: { color: c.iconMuted, fontSize: 28, fontWeight: '800', lineHeight: 30 },
-  navLogoBadge: { width: 36, height: 36, borderRadius: 14, backgroundColor: '#f7f1df', borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.38)', alignItems: 'center', justifyContent: 'center' },
+  navLogoBadge: { width: 36, height: 36, borderRadius: 14, backgroundColor: 'rgba(255,196,0,0.14)', borderWidth: 1.5, borderColor: 'rgba(255,196,0,0.38)', alignItems: 'center', justifyContent: 'center' },
   navLogoBadgeActive: { borderColor: c.yellow, shadowColor: c.yellow, shadowOpacity: 0.22, shadowRadius: 12, shadowOffset: { width: 0, height: 0 }, elevation: 5 },
   navLogo: { width: 27, height: 27, borderRadius: 9 },
   navText: { display: 'none' },
