@@ -42,6 +42,7 @@ type Prefs = { topics: string[]; sources: string[]; days: number; feedFilter: 'a
 const DEFAULT_TOPICS = ['ביטחון', 'פוליטיקה', 'אקטואליה בעולם', 'כלכלה', 'רכב', 'טכנולוגיה', 'צרכנות', 'תרבות', 'ספורט', 'בריאות'];
 const APP_SHARE_TEXT = 'מצאתי אפליקציית חדשות מעולה — Poenta.\nחדשות בעברית עם תקציר ברור, הקשר והפואנטה.\nhttps://poenta.app/';
 const POENTA_LOGO = require('./assets/poenta-logo.png');
+const POENTA_LOGO_LIGHT = require('./assets/poenta-logo-light.png');
 const POENTA_NAV_ICON = require('./assets/poenta-icon-64.png');
 
 type AppColors = {
@@ -332,11 +333,12 @@ function PoentaApp() {
   const insets = useSafeAreaInsets();
   const topInset = Math.max(insets.top, 18);
   const bottomInset = Math.max(insets.bottom, 10);
-  const topbarHeight = 150 + topInset;
-  const navHeight = 58 + bottomInset;
   const [items, setItems] = useState<FeedItem[]>([]);
   const [breaking, setBreaking] = useState<FeedItem[]>([]);
   const [view, setView] = useState<ViewMode>('home');
+  const showFreshnessMeter = view !== 'breaking';
+  const topbarHeight = (showFreshnessMeter ? 150 : 108) + topInset;
+  const navHeight = 58 + bottomInset;
   const [moreScreen, setMoreScreen] = useState<MoreScreen>('menu');
   const [appearance, setAppearance] = useState<'dark' | 'light' | 'system'>('system');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -559,24 +561,42 @@ function PoentaApp() {
     if (moreScreen === 'about') return <View style={styles.panel}>
       <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>אודות Poenta</Text><Text style={styles.moreHeadSub}>מה Poenta עושה ולמה היא נבנתה.</Text></View></View>
       <View style={styles.aboutContent}>
-        <Text style={styles.about}>Poenta נבנתה בשביל אנשים שרוצים להבין מהר מה באמת קורה — בלי לבזבז זמן על כותרות מטעות, קליקבייט וכתבות ארוכות.</Text>
-        <Text style={styles.about}>האפליקציה מרכזת חדשות ממגוון מקורות ומזקקת כל ידיעה ל־3 דברים בלבד: הכותרת, התמצית והפואנטה.</Text>
-        <Text style={styles.moreSectionTitle}>מה מיוחד ב־Poenta?</Text>
-        <Text style={styles.about}>• פיד חדשות חכם ומותאם אישית\n• תמצות AI מהיר וברור\n• הסרת קליקבייט ורעש מיותר\n• בחירת תחומי עניין ומקורות מועדפים</Text>
-        <Text style={styles.moreSectionTitle}>גרסה</Text><Text style={styles.about}>Poenta Beta v1.0</Text>
+        <Text style={styles.about}>Poenta / פואנטה היא שירות חדשות אישי בעברית שמרכז, מסכם ומארגן ידיעות ממקורות חיצוניים לפי מקורות, תחומי עניין והעדפות שימוש.</Text>
+        <Text style={styles.about}>המטרה: להבין מהר מה באמת קרה, למה זה חשוב ומה הפואנטה — בלי כותרות מטעות, רעש מיותר וגלילה אינסופית.</Text>
+        <Text style={styles.moreSectionTitle}>מה מוצג באפליקציה?</Text>
+        <Text style={styles.about}>• פיד חדשות חכם ומותאם אישית\n• תקצירים, הקשרים וניסוחי פואנטה בעזרת AI ובקרות איכות\n• קישורים למקורות המקוריים\n• שמורים, מבזקים, מקורות ותחומי עניין</Text>
+        <Text style={styles.moreSectionTitle}>גרסה</Text><Text style={styles.about}>Poenta 0.3.5</Text>
       </View>
     </View>;
     if (moreScreen === 'terms') return <View style={styles.panel}>
       <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>תנאי שימוש</Text><Text style={styles.moreHeadSub}>המסמך המשפטי לשימוש ב־Poenta.</Text></View></View>
-      <View style={styles.aboutContent}><Text style={styles.about}>עודכן לאחרונה: 24.05.2026</Text><Text style={styles.about}>השימוש באפליקציה, באתר ובשירותי Poenta כפוף לתנאי השימוש. Poenta היא פלטפורמת תוכן מבוססת AI המרכזת, מנתחת ומתמצתת מידע ממקורות חיצוניים.</Text><Text style={styles.about}>השירות ניתן “כפי שהוא”. כל זכויות הקניין הרוחני באפליקציה שייכות ל־Poenta.</Text></View>
+      <View style={styles.aboutContent}>
+        <Text style={styles.about}>עדכון אחרון: 2026-06-01</Text>
+        <Text style={styles.about}>Poenta היא שירות חדשות אישי שמרכז ידיעות ממקורות חיצוניים, מציג תקצירים, הקשרים, קישורים למקורות מקוריים וכלי סינון לפי מקורות ותחומי עניין.</Text>
+        <Text style={styles.about}>התוכן מבוסס על מקורות חיצוניים. זכויות היוצרים בתוכן המקורי, בכותרות המקור, בתמונות ובחומרים המקוריים שייכות לבעליהן. Poenta אינה מחליפה את המקור המקורי ואינה טוענת לבעלות על תוכן צד שלישי.</Text>
+        <Text style={styles.about}>חלק מהתקצירים, הכותרות, ההקשרים או ניסוחי “הפואנטה” עשויים להיווצר או להיערך בעזרת AI. ייתכנו טעויות, אי־דיוקים או השמטות; במקרה של סתירה המקור המקורי הוא נקודת הייחוס.</Text>
+        <Text style={styles.about}>השירות מיועד למידע חדשותי וכללי בלבד ואינו מהווה ייעוץ משפטי, פיננסי, רפואי, ביטחוני או מקצועי. השימוש הוא באחריות המשתמש.</Text>
+        <Text style={styles.about}>לפניות בנושא תנאי השימוש: support@poenta.app</Text>
+      </View>
     </View>;
     if (moreScreen === 'privacy') return <View style={styles.panel}>
       <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>מדיניות פרטיות</Text><Text style={styles.moreHeadSub}>איך Poenta מתייחסת למידע ולהעדפות המשתמש.</Text></View></View>
-      <View style={styles.aboutContent}><Text style={styles.about}>Poenta מכבדת את פרטיות המשתמשים ואינה מוכרת מידע אישי למפרסמים.</Text><Text style={styles.about}>המידע משמש להתאמה אישית של הפיד, שיפור השירות וניתוח שימוש בסיסי.</Text><Text style={styles.about}>יצירת קשר: support@poenta.app</Text></View>
+      <View style={styles.aboutContent}>
+        <Text style={styles.about}>עדכון אחרון: 2026-06-01</Text>
+        <Text style={styles.about}>בגרסה הראשונה, ללא הרשמה וללא התחברות, Poenta מיועדת לעבוד עם מידע מינימלי.</Text>
+        <Text style={styles.about}>העדפות מקומיות כמו מקורות, תחומי עניין, פריטים שמורים והגדרות תצוגה עשויות להישמר במכשיר או בדפדפן.</Text>
+        <Text style={styles.about}>ייתכן שייאסף מידע טכני בסיסי כמו IP, סוג דפדפן/מכשיר, זמני גישה ושגיאות לצורך אבטחה, תפעול ושיפור השירות.</Text>
+        <Text style={styles.about}>Poenta אינה מוכרת מידע אישי. בגרסה הראשונה אין צורך בהרשאות מיקום, אנשי קשר, מצלמה או מיקרופון.</Text>
+        <Text style={styles.about}>לפניות פרטיות ותמיכה: support@poenta.app</Text>
+      </View>
     </View>;
     if (moreScreen === 'contact') return <View style={styles.panel}>
       <View style={styles.moreHead}><MoreBack /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>צור קשר</Text><Text style={styles.moreHeadSub}>פניות, הצעות ושאלות על Poenta.</Text></View></View>
-      <View style={styles.aboutContent}><Text style={styles.about}>אפשר לפנות אלינו בכתובת:</Text><Text style={styles.moreSectionTitle}>support@poenta.app</Text></View>
+      <View style={styles.aboutContent}>
+        <Text style={styles.about}>לדיווח על תקלה, בעיית טעינה, תוכן שגוי או שאלה כללית:</Text>
+        <Text style={styles.moreSectionTitle}>support@poenta.app</Text>
+        <Text style={styles.about}>מומלץ לצרף צילום מסך, סוג מכשיר, מערכת הפעלה ותיאור קצר של הבעיה.</Text>
+      </View>
     </View>;
     return <View style={styles.panel}>
       <View style={styles.moreHead}><View style={styles.moreHeadText}><Text style={styles.title}>עוד</Text><Text style={styles.moreHeadSub}>הגדרות ומידע נוסף על Poenta.</Text></View></View>
@@ -629,15 +649,6 @@ function PoentaApp() {
       <View style={styles.daysSlider}>
         <View style={styles.daysTrack}><View style={[styles.daysFill, { width: `${((prefs.days - 1) / 6) * 100}%` }]} /></View>
         <View style={styles.daysTicks}>{[1, 2, 3, 4, 5, 6, 7].map(d => <TouchableOpacity key={d} style={styles.dayTickTouch} onPress={() => setPrefs(prev => ({ ...prev, days: d }))} activeOpacity={0.82}><View style={[styles.dayDot, prefs.days >= d && styles.dayDotOn]} /><Text style={[styles.dayLabel, prefs.days === d && styles.dayLabelOn]}>{d}</Text></TouchableOpacity>)}</View>
-      </View>
-    </View>
-
-    <View style={styles.settingsCard}>
-      <Text style={styles.settingsTitle}>מצב קריאה</Text>
-      <View style={styles.wrap}>
-        <Chip label="כל הכתבות" active={prefs.feedFilter === 'all'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'all' }))} />
-        <Chip label="רק לא נקראו" active={prefs.feedFilter === 'unread'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'unread' }))} count={unreadCount} />
-        <TouchableOpacity style={styles.bulkBtn} onPress={() => setReadKeys([])}><Text style={styles.bulkText}>אפס נקראו</Text></TouchableOpacity>
       </View>
     </View>
   </View>;
@@ -694,10 +705,10 @@ function PoentaApp() {
     <StatusBar style={isLight ? "dark" : "light"} />
     <View style={[styles.topbar, { height: topbarHeight, paddingTop: topInset }]}>
       <View style={styles.header}>
-        <Image source={POENTA_LOGO} style={styles.logoImage as any} resizeMode="contain" />
+        <Image source={isLight ? POENTA_LOGO_LIGHT : POENTA_LOGO} style={styles.logoImage as any} resizeMode="contain" />
         <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד" onPress={() => switchView('more')}><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
       </View>
-      <View style={styles.updates}>
+      {showFreshnessMeter && <View style={styles.updates}>
         <TouchableOpacity style={styles.updateTrack} onPress={loadAll} activeOpacity={0.86} accessibilityLabel="רענן פיד">
           <View style={[styles.updateFill, { width: `${unreadPct}%` }]} />
           <Text style={styles.updateText}>מדד החדשים שלך</Text>
@@ -708,11 +719,11 @@ function PoentaApp() {
         <TouchableOpacity style={[styles.updatePill, { left: `${unreadMarkerLeftPct}%` }, prefs.feedFilter === 'unread' && styles.updatePillActive]} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: prev.feedFilter === 'unread' ? 'all' : 'unread' }))} activeOpacity={0.84} accessibilityLabel="סנן לחדשים">
           <Text style={styles.updatePillText}>{unreadCount}</Text>
         </TouchableOpacity>
-      </View>
+      </View>}
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
     </View>
 
-    {view === 'settings' || view === 'more' ? <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />} keyboardShouldPersistTaps="handled">
+    {view === 'settings' || view === 'more' ? <ScrollView style={styles.scroll} contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} colors={[colors.yellow]} progressViewOffset={topbarHeight} />} keyboardShouldPersistTaps="handled">
       {view === 'settings' ? renderSettings() : renderMore()}
     </ScrollView> : <FlatList
       key={view === 'breaking' ? 'breaking-list' : view === 'home' ? 'home-list' : view === 'search' ? 'search-list' : 'saved-list'}
@@ -723,7 +734,7 @@ function PoentaApp() {
       renderItem={renderItem}
       ListHeaderComponent={listHeader}
       ListEmptyComponent={!loading ? <Text style={styles.empty}>{listEmptyText}</Text> : null}
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} />}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadAll} tintColor={colors.yellow} colors={[colors.yellow]} progressViewOffset={topbarHeight} />}
       initialNumToRender={6}
       maxToRenderPerBatch={6}
       updateCellsBatchingPeriod={80}
@@ -817,7 +828,7 @@ return StyleSheet.create({
   smallActionText: { color: c.yellow, fontSize: 12, fontWeight: '900' },
   sourceBox: { width: '100%', alignSelf: 'stretch', position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', borderRadius: 15, backgroundColor: c.sourceBg, paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden', direction: 'rtl', alignItems: 'stretch' },
   sourceAccent: { position: 'absolute', right: 0, top: 12, bottom: 12, width: 3, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.74)' },
-  sourceHead: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
+  sourceHead: { flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
   sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
   sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
   sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 1, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
@@ -862,14 +873,14 @@ return StyleSheet.create({
   switchKnobOn: { backgroundColor: c.textOnYellow },
   about: { color: c.secondary, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', lineHeight: 21, marginTop: 12, fontWeight: '600' },
   moreHead: { flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 12 },
-  moreHeadText: { flex: 1, alignItems: 'flex-end' },
+  moreHeadText: { flex: 1, alignItems: 'flex-end', alignSelf: 'stretch' },
   moreHeadSub: { color: c.muted, fontSize: 13, fontWeight: '700', lineHeight: 18, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', marginTop: 5 },
   moreBack: { borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, paddingHorizontal: 12, paddingVertical: 7, backgroundColor: 'rgba(255,196,0,0.08)' },
   moreBackText: { color: c.yellowSoft, fontSize: 12, fontWeight: '900' },
   moreList: { gap: 10 },
   moreRow: { borderWidth: 1, borderColor: c.border, borderRadius: 18, backgroundColor: c.surface, paddingHorizontal: 15, paddingVertical: 14, flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', gap: 12 },
   moreRowDisabled: { opacity: 0.46 },
-  moreRowText: { flex: 1, alignItems: 'flex-end' },
+  moreRowText: { flex: 1, alignItems: 'flex-end', alignSelf: 'stretch' },
   moreTitle: { color: c.text, fontSize: 16, fontWeight: '900', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
   moreSub: { color: c.muted, fontSize: 12.5, fontWeight: '700', lineHeight: 17, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', marginTop: 4 },
   moreArrow: { color: c.yellow, fontSize: 28, fontWeight: '800', lineHeight: 30 },
