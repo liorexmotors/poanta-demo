@@ -273,7 +273,7 @@ function ArticleCard({ item, index, saved, onSave, onOpen }: { item: FeedItem; i
     <View style={styles.heroBox}>
       <SourceThumb item={item} />
       <View style={styles.heroShade} />
-      <Text style={styles.headline}>{displayHeadline(item)}</Text>
+      <View style={styles.headlineWrap}><Text style={styles.headlineText}>{displayHeadline(item)}</Text></View>
     </View>
     {!!summaryFor(item) && <Text style={styles.summary}>{summaryFor(item)}</Text>}
     {!!item.takeaway && <View style={styles.takeawayBox}><Text style={styles.takeaway}>■ {String(item.takeaway).replace(/^💡\s*/, '')}</Text></View>}
@@ -780,7 +780,8 @@ return StyleSheet.create({
   image: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg },
   placeholder: { width: '100%', height: 214, borderRadius: 0, backgroundColor: c.heroBg, alignItems: 'center', justifyContent: 'center' },
   placeholderText: { color: c.textOnYellow, backgroundColor: c.yellow, overflow: 'hidden', borderRadius: 15, width: 48, height: 48, lineHeight: 48, textAlign: 'center', fontSize: 22, fontWeight: '900' },
-  headline: { position: 'absolute', bottom: 0, right: 0, left: 0, color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch', letterSpacing: -0.42, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
+  headlineWrap: { position: 'absolute', left: 0, right: 0, bottom: 0, paddingHorizontal: 15, paddingBottom: 13, paddingTop: 44, alignItems: 'flex-end', justifyContent: 'flex-end', direction: 'rtl' },
+  headlineText: { width: '100%', color: '#FFFFFF', fontSize: 21.5, lineHeight: 24.3, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', letterSpacing: -0.42, textShadowColor: 'rgba(0,0,0,0.55)', textShadowRadius: 11, textShadowOffset: { width: 0, height: 2 } },
   breakingHeadline: { color: c.text, fontSize: 21.5, lineHeight: 25, fontWeight: '900', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch', letterSpacing: -0.42, marginBottom: 8 },
   summary: { color: c.secondary, fontSize: 14.8, lineHeight: 21.3, fontWeight: '500', textAlign: 'right', writingDirection: 'rtl', direction: 'rtl', alignSelf: 'stretch' },
   takeawayBox: { marginTop: 9, paddingTop: 9, borderTopWidth: 1, borderTopColor: c.border },
@@ -846,7 +847,7 @@ return StyleSheet.create({
   searchInput: { height: 50, borderRadius: 16, borderWidth: 1, borderColor: c.border, backgroundColor: c.inputBg, color: c.text, paddingHorizontal: 14, textAlign: 'right', writingDirection: 'rtl', fontSize: 16, fontWeight: '800', marginBottom: 10 },
   empty: { color: c.muted, textAlign: 'center', marginTop: 34, fontWeight: '800' },
   error: { color: c.red, textAlign: 'right', marginTop: 18, fontWeight: '800' },
-  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, borderTopColor: c.border, borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: c.bottom, flexDirection: 'row', direction: 'rtl', paddingBottom: 10, justifyContent: 'space-around', shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
+  nav: { position: 'absolute', left: 0, right: 0, bottom: 0, borderTopWidth: 1, borderTopColor: c.border, borderTopLeftRadius: 18, borderTopRightRadius: 18, backgroundColor: c.bottom, flexDirection: 'row', direction: 'ltr', paddingBottom: 10, justifyContent: 'space-around', shadowColor: c.shadow, shadowOpacity: 0.22, shadowRadius: 30, shadowOffset: { width: 0, height: -14 }, elevation: 20 },
   navButton: { flex: 1, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
   navActive: {},
   navIcon: { color: c.iconMuted, fontSize: 28, fontWeight: '800', lineHeight: 30 },
