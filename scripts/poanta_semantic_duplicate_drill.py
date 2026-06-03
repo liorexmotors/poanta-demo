@@ -19,6 +19,50 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "fox_noy_hasadeh_business_live_regression_20260603",
+        True,
+        {
+            "source": "גלובס - שוק ההון",
+            "category": "כלכלה",
+            "categoryClass": "money",
+            "headline": "הראל ויזל בוחן כניסה לשוק המזון דרך נוי השדה",
+            "originalTitle": "הראל ויזל בוחן כניסה לשוק המזון דרך רכישת נוי השדה",
+            "context": "קבוצת פוקס של הראל ויזל בוחנת רכישת פעילות נוי השדה כדי להיכנס לשוק המזון הטרי.",
+            "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001544823#utm_source=RSS",
+        },
+        {
+            "source": "דה מרקר - שוק ההון",
+            "category": "כלכלה",
+            "categoryClass": "money",
+            "headline": "פוקס בוחנת רכישת רשת נוי השדה",
+            "originalTitle": "פוקס בוחנת רכישת רשת נוי השדה",
+            "context": "פוקס בוחנת עסקה לרכישת רשת המזון נוי השדה כחלק מהרחבת הפעילות הקמעונאית שלה.",
+            "sourceUrl": "https://www.themarker.com/markets/2026-06-03/ty-article/.premium/0000019e-8c29-d0a9-a7df-bdbb2e500000",
+        },
+    ),
+    (
+        "israir_slovenia_landing_diversion_live_regression_20260603",
+        True,
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "פוליטיקה",
+            "categoryClass": "security",
+            "headline": "טיסת ישראייר הוסטה מלובליאנה לזאגרב",
+            "originalTitle": "טיסת ישראייר ללובליאנה הוסטה לזאגרב",
+            "context": "טיסת ישראייר לא הורשתה לנחות בלובליאנה והוסטה לזאגרב בעקבות החלטת הרשויות בסלובניה.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/hjmahpteme",
+        },
+        {
+            "source": "N12 - בעולם",
+            "category": "פוליטיקה",
+            "categoryClass": "security",
+            "headline": "סלובניה חסמה נחיתה לישראייר",
+            "originalTitle": "סלובניה חסמה נחיתה לטיסת ישראייר",
+            "context": "הרשויות בסלובניה חסמו נחיתה של טיסת ישראייר בלובליאנה, והמטוס נחת לבסוף בזאגרב.",
+            "sourceUrl": "https://www.mako.co.il/news-world/2026_q2/Article-58489083cac8e91026.htm",
+        },
+    ),
+    (
         "us_iran_tanker_hellfire_live_regression_20260603",
         True,
         {

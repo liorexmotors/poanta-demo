@@ -428,6 +428,28 @@ def cancelled_beirut_strike_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def live_business_duplicate_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint narrow business/acquisition stories that word-overlap misses."""
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source", "sourceUrl", "url"]).lower()
+    has_fox = bool(re.search(r"פוקס|ויזל|fox", text))
+    has_noy = bool(re.search(r"נוי\s+השדה|noy\s+hasadeh", text))
+    has_deal = bool(re.search(r"רכיש|קניי|כניסה|בוחן|בוחנת|acquir|purchase|deal|market", text))
+    if has_fox and has_noy and has_deal:
+        return {"fox_noy_hasadeh_deal"}
+    return set()
+
+
+def israir_slovenia_flight_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint the same Israir Slovenia/Ljubljana landing-block diversion."""
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source", "sourceUrl", "url"]).lower()
+    has_israir = bool(re.search(r"ישראייר|israir", text))
+    has_slovenia = bool(re.search(r"סלובניה|slovenia|לובליאנה|ljubljana", text))
+    has_landing_or_diversion = bool(re.search(r"נחית|לנחות|חסמה|סירבה|הוסט|הועבר|זאגרב|zagreb|divert|landing|blocked", text))
+    if has_israir and has_slovenia and has_landing_or_diversion:
+        return {"israir_slovenia_landing_diversion"}
+    return set()
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -598,6 +620,14 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = cancelled_beirut_strike_tokens(a)
     bw = cancelled_beirut_strike_tokens(b)
     if aw and bw and "cancelled_beirut_strike" in aw and "cancelled_beirut_strike" in bw:
+        return True
+    aw = live_business_duplicate_tokens(a)
+    bw = live_business_duplicate_tokens(b)
+    if aw and bw and aw & bw:
+        return True
+    aw = israir_slovenia_flight_tokens(a)
+    bw = israir_slovenia_flight_tokens(b)
+    if aw and bw and "israir_slovenia_landing_diversion" in aw and "israir_slovenia_landing_diversion" in bw:
         return True
     if topic_for_item(a) != topic_for_item(b):
         return False
