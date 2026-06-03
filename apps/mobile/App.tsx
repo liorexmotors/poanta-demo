@@ -63,8 +63,8 @@ const LIGHT_COLORS: AppColors = {
   bg: '#F7F0DF', bottom: '#FFF7E4', topbar: '#FFF6E1', card: '#FFFFFF', cardSoft: '#FFF9EF', text: '#172027',
   muted: 'rgba(23,32,39,0.68)', secondary: 'rgba(23,32,39,0.82)', faint: 'rgba(23,32,39,0.16)', border: 'rgba(23,32,39,0.18)',
   subtleBorder: 'rgba(23,32,39,0.14)', surface: 'rgba(255,255,255,0.86)', surfaceSoft: '#FFFDF8',
-  yellow: '#FFC400', yellowSoft: '#6F4B00', yellowBg: 'rgba(255,196,0,0.22)', sourceBg: 'rgba(255,196,0,0.17)',
-  iconMuted: 'rgba(23,32,39,0.46)', textOnYellow: '#101820', inputBg: '#FFFDF8', heroBg: '#E9DFCC', overlay: 'rgba(0,0,0,0.46)',
+  yellow: '#FFC400', yellowSoft: '#8A5F00', yellowBg: 'rgba(255,196,0,0.22)', sourceBg: 'rgba(255,196,0,0.17)',
+  iconMuted: 'rgba(23,32,39,0.72)', textOnYellow: '#101820', inputBg: '#FFFDF8', heroBg: '#E9DFCC', overlay: 'rgba(0,0,0,0.46)',
   shadow: 'rgba(87,64,12,0.36)', red: '#C33B3B', green: '#23834C',
 };
 
@@ -145,18 +145,17 @@ function faviconForSource(name?: string, item?: FeedItem) {
 }
 
 function SourceIcon({ name, item, small = false }: { name: string; item?: FeedItem; small?: boolean }) {
-  // In dense settings lists, loading dozens of remote favicons blocks the JS/UI thread on older Android devices.
-  // Keep full favicons in article cards, but use instant local initials for compact source rows.
-  if (small) return <View style={styles.sourceMiniFallback}><Text style={styles.sourceMiniFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
   const icon = faviconForSource(name, item);
-  if (icon) return <Image source={{ uri: icon }} style={styles.sourceIconImage as any} />;
+  if (small && icon) return <Image source={{ uri: icon }} style={styles.sourceMiniImage as any} fadeDuration={0} />;
+  if (small) return <View style={styles.sourceMiniFallback}><Text style={styles.sourceMiniFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
+  if (icon) return <Image source={{ uri: icon }} style={styles.sourceIconImage as any} fadeDuration={0} />;
   return <View style={styles.sourceIconFallback}><Text style={styles.sourceIconFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
 }
 
 type IconName = 'bookmark' | 'share' | 'breaking' | 'settings' | 'search';
 function WebIcon({ name, active = false, size = 28 }: { name: IconName; active?: boolean; size?: number }) {
   const color = active ? appColors.yellow : appColors.iconMuted;
-  const fill = active && (name === 'bookmark' || name === 'breaking' || name === 'search') ? color : 'none';
+  const fill = active && (name === 'breaking' || name === 'search') ? color : 'none';
   if (name === 'bookmark') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M6 4h12v17l-6-4-6 4V4Z" stroke={color} fill={fill} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
   if (name === 'share') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /><Path d="M12 16V4" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /><Path d="M7 9l5-5 5 5" stroke={color} fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
   if (name === 'breaking') return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z" stroke={color} fill={fill} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" /></Svg>;
@@ -296,17 +295,30 @@ function ArticleCard({ item, index, saved, onSave, onOpen }: { item: FeedItem; i
   </View>;
 }
 
+function BreakingSourceLinks({ item }: { item: FeedItem }) {
+  const links = Array.isArray(item.sourceLinks) && item.sourceLinks.length
+    ? item.sourceLinks.map(link => ({ name: canonicalSource(link?.name || sourceName(item)), url: String(link?.url || '') }))
+    : [{ name: sourceName(item), url: item.sourceUrl || '' }];
+  const unique = links.filter((link, idx, arr) => link.name && arr.findIndex(other => other.name === link.name) === idx).slice(0, 3);
+  return <View style={styles.breakingSourceList}>
+    <Text style={styles.breakingDot}>•</Text>
+    {unique.map((link, idx) => <View key={`${link.name}-${idx}`} style={styles.breakingSourceItem}>
+      {idx > 0 && <Text style={styles.breakingSourceSep}>+</Text>}
+      <TouchableOpacity disabled={!link.url} onPress={() => link.url && Linking.openURL(link.url).catch(() => null)} activeOpacity={link.url ? 0.78 : 1}>
+        <Text style={styles.breakingSourceLink}>{link.name}</Text>
+      </TouchableOpacity>
+    </View>)}
+  </View>;
+}
+
 function BreakingCard({ item, index }: { item: FeedItem; index: number }) {
-  const open = () => { if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
-  const sources = item.sources?.length ? item.sources.join(' + ') : sourceName(item);
-  return <TouchableOpacity style={[styles.card, styles.breakingCard]} onPress={open} activeOpacity={item.sourceUrl ? 0.78 : 1}>
+  return <View style={[styles.card, styles.breakingCard]}>
     <View style={styles.breakingMetaRow}>
+      <BreakingSourceLinks item={item} />
       <Text style={styles.time}>{timeLabel(item, index)}</Text>
-      <View style={styles.breakingCat}><Text style={styles.bolt}>⚡</Text><Text style={styles.catText}>{sources}</Text></View>
     </View>
     <Text style={styles.breakingHeadline}>{displayHeadline(item)}</Text>
-    {!!summaryFor(item) && <Text style={styles.summary}>{summaryFor(item)}</Text>}
-  </TouchableOpacity>;
+  </View>;
 }
 
 function NavButton({ label, icon, active, onPress, logo }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean }) {
@@ -610,23 +622,20 @@ function PoentaApp() {
     </View>
 
     <View style={styles.settingsCard}>
-      <Text style={styles.settingsTitle}>טווח זמן</Text>
-      <View style={styles.wrap}>{[1, 2, 3, 7].map(d => <Chip key={d} label={d === 1 ? 'יום אחד' : `${d} ימים`} active={prefs.days === d} onPress={() => setPrefs(prev => ({ ...prev, days: d }))} />)}</View>
+      <View style={styles.settingsHead}><Text style={styles.settingsTitle}>סינון קריאה</Text><Text style={styles.savedPill}>{prefs.days === 1 ? 'יום אחד' : `${prefs.days} ימים`}</Text></View>
+      <View style={styles.daysSlider}>
+        <View style={styles.daysTrack}><View style={[styles.daysFill, { width: `${((prefs.days - 1) / 6) * 100}%` }]} /></View>
+        <View style={styles.daysTicks}>{[1, 2, 3, 4, 5, 6, 7].map(d => <TouchableOpacity key={d} style={styles.dayTickTouch} onPress={() => setPrefs(prev => ({ ...prev, days: d }))} activeOpacity={0.82}><View style={[styles.dayDot, prefs.days >= d && styles.dayDotOn]} /><Text style={[styles.dayLabel, prefs.days === d && styles.dayLabelOn]}>{d}</Text></TouchableOpacity>)}</View>
+      </View>
     </View>
 
     <View style={styles.settingsCard}>
-      <Text style={styles.settingsTitle}>סינון קריאה</Text>
+      <Text style={styles.settingsTitle}>מצב קריאה</Text>
       <View style={styles.wrap}>
         <Chip label="כל הכתבות" active={prefs.feedFilter === 'all'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'all' }))} />
         <Chip label="רק לא נקראו" active={prefs.feedFilter === 'unread'} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'unread' }))} count={unreadCount} />
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setReadKeys([])}><Text style={styles.bulkText}>אפס נקראו</Text></TouchableOpacity>
       </View>
-    </View>
-
-    <View style={styles.settingsCard}>
-      <Text style={styles.settingsTitle}>עוד</Text>
-      <TouchableOpacity style={styles.sourceRow} onPress={() => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(APP_SHARE_TEXT)}`).catch(() => null)}><Text style={styles.sourceRowName}>שתף את Poenta בווטסאפ</Text><Text style={styles.switchText}>›</Text></TouchableOpacity>
-      <Text style={styles.about}>Poenta מרכזת חדשות ממגוון מקורות ומזקקת כל ידיעה לכותרת, התמצית והפואנטה — בלי רעש ובלי קליקבייט.</Text>
     </View>
   </View>;
 
@@ -634,6 +643,8 @@ function PoentaApp() {
   const unreadCount = visibleMainBase.filter(i => !readKeySet.has(itemKey(i))).length;
   const totalMainCount = visibleMainBase.length;
   const unreadPct = totalMainCount ? Math.max(0, Math.min(100, Math.round((unreadCount / totalMainCount) * 100))) : 0;
+  const unreadRatio = totalMainCount ? unreadCount / totalMainCount : 0;
+  const unreadMarkerLeftPct = totalMainCount ? Math.max(13, Math.min(86, 13 + (1 - unreadRatio) * 73)) : 13;
 
   const keyExtractor = useCallback((item: FeedItem, index: number) => `${itemKey(item)}-${index}`, []);
   const renderItem = useCallback(({ item, index }: { item: FeedItem; index: number }) => viewRef.current === 'breaking'
@@ -684,15 +695,15 @@ function PoentaApp() {
         <TouchableOpacity style={styles.topMore} accessibilityLabel="עוד" onPress={() => switchView('more')}><Text style={styles.topMoreText}>☰</Text></TouchableOpacity>
       </View>
       <View style={styles.updates}>
-        <TouchableOpacity style={[styles.updatePill, prefs.feedFilter === 'unread' && styles.updatePillActive]} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: prev.feedFilter === 'unread' ? 'all' : 'unread' }))} activeOpacity={0.84} accessibilityLabel="סנן לחדשים">
-          <Text style={styles.updatePillText}>{unreadCount}</Text>
+        <TouchableOpacity style={styles.updateTrack} onPress={loadAll} activeOpacity={0.86} accessibilityLabel="רענן פיד">
+          <View style={[styles.updateFill, { width: `${unreadPct}%` }]} />
+          <Text style={styles.updateText}>מדד החדשים שלך</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.updateTotalPill, prefs.feedFilter === 'all' && styles.updatePillActive]} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: 'all' }))} activeOpacity={0.84} accessibilityLabel="הצג את כל הידיעות">
           <Text style={styles.updatePillText}>{totalMainCount}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.updateTrack} onPress={loadAll} activeOpacity={0.86} accessibilityLabel="רענן פיד">
-          <View style={[styles.updateFill, { width: `${unreadPct}%` }]} />
-          <Text style={styles.updateText}>מדד החדשים שלך</Text>
+        <TouchableOpacity style={[styles.updatePill, { left: `${unreadMarkerLeftPct}%` }, prefs.feedFilter === 'unread' && styles.updatePillActive]} onPress={() => setPrefs(prev => ({ ...prev, feedFilter: prev.feedFilter === 'unread' ? 'all' : 'unread' }))} activeOpacity={0.84} accessibilityLabel="סנן לחדשים">
+          <Text style={styles.updatePillText}>{unreadCount}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.tabline}>{(view === 'home' || view === 'breaking') && renderTabs()}</View>
@@ -722,7 +733,7 @@ function PoentaApp() {
     />}
 
     <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
-      <NavButton label="שמור" icon="bookmark" active={view === 'saved'} onPress={() => switchView('saved')} />
+      <NavButton label="שמור" icon="bookmark" active={view === 'saved' || savedKeys.length > 0} onPress={() => switchView('saved')} />
       <NavButton label="חיפוש" icon="search" active={view === 'search'} onPress={() => switchView('search')} />
       <NavButton label="הגדרות" icon="settings" active={view === 'settings'} onPress={() => switchView('settings')} />
       <NavButton label="מבזקים" icon="breaking" active={view === 'breaking'} onPress={() => switchView('breaking')} />
@@ -744,11 +755,11 @@ return StyleSheet.create({
   topMoreText: { color: c.secondary, fontSize: 25, fontWeight: '900', lineHeight: 30 },
   logoImage: { height: 38, width: 164 },
   updates: { height: 42, paddingHorizontal: 16, borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.border, backgroundColor: c.surface, justifyContent: 'center', direction: 'rtl', alignSelf: 'stretch' },
-  updatePill: { position: 'absolute', left: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.34)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
-  updateTotalPill: { position: 'absolute', right: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
+  updatePill: { position: 'absolute', top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.34)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
+  updateTotalPill: { position: 'absolute', left: 18, top: 4, minWidth: 34, height: 20, borderWidth: 1, borderColor: 'rgba(255,196,0,0.24)', borderRadius: 999, backgroundColor: c.surfaceSoft, alignItems: 'center', justifyContent: 'center', zIndex: 2 },
   updatePillActive: { borderColor: c.yellow, backgroundColor: c.yellowBg },
   updatePillText: { color: c.yellowSoft, fontSize: 12, fontWeight: '900' },
-  updateTrack: { height: 16, marginTop: 14, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,196,0,0.16)', borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', alignItems: 'center', justifyContent: 'center' },
+  updateTrack: { height: 16, marginTop: 18, borderRadius: 999, overflow: 'hidden', backgroundColor: 'rgba(255,196,0,0.16)', borderWidth: 1, borderColor: 'rgba(255,196,0,0.18)', alignItems: 'center', justifyContent: 'center' },
   updateFill: { position: 'absolute', right: 0, top: 0, bottom: 0, backgroundColor: c.yellow },
   updateText: { color: c.textOnYellow, fontSize: 10.8, fontWeight: '900', letterSpacing: -0.05 },
   syncText: { color: c.muted, textAlign: 'center', fontSize: 10.5, fontWeight: '800', marginTop: 3 },
@@ -774,6 +785,11 @@ return StyleSheet.create({
   metaActions: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
   cat: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flex: 1 },
   breakingCat: { flexDirection: 'row-reverse', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 7, flexShrink: 1 },
+  breakingSourceList: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 5, flexShrink: 1, minWidth: 0 },
+  breakingSourceItem: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 4, flexShrink: 1 },
+  breakingSourceLink: { color: c.yellowSoft, fontSize: 12.2, fontWeight: '900', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
+  breakingSourceSep: { color: c.yellowSoft, opacity: 0.62, fontSize: 12, fontWeight: '900' },
+  breakingDot: { color: c.red, fontSize: 22, lineHeight: 16, fontWeight: '900' },
   iconAction: { width: 15, height: 15, alignItems: 'center', justifyContent: 'center', marginLeft: 1 },
   iconActionText: { color: c.yellow, fontSize: 14, fontWeight: '900', lineHeight: 16 },
   iconActionOn: { color: c.yellow },
@@ -816,13 +832,22 @@ return StyleSheet.create({
   bulkText: { color: c.yellowSoft, fontSize: 12, fontWeight: '900' },
   wrap: { flexDirection: 'row', direction: 'rtl', justifyContent: 'flex-start', flexWrap: 'wrap', gap: 8 },
   inputRow: { flexDirection: 'row', direction: 'rtl', gap: 8, marginTop: 10 },
+  daysSlider: { marginTop: 6, paddingTop: 8, paddingBottom: 2, direction: 'ltr' },
+  daysTrack: { position: 'absolute', left: 13, right: 13, top: 18, height: 8, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.16)', overflow: 'hidden' },
+  daysFill: { height: '100%', backgroundColor: c.yellow, borderRadius: 999 },
+  daysTicks: { flexDirection: 'row', direction: 'ltr', justifyContent: 'space-between', alignItems: 'flex-start' },
+  dayTickTouch: { width: 28, alignItems: 'center', justifyContent: 'flex-start' },
+  dayDot: { width: 18, height: 18, borderRadius: 999, borderWidth: 2, borderColor: 'rgba(255,196,0,0.32)', backgroundColor: c.card },
+  dayDotOn: { borderColor: c.yellow, backgroundColor: c.yellow },
+  dayLabel: { marginTop: 7, color: c.muted, fontSize: 11.5, fontWeight: '900', textAlign: 'center' },
+  dayLabelOn: { color: c.yellowSoft },
   input: { flex: 1, height: 45, borderRadius: 14, borderWidth: 1, borderColor: c.border, color: c.text, backgroundColor: c.inputBg, paddingHorizontal: 12, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', fontWeight: '700' },
   addBtn: { borderRadius: 14, backgroundColor: c.yellow, paddingHorizontal: 15, alignItems: 'center', justifyContent: 'center' },
   addText: { color: c.textOnYellow, fontWeight: '900' },
   sourceRow: { borderTopWidth: 1, borderTopColor: c.border, paddingVertical: 12, flexDirection: 'row', direction: 'rtl', justifyContent: 'space-between', alignItems: 'center', gap: 12 },
   sourceRowOn: { backgroundColor: 'rgba(255,196,0,0.04)' },
   sourceRowLabel: { flex: 1, flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 9, minWidth: 0 },
-  sourceMiniImage: { width: 24, height: 24, borderRadius: 8, backgroundColor: c.faint },
+  sourceMiniImage: { width: 24, height: 24, borderRadius: 8, backgroundColor: c.faint, borderWidth: 1, borderColor: c.border },
   sourceMiniFallback: { width: 24, height: 24, borderRadius: 8, backgroundColor: c.faint, alignItems: 'center', justifyContent: 'center' },
   sourceMiniFallbackText: { color: c.yellow, fontSize: 10, fontWeight: '900' },
   sourceRowName: { color: c.text, fontSize: 14, fontWeight: '800', textAlign: RTL_TEXT_ALIGN, flexShrink: 1 },
