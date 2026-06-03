@@ -498,6 +498,22 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         "צפון" in text or "north" in text
     ) and ("מיגון" in text or "שיקום" in text or "shelters" in text or "infrastructure" in text):
         tokens.add("north_reconstruction_13b")
+    if (
+        ("צה״ל" in text or "צה\"ל" in text or "idf" in text)
+        and ("פינוי" in text or "להתפנות" in text or "evacuat" in text)
+        and ("דרום לבנון" in text or "south lebanon" in text)
+        and ("כפר" in text or "villag" in text or "צידון" in text or "צור" in text or "sidon" in text or "tyre" in text)
+    ):
+        tokens.add("idf_south_lebanon_village_evacuation")
+    if (
+        ("נתניהו" in text or "netanyahu" in text)
+        and ("חיזבאללה" in text or "hezbollah" in text)
+        and ("רחפן" in text or "רחפנ" in text or "כטב" in text or "drone" in text)
+        and ("פתרון" in text or "מערכת" in text or "solution" in text or "system" in text)
+        and ("קרוב" in text or "ימים הקרובים" in text or "soon" in text or "coming days" in text)
+        and ("צפון" in text or "north" in text)
+    ):
+        tokens.add("netanyahu_hezbollah_drone_solution_north")
     if ("איראן" in text or "iran" in text) and ("ארה״ב" in text or "ארה\"ב" in text or "us " in text or "u.s" in text or "american" in text) and (
         "הורמוז" in text or "hormuz" in text or "מפרץ" in text or "gulf" in text
     ) and (

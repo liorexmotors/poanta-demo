@@ -119,6 +119,42 @@ CASES = [
         },
     ),
     (
+        "idf_south_lebanon_village_evacuation_live_regression_20260603",
+        True,
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "headline": "צה״ל הזהיר שישה כפרים בדרום לבנון להתפנות לפני תקיפה",
+            "context": "דובר צה״ל בערבית פרסם אזהרת פינוי דחופה לתושבי שישה כפרים בדרום לבנון לפני תקיפה",
+            "sourceUrl": "https://news.walla.co.il/break/3842848",
+        },
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "ביטחון",
+            "headline": "צה״ל קרא לפינוי כפרים בדרום לבנון",
+            "context": "צה״ל פרסם אזהרת פינוי לשני כפרים באזור צידון ולכפר מצפון לצור",
+            "sourceUrl": "https://www.ynet.co.il/news/article/hkeqhstgzg",
+        },
+    ),
+    (
+        "netanyahu_hezbollah_drone_solution_north_live_regression_20260603",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "headline": "נתניהו מבטיח פתרון קרוב לאיום רחפני חיזבאללה",
+            "context": "נתניהו אמר לראשי מועצות בצפון שפתרון לאיום רחפני חיזבאללה ייושם בימים הקרובים",
+            "sourceUrl": "https://www.jpost.com/israel-news/article-898177",
+        },
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "ביטחון",
+            "headline": "נתניהו הבטיח ליישובי הצפון פתרון קרוב לרחפני הנפץ",
+            "context": "ראש הממשלה אמר לתושבי הצפון שהמערכת להתמודדות עם רחפני הנפץ של חיזבאללה צפויה להיות מיושמת בקרוב",
+            "sourceUrl": "https://www.israelhayom.co.il/news/defense/article/20678235",
+        },
+    ),
+    (
         "trump_netanyahu_beirut_strike_cancelled_cross_source",
         True,
         {
