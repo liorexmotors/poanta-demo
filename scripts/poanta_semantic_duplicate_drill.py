@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "tamra_yafia_triple_murder_ynet_israelhayom_visible_regression_20260605",
+        True,
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "שלושה גברים נרצחו ביריות בתוך שעות באזור נצרת ובטמרה",
+            "originalTitle": "שני צעירים נרצחו ביריות ליד נצרת, גבר נורה למוות בטמרה",
+            "context": "שני צעירים נרצחו ביריות סמוך לנצרת וגבר נוסף נורה למוות בטמרה בתוך פרק זמן קצר.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/ryfr88ybgx",
+        },
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "הרצח בטמרה מצטרף לשני נרצחים נוספים ביפיע באותו ערב",
+            "originalTitle": "חשד לרצח בטמרה: גבר כבן 50 נהרג באירוע אלימות",
+            "context": "מד״א קבע את מותו של גבר כבן 50 בטמרה; מוקדם יותר נרצחו שני גברים בכפר יפיע.",
+            "sourceUrl": "https://www.israelhayom.co.il/news/crime/article/20694495",
+        },
+    ),
+    (
         "israel_slovenia_embassy_walla_israelhayom_visible_regression_20260604",
         True,
         {

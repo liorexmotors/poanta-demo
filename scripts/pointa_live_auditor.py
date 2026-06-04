@@ -220,6 +220,12 @@ def local_emergency_event_tokens(item: dict[str, Any]) -> set[str]:
         tokens.add("fire_rescue")
     if re.search(r"רצח|נרצח|נרצחה|ירי|נורה|נורתה|הרוג|נהרג|murder|killed|shot", text):
         tokens.add("violent_death")
+    if re.search(r"טמרה|tamra", text):
+        tokens.add("tamra")
+    if re.search(r"יפיע|נצרת|yafa|yafia|nazareth", text):
+        tokens.add("yafia_nazareth")
+    if re.search(r"שלושה|שני צעירים|שני גברים|גבר כבן 50|3\s+men|three", text):
+        tokens.add("multiple_victims_north_crime")
     if re.search(r"לוד|lod", text):
         tokens.add("lod")
     if re.search(r"ירכא|yarka|yirka", text):
@@ -235,6 +241,8 @@ def local_emergency_event_tokens(item: dict[str, Any]) -> set[str]:
     if "fire_rescue" in tokens and "lod" in tokens and ("residential_building" in tokens or "eighteen_people" in tokens):
         return tokens
     if "violent_death" in tokens and "yirka" in tokens and ("samer_halabi" in tokens or "age_24" in tokens):
+        return tokens
+    if "violent_death" in tokens and "tamra" in tokens and "yafia_nazareth" in tokens and "multiple_victims_north_crime" in tokens:
         return tokens
     return set()
 
