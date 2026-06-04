@@ -427,6 +427,11 @@ def near_duplicate(a: str, b: str) -> bool:
     lebanon_ceasefire_terms = {"הסכם_הפסקת_אש", "סכם", "סכימו", "פסקת", "האש", "אש"}
     if {"ישראל", "לבנון"} <= shared and (ta & lebanon_ceasefire_terms) and (tb & lebanon_ceasefire_terms):
         return True
+    # Ben-Gvir/Lebanon ceasefire reaction flashes can split between a short
+    # Ynet quote ("צריך לומר לא") and a Rotter variant adding a cabinet vote.
+    # They are still the same live political reaction, not two breaking events.
+    if {"בן", "גביר", "פסקת", "טעות"} <= shared and (("לבנון" in ta or "בנון" in ta) and ("לבנון" in tb or "בנון" in tb)):
+        return True
     # Same Trump/Netanyahu Beirut de-escalation flash, phrased as a direct quote
     # by Rotter and as a paraphrased Walla/Ynet-style headline/context elsewhere.
     if {"טראמפ", "נתניהו", "דאחייה_ביירות"} <= shared and ((ta & {"ביקשתי", "ביקש", "שוחחתי", "שוחח"}) or (tb & {"ביקשתי", "ביקש", "שוחחתי", "שוחח"})) and ((ta & {"תקיפה_ביירות", "כוחותיו", "הפנה"}) or (tb & {"תקיפה_ביירות", "כוחותיו", "הפנה"})):
