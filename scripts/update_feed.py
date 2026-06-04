@@ -2171,7 +2171,13 @@ def northern_rocket_event_tokens(item: dict) -> set[str]:
         tokens.add("north_lebanon")
     if re.search(r"פגיעה ישירה|נפלה|פגע|נזק כבד|עסקים|חנויות", text):
         tokens.add("direct_hit_damage")
+    if re.search(r"כפר יובל|אצבע הגליל|גליל מערבי|ערב אל[־-]?עראמשה|ערב אל עראמשה", text):
+        tokens.add("north_uav_alert_area")
+    if re.search(r"מטרה אווירית|כלי טיס|כטב[״\"]?ם|רחפן|זיהוי שווא|חדירת", text):
+        tokens.add("north_uav_alert")
     if "kiryat_shmona" in tokens and "rocket_fire" in tokens and ("north_lebanon" in tokens or "direct_hit_damage" in tokens):
+        return tokens
+    if "north_uav_alert_area" in tokens and "north_uav_alert" in tokens:
         return tokens
     return set()
 

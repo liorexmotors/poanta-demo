@@ -720,6 +720,24 @@ CASES = [
             "sourceUrl": "https://news.walla.co.il/item/3839781",
         },
     ),
+    (
+        "north_uav_alert_kfar_yuval_maariv_ynet_20260604",
+        True,
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "ביטחון",
+            "headline": "צה״ל זיהה מטרה חשודה בכפר יובל וסגר את אירוע ההתרעה",
+            "context": "צה״ל עדכן כי באצבע הגליל זוהתה מטרה אווירית חשודה, בעוד שבגליל המערבי ההתרעה התבררה כזיהוי שווא. האירוע הסתיים ללא נפגעים.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/bkqxkdaege",
+        },
+        {
+            "source": "מעריב - מבזקים",
+            "category": "ביטחון",
+            "headline": "חשד למטרה אווירית ליד כפר יובל; אין נפגעים",
+            "context": "לאחר התרעות על חדירת כלי טיס עוין, צה״ל מסר כי ההתרעה בערב אל-עראמשה הייתה זיהוי שווא. במרחב כפר יובל זוהתה מטרה אווירית חשודה, האירוע הסתיים ולא דווח על נפגעים.",
+            "sourceUrl": "https://www.maariv.co.il/breaking-news/article-1329065",
+        },
+    ),
 ]
 
 
