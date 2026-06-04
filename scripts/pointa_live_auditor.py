@@ -536,6 +536,14 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and ("צפון" in text or "north" in text)
     ):
         tokens.add("netanyahu_hezbollah_drone_solution_north")
+    if (
+        ("ישראל" in text or "israel" in text)
+        and ("לבנון" in text or "lebanon" in text)
+        and ("חיזבאללה" in text or "hezbollah" in text)
+        and ("הפסקת אש" in text or "ceasefire" in text)
+        and ("ליטני" in text or "litani" in text or "נסיג" in text or "הרחק" in text or "פריסת" in text)
+    ):
+        tokens.add("israel_lebanon_hezbollah_ceasefire_litani")
     if ("איראן" in text or "iran" in text) and ("ארה״ב" in text or "ארה\"ב" in text or "us " in text or "u.s" in text or "american" in text) and (
         "הורמוז" in text or "hormuz" in text or "מפרץ" in text or "gulf" in text
     ) and (

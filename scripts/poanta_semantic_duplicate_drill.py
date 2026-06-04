@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "israel_lebanon_hezbollah_ceasefire_litani_live_regression_20260604",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "ישראל ולבנון קידמו הפסקת אש שמותנית בהרחקת חיזבאללה",
+            "originalTitle": "Israel, Lebanon agree to ceasefire on condition of end to Hezbollah fire, US State Department says",
+            "context": "ישראל ולבנון קידמו הבנות להפסקת אש בתיווך אמריקני, בתנאי שחיזבאללה יורחק מהאזור המאיים על הצפון.",
+            "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-898323",
+        },
+        {
+            "source": "מעריב - חדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "ישראל ולבנון קושרות הפסקת אש לנסיגת חיזבאללה מהליטני",
+            "originalTitle": "הפסקת אש מותנית בין ישראל ללבנון: תלויה בפריסת חיזבאללה מדרום לליטני",
+            "context": "הפסקת האש בין ישראל ללבנון מותנית בהרחקת חיזבאללה מדרום לליטני ובמניעת ירי נוסף לעבר הצפון.",
+            "sourceUrl": "https://www.maariv.co.il/news/politics/article-1329059",
+        },
+    ),
+    (
         "fox_noy_hasadeh_business_live_regression_20260603",
         True,
         {
