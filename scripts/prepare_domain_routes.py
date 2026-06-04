@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Prepare clean custom-domain routes for GitHub Pages.
+"""Prepare clean custom-domain routes for GitHub Pages / Cloudflare Pages.
 
 Routes:
 - /              -> marketing website (home.html)
-- /app/          -> Poenta app (index.html)
+- /app/          -> Poenta app (app/index.html source)
 - /dashboard/    -> feedback dashboard
 - /rss-dashboard/ -> RSS dashboard helper
 - /rss-viewer/    -> RSS viewer helper
@@ -27,8 +27,8 @@ def insert_base(html: str) -> str:
     return html.replace("<head>", '<head>\n<base href="/">', 1)
 
 
-def write_route(route: str, source_name: str, *, base: bool = True) -> None:
-    src = DIST / source_name
+def write_route(route: str, source: str | Path, *, base: bool = True) -> None:
+    src = source if isinstance(source, Path) else DIST / source
     target_dir = DIST / route
     target_dir.mkdir(parents=True, exist_ok=True)
     html = src.read_text(encoding="utf-8")
@@ -42,12 +42,15 @@ def main() -> int:
         raise SystemExit("dist/ does not exist. Run npm run build from the repo root.")
 
     app_html = DIST / "index.html"
+    app_source_html = ROOT / "app" / "index.html"
     home_html = DIST / "home.html"
-    if not app_html.exists() or not home_html.exists():
-        raise SystemExit("dist/index.html and dist/home.html are required")
+    if not app_source_html.exists() or not home_html.exists():
+        raise SystemExit("app/index.html and dist/home.html are required")
 
-    # Preserve the full app under /app/ before making the domain root the website.
-    write_route("app", "index.html", base=True)
+    # Preserve the full app under /app/ from the app source, not the domain root.
+    # The root index.html is the marketing website in the Pages build, so using it
+    # here would incorrectly serve the home page at /app/.
+    write_route("app", app_source_html, base=True)
     write_route("dashboard", "feedback-dashboard.html", base=True)
     write_route("rss-dashboard", "rss-dashboard.html", base=True)
     write_route("rss-viewer", "rss-viewer.html", base=True)
