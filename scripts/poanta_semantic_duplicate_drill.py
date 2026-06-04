@@ -848,6 +848,28 @@ CASES = [
             "sourceUrl": "https://www.maariv.co.il/breaking-news/article-1329065",
         },
     ),
+    (
+        "trump_iran_uranium_ground_operation_ynet_n12_visible_regression_20260605",
+        True,
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "טראמפ הסתייג ממבצע קרקעי להוצאת אורניום מאיראן",
+            "originalTitle": "טראמפ: שקלנו להכניס חיילים לאיראן כדי להוציא את האורניום",
+            "context": "טראמפ הבהיר כי מבצע קרקעי להוצאת אורניום מאיראן נבחן אך אינו מועדף, על רקע ההסלמה סביב תוכנית הגרעין.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/bk00w1vywme",
+        },
+        {
+            "source": "N12 - בעולם",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "טראמפ אמר שמבצע להוצאת האורניום מאיראן ידרוש שבועיים בשטח",
+            "originalTitle": "טראמפ: מבצע להוצאת האורניום מאיראן ידרוש שבועיים בשטח",
+            "context": "טראמפ אמר שמבצע אמריקני להוצאת אורניום מאיראן יחייב שהות של כשבועיים בשטח, אך הציג זאת כאפשרות מסוכנת ולא כבחירה מועדפת.",
+            "sourceUrl": "https://www.mako.co.il/news-world/2026_q2/Article-29ab8b086549e91026.htm",
+        },
+    ),
 ]
 
 

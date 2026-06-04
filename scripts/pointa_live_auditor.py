@@ -622,6 +622,15 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         "מכלית" in text or "tanker" in text or "קשם" in text or "qeshm" in text or "תחנת שליטה" in text or "self-defense" in text
     ):
         tokens.add("us_iran_gulf_exchange_kuwait_bahrain")
+    if (
+        ("טראמפ" in text or "trump" in text)
+        and ("איראן" in text or "iran" in text)
+        and ("אורניום" in text or "uranium" in text)
+        and ("מבצע" in text or "operation" in text)
+        and ("להוציא" in text or "הוצאת" in text or "להוצאת" in text or "remove" in text or "removal" in text)
+        and ("קרקע" in text or "חיילים" in text or "שטח" in text or "ground" in text or "troops" in text)
+    ):
+        tokens.add("trump_iran_uranium_ground_operation")
     return tokens
 
 
