@@ -541,7 +541,7 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and ("לבנון" in text or "lebanon" in text)
         and ("חיזבאללה" in text or "hezbollah" in text)
         and ("הפסקת אש" in primary or "ceasefire" in primary)
-        and ("ליטני" in text or "litani" in text or "נסיג" in text or "הרחק" in text or "פריסת" in text)
+        and ("ליטני" in text or "litani" in text or "נסיג" in text or "הרחק" in text or "יורחק" in text or "פריסת" in text or "אזורי פיילוט" in text)
         and not re.search(r"מחסן נשק|weapon storage|booby|raid|raids|פשט|פשיטה", primary)
     ):
         tokens.add("israel_lebanon_hezbollah_ceasefire_litani")

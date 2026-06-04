@@ -41,6 +41,28 @@ CASES = [
         },
     ),
     (
+        "israel_lebanon_hezbollah_ceasefire_walla_jpost_visible_regression_20260604",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "ישראל ולבנון קידמו אזורי פיילוט בלי חיזבאללה בדרום",
+            "originalTitle": "Israel, Lebanon agree to ceasefire on condition of end to Hezbollah fire, US State Department says",
+            "context": "ישראל ולבנון קידמו אזורי פיילוט להפסקת אש בדרום, בתנאי שחיזבאללה יורחק והצבא הלבנוני ייכנס לאזור.",
+            "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-898323",
+        },
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "ישראל ולבנון קידמו הפסקת אש בתנאי שחיזבאללה יורחק",
+            "originalTitle": "\"הפסקת האש - תמורת הפסקת ירי חיזבאללה\": סיכומי סבב שיחות השלום בין ישראל ללבנון",
+            "context": "ישראל ולבנון קידמו הפסקת אש בתיווך אמריקני, כאשר התנאי המרכזי הוא הפסקת ירי חיזבאללה והרחקתו מדרום לבנון.",
+            "sourceUrl": "https://news.walla.co.il/item/3843087",
+        },
+    ),
+    (
         "fox_noy_hasadeh_business_live_regression_20260603",
         True,
         {
