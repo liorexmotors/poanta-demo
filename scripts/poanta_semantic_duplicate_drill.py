@@ -31,13 +31,13 @@ CASES = [
             "sourceUrl": "https://news.walla.co.il/item/3843320",
         },
         {
-            "source": "ישראל היום - כל הכתבות",
+            "source": "ynet - מבזקי החדשות",
             "category": "פוליטיקה",
             "categoryClass": "security",
-            "headline": "ישראל תפתח שגרירות בסלובניה אחרי חזרת ממשלה פרו-ישראלית",
-            "originalTitle": "אחרי משבר הטיסה: ישראל תפתח שגרירות בסלובניה",
-            "context": "גדעון סער הורה לפתוח לראשונה שגרירות ישראלית בלובליאנה לאחר שהפרלמנט הסלובני אישר ממשלה בראשות יאנז יאנשה.",
-            "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20693088",
+            "headline": "ראש ממשלת סלובניה בירך על פתיחת השגרירות הישראלית",
+            "originalTitle": "ראש ממשלת סלובניה: \"מצפים לעידן חדש ביחסים עם ישראל\"",
+            "context": "ראש ממשלת סלובניה בירך על פתיחת השגרירות הישראלית ואמר כי המדינה מצפה לעידן חדש ביחסים עם ישראל.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/bji9jij11mg",
         },
     ),
     (

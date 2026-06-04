@@ -2316,7 +2316,7 @@ def israel_slovenia_embassy_tokens(item: dict) -> set[str]:
     has_israel = bool(re.search(r"ישראל|israel", text))
     has_slovenia = bool(re.search(r"סלובניה|slovenia|לובליאנה|ljubljana", text))
     has_embassy = bool(re.search(r"שגריר|שגרירות|embassy|ambassador", text))
-    has_government_change = bool(re.search(r"ממשלה|יאנש|janša|jansa|פרו-ישראל|ידיד(?:ת)? ישראל|אישור הקמת", text))
+    has_government_change = bool(re.search(r"ממשלה|יאנש|janša|jansa|פרו-ישראל|ידיד(?:ת)? ישראל|אישור הקמת|ראש ממשלת סלובניה|עידן חדש ביחסים", text))
     has_israir_only = bool(re.search(r"ישראייר|israir|נחית|זאגרב|zagreb|divert", text)) and not has_embassy
     if has_israel and has_slovenia and has_embassy and has_government_change and not has_israir_only:
         return {"israel_slovenia_embassy_government_change"}
