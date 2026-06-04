@@ -63,6 +63,28 @@ CASES = [
         },
     ),
     (
+        "outgoing_golani_commander_besheva_maariv_visible_regression_20260604",
+        True,
+        {
+            "source": "בשבע - מגזין ודעות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "מח״ט גולני היוצא אומר שהרחפנים לא משנים את הלחימה",
+            "originalTitle": "\"הרחפנים הם איום, אבל הם לא מונעים מאיתנו להילחם כרגיל\"",
+            "context": "אל״ם יאיר גנון סיכם את שירותו כמח״ט גולני וטען שהרחפנים הם איום משמעותי אך אינם משנים את דרך הלחימה של החטיבה.",
+            "sourceUrl": "https://be7.co.il/24124",
+        },
+        {
+            "source": "מעריב - חדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "מח״ט גולני היוצא מסכם שנתיים עם 132 נופלים",
+            "originalTitle": "132 נופלים בשנתיים של לחימה: האירוע הקשה שלא עוזב את מח\"ט גולני היוצא",
+            "context": "מח״ט גולני היוצא סיכם שנתיים של לחימה שבהן החטיבה איבדה 132 לוחמים והתייחסה גם לאיום הרחפנים בצפון.",
+            "sourceUrl": "https://www.maariv.co.il/news/military/article-1329398",
+        },
+    ),
+    (
         "idf_chief_north_hezbollah_posture_jpost_walla_visible_regression_20260604",
         True,
         {
