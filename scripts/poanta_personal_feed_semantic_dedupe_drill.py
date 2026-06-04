@@ -238,7 +238,9 @@ def main() -> int:
     if not any("הורמוז" in item["headline"] for item in security_visible):
         failures.append("distinct adjacent Hormuz story was incorrectly removed")
 
-    index = (ROOT / "index.html").read_text(encoding="utf-8")
+    app_index = ROOT / "app" / "index.html"
+    index_path = app_index if app_index.exists() else ROOT / "index.html"
+    index = index_path.read_text(encoding="utf-8")
     returns_deduped_rows = (
         "return dedupeVisibleItems(rows);" in index
         or "return dedupeVisibleItems(rows.map(row=>row.item));" in index
