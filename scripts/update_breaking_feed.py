@@ -286,6 +286,20 @@ def normalize_token(token: str) -> str:
         "לפינוי": "פינוי",
         "להתפנות": "פינוי",
         "תפנות": "פינוי",
+        # Yafia/Nazareth murder flashes can arrive as separate terse updates:
+        # early shooting/injury near Nazareth, death determined, and a named
+        # Yafia double-murder flash.  Normalize locality and casualty wording so
+        # מבזקים shows one evolving incident with source links.
+        "יפיע": "יפיע_נצרת",
+        "נצרת": "יפיע_נצרת",
+        "נורו": "ירי_מוות",
+        "שנורו": "ירי_מוות",
+        "נורה": "ירי_מוות",
+        "נרצח": "ירי_מוות",
+        "נרצחו": "ירי_מוות",
+        "רצח": "ירי_מוות",
+        "מותם": "ירי_מוות",
+        "ותם": "ירי_מוות",
     }
     token = synonym_map.get(token, token)
     return token
@@ -396,8 +410,14 @@ def near_duplicate(a: str, b: str) -> bool:
     # village death, a murder, or a nearby-city vehicle shooting.  Require the
     # normalized locality plus death/shooting terms so unrelated crime flashes
     # in the Galilee are not merged.
-    death_terms = {"נהרג", "נרצח", "נורה", "מוות"}
+    death_terms = {"נהרג", "נרצח", "נורה", "מוות", "ירי_מוות"}
     if "כעביה_שפרעם" in shared and (ta & death_terms) and (tb & death_terms):
+        return True
+    # Same Yafia/Nazareth double-murder incident: one source may say two young
+    # men were shot near Nazareth, another says their deaths were determined,
+    # and a third names Yafia.  Collapse only when both sides share the
+    # normalized locality and shooting/death anchor.
+    if "יפיע_נצרת" in shared and (ta & death_terms) and (tb & death_terms):
         return True
     # Tiberias rocket/siren waves often arrive first as an alert and then as an
     # MDA/no-casualty or impact-status flash.  Collapse only same-city northern
