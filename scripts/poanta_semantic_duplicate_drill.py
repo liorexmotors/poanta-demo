@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "idf_chief_north_hezbollah_posture_jpost_walla_visible_regression_20260604",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "הרמטכ״ל לצפון: צה״ל פרוס מול חיזבאללה בלי מדיניות הכלה",
+            "originalTitle": "IDF chief tells northern leaders army has no containment policy against Hezbollah",
+            "context": "הרמטכ״ל אמר לראשי רשויות בצפון שצה״ל ערוך מול חיזבאללה ופועל ללא מדיניות הכלה.",
+            "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-898406",
+        },
+        {
+            "source": "וואלה חדשות - צבא וביטחון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "הרמטכ״ל מבהיר לצפון: אין הכלה מול איומי חיזבאללה",
+            "originalTitle": "הרמטכ״ל לראשי הרשויות בצפון: אין הכלה, נפעל בהתקפיות מול חיזבאללה",
+            "context": "הרמטכ״ל הדגיש לראשי הרשויות בצפון כי צה״ל ירכז מאמץ ויפעל בהתקפיות מול איומי חיזבאללה בגבול.",
+            "sourceUrl": "https://news.walla.co.il/item/3843252",
+        },
+    ),
+    (
         "israel_lebanon_hezbollah_ceasefire_litani_live_regression_20260604",
         True,
         {

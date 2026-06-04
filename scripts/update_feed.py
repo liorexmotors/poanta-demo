@@ -2261,6 +2261,13 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
         and not re.search(r"מחסן נשק|weapon storage|booby|raid|raids|פשט|פשיטה", primary)
     ):
         tokens.add("israel_lebanon_hezbollah_ceasefire_litani")
+    if (
+        ("הרמטכ" in text or "chief of staff" in text or "idf chief" in text or "צה״ל" in text or "צה\"ל" in text)
+        and ("צפון" in text or "גבול הצפון" in text or "ראשי רשויות" in text or "north" in text)
+        and ("חיזבאללה" in text or "hezbollah" in text)
+        and ("אין הכלה" in text or "ללא הכלה" in text or "נפעל בהתקפיות" in text or "התקפית" in text or "פרוס" in text or "לרכז כאן את המאמץ" in text or "containment" in text)
+    ):
+        tokens.add("idf_chief_north_hezbollah_posture")
     return tokens
 
 
