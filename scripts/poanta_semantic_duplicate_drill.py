@@ -19,6 +19,50 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "idf_shinbet_hamas_security_apparatus_jpost_ynet_visible_regression_20260604",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "צה״ל ושב״כ חיסלו בכירי מנגנון האבטחה של חמאס בעזה",
+            "originalTitle": "IDF, Shin Bet kill several Hamas General Security Apparatus officials in Gaza",
+            "context": "צה״ל ושב״כ חיסלו כמה בכירים במנגנון הביטחון הכללי של חמאס בעזה, בהם גורמים שאחראים על אבטחת בכירי הארגון.",
+            "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-898428",
+        },
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "צה״ל ושב״כ חיסלו ארבעה מאבטחי בכירי חמאס",
+            "originalTitle": "צה\"ל ושב\"כ: חוסלו ארבעה בכירים במנגנון האחראי גם על אבטחת בכירים בחמאס",
+            "context": "צה״ל ושב״כ הודיעו על חיסול ארבעה בכירים במנגנון שאחראי בין היתר על אבטחת בכירי חמאס.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/b1fbhqkbgx",
+        },
+    ),
+    (
+        "israel_lebanon_hezbollah_ceasefire_guardian_nyt_rejection_visible_regression_20260604",
+        True,
+        {
+            "source": "The Guardian Middle East",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "הפסקת האש בלבנון תלויה בעצירה מלאה של חיזבאללה",
+            "originalTitle": "Israel and Lebanon agree yet another ceasefire - but can it hold?",
+            "context": "ישראל ולבנון הסכימו על מסגרת להפסקת אש, אבל המשך ההסלמה תלוי בשאלה אם חיזבאללה יעצור את הפעילות בדרום.",
+            "sourceUrl": "https://www.theguardian.com/news/video/2026/jun/04/israel-and-lebanon-agree-yet-another-ceasefire-but-can-it-hold-the-latest",
+        },
+        {
+            "source": "New York Times Middle East",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "הפסקת האש בלבנון מתערערת אחרי שחיזבאללה דחה את ההסכם",
+            "originalTitle": "Lebanon ceasefire faces uncertainty after Hezbollah rejection",
+            "context": "חיזבאללה דחה את מסגרת הפסקת האש בין ישראל ללבנון, וההסכם נותר תלוי בהסרת האיום מהדרום.",
+            "sourceUrl": "https://www.nytimes.com/live/2026/06/04/world/iran-war-trump-israel-lebanon/lebanon-ceasefire-israel-strikes",
+        },
+    ),
+    (
         "idf_chief_north_hezbollah_posture_jpost_walla_visible_regression_20260604",
         True,
         {

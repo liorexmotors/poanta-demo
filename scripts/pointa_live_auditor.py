@@ -566,6 +566,34 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and not re.search(r"מחסן נשק|weapon storage|booby|raid|raids|פשט|פשיטה", primary)
     ):
         tokens.add("israel_lebanon_hezbollah_ceasefire_litani")
+    if (
+        ("ישראל" in text or "israel" in text)
+        and ("לבנון" in text or "lebanon" in text)
+        and ("חיזבאללה" in text or "hezbollah" in text)
+        and has_ceasefire_frame
+        and (
+            "דחה" in text
+            or "דחיית" in text
+            or "rejected" in text
+            or "rejects" in text
+            or "renew" in text
+            or "hold" in text
+            or "החזיק" in text
+            or "תלויה בעצירה" in text
+            or "עצירה מלאה" in text
+        )
+        and not re.search(r"מחסן נשק|weapon storage|booby|raid|raids|פשט|פשיטה", primary)
+    ):
+        tokens.add("israel_lebanon_hezbollah_ceasefire_rejection")
+    if (
+        ("צה״ל" in text or "צה\"ל" in text or "idf" in text)
+        and ("שב״כ" in text or "שב\"כ" in text or "shin bet" in text)
+        and ("חמאס" in text or "hamas" in text)
+        and ("מנגנון" in text or "apparatus" in text)
+        and ("אבטח" in text or "security" in text)
+        and ("חוסל" in text or "חיסלו" in text or "kill" in text)
+    ):
+        tokens.add("idf_shinbet_hamas_security_apparatus_killings")
     if ("איראן" in text or "iran" in text) and ("ארה״ב" in text or "ארה\"ב" in text or "us " in text or "u.s" in text or "american" in text) and (
         "הורמוז" in text or "hormuz" in text or "מפרץ" in text or "gulf" in text
     ) and (
