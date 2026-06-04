@@ -456,6 +456,19 @@ def israir_slovenia_flight_tokens(item: dict[str, Any]) -> set[str]:
     return set()
 
 
+def israel_slovenia_embassy_tokens(item: dict[str, Any]) -> set[str]:
+    """Fingerprint Israel opening an embassy in Slovenia/Ljubljana after a pro-Israel government change."""
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source", "sourceUrl", "url"]).lower()
+    has_israel = bool(re.search(r"ישראל|israel", text))
+    has_slovenia = bool(re.search(r"סלובניה|slovenia|לובליאנה|ljubljana", text))
+    has_embassy = bool(re.search(r"שגריר|שגרירות|embassy|ambassador", text))
+    has_government_change = bool(re.search(r"ממשלה|יאנש|janša|jansa|פרו-ישראל|ידיד(?:ת)? ישראל|אישור הקמת", text))
+    has_israir_only = bool(re.search(r"ישראייר|israir|נחית|זאגרב|zagreb|divert", text)) and not has_embassy
+    if has_israel and has_slovenia and has_embassy and has_government_change and not has_israir_only:
+        return {"israel_slovenia_embassy_government_change"}
+    return set()
+
+
 def word_overlap(a: set[str], b: set[str]) -> float:
     if not a or not b:
         return 0.0
@@ -693,6 +706,10 @@ def likely_duplicate_story(a: dict[str, Any], b: dict[str, Any]) -> bool:
     aw = israir_slovenia_flight_tokens(a)
     bw = israir_slovenia_flight_tokens(b)
     if aw and bw and "israir_slovenia_landing_diversion" in aw and "israir_slovenia_landing_diversion" in bw:
+        return True
+    aw = israel_slovenia_embassy_tokens(a)
+    bw = israel_slovenia_embassy_tokens(b)
+    if aw and bw and "israel_slovenia_embassy_government_change" in aw and "israel_slovenia_embassy_government_change" in bw:
         return True
     if topic_for_item(a) != topic_for_item(b):
         return False

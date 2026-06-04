@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "israel_slovenia_embassy_walla_israelhayom_visible_regression_20260604",
+        True,
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "פוליטיקה",
+            "categoryClass": "security",
+            "headline": "סער מנצל ממשלה ידידותית בסלובניה לפתיחת שגרירות ישראלית",
+            "originalTitle": "מיד לאחר אישור הקמת הממשלה החדשה: ישראל תפתח שגרירות בסלובניה",
+            "context": "ישראל תפתח לראשונה שגרירות בלובליאנה מיד לאחר אישור ממשלת יאנז יאנשה בסלובניה.",
+            "sourceUrl": "https://news.walla.co.il/item/3843320",
+        },
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "פוליטיקה",
+            "categoryClass": "security",
+            "headline": "ישראל תפתח שגרירות בסלובניה אחרי חזרת ממשלה פרו-ישראלית",
+            "originalTitle": "אחרי משבר הטיסה: ישראל תפתח שגרירות בסלובניה",
+            "context": "גדעון סער הורה לפתוח לראשונה שגרירות ישראלית בלובליאנה לאחר שהפרלמנט הסלובני אישר ממשלה בראשות יאנז יאנשה.",
+            "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20693088",
+        },
+    ),
+    (
         "idf_shinbet_hamas_security_apparatus_jpost_ynet_visible_regression_20260604",
         True,
         {
