@@ -211,10 +211,20 @@ def normalize_token(token: str) -> str:
         "כוכב": "כוכב_מיכאל_גבעתי",
         "מיכאל": "כוכב_מיכאל_גבעתי",
         "גבעתי": "כוכב_מיכאל_גבעתי",
+        # Same fatal road crash near Kiryat Gat can be reported by exact junction
+        # (Nir Banim) or nearby city/area. Normalize both so Rotter/Ynet/Maariv
+        # flashes collapse into one live accident card instead of duplicates.
+        "ניר": "ניר_בנים_קריית_גת",
+        "נים": "ניר_בנים_קריית_גת",
+        "בנים": "ניר_בנים_קריית_גת",
+        "גת": "ניר_בנים_קריית_גת",
         "מותה": "מוות",
         "מותו": "מוות",
         "נהרגה": "מוות",
+        "נהרג": "מוות",
         "הרוגה": "מוות",
+        "הרוג": "מוות",
+        "רוג": "מוות",
         # Building-fire flashes often split between rescue count and smoke-injury
         # count.  Normalize the inflected fire token so same-location building
         # fires collapse into one breaking card with source links.
@@ -347,9 +357,11 @@ def near_duplicate(a: str, b: str) -> bool:
     # Keep these narrow: shared locality + same event class + injury signal.
     if {"תאונת", "טרקטורון", "מעלות_חוסן"} <= shared and "בן" in shared:
         return True
-    road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "צומת"}
+    road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "כבישים", "צומת", "משאית", "שאית", "פגיעת"}
     casualty_update_terms = {"נפצעה", "נפצע", "נפצעו", "אנוש", "קשה", "מוות", "הרוגה", "פצועים"}
     if "כוכב_מיכאל_גבעתי" in shared and (ta & road_crash_terms) and (tb & road_crash_terms) and (ta & casualty_update_terms) and (tb & casualty_update_terms):
+        return True
+    if "ניר_בנים_קריית_גת" in shared and (ta & road_crash_terms) and (tb & road_crash_terms) and (ta & casualty_update_terms) and (tb & casualty_update_terms):
         return True
     gush_terms = {"גוש", "עציון", "צומת"}
     injury_terms = {"פצועים", "פצוע", "נפצעה", "נפצע", "קשה", "מחבל", "נוטרל"}
@@ -487,7 +499,7 @@ def same_source_road_crash_status_update(a: str, b: str) -> bool:
     """Collapse same-source fatality/status updates for one road crash."""
     ta, tb = token_set(a), token_set(b)
     shared = ta & tb
-    road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "צומת"}
+    road_crash_terms = {"תאונה", "תאונת", "דרכים", "רכבים", "כביש", "כבישים", "צומת", "משאית", "שאית", "פגיעת"}
     casualty_update_terms = {"נפצעה", "נפצע", "נפצעו", "אנוש", "קשה", "מוות", "הרוגה", "פצועים"}
     return "כוכב_מיכאל_גבעתי" in shared and (ta & road_crash_terms) and (tb & road_crash_terms) and (ta & casualty_update_terms) and (tb & casualty_update_terms)
 
