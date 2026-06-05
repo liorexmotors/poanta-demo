@@ -547,9 +547,24 @@ def weak_speaker_only_title(title: str, context: str) -> bool:
     return False
 
 
+def weak_truncated_title(title: str, context: str) -> bool:
+    """Drop source-truncated breaking rows that end in ellipsis without context.
+
+    Rotter and similar feeds sometimes cut long forum titles with ``...``.  In a
+    breaking feed that becomes the entire visible card, so it violates Pointa's
+    complete-thought rule and should not outrank real complete flashes.
+    """
+    clean = clean_text(title).strip()
+    if context.strip():
+        return False
+    return bool(re.search(r"(?:\.\.\.|…)$", clean))
+
+
 def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
     text = f"{row.get('headline','')} {row.get('context','')}"
     if weak_speaker_only_title(str(row.get("headline", "")), str(row.get("context", ""))):
+        return False
+    if weak_truncated_title(str(row.get("headline", "")), str(row.get("context", ""))):
         return False
     if any(re.search(p, text, re.I) for p in DROP_PATTERNS):
         return False

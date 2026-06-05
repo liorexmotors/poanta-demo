@@ -179,6 +179,13 @@ def main() -> int:
         "''אתם לא יהודים, אלוהים ישלם לכם'': משה דוידוביץ', יו''ר פורום קו העימות תקף את חברי הכנסת",
     ):
         failures.append("expected same-source reordered Rotter quote update collapse")
+    if not mod.weak_truncated_title(
+        "הבחינות לאונ' בעזה : אין קמפוס, אין כיתות. מבחני האוניברסיטה של העזתיים נערכים על חוף הים. יש משגיח...",
+        "",
+    ):
+        failures.append("expected source-truncated ellipsis title to be dropped")
+    if mod.weak_truncated_title("אזעקות הופעלו בקו העימות בעקבות ירי מלבנון", "אזעקות הופעלו ביישובים אביבים ויראון"):
+        failures.append("expected complete title with useful context to be kept")
     if failures:
         for failure in failures:
             print("FAIL", failure)
