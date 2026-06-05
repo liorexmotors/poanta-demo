@@ -19,6 +19,50 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "khamenei_us_iran_nuclear_talks_deadlock_visible_regression_20260605",
+        True,
+        {
+            "source": "הארץ - המזרח התיכון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "יועץ חמינאי מציב שחרור 24 מיליארד דולר כתנאי להסכם",
+            "originalTitle": "יועצו של חמינאי: המו\"מ עם ארה\"ב במבוי סתום, הסכם תלוי בשחרור נכסינו המוקפאים",
+            "context": "יועץ חמינאי אמר שהמשא ומתן עם ארה״ב במבוי סתום ותלה הסכם בשחרור נכסים מוקפאים.",
+            "sourceUrl": "https://www.haaretz.co.il/news/world/middle-east/2026-06-05/ty-article/.premium/0000019e-98e5-d59e-a79f-fae7ade70000",
+        },
+        {
+            "source": "The Jerusalem Post - Iran News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "יועץ חמינאי טוען שטראמפ תוקע את שיחות הגרעין",
+            "originalTitle": "'At a deadlock': Khamenei's military advisor tells CNN that Trump is stalling talks",
+            "context": "יועץ חמינאי טען שהשיחות עם ארה״ב תקועות משום שטראמפ מעכב את המשא ומתן.",
+            "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-898504",
+        },
+    ),
+    (
+        "haredi_police_station_jerusalem_arrests_protest_visible_regression_20260605",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "מפגינים חרדים תקפו עובר אורח ליד תחנת משטרה בירושלים",
+            "originalTitle": "Man attacked by haredi protesters outside Jerusalem police station - report",
+            "context": "מפגינים חרדים תקפו עובר אורח ליד תחנת משטרה בירושלים לאחר מעצר מתפרעים.",
+            "sourceUrl": "https://www.jpost.com/israel-news/article-898506",
+        },
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "חרדים הפגינו בתחנת משטרה בירושלים אחרי מעצר מתפרעים",
+            "originalTitle": "עשרות חרדים מפגינים בתחנת המשטרה בי-ם, במחאה על מעצר המתפרעים מול בית סולברג",
+            "context": "עשרות חרדים הפגינו בתחנת המשטרה בירושלים במחאה על מעצר המתפרעים מול בית סולברג.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/bjvw6ye11fg",
+        },
+    ),
+    (
         "binyamin_firebomb_terrorist_inn_idf_visible_regression_20260605",
         True,
         {

@@ -661,6 +661,20 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and ("קצין" in text or "קציני" in text or "officer" in text or "גבעתי" in text or "מג״ד" in text or "מג\"ד" in text)
     ):
         tokens.add("idf_officers_injured_south_lebanon_20260605")
+    if (
+        ("חמינאי" in text or "khamenei" in text)
+        and ("ארה״ב" in text or "ארה\"ב" in text or "trump" in text or "טראמפ" in text or "u.s" in text or "american" in text)
+        and ("גרעין" in text or "nuclear" in text or "מו״מ" in text or "מו\"מ" in text or "שיחות" in text or "talks" in text or "agreement" in text or "הסכם" in text)
+        and ("מבוי סתום" in text or "stall" in text or "מוקפא" in text or "24 מיליארד" in text or "נכסים" in text or "deadlock" in text)
+    ):
+        tokens.add("khamenei_us_iran_nuclear_talks_deadlock")
+    if (
+        ("חרד" in text or "haredi" in text or "ultra-orthodox" in text)
+        and ("תחנת המשטרה" in text or "תחנת משטרה" in text or "police station" in text or "בית סולברג" in text or "solberg" in text)
+        and ("ירושלים" in text or "jerusalem" in text)
+        and ("מעצר" in text or "מתפרע" in text or "מפגינ" in text or "protest" in text or "attacked" in text)
+    ):
+        tokens.add("haredi_police_station_jerusalem_arrests_protest")
     return tokens
 
 
