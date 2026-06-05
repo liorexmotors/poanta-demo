@@ -41,6 +41,28 @@ CASES = [
         },
     ),
     (
+        "khamenei_us_iran_regional_war_threat_jpost_inn_visible_regression_20260605",
+        True,
+        {
+            "source": "The Jerusalem Post - Middle East",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "יועץ חמינאי מציב לטראמפ תנאי כספי לחידוש שיחות הגרעין",
+            "originalTitle": "'At a deadlock': Khamenei's military advisor tells CNN that Trump is stalling talks",
+            "context": "מוחסן רזאי אמר שהמו״מ בין ארה״ב לאיראן תקוע ותלה את הפריצה בשחרור 24 מיליארד דולר מנכסים מוקפאים. הוא הזהיר שאם הלחימה תתחדש, איראן תרחיב את הפגיעה בבסיסים אמריקאיים.",
+            "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-898504",
+        },
+        {
+            "source": "ערוץ 7 / INN עברית",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "יועץ חמינאי איים להרחיב את המלחמה לכל האזור",
+            "originalTitle": "יועצו של חמינאי: אם הלחימה תימשך נרחיב את העימות לאזור כולו",
+            "context": "יועצו של חמינאי הזהיר שאם הלחימה תימשך איראן ובעלות בריתה ירחיבו את העימות לאזור כולו מול ישראל או ארה״ב.",
+            "sourceUrl": "https://www.inn.co.il/flashes/1116443",
+        },
+    ),
+    (
         "haredi_police_station_jerusalem_arrests_protest_visible_regression_20260605",
         True,
         {

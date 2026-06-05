@@ -661,13 +661,23 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and ("קצין" in text or "קציני" in text or "officer" in text or "גבעתי" in text or "מג״ד" in text or "מג\"ד" in text)
     ):
         tokens.add("idf_officers_injured_south_lebanon_20260605")
+    has_khamenei = "חמינאי" in text or "khamenei" in text
+    has_us_or_trump = "ארה״ב" in text or "ארה\"ב" in text or "trump" in text or "טראמפ" in text or "u.s" in text or "american" in text
     if (
-        ("חמינאי" in text or "khamenei" in text)
-        and ("ארה״ב" in text or "ארה\"ב" in text or "trump" in text or "טראמפ" in text or "u.s" in text or "american" in text)
+        has_khamenei
+        and has_us_or_trump
         and ("גרעין" in text or "nuclear" in text or "מו״מ" in text or "מו\"מ" in text or "שיחות" in text or "talks" in text or "agreement" in text or "הסכם" in text)
         and ("מבוי סתום" in text or "stall" in text or "מוקפא" in text or "24 מיליארד" in text or "נכסים" in text or "deadlock" in text)
     ):
         tokens.add("khamenei_us_iran_nuclear_talks_deadlock")
+    if (
+        has_khamenei
+        and has_us_or_trump
+        and ("איראן" in text or "טהראן" in text or "iran" in text)
+        and ("תרחיב" in text or "נרחיב" in text or "להרחיב" in text or "expand" in text)
+        and ("מלחמה" in text or "לחימה" in text or "בסיס" in text or "war" in text or "bases" in text)
+    ):
+        tokens.add("khamenei_us_iran_regional_war_threat")
     if (
         ("חרד" in text or "haredi" in text or "ultra-orthodox" in text)
         and ("תחנת המשטרה" in text or "תחנת משטרה" in text or "police station" in text or "בית סולברג" in text or "solberg" in text)
