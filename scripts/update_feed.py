@@ -2179,6 +2179,7 @@ def local_emergency_event_tokens(item: dict) -> set[str]:
 
 def northern_rocket_event_tokens(item: dict) -> set[str]:
     """Fingerprint the same northern rocket-impact event across sources."""
+    main = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline"]).lower()
     text = " ".join(str(item.get(k) or "") for k in ["originalTitle", "headline", "context", "takeaway", "category"]).lower()
     tokens: set[str] = set()
     if re.search(r"קריית שמונה|ק\"ש|kiryat shmona", text):
@@ -2193,9 +2194,15 @@ def northern_rocket_event_tokens(item: dict) -> set[str]:
         tokens.add("north_uav_alert_area")
     if re.search(r"מטרה אווירית|כלי טיס|כטב[״\"]?ם|רחפן|זיהוי שווא|חדירת", text):
         tokens.add("north_uav_alert")
+    if re.search(r"חיזבאללה|לבנון|צפון|גליל", text):
+        tokens.add("north_aircraft_fire_region")
+    if re.search(r"מ?ירי\s+לעבר\s+כלי\s+טיס|ירה\s+לעבר\s+כלי\s+טיס|ירה\s+על\s+כלי\s+טיס|ירי\s+על\s+כלי\s+טיס|אזעק|התרע", main):
+        tokens.add("north_aircraft_fire_alert")
     if "kiryat_shmona" in tokens and "rocket_fire" in tokens and ("north_lebanon" in tokens or "direct_hit_damage" in tokens):
         return tokens
     if "north_uav_alert_area" in tokens and "north_uav_alert" in tokens:
+        return tokens
+    if {"north_uav_alert", "north_aircraft_fire_region", "north_aircraft_fire_alert"}.issubset(tokens):
         return tokens
     return set()
 

@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "north_aircraft_fire_alert_ynet_walla_visible_regression_20260606",
+        True,
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "חיזבאללה ירה לעבר כלי טיס וישראל העבירה אזהרה ללבנון",
+            "originalTitle": "חיזבאללה ירה על כלי טיס; דיווח: המסר שעבר ללבנון - פגיעה בישראל תגרור אש בדאחייה",
+            "context": "חיזבאללה ירה לעבר כלי טיס של חיל האוויר והירי הוביל לאזעקות בצפון, בלי פגיעה בכלי הטיס ובלי נפגעים. במקביל הועבר ללבנון מסר שלפיו פגיעה בישראל תגרור תגובה גם בדאחייה בביירות.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/r1wdrsgwfl",
+        },
+        {
+            "source": "וואלה חדשות - צבא וביטחון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "אזעקות בצפון הופעלו אחרי ירי לעבר מטוס חיל האוויר",
+            "originalTitle": "לאחר יום מתוח בצפון: אזעקות מירי לעבר כלי טיס של חיה\"א",
+            "context": "ירי לעבר כלי טיס של חיל האוויר הוביל להפעלת אזעקות בצפון אחרי יום מתוח בגבול לבנון. לפי הדיווחים, לא נרשמה פגיעה בכלי הטיס ולא היו נפגעים.",
+            "sourceUrl": "https://news.walla.co.il/item/3843477",
+        },
+    ),
+    (
         "khamenei_us_iran_nuclear_talks_deadlock_visible_regression_20260605",
         True,
         {
