@@ -16,6 +16,8 @@ export type FeedItem = {
   sourceUrl?: string;
   sourceLinks?: Array<{ name?: string; url?: string }>;
   sources?: string[];
+  shareId?: string;
+  shareUrl?: string;
   imageUrl?: string;
   publishedAt?: string;
   updatedAt?: string;
