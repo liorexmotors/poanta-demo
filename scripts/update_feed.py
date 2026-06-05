@@ -2156,6 +2156,12 @@ def local_emergency_event_tokens(item: dict) -> set[str]:
         tokens.add("yafia_nazareth")
     if re.search(r"שלושה|שני צעירים|שני גברים|גבר כבן 50|3\s+men|three", text):
         tokens.add("multiple_victims_north_crime")
+    if re.search(r"בקבוקי תבערה|יידה|השליך|firebomb|molotov", text):
+        tokens.add("firebomb_attack")
+    if re.search(r"גבעת אסף|עפרה|ביתין|בנימין|givat assaf|ofra|beitin", text):
+        tokens.add("binyamin_givat_ofra_area")
+    if re.search(r"חיסל|חוסל|מחבל|terrorist|eliminated", text):
+        tokens.add("terrorist_eliminated")
     if re.search(r"לוד|lod", text):
         tokens.add("lod")
     if re.search(r"בניין|מגורים|דירה|apartment", text):
@@ -2165,6 +2171,8 @@ def local_emergency_event_tokens(item: dict) -> set[str]:
     if "fire_rescue" in tokens and "lod" in tokens and ("residential_building" in tokens or "eighteen_people" in tokens):
         return tokens
     if "violent_death" in tokens and "tamra" in tokens and "yafia_nazareth" in tokens and "multiple_victims_north_crime" in tokens:
+        return tokens
+    if {"firebomb_attack", "binyamin_givat_ofra_area", "terrorist_eliminated"}.issubset(tokens):
         return tokens
     return set()
 

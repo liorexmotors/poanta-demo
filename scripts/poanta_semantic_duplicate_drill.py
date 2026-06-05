@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "binyamin_firebomb_terrorist_inn_idf_visible_regression_20260605",
+        True,
+        {
+            "source": "Israel National News English",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "מחבל שהשליך בקבוקי תבערה חוסל בין גבעת אסף לעפרה",
+            "originalTitle": "Firebomb-throwing terrorist eliminated between Givat Assaf and Ofra",
+            "context": "כוח ביטחון חיסל מחבל שהשליך בקבוקי תבערה באזור שבין גבעת אסף לעפרה.",
+            "sourceUrl": "https://www.israelnationalnews.com/flashes/687009",
+        },
+        {
+            "source": "דובר צה״ל - טלגרם רשמי",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "כוחות יחידה 636 חיסלו מחבל שיידה בקבוקי תבערה לעבר כביש מרכזי סמוך לכפר",
+            "originalTitle": "דובר צה״ל:",
+            "context": "כוחות יחידה 636 במרחב הכפר ביתין שבחטיבת בנימין זיהו מחבלים שזרקו בקבוקי תבערה לעבר רכבים ישראלים וחיסלו אחד מהם.",
+            "sourceUrl": "https://t.me/idf_telegram/24153",
+        },
+    ),
+    (
         "tamra_yafia_triple_murder_ynet_israelhayom_visible_regression_20260605",
         True,
         {
@@ -38,6 +60,50 @@ CASES = [
             "originalTitle": "חשד לרצח בטמרה: גבר כבן 50 נהרג באירוע אלימות",
             "context": "מד״א קבע את מותו של גבר כבן 50 בטמרה; מוקדם יותר נרצחו שני גברים בכפר יפיע.",
             "sourceUrl": "https://www.israelhayom.co.il/news/crime/article/20694495",
+        },
+    ),
+    (
+        "tamra_yafia_triple_murder_walla_ynet_visible_regression_20260605",
+        True,
+        {
+            "source": "וואלה חדשות",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "שלושה נרצחו בחברה הערבית בצפון בתוך כמה שעות",
+            "originalTitle": "גבר נורה למוות בטמרה: שלושה נרצחים בחברה הערבית תוך שעות",
+            "context": "גבר נורה למוות בטמרה, זמן קצר אחרי ששני צעירים נרצחו ביריות באזור נצרת ויפיע.",
+            "sourceUrl": "https://news.walla.co.il/item/3843347",
+        },
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "שלושה גברים נרצחו ביריות בתוך שעות באזור נצרת ובטמרה",
+            "originalTitle": "שני צעירים נרצחו ביריות ליד נצרת, גבר נורה למוות בטמרה",
+            "context": "שני צעירים נרצחו ביריות סמוך לנצרת וגבר נוסף נורה למוות בטמרה בתוך פרק זמן קצר.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/ryfr88ybgx",
+        },
+    ),
+    (
+        "trump_iran_uranium_ground_operation_walla_ynet_visible_regression_20260605",
+        True,
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "טראמפ שקל כניסה קרקעית לאיראן כדי להוציא אורניום מועשר",
+            "originalTitle": "טראמפ שקל מבצע קרקעי באיראן להוצאת אורניום מועשר",
+            "context": "טראמפ שקל אפשרות למבצע קרקעי באיראן שמטרתו הוצאת אורניום מועשר מתוך המדינה.",
+            "sourceUrl": "https://news.walla.co.il/break/3843344",
+        },
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "טראמפ הסתייג ממבצע קרקעי להוצאת אורניום מאיראן",
+            "originalTitle": "טראמפ הסתייג ממבצע קרקעי להוצאת אורניום מאיראן",
+            "context": "טראמפ הסתייג מאפשרות לשלוח כוחות קרקעיים כדי להוציא אורניום מועשר מאיראן.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/bk00w1vywme",
         },
     ),
     (
