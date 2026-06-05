@@ -958,6 +958,50 @@ CASES = [
             "sourceUrl": "https://www.mako.co.il/news-world/2026_q2/Article-29ab8b086549e91026.htm",
         },
     ),
+    (
+        "ireland_ben_gvir_smotrich_entry_ban_walla_israelhayom_visible_regression_20260605",
+        True,
+        {
+            "source": "וואלה חדשות - חדשות בעולם",
+            "category": "אקטואליה בעולם",
+            "categoryClass": "security",
+            "headline": "אירלנד חסמה את בן גביר וסמוטריץ'",
+            "originalTitle": "אירלנד אוסרת על סמוטריץ' ובן גביר כניסה לשטחה: \"נקדם הרחבה לכל האיחוד האירופי\"",
+            "context": "אירלנד אסרה את כניסת בן גביר וסמוטריץ' לשטחה ומקדמת הרחבת המהלך מול האיחוד האירופי.",
+            "sourceUrl": "https://news.walla.co.il/item/3843438",
+        },
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "אקטואליה בעולם",
+            "categoryClass": "security",
+            "headline": "אירלנד תחסום כניסה לבן גביר וסמוטריץ'",
+            "originalTitle": "אירלנד מטילה חרם אישי: השרים בן גביר וסמוטריץ' לא יורשו להיכנס",
+            "context": "ממשלת אירלנד הודיעה על איסור כניסה אישי לבן גביר וסמוטריץ' כחלק מהחרפת הצעדים נגד ישראל.",
+            "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20697658",
+        },
+    ),
+    (
+        "idf_officers_injured_south_lebanon_walla_ynet_visible_regression_20260605",
+        True,
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "שלושה קציני צה\"ל נפצעו בדרום לבנון",
+            "originalTitle": "2 קצינים נפצעו באורח קשה בדרום לבנון, קצין נוסף נפצע באורח קל",
+            "context": "שני קצינים נפצעו קשה וקצין נוסף נפצע קל בתקריות בדרום לבנון.",
+            "sourceUrl": "https://news.walla.co.il/break/3843440",
+        },
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "שתי תקריות קשות לצה״ל בדרום לבנון",
+            "originalTitle": "שני קצינים נפצעו קשה בתקריות שונות בדרום בלבנון, מפקד סיירת גבעתי נפצע קל",
+            "context": "שני קצינים נפצעו קשה בדרום לבנון ומפקד סיירת גבעתי נפצע קל באירוע נוסף.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/byflr8lwfe",
+        },
+    ),
 ]
 
 
