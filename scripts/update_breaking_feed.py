@@ -310,6 +310,38 @@ def normalize_token(token: str) -> str:
         "רצח": "ירי_מוות",
         "מותם": "ירי_מוות",
         "ותם": "ירי_מוות",
+        # Northern UAV alert waves can appear first as a suspected infiltration
+        # in the Galilee/Finger-of-Galilee and later as an interception/fallout
+        # update naming Margaliot/Misgav Am. Normalize the locality and UAV
+        # status anchors so מבזקים shows one evolving alert event.
+        "אצבע": "אצבע_הגליל_כטבם",
+        "הגליל": "אצבע_הגליל_כטבם",
+        "גליל": "אצבע_הגליל_כטבם",
+        "מרגליות": "אצבע_הגליל_כטבם",
+        "משגב": "אצבע_הגליל_כטבם",
+        "יורט": "יירוט_כטבם",
+        "יורטו": "יירוט_כטבם",
+        "התפוצצו": "יירוט_כטבם",
+        "חדירת": "חדירת_כטבם",
+        # Hormuz drone/radar escalation flashes can split between a Rotter-style
+        # intercepted-drone report and a Walla/Ynet radar-site strike update.
+        # Keep the anchors narrow: Hormuz + Iran + UAV/drone/interception.
+        "הורמוז": "הורמוז_כטבם",
+        "ורמוז": "הורמוז_כטבם",
+        "מצר": "הורמוז_כטבם",
+        "מכ\"ם": "מכמים",
+        "מכמים": "מכמים",
+        "יירטו": "יירוט_כטבם",
+        # Trump/Iran missile-capability estimates may be phrased as 20%,
+        # 21%-22%, or one fifth. Normalize percentage/capability anchors.
+        "יכולות": "יכולת_טילים_כטבמים",
+        "יכולת": "יכולת_טילים_כטבמים",
+        "הטילים": "טילים",
+        "טילים": "טילים",
+        "20": "חמישית_יכולת",
+        "21": "חמישית_יכולת",
+        "22": "חמישית_יכולת",
+        "חמישית": "חמישית_יכולת",
     }
     token = synonym_map.get(token, token)
     return token
@@ -431,6 +463,23 @@ def near_duplicate(a: str, b: str) -> bool:
     # normalized locality and shooting/death anchor.
     if "יפיע_נצרת" in shared and (ta & death_terms) and (tb & death_terms):
         return True
+    # Northern UAV alert/interception same-event updates: early suspected
+    # infiltration vs later interception/fallout wording. Require the normalized
+    # Galilee locality plus UAV/alert/status terms so unrelated northern events
+    # are not merged.
+    uav_terms = {"כטבם", "כטבמים", "חדירת_כטבם", "יירוט_כטבם", "אזעק", "אזעקה", "אזעקות", "תרעות", "התרעות"}
+    if "אצבע_הגליל_כטבם" in shared and (ta & uav_terms) and (tb & uav_terms):
+        return True
+    if ({"אזעק", "אזעקה", "אזעקות"} & (ta | tb)) and "אצבע_הגליל_כטבם" in (ta | tb) and (ta & uav_terms) and (tb & uav_terms) and ((ta & {"מערבי", "נטועה"}) or (tb & {"מערבי", "נטועה"}) or ({"קריית", "שמונה"} <= ta) or ({"קריית", "שמונה"} <= tb)):
+        return True
+    # Hormuz drone/radar escalation variants: one terse flash may mention only
+    # UAVs intercepted over Hormuz while another includes U.S. radar strikes.
+    if "הורמוז_כטבם" in shared and (ta & {"כטבם", "כטבמים", "יירוט_כטבם", "מכמים"}) and (tb & {"כטבם", "כטבמים", "יירוט_כטבם", "מכמים"}) and (("איראן" in (ta | tb)) or ("ארהב" in (ta | tb))):
+        return True
+    # Trump/Iran remaining missile/UAV capability estimates are one live quote
+    # even when one source says 20% and another says 21%-22%.
+    if {"טראמפ", "איראן", "טילים"} <= shared and (("יכולת_טילים_כטבמים" in ta or "יכולת_טילים_כטבמים" in tb) or ("חמישית_יכולת" in ta and "חמישית_יכולת" in tb)) and (("כטבם" in ta or "כטבמים" in ta or "כטבם" in tb or "כטבמים" in tb) or "חמישית_יכולת" in shared):
+        return True
     # Tiberias rocket/siren waves often arrive first as an alert and then as an
     # MDA/no-casualty or impact-status flash.  Collapse only same-city northern
     # launch/alert updates, preserving separate analysis about Lebanon.
@@ -511,6 +560,14 @@ def same_source_trump_iran_agreement_update(a: str, b: str) -> bool:
     near_time_terms = {"שבוע", "הבא", "בקרוב"}
     agreement_terms = {"הסכם_הפסקת_אש", "סכם", "פסקת", "האש", "אש"}
     return {"טראמפ", "איראן"} <= shared and (ta & near_time_terms) and (tb & near_time_terms) and (ta & agreement_terms) and (tb & agreement_terms)
+
+
+def same_source_northern_uav_alert_update(a: str, b: str) -> bool:
+    """Collapse same-source northern UAV alert/interception status updates."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    uav_terms = {"כטבם", "כטבמים", "חדירת_כטבם", "יירוט_כטבם", "אזעק", "אזעקה", "אזעקות", "תרעות", "התרעות"}
+    return "אצבע_הגליל_כטבם" in shared and (ta & uav_terms) and (tb & uav_terms)
 
 
 def same_source_reordered_title_update(a: str, b: str) -> bool:
@@ -608,6 +665,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_tiberias_alert_update(row_dupe_text, dupe_text(x))
                     or same_source_road_crash_status_update(row_dupe_text, dupe_text(x))
                     or same_source_trump_iran_agreement_update(row_dupe_text, dupe_text(x))
+                    or same_source_northern_uav_alert_update(row_dupe_text, dupe_text(x))
                     or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
                 )
             ),
