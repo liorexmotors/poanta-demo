@@ -57,15 +57,65 @@ def first_source(sources: Any) -> str:
 def status_label(status: str) -> str:
     return {
         "new": "חדש",
-        "queued_for_moshe": "נשלח למשה",
-        "checking": "משה בודק",
+        "queued_for_moshe": "ממתין למשה",
+        "checking": "משה בודק מקור וכפילות",
         "sent_to_editor": "נשלח לעורך",
-        "candidate_found": "נמצא מועמד",
+        "candidate_found": "נמצא מועמד פיד",
         "published": "פורסם",
         "rejected_duplicate": "נדחה — כפילות",
         "rejected_low_quality": "נדחה — איכות",
         "rejected_no_source": "נדחה — אין מקור",
     }.get(status or "new", status or "חדש")
+
+
+def moshe_stage(status: str) -> dict[str, str]:
+    return {
+        "new": {
+            "stage": "זוהה פער",
+            "currentAction": "ממתין לשליחה לתור משה",
+            "nextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+        },
+        "queued_for_moshe": {
+            "stage": "בתור משה",
+            "currentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
+            "nextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
+        },
+        "checking": {
+            "stage": "בדיקה",
+            "currentAction": "בדיקת מקור, כפילות, חשיבות ואיכות",
+            "nextAction": "מועמד לעורך או דחייה",
+        },
+        "candidate_found": {
+            "stage": "מועמד נמצא",
+            "currentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
+            "nextAction": "העברה לעורך מלא ול־QA",
+        },
+        "sent_to_editor": {
+            "stage": "אצל העורך",
+            "currentAction": "העורך מכין כרטיס פואנטה מלא: כותרת, תקציר ופואנטה",
+            "nextAction": "Quality Gate ואז פרסום אם עבר",
+        },
+        "published": {
+            "stage": "פורסם",
+            "currentAction": "הפער נסגר בפיד",
+            "nextAction": "אין פעולה",
+        },
+        "rejected_duplicate": {
+            "stage": "נדחה",
+            "currentAction": "נמצא שכבר יש אצלנו אותו סיפור סמנטית",
+            "nextAction": "אין פרסום נוסף",
+        },
+        "rejected_low_quality": {
+            "stage": "נדחה",
+            "currentAction": "המקור/הנושא לא מספיק איכותי לפיד",
+            "nextAction": "אין פרסום",
+        },
+        "rejected_no_source": {
+            "stage": "נדחה",
+            "currentAction": "לא נמצא מקור אמין/פתוח מספיק",
+            "nextAction": "אין פרסום",
+        },
+    }.get(status or "new", {"stage": "לא ידוע", "currentAction": "סטטוס לא מוכר", "nextAction": "בדיקה ידנית"})
 
 
 def trend_to_queue_row(trend: dict[str, Any], existing: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -79,10 +129,14 @@ def trend_to_queue_row(trend: dict[str, Any], existing: dict[str, Any] | None = 
     title = str(trend.get("trend") or existing.get("trend") or "").strip()
     domain = str(trend.get("domain") or existing.get("domain") or "חדשות").strip() or "חדשות"
     row = dict(existing)
+    stage = moshe_stage(status)
     row.update({
         "id": gid,
         "status": status,
         "statusLabel": status_label(status),
+        "mosheStage": stage["stage"],
+        "mosheCurrentAction": stage["currentAction"],
+        "mosheNextAction": stage["nextAction"],
         "createdAt": created_at,
         "updatedAt": now_iso(),
         "trend": title,
@@ -135,6 +189,12 @@ def refresh_queue(spy_path: Path, out_path: Path, limit: int) -> dict[str, Any]:
         if row.get("status") in {"published", "rejected_duplicate", "rejected_low_quality", "rejected_no_source"}:
             continue
         row = dict(row)
+        status = str(row.get("status") or "new")
+        stage = moshe_stage(status)
+        row["statusLabel"] = status_label(status)
+        row["mosheStage"] = row.get("mosheStage") or stage["stage"]
+        row["mosheCurrentAction"] = row.get("mosheCurrentAction") or stage["currentAction"]
+        row["mosheNextAction"] = row.get("mosheNextAction") or stage["nextAction"]
         row["staleFromCurrentSpy"] = True
         row["updatedAt"] = row.get("updatedAt") or now_iso()
         rows.append(row)
@@ -176,6 +236,10 @@ def mark_for_moshe(out_path: Path, max_items: int) -> dict[str, Any]:
         if row.get("status") == "new":
             row["status"] = "queued_for_moshe"
             row["statusLabel"] = status_label("queued_for_moshe")
+            stage = moshe_stage("queued_for_moshe")
+            row["mosheStage"] = stage["stage"]
+            row["mosheCurrentAction"] = stage["currentAction"]
+            row["mosheNextAction"] = stage["nextAction"]
             row["mosheQueuedAt"] = now_iso()
             row["updatedAt"] = now_iso()
             changed += 1
