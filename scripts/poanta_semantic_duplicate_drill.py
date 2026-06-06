@@ -41,6 +41,28 @@ CASES = [
         },
     ),
     (
+        "idf_tibnit_vehicle_lebanese_army_strike_visible_regression_20260606",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "צה״ל בודק אם תקיפה בדרום לבנון פגעה בחיילים לבנונים",
+            "originalTitle": "IDF southern Lebanon strike may have hit Lebanese Army personnel, military investigating",
+            "context": "צה״ל תקף רכב שנע לעבר כוחותיו באזור תיבנית בדרום לבנון, לאחר התרעה על ירי ותנועה חשודה במרחב לחימה פעיל. בצבא בודקים אם ברכב היו אנשי צבא לבנון, בזמן שחיזבאללה ממשיך לפעול באזור.",
+            "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-898520",
+        },
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "צה״ל תקף רכב שהתקרב לכוחות בדרום לבנון",
+            "originalTitle": "בצל הדיווח על חיילים לבנונים שנהרגו בתקיפה ישראלית - צה\"ל: תקפנו רכב שהתקרב לכוחות",
+            "context": "רכב נע באופן חשוד לעבר כוחות צה״ל סמוך לכפר תיבנית בדרום לבנון, במרחב לחימה מפונה שבו התקבלה גם התרעה על ירי. צה״ל תקף את הרכב וטען שחיזבאללה פועל באזור בניגוד להבנות הביטחוניות.",
+            "sourceUrl": "https://news.walla.co.il/break/3843529",
+        },
+    ),
+    (
         "trump_iran_remaining_missile_drone_capability_visible_regression_20260606",
         True,
         {
