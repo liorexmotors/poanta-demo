@@ -2288,6 +2288,13 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
         and ("פליטת כדור" in text or "ירי פנימי" in text or "friendly fire" in text or "accidental discharge" in text or "separate" in text)
     ):
         tokens.add("idf_south_lebanon_two_soldiers_drone_accident_20260607")
+    if (
+        ("אפרת" in text or "efrat" in text)
+        and ("דריסה" in text or "דרס" in text or "ramming" in text)
+        and ("חשוד" in text or "suspected" in text or "terror" in text)
+        and ("אבנים" in text or "יידוי" in text or "עימות" in text or "clash" in text or "settler" in text or "מתנחל" in text)
+    ):
+        tokens.add("efrat_junction_suspected_ramming_clashes_20260607")
     has_ceasefire_frame = (
         "הפסקת אש" in primary
         or "ceasefire" in primary

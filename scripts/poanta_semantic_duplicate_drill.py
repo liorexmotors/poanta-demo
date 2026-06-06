@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "efrat_junction_suspected_ramming_walla_jpost_visible_regression_20260607",
+        True,
+        {
+            "source": "וואלה חדשות - צבא וביטחון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "צה״ל עצר חשוד בדריסה באפרת אחרי חסימות ויידוי אבנים",
+            "originalTitle": "צה\"ל: חשוד פלסטיני דרס אזרח ישראלי בצומת אפרת - ונעצר",
+            "context": "צה״ל עצר חשוד בדריסה בצומת אפרת אחרי שעשרות ישראלים חסמו רכבים פלסטיניים ויידו אבנים. האירוע משלב חשד ביטחוני עם הסלמה אזרחית בזירה אחת.",
+            "sourceUrl": "https://news.walla.co.il/item/3843649",
+        },
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "חשד לדריסה נבדק אחרי עימותים בצומת אפרת",
+            "originalTitle": "Car ramming terror attack suspected at Efrat Junction",
+            "context": "חשד לפיגוע דריסה בצומת אפרת נבדק במקביל לדיווחים על עימותים, חסימות ויידוי אבנים במקום. זו אותה תקרית חיכוך שהופיעה בוואלה ובג׳רוזלם פוסט.",
+            "sourceUrl": "https://www.jpost.com/israel-news/crime-in-israel/article-898533",
+        },
+    ),
+    (
         "idf_south_lebanon_two_soldiers_killed_walla_ynet_jpost_visible_regression_20260607",
         True,
         {
