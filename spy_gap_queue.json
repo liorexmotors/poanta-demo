@@ -6,20 +6,29 @@
     "name": "משה · פערי מרגל",
     "role": "הפיכת טרנדים חסרים למועמדי פיד בטוחים"
   },
-  "generatedAt": "2026-06-06T10:11:23+02:00",
-  "sourceSpyGeneratedAt": "2026-06-06T10:11:23+02:00",
+  "generatedAt": "2026-06-06T10:35:08+02:00",
+  "sourceSpyGeneratedAt": "2026-06-06T10:35:07+02:00",
   "policy": "missing spy trends enter a queue for משה/editor QA; no raw auto-publish",
+  "mosheProcessor": {
+    "lastRunAt": "2026-06-06T10:35:03+02:00",
+    "finishedAt": "2026-06-06T10:35:03+02:00",
+    "processed": 0,
+    "schedule": "כל 10 דקות",
+    "policy": "no raw publish; candidate/editor/QA only"
+  },
   "missingInCurrentSpy": 2,
   "queueItems": 4,
   "newItems": 0,
-  "queuedForMoshe": 4,
+  "queuedForMoshe": 0,
   "sentToEditor": 0,
+  "candidateFound": 4,
   "published": 0,
+  "rejected": 0,
   "items": [
     {
       "id": "gap_262e79c47c0127f1",
-      "status": "queued_for_moshe",
-      "statusLabel": "ממתין למשה",
+      "status": "candidate_found",
+      "statusLabel": "נמצא מועמד פיד",
       "createdAt": "2026-06-06T09:23:22+02:00",
       "updatedAt": "2026-06-06T09:27:23+02:00",
       "trend": "שווי מניות השבבים בוול סטריט נחתך ב-1.3 טריליון דולר; נאסד\"ק צנח ב-4%",
@@ -69,14 +78,40 @@
       },
       "mosheQueuedAt": "2026-06-06T09:23:33+02:00",
       "staleFromCurrentSpy": true,
-      "mosheStage": "בתור משה",
-      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
-      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה"
+      "mosheStage": "מועמד נמצא",
+      "mosheCurrentAction": "משה אימת מקור ולא מצא כפילות חזקה; נוצר מועמד פיד בטוח לבדיקה עריכתית",
+      "mosheNextAction": "להעביר לעורך מלא ול־Quality Gate לפני פרסום",
+      "mosheStartedAt": "2026-06-06T10:28:20+02:00",
+      "mosheLastActionAt": "2026-06-06T10:28:21+02:00",
+      "mosheSourceCheck": {
+        "ok": true,
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytesSampled": 4096
+      },
+      "mosheDuplicateCheck": {
+        "duplicate": false,
+        "score": 0.2,
+        "headline": "מארוול ופלקס נכנסות ל-S&P 500 ומקפיצות את המניות",
+        "source": "גלובס - שוק ההון",
+        "reason": "token_overlap"
+      },
+      "mosheCheckedAt": "2026-06-06T10:28:21+02:00",
+      "candidate": {
+        "headlineSeed": "שווי מניות השבבים בוול סטריט נחתך ב-1.3 טריליון דולר; נאסד\"ק צנח ב-4%",
+        "source": "גלובס",
+        "sourceUrl": "https://www.themarker.com/wallstreet/2026-06-05/ty-article-live/0000019e-8149-d813-a9be-954fb0760000",
+        "category": "כלכלה",
+        "reason": "spy_gap_verified_by_moshe",
+        "checkedAt": "2026-06-06T10:28:21+02:00",
+        "nextGate": "editor_quality_gate"
+      },
+      "mosheOutcome": "candidate_found"
     },
     {
       "id": "gap_ce8dbbf6400f1413",
-      "status": "queued_for_moshe",
-      "statusLabel": "ממתין למשה",
+      "status": "candidate_found",
+      "statusLabel": "נמצא מועמד פיד",
       "createdAt": "2026-06-06T09:23:22+02:00",
       "updatedAt": "2026-06-06T09:27:23+02:00",
       "trend": "דיווח פלסטיני: תינוק נהרג מאש צה\"ל - שטען כי הרכב האיץ לעבר כוחות",
@@ -128,16 +163,42 @@
       },
       "mosheQueuedAt": "2026-06-06T09:23:33+02:00",
       "staleFromCurrentSpy": true,
-      "mosheStage": "בתור משה",
-      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
-      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה"
+      "mosheStage": "מועמד נמצא",
+      "mosheCurrentAction": "משה אימת מקור ולא מצא כפילות חזקה; נוצר מועמד פיד בטוח לבדיקה עריכתית",
+      "mosheNextAction": "להעביר לעורך מלא ול־Quality Gate לפני פרסום",
+      "mosheStartedAt": "2026-06-06T10:28:21+02:00",
+      "mosheLastActionAt": "2026-06-06T10:28:21+02:00",
+      "mosheSourceCheck": {
+        "ok": true,
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytesSampled": 4096
+      },
+      "mosheDuplicateCheck": {
+        "duplicate": false,
+        "score": 0.2,
+        "headline": "משרד הבריאות הפלסטיני דיווח שתינוק נהרג מירי צה״ל בחברון",
+        "source": "הארץ - חדשות",
+        "reason": "token_overlap"
+      },
+      "mosheCheckedAt": "2026-06-06T10:28:21+02:00",
+      "candidate": {
+        "headlineSeed": "דיווח פלסטיני: תינוק נהרג מאש צה\"ל - שטען כי הרכב האיץ לעבר כוחות",
+        "source": "ynet",
+        "sourceUrl": "https://news.walla.co.il/item/3843483",
+        "category": "חדשות",
+        "reason": "spy_gap_verified_by_moshe",
+        "checkedAt": "2026-06-06T10:28:21+02:00",
+        "nextGate": "editor_quality_gate"
+      },
+      "mosheOutcome": "candidate_found"
     },
     {
       "id": "gap_b77739e94be2f6ad",
-      "status": "queued_for_moshe",
-      "statusLabel": "ממתין למשה",
+      "status": "candidate_found",
+      "statusLabel": "נמצא מועמד פיד",
       "createdAt": "2026-06-06T09:23:22+02:00",
-      "updatedAt": "2026-06-06T10:11:23+02:00",
+      "updatedAt": "2026-06-06T10:35:08+02:00",
       "trend": "אש בשדות ליד חברון: \"מתנחלים הציתו רכוש\" | תיעודים חריגים מהעימותים",
       "domain": "חדשות",
       "clusterKey": "ליד חברון",
@@ -156,7 +217,7 @@
       ],
       "rssMentions": 0,
       "webMentions": 2,
-      "latestAt": "2026-06-06T08:11:23.760422+00:00",
+      "latestAt": "2026-06-06T08:35:07.927628+00:00",
       "source": "ynet",
       "sourceGroup": "ynet",
       "sourceUrl": "https://www.ynet.co.il/news/article/syhofflzme#autoplay",
@@ -180,20 +241,47 @@
         "rssMentions": 0,
         "webMentions": 2,
         "mentionedInFeed": false,
-        "latestAt": "2026-06-06T08:11:23.760422+00:00",
+        "latestAt": "2026-06-06T08:35:07.927628+00:00",
         "sampleUrl": "https://www.ynet.co.il/news/article/syhofflzme#autoplay"
       },
       "mosheQueuedAt": "2026-06-06T09:23:33+02:00",
-      "mosheStage": "בתור משה",
-      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
-      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה"
+      "mosheStage": "מועמד נמצא",
+      "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
+      "mosheNextAction": "העברה לעורך מלא ול־QA",
+      "mosheStartedAt": "2026-06-06T10:28:21+02:00",
+      "mosheLastActionAt": "2026-06-06T10:28:22+02:00",
+      "mosheSourceCheck": {
+        "ok": true,
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytesSampled": 4096
+      },
+      "mosheDuplicateCheck": {
+        "duplicate": false,
+        "score": 0.071,
+        "headline": "כביש 40 ליד קדמה ספג תאונה עם פצוע בינוני",
+        "source": "וואלה חדשות - מבזקים",
+        "reason": "token_overlap"
+      },
+      "mosheCheckedAt": "2026-06-06T10:28:22+02:00",
+      "candidate": {
+        "headlineSeed": "אש בשדות ליד חברון: \"מתנחלים הציתו רכוש\" | תיעודים חריגים מהעימותים",
+        "source": "ynet",
+        "sourceUrl": "https://www.ynet.co.il/news/article/syhofflzme#autoplay",
+        "category": "חדשות",
+        "reason": "spy_gap_verified_by_moshe",
+        "checkedAt": "2026-06-06T10:28:22+02:00",
+        "nextGate": "editor_quality_gate"
+      },
+      "mosheOutcome": "candidate_found",
+      "staleFromCurrentSpy": true
     },
     {
       "id": "gap_07c94e01fd5d2f92",
-      "status": "queued_for_moshe",
-      "statusLabel": "ממתין למשה",
+      "status": "candidate_found",
+      "statusLabel": "נמצא מועמד פיד",
       "createdAt": "2026-06-06T09:23:22+02:00",
-      "updatedAt": "2026-06-06T10:11:23+02:00",
+      "updatedAt": "2026-06-06T10:35:08+02:00",
       "trend": "More than half of Latin Americans deported from US to Congo are now back home",
       "domain": "אקטואליה בעולם",
       "clusterKey": "back home",
@@ -212,7 +300,7 @@
       ],
       "rssMentions": 0,
       "webMentions": 2,
-      "latestAt": "2026-06-06T08:11:23.765749+00:00",
+      "latestAt": "2026-06-06T08:35:07.928671+00:00",
       "source": "AP",
       "sourceGroup": "AP",
       "sourceUrl": "https://apnews.com/article/congo-us-latin-deportations-trump-e8ab8fd45e3f9a2e5fafabade053cfe8",
@@ -236,13 +324,39 @@
         "rssMentions": 0,
         "webMentions": 2,
         "mentionedInFeed": false,
-        "latestAt": "2026-06-06T08:11:23.765749+00:00",
+        "latestAt": "2026-06-06T08:35:07.928671+00:00",
         "sampleUrl": "https://apnews.com/article/congo-us-latin-deportations-trump-e8ab8fd45e3f9a2e5fafabade053cfe8"
       },
       "mosheQueuedAt": "2026-06-06T09:23:33+02:00",
-      "mosheStage": "בתור משה",
-      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
-      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה"
+      "mosheStage": "מועמד נמצא",
+      "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
+      "mosheNextAction": "העברה לעורך מלא ול־QA",
+      "mosheStartedAt": "2026-06-06T10:29:36+02:00",
+      "mosheLastActionAt": "2026-06-06T10:29:36+02:00",
+      "mosheSourceCheck": {
+        "ok": true,
+        "status": 200,
+        "contentType": "text/html;charset=UTF-8",
+        "bytesSampled": 4096
+      },
+      "mosheDuplicateCheck": {
+        "duplicate": false,
+        "score": 0.077,
+        "headline": "אנתרופיק מציעה אמנת פיקוח עולמית לפיתוח AI מתקדם",
+        "source": "דה מרקר - גלובל",
+        "reason": "token_overlap"
+      },
+      "mosheCheckedAt": "2026-06-06T10:29:36+02:00",
+      "candidate": {
+        "headlineSeed": "More than half of Latin Americans deported from US to Congo are now back home",
+        "source": "AP",
+        "sourceUrl": "https://apnews.com/article/congo-us-latin-deportations-trump-e8ab8fd45e3f9a2e5fafabade053cfe8",
+        "category": "אקטואליה בעולם",
+        "reason": "spy_gap_verified_by_moshe",
+        "checkedAt": "2026-06-06T10:29:36+02:00",
+        "nextGate": "editor_quality_gate"
+      },
+      "mosheOutcome": "candidate_found"
     }
   ]
 }
