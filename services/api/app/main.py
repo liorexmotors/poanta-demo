@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import sqlite3
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,8 @@ from services.worker.worker.feedback_report import build_report as build_feedbac
 
 ROOT = Path(__file__).resolve().parents[3]
 LEGACY_FEED = ROOT / "feed.json"
+SPY_TRENDS = ROOT / "spy_trends.json"
+SPY_SCRIPT = ROOT / "scripts" / "generate_spy_trends.py"
 DEFAULT_SQLITE = ROOT / "var" / "poanta_feedback.sqlite3"
 OPS_REPORTS = {
     "liveAuditor": ROOT / "tmp" / "pointa_live_auditor_last.json",
@@ -310,6 +313,68 @@ def ops_status() -> dict[str, Any]:
             "qualityAuditor": {"status": quality.get("status"), "checkedAt": quality.get("checkedAt"), "errors": quality.get("errors") or [], "warnings": quality.get("warnings") or []},
         },
     }
+
+
+@app.get("/v1/spy/trends")
+def spy_trends() -> dict[str, Any]:
+    """Return the latest generated spy snapshot for the dashboard."""
+    data = load_json_file(SPY_TRENDS)
+    if data is None:
+        return {
+            "ok": False,
+            "status": "unavailable",
+            "generatedAt": None,
+            "trends": [],
+            "error": "spy_trends.json is not available",
+        }
+    data.setdefault("ok", data.get("status") == "ok")
+    data.setdefault("source", "api-spy-trends-json")
+    return data
+
+
+@app.post("/v1/spy/run")
+def run_spy_trends() -> dict[str, Any]:
+    """Run the bounded RSS + approved-Web-target spy scan on demand.
+
+    The scan writes only spy_trends.json. It does not mutate or publish feed.json.
+    """
+    if not SPY_SCRIPT.exists():
+        return {"ok": False, "status": "error", "error": "generate_spy_trends.py is missing"}
+    started = datetime.now(timezone.utc)
+    try:
+        proc = subprocess.run(
+            ["python3", str(SPY_SCRIPT), "--out", str(SPY_TRENDS)],
+            cwd=str(ROOT),
+            text=True,
+            capture_output=True,
+            timeout=45,
+            check=False,
+        )
+    except subprocess.TimeoutExpired:
+        return {
+            "ok": False,
+            "status": "timeout",
+            "startedAt": started.isoformat(),
+            "finishedAt": datetime.now(timezone.utc).isoformat(),
+            "error": "הסריקה חרגה ממגבלת הזמן",
+        }
+    if proc.returncode != 0:
+        return {
+            "ok": False,
+            "status": "error",
+            "startedAt": started.isoformat(),
+            "finishedAt": datetime.now(timezone.utc).isoformat(),
+            "error": (proc.stderr or proc.stdout or "spy scan failed")[-2000:],
+        }
+    data = load_json_file(SPY_TRENDS) or {}
+    data.update({
+        "ok": True,
+        "manualRun": True,
+        "startedAt": started.isoformat(),
+        "finishedAt": datetime.now(timezone.utc).isoformat(),
+        "stdout": (proc.stdout or "")[-1000:],
+    })
+    return data
 
 
 @app.get("/v1/sources")
