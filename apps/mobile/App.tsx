@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   ActivityIndicator,
@@ -340,13 +340,13 @@ function faviconForSource(name?: string, item?: FeedItem) {
   try { return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(new URL(url).hostname)}&sz=64`; } catch { return ''; }
 }
 
-function SourceIcon({ name, item, small = false }: { name: string; item?: FeedItem; small?: boolean }) {
+const SourceIcon = memo(function SourceIcon({ name, item, small = false, themeKey: _themeKey }: { name: string; item?: FeedItem; small?: boolean; themeKey?: string }) {
   const icon = faviconForSource(name, item);
   if (small && icon) return <Image source={{ uri: icon }} style={styles.sourceMiniImage as any} fadeDuration={0} />;
   if (small) return <View style={styles.sourceMiniFallback}><Text style={styles.sourceMiniFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
   if (icon) return <Image source={{ uri: icon }} style={styles.sourceIconImage as any} fadeDuration={0} />;
   return <View style={styles.sourceIconFallback}><Text style={styles.sourceIconFallbackText}>{name.slice(0, 1) || 'P'}</Text></View>;
-}
+});
 
 type IconName = 'bookmark' | 'share' | 'breaking' | 'settings' | 'search';
 function WebIcon({ name, active = false, filled = false, size = 28 }: { name: IconName; active?: boolean; filled?: boolean; size?: number }) {
@@ -603,12 +603,27 @@ async function warmLanguageCache(lang: AppLanguage, texts: string[], existing: R
 }
 
 
-function Chip({ label, active, onPress, count }: { label: string; active: boolean; onPress: () => void; count?: number }) {
+const SETTINGS_DAYS = [1, 2, 3, 4, 5, 6, 7] as const;
+
+const Chip = memo(function Chip({ label, active, onPress, count, themeKey: _themeKey }: { label: string; active: boolean; onPress: () => void; count?: number; themeKey?: string }) {
   return <TouchableOpacity style={[styles.chip, active && styles.chipActive]} onPress={onPress} activeOpacity={0.82}>
     <Text style={[styles.chipText, active && styles.chipTextActive]} numberOfLines={1}>{label}</Text>
     {typeof count === 'number' && <Text style={[styles.chipCount, active && styles.chipCountActive]}>{count}</Text>}
   </TouchableOpacity>;
-}
+});
+
+const SettingsTopicChip = memo(function SettingsTopicChip({ topic, label, active, onToggle, themeKey }: { topic: string; label: string; active: boolean; onToggle: (topic: string) => void; themeKey: string }) {
+  const handlePress = useCallback(() => onToggle(topic), [onToggle, topic]);
+  return <Chip label={label} active={active} onPress={handlePress} themeKey={themeKey} />;
+});
+
+const SettingsSourceRow = memo(function SettingsSourceRow({ source, active, onToggle, themeKey }: { source: string; active: boolean; onToggle: (source: string) => void; themeKey: string }) {
+  const handlePress = useCallback(() => onToggle(source), [onToggle, source]);
+  return <TouchableOpacity style={[styles.sourceRow, active && styles.sourceRowOn]} onPress={handlePress} activeOpacity={0.82}>
+    <View style={styles.sourceRowLabel}><SourceIcon name={source} small themeKey={themeKey} /><Text style={[styles.sourceRowName, active && styles.sourceRowNameOn]}>{source}</Text></View>
+    <View style={[styles.switchTrack, active && styles.switchTrackOn]}><View style={[styles.switchKnob, active && styles.switchKnobOn]} /></View>
+  </TouchableOpacity>;
+});
 
 function SourceThumb({ item }: { item: FeedItem }) {
   if (item.imageUrl) return <Image source={{ uri: item.imageUrl }} style={styles.image as any} resizeMode="cover" fadeDuration={0} />;
@@ -616,7 +631,7 @@ function SourceThumb({ item }: { item: FeedItem }) {
   return <View style={styles.placeholder}><Text style={styles.placeholderText}>{label}</Text></View>;
 }
 
-function ArticleCard({ item, index, saved, onSave, onOpen, headline, summary, takeaway, topic, time, tr }: { item: FeedItem; index: number; saved: boolean; onSave: () => void; onOpen: () => void; headline: string; summary: string; takeaway: string; topic: string; time: string; tr: (text: string) => string }) {
+const ArticleCard = memo(function ArticleCard({ item, index, saved, onSave, onOpen, headline, summary, takeaway, topic, time, tr, themeKey }: { item: FeedItem; index: number; saved: boolean; onSave: () => void; onOpen: () => void; headline: string; summary: string; takeaway: string; topic: string; time: string; tr: (text: string) => string; themeKey: string }) {
   const shareText = articleShareText(item, headline, summary);
   const openSource = () => { onOpen(); if (item.sourceUrl) Linking.openURL(item.sourceUrl).catch(() => null); };
   const share = () => Linking.openURL(`https://wa.me/?text=${encodeURIComponent(shareText)}`).catch(() => null);
@@ -642,13 +657,13 @@ function ArticleCard({ item, index, saved, onSave, onOpen, headline, summary, ta
         <View style={styles.sourceAccent} />
         <View style={styles.sourceHead}>
           <Text style={styles.sourceLabel}>{tr('כותרת המקור')}</Text>
-          <View style={styles.sourceBrand}><SourceIcon name={sourceName(item)} item={item} /><Text style={styles.sourceNameText} numberOfLines={1}>{sourceName(item)}</Text></View>
+          <View style={styles.sourceBrand}><SourceIcon name={sourceName(item)} item={item} themeKey={themeKey} /><Text style={styles.sourceNameText} numberOfLines={1}>{sourceName(item)}</Text></View>
         </View>
         <Text style={styles.sourceText}>{String(item.originalTitle || sourceName(item))}</Text>
       </View>
     </TouchableOpacity>
   </View>;
-}
+});
 
 function BreakingSourceLinks({ item }: { item: FeedItem }) {
   const links = Array.isArray(item.sourceLinks) && item.sourceLinks.length
@@ -666,7 +681,7 @@ function BreakingSourceLinks({ item }: { item: FeedItem }) {
   </View>;
 }
 
-function BreakingCard({ item, index, headline, time }: { item: FeedItem; index: number; headline: string; time: string }) {
+const BreakingCard = memo(function BreakingCard({ item, headline, time, themeKey: _themeKey }: { item: FeedItem; index: number; headline: string; time: string; themeKey: string }) {
   return <View style={[styles.card, styles.breakingCard]}>
     <View style={styles.breakingMetaRow}>
       <BreakingSourceLinks item={item} />
@@ -674,13 +689,13 @@ function BreakingCard({ item, index, headline, time }: { item: FeedItem; index: 
     </View>
     <Text style={styles.breakingHeadline}>{headline}</Text>
   </View>;
-}
+});
 
-function NavButton({ label, icon, active, onPress, logo, filled = false }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean; filled?: boolean }) {
+const NavButton = memo(function NavButton({ label, icon, active, onPress, logo, filled = false, themeKey: _themeKey }: { label: string; icon?: IconName; active: boolean; onPress: () => void; logo?: boolean; filled?: boolean; themeKey: string }) {
   return <TouchableOpacity style={styles.navButton} onPress={onPress} accessibilityLabel={label}>
     {logo ? <View style={[styles.navLogoBadge, active && styles.navLogoBadgeActive]}><Image source={POENTA_NAV_ICON} style={styles.navLogo as any} /></View> : icon ? <WebIcon name={icon} active={active} filled={filled} size={28} /> : null}
   </TouchableOpacity>;
-}
+});
 
 function PoentaApp() {
   const colorScheme = useColorScheme();
@@ -722,6 +737,7 @@ function PoentaApp() {
 
   const isLight = appearance === 'light' || (appearance === 'system' && colorScheme === 'light');
   const colors = isLight ? LIGHT_COLORS : DARK_COLORS;
+  const themeKey = isLight ? 'light' : 'dark';
   appColors = colors;
   styles = useMemo(() => createStyles(colors), [colors]);
 
@@ -732,6 +748,7 @@ function PoentaApp() {
   const unreadSessionKeySet = useMemo(() => new Set(unreadSessionKeys), [unreadSessionKeys]);
   const prefTopicSet = useMemo(() => new Set(prefs.topics), [prefs.topics]);
   const prefSourceSet = useMemo(() => new Set(prefs.sources.length ? prefs.sources : knownSources), [prefs.sources, knownSources]);
+  const settingsPrefTopicSet = useMemo(() => new Set(settingsPrefs.topics), [settingsPrefs.topics]);
   const settingsPrefSourceSet = useMemo(() => new Set(settingsPrefs.sources.length ? settingsPrefs.sources : knownSources), [settingsPrefs.sources, knownSources]);
   const groupedSources = useMemo(() => {
     const groups: Record<SourceGroupKey, string[]> = { israel: [], world: [], telegram: [] };
@@ -1117,18 +1134,22 @@ function PoentaApp() {
     setUnreadSessionKeys([]);
   }
 
-  function toggleTopic(topic: string) {
+  const toggleTopic = useCallback((topic: string) => {
     setSettingsPrefs(prev => ({ ...prev, topics: prev.topics.includes(topic) ? prev.topics.filter(t => t !== topic) : [...prev.topics, topic] }));
-    if (activeFilter !== 'all' && activeFilter === topic) setActiveFilter('all');
-  }
+    setActiveFilter(prev => prev !== 'all' && prev === topic ? 'all' : prev);
+  }, []);
 
-  function toggleSource(source: string) {
+  const toggleSource = useCallback((source: string) => {
     setSettingsPrefs(prev => {
       const current = prev.sources.filter(s => s !== '__NONE__');
       return { ...prev, sources: current.includes(source) ? current.filter(s => s !== source) : [...current, source] };
     });
-    if (activeFilter !== 'all' && activeFilter === source) setActiveFilter('all');
-  }
+    setActiveFilter(prev => prev !== 'all' && prev === source ? 'all' : prev);
+  }, []);
+
+  const setSettingsDays = useCallback((days: number) => {
+    setSettingsPrefs(prev => prev.days === days ? prev : ({ ...prev, days }));
+  }, []);
 
   function scheduleSettingsCommit() {
     const draft = settingsPrefs;
@@ -1186,8 +1207,8 @@ function PoentaApp() {
   const renderTabs = () => {
     const tabs = view === 'breaking' ? breakingSources : knownTopics;
     return <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabsScroll} contentContainerStyle={styles.tabs} keyboardShouldPersistTaps="always" nestedScrollEnabled directionalLockEnabled>
-      <Chip label={tr('הכל')} active={activeFilter === 'all'} onPress={() => setActiveFilter('all')} count={view === 'breaking' ? visibleBreaking.length : topicCounts.all} />
-      {tabs.map(t => <Chip key={t} label={view === 'breaking' ? t : topicLabel(t)} active={activeFilter === t} onPress={() => setActiveFilter(t)} count={view === 'breaking' ? breaking.filter(i => sourceName(i) === t || i.sources?.includes(t)).length : topicCounts[t] || 0} />)}
+      <Chip label={tr('הכל')} active={activeFilter === 'all'} onPress={() => setActiveFilter('all')} count={view === 'breaking' ? visibleBreaking.length : topicCounts.all} themeKey={themeKey} />
+      {tabs.map(t => <Chip key={t} label={view === 'breaking' ? t : topicLabel(t)} active={activeFilter === t} onPress={() => setActiveFilter(t)} count={view === 'breaking' ? breaking.filter(i => sourceName(i) === t || i.sources?.includes(t)).length : topicCounts[t] || 0} themeKey={themeKey} />)}
     </ScrollView>;
   };
 
@@ -1207,7 +1228,7 @@ function PoentaApp() {
       <View style={styles.moreHead}><MoreBack to="settings" /><View style={styles.moreHeadText}><Text style={styles.settingsTitle}>{tr('מצב תצוגה')}</Text><Text style={styles.moreHeadSub}>{tr('בחר איך Poenta תיראה אצלך.')}</Text></View><Text style={styles.savedPill}>{tr('נשמר')}</Text></View>
       <View style={styles.wrap}>{[
         { code: 'dark' as const, name: tr('כהה') }, { code: 'light' as const, name: tr('בהיר') }, { code: 'system' as const, name: tr('לפי מערכת') },
-      ].map(o => <Chip key={o.code} label={o.name} active={appearance === o.code} onPress={() => setAppearance(o.code)} />)}</View>
+      ].map(o => <Chip key={o.code} label={o.name} active={appearance === o.code} onPress={() => setAppearance(o.code)} themeKey={themeKey} />)}</View>
       <Text style={styles.translationNote}>{tr('“לפי מערכת” מחליף אוטומטית בין לייט לדרק לפי הגדרת המכשיר.')}</Text>
     </View>;
     if (moreScreen === 'about') return <View style={styles.panel}>
@@ -1217,7 +1238,7 @@ function PoentaApp() {
         <Text style={styles.about}>{tr('המטרה: להבין מהר מה באמת קרה, למה זה חשוב ומה הפואנטה — בלי כותרות מטעות, רעש מיותר וגלילה אינסופית.')}</Text>
         <Text style={styles.moreSectionTitle}>{tr('מה מוצג באפליקציה?')}</Text>
         <Text style={styles.about}>{tr('• פיד חדשות חכם ומותאם אישית\n• תקצירים, הקשרים וניסוחי פואנטה בעזרת AI ובקרות איכות\n• קישורים למקורות המקוריים\n• שמורים, מבזקים, מקורות ותחומי עניין')}</Text>
-        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.33</Text>
+        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.35</Text>
       </View>
     </View>;
     if (moreScreen === 'terms') return <View style={styles.panel}>
@@ -1274,7 +1295,7 @@ function PoentaApp() {
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setSettingsPrefs(prev => sameList(prev.topics, knownTopics) ? prev : ({ ...prev, topics: knownTopics }))}><Text style={styles.bulkText}>{tr('סמן הכל')}</Text></TouchableOpacity>
         <TouchableOpacity style={styles.bulkBtn} onPress={() => setSettingsPrefs(prev => prev.topics.length ? ({ ...prev, topics: [] }) : prev)}><Text style={styles.bulkText}>{tr('בטל הכל')}</Text></TouchableOpacity>
       </View>
-      <View style={styles.wrap}>{knownTopics.map(t => <Chip key={t} label={topicLabel(t)} active={settingsPrefs.topics.includes(t)} onPress={() => toggleTopic(t)} />)}</View>
+      <View style={styles.wrap}>{knownTopics.map(t => <SettingsTopicChip key={t} topic={t} label={topicLabel(t)} active={settingsPrefTopicSet.has(t)} onToggle={toggleTopic} themeKey={themeKey} />)}</View>
       <View style={styles.inputRow}>
         <TextInput style={styles.input} value={customTopic} onChangeText={setCustomTopic} placeholder={tr('תחום אישי, למשל מיצרי הורמוז')} placeholderTextColor={colors.muted} />
         <TouchableOpacity style={styles.addBtn} onPress={() => { const t = customTopic.trim().slice(0, 22); if (t) { setSettingsPrefs(prev => ({ ...prev, topics: [...new Set([...prev.topics, t])] })); setCustomTopic(''); } }}><Text style={styles.addText}>{tr('הוסף')}</Text></TouchableOpacity>
@@ -1292,13 +1313,7 @@ function PoentaApp() {
           <Text style={styles.sourceGroupTitle}>{tr(group.label)}</Text>
           <Text style={styles.sourceGroupCount}>{group.sources.filter(src => settingsPrefSourceSet.has(src)).length}/{group.sources.length}</Text>
         </View>
-        {group.sources.map(src => {
-          const on = settingsPrefSourceSet.has(src);
-          return <TouchableOpacity key={src} style={[styles.sourceRow, on && styles.sourceRowOn]} onPress={() => toggleSource(src)}>
-            <View style={styles.sourceRowLabel}><SourceIcon name={src} small /><Text style={[styles.sourceRowName, on && styles.sourceRowNameOn]}>{src}</Text></View>
-            <View style={[styles.switchTrack, on && styles.switchTrackOn]}><View style={[styles.switchKnob, on && styles.switchKnobOn]} /></View>
-          </TouchableOpacity>;
-        })}
+        {group.sources.map(src => <SettingsSourceRow key={src} source={src} active={settingsPrefSourceSet.has(src)} onToggle={toggleSource} themeKey={themeKey} />)}
       </View>)}
     </View>
 
@@ -1306,7 +1321,7 @@ function PoentaApp() {
       <View style={styles.settingsHead}><Text style={styles.settingsTitle}>{tr('סינון קריאה')}</Text><Text style={styles.savedPill}>{settingsPrefs.days === 1 ? tr('יום אחד') : `${settingsPrefs.days} ${tr('ימים')}`}</Text></View>
       <View style={styles.daysSlider}>
         <View style={styles.daysTrack}><View style={[styles.daysFill, { width: `${((settingsPrefs.days - 1) / 6) * 100}%` }]} /></View>
-        <View style={styles.daysTicks}>{[1, 2, 3, 4, 5, 6, 7].map(d => <TouchableOpacity key={d} style={styles.dayTickTouch} onPress={() => setSettingsPrefs(prev => prev.days === d ? prev : ({ ...prev, days: d }))} activeOpacity={0.82}><View style={[styles.dayDot, settingsPrefs.days >= d && styles.dayDotOn]} /><Text style={[styles.dayLabel, settingsPrefs.days === d && styles.dayLabelOn]}>{d}</Text></TouchableOpacity>)}</View>
+        <View style={styles.daysTicks}>{SETTINGS_DAYS.map(d => <TouchableOpacity key={d} style={styles.dayTickTouch} onPress={() => setSettingsDays(d)} activeOpacity={0.82}><View style={[styles.dayDot, settingsPrefs.days >= d && styles.dayDotOn]} /><Text style={[styles.dayLabel, settingsPrefs.days === d && styles.dayLabelOn]}>{d}</Text></TouchableOpacity>)}</View>
       </View>
     </View>
 
@@ -1339,8 +1354,8 @@ function PoentaApp() {
 
   const keyExtractor = useCallback((item: FeedItem, index: number) => `${itemKey(item)}-${index}`, []);
   const renderItem = useCallback(({ item, index }: { item: FeedItem; index: number }) => view === 'breaking'
-    ? <BreakingCard item={item} index={index} headline={articleHeadline(item)} time={articleTime(item, index)} />
-    : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} headline={articleHeadline(item)} summary={articleSummary(item)} takeaway={articleTakeaway(item)} topic={articleTopic(item)} time={articleTime(item, index)} tr={tr} />, [view, savedKeySet, articleHeadline, articleSummary, articleTakeaway, articleTopic, articleTime, tr]);
+    ? <BreakingCard item={item} index={index} headline={articleHeadline(item)} time={articleTime(item, index)} themeKey={themeKey} />
+    : <ArticleCard item={item} index={index} saved={savedKeySet.has(itemKey(item))} onSave={() => { toggleSaved(item); markRead(item); }} onOpen={() => markRead(item)} headline={articleHeadline(item)} summary={articleSummary(item)} takeaway={articleTakeaway(item)} topic={articleTopic(item)} time={articleTime(item, index)} tr={tr} themeKey={themeKey} />, [view, savedKeySet, articleHeadline, articleSummary, articleTakeaway, articleTopic, articleTime, tr, themeKey]);
   const viewabilityConfig = useRef({ itemVisiblePercentThreshold: 62, minimumViewTime: 450 }).current;
   const onViewableItemsChanged = useRef(({ viewableItems }: { viewableItems: Array<{ item?: FeedItem }> }) => {
     if (viewRef.current !== 'home') return;
@@ -1439,11 +1454,11 @@ function PoentaApp() {
     </View>}
 
     <View style={[styles.nav, { height: navHeight, paddingBottom: bottomInset }]}>
-      <NavButton label={tr('שמור')} icon="bookmark" active={view === 'saved' || savedKeys.length > 0} filled={view === 'saved'} onPress={() => switchView('saved')} />
-      <NavButton label={tr('חיפוש')} icon="search" active={view === 'search'} onPress={() => switchView('search')} />
-      <NavButton label={tr('הגדרות')} icon="settings" active={view === 'settings'} onPress={() => switchView('settings')} />
-      <NavButton label={tr('מבזקים')} icon="breaking" active={view === 'breaking'} onPress={() => switchView('breaking')} />
-      <NavButton label="Poenta" logo active={view === 'home'} onPress={() => switchView('home')} />
+      <NavButton label={tr('שמור')} icon="bookmark" active={view === 'saved' || savedKeys.length > 0} filled={view === 'saved'} onPress={() => switchView('saved')} themeKey={themeKey} />
+      <NavButton label={tr('חיפוש')} icon="search" active={view === 'search'} onPress={() => switchView('search')} themeKey={themeKey} />
+      <NavButton label={tr('הגדרות')} icon="settings" active={view === 'settings'} onPress={() => switchView('settings')} themeKey={themeKey} />
+      <NavButton label={tr('מבזקים')} icon="breaking" active={view === 'breaking'} onPress={() => switchView('breaking')} themeKey={themeKey} />
+      <NavButton label="Poenta" logo active={view === 'home'} onPress={() => switchView('home')} themeKey={themeKey} />
     </View>
   </SafeAreaView>;
 }
