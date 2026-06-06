@@ -209,7 +209,9 @@ def refresh_queue(spy_path: Path, out_path: Path, limit: int) -> dict[str, Any]:
         "newItems": sum(1 for r in rows if r.get("status") == "new"),
         "queuedForMoshe": sum(1 for r in rows if r.get("status") == "queued_for_moshe"),
         "sentToEditor": sum(1 for r in rows if r.get("status") == "sent_to_editor"),
+        "candidateFound": sum(1 for r in rows if r.get("status") == "candidate_found"),
         "published": sum(1 for r in rows if r.get("status") == "published"),
+        "rejected": sum(1 for r in rows if str(r.get("status") or "").startswith("rejected_")),
     }
     doc = {
         "ok": True,
@@ -218,6 +220,7 @@ def refresh_queue(spy_path: Path, out_path: Path, limit: int) -> dict[str, Any]:
         "generatedAt": now_iso(),
         "sourceSpyGeneratedAt": spy.get("generatedAt"),
         "policy": "missing spy trends enter a queue for משה/editor QA; no raw auto-publish",
+        "mosheProcessor": existing_doc.get("mosheProcessor") if isinstance(existing_doc, dict) else None,
         **stats,
         "items": rows,
     }

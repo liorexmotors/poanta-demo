@@ -21,6 +21,8 @@ SPY_TRENDS = ROOT / "spy_trends.json"
 SPY_GAP_QUEUE = ROOT / "spy_gap_queue.json"
 SPY_SCRIPT = ROOT / "scripts" / "generate_spy_trends.py"
 SPY_GAP_SCRIPT = ROOT / "scripts" / "update_spy_gap_queue.py"
+SPY_GAP_PROCESS_SCRIPT = ROOT / "scripts" / "process_spy_gap_queue.py"
+SPY_GAP_ACTIVITY = ROOT / "tmp" / "moshe_spy_gap_activity.json"
 DEFAULT_SQLITE = ROOT / "var" / "poanta_feedback.sqlite3"
 OPS_REPORTS = {
     "liveAuditor": ROOT / "tmp" / "pointa_live_auditor_last.json",
@@ -448,6 +450,39 @@ def queue_spy_gaps_for_moshe() -> dict[str, Any]:
         return {"ok": False, "status": "error", "error": (proc.stderr or proc.stdout or "moshe queue failed")[-2000:]}
     data = load_json_file(SPY_GAP_QUEUE) or {}
     data.update({"ok": True, "status": "queued", "mosheRun": True, "stdout": (proc.stdout or "")[-1000:]})
+    return data
+
+
+@app.post("/v1/spy/gaps/process")
+def process_spy_gaps_by_moshe() -> dict[str, Any]:
+    """Let משה process queued spy gaps and write visible outcomes.
+
+    Safe boundary: this only updates spy_gap_queue.json and a local activity log.
+    It does not publish feed.json.
+    """
+    if not SPY_GAP_PROCESS_SCRIPT.exists():
+        return {"ok": False, "status": "error", "error": "process_spy_gap_queue.py is missing"}
+    proc = subprocess.run(
+        ["python3", str(SPY_GAP_PROCESS_SCRIPT), "--queue", str(SPY_GAP_QUEUE), "--feed", str(LEGACY_FEED), "--activity", str(SPY_GAP_ACTIVITY), "--max-items", "3"],
+        cwd=str(ROOT),
+        text=True,
+        capture_output=True,
+        timeout=45,
+        check=False,
+    )
+    if proc.returncode != 0:
+        return {"ok": False, "status": "error", "error": (proc.stderr or proc.stdout or "moshe process failed")[-2000:]}
+    data = load_json_file(SPY_GAP_QUEUE) or {}
+    data.update({"ok": True, "status": "processed", "mosheProcessed": True, "stdout": (proc.stdout or "")[-1000:]})
+    return data
+
+
+@app.get("/v1/spy/gaps/activity")
+def spy_gap_activity() -> dict[str, Any]:
+    data = load_json_file(SPY_GAP_ACTIVITY)
+    if data is None:
+        return {"ok": True, "updatedAt": None, "events": []}
+    data.setdefault("ok", True)
     return data
 
 
