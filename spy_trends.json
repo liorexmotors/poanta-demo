@@ -5,209 +5,327 @@
     "name": "מרגל",
     "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"
   },
-  "generatedAt": "2026-06-04T06:39:56+02:00",
+  "generatedAt": "2026-06-06T21:22:05+02:00",
   "windowHours": 8,
-  "sourcesChecked": 80,
-  "sourcesWithErrors": 1,
-  "itemsScanned": 98,
-  "durationSec": 2.39,
+  "sourcesChecked": 95,
+  "rssSourcesChecked": 80,
+  "webTargetsChecked": 15,
+  "sourcesWithErrors": 5,
+  "itemsScanned": 281,
+  "rssItemsScanned": 101,
+  "webItemsScanned": 180,
+  "durationSec": 6.34,
   "errorsSample": [
     {
       "source": "ישראל היום",
+      "type": "RSS",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "ישראל היום",
+      "type": "WEB",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "מעריב",
+      "type": "WEB",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "Reuters",
+      "type": "WEB",
+      "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
+    },
+    {
+      "source": "Axios",
+      "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
   "trends": [
     {
       "domain": "חדשות",
-      "trend": "בתיווך אמריקני: ישראל ולבנון סיכמו על מתווה להפסקת אש",
-      "clusterKey": "ישראל ולבנון",
-      "externalMentions": 4,
+      "trend": "ראש המוסד רומן גופמן הודיע כי סגנו יסיים את תפקידו",
+      "clusterKey": "גופמן הודיע",
+      "externalMentions": 7,
+      "sourceCount": 3,
+      "sources": [
+        "דה מרקר",
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 3,
+      "webMentions": 4,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T21:01:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843618"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "הותר לפרסום: סרן שחר גמלא וסמל אהד יערי נפלו בקרבות בדרום לבנון",
+      "clusterKey": "הותר לפרסום",
+      "externalMentions": 8,
       "sourceCount": 3,
       "sources": [
         "ynet",
         "וואלה",
         "סרוגים"
       ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T03:29:14+00:00",
-      "sampleUrl": "https://www.srugim.co.il/1306094-ישראל-ולבנון-סיכמו-על-הפסקת-אש"
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 7,
+      "webMentions": 1,
+      "mentionedInFeed": false,
+      "latestAt": "2026-06-06T22:12:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843629"
     },
     {
       "domain": "חדשות",
-      "trend": "דיווח בלבנון: תקיפות צה\"ל בלבנון פסקו מיד אחרי ההכרזה על יישום הפסקת האש",
-      "clusterKey": "הפסקת האש",
+      "trend": "רוכב אופניים חשמליים בן 13 נפצע כאשר החליק בירכא - מצבו בינוני",
+      "clusterKey": "מצבו בינוני",
+      "externalMentions": 7,
+      "sourceCount": 1,
+      "sources": [
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 3,
+      "webMentions": 4,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T21:28:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843622"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "הרצח הרביעי בסוף השבוע: צעיר נורה למוות במע'אר",
+      "clusterKey": "נורה למוות",
+      "externalMentions": 5,
+      "sourceCount": 3,
+      "sources": [
+        "ynet",
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 3,
+      "webMentions": 2,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T18:06:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3843577"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "דיווח בעזה: 7 הרוגים בתקיפה ישראלית בעיר",
+      "clusterKey": "בתקיפה ישראלית",
+      "externalMentions": 4,
+      "sourceCount": 3,
+      "sources": [
+        "ynet",
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 1,
+      "webMentions": 3,
+      "mentionedInFeed": false,
+      "latestAt": "2026-06-06T19:06:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843592"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "ראש צבא לבנון יצא לפקיסטן בהזמנת מקבילו במסגרת המו\"מ",
+      "clusterKey": "צבא לבנון",
+      "externalMentions": 4,
+      "sourceCount": 3,
+      "sources": [
+        "ynet",
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 2,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T19:48:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843604"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "לאחר שטענו כי נגנב להם צאן: מתנחלים וחייל תועדו מכים פלסטינים",
+      "clusterKey": "מתנחלים וחייל תועדו",
       "externalMentions": 5,
       "sourceCount": 2,
       "sources": [
-        "ynet",
+        "הארץ",
         "וואלה"
       ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T04:02:57+00:00",
-      "sampleUrl": "https://www.ynet.co.il/news/article/b11ijd0gml"
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 3,
+      "webMentions": 2,
+      "mentionedInFeed": false,
+      "latestAt": "2026-06-06T18:13:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843579"
     },
     {
       "domain": "חדשות",
-      "trend": "ההתראות בגליל המערבי: זיהוי שווא",
-      "clusterKey": "בגליל המערבי",
-      "externalMentions": 4,
+      "trend": "הבכירים האמריקנים שישראל ריגלה אחריהם - וסוכני שב\"כ שנתפסו \"על חם\"",
+      "clusterKey": "שישראל ריגלה",
+      "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
         "ynet",
-        "וואלה"
+        "גלובס"
       ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T06:20:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3843107"
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 1,
+      "webMentions": 2,
+      "mentionedInFeed": false,
+      "latestAt": "2026-06-06T17:07:48+00:00",
+      "sampleUrl": "https://www.ynet.co.il/news/article/sjkp1cbzgg"
     },
     {
       "domain": "חדשות",
-      "trend": "אזעקה באצבע הגליל בשל חשש לחדירת כטב\"ם",
-      "clusterKey": "חשש לחדירת",
+      "trend": "צה\"ל: במהלך הסופ\"ש הותקפו 150 תשתיות טרור של חיזבאללה בדרום לבנון",
+      "clusterKey": "חיזבאללה בדרום",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
         "ynet",
         "וואלה"
       ],
-      "mentionedInFeed": false,
-      "latestAt": "2026-06-04T05:58:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3843106"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "כלי טיס עוין במרחב כפר יובל: האירוע הסתיים ללא נפגעים",
-      "clusterKey": "האירוע הסתיים",
-      "externalMentions": 2,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "וואלה"
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
       ],
+      "rssMentions": 2,
+      "webMentions": 1,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-04T06:22:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3843108"
+      "latestAt": "2026-06-06T20:04:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843608"
     },
     {
       "domain": "חדשות",
-      "trend": "דיווח: טראמפ שוקל לסיים את הפסקת האש - במידה וייהרגו חיילים אמריקנים",
-      "clusterKey": "חיילים אמריקנים",
-      "externalMentions": 2,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "וואלה"
-      ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T02:52:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3843094"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "המהומות בבית השופט סולברג: 65 \"פורעי חוק\" עוקבו לחקירה",
-      "clusterKey": "השופט סולברג",
-      "externalMentions": 2,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "וואלה"
-      ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T02:14:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3843091"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "ישראל ולבנון הודיעו כי הסכימו על הפסקת אש",
-      "clusterKey": "הסכימו הפסקת",
-      "externalMentions": 2,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "וואלה"
-      ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T02:00:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3843089"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "תחזית מסוכנת ממומחי אקלים: אנו בתחילת הקיץ החם וההרסני ביותר בהיסטוריה",
-      "clusterKey": "ביותר בהיסטוריה",
+      "trend": "צה\"ל בודק: חייל תועד נוהג באלימות כלפי פלסטיני בחווארה",
+      "clusterKey": "חייל תועד",
       "externalMentions": 3,
-      "sourceCount": 1,
+      "sourceCount": 2,
       "sources": [
-        "וואלה"
+        "ynet",
+        "סרוגים"
       ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T00:08:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3842934"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "הוציאה מאות אלפי שקלים כדי להיראות מושלמת - וכעת מתחרטת",
-      "clusterKey": "מושלמת וכעת",
-      "externalMentions": 2,
-      "sourceCount": 1,
-      "sources": [
-        "וואלה"
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
       ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T14:58:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3842719"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "משפחה אימצה בת שעברה התעללות קשה, אבל אז התגלה הסוד המצמרר שלה",
-      "clusterKey": "המצמרר שלה",
-      "externalMentions": 2,
-      "sourceCount": 1,
-      "sources": [
-        "וואלה"
-      ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T07:03:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3842988"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "נערים ובעלי מוגבלויות נשלחים לאסוף מודיעין: כך נראית המערכה השקטה על \"הקו הצהוב\" בעזה",
-      "clusterKey": "נערים ובעלי מוגבלויות",
-      "externalMentions": 2,
-      "sourceCount": 1,
-      "sources": [
-        "וואלה"
-      ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T06:25:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3843022"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "\"המאבטחים פגעו בי פיזית ונפשית\": הלום קרב תובע רבע מליון שקל מביה\"ח",
-      "clusterKey": "מליון שקל מביה",
-      "externalMentions": 2,
-      "sourceCount": 1,
-      "sources": [
-        "וואלה"
-      ],
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-04T04:48:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3843099"
-    },
-    {
-      "domain": "חדשות",
-      "trend": "תחזית מזג האוויר: עלייה נוספת בטמפרטורות, יהיה חם מהרגיל",
-      "clusterKey": "עלייה נוספת בטמפרטורות",
-      "externalMentions": 2,
-      "sourceCount": 1,
-      "sources": [
-        "ynet"
-      ],
+      "rssMentions": 2,
+      "webMentions": 1,
       "mentionedInFeed": false,
-      "latestAt": "2026-06-04T03:00:00+00:00",
-      "sampleUrl": "https://www.ynet.co.il/news/article/hknfepremx"
+      "latestAt": "2026-06-06T18:40:00+00:00",
+      "sampleUrl": "https://www.srugim.co.il/1306245-צהל-בודק-חייל-תועד-נוהג-באלימות-בחווארה"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "8 פצועים בתאונת דרכים קשה בכביש 4 - בהם שניים באורח קשה",
+      "clusterKey": "בהם שניים",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "ynet",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 1,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T18:28:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3843585"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "כ-1,000 איש בהפגנה נגד הממשלה בכיכר הבימה: \"שום דבר לא ישכיח את 7/10\"",
+      "clusterKey": "נגד הממשלה",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "ynet",
+        "הארץ"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 1,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T18:15:09+00:00",
+      "sampleUrl": "https://www.ynet.co.il/news/article/s1gfj2zbme"
+    },
+    {
+      "domain": "כלכלה",
+      "trend": "מאות מפגינים בצעדה נגד הממשלה בתל אביב",
+      "clusterKey": "בתל אביב",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "ynet",
+        "גלובס"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 1,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T16:53:48+00:00",
+      "sampleUrl": "https://www.ynet.co.il/news/article/ry8fi6zbfg"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "חיילים בצבא לבנון נהרגו בשוגג בתקיפת צה\"ל",
+      "clusterKey": "לבנון נהרגו",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 1,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-06T12:28:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3843529"
     }
   ]
 }
