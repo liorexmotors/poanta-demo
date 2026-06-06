@@ -2343,6 +2343,13 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
     ):
         tokens.add("khamenei_us_iran_regional_war_threat")
     if (
+        ("צה״ל" in text or "צה\"ל" in text or "idf" in text or "אגוז" in text or "egoz" in text or "גבעתי" in text or "givati" in text)
+        and ("דרום לבנון" in text or "בלבנון" in text or "south lebanon" in text)
+        and ("נפל" in text or "נפלו" in text or "מת מפצעיו" in text or "fell" in text or "killed" in text)
+        and ("שחר גמלא" in text or "ohad yaari" in text or "אוהד יערי" in text or "אהד יערי" in text or "shahar gamla" in text or "capt" in text or "סרן" in text)
+    ):
+        tokens.add("idf_fallen_soldiers_south_lebanon_20260606")
+    if (
         ("חרד" in text or "haredi" in text or "ultra-orthodox" in text)
         and ("תחנת המשטרה" in text or "תחנת משטרה" in text or "police station" in text or "בית סולברג" in text or "solberg" in text)
         and ("ירושלים" in text or "jerusalem" in text)

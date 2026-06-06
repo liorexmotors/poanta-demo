@@ -740,6 +740,13 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and ("נפצע" in text or "נהרג" in text or "injured" in text or "killed" in text)
     ):
         tokens.add("hebron_idf_civilian_baby_shooting_20260606")
+    if (
+        ("צה״ל" in text or "צה\"ל" in text or "idf" in text or "אגוז" in text or "egoz" in text or "גבעתי" in text or "givati" in text)
+        and ("דרום לבנון" in text or "בלבנון" in text or "south lebanon" in text)
+        and ("נפל" in text or "נפלו" in text or "מת מפצעיו" in text or "fell" in text or "killed" in text)
+        and ("שחר גמלא" in text or "ohad yaari" in text or "אוהד יערי" in text or "אהד יערי" in text or "shahar gamla" in text or "capt" in text or "סרן" in text)
+    ):
+        tokens.add("idf_fallen_soldiers_south_lebanon_20260606")
     return tokens
 
 
