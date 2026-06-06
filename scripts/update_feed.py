@@ -2269,6 +2269,15 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
         "מכלית" in text or "tanker" in text or "קשם" in text or "qeshm" in text or "תחנת שליטה" in text or "self-defense" in text
     ):
         tokens.add("us_iran_gulf_exchange_kuwait_bahrain")
+    if (
+        ("תקיפה" in text or "תקף" in text or "strike" in text)
+        and ("ישראל" in text or "israel" in text)
+        and ("צבא לבנון" in text or "lebanese army" in text or "lebanon army" in text)
+        and ("חייל" in text or "קצין" in text or "soldier" in text or "officer" in text)
+        and ("נהרג" in text or "killed" in text)
+        and ("נבטיה" in text or "חרדלי" in text or "דרום לבנון" in text or "nabatieh" in text or "south lebanon" in text)
+    ):
+        tokens.add("israel_strike_lebanese_army_soldiers_nabatieh_20260606")
     has_ceasefire_frame = (
         "הפסקת אש" in primary
         or "ceasefire" in primary

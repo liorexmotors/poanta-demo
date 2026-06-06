@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "israel_strike_lebanese_army_soldiers_nabatieh_visible_regression_20260606",
+        True,
+        {
+            "source": "וואלה חדשות - מבזקים",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "תקיפה ישראלית בדרום לבנון הרגה חיילים בצבא לבנון",
+            "originalTitle": "דיווח: מספר חיילים לבנונים נהרגו בתקיפה ישראלית על רכב צבאי",
+            "context": "צבא לבנון הודיע שמספר חיילים, בהם קצין, נהרגו בתקיפה ישראלית על רכב צבאי בכביש חרדלי־נבטיה. פגיעה בצבא הרשמי של לבנון מעלה את רמת הרגישות סביב הלחימה בדרום המדינה.",
+            "sourceUrl": "https://news.walla.co.il/break/3843514",
+        },
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "צבא לבנון הודיע שחיילים וקצין נהרגו בתקיפה ליד נבטיה",
+            "originalTitle": "צבא לבנון: חיילים וקצין נהרגו בתקיפה הישראלית בנבטיה",
+            "context": "צבא לבנון הודיע שחיילים וקצין נהרגו בתקיפה ישראלית באזור נבטיה. האירוע מעלה את הסיכון שהלחימה בדרום לבנון תסבך גם את הצבא הרשמי ולא רק את חיזבאללה.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/hylizbwbmx",
+        },
+    ),
+    (
         "trump_iran_remaining_missile_drone_capability_visible_regression_20260606",
         True,
         {
