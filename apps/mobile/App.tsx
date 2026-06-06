@@ -42,7 +42,7 @@ type AppLanguage = 'he' | 'en' | 'ru' | 'ar';
 type Prefs = { topics: string[]; sources: string[]; days: number; feedFilter: 'all' | 'unread'; language: AppLanguage };
 type SavedArticleRecord = { item: FeedItem; savedAt: number; shared?: boolean };
 
-const DEFAULT_TOPICS = ['ביטחון', 'פוליטיקה', 'אקטואליה בעולם', 'כלכלה', 'רכב', 'טכנולוגיה', 'צרכנות', 'תרבות', 'ספורט', 'בריאות'];
+const DEFAULT_TOPICS = ['ביטחון', 'פוליטיקה', 'אקטואליה בעולם', 'כלכלה', 'רכב', 'טכנולוגיה', 'צרכנות', 'תרבות', 'ספורט', 'בריאות', 'מזג אוויר'];
 const DEFAULT_PREFS: Prefs = { topics: [], sources: [], days: 3, feedFilter: 'all', language: 'he' };
 const LANGUAGE_OPTIONS: Array<{ code: AppLanguage; name: string; dir: 'rtl' | 'ltr' }> = [
   { code: 'he', name: 'עברית', dir: 'rtl' },
@@ -642,7 +642,7 @@ function ArticleCard({ item, index, saved, onSave, onOpen, headline, summary, ta
         <View style={styles.sourceAccent} />
         <View style={styles.sourceHead}>
           <Text style={styles.sourceLabel}>{tr('כותרת המקור')}</Text>
-          <View style={styles.sourceBrand}><SourceIcon name={sourceName(item)} item={item} /><Text style={styles.sourceNameText}>{sourceName(item)}</Text></View>
+          <View style={styles.sourceBrand}><SourceIcon name={sourceName(item)} item={item} /><Text style={styles.sourceNameText} numberOfLines={1}>{sourceName(item)}</Text></View>
         </View>
         <Text style={styles.sourceText}>{String(item.originalTitle || sourceName(item))}</Text>
       </View>
@@ -1217,7 +1217,7 @@ function PoentaApp() {
         <Text style={styles.about}>{tr('המטרה: להבין מהר מה באמת קרה, למה זה חשוב ומה הפואנטה — בלי כותרות מטעות, רעש מיותר וגלילה אינסופית.')}</Text>
         <Text style={styles.moreSectionTitle}>{tr('מה מוצג באפליקציה?')}</Text>
         <Text style={styles.about}>{tr('• פיד חדשות חכם ומותאם אישית\n• תקצירים, הקשרים וניסוחי פואנטה בעזרת AI ובקרות איכות\n• קישורים למקורות המקוריים\n• שמורים, מבזקים, מקורות ותחומי עניין')}</Text>
-        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.28</Text>
+        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.33</Text>
       </View>
     </View>;
     if (moreScreen === 'terms') return <View style={styles.panel}>
@@ -1520,10 +1520,10 @@ return StyleSheet.create({
   smallActionText: { color: c.yellow, fontSize: 12, fontWeight: '900' },
   sourceBox: { width: '100%', alignSelf: 'stretch', position: 'relative', marginTop: 12, marginHorizontal: -1, borderWidth: 1, borderColor: 'rgba(255,196,0,0.26)', borderRadius: 15, backgroundColor: c.sourceBg, paddingHorizontal: 12, paddingTop: 10, paddingBottom: 11, overflow: 'hidden', direction: 'rtl', alignItems: 'stretch' },
   sourceAccent: { position: 'absolute', right: 0, top: 12, bottom: 12, width: 3, borderRadius: 999, backgroundColor: 'rgba(255,196,0,0.74)' },
-  sourceHead: { flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 7 },
-  sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
-  sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', gap: 6, flexShrink: 1, minWidth: 0 },
-  sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 1, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
+  sourceHead: { flexDirection: 'row', direction: 'ltr', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 7 },
+  sourceLabel: { color: c.yellowSoft, backgroundColor: c.yellowBg, borderRadius: 999, paddingHorizontal: 7, paddingVertical: 4, fontSize: 10.5, fontWeight: '900', overflow: 'hidden', textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl', flexShrink: 0 },
+  sourceBrand: { flexDirection: 'row', direction: 'rtl', alignItems: 'center', justifyContent: 'flex-start', gap: 6, flexShrink: 0, maxWidth: '64%', minWidth: 62 },
+  sourceNameText: { color: c.secondary, fontSize: 11.5, fontWeight: '900', flexShrink: 0, textAlign: RTL_TEXT_ALIGN, writingDirection: 'rtl' },
   sourceIconImage: { width: 22, height: 22, borderRadius: 999, backgroundColor: 'transparent' },
   sourceIconFallback: { width: 22, height: 22, borderRadius: 7, backgroundColor: c.faint, alignItems: 'center', justifyContent: 'center' },
   sourceIconFallbackText: { color: c.text, fontSize: 9.5, fontWeight: '900' },
