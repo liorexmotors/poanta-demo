@@ -18,7 +18,9 @@ from services.worker.worker.feedback_report import build_report as build_feedbac
 ROOT = Path(__file__).resolve().parents[3]
 LEGACY_FEED = ROOT / "feed.json"
 SPY_TRENDS = ROOT / "spy_trends.json"
+SPY_GAP_QUEUE = ROOT / "spy_gap_queue.json"
 SPY_SCRIPT = ROOT / "scripts" / "generate_spy_trends.py"
+SPY_GAP_SCRIPT = ROOT / "scripts" / "update_spy_gap_queue.py"
 DEFAULT_SQLITE = ROOT / "var" / "poanta_feedback.sqlite3"
 OPS_REPORTS = {
     "liveAuditor": ROOT / "tmp" / "pointa_live_auditor_last.json",
@@ -374,6 +376,78 @@ def run_spy_trends() -> dict[str, Any]:
         "finishedAt": datetime.now(timezone.utc).isoformat(),
         "stdout": (proc.stdout or "")[-1000:],
     })
+    # Keep משה's gap queue in sync with the fresh spy snapshot. This only queues
+    # missing trends for editorial handling; it never mutates feed.json.
+    if SPY_GAP_SCRIPT.exists():
+        subprocess.run(
+            ["python3", str(SPY_GAP_SCRIPT), "--spy", str(SPY_TRENDS), "--out", str(SPY_GAP_QUEUE)],
+            cwd=str(ROOT),
+            text=True,
+            capture_output=True,
+            timeout=20,
+            check=False,
+        )
+    return data
+
+
+@app.get("/v1/spy/gaps")
+def spy_gaps() -> dict[str, Any]:
+    """Return משה's queue of spy trends missing from the feed."""
+    data = load_json_file(SPY_GAP_QUEUE)
+    if data is None:
+        return {
+            "ok": False,
+            "status": "unavailable",
+            "generatedAt": None,
+            "items": [],
+            "error": "spy_gap_queue.json is not available",
+        }
+    data.setdefault("ok", True)
+    data.setdefault("source", "api-spy-gap-queue-json")
+    return data
+
+
+@app.post("/v1/spy/gaps/refresh")
+def refresh_spy_gaps() -> dict[str, Any]:
+    """Refresh the gap queue from the current spy snapshot without publishing."""
+    if not SPY_GAP_SCRIPT.exists():
+        return {"ok": False, "status": "error", "error": "update_spy_gap_queue.py is missing"}
+    proc = subprocess.run(
+        ["python3", str(SPY_GAP_SCRIPT), "--spy", str(SPY_TRENDS), "--out", str(SPY_GAP_QUEUE)],
+        cwd=str(ROOT),
+        text=True,
+        capture_output=True,
+        timeout=20,
+        check=False,
+    )
+    if proc.returncode != 0:
+        return {"ok": False, "status": "error", "error": (proc.stderr or proc.stdout or "gap refresh failed")[-2000:]}
+    data = load_json_file(SPY_GAP_QUEUE) or {}
+    data.update({"ok": True, "manualRefresh": True, "stdout": (proc.stdout or "")[-1000:]})
+    return data
+
+
+@app.post("/v1/spy/gaps/moshe")
+def queue_spy_gaps_for_moshe() -> dict[str, Any]:
+    """Send current missing spy trends to משה's handling queue.
+
+    Safe boundary: this creates/updates spy_gap_queue.json and tmp/moshe_spy_gap_task.json.
+    It does not publish feed.json; משה/editor QA must still approve any candidate.
+    """
+    if not SPY_GAP_SCRIPT.exists():
+        return {"ok": False, "status": "error", "error": "update_spy_gap_queue.py is missing"}
+    proc = subprocess.run(
+        ["python3", str(SPY_GAP_SCRIPT), "--spy", str(SPY_TRENDS), "--out", str(SPY_GAP_QUEUE), "--mark-for-moshe", "--max-moshe", "5"],
+        cwd=str(ROOT),
+        text=True,
+        capture_output=True,
+        timeout=20,
+        check=False,
+    )
+    if proc.returncode != 0:
+        return {"ok": False, "status": "error", "error": (proc.stderr or proc.stdout or "moshe queue failed")[-2000:]}
+    data = load_json_file(SPY_GAP_QUEUE) or {}
+    data.update({"ok": True, "status": "queued", "mosheRun": True, "stdout": (proc.stdout or "")[-1000:]})
     return data
 
 
