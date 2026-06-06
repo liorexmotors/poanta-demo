@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Generate Poenta dashboard trend-intelligence snapshot for agent "מרגל".
 
-The spy scans active RSS news/current-affairs sources, clusters fresh titles into
-currently discussed topics, counts external mentions, and marks whether each
-trend appears in our current feed.
+The spy scans two controlled external layers:
+1. active RSS news/current-affairs sources from rss_sources.json;
+2. approved open-web target pages from spy_web_targets.json.
+
+It clusters fresh/outside headlines into currently discussed topics, counts external
+mentions, labels the discovery layer (RSS/WEB), and marks whether each trend
+appears in our current feed.
 """
 from __future__ import annotations
 
@@ -13,7 +17,6 @@ import email.utils
 import html
 import json
 import re
-import sys
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -21,6 +24,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
+from urllib.parse import urljoin, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 STOP_HE = {
@@ -35,9 +39,14 @@ STOP_EN = {
 CURRENT_AFFAIRS_HINTS = {
     "חדשות", "ביטחון", "פוליטיקה", "אקטואליה בעולם", "כלכלה", "משפט", "פלילים", "טכנולוגיה", "בריאות", "צרכנות", "רכב", "נדל״ן", "דעות", "מזג אוויר"
 }
-UA = "PoentaSpy/1.0 (+https://poenta.app)"
-TOKEN_RE = re.compile(r"[A-Za-z0-9\u0590-\u05ff₪$€£]+")
+UA = "PoentaSpy/1.1 (+https://poenta.app; controlled-web-scout)"
+TOKEN_RE = re.compile(r"[\w\u0590-\u05ff][\w\u0590-\u05ff'׳״\-]+")
 TAG_RE = re.compile(r"<[^>]+>")
+ANCHOR_RE = re.compile(r"<a\b[^>]*?href=[\"'](?P<href>[^\"']+)[\"'][^>]*>(?P<label>.*?)</a>", re.I | re.S)
+BAD_WEB_LABEL_RE = re.compile(
+    r"^(כניסה|הרשמה|חיפוש|תפריט|עוד|פרסומת|שתף|עקבו|לכל הכתבות|דף הבית|English|עברית|Subscribe|Sign in|Menu|Search|More)$",
+    re.I,
+)
 
 
 def now_iso() -> str:
@@ -88,6 +97,13 @@ def source_name(src: dict[str, Any]) -> str:
     return str(src.get("logo") or src.get("name") or "מקור")
 
 
+def domain_for_url(url: str) -> str:
+    try:
+        return urlparse(url).netloc.lower().removeprefix("www.")
+    except Exception:
+        return ""
+
+
 def parse_feed_xml(raw: bytes) -> list[dict[str, Any]]:
     root = ET.fromstring(raw)
     items = []
@@ -115,7 +131,7 @@ def parse_feed_xml(raw: bytes) -> list[dict[str, Any]]:
 def fetch_source(src: dict[str, Any], timeout: int, max_items: int) -> dict[str, Any]:
     url = src.get("rss")
     if not url:
-        return {"source": source_name(src), "items": [], "error": "no_rss"}
+        return {"source": source_name(src), "items": [], "error": "no_rss", "discoveryType": "RSS"}
     try:
         req = urllib.request.Request(str(url), headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -125,9 +141,83 @@ def fetch_source(src: dict[str, Any], timeout: int, max_items: int) -> dict[str,
             it["source"] = source_name(src)
             it["sourceName"] = src.get("name") or source_name(src)
             it["domain"] = src.get("categoryHint") or "חדשות"
-        return {"source": source_name(src), "items": items, "error": None}
+            it["discoveryType"] = "RSS"
+        return {"source": source_name(src), "items": items, "error": None, "discoveryType": "RSS"}
     except Exception as e:
-        return {"source": source_name(src), "items": [], "error": f"{type(e).__name__}: {str(e)[:120]}"}
+        return {"source": source_name(src), "items": [], "error": f"{type(e).__name__}: {str(e)[:120]}", "discoveryType": "RSS"}
+
+
+def looks_like_story(label: str, href: str) -> bool:
+    label = clean_text(label)
+    if len(label) < 18 or len(label) > 190:
+        return False
+    if BAD_WEB_LABEL_RE.match(label):
+        return False
+    tk = tokens(label)
+    if len(tk) < 3:
+        return False
+    href_l = href.lower()
+    if href_l.startswith(("mailto:", "tel:", "javascript:", "#")):
+        return False
+    if re.search(r"/(privacy|terms|contact|about|login|signup|subscribe)(/|$)", href_l):
+        return False
+    return True
+
+
+def parse_web_html(raw: bytes, base_url: str, src: dict[str, Any], max_items: int) -> list[dict[str, Any]]:
+    text = raw.decode("utf-8", errors="ignore")
+    base_domain = domain_for_url(base_url)
+    seen: set[str] = set()
+    items: list[dict[str, Any]] = []
+    for m in ANCHOR_RE.finditer(text):
+        label = clean_text(m.group("label"))
+        href = html.unescape(m.group("href") or "")
+        if not looks_like_story(label, href):
+            continue
+        url = urljoin(base_url, href)
+        # Keep the scan controlled: target page links should stay on the same site.
+        if src.get("sameDomain", True) and base_domain and domain_for_url(url) and domain_for_url(url) != base_domain:
+            continue
+        key = re.sub(r"#.*$", "", url)
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append({
+            "title": label,
+            "summary": "",
+            "url": url,
+            "publishedAt": None,  # homepage/category pages rarely expose reliable dates in anchors
+            "source": source_name(src),
+            "sourceName": src.get("name") or source_name(src),
+            "domain": src.get("categoryHint") or "חדשות",
+            "discoveryType": "WEB",
+        })
+        if len(items) >= max_items:
+            break
+    return items
+
+
+def fetch_web_target(src: dict[str, Any], timeout: int, max_items: int) -> dict[str, Any]:
+    url = src.get("url")
+    if not url:
+        return {"source": source_name(src), "items": [], "error": "no_url", "discoveryType": "WEB"}
+    try:
+        req = urllib.request.Request(str(url), headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            raw = r.read(1_500_000)
+        items = parse_web_html(raw, str(url), src, max_items)
+        return {"source": source_name(src), "items": items, "error": None, "discoveryType": "WEB"}
+    except Exception as e:
+        return {"source": source_name(src), "items": [], "error": f"{type(e).__name__}: {str(e)[:120]}", "discoveryType": "WEB"}
+
+
+def load_web_targets(path: str) -> list[dict[str, Any]]:
+    p = Path(path)
+    if not p.exists():
+        return []
+    doc = json.loads(p.read_text(encoding="utf-8"))
+    rows = doc.get("active", doc if isinstance(doc, list) else [])
+    return [r for r in rows if isinstance(r, dict) and r.get("url") and r.get("enabled", True)]
 
 
 def phrase_keys(title: str) -> set[tuple[str, ...]]:
@@ -183,6 +273,7 @@ def build_trends(items: list[dict[str, Any]], feed: dict[str, Any], top_n: int) 
         if label in seen_labels:
             continue
         seen_labels.add(label)
+        discovery_counts = Counter(r.get("discoveryType") or "RSS" for r in rows)
         candidates.append({
             "domain": domain,
             "trend": clean_text(rep.get("title") or label)[:145],
@@ -190,11 +281,14 @@ def build_trends(items: list[dict[str, Any]], feed: dict[str, Any], top_n: int) 
             "externalMentions": len(rows),
             "sourceCount": len(sources),
             "sources": sorted(sources)[:8],
+            "discoveryTypes": sorted(discovery_counts.keys()),
+            "rssMentions": int(discovery_counts.get("RSS", 0)),
+            "webMentions": int(discovery_counts.get("WEB", 0)),
             "mentionedInFeed": mentioned_in_feed(key, feed_sets, feed_all),
             "latestAt": (rep.get("publishedAt") or datetime.now(timezone.utc)).isoformat(),
             "sampleUrl": rep.get("url") or "",
         })
-    candidates.sort(key=lambda r: (r["externalMentions"] * 2 + r["sourceCount"] * 3, r["latestAt"]), reverse=True)
+    candidates.sort(key=lambda r: (r["externalMentions"] * 2 + r["sourceCount"] * 3 + r.get("webMentions", 0), r["latestAt"]), reverse=True)
     # Dedupe by token overlap so one story does not occupy the whole table.
     out = []
     used: list[set[str]] = []
@@ -212,23 +306,29 @@ def build_trends(items: list[dict[str, Any]], feed: dict[str, Any], top_n: int) 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sources", default=str(ROOT / "rss_sources.json"))
+    ap.add_argument("--web-targets", default=str(ROOT / "spy_web_targets.json"))
     ap.add_argument("--feed", default=str(ROOT / "feed.json"))
     ap.add_argument("--out", default=str(ROOT / "spy_trends.json"))
     ap.add_argument("--hours", type=int, default=8)
     ap.add_argument("--max-sources", type=int, default=80)
     ap.add_argument("--max-items-per-source", type=int, default=18)
+    ap.add_argument("--max-web-targets", type=int, default=24)
+    ap.add_argument("--max-web-items-per-target", type=int, default=22)
     ap.add_argument("--timeout", type=int, default=8)
     ap.add_argument("--top", type=int, default=14)
+    ap.add_argument("--disable-web", action="store_true")
     args = ap.parse_args()
 
     sources_doc = json.loads(Path(args.sources).read_text(encoding="utf-8"))
     feed = json.loads(Path(args.feed).read_text(encoding="utf-8"))
     sources = [s for s in sources_doc.get("active", []) if s.get("rss") and (s.get("categoryHint") in CURRENT_AFFAIRS_HINTS)]
     sources = sources[: args.max_sources]
+    web_targets = [] if args.disable_web else load_web_targets(args.web_targets)[: args.max_web_targets]
     started = time.time()
     fetched = []
-    with cf.ThreadPoolExecutor(max_workers=10) as ex:
+    with cf.ThreadPoolExecutor(max_workers=12) as ex:
         futs = [ex.submit(fetch_source, s, args.timeout, args.max_items_per_source) for s in sources]
+        futs += [ex.submit(fetch_web_target, s, args.timeout, args.max_web_items_per_target) for s in web_targets]
         for fut in cf.as_completed(futs):
             fetched.append(fut.result())
     cutoff = datetime.now(timezone.utc) - timedelta(hours=args.hours)
@@ -236,26 +336,34 @@ def main() -> int:
     errors = []
     for res in fetched:
         if res.get("error"):
-            errors.append({"source": res.get("source"), "error": res.get("error")})
+            errors.append({"source": res.get("source"), "type": res.get("discoveryType"), "error": res.get("error")})
         for it in res.get("items") or []:
             d = it.get("publishedAt")
+            # RSS items usually have dates. Web homepage/category headlines often do not;
+            # keep them as fresh scouting candidates because the target page itself is current.
             if d is None or d >= cutoff:
                 items.append(it)
     trends = build_trends(items, feed, args.top)
+    rss_items = sum(1 for it in items if it.get("discoveryType") == "RSS")
+    web_items = sum(1 for it in items if it.get("discoveryType") == "WEB")
     doc = {
         "status": "ok" if trends else "empty",
         "agent": {"id": "spy", "name": "מרגל", "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"},
         "generatedAt": now_iso(),
         "windowHours": args.hours,
-        "sourcesChecked": len(sources),
+        "sourcesChecked": len(sources) + len(web_targets),
+        "rssSourcesChecked": len(sources),
+        "webTargetsChecked": len(web_targets),
         "sourcesWithErrors": len(errors),
         "itemsScanned": len(items),
+        "rssItemsScanned": rss_items,
+        "webItemsScanned": web_items,
         "durationSec": round(time.time() - started, 2),
         "errorsSample": errors[:12],
         "trends": trends,
     }
     Path(args.out).write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps({k: doc[k] for k in ("status", "sourcesChecked", "itemsScanned", "durationSec")}, ensure_ascii=False))
+    print(json.dumps({k: doc[k] for k in ("status", "sourcesChecked", "rssSourcesChecked", "webTargetsChecked", "itemsScanned", "durationSec")}, ensure_ascii=False))
     return 0
 
 
