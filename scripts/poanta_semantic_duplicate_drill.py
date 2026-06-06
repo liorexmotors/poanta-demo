@@ -19,6 +19,50 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "idf_south_lebanon_two_soldiers_killed_walla_ynet_jpost_visible_regression_20260607",
+        True,
+        {
+            "source": "וואלה חדשות - צבא וביטחון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "שני לוחמי צה״ל נהרגו בשתי תקריות בדרום לבנון",
+            "originalTitle": "שני לוחמי צה״ל נהרגו בשתי תקריות בדרום לבנון",
+            "context": "שני לוחמי צה״ל נהרגו בדרום לבנון בשתי תקריות נפרדות: אחת מפגיעת רחפן ואחת מפליטת כדור. האירועים מדגישים שהחזית בלבנון מסוכנת גם מאיום אויב וגם מתקלות מבצעיות בתוך הכוחות.",
+            "sourceUrl": "https://news.walla.co.il/item/3843628",
+        },
+        {
+            "source": "ynet - כל ערוץ החדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "שני לוחמים נהרגו בלבנון, אחד מרחפן ואחד מפליטת כדור",
+            "originalTitle": "שני לוחמים נהרגו בלבנון, אחד מרחפן ואחד מפליטת כדור",
+            "context": "צה״ל הודיע על מות שני לוחמים בשני אירועים בדרום לבנון: פגיעת רחפן ותקרית פליטת כדור. הצירוף בין תקיפת אויב לתקלה פנימית מחדד את עומס הסיכון על הכוחות בגזרה.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/h107jc11wzl",
+        },
+    ),
+    (
+        "idf_south_lebanon_two_soldiers_killed_walla_jpost_visible_regression_20260607",
+        True,
+        {
+            "source": "וואלה חדשות - צבא וביטחון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "שני לוחמי צה״ל נהרגו בשתי תקריות בדרום לבנון",
+            "originalTitle": "שני לוחמי צה״ל נהרגו בשתי תקריות בדרום לבנון",
+            "context": "שני לוחמי צה״ל נהרגו בדרום לבנון בשתי תקריות נפרדות: אחת מפגיעת רחפן ואחת מפליטת כדור. האירועים מדגישים שהחזית בלבנון מסוכנת גם מאיום אויב וגם מתקלות מבצעיות בתוך הכוחות.",
+            "sourceUrl": "https://news.walla.co.il/item/3843628",
+        },
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "שני לוחמי צה״ל נפלו בשני אירועים בדרום לבנון",
+            "originalTitle": "Two IDF soldiers fall in two separate southern Lebanon incidents",
+            "context": "צה״ל הודיע ששני לוחמים נהרגו בשני אירועים נפרדים בדרום לבנון, אחד באירוע רחפן ואחד בתקרית ירי פנימית. שני האירועים מתארים את אותו יום לחימה ואת אותו מחיר מבצעי בגזרה.",
+            "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-898531",
+        },
+    ),
+    (
         "israel_strike_lebanese_army_soldiers_nabatieh_visible_regression_20260606",
         True,
         {

@@ -489,6 +489,15 @@ def near_duplicate(a: str, b: str) -> bool:
     # normalized locality and shooting/death anchor.
     if "יפיע_נצרת" in shared and (ta & death_terms) and (tb & death_terms):
         return True
+    # Same Jerusalem crime/violence flash can split between one source reporting
+    # a serious shooting injury and another reporting the MDA casualty count for
+    # the same violent incident. Require Jerusalem + severe injury + explicit
+    # crime/violence terms so unrelated municipal updates are not merged.
+    jerusalem_terms = {"ירושלים", "צור", "באהר"}
+    serious_injury_terms = {"נפצע", "נפצעו", "פצוע", "פצועים", "קשה"}
+    violence_terms = {"ירי", "מירי", "אלימות", "פלילי", "פלילית"}
+    if (shared & jerusalem_terms) and (ta & serious_injury_terms) and (tb & serious_injury_terms) and (ta & violence_terms) and (tb & violence_terms):
+        return True
     # Northern UAV alert/interception same-event updates: early suspected
     # infiltration vs later interception/fallout wording. Require the normalized
     # Galilee locality plus UAV/alert/status terms so unrelated northern events
