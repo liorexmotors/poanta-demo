@@ -692,6 +692,36 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
         and ("מעצר" in text or "מתפרע" in text or "מפגינ" in text or "protest" in text or "attacked" in text)
     ):
         tokens.add("haredi_police_station_jerusalem_arrests_protest")
+    if (
+        ("טראמפ" in text or "trump" in text)
+        and ("איראן" in text or "iran" in text)
+        and ("טילים" in text or "missile" in text)
+        and ("כטב" in text or "drone" in text)
+        and ("21" in text or "22" in text or "חמיש" in text or "fifth" in text)
+    ):
+        tokens.add("trump_iran_remaining_missile_drone_capability_20260606")
+    if (
+        ("טראמפ" in text or "trump" in text)
+        and ("איראן" in text or "iran" in text)
+        and ("הסכם" in text or "deal" in text or "חתימה" in text or "signed" in text)
+        and ("דרך קשה" in text or "hard way" in text or "אחרת" in text or "one way or the other" in text)
+    ):
+        tokens.add("trump_iran_deal_or_hard_way_20260606")
+    if (
+        ("איראן" in text or "iran" in text)
+        and ("הורמוז" in text or "hormuz" in text)
+        and ("כטב" in text or "drone" in text)
+        and ("יורט" in text or "intercept" in text)
+    ):
+        tokens.add("iran_hormuz_drones_intercepted_20260606")
+    if (
+        ("חברון" in text or "hebron" in text)
+        and ("צה״ל" in text or "צה\"ל" in text or "idf" in text)
+        and ("ירי" in text or "ירה" in text or "shot" in text or "fire" in text)
+        and ("תינוק" in text or "baby" in text or "פלסטיני" in text or "palestinian" in text or "אזרחים" in text or "civilians" in text or "בלתי מעורבים" in text)
+        and ("נפצע" in text or "נהרג" in text or "injured" in text or "killed" in text)
+    ):
+        tokens.add("hebron_idf_civilian_baby_shooting_20260606")
     return tokens
 
 
