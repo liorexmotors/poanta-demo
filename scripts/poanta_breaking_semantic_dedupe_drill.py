@@ -195,6 +195,13 @@ def main() -> int:
         "''אתם לא יהודים, אלוהים ישלם לכם'': משה דוידוביץ', יו''ר פורום קו העימות תקף את חברי הכנסת",
     ):
         failures.append("expected same-source reordered Rotter quote update collapse")
+    if not mod.same_source_fallen_soldier_update(
+        'בצער רב אנו מודיעים על נפילתו בקרב בלבנון של סרן *שחר גמלא* ז״ל בן נטור קצין בסיירת אגוז.',
+        'מועצה אזורית גולן: בצער רב אנו מודיעים על נפילתו בקרב בלבנון של סרן שחר גמלא ז״ל בן נטור קצין בסיירת אגוז',
+    ):
+        failures.append("expected same-source fallen-soldier Rotter update collapse")
+    if mod.collapse_repeated_breaking_title("מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון") != "מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון":
+        failures.append("expected repeated breaking title clause to collapse")
     if not mod.weak_truncated_title(
         "הבחינות לאונ' בעזה : אין קמפוס, אין כיתות. מבחני האוניברסיטה של העזתיים נערכים על חוף הים. יש משגיח...",
         "",

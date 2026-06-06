@@ -40,6 +40,32 @@ def clean_text(value: str | None) -> str:
     return value
 
 
+def collapse_repeated_breaking_title(value: str) -> str:
+    """Remove accidental repeated source/title clauses from terse RSS titles."""
+    title = clean_text(value)
+    if not title:
+        return ""
+    # Rotter occasionally emits a title where a source prefix + sentence appears
+    # twice in the same row. Keep the first complete occurrence so the card is a
+    # complete thought without a visible stutter.
+    for sep in (":", " - ", "–"):
+        if sep in title:
+            prefix, rest = title.split(sep, 1)
+            prefix = prefix.strip()
+            if len(prefix) >= 5:
+                repeated = f"{prefix}{sep}"
+                second = title.find(repeated, len(prefix) + len(sep))
+                if second > 0:
+                    return title[:second].strip()
+    # If the second half repeats the first half exactly after whitespace, keep one.
+    words = title.split()
+    if len(words) >= 8 and len(words) % 2 == 0:
+        mid = len(words) // 2
+        if words[:mid] == words[mid:]:
+            return " ".join(words[:mid])
+    return title
+
+
 def visible_text_key(value: str | None) -> str:
     """Normalize text for user-visible duplicate checks."""
     text = clean_text(value).lower()
@@ -138,7 +164,7 @@ def parse_rss(text: str, source: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for item in root.findall(".//item"):
         fields = item_children(item)
-        title = clean_text(fields.get("title"))
+        title = collapse_repeated_breaking_title(fields.get("title"))
         if not title:
             continue
         link = clean_text(fields.get("link") or fields.get("guid"))
@@ -570,6 +596,18 @@ def same_source_northern_uav_alert_update(a: str, b: str) -> bool:
     return "אצבע_הגליל_כטבם" in shared and (ta & uav_terms) and (tb & uav_terms)
 
 
+def same_source_fallen_soldier_update(a: str, b: str) -> bool:
+    """Collapse same-source municipal/unit notices for the same fallen soldier."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    fall_terms = {"נפילתו", "נפילתה", "נפל", "נפלה", "נפילת", "ז״ל", "זל"}
+    soldier_terms = {"לוחם", "קצין", "סרן", "סמל", "גדוד", "סיירת", "אגוז", "שקד"}
+    # Same named casualty, sometimes one title names the municipality and the
+    # other the unit. Require name overlap + Lebanon + fall/soldier framing.
+    name_overlap = len(shared & {"שחר", "גמלא", "אהד", "יערי"}) >= 2
+    return name_overlap and "לבנון" in shared and (ta & fall_terms) and (tb & fall_terms) and (ta & soldier_terms) and (tb & soldier_terms)
+
+
 def same_source_reordered_title_update(a: str, b: str) -> bool:
     """Collapse same-source flashes that contain the same distinctive words in a different order.
 
@@ -666,6 +704,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_road_crash_status_update(row_dupe_text, dupe_text(x))
                     or same_source_trump_iran_agreement_update(row_dupe_text, dupe_text(x))
                     or same_source_northern_uav_alert_update(row_dupe_text, dupe_text(x))
+                    or same_source_fallen_soldier_update(row_dupe_text, dupe_text(x))
                     or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
                 )
             ),
