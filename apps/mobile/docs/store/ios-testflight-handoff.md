@@ -1,59 +1,59 @@
 # Poenta — iOS TestFlight / App Store handoff
 
-Last updated: 2026-06-01
+Last updated: 2026-06-07
 
 ## Current iOS state
 - Expo project: `@poenta.app/poenta`
 - App name: `Poenta`
 - Bundle ID: `app.poenta`
-- Version: `0.1.0`
+- Version: `0.3.38`
+- iOS build number: `47`
 - v1 scope: iPhone only (`ios.supportsTablet=false`)
 - Support email for store submission: `support@poenta.app`
 - Privacy policy: `https://poenta.app/privacy`
 - Terms: `https://poenta.app/terms`
 - Support URL: `https://poenta.app/support`
 
-## Verified so far
-- iOS simulator/preview EAS build finished and was inspected.
-- Basic simulator artifact checks passed:
-  - `CFBundleIdentifier=app.poenta`
-  - Display name `Poenta`
-  - Version `0.1.0`, build `1`
-  - iPhone-only device family
-  - No camera/microphone/location/tracking permission strings
-  - `PrivacyInfo.xcprivacy` exists and does not declare tracking/collected data types
+## Verified / prepared so far
+- The iOS app uses the same Expo / React Native source as the Android `0.3.38 / versionCode 47` hotfix prepared for the next Google Play update.
+- iOS `buildNumber` is explicitly set to `47` to match the Android `versionCode 47` release line.
+- `CFBundleIdentifier` target remains `app.poenta`.
+- iPhone-only device family remains the v1 decision.
+- No camera/microphone/location/tracking permission strings are intentionally used by the app.
+- `ITSAppUsesNonExemptEncryption=false` is set in `app.json` for standard HTTPS-only usage.
+- Previous iOS simulator artifact existed for older baseline `0.3.34`; a fresh `0.3.38` iOS build is still needed.
 
 ## Current blocker
-A real iOS device/TestFlight build requires completed Apple credentials in EAS.
-
-Attempted command:
-
-```bash
-npx --yes eas-cli build --platform ios --profile production --non-interactive --no-wait --json
-```
-
-Result:
+This machine is not logged into Expo/EAS:
 
 ```text
-Using remote iOS credentials (Expo server)
-Distribution Certificate is not validated for non-interactive builds.
-Failed to set up credentials.
-Credentials are not set up. Run this command again in interactive mode.
+npx eas-cli whoami --non-interactive
+Not logged in
 ```
 
-This means EAS is connected enough to start credential flow, but the Apple distribution certificate / provisioning setup is not completed for non-interactive production builds.
+A real iOS device/TestFlight build also requires completed Apple credentials in EAS / App Store Connect:
+- Apple Distribution Certificate
+- Provisioning profile for bundle ID `app.poenta`
+- App Store Connect app record
 
-## What Lior / Apple admin must provide or do
-Do **not** paste Apple passwords, 2FA codes, private keys, or certificates in chat.
+Do **not** paste Apple passwords, 2FA codes, Expo tokens, private keys, or certificates in chat.
 
-One of these paths is needed:
+## Recommended secure paths
 
-### Option A — interactive EAS Apple login (fastest)
-Run locally in a secure terminal where the Apple account owner can complete login/2FA:
+### Option A — interactive EAS Apple login on a secure machine
+Run where the Apple account owner can complete login/2FA:
 
 ```bash
-cd apps/mobile
-npx --yes eas-cli build --platform ios --profile production
+cd /root/.openclaw/workspace/projects/poanta-demo/apps/mobile
+npx eas-cli login
+npx eas-cli whoami
+npx eas-cli build --platform ios --profile preview
+```
+
+For the first real TestFlight build:
+
+```bash
+npx eas-cli build --platform ios --profile production
 ```
 
 When prompted:
@@ -62,36 +62,29 @@ When prompted:
 3. Let EAS create/manage the provisioning profile for bundle ID `app.poenta`.
 4. Confirm the build starts.
 
-After that, future non-interactive builds should work from Hermes/EAS using the existing Expo token.
-
-### Option B — App Store Connect API key
-Create an App Store Connect API key with enough permissions for app/build management, then store locally as secrets (not in repo/chat):
-- `ASC_ISSUER_ID`
-- `ASC_KEY_ID`
-- `.p8` private key file path
-
-Then EAS/automation can be configured to run without Apple ID prompts.
+### Option B — App Store Connect API key / Expo token
+Create credentials in the official dashboards and store them only in a secure secrets store, not in repo/chat.
 
 ## App Store Connect app record checklist
-In App Store Connect:
 1. Create or verify app record for bundle ID `app.poenta`.
-2. Primary language: Hebrew (or Hebrew/English according to listing strategy).
+2. Primary language: Hebrew if available/desired.
 3. App name: `Poenta` / `פואנטה` as available.
 4. Category: News.
 5. Privacy policy URL: `https://poenta.app/privacy`.
 6. Support URL: `https://poenta.app/support`.
 7. Support email: `support@poenta.app`.
-8. Export compliance: app uses standard HTTPS only; `ITSAppUsesNonExemptEncryption=false` is set in `app.json`.
+8. Export compliance: app uses standard HTTPS only; `ITSAppUsesNonExemptEncryption=false` is set.
 
-## Next verification after a real iOS build finishes
-1. Download `.ipa`/artifact or inspect App Store Connect/TestFlight processing status.
-2. Verify bundle ID, version/build number, and device family.
-3. Confirm no unexpected permission usage strings were introduced.
-4. Install via TestFlight on iPhone.
-5. Smoke test:
-   - app launches
+## Required QA before App Review
+1. Install on real iPhone via TestFlight.
+2. Smoke test:
+   - app launches quickly
    - Hebrew RTL layout readable
    - feed loads from `https://poenta.app/feed.json`
+   - bottom navigation works
+   - Settings source/topic/day taps respond immediately
+   - language selector is visible and functional
    - no login/push prompts
-   - support/privacy links are correct where applicable
-6. Lock Apple Privacy Nutrition answers after this device-build inspection.
+   - no unexpected permission prompts
+   - support/privacy/terms are correct
+3. Lock Apple Privacy Nutrition answers after device-build inspection.

@@ -1203,23 +1203,35 @@ function PoentaApp() {
       setPrefs(prev => ({ ...prev, language: lang }));
       return;
     }
+
+    // Language selection must be instant. The previous implementation waited for
+    // hundreds of remote Google Translate requests before applying the language,
+    // which made iPhone/Safari look stuck on “Loading…” for a minute or more.
+    // Apply the selected language immediately using built-in/cached strings, then
+    // warm any missing article translations quietly in the background.
     setLanguageLoading(lang);
+    setSettingsPrefs(prev => ({ ...prev, language: lang }));
+    setPrefs(prev => ({ ...prev, language: lang }));
     const storageKey = `${TRANSLATION_CACHE_PREFIX}.${lang}`;
-    try {
-      let existing: Record<string, string> = {};
-      try {
-        const raw = await AsyncStorage.getItem(storageKey);
-        existing = raw ? JSON.parse(raw) : {};
-      } catch { existing = {}; }
-      const candidates = collectLanguageCandidates(items, breaking, [...knownTopics, ...settingsPrefs.topics]);
-      const prepared = await translateAllMissing(lang, candidates, existing);
-      await AsyncStorage.setItem(storageKey, JSON.stringify(prepared));
-      setTranslationCache(prepared);
-      setSettingsPrefs(prev => ({ ...prev, language: lang }));
-      setPrefs(prev => ({ ...prev, language: lang }));
-    } finally {
-      setLanguageLoading(null);
-    }
+
+    AsyncStorage.getItem(storageKey)
+      .then(raw => {
+        const existing: Record<string, string> = raw ? JSON.parse(raw) : {};
+        setTranslationCache(existing);
+        const candidates = collectLanguageCandidates(items, breaking, [...knownTopics, ...settingsPrefs.topics]).slice(0, 600);
+        return warmLanguageCache(lang, candidates, existing, () => viewRef.current === 'settings', cache => {
+          AsyncStorage.setItem(storageKey, JSON.stringify(cache)).catch(() => null);
+        });
+      })
+      .then(cache => {
+        if (cache) {
+          setTranslationCache(cache);
+          AsyncStorage.setItem(storageKey, JSON.stringify(cache)).catch(() => null);
+        }
+      })
+      .catch(() => null);
+
+    setTimeout(() => setLanguageLoading(current => current === lang ? null : current), 180);
   }, [prefs.language, items, breaking, knownTopics, settingsPrefs.topics]);
 
   const renderTabs = () => {
@@ -1256,7 +1268,7 @@ function PoentaApp() {
         <Text style={styles.about}>{tr('המטרה: להבין מהר מה באמת קרה, למה זה חשוב ומה הפואנטה — בלי כותרות מטעות, רעש מיותר וגלילה אינסופית.')}</Text>
         <Text style={styles.moreSectionTitle}>{tr('מה מוצג באפליקציה?')}</Text>
         <Text style={styles.about}>{tr('• פיד חדשות חכם ומותאם אישית\n• תקצירים, הקשרים וניסוחי פואנטה בעזרת AI ובקרות איכות\n• קישורים למקורות המקוריים\n• שמורים, מבזקים, מקורות ותחומי עניין')}</Text>
-        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.36</Text>
+        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.38</Text>
       </View>
     </View>;
     if (moreScreen === 'terms') return <View style={styles.panel}>

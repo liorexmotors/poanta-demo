@@ -46,6 +46,18 @@ else:
     if re.search(r"group\.sources\.map\([\s\S]{0,220}<TouchableOpacity", block):
         errors.append("source rows still use inline TouchableOpacity map")
 
+language_switch = re.search(r"const switchLanguageAtomically = useCallback\(async \(lang: AppLanguage\) => \{([\s\S]*?)\n  \}, \[prefs\.language", text)
+if not language_switch:
+    errors.append("missing switchLanguageAtomically block")
+else:
+    block = language_switch.group(1)
+    first_prefs_update = block.find("setPrefs(prev => ({ ...prev, language: lang }))")
+    first_remote_translation = block.find("await translateAllMissing")
+    if first_remote_translation != -1 and (first_prefs_update == -1 or first_remote_translation < first_prefs_update):
+        errors.append("language switch must not block on remote translation before updating prefs")
+    if "setTimeout(() => setLanguageLoading" not in block:
+        errors.append("language loading overlay must be cleared quickly after language tap")
+
 if errors:
     print("Settings regression checks FAILED:")
     for err in errors:
