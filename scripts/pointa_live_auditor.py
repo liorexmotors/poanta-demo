@@ -759,6 +759,14 @@ def live_regression_duplicate_tokens(item: dict[str, Any]) -> set[str]:
     ):
         tokens.add("iran_hormuz_drones_intercepted_20260606")
     if (
+        ("ארה״ב" in text or "ארה\"ב" in text or "וושינגטון" in text or "us " in text or "u.s" in text or "washington" in text)
+        and ("איראן" in text or "iran" in text or "איראני" in text)
+        and ("נכסים" in text or "מוקפא" in text or "assets" in text or "frozen" in text)
+        and ("שיקום" in text or "תיקון" in text or "נזק" in text or "rebuild" in text or "repair" in text or "damage" in text)
+        and ("מפרץ" in text or "gulf" in text)
+    ):
+        tokens.add("us_iran_assets_gulf_reconstruction_20260607")
+    if (
         ("חברון" in text or "hebron" in text)
         and ("צה״ל" in text or "צה\"ל" in text or "idf" in text)
         and ("ירי" in text or "ירה" in text or "shot" in text or "fire" in text)

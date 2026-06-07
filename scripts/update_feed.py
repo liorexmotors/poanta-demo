@@ -2382,6 +2382,14 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
     ):
         tokens.add("ohio_festival_mass_shooting_20260607")
     if (
+        ("ארה״ב" in text or "ארה\"ב" in text or "וושינגטון" in text or "us " in text or "u.s" in text or "washington" in text)
+        and ("איראן" in text or "iran" in text or "איראני" in text)
+        and ("נכסים" in text or "מוקפא" in text or "assets" in text or "frozen" in text)
+        and ("שיקום" in text or "תיקון" in text or "נזק" in text or "rebuild" in text or "repair" in text or "damage" in text)
+        and ("מפרץ" in text or "gulf" in text)
+    ):
+        tokens.add("us_iran_assets_gulf_reconstruction_20260607")
+    if (
         ("חרד" in text or "haredi" in text or "ultra-orthodox" in text)
         and ("תחנת המשטרה" in text or "תחנת משטרה" in text or "police station" in text or "בית סולברג" in text or "solberg" in text)
         and ("ירושלים" in text or "jerusalem" in text)

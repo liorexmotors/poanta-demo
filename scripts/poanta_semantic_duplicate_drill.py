@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "us_iran_assets_gulf_reconstruction_kipa_inn_visible_regression_20260607",
+        True,
+        {
+            "source": "כיפה - חדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "וושינגטון בוחנת שימוש בנכסים איראניים לשיקום מדינות המפרץ",
+            "originalTitle": "בשווי מיליארדי דולרים: המכה שטראמפ מתכנן להנחית על האיראנים",
+            "context": "ארה״ב בוחנת לאפשר למדינות המפרץ להשתמש בנכסים איראניים מוקפאים כדי לשקם נזקי תקיפות. המהלך יהפוך כסף איראני לכלי לחץ ושיקום אזורי.",
+            "sourceUrl": "https://www.kipa.co.il/1225573-0",
+        },
+        {
+            "source": "ערוץ 7 / INN עברית",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "ארה״ב תקדם שימוש בנכסים איראניים לשיקום במפרץ",
+            "originalTitle": "דיווח: ארה\"ב תאפשר למדינות המפרץ להשתמש בנכסים איראניים לשיקום נזקי המלחמה",
+            "context": "וושינגטון מקדמת שימוש בנכסים איראניים מוקפאים לשיקום נזקים במדינות המפרץ. זו אותה יוזמת נכסים איראניים שמופיעה גם בכיפה.",
+            "sourceUrl": "https://www.inn.co.il/flashes/1116509",
+        },
+    ),
+    (
         "south_lebanon_four_reservists_drone_wounded_walla_kipa_visible_regression_20260607",
         True,
         {
