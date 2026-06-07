@@ -2251,6 +2251,20 @@ def live_regression_duplicate_tokens(item: dict) -> set[str]:
     primary = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle", "sourceUrl", "url"]).lower()
     text = " ".join(str(item.get(k) or "") for k in ["headline", "context", "summary", "takeaway", "originalTitle", "source", "sourceUrl", "url"]).lower()
     tokens = set()
+    if (
+        ("טראמפ" in text or "trump" in text)
+        and ("נתניהו" in text or "netanyahu" in text)
+        and ("איראן" in text or "iran" in text)
+        and (
+            "לא להגיב" in text
+            or "לא לתקוף" in text
+            or "תגובה ישראלית" in text
+            or "strike back" in text
+            or "not to strike" in text
+            or "not strike" in text
+        )
+    ):
+        tokens.add("trump_netanyahu_no_iran_response_20260608")
     # Require the tanker itself to be the primary story, not merely background
     # context for adjacent Kuwait/Bahrain air-defense alerts in the same crisis.
     if ("מכלית" in primary or "מיכלית" in primary or "tanker" in primary) and ("איראן" in text or "iran" in text) and (

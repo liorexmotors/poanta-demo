@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "trump_netanyahu_no_iran_response_jpost_inn_visible_regression_20260608",
+        True,
+        {
+            "source": "The Jerusalem Post - Israel News",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "טראמפ לוחץ על נתניהו לא להגיב שוב לאיראן",
+            "originalTitle": "Trump asks Netanyahu not to strike back at Iran after missile attack",
+            "context": "טראמפ ביקש מנתניהו שלא להוציא תגובה ישראלית נוספת נגד איראן אחרי ירי הטילים. וושינגטון מנסה לעצור את סבב התגובה לפני שההסלמה נפתחת מחדש.",
+            "sourceUrl": "https://www.jpost.com/israel-news/article-898663",
+        },
+        {
+            "source": "ערוץ 7 / INN עברית",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "טראמפ מנסה לבלום תגובה ישראלית נוספת מול איראן",
+            "originalTitle": "טראמפ: אתקשר לנתניהו עכשיו ואומר לו לא לתקוף באיראן בתגובה",
+            "context": "טראמפ אמר שידבר עם נתניהו ויבקש ממנו לא לתקוף באיראן כתגובה נוספת. זה אותו אירוע דיפלומטי שבו וושינגטון לוחצת לעצירת סבב התגובה.",
+            "sourceUrl": "https://www.inn.co.il/flashes/1116737",
+        },
+    ),
+    (
         "us_iran_assets_gulf_reconstruction_kipa_inn_visible_regression_20260607",
         True,
         {
