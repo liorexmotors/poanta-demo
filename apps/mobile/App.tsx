@@ -483,12 +483,16 @@ function nearDuplicate(a: FeedItem, b: FeedItem) {
 
 function dedupeItems(items: FeedItem[]) {
   const out: FeedItem[] = [];
+  const seenIdentity = new Set<string>();
+  const seenCluster = new Set<string>();
   items.forEach(item => {
-    const explicit = item.semanticClusterKey || item.storyClusterKey || item.clusterKey || item.dedupeKey;
-    const match = explicit
-      ? out.find(row => (row.semanticClusterKey || row.storyClusterKey || row.clusterKey || row.dedupeKey) === explicit && sourceName(row) !== sourceName(item))
-      : out.find(row => sourceName(row) !== sourceName(item) && nearDuplicate(item, row));
-    if (!match) out.push(item);
+    const identity = itemKey(item);
+    const explicit = String(item.semanticClusterKey || item.storyClusterKey || item.clusterKey || item.dedupeKey || '').trim();
+    if (seenIdentity.has(identity)) return;
+    if (explicit && seenCluster.has(explicit)) return;
+    seenIdentity.add(identity);
+    if (explicit) seenCluster.add(explicit);
+    out.push(item);
   });
   return out;
 }
@@ -853,15 +857,22 @@ function PoentaApp() {
         }
         if (readRaw) setReadKeys(JSON.parse(readRaw).filter((x: unknown) => typeof x === 'string').slice(0, 1200));
         if (appearanceRaw === 'dark' || appearanceRaw === 'light' || appearanceRaw === 'system') setAppearance(appearanceRaw);
+        let restoredCachedFeed = false;
         if (feedRaw) {
           const cachedFeed = JSON.parse(feedRaw);
-          if (Array.isArray(cachedFeed)) setItems(cachedFeed);
+          if (Array.isArray(cachedFeed) && cachedFeed.length) {
+            setItems(cachedFeed);
+            restoredCachedFeed = true;
+          }
         }
         if (breakingRaw) {
           const cachedBreaking = JSON.parse(breakingRaw);
           if (Array.isArray(cachedBreaking)) setBreaking(dedupeItems(cachedBreaking));
         }
         if (syncRaw) setLastSyncedAt(syncRaw);
+        // Do not keep the first screen blank while the network refresh runs.
+        // Cached feed should paint immediately and refresh in the background.
+        if (restoredCachedFeed) setLoading(false);
       } catch {
         // Keep the app usable if device storage contains invalid stale data.
       } finally {
@@ -950,19 +961,26 @@ function PoentaApp() {
       const feedItems = Array.isArray(feed.items) ? feed.items : [];
       const breakingItems = Array.isArray(breakingFeed.items) ? breakingFeed.items : [];
       const languageAtLoad = prefs.language;
+      setItems(feedItems);
+      setBreaking(dedupeItems(breakingItems));
+      // Feed paint must not wait for hundreds of remote translation requests.
+      // Fill the selected-language cache progressively after the fresh feed is visible.
       if (languageAtLoad !== 'he') {
         const storageKey = `${TRANSLATION_CACHE_PREFIX}.${languageAtLoad}`;
         let existing = translationCache;
-        try {
-          const raw = await AsyncStorage.getItem(storageKey);
-          if (raw) existing = { ...existing, ...JSON.parse(raw) };
-        } catch { /* keep in-memory cache */ }
-        const prepared = await translateAllMissing(languageAtLoad, collectLanguageCandidates(feedItems, breakingItems, allTopics(feedItems)), existing);
-        setTranslationCache(prepared);
-        AsyncStorage.setItem(storageKey, JSON.stringify(prepared)).catch(() => null);
+        AsyncStorage.getItem(storageKey)
+          .then(raw => {
+            if (raw) existing = { ...existing, ...JSON.parse(raw) };
+            return translateAllMissing(languageAtLoad, collectLanguageCandidates(feedItems, breakingItems, allTopics(feedItems)), existing, additions => {
+              setTranslationCache(prev => ({ ...prev, ...additions }));
+            });
+          })
+          .then(prepared => {
+            setTranslationCache(prepared);
+            AsyncStorage.setItem(storageKey, JSON.stringify(prepared)).catch(() => null);
+          })
+          .catch(() => null);
       }
-      setItems(feedItems);
-      setBreaking(dedupeItems(breakingItems));
       const syncStamp = new Date().toISOString();
       setLastSyncedAt(syncStamp);
       AsyncStorage.multiSet([
@@ -1238,7 +1256,7 @@ function PoentaApp() {
         <Text style={styles.about}>{tr('המטרה: להבין מהר מה באמת קרה, למה זה חשוב ומה הפואנטה — בלי כותרות מטעות, רעש מיותר וגלילה אינסופית.')}</Text>
         <Text style={styles.moreSectionTitle}>{tr('מה מוצג באפליקציה?')}</Text>
         <Text style={styles.about}>{tr('• פיד חדשות חכם ומותאם אישית\n• תקצירים, הקשרים וניסוחי פואנטה בעזרת AI ובקרות איכות\n• קישורים למקורות המקוריים\n• שמורים, מבזקים, מקורות ותחומי עניין')}</Text>
-        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.35</Text>
+        <Text style={styles.moreSectionTitle}>{tr('גרסה')}</Text><Text style={styles.about}>Poenta 0.3.36</Text>
       </View>
     </View>;
     if (moreScreen === 'terms') return <View style={styles.panel}>
@@ -1430,7 +1448,7 @@ function PoentaApp() {
       key={view === 'breaking' ? 'breaking-list' : view === 'home' ? 'home-list' : view === 'search' ? 'search-list' : 'saved-list'}
       style={styles.scroll}
       contentContainerStyle={[styles.content, { paddingTop: topbarHeight + 4, paddingBottom: navHeight + 52 }]}
-      data={loading ? [] : list}
+      data={list}
       keyExtractor={keyExtractor}
       renderItem={renderItem}
       ListHeaderComponent={listHeader}
