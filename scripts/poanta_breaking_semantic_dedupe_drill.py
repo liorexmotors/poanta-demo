@@ -222,6 +222,16 @@ def main() -> int:
         'התקיפות בדאחייה מכוונות נגד מפקדות של חיזבאללה',
     ):
         failures.append("expected same-source Dahieh strike scene/target collapse")
+    if not mod.same_source_iran_missile_interception_update(
+        'צה״ל: יורטו לבנתיים כל הטילים.',
+        "דובר צה''ל: חיל האוויר יירט עד כה את כלל הטילים ששוגרו מאיראן צה''ל זיהה כעת שיגורים נוספים שנורו לעבר מדינת ישראל.",
+    ):
+        failures.append("expected same-source Iran missile interception status collapse")
+    if not mod.same_source_iran_missile_interception_update(
+        "דובר צה''ל: חיל האוויר יירט עד כה את כלל הטילים ששוגרו מאיראן צה''ל זיהה כעת שיגורים נוספים שנורו לעבר מדינת ישראל.",
+        "דובר צה''ל: *חיל האוויר יירט עד כה את כלל הטילים ששוגרו מאיראן*",
+    ):
+        failures.append("expected same-source Iran missile all-intercept repeat collapse")
     if mod.collapse_repeated_breaking_title("מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון") != "מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון":
         failures.append("expected repeated breaking title clause to collapse")
     if not mod.weak_truncated_title(

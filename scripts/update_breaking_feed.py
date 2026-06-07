@@ -662,6 +662,30 @@ def same_source_dahiya_strike_update(a: str, b: str) -> bool:
     return "דאחייה_ביירות" in shared and (ta & strike_terms) and (tb & strike_terms) and ((ta & target_terms) or (tb & target_terms))
 
 
+def same_source_iran_missile_interception_update(a: str, b: str) -> bool:
+    """Collapse same-source missile-interception status repeats in one live Iran wave.
+
+    Rotter often emits several terse rows within minutes saying the Air Force/IDF
+    has intercepted all missiles so far, then another row adding that more
+    launches were identified.  Those are status variants of the same live missile
+    wave and should be one מבזק with sourceLinks, not multiple top cards.
+    """
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    missile_terms = {"טילים", "טיל", "שיגור"}
+    interception_terms = {"יירוט_כטבם", "יורט", "יורטו", "יירט", "יירטו", "יירוט", "יירטה"}
+    all_so_far_terms = {"כל", "כלל", "כה", "עד", "לבנתיים", "בינתיים", "בנתיים"}
+    authority_terms = {"צה", "צהל", "דובר", "חיל", "האוויר", "איראן"}
+    return (
+        (ta & missile_terms)
+        and (tb & missile_terms)
+        and (ta & interception_terms)
+        and (tb & interception_terms)
+        and ((ta & all_so_far_terms) or (tb & all_so_far_terms) or "שיגור" in shared)
+        and ((ta & authority_terms) or (tb & authority_terms))
+    )
+
+
 def weak_speaker_only_title(title: str, context: str) -> bool:
     """Drop breaking rows that name only a speaker, without the actual update.
 
@@ -745,6 +769,7 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_fallen_soldier_update(row_dupe_text, dupe_text(x))
                     or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
                     or same_source_dahiya_strike_update(row_dupe_text, dupe_text(x))
+                    or same_source_iran_missile_interception_update(row_dupe_text, dupe_text(x))
                 )
             ),
             None,
