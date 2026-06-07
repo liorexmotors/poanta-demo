@@ -22,6 +22,14 @@ DUPLICATE_CASES = [
         "בבקאע וברחבי דרום לבנון: צה''ל תקף לאורך הלילה יותר מ-100 תשתיות טרור ומחבלים של ארגון הטרור חיזבאללה",
     ),
     (
+        'צה"ל תוקף בדאחייה',
+        'התקיפות בדאחייה מכוונות נגד מפקדות של חיזבאללה',
+    ),
+    (
+        'תיעוד: זירת התקיפה בדאחייה',
+        'התקיפות בדאחייה מכוונות נגד מפקדות של חיזבאללה',
+    ),
+    (
         'אזעקות בגליל המערבי',
         'בפעם הרביעית תוך שעתיים: אזעקות בנטועה בשל חשש לחדירת כטב"ם',
     ),
@@ -204,6 +212,16 @@ def main() -> int:
         'מועצה אזורית גולן: בצער רב אנו מודיעים על נפילתו בקרב בלבנון של סרן שחר גמלא ז״ל בן נטור קצין בסיירת אגוז',
     ):
         failures.append("expected same-source fallen-soldier Rotter update collapse")
+    if not mod.same_source_dahiya_strike_update(
+        'צה"ל תוקף בדאחייה',
+        'התקיפות בדאחייה מכוונות נגד מפקדות של חיזבאללה',
+    ):
+        failures.append("expected same-source Dahieh strike update collapse")
+    if not mod.same_source_dahiya_strike_update(
+        'תיעוד: זירת התקיפה בדאחייה',
+        'התקיפות בדאחייה מכוונות נגד מפקדות של חיזבאללה',
+    ):
+        failures.append("expected same-source Dahieh strike scene/target collapse")
     if mod.collapse_repeated_breaking_title("מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון") != "מקור ביוניפי''ל: צה''ל עצר את הרס הכפרים בדרום לבנון":
         failures.append("expected repeated breaking title clause to collapse")
     if not mod.weak_truncated_title(

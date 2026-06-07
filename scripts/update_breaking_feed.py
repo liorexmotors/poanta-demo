@@ -296,6 +296,17 @@ def normalize_token(token: str) -> str:
         "דאחייה": "דאחייה_ביירות",
         "ביירות": "דאחייה_ביירות",
         "יירות": "דאחייה_ביירות",
+        "פקדות": "מפקדת_חיזבאללה",
+        "פקדה": "מפקדת_חיזבאללה",
+        "פקדת": "מפקדת_חיזבאללה",
+        "מפקדות": "מפקדת_חיזבאללה",
+        "מפקדה": "מפקדת_חיזבאללה",
+        "מפקדת": "מפקדת_חיזבאללה",
+        "זירת": "זירת_תקיפה",
+        "התקיפה": "תקיפה_ביירות",
+        "תקיפה": "תקיפה_ביירות",
+        "התקיפות": "תקיפה_ביירות",
+        "תקיפות": "תקיפה_ביירות",
         # Trump/Iran ceasefire-agreement flashes can arrive as ``הסכם עם איראן``
         # in one source and ``הארכת הפסקת האש עם איראן`` in another.  Normalize
         # only the agreement/ceasefire anchors; the near-duplicate rule below
@@ -528,6 +539,15 @@ def near_duplicate(a: str, b: str) -> bool:
     idf_warning_terms = {"צה", "דובר", "אזהרת", "מזהיר", "קורא", "לראשונה", "הודעת"}
     if dahiya_terms <= shared and (ta & idf_warning_terms) and (tb & idf_warning_terms):
         return True
+    # Same Dahieh strike wave: initial "IDF strikes", command-center target,
+    # and scene-video flashes from the same source/source family are one live
+    # breaking incident. Keep this narrow to Dahieh/Beirut + strike + Hezbollah/IDF
+    # targeting language so evacuation warnings and later casualty updates can
+    # remain separate when they add a distinct event.
+    dahiya_strike_terms = {"תקיפה_ביירות", "תקף", "תוקף", "תוקפים", "זירת_תקיפה"}
+    dahiya_target_terms = {"מפקדת_חיזבאללה", "חיזבאללה", "צה", "צהל"}
+    if "דאחייה_ביירות" in shared and (ta & dahiya_strike_terms) and (tb & dahiya_strike_terms) and ((ta & dahiya_target_terms) or (tb & dahiya_target_terms)):
+        return True
     # Same Trump/Iran near-term ceasefire/agreement flash: one source can report
     # ``הסכם עם איראן בשבוע הבא`` while another says ``הארכת הפסקת האש``.
     # Require Trump + Iran + the agreement anchor + near-term timing to avoid
@@ -633,6 +653,15 @@ def same_source_reordered_title_update(a: str, b: str) -> bool:
     return ta == tb and len(distinctive_overlap(ta, tb)) >= 5
 
 
+def same_source_dahiya_strike_update(a: str, b: str) -> bool:
+    """Collapse same-source Dahieh strike/target/scene status flashes."""
+    ta, tb = token_set(a), token_set(b)
+    shared = ta & tb
+    strike_terms = {"תקיפה_ביירות", "תקף", "תוקף", "תוקפים", "זירת_תקיפה"}
+    target_terms = {"מפקדת_חיזבאללה", "חיזבאללה", "צה", "צהל"}
+    return "דאחייה_ביירות" in shared and (ta & strike_terms) and (tb & strike_terms) and ((ta & target_terms) or (tb & target_terms))
+
+
 def weak_speaker_only_title(title: str, context: str) -> bool:
     """Drop breaking rows that name only a speaker, without the actual update.
 
@@ -715,20 +744,19 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
                     or same_source_northern_uav_alert_update(row_dupe_text, dupe_text(x))
                     or same_source_fallen_soldier_update(row_dupe_text, dupe_text(x))
                     or same_source_reordered_title_update(row_dupe_text, dupe_text(x))
+                    or same_source_dahiya_strike_update(row_dupe_text, dupe_text(x))
                 )
             ),
             None,
         )
         if match:
             sources = match.setdefault("sources", [match.get("source")])
+            links = match.setdefault("sourceLinks", [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}])
+            row_url = row.get("sourceUrl") or ""
             if row.get("source") and row.get("source") not in sources:
                 sources.append(row.get("source"))
-                links = match.setdefault("sourceLinks", [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}])
-                row_url = row.get("sourceUrl") or ""
-                if not any(link.get("url") == row_url for link in links):
-                    links.append({"name": row.get("source"), "url": row_url})
-            elif not match.get("sourceLinks"):
-                match["sourceLinks"] = [{"name": match.get("source") or "מקור", "url": match.get("sourceUrl") or ""}]
+            if row_url and not any(link.get("url") == row_url for link in links):
+                links.append({"name": row.get("source") or "מקור", "url": row_url})
             continue
         deduped.append(row)
         if len(deduped) >= limit:
