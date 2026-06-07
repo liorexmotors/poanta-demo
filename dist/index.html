@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Poenta — החדשות החשובות, בלי לבזבז את היום</title>
+  <meta name="description" content="Poenta מרכזת עבורכם חדשות ממקורות ונושאים שבחרתם, מסננת רעש וכפילויות, ומציגה את העיקר בעברית ברורה.">
+  <meta name="theme-color" content="#080806">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500;600;700;800;900&family=Inter:wght@500;600;700;800;900&display=swap');
+    :root{
+      --black:#080806;--ink:#151510;--muted:#6f7168;--paper:#fffdf6;--cream:#f6f1e3;--sand:#eae0c5;--yellow:#f4bf00;--yellow2:#ffd940;--olive:#242419;--line:rgba(21,21,16,.13);--whiteLine:rgba(255,255,255,.14);--max:1160px;
+      color-scheme:light;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--cream)}body{margin:0;font-family:"Heebo",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.page{overflow:hidden}.skip{position:absolute;top:-80px;right:20px;z-index:20;background:#fff;padding:10px 14px;border-radius:999px}.skip:focus{top:16px}
+    .hero-wrap{position:relative;background:radial-gradient(circle at 18% 18%,rgba(244,191,0,.25),transparent 29rem),linear-gradient(180deg,#080806 0,#111107 100%);color:#fff;isolation:isolate}.hero-wrap:after{content:"";position:absolute;inset:auto -10% -1px -10%;height:140px;background:var(--cream);clip-path:polygon(0 48%,100% 0,100% 100%,0 100%);z-index:-1}.grain{position:absolute;inset:0;opacity:.18;background-image:linear-gradient(120deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(180deg,#000,transparent 75%)}
+    .nav{position:relative;z-index:3;max-width:var(--max);margin:0 auto;padding:25px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:14px}.brand img{width:154px;filter:drop-shadow(0 16px 28px rgba(244,191,0,.18))}.brand span{font-size:12px;font-weight:850;color:#d9d8ca;white-space:nowrap}.nav-links{display:flex;gap:18px;color:#ddddcf;font-size:14px;font-weight:800}.nav-cta{height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 18px;border-radius:999px;background:#fff;color:#0d0d0a;font-size:14px;font-weight:780;line-height:1;letter-spacing:0;font-family:"Heebo",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-rendering:geometricPrecision;-webkit-font-smoothing:antialiased;box-shadow:0 18px 45px rgba(0,0,0,.2)}
+    .hero{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:46px 22px 132px;display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:68px;align-items:center}.copy{max-width:720px}.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:9px 14px;border:1px solid var(--whiteLine);border-radius:999px;background:rgba(255,255,255,.055);color:#ffe590;font-size:14px;font-weight:950}.eyebrow:before{content:"";width:9px;height:9px;border-radius:50%;background:#9de45d;box-shadow:0 0 0 7px rgba(157,228,93,.13)}h1{margin:0;font-size:clamp(54px,7.4vw,98px);line-height:.91;letter-spacing:-.078em;text-wrap:balance}.accent{display:block;color:var(--yellow2)}.lead{margin:28px 0 0;max-width:645px;color:#eeeedf;font-size:clamp(19px,2.2vw,24px);line-height:1.58;font-weight:720;text-wrap:pretty}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}.btn{min-height:58px;border-radius:18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 26px;font-size:16px;font-weight:780;line-height:1;letter-spacing:0;font-family:"Heebo",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-rendering:geometricPrecision;-webkit-font-smoothing:antialiased;white-space:nowrap}.btn.primary{background:var(--yellow2);color:#0b0b08;box-shadow:0 30px 65px rgba(244,191,0,.24)}.btn.ghost{border:1px solid var(--whiteLine);background:rgba(255,255,255,.055);color:#fff}.trust{display:flex;flex-wrap:wrap;gap:9px;margin-top:32px}.trust span{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--whiteLine);background:rgba(255,255,255,.052);border-radius:999px;padding:10px 13px;color:#d8d8ca;font-size:13px;font-weight:820}.trust b{color:#fff}.product-shot{position:relative;min-height:690px}.halo{position:absolute;inset:55px -46px auto auto;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(244,191,0,.34),rgba(244,191,0,.11) 45%,transparent 70%);filter:blur(10px)}.phone-shell{position:absolute;left:24px;top:0;width:338px;border-radius:50px;padding:12px;background:linear-gradient(145deg,#f9f9f4,#a59f89 36%,#11110d 58%);box-shadow:0 44px 110px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.25);transform:rotate(-2deg)}.phone-inner{position:relative;border-radius:40px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}.phone-inner:before{content:"";position:absolute;z-index:2;top:10px;left:50%;transform:translateX(-50%);width:92px;height:24px;border-radius:999px;background:#fff}.phone-inner img{width:100%;aspect-ratio:590/1280;object-fit:cover}.shot-card{position:absolute;right:0;bottom:122px;width:235px;border:1px solid rgba(255,255,255,.18);background:rgba(8,8,6,.82);backdrop-filter:blur(18px);border-radius:26px;padding:18px;box-shadow:0 28px 80px rgba(0,0,0,.38)}.shot-card strong{display:block;font-size:20px;letter-spacing:-.03em}.shot-card p{margin:7px 0 0;color:#d8d8ca;font-size:14px;line-height:1.5;font-weight:700}.dotline{position:absolute;left:-16px;bottom:75px;width:174px;height:92px;border:1px solid rgba(244,191,0,.42);border-right:0;border-top:0;border-radius:0 0 0 28px}
+    .promise{max-width:var(--max);margin:-52px auto 0;padding:0 22px;position:relative;z-index:5}.promise-grid{background:var(--paper);border:1px solid var(--line);border-radius:34px;box-shadow:0 28px 80px rgba(26,22,11,.14);padding:16px;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:12px}.promise-title{background:#17170f;color:#fff;border-radius:24px;padding:24px}.promise-title b{display:block;font-size:24px;letter-spacing:-.04em}.promise-title span{display:block;margin-top:7px;color:#d4d2c2;line-height:1.48;font-weight:650}.promise-item{border:1px solid var(--line);background:#fff;border-radius:24px;padding:22px}.promise-item em{font-style:normal;display:block;color:#9b7800;font-size:13px;font-weight:950}.promise-item strong{display:block;margin-top:13px;font-size:26px;letter-spacing:-.05em}.promise-item p{margin:6px 0 0;color:var(--muted);line-height:1.45;font-weight:700}
+    .section{max-width:var(--max);margin:0 auto;padding:98px 22px}.split-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:end;margin-bottom:34px}.kicker{margin:0 0 12px;color:#967300;font-size:14px;font-weight:950;letter-spacing:.05em}.title{margin:0;font-size:clamp(36px,5.1vw,66px);line-height:.97;letter-spacing:-.064em;text-wrap:balance}.sub{margin:0;color:#626458;font-size:19px;line-height:1.68;font-weight:680;text-wrap:pretty}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{min-height:250px;background:#fff;border:1px solid var(--line);border-radius:32px;padding:28px;box-shadow:0 18px 55px rgba(28,23,9,.065)}.card .num{width:44px;height:44px;border-radius:16px;background:#17170f;color:var(--yellow2);display:grid;place-items:center;font-weight:950}.card h3{margin:28px 0 10px;font-size:27px;line-height:1.05;letter-spacing:-.045em}.card p{margin:0;color:#66685f;line-height:1.58;font-weight:670}.product-section{padding-top:44px}.product-panel{position:relative;background:#12120c;color:#fff;border-radius:44px;padding:42px;display:grid;grid-template-columns:1fr 360px;gap:42px;align-items:center;box-shadow:0 36px 110px rgba(18,18,12,.18);overflow:hidden}.product-panel:before{content:"";position:absolute;inset:auto -120px -180px auto;width:520px;height:520px;border-radius:50%;background:rgba(244,191,0,.14);filter:blur(4px)}.panel-copy{position:relative;z-index:1}.panel-copy h2{margin:0;font-size:clamp(36px,5vw,60px);line-height:.98;letter-spacing:-.062em}.panel-copy>p{color:#dcdbcd;font-size:18px;line-height:1.65;font-weight:670}.features{display:grid;gap:12px;margin-top:26px}.feature{display:flex;gap:13px;border:1px solid var(--whiteLine);background:rgba(255,255,255,.05);border-radius:20px;padding:16px}.feature i{font-style:normal;color:var(--yellow2);font-weight:950}.feature b{display:block}.feature small{display:block;margin-top:3px;color:#cbcabb;font-size:14px;line-height:1.45;font-weight:650}.panel-shot{position:relative;z-index:1;border-radius:34px;padding:9px;background:#090906;box-shadow:0 26px 80px rgba(0,0,0,.42);transform:rotate(1.4deg)}.panel-shot img{border-radius:27px;aspect-ratio:590/1280;object-fit:cover;width:100%}.guide-section{padding-top:54px}.guide-head{margin-bottom:26px}.guide-grid{display:grid;grid-template-columns:1.15fr repeat(3,1fr);gap:16px}.guide-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:26px;box-shadow:0 18px 55px rgba(28,23,9,.065);min-height:220px}.guide-card.wide{grid-row:span 2;background:linear-gradient(180deg,#18180f,#0f0f0a);color:#fff}.guide-label{display:inline-flex;border:1px solid var(--whiteLine);border-radius:999px;padding:8px 12px;color:#ffe590;font-size:13px;font-weight:850;line-height:1}.guide-icon{width:46px;height:46px;border-radius:17px;background:#17170f;color:var(--yellow2);display:grid;place-items:center}.guide-icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.guide-icon img{width:28px;height:28px;border-radius:9px;object-fit:cover;display:block}.guide-icon.bolt svg{fill:none}.guide-icon.settings svg{stroke-width:1.7}.guide-card h3{margin:22px 0 10px;font-size:28px;line-height:1.05;letter-spacing:-.035em;font-weight:800;text-rendering:geometricPrecision}.guide-card p{margin:0;color:#626458;line-height:1.62;font-weight:620}.guide-card.wide p{color:#dedccd;font-size:17px;font-weight:620}.guide-card b{color:inherit;font-weight:800}.audience{display:grid;grid-template-columns:1fr 1fr;gap:18px}.audience-main{background:#fff;border:1px solid var(--line);border-radius:36px;padding:38px;box-shadow:0 18px 55px rgba(28,23,9,.065)}.audience-main h2{margin:0;font-size:clamp(34px,4.8vw,58px);line-height:1;letter-spacing:-.06em}.audience-main p{margin:18px 0 0;color:#606259;font-size:18px;line-height:1.65;font-weight:680}.checks{background:#eae0c5;border:1px solid rgba(21,21,16,.1);border-radius:36px;padding:28px}.check{display:flex;gap:13px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(21,21,16,.1);font-weight:850}.check:last-child{border-bottom:0}.check i{font-style:normal;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#17170f;color:var(--yellow2);flex:0 0 auto}.final{max-width:var(--max);margin:0 auto 26px;padding:0 22px}.final-inner{background:radial-gradient(circle at 15% 8%,rgba(244,191,0,.27),transparent 31rem),#080806;color:#fff;border-radius:46px;padding:58px;display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;overflow:hidden}.final h2{margin:0;font-size:clamp(39px,5.8vw,72px);line-height:.95;letter-spacing:-.07em}.final p{margin:16px 0 0;color:#dedccd;font-size:19px;font-weight:680}.footer{max-width:var(--max);margin:0 auto;padding:28px 22px 50px;display:flex;justify-content:space-between;gap:16px;color:#77786d;font-size:14px}.footer img{width:116px;opacity:.85}
+    .global-proof{padding-top:36px}.global-panel{display:grid;grid-template-columns:390px 1fr;gap:48px;align-items:center;background:linear-gradient(135deg,#fffdf6 0,#f7edcd 52%,#fff8dd 100%);border:1px solid rgba(151,115,0,.2);border-radius:44px;padding:24px;box-shadow:0 28px 90px rgba(40,31,6,.11);overflow:hidden}.global-image{position:relative;border-radius:38px;background:#111;padding:10px;box-shadow:0 30px 80px rgba(30,22,5,.24);transform:rotate(.7deg)}.global-image:before{content:"מקור באנגלית → תובנה בעברית";position:absolute;z-index:2;top:18px;right:18px;background:#f4bf00;color:#111;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:950;box-shadow:0 12px 24px rgba(0,0,0,.16)}.global-image img{border-radius:30px;width:100%;height:auto}.global-copy{padding:24px 16px}.global-copy h2{margin:0;font-size:clamp(38px,5.5vw,70px);line-height:.94;letter-spacing:-.068em;text-wrap:balance}.global-copy .sub{margin-top:18px}.global-list{display:grid;gap:12px;margin-top:26px}.global-list div{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid rgba(21,21,16,.1);border-radius:22px;padding:16px;box-shadow:0 14px 38px rgba(45,35,7,.055)}.global-list i{font-style:normal;display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:#17170f;color:#ffd940;font-weight:950}.global-list b{display:block;font-size:17px}.global-list span{display:block;margin-top:3px;color:#65665d;line-height:1.5;font-weight:680}.source-pill{display:inline-flex;align-items:center;gap:9px;margin-top:28px;border:1px solid rgba(151,115,0,.2);background:rgba(255,255,255,.72);border-radius:999px;padding:11px 14px;color:#705600;font-weight:950}.source-pill strong{color:#17170f}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a{color:#4b4c43;font-weight:850}
+    @media(max-width:980px){.nav-links{display:none}.hero{grid-template-columns:1fr;gap:30px;padding-bottom:108px}.copy{max-width:none}.product-shot{min-height:640px;max-width:520px;margin:0 auto;width:100%}.phone-shell{left:50%;transform:translateX(-50%) rotate(-2deg)}.promise-grid{grid-template-columns:1fr 1fr}.promise-title{grid-column:1/-1}.split-head,.product-panel,.audience,.final-inner,.global-panel{grid-template-columns:1fr}.cards,.guide-grid{grid-template-columns:1fr}.guide-card.wide{grid-row:auto}.panel-shot{max-width:360px;margin:0 auto}.global-image{max-width:360px;margin:0 auto}.final .btn{width:max-content}}
+    @media(max-width:620px){.nav{padding:18px 16px}.brand img{width:130px}.brand span{display:none}.nav-cta{height:42px;padding:0 14px;font-size:14px}.hero{padding:36px 16px 92px}.lead{font-size:18px}.actions a{width:100%}.trust span{font-size:12px}.product-shot{min-height:544px}.phone-shell{width:min(305px,88vw);border-radius:42px;padding:9px}.phone-inner{border-radius:34px}.dotline{display:none}.promise{padding:0 16px}.promise-grid{grid-template-columns:1fr;border-radius:28px;padding:12px}.section{padding:76px 16px}.product-panel{border-radius:32px;padding:24px}.panel-shot{max-width:300px}.guide-card{border-radius:26px;padding:22px;min-height:auto}.audience-main,.checks{border-radius:30px;padding:26px}.final{padding:0 16px}.final-inner{border-radius:34px;padding:34px 24px}.footer{display:block;padding-inline:16px}.footer img{margin-bottom:14px}.footer-links{margin-top:12px}}
+    @media(prefers-reduced-motion:no-preference){.btn,.nav-cta{transition:transform .18s ease,box-shadow .18s ease}.btn:hover,.nav-cta:hover{transform:translateY(-1px)}.phone-shell{transition:transform .28s ease}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">דלג לתוכן</a>
+<div class="page">
+  <section class="hero-wrap">
+    <div class="grain" aria-hidden="true"></div>
+    <header class="nav" aria-label="ניווט ראשי">
+      <a class="brand" href="/" aria-label="Poenta דף הבית"><img src="./assets/poenta-logo.png" alt="Poenta"><span>חדשות לפי הזמן שלכם</span></a>
+      <nav class="nav-links" aria-label="ניווט באתר"><a href="#why">למי זה מתאים</a><a href="#product">המוצר</a><a href="#guide">איך משתמשים</a><a href="/app/">האפליקציה</a><a href="/privacy">פרטיות</a><a href="/terms">תנאים</a><a href="/support">תמיכה</a></nav>
+      <a class="nav-cta" href="/app/">הורדה עכשיו</a>
+    </header>
+    <main id="main" class="hero" aria-labelledby="hero-title">
+      <div class="copy">
+        <p class="eyebrow">נבנה לצורכי חדשות בישראל — לאנשים שהזמן שלהם יקר</p>
+        <h1 id="hero-title">החדשות החשובות.<span class="accent">בלי לבזבז את היום.</span></h1>
+        <p class="lead"><strong>Poenta</strong> מרכזת את החדשות ממקורות ונושאים שבחרתם, מסננת רעש וכפילויות, ומחזירה לכם את העיקר — ברור, מהיר ובעברית.</p>
+        <div class="actions"><a class="btn primary" href="/app/">הורדה עכשיו</a><a class="btn ghost" href="#product">לראות את הפיד</a></div>
+        <div class="trust" aria-label="יכולות מרכזיות"><span><b>247</b> מקורות פעילים</span><span><b>12</b> תחומי עניין</span><span><b>200</b> ידיעות בפיד החי</span></div>
+      </div>
+      <div class="product-shot" aria-label="צילום פיד Poenta">
+        <div class="halo"></div>
+        <div class="phone-shell"><div class="phone-inner"><img src="./assets/screenshots/poenta-feed-lior-20260531.jpg" alt="פיד Poenta עם מדד החדשים וכרטיס חדשות"></div></div>
+        <div class="dotline" aria-hidden="true"></div>
+      </div>
+    </main>
+  </section>
+
+  <section class="promise" aria-label="הבטחת המוצר">
+    <div class="promise-grid">
+      <div class="promise-title"><b>מה Poenta עושה אחרת?</b><span>היא לא עוד מקור חדשות. היא שכבת מיקוד מעל החדשות שאתם כבר סומכים עליהן.</span></div>
+      <div class="promise-item"><em>01</em><strong>בחרו</strong><p>מקורות ונושאים שמעניינים אתכם.</p></div>
+      <div class="promise-item"><em>02</em><strong>סננו</strong><p>רעש, כפילויות ועדכונים לא רלוונטיים.</p></div>
+      <div class="promise-item"><em>03</em><strong>הבינו</strong><p>מה חדש באמת — בלי לפתוח עשר כתבות.</p></div>
+    </div>
+  </section>
+
+  <section id="why" class="section">
+    <div class="split-head">
+      <div><p class="kicker">הבעיה</p><h2 class="title">מי שאוהב להיות מעודכן משלם בזמן.</h2></div>
+      <p class="sub">כותרות חוזרות, מקורות מפוזרים, התראות בלי סוף וכתבות ארוכות מדי. Poenta נועדה לאנשים שרוצים לדעת — אבל לא רוצים שכל היום ייעלם בתוך הפיד.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="num">01</div><h3>יותר מדי רעש</h3><p>אותה ידיעה מופיעה שוב ושוב ממקורות שונים, וקשה להבין מה באמת חדש.</p></article>
+      <article class="card"><div class="num">02</div><h3>יותר מדי קפיצות</h3><p>כל מקור דורש לפתוח אתר אחר, לעבור פרסומות, ולחפש את השורה החשובה.</p></article>
+      <article class="card"><div class="num">03</div><h3>פחות מדי שליטה</h3><p>ברוב הפידים האלגוריתם מחליט עבורכם. ב־Poenta אתם מגדירים מקורות, תחומים ושפה.</p></article>
+    </div>
+  </section>
+
+  <section id="product" class="section product-section">
+    <div class="product-panel">
+      <div class="panel-copy">
+        <p class="kicker">המוצר</p>
+        <h2>פיד חדשות אישי שמכבד את הקשב שלכם.</h2>
+        <p>Poenta אוספת, ממיינת ומציגה את הידיעות החשובות בצורה שמאפשרת לסרוק מהר, להעמיק כשצריך, ולחזור למה שחשוב לכם.</p>
+        <div class="features">
+          <div class="feature"><i>●</i><p><b>מקורות לבחירה</b><small>בחרו מאילו מקורות לקבל חדשות — ישראליים, רשמיים ובינלאומיים רלוונטיים.</small></p></div>
+          <div class="feature"><i>●</i><p><b>תחומי עניין</b><small>חדשות, ביטחון, כלכלה, ספורט, טכנולוגיה, רכב ועוד — לפי מה שחשוב לכם.</small></p></div>
+          <div class="feature"><i>●</i><p><b>מדד החדשים</b><small>רואים מהר כמה תוכן חדש באמת מחכה לכם, במקום לנחש אם הפסדתם משהו.</small></p></div>
+        </div>
+      </div>
+      <div class="panel-shot"><img src="./assets/screenshots/poenta-tase-bursa-source-hebrew-20260601.jpg" alt="צילום מסך של פיד Poenta עם כרטיס בורסה בתל אביב"></div>
+    </div>
+  </section>
+
+  <section class="section global-proof" aria-label="מקור באנגלית בעברית">
+    <div class="global-panel">
+      <figure class="global-image">
+      <img src="./assets/screenshots/poenta-guardian-source-hebrew-20260531.jpg" alt="Poenta מציגה ידיעה מה־Guardian עם תקציר בעברית">
+      </figure>
+      <div class="global-copy">
+        <p class="kicker">הכוח האמיתי</p>
+        <h2>גם כשהמקור בחו״ל ובאנגלית — אתם מקבלים את הפואנטה בעברית.</h2>
+        <p class="sub">הדוגמה הזו מראה בדיוק את הערך: ידיעה של The Guardian באנגלית, על אירוע שרלוונטי לישראל, עוברת דרך Poenta והופכת לכרטיס ברור בעברית — עם התמונה, התקציר, המשמעות והמקור המקורי למי שרוצה להעמיק.</p>
+        <div class="global-list">
+          <div><i>1</i><p><b>לא מפספסים מקורות חשובים מחו״ל</b><span>גם אם הידיעה נולדה באנגלית, היא נכנסת לפיד כשהיא רלוונטית לכם.</span></p></div>
+          <div><i>2</i><p><b>מבינים מהר את ההקשר הישראלי</b><span>Poenta מסכמת ומחדדת למה זה משנה — בלי לקרוא כתבה ארוכה בשפה אחרת.</span></p></div>
+          <div><i>3</i><p><b>המקור נשאר שקוף</b><span>רואים מי פרסם את הידיעה ויכולים לפתוח את הכתבה המקורית בכל רגע.</span></p></div>
+        </div>
+        <div class="source-pill">בדוגמה: <strong>The Guardian</strong> → תקציר ברור בעברית</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section guide-section" id="guide">
+    <div class="split-head guide-head">
+      <div><p class="kicker">איך משתמשים</p><h2 class="title">כל כפתור בפיד נועד לחסוך לכם זמן.</h2></div>
+      <p class="sub">כדי שמי שנכנס לאתר יבין מיד איך לעבוד עם Poenta, הוספנו הסבר ברור על הכפתורים בתחתית האפליקציה ועל הסינונים בחלק העליון של הפיד.</p>
+    </div>
+    <div class="guide-grid">
+      <article class="guide-card wide"><span class="guide-label">הכפתורים למעלה</span><h3>חדשים, הכל וקטגוריות</h3><p><b>חדשים</b> מציג רק ידיעות שעדיין לא ראיתם. <b>הכל</b> מחזיר אתכם לכל הפיד. <b>קטגוריות</b> כמו ביטחון, פוליטיקה או אקטואלי מאפשרות לקפוץ מהר לנושא שמעניין אתכם עכשיו.</p></article>
+      <article class="guide-card"><span class="guide-icon p-icon"><img src="./assets/poenta-icon-64.png" alt=""></span><h3>פיד ראשי</h3><p>חוזרים למסך הבית של Poenta — הפיד האישי עם הידיעות, התקצירים ומדד החדשים.</p></article>
+      <article class="guide-card"><span class="guide-icon bolt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z"/></svg></span><h3>מבזקים</h3><p>עדכונים קצרים ומהירים לאירועים שמתפתחים עכשיו — למי שרוצה להבין מה קרה בלי לפתוח כתבה מלאה.</p></article>
+      <article class="guide-card"><span class="guide-icon settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v16"/><path d="M12 4v16"/><path d="M18 4v16"/><circle cx="6" cy="9" r="2.15"/><circle cx="12" cy="15" r="2.15"/><circle cx="18" cy="7.5" r="2.15"/></svg></span><h3>הגדרות</h3><p>כאן מגדירים מקורות, תחומי עניין ושפה. זה המקום שבו הופכים את הפיד לכלי אישי ולא לעוד רשימת חדשות כללית.</p></article>
+      <article class="guide-card"><span class="guide-icon search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.4-4.4"/></svg></span><h3>חיפוש</h3><p>מחפשים ידיעה, מקור או נושא ספציפי ומגיעים ישר למה שרלוונטי — בלי לגלול אחורה בפיד.</p></article>
+      <article class="guide-card"><span class="guide-icon saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4V4Z"/></svg></span><h3>שמור</h3><p>שומרים ידיעות חשובות לקריאה חוזרת, להשוואה או לשיתוף מאוחר יותר — גם אם הן כבר לא בראש הפיד.</p></article>
+      <article class="guide-card"><span class="guide-icon share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/></svg></span><h3>שיתוף כתבה</h3><p>משתפים כתבה ישירות מהכרטיס עם כותרת, תקציר וקישור לפתיחה ב־Poenta — נוח לשליחה בוואטסאפ או להמשך קריאה.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="audience">
+      <article class="audience-main"><h2>זה לא למי שרוצה לגלול. זה למי שרוצה לדעת.</h2><p>Poenta מיועדת לאנשים שחדשות חשובות להם — מנהלים, עצמאיים, משקיעים, אנשי שטח וכל מי שאוהב להיות מעודכן אבל לא מוכן לבזבז שעה על סינון רעש.</p></article>
+      <div class="checks" aria-label="יתרונות מרכזיים">
+        <div class="check"><i>✓</i><span>פותחים פיד אחד במקום לקפוץ בין מקורות.</span></div>
+        <div class="check"><i>✓</i><span>מקבלים את הנקודה החשובה מהר.</span></div>
+        <div class="check"><i>✓</i><span>שולטים במקורות, בתחומים ובשפה.</span></div>
+        <div class="check"><i>✓</i><span>שומרים ידיעות חשובות וחוזרים אליהן כשיש זמן.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-label="קריאה לפעולה">
+    <div class="final-inner">
+      <div><h2>תנו לחדשות לעבוד בשבילכם.</h2><p>הורידו את Poenta עכשיו וקבלו פיד שמרכז את מה שחשוב — בלי רעש מיותר.</p></div>
+      <a class="btn primary" href="/app/">הורדה עכשיו</a>
+    </div>
+  </section>
+
+  <footer class="footer"><img src="./assets/poenta-logo-light.png" alt="Poenta"><span>Poenta — החדשות החשובות, בלי לבזבז את היום.</span><nav class="footer-links" aria-label="קישורי אתר"><a href="/privacy">פרטיות</a><a href="/terms">תנאים</a><a href="/support">תמיכה</a><a href="/app/">אפליקציה</a></nav></footer>
+</div>
+</body>
+</html>

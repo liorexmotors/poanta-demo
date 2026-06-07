@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poenta · פריטי RSS מה־XML</title>
+  <link rel="icon" href="./favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="./favicon-32.png" sizes="32x32">
+  <style>
+    :root{
+      --bg:#071015;
+      --surface:#0d171d;
+      --card:#0b1920;
+      --card2:#0e2028;
+      --text:#f4f6f7;
+      --muted:rgba(255,255,255,.58);
+      --soft:rgba(255,255,255,.76);
+      --line:rgba(255,255,255,.09);
+      --line2:rgba(89,195,172,.24);
+      --yellow:#ffc400;
+      --green:#51d484;
+      --red:#ff6b6b;
+      --shadow:0 24px 70px rgba(0,0,0,.42);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:#020608;color:var(--text);font-family:"Heebo",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    body{padding:16px}
+    a{color:inherit}
+    .wrap{width:min(1240px,100%);min-height:calc(100vh - 32px);margin:0 auto;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,#081217 0%,var(--bg) 58%,#050b0f 100%);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.06);padding:0 16px 24px}
+    .top{position:sticky;top:0;z-index:10;margin:0 -16px 14px;padding:12px 16px;background:rgba(7,16,21,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);box-shadow:0 10px 22px rgba(0,0,0,.34)}
+    .brandline{height:38px;display:flex;align-items:center;justify-content:space-between;gap:12px;direction:ltr}
+    .brand-logo{height:34px;width:auto;display:block}.brand-logo-light{display:none}
+    .top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;direction:rtl}
+    .btn{border:1px solid rgba(255,196,0,.22);background:rgba(255,196,0,.08);color:var(--yellow);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:950;text-decoration:none;cursor:pointer;white-space:nowrap}
+    .btn.primary{background:var(--yellow);color:#111;border-color:var(--yellow)}
+    .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;padding-top:8px}
+    h1{margin:0;font-size:24px;line-height:1.08;font-weight:950;letter-spacing:-.3px}
+    .source-url{display:block;margin-top:5px;direction:ltr;text-align:right;color:var(--muted);font-size:12px;font-weight:750;overflow-wrap:anywhere}
+    .summary{text-align:left;direction:rtl;color:var(--muted);font-size:12px;font-weight:850;line-height:1.35;min-width:150px}
+    .summary strong{display:block;color:var(--soft);font-size:13px}
+    .source-pill{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:28px;margin-top:6px;border-radius:999px;border:1px solid rgba(81,212,132,.22);background:rgba(81,212,132,.075);color:var(--green);font-size:11px;font-weight:950;box-shadow:inset 0 0 18px rgba(81,212,132,.04)}
+    .panel{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.027);padding:12px;margin:12px 0;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+    .catalog{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .label{font-size:11px;color:var(--muted);font-weight:950;text-transform:uppercase;letter-spacing:.05em}
+    .source-select{min-width:min(520px,100%);flex:1;border-radius:14px;border:1px solid var(--line);background:#071015;color:#fff;padding:10px;font-weight:850}
+    .status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:950;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);color:var(--yellow)}
+    .status.ok{color:var(--green)}.status.fail{color:var(--red)}
+    .fetch-hint{margin-top:8px;color:var(--muted);font-size:12px;font-weight:750;line-height:1.45}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .item{min-height:138px;background:linear-gradient(180deg,rgba(14,32,40,.94),rgba(9,23,30,.96));border:1px solid var(--line2);border-radius:20px;padding:16px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 8px 18px rgba(0,0,0,.16)}
+    .item-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px;color:var(--muted);font-size:12px;font-weight:950;direction:ltr;text-align:left}
+    .item h3{margin:0 auto 16px;max-width:92%;text-align:center;font-size:18px;line-height:1.28;letter-spacing:-.25px;font-weight:950;color:#fff}
+    .item .url{display:block;direction:ltr;text-align:center;color:rgba(255,255,255,.60);font-size:13px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none}
+    .item .open{display:block;margin-top:10px;color:var(--yellow);font-size:12px;font-weight:950;text-align:left;text-decoration:none}
+    .raw{direction:ltr;text-align:left;white-space:pre-wrap;overflow:auto;max-height:520px;background:#03080b;border:1px solid var(--line);border-radius:16px;padding:12px;color:#d7e3e8;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    details summary{cursor:pointer;color:var(--yellow);font-weight:950;margin-bottom:10px}
+    .empty{padding:30px;text-align:center;color:var(--muted);font-weight:850;line-height:1.5}
+    .error{border-color:rgba(255,107,107,.35);background:rgba(255,107,107,.08);border-radius:18px}
+    @media(max-width:760px){body{padding:0;background:var(--bg)}.wrap{border-radius:0;border:0;min-height:100vh}.grid{grid-template-columns:1fr}.hero{align-items:flex-start;flex-direction:column}.summary{text-align:right}.top{border-radius:0 0 18px 18px}.brand-logo{height:32px}.item h3{font-size:17px;max-width:100%}}
+    @media(prefers-color-scheme:light){.brand-logo-dark{display:none}.brand-logo-light{display:block}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="top">
+      <div class="brandline">
+        <div class="brand"><img class="brand-logo brand-logo-dark" src="./assets/poenta-logo.png" alt="Poenta"><img class="brand-logo brand-logo-light" src="./assets/poenta-logo-light.png" alt="Poenta"></div>
+        <div class="top-actions">
+          <button class="btn" id="reload">רענון</button>
+          <a class="btn" id="openOriginal" href="#" target="_blank" rel="noopener">פתח XML מקורי</a>
+          <a class="btn primary" href="./feedback-dashboard.html">חזרה לדשבורד</a>
+        </div>
+      </div>
+      <div class="hero">
+        <div>
+          <span class="source-pill" id="sourceBadge">RSS</span>
+          <h1 id="sourceTitle">פריטי RSS מה־XML</h1>
+          <span class="source-url" id="sourceUrl">—</span>
+        </div>
+        <div class="summary">
+          <strong>פריטים אחרונים מהמקור</strong>
+          <span id="itemCount">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="catalogPanel" hidden>
+      <div class="catalog">
+        <div class="label">בחירת מקור מהרשימה</div>
+        <select id="catalogSelect" class="source-select"><option value="">בחר מקור RSS…</option></select>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="catalog">
+        <span class="status" id="statusPill">טוען</span>
+        <div class="fetch-hint" id="fetchHint">מביא את ה־XML המקורי ומציג את הפריטים כפי שהם במקור.</div>
+      </div>
+    </section>
+
+    <section class="grid" id="items"><div class="empty">טוען XML…</div></section>
+
+    <section class="panel">
+      <details>
+        <summary>הצג XML גולמי לבדיקה טכנית</summary>
+        <pre class="raw" id="rawXml">—</pre>
+      </details>
+    </section>
+  </main>
+<script>
+const $=s=>document.querySelector(s);
+const params=new URLSearchParams(location.search);
+const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const text=(node,sel)=>node?.querySelector(sel)?.textContent?.trim()||'';
+function sourceUrl(){return params.get('url')||params.get('rss')||''}
+function sourceName(){return params.get('name')||params.get('source')||'מקור RSS'}
+function sourceBadge(name,url){const raw=String(name||'').trim();const low=(raw+' '+url).toLowerCase();if(low.includes('ynet'))return 'ynet';if(low.includes('walla')||raw.includes('וואלה'))return 'וואלה';if(low.includes('maariv')||raw.includes('מעריב'))return 'מעריב';if(low.includes('mako')||raw.includes('N12'))return 'N12';if(raw.includes('ישראל היום'))return 'ישראל היום';if(raw.includes('הארץ')||low.includes('haaretz'))return 'הארץ';return raw.split(/[·\-–|]/)[0].trim().slice(0,16)||'RSS'}
+function fmtDate(value){if(!value)return '—';const d=new Date(value);return Number.isNaN(d.getTime())?value:new Intl.DateTimeFormat('he-IL',{timeZone:'Asia/Jerusalem',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(d)}
+function decodeHtml(html){const t=document.createElement('textarea');t.innerHTML=html||'';return t.value.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim()}
+function cacheBustUrl(url){try{const u=new URL(url);u.searchParams.set('_poanta_cb',String(Date.now()));return u.toString()}catch{return url}}
+function isGoogleNewsUrl(url){try{return new URL(url).hostname==='news.google.com'}catch{return false}}
+function proxyUrls(url){return [
+  {name:'allorigins-json',make:()=> 'https://api.allorigins.win/get?url='+encodeURIComponent(cacheBustUrl(url))},
+  {name:'allorigins-raw',make:()=> 'https://api.allorigins.win/raw?url='+encodeURIComponent(cacheBustUrl(url))},
+  {name:'codetabs',make:()=> 'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(cacheBustUrl(url))}
+]}
+async function fetchWithTimeout(url,options={},timeoutMs=6500){const ctrl=new AbortController();const timer=setTimeout(()=>ctrl.abort(),timeoutMs);try{return await fetch(url,{...options,signal:ctrl.signal})}finally{clearTimeout(timer)}}
+async function fetchText(url){const r=await fetchWithTimeout(cacheBustUrl(url),{cache:'no-store'},4500);if(!r.ok)throw new Error('HTTP '+r.status);const body=await r.text();if(!body.trim())throw new Error('empty response');return {text:body,via:'direct-xml'}}
+async function fetchProxyText(url){const errors=[];for(const proxy of proxyUrls(url)){try{const r=await fetchWithTimeout(proxy.make(),{cache:'no-store'},6500);if(!r.ok)throw new Error('HTTP '+r.status);const body=await r.text();if(!body.trim())throw new Error('empty response');if(proxy.name==='allorigins-json'){const wrapped=JSON.parse(body);if(!wrapped.contents?.trim())throw new Error('empty response');return {text:wrapped.contents,via:'proxy-xml'}}return {text:body,via:'proxy-xml'}}catch(e){errors.push(proxy.name+': '+(e.name==='AbortError'?'timeout':e.message))}}throw new Error(errors.join(' | '))}
+async function fetchRssJson(url){const r=await fetchWithTimeout('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(cacheBustUrl(url)),{cache:'no-store'},8500);if(!r.ok)throw new Error('rss2json HTTP '+r.status);const data=await r.json();if(data.status!=='ok')throw new Error(data.message||'rss2json failed');return {data,via:'rss2json'}}
+function byNewestFirst(items){return [...items].sort((a,b)=>{const da=Date.parse(a.date||'');const db=Date.parse(b.date||'');if(Number.isNaN(da)&&Number.isNaN(db))return 0;if(Number.isNaN(da))return 1;if(Number.isNaN(db))return -1;return db-da})}
+function parseRssJson(data){const feed=data.feed||{};const items=(data.items||[]).map(it=>({title:it.title||'ללא כותרת',link:it.link||'',description:decodeHtml(it.description||it.content||''),date:it.pubDate||'',guid:it.guid||it.link||''}));return {title:feed.title||sourceName(),link:feed.link||'',description:decodeHtml(feed.description||''),updated:feed.lastBuildDate||'',items:byNewestFirst(items).slice(0,30)}}
+function parseFeed(xmlText){const doc=new DOMParser().parseFromString(xmlText,'application/xml');const parseError=doc.querySelector('parsererror');if(parseError)throw new Error(parseError.textContent.replace(/\s+/g,' ').slice(0,220));const channel=doc.querySelector('channel')||doc.querySelector('feed')||doc.documentElement;const atom=doc.documentElement?.localName==='feed';const rawItems=[...doc.querySelectorAll(atom?'entry':'item')];const items=rawItems.map(it=>{const linkEl=it.querySelector('link');const link=atom?(linkEl?.getAttribute('href')||linkEl?.textContent||''):text(it,'link');return {title:text(it,'title')||'ללא כותרת',link,description:decodeHtml(text(it,'description')||text(it,'summary')||text(it,'content')),date:text(it,'pubDate')||text(it,'published')||text(it,'updated')||text(it,'dc\\:date')||'',guid:text(it,'guid')||text(it,'id')||''};});return {title:text(channel,'title')||sourceName(),link:text(channel,'link')||'',description:decodeHtml(text(channel,'description')||text(channel,'subtitle')),updated:text(channel,'lastBuildDate')||text(channel,'updated')||text(channel,'pubDate'),items:byNewestFirst(items).slice(0,30)}}
+function render(feed,xml,via){
+  $('#statusPill').textContent='נטען';$('#statusPill').className='status ok';
+  $('#fetchHint').textContent=via==='direct-xml'?'נטען ישירות מה־XML של המקור.':via==='proxy-xml'?'הוצגו פריטים מה־XML המקורי של המקור; הקריאה עברה דרך proxy ציבורי כי הדפדפן נחסם ב־CORS.':'הפריטים הובאו מה־RSS/XML של המקור דרך המרת RSS→JSON, כי הדפדפן חסום מקריאה ישירה ב־CORS.';
+  $('#sourceTitle').textContent=feed.title||sourceName();
+  $('#itemCount').textContent=`${feed.items.length} פריטים מוצגים`;
+  $('#items').innerHTML=feed.items.length?feed.items.map((it,i)=>`<article class="item"><div class="item-head"><span>#${i+1}</span><span>${esc(fmtDate(it.date))}</span></div><h3>${esc(it.title)}</h3>${it.link?`<a class="url" href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.link)}</a><a class="open" href="${esc(it.link)}" target="_blank" rel="noopener">פתח כתבה מקורית</a>`:`<span class="url">${esc(it.guid||'אין קישור')}</span>`}</article>`).join(''):'<div class="empty">לא נמצאו פריטים ב־XML.</div>';
+  $('#rawXml').textContent=xml.slice(0,200000);
+}
+async function loadCatalog(){try{const data=await fetch('rss_sources.json',{cache:'no-store'}).then(r=>r.json());const sources=(data.active||[]).filter(s=>s.rss);if(!sources.length)return;$('#catalogPanel').hidden=false;$('#catalogSelect').innerHTML='<option value="">בחר מקור RSS…</option>'+sources.map(s=>`<option value="${esc(s.rss)}" data-name="${esc(s.name)}">${esc(s.logo||s.name)} · ${esc(s.name)}</option>`).join('');$('#catalogSelect').addEventListener('change',e=>{const opt=e.target.selectedOptions[0];if(!e.target.value)return;location.href='rss-viewer.html?url='+encodeURIComponent(e.target.value)+'&name='+encodeURIComponent(opt.dataset.name||opt.textContent)});}catch{}}
+async function load(){
+  const url=sourceUrl(), name=sourceName();
+  $('#sourceTitle').textContent=name;
+  $('#sourceBadge').textContent=sourceBadge(name,url);
+  $('#sourceUrl').textContent=url||'לא נבחר מקור';
+  $('#openOriginal').href=url||'#';
+  if(!url){$('#statusPill').textContent='בחר מקור';$('#statusPill').className='status';$('#items').innerHTML='<div class="empty">אין URL. בחר מקור מהרשימה או חזור לדשבורד.</div>';$('#itemCount').textContent='—';$('#rawXml').textContent='—';await loadCatalog();return;}
+  $('#statusPill').textContent='טוען XML';$('#statusPill').className='status';$('#items').innerHTML='<div class="empty">מביא XML וממיר לכרטיסים…</div>';
+  try{if(isGoogleNewsUrl(url)){const result=await fetchRssJson(url);const feed=parseRssJson(result.data);render(feed,JSON.stringify(result.data,null,2),result.via);return}try{const result=await fetchText(url);const feed=parseFeed(result.text);render(feed,result.text,result.via);return}catch(directError){try{const result=await fetchRssJson(url);const feed=parseRssJson(result.data);render(feed,JSON.stringify(result.data,null,2),result.via);return}catch(jsonError){const result=await fetchProxyText(url);const feed=parseFeed(result.text);render(feed,result.text,result.via);return}}}catch(e){$('#statusPill').textContent='שגיאה';$('#statusPill').className='status fail';$('#itemCount').textContent='—';$('#items').innerHTML=`<div class="empty error"><strong>לא הצלחתי להביא XML עדכני.</strong><br><span>לא מוצג cache ישן כדי לא להטעות. ${esc(e.message)}</span><br><br><a class="btn" href="${esc(url)}" target="_blank" rel="noopener">פתח XML מקורי</a></div>`;$('#rawXml').textContent='—';}
+}
+$('#reload').addEventListener('click',load);
+loadCatalog();
+load();
+</script>
+</body>
+</html>
