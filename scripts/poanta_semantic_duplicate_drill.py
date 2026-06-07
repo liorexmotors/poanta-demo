@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "south_lebanon_four_reservists_drone_wounded_walla_kipa_visible_regression_20260607",
+        True,
+        {
+            "source": "וואלה חדשות - צבא וביטחון",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "רחפן נפץ פצע ארבעה מילואימניקים בדרום לבנון",
+            "originalTitle": "ארבעה לוחמי מילואים נפצעו באורח בינוני מפגיעת רחפן נפץ בדרום לבנון",
+            "context": "ארבעה לוחמי מילואים מאוגדה 91 נפצעו בינוני מפגיעת רחפן נפץ בגזרה המערבית בדרום לבנון ופונו לבית חולים. האירוע מחדד את הסיכון המתמשך לכוחות בשטח.",
+            "sourceUrl": "https://news.walla.co.il/item/3843661",
+        },
+        {
+            "source": "כיפה - חדשות",
+            "category": "ביטחון",
+            "categoryClass": "security",
+            "headline": "ארבעה מילואימניקים נפצעו בינוני מפגיעת רחפן בלבנון",
+            "originalTitle": "איום הרחפנים: ארבעה מילואימניקים נפצעו בינוני בדרום לבנון",
+            "context": "ארבעה מילואימניקים נפצעו באורח בינוני מפגיעת רחפן בדרום לבנון. מדובר באותו אירוע פציעה של ארבעה לוחמי מילואים בגזרה הלבנונית.",
+            "sourceUrl": "https://www.kipa.co.il/1225571-0",
+        },
+    ),
+    (
         "ohio_festival_mass_shooting_ynet_israelhayom_visible_regression_20260607",
         True,
         {
