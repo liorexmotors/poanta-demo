@@ -19,6 +19,28 @@ import update_feed  # noqa: E402
 
 CASES = [
     (
+        "ohio_festival_mass_shooting_ynet_israelhayom_visible_regression_20260607",
+        True,
+        {
+            "source": "ynet - מבזקי החדשות",
+            "category": "פלילים",
+            "categoryClass": "security",
+            "headline": "ירי בפסטיבל באוהיו הפך אירוע מוזיקה לזירת פצועים המונית",
+            "originalTitle": "ארה\"ב: 12 בני אדם נפצעו מירי בפסטיבל באוהיו, שניים במצב קשה",
+            "context": "12 בני אדם נפצעו מירי בפסטיבל Old West End בטולדו, ושניים מהם במצב קשה. המשטרה בודקת חשד שלפחות שני יורים פעלו בתוך האירוע.",
+            "sourceUrl": "https://www.ynet.co.il/news/article/b1np11sfzfg",
+        },
+        {
+            "source": "ישראל היום - כל הכתבות",
+            "category": "אקטואליה בעולם",
+            "categoryClass": "security",
+            "headline": "ירי המוני ליד פסטיבל באוהיו הותיר כמה פצועים",
+            "originalTitle": "\"כאוס מוחלט\": ירי המוני בפסטיבל קיץ באוהיו",
+            "context": "ירי המוני ליד פסטיבל באוהיו הותיר כמה פצועים והוביל לסריקות משטרה אחר החשודים. זו אותה תקרית טולדו/Old West End שמופיעה גם ב־ynet.",
+            "sourceUrl": "https://www.israelhayom.co.il/news/world-news/usa/article/20702844",
+        },
+    ),
+    (
         "efrat_junction_suspected_ramming_walla_jpost_visible_regression_20260607",
         True,
         {
