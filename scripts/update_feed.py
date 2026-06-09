@@ -3259,6 +3259,67 @@ def is_official_telegram_item(item: dict) -> bool:
     return any(x in source for x in ["דובר צה", "צה״ל", "צה\"ל", "משטרת ישראל", "דוברות משטרת"])
 
 
+def main_feed_breaking_leak_reasons(item: dict) -> list[str]:
+    """Return reasons that a row belongs in breaking_feed.json, not feed.json.
+
+    TT RR now allows מבזקים again only as a separate tab/feed.  The main feed
+    must stay full Pointa article cards.  This guard is intentionally stricter
+    than item quality so a future freshness fallback cannot silently promote
+    Rotter/Telegram/live rows into feed.json.
+    """
+    parts = [
+        str(item.get("sourceUrl") or ""),
+        str(item.get("source") or ""),
+        str(item.get("sourceLogo") or ""),
+        str(item.get("headline") or ""),
+        str(item.get("originalTitle") or ""),
+        str(item.get("category") or ""),
+    ]
+    for link in item.get("sourceLinks") or []:
+        if isinstance(link, dict):
+            parts.append(str(link.get("url") or ""))
+            parts.append(str(link.get("name") or ""))
+    text = " ".join(parts)
+    low = text.lower()
+    reasons: list[str] = []
+    if item.get("breaking") is True:
+        reasons.append("breaking:true")
+    if item.get("promotedFromBreaking") is True:
+        reasons.append("promotedFromBreaking:true")
+    if item.get("emergencyFreshnessFallback") is True:
+        reasons.append("emergencyFreshnessFallback:true")
+    for marker in ["/break/", "rotter.net/forum/scoops", "rotter.net/forum/scoops1", "t.me/", "telegram.me/"]:
+        if marker in low:
+            reasons.append(f"live_url:{marker}")
+    for marker in ["מבזק", "מבזקים", "טלגרם", "רוטר", "telegram", "rotter"]:
+        haystack = low if marker.isascii() else text
+        needle = marker.lower() if marker.isascii() else marker
+        if needle in haystack:
+            reasons.append(f"live_text:{marker}")
+    return reasons
+
+
+def filter_main_feed_breaking_leaks(items: list[dict], reason: str) -> list[dict]:
+    kept: list[dict] = []
+    rejected: list[dict] = []
+    for item in items:
+        reasons = main_feed_breaking_leak_reasons(item)
+        if reasons:
+            rejected.append({"reason": reason, "errors": reasons, "item": item})
+        else:
+            kept.append(item)
+    if rejected:
+        payload = {"updatedAt": datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds"), "rejected": rejected}
+        try:
+            leak_path = ROOT / "tmp" / "pointa_main_feed_breaking_leaks.json"
+            leak_path.parent.mkdir(parents=True, exist_ok=True)
+            leak_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        except Exception:
+            pass
+        print(f"Blocked {len(rejected)} breaking/live-like rows from main feed", file=sys.stderr)
+    return kept
+
+
 def preserve_recent_official_telegram_items(items: list[dict], now: datetime, limit: int = MAX_FEED_ITEMS) -> list[dict]:
     """Keep recent IDF/Police Telegram cards visible even when the 200-card cap is crowded."""
     if len(items) <= limit:
@@ -3415,6 +3476,7 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
         deduped.append(item)
     deduped = balance_feed_category_mix(deduped)
     limited = preserve_recent_official_telegram_items(deduped, now, MAX_FEED_ITEMS)
+    limited = filter_main_feed_breaking_leaks(limited, "main_feed_no_breaking_guard")
     merged = assign_display_rank(diversify_visible_top(limited))
     new_feed["items"] = merged
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")

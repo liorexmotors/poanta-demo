@@ -84,10 +84,18 @@ def main() -> int:
 
     if args.mode == "candidate":
         live = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--feed-file", args.feed, "--json"])
+        no_breaking = run_json([sys.executable, "scripts/pointa_main_feed_no_breaking_guard.py", "--feed", args.feed, "--json"])
     else:
         live = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--json"])
+        no_breaking = run_json([sys.executable, "scripts/pointa_main_feed_no_breaking_guard.py", "--feed", "feed.json", "--json"])
 
     blockers = live_blockers(live, mode=args.mode)
+    for leak in no_breaking.get("leaks") or []:
+        blockers.append({
+            "code": "main_feed_breaking_leak",
+            "message": "feed.json contains a breaking/live-like item that belongs only in breaking_feed.json",
+            "item": leak,
+        })
     timing = None
     if args.timing:
         timing = run_json([sys.executable, "scripts/pointa_timing_auditor.py", "--json"])
@@ -98,6 +106,8 @@ def main() -> int:
         "mode": args.mode,
         "status": "fail" if blockers else "ok",
         "liveStatus": live.get("status"),
+        "noBreakingStatus": no_breaking.get("status"),
+        "noBreakingLeaks": no_breaking.get("leaks") or [],
         "timingStatus": timing.get("status") if timing else None,
         "blockers": blockers,
         "liveErrors": live.get("errors") or [],
