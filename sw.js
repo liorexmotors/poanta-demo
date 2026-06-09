@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v96-breaking-summary-dedupe';
+const CACHE_NAME = 'poenta-v97-breaking-separated';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
