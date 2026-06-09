@@ -275,6 +275,27 @@ const STORAGE_KEYS = {
   breakingCache: 'poenta.native.breakingCache.v1',
   lastSync: 'poenta.native.lastSync.v1',
 };
+const TT_RR_ALL_TOPICS_MIGRATION_KEY = 'poenta.native.migration.ttRRAllTopics.v3';
+
+function isBroadDefaultTopicSelection(selected: string[], availableTopics: string[]) {
+  if (!selected.length) return false;
+  const normalized = selected.map(value => String(value || '').trim()).filter(Boolean);
+  if (!normalized.length) return false;
+  const available = new Set(availableTopics.map(value => String(value || '').trim()).filter(Boolean));
+  const hardNewsDefaults = new Set([
+    'ביטחון', 'פוליטיקה', 'אקטואליה בעולם', 'חדשות', 'משפט', 'פלילים',
+    'כלכלה', 'רכב', 'טכנולוגיה', 'צרכנות', 'עולם', 'תחבורה'
+  ]);
+  const hasCustomOrNarrow = normalized.some(topic => available.has(topic) && !hardNewsDefaults.has(topic) && !DEFAULT_TOPICS.includes(topic));
+  if (hasCustomOrNarrow) return false;
+  const onlyDefaultLike = normalized.every(topic => hardNewsDefaults.has(topic) || DEFAULT_TOPICS.includes(topic));
+  const missingFreshTopic = availableTopics.some(topic => !normalized.includes(topic));
+  // TT RR: old broad/default clients often kept only hard-news categories, which hides
+  // fresh full Pointa cards in sports/culture/gossip and makes /app look stale even
+  // when the raw public feed is healthy. Expand only broad/default-looking choices;
+  // explicit custom/narrow topic selections are preserved.
+  return onlyDefaultLike && missingFreshTopic && normalized.length <= DEFAULT_TOPICS.length;
+}
 
 function canonicalSource(name?: string) {
   const s = String(name || '').trim();
@@ -982,18 +1003,32 @@ function PoentaApp() {
           .catch(() => null);
       }
       const syncStamp = new Date().toISOString();
+      const availableTopics = allTopics(feedItems);
+      let allTopicsMigrationDone = false;
+      try {
+        allTopicsMigrationDone = Boolean(await AsyncStorage.getItem(TT_RR_ALL_TOPICS_MIGRATION_KEY));
+      } catch {
+        allTopicsMigrationDone = false;
+      }
       setLastSyncedAt(syncStamp);
       AsyncStorage.multiSet([
         [STORAGE_KEYS.feedCache, JSON.stringify(feedItems.slice(0, 300))],
         [STORAGE_KEYS.breakingCache, JSON.stringify(breakingItems.slice(0, 150))],
         [STORAGE_KEYS.lastSync, syncStamp],
       ]).catch(() => null);
-      setPrefs(prev => ({
-        ...prev,
-        sources: prefsLoadedFromStorageRef.current ? prev.sources : allSources([...feedItems, ...breakingItems]),
-        topics: prefsLoadedFromStorageRef.current ? prev.topics : allTopics(feedItems),
-        language: normalizeLanguage(prev.language),
-      }));
+      setPrefs(prev => {
+        const fromStorage = prefsLoadedFromStorageRef.current;
+        const shouldExpandBroadTopics = fromStorage && !allTopicsMigrationDone && isBroadDefaultTopicSelection(prev.topics, availableTopics);
+        if (shouldExpandBroadTopics) {
+          AsyncStorage.setItem(TT_RR_ALL_TOPICS_MIGRATION_KEY, new Date().toISOString()).catch(() => null);
+        }
+        return {
+          ...prev,
+          sources: fromStorage ? prev.sources : allSources([...feedItems, ...breakingItems]),
+          topics: fromStorage ? (shouldExpandBroadTopics ? availableTopics : prev.topics) : availableTopics,
+          language: normalizeLanguage(prev.language),
+        };
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : tr('שגיאה בטעינת הנתונים'));
     } finally {
