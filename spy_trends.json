@@ -5,7 +5,7 @@
     "name": "מרגל",
     "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"
   },
-  "generatedAt": "2026-06-09T18:38:51+02:00",
+  "generatedAt": "2026-06-09T18:41:19+02:00",
   "windowHours": 8,
   "sourcesChecked": 95,
   "rssSourcesChecked": 80,
@@ -14,11 +14,16 @@
   "itemsScanned": 380,
   "rssItemsScanned": 200,
   "webItemsScanned": 180,
-  "durationSec": 3.15,
+  "durationSec": 2.89,
   "errorsSample": [
     {
       "source": "ישראל היום",
       "type": "RSS",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "ישראל היום",
+      "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
@@ -27,19 +32,14 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
-      "source": "ישראל היום",
+      "source": "Reuters",
       "type": "WEB",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
     },
     {
       "source": "Axios",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "source": "Reuters",
-      "type": "WEB",
-      "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
     }
   ],
   "trends": [
@@ -106,7 +106,7 @@
     {
       "domain": "חדשות",
       "trend": "שוטר ושני קציני מילואים נעצרו בחשד לניסיון רצח",
-      "clusterKey": "נעצרו בחשד",
+      "clusterKey": "נעצרו בחשד לניסיון",
       "externalMentions": 3,
       "sourceCount": 3,
       "sources": [
@@ -125,25 +125,6 @@
       "sampleUrl": "https://news.walla.co.il/item/3844406"
     },
     {
-      "domain": "אקטואליה בעולם",
-      "trend": "Iran attacks damage 20 US military sites since start of war, satellite images show Analysts told BBC Verify that Tehran's strikes were more exten",
-      "clusterKey": "satellite images",
-      "externalMentions": 3,
-      "sourceCount": 2,
-      "sources": [
-        "BBC",
-        "Jerusalem Post"
-      ],
-      "discoveryTypes": [
-        "WEB"
-      ],
-      "rssMentions": 0,
-      "webMentions": 3,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-09T16:38:51.427297+00:00",
-      "sampleUrl": "https://www.bbc.com/news/articles/c2l2yl7r8r2o"
-    },
-    {
       "domain": "כלכלה",
       "trend": "עובדות הסתירו שטרות בבגדיהן: הפועלים ישלם 10 מיליון שקל בעקבות מעילה",
       "clusterKey": "מיליון שקל",
@@ -159,18 +140,37 @@
       "rssMentions": 0,
       "webMentions": 3,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-09T16:38:51.424652+00:00",
+      "latestAt": "2026-06-09T16:41:19.033252+00:00",
       "sampleUrl": "https://www.themarker.com/markets/2026-06-09/ty-article/.highlight/0000019e-a68c-db2a-a59f-e6afbfbb0000"
     },
     {
+      "domain": "אקטואליה בעולם",
+      "trend": "Iran attacks damage 20 US military sites since start of war, satellite images show Analysts told BBC Verify that Tehran's strikes were more exten",
+      "clusterKey": "satellite images",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "BBC",
+        "Jerusalem Post"
+      ],
+      "discoveryTypes": [
+        "WEB"
+      ],
+      "rssMentions": 0,
+      "webMentions": 3,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-09T16:41:19.030106+00:00",
+      "sampleUrl": "https://www.bbc.com/news/articles/c2l2yl7r8r2o"
+    },
+    {
       "domain": "חדשות",
-      "trend": "השטח \"טוהר\" - והמחבל הפתיע בירי בשטח ישראל: \"החשש כתושב - שזו מנהרה\"",
-      "clusterKey": "בשטח ישראל",
+      "trend": "חוו\"ד שב\"כ: טלי גוטליב סיכנה את חיי בן זוגה של שקמה ברסלר ומשפחתו",
+      "clusterKey": "סיכנה חיי",
       "externalMentions": 4,
       "sourceCount": 2,
       "sources": [
         "ynet",
-        "וואלה"
+        "סרוגים"
       ],
       "discoveryTypes": [
         "RSS",
@@ -179,8 +179,8 @@
       "rssMentions": 3,
       "webMentions": 1,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-09T15:29:57+00:00",
-      "sampleUrl": "https://www.ynet.co.il/news/article/rj1richzge"
+      "latestAt": "2026-06-09T14:26:36+00:00",
+      "sampleUrl": "https://www.ynet.co.il/news/article/hk7wzjhzzx"
     },
     {
       "domain": "חדשות",
@@ -225,7 +225,7 @@
     {
       "domain": "כלכלה",
       "trend": "רשות התחרות שוקלת להכריז על יקבי כרמל כמונופול",
-      "clusterKey": "יקבי כרמל",
+      "clusterKey": "להכריז יקבי",
       "externalMentions": 4,
       "sourceCount": 2,
       "sources": [
@@ -304,7 +304,7 @@
     {
       "domain": "חדשות",
       "trend": "לפני פיזור הכנסת: ועדת הכספים אישרה את חוק המעונות לקריאה ראשונה",
-      "clusterKey": "הכספים אישרה",
+      "clusterKey": "ועדת הכספים",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
