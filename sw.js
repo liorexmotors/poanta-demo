@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v97-breaking-separated';
+const CACHE_NAME = 'poenta-v98-main-tt-rr-20260609083445';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
