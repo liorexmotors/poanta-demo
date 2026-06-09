@@ -18,8 +18,8 @@
     "sync:medium": "python3 scripts/update_feed.py --sync-profile medium",
     "sync:slow": "python3 scripts/update_feed.py --sync-profile slow",
     "engagement": "python3 scripts/editor_engagement_score.py",
-    "deploy:cloudflare": "npm run build && npx wrangler pages deploy dist --project-name poanta-demo",
-    "deploy:cloudflare:preview": "npm run build && npx wrangler pages deploy dist --project-name poanta-demo --branch preview"
+    "deploy:cloudflare": "bash scripts/deploy_current_feed.sh",
+    "deploy:cloudflare:preview": "npm run build && python3 scripts/pointa_publish_rollback_guard.py --candidate dist/feed.json --out tmp/deploy_preview_rollback_guard.json && npx wrangler pages deploy dist --project-name poanta-demo --branch preview"
   },
   "devDependencies": {}
 }
