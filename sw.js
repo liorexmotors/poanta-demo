@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v98-main-tt-rr-20260609083445';
+const CACHE_NAME = 'poenta-v99-dashboard-no-manual-agent-buttons-202606091406';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
