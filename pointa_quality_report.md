@@ -1,20 +1,20 @@
 # Pointa Quality Gate Report
 
-Items checked: 417
+Items checked: 428
 Errors: 0
-Warnings: 90
+Warnings: 94
 
 ## Category distribution
 
-- ביטחון: 100
-- רכילות: 99
-- ספורט: 45
-- כלכלה: 26
-- פוליטיקה: 22
+- ביטחון: 103
+- רכילות: 101
+- ספורט: 46
+- כלכלה: 27
+- פוליטיקה: 23
 - טכנולוגיה: 20
+- בריאות: 19
 - חדשות: 19
-- בריאות: 17
-- תרבות: 16
+- תרבות: 17
 - פלילים: 16
 - צרכנות: 9
 - אקטואליה בעולם: 7
@@ -26,637 +26,665 @@ Warnings: 90
 
 ## Issue counts
 
-- summary_long: 53
+- summary_long: 57
 - takeaway_long: 31
 - category_sport_source: 4
 - headline_near_duplicate_summary: 2
 
 ## Issues
 
-### WARNING · summary_long · item 0
+### WARNING · summary_long · item 1
+- Summary length 233 > 220
+- Headline: `איראן בוחנת גבולות חדשים מול ישראל, ארה״ב והמפרץ`
+- Original: `'Iran is acting like Israel on October 8': Expert warns why Tehran is taking bigger risks`
+- Source: The Jerusalem Post - Middle East
+- URL: https://www.jpost.com/middle-east/iran-news/article-898924
+
+### WARNING · summary_long · item 7
+- Summary length 224 > 220
+- Headline: `סביבת נתניהו מבהירה שהוא מתכוון לרוץ גם בבחירות הבאות`
+- Original: `"פייק ניוז": כך הגיב גורם בסביבת נתניהו לאמירת טראמפ על עתידו הפוליטי`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/politics/article/20728329
+
+### WARNING · summary_long · item 8
+- Summary length 224 > 220
+- Headline: `הדולר מתחזק והמוסדיים בוחנים הסטת כספים לחו״ל`
+- Original: `הדולר מזנק, הבורסות נחלשות: המוסדיים מתחילים לחפש הזדמנויות בחו"ל`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/business/article/20728325
+
+### WARNING · summary_long · item 9
+- Summary length 230 > 220
+- Headline: `ynet בוחר את רגעי ההפי־אנד הגדולים בתולדות המונדיאל`
+- Original: `הכי מתוק שיש: 10 רגעים של הפי אנד הוליוודי`
+- Source: ynet - כל ערוץ הספורט
+- URL: https://www.ynet.co.il/sport/article/skjfws4zzx
+
+### WARNING · summary_long · item 11
 - Summary length 246 > 220
 - Headline: `רשויות מקומיות בישראל מאמצות טכנולוגיה כחלק מחוסן עירוני`
 - Original: `הרבה יותר מעיר חכמה: כך ייראה הדור הבא של השלטון המקומי בישראל`
 - Source: וואלה מקומי
 - URL: https://mekomi.walla.co.il/item/3844439
 
-### WARNING · takeaway_long · item 0
+### WARNING · takeaway_long · item 11
 - Takeaway length 102 > 95
 - Headline: `רשויות מקומיות בישראל מאמצות טכנולוגיה כחלק מחוסן עירוני`
 - Original: `הרבה יותר מעיר חכמה: כך ייראה הדור הבא של השלטון המקומי בישראל`
 - Source: וואלה מקומי
 - URL: https://mekomi.walla.co.il/item/3844439
 
-### WARNING · takeaway_long · item 1
+### WARNING · takeaway_long · item 12
 - Takeaway length 116 > 95
 - Headline: `מטא מבקשת סנקציות נגד NSO בגלל תקיפות חדשות על וואטסאפ`
 - Original: `מתקפה על משתמשי וואטסאפ: פנייה בהולה לבית המשפט`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1225776-0
 
-### WARNING · summary_long · item 3
+### WARNING · summary_long · item 14
 - Summary length 237 > 220
 - Headline: `ספיידר-נואר מוכיחה שלגיבורי־על עדיין יש כיוון חדש`
 - Original: `הסדרה הזו כה טובה עד כדי כך ששווה לצפות בה פעם נוספת`
 - Source: וואלה תרבות - טלוויזיה
 - URL: https://e.walla.co.il/item/3844296
 
-### WARNING · summary_long · item 4
+### WARNING · summary_long · item 15
 - Summary length 256 > 220
 - Headline: `וומבניאמה ניצל מהרחקה אך הפיזיות שלו כבר במוקד הפלייאוף`
 - Original: `הליגה לא תעניש את וומבניאמה, כוכב העבר: "הוא מתחיל לשחק מלוכלך, תנו לו קרדיט"`
 - Source: וואלה ספורט - NBA
 - URL: https://sports.walla.co.il/item/3844542
 
-### WARNING · summary_long · item 5
+### WARNING · summary_long · item 16
 - Summary length 246 > 220
 - Headline: `איראן הרחיבה את התגובה לבסיסי ארה״ב בירדן, כוויית ובחריין`
 - Original: `Middle East crisis live: Iran launches broad retaliatory attacks after US strikes over downed helicopter`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/jun/10/iran-war-updates-missile-strikes-trump-us-retaliation-middle-east-crisis-war-live
 
-### WARNING · summary_long · item 6
+### WARNING · summary_long · item 17
 - Summary length 260 > 220
 - Headline: `בריטניה בודקת אם עמותות מימנו התנחלויות בכספי מס`
 - Original: `Charities in England and Wales ‘donate millions to illegal Israeli settlements’`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/society/2026/jun/10/charities-in-england-and-wales-donate-millions-to-israeli-settlements
 
-### WARNING · summary_long · item 8
+### WARNING · summary_long · item 19
 - Summary length 235 > 220
 - Headline: `ים מדר סחב את הפועל תל אביב לניצחון מול ירושלים`
 - Original: `המהפך המושלם? בהפועל תל אביב משוכנעים: "המדר הזה שווה הרבה דקות ביורוליג"`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3844541
 
-### WARNING · summary_long · item 11
+### WARNING · summary_long · item 22
 - Summary length 264 > 220
 - Headline: `מחקר מצא פער חד בבריאות השיניים בין המרכז לפריפריה`
 - Original: `פחות שיניים, יותר כאב: ההבדל החד בבריאות הפה בין מרכז לפריפריה`
 - Source: ynet - כל ערוץ הבריאות
 - URL: https://www.ynet.co.il/health/article/rkkyglizge
 
-### WARNING · summary_long · item 12
+### WARNING · summary_long · item 23
 - Summary length 233 > 220
 - Headline: `התקיפות באיראן דחפו את אסיה לירידות ואת הנפט למעלה`
 - Original: `ירידות במסחר באסיה: סיאול נופלת ב-4%; הבורסות בסין וביפן ביותר מ-1%`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-10/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000
 
-### WARNING · summary_long · item 14
+### WARNING · summary_long · item 25
 - Summary length 251 > 220
 - Headline: `חניוני תל אביב הפכו למקלטים מאולתרים במלחמת איראן`
 - Original: `חוזרים לשגרה: סיפור מקלט`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/blogs/photoblog/2026-06-10/ty-article-magazine/0000019e-a5b8-df19-a59e-fff949fb0000
 
-### WARNING · summary_long · item 15
+### WARNING · summary_long · item 26
 - Summary length 229 > 220
 - Headline: `המלחמה רוקנה להורים את ימי החופשה לפני הקיץ`
 - Original: `ההורים בבעיה לקראת החופש הגדול: המלחמה גמרה לרבים את ימי החופשה`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/sj116fihzmx
 
-### WARNING · summary_long · item 16
+### WARNING · summary_long · item 27
 - Summary length 230 > 220
 - Headline: `מדונה מקדמת אלבום חדש בסרט פרובוקטיבי בן 13 דקות`
 - Original: `ממשיכה להתפרע: מדונה בסרט קצר אירוטי ופרובוקטיבי`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20726007
 
-### WARNING · summary_long · item 18
+### WARNING · summary_long · item 29
 - Summary length 223 > 220
 - Headline: `איראן הרחיבה את העימות לבסיסי ארה״ב בשלוש מדינות`
 - Original: `Iran attacks Kuwait, Bahrain, Jordan in retaliation for US strikes - report`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-898914
 
-### WARNING · summary_long · item 20
+### WARNING · summary_long · item 31
 - Summary length 240 > 220
 - Headline: `בורסת טוקיו יוצאת מתרדמת בזכות AI ורפורמות מסחר`
 - Original: `אחרי 30 שנות תרדמת: בורסת טוקיו רוכבת על AI ועוקפת את וול סטריט`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-06-10/ty-article-magazine/.highlight/0000019e-a7b7-df19-a59e-ffffe4e90000
 
-### WARNING · summary_long · item 21
+### WARNING · summary_long · item 32
 - Summary length 239 > 220
 - Headline: `הנפקות ספייס־אקס ו־OpenAI נהפכות למבחן הון סיכון`
 - Original: `אחרי שנים שחונות, הנפקות הענק של ספייס אקס, אנתרופיק ו–OpenAI הן שעת מבחן לענף ההון סיכון`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/technation/2026-06-10/ty-article/.highlight/0000019e-ac64-d7a4-a9bf-fcec816e0000
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 44
 - Takeaway length 98 > 95
 - Headline: `פיפ״א מואשמת ביצירת מחסור מלאכותי בכרטיסי המונדיאל`
 - Original: `המונדיאל הכי יקר הפך למצג מלאכותי של מחסור ומחירי עתק`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-06-10/ty-article-magazine/.premium/0000019e-add1-d3e2-a3df-aff370c90000
 
-### WARNING · summary_long · item 34
+### WARNING · summary_long · item 45
 - Summary length 226 > 220
 - Headline: `זאק אפרון בונה באוסטרליה בית קנאביס אקולוגי ב־2 מיליון דולר`
 - Original: `Zac Efron secretly living in Australia: Hollywood star begins work on $2million 'hemp house'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884587/Zac-Efron-living-Australia.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 35
+### WARNING · summary_long · item 46
 - Summary length 224 > 220
 - Headline: `חוקרים ערכו גנים בעוברים אך מצאו סיכונים לא צפויים`
 - Original: `פריצת דרך מסוכנת? מדענים הצליחו לערוך גנים של עוברים אנושיים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/space/article/20723414
 
-### WARNING · summary_long · item 42
+### WARNING · summary_long · item 53
 - Summary length 236 > 220
 - Headline: `ישראל תלויה בארה״ב מול איראן אך לא חולקת איתה את כל היעדים`
 - Original: `במלכוד הנוכחי - צריך לקחת את מה שאפשר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/geopolitics/article/20727311
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 55
 - Takeaway length 103 > 95
 - Headline: `מערך הלוחמה האלקטרונית אפשר לחיל האוויר לפעול בעומק איראן`
 - Original: `"כבר עובדים על הסבב הבא": אנשי הלוחמה האלקטרונית ש"פתחו" את שמי איראן`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14796232
 
-### WARNING · summary_long · item 50
+### WARNING · summary_long · item 61
 - Summary length 224 > 220
 - Headline: `אנדי כהן לחץ על ווסט ווילסון להסביר את האדישות באיחוד`
 - Original: `Andy Cohen calls out emotionless West Wilson for being on ‘a bunch of beta blockers’ during ‘Summer House’ reunion`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/09/entertainment/andy-cohen-calls-out-west-wilson-for-being-on-beta-blockers-during-summer-house-reunion/
 
-### WARNING · summary_long · item 51
+### WARNING · summary_long · item 62
 - Summary length 226 > 220
 - Headline: `תמי המברו ספגה לעג אחרי מחווה זוגית לגרייסון הצעיר`
 - Original: `Tammy Hembrow is brutally roasted over gushing new post with toyboy beau Grayson Te Moana: 'Oh god, not again'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15887061/Tammy-Hembrow-brutally-roasted-gushing-new-post-toyboy-beau-Grayson-Te-Moana-Oh-god-not-again.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 67
 - Takeaway length 110 > 95
 - Headline: `טראמפ מטיל ספק אם נתניהו ירצה להמשיך אחרי המלחמה`
 - Original: `טראמפ: "נתניהו ירוץ בבחירות? לא יודע אם הוא רוצה להמשיך"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/skyr3gibze
 
-### WARNING · summary_long · item 59
+### WARNING · summary_long · item 70
 - Summary length 226 > 220
 - Headline: `סידני סוויני הדגישה שקאסי מ־Euphoria אינה משקפת אותה`
 - Original: `Sydney Sweeney reveals if she would ever join OnlyFans as she reacts to backlash over THOSE X-rated Euphoria scenes`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15887329/Sydney-Sweeney-reveals-join-OnlyFans-Euphoria-backlash.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 72
+### WARNING · summary_long · item 83
 - Summary length 243 > 220
 - Headline: `גריר פיי קשמן מזהירה מהתרמות חרדיות שקשה לאמת`
 - Original: `Grapevine: Fiscal support for the ultra-Orthodox`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/opinion/article-898907
 
-### WARNING · takeaway_long · item 72
+### WARNING · takeaway_long · item 83
 - Takeaway length 100 > 95
 - Headline: `גריר פיי קשמן מזהירה מהתרמות חרדיות שקשה לאמת`
 - Original: `Grapevine: Fiscal support for the ultra-Orthodox`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/opinion/article-898907
 
-### WARNING · takeaway_long · item 93
+### WARNING · takeaway_long · item 104
 - Takeaway length 102 > 95
 - Headline: `משרד החינוך פרסם מועדי בגרות חדשים אחרי שיבושי הלחימה`
 - Original: `שיבושי הבגרויות עקב יממת הלחימה עם איראן - והמתווה החדש`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/sjarswsbml
 
-### WARNING · takeaway_long · item 103
+### WARNING · takeaway_long · item 114
 - Takeaway length 100 > 95
 - Headline: `הרמטכ״ל אומר שהתקיפה באיראן הייתה הכנה למכה כבדה יותר`
 - Original: `הרמטכ"ל מבהיר: "התקיפה באיראן הייתה הכנה למהלומה כבדה יותר"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/military/article-1331022
 
-### WARNING · takeaway_long · item 105
+### WARNING · takeaway_long · item 116
 - Takeaway length 99 > 95
 - Headline: `צרפת חסמה את כניסת סמוטריץ׳ במסגרת סנקציות מתנחלים`
 - Original: `צרפת אוסרת על סמוטריץ' להיכנס, בריטניה לחברות: לא לפעול בהתנחלויות`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hjkdiyrzfx
 
-### WARNING · takeaway_long · item 123
+### WARNING · takeaway_long · item 134
 - Takeaway length 96 > 95
 - Headline: `תושב חיפה חשוד שצילם אתרים רגישים עבור סוכן איראני`
 - Original: `תושב חיפה שלח צילומים רגישים לאיראן: שב"כ התיר לפרסום את שמו`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1225741-0
 
-### WARNING · takeaway_long · item 126
+### WARNING · takeaway_long · item 137
 - Takeaway length 96 > 95
 - Headline: `מרכז אובמה בשיקגו הופך ספרייה נשיאותית למונומנט ענק`
 - Original: `הספרייה הנשיאותית של ברק אובמה היא הרבה יותר מספרייה`
 - Source: הארץ - תרבות
 - URL: https://www.haaretz.co.il/gallery/architecture/2026-06-09/ty-article-magazine/.premium/0000019e-abcb-d5dc-a3be-fbef77df0000
 
-### WARNING · summary_long · item 130
+### WARNING · summary_long · item 141
 - Summary length 223 > 220
 - Headline: `קים קרדשיאן הפכה את מרוץ מונאקו למאבק על תרבות ה-F1`
 - Original: `הסיפורים נחשפים: "קרקס קים קרדשיאן" מלהיט את הפורמולה 1`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3844360
 
-### WARNING · summary_long · item 131
+### WARNING · summary_long · item 142
 - Summary length 233 > 220
 - Headline: `בגרות באזרחות תוחלף בציון פנימי לתלמידי י״ב`
 - Original: `בעקבות הסבב מול איראן: משרד החינוך פרסם עדכון נוסף למתווה בחינות הבגרות`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3844364
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 142
 - Takeaway length 96 > 95
 - Headline: `בגרות באזרחות תוחלף בציון פנימי לתלמידי י״ב`
 - Original: `בעקבות הסבב מול איראן: משרד החינוך פרסם עדכון נוסף למתווה בחינות הבגרות`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3844364
 
-### WARNING · summary_long · item 135
+### WARNING · summary_long · item 146
 - Summary length 236 > 220
 - Headline: `סופי מ׳חתונמי׳ חשפה היריון מתקדם בלי לחשוף את האב`
 - Original: `בזמן שהצופים מחפשים תשובות: כוכבת "חתונמי" חושפת היריון מתקדם`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/celebs-news/article-1330965
 
-### WARNING · summary_long · item 136
+### WARNING · summary_long · item 147
 - Summary length 232 > 220
 - Headline: `מחקר חדש מצמצם את גבול האלכוהול הבטוח למשקה אחד ביום`
 - Original: `חשבתם שכוס ביום זה בסדר? עכשיו מגיעה האזהרה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/health/article-1330967
 
-### WARNING · summary_long · item 143
+### WARNING · summary_long · item 154
 - Summary length 226 > 220
 - Headline: `משרד החינוך קבע מועדי בגרות חדשים אחרי הדחיות`
 - Original: `כאוס הבגרויות נמשך: הבחינות נדחו, הלחץ על התלמידים גובר`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/education/article-1330944
 
-### WARNING · summary_long · item 144
+### WARNING · summary_long · item 155
 - Summary length 243 > 220
 - Headline: `הארץ מזהה חזרה של צליל אייטיז דרך קאברים חדשים`
 - Original: `כך פתאום אחרי שמונה שנים, "משינה" הנחיתה המנון רוק סוחף כמו פעם`
 - Source: הארץ - תרבות
 - URL: https://www.haaretz.co.il/gallery/music/theplaylist/2026-06-09/ty-article/.premium/0000019e-abba-d3e2-a3df-abba656c0000
 
-### WARNING · summary_long · item 149
+### WARNING · summary_long · item 160
 - Summary length 221 > 220
 - Headline: `תמונת לוויין מצביעה על פגיעה אפשרית בהאנגר ברמת דוד`
 - Original: `התיעוד מהלוויין חשף: ייתכן ששיגור פגע בהאנגר בבסיס רמת דוד`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hya2qpsbmg
 
-### WARNING · summary_long · item 164
+### WARNING · summary_long · item 175
 - Summary length 222 > 220
 - Headline: `יותר מ־100 עובדי אונר״א הופנו לארה״ב בגלל קשרי חמאס`
 - Original: `Over 100 UNRWA staff referred to US State Department over Hamas ties, Oct. 7 attacks`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-898840
 
-### WARNING · summary_long · item 166
+### WARNING · summary_long · item 177
 - Summary length 236 > 220
 - Headline: `השופטת עצרה את עדות נתניהו אחרי עימות חריף באולם`
 - Original: `השופטת במשפט נתניהו פוצצה את הדיון: "אדוני חצוף"`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1225727-0
 
-### WARNING · summary_long · item 168
+### WARNING · summary_long · item 179
 - Summary length 229 > 220
 - Headline: `לסלי מנוויל זכתה בטוני ראשון אחרי הופעת בכורה בברודוויי`
 - Original: `Lesley Manville, 70, becomes the new queen of Broadway as she bags her first ever Tony Award for her New York debut in Oedipus just hours after performing in London`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884977/Lesley-Manville-70-new-queen-Broadway-bags-Tony-Award-New-York-debut-Oedipus-just-hours-performing-London.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 169
+### WARNING · summary_long · item 180
 - Summary length 227 > 220
 - Headline: `אירה דולפין חשפה שהיא מתחילה פונדקאות בגאורגיה`
 - Original: `אירה דולפין חושפת: "התחלנו הליך פונדקאות בגאורגיה"`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/fashion-tmf/article-1330893
 
-### WARNING · summary_long · item 172
+### WARNING · summary_long · item 183
 - Summary length 233 > 220
 - Headline: `הכנסת אישרה חוק סייבר שמרחיב את סמכויות ההגנה הלאומיות`
 - Original: `Knesset passes national cyber defense bill amid ongoing campaign against Iran`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-898831
 
-### WARNING · takeaway_long · item 172
+### WARNING · takeaway_long · item 183
 - Takeaway length 106 > 95
 - Headline: `הכנסת אישרה חוק סייבר שמרחיב את סמכויות ההגנה הלאומיות`
 - Original: `Knesset passes national cyber defense bill amid ongoing campaign against Iran`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-898831
 
-### WARNING · summary_long · item 173
+### WARNING · summary_long · item 184
 - Summary length 228 > 220
 - Headline: `אפל מפסיקה עדכוני מערכת לכמה דגמי Apple Watch חדשים יחסית`
 - Original: `מפתיע: אפל מפסיקה לתמוך בשעוני Apple Watch חדשים יחסית`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3844343
 
-### WARNING · summary_long · item 174
+### WARNING · summary_long · item 185
 - Summary length 233 > 220
 - Headline: `צה״ל הציג את העיר שמובילה במספר משרתי המילואים`
 - Original: `צה"ל חשף: זו העיר עם הכי הרבה משרתי מילואים מכל הארץ`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1225725-0
 
-### WARNING · summary_long · item 175
+### WARNING · summary_long · item 186
 - Summary length 231 > 220
 - Headline: `אנבידיה מציירת עתיד שבו סוכני AI יחליפו חלק מתפקידי הסמארטפון`
 - Original: `הסמארטפון בדרך החוצה? ענקית השבבים רוצה עתיד שבו ה-AI יעשה הכול לבד`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technews/article/hywlorh11fl
 
-### WARNING · summary_long · item 188
+### WARNING · summary_long · item 199
 - Summary length 251 > 220
 - Headline: `הייעוץ המשפטי קובע שחוק המעונות לא יסבסד משתמטים`
 - Original: `המשנה ליועמ"שית: גם אם חוק המעונות יעבור – משתמטים לא יקבלו סבסוד`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/news/2026-06-09/ty-article/0000019e-ab52-d7a4-a9bf-ffdae74d0000
 
-### WARNING · summary_long · item 190
+### WARNING · summary_long · item 201
 - Summary length 222 > 220
 - Headline: `טעויות פיננסיות שקטות עולות למשפחה אלפי שקלים בשנה`
 - Original: `תפסיקו להיות פראיירים: 10 טעויות שעולות לכם אלפי שקלים בשנה - וכיצד תתקנו אותן`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3844271
 
-### WARNING · summary_long · item 191
+### WARNING · summary_long · item 202
 - Summary length 232 > 220
 - Headline: `ווסטרן יוניון מפסיקה את הפעילות דרך דואר ישראל`
 - Original: `פרסום ראשון: חברת הענק מנתקת קשר עם דואר ישראל`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3843735
 
-### WARNING · summary_long · item 198
+### WARNING · summary_long · item 209
 - Summary length 229 > 220
 - Headline: `כוכבי ITV מנסים לשקם את פיליפ סקופילד אחרי פרשת הרומן`
 - Original: `RICHARD EDEN: Quietly, one by one, ITV stars including Ant and Dec are rallying around disgraced Phillip Schofield. So, what do they know that we don't? Darren Day has the answer...`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15883881/RICHARD-EDEN-ITV-stars-Ant-Dec-rallying-disgraced-Phillip-Schofield-Darren-Day.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 199
+### WARNING · summary_long · item 210
 - Summary length 223 > 220
 - Headline: `תוכנית קיץ פלוס נתקעת בהתנגדות מורים ורשויות`
 - Original: `לימודים בקיץ? המורים לא ממש בעניין: "המנהלת יכולה לעשות חמוצים"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/education/article/20720664
 
-### WARNING · summary_long · item 200
+### WARNING · summary_long · item 211
 - Summary length 231 > 220
 - Headline: `מחקר ישראלי: ממ״ד בבית מפחית מצוקה נפשית אצל ילדים`
 - Original: `מציל חיים, וגם את הנפש: ממ"ד בבית מפחית חרדה ומצוקה אצל ילדים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/health/article/20720686
 
-### WARNING · headline_near_duplicate_summary · item 209
+### WARNING · headline_near_duplicate_summary · item 220
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `ג׳ושוע ג׳קסון נצפה יד ביד עם הדוגמנית אוליביה ברג׳ס בניו יורק`
 - Original: `Joshua Jackson sparks romance rumors with model Olivia Burgess as pair hold hands during NYC outing`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884739/joshua-jackson-romance-rumors-model-olivia-burgess-hold-hands-nyc.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 213
+### WARNING · takeaway_long · item 224
 - Takeaway length 98 > 95
 - Headline: `ואנס מזהיר שגרעין איראני יצית מרוץ חימוש במפרץ`
 - Original: `ואנס במסר לישראל: נקדם הסכם גרעין עם איראן גם תחת התנגדות`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3844258
 
-### WARNING · headline_near_duplicate_summary · item 214
+### WARNING · headline_near_duplicate_summary · item 225
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `נועה קירל ודניאל פרץ יצאו לירח דבש בטוקיו אחרי שבעה חודשים`
 - Original: `למעלה מחצי שנה מהחתונה: נועה קירל ודניאל פרץ חוגגים בירח הדבש`
 - Source: mako סלבס - ראשי
 - URL: https://www.mako.co.il/entertainment-celebs/local-2026/Article-7065db85edaae91026.htm
 
-### WARNING · takeaway_long · item 220
+### WARNING · takeaway_long · item 231
 - Takeaway length 101 > 95
 - Headline: `טראמפ מציב שבועיים לניצחון אמריקני מול איראן`
 - Original: `Trump says US to achieve 'total victory' over Iran within two weeks`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-898796
 
-### WARNING · summary_long · item 225
+### WARNING · summary_long · item 236
 - Summary length 249 > 220
 - Headline: `הבורסה בתל אביב נפתחת תחת לחץ הדואליות`
 - Original: `חמישה דברים שכדאי לדעת לקראת פתיחת המסחר בבורסה`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545304#utm_source=RSS
 
-### WARNING · takeaway_long · item 226
+### WARNING · takeaway_long · item 237
 - Takeaway length 104 > 95
 - Headline: `פעוטה בת 3 מתה אחרי דריסה ברחוב פינסקר בקריית אתא`
 - Original: `נקבע מותה של הפעוטה בת ה-3 שנפגעה בתאונת דרכים בקריית אתא`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20720358
 
-### WARNING · takeaway_long · item 227
+### WARNING · takeaway_long · item 238
 - Takeaway length 98 > 95
 - Headline: `וויין ליניקר החליף את חיי המסיבות באיביזה בשיקום בריאותי`
 - Original: `Inside my rift with Gary, the truth about my wild O Beach parties ... and why I will never drink again after THAT viral Ibiza video: WAYNE LINEKER`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15883201/rift-Gary-brother-drink-viral-Ibiza-video-WAYNE-LINEKER.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 239
+### WARNING · summary_long · item 250
 - Summary length 225 > 220
 - Headline: `הפועל ירושלים מחכה לבית הדין אחרי סירוב הזרים לשחק`
 - Original: `ירושלים מקווה לשחק עם ארבעה זרים, ביה"ד יפסוק הפסד טכני?`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3844253
 
-### WARNING · summary_long · item 243
+### WARNING · summary_long · item 254
 - Summary length 238 > 220
 - Headline: `הסבב מול איראן הסתיים כשהאמריקנים קבעו את גבול הפעולה לישראל`
 - Original: `איראן אמרה את המילה האחרונה`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14795557
 
-### WARNING · summary_long · item 247
+### WARNING · summary_long · item 258
 - Summary length 228 > 220
 - Headline: `צה״ל ממקד את הלחימה בלבנון בציד מפעילי רחפנים`
 - Original: `"אנחנו רואים את האויב הולך לאחור - לכן הוא שולח רחפנים": כך צה"ל נלחם באיום המרכזי`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3844231
 
-### WARNING · summary_long · item 248
+### WARNING · summary_long · item 259
 - Summary length 235 > 220
 - Headline: `הסבב מול איראן פתח מחדש פער תקציבי של 40 מיליארד שקל`
 - Original: `פער של 40 מיליארד שקל: המחלוקת בין משרדי האוצר והביטחון עולה מדרגה`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545308#utm_source=RSS
 
-### WARNING · summary_long · item 249
+### WARNING · summary_long · item 260
 - Summary length 228 > 220
 - Headline: `ספייס־אקס מייעדת נתח חריג מההנפקה למשקיעים קטנים`
 - Original: `גם ישראלים יכולים לקנות חתיכה מספייס־אקס. כך תשתתפו בהנפקה הגדולה ביותר אי פעם`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-09/ty-article/.highlight/0000019e-a70b-db2a-a59f-e72fd7430000
 
-### WARNING · summary_long · item 252
+### WARNING · summary_long · item 263
 - Summary length 223 > 220
 - Headline: `גל ההנפקות עלול ללחוץ גם מניות טובות בבורסה`
 - Original: `מנהל השקעות במיטב: "עם כמות ההנפקות החדשות, מניות טובות עלולות לסבול"`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545302#utm_source=RSS
 
-### WARNING · summary_long · item 255
+### WARNING · summary_long · item 266
 - Summary length 228 > 220
 - Headline: `תושבי קו העימות חוששים שהירי מאיראן יגביל פעולה בלבנון`
 - Original: `"לאן זה הולך?": בזמן שהתרחב הירי לשאר ישראל, גברו הספקות בקו העימות`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-09/ty-article/.premium/0000019e-a889-db2a-a59f-eeaf2e6d0000
 
-### WARNING · summary_long · item 264
+### WARNING · summary_long · item 275
 - Summary length 229 > 220
 - Headline: `בן גביר הציע לעצור משפחות של פעילי חיזבאללה`
 - Original: `Ben-Gvir proposes arresting family members of Hezbollah operatives`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-898784
 
-### WARNING · summary_long · item 266
+### WARNING · summary_long · item 277
 - Summary length 221 > 220
 - Headline: `קייטי פרי וג׳סטין טרודו הפכו את הקשר לרשמי בפומבי`
 - Original: `Katy Perry and boyfriend Justin Trudeau make their red carpet debut as they put on a VERY cozy display at her NYC concert film premiere`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884443/katy-perry-justin-trudeau-hold-hands-cozy-premiere-concert-film.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 271
+### WARNING · takeaway_long · item 282
 - Takeaway length 105 > 95
 - Headline: `תביעה פדרלית מנסה לעצור את אירוע ה-UFC של טראמפ בבית הלבן`
 - Original: `"שחיתות": התביעה שמאיימת על חגיגות יום ההולדת הגרנדיוזיות של טראמפ`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20719908
 
-### WARNING · summary_long · item 277
+### WARNING · summary_long · item 288
 - Summary length 221 > 220
 - Headline: `מגרש השדים של וושינגטון הודח אחרי שקשר עב״מים לשדים`
 - Original: `סערה דתית: ההצהרה המטרידה שהובילה להדחתו של מגרש השדים הראשי`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3844080
 
-### WARNING · takeaway_long · item 278
+### WARNING · takeaway_long · item 289
 - Takeaway length 101 > 95
 - Headline: `יוצרת פיליפינית הפכה סחיטה מינית לעסק של 63 אלף דולר בחודש`
 - Original: `קלטת הסקס שהופצה ברשת הרסה את חיי - והפכה אותי למיליונרית`
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3844057
 
-### WARNING · takeaway_long · item 285
+### WARNING · takeaway_long · item 296
 - Takeaway length 99 > 95
 - Headline: `איראן קשרה את לבנון לכל תקיפה ישראלית והגדילה את סיכון ההסלמה`
 - Original: `המשטר האיראני בשכרון כוח - וישראל תתקשה לטעון שריסנה אותו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/defense/article/20719830
 
-### WARNING · takeaway_long · item 295
+### WARNING · takeaway_long · item 306
 - Takeaway length 98 > 95
 - Headline: `בן גביר הציע לעצור בני משפחות מחבלי חיזבאללה`
 - Original: `הצעת בן גביר: "לעצור נשות מחבלים" - והמתקפה על סמוטריץ'`
 - Source: וואלה חדשות - פוליטי-מדיני
 - URL: https://news.walla.co.il/item/3844244
 
-### WARNING · takeaway_long · item 302
+### WARNING · takeaway_long · item 313
 - Takeaway length 119 > 95
 - Headline: `טראמפ מעריך שישראל לא תחזור לתקוף באיראן`
 - Original: `טראמפ: ישראל לא תחזור להילחם באיראן`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20719757
 
-### WARNING · takeaway_long · item 306
+### WARNING · takeaway_long · item 317
 - Takeaway length 97 > 95
 - Headline: `טור בישראל היום קושר את הפסקת האש לתאריך מקראי`
 - Original: `דז'ה וו: זה כבר קרה לנו באיראן - הרבה לפני שאתם זוכרים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20719737
 
-### WARNING · category_sport_source · item 310
+### WARNING · category_sport_source · item 321
 - Sport source should usually be ספורט
 - Headline: `אוהדי הניקס הפכו תוכן OnlyFans למוצר פלייאוף`
 - Original: `זה מה שמדליק אותו? הבקשה החריגה של אוהד ניו יורק ניקס מדוגמנית OnlyFans`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3844222
 
-### WARNING · takeaway_long · item 335
+### WARNING · takeaway_long · item 346
 - Takeaway length 106 > 95
 - Headline: `ארה״ב גירשה שופט מונדיאל מסומליה לפני הטורניר`
 - Original: `פיפ"א שיבצה שופט מסומליה, ארה"ב גירשה אותו משטחה`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3844214
 
-### WARNING · takeaway_long · item 347
+### WARNING · takeaway_long · item 358
 - Takeaway length 96 > 95
 - Headline: `ההתעלמות של קים קרדשיאן מבראנדל הציפה שוב את הליכות ה־F1`
 - Original: `Martin Brundle's most excruciating celeb F1 grid walk chats after Kim Kardashian snub`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/martin-brundle-f1-grid-walk-37264104
 
-### WARNING · takeaway_long · item 350
+### WARNING · takeaway_long · item 361
 - Takeaway length 100 > 95
 - Headline: `לפיד מציג את סבב איראן כמלחמה בלי יעד ברור`
 - Original: `‘No strategic objective’: Opposition criticizes government’s handling of Iran conflict`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-898769
 
-### WARNING · takeaway_long · item 351
+### WARNING · takeaway_long · item 362
 - Takeaway length 98 > 95
 - Headline: `אפל הופכת את iOS 27 למבחן הגדול של Siri AI`
 - Original: `Siri AI ו-iOS 27: אפל מסתערת על תחום הבינה המלאכותית`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3844035
 
-### WARNING · takeaway_long · item 352
+### WARNING · takeaway_long · item 363
 - Takeaway length 104 > 95
 - Headline: `לוני ווקר הופך את משחק הפלייאוף למחאת שחקנים`
 - Original: `לא הופיע: לוני ווקר מחרים את חצי הגמר מול הפועל חולון`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3844119
 
-### WARNING · takeaway_long · item 353
+### WARNING · takeaway_long · item 364
 - Takeaway length 96 > 95
 - Headline: `נשיא לבנון שם משא ומתן לפני פגישה עם נתניהו`
 - Original: `Middle East crisis live: Lebanon’s president refuses to meet Netanyahu until war ends`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/jun/08/iran-israel-news-live-updates-strikes-attacks-intensify-trump-netanyahu
 
-### WARNING · takeaway_long · item 355
+### WARNING · takeaway_long · item 366
 - Takeaway length 101 > 95
 - Headline: `טראמפ מתנער מהבטחת 'בלי מלחמות' בזמן משבר איראן`
 - Original: `Trump claims he ‘didn’t guarantee’ no US wars. Here’s what he’s actually said`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/us-news/2026/jun/08/what-trump-actually-said-no-war-promise
 
-### WARNING · takeaway_long · item 360
+### WARNING · takeaway_long · item 371
 - Takeaway length 105 > 95
 - Headline: `השיחה עם טראמפ עצרה את ההסלמה מול איראן`
 - Original: `יממה דרמטית על ציר זמן: המסרים, הלחץ, האיומים והשיחה שהכריעה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20719183
 
-### WARNING · category_sport_source · item 367
+### WARNING · category_sport_source · item 378
 - Sport source should usually be ספורט
 - Headline: `פיקוד העורף הודיע על חזרה לשגרה, אך הזרים לא לקחו חלק באימון המסכם`
 - Original: `הפועל ירושלים הודיעה: "הזרים חוששים לשהות בישראל. מנסים לשכנע אותם"`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3844180
 
-### WARNING · category_sport_source · item 369
+### WARNING · category_sport_source · item 380
 - Sport source should usually be ספורט
 - Headline: `הבעלים ברק אברמוב הבהיר לכוכב כי גם אם יביא הצעה מעט נמוכה יותר מסעיף`
 - Original: `פחות מסעיף השחרור? בית"ר ירושלים תבוא לקראתו של ירדן שועה`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3844192
 
-### WARNING · category_sport_source · item 373
+### WARNING · category_sport_source · item 384
 - Sport source should usually be ספורט
 - Headline: `מכבי ת"א ופיקוד העורף לא הצליחו להגיע לעמק השווה בנוגע לכמות הקהל`
 - Original: `לא הושגו הסכמות: המשחק בין מכבי תל אביב להפועל חולון יתקיים ללא קהל`
