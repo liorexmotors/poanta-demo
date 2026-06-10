@@ -1005,22 +1005,39 @@ def regional_category(text: str) -> tuple[str, str]:
     return "חדשות", ""
 
 
+def has_hebrew_phrase(text: str, phrase: str) -> bool:
+    """Match Hebrew weather terms as standalone phrases, not inside verbs.
+
+    Plain substring matching made ``הבהיר`` ("clarified") look like ``בהיר``
+    ("clear/sunny"), which routed non-weather politics/sports cards to the
+    weather category.  Hebrew has no capitalization, so guard both sides with a
+    Hebrew-letter negative lookaround for short sky-condition words.
+    """
+    return re.search(rf"(?<![א-ת]){re.escape(phrase)}(?![א-ת])", text) is not None
+
+
 def is_weather_forecast_story(title: str, desc: str, source: str = "") -> bool:
-    text = f"{title} {desc} {source}"
-    low = text.lower()
-    weather_markers = [
-        "תחזית מזג אוויר", "מזג האוויר", "מזג אוויר", "תחזית", "טמפרטורות",
-        "מעלות", "מעונן", "בהיר", "גשם", "גשמים", "שרב", "רוחות", "אובך",
+    text = f"{title} {desc}"
+    source_text = source or ""
+    low = f"{text} {source_text}".lower()
+    official_weather_source = any(x in source_text for x in ["השירות המטאורולוגי", "IMS", "תחזית"])
+    strong_weather_markers = [
+        "תחזית מזג אוויר", "מזג האוויר", "מזג אוויר", "טמפרטורות",
         "weather", "forecast", "temperatures",
     ]
-    # A bare seasonal word is too weak, but forecast/source markers plus concrete
-    # temperature or sky-condition terms are enough to keep weather out of politics.
-    has_weather = any(marker.lower() in low for marker in weather_markers)
-    has_forecast_detail = any(detail.lower() in low for detail in [
+    detail_terms = [
         "טמפרטורות", "מעלות", "מעונן", "בהיר", "גשם", "גשמים", "שרב", "רוחות",
-        "אובך", "סוף מאי", "העונתי", "temperatures",
-    ])
-    return has_weather and has_forecast_detail
+        "אובך", "temperatures",
+    ]
+    has_strong_weather = any(marker.lower() in low for marker in strong_weather_markers)
+    has_forecast_detail = any(
+        (detail.lower() in low if detail.isascii() else has_hebrew_phrase(low, detail))
+        for detail in detail_terms
+    )
+    # Official weather-source rows can be forecast cards even when the title is
+    # compact.  General news rows need an explicit weather/forecast marker plus
+    # a concrete detail, so verbs like "הבהיר" do not count as sunny weather.
+    return has_forecast_detail and (official_weather_source or has_strong_weather)
 
 
 def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
@@ -2887,6 +2904,21 @@ def refresh_item_pointa(item: dict) -> dict:
         item["category"] = "רכילות"
         item["categoryClass"] = "real"
         category = "רכילות"
+    if (
+        category == "מזג אוויר"
+        and source != WEATHER_SOURCE
+        and not item.get("weather")
+        and not is_weather_forecast_story(title, desc, source)
+    ):
+        # Repair retained cards created before the stricter weather matcher.  The
+        # June 2026 regression was caused by the word "הבהיר" being read as the
+        # sky-condition "בהיר"; old retained rows must be recategorized during
+        # merge instead of staying bad until they age out.
+        repaired_category, repaired_cls = categorize_item(title, desc, source)
+        if repaired_category != "מזג אוויר":
+            item["category"] = repaired_category
+            item["categoryClass"] = repaired_cls
+            category = repaired_category
     if 'יאיר גולן' in title and 'נתניהו כשיר' in title:
         item["headline"] = 'יאיר גולן תקף את כשירות נתניהו ואת פירוק מערכות האכיפה'
         item["context"] = 'יאיר גולן אמר שאינו בטוח שנתניהו כשיר פיזית וקוגניטיבית, וטען שהממשלה מרסקת את מערכות האכיפה במכוון.'
@@ -3356,6 +3388,40 @@ def preserve_recent_official_telegram_items(items: list[dict], now: datetime, li
     limited.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
     return limited
 
+
+def is_service_weather_item(item: dict) -> bool:
+    return (
+        str(item.get("source") or "") == WEATHER_SOURCE
+        or str(item.get("sourceLogo") or "") == "IMS"
+        or bool(item.get("weather"))
+    )
+
+
+def preserve_daily_weather_item(items: list[dict], now: datetime, limit: int = MAX_FEED_ITEMS) -> list[dict]:
+    """Keep the daily IMS utility card inside the capped feed without pinning it on top."""
+    if len(items) <= limit:
+        return items
+    limited = list(items[:limit])
+    if any(is_service_weather_item(item) for item in limited):
+        return limited
+    weather_candidates = [item for item in items[limit:] if is_service_weather_item(item)]
+    if not weather_candidates:
+        return limited
+    weather_item = max(weather_candidates, key=lambda item: item_datetime(item, now))
+    replace_idx = next(
+        (
+            idx
+            for idx in range(len(limited) - 1, -1, -1)
+            if not is_official_telegram_item(limited[idx]) and not is_service_weather_item(limited[idx])
+        ),
+        None,
+    )
+    if replace_idx is None:
+        return limited
+    limited[replace_idx] = weather_item
+    limited.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
+    return limited
+
 def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -> dict:
     tz = timezone(timedelta(hours=3))
     now = datetime.now(tz)
@@ -3476,6 +3542,7 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
         deduped.append(item)
     deduped = balance_feed_category_mix(deduped)
     limited = preserve_recent_official_telegram_items(deduped, now, MAX_FEED_ITEMS)
+    limited = preserve_daily_weather_item(limited if len(limited) > MAX_FEED_ITEMS else deduped, now, MAX_FEED_ITEMS)
     limited = filter_main_feed_breaking_leaks(limited, "main_feed_no_breaking_guard")
     merged = assign_display_rank(diversify_visible_top(limited))
     new_feed["items"] = merged
