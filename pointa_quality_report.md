@@ -1,252 +1,282 @@
 # Pointa Quality Gate Report
 
-Items checked: 197
+Items checked: 208
 Errors: 0
-Warnings: 32
+Warnings: 36
 
 ## Category distribution
 
-- רכילות: 79
+- רכילות: 81
 - ספורט: 35
-- כלכלה: 20
-- בריאות: 14
+- כלכלה: 24
+- בריאות: 15
 - טכנולוגיה: 13
 - תרבות: 12
 - צרכנות: 9
 - נדל״ן: 4
 - רכב: 3
 - אקטואליה בעולם: 3
+- חדשות: 2
+- פוליטיקה: 2
 - ביטחון: 2
 - דעות: 2
 - מזג אוויר: 1
 
 ## Issue counts
 
-- summary_long: 19
-- takeaway_long: 10
+- summary_long: 21
+- takeaway_long: 12
 - headline_near_duplicate_summary: 2
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · takeaway_long · item 5
+### WARNING · summary_long · item 3
+- Summary length 233 > 220
+- Headline: `הכנסת קידמה חוק יסוד שמכיר בלימוד תורה כשירות למדינה`
+- Original: `Knesset advances bill to enshrine Torah study into Basic Law, supporting haredi draft evaders`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-898980
+
+### WARNING · summary_long · item 5
+- Summary length 229 > 220
+- Headline: `המשטרה העבירה לפרקליטות את תיק החקירה נגד מאי גולן`
+- Original: `חקירת השחיתות: המשטרה סיימה את חקירת מאי גולן`
+- Source: כיפה - חדשות
+- URL: https://www.kipa.co.il/1225812-0
+
+### WARNING · takeaway_long · item 8
+- Takeaway length 106 > 95
+- Headline: `המסחר בתל אביב נחלש כשאנרגיה וקלינטק מתפצלים`
+- Original: `הירידות בת"א מחריפות; מדד הקלינטק נופל ב-4.5%, מדד נפט וגז מזנק`
+- Source: גלובס - שוק ההון
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545381#utm_source=RSS
+
+### WARNING · takeaway_long · item 10
+- Takeaway length 100 > 95
+- Headline: `הדולר מתקרב שוב לרף של שלושה שקלים`
+- Original: `הדולר היציג נקבע על 2.973 שקלים`
+- Source: ערוץ 7 / INN עברית
+- URL: https://www.inn.co.il/flashes/1117278
+
+### WARNING · takeaway_long · item 16
 - Takeaway length 99 > 95
 - Headline: `אלן דג׳נרס ופורשיה דה רוסי תועדו בחופשה זוגית במיורקה`
 - Original: `הים התיכון עושה להן טוב: אלן דג'נרס ובת הזוג חוגגות בחופשה עם קריס ג'נר`
 - Source: mako סלבס - ראשי
 - URL: https://www.mako.co.il/entertainment-celebs/world-2026/Article-bf352651d31be91026.htm
 
-### WARNING · takeaway_long · item 38
+### WARNING · takeaway_long · item 50
 - Takeaway length 96 > 95
 - Headline: `מרכז אובמה בשיקגו הופך ספרייה נשיאותית למונומנט ענק`
 - Original: `הספרייה הנשיאותית של ברק אובמה היא הרבה יותר מספרייה`
 - Source: הארץ - תרבות
 - URL: https://www.haaretz.co.il/gallery/architecture/2026-06-09/ty-article-magazine/.premium/0000019e-abcb-d5dc-a3be-fbef77df0000
 
-### WARNING · summary_long · item 40
+### WARNING · summary_long · item 52
 - Summary length 223 > 220
 - Headline: `קים קרדשיאן הפכה את מרוץ מונאקו למאבק על תרבות ה-F1`
 - Original: `הסיפורים נחשפים: "קרקס קים קרדשיאן" מלהיט את הפורמולה 1`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3844360
 
-### WARNING · summary_long · item 43
+### WARNING · summary_long · item 55
 - Summary length 236 > 220
 - Headline: `סופי מ׳חתונמי׳ חשפה היריון מתקדם בלי לחשוף את האב`
 - Original: `בזמן שהצופים מחפשים תשובות: כוכבת "חתונמי" חושפת היריון מתקדם`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/celebs-news/article-1330965
 
-### WARNING · summary_long · item 44
+### WARNING · summary_long · item 56
 - Summary length 232 > 220
 - Headline: `מחקר חדש מצמצם את גבול האלכוהול הבטוח למשקה אחד ביום`
 - Original: `חשבתם שכוס ביום זה בסדר? עכשיו מגיעה האזהרה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/health/article-1330967
 
-### WARNING · summary_long · item 50
+### WARNING · summary_long · item 62
 - Summary length 243 > 220
 - Headline: `הארץ מזהה חזרה של צליל אייטיז דרך קאברים חדשים`
 - Original: `כך פתאום אחרי שמונה שנים, "משינה" הנחיתה המנון רוק סוחף כמו פעם`
 - Source: הארץ - תרבות
 - URL: https://www.haaretz.co.il/gallery/music/theplaylist/2026-06-09/ty-article/.premium/0000019e-abba-d3e2-a3df-abba656c0000
 
-### WARNING · summary_long · item 61
+### WARNING · summary_long · item 73
 - Summary length 229 > 220
 - Headline: `לסלי מנוויל זכתה בטוני ראשון אחרי הופעת בכורה בברודוויי`
 - Original: `Lesley Manville, 70, becomes the new queen of Broadway as she bags her first ever Tony Award for her New York debut in Oedipus just hours after performing in London`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884977/Lesley-Manville-70-new-queen-Broadway-bags-Tony-Award-New-York-debut-Oedipus-just-hours-performing-London.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 62
+### WARNING · summary_long · item 74
 - Summary length 227 > 220
 - Headline: `אירה דולפין חשפה שהיא מתחילה פונדקאות בגאורגיה`
 - Original: `אירה דולפין חושפת: "התחלנו הליך פונדקאות בגאורגיה"`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/fashion-tmf/article-1330893
 
-### WARNING · summary_long · item 64
+### WARNING · summary_long · item 76
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
 - Original: `ככה נתניהו אוהב את שותפיו הקואליציוניים`
 - Source: ynet - כל ערוץ הדעות
 - URL: https://www.ynet.co.il/news/article/rjyqrubbmg
 
-### WARNING · summary_long · item 65
+### WARNING · summary_long · item 77
 - Summary length 228 > 220
 - Headline: `אפל מפסיקה עדכוני מערכת לכמה דגמי Apple Watch חדשים יחסית`
 - Original: `מפתיע: אפל מפסיקה לתמוך בשעוני Apple Watch חדשים יחסית`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3844343
 
-### WARNING · summary_long · item 66
+### WARNING · summary_long · item 78
 - Summary length 231 > 220
 - Headline: `אנבידיה מציירת עתיד שבו סוכני AI יחליפו חלק מתפקידי הסמארטפון`
 - Original: `הסמארטפון בדרך החוצה? ענקית השבבים רוצה עתיד שבו ה-AI יעשה הכול לבד`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technews/article/hywlorh11fl
 
-### WARNING · summary_long · item 75
+### WARNING · summary_long · item 87
 - Summary length 222 > 220
 - Headline: `טעויות פיננסיות שקטות עולות למשפחה אלפי שקלים בשנה`
 - Original: `תפסיקו להיות פראיירים: 10 טעויות שעולות לכם אלפי שקלים בשנה - וכיצד תתקנו אותן`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3844271
 
-### WARNING · summary_long · item 76
+### WARNING · summary_long · item 88
 - Summary length 232 > 220
 - Headline: `ווסטרן יוניון מפסיקה את הפעילות דרך דואר ישראל`
 - Original: `פרסום ראשון: חברת הענק מנתקת קשר עם דואר ישראל`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3843735
 
-### WARNING · summary_long · item 80
+### WARNING · summary_long · item 92
 - Summary length 229 > 220
 - Headline: `כוכבי ITV מנסים לשקם את פיליפ סקופילד אחרי פרשת הרומן`
 - Original: `RICHARD EDEN: Quietly, one by one, ITV stars including Ant and Dec are rallying around disgraced Phillip Schofield. So, what do they know that we don't? Darren Day has the answer...`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15883881/RICHARD-EDEN-ITV-stars-Ant-Dec-rallying-disgraced-Phillip-Schofield-Darren-Day.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 81
+### WARNING · summary_long · item 93
 - Summary length 231 > 220
 - Headline: `מחקר ישראלי: ממ״ד בבית מפחית מצוקה נפשית אצל ילדים`
 - Original: `מציל חיים, וגם את הנפש: ממ"ד בבית מפחית חרדה ומצוקה אצל ילדים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/health/article/20720686
 
-### WARNING · headline_near_duplicate_summary · item 89
+### WARNING · headline_near_duplicate_summary · item 101
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `ג׳ושוע ג׳קסון נצפה יד ביד עם הדוגמנית אוליביה ברג׳ס בניו יורק`
 - Original: `Joshua Jackson sparks romance rumors with model Olivia Burgess as pair hold hands during NYC outing`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884739/joshua-jackson-romance-rumors-model-olivia-burgess-hold-hands-nyc.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · headline_near_duplicate_summary · item 90
+### WARNING · headline_near_duplicate_summary · item 102
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `נועה קירל ודניאל פרץ יצאו לירח דבש בטוקיו אחרי שבעה חודשים`
 - Original: `למעלה מחצי שנה מהחתונה: נועה קירל ודניאל פרץ חוגגים בירח הדבש`
 - Source: mako סלבס - ראשי
 - URL: https://www.mako.co.il/entertainment-celebs/local-2026/Article-7065db85edaae91026.htm
 
-### WARNING · summary_long · item 100
+### WARNING · summary_long · item 112
 - Summary length 249 > 220
 - Headline: `הבורסה בתל אביב נפתחת תחת לחץ הדואליות`
 - Original: `חמישה דברים שכדאי לדעת לקראת פתיחת המסחר בבורסה`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545304#utm_source=RSS
 
-### WARNING · takeaway_long · item 101
+### WARNING · takeaway_long · item 113
 - Takeaway length 104 > 95
 - Headline: `פעוטה בת 3 מתה אחרי דריסה ברחוב פינסקר בקריית אתא`
 - Original: `נקבע מותה של הפעוטה בת ה-3 שנפגעה בתאונת דרכים בקריית אתא`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20720358
 
-### WARNING · takeaway_long · item 102
+### WARNING · takeaway_long · item 114
 - Takeaway length 98 > 95
 - Headline: `וויין ליניקר החליף את חיי המסיבות באיביזה בשיקום בריאותי`
 - Original: `Inside my rift with Gary, the truth about my wild O Beach parties ... and why I will never drink again after THAT viral Ibiza video: WAYNE LINEKER`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15883201/rift-Gary-brother-drink-viral-Ibiza-video-WAYNE-LINEKER.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 109
+### WARNING · summary_long · item 121
 - Summary length 225 > 220
 - Headline: `הפועל ירושלים מחכה לבית הדין אחרי סירוב הזרים לשחק`
 - Original: `ירושלים מקווה לשחק עם ארבעה זרים, ביה"ד יפסוק הפסד טכני?`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3844253
 
-### WARNING · summary_long · item 115
+### WARNING · summary_long · item 127
 - Summary length 235 > 220
 - Headline: `הסבב מול איראן פתח מחדש פער תקציבי של 40 מיליארד שקל`
 - Original: `פער של 40 מיליארד שקל: המחלוקת בין משרדי האוצר והביטחון עולה מדרגה`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545308#utm_source=RSS
 
-### WARNING · summary_long · item 116
+### WARNING · summary_long · item 128
 - Summary length 228 > 220
 - Headline: `ספייס־אקס מייעדת נתח חריג מההנפקה למשקיעים קטנים`
 - Original: `גם ישראלים יכולים לקנות חתיכה מספייס־אקס. כך תשתתפו בהנפקה הגדולה ביותר אי פעם`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-09/ty-article/.highlight/0000019e-a70b-db2a-a59f-e72fd7430000
 
-### WARNING · summary_long · item 119
+### WARNING · summary_long · item 131
 - Summary length 223 > 220
 - Headline: `גל ההנפקות עלול ללחוץ גם מניות טובות בבורסה`
 - Original: `מנהל השקעות במיטב: "עם כמות ההנפקות החדשות, מניות טובות עלולות לסבול"`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545302#utm_source=RSS
 
-### WARNING · summary_long · item 127
+### WARNING · summary_long · item 139
 - Summary length 221 > 220
 - Headline: `קייטי פרי וג׳סטין טרודו הפכו את הקשר לרשמי בפומבי`
 - Original: `Katy Perry and boyfriend Justin Trudeau make their red carpet debut as they put on a VERY cozy display at her NYC concert film premiere`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15884443/katy-perry-justin-trudeau-hold-hands-cozy-premiere-concert-film.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 144
 - Takeaway length 105 > 95
 - Headline: `תביעה פדרלית מנסה לעצור את אירוע ה-UFC של טראמפ בבית הלבן`
 - Original: `"שחיתות": התביעה שמאיימת על חגיגות יום ההולדת הגרנדיוזיות של טראמפ`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20719908
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 167
 - Takeaway length 97 > 95
 - Headline: `טור בישראל היום קושר את הפסקת האש לתאריך מקראי`
 - Original: `דז'ה וו: זה כבר קרה לנו באיראן - הרבה לפני שאתם זוכרים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20719737
 
-### WARNING · category_sport_source · item 158
+### WARNING · category_sport_source · item 170
 - Sport source should usually be ספורט
 - Headline: `אוהדי הניקס הפכו תוכן OnlyFans למוצר פלייאוף`
 - Original: `זה מה שמדליק אותו? הבקשה החריגה של אוהד ניו יורק ניקס מדוגמנית OnlyFans`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3844222
 
-### WARNING · takeaway_long · item 174
+### WARNING · takeaway_long · item 186
 - Takeaway length 106 > 95
 - Headline: `ארה״ב גירשה שופט מונדיאל מסומליה לפני הטורניר`
 - Original: `פיפ"א שיבצה שופט מסומליה, ארה"ב גירשה אותו משטחה`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3844214
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 193
 - Takeaway length 96 > 95
 - Headline: `ההתעלמות של קים קרדשיאן מבראנדל הציפה שוב את הליכות ה־F1`
 - Original: `Martin Brundle's most excruciating celeb F1 grid walk chats after Kim Kardashian snub`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/martin-brundle-f1-grid-walk-37264104
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 195
 - Takeaway length 98 > 95
 - Headline: `אפל הופכת את iOS 27 למבחן הגדול של Siri AI`
 - Original: `Siri AI ו-iOS 27: אפל מסתערת על תחום הבינה המלאכותית`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3844035
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 196
 - Takeaway length 104 > 95
 - Headline: `לוני ווקר הופך את משחק הפלייאוף למחאת שחקנים`
 - Original: `לא הופיע: לוני ווקר מחרים את חצי הגמר מול הפועל חולון`
