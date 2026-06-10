@@ -162,7 +162,7 @@ html[data-theme="light"] .wifi:before,html[data-theme="light"] .wifi:after{borde
 </main>
 <script src="./supabase-config.js?v=poenta-supabase-v1"></script>
 <script>
-const POANTA_FEED_VERSION = '20260610-weather-sources-v1';
+const POANTA_FEED_VERSION = '20260610-weather-sources-v2';
 const embeddedFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","items":[{"category":"ביטחון","source":"ynet","sourceLogo":"ynet","sourceUrl":"https://www.ynet.co.il/news/article/r1smty11ml","imageUrl":"","headline":"ראש המוסד מזהיר שמינוי גופמן מסוכן לארגון","originalTitle":"\"סכנה חמורה\": המסמך המלא, התקדימי והחריף של ראש המוסד נגד מחליפו המיועד","context":"דדי ברנע העביר לבג״ץ חוות דעת חריפה נגד מינוי רומן גופמן לראשות המוסד, ומתמקד בהתנהלותו בפרשת הנער אלמקייס.","takeaway":"הסיפור הוא לא רק מי יעמוד בראש המוסד — אלא האם מינוי ביטחוני בכיר יכול לעבור למרות אזהרה פנימית חריגה."}]};
 const embeddedBreakingFeed = {"updatedAt":"2026-05-11T21:20:00+03:00","mode":"breaking","ttlHours":12,"items":[{"category":"מבזקים","source":"Poenta","sourceLogo":"Poenta","headline":"טוען מבזקים…","context":"המבזקים יופיעו כאן כפיד נפרד מהכתבות הערוכות.","publishedAt":"2026-05-11T21:20:00+03:00","breaking":true}]};
 const host = document.getElementById('feedCards');
@@ -308,8 +308,9 @@ function persistViewInUrl(view){
 
 function esc(value){ return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
 function topicFor(item){ const c=String(item.category||'חדשות'); if(c==='תחבורה') return 'רכב'; if(c==='חדשות') return 'פוליטיקה'; if(c==='עולם') return 'אקטואליה בעולם'; return c; }
+function isWeatherItem(item){ return !!item.weather || String(item.category||'').includes('מזג') || String(item.source||'').includes('מטאורולוגי') || String(item.sourceLogo||'').toUpperCase()==='IMS'; }
 function timeFor(item,index){
-  if(item.hasSourceDate===false && item.weather) return 'תחזית להיום';
+  if(item.hasSourceDate===false && isWeatherItem(item)) return 'תחזית להיום';
   if(item.hasSourceDate===false) return 'תאריך לא זמין';
   const d=itemDate(item,index);
   const diffMs=Math.max(0, Date.now()-d.getTime());
@@ -321,7 +322,7 @@ function timeFor(item,index){
   const days=Math.floor(hours/24);
   return days===1?'לפני יום':`לפני ${days} ימים`;
 }
-function sourceName(item){ return canonicalSource(item.sourceLogo || item.source || 'מקור'); }
+function sourceName(item){ return canonicalSource(item.source || item.sourceLogo || 'מקור'); }
 function rawSourceName(item){ return String(item.source || item.sourceLogo || 'מקור'); }
 function sourceClass(item){ const s=sourceName(item).toLowerCase(); if(s.includes('ynet'))return'ynet'; if(s.includes('marker'))return'marker'; if(s.includes('tech'))return'tech'; if(s.includes('וואלה')||s.includes('walla'))return'walla'; if(s.includes('n12')||s.includes('mako'))return'n12'; if(s.includes('מעריב'))return'maariv'; if(s.includes('דה'))return'marker'; if(s.includes('ישראל'))return'israel'; return'other'; }
 function faviconUrl(item){ const forced=forcedFaviconDomain(item?.sourceLogo||item?.source||sourceName(item||{})); if(forced) return faviconFromDomain(forced); try{ const host=new URL(item.sourceUrl||'', location.href).hostname; return faviconFromDomain(host); }catch{return '';} }
