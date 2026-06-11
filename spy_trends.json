@@ -5,20 +5,25 @@
     "name": "מרגל",
     "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"
   },
-  "generatedAt": "2026-06-11T06:17:45+02:00",
+  "generatedAt": "2026-06-11T06:52:27+02:00",
   "windowHours": 8,
   "sourcesChecked": 95,
   "rssSourcesChecked": 80,
   "webTargetsChecked": 15,
   "sourcesWithErrors": 5,
-  "itemsScanned": 291,
-  "rssItemsScanned": 111,
+  "itemsScanned": 298,
+  "rssItemsScanned": 118,
   "webItemsScanned": 180,
-  "durationSec": 4.3,
+  "durationSec": 2.94,
   "errorsSample": [
     {
       "source": "ישראל היום",
       "type": "RSS",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "ישראל היום",
+      "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
@@ -27,19 +32,14 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
-      "source": "ישראל היום",
+      "source": "Reuters",
       "type": "WEB",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
     },
     {
       "source": "Axios",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "source": "Reuters",
-      "type": "WEB",
-      "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
     }
   ],
   "trends": [
@@ -59,7 +59,7 @@
       "rssMentions": 0,
       "webMentions": 5,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-11T04:17:45.883278+00:00",
+      "latestAt": "2026-06-11T04:52:27.814882+00:00",
       "sampleUrl": "https://www.bbc.com/sport/football/articles/cyv2l60q188o"
     },
     {
@@ -104,25 +104,6 @@
     },
     {
       "domain": "חדשות",
-      "trend": "הטלוויזיה האיראנית: מצר הורמוז נסגר לכלי שיט",
-      "clusterKey": "מצר הורמוז",
-      "externalMentions": 6,
-      "sourceCount": 1,
-      "sources": [
-        "וואלה"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 3,
-      "webMentions": 3,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-11T02:00:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3844825"
-    },
-    {
-      "domain": "חדשות",
       "trend": "צבא ארה\"ב: איראן משקרת, מיצר הורמוז פתוח",
       "clusterKey": "צבא ארה",
       "externalMentions": 5,
@@ -164,28 +145,47 @@
     },
     {
       "domain": "חדשות",
-      "trend": "משמרות המהפכה: \"שיגרנו 12 טילים בליסטיים לעבר בסיס חיל האוויר בירדן\"",
-      "clusterKey": "חיל האוויר",
-      "externalMentions": 3,
-      "sourceCount": 2,
+      "trend": "הטלוויזיה האיראנית: מצר הורמוז נסגר לכלי שיט",
+      "clusterKey": "מצר הורמוז",
+      "externalMentions": 5,
+      "sourceCount": 1,
       "sources": [
-        "ynet",
-        "הארץ"
+        "וואלה"
       ],
       "discoveryTypes": [
         "RSS",
         "WEB"
       ],
-      "rssMentions": 1,
-      "webMentions": 2,
+      "rssMentions": 2,
+      "webMentions": 3,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-11T03:09:44+00:00",
-      "sampleUrl": "https://www.ynet.co.il/news/article/bjq00rjvbml"
+      "latestAt": "2026-06-11T02:00:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3844825"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "לאחר התקיפות באיראן: מעקב אחר תנועת כלי השיט במצר הורמוז",
+      "clusterKey": "במצר הורמוז",
+      "externalMentions": 4,
+      "sourceCount": 2,
+      "sources": [
+        "ynet",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 3,
+      "webMentions": 1,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-11T07:23:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3844852"
     },
     {
       "domain": "כלכלה",
       "trend": "ההנפקה הגדולה בהיסטוריה יוצאת לדרך. איך היא תשפיע על החסכונות של הישראלים?",
-      "clusterKey": "ההנפקה הגדולה",
+      "clusterKey": "בהיסטוריה יוצאת",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -204,23 +204,22 @@
     },
     {
       "domain": "חדשות",
-      "trend": "דיווח ב-\"וול סטריט ג'ורנל\": התקיפות האמריקניות כוונו לאתרי הגנה אווירית ומכ\"ם ליד מצר הורמוז",
-      "clusterKey": "וול סטריט",
-      "externalMentions": 3,
-      "sourceCount": 2,
+      "trend": "כוחות אוגדה 91 השמידו משגר טילי נ\"ט שהוסתר בשיחים בדרום לבנון",
+      "clusterKey": "בדרום לבנון",
+      "externalMentions": 4,
+      "sourceCount": 1,
       "sources": [
-        "דה מרקר",
         "וואלה"
       ],
       "discoveryTypes": [
         "RSS",
         "WEB"
       ],
-      "rssMentions": 1,
+      "rssMentions": 2,
       "webMentions": 2,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-11T00:56:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3844820"
+      "latestAt": "2026-06-11T07:18:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3844850"
     },
     {
       "domain": "חדשות",
@@ -265,7 +264,7 @@
     {
       "domain": "חדשות",
       "trend": "כווית: מערכות ההגנה האווירית פועלות נגד מטרות עוינות",
-      "clusterKey": "מערכות ההגנה האווירית",
+      "clusterKey": "מערכות ההגנה",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -284,8 +283,8 @@
     },
     {
       "domain": "חדשות",
-      "trend": "איראן מכחישה שיחה עם טראמפ: \"נגיב באמצעים צבאיים\"",
-      "clusterKey": "איראן מכחישה",
+      "trend": "בתוך תא ההלבשה: אחרי שתמונתו פורסמה - נעצר החשוד בצילום צעירה בקניון בת\"א",
+      "clusterKey": "בצילום צעירה",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -299,13 +298,13 @@
       "rssMentions": 2,
       "webMentions": 1,
       "mentionedInFeed": false,
-      "latestAt": "2026-06-11T03:01:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/break/3844830"
+      "latestAt": "2026-06-10T21:47:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3844787"
     },
     {
       "domain": "חדשות",
-      "trend": "בתוך תא ההלבשה: אחרי שתמונתו פורסמה - נעצר החשוד בצילום צעירה בקניון בת\"א",
-      "clusterKey": "נעצר החשוד",
+      "trend": "\"דרוס אותי\": מרדכי דוד ואייל ברקוביץ' זומנו לחקירה בעקבות העימות בכביש | תיעוד",
+      "clusterKey": "מרדכי דוד",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -319,8 +318,8 @@
       "rssMentions": 2,
       "webMentions": 1,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-10T21:47:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3844787"
+      "latestAt": "2026-06-10T21:18:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3844780"
     }
   ]
 }
