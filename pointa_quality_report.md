@@ -2,17 +2,17 @@
 
 Items checked: 381
 Errors: 0
-Warnings: 69
+Warnings: 67
 
 ## Category distribution
 
 - רכילות: 93
 - ביטחון: 86
 - ספורט: 46
-- כלכלה: 23
 - פוליטיקה: 23
+- כלכלה: 22
 - חדשות: 19
-- פלילים: 16
+- פלילים: 17
 - בריאות: 15
 - טכנולוגיה: 15
 - תרבות: 13
@@ -27,25 +27,11 @@ Warnings: 69
 ## Issue counts
 
 - summary_long: 32
-- takeaway_long: 31
+- takeaway_long: 29
 - category_sport_source: 4
 - headline_near_duplicate_summary: 2
 
 ## Issues
-
-### WARNING · takeaway_long · item 2
-- Takeaway length 98 > 95
-- Headline: `איחוד האמירויות משחררת מיליארדים לאיראן כדי להרגיע את התקיפות`
-- Original: `UAE to unlock billions of dollars for Iran, sources say`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/iran-news/article-899229
-
-### WARNING · takeaway_long · item 8
-- Takeaway length 100 > 95
-- Headline: `וול סטריט עלתה כשציפיות להסכם עם איראן הזיזו נפט וזהב`
-- Original: `וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%`
-- Source: דה מרקר - גלובל
-- URL: https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000
 
 ### WARNING · takeaway_long · item 14
 - Takeaway length 101 > 95
