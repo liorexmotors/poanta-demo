@@ -2,13 +2,13 @@
 
 Items checked: 378
 Errors: 0
-Warnings: 67
+Warnings: 68
 
 ## Category distribution
 
-- רכילות: 91
-- ביטחון: 86
-- ספורט: 45
+- רכילות: 90
+- ביטחון: 88
+- ספורט: 44
 - פוליטיקה: 23
 - כלכלה: 22
 - חדשות: 19
@@ -26,12 +26,19 @@ Warnings: 67
 
 ## Issue counts
 
-- summary_long: 32
+- summary_long: 33
 - takeaway_long: 29
 - category_sport_source: 4
 - headline_near_duplicate_summary: 2
 
 ## Issues
+
+### WARNING · summary_long · item 6
+- Summary length 228 > 220
+- Headline: `טיילור סוויפט ספגה ביקורת על מפגש מביך עם ג׳ימי ג׳אם`
+- Original: `Taylor Swift faces fan backlash after awkward exchange with music legend Jimmy Jam`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15895075/Taylor-Swift-awkward-Jimmy-Jam.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
 ### WARNING · takeaway_long · item 11
 - Takeaway length 101 > 95
