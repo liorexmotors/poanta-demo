@@ -582,7 +582,7 @@ def compact_item(item: dict[str, Any], now: datetime, *, before_rank: int | None
 
 
 
-def latest_aliza_review(report_dir: Path) -> dict[str, Any]:
+def latest_aliza_review(report_dir: Path, history_path: Path | None = None) -> dict[str, Any]:
     """Read the latest Aliza TT RR simulation review markdown.
 
     Aliza writes reports outside the repo in the shared OpenClaw reports folder.
@@ -603,14 +603,31 @@ def latest_aliza_review(report_dir: Path) -> dict[str, Any]:
         "metrics": {},
         "recommendedActions": [],
     }
+
+    def fallback_from_history(error: str | None = None) -> dict[str, Any]:
+        if history_path:
+            try:
+                hist = json.loads(history_path.read_text(encoding="utf-8"))
+                for run in reversed(hist.get("runs") or []):
+                    previous = run.get("alizaReview") or {}
+                    if previous.get("score") is not None:
+                        reused = dict(previous)
+                        reused["status"] = "reused_previous"
+                        reused["scoreSource"] = previous.get("scoreSource") or "previous_aliza_report"
+                        reused["reusedBecause"] = error or "no current Aliza report available in this runtime"
+                        return reused
+            except Exception:
+                pass
+        out = dict(result)
+        if error:
+            out["error"] = error
+        return out
     try:
         reports = sorted(report_dir.glob("tt-rr-simulation-review-*.md"), key=lambda x: x.stat().st_mtime)
     except Exception as exc:
-        result["error"] = str(exc)[:180]
-        return result
+        return fallback_from_history(str(exc)[:180])
     if not reports:
-        result["error"] = "no Aliza simulation review reports found"
-        return result
+        return fallback_from_history("no Aliza simulation review reports found")
     latest = reports[-1]
     text = latest.read_text(encoding="utf-8", errors="replace")
     result.update({"status": "ok", "reportPath": str(latest), "reportName": latest.name})
@@ -754,7 +771,7 @@ def main() -> int:
     original = list(data.get("items") or [])
     now = datetime.now(timezone.utc)
     trend_signal = load_trend_signals(Path(args.spy_trends), now)
-    aliza_review = latest_aliza_review(Path(args.aliza_report_dir))
+    aliza_review = latest_aliza_review(Path(args.aliza_report_dir), Path(args.history))
     simulated = simulate_order(original, now, max(10, args.limit), trend_signal)
 
     original_rank_by_key = {story_key(item): i + 1 for i, item in enumerate(original[: args.limit])}

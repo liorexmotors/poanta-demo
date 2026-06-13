@@ -1,32 +1,34 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-13T16:39:17+00:00",
+  "generatedAt": "2026-06-13T16:42:30+00:00",
   "summary": {
-    "sampleCount": 48,
+    "sampleCount": 51,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 24.25,
-    "avgAfterHealthScore": 88.75,
+    "avgHealthDelta": 28.33,
+    "avgAfterHealthScore": 89.33,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 98,
-      "rollingScore": 73.73,
+      "latestScore": 93,
+      "rollingScore": 76.38,
       "readyRuns": 15,
-      "criticalBlockers": [],
+      "criticalBlockers": [
+        "top_item_stale_over_25m"
+      ],
       "matureForProduction": false
     },
     "alizaReview": {
       "latestScore": 88,
       "latestSummaryLine": "טוב",
       "latestReportName": "tt-rr-simulation-review-2026-06-13-1927.md",
-      "window": 4,
+      "window": 7,
       "averageScore": 88.0,
-      "positiveReports": 4
+      "positiveReports": 7
     }
   },
   "runs": [
@@ -9500,6 +9502,1369 @@
         },
         "criticalBlockers": [],
         "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "derived_from_aliza_metrics",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-1927.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-1927.md",
+        "reportGeneratedAt": "2026-06-13T16:25:48+00:00",
+        "metrics": {
+          "generatedAt": 2026,
+          "afterHealthScore": 90,
+          "healthDelta": 30,
+          "replacementReadiness score": 98,
+          "rollingScore": 64.59,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 9,
+          "trendMatchedTop10": 5,
+          "trendMatchedTop20": 8,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 8,
+          "hardReadyCount": 7,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 6
+        },
+        "recommendedActions": [
+          "להקשיח trendMatch לפריטי soft-news: דרישת entity/topic overlap חזקה לפני boost, ובמיוחד חסימת התאמות מילוליות כלליות.",
+          "לעדכן את סיווג hard/soft כך שספורט וטכנולוגיה צרכנית לא יקבלו hard כברירת מחדל ללא משמעות חדשותית רחבה.",
+          "להוסיף decay מבוקר לפריטי hard-news מעל 90 דקות, עם החרגה רק לטרנד חזק או למחסור אמיתי בחלופות טריות."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 19:27"
+      },
+      "delta": {
+        "newsinessTop10": 5,
+        "softTop10": -5,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "healthScore": 30
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T16:42:05+00:00",
+      "feedFingerprint": "8065824646438796554",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 27,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 88,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "דובר",
+                  "החוץ",
+                  "חתימה",
+                  "משרד",
+                  "שלום"
+                ],
+                "score": 62.05,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 11,
+              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
+              "source": "The Guardian Middle East",
+              "canonicalSource": "Guardian",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "ישראלי"
+                ],
+                "score": 26.25,
+                "boost": 26.25
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 1,
+              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 12,
+              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 3,
+              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://tech.walla.co.il/item/3845381",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://sports.walla.co.il/item/3845377",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 1,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 27,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 3,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 88,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "דובר",
+                  "החוץ",
+                  "חתימה",
+                  "משרד",
+                  "שלום"
+                ],
+                "score": 62.05,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
+              "source": "The Guardian Middle East",
+              "canonicalSource": "Guardian",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "ישראלי"
+                ],
+                "score": 26.25,
+                "boost": 26.25
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 4,
+              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 5,
+              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://tech.walla.co.il/item/3845381",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 6,
+              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://sports.walla.co.il/item/3845377",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 60,
+      "afterHealthScore": 90,
+      "replacementReadiness": {
+        "score": 93,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.6,
+          "newsinessTop10": 25.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "derived_from_aliza_metrics",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-1927.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-1927.md",
+        "reportGeneratedAt": "2026-06-13T16:25:48+00:00",
+        "metrics": {
+          "generatedAt": 2026,
+          "afterHealthScore": 90,
+          "healthDelta": 30,
+          "replacementReadiness score": 98,
+          "rollingScore": 64.59,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 9,
+          "trendMatchedTop10": 5,
+          "trendMatchedTop20": 8,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 8,
+          "hardReadyCount": 7,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 6
+        },
+        "recommendedActions": [
+          "להקשיח trendMatch לפריטי soft-news: דרישת entity/topic overlap חזקה לפני boost, ובמיוחד חסימת התאמות מילוליות כלליות.",
+          "לעדכן את סיווג hard/soft כך שספורט וטכנולוגיה צרכנית לא יקבלו hard כברירת מחדל ללא משמעות חדשותית רחבה.",
+          "להוסיף decay מבוקר לפריטי hard-news מעל 90 דקות, עם החרגה רק לטרנד חזק או למחסור אמיתי בחלופות טריות."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 19:27"
+      },
+      "delta": {
+        "newsinessTop10": 5,
+        "softTop10": -5,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "healthScore": 30
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T16:42:14+00:00",
+      "feedFingerprint": "1410918658438183740",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 27,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 88,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "דובר",
+                  "החוץ",
+                  "חתימה",
+                  "משרד",
+                  "שלום"
+                ],
+                "score": 62.05,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 11,
+              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
+              "source": "The Guardian Middle East",
+              "canonicalSource": "Guardian",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "ישראלי"
+                ],
+                "score": 26.25,
+                "boost": 26.25
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 1,
+              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 12,
+              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 3,
+              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://tech.walla.co.il/item/3845381",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://sports.walla.co.il/item/3845377",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 1,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 27,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 3,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 88,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "דובר",
+                  "החוץ",
+                  "חתימה",
+                  "משרד",
+                  "שלום"
+                ],
+                "score": 62.05,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
+              "source": "The Guardian Middle East",
+              "canonicalSource": "Guardian",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "ישראלי"
+                ],
+                "score": 26.25,
+                "boost": 26.25
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 4,
+              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 5,
+              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://tech.walla.co.il/item/3845381",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 6,
+              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://sports.walla.co.il/item/3845377",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 60,
+      "afterHealthScore": 90,
+      "replacementReadiness": {
+        "score": 93,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.6,
+          "newsinessTop10": 25.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "reused_previous",
+        "score": 88,
+        "scoreSource": "derived_from_aliza_metrics",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-1927.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-1927.md",
+        "reportGeneratedAt": "2026-06-13T16:25:48+00:00",
+        "metrics": {
+          "generatedAt": 2026,
+          "afterHealthScore": 90,
+          "healthDelta": 30,
+          "replacementReadiness score": 98,
+          "rollingScore": 64.59,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 9,
+          "trendMatchedTop10": 5,
+          "trendMatchedTop20": 8,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 8,
+          "hardReadyCount": 7,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 6
+        },
+        "recommendedActions": [
+          "להקשיח trendMatch לפריטי soft-news: דרישת entity/topic overlap חזקה לפני boost, ובמיוחד חסימת התאמות מילוליות כלליות.",
+          "לעדכן את סיווג hard/soft כך שספורט וטכנולוגיה צרכנית לא יקבלו hard כברירת מחדל ללא משמעות חדשותית רחבה.",
+          "להוסיף decay מבוקר לפריטי hard-news מעל 90 דקות, עם החרגה רק לטרנד חזק או למחסור אמיתי בחלופות טריות."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 19:27",
+        "reusedBecause": "no Aliza simulation review reports found"
+      },
+      "delta": {
+        "newsinessTop10": 5,
+        "softTop10": -5,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "healthScore": 30
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T16:42:30+00:00",
+      "feedFingerprint": "9206433300709021580",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 27,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 88,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "דובר",
+                  "החוץ",
+                  "חתימה",
+                  "משרד",
+                  "שלום"
+                ],
+                "score": 62.05,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 11,
+              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
+              "source": "The Guardian Middle East",
+              "canonicalSource": "Guardian",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "ישראלי"
+                ],
+                "score": 26.25,
+                "boost": 26.25
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 1,
+              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 12,
+              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 3,
+              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://tech.walla.co.il/item/3845381",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://sports.walla.co.il/item/3845377",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 1,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 27,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 4,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 88,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "דובר",
+                  "החוץ",
+                  "חתימה",
+                  "משרד",
+                  "שלום"
+                ],
+                "score": 62.05,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
+              "source": "The Guardian Middle East",
+              "canonicalSource": "Guardian",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "ישראלי"
+                ],
+                "score": 26.25,
+                "boost": 26.25
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 4,
+              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 5,
+              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://tech.walla.co.il/item/3845381",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 6,
+              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://sports.walla.co.il/item/3845377",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 60,
+      "afterHealthScore": 90,
+      "replacementReadiness": {
+        "score": 93,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.6,
+          "newsinessTop10": 25.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m"
+        ],
+        "readyNow": false
       },
       "alizaReview": {
         "status": "ok",
