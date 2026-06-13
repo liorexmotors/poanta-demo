@@ -71,4 +71,4 @@ jobs:
           git push origin HEAD:gh-pages
       - name: Deploy Cloudflare Pages if token is configured
         if: steps.commit-feed.outputs.changed == 'true' && env.CLOUDFLARE_API_TOKEN != ''
-        run: npx wrangler pages deploy dist --project-name poanta-demo --branch main
+        run: npx wrangler pages deploy dist --project-name poanta-demo --branch gh-pages
