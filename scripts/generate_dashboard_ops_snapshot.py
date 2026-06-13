@@ -180,6 +180,7 @@ def main() -> int:
     feed = load_json(ROOT / "feed.json")
     breaking = load_json(ROOT / "breaking_feed.json")
     feed_simulation = load_json(TMP / "feed_quality_ranking_simulation.json")
+    feed_simulation_history = load_json(ROOT / "dashboard_simulation_history.json")
 
     generated = datetime.now(TZ).isoformat(timespec="seconds")
     now = datetime.now(TZ)
@@ -202,6 +203,7 @@ def main() -> int:
         ],
         "feedQuality": build_feed_quality(feed, breaking, now),
         "feedQualitySimulation": feed_simulation,
+        "feedQualitySimulationHistory": feed_simulation_history,
     }
     OUT.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"out": str(OUT), "generatedAt": generated, "agents": len(snapshot["agents"])}, ensure_ascii=False))

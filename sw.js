@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v102-tt-rr-simulation-dashboard-202606130918';
+const CACHE_NAME = 'poenta-v103-tt-rr-simulation-history-202606130935';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -20,7 +20,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(request));
     return;
   }
-  if (/\/(feed|breaking_feed|dashboard_ops_snapshot|spy_trends|spy_gap_queue|intelligence_briefing_queue)\.json$/.test(new URL(request.url).pathname)) {
+  if (/\/(feed|breaking_feed|dashboard_ops_snapshot|dashboard_simulation_history|spy_trends|spy_gap_queue|intelligence_briefing_queue)\.json$/.test(new URL(request.url).pathname)) {
     event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
