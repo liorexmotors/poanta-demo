@@ -33,6 +33,11 @@ CORE_KEYWORDS = [
 ]
 BREAKING_TERMS = ["פיגוע", "ירי", "טיל", "כטב", "אזעק", "נפגע", "הרוג", "חוסל", "תקיפה", "מלחמה", "חירום"]
 LOW_VALUE_TERMS = ["ביקיני", "שמלה", "סלפי", "ריאליטי", "כוכבת", "סלב", "חשפה", "נראתה", "נישקה"]
+SOFT_STORY_TERMS = LOW_VALUE_TERMS + [
+    "חתונה", "חתונת", "ירח הדבש", "הארי סטיילס", "בקהאם", "ברוקלין", "ליטל מיקס", "פרי אדוארדס",
+    "Trooping", "מלוכה", "נסיך", "מונדיאל", "כדורגל", "שחקנים", "מאמן", "אוהדי", "טורקיה עמוסת כוכבים",
+    "וומבלי", "לבוש", "הלבשה תחתונה", "קמפיין", "דימוי גוף", "ריאליטי", "כוכבי",
+]
 IMPORTANT_SOURCES = ["N12", "ynet", "מעריב", "הארץ", "BBC", "Guardian", "NYT", "גלובס", "ישראל היום", "וואלה"]
 TREND_HARD_DOMAINS = {"ביטחון", "פוליטיקה", "חדשות", "משפט", "פלילים", "כלכלה", "אקטואליה בעולם"}
 STOPWORDS = {
@@ -219,13 +224,18 @@ def trend_match(item: dict[str, Any], trend_signal: dict[str, Any] | None) -> di
 def quality_class(item: dict[str, Any]) -> str:
     cat = str(item.get("category") or "")
     text = item_text(item)
+    src = canonical_source(item.get("source"))
+    has_breaking = any(word in text for word in BREAKING_TERMS + ["חיזבאללה", "חמאס", "איראן", "רצח", "חטופים", "ממשלה", "כנסת", "בחירות", "הסכם"])
+    looks_soft = any(word in text for word in SOFT_STORY_TERMS) or any(word in text for word in ("רכילות", "ספורט", "סלב", "TVShowbiz", "Celebs"))
+    if looks_soft and not has_breaking:
+        return "soft"
     if cat in SOFT_CATEGORIES:
-        return "hard" if any(word in text for word in BREAKING_TERMS + ["חיזבאללה", "חמאס", "איראן", "רצח"]) else "soft"
+        return "hard" if has_breaking else "soft"
     if cat in HARD_CATEGORIES:
         return "hard"
     if any(word in text for word in CORE_KEYWORDS):
         return "hard"
-    if any(word in text for word in ("רכילות", "ספורט", "סלב", "TVShowbiz", "Celebs")):
+    if looks_soft:
         return "soft"
     return "other"
 
@@ -247,6 +257,8 @@ def metric_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[
     ages = [age_minutes(item, now) for item in items]
     top10_trend_matches = [trend_match(item, trend_signal) for item in top10]
     top20_trend_matches = [trend_match(item, trend_signal) for item in top20]
+    story_keys = [story_key(item) for item in top20]
+    duplicate_top20 = len(story_keys) - len(set(k for k in story_keys if k))
     return {
         "newsinessTop10": classes.count("hard"),
         "softTop10": classes.count("soft"),
@@ -258,10 +270,77 @@ def metric_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[
         "uniqueSourcesTop20": len(set(sources)),
         "dominantSource": {"name": dominant[0], "count": dominant[1]},
         "importantMissingTop20": [s for s in IMPORTANT_SOURCES if s not in set(sources)],
+        "duplicateTop20": max(0, duplicate_top20),
         "topSources": [{"name": k, "count": v} for k, v in source_counts.most_common(8)],
         "trendMatchedTop10": sum(1 for m in top10_trend_matches if m),
         "trendMatchedTop20": sum(1 for m in top20_trend_matches if m),
         "trendGapMatchedTop20": sum(1 for m in top20_trend_matches if m and not m.get("mentionedInFeed")),
+    }
+
+
+def readiness_blockers(metrics: dict[str, Any]) -> list[str]:
+    blockers: list[str] = []
+    top_age = metrics.get("topItemAgeMinutes")
+    if top_age is None or int(top_age) > 25:
+        blockers.append("top_item_stale_over_25m")
+    if int(metrics.get("newsinessTop10", 0)) < 7:
+        blockers.append("newsiness_top10_below_7")
+    if int(metrics.get("softTop10", 0)) > 2:
+        blockers.append("soft_top10_above_2")
+    if int(metrics.get("duplicateTop20", 0)) > 0:
+        blockers.append("duplicate_top20_detected")
+    if int((metrics.get("dominantSource") or {}).get("count") or 0) > 5:
+        blockers.append("dominant_source_top20_above_5")
+    if int(metrics.get("top12Under60", 0)) < 9:
+        blockers.append("top12_under60_below_9")
+    return blockers
+
+
+def replacement_score(metrics: dict[str, Any]) -> dict[str, Any]:
+    """0-100 production-replacement readiness score for simulation only.
+
+    This is stricter than health_score: it represents whether the simulated
+    ranking is mature enough to become the production ranking after a rolling
+    observation period. A high score is not enough if critical blockers exist.
+    """
+    top_age = metrics.get("topItemAgeMinutes")
+    freshness = 0.0
+    if top_age is not None:
+        freshness += 8.0 if int(top_age) <= 25 else max(0.0, 8.0 - (int(top_age) - 25) * 0.45)
+    freshness += min(6.0, int(metrics.get("top5Under60", 0)) / 5 * 6.0)
+    freshness += min(6.0, int(metrics.get("top12Under60", 0)) / 12 * 6.0)
+
+    newsiness = min(20.0, int(metrics.get("newsinessTop10", 0)) / 8 * 20.0)
+    newsiness += max(0.0, 5.0 - max(0, int(metrics.get("softTop10", 0)) - 1) * 2.5)
+
+    top20_quality = min(8.0, int(metrics.get("uniqueSourcesTop20", 0)) / 10 * 8.0)
+    top20_quality += max(0.0, 6.0 - int(metrics.get("duplicateTop20", 0)) * 6.0)
+    top20_quality += max(0.0, 6.0 - max(0, len(metrics.get("importantMissingTop20") or []) - 2) * 1.5)
+
+    dominant = int((metrics.get("dominantSource") or {}).get("count") or 0)
+    source_balance = max(0.0, 10.0 - max(0, dominant - 4) * 3.0)
+
+    trend_use = min(6.0, int(metrics.get("trendMatchedTop10", 0)) / 3 * 6.0)
+    trend_use += min(4.0, int(metrics.get("trendMatchedTop20", 0)) / 6 * 4.0)
+
+    components = {
+        "freshness": round(min(20.0, freshness), 2),
+        "newsinessTop10": round(min(25.0, newsiness), 2),
+        "top20Quality": round(min(20.0, top20_quality), 2),
+        "sourceBalance": round(min(10.0, source_balance), 2),
+        "trendSignalUse": round(min(10.0, trend_use), 2),
+    }
+    # Reserve the last 15 points for no critical blockers. This makes the public
+    # card easy to reason about: one blocker prevents a "ready" status.
+    blockers = readiness_blockers(metrics)
+    components["criticalBlockersClear"] = 15.0 if not blockers else max(0.0, 15.0 - len(blockers) * 5.0)
+    score = int(round(sum(components.values())))
+    return {
+        "score": max(0, min(100, score)),
+        "threshold": 80,
+        "components": components,
+        "criticalBlockers": blockers,
+        "readyNow": score >= 80 and not blockers,
     }
 
 
@@ -341,6 +420,8 @@ def simulate_order(items: list[dict[str, Any]], now: datetime, limit: int = 60, 
 
             # Strong freshness guard: the simulation may improve quality, but should
             # not make the feed feel stale in the first screen.
+            if position <= 3 and (item_age is None or item_age > 45):
+                value -= 45 + max(0, (item_age or 120) - 45) * 1.2
             if position <= 5 and (item_age is None or item_age > 60):
                 value -= 85 + max(0, (item_age or 180) - 60) * 0.9
             elif position <= 12 and (item_age is None or item_age > 90):
@@ -416,6 +497,14 @@ def update_history(path: Path, run: dict[str, Any], max_runs: int) -> dict[str, 
     runs = runs[-max_runs:]
     deltas = [int((r.get("delta") or {}).get("healthScore", 0)) for r in runs[-12:]]
     after_scores = [int(r.get("afterHealthScore", 0)) for r in runs[-12:]]
+    replacement_window = runs[-48:]
+    for existing in replacement_window:
+        if not existing.get("replacementReadiness") and isinstance(existing.get("after"), dict):
+            existing["replacementReadiness"] = replacement_score(existing["after"])
+    replacement_scores = [int(((r.get("replacementReadiness") or {}).get("score") or 0)) for r in replacement_window]
+    ready_runs = [bool((r.get("replacementReadiness") or {}).get("readyNow")) for r in replacement_window]
+    latest_replacement = run.get("replacementReadiness") or {}
+    rolling_replacement_score = round(sum(replacement_scores) / len(replacement_scores), 2) if replacement_scores else 0
     summary = {
         "sampleCount": len(runs),
         "window": min(12, len(runs)),
@@ -424,6 +513,21 @@ def update_history(path: Path, run: dict[str, Any], max_runs: int) -> dict[str, 
         "avgHealthDelta": round(sum(deltas) / len(deltas), 2) if deltas else 0,
         "avgAfterHealthScore": round(sum(after_scores) / len(after_scores), 2) if after_scores else 0,
         "stablePositive": bool(deltas) and sum(1 for d in deltas if d > 0) >= math.ceil(len(deltas) * 0.7),
+        "replacement": {
+            "threshold": 80,
+            "minSamplesForPromotion": 24,
+            "window": len(replacement_window),
+            "latestScore": int(latest_replacement.get("score") or 0),
+            "rollingScore": rolling_replacement_score,
+            "readyRuns": sum(1 for ok in ready_runs if ok),
+            "criticalBlockers": latest_replacement.get("criticalBlockers") or [],
+            "matureForProduction": bool(
+                len(replacement_window) >= 24
+                and rolling_replacement_score >= 80
+                and sum(1 for ok in ready_runs if ok) >= math.ceil(len(replacement_window) * 0.8)
+                and not (latest_replacement.get("criticalBlockers") or [])
+            ),
+        },
     }
     history = {
         "status": "ok",
@@ -467,6 +571,7 @@ def main() -> int:
     after = metric_block(simulated, now, trend_signal)
     before_score = health_score(before)
     after_score = health_score(after)
+    readiness = replacement_score(after)
     delta = {
         "newsinessTop10": after["newsinessTop10"] - before["newsinessTop10"],
         "softTop10": after["softTop10"] - before["softTop10"],
@@ -484,6 +589,7 @@ def main() -> int:
         "after": after,
         "beforeHealthScore": before_score,
         "afterHealthScore": after_score,
+        "replacementReadiness": readiness,
         "delta": delta,
     }
     history = update_history(Path(args.history), run_record, max(1, args.history_max))
@@ -498,6 +604,7 @@ def main() -> int:
         "after": after,
         "beforeHealthScore": before_score,
         "afterHealthScore": after_score,
+        "replacementReadiness": readiness,
         "delta": delta,
         "historySummary": history.get("summary", {}),
         "trendSignal": {
@@ -530,6 +637,8 @@ def main() -> int:
             "source cap to reduce dominant-source takeover in top 10/20",
             "duplicate/story crowding cap",
             "external news-trend signal from spy_trends.json boosts existing feed items that match strong RSS/WEB multi-source trends",
+            "replacement-readiness score tracks freshness, newsiness, top-20 quality, source balance, trend use, and critical blockers",
+            "production promotion requires rolling score >= 80, at least 24 samples, 80% ready runs, and zero critical blockers",
             "longitudinal history tracks whether simulated health stays better than the main feed",
         ],
     }
@@ -546,7 +655,7 @@ def main() -> int:
             "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
         }
         public_out.write_text(json.dumps(public_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"out": str(out), "publicOut": str(public_out), "history": str(args.history), "before": before, "after": after, "delta": delta}, ensure_ascii=False))
+    print(json.dumps({"out": str(out), "publicOut": str(public_out), "history": str(args.history), "before": before, "after": after, "delta": delta, "replacementReadiness": readiness, "historySummary": history.get("summary", {})}, ensure_ascii=False))
     return 0
 
 

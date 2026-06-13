@@ -1,17 +1,17 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-13T14:26:08+00:00",
-  "inputFeed": "/tmp/poanta-trend-main/feed.json",
+  "generatedAt": "2026-06-13T15:17:47+00:00",
+  "inputFeed": "/tmp/poanta-clean/feed.json",
   "itemCount": 510,
   "before": {
     "newsinessTop10": 4,
     "softTop10": 6,
     "otherTop10": 0,
-    "top5Under60": 5,
-    "top10Under60": 10,
-    "top12Under60": 12,
-    "topItemAgeMinutes": 10,
+    "top5Under60": 0,
+    "top10Under60": 0,
+    "top12Under60": 0,
+    "topItemAgeMinutes": 62,
     "uniqueSourcesTop20": 8,
     "dominantSource": {
       "name": "וואלה",
@@ -25,6 +25,7 @@
       "NYT",
       "גלובס"
     ],
+    "duplicateTop20": 0,
     "topSources": [
       {
         "name": "וואלה",
@@ -64,13 +65,13 @@
     "trendGapMatchedTop20": 1
   },
   "after": {
-    "newsinessTop10": 7,
-    "softTop10": 3,
+    "newsinessTop10": 6,
+    "softTop10": 4,
     "otherTop10": 0,
-    "top5Under60": 5,
-    "top10Under60": 8,
-    "top12Under60": 10,
-    "topItemAgeMinutes": 46,
+    "top5Under60": 0,
+    "top10Under60": 0,
+    "top12Under60": 0,
+    "topItemAgeMinutes": 62,
     "uniqueSourcesTop20": 10,
     "dominantSource": {
       "name": "וואלה",
@@ -83,6 +84,7 @@
       "NYT",
       "גלובס"
     ],
+    "duplicateTop20": 0,
     "topSources": [
       {
         "name": "וואלה",
@@ -97,15 +99,15 @@
         "count": 3
       },
       {
-        "name": "ישראל היום",
-        "count": 2
-      },
-      {
         "name": "Jerusalem Post",
         "count": 2
       },
       {
         "name": "ynet",
+        "count": 2
+      },
+      {
+        "name": "ישראל היום",
         "count": 2
       },
       {
@@ -117,42 +119,96 @@
         "count": 1
       }
     ],
-    "trendMatchedTop10": 3,
-    "trendMatchedTop20": 7,
-    "trendGapMatchedTop20": 1
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 6,
+    "trendGapMatchedTop20": 2
   },
-  "beforeHealthScore": 52,
-  "afterHealthScore": 79,
+  "beforeHealthScore": 32,
+  "afterHealthScore": 55,
+  "replacementReadiness": {
+    "score": 48,
+    "threshold": 80,
+    "components": {
+      "freshness": 0.0,
+      "newsinessTop10": 15.0,
+      "top20Quality": 15.5,
+      "sourceBalance": 10.0,
+      "trendSignalUse": 8.0,
+      "criticalBlockersClear": 0.0
+    },
+    "criticalBlockers": [
+      "top_item_stale_over_25m",
+      "newsiness_top10_below_7",
+      "soft_top10_above_2",
+      "top12_under60_below_9"
+    ],
+    "readyNow": false
+  },
   "delta": {
-    "newsinessTop10": 3,
-    "softTop10": -3,
-    "top12Under60": -2,
+    "newsinessTop10": 2,
+    "softTop10": -2,
+    "top12Under60": 0,
     "uniqueSourcesTop20": 2,
-    "trendMatchedTop10": 3,
-    "trendMatchedTop20": 4,
-    "healthScore": 27
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 3,
+    "healthScore": 23
   },
   "historySummary": {
-    "sampleCount": 26,
+    "sampleCount": 27,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 28.25,
-    "avgAfterHealthScore": 76.58,
-    "stablePositive": true
+    "avgHealthDelta": 28.08,
+    "avgAfterHealthScore": 74.25,
+    "stablePositive": true,
+    "replacement": {
+      "threshold": 80,
+      "minSamplesForPromotion": 24,
+      "window": 27,
+      "latestScore": 48,
+      "rollingScore": 62.52,
+      "readyRuns": 3,
+      "criticalBlockers": [
+        "top_item_stale_over_25m",
+        "newsiness_top10_below_7",
+        "soft_top10_above_2",
+        "top12_under60_below_9"
+      ],
+      "matureForProduction": false
+    }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-13T17:26:08+03:00",
+    "generatedAt": "2026-06-13T18:17:47+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 76,
+    "rssItemsScanned": 79,
     "webItemsScanned": 180,
     "topTrends": [
       {
+        "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+        "clusterKey": "מטוסי קרב",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-13T16:47:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3845359",
+        "strength": 52.5
+      },
+      {
         "trend": "נקבע מותו של ילד בן ארבע מרהט שטבע בחוף דלילה באשקלון",
-        "clusterKey": "שטבע בחוף",
+        "clusterKey": "נקבע מותו",
         "domain": "חדשות",
         "externalMentions": 5,
         "sourceCount": 2,
@@ -170,10 +226,10 @@
         "strength": 45.5
       },
       {
-        "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-        "clusterKey": "קרב הוזנקו",
+        "trend": "צה\"ל חיסל שבעה מחבלים בדרום לבנון במהלך השבוע האחרון",
+        "clusterKey": "בדרום לבנון",
         "domain": "חדשות",
-        "externalMentions": 4,
+        "externalMentions": 9,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -183,9 +239,28 @@
           "RSS",
           "WEB"
         ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-13T17:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845369",
+        "strength": 44.3
+      },
+      {
+        "trend": "ארקיע על הזנקת מטוסי הקרב בהונגריה לעבר מטוס נוסעים: \"לא נשקפה סכנה\"",
+        "clusterKey": "לעבר מטוס",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "דה מרקר"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-13T16:47:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3845359",
+        "latestAt": "2026-06-13T13:54:47+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/bksgtacwzx",
         "strength": 43.8
       },
       {
@@ -203,15 +278,15 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.559960+00:00",
+        "latestAt": "2026-06-13T15:17:47.133832+00:00",
         "sampleUrl": "https://www.bbc.com/sport/football/articles/cyv2l60q188o",
         "strength": 43.2
       },
       {
-        "trend": "במהלך היממה האחרונה: צה\"ל תקף יותר מ-70 תשתיות חיזבאללה בדרום לבנון",
-        "clusterKey": "בדרום לבנון",
+        "trend": "דובר משרד החוץ של איראן מכחיש כי צוות המשא ומתן ייסע לג'נבה",
+        "clusterKey": "משרד החוץ",
         "domain": "חדשות",
-        "externalMentions": 7,
+        "externalMentions": 8,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -222,9 +297,9 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:20:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845349",
-        "strength": 40.9
+        "latestAt": "2026-06-13T18:10:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845380",
+        "strength": 42.6
       },
       {
         "trend": "טראמפ שיתף פוסט של ראש ממשלת פקיסטן: \"הצפי להסכם - ביממה הקרובה\"",
@@ -246,28 +321,10 @@
         "strength": 39.2
       },
       {
-        "trend": "צעיר בן 18 נפצע באורח בינוני באשדוד כשהוא סובל מפציעות חודרות",
-        "clusterKey": "באורח בינוני",
+        "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+        "clusterKey": "בכיר אמריקני",
         "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
-        "sources": [
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-13T17:08:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845364",
-        "strength": 36.8
-      },
-      {
-        "trend": "דובר משרד החוץ האיראני הודיע כי מועד חתימת המזכר לא יהיה מחר",
-        "clusterKey": "משרד החוץ",
-        "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 5,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -278,52 +335,14 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:54:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845353",
-        "strength": 34.1
+        "latestAt": "2026-06-13T17:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845368",
+        "strength": 37.5
       },
       {
-        "trend": "איראן: הלווייתו של עלי חמינאי תיערך ב-4 ביולי בטהרן",
-        "clusterKey": "עלי חמינאי",
+        "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
+        "clusterKey": "לאחר שארה תכננה",
         "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845333",
-        "strength": 34.1
-      },
-      {
-        "trend": "דובר צה\"ל בערבית: אזהרת פינוי דחופה לתושבי דרום לבנון",
-        "clusterKey": "אזהרת פינוי",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:43:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845331",
-        "strength": 34.1
-      },
-      {
-        "trend": "דיווח על תקיפות בנבטיה ובצור; איראן: ההסכם יכלול נסיגה ישראלית מלבנון",
-        "clusterKey": "איראן ההסכם יכלול",
-        "domain": "כלכלה",
         "externalMentions": 2,
         "sourceCount": 2,
         "sources": [
@@ -333,10 +352,28 @@
         "discoveryTypes": [
           "WEB"
         ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.592996+00:00",
-        "sampleUrl": "https://www.themarker.com/hrtz/news/politics/2026-06-13/ty-article/0000019e-bf30-d86d-adde-bffd9b340000",
-        "strength": 29.4
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-13T15:17:47.147438+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+        "strength": 37.4
+      },
+      {
+        "trend": "Sailors stressed and exhausted after months trapped by Strait of Hormuz blockade The uncertainty has weighed heavily on the 20,000 seafarers trap",
+        "clusterKey": "iran war",
+        "domain": "אקטואליה בעולם",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "AP",
+          "BBC"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-13T15:17:47.133750+00:00",
+        "sampleUrl": "https://www.bbc.com/news/articles/cy02rz27l32o",
+        "strength": 37.4
       }
     ]
   },
@@ -347,7 +384,7 @@
       "canonicalSource": "Jerusalem Post",
       "category": "בריאות",
       "class": "hard",
-      "ageMinutes": 10,
+      "ageMinutes": 62,
       "url": "https://www.jpost.com/israel-news/article-899255",
       "beforeRank": 1,
       "afterRank": 1,
@@ -360,7 +397,7 @@
       "canonicalSource": "וואלה",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 11,
+      "ageMinutes": 63,
       "url": "https://celebs.walla.co.il/item/3845355",
       "beforeRank": 2,
       "afterRank": 2,
@@ -373,7 +410,7 @@
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 11,
+      "ageMinutes": 63,
       "url": "https://sports.walla.co.il/item/3845361",
       "beforeRank": 3,
       "afterRank": 3,
@@ -386,7 +423,7 @@
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 11,
+      "ageMinutes": 63,
       "url": "https://sports.walla.co.il/item/3845360",
       "beforeRank": 4,
       "afterRank": 4,
@@ -399,7 +436,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "hard",
-      "ageMinutes": 14,
+      "ageMinutes": 66,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897003/Harper-Beckham-fails-reconnect-Brooklyn-visits-brothers-LA-mansion-boycotted-Davids-Hollywood-Walk-Fame-star-unveiling.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 5,
       "afterRank": 5,
@@ -412,7 +449,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 15,
+      "ageMinutes": 67,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897073/Jesy-Nelson-shows-incredible-figure-red-crop-matching-skirt-brushes-Perrie-Edwards-drama-snubbed-ex-Little-Mix-bandmates-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 6,
       "afterRank": 6,
@@ -425,7 +462,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 16,
+      "ageMinutes": 68,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897017/Shania-Twain-Harry-Styles-Wembley-residency.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 7,
       "afterRank": 7,
@@ -438,7 +475,7 @@
       "canonicalSource": "ynet",
       "category": "פוליטיקה",
       "class": "hard",
-      "ageMinutes": 19,
+      "ageMinutes": 71,
       "url": "https://www.ynet.co.il/news/article/yokra14797325",
       "beforeRank": 8,
       "afterRank": 8,
@@ -451,7 +488,7 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 20,
+      "ageMinutes": 71,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/perrie-edwards-zayn-malik-heartbreak-37290231",
       "beforeRank": 9,
       "afterRank": 9,
@@ -464,7 +501,7 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "hard",
-      "ageMinutes": 25,
+      "ageMinutes": 77,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/ibiza-final-boss-boxing-tonight-36918914",
       "beforeRank": 10,
       "afterRank": 10,
@@ -474,21 +511,60 @@
   ],
   "top10After": [
     {
+      "headline": "מות שני ילדים מחיידק אלים מחזיר את חיסון המנינגוקוקוס למרכז",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "בריאות",
+      "class": "hard",
+      "ageMinutes": 62,
+      "url": "https://www.jpost.com/israel-news/article-899255",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נעמה לזימי מציבה את הבחירות כמבחן לעצירת נתניהו מהסלמה פוליטית",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "ageMinutes": 71,
+      "url": "https://www.ynet.co.il/news/article/yokra14797325",
+      "beforeRank": 8,
+      "afterRank": 2,
+      "delta": 6,
+      "trendMatch": null
+    },
+    {
+      "headline": "הארפר בקהאם ניסתה לבקר את ברוקלין בזמן הקרע המשפחתי",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "hard",
+      "ageMinutes": 66,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15897003/Harper-Beckham-fails-reconnect-Brooklyn-visits-brothers-LA-mansion-boycotted-Davids-Hollywood-Walk-Fame-star-unveiling.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 5,
+      "afterRank": 3,
+      "delta": 2,
+      "trendMatch": null
+    },
+    {
       "headline": "איראן מצננת את ציפיות ההסכם עם ארה״ב למרות התקדמות המגעים",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 46,
+      "ageMinutes": 98,
       "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20750828",
       "beforeRank": 13,
-      "afterRank": 1,
-      "delta": 12,
+      "afterRank": 4,
+      "delta": 9,
       "trendMatch": {
-        "trend": "דובר משרד החוץ האיראני הודיע כי מועד חתימת המזכר לא יהיה מחר",
+        "trend": "דובר משרד החוץ של איראן מכחיש כי צוות המשא ומתן ייסע לג'נבה",
         "clusterKey": "משרד החוץ",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 8,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -499,56 +575,17 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:54:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845353",
+        "latestAt": "2026-06-13T18:10:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845380",
         "overlapTokens": [
+          "איראן",
           "דובר",
-          "האיראני",
           "החוץ",
           "משרד"
         ],
-        "score": 34.54,
-        "boost": 34.54
+        "score": 43.15,
+        "boost": 38.0
       }
-    },
-    {
-      "headline": "מות שני ילדים מחיידק אלים מחזיר את חיסון המנינגוקוקוס למרכז",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "בריאות",
-      "class": "hard",
-      "ageMinutes": 10,
-      "url": "https://www.jpost.com/israel-news/article-899255",
-      "beforeRank": 1,
-      "afterRank": 2,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
-      "headline": "נעמה לזימי מציבה את הבחירות כמבחן לעצירת נתניהו מהסלמה פוליטית",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "ageMinutes": 19,
-      "url": "https://www.ynet.co.il/news/article/yokra14797325",
-      "beforeRank": 8,
-      "afterRank": 3,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "הארפר בקהאם ניסתה לבקר את ברוקלין בזמן הקרע המשפחתי",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "hard",
-      "ageMinutes": 14,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15897003/Harper-Beckham-fails-reconnect-Brooklyn-visits-brothers-LA-mansion-boycotted-Davids-Hollywood-Walk-Fame-star-unveiling.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 4,
-      "delta": 1,
-      "trendMatch": null
     },
     {
       "headline": "איביזה פיינל בוס הפך ויראליות מקרית לקרב אגרוף ראשון",
@@ -556,11 +593,50 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "hard",
-      "ageMinutes": 25,
+      "ageMinutes": 77,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/ibiza-final-boss-boxing-tonight-36918914",
       "beforeRank": 10,
       "afterRank": 5,
       "delta": 5,
+      "trendMatch": null
+    },
+    {
+      "headline": "אוסטרליה מנסה לשבור פתיחות רעות מול טורקיה עמוסת כוכבים",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 63,
+      "url": "https://sports.walla.co.il/item/3845361",
+      "beforeRank": 3,
+      "afterRank": 6,
+      "delta": -3,
+      "trendMatch": null
+    },
+    {
+      "headline": "אוהדי ברזיל הפכו את ניו יורק לחגיגת מונדיאל לפני מרוקו",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 63,
+      "url": "https://sports.walla.co.il/item/3845360",
+      "beforeRank": 4,
+      "afterRank": 7,
+      "delta": -3,
+      "trendMatch": null
+    },
+    {
+      "headline": "ג׳סי נלסון התעלמה מדרמת ליטל מיקס בזמן חתונת פרי אדוארדס",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "ageMinutes": 67,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15897073/Jesy-Nelson-shows-incredible-figure-red-crop-matching-skirt-brushes-Perrie-Edwards-drama-snubbed-ex-Little-Mix-bandmates-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 6,
+      "afterRank": 8,
+      "delta": -2,
       "trendMatch": null
     },
     {
@@ -569,14 +645,14 @@
       "canonicalSource": "וואלה",
       "category": "בריאות",
       "class": "hard",
-      "ageMinutes": 72,
+      "ageMinutes": 124,
       "url": "https://news.walla.co.il/item/3845348",
       "beforeRank": 19,
-      "afterRank": 6,
-      "delta": 13,
+      "afterRank": 9,
+      "delta": 10,
       "trendMatch": {
         "trend": "נקבע מותו של ילד בן ארבע מרהט שטבע בחוף דלילה באשקלון",
-        "clusterKey": "שטבע בחוף",
+        "clusterKey": "נקבע מותו",
         "domain": "חדשות",
         "externalMentions": 5,
         "sourceCount": 2,
@@ -600,82 +676,17 @@
       }
     },
     {
-      "headline": "אוסטרליה מנסה לשבור פתיחות רעות מול טורקיה עמוסת כוכבים",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "ageMinutes": 11,
-      "url": "https://sports.walla.co.il/item/3845361",
-      "beforeRank": 3,
-      "afterRank": 7,
-      "delta": -4,
-      "trendMatch": null
-    },
-    {
-      "headline": "ג׳סי נלסון התעלמה מדרמת ליטל מיקס בזמן חתונת פרי אדוארדס",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
+      "headline": "פרי אדוארדס מתחתנת אחרי שהפכה פרידה פומבית מזאין לסיפור שיקום",
+      "source": "Mirror Celebs רכילות חו״ל",
+      "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 15,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15897073/Jesy-Nelson-shows-incredible-figure-red-crop-matching-skirt-brushes-Perrie-Edwards-drama-snubbed-ex-Little-Mix-bandmates-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 6,
-      "afterRank": 8,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
-      "headline": "אוהדי ברזיל הפכו את ניו יורק לחגיגת מונדיאל לפני מרוקו",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "ageMinutes": 11,
-      "url": "https://sports.walla.co.il/item/3845360",
-      "beforeRank": 4,
-      "afterRank": 9,
-      "delta": -5,
-      "trendMatch": null
-    },
-    {
-      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת על יציבות שלטונית",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 134,
-      "url": "https://www.aljazeera.com/news/2026/6/13/iran-announces-funeral-burial-dates-for-late-supreme-leader-khamenei?traffic_source=rss",
-      "beforeRank": 28,
+      "ageMinutes": 71,
+      "url": "https://www.mirror.co.uk/3am/celebrity-news/perrie-edwards-zayn-malik-heartbreak-37290231",
+      "beforeRank": 9,
       "afterRank": 10,
-      "delta": 18,
-      "trendMatch": {
-        "trend": "איראן: הלווייתו של עלי חמינאי תיערך ב-4 ביולי בטהרן",
-        "clusterKey": "עלי חמינאי",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845333",
-        "overlapTokens": [
-          "איראן",
-          "בטהרן",
-          "ביולי",
-          "חמינאי",
-          "עלי"
-        ],
-        "score": 45.67,
-        "boost": 38.0
-      }
+      "delta": -1,
+      "trendMatch": null
     }
   ],
   "top20Before": [
@@ -685,7 +696,7 @@
       "canonicalSource": "Jerusalem Post",
       "category": "בריאות",
       "class": "hard",
-      "ageMinutes": 10,
+      "ageMinutes": 62,
       "url": "https://www.jpost.com/israel-news/article-899255",
       "beforeRank": 1,
       "afterRank": 1,
@@ -698,7 +709,7 @@
       "canonicalSource": "וואלה",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 11,
+      "ageMinutes": 63,
       "url": "https://celebs.walla.co.il/item/3845355",
       "beforeRank": 2,
       "afterRank": 2,
@@ -711,7 +722,7 @@
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 11,
+      "ageMinutes": 63,
       "url": "https://sports.walla.co.il/item/3845361",
       "beforeRank": 3,
       "afterRank": 3,
@@ -724,7 +735,7 @@
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 11,
+      "ageMinutes": 63,
       "url": "https://sports.walla.co.il/item/3845360",
       "beforeRank": 4,
       "afterRank": 4,
@@ -737,7 +748,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "hard",
-      "ageMinutes": 14,
+      "ageMinutes": 66,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897003/Harper-Beckham-fails-reconnect-Brooklyn-visits-brothers-LA-mansion-boycotted-Davids-Hollywood-Walk-Fame-star-unveiling.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 5,
       "afterRank": 5,
@@ -750,7 +761,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 15,
+      "ageMinutes": 67,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897073/Jesy-Nelson-shows-incredible-figure-red-crop-matching-skirt-brushes-Perrie-Edwards-drama-snubbed-ex-Little-Mix-bandmates-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 6,
       "afterRank": 6,
@@ -763,7 +774,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 16,
+      "ageMinutes": 68,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897017/Shania-Twain-Harry-Styles-Wembley-residency.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 7,
       "afterRank": 7,
@@ -776,7 +787,7 @@
       "canonicalSource": "ynet",
       "category": "פוליטיקה",
       "class": "hard",
-      "ageMinutes": 19,
+      "ageMinutes": 71,
       "url": "https://www.ynet.co.il/news/article/yokra14797325",
       "beforeRank": 8,
       "afterRank": 8,
@@ -789,7 +800,7 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 20,
+      "ageMinutes": 71,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/perrie-edwards-zayn-malik-heartbreak-37290231",
       "beforeRank": 9,
       "afterRank": 9,
@@ -802,7 +813,7 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "hard",
-      "ageMinutes": 25,
+      "ageMinutes": 77,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/ibiza-final-boss-boxing-tonight-36918914",
       "beforeRank": 10,
       "afterRank": 10,
@@ -815,7 +826,7 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 31,
+      "ageMinutes": 82,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-price-peter-andre-lead-37290790",
       "beforeRank": 11,
       "afterRank": 11,
@@ -828,7 +839,7 @@
       "canonicalSource": "Page Six",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 43,
+      "ageMinutes": 94,
       "url": "https://pagesix.com/2026/06/13/royal-family/prince-louis-steals-the-show-yet-again-with-cheeky-trooping-the-colour-antics/",
       "beforeRank": 12,
       "afterRank": 12,
@@ -841,16 +852,16 @@
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 46,
+      "ageMinutes": 98,
       "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20750828",
       "beforeRank": 13,
       "afterRank": 13,
       "delta": 0,
       "trendMatch": {
-        "trend": "דובר משרד החוץ האיראני הודיע כי מועד חתימת המזכר לא יהיה מחר",
+        "trend": "דובר משרד החוץ של איראן מכחיש כי צוות המשא ומתן ייסע לג'נבה",
         "clusterKey": "משרד החוץ",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 8,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -861,16 +872,16 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:54:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845353",
+        "latestAt": "2026-06-13T18:10:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845380",
         "overlapTokens": [
+          "איראן",
           "דובר",
-          "האיראני",
           "החוץ",
           "משרד"
         ],
-        "score": 34.54,
-        "boost": 34.54
+        "score": 43.15,
+        "boost": 38.0
       }
     },
     {
@@ -879,7 +890,7 @@
       "canonicalSource": "הארץ",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 57,
+      "ageMinutes": 109,
       "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-13/ty-article/0000019e-c11e-d43d-a39f-e77f86c60000",
       "beforeRank": 14,
       "afterRank": 14,
@@ -892,7 +903,7 @@
       "canonicalSource": "Jerusalem Post",
       "category": "תרבות",
       "class": "soft",
-      "ageMinutes": 70,
+      "ageMinutes": 121,
       "url": "https://www.jpost.com/israel-news/culture/article-899254",
       "beforeRank": 15,
       "afterRank": 15,
@@ -912,7 +923,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.559960+00:00",
+        "latestAt": "2026-06-13T15:17:47.133832+00:00",
         "sampleUrl": "https://www.bbc.com/sport/football/articles/cyv2l60q188o",
         "overlapTokens": [
           "cup",
@@ -928,7 +939,7 @@
       "canonicalSource": "וואלה",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 72,
+      "ageMinutes": 123,
       "url": "https://celebs.walla.co.il/item/3845351",
       "beforeRank": 16,
       "afterRank": 16,
@@ -941,7 +952,7 @@
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 72,
+      "ageMinutes": 124,
       "url": "https://sports.walla.co.il/item/3845176",
       "beforeRank": 17,
       "afterRank": 17,
@@ -954,7 +965,7 @@
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "hard",
-      "ageMinutes": 72,
+      "ageMinutes": 124,
       "url": "https://sports.walla.co.il/item/3845352",
       "beforeRank": 18,
       "afterRank": 18,
@@ -967,14 +978,14 @@
       "canonicalSource": "וואלה",
       "category": "בריאות",
       "class": "hard",
-      "ageMinutes": 72,
+      "ageMinutes": 124,
       "url": "https://news.walla.co.il/item/3845348",
       "beforeRank": 19,
       "afterRank": 19,
       "delta": 0,
       "trendMatch": {
         "trend": "נקבע מותו של ילד בן ארבע מרהט שטבע בחוף דלילה באשקלון",
-        "clusterKey": "שטבע בחוף",
+        "clusterKey": "נקבע מותו",
         "domain": "חדשות",
         "externalMentions": 5,
         "sourceCount": 2,
@@ -1003,7 +1014,7 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 77,
+      "ageMinutes": 129,
       "url": "https://www.dailymail.com/tvshowbiz/article-15871205/Ashley-James-mum-shaming-trolls-diet-culture.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 20,
       "afterRank": 20,
@@ -1013,21 +1024,60 @@
   ],
   "top20After": [
     {
+      "headline": "מות שני ילדים מחיידק אלים מחזיר את חיסון המנינגוקוקוס למרכז",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "בריאות",
+      "class": "hard",
+      "ageMinutes": 62,
+      "url": "https://www.jpost.com/israel-news/article-899255",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נעמה לזימי מציבה את הבחירות כמבחן לעצירת נתניהו מהסלמה פוליטית",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "ageMinutes": 71,
+      "url": "https://www.ynet.co.il/news/article/yokra14797325",
+      "beforeRank": 8,
+      "afterRank": 2,
+      "delta": 6,
+      "trendMatch": null
+    },
+    {
+      "headline": "הארפר בקהאם ניסתה לבקר את ברוקלין בזמן הקרע המשפחתי",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "hard",
+      "ageMinutes": 66,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15897003/Harper-Beckham-fails-reconnect-Brooklyn-visits-brothers-LA-mansion-boycotted-Davids-Hollywood-Walk-Fame-star-unveiling.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 5,
+      "afterRank": 3,
+      "delta": 2,
+      "trendMatch": null
+    },
+    {
       "headline": "איראן מצננת את ציפיות ההסכם עם ארה״ב למרות התקדמות המגעים",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 46,
+      "ageMinutes": 98,
       "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20750828",
       "beforeRank": 13,
-      "afterRank": 1,
-      "delta": 12,
+      "afterRank": 4,
+      "delta": 9,
       "trendMatch": {
-        "trend": "דובר משרד החוץ האיראני הודיע כי מועד חתימת המזכר לא יהיה מחר",
+        "trend": "דובר משרד החוץ של איראן מכחיש כי צוות המשא ומתן ייסע לג'נבה",
         "clusterKey": "משרד החוץ",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 8,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -1038,56 +1088,17 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:54:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845353",
+        "latestAt": "2026-06-13T18:10:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845380",
         "overlapTokens": [
+          "איראן",
           "דובר",
-          "האיראני",
           "החוץ",
           "משרד"
         ],
-        "score": 34.54,
-        "boost": 34.54
+        "score": 43.15,
+        "boost": 38.0
       }
-    },
-    {
-      "headline": "מות שני ילדים מחיידק אלים מחזיר את חיסון המנינגוקוקוס למרכז",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "בריאות",
-      "class": "hard",
-      "ageMinutes": 10,
-      "url": "https://www.jpost.com/israel-news/article-899255",
-      "beforeRank": 1,
-      "afterRank": 2,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
-      "headline": "נעמה לזימי מציבה את הבחירות כמבחן לעצירת נתניהו מהסלמה פוליטית",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "ageMinutes": 19,
-      "url": "https://www.ynet.co.il/news/article/yokra14797325",
-      "beforeRank": 8,
-      "afterRank": 3,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "הארפר בקהאם ניסתה לבקר את ברוקלין בזמן הקרע המשפחתי",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "hard",
-      "ageMinutes": 14,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15897003/Harper-Beckham-fails-reconnect-Brooklyn-visits-brothers-LA-mansion-boycotted-Davids-Hollywood-Walk-Fame-star-unveiling.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 4,
-      "delta": 1,
-      "trendMatch": null
     },
     {
       "headline": "איביזה פיינל בוס הפך ויראליות מקרית לקרב אגרוף ראשון",
@@ -1095,11 +1106,50 @@
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "hard",
-      "ageMinutes": 25,
+      "ageMinutes": 77,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/ibiza-final-boss-boxing-tonight-36918914",
       "beforeRank": 10,
       "afterRank": 5,
       "delta": 5,
+      "trendMatch": null
+    },
+    {
+      "headline": "אוסטרליה מנסה לשבור פתיחות רעות מול טורקיה עמוסת כוכבים",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 63,
+      "url": "https://sports.walla.co.il/item/3845361",
+      "beforeRank": 3,
+      "afterRank": 6,
+      "delta": -3,
+      "trendMatch": null
+    },
+    {
+      "headline": "אוהדי ברזיל הפכו את ניו יורק לחגיגת מונדיאל לפני מרוקו",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 63,
+      "url": "https://sports.walla.co.il/item/3845360",
+      "beforeRank": 4,
+      "afterRank": 7,
+      "delta": -3,
+      "trendMatch": null
+    },
+    {
+      "headline": "ג׳סי נלסון התעלמה מדרמת ליטל מיקס בזמן חתונת פרי אדוארדס",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "ageMinutes": 67,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15897073/Jesy-Nelson-shows-incredible-figure-red-crop-matching-skirt-brushes-Perrie-Edwards-drama-snubbed-ex-Little-Mix-bandmates-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 6,
+      "afterRank": 8,
+      "delta": -2,
       "trendMatch": null
     },
     {
@@ -1108,14 +1158,14 @@
       "canonicalSource": "וואלה",
       "category": "בריאות",
       "class": "hard",
-      "ageMinutes": 72,
+      "ageMinutes": 124,
       "url": "https://news.walla.co.il/item/3845348",
       "beforeRank": 19,
-      "afterRank": 6,
-      "delta": 13,
+      "afterRank": 9,
+      "delta": 10,
       "trendMatch": {
         "trend": "נקבע מותו של ילד בן ארבע מרהט שטבע בחוף דלילה באשקלון",
-        "clusterKey": "שטבע בחוף",
+        "clusterKey": "נקבע מותו",
         "domain": "חדשות",
         "externalMentions": 5,
         "sourceCount": 2,
@@ -1139,94 +1189,16 @@
       }
     },
     {
-      "headline": "אוסטרליה מנסה לשבור פתיחות רעות מול טורקיה עמוסת כוכבים",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "ageMinutes": 11,
-      "url": "https://sports.walla.co.il/item/3845361",
-      "beforeRank": 3,
-      "afterRank": 7,
-      "delta": -4,
-      "trendMatch": null
-    },
-    {
-      "headline": "ג׳סי נלסון התעלמה מדרמת ליטל מיקס בזמן חתונת פרי אדוארדס",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "ageMinutes": 15,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15897073/Jesy-Nelson-shows-incredible-figure-red-crop-matching-skirt-brushes-Perrie-Edwards-drama-snubbed-ex-Little-Mix-bandmates-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 6,
-      "afterRank": 8,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
-      "headline": "אוהדי ברזיל הפכו את ניו יורק לחגיגת מונדיאל לפני מרוקו",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "ageMinutes": 11,
-      "url": "https://sports.walla.co.il/item/3845360",
-      "beforeRank": 4,
-      "afterRank": 9,
-      "delta": -5,
-      "trendMatch": null
-    },
-    {
-      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת על יציבות שלטונית",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 134,
-      "url": "https://www.aljazeera.com/news/2026/6/13/iran-announces-funeral-burial-dates-for-late-supreme-leader-khamenei?traffic_source=rss",
-      "beforeRank": 28,
-      "afterRank": 10,
-      "delta": 18,
-      "trendMatch": {
-        "trend": "איראן: הלווייתו של עלי חמינאי תיערך ב-4 ביולי בטהרן",
-        "clusterKey": "עלי חמינאי",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845333",
-        "overlapTokens": [
-          "איראן",
-          "בטהרן",
-          "ביולי",
-          "חמינאי",
-          "עלי"
-        ],
-        "score": 45.67,
-        "boost": 38.0
-      }
-    },
-    {
       "headline": "פרי אדוארדס מתחתנת אחרי שהפכה פרידה פומבית מזאין לסיפור שיקום",
       "source": "Mirror Celebs רכילות חו״ל",
       "canonicalSource": "Mirror",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 20,
+      "ageMinutes": 71,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/perrie-edwards-zayn-malik-heartbreak-37290231",
       "beforeRank": 9,
-      "afterRank": 11,
-      "delta": -2,
+      "afterRank": 10,
+      "delta": -1,
       "trendMatch": null
     },
     {
@@ -1235,29 +1207,93 @@
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 16,
+      "ageMinutes": 68,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897017/Shania-Twain-Harry-Styles-Wembley-residency.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 7,
-      "afterRank": 12,
-      "delta": -5,
+      "afterRank": 11,
+      "delta": -4,
       "trendMatch": null
     },
     {
-      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת שהמלחמה נרגעת",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "פוליטיקה",
+      "headline": "ג׳וניור אנדרה הגיע לגיל 21 עם מחוות מכל משפחת פרייס־אנדרה",
+      "source": "Mirror Celebs רכילות חו״ל",
+      "canonicalSource": "Mirror",
+      "category": "רכילות",
+      "class": "soft",
+      "ageMinutes": 82,
+      "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-price-peter-andre-lead-37290790",
+      "beforeRank": 11,
+      "afterRank": 12,
+      "delta": -1,
+      "trendMatch": null
+    },
+    {
+      "headline": "מאגר האורניום האיראני הפך למבחן האמיתי של ההסכם",
+      "source": "וואלה חדשות - חדשות בעולם",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 187,
-      "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20750489",
-      "beforeRank": 43,
+      "ageMinutes": 174,
+      "url": "https://news.walla.co.il/item/3845335",
+      "beforeRank": 26,
       "afterRank": 13,
-      "delta": 30,
+      "delta": 13,
       "trendMatch": {
-        "trend": "איראן: הלווייתו של עלי חמינאי תיערך ב-4 ביולי בטהרן",
-        "clusterKey": "עלי חמינאי",
+        "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
+        "clusterKey": "לאחר שארה תכננה",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-13T15:17:47.147438+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+        "overlapTokens": [
+          "איראן",
+          "האורניום",
+          "חדשות",
+          "מבצע",
+          "קרקעי"
+        ],
+        "score": 47.36,
+        "boost": 38.0
+      }
+    },
+    {
+      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת על יציבות שלטונית",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 186,
+      "url": "https://www.aljazeera.com/news/2026/6/13/iran-announces-funeral-burial-dates-for-late-supreme-leader-khamenei?traffic_source=rss",
+      "beforeRank": 28,
+      "afterRank": 14,
+      "delta": 14,
+      "trendMatch": null
+    },
+    {
+      "headline": "ישראל תקפה בלבנון בזמן שאיראן מדברת על הסכם קרוב עם ארה״ב",
+      "source": "BBC World",
+      "canonicalSource": "BBC",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 242,
+      "url": "https://www.bbc.com/news/articles/c39y02x98k8o?at_medium=RSS&at_campaign=rss",
+      "beforeRank": 44,
+      "afterRank": 15,
+      "delta": 29,
+      "trendMatch": {
+        "trend": "צה\"ל חיסל שבעה מחבלים בדרום לבנון במהלך השבוע האחרון",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 9,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -1268,33 +1304,31 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845333",
+        "latestAt": "2026-06-13T17:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845369",
         "overlapTokens": [
-          "איראן",
-          "בטהרן",
-          "הלווייתו",
-          "חמינאי"
+          "בדרום",
+          "לבנון"
         ],
-        "score": 36.54,
-        "boost": 36.54
+        "score": 23.2,
+        "boost": 23.2
       }
     },
     {
-      "headline": "מאגר האורניום האיראני הפך למבחן האמיתי של ההסכם",
-      "source": "וואלה חדשות - חדשות בעולם",
-      "canonicalSource": "וואלה",
-      "category": "ביטחון",
+      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת שהמלחמה נרגעת",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "פוליטיקה",
       "class": "hard",
-      "ageMinutes": 122,
-      "url": "https://news.walla.co.il/item/3845335",
-      "beforeRank": 26,
-      "afterRank": 14,
-      "delta": 12,
+      "ageMinutes": 238,
+      "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20750489",
+      "beforeRank": 43,
+      "afterRank": 16,
+      "delta": 27,
       "trendMatch": {
-        "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
-        "clusterKey": "מלכדה האורניום",
-        "domain": "כלכלה",
+        "trend": "דיווח על תקיפות בנבטיה ובצור; איראן: ההסכם יכלול נסיגה ישראלית מלבנון",
+        "clusterKey": "ההסכם יכלול נסיגה",
+        "domain": "חדשות",
         "externalMentions": 2,
         "sourceCount": 2,
         "sources": [
@@ -1305,54 +1339,28 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.585875+00:00",
-        "sampleUrl": "https://www.themarker.com/hrtz/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+        "latestAt": "2026-06-13T15:17:47.151925+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/0000019e-bf30-d86d-adde-bffd9b340000",
         "overlapTokens": [
           "איראן",
-          "האורניום",
-          "מבצע",
-          "קרקעי"
+          "ישראלית"
         ],
-        "score": 29.78,
-        "boost": 29.78
+        "score": 14.89,
+        "boost": 14.89
       }
     },
     {
-      "headline": "ישראל תקפה בלבנון בזמן שאיראן מדברת על הסכם קרוב עם ארה״ב",
-      "source": "BBC World",
-      "canonicalSource": "BBC",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 190,
-      "url": "https://www.bbc.com/news/articles/c39y02x98k8o?at_medium=RSS&at_campaign=rss",
-      "beforeRank": 44,
-      "afterRank": 15,
-      "delta": 29,
-      "trendMatch": {
-        "trend": "במהלך היממה האחרונה: צה\"ל תקף יותר מ-70 תשתיות חיזבאללה בדרום לבנון",
-        "clusterKey": "בדרום לבנון",
-        "domain": "חדשות",
-        "externalMentions": 7,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:20:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845349",
-        "overlapTokens": [
-          "בדרום",
-          "יותר",
-          "לבנון"
-        ],
-        "score": 31.55,
-        "boost": 31.55
-      }
+      "headline": "גרניט ג׳אקה מציב לשווייץ יעד שיא לפני פתיחת המונדיאל",
+      "source": "הארץ - ספורט",
+      "canonicalSource": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 109,
+      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-13/ty-article/0000019e-c11e-d43d-a39f-e77f86c60000",
+      "beforeRank": 14,
+      "afterRank": 17,
+      "delta": -3,
+      "trendMatch": null
     },
     {
       "headline": "אליאנה מנצרת הופיעה בטקס פתיחת המונדיאל בקנדה",
@@ -1360,11 +1368,11 @@
       "canonicalSource": "Jerusalem Post",
       "category": "תרבות",
       "class": "soft",
-      "ageMinutes": 70,
+      "ageMinutes": 121,
       "url": "https://www.jpost.com/israel-news/culture/article-899254",
       "beforeRank": 15,
-      "afterRank": 16,
-      "delta": -1,
+      "afterRank": 18,
+      "delta": -3,
       "trendMatch": {
         "trend": "Wars, sanctions and punishments: Iraq's 40-year World Cup wait Iraq return to the World Cup with ambitions of delivering stronger performances an",
         "clusterKey": "world cup",
@@ -1380,7 +1388,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.559960+00:00",
+        "latestAt": "2026-06-13T15:17:47.133832+00:00",
         "sampleUrl": "https://www.bbc.com/sport/football/articles/cyv2l60q188o",
         "overlapTokens": [
           "cup",
@@ -1396,64 +1404,65 @@
       "canonicalSource": "Page Six",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 43,
+      "ageMinutes": 94,
       "url": "https://pagesix.com/2026/06/13/royal-family/prince-louis-steals-the-show-yet-again-with-cheeky-trooping-the-colour-antics/",
       "beforeRank": 12,
-      "afterRank": 17,
-      "delta": -5,
-      "trendMatch": null
-    },
-    {
-      "headline": "ג׳וניור אנדרה הגיע לגיל 21 עם מחוות מכל משפחת פרייס־אנדרה",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "ageMinutes": 31,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-price-peter-andre-lead-37290790",
-      "beforeRank": 11,
-      "afterRank": 18,
+      "afterRank": 19,
       "delta": -7,
       "trendMatch": null
     },
     {
-      "headline": "גרניט ג׳אקה מציב לשווייץ יעד שיא לפני פתיחת המונדיאל",
-      "source": "הארץ - ספורט",
-      "canonicalSource": "הארץ",
-      "category": "ספורט",
-      "class": "soft",
-      "ageMinutes": 57,
-      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-13/ty-article/0000019e-c11e-d43d-a39f-e77f86c60000",
-      "beforeRank": 14,
-      "afterRank": 19,
-      "delta": -5,
-      "trendMatch": null
-    },
-    {
-      "headline": "אנצ׳לוטי פותח את משימת השיקום של ברזיל מול מרוקו",
-      "source": "ynet - כל ערוץ הספורט",
+      "headline": "טורקיה וסעודיה מקדמות ציר יבשתי שעוקף את הורמוז ואת ישראל",
+      "source": "ynet - כל ערוץ החדשות",
       "canonicalSource": "ynet",
-      "category": "ספורט",
-      "class": "soft",
-      "ageMinutes": 80,
-      "url": "https://www.ynet.co.il/sport/worldcup2026/article/bjnusuc11fe",
-      "beforeRank": 21,
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 233,
+      "url": "https://www.ynet.co.il/news/article/yokra14798610",
+      "beforeRank": 42,
       "afterRank": 20,
-      "delta": 1,
+      "delta": 22,
       "trendMatch": null
     }
   ],
   "movement": [
+    {
+      "headline": "מות שני ילדים מחיידק אלים מחזיר את חיסון המנינגוקוקוס למרכז",
+      "source": "Jerusalem Post",
+      "category": "בריאות",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 1,
+      "afterRank": 1
+    },
+    {
+      "headline": "נעמה לזימי מציבה את הבחירות כמבחן לעצירת נתניהו מהסלמה פוליטית",
+      "source": "ynet",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 8,
+      "afterRank": 2
+    },
+    {
+      "headline": "הארפר בקהאם ניסתה לבקר את ברוקלין בזמן הקרע המשפחתי",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 5,
+      "afterRank": 3
+    },
     {
       "headline": "איראן מצננת את ציפיות ההסכם עם ארה״ב למרות התקדמות המגעים",
       "source": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": {
-        "trend": "דובר משרד החוץ האיראני הודיע כי מועד חתימת המזכר לא יהיה מחר",
+        "trend": "דובר משרד החוץ של איראן מכחיש כי צוות המשא ומתן ייסע לג'נבה",
         "clusterKey": "משרד החוץ",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 8,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -1464,45 +1473,18 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:54:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845353",
+        "latestAt": "2026-06-13T18:10:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845380",
         "overlapTokens": [
+          "איראן",
           "דובר",
-          "האיראני",
           "החוץ",
           "משרד"
         ],
-        "score": 34.54,
-        "boost": 34.54
+        "score": 43.15,
+        "boost": 38.0
       },
       "beforeRank": 13,
-      "afterRank": 1
-    },
-    {
-      "headline": "מות שני ילדים מחיידק אלים מחזיר את חיסון המנינגוקוקוס למרכז",
-      "source": "Jerusalem Post",
-      "category": "בריאות",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 1,
-      "afterRank": 2
-    },
-    {
-      "headline": "נעמה לזימי מציבה את הבחירות כמבחן לעצירת נתניהו מהסלמה פוליטית",
-      "source": "ynet",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 8,
-      "afterRank": 3
-    },
-    {
-      "headline": "הארפר בקהאם ניסתה לבקר את ברוקלין בזמן הקרע המשפחתי",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 5,
       "afterRank": 4
     },
     {
@@ -1515,13 +1497,40 @@
       "afterRank": 5
     },
     {
+      "headline": "אוסטרליה מנסה לשבור פתיחות רעות מול טורקיה עמוסת כוכבים",
+      "source": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 3,
+      "afterRank": 6
+    },
+    {
+      "headline": "אוהדי ברזיל הפכו את ניו יורק לחגיגת מונדיאל לפני מרוקו",
+      "source": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 4,
+      "afterRank": 7
+    },
+    {
+      "headline": "ג׳סי נלסון התעלמה מדרמת ליטל מיקס בזמן חתונת פרי אדוארדס",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 6,
+      "afterRank": 8
+    },
+    {
       "headline": "תקיפת התנים בכנרת חושפת שנה חריגה של כלבת בישראל",
       "source": "וואלה",
       "category": "בריאות",
       "class": "hard",
       "trendMatch": {
         "trend": "נקבע מותו של ילד בן ארבע מרהט שטבע בחוף דלילה באשקלון",
-        "clusterKey": "שטבע בחוף",
+        "clusterKey": "נקבע מותו",
         "domain": "חדשות",
         "externalMentions": 5,
         "sourceCount": 2,
@@ -1544,69 +1553,7 @@
         "boost": 23.4
       },
       "beforeRank": 19,
-      "afterRank": 6
-    },
-    {
-      "headline": "אוסטרליה מנסה לשבור פתיחות רעות מול טורקיה עמוסת כוכבים",
-      "source": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 3,
-      "afterRank": 7
-    },
-    {
-      "headline": "ג׳סי נלסון התעלמה מדרמת ליטל מיקס בזמן חתונת פרי אדוארדס",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 6,
-      "afterRank": 8
-    },
-    {
-      "headline": "אוהדי ברזיל הפכו את ניו יורק לחגיגת מונדיאל לפני מרוקו",
-      "source": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 4,
       "afterRank": 9
-    },
-    {
-      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת על יציבות שלטונית",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "איראן: הלווייתו של עלי חמינאי תיערך ב-4 ביולי בטהרן",
-        "clusterKey": "עלי חמינאי",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845333",
-        "overlapTokens": [
-          "איראן",
-          "בטהרן",
-          "ביולי",
-          "חמינאי",
-          "עלי"
-        ],
-        "score": 45.67,
-        "boost": 38.0
-      },
-      "beforeRank": 28,
-      "afterRank": 10
     },
     {
       "headline": "פרי אדוארדס מתחתנת אחרי שהפכה פרידה פומבית מזאין לסיפור שיקום",
@@ -1615,7 +1562,7 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 9,
-      "afterRank": 11
+      "afterRank": 10
     },
     {
       "headline": "שאנה טוויין פתחה להארי סטיילס את וומבלי ולא נתנה לו לגנוב את כל ההצגה",
@@ -1624,18 +1571,70 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 7,
+      "afterRank": 11
+    },
+    {
+      "headline": "ג׳וניור אנדרה הגיע לגיל 21 עם מחוות מכל משפחת פרייס־אנדרה",
+      "source": "Mirror",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 11,
       "afterRank": 12
     },
     {
-      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת שהמלחמה נרגעת",
-      "source": "ישראל היום",
-      "category": "פוליטיקה",
+      "headline": "מאגר האורניום האיראני הפך למבחן האמיתי של ההסכם",
+      "source": "וואלה",
+      "category": "ביטחון",
       "class": "hard",
       "trendMatch": {
-        "trend": "איראן: הלווייתו של עלי חמינאי תיערך ב-4 ביולי בטהרן",
-        "clusterKey": "עלי חמינאי",
+        "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
+        "clusterKey": "לאחר שארה תכננה",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-13T15:17:47.147438+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+        "overlapTokens": [
+          "איראן",
+          "האורניום",
+          "חדשות",
+          "מבצע",
+          "קרקעי"
+        ],
+        "score": 47.36,
+        "boost": 38.0
+      },
+      "beforeRank": 26,
+      "afterRank": 13
+    },
+    {
+      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת על יציבות שלטונית",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 28,
+      "afterRank": 14
+    },
+    {
+      "headline": "ישראל תקפה בלבנון בזמן שאיראן מדברת על הסכם קרוב עם ארה״ב",
+      "source": "BBC",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "צה\"ל חיסל שבעה מחבלים בדרום לבנון במהלך השבוע האחרון",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 9,
         "sourceCount": 2,
         "sources": [
           "ynet",
@@ -1646,29 +1645,27 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T13:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845333",
+        "latestAt": "2026-06-13T17:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845369",
         "overlapTokens": [
-          "איראן",
-          "בטהרן",
-          "הלווייתו",
-          "חמינאי"
+          "בדרום",
+          "לבנון"
         ],
-        "score": 36.54,
-        "boost": 36.54
+        "score": 23.2,
+        "boost": 23.2
       },
-      "beforeRank": 43,
-      "afterRank": 13
+      "beforeRank": 44,
+      "afterRank": 15
     },
     {
-      "headline": "מאגר האורניום האיראני הפך למבחן האמיתי של ההסכם",
-      "source": "וואלה",
-      "category": "ביטחון",
+      "headline": "איראן קבעה מסע הלוויה לחמינאי ומאותתת שהמלחמה נרגעת",
+      "source": "ישראל היום",
+      "category": "פוליטיקה",
       "class": "hard",
       "trendMatch": {
-        "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
-        "clusterKey": "מלכדה האורניום",
-        "domain": "כלכלה",
+        "trend": "דיווח על תקיפות בנבטיה ובצור; איראן: ההסכם יכלול נסיגה ישראלית מלבנון",
+        "clusterKey": "ההסכם יכלול נסיגה",
+        "domain": "חדשות",
         "externalMentions": 2,
         "sourceCount": 2,
         "sources": [
@@ -1679,52 +1676,26 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.585875+00:00",
-        "sampleUrl": "https://www.themarker.com/hrtz/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+        "latestAt": "2026-06-13T15:17:47.151925+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/0000019e-bf30-d86d-adde-bffd9b340000",
         "overlapTokens": [
           "איראן",
-          "האורניום",
-          "מבצע",
-          "קרקעי"
+          "ישראלית"
         ],
-        "score": 29.78,
-        "boost": 29.78
+        "score": 14.89,
+        "boost": 14.89
       },
-      "beforeRank": 26,
-      "afterRank": 14
+      "beforeRank": 43,
+      "afterRank": 16
     },
     {
-      "headline": "ישראל תקפה בלבנון בזמן שאיראן מדברת על הסכם קרוב עם ארה״ב",
-      "source": "BBC",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "במהלך היממה האחרונה: צה\"ל תקף יותר מ-70 תשתיות חיזבאללה בדרום לבנון",
-        "clusterKey": "בדרום לבנון",
-        "domain": "חדשות",
-        "externalMentions": 7,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-13T15:20:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845349",
-        "overlapTokens": [
-          "בדרום",
-          "יותר",
-          "לבנון"
-        ],
-        "score": 31.55,
-        "boost": 31.55
-      },
-      "beforeRank": 44,
-      "afterRank": 15
+      "headline": "גרניט ג׳אקה מציב לשווייץ יעד שיא לפני פתיחת המונדיאל",
+      "source": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 14,
+      "afterRank": 17
     },
     {
       "headline": "אליאנה מנצרת הופיעה בטקס פתיחת המונדיאל בקנדה",
@@ -1746,7 +1717,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-13T14:26:08.559960+00:00",
+        "latestAt": "2026-06-13T15:17:47.133832+00:00",
         "sampleUrl": "https://www.bbc.com/sport/football/articles/cyv2l60q188o",
         "overlapTokens": [
           "cup",
@@ -1756,7 +1727,7 @@
         "boost": 20.98
       },
       "beforeRank": 15,
-      "afterRank": 16
+      "afterRank": 18
     },
     {
       "headline": "הנסיך לואי שוב גנב את ההצגה בטקס Trooping the Colour",
@@ -1765,33 +1736,15 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 12,
-      "afterRank": 17
-    },
-    {
-      "headline": "ג׳וניור אנדרה הגיע לגיל 21 עם מחוות מכל משפחת פרייס־אנדרה",
-      "source": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 11,
-      "afterRank": 18
-    },
-    {
-      "headline": "גרניט ג׳אקה מציב לשווייץ יעד שיא לפני פתיחת המונדיאל",
-      "source": "הארץ",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 14,
       "afterRank": 19
     },
     {
-      "headline": "אנצ׳לוטי פותח את משימת השיקום של ברזיל מול מרוקו",
+      "headline": "טורקיה וסעודיה מקדמות ציר יבשתי שעוקף את הורמוז ואת ישראל",
       "source": "ynet",
-      "category": "ספורט",
-      "class": "soft",
+      "category": "ביטחון",
+      "class": "hard",
       "trendMatch": null,
-      "beforeRank": 21,
+      "beforeRank": 42,
       "afterRank": 20
     }
   ],
@@ -1802,6 +1755,8 @@
     "source cap to reduce dominant-source takeover in top 10/20",
     "duplicate/story crowding cap",
     "external news-trend signal from spy_trends.json boosts existing feed items that match strong RSS/WEB multi-source trends",
+    "replacement-readiness score tracks freshness, newsiness, top-20 quality, source balance, trend use, and critical blockers",
+    "production promotion requires rolling score >= 80, at least 24 samples, 80% ready runs, and zero critical blockers",
     "longitudinal history tracks whether simulated health stays better than the main feed"
   ],
   "accessPurpose": "open_readonly_aliza_tt_rr_simulation",
