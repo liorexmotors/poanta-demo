@@ -22,6 +22,7 @@ DEFAULT_FEED = ROOT / "feed.json"
 DEFAULT_OUT = ROOT / "tmp" / "feed_quality_ranking_simulation.json"
 DEFAULT_PUBLIC_OUT = ROOT / "tt_rr_simulation_feed.json"
 DEFAULT_HISTORY = ROOT / "dashboard_simulation_history.json"
+DEFAULT_SPY_TRENDS = ROOT / "spy_trends.json"
 
 HARD_CATEGORIES = {"ביטחון", "פוליטיקה", "חדשות", "משפט", "פלילים", "כלכלה", "אקטואליה בעולם"}
 SOFT_CATEGORIES = {"רכילות", "ספורט", "תרבות", "בריאות"}
@@ -33,6 +34,11 @@ CORE_KEYWORDS = [
 BREAKING_TERMS = ["פיגוע", "ירי", "טיל", "כטב", "אזעק", "נפגע", "הרוג", "חוסל", "תקיפה", "מלחמה", "חירום"]
 LOW_VALUE_TERMS = ["ביקיני", "שמלה", "סלפי", "ריאליטי", "כוכבת", "סלב", "חשפה", "נראתה", "נישקה"]
 IMPORTANT_SOURCES = ["N12", "ynet", "מעריב", "הארץ", "BBC", "Guardian", "NYT", "גלובס", "ישראל היום", "וואלה"]
+TREND_HARD_DOMAINS = {"ביטחון", "פוליטיקה", "חדשות", "משפט", "פלילים", "כלכלה", "אקטואליה בעולם"}
+STOPWORDS = {
+    "של", "על", "עם", "את", "זה", "זו", "הוא", "היא", "הם", "הן", "כי", "לא", "כן", "או", "גם", "כל", "עוד",
+    "from", "with", "that", "this", "the", "and", "for", "into", "after", "before", "says", "said", "over",
+}
 SOURCE_TIERS = {
     "N12": 8,
     "ynet": 7,
@@ -102,6 +108,114 @@ def item_text(item: dict[str, Any]) -> str:
     return " ".join(str(item.get(k) or "") for k in ("category", "source", "headline", "originalTitle", "context", "takeaway"))
 
 
+def meaningful_tokens(text: Any) -> set[str]:
+    raw = re.sub(r"[^\w\u0590-\u05ff]+", " ", str(text or "").lower())
+    tokens = set()
+    for token in raw.split():
+        token = token.strip("_ ")
+        if len(token) < 3 or token in STOPWORDS or token.isdigit():
+            continue
+        tokens.add(token)
+    return tokens
+
+
+def load_trend_signals(path: Path, now: datetime, max_trends: int = 40) -> dict[str, Any]:
+    """Load external spy trends as a read-only signal for the simulation lane.
+
+    The trend agent already compares external RSS/WEB clusters to the current
+    feed. Here we do not create or publish items; we only reward existing feed
+    items that overlap with strong external news clusters, especially hard-news
+    domains and multi-source gaps.
+    """
+    empty = {"status": "unavailable", "path": str(path), "trends": [], "error": None}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {**empty, "error": "spy_trends.json not found"}
+    except Exception as exc:
+        return {**empty, "error": str(exc)[:180]}
+    trends = []
+    for row in list(data.get("trends") or [])[: max(1, max_trends)]:
+        domain = str(row.get("domain") or "")
+        latest = parse_dt(row.get("latestAt"))
+        age_hours = None
+        if latest:
+            age_hours = max(0.0, (now.astimezone(latest.tzinfo) - latest).total_seconds() / 3600)
+        external_mentions = int(row.get("externalMentions") or 0)
+        source_count = int(row.get("sourceCount") or 0)
+        discovery_types = list(row.get("discoveryTypes") or [])
+        text = " ".join(str(row.get(k) or "") for k in ("trend", "clusterKey", "domain"))
+        tokens = meaningful_tokens(text)
+        if not tokens:
+            continue
+        strength = min(42.0, source_count * 7.0 + external_mentions * 1.7)
+        if domain in TREND_HARD_DOMAINS:
+            strength += 10.0
+        if not row.get("mentionedInFeed"):
+            strength += 8.0
+        if "WEB" in discovery_types and "RSS" in discovery_types:
+            strength += 5.0
+        elif "WEB" in discovery_types:
+            strength += 2.0
+        if age_hours is not None and age_hours > 8:
+            strength -= min(18.0, (age_hours - 8) * 1.5)
+        trends.append({
+            "trend": row.get("trend") or "",
+            "clusterKey": row.get("clusterKey") or "",
+            "domain": domain,
+            "externalMentions": external_mentions,
+            "sourceCount": source_count,
+            "sources": row.get("sources") or [],
+            "discoveryTypes": discovery_types,
+            "mentionedInFeed": bool(row.get("mentionedInFeed")),
+            "latestAt": row.get("latestAt"),
+            "sampleUrl": row.get("sampleUrl") or "",
+            "tokens": sorted(tokens),
+            "strength": max(0.0, round(strength, 2)),
+        })
+    trends.sort(key=lambda r: (r["strength"], r["sourceCount"], r["externalMentions"]), reverse=True)
+    return {
+        "status": "ok",
+        "path": str(path),
+        "generatedAt": data.get("generatedAt"),
+        "sourceTrendCount": len(data.get("trends") or []),
+        "usedTrendCount": len(trends),
+        "rssItemsScanned": data.get("rssItemsScanned"),
+        "webItemsScanned": data.get("webItemsScanned"),
+        "trends": trends,
+    }
+
+
+def trend_match(item: dict[str, Any], trend_signal: dict[str, Any] | None) -> dict[str, Any] | None:
+    if not trend_signal or not trend_signal.get("trends"):
+        return None
+    tokens = meaningful_tokens(item_text(item))
+    if not tokens:
+        return None
+    best: dict[str, Any] | None = None
+    best_score = 0.0
+    for trend in trend_signal.get("trends") or []:
+        trend_tokens = set(trend.get("tokens") or [])
+        if not trend_tokens:
+            continue
+        overlap = tokens & trend_tokens
+        if not overlap:
+            continue
+        # Require more than a single generic token unless the source/domain is
+        # very strong. This prevents accidental boosts from broad words.
+        ratio = len(overlap) / max(1, min(len(tokens), len(trend_tokens)))
+        score = (len(overlap) * 9.0 + ratio * 18.0) * (float(trend.get("strength") or 0.0) / 42.0)
+        if len(overlap) == 1 and score < 18:
+            continue
+        if score > best_score:
+            best_score = score
+            best = {k: trend.get(k) for k in ("trend", "clusterKey", "domain", "externalMentions", "sourceCount", "sources", "discoveryTypes", "mentionedInFeed", "latestAt", "sampleUrl")}
+            best["overlapTokens"] = sorted(overlap)[:8]
+            best["score"] = round(score, 2)
+            best["boost"] = round(min(38.0, max(0.0, score)), 2)
+    return best
+
+
 def quality_class(item: dict[str, Any]) -> str:
     cat = str(item.get("category") or "")
     text = item_text(item)
@@ -123,7 +237,7 @@ def story_key(item: dict[str, Any]) -> str:
     return " ".join(text.split()[:14])
 
 
-def metric_block(items: list[dict[str, Any]], now: datetime) -> dict[str, Any]:
+def metric_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[str, Any] | None = None) -> dict[str, Any]:
     top10 = items[:10]
     top20 = items[:20]
     classes = [quality_class(item) for item in top10]
@@ -131,6 +245,8 @@ def metric_block(items: list[dict[str, Any]], now: datetime) -> dict[str, Any]:
     source_counts = Counter(sources)
     dominant = source_counts.most_common(1)[0] if source_counts else ("—", 0)
     ages = [age_minutes(item, now) for item in items]
+    top10_trend_matches = [trend_match(item, trend_signal) for item in top10]
+    top20_trend_matches = [trend_match(item, trend_signal) for item in top20]
     return {
         "newsinessTop10": classes.count("hard"),
         "softTop10": classes.count("soft"),
@@ -143,6 +259,9 @@ def metric_block(items: list[dict[str, Any]], now: datetime) -> dict[str, Any]:
         "dominantSource": {"name": dominant[0], "count": dominant[1]},
         "importantMissingTop20": [s for s in IMPORTANT_SOURCES if s not in set(sources)],
         "topSources": [{"name": k, "count": v} for k, v in source_counts.most_common(8)],
+        "trendMatchedTop10": sum(1 for m in top10_trend_matches if m),
+        "trendMatchedTop20": sum(1 for m in top20_trend_matches if m),
+        "trendGapMatchedTop20": sum(1 for m in top20_trend_matches if m and not m.get("mentionedInFeed")),
     }
 
 
@@ -171,7 +290,7 @@ def base_recency_score(item: dict[str, Any], now: datetime) -> float:
     return max(-140.0, 0.0 - (age - 180) * 0.5)
 
 
-def static_quality_bonus(item: dict[str, Any]) -> float:
+def static_quality_bonus(item: dict[str, Any], trend_signal: dict[str, Any] | None = None) -> float:
     cls = quality_class(item)
     cat = str(item.get("category") or "")
     src = canonical_source(item.get("source"))
@@ -195,10 +314,16 @@ def static_quality_bonus(item: dict[str, Any]) -> float:
         bonus += 8
     if any(word in text for word in LOW_VALUE_TERMS):
         bonus -= 8
+    match = trend_match(item, trend_signal)
+    if match:
+        trend_bonus = float(match.get("boost") or 0.0)
+        if quality_class(item) == "soft":
+            trend_bonus *= 0.45
+        bonus += trend_bonus
     return bonus
 
 
-def simulate_order(items: list[dict[str, Any]], now: datetime, limit: int = 60) -> list[dict[str, Any]]:
+def simulate_order(items: list[dict[str, Any]], now: datetime, limit: int = 60, trend_signal: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     pool = list(items[:limit])
     selected: list[dict[str, Any]] = []
     source_counts: Counter[str] = Counter()
@@ -212,7 +337,7 @@ def simulate_order(items: list[dict[str, Any]], now: datetime, limit: int = 60) 
             src = canonical_source(item.get("source"))
             cls = quality_class(item)
             item_age = age_minutes(item, now)
-            value = base_recency_score(item, now) + static_quality_bonus(item)
+            value = base_recency_score(item, now) + static_quality_bonus(item, trend_signal)
 
             # Strong freshness guard: the simulation may improve quality, but should
             # not make the feed feel stale in the first screen.
@@ -253,7 +378,8 @@ def simulate_order(items: list[dict[str, Any]], now: datetime, limit: int = 60) 
     return selected + items[limit:]
 
 
-def compact_item(item: dict[str, Any], now: datetime, *, before_rank: int | None = None, after_rank: int | None = None) -> dict[str, Any]:
+def compact_item(item: dict[str, Any], now: datetime, *, before_rank: int | None = None, after_rank: int | None = None, trend_signal: dict[str, Any] | None = None) -> dict[str, Any]:
+    match = trend_match(item, trend_signal)
     return {
         "headline": item.get("headline") or item.get("originalTitle") or "",
         "source": item.get("source") or "",
@@ -265,6 +391,7 @@ def compact_item(item: dict[str, Any], now: datetime, *, before_rank: int | None
         "beforeRank": before_rank,
         "afterRank": after_rank,
         "delta": (before_rank - after_rank) if before_rank and after_rank else None,
+        "trendMatch": match,
     }
 
 
@@ -315,6 +442,7 @@ def main() -> int:
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     ap.add_argument("--public-out", default=str(DEFAULT_PUBLIC_OUT), help="public sanitized simulation JSON for the open Aliza page")
     ap.add_argument("--history", default=str(DEFAULT_HISTORY))
+    ap.add_argument("--spy-trends", default=str(DEFAULT_SPY_TRENDS), help="read-only external trend signal JSON")
     ap.add_argument("--limit", type=int, default=60)
     ap.add_argument("--history-max", type=int, default=144)
     args = ap.parse_args()
@@ -323,7 +451,8 @@ def main() -> int:
     data = json.loads(feed_path.read_text(encoding="utf-8"))
     original = list(data.get("items") or [])
     now = datetime.now(timezone.utc)
-    simulated = simulate_order(original, now, max(10, args.limit))
+    trend_signal = load_trend_signals(Path(args.spy_trends), now)
+    simulated = simulate_order(original, now, max(10, args.limit), trend_signal)
 
     original_rank_by_key = {story_key(item): i + 1 for i, item in enumerate(original[: args.limit])}
     simulated_rank_by_key = {story_key(item): i + 1 for i, item in enumerate(simulated[: args.limit])}
@@ -332,10 +461,10 @@ def main() -> int:
         key = story_key(item)
         before_rank = original_rank_by_key.get(key)
         after_rank = simulated_rank_by_key.get(key) if after else rank
-        return compact_item(item, now, before_rank=before_rank, after_rank=after_rank)
+        return compact_item(item, now, before_rank=before_rank, after_rank=after_rank, trend_signal=trend_signal)
 
-    before = metric_block(original, now)
-    after = metric_block(simulated, now)
+    before = metric_block(original, now, trend_signal)
+    after = metric_block(simulated, now, trend_signal)
     before_score = health_score(before)
     after_score = health_score(after)
     delta = {
@@ -343,6 +472,8 @@ def main() -> int:
         "softTop10": after["softTop10"] - before["softTop10"],
         "top12Under60": after["top12Under60"] - before["top12Under60"],
         "uniqueSourcesTop20": after["uniqueSourcesTop20"] - before["uniqueSourcesTop20"],
+        "trendMatchedTop10": after["trendMatchedTop10"] - before["trendMatchedTop10"],
+        "trendMatchedTop20": after["trendMatchedTop20"] - before["trendMatchedTop20"],
         "healthScore": after_score - before_score,
     }
     feed_fingerprint = ";".join(story_key(item) for item in original[:20])
@@ -369,16 +500,24 @@ def main() -> int:
         "afterHealthScore": after_score,
         "delta": delta,
         "historySummary": history.get("summary", {}),
+        "trendSignal": {
+            **{k: v for k, v in trend_signal.items() if k != "trends"},
+            "topTrends": [
+                {k: trend.get(k) for k in ("trend", "clusterKey", "domain", "externalMentions", "sourceCount", "sources", "discoveryTypes", "mentionedInFeed", "latestAt", "sampleUrl", "strength")}
+                for trend in (trend_signal.get("trends") or [])[:10]
+            ],
+        },
         "top10Before": [ranked(item, i + 1, after=False) for i, item in enumerate(original[:10])],
         "top10After": [ranked(item, i + 1, after=True) for i, item in enumerate(simulated[:10])],
         "top20Before": [ranked(item, i + 1, after=False) for i, item in enumerate(original[:20])],
         "top20After": [ranked(item, i + 1, after=True) for i, item in enumerate(simulated[:20])],
         "movement": [
             {
-                "headline": compact_item(item, now)["headline"],
-                "source": compact_item(item, now)["canonicalSource"],
-                "category": compact_item(item, now)["category"],
-                "class": compact_item(item, now)["class"],
+                "headline": compact_item(item, now, trend_signal=trend_signal)["headline"],
+                "source": compact_item(item, now, trend_signal=trend_signal)["canonicalSource"],
+                "category": compact_item(item, now, trend_signal=trend_signal)["category"],
+                "class": compact_item(item, now, trend_signal=trend_signal)["class"],
+                "trendMatch": compact_item(item, now, trend_signal=trend_signal)["trendMatch"],
                 "beforeRank": original_rank_by_key.get(story_key(item)),
                 "afterRank": i + 1,
             }
@@ -390,6 +529,7 @@ def main() -> int:
             "soft cap for gossip/sport/culture in top 3/5/10",
             "source cap to reduce dominant-source takeover in top 10/20",
             "duplicate/story crowding cap",
+            "external news-trend signal from spy_trends.json boosts existing feed items that match strong RSS/WEB multi-source trends",
             "longitudinal history tracks whether simulated health stays better than the main feed",
         ],
     }
