@@ -1,21 +1,21 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-13T22:19:55+00:00",
+  "generatedAt": "2026-06-13T23:24:00+00:00",
   "summary": {
-    "sampleCount": 103,
+    "sampleCount": 112,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 20.08,
-    "avgAfterHealthScore": 71.5,
+    "avgHealthDelta": 10.25,
+    "avgAfterHealthScore": 44.75,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 70,
-      "rollingScore": 64.96,
+      "latestScore": 61,
+      "rollingScore": 59.67,
       "readyRuns": 5,
       "criticalBlockers": [
         "newsiness_top10_below_7",
@@ -24,12 +24,12 @@
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 86,
-      "latestSummaryLine": "טוב",
-      "latestReportName": "tt-rr-simulation-review-2026-06-14-0100.md",
+      "latestScore": 56,
+      "latestSummaryLine": "בעייתי",
+      "latestReportName": "tt-rr-simulation-review-2026-06-14-0200.md",
       "window": 48,
-      "averageScore": 68.12,
-      "positiveReports": 20
+      "averageScore": 65.5,
+      "positiveReports": 16
     }
   },
   "runs": [
@@ -31275,6 +31275,3174 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 3,
         "healthScore": 14
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T22:28:31+00:00",
+      "feedFingerprint": "6818823813248527196",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 5
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          },
+          {
+            "name": "ישראל היום",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 80,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 3,
+          "blockers": [
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "ישראל עשויה לעצור את ההתקדמות בלבנון בגלל הסכם איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-899270",
+              "trendMatch": {
+                "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
+                "clusterKey": "להיחתם מחר",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T17:28:10+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk4glwswgl",
+                "overlapTokens": [
+                  "איראן",
+                  "הסכם"
+                ],
+                "score": 24.28,
+                "boost": 24.28
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 35.07,
+                "boost": 35.07
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 13,
+              "headline": "הסכם טראמפ־איראן מתקדם ומשאיר עמימות על הגרעין והורמוז",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 63,
+              "url": "https://www.ynet.co.il/news/article/rky417jbfx",
+              "trendMatch": {
+                "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T21:25:26+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/rky417jbfx",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "ומה",
+                  "ישתבש",
+                  "לחתימה",
+                  "לפני",
+                  "מרוץ",
+                  "משהו"
+                ],
+                "score": 144.35,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 11,
+              "headline": "צעירה נהרגה בבנג׳י בברזיל לאחר שחבל הבטיחות לא חובר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 58,
+              "url": "https://www.ynet.co.il/news/article/hyaj114obzx",
+              "trendMatch": null,
+              "queueScore": 14.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 9,
+        "top12Under60": 11,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 80,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 3,
+          "blockers": [
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 35.07,
+                "boost": 35.07
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "ישראל עשויה לעצור את ההתקדמות בלבנון בגלל הסכם איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-899270",
+              "trendMatch": {
+                "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
+                "clusterKey": "להיחתם מחר",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T17:28:10+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk4glwswgl",
+                "overlapTokens": [
+                  "איראן",
+                  "הסכם"
+                ],
+                "score": 24.28,
+                "boost": 24.28
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם טראמפ־איראן מתקדם ומשאיר עמימות על הגרעין והורמוז",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 63,
+              "url": "https://www.ynet.co.il/news/article/rky417jbfx",
+              "trendMatch": {
+                "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T21:25:26+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/rky417jbfx",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "ומה",
+                  "ישתבש",
+                  "לחתימה",
+                  "לפני",
+                  "מרוץ",
+                  "משהו"
+                ],
+                "score": 144.35,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 9,
+              "headline": "צעירה נהרגה בבנג׳י בברזיל לאחר שחבל הבטיחות לא חובר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 58,
+              "url": "https://www.ynet.co.il/news/article/hyaj114obzx",
+              "trendMatch": null,
+              "queueScore": 14.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 45,
+      "afterHealthScore": 59,
+      "replacementReadiness": {
+        "score": 68,
+        "threshold": 80,
+        "components": {
+          "freshness": 18.3,
+          "newsinessTop10": 10.0,
+          "top20Quality": 14.7,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportGeneratedAt": "2026-06-13T21:48:30+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 88,
+          "healthDelta": 23,
+          "replacementReadiness score": 92,
+          "rollingScore": 77.25,
+          "newsinessTop10": 9,
+          "softTop10": 0,
+          "top12Under60": 9,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 12,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 5,
+          "hardReadyCount": 5,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 3
+        },
+        "recommendedActions": [
+          "להקשיח את trendMatch: חסימת boost משמעותי כאשר החפיפה מבוססת רק על מילים כלליות, ודרישה לישות/נושא מובהק לפני קידום Top 20.",
+          "לתקן סיווג ספורט: ספורט רגיל לא ייספר hard-news ולא יקבל קדימות Top 10 אלא אם יש קשר מדיני/ביטחוני/פלילי ברור.",
+          "להרחיב את continuous publishing queue ל־7-9 מועמדים עם יעד מינימום 4 מקורות, ולהוסיף penalty למועמד חסר trendMatch כאשר הוא לא hard-news ציבורי מובהק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 01:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 2,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "healthScore": 14
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T22:39:31+00:00",
+      "feedFingerprint": "3992510196815514338",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 24,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 5
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          },
+          {
+            "name": "ישראל היום",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 76,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 3,
+          "blockers": [
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 24,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "ישראל עשויה לעצור את ההתקדמות בלבנון בגלל הסכם איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 24,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-899270",
+              "trendMatch": {
+                "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
+                "clusterKey": "להיחתם מחר",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T17:28:10+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk4glwswgl",
+                "overlapTokens": [
+                  "איראן",
+                  "הסכם"
+                ],
+                "score": 24.28,
+                "boost": 24.28
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 24,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 35.07,
+                "boost": 35.07
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 13,
+              "headline": "הסכם טראמפ־איראן מתקדם ומשאיר עמימות על הגרעין והורמוז",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 74,
+              "url": "https://www.ynet.co.il/news/article/rky417jbfx",
+              "trendMatch": {
+                "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T21:25:26+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/rky417jbfx",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "ומה",
+                  "ישתבש",
+                  "לחתימה",
+                  "לפני",
+                  "מרוץ",
+                  "משהו"
+                ],
+                "score": 144.35,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 11,
+              "headline": "צעירה נהרגה בבנג׳י בברזיל לאחר שחבל הבטיחות לא חובר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 69,
+              "url": "https://www.ynet.co.il/news/article/hyaj114obzx",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 24,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 76,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 3,
+          "blockers": [
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 24,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 35.07,
+                "boost": 35.07
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 24,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "ישראל עשויה לעצור את ההתקדמות בלבנון בגלל הסכם איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 24,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-899270",
+              "trendMatch": {
+                "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
+                "clusterKey": "להיחתם מחר",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T17:28:10+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk4glwswgl",
+                "overlapTokens": [
+                  "איראן",
+                  "הסכם"
+                ],
+                "score": 24.28,
+                "boost": 24.28
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם טראמפ־איראן מתקדם ומשאיר עמימות על הגרעין והורמוז",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 74,
+              "url": "https://www.ynet.co.il/news/article/rky417jbfx",
+              "trendMatch": {
+                "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T21:25:26+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/rky417jbfx",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "ומה",
+                  "ישתבש",
+                  "לחתימה",
+                  "לפני",
+                  "מרוץ",
+                  "משהו"
+                ],
+                "score": 144.35,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 8,
+              "headline": "צעירה נהרגה בבנג׳י בברזיל לאחר שחבל הבטיחות לא חובר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 69,
+              "url": "https://www.ynet.co.il/news/article/hyaj114obzx",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 45,
+      "afterHealthScore": 57,
+      "replacementReadiness": {
+        "score": 67,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.3,
+          "newsinessTop10": 10.0,
+          "top20Quality": 14.7,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportGeneratedAt": "2026-06-13T21:48:30+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 88,
+          "healthDelta": 23,
+          "replacementReadiness score": 92,
+          "rollingScore": 77.25,
+          "newsinessTop10": 9,
+          "softTop10": 0,
+          "top12Under60": 9,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 12,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 5,
+          "hardReadyCount": 5,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 3
+        },
+        "recommendedActions": [
+          "להקשיח את trendMatch: חסימת boost משמעותי כאשר החפיפה מבוססת רק על מילים כלליות, ודרישה לישות/נושא מובהק לפני קידום Top 20.",
+          "לתקן סיווג ספורט: ספורט רגיל לא ייספר hard-news ולא יקבל קדימות Top 10 אלא אם יש קשר מדיני/ביטחוני/פלילי ברור.",
+          "להרחיב את continuous publishing queue ל־7-9 מועמדים עם יעד מינימום 4 מקורות, ולהוסיף penalty למועמד חסר trendMatch כאשר הוא לא hard-news ציבורי מובהק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 01:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 2,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T22:50:31+00:00",
+      "feedFingerprint": "1815464186552537479",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 9,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 35,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 5
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          },
+          {
+            "name": "ישראל היום",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 70,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 35,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 2,
+              "headline": "ישראל עשויה לעצור את ההתקדמות בלבנון בגלל הסכם איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 35,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-899270",
+              "trendMatch": {
+                "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
+                "clusterKey": "להיחתם מחר",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T17:28:10+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk4glwswgl",
+                "overlapTokens": [
+                  "איראן",
+                  "הסכם"
+                ],
+                "score": 24.28,
+                "boost": 24.28
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 35,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 35.07,
+                "boost": 35.07
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 13,
+              "headline": "הסכם טראמפ־איראן מתקדם ומשאיר עמימות על הגרעין והורמוז",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 85,
+              "url": "https://www.ynet.co.il/news/article/rky417jbfx",
+              "trendMatch": {
+                "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T21:25:26+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/rky417jbfx",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "ומה",
+                  "ישתבש",
+                  "לחתימה",
+                  "לפני",
+                  "מרוץ",
+                  "משהו"
+                ],
+                "score": 144.35,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 11,
+              "headline": "צעירה נהרגה בבנג׳י בברזיל לאחר שחבל הבטיחות לא חובר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 80,
+              "url": "https://www.ynet.co.il/news/article/hyaj114obzx",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 35,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 70,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 35,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 35.07,
+                "boost": 35.07
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 35,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "ישראל עשויה לעצור את ההתקדמות בלבנון בגלל הסכם איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 35,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-899270",
+              "trendMatch": {
+                "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
+                "clusterKey": "להיחתם מחר",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T17:28:10+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk4glwswgl",
+                "overlapTokens": [
+                  "איראן",
+                  "הסכם"
+                ],
+                "score": 24.28,
+                "boost": 24.28
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם טראמפ־איראן מתקדם ומשאיר עמימות על הגרעין והורמוז",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 85,
+              "url": "https://www.ynet.co.il/news/article/rky417jbfx",
+              "trendMatch": {
+                "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T21:25:26+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/rky417jbfx",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "ומה",
+                  "ישתבש",
+                  "לחתימה",
+                  "לפני",
+                  "מרוץ",
+                  "משהו"
+                ],
+                "score": 144.35,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 7,
+              "headline": "צעירה נהרגה בבנג׳י בברזיל לאחר שחבל הבטיחות לא חובר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 80,
+              "url": "https://www.ynet.co.il/news/article/hyaj114obzx",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 43,
+      "afterHealthScore": 57,
+      "replacementReadiness": {
+        "score": 58,
+        "threshold": 80,
+        "components": {
+          "freshness": 12.8,
+          "newsinessTop10": 10.0,
+          "top20Quality": 14.7,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportGeneratedAt": "2026-06-13T21:48:30+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 88,
+          "healthDelta": 23,
+          "replacementReadiness score": 92,
+          "rollingScore": 77.25,
+          "newsinessTop10": 9,
+          "softTop10": 0,
+          "top12Under60": 9,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 12,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 5,
+          "hardReadyCount": 5,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 3
+        },
+        "recommendedActions": [
+          "להקשיח את trendMatch: חסימת boost משמעותי כאשר החפיפה מבוססת רק על מילים כלליות, ודרישה לישות/נושא מובהק לפני קידום Top 20.",
+          "לתקן סיווג ספורט: ספורט רגיל לא ייספר hard-news ולא יקבל קדימות Top 10 אלא אם יש קשר מדיני/ביטחוני/פלילי ברור.",
+          "להרחיב את continuous publishing queue ל־7-9 מועמדים עם יעד מינימום 4 מקורות, ולהוסיף penalty למועמד חסר trendMatch כאשר הוא לא hard-news ציבורי מובהק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 01:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 2,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "healthScore": 14
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T23:01:32+00:00",
+      "feedFingerprint": "6701157102412855033",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1109,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1109,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 38,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0100.md",
+        "reportGeneratedAt": "2026-06-13T21:48:30+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 88,
+          "healthDelta": 23,
+          "replacementReadiness score": 92,
+          "rollingScore": 77.25,
+          "newsinessTop10": 9,
+          "softTop10": 0,
+          "top12Under60": 9,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 12,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 5,
+          "hardReadyCount": 5,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 3
+        },
+        "recommendedActions": [
+          "להקשיח את trendMatch: חסימת boost משמעותי כאשר החפיפה מבוססת רק על מילים כלליות, ודרישה לישות/נושא מובהק לפני קידום Top 20.",
+          "לתקן סיווג ספורט: ספורט רגיל לא ייספר hard-news ולא יקבל קדימות Top 10 אלא אם יש קשר מדיני/ביטחוני/פלילי ברור.",
+          "להרחיב את continuous publishing queue ל־7-9 מועמדים עם יעד מינימום 4 מקורות, ולהוסיף penalty למועמד חסר trendMatch כאשר הוא לא hard-news ציבורי מובהק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 01:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T23:06:28+00:00",
+      "feedFingerprint": "1139555086428814411",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1114,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1114,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 34,
+      "replacementReadiness": {
+        "score": 35,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 0.67,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 56,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportGeneratedAt": "2026-06-13T22:52:59+00:00",
+        "metrics": {
+          "ציון עליזה": 56,
+          "generatedAt": 2026,
+          "afterHealthScore": 55,
+          "healthDelta": 10,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 8,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 11,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להקשיח `trendMatch` לפריטי soft ולפריטים מעל 90 דקות: דרישת entity/topic overlap משמעותית, וחסימת boosts שמבוססים רק על מילים כלליות כמו \"אחרי\", \"מאבק\", \"חדשות\", \"world\", \"cup\", \"יותר\".",
+          "להוסיף rule של freshness hard-stop: פריט מעל 180 דקות לא יכול להיכנס ל-Top 20 אלא אם הוא hard-news אמיתי עם טרנד חזק מאוד וריבוי מקורות; פריט מעל 24 שעות לא יקודם בכלל בלי override מפורש.",
+          "לשנות את continuous publishing readiness כך ש-`uniqueReadySources < 2` הוא חסם חמור שמוריד score, ולהרחיב את איתור המועמדים ממקורות נוספים כדי להגיע ל-10 דקות אמיתי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 02:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "healthScore": 7
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T23:06:57+00:00",
+      "feedFingerprint": "1881368057545924664",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1114,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1114,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 34,
+      "replacementReadiness": {
+        "score": 35,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 0.67,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 56,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportGeneratedAt": "2026-06-13T22:52:59+00:00",
+        "metrics": {
+          "ציון עליזה": 56,
+          "generatedAt": 2026,
+          "afterHealthScore": 55,
+          "healthDelta": 10,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 8,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 11,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להקשיח `trendMatch` לפריטי soft ולפריטים מעל 90 דקות: דרישת entity/topic overlap משמעותית, וחסימת boosts שמבוססים רק על מילים כלליות כמו \"אחרי\", \"מאבק\", \"חדשות\", \"world\", \"cup\", \"יותר\".",
+          "להוסיף rule של freshness hard-stop: פריט מעל 180 דקות לא יכול להיכנס ל-Top 20 אלא אם הוא hard-news אמיתי עם טרנד חזק מאוד וריבוי מקורות; פריט מעל 24 שעות לא יקודם בכלל בלי override מפורש.",
+          "לשנות את continuous publishing readiness כך ש-`uniqueReadySources < 2` הוא חסם חמור שמוריד score, ולהרחיב את איתור המועמדים ממקורות נוספים כדי להגיע ל-10 דקות אמיתי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 02:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "healthScore": 7
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T23:12:33+00:00",
+      "feedFingerprint": "3732945461348136",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1120,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1120,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 34,
+      "replacementReadiness": {
+        "score": 35,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 0.67,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 56,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportGeneratedAt": "2026-06-13T22:52:59+00:00",
+        "metrics": {
+          "ציון עליזה": 56,
+          "generatedAt": 2026,
+          "afterHealthScore": 55,
+          "healthDelta": 10,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 8,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 11,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להקשיח `trendMatch` לפריטי soft ולפריטים מעל 90 דקות: דרישת entity/topic overlap משמעותית, וחסימת boosts שמבוססים רק על מילים כלליות כמו \"אחרי\", \"מאבק\", \"חדשות\", \"world\", \"cup\", \"יותר\".",
+          "להוסיף rule של freshness hard-stop: פריט מעל 180 דקות לא יכול להיכנס ל-Top 20 אלא אם הוא hard-news אמיתי עם טרנד חזק מאוד וריבוי מקורות; פריט מעל 24 שעות לא יקודם בכלל בלי override מפורש.",
+          "לשנות את continuous publishing readiness כך ש-`uniqueReadySources < 2` הוא חסם חמור שמוריד score, ולהרחיב את איתור המועמדים ממקורות נוספים כדי להגיע ל-10 דקות אמיתי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 02:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "healthScore": 7
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T23:23:33+00:00",
+      "feedFingerprint": "3854557705553795685",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1131,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1131,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 34,
+      "replacementReadiness": {
+        "score": 35,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 0.67,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 56,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportGeneratedAt": "2026-06-13T22:52:59+00:00",
+        "metrics": {
+          "ציון עליזה": 56,
+          "generatedAt": 2026,
+          "afterHealthScore": 55,
+          "healthDelta": 10,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 8,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 11,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להקשיח `trendMatch` לפריטי soft ולפריטים מעל 90 דקות: דרישת entity/topic overlap משמעותית, וחסימת boosts שמבוססים רק על מילים כלליות כמו \"אחרי\", \"מאבק\", \"חדשות\", \"world\", \"cup\", \"יותר\".",
+          "להוסיף rule של freshness hard-stop: פריט מעל 180 דקות לא יכול להיכנס ל-Top 20 אלא אם הוא hard-news אמיתי עם טרנד חזק מאוד וריבוי מקורות; פריט מעל 24 שעות לא יקודם בכלל בלי override מפורש.",
+          "לשנות את continuous publishing readiness כך ש-`uniqueReadySources < 2` הוא חסם חמור שמוריד score, ולהרחיב את איתור המועמדים ממקורות נוספים כדי להגיע ל-10 דקות אמיתי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 02:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "healthScore": 7
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T23:24:00+00:00",
+      "feedFingerprint": "4540627678491897009",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 4,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 5
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 56,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 3,
+          "blockers": [
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 2,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 3,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 44.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 4,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 56,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 3,
+          "blockers": [
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 3,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 44.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 47,
+      "afterHealthScore": 52,
+      "replacementReadiness": {
+        "score": 61,
+        "threshold": 80,
+        "components": {
+          "freshness": 20.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 12.4,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 6.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 56,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0200.md",
+        "reportGeneratedAt": "2026-06-13T22:52:59+00:00",
+        "metrics": {
+          "ציון עליזה": 56,
+          "generatedAt": 2026,
+          "afterHealthScore": 55,
+          "healthDelta": 10,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 8,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 11,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להקשיח `trendMatch` לפריטי soft ולפריטים מעל 90 דקות: דרישת entity/topic overlap משמעותית, וחסימת boosts שמבוססים רק על מילים כלליות כמו \"אחרי\", \"מאבק\", \"חדשות\", \"world\", \"cup\", \"יותר\".",
+          "להוסיף rule של freshness hard-stop: פריט מעל 180 דקות לא יכול להיכנס ל-Top 20 אלא אם הוא hard-news אמיתי עם טרנד חזק מאוד וריבוי מקורות; פריט מעל 24 שעות לא יקודם בכלל בלי override מפורש.",
+          "לשנות את continuous publishing readiness כך ש-`uniqueReadySources < 2` הוא חסם חמור שמוריד score, ולהרחיב את איתור המועמדים ממקורות נוספים כדי להגיע ל-10 דקות אמיתי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 02:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 1,
+        "healthScore": 5
       }
     }
   ]
