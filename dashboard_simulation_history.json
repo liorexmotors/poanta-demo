@@ -1,32 +1,35 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-13T19:13:00+00:00",
+  "generatedAt": "2026-06-13T20:16:13+00:00",
   "summary": {
-    "sampleCount": 74,
+    "sampleCount": 83,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 20.75,
-    "avgAfterHealthScore": 76.83,
+    "avgHealthDelta": 12.25,
+    "avgAfterHealthScore": 54.58,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 97,
-      "rollingScore": 80.9,
-      "readyRuns": 13,
-      "criticalBlockers": [],
+      "latestScore": 63,
+      "rollingScore": 75.54,
+      "readyRuns": 12,
+      "criticalBlockers": [
+        "newsiness_top10_below_7",
+        "soft_top10_above_2"
+      ],
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 72,
+      "latestScore": 74,
       "latestSummaryLine": "בינוני",
-      "latestReportName": "tt-rr-simulation-review-2026-06-13-2200.md",
-      "window": 30,
-      "averageScore": 78.47,
-      "positiveReports": 21
+      "latestReportName": "tt-rr-simulation-review-2026-06-13-2300.md",
+      "window": 39,
+      "averageScore": 77.08,
+      "positiveReports": 28
     }
   },
   "runs": [
@@ -18764,6 +18767,2362 @@
         "trendMatchedTop10": 2,
         "trendMatchedTop20": 2,
         "healthScore": 3
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:21:25+00:00",
+      "feedFingerprint": "8732944000147697694",
+      "before": {
+        "newsinessTop10": 6,
+        "softTop10": 3,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 15,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 94,
+          "readyCount": 7,
+          "hardReadyCount": 5,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 5,
+          "freshReadyUnder25Count": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "דיין מזהיר שטראמפ מתרחק מקו נתניהו מול איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/israel-news/article-899265",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "טראמפ"
+                ],
+                "score": 29.86,
+                "boost": 29.86
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 1,
+              "headline": "קטאר ניסתה לעצור את הגז כדי למנוע תקיפה איראנית",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899263",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 3,
+              "headline": "פעילי עזה קוראים להפגנות חדשות נגד שלטון חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/middle-east/article-899267",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 4,
+              "headline": "ספיידרמן התימני נהרג בנפילה ללוע הר געש",
+              "source": "וואלה ספורט - טראש טוק",
+              "canonicalSource": "וואלה",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 16,
+              "url": "https://sports.walla.co.il/item/3845390",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 8,
+              "headline": "בנט טוען שהתקשורת והליכוד מריצים את איזנקוט",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.kipa.co.il/1225940-0",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 9,
+              "headline": "גמר הליגה היוונית נגמר באלימות בין כוכבי פנאתינייקוס ואולימפיאקוס",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20752550",
+              "trendMatch": null,
+              "queueScore": 17.0
+            },
+            {
+              "rank": 7,
+              "headline": "ארה״ב חסמה לזרים גישה למודלים המתקדמים של אנתרופיק",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 27,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545755#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 8,
+        "softTop10": 1,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 15,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 6,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 94,
+          "readyCount": 7,
+          "hardReadyCount": 5,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 5,
+          "freshReadyUnder25Count": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "דיין מזהיר שטראמפ מתרחק מקו נתניהו מול איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/israel-news/article-899265",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "טראמפ"
+                ],
+                "score": 29.86,
+                "boost": 29.86
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "קטאר ניסתה לעצור את הגז כדי למנוע תקיפה איראנית",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899263",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 3,
+              "headline": "פעילי עזה קוראים להפגנות חדשות נגד שלטון חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/middle-east/article-899267",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 8,
+              "headline": "ספיידרמן התימני נהרג בנפילה ללוע הר געש",
+              "source": "וואלה ספורט - טראש טוק",
+              "canonicalSource": "וואלה",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 16,
+              "url": "https://sports.walla.co.il/item/3845390",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 5,
+              "headline": "בנט טוען שהתקשורת והליכוד מריצים את איזנקוט",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.kipa.co.il/1225940-0",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 7,
+              "headline": "גמר הליגה היוונית נגמר באלימות בין כוכבי פנאתינייקוס ואולימפיאקוס",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20752550",
+              "trendMatch": null,
+              "queueScore": 17.0
+            },
+            {
+              "rank": 9,
+              "headline": "ארה״ב חסמה לזרים גישה למודלים המתקדמים של אנתרופיק",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 27,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545755#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 85,
+      "afterHealthScore": 88,
+      "replacementReadiness": {
+        "score": 97,
+        "threshold": 80,
+        "components": {
+          "freshness": 18.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 18.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "healthScore": 3
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:32:25+00:00",
+      "feedFingerprint": "3399851720492533022",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 900,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 900,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:43:25+00:00",
+      "feedFingerprint": "3828272120225755869",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 911,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 911,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:47:18+00:00",
+      "feedFingerprint": "167156131564278623",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 914,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 914,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:48:27+00:00",
+      "feedFingerprint": "6082763356301734794",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 916,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 916,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:48:53+00:00",
+      "feedFingerprint": "1094881814744720155",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 916,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 916,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:54:26+00:00",
+      "feedFingerprint": "5754317687062991462",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 922,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 922,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T20:05:26+00:00",
+      "feedFingerprint": "2877215913687450848",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 933,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 933,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 74,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2300.md",
+        "reportGeneratedAt": "2026-06-13T19:45:49+00:00",
+        "metrics": {
+          "ציון עליזה": 74,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 1,
+          "replacementReadiness score": 76,
+          "rollingScore": 76.92,
+          "newsinessTop10": 7,
+          "softTop10": 2,
+          "top12Under60": 8,
+          "trendMatchedTop10": 3,
+          "trendMatchedTop20": 8,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף gate ל־Top 3: פריט מעל 25 דקות לא יכול להיות #1 אלא אם יש לו trendMatch חזק עם overlap מהותי ו־sourceCount >= 3; אחרת להעדיף מועמד טרי יותר גם אם ציון הבסיס מעט נמוך.",
+          "להקשיח trendMatch: חסימת boosts שמבוססים על tokens כלליים בלבד, והורדת boost ל־0 כאשר אין entity/topic overlap חזק. זה נדרש במיוחד למקרים כמו Guardian/מטוס ישראלי.",
+          "לשפר את readyQueue: להגדיל חיפוש מועמדים טריים, להחיל source diversity על התור עצמו, ולהוציא soft/sport/consumer-tech כאשר אין לפחות 4 hard-news מועמדים מ־3 מקורות."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 23:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T20:16:13+00:00",
+      "feedFingerprint": "3052368319572234091",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 4,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 68,
+          "readyCount": 4,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "פעילי עזה קוראים להפגנות חדשות נגד שלטון חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/middle-east/article-899267",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 9,
+              "headline": "תינוק מת אחרי ברית מילה במטה בנימין",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.kipa.co.il/1225943-0",
+              "trendMatch": {
+                "trend": "לאחר שעבר ברית מילה: תינוק מת בבית החולים הדסה עין כרם",
+                "clusterKey": "ברית מילה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T22:54:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845424",
+                "overlapTokens": [
+                  "בבית",
+                  "ברית",
+                  "הדסה",
+                  "החולים",
+                  "חדשות",
+                  "לאחר",
+                  "מילה",
+                  "תינוק"
+                ],
+                "score": 75.97,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 1,
+              "headline": "אולימפיאקוס זכתה באליפות יוון אחרי משחק חמישי סוער",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://sports.walla.co.il/item/3845393",
+              "trendMatch": null,
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "פרמאונט קיבלה אישור לרכישת וורנר ומרחיבה אימפריית מדיה",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 7,
+              "url": "https://tech.walla.co.il/item/3845410",
+              "trendMatch": null,
+              "queueScore": 24.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 7,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 68,
+          "readyCount": 4,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פעילי עזה קוראים להפגנות חדשות נגד שלטון חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/middle-east/article-899267",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 2,
+              "headline": "תינוק מת אחרי ברית מילה במטה בנימין",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.kipa.co.il/1225943-0",
+              "trendMatch": {
+                "trend": "לאחר שעבר ברית מילה: תינוק מת בבית החולים הדסה עין כרם",
+                "clusterKey": "ברית מילה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T22:54:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845424",
+                "overlapTokens": [
+                  "בבית",
+                  "ברית",
+                  "הדסה",
+                  "החולים",
+                  "חדשות",
+                  "לאחר",
+                  "מילה",
+                  "תינוק"
+                ],
+                "score": 75.97,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "אולימפיאקוס זכתה באליפות יוון אחרי משחק חמישי סוער",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 4,
+              "url": "https://sports.walla.co.il/item/3845393",
+              "trendMatch": null,
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "פרמאונט קיבלה אישור לרכישת וורנר ומרחיבה אימפריית מדיה",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 7,
+              "url": "https://tech.walla.co.il/item/3845410",
+              "trendMatch": null,
+              "queueScore": 24.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 45,
+      "afterHealthScore": 58,
+      "replacementReadiness": {
+        "score": 63,
+        "threshold": 80,
+        "components": {
+          "freshness": 20.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 74,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2300.md",
+        "reportGeneratedAt": "2026-06-13T19:45:49+00:00",
+        "metrics": {
+          "ציון עליזה": 74,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 1,
+          "replacementReadiness score": 76,
+          "rollingScore": 76.92,
+          "newsinessTop10": 7,
+          "softTop10": 2,
+          "top12Under60": 8,
+          "trendMatchedTop10": 3,
+          "trendMatchedTop20": 8,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף gate ל־Top 3: פריט מעל 25 דקות לא יכול להיות #1 אלא אם יש לו trendMatch חזק עם overlap מהותי ו־sourceCount >= 3; אחרת להעדיף מועמד טרי יותר גם אם ציון הבסיס מעט נמוך.",
+          "להקשיח trendMatch: חסימת boosts שמבוססים על tokens כלליים בלבד, והורדת boost ל־0 כאשר אין entity/topic overlap חזק. זה נדרש במיוחד למקרים כמו Guardian/מטוס ישראלי.",
+          "לשפר את readyQueue: להגדיל חיפוש מועמדים טריים, להחיל source diversity על התור עצמו, ולהוציא soft/sport/consumer-tech כאשר אין לפחות 4 hard-news מועמדים מ־3 מקורות."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 23:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 13
       }
     }
   ]
