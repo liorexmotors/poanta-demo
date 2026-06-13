@@ -6,9 +6,9 @@ Routes:
 - /app/          -> Poenta app (app/index.html source)
 - /dashboard/    -> feedback dashboard
 - /rss-dashboard/ -> RSS dashboard helper
-- /rss-viewer/    -> RSS viewer helper
+- /tt-rr-simulation/ -> open TT RR simulation-only page for Aliza
 
-The app/dashboard copies get <base href="/"> so their existing relative
+The app/dashboard/simulation copies get <base href="/"> so their existing relative
 references continue to resolve to the root assets/feed files when served from
 subdirectories.
 """
@@ -52,6 +52,7 @@ def main() -> int:
     # here would incorrectly serve the home page at /app/.
     write_route("app", app_source_html, base=True)
     write_route("dashboard", "feedback-dashboard.html", base=True)
+    write_route("tt-rr-simulation", "tt-rr-simulation.html", base=True)
     write_route("rss-dashboard", "rss-dashboard.html", base=True)
     write_route("rss-viewer", "rss-viewer.html", base=True)
 
