@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<base href="/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TT RR · פיד סימולציה פתוח לעליזה</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{color-scheme:dark;--bg:#070b16;--card:#101828;--muted:#94a3b8;--txt:#e5e7eb;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--line:rgba(148,163,184,.22);--accent:#38bdf8}
+    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 20% 0,#172554 0,#070b16 32rem),#070b16;color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55} a{color:var(--accent)}
+    main{max-width:1180px;margin:auto;padding:24px}.hero{border:1px solid rgba(56,189,248,.35);background:linear-gradient(135deg,rgba(14,165,233,.16),rgba(16,24,40,.92));border-radius:24px;padding:24px;margin-bottom:18px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+    h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px)} h2{margin:0 0 14px;font-size:22px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:rgba(15,23,42,.72);font-weight:700}.badge.ok{border-color:rgba(34,197,94,.4);color:#bbf7d0}.badge.warn{border-color:rgba(245,158,11,.55);color:#fde68a}.badge.bad{border-color:rgba(239,68,68,.55);color:#fecaca}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.card{border:1px solid var(--line);background:rgba(16,24,40,.88);border-radius:18px;padding:16px}.metric .label{color:var(--muted);font-size:13px}.metric .value{font-size:30px;font-weight:900;margin-top:4px}.green{color:var(--ok)}.yellow{color:var(--warn)}.red{color:var(--bad)}.muted{color:var(--muted)}
+    .instruction{border:2px solid rgba(239,68,68,.55);background:rgba(127,29,29,.22);border-radius:20px;padding:18px;margin:18px 0}.instruction strong{font-size:19px}.section{margin:18px 0}.tableWrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:rgba(15,23,42,.72)}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#cbd5e1;text-align:right;background:rgba(30,41,59,.72);position:sticky;top:0}tr:hover td{background:rgba(56,189,248,.06)}.headline{font-weight:800}.pill{display:inline-block;border-radius:999px;padding:3px 8px;font-size:12px;border:1px solid var(--line)}.pill.hard{color:#bbf7d0;border-color:rgba(34,197,94,.4)}.pill.soft{color:#fecaca;border-color:rgba(239,68,68,.4)}.footer{color:var(--muted);font-size:13px;margin-top:22px}.error{border:1px solid rgba(239,68,68,.6);background:rgba(127,29,29,.25);padding:16px;border-radius:14px}
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <span class="badge ok">TT RR · SIMULATION ONLY · OPEN READONLY</span>
+    <h1>פיד סימולציה לעליזה</h1>
+    <p class="muted">דף פתוח ללא סיסמה שמציג רק את פיד הסימולציה ואת היסטוריית הביצועים שלו. הוא לא משנה את הפיד הראשי ולא מפרסם לאפליקציה.</p>
+  </section>
+
+  <section class="instruction">
+    <strong>הנחיה מחייבת לעליזה:</strong>
+    <div>לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום, בלי שינוי `feed.json`, ובלי שיפוט לפי הפיד הציבורי הרגיל.</div>
+  </section>
+
+  <section class="grid" id="metrics">
+    <div class="card metric"><div class="label">סטטוס טעינה</div><div class="value yellow">טוען…</div></div>
+  </section>
+
+  <section class="section card" id="summary"></section>
+  <section class="section card" id="history"></section>
+  <section class="section">
+    <h2>Top 20 — פיד סימולציה</h2>
+    <div class="tableWrap" id="feedTable"></div>
+  </section>
+  <section class="section card" id="rules"></section>
+  <div class="footer">Public readonly endpoint: <code>/tt_rr_simulation_feed.json</code> · history: <code>/dashboard_simulation_history.json</code></div>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function signed(n){return typeof n==='number'?(n>0?`+${n}`:`${n}`):'—'}
+function age(m){if(m==null)return '—'; if(m<60)return `${m} דק׳`; const h=Math.floor(m/60), mm=m%60; return `${h} ש׳ ${mm} דק׳`}
+function clsLabel(c){return c==='hard'?'חדשותי':c==='soft'?'רך':'אחר'}
+function metricClass(v,good,border){return v>=good?'green':v>=border?'yellow':'red'}
+async function loadJson(url){const r=await fetch(`${url}?cb=${Date.now()}`,{cache:'no-store'}); if(!r.ok)throw new Error(`${url} ${r.status}`); return r.json()}
+function renderMetrics(sim,hist){const after=sim.after||{},before=sim.before||{},d=sim.delta||{},hs=hist.summary||sim.historySummary||{};$('#metrics').innerHTML=`
+  <div class="card metric"><div class="label">בריאות סימולציה</div><div class="value ${metricClass(sim.afterHealthScore||0,80,70)}">${sim.afterHealthScore??'—'} <small>(${signed(d.healthScore)})</small></div><div class="muted">לפני ${sim.beforeHealthScore??'—'}</div></div>
+  <div class="card metric"><div class="label">חדשותיות אחרי</div><div class="value ${metricClass(after.newsinessTop10||0,6,5)}">${after.newsinessTop10??'—'}/10</div><div class="muted">לפני ${before.newsinessTop10??'—'} · ${signed(d.newsinessTop10)}</div></div>
+  <div class="card metric"><div class="label">תוכן רך אחרי</div><div class="value ${(after.softTop10||99)<=3?'green':(after.softTop10||99)<=4?'yellow':'red'}">${after.softTop10??'—'}/10</div><div class="muted">לפני ${before.softTop10??'—'} · ${signed(d.softTop10)}</div></div>
+  <div class="card metric"><div class="label">טריות Top 12</div><div class="value ${metricClass(after.top12Under60||0,9,8)}">${after.top12Under60??'—'}/12</div><div class="muted">לפני ${before.top12Under60??'—'} · ${signed(d.top12Under60)}</div></div>
+  <div class="card metric"><div class="label">מעקב לאורך זמן</div><div class="value ${hs.stablePositive?'green':'yellow'}">${hs.stablePositive?'יציב':'בבדיקה'}</div><div class="muted">${hs.positiveRuns??0}/${hs.sampleCount??0} ריצות חיוביות</div></div>`}
+function renderSummary(sim,hist){const after=sim.after||{},before=sim.before||{},hs=hist.summary||{};$('#summary').innerHTML=`<h2>סיכום לפני/אחרי</h2><p><strong>לפני:</strong> בריאות ${sim.beforeHealthScore??'—'}, חדשותיות ${before.newsinessTop10??'—'}/10, רך ${before.softTop10??'—'}/10, top12 ${before.top12Under60??'—'}/12, מקור מוביל ${esc(before.dominantSource?.name||'—')} ${before.dominantSource?.count||0}.</p><p><strong>אחרי:</strong> בריאות ${sim.afterHealthScore??'—'}, חדשותיות ${after.newsinessTop10??'—'}/10, רך ${after.softTop10??'—'}/10, top12 ${after.top12Under60??'—'}/12, מקור מוביל ${esc(after.dominantSource?.name||'—')} ${after.dominantSource?.count||0}.</p><p><strong>היסטוריה:</strong> ${hs.sampleCount??0} דגימות, דלתא בריאות ממוצעת ${hs.avgHealthDelta??'—'}, ציון אחרי ממוצע ${hs.avgAfterHealthScore??'—'}.</p>`}
+function renderHistory(hist){const rows=(hist.runs||[]).slice(-10).reverse();$('#history').innerHTML=`<h2>מעקב לאורך זמן</h2>${rows.length?`<div class="tableWrap"><table><thead><tr><th>זמן</th><th>בריאות</th><th>חדשותיות</th><th>רך</th><th>טריות</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(new Date(r.generatedAt).toLocaleString('he-IL'))}</td><td>${r.beforeHealthScore??'—'} → ${r.afterHealthScore??'—'} (${signed(r.delta?.healthScore)})</td><td>${r.before?.newsinessTop10??'—'} → ${r.after?.newsinessTop10??'—'} (${signed(r.delta?.newsinessTop10)})</td><td>${r.before?.softTop10??'—'} → ${r.after?.softTop10??'—'} (${signed(r.delta?.softTop10)})</td><td>${r.before?.top12Under60??'—'} → ${r.after?.top12Under60??'—'} (${signed(r.delta?.top12Under60)})</td></tr>`).join('')}</tbody></table></div>`:'<p class="muted">אין עדיין היסטוריה.</p>'}`}
+function renderFeed(sim){const rows=(sim.top20After||[]).slice(0,20);$('#feedTable').innerHTML=rows.length?`<table><thead><tr><th>#</th><th>כותרת סימולציה</th><th>מקור</th><th>סוג</th><th>גיל</th><th>דירוג קודם</th></tr></thead><tbody>${rows.map((it,i)=>{const c=it.class==='hard'?'hard':it.class==='soft'?'soft':'';const move=typeof it.delta==='number'&&it.delta!==0?` · ${it.delta>0?'עלה':'ירד'} ${Math.abs(it.delta)}`:'';return `<tr><td>${i+1}</td><td class="headline">${esc(it.headline||'ללא כותרת')}</td><td>${esc(it.canonicalSource||it.source||'—')}</td><td><span class="pill ${c}">${clsLabel(it.class)}</span></td><td>${age(it.ageMinutes)}</td><td>${it.beforeRank?`#${it.beforeRank}`:'חדש'}${move}</td></tr>`}).join('')}</tbody></table>`:'<div class="error">אין פריטי סימולציה להצגה.</div>'}
+function renderRules(sim){$('#rules').innerHTML=`<h2>חוקיות פעילה</h2><p class="muted">${esc(sim.hebrewInstruction||'עליזה: לעבוד רק על פיד הסימולציה של TT RR.')}</p><ul>${(sim.rules||[]).map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`}
+(async()=>{try{const [sim,hist]=await Promise.all([loadJson('/tt_rr_simulation_feed.json'),loadJson('/dashboard_simulation_history.json')]);renderMetrics(sim,hist);renderSummary(sim,hist);renderHistory(hist);renderFeed(sim);renderRules(sim);document.title=`TT RR Simulation · ${sim.afterHealthScore??''}`;}catch(e){$('#metrics').innerHTML=`<div class="card error">שגיאה בטעינת סימולציה: ${esc(e.message)}</div>`;console.error(e);}})();
+</script>
+</body>
+</html>
