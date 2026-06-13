@@ -1,27 +1,24 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-13T15:17:47+00:00",
+  "generatedAt": "2026-06-13T15:55:46+00:00",
   "summary": {
-    "sampleCount": 27,
+    "sampleCount": 28,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 28.08,
-    "avgAfterHealthScore": 74.25,
+    "avgHealthDelta": 26.92,
+    "avgAfterHealthScore": 74.75,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
-      "window": 27,
-      "latestScore": 48,
-      "rollingScore": 62.52,
+      "window": 28,
+      "latestScore": 87,
+      "rollingScore": 63.39,
       "readyRuns": 3,
       "criticalBlockers": [
-        "top_item_stale_over_25m",
-        "newsiness_top10_below_7",
-        "soft_top10_above_2",
-        "top12_under60_below_9"
+        "top_item_stale_over_25m"
       ],
       "matureForProduction": false
     }
@@ -3871,6 +3868,235 @@
         "trendMatchedTop10": 2,
         "trendMatchedTop20": 3,
         "healthScore": 23
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T15:55:46+00:00",
+      "feedFingerprint": "6767132324741223292",
+      "before": {
+        "newsinessTop10": 7,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 9,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 29,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "דה מרקר",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "מעריב",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 6,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 27,
+          "readyCount": 2,
+          "hardReadyCount": 1,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 2,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
+              "source": "וואלה ספורט - כדורסל",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://sports.walla.co.il/item/3845378",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 2,
+              "headline": "מדינות בארה״ב חוקרות איך OpenAI אוספת מידע על קטינים",
+              "source": "דה מרקר - גלובל",
+              "canonicalSource": "דה מרקר",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 43,
+              "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-c179-dd0a-a19f-d37dba780000",
+              "trendMatch": null,
+              "queueScore": 5.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 8,
+        "softTop10": 1,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 29,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "דה מרקר",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 3,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 27,
+          "readyCount": 2,
+          "hardReadyCount": 1,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 2,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
+              "source": "וואלה ספורט - כדורסל",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://sports.walla.co.il/item/3845378",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 3,
+              "headline": "מדינות בארה״ב חוקרות איך OpenAI אוספת מידע על קטינים",
+              "source": "דה מרקר - גלובל",
+              "canonicalSource": "דה מרקר",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 43,
+              "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-c179-dd0a-a19f-d37dba780000",
+              "trendMatch": null,
+              "queueScore": 5.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 74,
+      "afterHealthScore": 85,
+      "replacementReadiness": {
+        "score": 87,
+        "threshold": 80,
+        "components": {
+          "freshness": 16.7,
+          "newsinessTop10": 25.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m"
+        ],
+        "readyNow": false
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 2,
+        "healthScore": 11
       }
     }
   ]

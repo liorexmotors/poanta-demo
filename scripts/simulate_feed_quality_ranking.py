@@ -247,6 +247,102 @@ def story_key(item: dict[str, Any]) -> str:
     return " ".join(text.split()[:14])
 
 
+def proactive_publish_bonus(item: dict[str, Any], now: datetime, trend_signal: dict[str, Any] | None = None) -> float:
+    """Simulation-only signal for a prebuilt 10-minute publishing queue.
+
+    This does not create or publish cards. It models the operational change Lior
+    requested to test: every 10-minute cycle should have ready, QA-worthy
+    candidates staged before the feed becomes stale, instead of waiting for a
+    25-30 minute SLA breach. Fresh hard-news/trend-matched items get priority;
+    soft items do not become lead candidates just because they are fresh.
+    """
+    item_age = age_minutes(item, now)
+    if item_age is None or item_age > 45:
+        return 0.0
+    cls = quality_class(item)
+    cat = str(item.get("category") or "")
+    if cls == "soft" and cat not in HARD_CATEGORIES:
+        return 2.0 if item_age <= 15 and trend_match(item, trend_signal) else 0.0
+    bonus = 0.0
+    if item_age <= 10:
+        bonus += 24.0
+    elif item_age <= 20:
+        bonus += 18.0
+    elif item_age <= 30:
+        bonus += 11.0
+    else:
+        bonus += 5.0
+    if cls == "hard":
+        bonus += 12.0
+    if cat in {"ביטחון", "פוליטיקה", "חדשות", "משפט", "פלילים", "כלכלה"}:
+        bonus += 8.0
+    if trend_match(item, trend_signal):
+        bonus += 10.0
+    return bonus
+
+
+def ready_candidate_rows(items: list[dict[str, Any]], now: datetime, trend_signal: dict[str, Any] | None = None, limit: int = 8) -> list[dict[str, Any]]:
+    rows = []
+    for idx, item in enumerate(items[:80], 1):
+        item_age = age_minutes(item, now)
+        bonus = proactive_publish_bonus(item, now, trend_signal)
+        if bonus <= 0 or item_age is None:
+            continue
+        match = trend_match(item, trend_signal)
+        rows.append({
+            "rank": idx,
+            "headline": item.get("headline") or item.get("originalTitle") or "",
+            "source": item.get("source") or "",
+            "canonicalSource": canonical_source(item.get("source")),
+            "category": item.get("category") or "",
+            "class": quality_class(item),
+            "ageMinutes": item_age,
+            "url": item.get("sourceUrl") or item.get("url") or "",
+            "trendMatch": match,
+            "queueScore": round(bonus, 2),
+        })
+    rows.sort(key=lambda r: (r["queueScore"], -int(r["ageMinutes"]), r["class"] == "hard"), reverse=True)
+    return rows[:limit]
+
+
+def continuous_publish_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[str, Any] | None = None) -> dict[str, Any]:
+    ready = ready_candidate_rows(items, now, trend_signal, limit=20)
+    sources = {row["canonicalSource"] for row in ready[:12] if row.get("canonicalSource")}
+    hard_ready = sum(1 for row in ready if row.get("class") == "hard")
+    trend_ready = sum(1 for row in ready if row.get("trendMatch"))
+    top_age = age_minutes(items[0], now) if items else None
+    score = 0
+    score += min(35, len(ready) * 6)
+    score += min(25, hard_ready * 5)
+    score += min(20, len(sources) * 5)
+    score += min(10, trend_ready * 4)
+    if top_age is not None and top_age <= 15:
+        score += 10
+    elif top_age is not None and top_age <= 25:
+        score += 6
+    estimated_minutes = 10 if len(ready) >= 3 and hard_ready >= 2 and len(sources) >= 2 else 20 if len(ready) >= 2 else 30 if ready else 40
+    blockers = []
+    if len(ready) < 3:
+        blockers.append("ready_queue_below_3")
+    if hard_ready < 2:
+        blockers.append("hard_ready_below_2")
+    if len(sources) < 2:
+        blockers.append("ready_sources_below_2")
+    if top_age is None or top_age > 25:
+        blockers.append("top_item_over_25m")
+    return {
+        "targetMinutes": 10,
+        "estimatedVisibleChangeMinutes": estimated_minutes,
+        "score": max(0, min(100, score)),
+        "readyCount": len(ready),
+        "hardReadyCount": hard_ready,
+        "trendReadyCount": trend_ready,
+        "uniqueReadySources": len(sources),
+        "blockers": blockers,
+        "readyQueue": ready[:8],
+    }
+
+
 def metric_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[str, Any] | None = None) -> dict[str, Any]:
     top10 = items[:10]
     top20 = items[:20]
@@ -259,6 +355,7 @@ def metric_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[
     top20_trend_matches = [trend_match(item, trend_signal) for item in top20]
     story_keys = [story_key(item) for item in top20]
     duplicate_top20 = len(story_keys) - len(set(k for k in story_keys if k))
+    continuous = continuous_publish_block(items, now, trend_signal)
     return {
         "newsinessTop10": classes.count("hard"),
         "softTop10": classes.count("soft"),
@@ -275,6 +372,7 @@ def metric_block(items: list[dict[str, Any]], now: datetime, trend_signal: dict[
         "trendMatchedTop10": sum(1 for m in top10_trend_matches if m),
         "trendMatchedTop20": sum(1 for m in top20_trend_matches if m),
         "trendGapMatchedTop20": sum(1 for m in top20_trend_matches if m and not m.get("mentionedInFeed")),
+        "continuousPublishing": continuous,
     }
 
 
@@ -442,6 +540,12 @@ def simulate_order(items: list[dict[str, Any]], now: datetime, limit: int = 60, 
                 value -= 34
             if cls == "soft" and position <= 10 and class_counts["soft"] >= 3:
                 value -= 48
+
+            # Proactive 10-minute publishing queue model: reward fresh,
+            # QA-worthy candidates before SLA breach would normally trigger a
+            # rescue. This is simulation-only and never mutates feed.json.
+            if position <= 12:
+                value += proactive_publish_bonus(item, now, trend_signal)
 
             # Duplicate/story crowding cap.
             key = story_key(item)
@@ -637,6 +741,8 @@ def main() -> int:
             "source cap to reduce dominant-source takeover in top 10/20",
             "duplicate/story crowding cap",
             "external news-trend signal from spy_trends.json boosts existing feed items that match strong RSS/WEB multi-source trends",
+            "simulation-only continuous publishing queue rewards fresh QA-worthy hard-news candidates before rescue/SLA breach",
+            "ready-queue metrics estimate whether the visible feed could change around every 10 minutes without mutating feed.json",
             "replacement-readiness score tracks freshness, newsiness, top-20 quality, source balance, trend use, and critical blockers",
             "production promotion requires rolling score >= 80, at least 24 samples, 80% ready runs, and zero critical blockers",
             "longitudinal history tracks whether simulated health stays better than the main feed",
