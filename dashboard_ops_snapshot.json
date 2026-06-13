@@ -1,12 +1,12 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-06-13T11:25:59+03:00",
+  "generatedAt": "2026-06-13T12:02:22+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
-      "status": "ok",
-      "checkedAt": "2026-06-13T11:25:56+03:00",
+      "status": "fail",
+      "checkedAt": "2026-06-13T11:58:20+03:00",
       "url": "feed.json",
       "updatedAt": "2026-06-13T11:25:44+03:00",
       "items": 432,
@@ -96,21 +96,40 @@
           "url": "https://sports.walla.co.il/item/3845299"
         }
       ],
-      "errors": [],
-      "warnings": [
+      "errors": [
         {
-          "severity": "warning",
-          "code": "no_new_top_item_warning",
-          "message": "No new top feed item for more than 15m: latest is 2026-06-13T11:09:29+03:00 (0:16:25.213475 old). Warning only; if it reaches 25m, treat as operational problem.",
+          "severity": "error",
+          "code": "stale_updated_at",
+          "message": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        },
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-06-13T11:09:29+03:00 (0:48:49.919743 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
           "item": 0,
           "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
         },
         {
+          "severity": "error",
+          "code": "too_few_recent_items_sla",
+          "message": "Quantity SLA failed: only 4 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        }
+      ],
+      "warnings": [
+        {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest הארץ item is older than 120m: 2026-06-13T09:15:51+03:00 (2:10:03.213475 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "message": "Latest הארץ item is older than 120m: 2026-06-13T09:15:51+03:00 (2:42:27.919743 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
           "item": 32,
           "headline": "אונר״א פיטרה 70 עובדים שישראל קשרה לחמאס מחשש לתקיפות",
           "source": "הארץ - כל הכתבות",
@@ -119,18 +138,27 @@
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest מעריב item is older than 120m: 2026-06-09T17:15:13+03:00 (3 days, 18:10:41.213475 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "message": "Latest מעריב item is older than 120m: 2026-06-09T17:15:13+03:00 (3 days, 18:43:05.919743 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
           "item": 118,
           "headline": "הרמטכ״ל אומר שהתקיפה באיראן הייתה הכנה למכה כבדה יותר",
           "source": "מעריב - חדשות",
           "url": "https://www.maariv.co.il/news/military/article-1331022"
+        },
+        {
+          "severity": "warning",
+          "code": "stale_foreign_source_view",
+          "message": "Latest foreign-source item is older than 60m: 2026-06-13T10:33:14+03:00 (1:25:04.919743 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "item": 12,
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "url": "https://www.aljazeera.com/news/2026/6/13/one-killed-as-israel-hits-south-lebanon-issues-forced-displacement-orders?traffic_source=rss"
         }
       ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-06-13T11:25:58+03:00",
+      "checkedAt": "2026-06-13T11:58:15+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -162,15 +190,11 @@
       "warningMinutes": {
         "all": 15
       },
-      "recentItems60m": 18,
+      "recentItems60m": 4,
       "recentSourceGroups60m": [
-        "Al Jazeera",
         "Daily Mail TVShowbiz רכילות חו״ל",
         "Mirror Celebs רכילות חו״ל",
-        "The Jerusalem Post",
         "ynet",
-        "דה מרקר",
-        "וואלה",
         "ישראל היום"
       ],
       "latestByGroup": {
@@ -404,13 +428,39 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "ageMinutes": 48,
+          "latestAt": "2026-06-13T11:09:29+03:00",
+          "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "message": "No fresh all publication event for 48 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "foreign",
+          "thresholdMinutes": 60,
+          "ageMinutes": 85,
+          "latestAt": "2026-06-13T10:33:14+03:00",
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "message": "No fresh foreign publication event for 85 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 27,
+          "ageMinutes": 59,
           "latestAt": "2026-06-13T10:58:21+03:00",
           "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh ביטחון publication event for 27 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 59 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -419,11 +469,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 48,
+          "ageMinutes": 80,
           "latestAt": "2026-06-13T10:37:42+03:00",
           "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh פוליטיקה publication event for 48 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 80 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -432,11 +482,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 1537,
+          "ageMinutes": 1569,
           "latestAt": "2026-06-12T09:48:32+03:00",
           "headline": "משטרת תל אביב סוגרת כבישים לקראת מצעד הגאווה",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh חדשות publication event for 1537 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 1569 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -445,11 +495,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 271,
+          "ageMinutes": 303,
           "latestAt": "2026-06-13T06:54:52+03:00",
           "headline": "מסע ירי במידלנד הסתיים בהרוג, 10 פצועים ומות החשוד",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh פלילים publication event for 271 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 303 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -458,11 +508,24 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 1504,
+          "ageMinutes": 1536,
           "latestAt": "2026-06-12T10:21:21+03:00",
           "headline": "בית המשפט השאיר את הירושה אצל האחיין למרות התנגדות הבנים",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh משפט publication event for 1504 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 1536 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "כלכלה",
+          "thresholdMinutes": 45,
+          "ageMinutes": 61,
+          "latestAt": "2026-06-13T10:57:15+03:00",
+          "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+          "source": "ישראל היום - כל הכתבות",
+          "message": "No fresh כלכלה publication event for 61 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -471,11 +534,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 260,
+          "ageMinutes": 292,
           "latestAt": "2026-06-13T07:05:28+03:00",
           "headline": "חלב שקדים ביתי דורש רק השריה, טחינה וסינון",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh צרכנות publication event for 260 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 292 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -484,11 +547,24 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 74,
+          "ageMinutes": 106,
           "latestAt": "2026-06-13T10:11:48+03:00",
           "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh רכב publication event for 74 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 106 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ספורט",
+          "thresholdMinutes": 60,
+          "ageMinutes": 81,
+          "latestAt": "2026-06-13T10:36:43+03:00",
+          "headline": "שריף כיוף מתקרב להשאלה להפועל רמת גן כדי לקבל דקות כשוער ראשון",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "message": "No fresh ספורט publication event for 81 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -497,11 +573,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 102,
+          "ageMinutes": 135,
           "latestAt": "2026-06-13T09:43:09+03:00",
           "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 102 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 135 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -510,11 +586,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 297,
+          "ageMinutes": 330,
           "latestAt": "2026-06-13T06:28:00+03:00",
           "headline": "כותבת ynet מתארת את רגע ההחלטה אם לפרוש לפנסיה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh דעות publication event for 297 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 330 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -523,11 +599,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 125,
+          "ageMinutes": 157,
           "latestAt": "2026-06-13T09:20:35+03:00",
           "headline": "תנים נשכו תשעה נופשים בכנרת ועוררו חשש לכלבת",
           "source": "וואלה חדשות - חדשות בארץ",
-          "message": "No fresh בריאות publication event for 125 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 157 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -536,11 +612,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 1742,
+          "ageMinutes": 1775,
           "latestAt": "2026-06-12T06:23:15+03:00",
           "headline": "דירות 3 חדרים נמכרו בפריפריה בפחות מ־600 אלף שקל",
           "source": "דה מרקר - נדל״ן",
-          "message": "No fresh נדל״ן publication event for 1742 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 1775 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -549,11 +625,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 4094,
+          "ageMinutes": 4127,
           "latestAt": "2026-06-10T15:11:05+03:00",
           "headline": "מזג האוויר בירושלים: 19°–29°; שמיים בהירים; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 4094 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 4127 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -562,11 +638,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 130,
+          "ageMinutes": 162,
           "latestAt": "2026-06-13T09:15:51+03:00",
           "headline": "אונר״א פיטרה 70 עובדים שישראל קשרה לחמאס מחשש לתקיפות",
           "source": "הארץ - כל הכתבות",
-          "message": "No fresh הארץ publication event for 130 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 162 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -575,11 +651,24 @@
           "code": "publication_timing_sla",
           "group": "מעריב",
           "thresholdMinutes": 90,
-          "ageMinutes": 907,
+          "ageMinutes": 940,
           "latestAt": "2026-06-12T20:18:06+03:00",
           "headline": "הטיוטה להסכם איראן כוללת את הורמוז ואת חזית לבנון",
           "source": "מעריב - חדשות",
-          "message": "No fresh מעריב publication event for 907 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מעריב publication event for 940 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "מקורות זרים",
+          "thresholdMinutes": 60,
+          "ageMinutes": 85,
+          "latestAt": "2026-06-13T10:33:14+03:00",
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "message": "No fresh מקורות זרים publication event for 85 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -587,32 +676,36 @@
       "warnings": [
         {
           "severity": "warning",
-          "code": "publication_silence_warning",
-          "group": "all",
-          "thresholdMinutes": 25,
-          "warningMinutes": 15,
-          "ageMinutes": 16,
-          "latestAt": "2026-06-13T11:09:29+03:00",
-          "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "message": "No new publication event for 16 minutes; warn Aliza now. At 25 minutes this becomes an operational problem.",
-          "recommendedAction": "alert_aliza_monitor_until_fast_rescue_threshold",
-          "escalateTo": "aliza"
+          "code": "low_recent_event_volume",
+          "recent60m": 4,
+          "message": "Only 4 publication events in the last 60 minutes."
         }
       ],
       "findings": [
         {
-          "severity": "warning",
-          "code": "publication_silence_warning",
+          "severity": "error",
+          "code": "publication_timing_sla",
           "group": "all",
           "thresholdMinutes": 25,
-          "warningMinutes": 15,
-          "ageMinutes": 16,
+          "ageMinutes": 48,
           "latestAt": "2026-06-13T11:09:29+03:00",
           "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "message": "No new publication event for 16 minutes; warn Aliza now. At 25 minutes this becomes an operational problem.",
-          "recommendedAction": "alert_aliza_monitor_until_fast_rescue_threshold",
+          "message": "No fresh all publication event for 48 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "foreign",
+          "thresholdMinutes": 60,
+          "ageMinutes": 85,
+          "latestAt": "2026-06-13T10:33:14+03:00",
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "message": "No fresh foreign publication event for 85 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
         {
@@ -620,11 +713,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 27,
+          "ageMinutes": 59,
           "latestAt": "2026-06-13T10:58:21+03:00",
           "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh ביטחון publication event for 27 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 59 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -633,11 +726,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 48,
+          "ageMinutes": 80,
           "latestAt": "2026-06-13T10:37:42+03:00",
           "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh פוליטיקה publication event for 48 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 80 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -646,11 +739,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 1537,
+          "ageMinutes": 1569,
           "latestAt": "2026-06-12T09:48:32+03:00",
           "headline": "משטרת תל אביב סוגרת כבישים לקראת מצעד הגאווה",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh חדשות publication event for 1537 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 1569 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -659,11 +752,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 271,
+          "ageMinutes": 303,
           "latestAt": "2026-06-13T06:54:52+03:00",
           "headline": "מסע ירי במידלנד הסתיים בהרוג, 10 פצועים ומות החשוד",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh פלילים publication event for 271 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 303 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -672,11 +765,24 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 1504,
+          "ageMinutes": 1536,
           "latestAt": "2026-06-12T10:21:21+03:00",
           "headline": "בית המשפט השאיר את הירושה אצל האחיין למרות התנגדות הבנים",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh משפט publication event for 1504 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 1536 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "כלכלה",
+          "thresholdMinutes": 45,
+          "ageMinutes": 61,
+          "latestAt": "2026-06-13T10:57:15+03:00",
+          "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+          "source": "ישראל היום - כל הכתבות",
+          "message": "No fresh כלכלה publication event for 61 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -685,11 +791,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 260,
+          "ageMinutes": 292,
           "latestAt": "2026-06-13T07:05:28+03:00",
           "headline": "חלב שקדים ביתי דורש רק השריה, טחינה וסינון",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh צרכנות publication event for 260 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 292 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -698,11 +804,24 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 74,
+          "ageMinutes": 106,
           "latestAt": "2026-06-13T10:11:48+03:00",
           "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh רכב publication event for 74 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 106 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ספורט",
+          "thresholdMinutes": 60,
+          "ageMinutes": 81,
+          "latestAt": "2026-06-13T10:36:43+03:00",
+          "headline": "שריף כיוף מתקרב להשאלה להפועל רמת גן כדי לקבל דקות כשוער ראשון",
+          "source": "וואלה ספורט - כדורגל ישראלי",
+          "message": "No fresh ספורט publication event for 81 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -711,11 +830,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 102,
+          "ageMinutes": 135,
           "latestAt": "2026-06-13T09:43:09+03:00",
           "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 102 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 135 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -724,11 +843,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 297,
+          "ageMinutes": 330,
           "latestAt": "2026-06-13T06:28:00+03:00",
           "headline": "כותבת ynet מתארת את רגע ההחלטה אם לפרוש לפנסיה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh דעות publication event for 297 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 330 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -737,11 +856,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 125,
+          "ageMinutes": 157,
           "latestAt": "2026-06-13T09:20:35+03:00",
           "headline": "תנים נשכו תשעה נופשים בכנרת ועוררו חשש לכלבת",
           "source": "וואלה חדשות - חדשות בארץ",
-          "message": "No fresh בריאות publication event for 125 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 157 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -750,11 +869,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 1742,
+          "ageMinutes": 1775,
           "latestAt": "2026-06-12T06:23:15+03:00",
           "headline": "דירות 3 חדרים נמכרו בפריפריה בפחות מ־600 אלף שקל",
           "source": "דה מרקר - נדל״ן",
-          "message": "No fresh נדל״ן publication event for 1742 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 1775 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -763,11 +882,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 4094,
+          "ageMinutes": 4127,
           "latestAt": "2026-06-10T15:11:05+03:00",
           "headline": "מזג האוויר בירושלים: 19°–29°; שמיים בהירים; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 4094 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 4127 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -776,11 +895,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 130,
+          "ageMinutes": 162,
           "latestAt": "2026-06-13T09:15:51+03:00",
           "headline": "אונר״א פיטרה 70 עובדים שישראל קשרה לחמאס מחשש לתקיפות",
           "source": "הארץ - כל הכתבות",
-          "message": "No fresh הארץ publication event for 130 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 162 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -789,26 +908,101 @@
           "code": "publication_timing_sla",
           "group": "מעריב",
           "thresholdMinutes": 90,
-          "ageMinutes": 907,
+          "ageMinutes": 940,
           "latestAt": "2026-06-12T20:18:06+03:00",
           "headline": "הטיוטה להסכם איראן כוללת את הורמוז ואת חזית לבנון",
           "source": "מעריב - חדשות",
-          "message": "No fresh מעריב publication event for 907 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מעריב publication event for 940 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "מקורות זרים",
+          "thresholdMinutes": 60,
+          "ageMinutes": 85,
+          "latestAt": "2026-06-13T10:33:14+03:00",
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "message": "No fresh מקורות זרים publication event for 85 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "warning",
+          "code": "low_recent_event_volume",
+          "recent60m": 4,
+          "message": "Only 4 publication events in the last 60 minutes."
         }
       ]
     },
     "publicationHealthGate": {
       "gate": "pointa_publication_health_gate",
       "mode": "candidate",
-      "status": "ok",
-      "liveStatus": "ok",
+      "status": "fail",
+      "liveStatus": "fail",
       "noBreakingStatus": "ok",
       "noBreakingLeaks": [],
       "timingStatus": null,
-      "blockers": [],
-      "liveErrors": [],
+      "blockers": [
+        {
+          "severity": "error",
+          "code": "stale_updated_at",
+          "message": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        },
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-06-13T11:09:29+03:00 (0:48:49.919743 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "item": 0,
+          "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+        },
+        {
+          "severity": "error",
+          "code": "too_few_recent_items_sla",
+          "message": "Quantity SLA failed: only 4 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        }
+      ],
+      "liveErrors": [
+        {
+          "severity": "error",
+          "code": "stale_updated_at",
+          "message": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        },
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-06-13T11:09:29+03:00 (0:48:49.919743 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "item": 0,
+          "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+        },
+        {
+          "severity": "error",
+          "code": "too_few_recent_items_sla",
+          "message": "Quantity SLA failed: only 4 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        }
+      ],
       "timingErrors": [],
       "top": [
         {
@@ -850,46 +1044,64 @@
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastStage3StartedAt": "2026-06-13T11:24:19+03:00",
-      "lastStage3IncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at|2026-06-13T10:48:18+03:00|https://www.jpost.com/israel-news/article-899146",
-      "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260613-111945",
-      "lastCheckedAt": "2026-06-13T11:24:19+03:00",
-      "lastStatus": "blocked",
-      "lastIncidentType": "stage3_candidate_quality_gate_failed",
-      "currentIncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at|2026-06-13T10:48:18+03:00|https://www.jpost.com/israel-news/article-899146",
-      "currentIncidentRepeatCount": 2,
-      "lastAutomaticAction": "do_not_publish",
+      "lastStage3StartedAt": "2026-06-13T11:58:10+03:00",
+      "lastStage3IncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at,too_few_recent_items_sla|2026-06-13T11:25:44+03:00|https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260613-115952",
+      "lastCheckedAt": "2026-06-13T11:58:10+03:00",
+      "lastStatus": "repair_needed",
+      "lastIncidentType": "stage3_waiting_for_editor_results",
+      "currentIncidentKey": "top_stale|no_new_top_item_sla,stale_updated_at,too_few_recent_items_sla|2026-06-13T11:25:44+03:00|https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "currentIncidentRepeatCount": 1,
+      "lastAutomaticAction": "write_batch_results_then_rerun_stage3",
       "loopProtection": {
         "active": false,
         "reason": "",
-        "repeatCount": 2
+        "repeatCount": 1
       },
-      "lastStage4StartedAt": "2026-06-13T10:42:17+03:00",
-      "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-06-13T10:00:27+03:00|שרוני טוען שנתניהו בונה רשת מינויים ליום שאחרי ההפסד",
-      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260613-104421"
+      "lastStage4StartedAt": "2026-06-13T11:25:28+03:00",
+      "lastStage4IncidentKey": "domain_sla|ביטחון|2026-06-13T10:58:21+03:00|פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
+      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-ביטחון-20260613-112804"
     }
   },
   "agents": [
     {
       "id": "live",
       "name": "מבקר חי",
-      "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-06-13T11:25:56+03:00",
-      "checkedAt": "2026-06-13T11:25:56+03:00",
+      "status": "fail",
+      "summary": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
+      "checkedAt": "2026-06-13T11:58:20+03:00",
       "findings": [
         {
-          "severity": "warning",
-          "code": "no_new_top_item_warning",
-          "message": "No new top feed item for more than 15m: latest is 2026-06-13T11:09:29+03:00 (0:16:25.213475 old). Warning only; if it reaches 25m, treat as operational problem.",
+          "severity": "error",
+          "code": "stale_updated_at",
+          "message": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        },
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-06-13T11:09:29+03:00 (0:48:49.919743 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
           "item": 0,
           "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
         },
         {
+          "severity": "error",
+          "code": "too_few_recent_items_sla",
+          "message": "Quantity SLA failed: only 4 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        },
+        {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest הארץ item is older than 120m: 2026-06-13T09:15:51+03:00 (2:10:03.213475 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "message": "Latest הארץ item is older than 120m: 2026-06-13T09:15:51+03:00 (2:42:27.919743 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
           "item": 32,
           "headline": "אונר״א פיטרה 70 עובדים שישראל קשרה לחמאס מחשש לתקיפות",
           "source": "הארץ - כל הכתבות",
@@ -898,11 +1110,20 @@
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest מעריב item is older than 120m: 2026-06-09T17:15:13+03:00 (3 days, 18:10:41.213475 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "message": "Latest מעריב item is older than 120m: 2026-06-09T17:15:13+03:00 (3 days, 18:43:05.919743 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
           "item": 118,
           "headline": "הרמטכ״ל אומר שהתקיפה באיראן הייתה הכנה למכה כבדה יותר",
           "source": "מעריב - חדשות",
           "url": "https://www.maariv.co.il/news/military/article-1331022"
+        },
+        {
+          "severity": "warning",
+          "code": "stale_foreign_source_view",
+          "message": "Latest foreign-source item is older than 60m: 2026-06-13T10:33:14+03:00 (1:25:04.919743 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "item": 12,
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "url": "https://www.aljazeera.com/news/2026/6/13/one-killed-as-israel-hits-south-lebanon-issues-forced-displacement-orders?traffic_source=rss"
         }
       ]
     },
@@ -910,19 +1131,45 @@
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh ביטחון publication event for 27 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-06-13T11:25:58+03:00",
+      "summary": "No fresh all publication event for 48 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-06-13T11:58:15+03:00",
       "findings": [
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "ageMinutes": 48,
+          "latestAt": "2026-06-13T11:09:29+03:00",
+          "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "message": "No fresh all publication event for 48 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "foreign",
+          "thresholdMinutes": 60,
+          "ageMinutes": 85,
+          "latestAt": "2026-06-13T10:33:14+03:00",
+          "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+          "source": "Al Jazeera RSS מסונן מזרח תיכון",
+          "message": "No fresh foreign publication event for 85 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 27,
+          "ageMinutes": 59,
           "latestAt": "2026-06-13T10:58:21+03:00",
           "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh ביטחון publication event for 27 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 59 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -931,11 +1178,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 48,
+          "ageMinutes": 80,
           "latestAt": "2026-06-13T10:37:42+03:00",
           "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh פוליטיקה publication event for 48 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 80 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -944,11 +1191,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 1537,
+          "ageMinutes": 1569,
           "latestAt": "2026-06-12T09:48:32+03:00",
           "headline": "משטרת תל אביב סוגרת כבישים לקראת מצעד הגאווה",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh חדשות publication event for 1537 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 1569 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -957,11 +1204,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 271,
+          "ageMinutes": 303,
           "latestAt": "2026-06-13T06:54:52+03:00",
           "headline": "מסע ירי במידלנד הסתיים בהרוג, 10 פצועים ומות החשוד",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh פלילים publication event for 271 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 303 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -970,50 +1217,24 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 1504,
+          "ageMinutes": 1536,
           "latestAt": "2026-06-12T10:21:21+03:00",
           "headline": "בית המשפט השאיר את הירושה אצל האחיין למרות התנגדות הבנים",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh משפט publication event for 1504 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 1536 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
         {
           "severity": "error",
           "code": "publication_timing_sla",
-          "group": "צרכנות",
-          "thresholdMinutes": 60,
-          "ageMinutes": 260,
-          "latestAt": "2026-06-13T07:05:28+03:00",
-          "headline": "חלב שקדים ביתי דורש רק השריה, טחינה וסינון",
+          "group": "כלכלה",
+          "thresholdMinutes": 45,
+          "ageMinutes": 61,
+          "latestAt": "2026-06-13T10:57:15+03:00",
+          "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh צרכנות publication event for 260 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "רכב",
-          "thresholdMinutes": 60,
-          "ageMinutes": 74,
-          "latestAt": "2026-06-13T10:11:48+03:00",
-          "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
-          "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh רכב publication event for 74 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "אקטואליה בעולם",
-          "thresholdMinutes": 60,
-          "ageMinutes": 102,
-          "latestAt": "2026-06-13T09:43:09+03:00",
-          "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
-          "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 102 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 61 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -1022,10 +1243,38 @@
     {
       "id": "gatekeeper",
       "name": "השוער",
-      "status": "ok",
-      "summary": "תקין בבדיקה האחרונה",
+      "status": "fail",
+      "summary": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
       "checkedAt": "",
-      "findings": []
+      "findings": [
+        {
+          "severity": "error",
+          "code": "stale_updated_at",
+          "message": "Live updatedAt is stale: 2026-06-13T11:25:44+03:00 (0:32:34.919743 old)",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        },
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-06-13T11:09:29+03:00 (0:48:49.919743 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "item": 0,
+          "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
+        },
+        {
+          "severity": "error",
+          "code": "too_few_recent_items_sla",
+          "message": "Quantity SLA failed: only 4 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "item": null,
+          "headline": "",
+          "source": "",
+          "url": ""
+        }
+      ]
     },
     {
       "id": "repair",
@@ -1035,5 +1284,1058 @@
       "checkedAt": "",
       "findings": []
     }
-  ]
+  ],
+  "feedQuality": {
+    "generatedAt": "2026-06-13T12:02:22+03:00",
+    "score": "fail",
+    "newsinessTop10": 3,
+    "softTop10": 7,
+    "otherTop10": 0,
+    "topItemAgeMinutes": 52,
+    "top5Under60": 2,
+    "top10Under60": 2,
+    "top12Under60": 2,
+    "uniqueSourcesTop20": 8,
+    "dominantSource": {
+      "name": "Daily Mail",
+      "count": 6
+    },
+    "importantSourcesInTop20": {
+      "N12": false,
+      "ynet": true,
+      "מעריב": false,
+      "הארץ": false,
+      "BBC": false,
+      "Guardian": false,
+      "NYT": false,
+      "גלובס": false,
+      "ישראל היום": true,
+      "וואלה": true
+    },
+    "breaking": {
+      "visible": true,
+      "topAgeMinutes": 5938,
+      "top12Under60": 0,
+      "count": 80
+    },
+    "notes": [
+      "מדידה בלבד — לא משנה את דירוג הפיד.",
+      "מדדי חדשותיות, תוכן רך וגיוון מקורות נוספו כדי ללמוד מדוחות עליזה ולכוון שיפור מבוקר."
+    ]
+  },
+  "feedQualitySimulation": {
+    "status": "ok",
+    "mode": "simulation_only_no_feed_mutation",
+    "generatedAt": "2026-06-13T09:01:58+00:00",
+    "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
+    "itemCount": 432,
+    "before": {
+      "newsinessTop10": 3,
+      "softTop10": 7,
+      "otherTop10": 0,
+      "top5Under60": 2,
+      "top10Under60": 2,
+      "top12Under60": 2,
+      "uniqueSourcesTop20": 8,
+      "dominantSource": {
+        "name": "Daily Mail",
+        "count": 6
+      },
+      "importantMissingTop20": [
+        "N12",
+        "מעריב",
+        "הארץ",
+        "BBC",
+        "Guardian",
+        "NYT",
+        "גלובס"
+      ],
+      "topSources": [
+        {
+          "name": "Daily Mail",
+          "count": 6
+        },
+        {
+          "name": "Mirror",
+          "count": 4
+        },
+        {
+          "name": "דה מרקר",
+          "count": 3
+        },
+        {
+          "name": "ynet",
+          "count": 2
+        },
+        {
+          "name": "ישראל היום",
+          "count": 2
+        },
+        {
+          "name": "Jerusalem Post",
+          "count": 1
+        },
+        {
+          "name": "וואלה",
+          "count": 1
+        },
+        {
+          "name": "Al Jazeera RSS מסונן מזרח תיכון",
+          "count": 1
+        }
+      ]
+    },
+    "after": {
+      "newsinessTop10": 7,
+      "softTop10": 3,
+      "otherTop10": 0,
+      "top5Under60": 2,
+      "top10Under60": 2,
+      "top12Under60": 2,
+      "uniqueSourcesTop20": 8,
+      "dominantSource": {
+        "name": "Daily Mail",
+        "count": 4
+      },
+      "importantMissingTop20": [
+        "N12",
+        "מעריב",
+        "הארץ",
+        "BBC",
+        "Guardian",
+        "NYT",
+        "גלובס"
+      ],
+      "topSources": [
+        {
+          "name": "Daily Mail",
+          "count": 4
+        },
+        {
+          "name": "ישראל היום",
+          "count": 3
+        },
+        {
+          "name": "דה מרקר",
+          "count": 3
+        },
+        {
+          "name": "Mirror",
+          "count": 3
+        },
+        {
+          "name": "וואלה",
+          "count": 3
+        },
+        {
+          "name": "ynet",
+          "count": 2
+        },
+        {
+          "name": "Al Jazeera RSS מסונן מזרח תיכון",
+          "count": 1
+        },
+        {
+          "name": "Jerusalem Post",
+          "count": 1
+        }
+      ]
+    },
+    "top10Before": [
+      {
+        "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 52,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 1,
+        "afterRank": 1,
+        "delta": 0
+      },
+      {
+        "headline": "מאט טבאט מודה שהירושה של ג׳יימס מרטין עדיין מלווה בלחץ",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 57,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/matt-tebbutt-admits-isnt-easy-37283806",
+        "beforeRank": 2,
+        "afterRank": 2,
+        "delta": 0
+      },
+      {
+        "headline": "הסרט על מייקל ג׳קסון עקף את כל הביופיקים המוזיקליים בקופות",
+        "source": "ynet - כל ערוץ התרבות",
+        "canonicalSource": "ynet",
+        "category": "תרבות",
+        "class": "soft",
+        "ageMinutes": 63,
+        "url": "https://www.ynet.co.il/entertainment/article/sks2ufqbml",
+        "beforeRank": 3,
+        "afterRank": 3,
+        "delta": 0
+      },
+      {
+        "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20749907",
+        "beforeRank": 4,
+        "afterRank": 4,
+        "delta": 0
+      },
+      {
+        "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 64,
+        "url": "https://www.israelhayom.co.il/business/article/20749990",
+        "beforeRank": 5,
+        "afterRank": 5,
+        "delta": 0
+      },
+      {
+        "headline": "פריחת השבבים באסיה מסתירה חולשה עמוקה בשאר התעשייה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 65,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article-magazine/.premium/0000019e-ac03-db2a-a59f-ee27bb130000",
+        "beforeRank": 6,
+        "afterRank": 6,
+        "delta": 0
+      },
+      {
+        "headline": "פרי אדוארדס מתחתנת אחרי עשור שהתחיל בשברון לב ציבורי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 66,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15891451/Perrie-Edwards-marry-Alex-Oxlade-Chamberlain-heartbreak-Zayn-Malik.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 7,
+        "afterRank": 7,
+        "delta": 0
+      },
+      {
+        "headline": "האחיות אולסן מגיעות לגיל 40 ככוכבות עבר שבחרו להיעלם",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 68,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/inside-hidden-lives-millionaire-twins-37276543",
+        "beforeRank": 8,
+        "afterRank": 8,
+        "delta": 0
+      },
+      {
+        "headline": "ונסה באואר מחליפה את הקרח בקולנוע ומתכננת חתונה בחו״ל",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 68,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/dancing-ice-star-reveals-wedding-37285066",
+        "beforeRank": 9,
+        "afterRank": 9,
+        "delta": 0
+      },
+      {
+        "headline": "קים קרדשיאן הפכה מבוכה במונקו למחווה ממותגת לנהג מרצדס",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 71,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896961/Kim-Kardashian-addresses-awkward-moment-stole-Kimi-Antonellis-towel-Monaco-Grand-Prix-gifts-Mercedes-driver-personalised-one.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 10,
+        "afterRank": 10,
+        "delta": 0
+      }
+    ],
+    "top10After": [
+      {
+        "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20749907",
+        "beforeRank": 4,
+        "afterRank": 1,
+        "delta": 3
+      },
+      {
+        "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 64,
+        "url": "https://www.israelhayom.co.il/business/article/20749990",
+        "beforeRank": 5,
+        "afterRank": 2,
+        "delta": 3
+      },
+      {
+        "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 52,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 1,
+        "afterRank": 3,
+        "delta": -2
+      },
+      {
+        "headline": "פריחת השבבים באסיה מסתירה חולשה עמוקה בשאר התעשייה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 65,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article-magazine/.premium/0000019e-ac03-db2a-a59f-ee27bb130000",
+        "beforeRank": 6,
+        "afterRank": 4,
+        "delta": 2
+      },
+      {
+        "headline": "מאט טבאט מודה שהירושה של ג׳יימס מרטין עדיין מלווה בלחץ",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 57,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/matt-tebbutt-admits-isnt-easy-37283806",
+        "beforeRank": 2,
+        "afterRank": 5,
+        "delta": -3
+      },
+      {
+        "headline": "הסרט על מייקל ג׳קסון עקף את כל הביופיקים המוזיקליים בקופות",
+        "source": "ynet - כל ערוץ התרבות",
+        "canonicalSource": "ynet",
+        "category": "תרבות",
+        "class": "soft",
+        "ageMinutes": 63,
+        "url": "https://www.ynet.co.il/entertainment/article/sks2ufqbml",
+        "beforeRank": 3,
+        "afterRank": 6,
+        "delta": -3
+      },
+      {
+        "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 88,
+        "url": "https://www.aljazeera.com/news/2026/6/13/one-killed-as-israel-hits-south-lebanon-issues-forced-displacement-orders?traffic_source=rss",
+        "beforeRank": 13,
+        "afterRank": 7,
+        "delta": 6
+      },
+      {
+        "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "ageMinutes": 84,
+        "url": "https://www.jpost.com/israel-news/article-899146",
+        "beforeRank": 11,
+        "afterRank": 8,
+        "delta": 3
+      },
+      {
+        "headline": "ארה״ב מצמצמת גישה למודלי אנתרופיק מחשש לשימושי סייבר",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 93,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-bfd3-d86d-adde-bfffb8430000",
+        "beforeRank": 15,
+        "afterRank": 9,
+        "delta": 6
+      },
+      {
+        "headline": "ארה״ב מגבילה את מודלי אנתרופיק המתקדמים מחוץ לשטחה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 93,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/0000019e-bfd3-d86d-adde-bfffb8430000",
+        "beforeRank": 16,
+        "afterRank": 10,
+        "delta": 6
+      }
+    ],
+    "top20Before": [
+      {
+        "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 52,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 1,
+        "afterRank": 1,
+        "delta": 0
+      },
+      {
+        "headline": "מאט טבאט מודה שהירושה של ג׳יימס מרטין עדיין מלווה בלחץ",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 57,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/matt-tebbutt-admits-isnt-easy-37283806",
+        "beforeRank": 2,
+        "afterRank": 2,
+        "delta": 0
+      },
+      {
+        "headline": "הסרט על מייקל ג׳קסון עקף את כל הביופיקים המוזיקליים בקופות",
+        "source": "ynet - כל ערוץ התרבות",
+        "canonicalSource": "ynet",
+        "category": "תרבות",
+        "class": "soft",
+        "ageMinutes": 63,
+        "url": "https://www.ynet.co.il/entertainment/article/sks2ufqbml",
+        "beforeRank": 3,
+        "afterRank": 3,
+        "delta": 0
+      },
+      {
+        "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20749907",
+        "beforeRank": 4,
+        "afterRank": 4,
+        "delta": 0
+      },
+      {
+        "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 64,
+        "url": "https://www.israelhayom.co.il/business/article/20749990",
+        "beforeRank": 5,
+        "afterRank": 5,
+        "delta": 0
+      },
+      {
+        "headline": "פריחת השבבים באסיה מסתירה חולשה עמוקה בשאר התעשייה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 65,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article-magazine/.premium/0000019e-ac03-db2a-a59f-ee27bb130000",
+        "beforeRank": 6,
+        "afterRank": 6,
+        "delta": 0
+      },
+      {
+        "headline": "פרי אדוארדס מתחתנת אחרי עשור שהתחיל בשברון לב ציבורי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 66,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15891451/Perrie-Edwards-marry-Alex-Oxlade-Chamberlain-heartbreak-Zayn-Malik.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 7,
+        "afterRank": 7,
+        "delta": 0
+      },
+      {
+        "headline": "האחיות אולסן מגיעות לגיל 40 ככוכבות עבר שבחרו להיעלם",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 68,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/inside-hidden-lives-millionaire-twins-37276543",
+        "beforeRank": 8,
+        "afterRank": 8,
+        "delta": 0
+      },
+      {
+        "headline": "ונסה באואר מחליפה את הקרח בקולנוע ומתכננת חתונה בחו״ל",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 68,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/dancing-ice-star-reveals-wedding-37285066",
+        "beforeRank": 9,
+        "afterRank": 9,
+        "delta": 0
+      },
+      {
+        "headline": "קים קרדשיאן הפכה מבוכה במונקו למחווה ממותגת לנהג מרצדס",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 71,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896961/Kim-Kardashian-addresses-awkward-moment-stole-Kimi-Antonellis-towel-Monaco-Grand-Prix-gifts-Mercedes-driver-personalised-one.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 10,
+        "afterRank": 10,
+        "delta": 0
+      },
+      {
+        "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "ageMinutes": 84,
+        "url": "https://www.jpost.com/israel-news/article-899146",
+        "beforeRank": 11,
+        "afterRank": 11,
+        "delta": 0
+      },
+      {
+        "headline": "שריף כיוף מתקרב להשאלה להפועל רמת גן כדי לקבל דקות כשוער ראשון",
+        "source": "וואלה ספורט - כדורגל ישראלי",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "ageMinutes": 85,
+        "url": "https://sports.walla.co.il/item/3845299",
+        "beforeRank": 12,
+        "afterRank": 12,
+        "delta": 0
+      },
+      {
+        "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 88,
+        "url": "https://www.aljazeera.com/news/2026/6/13/one-killed-as-israel-hits-south-lebanon-issues-forced-displacement-orders?traffic_source=rss",
+        "beforeRank": 13,
+        "afterRank": 13,
+        "delta": 0
+      },
+      {
+        "headline": "היעדרות פרגי מחתונת אחייניתה מעמיקה את סימני השאלה סביב מצבה",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 92,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896009/EDEN-CONFIDENTIAL-Pals-Fergie-fails-nieces.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 14,
+        "afterRank": 14,
+        "delta": 0
+      },
+      {
+        "headline": "ארה״ב מצמצמת גישה למודלי אנתרופיק מחשש לשימושי סייבר",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 93,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-bfd3-d86d-adde-bfffb8430000",
+        "beforeRank": 15,
+        "afterRank": 15,
+        "delta": 0
+      },
+      {
+        "headline": "ארה״ב מגבילה את מודלי אנתרופיק המתקדמים מחוץ לשטחה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 93,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/0000019e-bfd3-d86d-adde-bfffb8430000",
+        "beforeRank": 16,
+        "afterRank": 16,
+        "delta": 0
+      },
+      {
+        "headline": "ג׳סי נלסון אומרת שמאבק התאומות ב־SMA פירק את הזוגיות שלה",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 93,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15894359/Jesy-Nelson-ended-relationship-fiance-Zion-Foster-twins-SMA-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 17,
+        "afterRank": 17,
+        "delta": 0
+      },
+      {
+        "headline": "הלן מירן מגיבה לתוקף שכינה אותה ציונית מרושעת בלונדון",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 94,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15895153/Dame-Helen-Mirren-breaks-silence-branded-evil-Zionist-shocking-London-street-confrontation.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 18,
+        "afterRank": 18,
+        "delta": 0
+      },
+      {
+        "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "רכב",
+        "class": "hard",
+        "ageMinutes": 110,
+        "url": "https://www.ynet.co.il/news/article/hj00tlkqwzx",
+        "beforeRank": 19,
+        "afterRank": 19,
+        "delta": 0
+      },
+      {
+        "headline": "זמר הקאנטרי והפופ פלויד בראון מת מסרטן בגיל 79",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "hard",
+        "ageMinutes": 120,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/floyd-brown-dead-80s-pop-37289680",
+        "beforeRank": 20,
+        "afterRank": 20,
+        "delta": 0
+      }
+    ],
+    "top20After": [
+      {
+        "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20749907",
+        "beforeRank": 4,
+        "afterRank": 1,
+        "delta": 3
+      },
+      {
+        "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 64,
+        "url": "https://www.israelhayom.co.il/business/article/20749990",
+        "beforeRank": 5,
+        "afterRank": 2,
+        "delta": 3
+      },
+      {
+        "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 52,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896981/Kanye-West-shares-TOPLESS-photo-wife-Bianca-Censori-posing-cat-mask-stepped-no-underwear-sheer-gown.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 1,
+        "afterRank": 3,
+        "delta": -2
+      },
+      {
+        "headline": "פריחת השבבים באסיה מסתירה חולשה עמוקה בשאר התעשייה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 65,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article-magazine/.premium/0000019e-ac03-db2a-a59f-ee27bb130000",
+        "beforeRank": 6,
+        "afterRank": 4,
+        "delta": 2
+      },
+      {
+        "headline": "מאט טבאט מודה שהירושה של ג׳יימס מרטין עדיין מלווה בלחץ",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 57,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/matt-tebbutt-admits-isnt-easy-37283806",
+        "beforeRank": 2,
+        "afterRank": 5,
+        "delta": -3
+      },
+      {
+        "headline": "הסרט על מייקל ג׳קסון עקף את כל הביופיקים המוזיקליים בקופות",
+        "source": "ynet - כל ערוץ התרבות",
+        "canonicalSource": "ynet",
+        "category": "תרבות",
+        "class": "soft",
+        "ageMinutes": 63,
+        "url": "https://www.ynet.co.il/entertainment/article/sks2ufqbml",
+        "beforeRank": 3,
+        "afterRank": 6,
+        "delta": -3
+      },
+      {
+        "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 88,
+        "url": "https://www.aljazeera.com/news/2026/6/13/one-killed-as-israel-hits-south-lebanon-issues-forced-displacement-orders?traffic_source=rss",
+        "beforeRank": 13,
+        "afterRank": 7,
+        "delta": 6
+      },
+      {
+        "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "ageMinutes": 84,
+        "url": "https://www.jpost.com/israel-news/article-899146",
+        "beforeRank": 11,
+        "afterRank": 8,
+        "delta": 3
+      },
+      {
+        "headline": "ארה״ב מצמצמת גישה למודלי אנתרופיק מחשש לשימושי סייבר",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 93,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-bfd3-d86d-adde-bfffb8430000",
+        "beforeRank": 15,
+        "afterRank": 9,
+        "delta": 6
+      },
+      {
+        "headline": "ארה״ב מגבילה את מודלי אנתרופיק המתקדמים מחוץ לשטחה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 93,
+        "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/0000019e-bfd3-d86d-adde-bfffb8430000",
+        "beforeRank": 16,
+        "afterRank": 10,
+        "delta": 6
+      },
+      {
+        "headline": "פרי אדוארדס מתחתנת אחרי עשור שהתחיל בשברון לב ציבורי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 66,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15891451/Perrie-Edwards-marry-Alex-Oxlade-Chamberlain-heartbreak-Zayn-Malik.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 7,
+        "afterRank": 11,
+        "delta": -4
+      },
+      {
+        "headline": "האחיות אולסן מגיעות לגיל 40 ככוכבות עבר שבחרו להיעלם",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 68,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/inside-hidden-lives-millionaire-twins-37276543",
+        "beforeRank": 8,
+        "afterRank": 12,
+        "delta": -4
+      },
+      {
+        "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "רכב",
+        "class": "hard",
+        "ageMinutes": 110,
+        "url": "https://www.ynet.co.il/news/article/hj00tlkqwzx",
+        "beforeRank": 19,
+        "afterRank": 13,
+        "delta": 6
+      },
+      {
+        "headline": "ארה״ב ואיראן מסכימות שיש מזכר הבנות, אבל חלוקות על לבנון והגרעין",
+        "source": "וואלה חדשות - חדשות בעולם",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 121,
+        "url": "https://news.walla.co.il/item/3845266",
+        "beforeRank": 24,
+        "afterRank": 14,
+        "delta": 10
+      },
+      {
+        "headline": "ונסה באואר מחליפה את הקרח בקולנוע ומתכננת חתונה בחו״ל",
+        "source": "Mirror Celebs רכילות חו״ל",
+        "canonicalSource": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 68,
+        "url": "https://www.mirror.co.uk/3am/celebrity-news/dancing-ice-star-reveals-wedding-37285066",
+        "beforeRank": 9,
+        "afterRank": 15,
+        "delta": -6
+      },
+      {
+        "headline": "קים קרדשיאן הפכה מבוכה במונקו למחווה ממותגת לנהג מרצדס",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 71,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896961/Kim-Kardashian-addresses-awkward-moment-stole-Kimi-Antonellis-towel-Monaco-Grand-Prix-gifts-Mercedes-driver-personalised-one.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 10,
+        "afterRank": 16,
+        "delta": -6
+      },
+      {
+        "headline": "שריף כיוף מתקרב להשאלה להפועל רמת גן כדי לקבל דקות כשוער ראשון",
+        "source": "וואלה ספורט - כדורגל ישראלי",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "ageMinutes": 85,
+        "url": "https://sports.walla.co.il/item/3845299",
+        "beforeRank": 12,
+        "afterRank": 17,
+        "delta": -5
+      },
+      {
+        "headline": "שרוני טוען שנתניהו בונה רשת מינויים ליום שאחרי ההפסד",
+        "source": "וואלה כסף - דעות",
+        "canonicalSource": "וואלה",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "ageMinutes": 121,
+        "url": "https://finance.walla.co.il/item/3845291",
+        "beforeRank": 21,
+        "afterRank": 18,
+        "delta": 3
+      },
+      {
+        "headline": "היעדרות פרגי מחתונת אחייניתה מעמיקה את סימני השאלה סביב מצבה",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 92,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15896009/EDEN-CONFIDENTIAL-Pals-Fergie-fails-nieces.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 14,
+        "afterRank": 19,
+        "delta": -5
+      },
+      {
+        "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "ageMinutes": 138,
+        "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20749692",
+        "beforeRank": 28,
+        "afterRank": 20,
+        "delta": 8
+      }
+    ],
+    "movement": [
+      {
+        "headline": "פגיעה במפעל אלביט בבריטניה הוגדרה לראשונה כמעשה טרור",
+        "source": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "beforeRank": 4,
+        "afterRank": 1
+      },
+      {
+        "headline": "שניידר קיבל עוד קדנציה בנמל אשדוד אחרי זינוק ברווחים",
+        "source": "ישראל היום",
+        "category": "כלכלה",
+        "class": "hard",
+        "beforeRank": 5,
+        "afterRank": 2
+      },
+      {
+        "headline": "קניה ווסט הפך עוד הופעה חושפנית של ביאנקה למופע יחסי ציבור",
+        "source": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 1,
+        "afterRank": 3
+      },
+      {
+        "headline": "פריחת השבבים באסיה מסתירה חולשה עמוקה בשאר התעשייה",
+        "source": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "beforeRank": 6,
+        "afterRank": 4
+      },
+      {
+        "headline": "מאט טבאט מודה שהירושה של ג׳יימס מרטין עדיין מלווה בלחץ",
+        "source": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 2,
+        "afterRank": 5
+      },
+      {
+        "headline": "הסרט על מייקל ג׳קסון עקף את כל הביופיקים המוזיקליים בקופות",
+        "source": "ynet",
+        "category": "תרבות",
+        "class": "soft",
+        "beforeRank": 3,
+        "afterRank": 6
+      },
+      {
+        "headline": "ישראל תוקפת בדרום לבנון ומרחיבה פינוי אזרחי סביב חיזבאללה",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "ביטחון",
+        "class": "hard",
+        "beforeRank": 13,
+        "afterRank": 7
+      },
+      {
+        "headline": "מרכז בגין החזיר את גולדה מאיר לדיון על אחריות מנהיגותית",
+        "source": "Jerusalem Post",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "beforeRank": 11,
+        "afterRank": 8
+      },
+      {
+        "headline": "ארה״ב מצמצמת גישה למודלי אנתרופיק מחשש לשימושי סייבר",
+        "source": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "beforeRank": 15,
+        "afterRank": 9
+      },
+      {
+        "headline": "ארה״ב מגבילה את מודלי אנתרופיק המתקדמים מחוץ לשטחה",
+        "source": "דה מרקר",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "beforeRank": 16,
+        "afterRank": 10
+      },
+      {
+        "headline": "פרי אדוארדס מתחתנת אחרי עשור שהתחיל בשברון לב ציבורי",
+        "source": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 7,
+        "afterRank": 11
+      },
+      {
+        "headline": "האחיות אולסן מגיעות לגיל 40 ככוכבות עבר שבחרו להיעלם",
+        "source": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 8,
+        "afterRank": 12
+      },
+      {
+        "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
+        "source": "ynet",
+        "category": "רכב",
+        "class": "hard",
+        "beforeRank": 19,
+        "afterRank": 13
+      },
+      {
+        "headline": "ארה״ב ואיראן מסכימות שיש מזכר הבנות, אבל חלוקות על לבנון והגרעין",
+        "source": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "beforeRank": 24,
+        "afterRank": 14
+      },
+      {
+        "headline": "ונסה באואר מחליפה את הקרח בקולנוע ומתכננת חתונה בחו״ל",
+        "source": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 9,
+        "afterRank": 15
+      },
+      {
+        "headline": "קים קרדשיאן הפכה מבוכה במונקו למחווה ממותגת לנהג מרצדס",
+        "source": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 10,
+        "afterRank": 16
+      },
+      {
+        "headline": "שריף כיוף מתקרב להשאלה להפועל רמת גן כדי לקבל דקות כשוער ראשון",
+        "source": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "beforeRank": 12,
+        "afterRank": 17
+      },
+      {
+        "headline": "שרוני טוען שנתניהו בונה רשת מינויים ליום שאחרי ההפסד",
+        "source": "וואלה",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "beforeRank": 21,
+        "afterRank": 18
+      },
+      {
+        "headline": "היעדרות פרגי מחתונת אחייניתה מעמיקה את סימני השאלה סביב מצבה",
+        "source": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "beforeRank": 14,
+        "afterRank": 19
+      },
+      {
+        "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
+        "source": "ישראל היום",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "beforeRank": 28,
+        "afterRank": 20
+      }
+    ],
+    "rules": [
+      "recency remains dominant",
+      "boost hard news/core events",
+      "soft cap for gossip/sport/culture in top 5/10",
+      "source cap to reduce dominant-source takeover"
+    ]
+  }
 }
