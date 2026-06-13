@@ -53,6 +53,7 @@ def main() -> int:
     write_route("app", app_source_html, base=True)
     write_route("dashboard", "feedback-dashboard.html", base=True)
     write_route("tt-rr-simulation", "tt-rr-simulation.html", base=True)
+    write_route("tt-rr-breaking-simulation", "tt-rr-breaking-simulation.html", base=True)
     write_route("rss-dashboard", "rss-dashboard.html", base=True)
     write_route("rss-viewer", "rss-viewer.html", base=True)
 
