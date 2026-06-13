@@ -23,6 +23,7 @@ DEFAULT_OUT = ROOT / "tmp" / "feed_quality_ranking_simulation.json"
 DEFAULT_PUBLIC_OUT = ROOT / "tt_rr_simulation_feed.json"
 DEFAULT_HISTORY = ROOT / "dashboard_simulation_history.json"
 DEFAULT_SPY_TRENDS = ROOT / "spy_trends.json"
+DEFAULT_ALIZA_REPORT_DIR = Path("/root/.openclaw/workspace/poanta-reports")
 
 HARD_CATEGORIES = {"ביטחון", "פוליטיקה", "חדשות", "משפט", "פלילים", "כלכלה", "אקטואליה בעולם"}
 SOFT_CATEGORIES = {"רכילות", "ספורט", "תרבות", "בריאות"}
@@ -580,6 +581,87 @@ def compact_item(item: dict[str, Any], now: datetime, *, before_rank: int | None
     }
 
 
+
+def latest_aliza_review(report_dir: Path) -> dict[str, Any]:
+    """Read the latest Aliza TT RR simulation review markdown.
+
+    Aliza writes reports outside the repo in the shared OpenClaw reports folder.
+    This parser is intentionally tolerant: if future reports contain an explicit
+    `alizaScore: NN` / `ציון עליזה: NN`, use it; otherwise derive a display score
+    from the metrics Aliza already writes so Lior can see a trend immediately.
+    """
+    result: dict[str, Any] = {
+        "status": "unavailable",
+        "score": None,
+        "scoreSource": None,
+        "readyForMain": None,
+        "improvingVsBaseline": None,
+        "summaryLine": None,
+        "reportPath": None,
+        "reportName": None,
+        "reportGeneratedAt": None,
+        "metrics": {},
+        "recommendedActions": [],
+    }
+    try:
+        reports = sorted(report_dir.glob("tt-rr-simulation-review-*.md"), key=lambda x: x.stat().st_mtime)
+    except Exception as exc:
+        result["error"] = str(exc)[:180]
+        return result
+    if not reports:
+        result["error"] = "no Aliza simulation review reports found"
+        return result
+    latest = reports[-1]
+    text = latest.read_text(encoding="utf-8", errors="replace")
+    result.update({"status": "ok", "reportPath": str(latest), "reportName": latest.name})
+    metrics: dict[str, Any] = {}
+    actions: list[str] = []
+    in_actions = False
+    in_metrics = False
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("# TT RR Simulation Review"):
+            result["title"] = line.lstrip("# ").strip()
+        if line.startswith("## "):
+            in_actions = "פעולות קוד" in line or "Code" in line
+            in_metrics = "מדדים שנקראו" in line or "metrics" in line.lower()
+            continue
+        if in_actions and re.match(r"^\d+\.\s+", line):
+            actions.append(re.sub(r"^\d+\.\s+", "", line).strip())
+        if line.startswith("- ") and ":" in line:
+            key, value = line[2:].split(":", 1)
+            key = key.strip()
+            value = value.strip()
+            low_key = key.lower()
+            if key in {"שורה תחתונה", "bottomLine"}:
+                result["summaryLine"] = value
+            elif key in {"האם הסימולציה משתפרת מול baseline", "improvingVsBaseline"}:
+                result["improvingVsBaseline"] = value in {"כן", "yes", "true", "True"}
+            elif key in {"האם מוכנה להעברה לראשי", "readyForMain"}:
+                result["readyForMain"] = value in {"כן", "yes", "true", "True", "מוכן", "מוכנה"}
+            elif low_key in {"generatedat", "generated_at"}:
+                result["reportGeneratedAt"] = value
+            number = re.search(r"-?\d+(?:\.\d+)?", value)
+            if number and (in_metrics or low_key in {"alizascore", "aliza_score", "score"} or "ציון עליזה" in key):
+                num: Any = float(number.group(0)) if "." in number.group(0) else int(number.group(0))
+                metrics[key] = num
+                if low_key in {"alizascore", "aliza_score", "score"} or "ציון עליזה" in key:
+                    result["score"] = max(0, min(100, int(round(float(num)))))
+                    result["scoreSource"] = "explicit_report_score"
+    if result.get("score") is None:
+        health = float(metrics.get("afterHealthScore") or 0)
+        readiness = float(metrics.get("replacementReadiness score") or metrics.get("replacementReadiness") or 0)
+        rolling = float(metrics.get("rollingScore") or 0)
+        if health or readiness or rolling:
+            # Balanced Aliza display score: current quality + replacement readiness + stability trend.
+            result["score"] = max(0, min(100, int(round(health * 0.45 + readiness * 0.35 + rolling * 0.20))))
+            result["scoreSource"] = "derived_from_aliza_metrics"
+    result["metrics"] = metrics
+    result["recommendedActions"] = actions[:5]
+    return result
+
 def load_history(path: Path) -> dict[str, Any]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
@@ -608,6 +690,9 @@ def update_history(path: Path, run: dict[str, Any], max_runs: int) -> dict[str, 
     replacement_scores = [int(((r.get("replacementReadiness") or {}).get("score") or 0)) for r in replacement_window]
     ready_runs = [bool((r.get("replacementReadiness") or {}).get("readyNow")) for r in replacement_window]
     latest_replacement = run.get("replacementReadiness") or {}
+    aliza_window = [r.get("alizaReview") or {} for r in runs[-48:] if (r.get("alizaReview") or {}).get("score") is not None]
+    latest_aliza = run.get("alizaReview") or {}
+    aliza_scores = [int(r.get("score") or 0) for r in aliza_window]
     rolling_replacement_score = round(sum(replacement_scores) / len(replacement_scores), 2) if replacement_scores else 0
     summary = {
         "sampleCount": len(runs),
@@ -632,6 +717,14 @@ def update_history(path: Path, run: dict[str, Any], max_runs: int) -> dict[str, 
                 and not (latest_replacement.get("criticalBlockers") or [])
             ),
         },
+        "alizaReview": {
+            "latestScore": latest_aliza.get("score"),
+            "latestSummaryLine": latest_aliza.get("summaryLine"),
+            "latestReportName": latest_aliza.get("reportName"),
+            "window": len(aliza_scores),
+            "averageScore": round(sum(aliza_scores) / len(aliza_scores), 2) if aliza_scores else None,
+            "positiveReports": sum(1 for r in aliza_window if r.get("improvingVsBaseline") is True),
+        },
     }
     history = {
         "status": "ok",
@@ -651,6 +744,7 @@ def main() -> int:
     ap.add_argument("--public-out", default=str(DEFAULT_PUBLIC_OUT), help="public sanitized simulation JSON for the open Aliza page")
     ap.add_argument("--history", default=str(DEFAULT_HISTORY))
     ap.add_argument("--spy-trends", default=str(DEFAULT_SPY_TRENDS), help="read-only external trend signal JSON")
+    ap.add_argument("--aliza-report-dir", default=str(DEFAULT_ALIZA_REPORT_DIR), help="shared Aliza markdown report directory")
     ap.add_argument("--limit", type=int, default=60)
     ap.add_argument("--history-max", type=int, default=144)
     args = ap.parse_args()
@@ -660,6 +754,7 @@ def main() -> int:
     original = list(data.get("items") or [])
     now = datetime.now(timezone.utc)
     trend_signal = load_trend_signals(Path(args.spy_trends), now)
+    aliza_review = latest_aliza_review(Path(args.aliza_report_dir))
     simulated = simulate_order(original, now, max(10, args.limit), trend_signal)
 
     original_rank_by_key = {story_key(item): i + 1 for i, item in enumerate(original[: args.limit])}
@@ -694,6 +789,7 @@ def main() -> int:
         "beforeHealthScore": before_score,
         "afterHealthScore": after_score,
         "replacementReadiness": readiness,
+        "alizaReview": aliza_review,
         "delta": delta,
     }
     history = update_history(Path(args.history), run_record, max(1, args.history_max))
@@ -709,6 +805,7 @@ def main() -> int:
         "beforeHealthScore": before_score,
         "afterHealthScore": after_score,
         "replacementReadiness": readiness,
+        "alizaReview": aliza_review,
         "delta": delta,
         "historySummary": history.get("summary", {}),
         "trendSignal": {
@@ -745,6 +842,7 @@ def main() -> int:
             "ready-queue metrics estimate whether the visible feed could change around every 10 minutes without mutating feed.json",
             "replacement-readiness score tracks freshness, newsiness, top-20 quality, source balance, trend use, and critical blockers",
             "production promotion requires rolling score >= 80, at least 24 samples, 80% ready runs, and zero critical blockers",
+            "Aliza review score from shared hourly reports is displayed as an external human/agent quality grade",
             "longitudinal history tracks whether simulated health stays better than the main feed",
         ],
     }
