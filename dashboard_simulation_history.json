@@ -1,35 +1,36 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-13T17:25:57+00:00",
+  "generatedAt": "2026-06-13T18:23:25+00:00",
   "summary": {
-    "sampleCount": 56,
+    "sampleCount": 66,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 29.08,
-    "avgAfterHealthScore": 86.42,
+    "avgHealthDelta": 22.58,
+    "avgAfterHealthScore": 72.58,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 80,
-      "rollingScore": 79.19,
-      "readyRuns": 15,
+      "latestScore": 71,
+      "rollingScore": 79.92,
+      "readyRuns": 12,
       "criticalBlockers": [
+        "newsiness_top10_below_7",
         "soft_top10_above_2",
         "top12_under60_below_9"
       ],
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 86,
-      "latestSummaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
-      "latestReportName": "tt-rr-simulation-review-2026-06-13-2000.md",
-      "window": 12,
-      "averageScore": 87.5,
-      "positiveReports": 12
+      "latestScore": 62,
+      "latestSummaryLine": "בעייתי",
+      "latestReportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+      "window": 22,
+      "averageScore": 83.55,
+      "positiveReports": 19
     }
   },
   "runs": [
@@ -12525,6 +12526,3348 @@
         "trendMatchedTop10": 2,
         "trendMatchedTop20": 4,
         "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:31:22+00:00",
+      "feedFingerprint": "5450711453991339481",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 9,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": [
+            "ready_queue_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 9,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 6,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "ברחבי הארץ",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 9,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 9,
+        "trendGapMatchedTop20": 3,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": [
+            "ready_queue_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 9,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 2,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "ברחבי הארץ",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 80,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:35:42+00:00",
+      "feedFingerprint": "6163340515106696011",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 6,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "ברחבי הארץ",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "ברחבי הארץ",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 80,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:35:55+00:00",
+      "feedFingerprint": "2066828130493191843",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 6,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "נגד הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 9,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "נגד הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 80,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:36:33+00:00",
+      "feedFingerprint": "1977685182393273259",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 14,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 14,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 6,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 33,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "נגד הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 14,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 50,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 14,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 33,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": {
+                "trend": "מאות מפגינים נגד הממשלה במוקדים ברחבי הארץ",
+                "clusterKey": "נגד הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T17:18:19+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/syhqjfizfl",
+                "overlapTokens": [
+                  "ברחבי",
+                  "הארץ",
+                  "הממשלה",
+                  "מפגינים",
+                  "נגד"
+                ],
+                "score": 45.67,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 80,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:36:42+00:00",
+      "feedFingerprint": "7653056723026822212",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 14,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 46,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 14,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 6,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 33,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 14,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 46,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 14,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 33,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 77,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 7.33,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:42:22+00:00",
+      "feedFingerprint": "8114636212538437352",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 20,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 42,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 6,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 20,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 42,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 1,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "הפגנות נגד הממשלה נערכו בתל אביב, בירושלים ובגבול הצפון",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.ynet.co.il/news/article/sjhqy11owfg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 77,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 7.33,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T17:53:23+00:00",
+      "feedFingerprint": "5961624833580362466",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 31,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 30,
+          "score": 20,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 31,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 30,
+          "score": 20,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 74,
+      "replacementReadiness": {
+        "score": 70,
+        "threshold": 80,
+        "components": {
+          "freshness": 14.8,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 7.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 86,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב, אבל לא מספיק בשל בגלל טריות הפריט הראשון ותור 10 דקות חלש יחסית להרצה הקודמת",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2000.md",
+        "reportGeneratedAt": "2026-06-13T16:55:28+00:00",
+        "metrics": {
+          "ציון עליזה": 86,
+          "generatedAt": 2026,
+          "afterHealthScore": 93,
+          "healthDelta": 33,
+          "replacementReadiness score": 87,
+          "rollingScore": 77.15,
+          "newsinessTop10": 9,
+          "softTop10": 1,
+          "top12Under60": 10,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 12,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 12,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rank-1 freshness override: פריט ראשון מעל 25 דקות מפעיל חיפוש אגרסיבי של hard-news טרי, במיוחד אם יש trend gap שלא מיוצג.",
+          "להקשיח trendMatch: boost מלא רק עם overlap ישותי/נושאי חזק; התאמות מילים כלליות כמו Narwal מול טראמפ/איראן לא יכניסו פריט לתור.",
+          "לשפר readyQueue scoring כך ש־uniqueReadySources ו־ageMinutes יקבלו משקל עצמאי, ולמנוע תור \"מוכן\" שמורכב מפריטים בני 40+ דקות משני מקורות בלבד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 20:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:04:23+00:00",
+      "feedFingerprint": "5463620032905814158",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 5,
+        "topItemAgeMinutes": 42,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 30,
+          "score": 20,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 42,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 30,
+          "score": 20,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "פקיסטן טוענת שהסכם ארה״ב-איראן ייחתם כבר מחר",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://news.walla.co.il/item/3845366",
+              "trendMatch": {
+                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
+                "clusterKey": "משרד החוץ",
+                "domain": "חדשות",
+                "externalMentions": 13,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:34:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845384",
+                "overlapTokens": [
+                  "אמריקני",
+                  "החוץ",
+                  "הסכם",
+                  "חדשות",
+                  "חתימה",
+                  "מחר",
+                  "משרד"
+                ],
+                "score": 86.87,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 46,
+      "afterHealthScore": 68,
+      "replacementReadiness": {
+        "score": 62,
+        "threshold": 80,
+        "components": {
+          "freshness": 7.15,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 7.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:15:23+00:00",
+      "feedFingerprint": "5949052959519641846",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 53,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 53,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 44,
+      "afterHealthScore": 64,
+      "replacementReadiness": {
+        "score": 59,
+        "threshold": 80,
+        "components": {
+          "freshness": 6.8,
+          "newsinessTop10": 15.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 7.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 20
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:23:25+00:00",
+      "feedFingerprint": "5059677660242385356",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 6,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 66,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 3,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 19,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 7,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 23,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 38.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 19,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 62,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 3,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 19,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 23,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 38.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 54,
+      "afterHealthScore": 78,
+      "replacementReadiness": {
+        "score": 71,
+        "threshold": 80,
+        "components": {
+          "freshness": 16.8,
+          "newsinessTop10": 15.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "healthScore": 24
       }
     }
   ]
