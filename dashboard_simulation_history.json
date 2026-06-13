@@ -1,36 +1,32 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-13T18:23:25+00:00",
+  "generatedAt": "2026-06-13T19:13:00+00:00",
   "summary": {
-    "sampleCount": 66,
+    "sampleCount": 74,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 22.58,
-    "avgAfterHealthScore": 72.58,
+    "avgHealthDelta": 20.75,
+    "avgAfterHealthScore": 76.83,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 71,
-      "rollingScore": 79.92,
-      "readyRuns": 12,
-      "criticalBlockers": [
-        "newsiness_top10_below_7",
-        "soft_top10_above_2",
-        "top12_under60_below_9"
-      ],
+      "latestScore": 97,
+      "rollingScore": 80.9,
+      "readyRuns": 13,
+      "criticalBlockers": [],
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 62,
-      "latestSummaryLine": "בעייתי",
-      "latestReportName": "tt-rr-simulation-review-2026-06-13-2100.md",
-      "window": 22,
-      "averageScore": 83.55,
-      "positiveReports": 19
+      "latestScore": 72,
+      "latestSummaryLine": "בינוני",
+      "latestReportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+      "window": 30,
+      "averageScore": 78.47,
+      "positiveReports": 21
     }
   },
   "runs": [
@@ -15868,6 +15864,2906 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 1,
         "healthScore": 24
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:26:24+00:00",
+      "feedFingerprint": "379283682607715744",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 9,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 66,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 2,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 7,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 18,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 38.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 22,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 62,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 2,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 18,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 38.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 54,
+      "afterHealthScore": 78,
+      "replacementReadiness": {
+        "score": 71,
+        "threshold": 80,
+        "components": {
+          "freshness": 16.8,
+          "newsinessTop10": 15.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "healthScore": 24
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:37:24+00:00",
+      "feedFingerprint": "664035984368854414",
+      "before": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 20,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 62,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 33,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 37,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 31.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 33,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 56,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 33,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 2,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 37,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 31.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 54,
+      "afterHealthScore": 78,
+      "replacementReadiness": {
+        "score": 69,
+        "threshold": 80,
+        "components": {
+          "freshness": 14.4,
+          "newsinessTop10": 15.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "healthScore": 24
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:42:24+00:00",
+      "feedFingerprint": "3155457516195505870",
+      "before": {
+        "newsinessTop10": 5,
+        "softTop10": 5,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 25,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 78,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 5,
+              "headline": "חשד למקרה קטלני נוסף של מנינגוקוק אצל פעוט בסורוקה",
+              "source": "ערוץ 7 / INN עברית",
+              "canonicalSource": "ערוץ 7 / INN עברית",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://www.inn.co.il/flashes/1117702",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 38,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 72,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 2,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:23:24.873881+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 4,
+              "headline": "חשד למקרה קטלני נוסף של מנינגוקוק אצל פעוט בסורוקה",
+              "source": "ערוץ 7 / INN עברית",
+              "canonicalSource": "ערוץ 7 / INN עברית",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://www.inn.co.il/flashes/1117702",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 60,
+      "afterHealthScore": 82,
+      "replacementReadiness": {
+        "score": 69,
+        "threshold": 80,
+        "components": {
+          "freshness": 12.15,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:42:33+00:00",
+      "feedFingerprint": "8000593396036982668",
+      "before": {
+        "newsinessTop10": 5,
+        "softTop10": 5,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 25,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 78,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:42:33.392035+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 5,
+              "headline": "חשד למקרה קטלני נוסף של מנינגוקוק אצל פעוט בסורוקה",
+              "source": "ערוץ 7 / INN עברית",
+              "canonicalSource": "ערוץ 7 / INN עברית",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 41,
+              "url": "https://www.inn.co.il/flashes/1117702",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 38,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 72,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 2,
+              "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545605#utm_source=RSS",
+              "trendMatch": {
+                "trend": "וול סטריט נסגרה בעליות; למרות זינוק ספייס־אקס - מניות החלל צנחו עד 30%",
+                "clusterKey": "וול סטריט",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "דה מרקר"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T18:42:33.392035+00:00",
+                "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-12/ty-article-live/0000019e-9bc3-d7a4-a9bf-ffcb56ad0000",
+                "overlapTokens": [
+                  "וול",
+                  "כלכלה",
+                  "מניות",
+                  "סטריט"
+                ],
+                "score": 29.78,
+                "boost": 29.78
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 4,
+              "headline": "חשד למקרה קטלני נוסף של מנינגוקוק אצל פעוט בסורוקה",
+              "source": "ערוץ 7 / INN עברית",
+              "canonicalSource": "ערוץ 7 / INN עברית",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 41,
+              "url": "https://www.inn.co.il/flashes/1117702",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 60,
+      "afterHealthScore": 82,
+      "replacementReadiness": {
+        "score": 69,
+        "threshold": 80,
+        "components": {
+          "freshness": 12.15,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:48:24+00:00",
+      "feedFingerprint": "3125570765209438270",
+      "before": {
+        "newsinessTop10": 5,
+        "softTop10": 5,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 31,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 36,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 44,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 44,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 36,
+          "readyCount": 2,
+          "hardReadyCount": 2,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "טראמפ אומר שהסכם ארה״ב-איראן ייחתם בראשון; איראן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 44,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "טראמפ",
+                  "ייחתם",
+                  "מצר"
+                ],
+                "score": 89.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 2,
+              "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://www.ynet.co.il/news/article/rkrpt0c11mg",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 60,
+      "afterHealthScore": 82,
+      "replacementReadiness": {
+        "score": 67,
+        "threshold": 80,
+        "components": {
+          "freshness": 10.0,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T18:59:24+00:00",
+      "feedFingerprint": "902812848707137774",
+      "before": {
+        "newsinessTop10": 5,
+        "softTop10": 5,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 7,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 42,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 6,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 55,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 6,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 58,
+      "afterHealthScore": 80,
+      "replacementReadiness": {
+        "score": 67,
+        "threshold": 80,
+        "components": {
+          "freshness": 9.5,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 62,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2100.md",
+        "reportGeneratedAt": "2026-06-13T17:53:45+00:00",
+        "metrics": {
+          "ציון עליזה": 62,
+          "generatedAt": 2026,
+          "afterHealthScore": 74,
+          "healthDelta": 22,
+          "replacementReadiness score": 72,
+          "rollingScore": 76.83,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 7,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 9,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 30,
+          "readyCount": 1,
+          "hardReadyCount": 1,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 1,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שבמצב readyCount < 3 הוא מרחיב מועמדים טריים מ-Top 30/Top 40 לפי hard-news + source diversity, במקום להישאר עם פריט יחיד.",
+          "להקשיח trendMatch: ביטול boost להתאמות חלשות עם overlap גנרי, במיוחד כש-domain/cluster לא תואם את תוכן הידיעה.",
+          "להוסיף כלל דירוג ל-Top 5: soft-news לא יכול להיכנס מעל hard-news טרי אלא אם אין מספיק hard-news ראוי או שיש soft item עם טרנד חיצוני אמיתי וחזק."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 21:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:10:25+00:00",
+      "feedFingerprint": "1197182746467780310",
+      "before": {
+        "newsinessTop10": 5,
+        "softTop10": 5,
+        "otherTop10": 0,
+        "top5Under60": 1,
+        "top10Under60": 1,
+        "top12Under60": 1,
+        "topItemAgeMinutes": 53,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 1,
+        "top10Under60": 1,
+        "top12Under60": 1,
+        "topItemAgeMinutes": 66,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 6,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 46,
+      "afterHealthScore": 68,
+      "replacementReadiness": {
+        "score": 59,
+        "threshold": 80,
+        "components": {
+          "freshness": 1.7,
+          "newsinessTop10": 17.5,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "healthScore": 22
+      }
+    },
+    {
+      "generatedAt": "2026-06-13T19:13:00+00:00",
+      "feedFingerprint": "6512478270725338780",
+      "before": {
+        "newsinessTop10": 6,
+        "softTop10": 3,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 7,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 98,
+          "readyCount": 8,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 6,
+          "freshReadyUnder25Count": 5,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "דיין מזהיר שטראמפ מתרחק מקו נתניהו מול איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/israel-news/article-899265",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "טראמפ"
+                ],
+                "score": 29.86,
+                "boost": 29.86
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 1,
+              "headline": "קטאר ניסתה לעצור את הגז כדי למנוע תקיפה איראנית",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899263",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 3,
+              "headline": "פעילי עזה קוראים להפגנות חדשות נגד שלטון חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/middle-east/article-899267",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 10,
+              "headline": "בישראל חוששים שהסכם טראמפ ישאיר לאיראן אורניום מועשר",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/0000019e-c220-d86d-adde-fefd500c0000",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "חדשות",
+                  "טראמפ"
+                ],
+                "score": 59.71,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 4,
+              "headline": "ספיידרמן התימני נהרג בנפילה ללוע הר געש",
+              "source": "וואלה ספורט - טראש טוק",
+              "canonicalSource": "וואלה",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 8,
+              "url": "https://sports.walla.co.il/item/3845390",
+              "trendMatch": null,
+              "queueScore": 32.0
+            },
+            {
+              "rank": 8,
+              "headline": "בנט טוען שהתקשורת והליכוד מריצים את איזנקוט",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.kipa.co.il/1225940-0",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 7,
+              "headline": "ארה״ב חסמה לזרים גישה למודלים המתקדמים של אנתרופיק",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 19,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545755#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 18.0
+            },
+            {
+              "rank": 9,
+              "headline": "גמר הליגה היוונית נגמר באלימות בין כוכבי פנאתינייקוס ואולימפיאקוס",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20752550",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 8,
+        "softTop10": 1,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 8,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 7,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 6,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 98,
+          "readyCount": 8,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 6,
+          "freshReadyUnder25Count": 5,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "דיין מזהיר שטראמפ מתרחק מקו נתניהו מול איראן",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/israel-news/article-899265",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "טראמפ"
+                ],
+                "score": 29.86,
+                "boost": 29.86
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 2,
+              "headline": "קטאר ניסתה לעצור את הגז כדי למנוע תקיפה איראנית",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899263",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 4,
+              "headline": "פעילי עזה קוראים להפגנות חדשות נגד שלטון חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://www.jpost.com/middle-east/article-899267",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 3,
+              "headline": "בישראל חוששים שהסכם טראמפ ישאיר לאיראן אורניום מועשר",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.haaretz.co.il/news/politics/2026-06-13/ty-article/0000019e-c220-d86d-adde-fefd500c0000",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "חדשות",
+                  "טראמפ"
+                ],
+                "score": 59.71,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 6,
+              "headline": "ספיידרמן התימני נהרג בנפילה ללוע הר געש",
+              "source": "וואלה ספורט - טראש טוק",
+              "canonicalSource": "וואלה",
+              "category": "חדשות",
+              "class": "soft",
+              "ageMinutes": 8,
+              "url": "https://sports.walla.co.il/item/3845390",
+              "trendMatch": null,
+              "queueScore": 32.0
+            },
+            {
+              "rank": 5,
+              "headline": "בנט טוען שהתקשורת והליכוד מריצים את איזנקוט",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.kipa.co.il/1225940-0",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 9,
+              "headline": "ארה״ב חסמה לזרים גישה למודלים המתקדמים של אנתרופיק",
+              "source": "גלובס - גלובלי ושוקי עולם",
+              "canonicalSource": "גלובס",
+              "category": "טכנולוגיה",
+              "class": "other",
+              "ageMinutes": 19,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545755#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 18.0
+            },
+            {
+              "rank": 8,
+              "headline": "גמר הליגה היוונית נגמר באלימות בין כוכבי פנאתינייקוס ואולימפיאקוס",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20752550",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 85,
+      "afterHealthScore": 88,
+      "replacementReadiness": {
+        "score": 97,
+        "threshold": 80,
+        "components": {
+          "freshness": 18.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 18.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 72,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportName": "tt-rr-simulation-review-2026-06-13-2200.md",
+        "reportGeneratedAt": "2026-06-13T18:54:50+00:00",
+        "metrics": {
+          "ציון עליזה": 72,
+          "generatedAt": 2026,
+          "afterHealthScore": 82,
+          "healthDelta": 28,
+          "replacementReadiness score": 68,
+          "rollingScore": 76.75,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 8,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 3,
+          "uniqueSourcesTop20": 13,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את continuous publishing queue: ליצור שכבת candidate pool לפני ranking סופי, עם מינימום 3 ready, מינימום 2 hard ומינימום 2 unique sources, ולמדוד estimatedVisibleChangeMinutes מתוך התור הזה.",
+          "להקשיח Top 5 soft penalty: תרבות/ספורט/רכילות לא נכנסים ל-Top 5 כש-softTop10 מעל 2 או כש-top12Under60 מתחת ל-9, אלא אם יש trendMatch חזק עם domain תואם.",
+          "לשפר trendMatch validation: boost מלא רק על overlap של entity מרכזית + topic/domain, ולהוריד boost להתאמות מילוליות כלליות כמו \"יותר\", \"ממנו\" או התאמה בין כתבת תרבות לטרנד כלכלי."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-13 22:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "healthScore": 3
       }
     }
   ]

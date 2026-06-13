@@ -6,18 +6,129 @@
     "name": "רכז מודיעין",
     "role": "בישול פערי מרגל לפני העברה למשה"
   },
-  "generatedAt": "2026-06-13T21:23:27+03:00",
-  "sourceGapGeneratedAt": "2026-06-13T21:23:25+03:00",
+  "generatedAt": "2026-06-13T22:13:04+03:00",
+  "sourceGapGeneratedAt": "2026-06-13T22:13:01+03:00",
   "policy": "Spy gaps are triaged before משה; no raw publish; no feed mutation.",
   "scheduleRecommendation": "every 15m",
   "handoffToMoshe": false,
   "handedToMoshe": 0,
   "counts": {
+    "ready_for_moshe": 1,
     "dismissed_duplicate": 3,
-    "sent_to_moshe": 5,
+    "sent_to_moshe": 4,
     "needs_more_signal": 72
   },
   "items": [
+    {
+      "id": "intel_ba5a3e28f9caa0d9",
+      "gapId": "gap_ba5a3e28f9caa0d9",
+      "status": "ready_for_moshe",
+      "statusLabel": "מוכן למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-13T22:13:01+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
+      "trend": "גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+      "domain": "חדשות",
+      "clusterKey": "נפצע באורח",
+      "priority": 31,
+      "whyImportant": [
+        "9 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB",
+        "עובר סף רכז מודיעין להעברה מבושלת"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+        "source": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3845418",
+        "supportingSources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 9,
+        "sourceCount": 1,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.357,
+        "headline": "גבר נפצע קשה מדקירות בצפון בלפסט והחשוד נעצר בזירה",
+        "source": "מעריב - חדשות",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
+      "rawGap": {
+        "id": "gap_ba5a3e28f9caa0d9",
+        "status": "new",
+        "statusLabel": "חדש",
+        "mosheStage": "זוהה פער",
+        "mosheCurrentAction": "ממתין לשליחה לתור משה",
+        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+        "createdAt": "2026-06-13T22:13:01+03:00",
+        "updatedAt": "2026-06-13T22:13:01+03:00",
+        "trend": "גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+        "domain": "חדשות",
+        "clusterKey": "נפצע באורח",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 26,
+        "externalMentions": 9,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 4,
+        "webMentions": 5,
+        "latestAt": "2026-06-13T22:03:00+00:00",
+        "source": "וואלה",
+        "sourceGroup": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3845418",
+        "originalTitle": "גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+        "deterministicHeadline": "גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "חדשות",
+          "trend": "גבר בשנות ה-30 לחייו נפצע באורח קשה באירוע ירי בטמרה",
+          "clusterKey": "נפצע באורח",
+          "externalMentions": 9,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 4,
+          "webMentions": 5,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T22:03:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845418"
+        }
+      }
+    },
     {
       "id": "intel_0da10a8973a0f30e",
       "gapId": "gap_0da10a8973a0f30e",
@@ -28,7 +139,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T11:37:46+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "בגיל 71: הלך לעולמו גורו הכושר שגרם לנו לעשות כפיפות בטן מול הטלוויזיה",
       "domain": "חדשות",
       "clusterKey": "הלך לעולמו",
@@ -141,166 +252,6 @@
       }
     },
     {
-      "id": "intel_a1e6178ca67c5cee",
-      "gapId": "gap_a1e6178ca67c5cee",
-      "status": "sent_to_moshe",
-      "statusLabel": "הועבר למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-13T20:35:56+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
-      "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-      "domain": "חדשות",
-      "clusterKey": "נפצע באורח",
-      "priority": 28,
-      "whyImportant": [
-        "8 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-        "source": "וואלה",
-        "sourceUrl": "https://news.walla.co.il/break/3845389",
-        "supportingSources": [
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 8,
-        "sourceCount": 1,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.222,
-        "headline": "צעיר בן 20 נפצע אנוש בתאונת רכב בדרך חטיבת גולני בחיפה",
-        "source": "ישראל היום - כל הכתבות",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
-      "rawGap": {
-        "id": "gap_a1e6178ca67c5cee",
-        "status": "candidate_found",
-        "statusLabel": "נמצא מועמד פיד",
-        "mosheStage": "מועמד נמצא",
-        "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
-        "mosheNextAction": "העברה לעורך מלא ול־QA",
-        "createdAt": "2026-06-13T20:35:56+03:00",
-        "updatedAt": "2026-06-13T21:23:25+03:00",
-        "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-        "domain": "חדשות",
-        "clusterKey": "נפצע באורח",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 23,
-        "externalMentions": 8,
-        "sourceCount": 1,
-        "sources": [
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 4,
-        "webMentions": 4,
-        "latestAt": "2026-06-13T19:15:00+00:00",
-        "source": "וואלה",
-        "sourceGroup": "וואלה",
-        "sourceUrl": "https://news.walla.co.il/break/3845389",
-        "originalTitle": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-        "deterministicHeadline": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-          "clusterKey": "נפצע באורח",
-          "externalMentions": 8,
-          "sourceCount": 1,
-          "sources": [
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 4,
-          "webMentions": 4,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-13T19:15:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3845389"
-        },
-        "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_a1e6178ca67c5cee",
-        "intelligenceBriefing": {
-          "headlineSeed": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-          "source": "וואלה",
-          "sourceUrl": "https://news.walla.co.il/break/3845389",
-          "supportingSources": [
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "externalMentions": 8,
-          "sourceCount": 1,
-          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-          "checksForMoshe": [
-            "לאמת שהמקור אמיתי, נגיש ועדכני",
-            "לבדוק כפילות סמנטית מול הפיד",
-            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-          ],
-          "doNotRawPublish": true
-        },
-        "mosheQueuedAt": "2026-06-13T20:42:07+03:00",
-        "mosheStartedAt": "2026-06-13T20:43:58+03:00",
-        "mosheLastActionAt": "2026-06-13T20:43:58+03:00",
-        "mosheSourceCheck": {
-          "ok": true,
-          "status": 200,
-          "contentType": "text/html; charset=utf-8",
-          "bytesSampled": 4096
-        },
-        "mosheDuplicateCheck": {
-          "duplicate": false,
-          "score": 0.222,
-          "headline": "צעיר בן 20 נפצע אנוש בתאונת רכב בדרך חטיבת גולני בחיפה",
-          "source": "ישראל היום - כל הכתבות",
-          "reason": "token_overlap"
-        },
-        "mosheCheckedAt": "2026-06-13T20:43:58+03:00",
-        "candidate": {
-          "headlineSeed": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
-          "source": "וואלה",
-          "sourceUrl": "https://news.walla.co.il/break/3845389",
-          "category": "חדשות",
-          "reason": "spy_gap_verified_by_moshe",
-          "checkedAt": "2026-06-13T20:43:58+03:00",
-          "nextGate": "editor_quality_gate"
-        },
-        "mosheOutcome": "candidate_found"
-      }
-    },
-    {
       "id": "intel_bf55c7ba08164ca3",
       "gapId": "gap_bf55c7ba08164ca3",
       "status": "sent_to_moshe",
@@ -310,7 +261,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T20:35:56+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
       "domain": "חדשות",
       "clusterKey": "מטוסי קרב",
@@ -364,7 +315,7 @@
         "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
         "mosheNextAction": "העברה לעורך מלא ול־QA",
         "createdAt": "2026-06-13T20:35:56+03:00",
-        "updatedAt": "2026-06-13T21:23:25+03:00",
+        "updatedAt": "2026-06-13T22:13:01+03:00",
         "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
         "domain": "חדשות",
         "clusterKey": "מטוסי קרב",
@@ -479,7 +430,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:13:21+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "דיווח ראשוני: התרעות הופעלו באילת בשל חשד לחדירת כלי טיס עוין",
       "domain": "חדשות",
       "clusterKey": "כלי טיס",
@@ -585,171 +536,6 @@
       }
     },
     {
-      "id": "intel_555c831c3189cf8b",
-      "gapId": "gap_555c831c3189cf8b",
-      "status": "sent_to_moshe",
-      "statusLabel": "הועבר למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-13T20:35:56+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
-      "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-      "domain": "חדשות",
-      "clusterKey": "טראמפ ייפגש",
-      "priority": 23,
-      "whyImportant": [
-        "מופיע אצל 2 מקורות חיצוניים",
-        "5 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-        "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3845368",
-        "supportingSources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 5,
-        "sourceCount": 2,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.176,
-        "headline": "המיליציות הפרו־איראניות בעיראק מסרבות למסור נשק למרות לחץ אמריקני",
-        "source": "ישראל היום - כל הכתבות",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
-      "rawGap": {
-        "id": "gap_555c831c3189cf8b",
-        "status": "candidate_found",
-        "statusLabel": "נמצא מועמד פיד",
-        "mosheStage": "מועמד נמצא",
-        "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
-        "mosheNextAction": "העברה לעורך מלא ול־QA",
-        "createdAt": "2026-06-13T20:35:56+03:00",
-        "updatedAt": "2026-06-13T21:23:25+03:00",
-        "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-        "domain": "חדשות",
-        "clusterKey": "טראמפ ייפגש",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 18,
-        "externalMentions": 5,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 3,
-        "webMentions": 2,
-        "latestAt": "2026-06-13T17:30:00+00:00",
-        "source": "ynet",
-        "sourceGroup": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3845368",
-        "originalTitle": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-        "deterministicHeadline": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-          "clusterKey": "טראמפ ייפגש",
-          "externalMentions": 5,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 3,
-          "webMentions": 2,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-13T17:30:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3845368"
-        },
-        "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_555c831c3189cf8b",
-        "intelligenceBriefing": {
-          "headlineSeed": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-          "source": "ynet",
-          "sourceUrl": "https://news.walla.co.il/break/3845368",
-          "supportingSources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "externalMentions": 5,
-          "sourceCount": 2,
-          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-          "checksForMoshe": [
-            "לאמת שהמקור אמיתי, נגיש ועדכני",
-            "לבדוק כפילות סמנטית מול הפיד",
-            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-          ],
-          "doNotRawPublish": true
-        },
-        "mosheQueuedAt": "2026-06-13T20:42:07+03:00",
-        "mosheStartedAt": "2026-06-13T20:43:59+03:00",
-        "mosheLastActionAt": "2026-06-13T20:43:59+03:00",
-        "mosheSourceCheck": {
-          "ok": true,
-          "status": 200,
-          "contentType": "text/html; charset=utf-8",
-          "bytesSampled": 4096
-        },
-        "mosheDuplicateCheck": {
-          "duplicate": false,
-          "score": 0.176,
-          "headline": "המיליציות הפרו־איראניות בעיראק מסרבות למסור נשק למרות לחץ אמריקני",
-          "source": "ישראל היום - כל הכתבות",
-          "reason": "token_overlap"
-        },
-        "mosheCheckedAt": "2026-06-13T20:43:59+03:00",
-        "candidate": {
-          "headlineSeed": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
-          "source": "ynet",
-          "sourceUrl": "https://news.walla.co.il/break/3845368",
-          "category": "חדשות",
-          "reason": "spy_gap_verified_by_moshe",
-          "checkedAt": "2026-06-13T20:43:59+03:00",
-          "nextGate": "editor_quality_gate"
-        },
-        "mosheOutcome": "candidate_found"
-      }
-    },
-    {
       "id": "intel_8a022798bbc0e5e0",
       "gapId": "gap_8a022798bbc0e5e0",
       "status": "dismissed_duplicate",
@@ -759,7 +545,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T06:24:32+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "מסוק אפאצ'י צבאי התרסק סמוך למצר הורמוז, הצוות חולץ",
       "domain": "חדשות",
       "clusterKey": "הורמוז הצוות חולץ",
@@ -875,7 +661,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T19:38:02+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
       "domain": "חדשות",
       "clusterKey": "באורח בינוני",
@@ -927,7 +713,7 @@
         "mosheCurrentAction": "ממתין לשליחה לתור משה",
         "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
         "createdAt": "2026-06-13T19:38:02+03:00",
-        "updatedAt": "2026-06-13T20:25:58+03:00",
+        "updatedAt": "2026-06-13T21:48:24+03:00",
         "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
         "domain": "חדשות",
         "clusterKey": "באורח בינוני",
@@ -977,6 +763,333 @@
       }
     },
     {
+      "id": "intel_a1e6178ca67c5cee",
+      "gapId": "gap_a1e6178ca67c5cee",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-13T20:35:56+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
+      "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+      "domain": "חדשות",
+      "clusterKey": "נפצע באורח",
+      "priority": 20,
+      "whyImportant": [
+        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
+        "8 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+        "source": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3845389",
+        "supportingSources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 8,
+        "sourceCount": 1,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.222,
+        "headline": "צעיר בן 20 נפצע אנוש בתאונת רכב בדרך חטיבת גולני בחיפה",
+        "source": "ישראל היום - כל הכתבות",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
+      "rawGap": {
+        "id": "gap_a1e6178ca67c5cee",
+        "status": "candidate_found",
+        "statusLabel": "נמצא מועמד פיד",
+        "mosheStage": "מועמד נמצא",
+        "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
+        "mosheNextAction": "העברה לעורך מלא ול־QA",
+        "createdAt": "2026-06-13T20:35:56+03:00",
+        "updatedAt": "2026-06-13T21:31:59+03:00",
+        "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+        "domain": "חדשות",
+        "clusterKey": "נפצע באורח",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 23,
+        "externalMentions": 8,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 4,
+        "webMentions": 4,
+        "latestAt": "2026-06-13T19:15:00+00:00",
+        "source": "וואלה",
+        "sourceGroup": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3845389",
+        "originalTitle": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+        "deterministicHeadline": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "חדשות",
+          "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+          "clusterKey": "נפצע באורח",
+          "externalMentions": 8,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 4,
+          "webMentions": 4,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T19:15:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845389"
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_a1e6178ca67c5cee",
+        "intelligenceBriefing": {
+          "headlineSeed": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+          "source": "וואלה",
+          "sourceUrl": "https://news.walla.co.il/break/3845389",
+          "supportingSources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "externalMentions": 8,
+          "sourceCount": 1,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+          ],
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-13T20:42:07+03:00",
+        "mosheStartedAt": "2026-06-13T20:43:58+03:00",
+        "mosheLastActionAt": "2026-06-13T20:43:58+03:00",
+        "mosheSourceCheck": {
+          "ok": true,
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytesSampled": 4096
+        },
+        "mosheDuplicateCheck": {
+          "duplicate": false,
+          "score": 0.222,
+          "headline": "צעיר בן 20 נפצע אנוש בתאונת רכב בדרך חטיבת גולני בחיפה",
+          "source": "ישראל היום - כל הכתבות",
+          "reason": "token_overlap"
+        },
+        "mosheCheckedAt": "2026-06-13T20:43:58+03:00",
+        "candidate": {
+          "headlineSeed": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
+          "source": "וואלה",
+          "sourceUrl": "https://news.walla.co.il/break/3845389",
+          "category": "חדשות",
+          "reason": "spy_gap_verified_by_moshe",
+          "checkedAt": "2026-06-13T20:43:58+03:00",
+          "nextGate": "editor_quality_gate"
+        },
+        "mosheOutcome": "candidate_found",
+        "staleFromCurrentSpy": true
+      }
+    },
+    {
+      "id": "intel_555c831c3189cf8b",
+      "gapId": "gap_555c831c3189cf8b",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-13T20:35:56+03:00",
+      "updatedAt": "2026-06-13T22:13:04+03:00",
+      "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+      "domain": "חדשות",
+      "clusterKey": "טראמפ ייפגש",
+      "priority": 20,
+      "whyImportant": [
+        "מופיע אצל 2 מקורות חיצוניים",
+        "4 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+        "source": "ynet",
+        "sourceUrl": "https://news.walla.co.il/break/3845368",
+        "supportingSources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.176,
+        "headline": "המיליציות הפרו־איראניות בעיראק מסרבות למסור נשק למרות לחץ אמריקני",
+        "source": "ישראל היום - כל הכתבות",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
+      "rawGap": {
+        "id": "gap_555c831c3189cf8b",
+        "status": "candidate_found",
+        "statusLabel": "נמצא מועמד פיד",
+        "mosheStage": "מועמד נמצא",
+        "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
+        "mosheNextAction": "העברה לעורך מלא ול־QA",
+        "createdAt": "2026-06-13T20:35:56+03:00",
+        "updatedAt": "2026-06-13T22:13:01+03:00",
+        "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+        "domain": "חדשות",
+        "clusterKey": "טראמפ ייפגש",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 16,
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 2,
+        "webMentions": 2,
+        "latestAt": "2026-06-13T17:30:00+00:00",
+        "source": "ynet",
+        "sourceGroup": "ynet",
+        "sourceUrl": "https://news.walla.co.il/break/3845368",
+        "originalTitle": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+        "deterministicHeadline": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "חדשות",
+          "trend": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+          "clusterKey": "טראמפ ייפגש",
+          "externalMentions": 4,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 2,
+          "webMentions": 2,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T17:30:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845368"
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_555c831c3189cf8b",
+        "intelligenceBriefing": {
+          "headlineSeed": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+          "source": "ynet",
+          "sourceUrl": "https://news.walla.co.il/break/3845368",
+          "supportingSources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "externalMentions": 5,
+          "sourceCount": 2,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+          ],
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-13T20:42:07+03:00",
+        "mosheStartedAt": "2026-06-13T20:43:59+03:00",
+        "mosheLastActionAt": "2026-06-13T20:43:59+03:00",
+        "mosheSourceCheck": {
+          "ok": true,
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytesSampled": 4096
+        },
+        "mosheDuplicateCheck": {
+          "duplicate": false,
+          "score": 0.176,
+          "headline": "המיליציות הפרו־איראניות בעיראק מסרבות למסור נשק למרות לחץ אמריקני",
+          "source": "ישראל היום - כל הכתבות",
+          "reason": "token_overlap"
+        },
+        "mosheCheckedAt": "2026-06-13T20:43:59+03:00",
+        "candidate": {
+          "headlineSeed": "בכיר אמריקני ל\"סקיי ניוז\" בערבית: טראמפ ייפגש עם מנהיגי איחוד האמירויות וקטאר בפסגת ה-G7",
+          "source": "ynet",
+          "sourceUrl": "https://news.walla.co.il/break/3845368",
+          "category": "חדשות",
+          "reason": "spy_gap_verified_by_moshe",
+          "checkedAt": "2026-06-13T20:43:59+03:00",
+          "nextGate": "editor_quality_gate"
+        },
+        "mosheOutcome": "candidate_found"
+      }
+    },
+    {
       "id": "intel_39d84fc17b5d5357",
       "gapId": "gap_39d84fc17b5d5357",
       "status": "needs_more_signal",
@@ -986,7 +1099,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T22:46:46+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "מתקפה חריפה באו\"ם: נשיא קולומביה השווה את ישראל למשטר הנאצי",
       "domain": "חדשות",
       "clusterKey": "נשיא קולומביה",
@@ -1092,145 +1205,6 @@
       }
     },
     {
-      "id": "intel_98eb8d56ceb5804f",
-      "gapId": "gap_98eb8d56ceb5804f",
-      "status": "sent_to_moshe",
-      "statusLabel": "הועבר למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-13T20:59:13+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
-      "trend": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-      "domain": "חדשות",
-      "clusterKey": "הוצאת האורניום",
-      "priority": 17,
-      "whyImportant": [
-        "מופיע אצל 2 מקורות חיצוניים",
-        "3 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-        "source": "הארץ",
-        "sourceUrl": "https://news.walla.co.il/item/3845394",
-        "supportingSources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.176,
-        "headline": "לפיד מציג את סבב איראן כמלחמה בלי יעד ברור",
-        "source": "The Jerusalem Post - Israel News",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
-      "rawGap": {
-        "id": "gap_98eb8d56ceb5804f",
-        "status": "queued_for_moshe",
-        "statusLabel": "ממתין למשה",
-        "mosheStage": "בתור משה",
-        "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
-        "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
-        "createdAt": "2026-06-13T20:59:13+03:00",
-        "updatedAt": "2026-06-13T21:23:25+03:00",
-        "trend": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-        "domain": "חדשות",
-        "clusterKey": "הוצאת האורניום",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 13,
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 2,
-        "webMentions": 1,
-        "latestAt": "2026-06-13T19:39:00+00:00",
-        "source": "הארץ",
-        "sourceGroup": "הארץ",
-        "sourceUrl": "https://news.walla.co.il/item/3845394",
-        "originalTitle": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-        "deterministicHeadline": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-          "clusterKey": "הוצאת האורניום",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 2,
-          "webMentions": 1,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-13T19:39:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3845394"
-        },
-        "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_98eb8d56ceb5804f",
-        "intelligenceBriefing": {
-          "headlineSeed": "גורם ביטחוני בכיר לוואלה: \"ניצחון יהיה מהלך של הוצאת האורניום המועשר מידי איראן\"",
-          "source": "הארץ",
-          "sourceUrl": "https://news.walla.co.il/item/3845394",
-          "supportingSources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-          "checksForMoshe": [
-            "לאמת שהמקור אמיתי, נגיש ועדכני",
-            "לבדוק כפילות סמנטית מול הפיד",
-            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-          ],
-          "doNotRawPublish": true
-        },
-        "mosheQueuedAt": "2026-06-13T20:59:52+03:00"
-      }
-    },
-    {
       "id": "intel_3c2a4673dd854df0",
       "gapId": "gap_3c2a4673dd854df0",
       "status": "needs_more_signal",
@@ -1240,7 +1214,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T21:35:52+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "איטליה הודיעה: נפתח בחקירה נגד השר בן גביר בעקבות התנהלותו עם עצורי המשט לעזה",
       "domain": "חדשות",
       "clusterKey": "המשט לעזה",
@@ -1358,7 +1332,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T06:45:32+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "מסתערת על הבורסה: OpenAI הגישה בקשה חסויה להנפקה בארה\"ב",
       "domain": "כלכלה",
       "clusterKey": "openai הגישה",
@@ -1477,7 +1451,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T14:00:37+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "ההתפרעות בבית סולברג: הוארך ב-4 ימים מעצרם של ארבעה חשודים נוספים",
       "domain": "חדשות",
       "clusterKey": "בבית סולברג",
@@ -1595,7 +1569,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T00:38:33+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "צה\"ל יירט ארבעה שיגורים מלבנון לעבר ישראל ונערך לירי נוסף",
       "domain": "חדשות",
       "clusterKey": "לירי נוסף",
@@ -1713,7 +1687,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T00:38:33+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "לאחר התקיפות האיראניות - טראמפ מבהיר: אני קובע את העניינים, לא נתניהו - הוא יהיה חייב לקבל עסקה",
       "domain": "חדשות",
       "clusterKey": "אני קובע",
@@ -1831,7 +1805,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T15:08:59+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "לפני פיזור הכנסת: ועדת הכספים אישרה את חוק המעונות לקריאה ראשונה",
       "domain": "חדשות",
       "clusterKey": "ועדת הכספים אישרה",
@@ -1949,7 +1923,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T14:43:59+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "Wars, sanctions and punishments: Iraq's 40-year World Cup wait Iraq return to the World Cup with ambitions of delivering stronger performances an",
       "domain": "אקטואליה בעולם",
       "clusterKey": "world cup",
@@ -2061,7 +2035,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T18:36:22+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "גופמן החליט למנות את א' לתפקיד סגן ראש המוסד וראש מנהלת המבצעים",
       "domain": "חדשות",
       "clusterKey": "ראש המוסד",
@@ -2176,7 +2150,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-12T17:12:50+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "סערה באיחוד האירופי: שרת החוץ השוותה את ישראל למשטר האפרטהייד בדרום אפריקה | דיווח",
       "domain": "חדשות",
       "clusterKey": "שרת החוץ",
@@ -2291,7 +2265,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T20:36:43+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:04+03:00",
       "trend": "נקבע מותו של ילד בן ארבע מרהט שטבע בחוף דלילה באשקלון",
       "domain": "חדשות",
       "clusterKey": "נקבע מותו",
@@ -2458,7 +2432,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T22:59:43+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "אזעקות הופעלו בגליל המערבי מחשש לחדירת כלי טיס עויין",
       "domain": "חדשות",
       "clusterKey": "אזעקות הופעלו",
@@ -2569,7 +2543,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T08:11:11+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "התרעות על חשד לחדירת כלי טיס עוין הופעלו באזור זרעית ושומרה",
       "domain": "חדשות",
       "clusterKey": "לחדירת כלי",
@@ -2680,7 +2654,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:37:07+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "התרעות על חשד לחדירת כלי טיס עוין הופעלו באזור זרעית ושומרה",
       "domain": "חדשות",
       "clusterKey": "כלי טיס",
@@ -2791,7 +2765,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T07:19:21+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "התרעות על חשד לחדירת כלי טיס עוין הופעלו באזור זרעית ושומרה",
       "domain": "חדשות",
       "clusterKey": "לחדירת כלי טיס",
@@ -2902,7 +2876,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T07:25:30+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "21:29 איטליה הודיעה: נפתח בחקירה נגד השר בן גביר בעקבות התנהלותו עם עצורי המשט לעזה",
       "domain": "חדשות",
       "clusterKey": "המשט לעזה",
@@ -3017,7 +2991,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-07T23:59:42+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "דיווח: טראמפ יתקשר לנתניהו וידרוש לא לתקוף באיראן בתגובה לירי הטילים",
       "domain": "חדשות",
       "clusterKey": "לתקוף באיראן",
@@ -3135,7 +3109,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T00:38:33+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "הרמטכ\"ל: \"צה\"ל יכה באויב בעוצמה ברגע שיינתן אור ירוק\"",
       "domain": "חדשות",
       "clusterKey": "ברגע שיינתן אור",
@@ -3253,7 +3227,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-07T23:59:42+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "הרמטכ\"ל: \"צה\"ל יכה באויב בעוצמה ברגע שיינתן אור ירוק\"",
       "domain": "חדשות",
       "clusterKey": "שיינתן אור ירוק",
@@ -3371,7 +3345,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T22:53:13+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "שר החוץ האיראני על הפלת המסוק: \"הפתרון הטוב ביותר - שיעזבו\"",
       "domain": "חדשות",
       "clusterKey": "הפלת המסוק",
@@ -3489,7 +3463,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T20:25:58+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "טראמפ: החתימה מתוכננת למחר. בזמן המתאים נאסוף את האורניום ונשמיד אותו",
       "domain": "חדשות",
       "clusterKey": "בזמן המתאים",
@@ -3527,8 +3501,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.2,
-        "headline": "טראמפ מגלה שגם משבר איראן מגביל את כוחו במזרח התיכון",
-        "source": "New York Times Middle East",
+        "headline": "בישראל חוששים שהסכם טראמפ ישאיר לאיראן אורניום מועשר",
+        "source": "הארץ - חדשות",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -3607,7 +3581,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T20:25:58+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
       "domain": "חדשות",
       "clusterKey": "צפוי להיחתם מחר",
@@ -3662,7 +3636,7 @@
         "mosheCurrentAction": "ממתין לשליחה לתור משה",
         "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
         "createdAt": "2026-06-13T20:25:58+03:00",
-        "updatedAt": "2026-06-13T21:23:25+03:00",
+        "updatedAt": "2026-06-13T22:13:01+03:00",
         "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
         "domain": "חדשות",
         "clusterKey": "צפוי להיחתם מחר",
@@ -3725,7 +3699,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T20:35:56+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
       "domain": "חדשות",
       "clusterKey": "להיחתם מחר",
@@ -3780,7 +3754,7 @@
         "mosheCurrentAction": "ממתין לשליחה לתור משה",
         "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
         "createdAt": "2026-06-13T20:35:56+03:00",
-        "updatedAt": "2026-06-13T20:35:56+03:00",
+        "updatedAt": "2026-06-13T21:48:24+03:00",
         "trend": "הסכם איראן-ארה\"ב צפוי להיחתם מחר, מתקפת תנים חריגה בכינרת | כותרות השבת",
         "domain": "חדשות",
         "clusterKey": "להיחתם מחר",
@@ -3843,7 +3817,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T10:58:07+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "השופטת התפרצה במשפט נתניהו: \"אדוני חצוף!\"",
       "domain": "חדשות",
       "clusterKey": "במשפט נתניהו",
@@ -3961,7 +3935,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T14:07:13+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "שוטר ושני קציני מילואים נעצרו בחשד לניסיון רצח",
       "domain": "חדשות",
       "clusterKey": "נעצרו בחשד",
@@ -4079,7 +4053,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T21:27:40+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "איראן באיום דרמטי: \"נגיב בעוצמה ובאופן מיידי\"",
       "domain": "חדשות",
       "clusterKey": "נגיב בעוצמה",
@@ -4197,7 +4171,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T20:07:19+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "מאי גולן שוברת שתיקה: התעללו בקרוביי, הרעיבו אותם",
       "domain": "חדשות",
       "clusterKey": "מאי גולן",
@@ -4315,7 +4289,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T18:59:44+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "טראמפ מאיים: נתקוף באיראן חזק מאוד היום",
       "domain": "חדשות",
       "clusterKey": "חזק מאוד",
@@ -4433,7 +4407,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-12T08:53:48+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "סוף שבוע נוח ושמשי לפנינו: הטמפרטורות יהיו רגילות לעונה | תחזית מזג האוויר",
       "domain": "חדשות",
       "clusterKey": "תחזית מזג",
@@ -4551,7 +4525,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T14:56:03+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "טראמפ: \"קרוב להכריז על תקיפות נוספות נגד תחנות כוח וגשרים באיראן\"",
       "domain": "חדשות",
       "clusterKey": "כוח וגשרים",
@@ -4666,7 +4640,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T05:28:40+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "אזעקות באילת: חיל האוויר יירט כטב\"מ ששוגר מתימן",
       "domain": "חדשות",
       "clusterKey": "כטב ששוגר",
@@ -4781,7 +4755,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T14:00:37+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "דיווח: חשוד בריגול עבור ישראל נמלט ממעצר חיזבאללה - בזמן התקיפה הישראלית בביירות",
       "domain": "חדשות",
       "clusterKey": "ממעצר חיזבאללה",
@@ -4896,7 +4870,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T17:19:41+03:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
       "domain": "חדשות",
       "clusterKey": "מטוסי קרב הוזנקו",
@@ -5011,7 +4985,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T11:41:11+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:02+03:00",
       "trend": "טראמפ: \"אם אני אומר לנתניהו לעשות משהו - הוא עושה\"",
       "domain": "חדשות",
       "clusterKey": "לנתניהו לעשות משהו",
@@ -5126,7 +5100,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T07:19:21+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "טראמפ: \"אם אני אומר לנתניהו לעשות משהו - הוא עושה\"",
       "domain": "חדשות",
       "clusterKey": "משהו עושה",
@@ -5241,7 +5215,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T08:11:11+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "דיווחים בלבנון: ישראל תוקפת ליד צור",
       "domain": "חדשות",
       "clusterKey": "ישראל תוקפת",
@@ -5356,7 +5330,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T23:35:29+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "תיעודים חדשים מתקרית הירי בתינוק הפלסטיני: הרכב עצר; החיילים לא הגישו עזרה",
       "domain": "חדשות",
       "clusterKey": "הירי בתינוק",
@@ -5471,7 +5445,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T14:03:59+02:00",
-      "updatedAt": "2026-06-13T21:23:26+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "12 הרוגים ותשעה פצועים בירי ביוהנסבורג",
       "domain": "חדשות",
       "clusterKey": "ותשעה פצועים",
@@ -5586,7 +5560,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-12T17:12:50+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אזעקות הופעלו במטולה עקב חדירת כטב\"ם",
       "domain": "חדשות",
       "clusterKey": "אזעקות הופעלו במטולה",
@@ -5701,7 +5675,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T10:42:46+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אזעקות באצבע הגליל בשל חשש לחדירת כטב\"ם",
       "domain": "חדשות",
       "clusterKey": "בשל חשש",
@@ -5816,7 +5790,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T18:35:24+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "משרד החוץ הפקיסטני: איראן וארה\"ב יחתמו מחר על הסכם",
       "domain": "חדשות",
       "clusterKey": "מחר הסכם",
@@ -5931,7 +5905,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:37:07+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "רשות התעופה האיראנית: המרחב האווירי חזר לפעילות רגילה והטיסות חודשו",
       "domain": "חדשות",
       "clusterKey": "המרחב האווירי חזר",
@@ -6046,7 +6020,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:13:21+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "רשות התעופה האיראנית: המרחב האווירי חזר לפעילות רגילה והטיסות חודשו",
       "domain": "חדשות",
       "clusterKey": "המרחב האווירי",
@@ -6161,7 +6135,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T21:35:52+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "רשות התעופה האיראנית: המרחב האווירי חזר לפעילות רגילה והטיסות חודשו",
       "domain": "חדשות",
       "clusterKey": "האווירי חזר",
@@ -6276,7 +6250,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T00:12:33+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "האזעקות בגליל המערבי: זוהתה מטרה אווירית חשודה, אין נפגעים",
       "domain": "חדשות",
       "clusterKey": "אין נפגעים",
@@ -6391,7 +6365,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T00:59:24+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בן גביר על החקירה נגדו באיטליה: \"ישראל אינה ילדת כאפות של תומכי טרור\"",
       "domain": "חדשות",
       "clusterKey": "החקירה נגדו באיטליה",
@@ -6506,7 +6480,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T22:59:43+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בן גביר על החקירה נגדו באיטליה: \"ישראל אינה ילדת כאפות של תומכי טרור\"",
       "domain": "חדשות",
       "clusterKey": "גביר החקירה נגדו",
@@ -6621,7 +6595,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T21:35:52+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בן גביר על החקירה נגדו באיטליה: \"ישראל אינה ילדת כאפות של תומכי טרור\"",
       "domain": "חדשות",
       "clusterKey": "גביר החקירה",
@@ -6736,7 +6710,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T01:37:03+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בן גביר על החקירה נגדו באיטליה: \"ישראל אינה ילדת כאפות של תומכי טרור\"",
       "domain": "חדשות",
       "clusterKey": "החקירה נגדו",
@@ -6851,7 +6825,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:37:07+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בן גביר על החקירה נגדו באיטליה: \"ישראל אינה ילדת כאפות של תומכי טרור\"",
       "domain": "חדשות",
       "clusterKey": "נגדו באיטליה",
@@ -6966,7 +6940,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T01:37:03+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אוקראינה: שלושה הרוגים בתקיפה רוסית בעיר צ'והוייב במחוז חרקוב",
       "domain": "חדשות",
       "clusterKey": "הרוגים בתקיפה רוסית",
@@ -7081,7 +7055,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T02:09:28+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אוקראינה: שלושה הרוגים בתקיפה רוסית בעיר צ'והוייב במחוז חרקוב",
       "domain": "חדשות",
       "clusterKey": "הרוגים בתקיפה",
@@ -7196,7 +7170,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T01:04:42+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אוקראינה: שלושה הרוגים בתקיפה רוסית בעיר צ'והוייב במחוז חרקוב",
       "domain": "חדשות",
       "clusterKey": "בתקיפה רוסית",
@@ -7311,7 +7285,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T05:28:40+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "רעידת אדמה בעוצמה חמש הכתה בדרום איראן",
       "domain": "חדשות",
       "clusterKey": "אדמה בעוצמה",
@@ -7426,7 +7400,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T04:58:50+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "רעידת אדמה בעוצמה חמש הכתה בדרום איראן",
       "domain": "חדשות",
       "clusterKey": "רעידת אדמה בעוצמה",
@@ -7541,7 +7515,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T08:11:11+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בשל \"חוסר מעש\": כך נסגר חוב של 2 מיליון שקל",
       "domain": "כלכלה",
       "clusterKey": "מיליון שקל",
@@ -7656,7 +7630,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T12:03:55+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "רשות התחרות שוקלת להכריז על יקבי כרמל כמונופול",
       "domain": "כלכלה",
       "clusterKey": "להכריז יקבי",
@@ -7771,7 +7745,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T15:10:17+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "לבזבז מיליון דולר כל שעה: אילון מאסק בדרך להפוך לטריליונר הראשון בהיסטוריה",
       "domain": "כלכלה",
       "clusterKey": "מיליון דולר",
@@ -7886,7 +7860,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T23:39:41+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "יו\"ר הפרלמנט האיראני: \"מעדיפים את שפת הדיפלומטיה - אבל דוברים גם שפות אחרות\"",
       "domain": "חדשות",
       "clusterKey": "מעדיפים שפת",
@@ -8001,7 +7975,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T06:29:55+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "תחזית מזג האוויר: טמפרטורות רגילות לעונה",
       "domain": "חדשות",
       "clusterKey": "מזג האוויר",
@@ -8116,7 +8090,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T04:14:57+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בתוך תא ההלבשה: אחרי שתמונתו פורסמה - נעצר החשוד בצילום צעירה בקניון בת\"א",
       "domain": "חדשות",
       "clusterKey": "החשוד בצילום צעירה",
@@ -8231,7 +8205,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T09:53:28+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "החל תרגיל צבאי במרחב דרום הר חברון",
       "domain": "חדשות",
       "clusterKey": "תרגיל צבאי",
@@ -8346,7 +8320,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T09:47:08+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "נקבע מותו של פועל בן 30 שנפגע מחפץ כבד ונלכד בשער שומרון",
       "domain": "חדשות",
       "clusterKey": "מחפץ כבד",
@@ -8461,7 +8435,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T18:36:22+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בכיר איראני בתגובה לאיומי טראמפ: הוא יקבל תגובה חזקה וכואבת יותר",
       "domain": "חדשות",
       "clusterKey": "לאיומי טראמפ יקבל",
@@ -8576,7 +8550,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-12T08:11:09+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "בתו הבכורה של מלך תאילנד הלכה לעולמה בגיל 47",
       "domain": "חדשות",
       "clusterKey": "לעולמה בגיל",
@@ -8691,7 +8665,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-12T13:50:06+03:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "אזהרת רחצה בחוף הצוק צפון בתל אביב בעקבות חריגות באיכות המים",
       "domain": "חדשות",
       "clusterKey": "הצוק צפון",
@@ -8806,7 +8780,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-07T23:59:42+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "חיל האוויר יירט טילים ששוגרו מאיראן; זוהו שיגורים נוספים",
       "domain": "חדשות",
       "clusterKey": "שיגורים נוספים",
@@ -8917,7 +8891,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T01:37:03+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "גבר נפצע באורח בינוני באירוע אלימות בתל אביב",
       "domain": "חדשות",
       "clusterKey": "גבר נפצע באורח",
@@ -9028,7 +9002,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T21:35:52+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "גבר נפצע באורח בינוני באירוע אלימות בתל אביב",
       "domain": "חדשות",
       "clusterKey": "גבר נפצע",
@@ -9139,7 +9113,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T00:59:24+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "גבר נפצע באורח בינוני באירוע אלימות בתל אביב",
       "domain": "חדשות",
       "clusterKey": "נפצע באורח",
@@ -9250,7 +9224,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T14:56:03+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "ארה\"ב ומדינות נוספות הצהירו על גינוי התקיפות שבוצעו ע\"י אסחאב אל-ימין",
       "domain": "חדשות",
       "clusterKey": "התקיפות שבוצעו",
@@ -9361,7 +9335,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T09:47:08+02:00",
-      "updatedAt": "2026-06-13T21:23:27+03:00",
+      "updatedAt": "2026-06-13T22:13:03+03:00",
       "trend": "פועל בן 25 נפגע ממסור דיסק סמוך לכפר מסריק - מצבו בינוני",
       "domain": "חדשות",
       "clusterKey": "מצבו בינוני",
