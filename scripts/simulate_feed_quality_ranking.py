@@ -20,6 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FEED = ROOT / "feed.json"
 DEFAULT_OUT = ROOT / "tmp" / "feed_quality_ranking_simulation.json"
+DEFAULT_PUBLIC_OUT = ROOT / "tt_rr_simulation_feed.json"
 DEFAULT_HISTORY = ROOT / "dashboard_simulation_history.json"
 
 HARD_CATEGORIES = {"ביטחון", "פוליטיקה", "חדשות", "משפט", "פלילים", "כלכלה", "אקטואליה בעולם"}
@@ -312,6 +313,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--feed", default=str(DEFAULT_FEED))
     ap.add_argument("--out", default=str(DEFAULT_OUT))
+    ap.add_argument("--public-out", default=str(DEFAULT_PUBLIC_OUT), help="public sanitized simulation JSON for the open Aliza page")
     ap.add_argument("--history", default=str(DEFAULT_HISTORY))
     ap.add_argument("--limit", type=int, default=60)
     ap.add_argument("--history-max", type=int, default=144)
@@ -394,7 +396,17 @@ def main() -> int:
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"out": str(out), "history": str(args.history), "before": before, "after": after, "delta": delta}, ensure_ascii=False))
+    public_out = Path(args.public_out)
+    if str(public_out):
+        public_out.parent.mkdir(parents=True, exist_ok=True)
+        public_report = {
+            **report,
+            "accessPurpose": "open_readonly_aliza_tt_rr_simulation",
+            "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
+            "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
+        }
+        public_out.write_text(json.dumps(public_report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"out": str(out), "publicOut": str(public_out), "history": str(args.history), "before": before, "after": after, "delta": delta}, ensure_ascii=False))
     return 0
 
 
