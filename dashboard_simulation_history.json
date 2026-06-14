@@ -1,26 +1,27 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-14T00:10:07+00:00",
+  "generatedAt": "2026-06-14T00:29:20+00:00",
   "summary": {
-    "sampleCount": 117,
+    "sampleCount": 121,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
     "avgHealthDelta": 7.25,
-    "avgAfterHealthScore": 45.58,
+    "avgAfterHealthScore": 49.0,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 47,
-      "rollingScore": 57.96,
+      "latestScore": 56,
+      "rollingScore": 56.27,
       "readyRuns": 5,
       "criticalBlockers": [
         "top_item_stale_over_25m",
         "newsiness_top10_below_7",
-        "soft_top10_above_2"
+        "soft_top10_above_2",
+        "top12_under60_below_9"
       ],
       "matureForProduction": false
     },
@@ -29,8 +30,8 @@
       "latestSummaryLine": "בעייתי",
       "latestReportName": "tt-rr-simulation-review-2026-06-14-0300.md",
       "window": 48,
-      "averageScore": 64.96,
-      "positiveReports": 16
+      "averageScore": 64.42,
+      "positiveReports": 15
     }
   },
   "runs": [
@@ -36429,6 +36430,1745 @@
         "trendMatchedTop10": 0,
         "trendMatchedTop20": 0,
         "healthScore": 10
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T00:18:35+00:00",
+      "feedFingerprint": "1482700918147480630",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 10,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 56,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 5,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 6,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 7,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 26.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 7,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 59,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 46,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 26.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 47,
+      "afterHealthScore": 51,
+      "replacementReadiness": {
+        "score": 45,
+        "threshold": 80,
+        "components": {
+          "freshness": 8.3,
+          "newsinessTop10": 10.0,
+          "top20Quality": 11.6,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 58,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+        "metrics": {
+          "ציון עליזה": 58,
+          "generatedAt": 2026,
+          "afterHealthScore": 59,
+          "healthDelta": 12,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 10,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 7,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+          "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+          "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 03:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 4
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T00:21:23+00:00",
+      "feedFingerprint": "1986236184526101360",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 39,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 5,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 61,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 6,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 61,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 7,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 61,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 1,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 61,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 39,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 61,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 61,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 3,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 61,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 35,
+      "afterHealthScore": 45,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 3.2,
+          "newsinessTop10": 10.0,
+          "top20Quality": 11.6,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 58,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+        "metrics": {
+          "ציון עליזה": 58,
+          "generatedAt": 2026,
+          "afterHealthScore": 59,
+          "healthDelta": 12,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 10,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 7,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+          "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+          "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 03:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 10
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T00:21:36+00:00",
+      "feedFingerprint": "4149449641800911221",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 4,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 39,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 5,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 62,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 6,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 62,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 7,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 62,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 6,
+        "otherTop10": 0,
+        "top5Under60": 1,
+        "top10Under60": 4,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 62,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 39,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 62,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 2,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 62,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "הלך לעולמו",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 3,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 62,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 35,
+      "afterHealthScore": 45,
+      "replacementReadiness": {
+        "score": 40,
+        "threshold": 80,
+        "components": {
+          "freshness": 3.2,
+          "newsinessTop10": 10.0,
+          "top20Quality": 11.6,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 58,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+        "metrics": {
+          "ציון עליזה": 58,
+          "generatedAt": 2026,
+          "afterHealthScore": 59,
+          "healthDelta": 12,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 10,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 7,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+          "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+          "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 03:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 10
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T00:29:20+00:00",
+      "feedFingerprint": "6935137735018081284",
+      "before": {
+        "newsinessTop10": 5,
+        "softTop10": 5,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 6,
+        "top12Under60": 6,
+        "topItemAgeMinutes": 21,
+        "uniqueSourcesTop20": 6,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 86,
+          "readyCount": 5,
+          "hardReadyCount": 5,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1"
+          ],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://sports.walla.co.il/item/3845430",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "קשר"
+                ],
+                "score": 25.4,
+                "boost": 25.4
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 6,
+              "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "מצר"
+                ],
+                "score": 59.71,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 7,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 69,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 8,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 69,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 9,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 69,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 2,
+        "top10Under60": 6,
+        "top12Under60": 6,
+        "topItemAgeMinutes": 32,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 4,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 80,
+          "readyCount": 5,
+          "hardReadyCount": 5,
+          "trendReadyCount": 4,
+          "uniqueReadySources": 3,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://sports.walla.co.il/item/3845430",
+              "trendMatch": {
+                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                "clusterKey": "מטוסי קרב",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-13T16:47:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845359",
+                "overlapTokens": [
+                  "אירוע",
+                  "קשר"
+                ],
+                "score": 25.4,
+                "boost": 25.4
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 2,
+              "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 59,
+              "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+              "trendMatch": {
+                "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                "clusterKey": "טראמפ ההסכם",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T19:49:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845400",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם",
+                  "הורמוז",
+                  "מצר"
+                ],
+                "score": 59.71,
+                "boost": 38.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 69,
+              "url": "https://www.jpost.com/israel-news/article-899269",
+              "trendMatch": {
+                "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                "clusterKey": "יישובי הצפון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-13T20:45:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3845405",
+                "overlapTokens": [
+                  "איום",
+                  "המנהרות",
+                  "הצפון",
+                  "יישובי",
+                  "מפות"
+                ],
+                "score": 43.84,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 4,
+              "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 69,
+              "url": "https://www.jpost.com/israel-news/article-899272",
+              "trendMatch": {
+                "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                "clusterKey": "נתנאל לסרי",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T00:38:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845434",
+                "overlapTokens": [
+                  "בגיל",
+                  "חדשות",
+                  "לסרי",
+                  "מאבק",
+                  "נתנאל"
+                ],
+                "score": 59.4,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 5,
+              "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 69,
+              "url": "https://www.jpost.com/middle-east/article-899271",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 48,
+      "afterHealthScore": 64,
+      "replacementReadiness": {
+        "score": 56,
+        "threshold": 80,
+        "components": {
+          "freshness": 10.25,
+          "newsinessTop10": 15.0,
+          "top20Quality": 11.6,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 8.67,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 58,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+        "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+        "metrics": {
+          "ציון עליזה": 58,
+          "generatedAt": 2026,
+          "afterHealthScore": 59,
+          "healthDelta": 12,
+          "replacementReadiness score": 55,
+          "rollingScore": 76.48,
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "top12Under60": 10,
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 7,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 20,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 1,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+          "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+          "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 03:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 16
       }
     }
   ]

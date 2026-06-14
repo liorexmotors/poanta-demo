@@ -1,15 +1,15 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-06-14T03:10:15+03:00",
+  "generatedAt": "2026-06-14T03:29:28+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "ok",
-      "checkedAt": "2026-06-14T03:09:56+03:00",
+      "checkedAt": "2026-06-14T03:29:14+03:00",
       "url": "feed.json",
-      "updatedAt": "2026-06-14T03:09:46+03:00",
-      "items": 402,
+      "updatedAt": "2026-06-14T03:29:03+03:00",
+      "items": 404,
       "top": [
         {
           "publishedAt": "2026-06-14T03:08:00+03:00",
@@ -33,11 +33,25 @@
           "url": "https://sports.walla.co.il/item/3845431"
         },
         {
+          "publishedAt": "2026-06-14T02:57:00+03:00",
+          "source": "וואלה ספורט",
+          "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+          "takeaway": "גם אירוע ספורט עולמי הופך לזירת סנקציות כשהזיקה למשמרות המהפכה נכנסת לבדיקת הגבולות.",
+          "url": "https://sports.walla.co.il/item/3845430"
+        },
+        {
           "publishedAt": "2026-06-14T02:39:44+03:00",
           "source": "Mirror Celebs רכילות חו״ל",
           "headline": "שדרן KISS FM סם דרלסטון עוזב אחרי 11 שנים בתחנה",
           "takeaway": "עזיבת שדרן ותיק מסמנת חילופי דור גם בתחנות פופ שמבוססות על קול מוכר והרגל יומי.",
           "url": "https://www.mirror.co.uk/3am/celebrity-news/kiss-fm-sam-darlaston-quits-37292409"
+        },
+        {
+          "publishedAt": "2026-06-14T02:30:04+03:00",
+          "source": "ישראל היום - כל הכתבות",
+          "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+          "takeaway": "גם אם וושינגטון וטהרן מתקרבות לנוסח, ההסכם עוד צריך לשרוד את מלחמת הכוח בתוך המשטר האיראני.",
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781"
         },
         {
           "publishedAt": "2026-06-14T02:19:26+03:00",
@@ -80,20 +94,6 @@
           "headline": "קטאר חילצה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
           "takeaway": "שער אחד בדקה ה־94 הפך הופעת בכורה שנראתה אבודה לנקודת פתיחה היסטורית עבור קטאר.",
           "url": "https://sports.walla.co.il/item/3845345"
-        },
-        {
-          "publishedAt": "2026-06-14T02:13:07+03:00",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "headline": "טייגרלילי טיילור זעמה אחרי שמכוניתה נגררה בגלל משחק פולו",
-          "takeaway": "גם אירוע פולו נוצץ יכול להפוך לעימות שכונתי כשהמרחב הציבורי נמכר לטובת האורחים.",
-          "url": "https://www.dailymail.com/tvshowbiz/article-15897711/TALK-TOWN-Chukkad-Tigerlilys-fury-car-towed-make-way-polo-fans.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-        },
-        {
-          "publishedAt": "2026-06-14T02:11:43+03:00",
-          "source": "Page Six רכילות חו״ל",
-          "headline": "קיקי פאלמר ושון אוונס הציתו שמועות רומן בדייט בניו יורק",
-          "takeaway": "הקשר בין פאלמר לאוונס נבנה עכשיו יותר מסימני קרבה מצטברים מאשר מאישור רשמי.",
-          "url": "https://pagesix.com/2026/06/13/celebrity-news/keke-palmer-and-hot-ones-host-sean-evans-fuel-rumors-with-nyc-date/"
         }
       ],
       "errors": [],
@@ -111,17 +111,26 @@
           "severity": "warning",
           "code": "headline_duplicates_summary",
           "message": "Headline is too close to the summary",
-          "item": 4,
+          "item": 6,
           "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
           "source": "The Jerusalem Post - Israel News",
           "url": "https://www.jpost.com/israel-news/article-899272"
+        },
+        {
+          "severity": "warning",
+          "code": "duplicate_story_cluster",
+          "message": "Similar live-feed stories from different sources. Recommended keep: #5 ישראל היום - כל הכתבות — ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב. Filter out: #42 The Guardian Middle East — טראמפ טוען להסכם קרוב עם איראן, וטהרן עדיין לא מאשרת",
+          "item": 5,
+          "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+          "source": "ישראל היום - כל הכתבות",
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781"
         }
       ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-06-14T03:09:59+03:00",
+      "checkedAt": "2026-06-14T03:29:16+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -153,13 +162,12 @@
       "warningMinutes": {
         "all": 15
       },
-      "recentItems60m": 14,
+      "recentItems60m": 6,
       "recentSourceGroups60m": [
         "Daily Mail TVShowbiz רכילות חו״ל",
         "Mirror Celebs רכילות חו״ל",
-        "Page Six רכילות חו״ל",
-        "The Jerusalem Post",
-        "וואלה"
+        "וואלה",
+        "ישראל היום"
       ],
       "latestByGroup": {
         "Al Jazeera": {
@@ -243,9 +251,9 @@
           "source": "ישראל היום - כל הכתבות"
         },
         "ביטחון": {
-          "latestAt": "2026-06-14T02:19:26+03:00",
-          "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
-          "source": "The Jerusalem Post - Israel News"
+          "latestAt": "2026-06-14T02:57:00+03:00",
+          "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+          "source": "וואלה ספורט"
         },
         "בריאות": {
           "latestAt": "2026-06-13T21:01:26+03:00",
@@ -293,8 +301,8 @@
           "source": "וואלה TECH - כל הכתבות"
         },
         "ישראל היום": {
-          "latestAt": "2026-06-14T02:09:54+03:00",
-          "headline": "טל טיטו יוצאת מ״האח הגדול״ ישר לתביעת לשון הרע של אייל גולן",
+          "latestAt": "2026-06-14T02:30:04+03:00",
+          "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
           "source": "ישראל היום - כל הכתבות"
         },
         "כיפה": {
@@ -394,11 +402,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 160,
+          "ageMinutes": 180,
           "latestAt": "2026-06-14T00:29:10+03:00",
           "headline": "קטאר השיגה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh foreign publication event for 160 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 180 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -407,11 +415,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 50,
-          "latestAt": "2026-06-14T02:19:26+03:00",
-          "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
-          "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh ביטחון publication event for 50 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "ageMinutes": 32,
+          "latestAt": "2026-06-14T02:57:00+03:00",
+          "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+          "source": "וואלה ספורט",
+          "message": "No fresh ביטחון publication event for 32 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -420,11 +428,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 301,
+          "ageMinutes": 320,
           "latestAt": "2026-06-13T22:08:35+03:00",
           "headline": "יהודים בתפוצות מוחים נגד זיהוי אוטומטי שלהם עם ממשלת ישראל",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh פוליטיקה publication event for 301 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 320 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -433,11 +441,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 50,
+          "ageMinutes": 69,
           "latestAt": "2026-06-14T02:19:26+03:00",
           "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh חדשות publication event for 50 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 69 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -446,11 +454,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 361,
+          "ageMinutes": 381,
           "latestAt": "2026-06-13T21:08:16+03:00",
           "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh פלילים publication event for 361 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 381 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -459,11 +467,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 2448,
+          "ageMinutes": 2467,
           "latestAt": "2026-06-12T10:21:21+03:00",
           "headline": "בית המשפט השאיר את הירושה אצל האחיין למרות התנגדות הבנים",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh משפט publication event for 2448 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 2467 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -472,11 +480,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 369,
+          "ageMinutes": 389,
           "latestAt": "2026-06-13T21:00:00+03:00",
           "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
           "source": "גלובס - גלובלי ושוקי עולם",
-          "message": "No fresh כלכלה publication event for 369 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 389 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -485,11 +493,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 905,
+          "ageMinutes": 924,
           "latestAt": "2026-06-13T12:04:51+03:00",
           "headline": "מלון קלאב הוטל אילת הפך עסקת טיים־שר למשפחתית משתלמת",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh צרכנות publication event for 905 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 924 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -498,11 +506,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 1018,
+          "ageMinutes": 1037,
           "latestAt": "2026-06-13T10:11:48+03:00",
           "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh רכב publication event for 1018 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 1037 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -511,11 +519,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 1046,
+          "ageMinutes": 1066,
           "latestAt": "2026-06-13T09:43:09+03:00",
           "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 1046 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 1066 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -524,11 +532,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 188,
+          "ageMinutes": 208,
           "latestAt": "2026-06-14T00:01:00+03:00",
           "headline": "טור הארץ טוען שהמדינה מלבינה חוות במקום לעצור גניבת אדמות",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 188 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 208 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -537,11 +545,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 241,
+          "ageMinutes": 260,
           "latestAt": "2026-06-13T23:08:27+03:00",
           "headline": "פרמאונט קיבלה אישור לרכישת וורנר ומרחיבה אימפריית מדיה",
           "source": "וואלה TECH - כל הכתבות",
-          "message": "No fresh טכנולוגיה publication event for 241 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 260 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -550,11 +558,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 368,
+          "ageMinutes": 387,
           "latestAt": "2026-06-13T21:01:26+03:00",
           "headline": "חשד למקרה קטלני נוסף של מנינגוקוק אצל פעוט בסורוקה",
           "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh בריאות publication event for 368 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 387 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -563,11 +571,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 2686,
+          "ageMinutes": 2706,
           "latestAt": "2026-06-12T06:23:15+03:00",
           "headline": "דירות 3 חדרים נמכרו בפריפריה בפחות מ־600 אלף שקל",
           "source": "דה מרקר - נדל״ן",
-          "message": "No fresh נדל״ן publication event for 2686 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 2706 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -576,11 +584,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 5038,
+          "ageMinutes": 5058,
           "latestAt": "2026-06-10T15:11:05+03:00",
           "headline": "מזג האוויר בירושלים: 19°–29°; שמיים בהירים; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 5038 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 5058 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -589,11 +597,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 538,
+          "ageMinutes": 557,
           "latestAt": "2026-06-13T18:11:48+03:00",
           "headline": "מדינות בארה״ב חוקרות איך OpenAI אוספת מידע על קטינים",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh דה מרקר publication event for 538 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 557 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -602,11 +610,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 188,
+          "ageMinutes": 208,
           "latestAt": "2026-06-14T00:01:00+03:00",
           "headline": "טור הארץ טוען שהמדינה מלבינה חוות במקום לעצור גניבת אדמות",
           "source": "הארץ - דעות",
-          "message": "No fresh הארץ publication event for 188 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 208 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -615,11 +623,11 @@
           "code": "publication_timing_sla",
           "group": "מעריב",
           "thresholdMinutes": 90,
-          "ageMinutes": 555,
+          "ageMinutes": 574,
           "latestAt": "2026-06-13T17:54:52+03:00",
           "headline": "קטאר ניסתה למנוע תקיפה איראנית על מתקן הגז שמזין את העולם",
           "source": "מעריב - חדשות",
-          "message": "No fresh מעריב publication event for 555 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מעריב publication event for 574 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -628,11 +636,11 @@
           "code": "publication_timing_sla",
           "group": "מקורות זרים",
           "thresholdMinutes": 60,
-          "ageMinutes": 160,
+          "ageMinutes": 180,
           "latestAt": "2026-06-14T00:29:10+03:00",
           "headline": "קטאר השיגה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh מקורות זרים publication event for 160 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מקורות זרים publication event for 180 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -644,11 +652,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 160,
+          "ageMinutes": 180,
           "latestAt": "2026-06-14T00:29:10+03:00",
           "headline": "קטאר השיגה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh foreign publication event for 160 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 180 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -657,11 +665,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 50,
-          "latestAt": "2026-06-14T02:19:26+03:00",
-          "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
-          "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh ביטחון publication event for 50 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "ageMinutes": 32,
+          "latestAt": "2026-06-14T02:57:00+03:00",
+          "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+          "source": "וואלה ספורט",
+          "message": "No fresh ביטחון publication event for 32 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -670,11 +678,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 301,
+          "ageMinutes": 320,
           "latestAt": "2026-06-13T22:08:35+03:00",
           "headline": "יהודים בתפוצות מוחים נגד זיהוי אוטומטי שלהם עם ממשלת ישראל",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh פוליטיקה publication event for 301 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 320 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -683,11 +691,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 50,
+          "ageMinutes": 69,
           "latestAt": "2026-06-14T02:19:26+03:00",
           "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh חדשות publication event for 50 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 69 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -696,11 +704,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 361,
+          "ageMinutes": 381,
           "latestAt": "2026-06-13T21:08:16+03:00",
           "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh פלילים publication event for 361 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 381 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -709,11 +717,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 2448,
+          "ageMinutes": 2467,
           "latestAt": "2026-06-12T10:21:21+03:00",
           "headline": "בית המשפט השאיר את הירושה אצל האחיין למרות התנגדות הבנים",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh משפט publication event for 2448 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 2467 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -722,11 +730,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 369,
+          "ageMinutes": 389,
           "latestAt": "2026-06-13T21:00:00+03:00",
           "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
           "source": "גלובס - גלובלי ושוקי עולם",
-          "message": "No fresh כלכלה publication event for 369 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 389 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -735,11 +743,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 905,
+          "ageMinutes": 924,
           "latestAt": "2026-06-13T12:04:51+03:00",
           "headline": "מלון קלאב הוטל אילת הפך עסקת טיים־שר למשפחתית משתלמת",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh צרכנות publication event for 905 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 924 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -748,11 +756,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 1018,
+          "ageMinutes": 1037,
           "latestAt": "2026-06-13T10:11:48+03:00",
           "headline": "צעיר נהרג וצעיר נוסף נפצע אנוש בתאונת רכב בחיפה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh רכב publication event for 1018 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 1037 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -761,11 +769,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 1046,
+          "ageMinutes": 1066,
           "latestAt": "2026-06-13T09:43:09+03:00",
           "headline": "שוויץ מצביעה אם להגביל את האוכלוסייה ל־10 מיליון תושבים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh אקטואליה בעולם publication event for 1046 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 1066 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -774,11 +782,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 188,
+          "ageMinutes": 208,
           "latestAt": "2026-06-14T00:01:00+03:00",
           "headline": "טור הארץ טוען שהמדינה מלבינה חוות במקום לעצור גניבת אדמות",
           "source": "הארץ - דעות",
-          "message": "No fresh דעות publication event for 188 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 208 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -787,11 +795,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 241,
+          "ageMinutes": 260,
           "latestAt": "2026-06-13T23:08:27+03:00",
           "headline": "פרמאונט קיבלה אישור לרכישת וורנר ומרחיבה אימפריית מדיה",
           "source": "וואלה TECH - כל הכתבות",
-          "message": "No fresh טכנולוגיה publication event for 241 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 260 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -800,11 +808,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 368,
+          "ageMinutes": 387,
           "latestAt": "2026-06-13T21:01:26+03:00",
           "headline": "חשד למקרה קטלני נוסף של מנינגוקוק אצל פעוט בסורוקה",
           "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh בריאות publication event for 368 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 387 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -813,11 +821,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 2686,
+          "ageMinutes": 2706,
           "latestAt": "2026-06-12T06:23:15+03:00",
           "headline": "דירות 3 חדרים נמכרו בפריפריה בפחות מ־600 אלף שקל",
           "source": "דה מרקר - נדל״ן",
-          "message": "No fresh נדל״ן publication event for 2686 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 2706 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -826,11 +834,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 5038,
+          "ageMinutes": 5058,
           "latestAt": "2026-06-10T15:11:05+03:00",
           "headline": "מזג האוויר בירושלים: 19°–29°; שמיים בהירים; UV קיצוני בצהריים",
           "source": "השירות המטאורולוגי",
-          "message": "No fresh מזג אוויר publication event for 5038 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 5058 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -839,11 +847,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 538,
+          "ageMinutes": 557,
           "latestAt": "2026-06-13T18:11:48+03:00",
           "headline": "מדינות בארה״ב חוקרות איך OpenAI אוספת מידע על קטינים",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh דה מרקר publication event for 538 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 557 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -852,11 +860,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 188,
+          "ageMinutes": 208,
           "latestAt": "2026-06-14T00:01:00+03:00",
           "headline": "טור הארץ טוען שהמדינה מלבינה חוות במקום לעצור גניבת אדמות",
           "source": "הארץ - דעות",
-          "message": "No fresh הארץ publication event for 188 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 208 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -865,11 +873,11 @@
           "code": "publication_timing_sla",
           "group": "מעריב",
           "thresholdMinutes": 90,
-          "ageMinutes": 555,
+          "ageMinutes": 574,
           "latestAt": "2026-06-13T17:54:52+03:00",
           "headline": "קטאר ניסתה למנוע תקיפה איראנית על מתקן הגז שמזין את העולם",
           "source": "מעריב - חדשות",
-          "message": "No fresh מעריב publication event for 555 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מעריב publication event for 574 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -878,11 +886,11 @@
           "code": "publication_timing_sla",
           "group": "מקורות זרים",
           "thresholdMinutes": 60,
-          "ageMinutes": 160,
+          "ageMinutes": 180,
           "latestAt": "2026-06-14T00:29:10+03:00",
           "headline": "קטאר השיגה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh מקורות זרים publication event for 160 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מקורות זרים publication event for 180 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -922,40 +930,40 @@
           "url": "https://sports.walla.co.il/item/3845431"
         },
         {
+          "publishedAt": "2026-06-14T02:57:00+03:00",
+          "source": "וואלה ספורט",
+          "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+          "takeaway": "גם אירוע ספורט עולמי הופך לזירת סנקציות כשהזיקה למשמרות המהפכה נכנסת לבדיקת הגבולות.",
+          "url": "https://sports.walla.co.il/item/3845430"
+        },
+        {
           "publishedAt": "2026-06-14T02:39:44+03:00",
           "source": "Mirror Celebs רכילות חו״ל",
           "headline": "שדרן KISS FM סם דרלסטון עוזב אחרי 11 שנים בתחנה",
           "takeaway": "עזיבת שדרן ותיק מסמנת חילופי דור גם בתחנות פופ שמבוססות על קול מוכר והרגל יומי.",
           "url": "https://www.mirror.co.uk/3am/celebrity-news/kiss-fm-sam-darlaston-quits-37292409"
-        },
-        {
-          "publishedAt": "2026-06-14T02:19:26+03:00",
-          "source": "The Jerusalem Post - Israel News",
-          "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
-          "takeaway": "צה״ל איבד קצין שטח ותכנון צעיר שעבר כבר כמה מתפקידי הליבה של השריון.",
-          "url": "https://www.jpost.com/israel-news/article-899272"
         }
       ],
       "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA."
     },
     "autopilot": {
-      "lastStage3StartedAt": "2026-06-14T03:04:49+03:00",
+      "lastStage3StartedAt": "2026-06-14T03:09:33+03:00",
       "lastStage3IncidentKey": "top_stale||2026-06-14T02:56:44+03:00|https://www.jpost.com/israel-news/article-899272",
       "lastStage3RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/autopilot-20260614-030653",
-      "lastCheckedAt": "2026-06-14T03:04:49+03:00",
+      "lastCheckedAt": "2026-06-14T03:26:12+03:00",
       "lastStatus": "repair_needed",
-      "lastIncidentType": "stage3_waiting_for_editor_results",
-      "currentIncidentKey": "top_stale||2026-06-14T02:56:44+03:00|https://www.jpost.com/israel-news/article-899272",
-      "currentIncidentRepeatCount": 1,
-      "lastAutomaticAction": "write_batch_results_then_rerun_stage3",
+      "lastIncidentType": "stage4_waiting_for_editor_results",
+      "currentIncidentKey": "domain_sla|ביטחון|2026-06-14T02:19:26+03:00|צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+      "currentIncidentRepeatCount": 2,
+      "lastAutomaticAction": "write_batch_results_then_rerun_stage4",
       "loopProtection": {
         "active": false,
         "reason": "",
-        "repeatCount": 1
+        "repeatCount": 2
       },
-      "lastStage4StartedAt": "2026-06-14T02:23:25+03:00",
-      "lastStage4IncidentKey": "domain_sla|פוליטיקה|2026-06-13T22:08:35+03:00|יהודים בתפוצות מוחים נגד זיהוי אוטומטי שלהם עם ממשלת ישראל",
-      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-פוליטיקה-20260614-001312"
+      "lastStage4StartedAt": "2026-06-14T03:26:12+03:00",
+      "lastStage4IncidentKey": "domain_sla|ביטחון|2026-06-14T02:19:26+03:00|צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+      "lastStage4RunDir": "/root/.openclaw/workspace/projects/poanta-demo/tmp/editor-runs/domain-ביטחון-20260614-032720"
     }
   },
   "agents": [
@@ -963,8 +971,8 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-06-14T03:09:56+03:00",
-      "checkedAt": "2026-06-14T03:09:56+03:00",
+      "summary": "תקין בבדיקה האחרונה 2026-06-14T03:29:14+03:00",
+      "checkedAt": "2026-06-14T03:29:14+03:00",
       "findings": [
         {
           "severity": "warning",
@@ -979,10 +987,19 @@
           "severity": "warning",
           "code": "headline_duplicates_summary",
           "message": "Headline is too close to the summary",
-          "item": 4,
+          "item": 6,
           "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
           "source": "The Jerusalem Post - Israel News",
           "url": "https://www.jpost.com/israel-news/article-899272"
+        },
+        {
+          "severity": "warning",
+          "code": "duplicate_story_cluster",
+          "message": "Similar live-feed stories from different sources. Recommended keep: #5 ישראל היום - כל הכתבות — ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב. Filter out: #42 The Guardian Middle East — טראמפ טוען להסכם קרוב עם איראן, וטהרן עדיין לא מאשרת",
+          "item": 5,
+          "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+          "source": "ישראל היום - כל הכתבות",
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781"
         }
       ]
     },
@@ -990,19 +1007,19 @@
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh foreign publication event for 160 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-06-14T03:09:59+03:00",
+      "summary": "No fresh foreign publication event for 180 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-06-14T03:29:16+03:00",
       "findings": [
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 160,
+          "ageMinutes": 180,
           "latestAt": "2026-06-14T00:29:10+03:00",
           "headline": "קטאר השיגה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh foreign publication event for 160 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 180 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1011,11 +1028,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 50,
-          "latestAt": "2026-06-14T02:19:26+03:00",
-          "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
-          "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh ביטחון publication event for 50 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "ageMinutes": 32,
+          "latestAt": "2026-06-14T02:57:00+03:00",
+          "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+          "source": "וואלה ספורט",
+          "message": "No fresh ביטחון publication event for 32 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1024,11 +1041,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 301,
+          "ageMinutes": 320,
           "latestAt": "2026-06-13T22:08:35+03:00",
           "headline": "יהודים בתפוצות מוחים נגד זיהוי אוטומטי שלהם עם ממשלת ישראל",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh פוליטיקה publication event for 301 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 320 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1037,11 +1054,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 50,
+          "ageMinutes": 69,
           "latestAt": "2026-06-14T02:19:26+03:00",
           "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh חדשות publication event for 50 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 69 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1050,11 +1067,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 361,
+          "ageMinutes": 381,
           "latestAt": "2026-06-13T21:08:16+03:00",
           "headline": "צעיר מכפר כנא נרצח כנראה בגלל שם משפחה שגוי",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh פלילים publication event for 361 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 381 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1063,11 +1080,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 2448,
+          "ageMinutes": 2467,
           "latestAt": "2026-06-12T10:21:21+03:00",
           "headline": "בית המשפט השאיר את הירושה אצל האחיין למרות התנגדות הבנים",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh משפט publication event for 2448 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 2467 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1076,11 +1093,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 369,
+          "ageMinutes": 389,
           "latestAt": "2026-06-13T21:00:00+03:00",
           "headline": "מתמטיקאים ואלגוריתמים השתלטו על שכבת המסחר המהיר בוול סטריט",
           "source": "גלובס - גלובלי ושוקי עולם",
-          "message": "No fresh כלכלה publication event for 369 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 389 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1089,11 +1106,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 905,
+          "ageMinutes": 924,
           "latestAt": "2026-06-13T12:04:51+03:00",
           "headline": "מלון קלאב הוטל אילת הפך עסקת טיים־שר למשפחתית משתלמת",
           "source": "The Jerusalem Post - Israel News",
-          "message": "No fresh צרכנות publication event for 905 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 924 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -1117,23 +1134,23 @@
     }
   ],
   "feedQuality": {
-    "generatedAt": "2026-06-14T03:10:15+03:00",
+    "generatedAt": "2026-06-14T03:29:28+03:00",
     "score": "warn",
-    "newsinessTop10": 5,
-    "softTop10": 5,
+    "newsinessTop10": 7,
+    "softTop10": 3,
     "otherTop10": 0,
-    "topItemAgeMinutes": 2,
+    "topItemAgeMinutes": 21,
     "top5Under60": 5,
-    "top10Under60": 10,
-    "top12Under60": 12,
-    "uniqueSourcesTop20": 7,
+    "top10Under60": 6,
+    "top12Under60": 6,
+    "uniqueSourcesTop20": 6,
     "dominantSource": {
       "name": "וואלה",
-      "count": 5
+      "count": 6
     },
     "importantSourcesInTop20": {
       "N12": false,
-      "ynet": true,
+      "ynet": false,
       "מעריב": false,
       "הארץ": false,
       "BBC": false,
@@ -1145,7 +1162,7 @@
     },
     "breaking": {
       "visible": true,
-      "topAgeMinutes": 6846,
+      "topAgeMinutes": 6865,
       "top12Under60": 0,
       "count": 80
     },
@@ -1157,24 +1174,25 @@
   "feedQualitySimulation": {
     "status": "ok",
     "mode": "simulation_only_no_feed_mutation",
-    "generatedAt": "2026-06-14T00:10:07+00:00",
+    "generatedAt": "2026-06-14T00:29:20+00:00",
     "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-    "itemCount": 402,
+    "itemCount": 404,
     "before": {
-      "newsinessTop10": 3,
-      "softTop10": 7,
+      "newsinessTop10": 5,
+      "softTop10": 5,
       "otherTop10": 0,
       "top5Under60": 5,
-      "top10Under60": 10,
-      "top12Under60": 12,
-      "topItemAgeMinutes": 2,
-      "uniqueSourcesTop20": 7,
+      "top10Under60": 6,
+      "top12Under60": 6,
+      "topItemAgeMinutes": 21,
+      "uniqueSourcesTop20": 6,
       "dominantSource": {
         "name": "וואלה",
-        "count": 5
+        "count": 6
       },
       "importantMissingTop20": [
         "N12",
+        "ynet",
         "מעריב",
         "הארץ",
         "BBC",
@@ -1186,7 +1204,7 @@
       "topSources": [
         {
           "name": "וואלה",
-          "count": 5
+          "count": 6
         },
         {
           "name": "Daily Mail",
@@ -1197,47 +1215,118 @@
           "count": 3
         },
         {
+          "name": "ישראל היום",
+          "count": 3
+        },
+        {
           "name": "Jerusalem Post",
           "count": 3
         },
         {
           "name": "Page Six",
-          "count": 2
-        },
-        {
-          "name": "ישראל היום",
-          "count": 2
-        },
-        {
-          "name": "ynet",
           "count": 1
         }
       ],
-      "trendMatchedTop10": 2,
-      "trendMatchedTop20": 2,
-      "trendGapMatchedTop20": 0,
+      "trendMatchedTop10": 4,
+      "trendMatchedTop20": 4,
+      "trendGapMatchedTop20": 1,
       "continuousPublishing": {
         "targetMinutes": 10,
         "estimatedVisibleChangeMinutes": 20,
-        "score": 56,
-        "readyCount": 3,
-        "hardReadyCount": 3,
-        "trendReadyCount": 2,
-        "uniqueReadySources": 1,
+        "score": 86,
+        "readyCount": 5,
+        "hardReadyCount": 5,
+        "trendReadyCount": 4,
+        "uniqueReadySources": 3,
         "freshReadyUnder25Count": 0,
         "blockers": [
-          "ready_sources_below_3",
           "ready_fresh_under25_below_1"
         ],
         "readyQueue": [
           {
-            "rank": 5,
+            "rank": 4,
+            "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+            "source": "וואלה ספורט",
+            "canonicalSource": "וואלה",
+            "category": "ביטחון",
+            "class": "hard",
+            "ageMinutes": 32,
+            "url": "https://sports.walla.co.il/item/3845430",
+            "trendMatch": {
+              "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+              "clusterKey": "מטוסי קרב",
+              "domain": "חדשות",
+              "externalMentions": 4,
+              "sourceCount": 3,
+              "sources": [
+                "ynet",
+                "דה מרקר",
+                "וואלה"
+              ],
+              "discoveryTypes": [
+                "RSS",
+                "WEB"
+              ],
+              "mentionedInFeed": false,
+              "latestAt": "2026-06-13T16:47:00+00:00",
+              "sampleUrl": "https://news.walla.co.il/item/3845359",
+              "overlapTokens": [
+                "אירוע",
+                "קשר"
+              ],
+              "score": 25.4,
+              "boost": 25.4
+            },
+            "queueScore": 36.0
+          },
+          {
+            "rank": 6,
+            "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+            "source": "ישראל היום - כל הכתבות",
+            "canonicalSource": "ישראל היום",
+            "category": "ביטחון",
+            "class": "hard",
+            "ageMinutes": 59,
+            "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+            "trendMatch": {
+              "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+              "clusterKey": "טראמפ ההסכם",
+              "domain": "חדשות",
+              "externalMentions": 6,
+              "sourceCount": 5,
+              "sources": [
+                "ynet",
+                "דה מרקר",
+                "הארץ",
+                "וואלה",
+                "סרוגים"
+              ],
+              "discoveryTypes": [
+                "RSS",
+                "WEB"
+              ],
+              "mentionedInFeed": true,
+              "latestAt": "2026-06-13T19:49:00+00:00",
+              "sampleUrl": "https://news.walla.co.il/break/3845400",
+              "overlapTokens": [
+                "איראן",
+                "ההסכם",
+                "הורמוז",
+                "מצר"
+              ],
+              "score": 59.71,
+              "boost": 38.0
+            },
+            "queueScore": 36.0
+          },
+          {
+            "rank": 7,
             "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
             "source": "The Jerusalem Post - Israel News",
             "canonicalSource": "Jerusalem Post",
             "category": "חדשות",
             "class": "hard",
-            "ageMinutes": 50,
+            "ageMinutes": 69,
             "url": "https://www.jpost.com/israel-news/article-899272",
             "trendMatch": {
               "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
@@ -1267,16 +1356,16 @@
               "score": 59.4,
               "boost": 38.0
             },
-            "queueScore": 36.0
+            "queueScore": 33.0
           },
           {
-            "rank": 6,
+            "rank": 8,
             "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
             "source": "The Jerusalem Post - Israel News",
             "canonicalSource": "Jerusalem Post",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 50,
+            "ageMinutes": 69,
             "url": "https://www.jpost.com/israel-news/article-899269",
             "trendMatch": {
               "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
@@ -1305,34 +1394,34 @@
               "score": 43.84,
               "boost": 38.0
             },
-            "queueScore": 36.0
+            "queueScore": 33.0
           },
           {
-            "rank": 7,
+            "rank": 9,
             "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
             "source": "The Jerusalem Post - Middle East",
             "canonicalSource": "Jerusalem Post",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 50,
+            "ageMinutes": 69,
             "url": "https://www.jpost.com/middle-east/article-899271",
             "trendMatch": null,
-            "queueScore": 26.0
+            "queueScore": 23.0
           }
         ]
       }
     },
     "after": {
-      "newsinessTop10": 4,
-      "softTop10": 6,
+      "newsinessTop10": 6,
+      "softTop10": 4,
       "otherTop10": 0,
-      "top5Under60": 4,
-      "top10Under60": 8,
-      "top12Under60": 10,
-      "topItemAgeMinutes": 50,
+      "top5Under60": 2,
+      "top10Under60": 6,
+      "top12Under60": 6,
+      "topItemAgeMinutes": 32,
       "uniqueSourcesTop20": 7,
       "dominantSource": {
-        "name": "Jerusalem Post",
+        "name": "וואלה",
         "count": 4
       },
       "importantMissingTop20": [
@@ -1347,12 +1436,16 @@
       "duplicateTop20": 0,
       "topSources": [
         {
+          "name": "וואלה",
+          "count": 4
+        },
+        {
           "name": "Jerusalem Post",
           "count": 4
         },
         {
-          "name": "וואלה",
-          "count": 4
+          "name": "ישראל היום",
+          "count": 3
         },
         {
           "name": "Daily Mail",
@@ -1360,10 +1453,6 @@
         },
         {
           "name": "Mirror",
-          "count": 3
-        },
-        {
-          "name": "ישראל היום",
           "count": 2
         },
         {
@@ -1375,32 +1464,107 @@
           "count": 2
         }
       ],
-      "trendMatchedTop10": 2,
-      "trendMatchedTop20": 2,
-      "trendGapMatchedTop20": 0,
+      "trendMatchedTop10": 4,
+      "trendMatchedTop20": 4,
+      "trendGapMatchedTop20": 1,
       "continuousPublishing": {
         "targetMinutes": 10,
         "estimatedVisibleChangeMinutes": 20,
-        "score": 46,
-        "readyCount": 3,
-        "hardReadyCount": 3,
-        "trendReadyCount": 2,
-        "uniqueReadySources": 1,
+        "score": 80,
+        "readyCount": 5,
+        "hardReadyCount": 5,
+        "trendReadyCount": 4,
+        "uniqueReadySources": 3,
         "freshReadyUnder25Count": 0,
         "blockers": [
-          "ready_sources_below_3",
           "ready_fresh_under25_below_1",
           "top_item_over_25m"
         ],
         "readyQueue": [
           {
             "rank": 1,
+            "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+            "source": "וואלה ספורט",
+            "canonicalSource": "וואלה",
+            "category": "ביטחון",
+            "class": "hard",
+            "ageMinutes": 32,
+            "url": "https://sports.walla.co.il/item/3845430",
+            "trendMatch": {
+              "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+              "clusterKey": "מטוסי קרב",
+              "domain": "חדשות",
+              "externalMentions": 4,
+              "sourceCount": 3,
+              "sources": [
+                "ynet",
+                "דה מרקר",
+                "וואלה"
+              ],
+              "discoveryTypes": [
+                "RSS",
+                "WEB"
+              ],
+              "mentionedInFeed": false,
+              "latestAt": "2026-06-13T16:47:00+00:00",
+              "sampleUrl": "https://news.walla.co.il/item/3845359",
+              "overlapTokens": [
+                "אירוע",
+                "קשר"
+              ],
+              "score": 25.4,
+              "boost": 25.4
+            },
+            "queueScore": 36.0
+          },
+          {
+            "rank": 2,
+            "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+            "source": "ישראל היום - כל הכתבות",
+            "canonicalSource": "ישראל היום",
+            "category": "ביטחון",
+            "class": "hard",
+            "ageMinutes": 59,
+            "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+            "trendMatch": {
+              "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+              "clusterKey": "טראמפ ההסכם",
+              "domain": "חדשות",
+              "externalMentions": 6,
+              "sourceCount": 5,
+              "sources": [
+                "ynet",
+                "דה מרקר",
+                "הארץ",
+                "וואלה",
+                "סרוגים"
+              ],
+              "discoveryTypes": [
+                "RSS",
+                "WEB"
+              ],
+              "mentionedInFeed": true,
+              "latestAt": "2026-06-13T19:49:00+00:00",
+              "sampleUrl": "https://news.walla.co.il/break/3845400",
+              "overlapTokens": [
+                "איראן",
+                "ההסכם",
+                "הורמוז",
+                "מצר"
+              ],
+              "score": 59.71,
+              "boost": 38.0
+            },
+            "queueScore": 36.0
+          },
+          {
+            "rank": 3,
             "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
             "source": "The Jerusalem Post - Israel News",
             "canonicalSource": "Jerusalem Post",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 50,
+            "ageMinutes": 69,
             "url": "https://www.jpost.com/israel-news/article-899269",
             "trendMatch": {
               "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
@@ -1429,16 +1593,16 @@
               "score": 43.84,
               "boost": 38.0
             },
-            "queueScore": 36.0
+            "queueScore": 33.0
           },
           {
-            "rank": 2,
+            "rank": 4,
             "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
             "source": "The Jerusalem Post - Israel News",
             "canonicalSource": "Jerusalem Post",
             "category": "חדשות",
             "class": "hard",
-            "ageMinutes": 50,
+            "ageMinutes": 69,
             "url": "https://www.jpost.com/israel-news/article-899272",
             "trendMatch": {
               "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
@@ -1468,40 +1632,41 @@
               "score": 59.4,
               "boost": 38.0
             },
-            "queueScore": 36.0
+            "queueScore": 33.0
           },
           {
-            "rank": 3,
+            "rank": 5,
             "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
             "source": "The Jerusalem Post - Middle East",
             "canonicalSource": "Jerusalem Post",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 50,
+            "ageMinutes": 69,
             "url": "https://www.jpost.com/middle-east/article-899271",
             "trendMatch": null,
-            "queueScore": 26.0
+            "queueScore": 23.0
           }
         ]
       }
     },
-    "beforeHealthScore": 47,
-    "afterHealthScore": 57,
+    "beforeHealthScore": 48,
+    "afterHealthScore": 64,
     "replacementReadiness": {
-      "score": 47,
+      "score": 56,
       "threshold": 80,
       "components": {
-        "freshness": 9.8,
-        "newsinessTop10": 10.0,
+        "freshness": 10.25,
+        "newsinessTop10": 15.0,
         "top20Quality": 11.6,
         "sourceBalance": 10.0,
-        "trendSignalUse": 5.33,
+        "trendSignalUse": 8.67,
         "criticalBlockersClear": 0.0
       },
       "criticalBlockers": [
         "top_item_stale_over_25m",
         "newsiness_top10_below_7",
-        "soft_top10_above_2"
+        "soft_top10_above_2",
+        "top12_under60_below_9"
       ],
       "readyNow": false
     },
@@ -1546,31 +1711,32 @@
     "delta": {
       "newsinessTop10": 1,
       "softTop10": -1,
-      "top12Under60": -2,
-      "uniqueSourcesTop20": 0,
+      "top12Under60": 0,
+      "uniqueSourcesTop20": 1,
       "trendMatchedTop10": 0,
       "trendMatchedTop20": 0,
-      "healthScore": 10
+      "healthScore": 16
     },
     "historySummary": {
-      "sampleCount": 117,
+      "sampleCount": 121,
       "window": 12,
       "positiveRuns": 12,
       "negativeRuns": 0,
       "avgHealthDelta": 7.25,
-      "avgAfterHealthScore": 45.58,
+      "avgAfterHealthScore": 49.0,
       "stablePositive": true,
       "replacement": {
         "threshold": 80,
         "minSamplesForPromotion": 24,
         "window": 48,
-        "latestScore": 47,
-        "rollingScore": 57.96,
+        "latestScore": 56,
+        "rollingScore": 56.27,
         "readyRuns": 5,
         "criticalBlockers": [
           "top_item_stale_over_25m",
           "newsiness_top10_below_7",
-          "soft_top10_above_2"
+          "soft_top10_above_2",
+          "top12_under60_below_9"
         ],
         "matureForProduction": false
       },
@@ -1579,24 +1745,24 @@
         "latestSummaryLine": "בעייתי",
         "latestReportName": "tt-rr-simulation-review-2026-06-14-0300.md",
         "window": 48,
-        "averageScore": 64.96,
-        "positiveReports": 16
+        "averageScore": 64.42,
+        "positiveReports": 15
       }
     },
     "trendSignal": {
       "status": "ok",
       "path": "spy_trends.json",
-      "generatedAt": "2026-06-14T03:10:07+03:00",
+      "generatedAt": "2026-06-14T03:29:20+03:00",
       "sourceTrendCount": 14,
       "usedTrendCount": 14,
-      "rssItemsScanned": 115,
+      "rssItemsScanned": 114,
       "webItemsScanned": 180,
       "topTrends": [
         {
           "trend": "מרוץ לחתימה, לפני ש\"משהו ישתבש\": זה מה שידוע על ההסכם עם איראן - ומה שלא",
           "clusterKey": "ההסכם איראן",
           "domain": "חדשות",
-          "externalMentions": 8,
+          "externalMentions": 7,
           "sourceCount": 5,
           "sources": [
             "ynet",
@@ -1711,7 +1877,7 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-06-14T00:10:07.031671+00:00",
+          "latestAt": "2026-06-14T00:29:20.514156+00:00",
           "sampleUrl": "https://www.bbc.com/sport/football/articles/cyv2l60q188o",
           "strength": 46.1
         },
@@ -1773,7 +1939,7 @@
         },
         {
           "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-          "clusterKey": "דובר משרד",
+          "clusterKey": "דובר משרד החוץ",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 1,
@@ -1798,7 +1964,7 @@
         "canonicalSource": "וואלה",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 2,
+        "ageMinutes": 21,
         "url": "https://news.walla.co.il/item/3844962",
         "beforeRank": 1,
         "afterRank": 1,
@@ -1811,7 +1977,7 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 4,
+        "ageMinutes": 24,
         "url": "https://www.dailymail.com/tvshowbiz/article-15898133/Lleyton-Bec-Hewitt-list-sprawling-Sydney-estate-complete-professional-tennis-court-14million.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 2,
         "afterRank": 2,
@@ -1824,7 +1990,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 4,
+        "ageMinutes": 24,
         "url": "https://sports.walla.co.il/item/3845431",
         "beforeRank": 3,
         "afterRank": 3,
@@ -1832,17 +1998,95 @@
         "trendMatch": null
       },
       {
+        "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+        "source": "וואלה ספורט",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 32,
+        "url": "https://sports.walla.co.il/item/3845430",
+        "beforeRank": 4,
+        "afterRank": 4,
+        "delta": 0,
+        "trendMatch": {
+          "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+          "clusterKey": "מטוסי קרב",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T16:47:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3845359",
+          "overlapTokens": [
+            "אירוע",
+            "קשר"
+          ],
+          "score": 25.4,
+          "boost": 25.4
+        }
+      },
+      {
         "headline": "שדרן KISS FM סם דרלסטון עוזב אחרי 11 שנים בתחנה",
         "source": "Mirror Celebs רכילות חו״ל",
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 30,
+        "ageMinutes": 49,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/kiss-fm-sam-darlaston-quits-37292409",
-        "beforeRank": 4,
-        "afterRank": 4,
+        "beforeRank": 5,
+        "afterRank": 5,
         "delta": 0,
         "trendMatch": null
+      },
+      {
+        "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 59,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+        "beforeRank": 6,
+        "afterRank": 6,
+        "delta": 0,
+        "trendMatch": {
+          "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+          "clusterKey": "טראמפ ההסכם",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 5,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-13T19:49:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845400",
+          "overlapTokens": [
+            "איראן",
+            "ההסכם",
+            "הורמוז",
+            "מצר"
+          ],
+          "score": 59.71,
+          "boost": 38.0
+        }
       },
       {
         "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
@@ -1850,10 +2094,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899272",
-        "beforeRank": 5,
-        "afterRank": 5,
+        "beforeRank": 7,
+        "afterRank": 7,
         "delta": 0,
         "trendMatch": {
           "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
@@ -1890,10 +2134,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899269",
-        "beforeRank": 6,
-        "afterRank": 6,
+        "beforeRank": 8,
+        "afterRank": 8,
         "delta": 0,
         "trendMatch": {
           "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
@@ -1929,10 +2173,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/middle-east/article-899271",
-        "beforeRank": 7,
-        "afterRank": 7,
+        "beforeRank": 9,
+        "afterRank": 9,
         "delta": 0,
         "trendMatch": null
       },
@@ -1942,34 +2186,8 @@
         "canonicalSource": "וואלה",
         "category": "תרבות",
         "class": "soft",
-        "ageMinutes": 51,
+        "ageMinutes": 70,
         "url": "https://e.walla.co.il/item/3845403",
-        "beforeRank": 8,
-        "afterRank": 8,
-        "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "ברזיל ומרוקו פתחו את בית ג׳ במשחק הצהרה במונדיאל",
-        "source": "וואלה ספורט - כדורגל עולמי",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 51,
-        "url": "https://sports.walla.co.il/item/3845337",
-        "beforeRank": 9,
-        "afterRank": 9,
-        "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "קטאר חילצה נקודת מונדיאל ראשונה עם שוויון בדקה ה־94",
-        "source": "וואלה ספורט - כדורגל עולמי",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 51,
-        "url": "https://sports.walla.co.il/item/3845345",
         "beforeRank": 10,
         "afterRank": 10,
         "delta": 0,
@@ -1978,15 +2196,93 @@
     ],
     "top10After": [
       {
+        "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+        "source": "וואלה ספורט",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 32,
+        "url": "https://sports.walla.co.il/item/3845430",
+        "beforeRank": 4,
+        "afterRank": 1,
+        "delta": 3,
+        "trendMatch": {
+          "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+          "clusterKey": "מטוסי קרב",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T16:47:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3845359",
+          "overlapTokens": [
+            "אירוע",
+            "קשר"
+          ],
+          "score": 25.4,
+          "boost": 25.4
+        }
+      },
+      {
+        "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 59,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+        "beforeRank": 6,
+        "afterRank": 2,
+        "delta": 4,
+        "trendMatch": {
+          "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+          "clusterKey": "טראמפ ההסכם",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 5,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-13T19:49:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845400",
+          "overlapTokens": [
+            "איראן",
+            "ההסכם",
+            "הורמוז",
+            "מצר"
+          ],
+          "score": 59.71,
+          "boost": 38.0
+        }
+      },
+      {
         "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899269",
-        "beforeRank": 6,
-        "afterRank": 1,
+        "beforeRank": 8,
+        "afterRank": 3,
         "delta": 5,
         "trendMatch": {
           "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
@@ -2022,10 +2318,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899272",
-        "beforeRank": 5,
-        "afterRank": 2,
+        "beforeRank": 7,
+        "afterRank": 4,
         "delta": 3,
         "trendMatch": {
           "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
@@ -2062,10 +2358,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/middle-east/article-899271",
-        "beforeRank": 7,
-        "afterRank": 3,
+        "beforeRank": 9,
+        "afterRank": 5,
         "delta": 4,
         "trendMatch": null
       },
@@ -2075,10 +2371,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 128,
+        "ageMinutes": 147,
         "url": "https://www.jpost.com/middle-east/article-899267",
-        "beforeRank": 23,
-        "afterRank": 4,
+        "beforeRank": 25,
+        "afterRank": 6,
         "delta": 19,
         "trendMatch": null
       },
@@ -2088,24 +2384,11 @@
         "canonicalSource": "וואלה",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 2,
+        "ageMinutes": 21,
         "url": "https://news.walla.co.il/item/3844962",
         "beforeRank": 1,
-        "afterRank": 5,
-        "delta": -4,
-        "trendMatch": null
-      },
-      {
-        "headline": "לוקה בוז׳יץ׳ התנצל אחרי שפרסם את ״מיין קאמפף״ באינסטגרם",
-        "source": "וואלה ספורט - כדורסל",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 4,
-        "url": "https://sports.walla.co.il/item/3845431",
-        "beforeRank": 3,
-        "afterRank": 6,
-        "delta": -3,
+        "afterRank": 7,
+        "delta": -6,
         "trendMatch": null
       },
       {
@@ -2114,11 +2397,24 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 4,
+        "ageMinutes": 24,
         "url": "https://www.dailymail.com/tvshowbiz/article-15898133/Lleyton-Bec-Hewitt-list-sprawling-Sydney-estate-complete-professional-tennis-court-14million.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 2,
-        "afterRank": 7,
-        "delta": -5,
+        "afterRank": 8,
+        "delta": -6,
+        "trendMatch": null
+      },
+      {
+        "headline": "לוקה בוז׳יץ׳ התנצל אחרי שפרסם את ״מיין קאמפף״ באינסטגרם",
+        "source": "וואלה ספורט - כדורסל",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "ageMinutes": 24,
+        "url": "https://sports.walla.co.il/item/3845431",
+        "beforeRank": 3,
+        "afterRank": 9,
+        "delta": -6,
         "trendMatch": null
       },
       {
@@ -2127,37 +2423,11 @@
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 30,
+        "ageMinutes": 49,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/kiss-fm-sam-darlaston-quits-37292409",
-        "beforeRank": 4,
-        "afterRank": 8,
-        "delta": -4,
-        "trendMatch": null
-      },
-      {
-        "headline": "שף נבחרת אנגליה עוכב במיאמי בגלל סכיני המטבח שלו",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 71,
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20753684",
-        "beforeRank": 17,
-        "afterRank": 9,
-        "delta": 8,
-        "trendMatch": null
-      },
-      {
-        "headline": "טייגרלילי טיילור זעמה אחרי שמכוניתה נגררה בגלל משחק פולו",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 57,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15897711/TALK-TOWN-Chukkad-Tigerlilys-fury-car-towed-make-way-polo-fans.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "beforeRank": 11,
+        "beforeRank": 5,
         "afterRank": 10,
-        "delta": 1,
+        "delta": -5,
         "trendMatch": null
       }
     ],
@@ -2168,7 +2438,7 @@
         "canonicalSource": "וואלה",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 2,
+        "ageMinutes": 21,
         "url": "https://news.walla.co.il/item/3844962",
         "beforeRank": 1,
         "afterRank": 1,
@@ -2181,7 +2451,7 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 4,
+        "ageMinutes": 24,
         "url": "https://www.dailymail.com/tvshowbiz/article-15898133/Lleyton-Bec-Hewitt-list-sprawling-Sydney-estate-complete-professional-tennis-court-14million.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 2,
         "afterRank": 2,
@@ -2194,7 +2464,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 4,
+        "ageMinutes": 24,
         "url": "https://sports.walla.co.il/item/3845431",
         "beforeRank": 3,
         "afterRank": 3,
@@ -2202,17 +2472,95 @@
         "trendMatch": null
       },
       {
+        "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+        "source": "וואלה ספורט",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 32,
+        "url": "https://sports.walla.co.il/item/3845430",
+        "beforeRank": 4,
+        "afterRank": 4,
+        "delta": 0,
+        "trendMatch": {
+          "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+          "clusterKey": "מטוסי קרב",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T16:47:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3845359",
+          "overlapTokens": [
+            "אירוע",
+            "קשר"
+          ],
+          "score": 25.4,
+          "boost": 25.4
+        }
+      },
+      {
         "headline": "שדרן KISS FM סם דרלסטון עוזב אחרי 11 שנים בתחנה",
         "source": "Mirror Celebs רכילות חו״ל",
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 30,
+        "ageMinutes": 49,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/kiss-fm-sam-darlaston-quits-37292409",
-        "beforeRank": 4,
-        "afterRank": 4,
+        "beforeRank": 5,
+        "afterRank": 5,
         "delta": 0,
         "trendMatch": null
+      },
+      {
+        "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 59,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+        "beforeRank": 6,
+        "afterRank": 6,
+        "delta": 0,
+        "trendMatch": {
+          "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+          "clusterKey": "טראמפ ההסכם",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 5,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-13T19:49:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845400",
+          "overlapTokens": [
+            "איראן",
+            "ההסכם",
+            "הורמוז",
+            "מצר"
+          ],
+          "score": 59.71,
+          "boost": 38.0
+        }
       },
       {
         "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
@@ -2220,10 +2568,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899272",
-        "beforeRank": 5,
-        "afterRank": 5,
+        "beforeRank": 7,
+        "afterRank": 7,
         "delta": 0,
         "trendMatch": {
           "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
@@ -2260,10 +2608,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899269",
-        "beforeRank": 6,
-        "afterRank": 6,
+        "beforeRank": 8,
+        "afterRank": 8,
         "delta": 0,
         "trendMatch": {
           "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
@@ -2299,10 +2647,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/middle-east/article-899271",
-        "beforeRank": 7,
-        "afterRank": 7,
+        "beforeRank": 9,
+        "afterRank": 9,
         "delta": 0,
         "trendMatch": null
       },
@@ -2312,10 +2660,10 @@
         "canonicalSource": "וואלה",
         "category": "תרבות",
         "class": "soft",
-        "ageMinutes": 51,
+        "ageMinutes": 70,
         "url": "https://e.walla.co.il/item/3845403",
-        "beforeRank": 8,
-        "afterRank": 8,
+        "beforeRank": 10,
+        "afterRank": 10,
         "delta": 0,
         "trendMatch": null
       },
@@ -2325,10 +2673,10 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 51,
+        "ageMinutes": 70,
         "url": "https://sports.walla.co.il/item/3845337",
-        "beforeRank": 9,
-        "afterRank": 9,
+        "beforeRank": 11,
+        "afterRank": 11,
         "delta": 0,
         "trendMatch": null
       },
@@ -2338,10 +2686,10 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 51,
+        "ageMinutes": 70,
         "url": "https://sports.walla.co.il/item/3845345",
-        "beforeRank": 10,
-        "afterRank": 10,
+        "beforeRank": 12,
+        "afterRank": 12,
         "delta": 0,
         "trendMatch": null
       },
@@ -2351,10 +2699,10 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 57,
+        "ageMinutes": 76,
         "url": "https://www.dailymail.com/tvshowbiz/article-15897711/TALK-TOWN-Chukkad-Tigerlilys-fury-car-towed-make-way-polo-fans.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "beforeRank": 11,
-        "afterRank": 11,
+        "beforeRank": 13,
+        "afterRank": 13,
         "delta": 0,
         "trendMatch": null
       },
@@ -2364,10 +2712,10 @@
         "canonicalSource": "Page Six",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 58,
+        "ageMinutes": 77,
         "url": "https://pagesix.com/2026/06/13/celebrity-news/keke-palmer-and-hot-ones-host-sean-evans-fuel-rumors-with-nyc-date/",
-        "beforeRank": 12,
-        "afterRank": 12,
+        "beforeRank": 14,
+        "afterRank": 14,
         "delta": 0,
         "trendMatch": null
       },
@@ -2377,10 +2725,10 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 58,
+        "ageMinutes": 77,
         "url": "https://www.dailymail.com/tvshowbiz/article-15897899/anna-faris-brutally-honest-rare-comment-chris-pratt-divorce-coping-mechanism.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "beforeRank": 13,
-        "afterRank": 13,
+        "beforeRank": 15,
+        "afterRank": 15,
         "delta": 0,
         "trendMatch": null
       },
@@ -2390,10 +2738,10 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 58,
+        "ageMinutes": 78,
         "url": "https://www.dailymail.com/tvshowbiz/article-15897219/Dua-Lipa-husband-Callum-Turner-PDA-Amalfi-coast-honeymoon.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "beforeRank": 14,
-        "afterRank": 14,
+        "beforeRank": 16,
+        "afterRank": 16,
         "delta": 0,
         "trendMatch": null
       },
@@ -2403,10 +2751,10 @@
         "canonicalSource": "ישראל היום",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 60,
+        "ageMinutes": 79,
         "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20753767",
-        "beforeRank": 15,
-        "afterRank": 15,
+        "beforeRank": 17,
+        "afterRank": 17,
         "delta": 0,
         "trendMatch": null
       },
@@ -2416,10 +2764,10 @@
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 70,
+        "ageMinutes": 89,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/molly-mae-tommy-fury-midas-37292397",
-        "beforeRank": 16,
-        "afterRank": 16,
+        "beforeRank": 18,
+        "afterRank": 18,
         "delta": 0,
         "trendMatch": null
       },
@@ -2429,10 +2777,10 @@
         "canonicalSource": "ישראל היום",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 71,
+        "ageMinutes": 90,
         "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20753684",
-        "beforeRank": 17,
-        "afterRank": 17,
+        "beforeRank": 19,
+        "afterRank": 19,
         "delta": 0,
         "trendMatch": null
       },
@@ -2442,34 +2790,8 @@
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 93,
+        "ageMinutes": 113,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/david-beckham-walk-of-fame-37292401",
-        "beforeRank": 18,
-        "afterRank": 18,
-        "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "נורת׳ וסט הופיעה לראשונה לבד בפסטיבל מוזיקה",
-        "source": "Page Six רכילות חו״ל",
-        "canonicalSource": "Page Six",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 98,
-        "url": "https://pagesix.com/2026/06/13/entertainment/kim-kardashian-kanye-wests-daughter-north-12-takes-center-stage-for-first-solo-music-festival-performance/",
-        "beforeRank": 19,
-        "afterRank": 19,
-        "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "מסי וארגנטינה מגיעים למונדיאל האחרון שלו בלי חרדת קטאר",
-        "source": "ynet - כל ערוץ הספורט",
-        "canonicalSource": "ynet",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 100,
-        "url": "https://www.ynet.co.il/sport/article/skzkdkss11zx",
         "beforeRank": 20,
         "afterRank": 20,
         "delta": 0,
@@ -2478,15 +2800,93 @@
     ],
     "top20After": [
       {
+        "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+        "source": "וואלה ספורט",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 32,
+        "url": "https://sports.walla.co.il/item/3845430",
+        "beforeRank": 4,
+        "afterRank": 1,
+        "delta": 3,
+        "trendMatch": {
+          "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+          "clusterKey": "מטוסי קרב",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T16:47:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3845359",
+          "overlapTokens": [
+            "אירוע",
+            "קשר"
+          ],
+          "score": 25.4,
+          "boost": 25.4
+        }
+      },
+      {
+        "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 59,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+        "beforeRank": 6,
+        "afterRank": 2,
+        "delta": 4,
+        "trendMatch": {
+          "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+          "clusterKey": "טראמפ ההסכם",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 5,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-13T19:49:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845400",
+          "overlapTokens": [
+            "איראן",
+            "ההסכם",
+            "הורמוז",
+            "מצר"
+          ],
+          "score": 59.71,
+          "boost": 38.0
+        }
+      },
+      {
         "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899269",
-        "beforeRank": 6,
-        "afterRank": 1,
+        "beforeRank": 8,
+        "afterRank": 3,
         "delta": 5,
         "trendMatch": {
           "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
@@ -2522,10 +2922,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/article-899272",
-        "beforeRank": 5,
-        "afterRank": 2,
+        "beforeRank": 7,
+        "afterRank": 4,
         "delta": 3,
         "trendMatch": {
           "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
@@ -2562,10 +2962,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 50,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/middle-east/article-899271",
-        "beforeRank": 7,
-        "afterRank": 3,
+        "beforeRank": 9,
+        "afterRank": 5,
         "delta": 4,
         "trendMatch": null
       },
@@ -2575,10 +2975,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 128,
+        "ageMinutes": 147,
         "url": "https://www.jpost.com/middle-east/article-899267",
-        "beforeRank": 23,
-        "afterRank": 4,
+        "beforeRank": 25,
+        "afterRank": 6,
         "delta": 19,
         "trendMatch": null
       },
@@ -2588,24 +2988,11 @@
         "canonicalSource": "וואלה",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 2,
+        "ageMinutes": 21,
         "url": "https://news.walla.co.il/item/3844962",
         "beforeRank": 1,
-        "afterRank": 5,
-        "delta": -4,
-        "trendMatch": null
-      },
-      {
-        "headline": "לוקה בוז׳יץ׳ התנצל אחרי שפרסם את ״מיין קאמפף״ באינסטגרם",
-        "source": "וואלה ספורט - כדורסל",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 4,
-        "url": "https://sports.walla.co.il/item/3845431",
-        "beforeRank": 3,
-        "afterRank": 6,
-        "delta": -3,
+        "afterRank": 7,
+        "delta": -6,
         "trendMatch": null
       },
       {
@@ -2614,11 +3001,24 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 4,
+        "ageMinutes": 24,
         "url": "https://www.dailymail.com/tvshowbiz/article-15898133/Lleyton-Bec-Hewitt-list-sprawling-Sydney-estate-complete-professional-tennis-court-14million.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 2,
-        "afterRank": 7,
-        "delta": -5,
+        "afterRank": 8,
+        "delta": -6,
+        "trendMatch": null
+      },
+      {
+        "headline": "לוקה בוז׳יץ׳ התנצל אחרי שפרסם את ״מיין קאמפף״ באינסטגרם",
+        "source": "וואלה ספורט - כדורסל",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "ageMinutes": 24,
+        "url": "https://sports.walla.co.il/item/3845431",
+        "beforeRank": 3,
+        "afterRank": 9,
+        "delta": -6,
         "trendMatch": null
       },
       {
@@ -2627,24 +3027,11 @@
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 30,
+        "ageMinutes": 49,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/kiss-fm-sam-darlaston-quits-37292409",
-        "beforeRank": 4,
-        "afterRank": 8,
-        "delta": -4,
-        "trendMatch": null
-      },
-      {
-        "headline": "שף נבחרת אנגליה עוכב במיאמי בגלל סכיני המטבח שלו",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 71,
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20753684",
-        "beforeRank": 17,
-        "afterRank": 9,
-        "delta": 8,
+        "beforeRank": 5,
+        "afterRank": 10,
+        "delta": -5,
         "trendMatch": null
       },
       {
@@ -2653,24 +3040,24 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 57,
+        "ageMinutes": 76,
         "url": "https://www.dailymail.com/tvshowbiz/article-15897711/TALK-TOWN-Chukkad-Tigerlilys-fury-car-towed-make-way-polo-fans.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "beforeRank": 11,
-        "afterRank": 10,
-        "delta": 1,
+        "beforeRank": 13,
+        "afterRank": 11,
+        "delta": 2,
         "trendMatch": null
       },
       {
-        "headline": "טוני קיי חוזר להשלים עם ״אמריקה X״ אחרי מאבק העריכה",
-        "source": "וואלה תרבות",
-        "canonicalSource": "וואלה",
-        "category": "תרבות",
+        "headline": "שף נבחרת אנגליה עוכב במיאמי בגלל סכיני המטבח שלו",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 51,
-        "url": "https://e.walla.co.il/item/3845403",
-        "beforeRank": 8,
-        "afterRank": 11,
-        "delta": -3,
+        "ageMinutes": 90,
+        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20753684",
+        "beforeRank": 19,
+        "afterRank": 12,
+        "delta": 7,
         "trendMatch": null
       },
       {
@@ -2679,23 +3066,23 @@
         "canonicalSource": "Page Six",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 58,
+        "ageMinutes": 77,
         "url": "https://pagesix.com/2026/06/13/celebrity-news/keke-palmer-and-hot-ones-host-sean-evans-fuel-rumors-with-nyc-date/",
-        "beforeRank": 12,
-        "afterRank": 12,
-        "delta": 0,
+        "beforeRank": 14,
+        "afterRank": 13,
+        "delta": 1,
         "trendMatch": null
       },
       {
-        "headline": "טל טיטו יוצאת מ״האח הגדול״ ישר לתביעת לשון הרע של אייל גולן",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
+        "headline": "דואה ליפה וקאלום טרנר הפכו את ירח הדבש למופע פפראצי באמלפי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 60,
-        "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20753767",
-        "beforeRank": 15,
-        "afterRank": 13,
+        "ageMinutes": 78,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15897219/Dua-Lipa-husband-Callum-Turner-PDA-Amalfi-coast-honeymoon.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "beforeRank": 16,
+        "afterRank": 14,
         "delta": 2,
         "trendMatch": null
       },
@@ -2705,11 +3092,24 @@
         "canonicalSource": "Mirror",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 70,
+        "ageMinutes": 89,
         "url": "https://www.mirror.co.uk/3am/celebrity-news/molly-mae-tommy-fury-midas-37292397",
-        "beforeRank": 16,
-        "afterRank": 14,
-        "delta": 2,
+        "beforeRank": 18,
+        "afterRank": 15,
+        "delta": 3,
+        "trendMatch": null
+      },
+      {
+        "headline": "טל טיטו יוצאת מ״האח הגדול״ ישר לתביעת לשון הרע של אייל גולן",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 79,
+        "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20753767",
+        "beforeRank": 17,
+        "afterRank": 16,
+        "delta": 1,
         "trendMatch": null
       },
       {
@@ -2718,10 +3118,10 @@
         "canonicalSource": "ynet",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 100,
+        "ageMinutes": 119,
         "url": "https://www.ynet.co.il/sport/article/skzkdkss11zx",
-        "beforeRank": 20,
-        "afterRank": 15,
+        "beforeRank": 22,
+        "afterRank": 17,
         "delta": 5,
         "trendMatch": null
       },
@@ -2731,36 +3131,23 @@
         "canonicalSource": "ynet",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 100,
+        "ageMinutes": 119,
         "url": "https://www.ynet.co.il/sport/worldcup2026/article/hja01rj11gx",
-        "beforeRank": 21,
-        "afterRank": 16,
+        "beforeRank": 23,
+        "afterRank": 18,
         "delta": 5,
         "trendMatch": null
       },
       {
-        "headline": "דואה ליפה וקאלום טרנר הפכו את ירח הדבש למופע פפראצי באמלפי",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 58,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15897219/Dua-Lipa-husband-Callum-Turner-PDA-Amalfi-coast-honeymoon.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "beforeRank": 14,
-        "afterRank": 17,
-        "delta": -3,
-        "trendMatch": null
-      },
-      {
-        "headline": "ברזיל ומרוקו פתחו את בית ג׳ במשחק הצהרה במונדיאל",
-        "source": "וואלה ספורט - כדורגל עולמי",
+        "headline": "טוני קיי חוזר להשלים עם ״אמריקה X״ אחרי מאבק העריכה",
+        "source": "וואלה תרבות",
         "canonicalSource": "וואלה",
-        "category": "ספורט",
+        "category": "תרבות",
         "class": "soft",
-        "ageMinutes": 51,
-        "url": "https://sports.walla.co.il/item/3845337",
-        "beforeRank": 9,
-        "afterRank": 18,
+        "ageMinutes": 70,
+        "url": "https://e.walla.co.il/item/3845403",
+        "beforeRank": 10,
+        "afterRank": 19,
         "delta": -9,
         "trendMatch": null
       },
@@ -2770,28 +3157,85 @@
         "canonicalSource": "Page Six",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 98,
+        "ageMinutes": 117,
         "url": "https://pagesix.com/2026/06/13/entertainment/kim-kardashian-kanye-wests-daughter-north-12-takes-center-stage-for-first-solo-music-festival-performance/",
-        "beforeRank": 19,
-        "afterRank": 19,
-        "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "תמונות הכוכב של בקהאם החזירו את הוויכוח על ברוקלין",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 93,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/david-beckham-walk-of-fame-37292401",
-        "beforeRank": 18,
+        "beforeRank": 21,
         "afterRank": 20,
-        "delta": -2,
+        "delta": 1,
         "trendMatch": null
       }
     ],
     "movement": [
+      {
+        "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+        "source": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+          "clusterKey": "מטוסי קרב",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-13T16:47:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3845359",
+          "overlapTokens": [
+            "אירוע",
+            "קשר"
+          ],
+          "score": 25.4,
+          "boost": 25.4
+        },
+        "beforeRank": 4,
+        "afterRank": 1
+      },
+      {
+        "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+        "source": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+          "clusterKey": "טראמפ ההסכם",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 5,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-13T19:49:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845400",
+          "overlapTokens": [
+            "איראן",
+            "ההסכם",
+            "הורמוז",
+            "מצר"
+          ],
+          "score": 59.71,
+          "boost": 38.0
+        },
+        "beforeRank": 6,
+        "afterRank": 2
+      },
       {
         "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
         "source": "Jerusalem Post",
@@ -2824,8 +3268,8 @@
           "score": 43.84,
           "boost": 38.0
         },
-        "beforeRank": 6,
-        "afterRank": 1
+        "beforeRank": 8,
+        "afterRank": 3
       },
       {
         "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
@@ -2860,8 +3304,8 @@
           "score": 59.4,
           "boost": 38.0
         },
-        "beforeRank": 5,
-        "afterRank": 2
+        "beforeRank": 7,
+        "afterRank": 4
       },
       {
         "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
@@ -2869,8 +3313,8 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 7,
-        "afterRank": 3
+        "beforeRank": 9,
+        "afterRank": 5
       },
       {
         "headline": "קמפיין מחאה חדש בעזה קורא לתושבים לצאת נגד חמאס",
@@ -2878,8 +3322,8 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 23,
-        "afterRank": 4
+        "beforeRank": 25,
+        "afterRank": 6
       },
       {
         "headline": "מארק־פול גוסלאר הפך קידום סדרה למפגן קאמבק גופני",
@@ -2888,16 +3332,7 @@
         "class": "soft",
         "trendMatch": null,
         "beforeRank": 1,
-        "afterRank": 5
-      },
-      {
-        "headline": "לוקה בוז׳יץ׳ התנצל אחרי שפרסם את ״מיין קאמפף״ באינסטגרם",
-        "source": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 3,
-        "afterRank": 6
+        "afterRank": 7
       },
       {
         "headline": "לייטון ובק יואיט מבקשים 14 מיליון דולר על האחוזה בסידני",
@@ -2906,7 +3341,16 @@
         "class": "soft",
         "trendMatch": null,
         "beforeRank": 2,
-        "afterRank": 7
+        "afterRank": 8
+      },
+      {
+        "headline": "לוקה בוז׳יץ׳ התנצל אחרי שפרסם את ״מיין קאמפף״ באינסטגרם",
+        "source": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 3,
+        "afterRank": 9
       },
       {
         "headline": "שדרן KISS FM סם דרלסטון עוזב אחרי 11 שנים בתחנה",
@@ -2914,17 +3358,8 @@
         "category": "רכילות",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 4,
-        "afterRank": 8
-      },
-      {
-        "headline": "שף נבחרת אנגליה עוכב במיאמי בגלל סכיני המטבח שלו",
-        "source": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 17,
-        "afterRank": 9
+        "beforeRank": 5,
+        "afterRank": 10
       },
       {
         "headline": "טייגרלילי טיילור זעמה אחרי שמכוניתה נגררה בגלל משחק פולו",
@@ -2932,17 +3367,17 @@
         "category": "רכילות",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 11,
-        "afterRank": 10
+        "beforeRank": 13,
+        "afterRank": 11
       },
       {
-        "headline": "טוני קיי חוזר להשלים עם ״אמריקה X״ אחרי מאבק העריכה",
-        "source": "וואלה",
-        "category": "תרבות",
+        "headline": "שף נבחרת אנגליה עוכב במיאמי בגלל סכיני המטבח שלו",
+        "source": "ישראל היום",
+        "category": "ספורט",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 8,
-        "afterRank": 11
+        "beforeRank": 19,
+        "afterRank": 12
       },
       {
         "headline": "קיקי פאלמר ושון אוונס הציתו שמועות רומן בדייט בניו יורק",
@@ -2950,44 +3385,8 @@
         "category": "רכילות",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 12,
-        "afterRank": 12
-      },
-      {
-        "headline": "טל טיטו יוצאת מ״האח הגדול״ ישר לתביעת לשון הרע של אייל גולן",
-        "source": "ישראל היום",
-        "category": "רכילות",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 15,
+        "beforeRank": 14,
         "afterRank": 13
-      },
-      {
-        "headline": "מעריצי מולי־מיי הגיבו לשם מידאס שנחשף בזירת האגרוף",
-        "source": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 16,
-        "afterRank": 14
-      },
-      {
-        "headline": "מסי וארגנטינה מגיעים למונדיאל האחרון שלו בלי חרדת קטאר",
-        "source": "ynet",
-        "category": "ספורט",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 20,
-        "afterRank": 15
-      },
-      {
-        "headline": "המונדיאל המורחב יעמיד את קורסאו מול מבחן כמעט בלתי אפשרי",
-        "source": "ynet",
-        "category": "ספורט",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 21,
-        "afterRank": 16
       },
       {
         "headline": "דואה ליפה וקאלום טרנר הפכו את ירח הדבש למופע פפראצי באמלפי",
@@ -2995,17 +3394,53 @@
         "category": "רכילות",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 14,
-        "afterRank": 17
+        "beforeRank": 16,
+        "afterRank": 14
       },
       {
-        "headline": "ברזיל ומרוקו פתחו את בית ג׳ במשחק הצהרה במונדיאל",
-        "source": "וואלה",
+        "headline": "מעריצי מולי־מיי הגיבו לשם מידאס שנחשף בזירת האגרוף",
+        "source": "Mirror",
+        "category": "רכילות",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 18,
+        "afterRank": 15
+      },
+      {
+        "headline": "טל טיטו יוצאת מ״האח הגדול״ ישר לתביעת לשון הרע של אייל גולן",
+        "source": "ישראל היום",
+        "category": "רכילות",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 17,
+        "afterRank": 16
+      },
+      {
+        "headline": "מסי וארגנטינה מגיעים למונדיאל האחרון שלו בלי חרדת קטאר",
+        "source": "ynet",
         "category": "ספורט",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 9,
+        "beforeRank": 22,
+        "afterRank": 17
+      },
+      {
+        "headline": "המונדיאל המורחב יעמיד את קורסאו מול מבחן כמעט בלתי אפשרי",
+        "source": "ynet",
+        "category": "ספורט",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 23,
         "afterRank": 18
+      },
+      {
+        "headline": "טוני קיי חוזר להשלים עם ״אמריקה X״ אחרי מאבק העריכה",
+        "source": "וואלה",
+        "category": "תרבות",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 10,
+        "afterRank": 19
       },
       {
         "headline": "נורת׳ וסט הופיעה לראשונה לבד בפסטיבל מוזיקה",
@@ -3013,16 +3448,7 @@
         "category": "רכילות",
         "class": "soft",
         "trendMatch": null,
-        "beforeRank": 19,
-        "afterRank": 19
-      },
-      {
-        "headline": "תמונות הכוכב של בקהאם החזירו את הוויכוח על ברוקלין",
-        "source": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 18,
+        "beforeRank": 21,
         "afterRank": 20
       }
     ],
@@ -3044,26 +3470,27 @@
   "feedQualitySimulationHistory": {
     "status": "ok",
     "mode": "simulation_history_no_feed_mutation",
-    "generatedAt": "2026-06-14T00:10:07+00:00",
+    "generatedAt": "2026-06-14T00:29:20+00:00",
     "summary": {
-      "sampleCount": 117,
+      "sampleCount": 121,
       "window": 12,
       "positiveRuns": 12,
       "negativeRuns": 0,
       "avgHealthDelta": 7.25,
-      "avgAfterHealthScore": 45.58,
+      "avgAfterHealthScore": 49.0,
       "stablePositive": true,
       "replacement": {
         "threshold": 80,
         "minSamplesForPromotion": 24,
         "window": 48,
-        "latestScore": 47,
-        "rollingScore": 57.96,
+        "latestScore": 56,
+        "rollingScore": 56.27,
         "readyRuns": 5,
         "criticalBlockers": [
           "top_item_stale_over_25m",
           "newsiness_top10_below_7",
-          "soft_top10_above_2"
+          "soft_top10_above_2",
+          "top12_under60_below_9"
         ],
         "matureForProduction": false
       },
@@ -3072,8 +3499,8 @@
         "latestSummaryLine": "בעייתי",
         "latestReportName": "tt-rr-simulation-review-2026-06-14-0300.md",
         "window": 48,
-        "averageScore": 64.96,
-        "positiveReports": 16
+        "averageScore": 64.42,
+        "positiveReports": 15
       }
     },
     "runs": [
@@ -39472,6 +39899,1745 @@
           "trendMatchedTop10": 0,
           "trendMatchedTop20": 0,
           "healthScore": 10
+        }
+      },
+      {
+        "generatedAt": "2026-06-14T00:18:35+00:00",
+        "feedFingerprint": "1482700918147480630",
+        "before": {
+          "newsinessTop10": 3,
+          "softTop10": 7,
+          "otherTop10": 0,
+          "top5Under60": 5,
+          "top10Under60": 10,
+          "top12Under60": 10,
+          "topItemAgeMinutes": 10,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "וואלה",
+            "count": 5
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "וואלה",
+              "count": 5
+            },
+            {
+              "name": "Daily Mail",
+              "count": 4
+            },
+            {
+              "name": "Mirror",
+              "count": 3
+            },
+            {
+              "name": "Jerusalem Post",
+              "count": 3
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 1
+            }
+          ],
+          "trendMatchedTop10": 2,
+          "trendMatchedTop20": 2,
+          "trendGapMatchedTop20": 0,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 56,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_sources_below_3",
+              "ready_fresh_under25_below_1"
+            ],
+            "readyQueue": [
+              {
+                "rank": 5,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "נתנאל לסרי",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 6,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 7,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 26.0
+              }
+            ]
+          }
+        },
+        "after": {
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "otherTop10": 0,
+          "top5Under60": 4,
+          "top10Under60": 7,
+          "top12Under60": 7,
+          "topItemAgeMinutes": 59,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "Jerusalem Post",
+              "count": 4
+            },
+            {
+              "name": "וואלה",
+              "count": 4
+            },
+            {
+              "name": "Daily Mail",
+              "count": 3
+            },
+            {
+              "name": "Mirror",
+              "count": 3
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 2
+            }
+          ],
+          "trendMatchedTop10": 2,
+          "trendMatchedTop20": 2,
+          "trendGapMatchedTop20": 0,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 46,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_sources_below_3",
+              "ready_fresh_under25_below_1",
+              "top_item_over_25m"
+            ],
+            "readyQueue": [
+              {
+                "rank": 1,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 2,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "נתנאל לסרי",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 3,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 26.0
+              }
+            ]
+          }
+        },
+        "beforeHealthScore": 47,
+        "afterHealthScore": 51,
+        "replacementReadiness": {
+          "score": 45,
+          "threshold": 80,
+          "components": {
+            "freshness": 8.3,
+            "newsinessTop10": 10.0,
+            "top20Quality": 11.6,
+            "sourceBalance": 10.0,
+            "trendSignalUse": 5.33,
+            "criticalBlockersClear": 0.0
+          },
+          "criticalBlockers": [
+            "top_item_stale_over_25m",
+            "newsiness_top10_below_7",
+            "soft_top10_above_2",
+            "top12_under60_below_9"
+          ],
+          "readyNow": false
+        },
+        "alizaReview": {
+          "status": "ok",
+          "score": 58,
+          "scoreSource": "explicit_report_score",
+          "readyForMain": false,
+          "improvingVsBaseline": false,
+          "summaryLine": "בעייתי",
+          "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+          "metrics": {
+            "ציון עליזה": 58,
+            "generatedAt": 2026,
+            "afterHealthScore": 59,
+            "healthDelta": 12,
+            "replacementReadiness score": 55,
+            "rollingScore": 76.48,
+            "newsinessTop10": 4,
+            "softTop10": 6,
+            "top12Under60": 10,
+            "trendMatchedTop10": 4,
+            "trendMatchedTop20": 7,
+            "dominantSource": 4,
+            "uniqueSourcesTop20": 9,
+            "estimatedVisibleChangeMinutes": 20,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "blockers": 25
+          },
+          "recommendedActions": [
+            "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+            "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+            "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+          ],
+          "title": "TT RR Simulation Review — 2026-06-14 03:00"
+        },
+        "delta": {
+          "newsinessTop10": 1,
+          "softTop10": -1,
+          "top12Under60": -3,
+          "uniqueSourcesTop20": 0,
+          "trendMatchedTop10": 0,
+          "trendMatchedTop20": 0,
+          "healthScore": 4
+        }
+      },
+      {
+        "generatedAt": "2026-06-14T00:21:23+00:00",
+        "feedFingerprint": "1986236184526101360",
+        "before": {
+          "newsinessTop10": 3,
+          "softTop10": 7,
+          "otherTop10": 0,
+          "top5Under60": 4,
+          "top10Under60": 4,
+          "top12Under60": 4,
+          "topItemAgeMinutes": 13,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "וואלה",
+            "count": 5
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "וואלה",
+              "count": 5
+            },
+            {
+              "name": "Daily Mail",
+              "count": 4
+            },
+            {
+              "name": "Mirror",
+              "count": 3
+            },
+            {
+              "name": "Jerusalem Post",
+              "count": 3
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 1
+            }
+          ],
+          "trendMatchedTop10": 2,
+          "trendMatchedTop20": 2,
+          "trendGapMatchedTop20": 0,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 39,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_sources_below_2_hard_block",
+              "ready_sources_below_3",
+              "ready_fresh_under25_below_1"
+            ],
+            "readyQueue": [
+              {
+                "rank": 5,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 61,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "נתנאל לסרי",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 6,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 61,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 7,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 61,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 23.0
+              }
+            ]
+          }
+        },
+        "after": {
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "otherTop10": 0,
+          "top5Under60": 1,
+          "top10Under60": 4,
+          "top12Under60": 4,
+          "topItemAgeMinutes": 61,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "Jerusalem Post",
+              "count": 4
+            },
+            {
+              "name": "וואלה",
+              "count": 4
+            },
+            {
+              "name": "Daily Mail",
+              "count": 4
+            },
+            {
+              "name": "Mirror",
+              "count": 2
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 2
+            }
+          ],
+          "trendMatchedTop10": 2,
+          "trendMatchedTop20": 2,
+          "trendGapMatchedTop20": 0,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 39,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_sources_below_2_hard_block",
+              "ready_sources_below_3",
+              "ready_fresh_under25_below_1",
+              "top_item_over_25m"
+            ],
+            "readyQueue": [
+              {
+                "rank": 1,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 61,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 2,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 61,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "נתנאל לסרי",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 3,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 61,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 23.0
+              }
+            ]
+          }
+        },
+        "beforeHealthScore": 35,
+        "afterHealthScore": 45,
+        "replacementReadiness": {
+          "score": 40,
+          "threshold": 80,
+          "components": {
+            "freshness": 3.2,
+            "newsinessTop10": 10.0,
+            "top20Quality": 11.6,
+            "sourceBalance": 10.0,
+            "trendSignalUse": 5.33,
+            "criticalBlockersClear": 0.0
+          },
+          "criticalBlockers": [
+            "top_item_stale_over_25m",
+            "newsiness_top10_below_7",
+            "soft_top10_above_2",
+            "top12_under60_below_9"
+          ],
+          "readyNow": false
+        },
+        "alizaReview": {
+          "status": "ok",
+          "score": 58,
+          "scoreSource": "explicit_report_score",
+          "readyForMain": false,
+          "improvingVsBaseline": false,
+          "summaryLine": "בעייתי",
+          "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+          "metrics": {
+            "ציון עליזה": 58,
+            "generatedAt": 2026,
+            "afterHealthScore": 59,
+            "healthDelta": 12,
+            "replacementReadiness score": 55,
+            "rollingScore": 76.48,
+            "newsinessTop10": 4,
+            "softTop10": 6,
+            "top12Under60": 10,
+            "trendMatchedTop10": 4,
+            "trendMatchedTop20": 7,
+            "dominantSource": 4,
+            "uniqueSourcesTop20": 9,
+            "estimatedVisibleChangeMinutes": 20,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "blockers": 25
+          },
+          "recommendedActions": [
+            "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+            "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+            "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+          ],
+          "title": "TT RR Simulation Review — 2026-06-14 03:00"
+        },
+        "delta": {
+          "newsinessTop10": 1,
+          "softTop10": -1,
+          "top12Under60": 0,
+          "uniqueSourcesTop20": 0,
+          "trendMatchedTop10": 0,
+          "trendMatchedTop20": 0,
+          "healthScore": 10
+        }
+      },
+      {
+        "generatedAt": "2026-06-14T00:21:36+00:00",
+        "feedFingerprint": "4149449641800911221",
+        "before": {
+          "newsinessTop10": 3,
+          "softTop10": 7,
+          "otherTop10": 0,
+          "top5Under60": 4,
+          "top10Under60": 4,
+          "top12Under60": 4,
+          "topItemAgeMinutes": 13,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "וואלה",
+            "count": 5
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "וואלה",
+              "count": 5
+            },
+            {
+              "name": "Daily Mail",
+              "count": 4
+            },
+            {
+              "name": "Mirror",
+              "count": 3
+            },
+            {
+              "name": "Jerusalem Post",
+              "count": 3
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 1
+            }
+          ],
+          "trendMatchedTop10": 2,
+          "trendMatchedTop20": 2,
+          "trendGapMatchedTop20": 0,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 39,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_sources_below_2_hard_block",
+              "ready_sources_below_3",
+              "ready_fresh_under25_below_1"
+            ],
+            "readyQueue": [
+              {
+                "rank": 5,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 62,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "הלך לעולמו",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 6,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 62,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 7,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 62,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 23.0
+              }
+            ]
+          }
+        },
+        "after": {
+          "newsinessTop10": 4,
+          "softTop10": 6,
+          "otherTop10": 0,
+          "top5Under60": 1,
+          "top10Under60": 4,
+          "top12Under60": 4,
+          "topItemAgeMinutes": 62,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "Jerusalem Post",
+              "count": 4
+            },
+            {
+              "name": "וואלה",
+              "count": 4
+            },
+            {
+              "name": "Daily Mail",
+              "count": 3
+            },
+            {
+              "name": "Mirror",
+              "count": 3
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 2
+            }
+          ],
+          "trendMatchedTop10": 2,
+          "trendMatchedTop20": 2,
+          "trendGapMatchedTop20": 0,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 39,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_sources_below_2_hard_block",
+              "ready_sources_below_3",
+              "ready_fresh_under25_below_1",
+              "top_item_over_25m"
+            ],
+            "readyQueue": [
+              {
+                "rank": 1,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 62,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 2,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 62,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "הלך לעולמו",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 3,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 62,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 23.0
+              }
+            ]
+          }
+        },
+        "beforeHealthScore": 35,
+        "afterHealthScore": 45,
+        "replacementReadiness": {
+          "score": 40,
+          "threshold": 80,
+          "components": {
+            "freshness": 3.2,
+            "newsinessTop10": 10.0,
+            "top20Quality": 11.6,
+            "sourceBalance": 10.0,
+            "trendSignalUse": 5.33,
+            "criticalBlockersClear": 0.0
+          },
+          "criticalBlockers": [
+            "top_item_stale_over_25m",
+            "newsiness_top10_below_7",
+            "soft_top10_above_2",
+            "top12_under60_below_9"
+          ],
+          "readyNow": false
+        },
+        "alizaReview": {
+          "status": "ok",
+          "score": 58,
+          "scoreSource": "explicit_report_score",
+          "readyForMain": false,
+          "improvingVsBaseline": false,
+          "summaryLine": "בעייתי",
+          "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+          "metrics": {
+            "ציון עליזה": 58,
+            "generatedAt": 2026,
+            "afterHealthScore": 59,
+            "healthDelta": 12,
+            "replacementReadiness score": 55,
+            "rollingScore": 76.48,
+            "newsinessTop10": 4,
+            "softTop10": 6,
+            "top12Under60": 10,
+            "trendMatchedTop10": 4,
+            "trendMatchedTop20": 7,
+            "dominantSource": 4,
+            "uniqueSourcesTop20": 9,
+            "estimatedVisibleChangeMinutes": 20,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "blockers": 25
+          },
+          "recommendedActions": [
+            "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+            "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+            "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+          ],
+          "title": "TT RR Simulation Review — 2026-06-14 03:00"
+        },
+        "delta": {
+          "newsinessTop10": 1,
+          "softTop10": -1,
+          "top12Under60": 0,
+          "uniqueSourcesTop20": 0,
+          "trendMatchedTop10": 0,
+          "trendMatchedTop20": 0,
+          "healthScore": 10
+        }
+      },
+      {
+        "generatedAt": "2026-06-14T00:29:20+00:00",
+        "feedFingerprint": "6935137735018081284",
+        "before": {
+          "newsinessTop10": 5,
+          "softTop10": 5,
+          "otherTop10": 0,
+          "top5Under60": 5,
+          "top10Under60": 6,
+          "top12Under60": 6,
+          "topItemAgeMinutes": 21,
+          "uniqueSourcesTop20": 6,
+          "dominantSource": {
+            "name": "וואלה",
+            "count": 6
+          },
+          "importantMissingTop20": [
+            "N12",
+            "ynet",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "וואלה",
+              "count": 6
+            },
+            {
+              "name": "Daily Mail",
+              "count": 4
+            },
+            {
+              "name": "Mirror",
+              "count": 3
+            },
+            {
+              "name": "ישראל היום",
+              "count": 3
+            },
+            {
+              "name": "Jerusalem Post",
+              "count": 3
+            },
+            {
+              "name": "Page Six",
+              "count": 1
+            }
+          ],
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 4,
+          "trendGapMatchedTop20": 1,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 86,
+            "readyCount": 5,
+            "hardReadyCount": 5,
+            "trendReadyCount": 4,
+            "uniqueReadySources": 3,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_fresh_under25_below_1"
+            ],
+            "readyQueue": [
+              {
+                "rank": 4,
+                "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+                "source": "וואלה ספורט",
+                "canonicalSource": "וואלה",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 32,
+                "url": "https://sports.walla.co.il/item/3845430",
+                "trendMatch": {
+                  "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                  "clusterKey": "מטוסי קרב",
+                  "domain": "חדשות",
+                  "externalMentions": 4,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "דה מרקר",
+                    "וואלה"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": false,
+                  "latestAt": "2026-06-13T16:47:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845359",
+                  "overlapTokens": [
+                    "אירוע",
+                    "קשר"
+                  ],
+                  "score": 25.4,
+                  "boost": 25.4
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 6,
+                "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+                "source": "ישראל היום - כל הכתבות",
+                "canonicalSource": "ישראל היום",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+                "trendMatch": {
+                  "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                  "clusterKey": "טראמפ ההסכם",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 5,
+                  "sources": [
+                    "ynet",
+                    "דה מרקר",
+                    "הארץ",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T19:49:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845400",
+                  "overlapTokens": [
+                    "איראן",
+                    "ההסכם",
+                    "הורמוז",
+                    "מצר"
+                  ],
+                  "score": 59.71,
+                  "boost": 38.0
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 7,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 69,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "נתנאל לסרי",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 8,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 69,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 9,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 69,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 23.0
+              }
+            ]
+          }
+        },
+        "after": {
+          "newsinessTop10": 6,
+          "softTop10": 4,
+          "otherTop10": 0,
+          "top5Under60": 2,
+          "top10Under60": 6,
+          "top12Under60": 6,
+          "topItemAgeMinutes": 32,
+          "uniqueSourcesTop20": 7,
+          "dominantSource": {
+            "name": "וואלה",
+            "count": 4
+          },
+          "importantMissingTop20": [
+            "N12",
+            "מעריב",
+            "הארץ",
+            "BBC",
+            "Guardian",
+            "NYT",
+            "גלובס"
+          ],
+          "duplicateTop20": 0,
+          "topSources": [
+            {
+              "name": "וואלה",
+              "count": 4
+            },
+            {
+              "name": "Jerusalem Post",
+              "count": 4
+            },
+            {
+              "name": "ישראל היום",
+              "count": 3
+            },
+            {
+              "name": "Daily Mail",
+              "count": 3
+            },
+            {
+              "name": "Mirror",
+              "count": 2
+            },
+            {
+              "name": "Page Six",
+              "count": 2
+            },
+            {
+              "name": "ynet",
+              "count": 2
+            }
+          ],
+          "trendMatchedTop10": 4,
+          "trendMatchedTop20": 4,
+          "trendGapMatchedTop20": 1,
+          "continuousPublishing": {
+            "targetMinutes": 10,
+            "estimatedVisibleChangeMinutes": 20,
+            "score": 80,
+            "readyCount": 5,
+            "hardReadyCount": 5,
+            "trendReadyCount": 4,
+            "uniqueReadySources": 3,
+            "freshReadyUnder25Count": 0,
+            "blockers": [
+              "ready_fresh_under25_below_1",
+              "top_item_over_25m"
+            ],
+            "readyQueue": [
+              {
+                "rank": 1,
+                "headline": "ארה״ב חסמה אנשי משלחת איראנים למונדיאל בגלל קשר למשמרות המהפכה",
+                "source": "וואלה ספורט",
+                "canonicalSource": "וואלה",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 32,
+                "url": "https://sports.walla.co.il/item/3845430",
+                "trendMatch": {
+                  "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
+                  "clusterKey": "מטוסי קרב",
+                  "domain": "חדשות",
+                  "externalMentions": 4,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "דה מרקר",
+                    "וואלה"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": false,
+                  "latestAt": "2026-06-13T16:47:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845359",
+                  "overlapTokens": [
+                    "אירוע",
+                    "קשר"
+                  ],
+                  "score": 25.4,
+                  "boost": 25.4
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 2,
+                "headline": "ניצים באיראן מנסים לבלום הסכם מתקרב עם ארה״ב",
+                "source": "ישראל היום - כל הכתבות",
+                "canonicalSource": "ישראל היום",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 59,
+                "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20753781",
+                "trendMatch": {
+                  "trend": "טראמפ: ההסכם עם איראן ייחתם מחר, מצר הורמוז ייפתח",
+                  "clusterKey": "טראמפ ההסכם",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 5,
+                  "sources": [
+                    "ynet",
+                    "דה מרקר",
+                    "הארץ",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T19:49:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845400",
+                  "overlapTokens": [
+                    "איראן",
+                    "ההסכם",
+                    "הורמוז",
+                    "מצר"
+                  ],
+                  "score": 59.71,
+                  "boost": 38.0
+                },
+                "queueScore": 36.0
+              },
+              {
+                "rank": 3,
+                "headline": "צה״ל מצא במנהרות חיזבאללה מפות של יישובי הצפון",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 69,
+                "url": "https://www.jpost.com/israel-news/article-899269",
+                "trendMatch": {
+                  "trend": "צה\"ל איתר בבופור מפות הממחישות את איום המנהרות מלבנון על יישובי הצפון",
+                  "clusterKey": "יישובי הצפון",
+                  "domain": "חדשות",
+                  "externalMentions": 3,
+                  "sourceCount": 2,
+                  "sources": [
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-13T20:45:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/break/3845405",
+                  "overlapTokens": [
+                    "איום",
+                    "המנהרות",
+                    "הצפון",
+                    "יישובי",
+                    "מפות"
+                  ],
+                  "score": 43.84,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 4,
+                "headline": "אל״ם נתנאל לסרי נפטר מסרטן בגיל 40",
+                "source": "The Jerusalem Post - Israel News",
+                "canonicalSource": "Jerusalem Post",
+                "category": "חדשות",
+                "class": "hard",
+                "ageMinutes": 69,
+                "url": "https://www.jpost.com/israel-news/article-899272",
+                "trendMatch": {
+                  "trend": "אחרי מאבק במחלת הסרטן: אל\"ם נתנאל לסרי הלך לעולמו בגיל 40",
+                  "clusterKey": "נתנאל לסרי",
+                  "domain": "חדשות",
+                  "externalMentions": 6,
+                  "sourceCount": 3,
+                  "sources": [
+                    "ynet",
+                    "וואלה",
+                    "סרוגים"
+                  ],
+                  "discoveryTypes": [
+                    "RSS",
+                    "WEB"
+                  ],
+                  "mentionedInFeed": true,
+                  "latestAt": "2026-06-14T00:38:00+00:00",
+                  "sampleUrl": "https://news.walla.co.il/item/3845434",
+                  "overlapTokens": [
+                    "בגיל",
+                    "חדשות",
+                    "לסרי",
+                    "מאבק",
+                    "נתנאל"
+                  ],
+                  "score": 59.4,
+                  "boost": 38.0
+                },
+                "queueScore": 33.0
+              },
+              {
+                "rank": 5,
+                "headline": "אונר״א פיטרה 70 עובדים אחרי טענות לקשר עם חמאס",
+                "source": "The Jerusalem Post - Middle East",
+                "canonicalSource": "Jerusalem Post",
+                "category": "ביטחון",
+                "class": "hard",
+                "ageMinutes": 69,
+                "url": "https://www.jpost.com/middle-east/article-899271",
+                "trendMatch": null,
+                "queueScore": 23.0
+              }
+            ]
+          }
+        },
+        "beforeHealthScore": 48,
+        "afterHealthScore": 64,
+        "replacementReadiness": {
+          "score": 56,
+          "threshold": 80,
+          "components": {
+            "freshness": 10.25,
+            "newsinessTop10": 15.0,
+            "top20Quality": 11.6,
+            "sourceBalance": 10.0,
+            "trendSignalUse": 8.67,
+            "criticalBlockersClear": 0.0
+          },
+          "criticalBlockers": [
+            "top_item_stale_over_25m",
+            "newsiness_top10_below_7",
+            "soft_top10_above_2",
+            "top12_under60_below_9"
+          ],
+          "readyNow": false
+        },
+        "alizaReview": {
+          "status": "ok",
+          "score": 58,
+          "scoreSource": "explicit_report_score",
+          "readyForMain": false,
+          "improvingVsBaseline": false,
+          "summaryLine": "בעייתי",
+          "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportName": "tt-rr-simulation-review-2026-06-14-0300.md",
+          "reportGeneratedAt": "2026-06-14T00:00:59+00:00",
+          "metrics": {
+            "ציון עליזה": 58,
+            "generatedAt": 2026,
+            "afterHealthScore": 59,
+            "healthDelta": 12,
+            "replacementReadiness score": 55,
+            "rollingScore": 76.48,
+            "newsinessTop10": 4,
+            "softTop10": 6,
+            "top12Under60": 10,
+            "trendMatchedTop10": 4,
+            "trendMatchedTop20": 7,
+            "dominantSource": 4,
+            "uniqueSourcesTop20": 9,
+            "estimatedVisibleChangeMinutes": 20,
+            "readyCount": 3,
+            "hardReadyCount": 3,
+            "trendReadyCount": 2,
+            "uniqueReadySources": 1,
+            "blockers": 25
+          },
+          "recommendedActions": [
+            "להוסיף rule לתור 10 דקות: `uniqueReadySources < 2` מוריד את score מתחת ל־40 ומפעיל ניסיון להביא מועמדי hard-news ממקורות אחרים לפני סגירת הסימולציה.",
+            "להקשיח trend boost לפריטי soft-news ולדרוש חפיפת entity/topic חזקה; לא לאשר boost על טוקנים כלליים כמו \"אחרי\", \"בגיל\", \"מאבק\", \"שקל\".",
+            "להוסיף penalty חזק לפריטי soft ב־Top 10 כאשר `softTop10 > 3`, ובמקביל לתקן סיווג ספורט/טכנולוגיה צרכנית כך שלא ייספרו hard בלי משמעות חדשותית ציבורית."
+          ],
+          "title": "TT RR Simulation Review — 2026-06-14 03:00"
+        },
+        "delta": {
+          "newsinessTop10": 1,
+          "softTop10": -1,
+          "top12Under60": 0,
+          "uniqueSourcesTop20": 1,
+          "trendMatchedTop10": 0,
+          "trendMatchedTop20": 0,
+          "healthScore": 16
         }
       }
     ]
