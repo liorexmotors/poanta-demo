@@ -1,2938 +1,37 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-14T07:05:48+00:00",
+  "generatedAt": "2026-06-14T08:05:16+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
-    "positiveRuns": 12,
+    "positiveRuns": 11,
     "negativeRuns": 0,
-    "avgHealthDelta": 23.83,
-    "avgAfterHealthScore": 82.08,
+    "avgHealthDelta": 24.83,
+    "avgAfterHealthScore": 67.25,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 79,
-      "rollingScore": 66.92,
+      "latestScore": 81,
+      "rollingScore": 66.9,
       "readyRuns": 11,
       "criticalBlockers": [
-        "top12_under60_below_9"
+        "dominant_source_top20_above_5"
       ],
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 70,
-      "latestSummaryLine": "בינוני",
-      "latestReportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+      "latestScore": 64,
+      "latestSummaryLine": "בעייתי",
+      "latestReportName": "tt-rr-simulation-review-2026-06-14-1100.md",
       "window": 48,
-      "averageScore": 73.88,
+      "averageScore": 78.42,
       "positiveReports": 35
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-06-13T15:51:50+00:00",
-      "feedFingerprint": "7733891249233826658",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 2,
-        "otherTop10": 1,
-        "top5Under60": 5,
-        "top10Under60": 9,
-        "top12Under60": 9,
-        "topItemAgeMinutes": 25,
-        "uniqueSourcesTop20": 9,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 6
-        },
-        "importantMissingTop20": [
-          "N12",
-          "הארץ",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 6
-          },
-          {
-            "name": "Daily Mail",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Mirror",
-            "count": 2
-          },
-          {
-            "name": "דה מרקר",
-            "count": 1
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          },
-          {
-            "name": "ynet",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 33,
-          "readyCount": 2,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 2,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
-              "source": "וואלה ספורט - כדורסל",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 25,
-              "url": "https://sports.walla.co.il/item/3845378",
-              "trendMatch": null,
-              "queueScore": 23.0
-            },
-            {
-              "rank": 2,
-              "headline": "מדינות בארה״ב חוקרות איך OpenAI אוספת מידע על קטינים",
-              "source": "דה מרקר - גלובל",
-              "canonicalSource": "דה מרקר",
-              "category": "טכנולוגיה",
-              "class": "other",
-              "ageMinutes": 40,
-              "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-c179-dd0a-a19f-d37dba780000",
-              "trendMatch": null,
-              "queueScore": 5.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 8,
-        "softTop10": 1,
-        "otherTop10": 1,
-        "top5Under60": 5,
-        "top10Under60": 8,
-        "top12Under60": 9,
-        "topItemAgeMinutes": 25,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "N12",
-          "הארץ",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Mirror",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "דה מרקר",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 8,
-        "trendGapMatchedTop20": 4,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 33,
-          "readyCount": 2,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 2,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
-              "source": "וואלה ספורט - כדורסל",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 25,
-              "url": "https://sports.walla.co.il/item/3845378",
-              "trendMatch": null,
-              "queueScore": 23.0
-            },
-            {
-              "rank": 3,
-              "headline": "מדינות בארה״ב חוקרות איך OpenAI אוספת מידע על קטינים",
-              "source": "דה מרקר - גלובל",
-              "canonicalSource": "דה מרקר",
-              "category": "טכנולוגיה",
-              "class": "other",
-              "ageMinutes": 40,
-              "url": "https://www.themarker.com/wallstreet/2026-06-13/ty-article/.premium/0000019e-c179-dd0a-a19f-d37dba780000",
-              "trendMatch": null,
-              "queueScore": 5.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 74,
-      "afterHealthScore": 85,
-      "replacementReadiness": {
-        "score": 94,
-        "threshold": 80,
-        "components": {
-          "freshness": 18.5,
-          "newsinessTop10": 25.0,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 15.0
-        },
-        "criticalBlockers": [],
-        "readyNow": true
-      },
-      "delta": {
-        "newsinessTop10": 1,
-        "softTop10": -1,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 2,
-        "healthScore": 11
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:01:27+00:00",
-      "feedFingerprint": "207895043523120897",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 2,
-        "otherTop10": 1,
-        "top5Under60": 5,
-        "top10Under60": 8,
-        "top12Under60": 8,
-        "topItemAgeMinutes": 34,
-        "uniqueSourcesTop20": 9,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 6
-        },
-        "importantMissingTop20": [
-          "N12",
-          "הארץ",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 6
-          },
-          {
-            "name": "Daily Mail",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Mirror",
-            "count": 2
-          },
-          {
-            "name": "דה מרקר",
-            "count": 1
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          },
-          {
-            "name": "ynet",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 16,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
-              "source": "וואלה ספורט - כדורסל",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 34,
-              "url": "https://sports.walla.co.il/item/3845378",
-              "trendMatch": null,
-              "queueScore": 17.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 9,
-        "softTop10": 0,
-        "otherTop10": 1,
-        "top5Under60": 5,
-        "top10Under60": 6,
-        "top12Under60": 8,
-        "topItemAgeMinutes": 34,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "N12",
-          "הארץ",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Mirror",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 8,
-        "trendGapMatchedTop20": 4,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 16,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
-              "source": "וואלה ספורט - כדורסל",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 34,
-              "url": "https://sports.walla.co.il/item/3845378",
-              "trendMatch": null,
-              "queueScore": 17.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 72,
-      "afterHealthScore": 87,
-      "replacementReadiness": {
-        "score": 79,
-        "threshold": 80,
-        "components": {
-          "freshness": 13.95,
-          "newsinessTop10": 25.0,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 5.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "delta": {
-        "newsinessTop10": 2,
-        "softTop10": -2,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 2,
-        "healthScore": 15
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:12:28+00:00",
-      "feedFingerprint": "3115766913500376342",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 2,
-        "otherTop10": 1,
-        "top5Under60": 2,
-        "top10Under60": 2,
-        "top12Under60": 2,
-        "topItemAgeMinutes": 45,
-        "uniqueSourcesTop20": 9,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 6
-        },
-        "importantMissingTop20": [
-          "N12",
-          "הארץ",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 6
-          },
-          {
-            "name": "Daily Mail",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Mirror",
-            "count": 2
-          },
-          {
-            "name": "דה מרקר",
-            "count": 1
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          },
-          {
-            "name": "ynet",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 16,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
-              "source": "וואלה ספורט - כדורסל",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 45,
-              "url": "https://sports.walla.co.il/item/3845378",
-              "trendMatch": null,
-              "queueScore": 17.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 8,
-        "softTop10": 1,
-        "otherTop10": 1,
-        "top5Under60": 2,
-        "top10Under60": 2,
-        "top12Under60": 2,
-        "topItemAgeMinutes": 45,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "N12",
-          "הארץ",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Mirror",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "דה מרקר",
-            "count": 1
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 8,
-        "trendGapMatchedTop20": 4,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 16,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "גליל ורעננה משחקות על הישארות בזמן שנתניה מתקרבת לסכנת ירידה",
-              "source": "וואלה ספורט - כדורסל",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 45,
-              "url": "https://sports.walla.co.il/item/3845378",
-              "trendMatch": null,
-              "queueScore": 17.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 60,
-      "afterHealthScore": 71,
-      "replacementReadiness": {
-        "score": 69,
-        "threshold": 80,
-        "components": {
-          "freshness": 3.4,
-          "newsinessTop10": 25.0,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 5.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "delta": {
-        "newsinessTop10": 1,
-        "softTop10": -1,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 2,
-        "healthScore": 11
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:18:20+00:00",
-      "feedFingerprint": "7659594506670167500",
-      "before": {
-        "newsinessTop10": 4,
-        "softTop10": 6,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 10,
-        "top12Under60": 12,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "מעריב",
-          "BBC",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Daily Mail",
-            "count": 3
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 3,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 98,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 54.0
-            },
-            {
-              "rank": 11,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 12,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 48.0
-            },
-            {
-              "rank": 1,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 12,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 15,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 3,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 4,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 4,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 15,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 22,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 10,
-        "softTop10": 0,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 7,
-        "top12Under60": 9,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "BBC",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 98,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 54.0
-            },
-            {
-              "rank": 2,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 12,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 48.0
-            },
-            {
-              "rank": 3,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 6,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 15,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 4,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 4,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 4,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 7,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 22,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 60,
-      "afterHealthScore": 94,
-      "replacementReadiness": {
-        "score": 98,
-        "threshold": 80,
-        "components": {
-          "freshness": 18.5,
-          "newsinessTop10": 25.0,
-          "top20Quality": 20.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 15.0
-        },
-        "criticalBlockers": [],
-        "readyNow": true
-      },
-      "delta": {
-        "newsinessTop10": 6,
-        "softTop10": -6,
-        "top12Under60": -3,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 4,
-        "trendMatchedTop20": 4,
-        "healthScore": 34
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:23:29+00:00",
-      "feedFingerprint": "8687060987688744344",
-      "before": {
-        "newsinessTop10": 4,
-        "softTop10": 6,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 10,
-        "top12Under60": 12,
-        "topItemAgeMinutes": 8,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "מעריב",
-          "BBC",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Daily Mail",
-            "count": 3
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 3,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 98,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 8,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 54.0
-            },
-            {
-              "rank": 11,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 17,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 48.0
-            },
-            {
-              "rank": 1,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 8,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 12,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 20,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 3,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 9,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 9,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 15,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 27,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 9,
-        "softTop10": 1,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 8,
-        "top12Under60": 10,
-        "topItemAgeMinutes": 8,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "BBC",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 4,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 98,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 8,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 54.0
-            },
-            {
-              "rank": 2,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 17,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 48.0
-            },
-            {
-              "rank": 3,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 8,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 6,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 20,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 4,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 9,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 9,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 36.0
-            },
-            {
-              "rank": 7,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 27,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 60,
-      "afterHealthScore": 92,
-      "replacementReadiness": {
-        "score": 99,
-        "threshold": 80,
-        "components": {
-          "freshness": 19.0,
-          "newsinessTop10": 25.0,
-          "top20Quality": 20.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 15.0
-        },
-        "criticalBlockers": [],
-        "readyNow": true
-      },
-      "delta": {
-        "newsinessTop10": 5,
-        "softTop10": -5,
-        "top12Under60": -2,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 4,
-        "healthScore": 32
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:34:29+00:00",
-      "feedFingerprint": "7489827301009088173",
-      "before": {
-        "newsinessTop10": 4,
-        "softTop10": 6,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 10,
-        "top12Under60": 12,
-        "topItemAgeMinutes": 19,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "מעריב",
-          "BBC",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Daily Mail",
-            "count": 3
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 3,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 94,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 19,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 48.0
-            },
-            {
-              "rank": 11,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 28,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 41.0
-            },
-            {
-              "rank": 1,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 19,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 3,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 20,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 30.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 20,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 30.0
-            },
-            {
-              "rank": 12,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 15,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 38,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 25.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 10,
-        "softTop10": 0,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 7,
-        "top12Under60": 9,
-        "topItemAgeMinutes": 19,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "BBC",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 94,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 19,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 48.0
-            },
-            {
-              "rank": 2,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 28,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 41.0
-            },
-            {
-              "rank": 3,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 19,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 4,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 20,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 30.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 20,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 30.0
-            },
-            {
-              "rank": 6,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 7,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 38,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 25.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 60,
-      "afterHealthScore": 94,
-      "replacementReadiness": {
-        "score": 98,
-        "threshold": 80,
-        "components": {
-          "freshness": 18.5,
-          "newsinessTop10": 25.0,
-          "top20Quality": 20.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 15.0
-        },
-        "criticalBlockers": [],
-        "readyNow": true
-      },
-      "delta": {
-        "newsinessTop10": 6,
-        "softTop10": -6,
-        "top12Under60": -3,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 4,
-        "healthScore": 34
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:37:47+00:00",
-      "feedFingerprint": "699003723074875623",
-      "before": {
-        "newsinessTop10": 4,
-        "softTop10": 6,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 10,
-        "top12Under60": 12,
-        "topItemAgeMinutes": 22,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "מעריב",
-          "BBC",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Daily Mail",
-            "count": 3
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 3,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 94,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 22,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 41.0
-            },
-            {
-              "rank": 11,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 1,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 22,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 12,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 34,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 15,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 41,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 3,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 23.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 23.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 9,
-        "softTop10": 1,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 8,
-        "top12Under60": 9,
-        "topItemAgeMinutes": 22,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "BBC",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 94,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 22,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 41.0
-            },
-            {
-              "rank": 2,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 3,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 22,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 4,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 34,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 7,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 41,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 5,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 23.0
-            },
-            {
-              "rank": 6,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 23.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 60,
-      "afterHealthScore": 90,
-      "replacementReadiness": {
-        "score": 98,
-        "threshold": 80,
-        "components": {
-          "freshness": 18.5,
-          "newsinessTop10": 25.0,
-          "top20Quality": 20.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 15.0
-        },
-        "criticalBlockers": [],
-        "readyNow": true
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "derived_from_aliza_metrics",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-1927.md",
-        "reportName": "tt-rr-simulation-review-2026-06-13-1927.md",
-        "reportGeneratedAt": "2026-06-13T16:25:48+00:00",
-        "metrics": {
-          "generatedAt": 2026,
-          "afterHealthScore": 90,
-          "healthDelta": 30,
-          "replacementReadiness score": 98,
-          "rollingScore": 64.59,
-          "newsinessTop10": 9,
-          "softTop10": 1,
-          "top12Under60": 9,
-          "trendMatchedTop10": 5,
-          "trendMatchedTop20": 8,
-          "dominantSource": 3,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 10,
-          "readyCount": 8,
-          "hardReadyCount": 7,
-          "trendReadyCount": 3,
-          "uniqueReadySources": 6,
-          "מה טוב": 8,
-          "מה לא טוב": 6,
-          "שינוי מומלץ להרמס": 5,
-          "הסימולציה הנוכחית נראית כמו קפיצה אמיתית": 90
-        },
-        "recommendedActions": [
-          "להקשיח trendMatch לפריטי soft-news: דרישת entity/topic overlap חזקה לפני boost, ובמיוחד חסימת התאמות מילוליות כלליות.",
-          "לעדכן את סיווג hard/soft כך שספורט וטכנולוגיה צרכנית לא יקבלו hard כברירת מחדל ללא משמעות חדשותית רחבה.",
-          "להוסיף decay מבוקר לפריטי hard-news מעל 90 דקות, עם החרגה רק לטרנד חזק או למחסור אמיתי בחלופות טריות."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-13 19:27"
-      },
-      "delta": {
-        "newsinessTop10": 5,
-        "softTop10": -5,
-        "top12Under60": -3,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 4,
-        "healthScore": 30
-      }
-    },
-    {
-      "generatedAt": "2026-06-13T16:38:01+00:00",
-      "feedFingerprint": "8554343823794975839",
-      "before": {
-        "newsinessTop10": 4,
-        "softTop10": 6,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 10,
-        "top12Under60": 12,
-        "topItemAgeMinutes": 23,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "מעריב",
-          "BBC",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Daily Mail",
-            "count": 3
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 3,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 94,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 41.0
-            },
-            {
-              "rank": 11,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 32,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 1,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 12,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 34,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 15,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 42,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 3,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 23.0
-            },
-            {
-              "rank": 5,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 24,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 23.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 9,
-        "softTop10": 1,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 8,
-        "top12Under60": 10,
-        "topItemAgeMinutes": 23,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "BBC",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "Page Six",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 2
-          },
-          {
-            "name": "Guardian",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 94,
-          "readyCount": 7,
-          "hardReadyCount": 7,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 5,
-          "blockers": [],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "פקיסטן טוענת להסכם ארה״ב-איראן, וטהרן מצננת את המועד",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://www.jpost.com/middle-east/iran-news/article-899262",
-              "trendMatch": {
-                "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
-                "clusterKey": "משרד החוץ",
-                "domain": "חדשות",
-                "externalMentions": 13,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-06-13T18:34:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3845384",
-                "overlapTokens": [
-                  "דובר",
-                  "החוץ",
-                  "חתימה",
-                  "משרד",
-                  "שלום"
-                ],
-                "score": 62.05,
-                "boost": 38.0
-              },
-              "queueScore": 41.0
-            },
-            {
-              "rank": 2,
-              "headline": "חברי פרלמנט בבריטניה דורשים לבטל יריד נדל״ן בהתנחלויות",
-              "source": "The Guardian Middle East",
-              "canonicalSource": "Guardian",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 32,
-              "url": "https://www.theguardian.com/uk-news/2026/jun/13/uk-london-real-estate-west-bank-israel-settlements",
-              "trendMatch": {
-                "trend": "אירוע חריג בשמי הונגריה: מטוס ישראלי איבד קשר - מטוסי קרב הוזנקו",
-                "clusterKey": "מטוסי קרב",
-                "domain": "חדשות",
-                "externalMentions": 5,
-                "sourceCount": 3,
-                "sources": [
-                  "ynet",
-                  "דה מרקר",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-06-13T16:47:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3845359",
-                "overlapTokens": [
-                  "אירוע",
-                  "ישראלי"
-                ],
-                "score": 26.25,
-                "boost": 26.25
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 3,
-              "headline": "תושב חיפה שוחרר אחרי מעצר על הסתה נגד קהילת הלהט״ב",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899256",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 4,
-              "headline": "הפגנות נגד הממשלה נערכות בעפולה ובכיכר הבימה",
-              "source": "הארץ - חדשות",
-              "canonicalSource": "הארץ",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 34,
-              "url": "https://www.haaretz.co.il/news/politi/2026-06-13/ty-article/.premium/0000019e-c114-d43d-a39f-e77dbdb20000",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 7,
-              "headline": "אם ובנה מראשון לציון נאשמים שניהלו סחר בסמים מהבית",
-              "source": "ynet - כל ערוץ החדשות",
-              "canonicalSource": "ynet",
-              "category": "פלילים",
-              "class": "hard",
-              "ageMinutes": 42,
-              "url": "https://www.ynet.co.il/news/article/sjp6r00cbgl",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 5,
-              "headline": "Narwal נכנסת לשוק שואבי הפרימיום עם רולר שטיפה רציף",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "hard",
-              "ageMinutes": 23,
-              "url": "https://tech.walla.co.il/item/3845381",
-              "trendMatch": null,
-              "queueScore": 23.0
-            },
-            {
-              "rank": 6,
-              "headline": "הולנד פותחת מול יפן כשממפיס עדיין בספק להרכב",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "hard",
-              "ageMinutes": 24,
-              "url": "https://sports.walla.co.il/item/3845377",
-              "trendMatch": null,
-              "queueScore": 23.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 60,
-      "afterHealthScore": 92,
-      "replacementReadiness": {
-        "score": 99,
-        "threshold": 80,
-        "components": {
-          "freshness": 19.0,
-          "newsinessTop10": 25.0,
-          "top20Quality": 20.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 15.0
-        },
-        "criticalBlockers": [],
-        "readyNow": true
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "derived_from_aliza_metrics",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-13-1927.md",
-        "reportName": "tt-rr-simulation-review-2026-06-13-1927.md",
-        "reportGeneratedAt": "2026-06-13T16:25:48+00:00",
-        "metrics": {
-          "generatedAt": 2026,
-          "afterHealthScore": 90,
-          "healthDelta": 30,
-          "replacementReadiness score": 98,
-          "rollingScore": 64.59,
-          "newsinessTop10": 9,
-          "softTop10": 1,
-          "top12Under60": 9,
-          "trendMatchedTop10": 5,
-          "trendMatchedTop20": 8,
-          "dominantSource": 3,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 10,
-          "readyCount": 8,
-          "hardReadyCount": 7,
-          "trendReadyCount": 3,
-          "uniqueReadySources": 6,
-          "מה טוב": 8,
-          "מה לא טוב": 6,
-          "שינוי מומלץ להרמס": 5,
-          "הסימולציה הנוכחית נראית כמו קפיצה אמיתית": 90
-        },
-        "recommendedActions": [
-          "להקשיח trendMatch לפריטי soft-news: דרישת entity/topic overlap חזקה לפני boost, ובמיוחד חסימת התאמות מילוליות כלליות.",
-          "לעדכן את סיווג hard/soft כך שספורט וטכנולוגיה צרכנית לא יקבלו hard כברירת מחדל ללא משמעות חדשותית רחבה.",
-          "להוסיף decay מבוקר לפריטי hard-news מעל 90 דקות, עם החרגה רק לטרנד חזק או למחסור אמיתי בחלופות טריות."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-13 19:27"
-      },
-      "delta": {
-        "newsinessTop10": 5,
-        "softTop10": -5,
-        "top12Under60": -2,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 4,
-        "healthScore": 32
-      }
-    },
     {
       "generatedAt": "2026-06-13T16:39:04+00:00",
       "feedFingerprint": "4379364130374833222",
@@ -57947,6 +55046,2496 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 0,
         "healthScore": 30
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T07:16:49+00:00",
+      "feedFingerprint": "3634854656385635423",
+      "before": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 1,
+        "softTop10": 5,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 14,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "הארץ",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "כיפה",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 94,
+          "readyCount": 8,
+          "hardReadyCount": 6,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 5,
+          "freshReadyUnder25Count": 3,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 6,
+              "headline": "קטאר מנסה לסגור את מזכר ההבנות בין ארה״ב לאיראן",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.ynet.co.il/news/article/r1i3i6iwfg",
+              "trendMatch": {
+                "trend": "\"פספוס אסטרטגי - לא מיצינו את ההישגים הצבאיים\": בני גנץ מתריע מפני ההסכם עם איראן",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:57:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845468",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם"
+                ],
+                "score": 26.6,
+                "boost": 26.6
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "מודל חדש מסביר למה אותה ארוחה משמינה אנשים אחרת",
+              "source": "וואלה בריאות - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://healthy.walla.co.il/item/3844666",
+              "trendMatch": null,
+              "queueScore": 30.0
+            },
+            {
+              "rank": 4,
+              "headline": "רופאת ילדים מזהירה שעודף טיפוח מזיק לעור תינוקות בקיץ",
+              "source": "וואלה בריאות - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://healthy.walla.co.il/item/3845495",
+              "trendMatch": null,
+              "queueScore": 30.0
+            },
+            {
+              "rank": 1,
+              "headline": "כדורגלן בכיר נעצר בחשד להימורים והטיית משחקים",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "other",
+              "ageMinutes": 14,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899286",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 11,
+              "headline": "עיראק וסוריה מנסות לתאם כניסה מחודשת לוושינגטון דרך שליח אמריקני",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 73,
+              "url": "https://www.jpost.com/middle-east/article-899281",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 13,
+              "headline": "מתנות סוף השנה למורות ולגננות הפכו לשוק של יותר מ-60 מיליון שקל",
+              "source": "וואלה כסף - צרכנות",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 74,
+              "url": "https://finance.walla.co.il/item/3845475",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 10,
+              "headline": "ועדת הכספים מקדמת הפחתת מס על סיגריות אלקטרוניות",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 51,
+              "url": "https://www.israelhayom.co.il/health/article/20754876",
+              "trendMatch": null,
+              "queueScore": 18.0
+            },
+            {
+              "rank": 16,
+              "headline": "כדורגלן מליגה בכירה נעצר בחשד להימורים והלבנת הון",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "פלילים",
+              "class": "other",
+              "ageMinutes": 90,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545764#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "coreHardTop10": 4,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 4,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 15,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "מעריב",
+          "הארץ",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "כיפה",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "Daily Mail",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 2,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 94,
+          "readyCount": 8,
+          "hardReadyCount": 6,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 5,
+          "freshReadyUnder25Count": 3,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "קטאר מנסה לסגור את מזכר ההבנות בין ארה״ב לאיראן",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.ynet.co.il/news/article/r1i3i6iwfg",
+              "trendMatch": {
+                "trend": "\"פספוס אסטרטגי - לא מיצינו את ההישגים הצבאיים\": בני גנץ מתריע מפני ההסכם עם איראן",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:57:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845468",
+                "overlapTokens": [
+                  "איראן",
+                  "ההסכם"
+                ],
+                "score": 26.6,
+                "boost": 26.6
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 1,
+              "headline": "מודל חדש מסביר למה אותה ארוחה משמינה אנשים אחרת",
+              "source": "וואלה בריאות - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://healthy.walla.co.il/item/3844666",
+              "trendMatch": null,
+              "queueScore": 30.0
+            },
+            {
+              "rank": 3,
+              "headline": "רופאת ילדים מזהירה שעודף טיפוח מזיק לעור תינוקות בקיץ",
+              "source": "וואלה בריאות - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://healthy.walla.co.il/item/3845495",
+              "trendMatch": null,
+              "queueScore": 30.0
+            },
+            {
+              "rank": 8,
+              "headline": "כדורגלן בכיר נעצר בחשד להימורים והטיית משחקים",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פלילים",
+              "class": "other",
+              "ageMinutes": 14,
+              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899286",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 5,
+              "headline": "עיראק וסוריה מנסות לתאם כניסה מחודשת לוושינגטון דרך שליח אמריקני",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 73,
+              "url": "https://www.jpost.com/middle-east/article-899281",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 7,
+              "headline": "מתנות סוף השנה למורות ולגננות הפכו לשוק של יותר מ-60 מיליון שקל",
+              "source": "וואלה כסף - צרכנות",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 74,
+              "url": "https://finance.walla.co.il/item/3845475",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 4,
+              "headline": "ועדת הכספים מקדמת הפחתת מס על סיגריות אלקטרוניות",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "בריאות",
+              "class": "hard",
+              "ageMinutes": 51,
+              "url": "https://www.israelhayom.co.il/health/article/20754876",
+              "trendMatch": null,
+              "queueScore": 18.0
+            },
+            {
+              "rank": 11,
+              "headline": "כדורגלן מליגה בכירה נעצר בחשד להימורים והלבנת הון",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "פלילים",
+              "class": "other",
+              "ageMinutes": 90,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001545764#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 54,
+      "afterHealthScore": 80,
+      "replacementReadiness": {
+        "score": 79,
+        "threshold": 80,
+        "components": {
+          "freshness": 16.8,
+          "newsinessTop10": 20.0,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 5.33,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -2,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 0,
+        "healthScore": 26
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T07:27:49+00:00",
+      "feedFingerprint": "1224353800151963278",
+      "before": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1615,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1615,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "Jerusalem Post",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 39,
+      "replacementReadiness": {
+        "score": 33,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 7.5,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 0.0,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "newsiness_top10_below_7",
+          "soft_top10_above_2",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "coreHardTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 12
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T07:29:24+00:00",
+      "feedFingerprint": "1026518628853428635",
+      "before": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1617,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "coreHardTop10": 6,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1617,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 59,
+      "replacementReadiness": {
+        "score": 48,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 20.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 7.0,
+          "trendSignalUse": 0.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 3,
+        "softTop10": -4,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 32
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T07:30:12+00:00",
+      "feedFingerprint": "5643191663608781120",
+      "before": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1617,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "coreHardTop10": 6,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1617,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 59,
+      "replacementReadiness": {
+        "score": 48,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 20.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 7.0,
+          "trendSignalUse": 0.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 3,
+        "softTop10": -4,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 32
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T07:38:49+00:00",
+      "feedFingerprint": "8652511769347469723",
+      "before": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1626,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "coreHardTop10": 6,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1626,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 59,
+      "replacementReadiness": {
+        "score": 48,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 20.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 7.0,
+          "trendSignalUse": 0.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 3,
+        "softTop10": -4,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 32
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T07:49:49+00:00",
+      "feedFingerprint": "6805056840845088713",
+      "before": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1637,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "coreHardTop10": 6,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1637,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 59,
+      "replacementReadiness": {
+        "score": 48,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 20.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 7.0,
+          "trendSignalUse": 0.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 3,
+        "softTop10": -4,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 32
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T08:00:50+00:00",
+      "feedFingerprint": "3636053986563698646",
+      "before": {
+        "newsinessTop10": 3,
+        "coreHardTop10": 3,
+        "softTop10": 6,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1648,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "Daily Mail",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "מעריב",
+          "הארץ",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "Daily Mail",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 7,
+        "coreHardTop10": 6,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 0,
+        "top10Under60": 0,
+        "top12Under60": 0,
+        "topItemAgeMinutes": 1648,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "Guardian",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "freshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2_hard_block",
+            "ready_sources_below_3",
+            "ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 27,
+      "afterHealthScore": 59,
+      "replacementReadiness": {
+        "score": 48,
+        "threshold": 80,
+        "components": {
+          "freshness": 0.0,
+          "newsinessTop10": 20.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 7.0,
+          "trendSignalUse": 0.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 70,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בינוני",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1000.md",
+        "reportGeneratedAt": "2026-06-14T06:46:01+00:00",
+        "metrics": {
+          "ציון עליזה": 70,
+          "generatedAt": 2026,
+          "afterHealthScore": 72,
+          "healthDelta": 22,
+          "replacementReadiness score": 71,
+          "rollingScore": 76.81,
+          "newsinessTop10": 8,
+          "softTop10": 2,
+          "top12Under60": 5,
+          "trendMatchedTop10": 7,
+          "trendMatchedTop20": 14,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 9,
+          "estimatedVisibleChangeMinutes": 10,
+          "readyCount": 3,
+          "hardReadyCount": 3,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 2,
+          "blockers": 25
+        },
+        "recommendedActions": [
+          "להוסיף age decay אגרסיבי יותר ב-Top 5/Top 10: מעל 35 דקות penalty חזק, מעל 60 דקות חסימה כמעט מלאה בלי trendMatch חזק.",
+          "להקשיח trendMatch: דרישת entity/topic overlap, ביטול boost על מילים כלליות, וסף גבוה יותר ל-soft/other.",
+          "לתקן סיווג hard/soft לקטגוריות תרבות, ספורט, צרכנות ורכב, כך שלא ידחקו ביטחון/פוליטיקה/כלכלה קשה בראש הפיד."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 10:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 3,
+        "softTop10": -4,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 32
+      }
+    },
+    {
+      "generatedAt": "2026-06-14T08:05:16+00:00",
+      "feedFingerprint": "8076097294100772596",
+      "before": {
+        "newsinessTop10": 8,
+        "coreHardTop10": 7,
+        "softTop10": 1,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 5,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 5
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 9,
+          "hardReadyCount": 8,
+          "trendReadyCount": 5,
+          "uniqueReadySources": 5,
+          "freshReadyUnder25Count": 9,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "גנץ מזהיר שההסכם עם איראן מחמיץ את ההישגים הצבאיים",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://news.walla.co.il/item/3845468",
+              "trendMatch": {
+                "trend": "\"פספוס אסטרטגי - לא מיצינו את ההישגים הצבאיים\": בני גנץ מתריע מפני ההסכם עם איראן",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:57:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845468",
+                "overlapTokens": [
+                  "איראן",
+                  "אסטרטגי",
+                  "בני",
+                  "גנץ",
+                  "ההישגים",
+                  "ההסכם",
+                  "הצבאיים",
+                  "חדשות"
+                ],
+                "score": 128.4,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 4,
+              "headline": "מתקפת סייבר שיבשה שירותים בארבעה בנקים באיראן",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899300",
+              "trendMatch": {
+                "trend": "דיווח איראני: מתקפת סייבר שיבשה ארבעה בנקים במדינה",
+                "clusterKey": "בנקים במדינה",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 1,
+                "sources": [
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-14T10:00:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845503",
+                "overlapTokens": [
+                  "ארבעה",
+                  "בנקים",
+                  "מתקפת",
+                  "סייבר",
+                  "שיבשה"
+                ],
+                "score": 48.19,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 5,
+              "headline": "גנץ מציב ממשלת אחדות ציונית כחלופה לשלטון נתניהו",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899296",
+              "trendMatch": {
+                "trend": "\"פספוס אסטרטגי - לא מיצינו את ההישגים הצבאיים\": בני גנץ מתריע מפני ההסכם עם איראן",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:57:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845468",
+                "overlapTokens": [
+                  "איראן",
+                  "בני",
+                  "גנץ"
+                ],
+                "score": 32.1,
+                "boost": 32.1
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 7,
+              "headline": "טראמפ מציג חתימה קרובה על הסכם עם איראן, אך טהרן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
+                "clusterKey": "שארה תכננה מבצע",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-14T08:05:16.752318+00:00",
+                "sampleUrl": "https://www.themarker.com/hrtz/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+                "overlapTokens": [
+                  "איראן",
+                  "לאחר"
+                ],
+                "score": 18.94,
+                "boost": 18.94
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 9,
+              "headline": "ברק תקף את הסכם איראן ועורר דרישה לחקירה בליכוד",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 12,
+              "url": "https://www.maariv.co.il/news/politics/article-1332725",
+              "trendMatch": {
+                "trend": "אהוד ברק: אם נתניהו ינסה לחבל בבחירות - לגרש אותו במקלות ואבנים",
+                "clusterKey": "אותו במקלות",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:31:01+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bjpsvcizmx",
+                "overlapTokens": [
+                  "אהוד",
+                  "אותו",
+                  "בבחירות",
+                  "במקלות",
+                  "ברק",
+                  "ואבנים",
+                  "חדשות",
+                  "ינסה"
+                ],
+                "score": 99.73,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "טראמפ משלב תקיפות ומו״מ - וישראל חוששת מהסכם רך מול איראן",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899298",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 8,
+              "headline": "בריטניה גזרה מאסר כבד על פעילי Palestine Action בפרשת אלביט",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://www.maariv.co.il/news/world/article-1332738",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 6,
+              "headline": "חשבון האינסטגרם של נתניהו זינק בעוקבים בקצב חשוד",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 9,
+              "url": "https://tech.walla.co.il/item/3845509",
+              "trendMatch": null,
+              "queueScore": 36.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 8,
+        "coreHardTop10": 7,
+        "softTop10": 1,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 8,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 5
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 5,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 9,
+          "hardReadyCount": 8,
+          "trendReadyCount": 5,
+          "uniqueReadySources": 5,
+          "freshReadyUnder25Count": 9,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "גנץ מזהיר שההסכם עם איראן מחמיץ את ההישגים הצבאיים",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://news.walla.co.il/item/3845468",
+              "trendMatch": {
+                "trend": "\"פספוס אסטרטגי - לא מיצינו את ההישגים הצבאיים\": בני גנץ מתריע מפני ההסכם עם איראן",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:57:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845468",
+                "overlapTokens": [
+                  "איראן",
+                  "אסטרטגי",
+                  "בני",
+                  "גנץ",
+                  "ההישגים",
+                  "ההסכם",
+                  "הצבאיים",
+                  "חדשות"
+                ],
+                "score": 128.4,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 2,
+              "headline": "מתקפת סייבר שיבשה שירותים בארבעה בנקים באיראן",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899300",
+              "trendMatch": {
+                "trend": "דיווח איראני: מתקפת סייבר שיבשה ארבעה בנקים במדינה",
+                "clusterKey": "בנקים במדינה",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 1,
+                "sources": [
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-14T10:00:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845503",
+                "overlapTokens": [
+                  "ארבעה",
+                  "בנקים",
+                  "מתקפת",
+                  "סייבר",
+                  "שיבשה"
+                ],
+                "score": 48.19,
+                "boost": 38.0
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 5,
+              "headline": "גנץ מציב ממשלת אחדות ציונית כחלופה לשלטון נתניהו",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899296",
+              "trendMatch": {
+                "trend": "\"פספוס אסטרטגי - לא מיצינו את ההישגים הצבאיים\": בני גנץ מתריע מפני ההסכם עם איראן",
+                "clusterKey": "ההסכם איראן",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:57:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3845468",
+                "overlapTokens": [
+                  "איראן",
+                  "בני",
+                  "גנץ"
+                ],
+                "score": 32.1,
+                "boost": 32.1
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 3,
+              "headline": "טראמפ מציג חתימה קרובה על הסכם עם איראן, אך טהרן מצננת",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://www.bbc.com/news/articles/cvglmn49xz0o?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "דיווח: איראן מלכדה את האורניום לאחר שארה\"ב תכננה מבצע קרקעי לחילוצו",
+                "clusterKey": "שארה תכננה מבצע",
+                "domain": "כלכלה",
+                "externalMentions": 2,
+                "sourceCount": 2,
+                "sources": [
+                  "דה מרקר",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-14T08:05:16.752318+00:00",
+                "sampleUrl": "https://www.themarker.com/hrtz/news/politics/2026-06-13/ty-article/.premium/0000019e-bf54-d43d-a39f-bf7dd9cb0000",
+                "overlapTokens": [
+                  "איראן",
+                  "לאחר"
+                ],
+                "score": 18.94,
+                "boost": 18.94
+              },
+              "queueScore": 54.0
+            },
+            {
+              "rank": 4,
+              "headline": "ברק תקף את הסכם איראן ועורר דרישה לחקירה בליכוד",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 12,
+              "url": "https://www.maariv.co.il/news/politics/article-1332725",
+              "trendMatch": {
+                "trend": "אהוד ברק: אם נתניהו ינסה לחבל בבחירות - לגרש אותו במקלות ואבנים",
+                "clusterKey": "אותו במקלות",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-14T07:31:01+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bjpsvcizmx",
+                "overlapTokens": [
+                  "אהוד",
+                  "אותו",
+                  "בבחירות",
+                  "במקלות",
+                  "ברק",
+                  "ואבנים",
+                  "חדשות",
+                  "ינסה"
+                ],
+                "score": 99.73,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 8,
+              "headline": "טראמפ משלב תקיפות ומו״מ - וישראל חוששת מהסכם רך מול איראן",
+              "source": "The Jerusalem Post - Iran",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 8,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-899298",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 6,
+              "headline": "בריטניה גזרה מאסר כבד על פעילי Palestine Action בפרשת אלביט",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://www.maariv.co.il/news/world/article-1332738",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 7,
+              "headline": "חשבון האינסטגרם של נתניהו זינק בעוקבים בקצב חשוד",
+              "source": "וואלה TECH - כל הכתבות",
+              "canonicalSource": "וואלה",
+              "category": "טכנולוגיה",
+              "class": "hard",
+              "ageMinutes": 9,
+              "url": "https://tech.walla.co.il/item/3845509",
+              "trendMatch": null,
+              "queueScore": 36.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 79,
+      "afterHealthScore": 79,
+      "replacementReadiness": {
+        "score": 81,
+        "threshold": 80,
+        "components": {
+          "freshness": 19.0,
+          "newsinessTop10": 25.0,
+          "top20Quality": 13.9,
+          "sourceBalance": 4.0,
+          "trendSignalUse": 9.33,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "dominant_source_top20_above_5"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 64,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": false,
+        "summaryLine": "בעייתי",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-14-1100.md",
+        "reportName": "tt-rr-simulation-review-2026-06-14-1100.md",
+        "reportGeneratedAt": "2026-06-14T07:48:13+00:00",
+        "metrics": {
+          "ציון עליזה": 64,
+          "generatedAt": 2026,
+          "afterHealthScore": 71,
+          "healthDelta": 25,
+          "replacementReadiness score": 62,
+          "rollingScore": 76.62,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 6,
+          "trendMatchedTop10": 3,
+          "trendMatchedTop20": 8,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "לתקן את מנגנון readyQueue כך שלא יגיע ל-0: fallback ל-3-5 מועמדים hard-news עד 45 דקות, לפחות 2 מקורות, ולפחות מועמד אחד עם trendMatch מדויק אם קיים.",
+          "להקשיח trendMatch באמצעות entity/topic overlap ולהוריד boost להתאמות שמבוססות רק על מילים כלליות; להוסיף רשימת stopwords ייעודית לטרנדים.",
+          "לעדכן סיווג hard/soft ועונשי Top 5: בריאות lifestyle, רכילות, תרבות וספורט לא יעלו ל-Top 5 אלא אם יש אירוע חדשותי מובהק או מקור ליבה שמאשר חשיבות."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-14 11:00"
+      },
+      "delta": {
+        "newsinessTop10": 0,
+        "coreHardTop10": 0,
+        "softTop10": 0,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 0
       }
     }
   ]
