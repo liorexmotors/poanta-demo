@@ -1,39 +1,38 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-14T13:36:30+00:00",
+  "generatedAt": "2026-06-14T13:40:29+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 386,
+  "itemCount": 393,
   "before": {
     "newsinessTop10": 6,
-    "coreHardTop10": 6,
+    "coreHardTop10": 4,
     "softTop10": 4,
     "otherTop10": 0,
     "top5Under60": 5,
-    "top10Under60": 6,
-    "top12Under60": 6,
-    "topItemAgeMinutes": 6,
-    "uniqueSourcesTop20": 6,
+    "top10Under60": 10,
+    "top12Under60": 12,
+    "topItemAgeMinutes": 10,
+    "uniqueSourcesTop20": 7,
     "dominantSource": {
       "name": "וואלה",
-      "count": 5
+      "count": 6
     },
     "importantMissingTop20": [
-      "N12",
       "ynet",
-      "מעריב",
       "BBC",
       "Guardian",
       "NYT",
-      "גלובס"
+      "גלובס",
+      "ישראל היום"
     ],
-    "duplicateTop20": 0,
-    "storyClusterTop20Max": 1,
-    "eventClusterTop20Max": 1,
+    "duplicateTop20": 1,
+    "storyClusterTop20Max": 2,
+    "eventClusterTop20Max": 2,
     "topSources": [
       {
         "name": "וואלה",
-        "count": 5
+        "count": 6
       },
       {
         "name": "Jerusalem Post",
@@ -41,37 +40,39 @@
       },
       {
         "name": "Daily Mail",
-        "count": 5
+        "count": 3
+      },
+      {
+        "name": "מעריב",
+        "count": 2
       },
       {
         "name": "הארץ",
         "count": 2
       },
       {
-        "name": "ישראל היום",
-        "count": 2
+        "name": "N12",
+        "count": 1
       },
       {
-        "name": "Mirror",
+        "name": "TMI",
         "count": 1
       }
     ],
-    "trendMatchedTop10": 2,
-    "trendMatchedTop20": 2,
-    "trendGapMatchedTop20": 1,
+    "trendMatchedTop10": 3,
+    "trendMatchedTop20": 3,
+    "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 20,
-      "score": 61,
-      "readyCount": 3,
-      "hardReadyCount": 3,
-      "hardReadyStrictCount": 3,
-      "trendReadyCount": 2,
-      "uniqueReadySources": 2,
-      "freshReadyUnder25Count": 3,
-      "blockers": [
-        "ready_sources_below_3"
-      ],
+      "estimatedVisibleChangeMinutes": 10,
+      "score": 95,
+      "readyCount": 7,
+      "hardReadyCount": 7,
+      "hardReadyStrictCount": 7,
+      "trendReadyCount": 3,
+      "uniqueReadySources": 3,
+      "freshReadyUnder25Count": 7,
+      "blockers": [],
       "readyQueue": [
         {
           "rank": 3,
@@ -81,7 +82,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
           "trendMatch": {
             "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -97,7 +98,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-14T13:36:30.505592+00:00",
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
             "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
               "deal",
@@ -107,7 +108,7 @@
             "score": 22.49,
             "boost": 22.49
           },
-          "queueScore": 54.0
+          "queueScore": 48.0
         },
         {
           "rank": 4,
@@ -117,34 +118,67 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
           "trendMatch": {
-            "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-            "clusterKey": "כטב מים",
+            "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+            "clusterKey": "us-iran deal",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "BBC",
+              "Jerusalem Post"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
+            "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
+            "overlapTokens": [
+              "deal",
+              "iran"
+            ],
+            "score": 14.99,
+            "boost": 14.99
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 6,
+          "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 15,
+          "url": "https://www.jpost.com/israel-news/article-899335",
+          "trendMatch": {
+            "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+            "clusterKey": "נפצע קשה",
             "domain": "חדשות",
             "externalMentions": 4,
             "sourceCount": 1,
             "sources": [
-              "ynet"
+              "וואלה"
             ],
             "discoveryTypes": [
               "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-14T10:33:35+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T12:33:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3845569",
             "overlapTokens": [
-              "אחרי",
-              "בביירות",
-              "בדאחייה",
-              "תקף"
+              "יהודה",
+              "נפצע"
             ],
-            "score": 38.55,
-            "boost": 38.0
+            "score": 15.09,
+            "boost": 15.09
           },
-          "queueScore": 54.0
+          "queueScore": 48.0
         },
         {
           "rank": 2,
@@ -154,33 +188,84 @@
           "category": "כלכלה",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://finance.walla.co.il/item/3845589",
           "trendMatch": null,
-          "queueScore": 44.0
+          "queueScore": 38.0
+        },
+        {
+          "rank": 11,
+          "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "פלילים",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/law/article-1332890",
+          "trendMatch": null,
+          "queueScore": 31.0
+        },
+        {
+          "rank": 5,
+          "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+          "source": "וואלה TECH - כל הכתבות",
+          "canonicalSource": "וואלה",
+          "category": "טכנולוגיה",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 13,
+          "url": "https://tech.walla.co.il/item/3845644",
+          "trendMatch": null,
+          "queueScore": 30.0
+        },
+        {
+          "rank": 7,
+          "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+          "source": "מעריב - דעות",
+          "canonicalSource": "מעריב",
+          "category": "דעות",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 16,
+          "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+          "trendMatch": null,
+          "queueScore": 30.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 6,
-      "worthyFreshUnder60Count": 3,
-      "coreHardFreshUnder60Count": 3,
-      "softFreshUnder60Count": 3,
+      "freshUnder60Count": 13,
+      "worthyFreshUnder60Count": 7,
+      "coreHardFreshUnder60Count": 5,
+      "softFreshUnder60Count": 6,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 4,
-      "worthyUniqueSources": 2,
+      "freshUniqueSources": 7,
+      "worthyUniqueSources": 3,
       "freshSources": [
         {
           "name": "וואלה",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Jerusalem Post",
+          "count": 3
+        },
+        {
+          "name": "מעריב",
           "count": 2
         },
         {
           "name": "Daily Mail",
+          "count": 2
+        },
+        {
+          "name": "N12",
+          "count": 1
+        },
+        {
+          "name": "TMI",
           "count": 1
         },
         {
@@ -191,18 +276,22 @@
       "worthySources": [
         {
           "name": "Jerusalem Post",
-          "count": 2
+          "count": 3
         },
         {
           "name": "וואלה",
-          "count": 1
+          "count": 2
+        },
+        {
+          "name": "מעריב",
+          "count": 2
         }
       ],
       "disqualifiedFreshCounts": {
-        "quality_class_soft": 3,
-        "weak_or_missing_trend_match": 4
+        "quality_class_soft": 6,
+        "weak_or_missing_trend_match": 10
       },
-      "staleOrUndatedCount": 74,
+      "staleOrUndatedCount": 67,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -214,7 +303,7 @@
           "canonicalSource": "וואלה",
           "category": "תרבות",
           "class": "soft",
-          "ageMinutes": 6,
+          "ageMinutes": 10,
           "url": "https://e.walla.co.il/item/3845568",
           "trendMatch": null,
           "freshUnder60": true,
@@ -232,7 +321,7 @@
           "canonicalSource": "וואלה",
           "category": "כלכלה",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://finance.walla.co.il/item/3845589",
           "trendMatch": null,
           "freshUnder60": true,
@@ -249,7 +338,7 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
           "trendMatch": {
             "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -265,7 +354,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-14T13:36:30.505592+00:00",
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
             "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
               "deal",
@@ -287,32 +376,30 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
           "trendMatch": {
-            "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-            "clusterKey": "כטב מים",
+            "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+            "clusterKey": "us-iran deal",
             "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 1,
+            "externalMentions": 3,
+            "sourceCount": 2,
             "sources": [
-              "ynet"
+              "BBC",
+              "Jerusalem Post"
             ],
             "discoveryTypes": [
-              "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-14T10:33:35+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
+            "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
-              "אחרי",
-              "בביירות",
-              "בדאחייה",
-              "תקף"
+              "deal",
+              "iran"
             ],
-            "score": 38.55,
-            "boost": 38.0
+            "score": 14.99,
+            "boost": 14.99
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -321,12 +408,154 @@
         },
         {
           "beforeRank": 5,
+          "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+          "source": "וואלה TECH - כל הכתבות",
+          "canonicalSource": "וואלה",
+          "category": "טכנולוגיה",
+          "class": "hard",
+          "ageMinutes": 13,
+          "url": "https://tech.walla.co.il/item/3845644",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 6,
+          "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 15,
+          "url": "https://www.jpost.com/israel-news/article-899335",
+          "trendMatch": {
+            "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+            "clusterKey": "נפצע קשה",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 1,
+            "sources": [
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T12:33:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3845569",
+            "overlapTokens": [
+              "יהודה",
+              "נפצע"
+            ],
+            "score": 15.09,
+            "boost": 15.09
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 7,
+          "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+          "source": "מעריב - דעות",
+          "canonicalSource": "מעריב",
+          "category": "דעות",
+          "class": "hard",
+          "ageMinutes": 16,
+          "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 8,
+          "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "canonicalSource": "Daily Mail",
+          "category": "רכילות",
+          "class": "soft",
+          "ageMinutes": 19,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15886959/angelina-jolie-brad-pitt-rejected-revenge-campaign-knox.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 9,
+          "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+          "source": "mako סלבס - ראשי",
+          "canonicalSource": "N12",
+          "category": "רכילות",
+          "class": "soft",
+          "ageMinutes": 20,
+          "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 10,
+          "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+          "source": "TMI - ראשי",
+          "canonicalSource": "TMI",
+          "category": "רכילות",
+          "class": "soft",
+          "ageMinutes": 21,
+          "url": "https://tmi.maariv.co.il/celebs-news/article-1332896",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 11,
+          "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "פלילים",
+          "class": "hard",
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/law/article-1332890",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 12,
           "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
-          "ageMinutes": 22,
+          "ageMinutes": 26,
           "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
@@ -338,13 +567,13 @@
           ]
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 13,
           "headline": "יאן פול ואן הקה ינסה להמשיך את מסורת המונדיאל של דודו",
           "source": "הארץ - ספורט",
           "canonicalSource": "הארץ",
           "category": "ספורט",
           "class": "soft",
-          "ageMinutes": 22,
+          "ageMinutes": 26,
           "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
           "trendMatch": null,
           "freshUnder60": true,
@@ -364,7 +593,7 @@
           "canonicalSource": "וואלה",
           "category": "כלכלה",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://finance.walla.co.il/item/3845589",
           "trendMatch": null,
           "freshUnder60": true,
@@ -381,7 +610,7 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
           "trendMatch": {
             "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -397,7 +626,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-14T13:36:30.505592+00:00",
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
             "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
               "deal",
@@ -419,65 +648,151 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
           "trendMatch": {
-            "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-            "clusterKey": "כטב מים",
+            "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+            "clusterKey": "us-iran deal",
             "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 1,
+            "externalMentions": 3,
+            "sourceCount": 2,
             "sources": [
-              "ynet"
+              "BBC",
+              "Jerusalem Post"
             ],
             "discoveryTypes": [
-              "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-14T10:33:35+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
+            "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
-              "אחרי",
-              "בביירות",
-              "בדאחייה",
-              "תקף"
+              "deal",
+              "iran"
             ],
-            "score": 38.55,
-            "boost": 38.0
+            "score": 14.99,
+            "boost": 14.99
           },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": []
+        },
+        {
+          "beforeRank": 5,
+          "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+          "source": "וואלה TECH - כל הכתבות",
+          "canonicalSource": "וואלה",
+          "category": "טכנולוגיה",
+          "class": "hard",
+          "ageMinutes": 13,
+          "url": "https://tech.walla.co.il/item/3845644",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 6,
+          "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 15,
+          "url": "https://www.jpost.com/israel-news/article-899335",
+          "trendMatch": {
+            "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+            "clusterKey": "נפצע קשה",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 1,
+            "sources": [
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T12:33:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3845569",
+            "overlapTokens": [
+              "יהודה",
+              "נפצע"
+            ],
+            "score": 15.09,
+            "boost": 15.09
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 7,
+          "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+          "source": "מעריב - דעות",
+          "canonicalSource": "מעריב",
+          "category": "דעות",
+          "class": "hard",
+          "ageMinutes": 16,
+          "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 11,
+          "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "פלילים",
+          "class": "hard",
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/law/article-1332890",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
         }
       ]
     }
   },
   "after": {
-    "newsinessTop10": 7,
-    "coreHardTop10": 7,
-    "softTop10": 3,
+    "newsinessTop10": 8,
+    "coreHardTop10": 6,
+    "softTop10": 2,
     "otherTop10": 0,
-    "top5Under60": 4,
-    "top10Under60": 6,
-    "top12Under60": 6,
-    "topItemAgeMinutes": 8,
+    "top5Under60": 5,
+    "top10Under60": 9,
+    "top12Under60": 11,
+    "topItemAgeMinutes": 12,
     "uniqueSourcesTop20": 9,
     "dominantSource": {
       "name": "Jerusalem Post",
       "count": 4
     },
     "importantMissingTop20": [
-      "N12",
-      "מעריב",
+      "ynet",
       "BBC",
+      "Guardian",
       "NYT",
       "גלובס"
     ],
-    "duplicateTop20": 0,
-    "storyClusterTop20Max": 1,
-    "eventClusterTop20Max": 1,
+    "duplicateTop20": 1,
+    "storyClusterTop20Max": 2,
+    "eventClusterTop20Max": 2,
     "topSources": [
       {
         "name": "Jerusalem Post",
@@ -492,6 +807,10 @@
         "count": 3
       },
       {
+        "name": "מעריב",
+        "count": 2
+      },
+      {
         "name": "הארץ",
         "count": 2
       },
@@ -500,34 +819,28 @@
         "count": 2
       },
       {
-        "name": "ynet",
-        "count": 2
-      },
-      {
-        "name": "Mirror",
+        "name": "N12",
         "count": 1
       },
       {
-        "name": "Guardian",
+        "name": "TMI",
         "count": 1
       }
     ],
-    "trendMatchedTop10": 2,
-    "trendMatchedTop20": 2,
-    "trendGapMatchedTop20": 1,
+    "trendMatchedTop10": 3,
+    "trendMatchedTop20": 3,
+    "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 20,
-      "score": 61,
-      "readyCount": 3,
-      "hardReadyCount": 3,
-      "hardReadyStrictCount": 3,
-      "trendReadyCount": 2,
-      "uniqueReadySources": 2,
-      "freshReadyUnder25Count": 3,
-      "blockers": [
-        "ready_sources_below_3"
-      ],
+      "estimatedVisibleChangeMinutes": 10,
+      "score": 95,
+      "readyCount": 7,
+      "hardReadyCount": 7,
+      "hardReadyStrictCount": 7,
+      "trendReadyCount": 3,
+      "uniqueReadySources": 3,
+      "freshReadyUnder25Count": 7,
+      "blockers": [],
       "readyQueue": [
         {
           "rank": 1,
@@ -537,34 +850,32 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
           "trendMatch": {
-            "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-            "clusterKey": "כטב מים",
+            "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+            "clusterKey": "us-iran deal",
             "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 1,
+            "externalMentions": 3,
+            "sourceCount": 2,
             "sources": [
-              "ynet"
+              "BBC",
+              "Jerusalem Post"
             ],
             "discoveryTypes": [
-              "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-14T10:33:35+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
+            "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
-              "אחרי",
-              "בביירות",
-              "בדאחייה",
-              "תקף"
+              "deal",
+              "iran"
             ],
-            "score": 38.55,
-            "boost": 38.0
+            "score": 14.99,
+            "boost": 14.99
           },
-          "queueScore": 54.0
+          "queueScore": 48.0
         },
         {
           "rank": 3,
@@ -574,7 +885,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
           "trendMatch": {
             "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -590,7 +901,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-14T13:36:30.505592+00:00",
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
             "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
               "deal",
@@ -600,7 +911,42 @@
             "score": 22.49,
             "boost": 22.49
           },
-          "queueScore": 54.0
+          "queueScore": 48.0
+        },
+        {
+          "rank": 6,
+          "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 15,
+          "url": "https://www.jpost.com/israel-news/article-899335",
+          "trendMatch": {
+            "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+            "clusterKey": "נפצע קשה",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 1,
+            "sources": [
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T12:33:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3845569",
+            "overlapTokens": [
+              "יהודה",
+              "נפצע"
+            ],
+            "score": 15.09,
+            "boost": 15.09
+          },
+          "queueScore": 48.0
         },
         {
           "rank": 2,
@@ -610,33 +956,84 @@
           "category": "כלכלה",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://finance.walla.co.il/item/3845589",
           "trendMatch": null,
-          "queueScore": 44.0
+          "queueScore": 38.0
+        },
+        {
+          "rank": 4,
+          "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "פלילים",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/law/article-1332890",
+          "trendMatch": null,
+          "queueScore": 31.0
+        },
+        {
+          "rank": 5,
+          "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+          "source": "וואלה TECH - כל הכתבות",
+          "canonicalSource": "וואלה",
+          "category": "טכנולוגיה",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 13,
+          "url": "https://tech.walla.co.il/item/3845644",
+          "trendMatch": null,
+          "queueScore": 30.0
+        },
+        {
+          "rank": 7,
+          "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+          "source": "מעריב - דעות",
+          "canonicalSource": "מעריב",
+          "category": "דעות",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 16,
+          "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+          "trendMatch": null,
+          "queueScore": 30.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 6,
-      "worthyFreshUnder60Count": 3,
-      "coreHardFreshUnder60Count": 3,
-      "softFreshUnder60Count": 3,
+      "freshUnder60Count": 13,
+      "worthyFreshUnder60Count": 7,
+      "coreHardFreshUnder60Count": 5,
+      "softFreshUnder60Count": 6,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 4,
-      "worthyUniqueSources": 2,
+      "freshUniqueSources": 7,
+      "worthyUniqueSources": 3,
       "freshSources": [
         {
           "name": "וואלה",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Jerusalem Post",
+          "count": 3
+        },
+        {
+          "name": "מעריב",
           "count": 2
         },
         {
           "name": "Daily Mail",
+          "count": 2
+        },
+        {
+          "name": "N12",
+          "count": 1
+        },
+        {
+          "name": "TMI",
           "count": 1
         },
         {
@@ -647,18 +1044,22 @@
       "worthySources": [
         {
           "name": "Jerusalem Post",
-          "count": 2
+          "count": 3
         },
         {
           "name": "וואלה",
-          "count": 1
+          "count": 2
+        },
+        {
+          "name": "מעריב",
+          "count": 2
         }
       ],
       "disqualifiedFreshCounts": {
-        "quality_class_soft": 3,
-        "weak_or_missing_trend_match": 4
+        "quality_class_soft": 6,
+        "weak_or_missing_trend_match": 10
       },
-      "staleOrUndatedCount": 74,
+      "staleOrUndatedCount": 67,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -670,7 +1071,7 @@
           "canonicalSource": "וואלה",
           "category": "תרבות",
           "class": "soft",
-          "ageMinutes": 6,
+          "ageMinutes": 10,
           "url": "https://e.walla.co.il/item/3845568",
           "trendMatch": null,
           "freshUnder60": true,
@@ -688,7 +1089,7 @@
           "canonicalSource": "וואלה",
           "category": "כלכלה",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://finance.walla.co.il/item/3845589",
           "trendMatch": null,
           "freshUnder60": true,
@@ -705,7 +1106,7 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
           "trendMatch": {
             "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -721,7 +1122,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-14T13:36:30.505592+00:00",
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
             "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
               "deal",
@@ -743,32 +1144,30 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
           "trendMatch": {
-            "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-            "clusterKey": "כטב מים",
+            "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+            "clusterKey": "us-iran deal",
             "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 1,
+            "externalMentions": 3,
+            "sourceCount": 2,
             "sources": [
-              "ynet"
+              "BBC",
+              "Jerusalem Post"
             ],
             "discoveryTypes": [
-              "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-14T10:33:35+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
+            "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
-              "אחרי",
-              "בביירות",
-              "בדאחייה",
-              "תקף"
+              "deal",
+              "iran"
             ],
-            "score": 38.55,
-            "boost": 38.0
+            "score": 14.99,
+            "boost": 14.99
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -777,12 +1176,154 @@
         },
         {
           "beforeRank": 5,
+          "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+          "source": "וואלה TECH - כל הכתבות",
+          "canonicalSource": "וואלה",
+          "category": "טכנולוגיה",
+          "class": "hard",
+          "ageMinutes": 13,
+          "url": "https://tech.walla.co.il/item/3845644",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 6,
+          "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 15,
+          "url": "https://www.jpost.com/israel-news/article-899335",
+          "trendMatch": {
+            "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+            "clusterKey": "נפצע קשה",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 1,
+            "sources": [
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T12:33:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3845569",
+            "overlapTokens": [
+              "יהודה",
+              "נפצע"
+            ],
+            "score": 15.09,
+            "boost": 15.09
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 7,
+          "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+          "source": "מעריב - דעות",
+          "canonicalSource": "מעריב",
+          "category": "דעות",
+          "class": "hard",
+          "ageMinutes": 16,
+          "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 8,
+          "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "canonicalSource": "Daily Mail",
+          "category": "רכילות",
+          "class": "soft",
+          "ageMinutes": 19,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15886959/angelina-jolie-brad-pitt-rejected-revenge-campaign-knox.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 9,
+          "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+          "source": "mako סלבס - ראשי",
+          "canonicalSource": "N12",
+          "category": "רכילות",
+          "class": "soft",
+          "ageMinutes": 20,
+          "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 10,
+          "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+          "source": "TMI - ראשי",
+          "canonicalSource": "TMI",
+          "category": "רכילות",
+          "class": "soft",
+          "ageMinutes": 21,
+          "url": "https://tmi.maariv.co.il/celebs-news/article-1332896",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 11,
+          "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "פלילים",
+          "class": "hard",
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/law/article-1332890",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 12,
           "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
-          "ageMinutes": 22,
+          "ageMinutes": 26,
           "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
@@ -794,13 +1335,13 @@
           ]
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 13,
           "headline": "יאן פול ואן הקה ינסה להמשיך את מסורת המונדיאל של דודו",
           "source": "הארץ - ספורט",
           "canonicalSource": "הארץ",
           "category": "ספורט",
           "class": "soft",
-          "ageMinutes": 22,
+          "ageMinutes": 26,
           "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
           "trendMatch": null,
           "freshUnder60": true,
@@ -820,7 +1361,7 @@
           "canonicalSource": "וואלה",
           "category": "כלכלה",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://finance.walla.co.il/item/3845589",
           "trendMatch": null,
           "freshUnder60": true,
@@ -837,7 +1378,7 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
           "trendMatch": {
             "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -853,7 +1394,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-14T13:36:30.505592+00:00",
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
             "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
               "deal",
@@ -875,57 +1416,142 @@
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 8,
+          "ageMinutes": 12,
           "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
           "trendMatch": {
-            "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-            "clusterKey": "כטב מים",
+            "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+            "clusterKey": "us-iran deal",
             "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 1,
+            "externalMentions": 3,
+            "sourceCount": 2,
             "sources": [
-              "ynet"
+              "BBC",
+              "Jerusalem Post"
             ],
             "discoveryTypes": [
-              "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-14T10:33:35+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T13:40:29.402928+00:00",
+            "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
             "overlapTokens": [
-              "אחרי",
-              "בביירות",
-              "בדאחייה",
-              "תקף"
+              "deal",
+              "iran"
             ],
-            "score": 38.55,
-            "boost": 38.0
+            "score": 14.99,
+            "boost": 14.99
           },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": []
+        },
+        {
+          "beforeRank": 5,
+          "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+          "source": "וואלה TECH - כל הכתבות",
+          "canonicalSource": "וואלה",
+          "category": "טכנולוגיה",
+          "class": "hard",
+          "ageMinutes": 13,
+          "url": "https://tech.walla.co.il/item/3845644",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 6,
+          "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 15,
+          "url": "https://www.jpost.com/israel-news/article-899335",
+          "trendMatch": {
+            "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+            "clusterKey": "נפצע קשה",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 1,
+            "sources": [
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-14T12:33:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3845569",
+            "overlapTokens": [
+              "יהודה",
+              "נפצע"
+            ],
+            "score": 15.09,
+            "boost": 15.09
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 7,
+          "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+          "source": "מעריב - דעות",
+          "canonicalSource": "מעריב",
+          "category": "דעות",
+          "class": "hard",
+          "ageMinutes": 16,
+          "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 11,
+          "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "פלילים",
+          "class": "hard",
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/law/article-1332890",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
         }
       ]
     }
   },
-  "beforeHealthScore": 59,
-  "afterHealthScore": 70,
+  "beforeHealthScore": 66,
+  "afterHealthScore": 82,
   "replacementReadiness": {
-    "score": 63,
+    "score": 74,
     "threshold": 80,
     "components": {
-      "freshness": 15.8,
-      "newsinessTop10": 17.5,
-      "top20Quality": 14.7,
+      "freshness": 19.5,
+      "newsinessTop10": 22.5,
+      "top20Quality": 8.7,
       "sourceBalance": 10.0,
-      "trendSignalUse": 5.33,
-      "criticalBlockersClear": 0.0
+      "trendSignalUse": 8.0,
+      "criticalBlockersClear": 5.0
     },
     "criticalBlockers": [
-      "soft_top10_above_2",
-      "top12_under60_below_9",
+      "duplicate_top20_detected",
       "fresh_candidate_supply_below_9"
     ],
     "readyNow": false
@@ -968,35 +1594,47 @@
     "title": "TT RR Simulation Review — 2026-06-14 16:00"
   },
   "delta": {
-    "newsinessTop10": 1,
-    "coreHardTop10": 1,
-    "softTop10": -1,
-    "top12Under60": 0,
-    "uniqueSourcesTop20": 3,
+    "newsinessTop10": 2,
+    "coreHardTop10": 2,
+    "softTop10": -2,
+    "top12Under60": -1,
+    "uniqueSourcesTop20": 2,
     "trendMatchedTop10": 0,
     "trendMatchedTop20": 0,
-    "healthScore": 11
+    "healthScore": 16
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 6,
-    "worthyFreshUnder60Count": 3,
-    "coreHardFreshUnder60Count": 3,
-    "softFreshUnder60Count": 3,
+    "freshUnder60Count": 13,
+    "worthyFreshUnder60Count": 7,
+    "coreHardFreshUnder60Count": 5,
+    "softFreshUnder60Count": 6,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 4,
-    "worthyUniqueSources": 2,
+    "freshUniqueSources": 7,
+    "worthyUniqueSources": 3,
     "freshSources": [
       {
         "name": "וואלה",
-        "count": 2
+        "count": 3
       },
       {
         "name": "Jerusalem Post",
+        "count": 3
+      },
+      {
+        "name": "מעריב",
         "count": 2
       },
       {
         "name": "Daily Mail",
+        "count": 2
+      },
+      {
+        "name": "N12",
+        "count": 1
+      },
+      {
+        "name": "TMI",
         "count": 1
       },
       {
@@ -1007,18 +1645,22 @@
     "worthySources": [
       {
         "name": "Jerusalem Post",
-        "count": 2
+        "count": 3
       },
       {
         "name": "וואלה",
-        "count": 1
+        "count": 2
+      },
+      {
+        "name": "מעריב",
+        "count": 2
       }
     ],
     "disqualifiedFreshCounts": {
-      "quality_class_soft": 3,
-      "weak_or_missing_trend_match": 4
+      "quality_class_soft": 6,
+      "weak_or_missing_trend_match": 10
     },
-    "staleOrUndatedCount": 74,
+    "staleOrUndatedCount": 67,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
@@ -1030,7 +1672,7 @@
         "canonicalSource": "וואלה",
         "category": "תרבות",
         "class": "soft",
-        "ageMinutes": 6,
+        "ageMinutes": 10,
         "url": "https://e.walla.co.il/item/3845568",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1048,7 +1690,7 @@
         "canonicalSource": "וואלה",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 8,
+        "ageMinutes": 12,
         "url": "https://finance.walla.co.il/item/3845589",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1065,7 +1707,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 8,
+        "ageMinutes": 12,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
         "trendMatch": {
           "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -1081,7 +1723,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-14T13:36:30.505592+00:00",
+          "latestAt": "2026-06-14T13:40:29.402928+00:00",
           "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
           "overlapTokens": [
             "deal",
@@ -1103,32 +1745,30 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 8,
+        "ageMinutes": 12,
         "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
         "trendMatch": {
-          "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-          "clusterKey": "כטב מים",
+          "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+          "clusterKey": "us-iran deal",
           "domain": "חדשות",
-          "externalMentions": 4,
-          "sourceCount": 1,
+          "externalMentions": 3,
+          "sourceCount": 2,
           "sources": [
-            "ynet"
+            "BBC",
+            "Jerusalem Post"
           ],
           "discoveryTypes": [
-            "RSS",
             "WEB"
           ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-14T10:33:35+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-14T13:40:29.402928+00:00",
+          "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
           "overlapTokens": [
-            "אחרי",
-            "בביירות",
-            "בדאחייה",
-            "תקף"
+            "deal",
+            "iran"
           ],
-          "score": 38.55,
-          "boost": 38.0
+          "score": 14.99,
+          "boost": 14.99
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -1137,12 +1777,154 @@
       },
       {
         "beforeRank": 5,
+        "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+        "source": "וואלה TECH - כל הכתבות",
+        "canonicalSource": "וואלה",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 13,
+        "url": "https://tech.walla.co.il/item/3845644",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 6,
+        "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 15,
+        "url": "https://www.jpost.com/israel-news/article-899335",
+        "trendMatch": {
+          "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+          "clusterKey": "נפצע קשה",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-14T12:33:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845569",
+          "overlapTokens": [
+            "יהודה",
+            "נפצע"
+          ],
+          "score": 15.09,
+          "boost": 15.09
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 7,
+        "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+        "source": "מעריב - דעות",
+        "canonicalSource": "מעריב",
+        "category": "דעות",
+        "class": "hard",
+        "ageMinutes": 16,
+        "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 8,
+        "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 19,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15886959/angelina-jolie-brad-pitt-rejected-revenge-campaign-knox.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 9,
+        "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+        "source": "mako סלבס - ראשי",
+        "canonicalSource": "N12",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 20,
+        "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 10,
+        "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+        "source": "TMI - ראשי",
+        "canonicalSource": "TMI",
+        "category": "רכילות",
+        "class": "soft",
+        "ageMinutes": 21,
+        "url": "https://tmi.maariv.co.il/celebs-news/article-1332896",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 11,
+        "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "פלילים",
+        "class": "hard",
+        "ageMinutes": 22,
+        "url": "https://www.maariv.co.il/news/law/article-1332890",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 12,
         "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 22,
+        "ageMinutes": 26,
         "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1154,13 +1936,13 @@
         ]
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 13,
         "headline": "יאן פול ואן הקה ינסה להמשיך את מסורת המונדיאל של דודו",
         "source": "הארץ - ספורט",
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 22,
+        "ageMinutes": 26,
         "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1180,7 +1962,7 @@
         "canonicalSource": "וואלה",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 8,
+        "ageMinutes": 12,
         "url": "https://finance.walla.co.il/item/3845589",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1197,7 +1979,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 8,
+        "ageMinutes": 12,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
         "trendMatch": {
           "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
@@ -1213,7 +1995,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-14T13:36:30.505592+00:00",
+          "latestAt": "2026-06-14T13:40:29.402928+00:00",
           "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
           "overlapTokens": [
             "deal",
@@ -1235,37 +2017,123 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 8,
+        "ageMinutes": 12,
         "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
         "trendMatch": {
-          "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-          "clusterKey": "כטב מים",
+          "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+          "clusterKey": "us-iran deal",
           "domain": "חדשות",
-          "externalMentions": 4,
-          "sourceCount": 1,
+          "externalMentions": 3,
+          "sourceCount": 2,
           "sources": [
-            "ynet"
+            "BBC",
+            "Jerusalem Post"
           ],
           "discoveryTypes": [
-            "RSS",
             "WEB"
           ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-14T10:33:35+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-14T13:40:29.402928+00:00",
+          "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
           "overlapTokens": [
-            "אחרי",
-            "בביירות",
-            "בדאחייה",
-            "תקף"
+            "deal",
+            "iran"
           ],
-          "score": 38.55,
-          "boost": 38.0
+          "score": 14.99,
+          "boost": 14.99
         },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
         "disqualifiers": []
+      },
+      {
+        "beforeRank": 5,
+        "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+        "source": "וואלה TECH - כל הכתבות",
+        "canonicalSource": "וואלה",
+        "category": "טכנולוגיה",
+        "class": "hard",
+        "ageMinutes": 13,
+        "url": "https://tech.walla.co.il/item/3845644",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 6,
+        "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 15,
+        "url": "https://www.jpost.com/israel-news/article-899335",
+        "trendMatch": {
+          "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+          "clusterKey": "נפצע קשה",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-14T12:33:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3845569",
+          "overlapTokens": [
+            "יהודה",
+            "נפצע"
+          ],
+          "score": 15.09,
+          "boost": 15.09
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 7,
+        "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+        "source": "מעריב - דעות",
+        "canonicalSource": "מעריב",
+        "category": "דעות",
+        "class": "hard",
+        "ageMinutes": 16,
+        "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 11,
+        "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "פלילים",
+        "class": "hard",
+        "ageMinutes": 22,
+        "url": "https://www.maariv.co.il/news/law/article-1332890",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
       }
     ]
   },
@@ -1274,19 +2142,18 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 26.5,
-    "avgAfterHealthScore": 74.5,
+    "avgHealthDelta": 25.92,
+    "avgAfterHealthScore": 75.5,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 63,
-      "rollingScore": 66.9,
+      "latestScore": 74,
+      "rollingScore": 67.4,
       "readyRuns": 0,
       "criticalBlockers": [
-        "soft_top10_above_2",
-        "top12_under60_below_9",
+        "duplicate_top20_detected",
         "fresh_candidate_supply_below_9"
       ],
       "matureForProduction": false
@@ -1296,22 +2163,22 @@
       "latestSummaryLine": "טוב",
       "latestReportName": "tt-rr-simulation-review-2026-06-14-1600.md",
       "window": 48,
-      "averageScore": 78.81,
-      "positiveReports": 34
+      "averageScore": 79.33,
+      "positiveReports": 35
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-14T16:36:30+03:00",
+    "generatedAt": "2026-06-14T16:40:29+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 214,
-    "webItemsScanned": 180,
+    "rssItemsScanned": 213,
+    "webItemsScanned": 202,
     "topTrends": [
       {
         "trend": "\"הברקזיט של שווייץ\": נדחתה במשאל עם הצעה דרמטית להגבלת האוכלוסייה ל-10 מיליון",
-        "clusterKey": "האוכלוסייה ל-10 מיליון",
+        "clusterKey": "ל-10 מיליון",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 3,
@@ -1347,6 +2214,26 @@
         "latestAt": "2026-06-14T15:33:00+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3845635",
         "strength": 50.6
+      },
+      {
+        "trend": "הרמטכ\"ל: \"נערכים להתפתחויות בזירות אחרות\"",
+        "clusterKey": "נערכים להתפתחויות",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 3,
+        "sources": [
+          "N12",
+          "ynet",
+          "סרוגים"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-14T13:15:02+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjwedmh11fe",
+        "strength": 49.1
       },
       {
         "trend": "בכיר איראני בתגובה לתקיפה: \"הפשעים שבוצעו בדאחיה לא ישארו ללא מענה\"",
@@ -1425,25 +2312,6 @@
         "strength": 42.1
       },
       {
-        "trend": "המהומות בבית השופט סולברג: הפרקליטות הגישה כתבי אישום נגד 4 מתפרעים חרדים",
-        "clusterKey": "בבית השופט סולברג",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T11:56:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3845551",
-        "strength": 42.1
-      },
-      {
         "trend": "אזעקות הופעלו במשגב עם מחשש לחדירת כלי טיס עוין",
         "clusterKey": "אזעקות הופעלו",
         "domain": "חדשות",
@@ -1462,40 +2330,42 @@
         "strength": 41.9
       },
       {
-        "trend": "גבר במצב אנוש לאחר שנפגע ממשאית בעראבה",
-        "clusterKey": "לאחר שנפגע ממשאית",
+        "trend": "ארבעה מפגינים שפרצו למפעל אלביט בבריטניה נידונו ל-20 שנות מאסר במצטבר",
+        "clusterKey": "שנות מאסר",
         "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
+        "externalMentions": 3,
+        "sourceCount": 3,
         "sources": [
+          "N12",
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T13:40:29.401408+00:00",
+        "sampleUrl": "https://www.themarker.com/wallstreet/2026-06-14/ty-article/.premium/0000019e-c511-db50-a3df-e7fb22200000",
+        "strength": 38.1
+      },
+      {
+        "trend": "המתה בקלות דעת: כתב אישום נגד הנהג שפגע למוות בשוטר יניב אלקיים בנתניה",
+        "clusterKey": "כתב אישום",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 2,
+        "sources": [
+          "N12",
           "וואלה"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T15:42:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3845638",
-        "strength": 36.8
-      },
-      {
-        "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-        "clusterKey": "כטב מים",
-        "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
-        "sources": [
-          "ynet"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T10:33:35+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
-        "strength": 36.8
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T15:06:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3845627",
+        "strength": 37.5
       }
     ]
   },
@@ -1507,7 +2377,7 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 6,
+      "ageMinutes": 10,
       "url": "https://e.walla.co.il/item/3845568",
       "beforeRank": 1,
       "afterRank": 1,
@@ -1521,7 +2391,7 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://finance.walla.co.il/item/3845589",
       "beforeRank": 2,
       "afterRank": 2,
@@ -1535,7 +2405,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
       "beforeRank": 3,
       "afterRank": 3,
@@ -1554,7 +2424,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-14T13:36:30.505592+00:00",
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
         "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
           "deal",
@@ -1572,116 +2442,136 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
       "beforeRank": 4,
       "afterRank": 4,
       "delta": 0,
       "trendMatch": {
-        "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-        "clusterKey": "כטב מים",
+        "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+        "clusterKey": "us-iran deal",
         "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
+        "externalMentions": 3,
+        "sourceCount": 2,
         "sources": [
-          "ynet"
+          "BBC",
+          "Jerusalem Post"
         ],
         "discoveryTypes": [
-          "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T10:33:35+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
+        "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
-          "אחרי",
-          "בביירות",
-          "בדאחייה",
-          "תקף"
+          "deal",
+          "iran"
         ],
-        "score": 38.55,
-        "boost": 38.0
+        "score": 14.99,
+        "boost": 14.99
       }
     },
     {
-      "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 22,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+      "source": "וואלה TECH - כל הכתבות",
+      "canonicalSource": "וואלה",
+      "category": "טכנולוגיה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 13,
+      "url": "https://tech.walla.co.il/item/3845644",
       "beforeRank": 5,
       "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "יאן פול ואן הקה ינסה להמשיך את מסורת המונדיאל של דודו",
-      "source": "הארץ - ספורט",
-      "canonicalSource": "הארץ",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 22,
-      "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
+      "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 15,
+      "url": "https://www.jpost.com/israel-news/article-899335",
       "beforeRank": 6,
       "afterRank": 6,
       "delta": 0,
-      "trendMatch": null
+      "trendMatch": {
+        "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+        "clusterKey": "נפצע קשה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T12:33:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845569",
+        "overlapTokens": [
+          "יהודה",
+          "נפצע"
+        ],
+        "score": 15.09,
+        "boost": 15.09
+      }
     },
     {
-      "headline": "הממשלה אישרה תוכנית לצמצום זיהום בצפון אשדוד בלי תקציב מובטח",
-      "source": "הארץ - סביבה ואקלים",
-      "canonicalSource": "הארץ",
-      "category": "פוליטיקה",
+      "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+      "source": "מעריב - דעות",
+      "canonicalSource": "מעריב",
+      "category": "דעות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 135,
-      "url": "https://www.haaretz.co.il/nature/2026-06-14/ty-article/.premium/0000019e-c562-d7bd-addf-ef76fe8c0000",
+      "ageMinutes": 16,
+      "url": "https://www.maariv.co.il/news/opinions/article-1332893",
       "beforeRank": 7,
       "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "מעצר משתמטי גיוס באשדוד הזניק כ־100 מפגינים חרדים",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 1984,
-      "url": "https://www.jpost.com/israel-news/article-899237",
+      "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 19,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15886959/angelina-jolie-brad-pitt-rejected-revenge-campaign-knox.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 8,
       "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "ארה״ב יירטה כטב״מים איראניים מעל מצר הורמוז",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 1984,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899239",
+      "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+      "source": "mako סלבס - ראשי",
+      "canonicalSource": "N12",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
       "beforeRank": 9,
       "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "ארגנטינה תנסה לחסום חייבי מזונות ממשחקי המונדיאל בארה״ב",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
+      "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+      "source": "TMI - ראשי",
+      "canonicalSource": "TMI",
+      "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 1985,
-      "url": "https://sports.walla.co.il/item/3845250",
+      "ageMinutes": 21,
+      "url": "https://tmi.maariv.co.il/celebs-news/article-1332896",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -1696,35 +2586,33 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
       "beforeRank": 4,
       "afterRank": 1,
       "delta": 3,
       "trendMatch": {
-        "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-        "clusterKey": "כטב מים",
+        "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+        "clusterKey": "us-iran deal",
         "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
+        "externalMentions": 3,
+        "sourceCount": 2,
         "sources": [
-          "ynet"
+          "BBC",
+          "Jerusalem Post"
         ],
         "discoveryTypes": [
-          "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T10:33:35+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
+        "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
-          "אחרי",
-          "בביירות",
-          "בדאחייה",
-          "תקף"
+          "deal",
+          "iran"
         ],
-        "score": 38.55,
-        "boost": 38.0
+        "score": 14.99,
+        "boost": 14.99
       }
     },
     {
@@ -1734,7 +2622,7 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://finance.walla.co.il/item/3845589",
       "beforeRank": 2,
       "afterRank": 2,
@@ -1748,7 +2636,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
       "beforeRank": 3,
       "afterRank": 3,
@@ -1767,7 +2655,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-14T13:36:30.505592+00:00",
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
         "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
           "deal",
@@ -1779,31 +2667,95 @@
       }
     },
     {
-      "headline": "הממשלה אישרה תוכנית לצמצום זיהום בצפון אשדוד בלי תקציב מובטח",
-      "source": "הארץ - סביבה ואקלים",
-      "canonicalSource": "הארץ",
-      "category": "פוליטיקה",
+      "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 135,
-      "url": "https://www.haaretz.co.il/nature/2026-06-14/ty-article/.premium/0000019e-c562-d7bd-addf-ef76fe8c0000",
-      "beforeRank": 7,
+      "ageMinutes": 22,
+      "url": "https://www.maariv.co.il/news/law/article-1332890",
+      "beforeRank": 11,
       "afterRank": 4,
-      "delta": 3,
+      "delta": 7,
       "trendMatch": null
     },
     {
-      "headline": "פתאל רוק הפך באילת למפגש נוסטלגי עם רגעי מלחמה ושבי",
-      "source": "וואלה תרבות",
+      "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+      "source": "וואלה TECH - כל הכתבות",
       "canonicalSource": "וואלה",
-      "category": "תרבות",
+      "category": "טכנולוגיה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 13,
+      "url": "https://tech.walla.co.il/item/3845644",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 15,
+      "url": "https://www.jpost.com/israel-news/article-899335",
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+        "clusterKey": "נפצע קשה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T12:33:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845569",
+        "overlapTokens": [
+          "יהודה",
+          "נפצע"
+        ],
+        "score": 15.09,
+        "boost": 15.09
+      }
+    },
+    {
+      "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+      "source": "מעריב - דעות",
+      "canonicalSource": "מעריב",
+      "category": "דעות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 16,
+      "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+      "beforeRank": 7,
+      "afterRank": 7,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+      "source": "mako סלבס - ראשי",
+      "canonicalSource": "N12",
+      "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 6,
-      "url": "https://e.walla.co.il/item/3845568",
-      "beforeRank": 1,
-      "afterRank": 5,
-      "delta": -4,
+      "ageMinutes": 20,
+      "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
+      "beforeRank": 9,
+      "afterRank": 8,
+      "delta": 1,
       "trendMatch": null
     },
     {
@@ -1813,67 +2765,25 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 22,
+      "ageMinutes": 26,
       "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
-      "beforeRank": 6,
-      "afterRank": 6,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 22,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 7,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
-      "headline": "מסע ירי במידלנד הסתיים בהרוג, 10 פצועים ומות החשוד",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 2021,
-      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20749485",
-      "beforeRank": 15,
-      "afterRank": 8,
-      "delta": 7,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארה״ב יירטה כטב״מים איראניים מעל מצר הורמוז",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 1984,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899239",
-      "beforeRank": 9,
+      "beforeRank": 13,
       "afterRank": 9,
-      "delta": 0,
+      "delta": 4,
       "trendMatch": null
     },
     {
-      "headline": "מעצר משתמטי גיוס באשדוד הזניק כ־100 מפגינים חרדים",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
+      "headline": "הממשלה אישרה תוכנית לצמצום זיהום בצפון אשדוד בלי תקציב מובטח",
+      "source": "הארץ - סביבה ואקלים",
+      "canonicalSource": "הארץ",
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 1984,
-      "url": "https://www.jpost.com/israel-news/article-899237",
-      "beforeRank": 8,
+      "ageMinutes": 139,
+      "url": "https://www.haaretz.co.il/nature/2026-06-14/ty-article/.premium/0000019e-c562-d7bd-addf-ef76fe8c0000",
+      "beforeRank": 14,
       "afterRank": 10,
-      "delta": -2,
+      "delta": 4,
       "trendMatch": null
     }
   ],
@@ -1885,7 +2795,7 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 6,
+      "ageMinutes": 10,
       "url": "https://e.walla.co.il/item/3845568",
       "beforeRank": 1,
       "afterRank": 1,
@@ -1899,7 +2809,7 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://finance.walla.co.il/item/3845589",
       "beforeRank": 2,
       "afterRank": 2,
@@ -1913,7 +2823,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
       "beforeRank": 3,
       "afterRank": 3,
@@ -1932,7 +2842,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-14T13:36:30.505592+00:00",
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
         "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
           "deal",
@@ -1950,36 +2860,154 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
       "beforeRank": 4,
       "afterRank": 4,
       "delta": 0,
       "trendMatch": {
-        "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-        "clusterKey": "כטב מים",
+        "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+        "clusterKey": "us-iran deal",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "BBC",
+          "Jerusalem Post"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
+        "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
+        "overlapTokens": [
+          "deal",
+          "iran"
+        ],
+        "score": 14.99,
+        "boost": 14.99
+      }
+    },
+    {
+      "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+      "source": "וואלה TECH - כל הכתבות",
+      "canonicalSource": "וואלה",
+      "category": "טכנולוגיה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 13,
+      "url": "https://tech.walla.co.il/item/3845644",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 15,
+      "url": "https://www.jpost.com/israel-news/article-899335",
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+        "clusterKey": "נפצע קשה",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 1,
         "sources": [
-          "ynet"
+          "וואלה"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T10:33:35+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T12:33:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845569",
         "overlapTokens": [
-          "אחרי",
-          "בביירות",
-          "בדאחייה",
-          "תקף"
+          "יהודה",
+          "נפצע"
         ],
-        "score": 38.55,
-        "boost": 38.0
+        "score": 15.09,
+        "boost": 15.09
       }
+    },
+    {
+      "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+      "source": "מעריב - דעות",
+      "canonicalSource": "מעריב",
+      "category": "דעות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 16,
+      "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+      "beforeRank": 7,
+      "afterRank": 7,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 19,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15886959/angelina-jolie-brad-pitt-rejected-revenge-campaign-knox.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 8,
+      "afterRank": 8,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+      "source": "mako סלבס - ראשי",
+      "canonicalSource": "N12",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
+      "beforeRank": 9,
+      "afterRank": 9,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+      "source": "TMI - ראשי",
+      "canonicalSource": "TMI",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 21,
+      "url": "https://tmi.maariv.co.il/celebs-news/article-1332896",
+      "beforeRank": 10,
+      "afterRank": 10,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 22,
+      "url": "https://www.maariv.co.il/news/law/article-1332890",
+      "beforeRank": 11,
+      "afterRank": 11,
+      "delta": 0,
+      "trendMatch": null
     },
     {
       "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
@@ -1988,10 +3016,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 22,
+      "ageMinutes": 26,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -2002,10 +3030,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 22,
+      "ageMinutes": 26,
       "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -2016,10 +3044,10 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 135,
+      "ageMinutes": 139,
       "url": "https://www.haaretz.co.il/nature/2026-06-14/ty-article/.premium/0000019e-c562-d7bd-addf-ef76fe8c0000",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": null
     },
@@ -2030,10 +3058,10 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 1984,
+      "ageMinutes": 1988,
       "url": "https://www.jpost.com/israel-news/article-899237",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -2044,10 +3072,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 1984,
+      "ageMinutes": 1988,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899239",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -2058,10 +3086,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 1985,
+      "ageMinutes": 1989,
       "url": "https://sports.walla.co.il/item/3845250",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -2072,10 +3100,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 1985,
+      "ageMinutes": 1989,
       "url": "https://sports.walla.co.il/item/3845253",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -2086,10 +3114,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 1985,
+      "ageMinutes": 1989,
       "url": "https://sports.walla.co.il/item/3845274",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -2100,106 +3128,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 2000,
+      "ageMinutes": 2004,
       "url": "https://www.dailymail.com/tvshowbiz/article-15896635/brad-pitt-heartbreak-son-knox-drops-surname-18th-birthday.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 13,
-      "afterRank": 13,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "חלב שקדים ביתי דורש רק השריה, טחינה וסינון",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "צרכנות",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 2011,
-      "url": "https://www.israelhayom.co.il/food/recipes/article/20739679",
-      "beforeRank": 14,
-      "afterRank": 14,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מסע ירי במידלנד הסתיים בהרוג, 10 פצועים ומות החשוד",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 2021,
-      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20749485",
-      "beforeRank": 15,
-      "afterRank": 15,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "קייטי פרייס תחשוף בסדרה את עומק המשברים הנפשיים שעברה",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 2048,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-price-lee-andrews-reunited-37289491",
-      "beforeRank": 16,
-      "afterRank": 16,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מבקר הקולנוע ג׳ין שליט מת בגיל 100",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 2073,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15896567/gene-shalit-dead-100-today-movie-critic.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 17,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארה״ב מתכננת לגרש איראנים למדינה אפריקנית לא יציבה",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 3594,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899181",
-      "beforeRank": 18,
-      "afterRank": 18,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "אריאנה גרנדה דרשה מהבית הלבן להסיר את שירה מסרטון ICE",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 3597,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15893889/ariana-grande-ice-tiktok-trump-bye.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 19,
-      "afterRank": 19,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "סידני סוויני הפכה אירוע הלבשה תחתונה למפגן זוגי עם סקוטר בראון",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 3597,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15893837/sydney-sweeney-boyfriend-scooter-braun-support-syrn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -2214,35 +3144,33 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899341",
       "beforeRank": 4,
       "afterRank": 1,
       "delta": 3,
       "trendMatch": {
-        "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-        "clusterKey": "כטב מים",
+        "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+        "clusterKey": "us-iran deal",
         "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
+        "externalMentions": 3,
+        "sourceCount": 2,
         "sources": [
-          "ynet"
+          "BBC",
+          "Jerusalem Post"
         ],
         "discoveryTypes": [
-          "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T10:33:35+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
+        "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
-          "אחרי",
-          "בביירות",
-          "בדאחייה",
-          "תקף"
+          "deal",
+          "iran"
         ],
-        "score": 38.55,
-        "boost": 38.0
+        "score": 14.99,
+        "boost": 14.99
       }
     },
     {
@@ -2252,7 +3180,7 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://finance.walla.co.il/item/3845589",
       "beforeRank": 2,
       "afterRank": 2,
@@ -2266,7 +3194,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 8,
+      "ageMinutes": 12,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899351",
       "beforeRank": 3,
       "afterRank": 3,
@@ -2285,7 +3213,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-14T13:36:30.505592+00:00",
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
         "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
           "deal",
@@ -2297,31 +3225,95 @@
       }
     },
     {
-      "headline": "הממשלה אישרה תוכנית לצמצום זיהום בצפון אשדוד בלי תקציב מובטח",
-      "source": "הארץ - סביבה ואקלים",
-      "canonicalSource": "הארץ",
-      "category": "פוליטיקה",
+      "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 135,
-      "url": "https://www.haaretz.co.il/nature/2026-06-14/ty-article/.premium/0000019e-c562-d7bd-addf-ef76fe8c0000",
-      "beforeRank": 7,
+      "ageMinutes": 22,
+      "url": "https://www.maariv.co.il/news/law/article-1332890",
+      "beforeRank": 11,
       "afterRank": 4,
-      "delta": 3,
+      "delta": 7,
       "trendMatch": null
     },
     {
-      "headline": "פתאל רוק הפך באילת למפגש נוסטלגי עם רגעי מלחמה ושבי",
-      "source": "וואלה תרבות",
+      "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+      "source": "וואלה TECH - כל הכתבות",
       "canonicalSource": "וואלה",
-      "category": "תרבות",
+      "category": "טכנולוגיה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 13,
+      "url": "https://tech.walla.co.il/item/3845644",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 15,
+      "url": "https://www.jpost.com/israel-news/article-899335",
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+        "clusterKey": "נפצע קשה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T12:33:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845569",
+        "overlapTokens": [
+          "יהודה",
+          "נפצע"
+        ],
+        "score": 15.09,
+        "boost": 15.09
+      }
+    },
+    {
+      "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+      "source": "מעריב - דעות",
+      "canonicalSource": "מעריב",
+      "category": "דעות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 16,
+      "url": "https://www.maariv.co.il/news/opinions/article-1332893",
+      "beforeRank": 7,
+      "afterRank": 7,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+      "source": "mako סלבס - ראשי",
+      "canonicalSource": "N12",
+      "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 6,
-      "url": "https://e.walla.co.il/item/3845568",
-      "beforeRank": 1,
-      "afterRank": 5,
-      "delta": -4,
+      "ageMinutes": 20,
+      "url": "https://www.mako.co.il/entertainment-celebs/local-2026/Article-dcc692ec806ce91027.htm",
+      "beforeRank": 9,
+      "afterRank": 8,
+      "delta": 1,
       "trendMatch": null
     },
     {
@@ -2331,11 +3323,67 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 22,
+      "ageMinutes": 26,
       "url": "https://www.haaretz.co.il/sport/world-soccer/2026-06-14/ty-article/0000019e-c25b-d86d-adde-feff439f0000",
-      "beforeRank": 6,
-      "afterRank": 6,
-      "delta": 0,
+      "beforeRank": 13,
+      "afterRank": 9,
+      "delta": 4,
+      "trendMatch": null
+    },
+    {
+      "headline": "הממשלה אישרה תוכנית לצמצום זיהום בצפון אשדוד בלי תקציב מובטח",
+      "source": "הארץ - סביבה ואקלים",
+      "canonicalSource": "הארץ",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 139,
+      "url": "https://www.haaretz.co.il/nature/2026-06-14/ty-article/.premium/0000019e-c562-d7bd-addf-ef76fe8c0000",
+      "beforeRank": 14,
+      "afterRank": 10,
+      "delta": 4,
+      "trendMatch": null
+    },
+    {
+      "headline": "פתאל רוק הפך באילת למפגש נוסטלגי עם רגעי מלחמה ושבי",
+      "source": "וואלה תרבות",
+      "canonicalSource": "וואלה",
+      "category": "תרבות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 10,
+      "url": "https://e.walla.co.il/item/3845568",
+      "beforeRank": 1,
+      "afterRank": 11,
+      "delta": -10,
+      "trendMatch": null
+    },
+    {
+      "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+      "source": "TMI - ראשי",
+      "canonicalSource": "TMI",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 21,
+      "url": "https://tmi.maariv.co.il/celebs-news/article-1332896",
+      "beforeRank": 10,
+      "afterRank": 12,
+      "delta": -2,
+      "trendMatch": null
+    },
+    {
+      "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 19,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15886959/angelina-jolie-brad-pitt-rejected-revenge-campaign-knox.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 8,
+      "afterRank": 13,
+      "delta": -5,
       "trendMatch": null
     },
     {
@@ -2345,10 +3393,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 22,
+      "ageMinutes": 26,
       "url": "https://www.dailymail.com/tvshowbiz/article-15897715/Harper-Beckham-KATIE-HIND-trip-Brooklyn.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 7,
+      "beforeRank": 12,
+      "afterRank": 14,
       "delta": -2,
       "trendMatch": null
     },
@@ -2359,39 +3407,11 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 2021,
+      "ageMinutes": 2025,
       "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20749485",
-      "beforeRank": 15,
-      "afterRank": 8,
+      "beforeRank": 22,
+      "afterRank": 15,
       "delta": 7,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארה״ב יירטה כטב״מים איראניים מעל מצר הורמוז",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 1984,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899239",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מעצר משתמטי גיוס באשדוד הזניק כ־100 מפגינים חרדים",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 1984,
-      "url": "https://www.jpost.com/israel-news/article-899237",
-      "beforeRank": 8,
-      "afterRank": 10,
-      "delta": -2,
       "trendMatch": null
     },
     {
@@ -2401,24 +3421,38 @@
       "category": "צרכנות",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 2011,
+      "ageMinutes": 2015,
       "url": "https://www.israelhayom.co.il/food/recipes/article/20739679",
-      "beforeRank": 14,
-      "afterRank": 11,
-      "delta": 3,
+      "beforeRank": 21,
+      "afterRank": 16,
+      "delta": 5,
       "trendMatch": null
     },
     {
-      "headline": "ארגנטינה תנסה לחסום חייבי מזונות ממשחקי המונדיאל בארה״ב",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
+      "headline": "קייטי פרייס תחשוף בסדרה את עומק המשברים הנפשיים שעברה",
+      "source": "Mirror Celebs רכילות חו״ל",
+      "canonicalSource": "Mirror",
+      "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 1985,
-      "url": "https://sports.walla.co.il/item/3845250",
-      "beforeRank": 10,
-      "afterRank": 12,
+      "ageMinutes": 2052,
+      "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-price-lee-andrews-reunited-37289491",
+      "beforeRank": 23,
+      "afterRank": 17,
+      "delta": 6,
+      "trendMatch": null
+    },
+    {
+      "headline": "ארה״ב יירטה כטב״מים איראניים מעל מצר הורמוז",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 1988,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899239",
+      "beforeRank": 16,
+      "afterRank": 18,
       "delta": -2,
       "trendMatch": null
     },
@@ -2429,109 +3463,25 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 2000,
+      "ageMinutes": 2004,
       "url": "https://www.dailymail.com/tvshowbiz/article-15896635/brad-pitt-heartbreak-son-knox-drops-surname-18th-birthday.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 13,
-      "afterRank": 13,
-      "delta": 0,
+      "beforeRank": 20,
+      "afterRank": 19,
+      "delta": 1,
       "trendMatch": null
     },
     {
-      "headline": "קייטי פרייס תחשוף בסדרה את עומק המשברים הנפשיים שעברה",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 2048,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-price-lee-andrews-reunited-37289491",
-      "beforeRank": 16,
-      "afterRank": 14,
-      "delta": 2,
-      "trendMatch": null
-    },
-    {
-      "headline": "מבקר הקולנוע ג׳ין שליט מת בגיל 100",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 2073,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15896567/gene-shalit-dead-100-today-movie-critic.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 15,
-      "delta": 2,
-      "trendMatch": null
-    },
-    {
-      "headline": "הרננדז מגבה את אמבפה לקראת מבחן המונדיאל של צרפת",
+      "headline": "ארגנטינה תנסה לחסום חייבי מזונות ממשחקי המונדיאל בארה״ב",
       "source": "וואלה ספורט",
       "canonicalSource": "וואלה",
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 1985,
-      "url": "https://sports.walla.co.il/item/3845253",
-      "beforeRank": 11,
-      "afterRank": 16,
-      "delta": -5,
-      "trendMatch": null
-    },
-    {
-      "headline": "צבא ארה״ב היה מוכן לתקוף באיראן כשטראמפ הודיע על הסכם",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 3680,
-      "url": "https://www.ynet.co.il/news/article/b11hdaubmx",
-      "beforeRank": 31,
-      "afterRank": 17,
-      "delta": 14,
-      "trendMatch": null
-    },
-    {
-      "headline": "טראמפ טוען להסכם קרוב עם איראן, וטהרן עדיין לא מאשרת",
-      "source": "The Guardian Middle East",
-      "canonicalSource": "Guardian",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 3638,
-      "url": "https://www.theguardian.com/world/2026/jun/11/trump-seize-control-iran-oil-gas-ceasefire",
-      "beforeRank": 25,
-      "afterRank": 18,
-      "delta": 7,
-      "trendMatch": null
-    },
-    {
-      "headline": "חוק המעונות קיבל תיעדוף למילואימניקים לפני הקריאה הראשונה",
-      "source": "בשבע - מגזין ודעות",
-      "canonicalSource": "בשבע",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 7044,
-      "url": "https://be7.co.il/24252",
-      "beforeRank": 50,
-      "afterRank": 19,
-      "delta": 31,
-      "trendMatch": null
-    },
-    {
-      "headline": "קמפייני הבחירות בישראל עוברים לרשתות ולבינה מלאכותית",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 3876,
-      "url": "https://www.ynet.co.il/news/article/yokra14795826",
-      "beforeRank": 42,
+      "ageMinutes": 1989,
+      "url": "https://sports.walla.co.il/item/3845250",
+      "beforeRank": 17,
       "afterRank": 20,
-      "delta": 22,
+      "delta": -3,
       "trendMatch": null
     }
   ],
@@ -2542,29 +3492,27 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": {
-        "trend": "אחרי 3 כטב\"מים שהתפוצצו בישראל: צה\"ל תקף בדאחייה בביירות",
-        "clusterKey": "כטב מים",
+        "trend": "Trump says US-Iran deal to be signed on Sunday as Tehran casts doubt on timing The US president's comments come as Iran says an exact date has no",
+        "clusterKey": "us-iran deal",
         "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 1,
+        "externalMentions": 3,
+        "sourceCount": 2,
         "sources": [
-          "ynet"
+          "BBC",
+          "Jerusalem Post"
         ],
         "discoveryTypes": [
-          "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-14T10:33:35+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hytvxw2bge",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
+        "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
-          "אחרי",
-          "בביירות",
-          "בדאחייה",
-          "תקף"
+          "deal",
+          "iran"
         ],
-        "score": 38.55,
-        "boost": 38.0
+        "score": 14.99,
+        "boost": 14.99
       },
       "beforeRank": 4,
       "afterRank": 1
@@ -2597,7 +3545,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-14T13:36:30.505592+00:00",
+        "latestAt": "2026-06-14T13:40:29.402928+00:00",
         "sampleUrl": "https://www.bbc.com/news/articles/cvglmn49xz0o",
         "overlapTokens": [
           "deal",
@@ -2611,13 +3559,89 @@
       "afterRank": 3
     },
     {
+      "headline": "מעצרו של הפרוד של ליה מלכה הוארך אחרי התחזקות החשד ברצח",
+      "source": "מעריב",
+      "category": "פלילים",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 11,
+      "afterRank": 4
+    },
+    {
+      "headline": "מודל הבינה המלאכותית של אנת׳רופיק נחסם שלושה ימים אחרי ההשקה",
+      "source": "וואלה",
+      "category": "טכנולוגיה",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 5,
+      "afterRank": 5
+    },
+    {
+      "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "פועל נפצע קשה עקב פגיעת טרקטור במטה יהודה",
+        "clusterKey": "נפצע קשה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-14T12:33:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3845569",
+        "overlapTokens": [
+          "יהודה",
+          "נפצע"
+        ],
+        "score": 15.09,
+        "boost": 15.09
+      },
+      "beforeRank": 6,
+      "afterRank": 6
+    },
+    {
+      "headline": "שלמה שמיר טוען שטראמפ כבר החזיר לאיראן לגיטימציה מדינית",
+      "source": "מעריב",
+      "category": "דעות",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 7,
+      "afterRank": 7
+    },
+    {
+      "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי",
+      "source": "N12",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 9,
+      "afterRank": 8
+    },
+    {
+      "headline": "יאן פול ואן הקה ינסה להמשיך את מסורת המונדיאל של דודו",
+      "source": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 13,
+      "afterRank": 9
+    },
+    {
       "headline": "הממשלה אישרה תוכנית לצמצום זיהום בצפון אשדוד בלי תקציב מובטח",
       "source": "הארץ",
       "category": "פוליטיקה",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 7,
-      "afterRank": 4
+      "beforeRank": 14,
+      "afterRank": 10
     },
     {
       "headline": "פתאל רוק הפך באילת למפגש נוסטלגי עם רגעי מלחמה ושבי",
@@ -2626,16 +3650,25 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 1,
-      "afterRank": 5
+      "afterRank": 11
     },
     {
-      "headline": "יאן פול ואן הקה ינסה להמשיך את מסורת המונדיאל של דודו",
-      "source": "הארץ",
-      "category": "ספורט",
+      "headline": "גל רובין הוצאה מבית האח הגדול רגע לפני הגמר במסגרת משימה",
+      "source": "TMI",
+      "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 6,
-      "afterRank": 6
+      "beforeRank": 10,
+      "afterRank": 12
+    },
+    {
+      "headline": "בראד פיט דחה ניסיון חזרה מצד אנג׳לינה ג׳ולי והקרע התרחב לילדים",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 8,
+      "afterRank": 13
     },
     {
       "headline": "הארפר בקהאם נפגעה מהנתק של ברוקלין ביום הולדתה",
@@ -2643,8 +3676,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 5,
-      "afterRank": 7
+      "beforeRank": 12,
+      "afterRank": 14
     },
     {
       "headline": "מסע ירי במידלנד הסתיים בהרוג, 10 פצועים ומות החשוד",
@@ -2652,26 +3685,8 @@
       "category": "פלילים",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 15,
-      "afterRank": 8
-    },
-    {
-      "headline": "ארה״ב יירטה כטב״מים איראניים מעל מצר הורמוז",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 9,
-      "afterRank": 9
-    },
-    {
-      "headline": "מעצר משתמטי גיוס באשדוד הזניק כ־100 מפגינים חרדים",
-      "source": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 8,
-      "afterRank": 10
+      "beforeRank": 22,
+      "afterRank": 15
     },
     {
       "headline": "חלב שקדים ביתי דורש רק השריה, טחינה וסינון",
@@ -2679,26 +3694,8 @@
       "category": "צרכנות",
       "class": "other",
       "trendMatch": null,
-      "beforeRank": 14,
-      "afterRank": 11
-    },
-    {
-      "headline": "ארגנטינה תנסה לחסום חייבי מזונות ממשחקי המונדיאל בארה״ב",
-      "source": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 10,
-      "afterRank": 12
-    },
-    {
-      "headline": "בנו של בראד פיט הסיר את שם המשפחה שלו לפני גיל 18",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 13,
-      "afterRank": 13
+      "beforeRank": 21,
+      "afterRank": 16
     },
     {
       "headline": "קייטי פרייס תחשוף בסדרה את עומק המשברים הנפשיים שעברה",
@@ -2706,61 +3703,34 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 16,
-      "afterRank": 14
+      "beforeRank": 23,
+      "afterRank": 17
     },
     {
-      "headline": "מבקר הקולנוע ג׳ין שליט מת בגיל 100",
+      "headline": "ארה״ב יירטה כטב״מים איראניים מעל מצר הורמוז",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 16,
+      "afterRank": 18
+    },
+    {
+      "headline": "בנו של בראד פיט הסיר את שם המשפחה שלו לפני גיל 18",
       "source": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 17,
-      "afterRank": 15
+      "beforeRank": 20,
+      "afterRank": 19
     },
     {
-      "headline": "הרננדז מגבה את אמבפה לקראת מבחן המונדיאל של צרפת",
+      "headline": "ארגנטינה תנסה לחסום חייבי מזונות ממשחקי המונדיאל בארה״ב",
       "source": "וואלה",
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 11,
-      "afterRank": 16
-    },
-    {
-      "headline": "צבא ארה״ב היה מוכן לתקוף באיראן כשטראמפ הודיע על הסכם",
-      "source": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 31,
-      "afterRank": 17
-    },
-    {
-      "headline": "טראמפ טוען להסכם קרוב עם איראן, וטהרן עדיין לא מאשרת",
-      "source": "Guardian",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 25,
-      "afterRank": 18
-    },
-    {
-      "headline": "חוק המעונות קיבל תיעדוף למילואימניקים לפני הקריאה הראשונה",
-      "source": "בשבע",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 50,
-      "afterRank": 19
-    },
-    {
-      "headline": "קמפייני הבחירות בישראל עוברים לרשתות ולבינה מלאכותית",
-      "source": "ynet",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 42,
+      "beforeRank": 17,
       "afterRank": 20
     }
   ],
@@ -2786,13 +3756,13 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-14T13:36:54.113912+00:00",
+    "generatedAt": "2026-06-14T13:40:51.301321+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
-      "source_live_qa_bridge_needed": 2,
-      "source_live_visible_missing": 4,
+      "source_live_qa_bridge_needed": 3,
       "not_configured": 1,
+      "source_live_visible_missing": 3,
       "official_source_live_not_in_breaking": 2
     },
     "rows": [
@@ -2823,13 +3793,13 @@
         "qaRejectedCount": 144,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-14T13:13:49+00:00",
-        "latestRawAgeHours": 0.38,
+        "latestRawAgeHours": 0.45,
         "latestValidAt": "2026-06-14T13:13:49+00:00",
-        "latestValidAgeHours": 0.38,
+        "latestValidAgeHours": 0.45,
         "visibleMain": {
           "count": 30,
           "latestAt": "2026-06-14T13:13:49+00:00",
-          "latestAgeHours": 0.38,
+          "latestAgeHours": 0.45,
           "sample": [
             {
               "publishedAt": "2026-06-14T13:13:49+00:00",
@@ -2851,7 +3821,7 @@
         "visibleBreaking": {
           "count": 2,
           "latestAt": "2026-06-08T21:48:28+00:00",
-          "latestAgeHours": 135.81,
+          "latestAgeHours": 135.87,
           "sample": [
             {
               "publishedAt": "2026-06-08T21:48:28+00:00",
@@ -2937,8 +3907,8 @@
         "id": "n12",
         "label": "N12 / mako",
         "expectedRoute": "main",
-        "status": "source_live_visible_missing",
-        "problem": "המקור חי, אבל אין כרטיס טרי בפיד הנראה",
+        "status": "source_live_qa_bridge_needed",
+        "problem": "יש מועמדים טריים אבל כולם נדחים/מסוננים לפני כרטיס פוינטה",
         "treatment": "Simulation-only: separate live N12 source activity from visible-feed absence; prepare editor-bridge diagnostics for QA rejects.",
         "configuredSources": [
           "N12 - ביטחוני ופוליטי",
@@ -2959,14 +3929,19 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-14T13:35:00+00:00",
-        "latestRawAgeHours": 0.03,
+        "latestRawAgeHours": 0.1,
         "latestValidAt": "2026-06-14T13:35:00+00:00",
-        "latestValidAgeHours": 0.03,
+        "latestValidAgeHours": 0.1,
         "visibleMain": {
-          "count": 8,
-          "latestAt": "2026-06-12T00:15:38+00:00",
-          "latestAgeHours": 61.35,
+          "count": 9,
+          "latestAt": "2026-06-14T13:20:00+00:00",
+          "latestAgeHours": 0.35,
           "sample": [
+            {
+              "publishedAt": "2026-06-14T13:20:00+00:00",
+              "source": "mako סלבס - ראשי",
+              "headline": "נועה מוזס חגגה עם גל אמיתי בגלל קשר משפחתי ולא זוגי"
+            },
             {
               "publishedAt": "2026-06-12T00:15:38+00:00",
               "source": "mako - בריאות",
@@ -2976,11 +3951,6 @@
               "publishedAt": "2026-06-12T00:15:38+00:00",
               "source": "mako - בריאות",
               "headline": "רופאים מזהירים שמשחקי מונדיאל דרמטיים מעלים סיכון ללב"
-            },
-            {
-              "publishedAt": "2026-06-09T08:10:46+00:00",
-              "source": "The Jerusalem Post - Middle East",
-              "headline": "איראנים אומרים לישראל שהם בני ערובה של המשטר"
             }
           ]
         },
@@ -3074,13 +4044,13 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-14T13:27:33+00:00",
-        "latestRawAgeHours": 0.16,
+        "latestRawAgeHours": 0.22,
         "latestValidAt": "2026-06-14T13:27:33+00:00",
-        "latestValidAgeHours": 0.16,
+        "latestValidAgeHours": 0.22,
         "visibleMain": {
           "count": 27,
           "latestAt": "2026-06-13T04:05:28+00:00",
-          "latestAgeHours": 33.52,
+          "latestAgeHours": 33.59,
           "sample": [
             {
               "publishedAt": "2026-06-13T04:05:28+00:00",
@@ -3222,9 +4192,9 @@
         "qaRejectedCount": 6,
         "relevanceFilteredCount": 18,
         "latestRawAt": "2026-06-14T13:07:08+00:00",
-        "latestRawAgeHours": 0.5,
+        "latestRawAgeHours": 0.56,
         "latestValidAt": "2026-06-13T12:18:42+00:00",
-        "latestValidAgeHours": 25.3,
+        "latestValidAgeHours": 25.37,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -3320,14 +4290,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 4,
-        "latestRawAt": "2026-06-14T13:29:55+00:00",
-        "latestRawAgeHours": 0.12,
-        "latestValidAt": "2026-06-14T13:29:55+00:00",
-        "latestValidAgeHours": 0.12,
+        "latestRawAt": "2026-06-14T13:37:00+00:00",
+        "latestRawAgeHours": 0.06,
+        "latestValidAt": "2026-06-14T13:37:00+00:00",
+        "latestValidAgeHours": 0.06,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-12T00:57:39+00:00",
-          "latestAgeHours": 60.65,
+          "latestAgeHours": 60.72,
           "sample": [
             {
               "publishedAt": "2026-06-12T00:57:39+00:00",
@@ -3358,7 +4328,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "The Guardian Middle East",
-            "publishedAt": "2026-06-14T16:29:55+03:00",
+            "publishedAt": "2026-06-14T16:37:00+03:00",
             "title": "Middle East crisis live: Iran says Israeli attack on Beirut show lack of US willing after Trump says peace deal will be signed today",
             "url": "https://www.theguardian.com/world/live/2026/jun/14/iran-us-middle-east-crisis-donald-trump-peace-deal-strait-hormuz-open-pakistan-latest-news-updates"
           },
@@ -3436,7 +4406,7 @@
         "qaRejectedCount": 0,
         "relevanceFilteredCount": 10,
         "latestRawAt": "2026-06-13T18:34:00+00:00",
-        "latestRawAgeHours": 19.05,
+        "latestRawAgeHours": 19.11,
         "latestValidAt": null,
         "latestValidAgeHours": null,
         "visibleMain": {
@@ -3535,13 +4505,13 @@
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-14T13:15:07+00:00",
-        "latestRawAgeHours": 0.36,
+        "latestRawAgeHours": 0.43,
         "latestValidAt": "2026-06-14T13:15:07+00:00",
-        "latestValidAgeHours": 0.36,
+        "latestValidAgeHours": 0.43,
         "visibleMain": {
-          "count": 10,
+          "count": 11,
           "latestAt": "2026-06-14T13:27:42+00:00",
-          "latestAgeHours": 0.15,
+          "latestAgeHours": 0.22,
           "sample": [
             {
               "publishedAt": "2026-06-14T13:27:42+00:00",
@@ -3549,21 +4519,21 @@
               "headline": "צה״ל תקף מפקדות חיזבאללה בדאחייה אחרי שיגורי כטב״מים לצפון"
             },
             {
+              "publishedAt": "2026-06-14T13:25:24+00:00",
+              "source": "The Jerusalem Post - Israel News",
+              "headline": "חמאס שיבח ירי שבו נפצע קצין צה״ל בפעילות ליד חברון"
+            },
+            {
               "publishedAt": "2026-06-09T15:23:22+00:00",
               "source": "The Jerusalem Post - Israel News",
               "headline": "מחבל חצה מלבנון, ירה על כוח צה״ל וחוסל ליד הגבול"
-            },
-            {
-              "publishedAt": "2026-06-09T12:24:22+00:00",
-              "source": "הארץ - כל הכתבות",
-              "headline": "חמוש מלבנון חדר לרכס רמים ונהרג מירי כוחות צה״ל"
             }
           ]
         },
         "visibleBreaking": {
           "count": 4,
           "latestAt": "2026-06-08T21:34:16+00:00",
-          "latestAgeHours": 136.04,
+          "latestAgeHours": 136.11,
           "sample": [
             {
               "publishedAt": "2026-06-08T21:34:16+00:00",
@@ -3666,13 +4636,13 @@
         "qaRejectedCount": 11,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-14T13:18:22+00:00",
-        "latestRawAgeHours": 0.31,
+        "latestRawAgeHours": 0.37,
         "latestValidAt": "2026-06-14T13:18:22+00:00",
-        "latestValidAgeHours": 0.31,
+        "latestValidAgeHours": 0.37,
         "visibleMain": {
           "count": 5,
           "latestAt": "2026-06-09T12:04:00+00:00",
-          "latestAgeHours": 121.55,
+          "latestAgeHours": 121.61,
           "sample": [
             {
               "publishedAt": "2026-06-09T12:04:00+00:00",
@@ -3694,7 +4664,7 @@
         "visibleBreaking": {
           "count": 3,
           "latestAt": "2026-06-09T06:04:00+00:00",
-          "latestAgeHours": 127.55,
+          "latestAgeHours": 127.61,
           "sample": [
             {
               "publishedAt": "2026-06-09T06:04:00+00:00",
