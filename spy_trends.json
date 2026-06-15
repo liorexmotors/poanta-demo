@@ -5,20 +5,25 @@
     "name": "מרגל",
     "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"
   },
-  "generatedAt": "2026-06-15T20:09:20+03:00",
+  "generatedAt": "2026-06-15T20:11:22+03:00",
   "windowHours": 8,
   "sourcesChecked": 95,
   "rssSourcesChecked": 80,
   "webTargetsChecked": 15,
-  "sourcesWithErrors": 5,
-  "itemsScanned": 390,
-  "rssItemsScanned": 210,
+  "sourcesWithErrors": 6,
+  "itemsScanned": 389,
+  "rssItemsScanned": 209,
   "webItemsScanned": 180,
-  "durationSec": 4.16,
+  "durationSec": 64.9,
   "errorsSample": [
     {
       "source": "ישראל היום",
       "type": "RSS",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "ישראל היום",
+      "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
@@ -27,19 +32,19 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
-      "source": "ישראל היום",
+      "source": "Axios",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "גלובס",
+      "type": "WEB",
+      "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
     },
     {
       "source": "Reuters",
       "type": "WEB",
-      "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
-    },
-    {
-      "source": "Axios",
-      "type": "WEB",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
+      "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
     }
   ],
   "trends": [
@@ -147,6 +152,27 @@
       "mentionedInFeed": true,
       "latestAt": "2026-06-15T18:37:00+00:00",
       "sampleUrl": "https://news.walla.co.il/item/3845991"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "שני ילדים אושפזו לאחר שצרכו מחית פירות - משרד הבריאות פתח בחקירה",
+      "clusterKey": "מחית פירות",
+      "externalMentions": 4,
+      "sourceCount": 3,
+      "sources": [
+        "N12",
+        "וואלה",
+        "סרוגים"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 2,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-15T16:50:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3845971"
     },
     {
       "domain": "כלכלה",
@@ -268,32 +294,12 @@
       "webMentions": 1,
       "mentionedInFeed": true,
       "latestAt": "2026-06-15T16:10:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3845956"
-    },
-    {
-      "domain": "כלכלה",
-      "trend": "\"להשיב את החיים והכבוד לפצועים\": תרומת ענק של 200 מיליון שקל לבית חולים שיקומי חדש בשדה דב",
-      "clusterKey": "מיליון שקל",
-      "externalMentions": 5,
-      "sourceCount": 2,
-      "sources": [
-        "גלובס",
-        "וואלה"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 4,
-      "webMentions": 1,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-15T15:00:00+00:00",
-      "sampleUrl": "https://finance.walla.co.il/item/3845870"
+      "sampleUrl": "https://news.walla.co.il/break/3845972"
     },
     {
       "domain": "חדשות",
       "trend": "עשרות חרדים חסמו את צומת גילת במחאה על מעצר עריק",
-      "clusterKey": "חסמו צומת",
+      "clusterKey": "חרדים חסמו",
       "externalMentions": 5,
       "sourceCount": 2,
       "sources": [
@@ -328,7 +334,7 @@
       "webMentions": 2,
       "mentionedInFeed": false,
       "latestAt": "2026-06-15T12:45:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3845888"
+      "sampleUrl": "https://news.walla.co.il/break/3845889"
     }
   ]
 }
