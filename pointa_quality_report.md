@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 199
 Errors: 0
-Warnings: 66
+Warnings: 65
 
 ## Category distribution
 
-- רכילות: 58
+- רכילות: 57
 - ביטחון: 34
 - כלכלה: 22
 - ספורט: 19
@@ -26,7 +26,7 @@ Warnings: 66
 
 ## Issue counts
 
-- takeaway_long: 51
+- takeaway_long: 50
 - summary_long: 14
 - category_sport_source: 1
 
@@ -486,10 +486,3 @@ Warnings: 66
 - Original: `Lorraine Kelly 'crushed' by career setback as she addresses huge U-turn`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/lorraine-kelly-crushed-career-setback-37298184
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 97 > 95
-- Headline: `קייטי פרייס טסה לדובאי ביום הולדתו של בנה`
-- Original: `Katie Price flies out to Dubai to see Lee Andrews on son Junior Andre's 21st birthday`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/katie-price-flies-out-dubai-37298175
