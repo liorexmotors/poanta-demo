@@ -1,23 +1,23 @@
 # Pointa Quality Gate Report
 
-Items checked: 213
+Items checked: 198
 Errors: 0
-Warnings: 63
+Warnings: 61
 
 ## Category distribution
 
-- ביטחון: 58
-- רכילות: 30
-- ספורט: 27
-- כלכלה: 19
+- ביטחון: 56
+- רכילות: 26
+- ספורט: 23
+- כלכלה: 18
 - תרבות: 13
 - פלילים: 11
-- בריאות: 10
-- חדשות: 9
+- בריאות: 9
+- חדשות: 8
 - משפט: 6
-- פוליטיקה: 6
-- רכב: 6
+- פוליטיקה: 5
 - צרכנות: 5
+- רכב: 5
 - טכנולוגיה: 4
 - אקטואליה בעולם: 3
 - דעות: 3
@@ -26,7 +26,7 @@ Warnings: 63
 
 ## Issue counts
 
-- takeaway_long: 55
+- takeaway_long: 53
 - summary_long: 7
 - category_sport_source: 1
 
@@ -46,7 +46,7 @@ Warnings: 63
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3845801
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 20
 - Takeaway length 100 > 95
 - Headline: `קולורדו דחתה הצעת 10 מיליון יורו של ברצלונה`
 - Original: `ארסנל בעקבות ילד הפלא המרוקאי, ברצלונה תחתים בלם אוסטרלי? בורסת השמות`
@@ -458,17 +458,3 @@ Warnings: 63
 - Original: `באיראן מדווחים: אלה פרטי טיוטת ההסכם עם ארה"ב`
 - Source: N12 - בעולם
 - URL: https://www.mako.co.il/news-world/2026_q2/Article-6c1ce1be878ce91027.htm
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 97 > 95
-- Headline: `אחרי בוטוקס, ארבע שעות של ראש זקוף יכולות למנוע צניחת עפעף`
-- Original: `למה אסור להתכופף אחרי בוטוקס?`
-- Source: mako - בריאות
-- URL: https://www.mako.co.il/health-alternative-medicine/Article-6797cb711086e91027.htm
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 105 > 95
-- Headline: `שמלת הבייבי שאוור של ווג ויליאמס הציתה ניחושי מגדר`
-- Original: `Pregnant Vogue Williams stuns in a glamorous pink dress as she enjoys her baby shower in Ireland as fans speculate she has revealed the gender`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15899177/Pregnant-Vogue-Williams-stuns-glamorous-pink-dress-enjoys-baby-shower-Ireland-fans-speculate-revealed-gender.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
