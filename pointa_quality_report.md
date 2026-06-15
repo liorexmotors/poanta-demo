@@ -1,33 +1,33 @@
 # Pointa Quality Gate Report
 
-Items checked: 216
+Items checked: 198
 Errors: 0
-Warnings: 53
+Warnings: 39
 
 ## Category distribution
 
-- רכילות: 58
-- ביטחון: 45
-- ספורט: 25
-- כלכלה: 22
-- פוליטיקה: 14
+- רכילות: 53
+- ביטחון: 38
+- ספורט: 24
+- כלכלה: 21
+- פוליטיקה: 13
 - טכנולוגיה: 10
 - חדשות: 7
-- פלילים: 6
 - משפט: 6
+- פלילים: 5
 - תרבות: 5
 - דעות: 4
-- רכב: 3
 - צרכנות: 3
-- בריאות: 3
 - אקטואליה בעולם: 2
 - נדל״ן: 2
+- רכב: 2
+- בריאות: 2
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 43
-- summary_long: 8
+- takeaway_long: 31
+- summary_long: 6
 - category_sport_source: 2
 
 ## Issues
@@ -193,212 +193,114 @@ Warnings: 53
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15901695/Love-Island-producer-dies.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 127
-- Takeaway length 97 > 95
-- Headline: `נבחרת הכדורשער השיגה כרטיס ללוס אנג'לס`
-- Original: `גאווה ישראלית: נבחרת הנשים בכדורשער זכתה במדליית כסף`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/hj8g356zml
-
-### WARNING · summary_long · item 131
+### WARNING · summary_long · item 130
 - Summary length 223 > 220
 - Headline: `רות לנגספורד מתכננת ספרים נוספים אחרי רב-מכר`
 - Original: `Ruth Langsford set to write more books after memoir becomes a bestseller`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/ruth-langsford-set-write-more-37297987
 
-### WARNING · category_sport_source · item 137
+### WARNING · category_sport_source · item 136
 - Sport source should usually be ספורט
 - Headline: `רפא מיר נשלח למאסר ממושך על תקיפה מינית`
 - Original: `רפא מיר נידון לשמונה וחצי שנות מאסר בגין תקיפה מינית`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3845977
 
-### WARNING · takeaway_long · item 156
+### WARNING · takeaway_long · item 155
 - Takeaway length 99 > 95
 - Headline: `עונה 3 של House of the Dragon מגבירה קצב אחרי בנייה ארוכה`
 - Original: `‘House of the Dragon’ Season 3 is all gas, no breaks: review`
 - Source: Page Six רכילות חו״ל
 - URL: https://nypost.com/2026/06/15/entertainment/house-of-the-dragon-season-3-is-all-gas-no-breaks-review/
 
-### WARNING · takeaway_long · item 160
+### WARNING · takeaway_long · item 159
 - Takeaway length 99 > 95
 - Headline: `ספרד פתחה מול כף ורדה בלי ימאל בהרכב`
 - Original: `חי מהמונדיאל: ספרד - כף ורדה 0:0`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20768450
 
-### WARNING · takeaway_long · item 163
+### WARNING · takeaway_long · item 162
 - Takeaway length 104 > 95
 - Headline: `תוניסיה צפויה לפטר מאמן אחרי משחק מונדיאל אחד`
 - Original: `טוניסיה מתכוונת לפטר את מאמנה בעקבות התבוסה 5:1 במשחק הראשון במונדיאל`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-06-15/ty-article/0000019e-cbd1-d45a-ab9e-cffb13040000
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 176
 - Takeaway length 114 > 95
 - Headline: `גורמים בצה"ל ובמוסד מסתייגים מהסכם הגרעין המתגבש`
 - Original: `Iran nuclear deal opposed by IDF, Mossad officials: favor continued sanctions against Tehran`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-899503
 
-### WARNING · takeaway_long · item 178
+### WARNING · takeaway_long · item 177
 - Takeaway length 98 > 95
 - Headline: `בן זיני החל קשר עם הרקדנית יאנה דוברובסקי`
 - Original: `אתם לגמרי מכירים אותה: הזוגיות החדשה של בן זיני נחשפת`
 - Source: mako סלבס - ראשי
 - URL: https://www.mako.co.il/entertainment-celebs/local-2026/Article-0b71dd549b12e91026.htm
 
-### WARNING · takeaway_long · item 180
+### WARNING · takeaway_long · item 179
 - Takeaway length 103 > 95
 - Headline: `בן זיני בזוגיות עם הרקדנית יאנה דוברוסקי`
 - Original: `בן זיני בזוגיות חדשה - ולא תאמינו עם מי`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3845975
 
-### WARNING · takeaway_long · item 182
+### WARNING · takeaway_long · item 181
 - Takeaway length 97 > 95
 - Headline: `ספרד פתחה את המונדיאל מול כף ורדה בלי ימאל וניקו`
 - Original: `פראן טורס וגאבי פותחים: פורסמו הרכבי ספרד וכף ורדה`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3845914
 
-### WARNING · summary_long · item 183
+### WARNING · summary_long · item 182
 - Summary length 229 > 220
 - Headline: `שונה מקגרטי וטוני דיסיפלין הציתו שוב שמועות זוגיות`
 - Original: `Shona McGarty and former EastEnders co-star Tony Discipline can't keep their hands off each other as they enjoy a boozy day out`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15901213/Shona-McGarty-former-EastEnders-star-Tony-Discipline-hands-enjoy-boozy-day-out.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 182
 - Takeaway length 112 > 95
 - Headline: `שונה מקגרטי וטוני דיסיפלין הציתו שוב שמועות זוגיות`
 - Original: `Shona McGarty and former EastEnders co-star Tony Discipline can't keep their hands off each other as they enjoy a boozy day out`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15901213/Shona-McGarty-former-EastEnders-star-Tony-Discipline-hands-enjoy-boozy-day-out.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 185
+### WARNING · summary_long · item 184
 - Summary length 232 > 220
 - Headline: `ג'יימי הינס נראה שוב עם המוזיקאית סולאנג' סמית`
 - Original: `Jamie Hince, 57, steps out with Kate Moss doppelganger, 29, who looks just like his supermodel ex in hotpants and ballet flats while smoking a cigarette`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15901365/Jamie-Hince-57-Kate-Moss-doppelganger-29-ex-hotpants-ballet-flats-smoking-cigarette.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 189
+### WARNING · takeaway_long · item 188
 - Takeaway length 112 > 95
 - Headline: `הסכם ארה״ב-איראן הוריד את הנפט ואת הבורסה בת״א`
 - Original: `אחרי ההסכם בין ארה"ב לאיראן: המסחר בבורסה בת"א ננעל בירידות חדות`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/rkbs5xtzzg
 
-### WARNING · summary_long · item 191
+### WARNING · summary_long · item 190
 - Summary length 221 > 220
 - Headline: `לורן סילברמן סיפרה על ההיריון שסיים את נישואיה`
 - Original: `Lauren Silverman details finding out she was pregnant with son Eric following affair with husband's friend Simon Cowell as she says: 'it was the end of my marriage'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15900693/Lauren-Silverman-details-finding-pregnant-son-Eric-following-affair-husbands-friend-Simon-Cowell-says-end-marriage.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 193
+### WARNING · takeaway_long · item 192
 - Takeaway length 103 > 95
 - Headline: `הקרע בין ברוקלין בקהאם למשפחתו נמשך בטקס של דייוויד`
 - Original: `Brooklyn Beckham LIVE: New family photos show how much Beckhams miss 'much-loved son'`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/live-brooklyn-beckham-harper-statement-37293835
 
-### WARNING · takeaway_long · item 195
+### WARNING · takeaway_long · item 194
 - Takeaway length 98 > 95
 - Headline: `קייטי פרייס הציגה טבעת חדשה אחרי שחרור לי אנדרוז מהכלא`
 - Original: `Katie Price 'boasts about new ring' from Lee Andrews as he walks free from jail`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/katie-price-new-ring-husband-37298586
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 100 > 95
-- Headline: `אריאנה גרנדה דמעה על הבמה אחרי הפרידה מאיתן סלייטר`
-- Original: `Ariana Grande breaks down in tears at LA concert after Ethan Slater split: ‘This is so overwhelming’`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/15/celebrity-news/ariana-grande-breaks-down-in-tears-at-la-concert-after-ethan-slater-split/
-
-### WARNING · summary_long · item 201
-- Summary length 239 > 220
-- Headline: `ריצ'רד איואדי מצטרף לעונה הלונדונית של רק רוצחים בבניין`
-- Original: `Richard Ayoade confirmed to join cast of iconic murder mystery series days after car crash`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/tv/tv-news/richard-ayoade-crash-only-murders-37299133
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 96 > 95
-- Headline: `משרד הבריאות בודק מחית תינוקות אחרי אשפוז ילדים`
-- Original: `תינוקות אכלו ממחית הפירות - ופונו לביה"ח: "נמצאו תרופות נגד חרדה בדמם"`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3845967
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 100 > 95
-- Headline: `סופיה ריצ'י פרסמה הצצה נדירה לבנה התינוק`
-- Original: `Sofia Richie posts rare photo of baby son three months after giving birth`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15900169/Sofia-Richie-photo-baby-son.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 99 > 95
-- Headline: `הסכם איראן לחץ על הפיננסים בת״א, השבבים זינקו`
-- Original: `הבורסה בתל אביב ננעלה בירידות חדות; מניות השבבים זינקו`
-- Source: גלובס - שוק ההון
-- URL: https://www.globes.co.il/news/article.aspx?did=1001545842#utm_source=RSS
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 103 > 95
-- Headline: `לוחמים בדרום לבנון מתארים מרוץ לקביעת עובדות בשטח`
-- Original: `"תופסים שטח לפני החתימה על ההסכם": עדויות הלוחמים מדרום לבנון`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/defense/article/20767957
-
-### WARNING · takeaway_long · item 209
-- Takeaway length 97 > 95
-- Headline: `מחאת עריקים חסמה את צומת גילת ושיבשה תנועה`
-- Original: `עשרות חרדים חסמו את צומת גילת במחאה על מעצר עריק`
-- Source: וואלה חדשות - חדשות בארץ
-- URL: https://news.walla.co.il/item/3845931
-
-### WARNING · takeaway_long · item 210
-- Takeaway length 110 > 95
-- Headline: `טראמפ: אוניות חוזרות לנוע במצר הורמוז לפני ההסכם`
-- Original: `Trump says ships ‘starting to move’ through Strait of Hormuz`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/15/trump-says-ships-starting-to-move-through-strait-of-hormuz?traffic_source=rss
-
-### WARNING · takeaway_long · item 211
-- Takeaway length 112 > 95
-- Headline: `AEW נכנסת לווסט אנד עם מחזמר היאבקות`
-- Original: `All Elite Wrestling set for historic West End show as Swerve Strickland throws hat in ring`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15901281/All-Elite-Wrestling-West-End-Swerve-Strickland.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 212
-- Takeaway length 100 > 95
-- Headline: `הסכם איראן מסיים מלחמה שפגעה בעליונות האמריקאית`
-- Original: `Bowen: Iran deal ends Trump's war that revealed limit of US dominance`
-- Source: BBC World
-- URL: https://www.bbc.com/news/articles/cdr4x3vg347o?at_medium=RSS&at_campaign=rss
-
-### WARNING · takeaway_long · item 213
-- Takeaway length 103 > 95
-- Headline: `בן 18 נפצע בינוני בתאונת קורקינט ברמת גן`
-- Original: `רוכב קורקינט חשמלי נפצע בתאונה ברמת גן, מצבו בינוני`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1118025
-
-### WARNING · summary_long · item 214
-- Summary length 221 > 220
-- Headline: `הקרע במשפחת בקהאם הגיע גם לבת הצעירה`
-- Original: `All the theories on why Harper visited Brooklyn Beckham as expert weighs in on feud`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-beckham-visit-37297279
-
-### WARNING · takeaway_long · item 214
-- Takeaway length 99 > 95
-- Headline: `הקרע במשפחת בקהאם הגיע גם לבת הצעירה`
-- Original: `All the theories on why Harper visited Brooklyn Beckham as expert weighs in on feud`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-beckham-visit-37297279
