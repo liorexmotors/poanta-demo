@@ -1,168 +1,224 @@
 # Pointa Quality Gate Report
 
-Items checked: 213
+Items checked: 196
 Errors: 0
-Warnings: 39
+Warnings: 43
 
 ## Category distribution
 
-- רכילות: 53
-- ביטחון: 45
-- ספורט: 32
-- כלכלה: 16
-- תרבות: 14
-- טכנולוגיה: 11
-- בריאות: 10
+- רכילות: 49
+- ביטחון: 48
+- ספורט: 30
+- כלכלה: 14
+- תרבות: 10
+- בריאות: 7
+- טכנולוגיה: 7
+- חדשות: 5
 - רכב: 5
-- חדשות: 4
+- פלילים: 4
 - צרכנות: 4
 - נדל״ן: 4
 - דעות: 3
-- פלילים: 3
 - פוליטיקה: 3
-- אקטואליה בעולם: 3
-- משפט: 2
+- אקטואליה בעולם: 2
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 32
-- summary_long: 7
+- takeaway_long: 38
+- summary_long: 4
+- category_sport_source: 1
 
 ## Issues
 
-### WARNING · takeaway_long · item 15
-- Takeaway length 108 > 95
-- Headline: `אופוריית ריצה קשורה יותר למערכת דמוית קנאביס בגוף`
-- Original: `כמו קנאביס? זה מה שגורם לתחושת אופוריה בריצה ארוכה`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3845608
+### WARNING · takeaway_long · item 0
+- Takeaway length 107 > 95
+- Headline: `נבחרת איראן הגיעה ללוס אנג'לס לתוך מחאה פוליטית`
+- Original: `המסע המתיש, המפגינים שחיכו והשליחות: עלילות נבחרת איראן בלוס אנג'לס`
+- Source: וואלה ספורט - כדורגל עולמי
+- URL: https://sports.walla.co.il/item/3845776
 
-### WARNING · takeaway_long · item 21
+### WARNING · category_sport_source · item 0
+- Sport source should usually be ספורט
+- Headline: `נבחרת איראן הגיעה ללוס אנג'לס לתוך מחאה פוליטית`
+- Original: `המסע המתיש, המפגינים שחיכו והשליחות: עלילות נבחרת איראן בלוס אנג'לס`
+- Source: וואלה ספורט - כדורגל עולמי
+- URL: https://sports.walla.co.il/item/3845776
+
+### WARNING · takeaway_long · item 1
+- Takeaway length 98 > 95
+- Headline: `יאן דיומנדה הפך את בכורת המונדיאל להצהרה`
+- Original: `"באנו לעשות היסטוריה": הכוכב הצעיר של חוף השנהב מסמן מטרות`
+- Source: וואלה ספורט - כדורגל עולמי
+- URL: https://sports.walla.co.il/item/3845790
+
+### WARNING · takeaway_long · item 2
+- Takeaway length 109 > 95
+- Headline: `פעלול הכריש הוויראלי הסתבך בביקורת על היוצר`
+- Original: `הדוגמנית הפכה לפיתיון חי לכרישים - והסוף הצליח להלחיץ את כולם`
+- Source: וואלה חדשות - אסור לפספס
+- URL: https://news.walla.co.il/item/3844708
+
+### WARNING · takeaway_long · item 4
+- Takeaway length 101 > 95
+- Headline: `אינדי קלינטון הגיעה לבית המשפט בחולצה פרובוקטיבית`
+- Original: `Indy Clinton shocks onlookers as she arrives at Federal Court in X-rated T-shirt alongside husband Ben Azar as he sues his former employer for alleged unfair dismissal`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15900041/Indy-Clinton-shocks-onlookers-supreme-court.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · takeaway_long · item 6
+- Takeaway length 96 > 95
+- Headline: `שרים בישראל מאותתים: ההסכם עם איראן לא מגביל את צה"ל`
+- Original: `בישראל מתנערים מההסכם עם איראן: "הוא לא מחייב אותנו"`
+- Source: כיפה - חדשות
+- URL: https://www.kipa.co.il/1226019-0
+
+### WARNING · takeaway_long · item 12
+- Takeaway length 110 > 95
+- Headline: `פרשנות: ההסכם עם איראן מציב לישראל שלושה מבחנים`
+- Original: `מבחן המשוואה, מבחן ההסכם ומבחן התגובה: ימים קריטיים לעתיד ישראל במזה"ת`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/defense/article/20763272
+
+### WARNING · takeaway_long · item 17
 - Takeaway length 102 > 95
 - Headline: `הארץ: נתניהו ניסה לעכב את ההסכם עם איראן, טראמפ בלם`
 - Original: `טראמפ עצר את האיראנים, ובכך נראה שסיכל גם את ניסיונו של נתניהו לעכב את ההסכם`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-15/ty-article/.highlight/0000019e-c7a1-dd0a-a19f-d7fd1b620000
 
-### WARNING · takeaway_long · item 22
-- Takeaway length 109 > 95
-- Headline: `דיאלו הכריע בדקה ה-90: חוף השנהב פתחה את המונדיאל עם 0:1 על אקוודור`
-- Original: `בדקה ה-90: אמאד דיאלו סידר לחוף השנהב 0:1 מתוק על אקוודור`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3845768
-
-### WARNING · takeaway_long · item 23
-- Takeaway length 98 > 95
-- Headline: `גרמניה פתחה ב-1:7 על קוראסאו וקבעה שיא שערים במונדיאלים`
-- Original: `1:7 כמו במשחק אימון. הטור של דני דבורין`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3845780
-
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 19
 - Takeaway length 111 > 95
 - Headline: `המלחמה עם איראן הופכת לשגרת חירום אזורית`
 - Original: `The Iran war has reached a tragic new phase: the fear, killing and upheaval are all normalised`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/commentisfree/2026/jun/15/iran-war-new-phase-fear-killing-upheaval-normalised
 
-### WARNING · takeaway_long · item 28
+### WARNING · takeaway_long · item 24
+- Takeaway length 108 > 95
+- Headline: `אופוריית ריצה קשורה יותר למערכת דמוית קנאביס בגוף`
+- Original: `כמו קנאביס? זה מה שגורם לתחושת אופוריה בריצה ארוכה`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3845608
+
+### WARNING · takeaway_long · item 26
+- Takeaway length 109 > 95
+- Headline: `דיאלו הכריע בדקה ה-90: חוף השנהב פתחה את המונדיאל עם 0:1 על אקוודור`
+- Original: `בדקה ה-90: אמאד דיאלו סידר לחוף השנהב 0:1 מתוק על אקוודור`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3845768
+
+### WARNING · takeaway_long · item 27
+- Takeaway length 98 > 95
+- Headline: `גרמניה פתחה ב-1:7 על קוראסאו וקבעה שיא שערים במונדיאלים`
+- Original: `1:7 כמו במשחק אימון. הטור של דני דבורין`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3845780
+
+### WARNING · takeaway_long · item 30
 - Takeaway length 102 > 95
 - Headline: `טיוטת ההסכם עם איראן כוללת כסף מוקפא והפסקת אש אזורית`
 - Original: `באיראן מדווחים: אלה פרטי טיוטת ההסכם עם ארה"ב`
 - Source: N12 - בעולם
 - URL: https://www.mako.co.il/news-world/2026_q2/Article-6c1ce1be878ce91027.htm
 
-### WARNING · takeaway_long · item 39
+### WARNING · takeaway_long · item 41
 - Takeaway length 97 > 95
 - Headline: `אחרי בוטוקס, ארבע שעות של ראש זקוף יכולות למנוע צניחת עפעף`
 - Original: `למה אסור להתכופף אחרי בוטוקס?`
 - Source: mako - בריאות
 - URL: https://www.mako.co.il/health-alternative-medicine/Article-6797cb711086e91027.htm
 
-### WARNING · takeaway_long · item 40
+### WARNING · takeaway_long · item 42
 - Takeaway length 105 > 95
 - Headline: `שמלת הבייבי שאוור של ווג ויליאמס הציתה ניחושי מגדר`
 - Original: `Pregnant Vogue Williams stuns in a glamorous pink dress as she enjoys her baby shower in Ireland as fans speculate she has revealed the gender`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15899177/Pregnant-Vogue-Williams-stuns-glamorous-pink-dress-enjoys-baby-shower-Ireland-fans-speculate-revealed-gender.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 51
+### WARNING · takeaway_long · item 54
 - Takeaway length 97 > 95
 - Headline: `הסכם ארה"ב-איראן מטלטל את השווקים באסיה`
 - Original: `טוקיו וסיאול קופצות ביותר מ-5%; הנפט נופל ב-5% בעקבות ההסכם עם איראן`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-15/ty-article-live/0000019e-c033-dd0a-a19f-d37f4d160000
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 56
 - Takeaway length 104 > 95
 - Headline: `החשד בכנרת: תן בודד וחולה בכלבת תקף מתרחצים`
 - Original: `"מפחדים לתת לילדים לצאת החוצה באור יום": חקירת תקיפת התנים בכנרת והחשד - תן בודד שחולה בכלבת`
 - Source: N12 - בארץ
 - URL: https://www.mako.co.il/news-israel/2026_q2/Article-731c535ba05ce91027.htm
 
-### WARNING · takeaway_long · item 63
+### WARNING · takeaway_long · item 65
 - Takeaway length 101 > 95
 - Headline: `דיאלו הכריע את אקוודור, שבדיה דרסה את תוניסיה`
 - Original: `חוף השנהב ניצחה את אקוודור 0:1 בדקה ה-90; שבדיה הביסה את תוניסיה 1:5`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-06-15/ty-article/0000019e-c933-d86d-adde-fdff39490000
 
-### WARNING · takeaway_long · item 64
+### WARNING · takeaway_long · item 66
 - Takeaway length 114 > 95
 - Headline: `מחירי הנפט ירדו אחרי הודעת פקיסטאן על הסכם איראן`
 - Original: `Oil prices slide after Pakistan announces deal between US and Iran`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/c6217106px6o?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 70
+### WARNING · takeaway_long · item 73
 - Takeaway length 106 > 95
 - Headline: `הרובוט שנכנס למעון לנערות בסיכון מפצל את אנשי הרווחה`
 - Original: `במעונות לנוער בסיכון, הקשר האנושי הוא החשוב ביותר. לרובוט יש שם מקום?`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/education/2026-06-15/ty-article-magazine/0000019e-c619-d86d-adde-fefd06840000
 
-### WARNING · takeaway_long · item 71
+### WARNING · takeaway_long · item 74
 - Takeaway length 99 > 95
 - Headline: `אפליקציות AI לא רשמיות חשפו מידע של יחידות צה"ל`
 - Original: `סידורי שמירה ומספרים אישיים: החיילים בנו אפליקציות ב-AI — ומידע רגיש נחשף ברשת`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/captain-internet/infosecurity/2026-06-15/ty-article-magazine/.premium/0000019e-a1e8-d7a4-a9bf-f5e80da90000
 
-### WARNING · takeaway_long · item 72
+### WARNING · takeaway_long · item 75
 - Takeaway length 100 > 95
 - Headline: `מאמר דעה קורא להפוך את מלחמת איראן להסכם שלום`
 - Original: `טראמפ יכול וצריך להעז יותר. הגיע הזמן להסכמי כורש בין איראן וישראל`
 - Source: הארץ - דעות
 - URL: https://www.haaretz.co.il/opinions/2026-06-15/ty-article-opinion/.premium/0000019e-c668-d43d-a39f-e67da7340000
 
-### WARNING · takeaway_long · item 73
+### WARNING · takeaway_long · item 76
 - Takeaway length 105 > 95
 - Headline: `האוצר מכין רפורמת מס גדולה לממשלה הבאה`
 - Original: `אחרי 25 שנה של דריכה במקום: במשרד האוצר מתכננים רפורמת ענק במערכת המס בישראל`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/news/macroeconomics/2026-06-15/ty-article/.highlight/0000019e-c632-d43d-a39f-e67f4cec0000
 
-### WARNING · takeaway_long · item 74
+### WARNING · takeaway_long · item 77
 - Takeaway length 123 > 95
 - Headline: `לנובו מעלה את ThinkPad לקרב מול ה-MacBook Pro`
 - Original: `הלפטופ החדש של לנובו רוצה להיות מאקבוק פרו. זה מצליח לו — אבל במחיר כבד`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/captain-internet/personaltech/2026-06-15/ty-article-magazine/.premium/0000019e-c900-db50-a3df-ebeac3290000
 
-### WARNING · takeaway_long · item 75
+### WARNING · takeaway_long · item 78
 - Takeaway length 102 > 95
 - Headline: `מטה ה-AI רוצה תשתית לאומית של 100 אלף מעבדים`
 - Original: `תוכנית גרנדיוזית: במטה ה–AI שואפים להקים תשתית מחשוב לאומית של 100 אלף מעבדי בינה מלאכותית`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/technation/2026-06-15/ty-article/.highlight/0000019e-c5d8-d43d-a39f-e7fd76750000
 
-### WARNING · takeaway_long · item 78
+### WARNING · takeaway_long · item 79
 - Takeaway length 96 > 95
 - Headline: `הסכם ארה"ב-איראן עשוי לפתוח מחדש את מצר הורמוז`
 - Original: `World leaders welcome news the Strait of Hormuz could soon reopen.`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/live/2026/06/14/world/iran-war-trump-us/world-leaders-welcome-news-the-strait-of-hormuz-could-soon-reopen
+
+### WARNING · takeaway_long · item 80
+- Takeaway length 101 > 95
+- Headline: `נביוס ואסטרה בדרך לנאסד"ק 100`
+- Original: `עם מייסדים ישראלים: שתי המניות החדשות שנכנסות לנאסד"ק 100`
+- Source: גלובס - שוק ההון
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545838#utm_source=RSS
 
 ### WARNING · takeaway_long · item 85
 - Takeaway length 98 > 95
@@ -275,31 +331,3 @@ Warnings: 39
 - Original: `'It's three against one. It doesn't feel right': Inside fresh Little Mix feud, why Perrie Edwards has 'cut out' Jesy Nelson AGAIN after truce... and why she's only bandmate not invited to her wedding`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15892983/Little-Mix-feud-Perrie-Edwards-cut-Jesy-Nelson-bandmate-not-invited-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 96 > 95
-- Headline: `מרכז אובמה בשיקגו הופך ספרייה נשיאותית למונומנט ענק`
-- Original: `הספרייה הנשיאותית של ברק אובמה היא הרבה יותר מספרייה`
-- Source: הארץ - תרבות
-- URL: https://www.haaretz.co.il/gallery/architecture/2026-06-09/ty-article-magazine/.premium/0000019e-abcb-d5dc-a3be-fbef77df0000
-
-### WARNING · summary_long · item 208
-- Summary length 223 > 220
-- Headline: `קים קרדשיאן הפכה את מרוץ מונאקו למאבק על תרבות ה-F1`
-- Original: `הסיפורים נחשפים: "קרקס קים קרדשיאן" מלהיט את הפורמולה 1`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3844360
-
-### WARNING · summary_long · item 211
-- Summary length 236 > 220
-- Headline: `סופי מ׳חתונמי׳ חשפה היריון מתקדם בלי לחשוף את האב`
-- Original: `בזמן שהצופים מחפשים תשובות: כוכבת "חתונמי" חושפת היריון מתקדם`
-- Source: TMI - ראשי
-- URL: https://tmi.maariv.co.il/celebs-news/article-1330965
-
-### WARNING · summary_long · item 212
-- Summary length 232 > 220
-- Headline: `מחקר חדש מצמצם את גבול האלכוהול הבטוח למשקה אחד ביום`
-- Original: `חשבתם שכוס ביום זה בסדר? עכשיו מגיעה האזהרה`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/health/article-1330967
