@@ -1,33 +1,33 @@
 # Pointa Quality Gate Report
 
-Items checked: 211
+Items checked: 200
 Errors: 0
-Warnings: 75
+Warnings: 69
 
 ## Category distribution
 
-- רכילות: 62
-- ביטחון: 35
-- כלכלה: 23
-- ספורט: 21
+- רכילות: 58
+- ביטחון: 33
+- כלכלה: 21
+- ספורט: 20
 - פוליטיקה: 16
-- חדשות: 8
 - בריאות: 8
+- חדשות: 7
 - טכנולוגיה: 7
 - תרבות: 6
 - משפט: 6
 - פלילים: 5
 - צרכנות: 3
-- אקטואליה בעולם: 3
 - רכב: 3
 - דעות: 2
 - מזג אוויר: 2
+- אקטואליה בעולם: 2
 - נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 59
-- summary_long: 15
+- takeaway_long: 54
+- summary_long: 14
 - category_sport_source: 1
 
 ## Issues
@@ -514,45 +514,3 @@ Warnings: 75
 - Original: `NewCore נחשפת בשווי 300 מיליון דולר ומגייסת 66 מיליון`
 - Source: mako - דיגיטל Nexter
 - URL: https://www.mako.co.il/nexter-news/Article-d79d5cf647bce91027.htm
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 99 > 95
-- Headline: `כ״ץ מציב קו אדום להסכם ארה״ב-איראן בלבנון`
-- Original: `Israeli officials defiant over apparent inclusion of Lebanon ceasefire in US-Iran deal`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/world/2026/jun/15/israel-territory-lebanon-defence-minister-israel-katz
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 109 > 95
-- Headline: `התראת טורנדו בקנזס לא עצרה את ערב הספורט בבר`
-- Original: `ההתראות המפחידות על טורנדו בקנזס לא עצרו את המונדיאל`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/s1gvkq3bgx
-
-### WARNING · takeaway_long · item 207
-- Takeaway length 96 > 95
-- Headline: `חקירה: תוצרת התנחלויות נמכרת באירופה כתוצרת ישראל`
-- Original: `Settler products from occupied Palestine sold to Europe as Israeli, investigation finds`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/world/2026/jun/15/settler-products-from-occupied-palestine-sold-to-europe-as-israeli-investigation-finds
-
-### WARNING · summary_long · item 208
-- Summary length 229 > 220
-- Headline: `נעצר לפני טיסה עם מטען חבלה פעיל בסקרמנטו`
-- Original: `סוכל אסון בשמיים: נוסע הואשם בכך שניסה להבריח מטען חבלה לטיסה בארה"ב`
-- Source: N12 - בעולם
-- URL: https://www.mako.co.il/news-world/2026_q2/Article-d87d1c3466bce91027.htm
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 107 > 95
-- Headline: `נעצר לפני טיסה עם מטען חבלה פעיל בסקרמנטו`
-- Original: `סוכל אסון בשמיים: נוסע הואשם בכך שניסה להבריח מטען חבלה לטיסה בארה"ב`
-- Source: N12 - בעולם
-- URL: https://www.mako.co.il/news-world/2026_q2/Article-d87d1c3466bce91027.htm
-
-### WARNING · takeaway_long · item 209
-- Takeaway length 99 > 95
-- Headline: `פקיסטן תיווכה בהסכם ארה״ב-איראן אחרי יותר מ-100 ימי מלחמה`
-- Original: `How Pakistan mediated a US-Iran agreement after more than 100 days of war`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/15/how-pakistan-mediated-a-us-iran-agreement-after-more-than-100-days-of-war?traffic_source=rss
