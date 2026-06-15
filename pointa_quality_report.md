@@ -2,23 +2,23 @@
 
 Items checked: 199
 Errors: 0
-Warnings: 71
+Warnings: 73
 
 ## Category distribution
 
-- ביטחון: 43
-- רכילות: 35
-- כלכלה: 23
+- ביטחון: 44
+- רכילות: 32
+- כלכלה: 21
 - ספורט: 21
 - משפט: 14
 - תרבות: 10
 - טכנולוגיה: 9
+- פלילים: 8
 - פוליטיקה: 8
 - צרכנות: 8
-- פלילים: 7
-- חדשות: 4
+- חדשות: 6
+- דעות: 5
 - בריאות: 4
-- דעות: 4
 - נדל״ן: 3
 - רכב: 3
 - אקטואליה בעולם: 2
@@ -26,33 +26,26 @@ Warnings: 71
 
 ## Issue counts
 
-- takeaway_long: 60
-- summary_long: 11
+- takeaway_long: 61
+- summary_long: 12
 
 ## Issues
 
 ### WARNING · takeaway_long · item 0
+- Takeaway length 108 > 95
+- Headline: `שני פסלי שיש רומיים הוטמנו בגת עתיקה בבנימינה`
+- Original: `"תגלית של פעם בחיים": בבנימינה נדהמו מהגילוי של פסלים עתיקים ביישוב`
+- Source: כיפה - חדשות
+- URL: https://www.kipa.co.il/1226050-0
+
+### WARNING · takeaway_long · item 1
 - Takeaway length 96 > 95
 - Headline: `ועדת הערר ביטלה חיוב חניה בפרויקט בדיזנגוף`
 - Original: `עיריית תל אביב מנעה הקמת חניון בבניין - ודרשה מיליונים לקרן חניה: חברת הבנייה לא ויתרה`
 - Source: דה מרקר - נדל״ן
 - URL: https://www.themarker.com/realestate/2026-06-15/ty-article/.highlight/0000019e-cab7-d43d-a39f-eeffe6b00000
 
-### WARNING · takeaway_long · item 1
-- Takeaway length 102 > 95
-- Headline: `זנדאיה וטום הולנד חזרו יחד לשטיח האדום אחרי חמש שנים`
-- Original: `Zendaya and Tom Holland make their first red carpet appearance together in five years at the photocall of Spider-Man: Brand New Day in Madrid`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15900779/Zendaya-Tom-Holland-make-red-carpet-appearance-five-years-premiere-Spider-Man-Brand-New-Day-Madrid.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 2
-- Takeaway length 115 > 95
-- Headline: `טמקו סטאר חוזרת לבמה עם לקחי תהילת הניינטיז`
-- Original: `Tameko Star reflects on highs and lows of 90s fame - 'I was called a harlot!'`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/tameko-star-reflects-highs-lows-37290192
-
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 3
 - Takeaway length 99 > 95
 - Headline: `REDEFINE הישראלי נכנס לקוסקו בקנדה בסוף יוני`
 - Original: `מותג השיער הישראלי REDEFINE מתחיל להימכר בקוסקו בקנדה`
@@ -87,82 +80,82 @@ Warnings: 71
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-899456
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 17
 - Takeaway length 96 > 95
 - Headline: `מעצר החשוד בצילום בתא מדידה הוארך בארבעה ימים`
 - Original: `"פעלתי מסיפוק רגעי": החשוד הודה שצילם את הצעירה בתא מדידה, וטוען שלא אנס`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/r1yh7qt11mx
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 18
 - Takeaway length 97 > 95
 - Headline: `ועדת הכנסת מקדמת חסינות לטלי גוטליב לפני הכרעת המליאה`
 - Original: `שידור ישיר: ועדת הכנסת מצביעה על החסינות לגוטליב`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rkgxonabzl
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 20
 - Takeaway length 99 > 95
 - Headline: `קיילב קופר עקץ את ג'רמי קלארקסון על הירידה במשקל`
 - Original: `Kaleb Cooper aims cheeky dig at Jeremy Clarkson after co-star's dramatic weight loss`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/kaleb-cooper-aims-cheeky-dig-37295895
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 23
 - Takeaway length 101 > 95
 - Headline: `אוליבר טרי תכנן קרן לאמנים לפני שנהרג בהתרסקות`
 - Original: `Who is Oliver Tree? How singer raised in a travelling circus went on to become one of social media's biggest stars and revealed plans for his will weeks before tragic helicopter crash`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15900339/Oliver-Tree-travelling-circus-helicopter-crash.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 24
 - Takeaway length 110 > 95
 - Headline: `טוקיו מובילה את חיפושי הטיסות לקיץ 2026`
 - Original: `העיר שעקפה את לונדון, פריז ורומא - והפכה ליעד הכי מבוקש בעולם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/tourism-news/article/20764523
 
-### WARNING · takeaway_long · item 27
+### WARNING · takeaway_long · item 26
 - Takeaway length 98 > 95
 - Headline: `חברות הספנות עדיין חוששות לחזור למצר הורמוז`
 - Original: `חששות ביטחוניים לצד עומסי תנועה חריגים: האם השגרה תשוב למצר הורמוז?`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545881#utm_source=RSS
 
-### WARNING · takeaway_long · item 28
+### WARNING · takeaway_long · item 27
 - Takeaway length 102 > 95
 - Headline: `איראן תשחק בלוס אנג'לס תחת מגבלות פוליטיות`
 - Original: `הרבה מעבר לכדורגל: הסיפור הגדול ביותר של מונדיאל 2026 מתחיל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20764851
 
-### WARNING · takeaway_long · item 29
+### WARNING · takeaway_long · item 28
 - Takeaway length 97 > 95
 - Headline: `ההבנות עם איראן משאירות את דרישות ישראל בחוץ`
 - Original: `4 היעדים של נתניהו שלא באופק, והדיווח באיראן: "ארה"ב קיבלה הנחה ל-60 יום בהורמוז"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rj5sp4pzfl
 
-### WARNING · takeaway_long · item 31
+### WARNING · takeaway_long · item 30
 - Takeaway length 106 > 95
 - Headline: `פרי מתכננת חופשת יאכטה עם טרודו בזמן הטור באירופה`
 - Original: `Katy Perry plotting yacht getaway with Justin Trudeau during European tour`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/15/celebrity-news/katy-perry-plotting-yacht-getaway-with-justin-trudeau/
 
-### WARNING · takeaway_long · item 32
+### WARNING · takeaway_long · item 31
 - Takeaway length 96 > 95
 - Headline: `וילרבאן מגייסת משקיעים כדי להפוך לכוח יורוליג`
 - Original: `פרויקט המיליארדים של פארקר: כך וילרבאן הפכה למעצמה`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3845890
 
-### WARNING · takeaway_long · item 35
-- Takeaway length 98 > 95
-- Headline: `אלרון מבקש מבג״ץ להקפיא את מינוי ראבילו`
-- Original: `אלרון מצטרף לעתירה לבג"ץ נגד מינוי ראבילו ודורש לפסול את הבחירות למבקר המדינה`
-- Source: הארץ - חדשות
-- URL: https://www.haaretz.co.il/news/law/2026-06-15/ty-article/0000019e-caad-dd0a-a19f-dbfd9d000000
+### WARNING · takeaway_long · item 45
+- Takeaway length 106 > 95
+- Headline: `בכנסת נחשף פער בטיפול בגברים במשברי רווחה`
+- Original: `המדינה חייבת לתקן את הפער לרעת הגברים בשירותי הרווחה`
+- Source: בשבע - מגזין ודעות
+- URL: https://be7.co.il/24545
 
 ### WARNING · takeaway_long · item 47
 - Takeaway length 112 > 95
@@ -192,91 +185,112 @@ Warnings: 71
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/business/consumers/article/20764978
 
-### WARNING · takeaway_long · item 64
+### WARNING · takeaway_long · item 55
+- Takeaway length 99 > 95
+- Headline: `שמו של נהג המונית החשוד באונס בת 16 הותר לפרסום`
+- Original: `נהג מונית ושוטר לשעבר חשוד באונס בת 16`
+- Source: ynet - כל ערוץ החדשות
+- URL: https://www.ynet.co.il/news/article/bkl46xtwgg
+
+### WARNING · takeaway_long · item 65
 - Takeaway length 116 > 95
 - Headline: `ויקטוריה׳ס סיקרט תפתח חנות דגל בקומת הפלטיניום בקניון הזהב`
 - Original: `השקעה של 100 מיליון שקל: ויקטוריה'ס סיקרט פותחת חנות דגל בקניון הזהב`
 - Source: וואלה כסף - צרכנות
 - URL: https://finance.walla.co.il/item/3845872
 
-### WARNING · takeaway_long · item 65
+### WARNING · takeaway_long · item 66
 - Takeaway length 100 > 95
 - Headline: `בריטניה מקדמת איסור רשתות חברתיות לילדים מתחת לגיל 16`
 - Original: `מתחילה טרנד? גם בריטניה תאסור על שימוש ברשתות חברתיות מתחת לגיל 16`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3845861
 
-### WARNING · summary_long · item 71
+### WARNING · summary_long · item 72
 - Summary length 229 > 220
 - Headline: `השוק בתל אביב מתקשה לתמחר את ההסכם עם איראן`
 - Original: `אחרי ההכרזה על ההסכם: ירידות בת"א, מניות הבנקים והביטוח נופלות`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545842#utm_source=RSS
 
-### WARNING · takeaway_long · item 71
+### WARNING · takeaway_long · item 72
 - Takeaway length 108 > 95
 - Headline: `השוק בתל אביב מתקשה לתמחר את ההסכם עם איראן`
 - Original: `אחרי ההכרזה על ההסכם: ירידות בת"א, מניות הבנקים והביטוח נופלות`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001545842#utm_source=RSS
 
-### WARNING · takeaway_long · item 72
+### WARNING · takeaway_long · item 73
 - Takeaway length 96 > 95
 - Headline: `ימאים ממתינים לפתיחת הורמוז אחרי עסקת איראן`
 - Original: `Seafarers’ advocates welcome US-Iran deal after months-long limbo in Gulf`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/economy/2026/6/15/seafarers-advocates-welcome-us-iran-deal-after-months-long-limbo-in-gulf?traffic_source=rss
 
-### WARNING · takeaway_long · item 76
-- Takeaway length 109 > 95
-- Headline: `בריטניה מתכננת לאסור רשתות חברתיות עד גיל 16`
+### WARNING · summary_long · item 77
+- Summary length 238 > 220
+- Headline: `בריטניה מתכננת איסור רשתות חברתיות עד גיל 16`
 - Original: `בריטניה תאסור על בני נוער מתחת לגיל 16 להשתמש ברשתות חברתיות`
 - Source: mako - דיגיטל Nexter
 - URL: https://www.mako.co.il/nexter-news/Article-2c2dd525a8ace91026.htm
 
 ### WARNING · takeaway_long · item 77
+- Takeaway length 112 > 95
+- Headline: `בריטניה מתכננת איסור רשתות חברתיות עד גיל 16`
+- Original: `בריטניה תאסור על בני נוער מתחת לגיל 16 להשתמש ברשתות חברתיות`
+- Source: mako - דיגיטל Nexter
+- URL: https://www.mako.co.il/nexter-news/Article-2c2dd525a8ace91026.htm
+
+### WARNING · takeaway_long · item 78
 - Takeaway length 103 > 95
 - Headline: `קיסטון נכנסה לקרב על שיכון ובינוי אנרגיה`
 - Original: `קיסטון מול ג'נריישן: קרב המיליארדים על שיכון ובינוי אנרגיה עולה שלב`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/business/article/20764764
 
-### WARNING · takeaway_long · item 78
+### WARNING · takeaway_long · item 79
 - Takeaway length 108 > 95
 - Headline: `אוליבר טרי נהרג אחרי שהקים קרן לאמנים צעירים`
 - Original: `רגע לפני מותו הטראגי: הזמר אוליבר טרי נישל את משפחתו מהירושה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/culture/music/article/20764691
 
-### WARNING · takeaway_long · item 85
+### WARNING · takeaway_long · item 82
+- Takeaway length 103 > 95
+- Headline: `מח״ט יהודה הנכנס בחן תרחישי הגנה והתקפה`
+- Original: `תרחישי הגנה והתקפה: כך נערכים בחטיבת יהודה לאיום הבא`
+- Source: ערוץ 7 / INN עברית
+- URL: https://www.inn.co.il/flashes/1117972
+
+### WARNING · takeaway_long · item 87
 - Takeaway length 98 > 95
 - Headline: `בישראל חוששים שהסכם איראן ישאיר את המשטר חזק`
 - Original: `Iran’s regime survives, Israel worries: Winners, losers emerging from new US-Iran deal - analysis`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-899423
 
-### WARNING · takeaway_long · item 88
+### WARNING · takeaway_long · item 90
 - Takeaway length 113 > 95
 - Headline: `ארה"ב פתחה את המונדיאל עם 1:4 והראתה שינוי תחת פוצ'טינו`
 - Original: `לגלות את אמריקה: יש כדורגל בארה"ב!`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/r1btmejwfe
 
-### WARNING · takeaway_long · item 90
+### WARNING · takeaway_long · item 91
 - Takeaway length 99 > 95
 - Headline: `עסקי הצפון דורשים פטור מארנונה ומענקים`
 - Original: `בעלי עסקים מהצפון: להעניק פטור מארנונה ומענקים לעסקים`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1117971
 
-### WARNING · takeaway_long · item 92
+### WARNING · takeaway_long · item 93
 - Takeaway length 100 > 95
 - Headline: `משקיע קנה 8 דירות בירושלים ב-24 מיליון שקל`
 - Original: `French-Israeli businessman buys 8 unbuilt Jerusalem apartments for NIS 24 million`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-899444
 
-### WARNING · takeaway_long · item 93
+### WARNING · takeaway_long · item 94
 - Takeaway length 98 > 95
 - Headline: `לחץ בילדות נקשר לסיכון גבוה יותר לבעיות מעיים`
 - Original: `הקשר המפתיע בין הילדות שלכם לכאבי הבטן שאתם סובלים מהם היום`
