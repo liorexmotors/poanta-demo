@@ -5,20 +5,25 @@
     "name": "מרגל",
     "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"
   },
-  "generatedAt": "2026-06-15T20:41:56+03:00",
+  "generatedAt": "2026-06-15T20:50:39+03:00",
   "windowHours": 8,
   "sourcesChecked": 95,
   "rssSourcesChecked": 80,
   "webTargetsChecked": 15,
-  "sourcesWithErrors": 5,
-  "itemsScanned": 382,
+  "sourcesWithErrors": 7,
+  "itemsScanned": 360,
   "rssItemsScanned": 202,
-  "webItemsScanned": 180,
-  "durationSec": 3.99,
+  "webItemsScanned": 158,
+  "durationSec": 39.07,
   "errorsSample": [
     {
       "source": "ישראל היום",
       "type": "RSS",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "ישראל היום",
+      "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
@@ -27,19 +32,24 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
-      "source": "ישראל היום",
+      "source": "Axios",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "CNN",
+      "type": "WEB",
+      "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+    },
+    {
+      "source": "גלובס",
+      "type": "WEB",
+      "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
     },
     {
       "source": "Reuters",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
-    },
-    {
-      "source": "Axios",
-      "type": "WEB",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
   "trends": [
@@ -84,6 +94,27 @@
       "mentionedInFeed": true,
       "latestAt": "2026-06-15T14:06:00+00:00",
       "sampleUrl": "https://news.walla.co.il/break/3845945"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "בנט עולה למתקפה: \"הקדנציה של נתניהו נפתחה במלחמת אחים, והסתיימה בכישלון היסטורי מול איראן\"",
+      "clusterKey": "נפתחה במלחמת אחים",
+      "externalMentions": 6,
+      "sourceCount": 3,
+      "sources": [
+        "ynet",
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 4,
+      "webMentions": 2,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-15T20:18:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3846003"
     },
     {
       "domain": "חדשות",
@@ -191,25 +222,6 @@
       "sampleUrl": "https://finance.walla.co.il/item/3845978"
     },
     {
-      "domain": "אקטואליה בעולם",
-      "trend": "Political tension has undermined World Cup joy, says Iran striker Iran's striker Mehdi Taremi said the country's political predicament \"undermine",
-      "clusterKey": "world cup",
-      "externalMentions": 4,
-      "sourceCount": 2,
-      "sources": [
-        "AP",
-        "BBC"
-      ],
-      "discoveryTypes": [
-        "WEB"
-      ],
-      "rssMentions": 0,
-      "webMentions": 4,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-15T17:41:56.620498+00:00",
-      "sampleUrl": "https://www.bbc.com/sport/football/articles/c9d2ep375nzo"
-    },
-    {
       "domain": "חדשות",
       "trend": "החרדים מימשו את האיום: \"בשל אי-העלאת חוק המעונות - לא נצביע בעד ועדת חקירה פוליטית\"",
       "clusterKey": "חוק המעונות",
@@ -247,27 +259,7 @@
       "webMentions": 1,
       "mentionedInFeed": true,
       "latestAt": "2026-06-15T16:10:00+00:00",
-      "sampleUrl": "https://news.walla.co.il/item/3845956"
-    },
-    {
-      "domain": "כלכלה",
-      "trend": "\"להשיב את החיים והכבוד לפצועים\": תרומת ענק של 200 מיליון שקל לבית חולים שיקומי חדש בשדה דב",
-      "clusterKey": "מיליון שקל",
-      "externalMentions": 5,
-      "sourceCount": 2,
-      "sources": [
-        "גלובס",
-        "וואלה"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 4,
-      "webMentions": 1,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-15T15:00:00+00:00",
-      "sampleUrl": "https://finance.walla.co.il/item/3845870"
+      "sampleUrl": "https://news.walla.co.il/break/3845972"
     },
     {
       "domain": "חדשות",
@@ -291,26 +283,6 @@
     },
     {
       "domain": "חדשות",
-      "trend": "בנט: \"קדנציית הממשלה נפתחה במלחמת אחים - ומסתיימת בכישלון מול איראן\"",
-      "clusterKey": "אחים ומסתיימת",
-      "externalMentions": 4,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "הארץ"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 2,
-      "webMentions": 2,
-      "mentionedInFeed": false,
-      "latestAt": "2026-06-15T17:34:34+00:00",
-      "sampleUrl": "https://www.ynet.co.il/news/article/hyr94h6wgl"
-    },
-    {
-      "domain": "חדשות",
       "trend": "רוכב קורקינט חשמלי בן 18 נפצע באורח בינוני בתאונה עצמית בר\"ג",
       "clusterKey": "נפצע באורח",
       "externalMentions": 5,
@@ -327,6 +299,45 @@
       "mentionedInFeed": true,
       "latestAt": "2026-06-15T17:24:00+00:00",
       "sampleUrl": "https://news.walla.co.il/break/3845974"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "שופט העליון לשעבר אלרון לבג\"ץ: ההצבעה למבקר פסולה, יש להקפיא את מינוי ראבילו",
+      "clusterKey": "להקפיא מינוי",
+      "externalMentions": 4,
+      "sourceCount": 2,
+      "sources": [
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 2,
+      "mentionedInFeed": false,
+      "latestAt": "2026-06-15T12:45:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3845888"
+    },
+    {
+      "domain": "אקטואליה בעולם",
+      "trend": "Israeli military says Hezbollah targets struck in Beirut Israel says it targeted the Iran-backed armed group Hezbollah, as Tehran warns this coul",
+      "clusterKey": "deal end",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "AP",
+        "BBC"
+      ],
+      "discoveryTypes": [
+        "WEB"
+      ],
+      "rssMentions": 0,
+      "webMentions": 3,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-15T17:50:39.153307+00:00",
+      "sampleUrl": "https://www.bbc.com/news/articles/czj83zlx1vjo"
     }
   ]
 }
