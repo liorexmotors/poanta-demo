@@ -179,7 +179,7 @@ def main() -> int:
         ahead, detail = local_is_ahead_and_healthy(live_feed)
         result["localVsLive"] = detail
         if ahead and args.repair and not args.no_deploy:
-            code, text = run(["bash", "scripts/deploy_current_feed.sh"], timeout=300)
+            code, text = run(["bash", "scripts/deploy_current_feed.sh"], timeout=900)
             result["actions"].append({"action": "deploy_healthy_local_candidate", "exit": code, "tail": text[-3000:]})
             audit2, _ = audit_live()
             result["postDeployLiveAuditor"] = {"status": audit2.get("status") if audit2 else None, "errors": (audit2 or {}).get("errors", [])[:5]}
@@ -192,7 +192,7 @@ def main() -> int:
         return 1
 
     # First try the normal deterministic FAST sync/deploy path.
-    code, text = run(["bash", "scripts/fast_sync_and_deploy_feed.sh"], timeout=420)
+    code, text = run(["bash", "scripts/fast_sync_and_deploy_feed.sh"], timeout=900)
     result["actions"].append({"action": "fast_sync_and_deploy", "exit": code, "tail": text[-3000:]})
 
     # If FAST produced a healthy local candidate but did not get it live, publish it.
@@ -203,7 +203,7 @@ def main() -> int:
     ahead, detail = local_is_ahead_and_healthy(live_after_fast)
     result["localVsLiveAfterFast"] = detail
     if ahead and not args.no_deploy:
-        code2, text2 = run(["bash", "scripts/deploy_current_feed.sh"], timeout=300)
+        code2, text2 = run(["bash", "scripts/deploy_current_feed.sh"], timeout=900)
         result["actions"].append({"action": "deploy_healthy_local_candidate_after_fast", "exit": code2, "tail": text2[-3000:]})
 
     audit_after, _ = audit_live()

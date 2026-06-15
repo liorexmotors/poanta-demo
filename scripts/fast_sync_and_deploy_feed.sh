@@ -3,11 +3,16 @@ set -euo pipefail
 
 ROOT="/root/.openclaw/workspace/projects/poanta-demo"
 LOCK="/tmp/poanta-fast-sync.lock"
+MAIN_WORKTREE="/tmp/poanta-main-fast-sync"
 WORKTREE="/tmp/poanta-gh-pages-fast-sync"
 ASKPASS=""
 
 cleanup() {
   if [[ -n "${ASKPASS:-}" && -f "$ASKPASS" ]]; then rm -f "$ASKPASS"; fi
+  if [[ -d "$MAIN_WORKTREE" ]]; then
+    git -C "$ROOT" worktree remove "$MAIN_WORKTREE" --force >/dev/null 2>&1 || true
+    rm -rf "$MAIN_WORKTREE" >/dev/null 2>&1 || true
+  fi
   if [[ -d "$WORKTREE" ]]; then
     git -C "$ROOT" worktree remove "$WORKTREE" --force >/dev/null 2>&1 || true
     rm -rf "$WORKTREE" >/dev/null 2>&1 || true
@@ -85,13 +90,23 @@ python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
 
+git fetch origin main
+rm -rf "$MAIN_WORKTREE"
+git worktree add --detach "$MAIN_WORKTREE" origin/main
+cp feed.json "$MAIN_WORKTREE/feed.json"
+cp breaking_feed.json "$MAIN_WORKTREE/breaking_feed.json"
+cp .poanta-state.json "$MAIN_WORKTREE/.poanta-state.json"
+cp .poanta-seen.json "$MAIN_WORKTREE/.poanta-seen.json"
+cp pointa_quality_report.md "$MAIN_WORKTREE/pointa_quality_report.md"
+cd "$MAIN_WORKTREE"
 if ! git diff --quiet -- feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
   git add feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git commit -m "Auto-refresh Poanta FAST feed"
-  git push origin main
+  git push origin HEAD:main
 fi
+cd "$ROOT"
 
 git fetch origin gh-pages
 rm -rf "$WORKTREE"
