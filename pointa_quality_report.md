@@ -1,33 +1,33 @@
 # Pointa Quality Gate Report
 
-Items checked: 219
+Items checked: 198
 Errors: 0
-Warnings: 63
+Warnings: 59
 
 ## Category distribution
 
-- ביטחון: 50
-- רכילות: 38
-- כלכלה: 26
-- ספורט: 22
+- ביטחון: 42
+- רכילות: 36
+- כלכלה: 21
+- ספורט: 21
 - משפט: 15
-- תרבות: 12
+- תרבות: 11
 - טכנולוגיה: 10
-- פוליטיקה: 9
+- פוליטיקה: 8
 - צרכנות: 8
-- בריאות: 6
-- חדשות: 5
+- בריאות: 5
 - פלילים: 5
+- חדשות: 4
 - דעות: 4
-- נדל״ן: 3
 - אקטואליה בעולם: 3
 - רכב: 2
+- נדל״ן: 2
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 49
-- summary_long: 14
+- takeaway_long: 46
+- summary_long: 13
 
 ## Issues
 
@@ -443,31 +443,3 @@ Warnings: 63
 - Original: `פיקוד העורף מבטל את ההנחיות המגבילות - עד מחר בערב`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226026-0
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 96 > 95
-- Headline: `ויקטורי מייחסת את הזינוק למכירות לרצועת עזה`
-- Original: `ויקטורי מבהירה: הזינוק בהכנסות - בגלל מכירות לרצועת עזה`
-- Source: N12 - כלכלה וצרכנות
-- URL: https://www.mako.co.il/news-money/2026_q2/Article-24a14dd8cd7ce91026.htm
-
-### WARNING · summary_long · item 212
-- Summary length 235 > 220
-- Headline: `ה-UFC קיים ערב קרבות היסטורי במדשאת הבית הלבן`
-- Original: `הבית הלבן הפך לאוקטגון: הלילה שבו ה-UFC שבר את כל הגבולות`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/hyijng6zmx
-
-### WARNING · takeaway_long · item 214
-- Takeaway length 96 > 95
-- Headline: `מפגינים ניסו לשבש הרצאה של גיא פלג בכרמיאל`
-- Original: `קללות, יריקות וניסיון פריצה: המהומה בהרצאה של גיא פלג`
-- Source: TMI - ראשי
-- URL: https://tmi.maariv.co.il/celebs-news/article-1333158
-
-### WARNING · takeaway_long · item 216
-- Takeaway length 126 > 95
-- Headline: `ביטקוין התאושש מעל 65,800 דולר אחרי שבועיים של ירידות`
-- Original: `אחרי שבועיים של קריסה: ביטקוין מתאושש, ויחד איתו כל שוק הקריפטו`
-- Source: וואלה כסף - קריפטו
-- URL: https://finance.walla.co.il/item/3845812
