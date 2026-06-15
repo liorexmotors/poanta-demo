@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 196
+Items checked: 197
 Errors: 0
-Warnings: 58
+Warnings: 59
 
 ## Category distribution
 
 - רכילות: 57
-- ביטחון: 38
+- ביטחון: 39
 - ספורט: 23
 - כלכלה: 21
 - פוליטיקה: 13
@@ -27,7 +27,7 @@ Warnings: 58
 ## Issue counts
 
 - takeaway_long: 48
-- summary_long: 8
+- summary_long: 9
 - category_sport_source: 2
 
 ## Issues
@@ -437,3 +437,10 @@ Warnings: 58
 - Original: `"אוניות עמוסות בנפט מתחילות לנוע במצר": טראמפ בישר על פתיחת הורמוז`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3845956
+
+### WARNING · summary_long · item 196
+- Summary length 226 > 220
+- Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
+- Original: `באופוזיציה תוקפים: "ההסכם הוא כישלון - אם הוא היה על שמנו, היינו מואשמים בבגידה"`
+- Source: וואלה חדשות - פוליטי-מדיני
+- URL: https://news.walla.co.il/item/3845920
