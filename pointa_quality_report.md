@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 215
+Items checked: 200
 Errors: 0
-Warnings: 68
+Warnings: 66
 
 ## Category distribution
 
-- רכילות: 61
-- ביטחון: 39
+- רכילות: 58
+- ביטחון: 34
 - כלכלה: 22
-- ספורט: 21
+- ספורט: 19
 - פוליטיקה: 14
-- טכנולוגיה: 10
-- בריאות: 9
-- משפט: 8
+- טכנולוגיה: 8
+- בריאות: 8
 - חדשות: 7
+- משפט: 7
 - תרבות: 6
 - פלילים: 5
 - רכב: 3
-- צרכנות: 3
 - דעות: 2
 - מזג אוויר: 2
 - אקטואליה בעולם: 2
+- צרכנות: 2
 - נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 53
+- takeaway_long: 51
 - summary_long: 14
 - category_sport_source: 1
 
@@ -493,17 +493,3 @@ Warnings: 68
 - Original: `Katie Price flies out to Dubai to see Lee Andrews on son Junior Andre's 21st birthday`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/katie-price-flies-out-dubai-37298175
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 101 > 95
-- Headline: `ניוקור יוצאת מחשאיות עם גיוס של 66 מיליון דולר`
-- Original: `היזמים הוותיקים שגייסו 66 מיליון דולר רוצים להתחרות ראש בראש מול אוקטה`
-- Source: דה מרקר - TechNation
-- URL: https://www.themarker.com/technation/2026-06-15/ty-article/.highlight/0000019e-cafc-deb5-a99e-cbfd7c380000
-
-### WARNING · takeaway_long · item 213
-- Takeaway length 98 > 95
-- Headline: `אלרון הצטרף לעתירות נגד בחירת ראבילו למבקר`
-- Original: `שופט העליון לשעבר אלרון לבג"ץ: ההצבעה למבקר פסולה, יש להקפיא את מינוי ראבילו`
-- Source: וואלה חדשות - פוליטי-מדיני
-- URL: https://news.walla.co.il/item/3845888
