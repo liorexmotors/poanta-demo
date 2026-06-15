@@ -1,8 +1,8 @@
 # Pointa Quality Gate Report
 
-Items checked: 199
+Items checked: 198
 Errors: 0
-Warnings: 74
+Warnings: 73
 
 ## Category distribution
 
@@ -10,7 +10,7 @@ Warnings: 74
 - ביטחון: 44
 - ספורט: 18
 - פוליטיקה: 18
-- כלכלה: 16
+- כלכלה: 15
 - חדשות: 10
 - משפט: 10
 - בריאות: 9
@@ -24,7 +24,7 @@ Warnings: 74
 
 ## Issue counts
 
-- takeaway_long: 62
+- takeaway_long: 61
 - summary_long: 12
 
 ## Issues
@@ -539,10 +539,3 @@ Warnings: 74
 - Original: `תלמידות פרסמו שקרים מיניים באינסטגרם - ויפצו בעשרות אלפי שקלים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hyk7whtbfx
-
-### WARNING · takeaway_long · item 197
-- Takeaway length 106 > 95
-- Headline: `מדד שלילי צפוי לקרב את בנק ישראל לדילמת ריבית`
-- Original: `הדולר ברצפה, הנפט צונח: האם המדד שיפורסם היום יביא לירידת ריבית?`
-- Source: וואלה כסף
-- URL: https://finance.walla.co.il/item/3845830
