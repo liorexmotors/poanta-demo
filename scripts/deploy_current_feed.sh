@@ -70,14 +70,14 @@ MAIN_WORKTREE="/tmp/poanta-main-auto"
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
 mkdir -p "$MAIN_WORKTREE/tmp"
-for p in feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
+for p in feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
   if [[ -e "$ROOT/$p" ]]; then cp -a "$ROOT/$p" "$MAIN_WORKTREE/$p"; fi
 done
 cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git commit -m "Auto-update Poanta feed snapshot"
   git pull --rebase origin main
   git push origin HEAD:main
