@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 218
+Items checked: 199
 Errors: 0
-Warnings: 73
+Warnings: 71
 
 ## Category distribution
 
-- ביטחון: 47
-- רכילות: 41
-- כלכלה: 24
-- ספורט: 24
+- ביטחון: 43
+- רכילות: 35
+- כלכלה: 23
+- ספורט: 21
 - משפט: 14
-- תרבות: 11
-- טכנולוגיה: 10
-- צרכנות: 9
+- תרבות: 10
+- טכנולוגיה: 9
 - פוליטיקה: 8
+- צרכנות: 8
 - פלילים: 7
-- בריאות: 5
 - חדשות: 4
+- בריאות: 4
 - דעות: 4
 - נדל״ן: 3
 - רכב: 3
-- אקטואליה בעולם: 3
+- אקטואליה בעולם: 2
 - מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 62
+- takeaway_long: 60
 - summary_long: 11
 
 ## Issues
@@ -527,17 +527,3 @@ Warnings: 73
 - Original: `פיקוד העורף מסיר את הנחיות ההתקהלות בכלל אזורי הארץ - פרט לקו העימות`
 - Source: וואלה חדשות - פוליטי-מדיני
 - URL: https://news.walla.co.il/item/3845823
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 106 > 95
-- Headline: `בלייר דרילן מ-East 17 התחתן בשלושה טקסים`
-- Original: `East 17's Blair Dreelan ties the knot with dancer fiancée at royal wedding venue as part of three stunning ceremonies`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15891403/East-17-Blair-Dreelan-royal-wedding-ceremonies.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 214
-- Takeaway length 110 > 95
-- Headline: `פיקוד העורף מסיר את מגבלת ה-5,000 ברוב הארץ`
-- Original: `פיקוד העורף מבטל את ההנחיות המגבילות - עד מחר בערב`
-- Source: כיפה - חדשות
-- URL: https://www.kipa.co.il/1226026-0
