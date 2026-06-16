@@ -1,19 +1,19 @@
 # Pointa Quality Gate Report
 
-Items checked: 212
+Items checked: 198
 Errors: 0
-Warnings: 49
+Warnings: 44
 
 ## Category distribution
 
-- ביטחון: 52
-- רכילות: 47
+- ביטחון: 49
+- רכילות: 43
 - ספורט: 31
-- פוליטיקה: 20
-- כלכלה: 14
-- חדשות: 9
+- פוליטיקה: 18
+- כלכלה: 12
 - תרבות: 7
-- טכנולוגיה: 7
+- חדשות: 7
+- טכנולוגיה: 6
 - פלילים: 5
 - נדל״ן: 4
 - דעות: 4
@@ -25,8 +25,8 @@ Warnings: 49
 
 ## Issue counts
 
-- takeaway_long: 44
-- summary_long: 4
+- takeaway_long: 40
+- summary_long: 3
 - category_sport_source: 1
 
 ## Issues
@@ -338,38 +338,3 @@ Warnings: 49
 - Original: `קרפור התקפלה אחרי שהקפיצה מחירים, אבל עדיין מוכרת קוטג' ב-7.90 שקלים`
 - Source: ynet - כל ערוץ הצרכנות
 - URL: https://www.ynet.co.il/economy/article/s1bs3ypwgl
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 108 > 95
-- Headline: `צה״ל נערך להחזקה ממושכת של הקו הצהוב בלבנון`
-- Original: `המהלך של צה"ל בדרום לבנון שיהיה למנוף לחץ על איראן - ומבחן לנתניהו`
-- Source: וואלה חדשות - צבא וביטחון
-- URL: https://news.walla.co.il/item/3845959
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 105 > 95
-- Headline: `הלן סקלטון חושפת מה היא מחפשת בזוגיות הבאה`
-- Original: `Helen Skelton admits 'it's a heavy emotion' in rare relationship insight`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/helen-skelton-admits-its-heavy-37299353
-
-### WARNING · summary_long · item 203
-- Summary length 224 > 220
-- Headline: `הורמוז נפתח חלקית לקראת חתימת ההבנות עם איראן`
-- Original: `"אוניות עמוסות בנפט מתחילות לנוע במצר": טראמפ בישר על פתיחת הורמוז`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3845956
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 111 > 95
-- Headline: `הורמוז נפתח חלקית לקראת חתימת ההבנות עם איראן`
-- Original: `"אוניות עמוסות בנפט מתחילות לנוע במצר": טראמפ בישר על פתיחת הורמוז`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3845956
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 106 > 95
-- Headline: `אוליבר טרי תכנן להעביר את הונו לאמנים`
-- Original: `What will happen to Oliver Tree's $4m fortune? Star shared plans for his will just WEEKS before shock death`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15901377/Oliver-Tree-4-million-fortune.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
