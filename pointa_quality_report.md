@@ -1,22 +1,22 @@
 # Pointa Quality Gate Report
 
-Items checked: 214
+Items checked: 198
 Errors: 0
-Warnings: 54
+Warnings: 48
 
 ## Category distribution
 
-- ביטחון: 50
-- רכילות: 50
-- ספורט: 31
+- ביטחון: 49
+- רכילות: 45
+- ספורט: 28
 - פוליטיקה: 20
-- כלכלה: 15
+- כלכלה: 12
 - חדשות: 9
-- תרבות: 8
-- טכנולוגיה: 8
+- טכנולוגיה: 7
+- תרבות: 6
 - פלילים: 5
 - צרכנות: 4
-- משפט: 4
+- משפט: 3
 - נדל״ן: 3
 - דעות: 3
 - בריאות: 2
@@ -25,8 +25,8 @@ Warnings: 54
 
 ## Issue counts
 
-- takeaway_long: 48
-- summary_long: 5
+- takeaway_long: 43
+- summary_long: 4
 - category_sport_source: 1
 
 ## Issues
@@ -366,45 +366,3 @@ Warnings: 54
 - Original: `What will happen to Oliver Tree's $4m fortune? Star shared plans for his will just WEEKS before shock death`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15901377/Oliver-Tree-4-million-fortune.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 100 > 95
-- Headline: `יעל שלביה חושפת קשר מחודש עם לאנס סטרול`
-- Original: `יעל שלביה על בן הזוג לאנס סטרול: "הוא האחד"`
-- Source: וואלה סלבס
-- URL: https://celebs.walla.co.il/item/3845906
-
-### WARNING · takeaway_long · item 201
-- Takeaway length 96 > 95
-- Headline: `ויקטורי חשפה מכירות של 99 מיליון שקל לעזה`
-- Original: `100 מיליון שקל לעזה: הדיווח שחשף תעשיית ענק שכולם רוצים להסתיר`
-- Source: גלובס - בארץ
-- URL: https://www.globes.co.il/news/article.aspx?did=1001545921#utm_source=RSS
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 107 > 95
-- Headline: `מבצעי פריים דיי הורידו ערוצי סטרימינג לדולר בחודש`
-- Original: `Watch hit shows starting at $1/month with these early Prime Day streaming deals: Paramount+, MGM+ and more`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/15/entertainment/prime-day-2026-early-streaming-deals-add-subscriptions-on-prime-video-for-1/
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 98 > 95
-- Headline: `רוזי הנטינגטון-וייטלי השיקה קולקציית בגדי ים`
-- Original: `Rosie Huntington-Whiteley sizzles in bold bikinis and striking swimwear as she launches new collection for ViX Paula Hermanny`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15901467/Rosie-Huntington-Whiteley-bold-bikinis-striking-swimwear-new-collection-Hermanny.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 213
-- Summary length 227 > 220
-- Headline: `פתיחת הורמוז הורידה מחירי אנרגיה, אבל השיקום עוד רחוק`
-- Original: `Deal to Reopen Hormuz Kicks Off Long Effort to Ease Energy Crisis`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/2026/06/15/business/energy-environment/iran-deal-oil-natural-gas.html
-
-### WARNING · takeaway_long · item 213
-- Takeaway length 99 > 95
-- Headline: `פתיחת הורמוז הורידה מחירי אנרגיה, אבל השיקום עוד רחוק`
-- Original: `Deal to Reopen Hormuz Kicks Off Long Effort to Ease Energy Crisis`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/2026/06/15/business/energy-environment/iran-deal-oil-natural-gas.html
