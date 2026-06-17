@@ -1,905 +1,420 @@
 # Pointa Quality Gate Report
 
-Items checked: 183
+Items checked: 128
 Errors: 0
-Warnings: 125
+Warnings: 56
 
 ## Category distribution
 
-- רכילות: 63
-- ספורט: 38
-- כלכלה: 19
-- בריאות: 13
-- ביטחון: 11
-- טכנולוגיה: 8
-- תרבות: 5
-- פוליטיקה: 5
-- צרכנות: 5
-- נדל״ן: 4
-- מזג אוויר: 4
-- דעות: 3
-- רכב: 2
-- פלילים: 2
-- אקטואליה בעולם: 1
+- רכילות: 43
+- כלכלה: 22
+- ספורט: 19
+- בריאות: 9
+- טכנולוגיה: 9
+- צרכנות: 7
+- תרבות: 6
+- מזג אוויר: 5
+- רכב: 3
+- חדשות: 2
+- ביטחון: 1
+- נדל״ן: 1
+- דעות: 1
 
 ## Issue counts
 
-- takeaway_long: 83
-- summary_long: 42
+- takeaway_long: 42
+- summary_long: 14
 
 ## Issues
 
 ### WARNING · summary_long · item 0
-- Summary length 278 > 220
-- Headline: `הרמטכ״ל זמיר הודיע על השקת תוכנית טנקים לוחמות בנובמבר`
-- Original: `IDF women's tank unit program to start in November, Zamir announces`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/defense-news/article-899710
+- Summary length 258 > 220
+- Headline: `השחקנית דבי צ׳ייס, הקול של לילו מ״לילו וסטיץ׳, מתה בגיל 35 מדלקת קרום המוח`
+- Original: `דביי צ'ייס, הקול של לילו מהסרט "לילו וסטיץ'", מתה בגיל 35`
+- Source: וואלה תרבות - קולנוע
+- URL: https://e.walla.co.il/item/3846595
+
+### WARNING · takeaway_long · item 0
+- Takeaway length 116 > 95
+- Headline: `השחקנית דבי צ׳ייס, הקול של לילו מ״לילו וסטיץ׳, מתה בגיל 35 מדלקת קרום המוח`
+- Original: `דביי צ'ייס, הקול של לילו מהסרט "לילו וסטיץ'", מתה בגיל 35`
+- Source: וואלה תרבות - קולנוע
+- URL: https://e.walla.co.il/item/3846595
 
 ### WARNING · summary_long · item 1
-- Summary length 251 > 220
-- Headline: `שב״כ הצטרף לחקירת חשד להרעלת תינוקות בפיתת בייבי בירושלים`
-- Original: `Baby puree scare: Police examine possible terror angle after sedatives hospitalize four infants`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-899696
+- Summary length 249 > 220
+- Headline: `נשות הכדורגלנים של אנגליה הגיעו לדאלאס לפני משחק הפתיחה מול קרואטיה`
+- Original: `England WAGs including Jude Bellingham's girlfriend Ashlyn Castro gather to watch their men take on Croatia... as Jordan Pickford's wife Megan salvages a last-minute outfit`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15908037/Jordan-Pickford-wife-Megan-son-England-shirt-World-Cup-match.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
 ### WARNING · takeaway_long · item 1
-- Takeaway length 110 > 95
-- Headline: `שב״כ הצטרף לחקירת חשד להרעלת תינוקות בפיתת בייבי בירושלים`
-- Original: `Baby puree scare: Police examine possible terror angle after sedatives hospitalize four infants`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-899696
+- Takeaway length 120 > 95
+- Headline: `נשות הכדורגלנים של אנגליה הגיעו לדאלאס לפני משחק הפתיחה מול קרואטיה`
+- Original: `England WAGs including Jude Bellingham's girlfriend Ashlyn Castro gather to watch their men take on Croatia... as Jordan Pickford's wife Megan salvages a last-minute outfit`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15908037/Jordan-Pickford-wife-Megan-son-England-shirt-World-Cup-match.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · summary_long · item 2
+- Summary length 309 > 220
+- Headline: `איראן הסכימה להשמיד את מלאי האורניום המועשר - וישראל הושארה מחוץ למשא ומתן`
+- Original: `Middle East crisis live: Iran agrees to destroy enriched uranium stockpile, memorandum read out by US officials says`
+- Source: The Guardian Middle East
+- URL: https://www.theguardian.com/world/live/2026/jun/17/middle-east-war-iran-israel-us-donald-trump-hezbollah-lebanon-peace-deal-netanyahu-latest-news-updated
 
 ### WARNING · takeaway_long · item 2
-- Takeaway length 122 > 95
-- Headline: `ברקוביץ׳ למגל ברדיו 103FM: ״תתנצל בפני טראמפ ותזמין אותו לפטריוטים״`
-- Original: `אייל ברקוביץ' לינון מגל: "תתנצל ותזמין את טראמפ לפטריוטים"`
-- Source: וואלה סלבס - כל הכתבות
-- URL: https://celebs.walla.co.il/item/3846508
+- Takeaway length 147 > 95
+- Headline: `איראן הסכימה להשמיד את מלאי האורניום המועשר - וישראל הושארה מחוץ למשא ומתן`
+- Original: `Middle East crisis live: Iran agrees to destroy enriched uranium stockpile, memorandum read out by US officials says`
+- Source: The Guardian Middle East
+- URL: https://www.theguardian.com/world/live/2026/jun/17/middle-east-war-iran-israel-us-donald-trump-hezbollah-lebanon-peace-deal-netanyahu-latest-news-updated
+
+### WARNING · summary_long · item 3
+- Summary length 236 > 220
+- Headline: `סטיבן בולדווין טוען שפוטר מרומקום עם ג׳ניפר אניסטון כי ״הצחיק יותר ממנה״`
+- Original: `Stephen Baldwin claims he was fired from rom-com for being ‘funnier’ than Jennifer Aniston`
+- Source: Page Six רכילות חו״ל
+- URL: https://pagesix.com/2026/06/17/entertainment/stephen-baldwin-says-he-was-fired-from-rom-com-for-being-funnier-than-jennifer-aniston/
 
 ### WARNING · takeaway_long · item 3
-- Takeaway length 105 > 95
-- Headline: `מת קרלו גינצבורג, ההיסטוריון המיקרו-היסטורי מאחורי ״הגבינה והתולעים״`
-- Original: `ההיסטוריון הנודע קרלו גינצבורג ("הגבינה והתולעים") מת בגיל 87`
-- Source: וואלה תרבות - ספרות
-- URL: https://e.walla.co.il/item/3846491
+- Takeaway length 135 > 95
+- Headline: `סטיבן בולדווין טוען שפוטר מרומקום עם ג׳ניפר אניסטון כי ״הצחיק יותר ממנה״`
+- Original: `Stephen Baldwin claims he was fired from rom-com for being ‘funnier’ than Jennifer Aniston`
+- Source: Page Six רכילות חו״ל
+- URL: https://pagesix.com/2026/06/17/entertainment/stephen-baldwin-says-he-was-fired-from-rom-com-for-being-funnier-than-jennifer-aniston/
 
 ### WARNING · summary_long · item 4
-- Summary length 231 > 220
-- Headline: `מגיין מקיין נגד חברות ״The View״: ״הן עדיין חסרות משמעת מול ואנס״`
-- Original: `Meghan McCain bulldozes ‘s–tty’ ‘View’ co-hosts over ‘undisciplined’ JD Vance interview`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/17/entertainment/meghan-mccain-bulldozes-s-tty-view-co-hosts-over-undisciplined-jd-vance-interview/
-
-### WARNING · takeaway_long · item 4
-- Takeaway length 119 > 95
-- Headline: `מגיין מקיין נגד חברות ״The View״: ״הן עדיין חסרות משמעת מול ואנס״`
-- Original: `Meghan McCain bulldozes ‘s–tty’ ‘View’ co-hosts over ‘undisciplined’ JD Vance interview`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/17/entertainment/meghan-mccain-bulldozes-s-tty-view-co-hosts-over-undisciplined-jd-vance-interview/
+- Summary length 226 > 220
+- Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
+- Original: `איזנקוט: "אם הייתי חושב שחיבור עם ליברמן או בנט יביא ניצחון הייתי עושה זאת"`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/politics/article/20786790
 
 ### WARNING · summary_long · item 5
-- Summary length 241 > 220
-- Headline: `קיילי ג׳נר מתאמנת על הסיפון של היאכטה בסרדיניה`
-- Original: `Kylie Jenner strips to a crop top and hotpants as she does Pilates on the deck of her superyacht during girls' trip to Sardinia`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907479/Kylie-Jenner-crop-hotpants-Pilates-deck-superyacht-girls-trip-Sardinia.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 5
-- Takeaway length 123 > 95
-- Headline: `קיילי ג׳נר מתאמנת על הסיפון של היאכטה בסרדיניה`
-- Original: `Kylie Jenner strips to a crop top and hotpants as she does Pilates on the deck of her superyacht during girls' trip to Sardinia`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907479/Kylie-Jenner-crop-hotpants-Pilates-deck-superyacht-girls-trip-Sardinia.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+- Summary length 252 > 220
+- Headline: `המשטרה תחקור תלונות על אלימות שוטרים נגד מפגינים חרדים שחסמו את כביש 4`
+- Original: `Security Cabinet officials 'frustrated' over MoU, believe economic collapse imminent - exclusive`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/defense-news/article-899740
 
 ### WARNING · summary_long · item 6
-- Summary length 221 > 220
-- Headline: `אוליביה ויילד: ״הפכנו לזרים״ — יום הולדת שהסתיים בפרידה מסודייקיס`
-- Original: `Olivia Wilde says she and Jason Sudeikis 'became strangers' as she recalls the moment she realised their relationship was over on her birthday`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907455/Olivia-Wilde-Jason-Sudeikis-strangers-moment-relationship-birthday.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 6
-- Takeaway length 131 > 95
-- Headline: `אוליביה ויילד: ״הפכנו לזרים״ — יום הולדת שהסתיים בפרידה מסודייקיס`
-- Original: `Olivia Wilde says she and Jason Sudeikis 'became strangers' as she recalls the moment she realised their relationship was over on her birthday`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907455/Olivia-Wilde-Jason-Sudeikis-strangers-moment-relationship-birthday.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+- Summary length 279 > 220
+- Headline: `אשתו של שוער אנגליה פיקפורד לבשה חולצת בן ה-7 אחרי שהמזוודה אבדה`
+- Original: `Shin Bet officer petitions High Court against Knesset decision to grant Gotliv immunity`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/article-899729
 
 ### WARNING · summary_long · item 7
-- Summary length 234 > 220
-- Headline: `טראמפ ב-G7: ״אובמה שיחד את איראן בהסכם הגרעין של 2015״`
-- Original: `Trump accuses Obama of ‘bribing’ Iran in 2015 nuclear deal at G7 summit`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/video/newsfeed/2026/6/17/trump-accuses-obama-of-bribing-iran-in-2015-nuclear-deal-at-g7-summit?traffic_source=rss
-
-### WARNING · takeaway_long · item 7
-- Takeaway length 121 > 95
-- Headline: `טראמפ ב-G7: ״אובמה שיחד את איראן בהסכם הגרעין של 2015״`
-- Original: `Trump accuses Obama of ‘bribing’ Iran in 2015 nuclear deal at G7 summit`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/video/newsfeed/2026/6/17/trump-accuses-obama-of-bribing-iran-in-2015-nuclear-deal-at-g7-summit?traffic_source=rss
-
-### WARNING · summary_long · item 8
-- Summary length 255 > 220
-- Headline: `לינור סביניק: ״כולם חושבים שלהיות יפה זו מתנה, אבל מעטים מבינים שזו מלחמה״`
-- Original: `לינור סביניק נשברת: "מעטים מבינים שזו מלחמה"`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/culture/internet-culture/article/20784227
-
-### WARNING · takeaway_long · item 8
-- Takeaway length 111 > 95
-- Headline: `לינור סביניק: ״כולם חושבים שלהיות יפה זו מתנה, אבל מעטים מבינים שזו מלחמה״`
-- Original: `לינור סביניק נשברת: "מעטים מבינים שזו מלחמה"`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/culture/internet-culture/article/20784227
+- Summary length 237 > 220
+- Headline: `מחירי הנפט עלו בציפייה שמצר הורמוז ייפתח אחרי ההסכם עם איראן`
+- Original: `Tackling terror indoctrination in Palestinian schools key to ending 'Pay-for-Slay,' panelists say`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/article-899709
 
 ### WARNING · summary_long · item 9
-- Summary length 269 > 220
-- Headline: `תקיפות אוויריות ישראליות בלבנון נמשכות למרות הסכם ארה״ב-איראן`
-- Original: `Israeli air strikes on Lebanon continue despite US-Iran deal`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/17/israeli-air-strikes-on-lebanon-continue-threatening-us-iran-deal?traffic_source=rss
+- Summary length 230 > 220
+- Headline: `רייצ׳ל זוי מציגה את צבעי הקיץ שלה - ומודיעה: ״לובשת לבן כל השנה״`
+- Original: `נחשף: הבינה המלאכותית של אילון מאסק שימשה בתקיפות נגד איראן`
+- Source: וואלה TECH - כל הכתבות
+- URL: https://tech.walla.co.il/item/3846587
 
-### WARNING · takeaway_long · item 9
-- Takeaway length 142 > 95
-- Headline: `תקיפות אוויריות ישראליות בלבנון נמשכות למרות הסכם ארה״ב-איראן`
-- Original: `Israeli air strikes on Lebanon continue despite US-Iran deal`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/17/israeli-air-strikes-on-lebanon-continue-threatening-us-iran-deal?traffic_source=rss
+### WARNING · summary_long · item 10
+- Summary length 225 > 220
+- Headline: `וול סטריט יציבה לקראת החלטת הריבית של הפד; אינטל ו-ASML מובילות`
+- Original: `בלי צילום מסך ובלי העתקה: זה הפיצ'ר החדש שוואטסאפ בודקת`
+- Source: וואלה TECH - כל הכתבות
+- URL: https://tech.walla.co.il/item/3846589
 
 ### WARNING · takeaway_long · item 10
-- Takeaway length 186 > 95
-- Headline: `בשיבא נפתח ״האלמנט החמישי״ - מרחב טיפול בטראומה בלב הטבע`
-- Original: `לראשונה במרכז רפואי בישראל: שיבא פתחו מרחב טיפול בטראומה בלב הטבע`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3846490
+- Takeaway length 106 > 95
+- Headline: `וול סטריט יציבה לקראת החלטת הריבית של הפד; אינטל ו-ASML מובילות`
+- Original: `בלי צילום מסך ובלי העתקה: זה הפיצ'ר החדש שוואטסאפ בודקת`
+- Source: וואלה TECH - כל הכתבות
+- URL: https://tech.walla.co.il/item/3846589
 
-### WARNING · takeaway_long · item 11
-- Takeaway length 193 > 95
-- Headline: `פאנל TECH IL: ה-AI משנה את שוק ההייטק הישראלי - והמדינה צריכה להתעורר`
-- Original: `"מתכנתים שמרוויחים מיליון שקל בחודש": איך ייראה ההייטק הישראלי בעקבות מהפכת ה-AI?`
-- Source: גלובס - טכנולוגיה
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546194#utm_source=RSS
-
-### WARNING · takeaway_long · item 12
-- Takeaway length 173 > 95
-- Headline: `זנדאיה וטום הולנד הופיעו יחד לראשונה מאז אישרו נישואים`
-- Original: `Zendaya flashes her wedding ring as she and Tom Holland are seen together for the first time since confirming they ARE married after months of speculation`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907359/Zendaya-crashes-Tom-Hollands-video-couple-seen-time-actor-confirmed-married-months-speculation.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 13
-- Takeaway length 204 > 95
-- Headline: `רונאלדו (41) יוצא למונדיאל 2026 בניסיון שישי להשיג גביע עולם`
-- Original: `פעם שישית גלידה? רונאלדו יוצא לקרב על התואר היחיד שחסר לו`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/sjktmeygzx
-
-### WARNING · summary_long · item 14
-- Summary length 224 > 220
-- Headline: `אוליביה ויילד שברה שתיקה בפודקאסט על הרומן עם הארי סטיילס`
-- Original: `Olivia Wilde, 42, finally breaks her silence on 'loveliest' romance with Harry Styles, 32, as she accuses his fans of being enraged by their happiness and placing a 'weighty burden' on him`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907289/Olivia-Wilde-42-finally-breaks-silence-loveliest-romance-Harry-Styles-32-admits-really-upset-people.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+### WARNING · summary_long · item 12
+- Summary length 251 > 220
+- Headline: `סיילפוינט קונה את אנטרו כדי לאבטח זהויות של סוכני AI`
+- Original: `עסקת ענק בסייבר: סיילפוינט רוכשת את הסטארט-אפ הישראלי אנטרו בכ-200 מיליון דולר`
+- Source: וואלה כסף
+- URL: https://finance.walla.co.il/item/3845958
 
 ### WARNING · takeaway_long · item 14
-- Takeaway length 210 > 95
-- Headline: `אוליביה ויילד שברה שתיקה בפודקאסט על הרומן עם הארי סטיילס`
-- Original: `Olivia Wilde, 42, finally breaks her silence on 'loveliest' romance with Harry Styles, 32, as she accuses his fans of being enraged by their happiness and placing a 'weighty burden' on him`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15907289/Olivia-Wilde-42-finally-breaks-silence-loveliest-romance-Harry-Styles-32-admits-really-upset-people.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 15
-- Summary length 241 > 220
-- Headline: `חמישה בארה״ב הואשמו בתכנון רצח באירוע UFC בבית הלבן`
-- Original: `פיגוע ענק נמנע באירוע ה-UFC בבית הלבן - המטרות: מקבלי כסף "פרו ישראלי"`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3846422
-
-### WARNING · takeaway_long · item 15
-- Takeaway length 171 > 95
-- Headline: `חמישה בארה״ב הואשמו בתכנון רצח באירוע UFC בבית הלבן`
-- Original: `פיגוע ענק נמנע באירוע ה-UFC בבית הלבן - המטרות: מקבלי כסף "פרו ישראלי"`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3846422
-
-### WARNING · takeaway_long · item 16
-- Takeaway length 121 > 95
-- Headline: `קטאר תארח בדוחה שיחות עקיפות בין ארה״ב לאיראן`
-- Original: `Qatar to host US-Iran talks in Doha as behind-the-scenes diplomacy secures peace accord - report`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/article-899651
-
-### WARNING · takeaway_long · item 17
-- Takeaway length 155 > 95
-- Headline: `בכירי אש״ף דורשים להחזיר מחבלים משוחררים לגדה ולמצרים`
-- Original: `Released Palestinian terrorists demand right to return to West Bank, Egypt`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/article-899685
-
-### WARNING · summary_long · item 18
-- Summary length 232 > 220
-- Headline: `לורן סילברמן: הרגשתי כמו האישה האדומה בהיריון עם בייבי של קאוול`
-- Original: `Lauren Silverman reveals she felt like the scarlet woman when she fell pregnant with Simon Cowell's baby while married as she says 'I caused it and I deserved it'`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906909/Lauren-Silverman-reveals-felt-like-scarlet-woman-fell-pregnant-Simon-Cowells-baby-married-says-caused-deserved-it.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 18
-- Takeaway length 115 > 95
-- Headline: `לורן סילברמן: הרגשתי כמו האישה האדומה בהיריון עם בייבי של קאוול`
-- Original: `Lauren Silverman reveals she felt like the scarlet woman when she fell pregnant with Simon Cowell's baby while married as she says 'I caused it and I deserved it'`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906909/Lauren-Silverman-reveals-felt-like-scarlet-woman-fell-pregnant-Simon-Cowells-baby-married-says-caused-deserved-it.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 19
-- Summary length 232 > 220
-- Headline: `במכביה יונצחו שלושת הספורטאים שנרצחו ב-7 באוקטובר ובבונדי ביץ׳`
-- Original: `"עם ישראל לא שכח את הבנים שלנו": כך יונצחו במכביה דן, גיא ואדיר`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/ry0l6a1zzl
-
-### WARNING · takeaway_long · item 19
-- Takeaway length 130 > 95
-- Headline: `במכביה יונצחו שלושת הספורטאים שנרצחו ב-7 באוקטובר ובבונדי ביץ׳`
-- Original: `"עם ישראל לא שכח את הבנים שלנו": כך יונצחו במכביה דן, גיא ואדיר`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/ry0l6a1zzl
-
-### WARNING · summary_long · item 20
-- Summary length 267 > 220
-- Headline: `קאשבק ההצטרפות של FlyAll קוצץ בעקבות מעבר מועדון אל על לישראכרט`
-- Original: `מתנת ההצטרפות ל-FlyAll ירדה מ-250 דולר ל-75 דולר. זו הסיבה`
-- Source: גלובס - שיווק וצרכנות
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546180#utm_source=RSS
-
-### WARNING · takeaway_long · item 20
-- Takeaway length 178 > 95
-- Headline: `קאשבק ההצטרפות של FlyAll קוצץ בעקבות מעבר מועדון אל על לישראכרט`
-- Original: `מתנת ההצטרפות ל-FlyAll ירדה מ-250 דולר ל-75 דולר. זו הסיבה`
-- Source: גלובס - שיווק וצרכנות
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546180#utm_source=RSS
-
-### WARNING · takeaway_long · item 21
-- Takeaway length 144 > 95
-- Headline: `אמילי רטאייקובסקי חזרה לרשת עם תמונות ממיורקה אחרי ביקורת`
-- Original: `Defiant Emily Ratajkowski returns to social media to post risqué snaps from Mallorca holiday after backlash over 'disturbing' topless shoot`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906913/Emily-Ratajkowski-returns-social-media-risqu-snaps-Mallorca-backlash-topless-shoot.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 22
-- Summary length 241 > 220
-- Headline: `בלונדון נחשף אירוע נדל״ן שפרסם מכירת קרקעות בהתנחלויות`
-- Original: `Real estate event in London ‘advertised sale of land in illegal Israeli settlements’`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/business/2026/jun/17/real-estate-event-london-illegal-israeli-settlements-land-west-bank
-
-### WARNING · takeaway_long · item 22
-- Takeaway length 152 > 95
-- Headline: `בלונדון נחשף אירוע נדל״ן שפרסם מכירת קרקעות בהתנחלויות`
-- Original: `Real estate event in London ‘advertised sale of land in illegal Israeli settlements’`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/business/2026/jun/17/real-estate-event-london-illegal-israeli-settlements-land-west-bank
-
-### WARNING · takeaway_long · item 24
-- Takeaway length 119 > 95
-- Headline: `טלסקופ ג'יימס ווב חשף "מאובן גלקטי" בן 12.5 מיליארד שנה בלב שביל החלב`
-- Original: `טלסקופ החלל ג'יימס ווב חשף "מאובן" נדיר מלב שביל החלב`
-- Source: וואלה TECH - כל הכתבות
-- URL: https://tech.walla.co.il/item/3846406
-
-### WARNING · takeaway_long · item 25
-- Takeaway length 108 > 95
-- Headline: `רופא NHS: שלושה תסמינים שמחייבים להפחית קפה או להפסיקו`
-- Original: `רופא מזהיר: אם אתם סובלים מזה - אולי כדאי להפסיק עם הקפה`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3846397
-
-### WARNING · summary_long · item 26
-- Summary length 242 > 220
-- Headline: `הבורסה בתל אביב נפתחה בירידות; מדד הביטוח מתאושש אחרי נפילה של 8%`
-- Original: `הבורסה נפתחה בירידות בהובלת מניות השבבים: נובה מאבדת 5.5%, טאואר 3%`
-- Source: דה מרקר - שוק ההון
-- URL: https://www.themarker.com/markets/2026-06-17/ty-article-live/0000019e-d471-d6a3-a5be-f5712d630000
-
-### WARNING · takeaway_long · item 26
-- Takeaway length 111 > 95
-- Headline: `הבורסה בתל אביב נפתחה בירידות; מדד הביטוח מתאושש אחרי נפילה של 8%`
-- Original: `הבורסה נפתחה בירידות בהובלת מניות השבבים: נובה מאבדת 5.5%, טאואר 3%`
-- Source: דה מרקר - שוק ההון
-- URL: https://www.themarker.com/markets/2026-06-17/ty-article-live/0000019e-d471-d6a3-a5be-f5712d630000
-
-### WARNING · takeaway_long · item 28
-- Takeaway length 122 > 95
-- Headline: `מסי כבש שלושער ב-0:3 על אלג'יריה - אבל ביצע עבירה שלא קיבלה קארד אדום`
-- Original: `"הוא היה חייב לקבל כרטיס אדום": הסערה סביב לאו מסי`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/worldcup2026/article/rythqpjzge
-
-### WARNING · summary_long · item 29
-- Summary length 240 > 220
-- Headline: `איראן מאיימת על ישראל בתגובה חריפה על הפרות הפסקת האש בלבנון`
-- Original: `Iran war day 110: Tehran says Israeli attacks on Lebanon threaten US deal`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/17/iran-war-day-110-tehran-says-israeli-attacks-on-lebanon-threaten-us-deal?traffic_source=rss
-
-### WARNING · takeaway_long · item 29
-- Takeaway length 120 > 95
-- Headline: `איראן מאיימת על ישראל בתגובה חריפה על הפרות הפסקת האש בלבנון`
-- Original: `Iran war day 110: Tehran says Israeli attacks on Lebanon threaten US deal`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/17/iran-war-day-110-tehran-says-israeli-attacks-on-lebanon-threaten-us-deal?traffic_source=rss
-
-### WARNING · summary_long · item 30
-- Summary length 266 > 220
-- Headline: `מחקר: סלרי, שומר, פטרוזיליה וגזר לבן הפחיתו דלקת במעי בניסוי`
-- Original: `האם הירקות שאתם כמעט לא אוכלים הם הסוד למעי בריא יותר?`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3846185
-
-### WARNING · takeaway_long · item 30
-- Takeaway length 120 > 95
-- Headline: `מחקר: סלרי, שומר, פטרוזיליה וגזר לבן הפחיתו דלקת במעי בניסוי`
-- Original: `האם הירקות שאתם כמעט לא אוכלים הם הסוד למעי בריא יותר?`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3846185
-
-### WARNING · summary_long · item 31
-- Summary length 261 > 220
-- Headline: `רגב נסוגה יממה לפני המועד: הטסט הפנימי לנהגים חדשים לא יבוטל`
-- Original: `בעקבות הפרסום בוואלה - מירי רגב מאשרת: הטסט הפנימי לא יבוטל`
-- Source: וואלה רכב - כל הכתבות
-- URL: https://cars.walla.co.il/item/3846351
-
-### WARNING · takeaway_long · item 31
-- Takeaway length 121 > 95
-- Headline: `רגב נסוגה יממה לפני המועד: הטסט הפנימי לנהגים חדשים לא יבוטל`
-- Original: `בעקבות הפרסום בוואלה - מירי רגב מאשרת: הטסט הפנימי לא יבוטל`
-- Source: וואלה רכב - כל הכתבות
-- URL: https://cars.walla.co.il/item/3846351
-
-### WARNING · takeaway_long · item 32
-- Takeaway length 102 > 95
-- Headline: `ג׳רמי קלארקסון חשף אבחון סרטן "אגרסיבי" בפרק האחרון של Clarkson's Farm`
-- Original: `Jeremy Clarkson fans erupt with grief over Top Gear icon's 'shocking' and 'terrible' cancer diagnosis`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906419/jeremy-clarkson-fans-erupt-grief-shocking-terrible-cancer-diagnosis-clarksons-farm-gear.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 33
-- Takeaway length 104 > 95
-- Headline: `בתו בת ה-18 של ג׳לי רול דחתה את הפרסומים על גירושיו: "עניין פרטי של המשפחה"`
-- Original: `Jelly Roll's daughter, 18, breaks silence on his divorce despite close bond with stepmom Bunnie XO... as she calls it a 'private family matter'`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906109/jelly-roll-daughter-breaks-silence-bunnie-xo-divorce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 34
-- Summary length 229 > 220
-- Headline: `חברות ה-SaaS מאבדות את הנחת היסוד: לקוחות יכולים לפתח בעצמם בעזרת AI`
-- Original: `חברות ה–SaaS נראו בלתי ניתנות לעצירה. כעת ה–AI מציבה בפניהן איום קיומי`
-- Source: דה מרקר - גלובל
-- URL: https://www.themarker.com/wallstreet/2026-06-17/ty-article/.premium/0000019e-c607-d86d-adde-feff3d670000
-
-### WARNING · takeaway_long · item 34
-- Takeaway length 134 > 95
-- Headline: `חברות ה-SaaS מאבדות את הנחת היסוד: לקוחות יכולים לפתח בעצמם בעזרת AI`
-- Original: `חברות ה–SaaS נראו בלתי ניתנות לעצירה. כעת ה–AI מציבה בפניהן איום קיומי`
-- Source: דה מרקר - גלובל
-- URL: https://www.themarker.com/wallstreet/2026-06-17/ty-article/.premium/0000019e-c607-d86d-adde-feff3d670000
-
-### WARNING · summary_long · item 35
-- Summary length 249 > 220
-- Headline: `ביקורת "אליס וסטיב": הסדרה הבריטית החדשה מבטיחה אך מסתבכת בעלילות משנה`
-- Original: `למרות הפוטנציאל, "אליס וסטיב" מתקשה להתגבש לכדי קומדיה בשלה ובטוחה בעצמה`
-- Source: הארץ - תרבות
-- URL: https://www.haaretz.co.il/gallery/television/tv-review/2026-06-17/ty-article-review/.highlight/0000019e-d2e8-d21d-a9de-f7ef1d860000
+- Takeaway length 96 > 95
+- Headline: `מתיאס פרננדס-פארדו בחר בבלגיה גם כהזדמנות שוק`
+- Original: `הכלכלה של הפטריוטיזם: למה הכוכב הצעיר בחר דווקא בבלגיה?`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3845820
 
 ### WARNING · takeaway_long · item 35
-- Takeaway length 138 > 95
-- Headline: `ביקורת "אליס וסטיב": הסדרה הבריטית החדשה מבטיחה אך מסתבכת בעלילות משנה`
-- Original: `למרות הפוטנציאל, "אליס וסטיב" מתקשה להתגבש לכדי קומדיה בשלה ובטוחה בעצמה`
-- Source: הארץ - תרבות
-- URL: https://www.haaretz.co.il/gallery/television/tv-review/2026-06-17/ty-article-review/.highlight/0000019e-d2e8-d21d-a9de-f7ef1d860000
-
-### WARNING · summary_long · item 36
-- Summary length 226 > 220
-- Headline: `אסיר משוחרר מיפיע ניסה לגנוב מרצדס - נתפס אחרי מרדף, ירי אזהרה וכתב אישום`
-- Original: `יצא לחופשה מהכלא וניסה לגנוב מרצדס - נתפס לאחר מרדף וירי אזהרה`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/crime/article/20779421
+- Takeaway length 103 > 95
+- Headline: `בורסת תל אביב נחלשת בזמן שמניות השבבים מזנקות`
+- Original: `ירידות בת"א; מדד הביטוח נופל בכ-5%, מניות השבבים מזנקות`
+- Source: גלובס - שוק ההון
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545842#utm_source=RSS
 
 ### WARNING · takeaway_long · item 36
-- Takeaway length 121 > 95
-- Headline: `אסיר משוחרר מיפיע ניסה לגנוב מרצדס - נתפס אחרי מרדף, ירי אזהרה וכתב אישום`
-- Original: `יצא לחופשה מהכלא וניסה לגנוב מרצדס - נתפס לאחר מרדף וירי אזהרה`
+- Takeaway length 107 > 95
+- Headline: `יעל שלביה מתארת חזרה זהירה לזוגיות עם לאנס סטרול`
+- Original: `יעל שלביה חזרה לאהבה ונבהלה מהמצלמות (וידאו)`
 - Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/crime/article/20779421
-
-### WARNING · summary_long · item 37
-- Summary length 235 > 220
-- Headline: `המשמרות שיגרו כטב"מים למצר הורמוז מדי לילה מאז ההסכם עם ארה"ב`
-- Original: `Iran has fired drones at commercial ships in Strait of Hormuz since signing of MoU`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/iran-news/article-899643
-
-### WARNING · takeaway_long · item 37
-- Takeaway length 123 > 95
-- Headline: `המשמרות שיגרו כטב"מים למצר הורמוז מדי לילה מאז ההסכם עם ארה"ב`
-- Original: `Iran has fired drones at commercial ships in Strait of Hormuz since signing of MoU`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/iran-news/article-899643
-
-### WARNING · summary_long · item 38
-- Summary length 273 > 220
-- Headline: `בריטניה, אוסטרליה וקנדה הקימו קרן שלום ישראל-פלסטין משותפת`
-- Original: `Britain launches Israel-Palestine peace fund alongside Australia, Canada`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/article-899641
-
-### WARNING · takeaway_long · item 38
-- Takeaway length 144 > 95
-- Headline: `בריטניה, אוסטרליה וקנדה הקימו קרן שלום ישראל-פלסטין משותפת`
-- Original: `Britain launches Israel-Palestine peace fund alongside Australia, Canada`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/article-899641
+- URL: https://www.israelhayom.co.il/forreal/localy/article/20765636
 
 ### WARNING · takeaway_long · item 39
-- Takeaway length 144 > 95
-- Headline: `הארץ: מפלגת "עומדים ביחד" מציגה עצמה כמועמדת מהשמאל - אך מסרבת להגדיר עצמה`
-- Original: `מפלגת "עומדים ביחד", סליחה, "מקום לכולנו", אתם הדבר האחרון שהשמאל צריך`
-- Source: הארץ - כל הכתבות
-- URL: https://www.haaretz.co.il/opinions/2026-06-17/ty-article-opinion/.premium/0000019e-d143-db7a-a9bf-ddd7e5f80000
-
-### WARNING · summary_long · item 40
-- Summary length 227 > 220
-- Headline: `מכבי תל אביב הביסה את הפועל 75:96 בגמר הפלייאוף - לונדברג: "תנו 100 אחוז"`
-- Original: `איפה לונדברג מוכן לקרב: "אם אתה לא פה כדי לתת 100 אחוז, אל תהיה בספורט הזה"`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3846349
+- Takeaway length 103 > 95
+- Headline: `ניו-קור נחשפת עם גיוסי 66 מיליון דולר ושווי של 300 מיליון`
+- Original: `הבכיר שכיהן שתי קדנציות בצ'ק פוינט חושף סטארט-אפ בשווי 300 מיליון דולר`
+- Source: גלובס - טכנולוגיה
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545903#utm_source=RSS
 
 ### WARNING · takeaway_long · item 40
-- Takeaway length 148 > 95
-- Headline: `מכבי תל אביב הביסה את הפועל 75:96 בגמר הפלייאוף - לונדברג: "תנו 100 אחוז"`
-- Original: `איפה לונדברג מוכן לקרב: "אם אתה לא פה כדי לתת 100 אחוז, אל תהיה בספורט הזה"`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3846349
-
-### WARNING · summary_long · item 41
-- Summary length 240 > 220
-- Headline: `מסי יכול לשבור עוד שלושה שיאים במונדיאל 2026 - כולל הבישולים`
-- Original: `זו רק ההתחלה? השיאים שליאונל מסי יכול לשבור במונדיאל 2026`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3846346
-
-### WARNING · takeaway_long · item 41
-- Takeaway length 122 > 95
-- Headline: `מסי יכול לשבור עוד שלושה שיאים במונדיאל 2026 - כולל הבישולים`
-- Original: `זו רק ההתחלה? השיאים שליאונל מסי יכול לשבור במונדיאל 2026`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3846346
-
-### WARNING · summary_long · item 42
-- Summary length 234 > 220
-- Headline: `בלייק לייבלי ביקשה דחייה בתיק המשפטי נגד ג׳סטין בלדוני בגלל לוח זמנים עמוס`
-- Original: `Blake Lively asks judge for more time in Justin Baldoni case due to summer plans after settled court war`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906249/blake-lively-request-justin-baldoni-case.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+- Takeaway length 97 > 95
+- Headline: `קייטי פרייס טסה לדובאי ביום הולדתו של בנה`
+- Original: `Katie Price flies out to Dubai to see Lee Andrews on son Junior Andre's 21st birthday`
+- Source: Mirror Celebs רכילות חו״ל
+- URL: https://www.mirror.co.uk/3am/celebrity-news/katie-price-flies-out-dubai-37298175
 
 ### WARNING · takeaway_long · item 42
-- Takeaway length 173 > 95
-- Headline: `בלייק לייבלי ביקשה דחייה בתיק המשפטי נגד ג׳סטין בלדוני בגלל לוח זמנים עמוס`
-- Original: `Blake Lively asks judge for more time in Justin Baldoni case due to summer plans after settled court war`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15906249/blake-lively-request-justin-baldoni-case.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 43
-- Takeaway length 139 > 95
-- Headline: `שחקנית סדרת הפשע "Simon & Simon" של שנות ה-80 הופיעה בלוס אנג׳לס בגיל 79`
-- Original: `Popular 80s actress, 79, who starred in classic TV shows looks unrecognizable in rare outing with her husband… can YOU guess who?`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905473/Popular-80s-actress-Wilson-classic-TV-unrecognizable.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 44
-- Summary length 243 > 220
-- Headline: `מייק פנס: ההסכם עם איראן "מריח מפייסנות" - מעניק ויתורים בלי תמורה`
-- Original: `מייק פנס על ההסכם עם איראן: מריח מפייסנות, לא מבטיח עצירת טרור`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1118265
-
-### WARNING · takeaway_long · item 44
-- Takeaway length 172 > 95
-- Headline: `מייק פנס: ההסכם עם איראן "מריח מפייסנות" - מעניק ויתורים בלי תמורה`
-- Original: `מייק פנס על ההסכם עם איראן: מריח מפייסנות, לא מבטיח עצירת טרור`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1118265
-
-### WARNING · summary_long · item 45
-- Summary length 269 > 220
-- Headline: `קלארקסון חשף אבחון סרטן בעונה החדשה של "חוות קלארקסון" - קופר פרץ בבכי`
-- Original: `Jeremy Clarkson cancer diagnosis leaves Kaleb Cooper in tears - 'look after yourself'`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/jeremy-clarkson-cancer-kaleb-tears-37306390
-
-### WARNING · takeaway_long · item 45
-- Takeaway length 142 > 95
-- Headline: `קלארקסון חשף אבחון סרטן בעונה החדשה של "חוות קלארקסון" - קופר פרץ בבכי`
-- Original: `Jeremy Clarkson cancer diagnosis leaves Kaleb Cooper in tears - 'look after yourself'`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/jeremy-clarkson-cancer-kaleb-tears-37306390
-
-### WARNING · takeaway_long · item 46
-- Takeaway length 126 > 95
-- Headline: `מסי ואמבפה השוו ל-14 שערים במונדיאל; אמבפה כובש כל פחות ממשחק אחד`
-- Original: `מסי ואמבפה בדרך לשיא כל הזמנים במונדיאל? תמונת מצב`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3846341
-
-### WARNING · takeaway_long · item 47
-- Takeaway length 150 > 95
-- Headline: `הולאנד כבש צמד בבכורת מונדיאל; נורבגיה הביסה את עיראק 1:4`
-- Original: `הולאנד כיכב בבכורה במונדיאל: נורבגיה הביסה 1:4 את עיראק`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3846254
-
-### WARNING · summary_long · item 48
-- Summary length 270 > 220
-- Headline: `שון פן מביים סרט על הפריצה לקפיטול; בראדלי קופר במשא ומתן לתפקיד שוטר סמוי`
-- Original: `Sean Penn slammed for 'wokemaxxing' as he directs January 6 Capitol riot movie with A-list star... after THAT Holocaust remark`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905803/sean-penn-slammed-wokemaxxing-directs-january-6-capitol-riot-movie-list-star-holocaust.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 48
-- Takeaway length 154 > 95
-- Headline: `שון פן מביים סרט על הפריצה לקפיטול; בראדלי קופר במשא ומתן לתפקיד שוטר סמוי`
-- Original: `Sean Penn slammed for 'wokemaxxing' as he directs January 6 Capitol riot movie with A-list star... after THAT Holocaust remark`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905803/sean-penn-slammed-wokemaxxing-directs-january-6-capitol-riot-movie-list-star-holocaust.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 49
-- Summary length 222 > 220
-- Headline: `ארבעה תינוקות בירושלים אושפזו אחרי שאכלו מחית תינוקות שנמצאו בה חומרי הרדמה`
-- Original: `Four infants hospitalized in Jerusalem after consuming puree containing sedatives`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-899639
-
-### WARNING · takeaway_long · item 49
-- Takeaway length 121 > 95
-- Headline: `ארבעה תינוקות בירושלים אושפזו אחרי שאכלו מחית תינוקות שנמצאו בה חומרי הרדמה`
-- Original: `Four infants hospitalized in Jerusalem after consuming puree containing sedatives`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-899639
-
-### WARNING · takeaway_long · item 50
-- Takeaway length 135 > 95
-- Headline: `ויזת כניסה לארה״ב של שחקן איראן פגה אחרי משחק אחד במונדיאל`
-- Original: `Iranian football player's US visa expired after one World Cup game, Iran Football Federation says`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/iran-news/article-899636
-
-### WARNING · takeaway_long · item 51
-- Takeaway length 115 > 95
-- Headline: `מסי כבש בבעיטה מ-18 מטר לרשת העליונה; ארגנטינה מול אלג׳יריה 0:1 במחצית`
-- Original: `ארגנטינה - אלג'יריה 0:1 (מחצית 1)`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3846079
-
-### WARNING · summary_long · item 52
-- Summary length 225 > 220
-- Headline: `הראפר מיסטיקל נידון ל-20 שנות מאסר על אונס בלואיזיאנה`
-- Original: `Rapper Mystikal sentenced to 20 years in prison after raping woman in Louisiana`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/16/entertainment/rapper-mystikal-sentenced-to-20-years-in-prison-after-raping-woman-in-louisiana/
-
-### WARNING · takeaway_long · item 52
-- Takeaway length 125 > 95
-- Headline: `הראפר מיסטיקל נידון ל-20 שנות מאסר על אונס בלואיזיאנה`
-- Original: `Rapper Mystikal sentenced to 20 years in prison after raping woman in Louisiana`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/16/entertainment/rapper-mystikal-sentenced-to-20-years-in-prison-after-raping-woman-in-louisiana/
-
-### WARNING · summary_long · item 53
-- Summary length 237 > 220
-- Headline: `משפט התקיפה של כריס בראון הוכרז משפט-בטל בגלל חיפוש אינטרנט של מושבע`
-- Original: `Chris Brown $90m lawsuit from housekeeper claiming she was mauled by his dog declared mistrial`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905955/chris-brown-lawsuit-housekeeper-dog-mistrial.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 53
-- Takeaway length 145 > 95
-- Headline: `משפט התקיפה של כריס בראון הוכרז משפט-בטל בגלל חיפוש אינטרנט של מושבע`
-- Original: `Chris Brown $90m lawsuit from housekeeper claiming she was mauled by his dog declared mistrial`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905955/chris-brown-lawsuit-housekeeper-dog-mistrial.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 54
-- Summary length 235 > 220
-- Headline: `נורת׳ ווסט בת ה-13 תצא לסיבוב הופעות ראשון עם הראפרית מולי סנטנה`
-- Original: `Kim Kardashian's daughter North West, 13, launches her first tour with rapper Molly Santana`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905849/Kim-Kardashian-North-West-tour.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 54
-- Takeaway length 168 > 95
-- Headline: `נורת׳ ווסט בת ה-13 תצא לסיבוב הופעות ראשון עם הראפרית מולי סנטנה`
-- Original: `Kim Kardashian's daughter North West, 13, launches her first tour with rapper Molly Santana`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905849/Kim-Kardashian-North-West-tour.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 55
-- Summary length 225 > 220
-- Headline: `ג׳לי רול ובאני אקס-או מתגרשים על רקע התקרבותו לנצרות ועברה הפרובוקטיבי שלה`
-- Original: `The real reason behind Jelly Roll and Bunnie XO’s split reportedly revealed`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/16/celebrity-news/the-real-reason-behind-jelly-roll-and-bunnie-xos-split-reportedly-revealed/
-
-### WARNING · takeaway_long · item 55
-- Takeaway length 112 > 95
-- Headline: `ג׳לי רול ובאני אקס-או מתגרשים על רקע התקרבותו לנצרות ועברה הפרובוקטיבי שלה`
-- Original: `The real reason behind Jelly Roll and Bunnie XO’s split reportedly revealed`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/16/celebrity-news/the-real-reason-behind-jelly-roll-and-bunnie-xos-split-reportedly-revealed/
-
-### WARNING · summary_long · item 56
-- Summary length 223 > 220
-- Headline: `מסי כבש בדקה ה-18 והעלה את ארגנטינה ל-0:1 על אלג׳יריה במונדיאל`
-- Original: `מונדיאל 2026: ליאו מסי העלה את ארגנטינה ל-0:1 מול אלג'יריה`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1118256
+- Takeaway length 101 > 95
+- Headline: `ניוקור יוצאת מחשאיות עם גיוס של 66 מיליון דולר`
+- Original: `היזמים הוותיקים שגייסו 66 מיליון דולר רוצים להתחרות ראש בראש מול אוקטה`
+- Source: דה מרקר - TechNation
+- URL: https://www.themarker.com/technation/2026-06-15/ty-article/.highlight/0000019e-cafc-deb5-a99e-cbfd7c380000
 
 ### WARNING · takeaway_long · item 56
-- Takeaway length 131 > 95
-- Headline: `מסי כבש בדקה ה-18 והעלה את ארגנטינה ל-0:1 על אלג׳יריה במונדיאל`
-- Original: `מונדיאל 2026: ליאו מסי העלה את ארגנטינה ל-0:1 מול אלג'יריה`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1118256
-
-### WARNING · summary_long · item 57
-- Summary length 247 > 220
-- Headline: `תושב אבן יהודה חשוד ביריקה על רוקחת וקריאות גזעניות בבית מרקחת של כללית`
-- Original: `'You Arabs should not be here': Suspect arrested for spitting at, threatening pharmacist`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/crime-in-israel/article-899634
+- Takeaway length 118 > 95
+- Headline: `באיירן ופ.ס.וו סיכמו על מעבר סייבארי`
+- Original: `55 מיליון יורו וחלום שמתגשם: סייבארי בדרך לבאיירן`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3845930
 
 ### WARNING · takeaway_long · item 57
-- Takeaway length 126 > 95
-- Headline: `תושב אבן יהודה חשוד ביריקה על רוקחת וקריאות גזעניות בבית מרקחת של כללית`
-- Original: `'You Arabs should not be here': Suspect arrested for spitting at, threatening pharmacist`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/crime-in-israel/article-899634
+- Takeaway length 99 > 95
+- Headline: `רובן אמורים סיכם לשנתיים כמאמן מילאן`
+- Original: `רובן אמורים סיכם במילאן, צפוי לחתום לשנתיים`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3845908
 
 ### WARNING · takeaway_long · item 58
-- Takeaway length 144 > 95
-- Headline: `אמה המינג וויליס: ״אני באבל מתמשך״ על בעלה ברוס בן ה-71 החולה בדמנציה`
-- Original: `Bruce Willis's wife Emma admits she is 'consistently in grief' amid the 71-year-old actor's battle with frontotemporal dementia`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15905971/bruce-willis-wife-emma-grief-frontotemporal-dementia.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 59
-- Summary length 225 > 220
-- Headline: `ארה״ב ואיראן חתמו על הסכם ראשוני; לבנון נותרה מחוץ למשוואה`
-- Original: `U.S.-Iran Agreement Leaves Lebanon’s Fate Murky`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-agreement-lebanon.html
+- Takeaway length 111 > 95
+- Headline: `ספרד, מצרים ובלגיה פותחות יום מבחן במונדיאל`
+- Original: `ספרד מחפשת את גביע העולם, סלאח ודור הזהב של בלגיה בהזדמנות אחרונה`
+- Source: הארץ - ספורט
+- URL: https://www.haaretz.co.il/sport/world-cup/2026-06-15/ty-article-magazine/.premium/0000019e-cad8-dc3e-a9ff-ebdbfe410000
 
 ### WARNING · takeaway_long · item 59
-- Takeaway length 114 > 95
-- Headline: `ארה״ב ואיראן חתמו על הסכם ראשוני; לבנון נותרה מחוץ למשוואה`
-- Original: `U.S.-Iran Agreement Leaves Lebanon’s Fate Murky`
-- Source: New York Times Middle East
-- URL: https://www.nytimes.com/2026/06/15/world/middleeast/us-iran-agreement-lebanon.html
-
-### WARNING · summary_long · item 60
-- Summary length 256 > 220
-- Headline: `ווסט ווילסון סיפר לקוק שאמר ״אני אוהב אותך״ לבאטולה בעונה 10`
-- Original: `West Wilson reveals surprising first time he told Amanda Batula he loves her`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/16/entertainment/west-wilson-reveals-surprising-first-time-he-told-amanda-batula-he-loves-her/
+- Takeaway length 113 > 95
+- Headline: `מושתלת כליה ילדה בבילינסון אחרי היריון תקין`
+- Original: `מושתלת הכליה ילדה - והמיילדת התגלתה כתורמת בעצמה`
+- Source: ynet - כל ערוץ מעורבות
+- URL: https://www.ynet.co.il/activism/article/yokra14800696
 
 ### WARNING · takeaway_long · item 60
-- Takeaway length 154 > 95
-- Headline: `ווסט ווילסון סיפר לקוק שאמר ״אני אוהב אותך״ לבאטולה בעונה 10`
-- Original: `West Wilson reveals surprising first time he told Amanda Batula he loves her`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/16/entertainment/west-wilson-reveals-surprising-first-time-he-told-amanda-batula-he-loves-her/
-
-### WARNING · summary_long · item 61
-- Summary length 338 > 220
-- Headline: `פרשן JPost: ״ישראל הפכה את בגידת טראמפ באיראן לבלתי נמנעת״`
-- Original: `How Israel made Trump's Iran betrayal inevitable - comment`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-899630
+- Takeaway length 99 > 95
+- Headline: `ירידת מתח ושינוי שגרה עלולים לחשוף מחלה בחופשה`
+- Original: `רופאה מסבירה: למה אנחנו תמיד נהיים חולים בחופשה?`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3845868
 
 ### WARNING · takeaway_long · item 61
-- Takeaway length 213 > 95
-- Headline: `פרשן JPost: ״ישראל הפכה את בגידת טראמפ באיראן לבלתי נמנעת״`
-- Original: `How Israel made Trump's Iran betrayal inevitable - comment`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-899630
+- Takeaway length 102 > 95
+- Headline: `בר רפאלי צפויה לקבל מעל חצי מיליון שקל לנינג׳ה`
+- Original: `כפי שפרסמנו לראשונה: בר רפאלי תנחה את נינג'ה ישראל - זה הסכום שהיא תקבל`
+- Source: וואלה סלבס - כל הכתבות
+- URL: https://celebs.walla.co.il/item/3845919
 
-### WARNING · summary_long · item 62
-- Summary length 342 > 220
-- Headline: `לוין וכץ מקדמים ביטול פריימריז בליכוד כדי לשמור על מקומם הגבוה ברשימה`
-- Original: `"חוששים למקומם": הבכירים בליכוד שעומדים מאחורי הרעיון לביטול הפריימריז`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/yokra14803649
+### WARNING · takeaway_long · item 63
+- Takeaway length 100 > 95
+- Headline: `רונית שחר ודויד ברוזה הוציאו קאבר ל־Sleep Song`
+- Original: `מפגש ענקים: רונית שחר ודויד ברוזה חוזרים לקלאסיקה האהובה`
+- Source: וואלה תרבות - מוזיקה
+- URL: https://e.walla.co.il/item/3845913
 
-### WARNING · takeaway_long · item 62
-- Takeaway length 107 > 95
-- Headline: `לוין וכץ מקדמים ביטול פריימריז בליכוד כדי לשמור על מקומם הגבוה ברשימה`
-- Original: `"חוששים למקומם": הבכירים בליכוד שעומדים מאחורי הרעיון לביטול הפריימריז`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/yokra14803649
+### WARNING · takeaway_long · item 64
+- Takeaway length 104 > 95
+- Headline: `אמנדה סייפריד מגנה על לינדזי לוהן וחוזרת לשנות ה־20`
+- Original: `Amanda Seyfried reflects on her 'ridiculous' 20s as she defends Mean Girls co-star Lindsay Lohan, details being 'scared' of cocaine and recalls partying in Val Kilmer's pool`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15900545/Amanda-Seyfried-reflects-ridiculous-20s-defends-Mean-Girls-star-Lindsay-Lohan-details-scared-cocaine-recalls-partying-Val-Kilmers-pool.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 76
-- Takeaway length 108 > 95
-- Headline: `סטודנטים בסטנפורד נטשו את נאום מנכ״ל גוגל`
-- Original: `מנכ"ל גוגל עלה לנאום - עשרות סטודנטים נטשו עם גדלי פלסטין`
-- Source: וואלה TECH - כל הכתבות
-- URL: https://tech.walla.co.il/item/3846121
+### WARNING · summary_long · item 66
+- Summary length 227 > 220
+- Headline: `בני הזוג בואן מגינים על הווילה הספרדית`
+- Original: `Olivia and Alex Bowen furiously hit back after Influencer lays into them for posting 'unrelatable' content from their new holiday home in Spain`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15900689/Olivia-Alex-Bowen-furiously-hit-Influencer-lays-posting-unrelatable-content-new-holiday-home-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 78
+### WARNING · takeaway_long · item 67
 - Takeaway length 99 > 95
-- Headline: `ג׳לי רול הגיש בקשת גירושים מבאני XO`
-- Original: `Country star Jelly Roll files for divorce from Bunnie XO after decade of marriage`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/jelly-roll-divorce-bunnie-xo-37301164
+- Headline: `ג'ק וייטהול התנצל על בדיחת המעמדות`
+- Original: `Jack Whitehall reveals he apologised to Becky Hill over 'Wetherspoons Whitney' class row gag as he reacts to being the subject of her 'diss track' and insists 'I ham up my poshness'`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15900385/Jack-Whitehall-reveals-apologised-Becky-Hill-Wetherspoons-Whitney-class-row-gag-reacts-subject-diss-track-insists-ham-poshness.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · takeaway_long · item 68
+- Takeaway length 112 > 95
+- Headline: `מחאה פרו-פלסטינית קטעה את נאום מנכ״ל גוגל בסטנפורד`
+- Original: `דגלי פלסטין ושריקות בוז: כך קיבלו את מנכ"ל גוגל בטקס הסיום של סטנפורד`
+- Source: ynet - כל ערוץ המחשבים
+- URL: https://www.ynet.co.il/digital/technews/article/hypgjpabfg
+
+### WARNING · takeaway_long · item 69
+- Takeaway length 100 > 95
+- Headline: `קשקאש מציעה בונוס של 50 שקל על גיפט קארד`
+- Original: `אפליקציית התשלומים שמציעה את "תו הקנייה המשתלם בישראל"`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/business/consumers/article/20766095
+
+### WARNING · takeaway_long · item 74
+- Takeaway length 98 > 95
+- Headline: `האוצר מתמרץ מסלול מהיר למסחור ידע אקדמי`
+- Original: `מסחור ידע מהאוניברסיטאות: אלו התמריצים החדשים של משרד האוצר`
+- Source: גלובס - בארץ
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545890#utm_source=RSS
+
+### WARNING · summary_long · item 75
+- Summary length 221 > 220
+- Headline: `ספרד פותחת מונדיאל עם ימאל כשיר חלקית`
+- Original: `ספרד יוצאת לדרך, גם איראן ואקס מכבי ת"א`
+- Source: ynet - כל ערוץ הספורט
+- URL: https://www.ynet.co.il/sport/worldcup2026/article/rk2a9t511zg
+
+### WARNING · takeaway_long · item 75
+- Takeaway length 108 > 95
+- Headline: `ספרד פותחת מונדיאל עם ימאל כשיר חלקית`
+- Original: `ספרד יוצאת לדרך, גם איראן ואקס מכבי ת"א`
+- Source: ynet - כל ערוץ הספורט
+- URL: https://www.ynet.co.il/sport/worldcup2026/article/rk2a9t511zg
+
+### WARNING · takeaway_long · item 77
+- Takeaway length 101 > 95
+- Headline: `הסכם ארה״ב-איראן הקפיץ את וול סטריט והפיל את הנפט`
+- Original: `צפי לעליות בוול סטריט על רקע ההסכם עם איראן; החוזים על נאסד"ק קופצים ב-2%`
+- Source: דה מרקר - גלובל
+- URL: https://www.themarker.com/wallstreet/2026-06-15/ty-article-live/0000019e-c033-dd0a-a19f-d37f4d160000
+
+### WARNING · takeaway_long · item 80
+- Takeaway length 113 > 95
+- Headline: `המכביה חוזרת להציג כוכבי־על יהודים לצד ספורטאים מקומיים`
+- Original: `ממארק ספיץ עד אמארה סטודמאייר: הכוכבים הגדולים ביותר שהגיעו למכביה`
+- Source: ynet - כל ערוץ הספורט
+- URL: https://www.ynet.co.il/sport/article/sydzyuozfe
+
+### WARNING · takeaway_long · item 81
+- Takeaway length 99 > 95
+- Headline: `הסכם ארה"ב-איראן הקפיץ שווקים והפיל נפט`
+- Original: `עליות חדות בחוזים בוול סטריט; SpaceX עולה ב-5% במסחר המוקדם`
+- Source: גלובס - שוק ההון
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545860#utm_source=RSS
 
 ### WARNING · takeaway_long · item 84
-- Takeaway length 120 > 95
-- Headline: `דודי אמסלם שוחרר לביתו אחרי התקף לב`
-- Original: `התפללו לרפואתו: השר דודי אמסלם אושפז לאחר שעבר התקף לב`
-- Source: כיפה - חדשות
-- URL: https://www.kipa.co.il/1226093-0
-
-### WARNING · takeaway_long · item 121
-- Takeaway length 108 > 95
-- Headline: `תוניסיה מתקרבת למינוי הרווה רנאר אחרי תבוסה במונדיאל`
-- Original: `דיווח: נבחרת טוניסיה בדרך למנות מאמן חדש`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/sport/world-soccer/article/20770870
-
-### WARNING · takeaway_long · item 122
 - Takeaway length 98 > 95
-- Headline: `טיילור סוויפט חזרה לסטודיו בלוק שנות ה-70`
-- Original: `Taylor Swift nods to ‘Midnights’ era with ‘70-inspired studio look`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/15/entertainment/taylor-swift-nods-to-midnights-era-with-70-inspired-studio-look/
+- Headline: `קוראסאו כבשה מול גרמניה ומנעה שיא תבוסה במונדיאל`
+- Original: `השיא עוד יחכה: המדינה הקטנה שעשתה היסטוריה, ובלמה אחרת`
+- Source: בשבע - מגזין ודעות
+- URL: https://be7.co.il/24527
 
-### WARNING · takeaway_long · item 123
-- Takeaway length 98 > 95
-- Headline: `הסכם איראן הקפיץ את וול סטריט והוריד את הנפט`
-- Original: `US stock market climbs as US-Iran deal stirs hopes for end to energy chaos`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/economy/2026/6/16/us-stock-market-climbs-as-us-iran-deal-stirs-hopes-for-end-to-energy-chaos?traffic_source=rss
-
-### WARNING · takeaway_long · item 127
-- Takeaway length 100 > 95
-- Headline: `איראן וניו זילנד סיפקו משחק פתיחה סוער במונדיאל`
-- Original: `דקה 67: איראן - ניו-זילנד 2:2`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://livegame.ynet.co.il/games/525528
-
-### WARNING · summary_long · item 138
-- Summary length 232 > 220
-- Headline: `ספנסר פראט נסע להוואי אחרי שהודח מהמירוץ בלוס אנג'לס`
-- Original: `Spencer Pratt retreats to Hawaii with wife Heidi Montag for her VERY streamy music video shoot after election loss`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15902181/spencer-pratt-heidi-montag-hawaii-music-video.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 138
-- Takeaway length 125 > 95
-- Headline: `ספנסר פראט נסע להוואי אחרי שהודח מהמירוץ בלוס אנג'לס`
-- Original: `Spencer Pratt retreats to Hawaii with wife Heidi Montag for her VERY streamy music video shoot after election loss`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15902181/spencer-pratt-heidi-montag-hawaii-music-video.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 139
-- Takeaway length 125 > 95
-- Headline: `כוכבות הוליווד קיימו בניו יורק אירוע נגד טראמפ`
-- Original: `Julia Roberts trashes Trump alongside Jane Fonda and Joy Reid at resistance event counterprogramming to president's UFC match`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15901875/Julia-Roberts-donald-Trump-Jane-Fonda-UFC.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 140
-- Summary length 236 > 220
-- Headline: `עשר סנסציות מונדיאל דורגו לפי גודל ההלם`
-- Original: `כש-200 אלף ברזילאים מיררו בבכי: 10 הסנסציות הגדולות בתולדות המונדיאל`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/rkonhowxmg
-
-### WARNING · takeaway_long · item 140
-- Takeaway length 117 > 95
-- Headline: `עשר סנסציות מונדיאל דורגו לפי גודל ההלם`
-- Original: `כש-200 אלף ברזילאים מיררו בבכי: 10 הסנסציות הגדולות בתולדות המונדיאל`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/article/rkonhowxmg
-
-### WARNING · takeaway_long · item 142
-- Takeaway length 106 > 95
-- Headline: `גלן פאוול ומישל רנדולף נראו יחד בניו יורק`
-- Original: `Glen Powell packs on the PDA with Landman star Michelle Randolph as their romance continues to heat up`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15901841/Glen-Powell-PDA-Landman-star-Michelle-Randolph.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 143
-- Takeaway length 105 > 95
-- Headline: `זנדאיה וטום הולנד חזרו יחד לשטיח האדום`
-- Original: `Zendaya and Tom Holland make their first red carpet appearance together in five years at the photocall of Spider-Man: Brand New Day in Madrid`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15900779/Zendaya-Tom-Holland-make-red-carpet-appearance-five-years-premiere-Spider-Man-Brand-New-Day-Madrid.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 144
-- Takeaway length 100 > 95
-- Headline: `ספרד פתחה את המונדיאל ב-0:0 מתסכל מול כף ורדה`
-- Original: `מאמן נבחרת ספרד אחרי ה-0:0 עם כף ורדה: "היינו צריכים לנצח את המשחק"`
-- Source: הארץ - ספורט
-- URL: https://www.haaretz.co.il/sport/world-cup/2026-06-15/ty-article/0000019e-cc97-d9a8-a5de-dff7b57c0000
-
-### WARNING · takeaway_long · item 146
-- Takeaway length 103 > 95
-- Headline: `בלגיה ומצרים פתחו בזהירות את בית ז׳ במונדיאל`
-- Original: `דקה 12: בלגיה - מצרים 0:0`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://livegame.ynet.co.il/games/525535
-
-### WARNING · takeaway_long · item 147
-- Takeaway length 106 > 95
-- Headline: `ספרד נתקעה מול כף ורדה עם נתוני התקפה חריגים`
-- Original: `לראשונה במונדיאל: הנתון המביך של נבחרת ספרד`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/sport/world-soccer/article/20769742
-
-### WARNING · takeaway_long · item 152
-- Takeaway length 127 > 95
-- Headline: `נבחרות המונדיאל הופכות את ההגעה לתצוגת אופנה לאומית`
-- Original: `Animal print, Birkin bags and three-piece suits: How World Cup 2026 teams are representing their countries in style`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/15/style/the-best-world-cup-2026-team-arrival-outfits-dr-congo-france-and-more/
-
-### WARNING · takeaway_long · item 153
-- Takeaway length 120 > 95
-- Headline: `ניהול עסק באקסל חושף מעסיקים לטעויות שכר וקנסות`
-- Original: `מה קורה כשעסק ישראלי מנסה לנהל הכל באקסל ב-2026? כשהגיליון הופך לבעיה, לא לפתרון`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/mumlazim/article/20769926
-
-### WARNING · takeaway_long · item 157
-- Takeaway length 102 > 95
-- Headline: `גל הכרזות הריון חדש בקרב כוכבות ב-2026`
-- Original: `Pregnant celebrities 2026: Which stars are expecting babies this year`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/parents/celebrity-pregnancy-announcements-2026/
-
-### WARNING · takeaway_long · item 158
-- Takeaway length 99 > 95
-- Headline: `זואי קרביץ נצפתה עם מנהלו של הארי סטיילס בוומבלי`
-- Original: `Zoe Kravitz and Harry Styles' manager catch up at Wembley gig - five years after Aperture singer officiated his wedding wearing a bathrobe and slippers`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15901687/Zoe-Kravitz-Harry-Styles-manager-catch-Wembley-gig-five-years-Aperture-singer-officiated-wedding-wearing-bathrobe-slippers.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 159
-- Takeaway length 100 > 95
-- Headline: `הקוטג׳ חזר לייצור, המדפים עדיין ריקים`
-- Original: `הייצור חזר לשגרה - אז למה הקוטג' של תנובה עדיין נעלם מהמדפים?`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/business/consumers/article/20769553
-
-### WARNING · takeaway_long · item 164
-- Takeaway length 101 > 95
-- Headline: `ברוקלין בקהאם הפך פוסט מסחרי לרמז על הקרע המשפחתי`
-- Original: `Brooklyn Beckham warned 'don't forget your family' after latest feud drama`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/brooklyn-beckham-statement-family-feud-37300071
-
-### WARNING · takeaway_long · item 167
-- Takeaway length 120 > 95
-- Headline: `ברוקלין בקהאם ממשיך להתרחק מאירועי המשפחה`
-- Original: `All the massive milestones Brooklyn Beckham has missed amid major family fallout`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/gallery/massive-milestones-brooklyn-beckham-missed-37300019
-
-### WARNING · takeaway_long · item 178
+### WARNING · takeaway_long · item 86
 - Takeaway length 96 > 95
-- Headline: `ווסט וילסון לא יחזור לעונה החדשה של Summer House`
-- Original: `West Wilson ousted from ‘Summer House’ Season 11 after Amanda Batula scandal`
+- Headline: `ועדת הערר ביטלה חיוב חניה בפרויקט בדיזנגוף`
+- Original: `עיריית תל אביב מנעה הקמת חניון בבניין - ודרשה מיליונים לקרן חניה: חברת הבנייה לא ויתרה`
+- Source: דה מרקר - נדל״ן
+- URL: https://www.themarker.com/realestate/2026-06-15/ty-article/.highlight/0000019e-cab7-d43d-a39f-eeffe6b00000
+
+### WARNING · takeaway_long · item 88
+- Takeaway length 99 > 95
+- Headline: `REDEFINE הישראלי נכנס לקוסקו בקנדה בסוף יוני`
+- Original: `מותג השיער הישראלי REDEFINE מתחיל להימכר בקוסקו בקנדה`
+- Source: בשבע - מגזין ודעות
+- URL: https://be7.co.il/24530
+
+### WARNING · takeaway_long · item 89
+- Takeaway length 106 > 95
+- Headline: `מדד שלילי צפוי לקרב את בנק ישראל לדילמת ריבית`
+- Original: `הדולר ברצפה, הנפט צונח: האם המדד שיפורסם היום יביא לירידת ריבית?`
+- Source: וואלה כסף
+- URL: https://finance.walla.co.il/item/3845830
+
+### WARNING · takeaway_long · item 93
+- Takeaway length 115 > 95
+- Headline: `קלואי לואיס נפרדה מג'ייק הול אחרי הלווייתו בלונדון`
+- Original: `Chloe Lewis' hearbreaking final goodbye to Jake Hall after his 'unconventional' funeral`
+- Source: Mirror Celebs רכילות חו״ל
+- URL: https://www.mirror.co.uk/3am/celebrity-news/chloe-lewis-jake-hall-funeral-37296486
+
+### WARNING · takeaway_long · item 97
+- Takeaway length 99 > 95
+- Headline: `קיילב קופר עקץ את ג'רמי קלארקסון על הירידה במשקל`
+- Original: `Kaleb Cooper aims cheeky dig at Jeremy Clarkson after co-star's dramatic weight loss`
+- Source: Mirror Celebs רכילות חו״ל
+- URL: https://www.mirror.co.uk/3am/celebrity-news/kaleb-cooper-aims-cheeky-dig-37295895
+
+### WARNING · takeaway_long · item 100
+- Takeaway length 101 > 95
+- Headline: `אוליבר טרי תכנן קרן לאמנים לפני שנהרג בהתרסקות`
+- Original: `Who is Oliver Tree? How singer raised in a travelling circus went on to become one of social media's biggest stars and revealed plans for his will weeks before tragic helicopter crash`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15900339/Oliver-Tree-travelling-circus-helicopter-crash.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · takeaway_long · item 101
+- Takeaway length 110 > 95
+- Headline: `טוקיו מובילה את חיפושי הטיסות לקיץ 2026`
+- Original: `העיר שעקפה את לונדון, פריז ורומא - והפכה ליעד הכי מבוקש בעולם`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/travel/tourism-news/article/20764523
+
+### WARNING · takeaway_long · item 103
+- Takeaway length 98 > 95
+- Headline: `חברות הספנות עדיין חוששות לחזור למצר הורמוז`
+- Original: `חששות ביטחוניים לצד עומסי תנועה חריגים: האם השגרה תשוב למצר הורמוז?`
+- Source: גלובס - גלובלי ושוקי עולם
+- URL: https://www.globes.co.il/news/article.aspx?did=1001545881#utm_source=RSS
+
+### WARNING · takeaway_long · item 104
+- Takeaway length 102 > 95
+- Headline: `איראן תשחק בלוס אנג'לס תחת מגבלות פוליטיות`
+- Original: `הרבה מעבר לכדורגל: הסיפור הגדול ביותר של מונדיאל 2026 מתחיל`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/sport/world-soccer/article/20764851
+
+### WARNING · takeaway_long · item 106
+- Takeaway length 106 > 95
+- Headline: `פרי מתכננת חופשת יאכטה עם טרודו בזמן הטור באירופה`
+- Original: `Katy Perry plotting yacht getaway with Justin Trudeau during European tour`
 - Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/15/entertainment/west-wilson-ousted-from-summer-house-season-11/
+- URL: https://pagesix.com/2026/06/15/celebrity-news/katy-perry-plotting-yacht-getaway-with-justin-trudeau/
+
+### WARNING · takeaway_long · item 107
+- Takeaway length 96 > 95
+- Headline: `וילרבאן מגייסת משקיעים כדי להפוך לכוח יורוליג`
+- Original: `פרויקט המיליארדים של פארקר: כך וילרבאן הפכה למעצמה`
+- Source: וואלה ספורט - כדורסל
+- URL: https://sports.walla.co.il/item/3845890
+
+### WARNING · takeaway_long · item 113
+- Takeaway length 106 > 95
+- Headline: `בכנסת נחשף פער בטיפול בגברים במשברי רווחה`
+- Original: `המדינה חייבת לתקן את הפער לרעת הגברים בשירותי הרווחה`
+- Source: בשבע - מגזין ודעות
+- URL: https://be7.co.il/24545
+
+### WARNING · takeaway_long · item 115
+- Takeaway length 112 > 95
+- Headline: `בנו הצעיר של פיטר אנדרה מכוון לעולם הבידור`
+- Original: `Peter Andre makes rare comments on youngest son as he admits he 'wants to be' in showbiz`
+- Source: Mirror Celebs רכילות חו״ל
+- URL: https://www.mirror.co.uk/3am/celebrity-news/peter-andre-makes-rare-comments-37289305
+
+### WARNING · takeaway_long · item 120
+- Takeaway length 109 > 95
+- Headline: `ריאל מדריד רכשה את קוקורייה מצ׳לסי ב-55 מיליון יורו`
+- Original: `הקדימה את ברצלונה: מארק קוקורייה חתם בריאל מדריד עד 2032`
+- Source: וואלה ספורט - כדורגל עולמי
+- URL: https://sports.walla.co.il/item/3845877
+
+### WARNING · summary_long · item 122
+- Summary length 225 > 220
+- Headline: `לוריאל וסופר-פארם בוחנות הנחות לריפיל קוסמטי`
+- Original: `ממחר: מותגי קוסמטיקה יציעו "ריפיל" למוצריהן`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/business/consumers/article/20764978
