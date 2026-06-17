@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-17T13:45:11.757428+00:00",
+  "generatedAt": "2026-06-17T21:31:32.667537+00:00",
   "mode": "tt_rr_source_visibility_simulation_only",
   "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
   "summary": {
-    "source_live_qa_bridge_needed": 5,
-    "source_live_visible_missing": 4,
+    "source_live_visible_missing": 6,
+    "source_live_qa_bridge_needed": 3,
     "not_configured": 4,
     "ok": 1,
     "ok_official_source_live": 2
@@ -14,8 +14,8 @@
       "id": "haaretz",
       "label": "הארץ",
       "expectedRoute": "main",
-      "status": "source_live_qa_bridge_needed",
-      "problem": "יש מועמדים טריים אבל כולם נדחים/מסוננים לפני כרטיס פוינטה",
+      "status": "source_live_visible_missing",
+      "problem": "המקור חי, אבל אין כרטיס טרי בפיד הנראה",
       "treatment": "Simulation-only: surface fresh Haaretz candidates as source-live/visible-missing and route them to editor-bridge candidates instead of treating RSS as stale.",
       "configuredSources": [
         "הארץ - תרבות",
@@ -36,29 +36,29 @@
       "qaPassSimulationCount": 0,
       "qaRejectedCount": 142,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T13:45:15+00:00",
-      "latestRawAgeHours": 0.0,
-      "latestValidAt": "2026-06-17T13:45:15+00:00",
-      "latestValidAgeHours": 0.0,
+      "latestRawAt": "2026-06-17T21:07:26+00:00",
+      "latestRawAgeHours": 0.4,
+      "latestValidAt": "2026-06-17T21:07:26+00:00",
+      "latestValidAgeHours": 0.4,
       "visibleMain": {
-        "count": 11,
-        "latestAt": "2026-06-17T05:09:42+00:00",
-        "latestAgeHours": 8.59,
+        "count": 3,
+        "latestAt": "2026-06-15T11:38:59+00:00",
+        "latestAgeHours": 57.88,
         "sample": [
           {
-            "publishedAt": "2026-06-17T05:09:42+00:00",
-            "source": "הארץ - תרבות",
-            "headline": "ביקורת \"אליס וסטיב\": הסדרה הבריטית החדשה מבטיחה אך מסתבכת בעלילות משנה"
-          },
-          {
-            "publishedAt": "2026-06-17T04:15:13+00:00",
-            "source": "הארץ - כל הכתבות",
-            "headline": "הארץ: מפלגת \"עומדים ביחד\" מציגה עצמה כמועמדת מהשמאל - אך מסרבת להגדיר עצמה"
-          },
-          {
-            "publishedAt": "2026-06-16T08:05:24+00:00",
+            "publishedAt": "2026-06-15T11:38:59+00:00",
             "source": "הארץ - ספורט",
-            "headline": "טאי אודיאסי חוזר לסגל הפועל תל אביב בגמר"
+            "headline": "ספרד, מצרים ובלגיה פותחות יום מבחן במונדיאל"
+          },
+          {
+            "publishedAt": "2026-06-15T11:26:04+00:00",
+            "source": "הארץ - ספורט",
+            "headline": "פיפ״א מקדמת משחק נוער ראשון בין ישראל לפלסטין"
+          },
+          {
+            "publishedAt": "2026-06-15T11:00:42+00:00",
+            "source": "הארץ - ספורט",
+            "headline": "ג'קובי ת'ארפ שבר את שיא העולם ב-110 משוכות"
           }
         ]
       },
@@ -70,6 +70,14 @@
       },
       "fetchErrors": [],
       "candidateSamples": [
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "הארץ - תרבות",
+          "publishedAt": "2026-06-17T22:26:43+03:00",
+          "title": "השחקנית דבי צ'ייס (\"הצלצול\") מתה בגיל 35",
+          "url": "https://www.haaretz.co.il/gallery/cinema/2026-06-17/ty-article/0000019e-d6f8-db7a-a9bf-dffc0f4c0000"
+        },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
@@ -125,14 +133,6 @@
           "publishedAt": "2026-06-17T06:00:39+03:00",
           "title": "\"הסודות של לאשה\": על מגזין שכתבו נשים משכילות וערכו גברים שוביניסטים",
           "url": "https://www.haaretz.co.il/gallery/television/guide/2026-06-17/ty-article/.premium/0000019e-d01c-de6a-a79f-fd1dc3cc0000"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "הארץ - תרבות",
-          "publishedAt": "2026-06-17T06:00:19+03:00",
-          "title": "מיכל גוברין: \"אם לא היתה שואה, לא היינו נולדים. זה פחד מוות\"",
-          "url": "https://www.haaretz.co.il/gallery/literature/2026-06-17/ty-article-magazine/.premium/0000019e-c1de-d1ec-a19f-eddee2f00000"
         }
       ]
     },
@@ -161,15 +161,31 @@
       "qaPassSimulationCount": 0,
       "qaRejectedCount": 128,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T12:27:00+00:00",
-      "latestRawAgeHours": 1.3,
-      "latestValidAt": "2026-06-17T12:27:00+00:00",
-      "latestValidAgeHours": 1.3,
+      "latestRawAt": "2026-06-17T19:28:00+00:00",
+      "latestRawAgeHours": 2.06,
+      "latestValidAt": "2026-06-17T19:28:00+00:00",
+      "latestValidAgeHours": 2.06,
       "visibleMain": {
-        "count": 0,
-        "latestAt": null,
-        "latestAgeHours": null,
-        "sample": []
+        "count": 3,
+        "latestAt": "2026-06-15T13:43:00+00:00",
+        "latestAgeHours": 55.81,
+        "sample": [
+          {
+            "publishedAt": "2026-06-15T13:43:00+00:00",
+            "source": "mako סלבס - ראשי",
+            "headline": "משפחת כהן חוגגת בדובאי אחרי ביטול החתונה של אלין"
+          },
+          {
+            "publishedAt": "2026-06-15T13:17:00+00:00",
+            "source": "mako סלבס - ראשי",
+            "headline": "וייסמן וטוכמאייר חושפים עוד רגעים מהחתונה"
+          },
+          {
+            "publishedAt": "2026-06-15T13:00:00+00:00",
+            "source": "mako סלבס - ראשי",
+            "headline": "יעל שלביה מדברת לראשונה על החזרה לסטרול"
+          }
+        ]
       },
       "visibleBreaking": {
         "count": 0,
@@ -179,6 +195,30 @@
       },
       "fetchErrors": [],
       "candidateSamples": [
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "N12 - ביטחוני ופוליטי",
+          "publishedAt": "2026-06-17T22:24:00+03:00",
+          "title": "הפתרון לרחפני הנפץ? רפאל הציגה את מערכת היירוט החדשה Iron Wasp",
+          "url": "https://www.mako.co.il/news-military/2026_q2/Article-8fb521066c5de91027.htm"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "N12 - ביטחוני ופוליטי",
+          "publishedAt": "2026-06-17T20:53:00+03:00",
+          "title": "המחסור בלוחמים: אזהרת הרמטכ\"ל לדרג המדיני - והפתרון החריג שנבחן",
+          "url": "https://www.mako.co.il/news-military/2026_q2/Article-95ab9143f66de91026.htm"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "N12 - ביטחוני ופוליטי",
+          "publishedAt": "2026-06-17T17:05:00+03:00",
+          "title": "חמישה לוחמי צה\"ל נפצעו משני רחפני נפץ בדרום לבנון, אחד במצב קשה",
+          "url": "https://www.mako.co.il/news-military/2026_q2/Article-a5ef00b5435de91026.htm"
+        },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
@@ -218,30 +258,6 @@
           "publishedAt": "2026-06-16T12:15:00+03:00",
           "title": "השר סמוטריץ' הכריז: אחרי כמעט 30 שנה - מבטל את הסכמי חברון",
           "url": "https://www.mako.co.il/news-military/2026_q2/Article-e85d07891bfce91027.htm"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "N12 - ביטחוני ופוליטי",
-          "publishedAt": "2026-06-16T11:40:00+03:00",
-          "title": "נערי גבעות חמושים נכנסו לכפר ליד טולכרם והתעמתו עם שוטרים פלסטינים",
-          "url": "https://www.mako.co.il/news-military/2026_q2/Article-bac9305e66fce91026.htm"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "N12 - ביטחוני ופוליטי",
-          "publishedAt": "2026-06-16T09:19:00+03:00",
-          "title": "מפקד חיל האוויר: \"התקיפה באיראן נעצרה שעה לפני ההמראה\"",
-          "url": "https://www.mako.co.il/news-military/2026_q2/Article-18bc6c2190fce91026.htm"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "N12 - ביטחוני ופוליטי",
-          "publishedAt": "2026-06-16T08:45:00+03:00",
-          "title": "צבא ארה\"ב נערך לפנות כ-20% ממטוסי התדלוק האמריקניים בנתב\"ג",
-          "url": "https://www.mako.co.il/news-military/2026_q2/Article-b43adf896eece91026.htm"
         }
       ]
     },
@@ -278,56 +294,56 @@
         "ynet - כל ערוץ מדע וטבע",
         "ynet - כל ערוץ יחסים"
       ],
-      "rawCandidateCount": 268,
-      "validCandidateCount": 268,
+      "rawCandidateCount": 266,
+      "validCandidateCount": 266,
       "qaPassSimulationCount": 0,
-      "qaRejectedCount": 268,
+      "qaRejectedCount": 266,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T13:34:30+00:00",
-      "latestRawAgeHours": 0.18,
-      "latestValidAt": "2026-06-17T13:34:30+00:00",
-      "latestValidAgeHours": 0.18,
+      "latestRawAt": "2026-06-17T21:14:59+00:00",
+      "latestRawAgeHours": 0.28,
+      "latestValidAt": "2026-06-17T21:14:59+00:00",
+      "latestValidAgeHours": 0.28,
       "visibleMain": {
-        "count": 17,
-        "latestAt": "2026-06-17T12:33:40+00:00",
-        "latestAgeHours": 1.19,
+        "count": 12,
+        "latestAt": "2026-06-17T21:00:28+00:00",
+        "latestAgeHours": 0.52,
         "sample": [
           {
-            "publishedAt": "2026-06-17T12:33:40+00:00",
-            "source": "ynet - כל ערוץ הספורט",
-            "headline": "רונאלדו (41) יוצא למונדיאל 2026 בניסיון שישי להשיג גביע עולם"
+            "publishedAt": "2026-06-17T21:00:28+00:00",
+            "source": "ynet - כל ערוץ החדשות",
+            "headline": "קצב האש בלבנון ירד; בכירים בצה״ל מזהירים: ״אסור לצאת מרצועת הביטחון״"
           },
           {
-            "publishedAt": "2026-06-17T10:24:23+00:00",
-            "source": "ynet - כל ערוץ הספורט",
-            "headline": "במכביה יונצחו שלושת הספורטאים שנרצחו ב-7 באוקטובר ובבונדי ביץ׳"
+            "publishedAt": "2026-06-17T21:00:15+00:00",
+            "source": "ynet - כל ערוץ החדשות",
+            "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט"
           },
           {
-            "publishedAt": "2026-06-17T07:24:22+00:00",
-            "source": "ynet - כל ערוץ הספורט",
-            "headline": "מסי כבש שלושער ב-0:3 על אלג'יריה - אבל ביצע עבירה שלא קיבלה קארד אדום"
+            "publishedAt": "2026-06-15T13:35:39+00:00",
+            "source": "ynet - כל ערוץ הכלכלה",
+            "headline": "פיוניר נמכרת בפחות משווי ההנפקה שלה"
           }
         ]
       },
       "visibleBreaking": {
-        "count": 25,
-        "latestAt": "2026-06-17T13:29:03+00:00",
-        "latestAgeHours": 0.27,
+        "count": 23,
+        "latestAt": "2026-06-17T20:01:39+00:00",
+        "latestAgeHours": 1.5,
         "sample": [
           {
-            "publishedAt": "2026-06-17T13:29:03+00:00",
+            "publishedAt": "2026-06-17T20:01:39+00:00",
             "source": "ynet",
-            "headline": "ראש ישיבות ההסדר החרדיות לנתניהו: עצור את מעצרי העריקים למשך שנה"
+            "headline": "המשטרה מבקשת עזרה באיתור הנעדר דאניו אדוניה (82) שנראה לאחרונה בבני ברק"
           },
           {
-            "publishedAt": "2026-06-17T13:25:25+00:00",
+            "publishedAt": "2026-06-17T18:59:23+00:00",
             "source": "ynet",
-            "headline": "הרמטכ\"ל בוועידת ההנצחה: \"האובדן מחדד את חוש האחריות בשגרה ובקרב\""
+            "headline": "הפתעה במונדיאל: רונאלדו ופורטוגל לא הצליחו לנצח את קונגו"
           },
           {
-            "publishedAt": "2026-06-17T13:10:58+00:00",
+            "publishedAt": "2026-06-17T18:25:45+00:00",
             "source": "ynet",
-            "headline": "המשטרה תפסה דגלים של הרשות הפלסטינית בבי\"ס במזרח ירושלים, המנהלת עוכבה"
+            "headline": "דבי צ'ייס (סמארה מ\"הצלצול\") מתה בגיל 35"
           }
         ]
       },
@@ -337,65 +353,65 @@
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T16:28:16+03:00",
-          "title": "עבריין מין זייף את זהותו - ועבד כמורה במשך שנה וחצי",
-          "url": "https://www.ynet.co.il/news/article/rydx11zgfme"
+          "publishedAt": "2026-06-18T00:00:28+03:00",
+          "title": "המציאות המורכבת בדרום לבנון - והאזהרה בצה\"ל: \"אסור לצאת מרצועת הביטחון\"",
+          "url": "https://www.ynet.co.il/news/article/h1qqjrgzzg"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T15:53:46+03:00",
-          "title": "לאחר המתקפה האנטישמית: משרד החוץ זימן את שגריר בלארוס לשיחת נזיפה",
-          "url": "https://www.ynet.co.il/news/article/hy9bjmlzfl"
+          "publishedAt": "2026-06-18T00:00:15+03:00",
+          "title": "הסעיפים הבעייתיים בעיני ישראל, וההתרברבות של איראן: \"אנחנו בעמדת כוח\"",
+          "url": "https://www.ynet.co.il/news/article/s1zvyvlfge"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T15:39:32+03:00",
-          "title": "נתניהו נעדר: הכנסת אישרה חסינות לגוטליב מפני העמדה לדין אחרי שחשפה זהות איש שב\"כ",
-          "url": "https://www.ynet.co.il/news/article/hkmnniygmx"
+          "publishedAt": "2026-06-18T00:00:00+03:00",
+          "title": "המסמך שחושף: רבין חזה את תרחיש אנטבה",
+          "url": "https://www.ynet.co.il/news/article/yokra14804779"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T15:23:23+03:00",
-          "title": "בשרון \"כולם בבתים בחרדה\"; ש\"ס: החוק יגן רק על עריקים חרדים, חילונים - לעצור",
-          "url": "https://www.ynet.co.il/news/article/h1h6q11gmmg"
+          "publishedAt": "2026-06-17T23:07:56+03:00",
+          "title": "לאחוז בלבנון ולחכות לאיראן בנובמבר: התקווה הישראלית לחלון ההזדמנויות הבא",
+          "url": "https://www.ynet.co.il/news/article/syfilolfgl"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T15:02:34+03:00",
-          "title": "האזנות סתר ו-DNA משערה: בת 79 נשפטת על הגופה המבותרת בנהר לפני 31 שנה",
-          "url": "https://www.ynet.co.il/news/article/hj4kaxlgzx"
+          "publishedAt": "2026-06-17T22:52:15+03:00",
+          "title": "ניגריה: החביא 50 שקי צואה מחוץ לביתו - ונידון למאסר",
+          "url": "https://www.ynet.co.il/news/article/syk8eogzzg"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T14:36:19+03:00",
-          "title": "מורה מצפת נאשם במעשים מגונים בשבעה ילדים: \"נעל את הכיתה וניצל את תמימותם\"",
-          "url": "https://www.ynet.co.il/news/article/s1zsx11xfgl"
+          "publishedAt": "2026-06-17T22:45:09+03:00",
+          "title": "הסלפי בקלפי - והקשר לנתניהו: בג\"ץ ידון מחר בעתירות נגד מינוי ראבילו למבקר",
+          "url": "https://www.ynet.co.il/news/article/h1hzuqxffx"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T14:31:45+03:00",
-          "title": "מסגד נשרף כליל, האימאם: \"מתנחלים הציתו, חשבנו בהתחלה שפרצה מלחמה\"",
-          "url": "https://www.ynet.co.il/news/article/bjurijezme"
+          "publishedAt": "2026-06-17T22:40:46+03:00",
+          "title": "נשיא סומלילנד ביקר ילדים חולים ממדינתו בישראל: \"שת\"פ שקדם ליחסים הרשמיים\"",
+          "url": "https://www.ynet.co.il/news/article/bybi3wggml"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ynet - כל ערוץ החדשות",
-          "publishedAt": "2026-06-17T14:20:49+03:00",
-          "title": "טראמפ: \"אם לא אהיה מרוצה - נחזור להטיל פצצות על הראש של איראן\"",
-          "url": "https://www.ynet.co.il/news/article/hjwbcgxfzx"
+          "publishedAt": "2026-06-17T22:02:33+03:00",
+          "title": "מלוני הפסיקה לעשן, מקרון שכח את השעון - וטראמפ איחר: \"אני הבוס!\"",
+          "url": "https://www.ynet.co.il/news/article/sjprm8lmfe"
         }
       ]
     },
@@ -417,27 +433,28 @@
       "latestValidAt": null,
       "latestValidAgeHours": null,
       "visibleMain": {
-        "count": 2,
-        "latestAt": "2026-06-16T00:33:43+00:00",
-        "latestAgeHours": 37.19,
+        "count": 1,
+        "latestAt": "2026-06-15T11:21:45+00:00",
+        "latestAgeHours": 58.16,
         "sample": [
           {
-            "publishedAt": "2026-06-16T00:33:43+00:00",
+            "publishedAt": "2026-06-15T11:21:45+00:00",
             "source": "ישראל היום - כל הכתבות",
-            "headline": "ג׳ו ג׳ונאס צפה במונדיאל דרך שידור כאן 11"
-          },
-          {
-            "publishedAt": "2026-06-15T19:08:37+00:00",
-            "source": "ישראל היום - כל הכתבות",
-            "headline": "ספילברג אמר שהוא מאמין שחייזרים כבר כאן"
+            "headline": "כאן גימל מציינת 50 שנה וחוזרת למהפך הישראלי"
           }
         ]
       },
       "visibleBreaking": {
-        "count": 0,
-        "latestAt": null,
-        "latestAgeHours": null,
-        "sample": []
+        "count": 1,
+        "latestAt": "2026-06-17T18:18:30+00:00",
+        "latestAgeHours": 3.22,
+        "sample": [
+          {
+            "publishedAt": "2026-06-17T18:18:30+00:00",
+            "source": "רוטר",
+            "headline": "׳כאן 11׳: המשטרה בפנייה חריגה לציבור: בדקו שמוצרים שאתם רוכשים לילדים - סגורים ואטומים."
+          }
+        ]
       },
       "fetchErrors": [],
       "candidateSamples": []
@@ -463,34 +480,34 @@
         "וואלה חדשות - חדשות יהדות",
         "וואלה חדשות - חדשות המשפט"
       ],
-      "rawCandidateCount": 138,
-      "validCandidateCount": 138,
+      "rawCandidateCount": 126,
+      "validCandidateCount": 126,
       "qaPassSimulationCount": 3,
-      "qaRejectedCount": 135,
+      "qaRejectedCount": 123,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T13:45:20+00:00",
+      "latestRawAt": "2026-06-17T21:31:45+00:00",
       "latestRawAgeHours": 0.0,
-      "latestValidAt": "2026-06-17T13:45:20+00:00",
+      "latestValidAt": "2026-06-17T21:31:45+00:00",
       "latestValidAgeHours": 0.0,
       "visibleMain": {
         "count": 3,
-        "latestAt": "2026-06-17T10:36:00+00:00",
-        "latestAgeHours": 3.15,
+        "latestAt": "2026-06-17T21:25:00+00:00",
+        "latestAgeHours": 0.11,
         "sample": [
           {
-            "publishedAt": "2026-06-17T10:36:00+00:00",
+            "publishedAt": "2026-06-17T21:25:00+00:00",
             "source": "וואלה חדשות",
-            "headline": "חמישה בארה״ב הואשמו בתכנון רצח באירוע UFC בבית הלבן"
+            "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4"
           },
           {
-            "publishedAt": "2026-06-16T04:41:21+00:00",
-            "source": "וואלה חדשות - חדשות בארץ",
-            "headline": "שדרות תסבסד שכונת הייטק ב-15 מיליון שקל"
+            "publishedAt": "2026-06-15T11:04:11+00:00",
+            "source": "וואלה חדשות - חדשות המשפט",
+            "headline": "נהגים עלולים לגלות שרישיונם הותלה רק אחרי תאונה"
           },
           {
-            "publishedAt": "2026-06-16T02:42:39+00:00",
-            "source": "וואלה חדשות - אסור לפספס",
-            "headline": "מחקר קושר גיל התנסות ראשונה לבריאות בגיל מבוגר"
+            "publishedAt": "2026-06-15T10:24:48+00:00",
+            "source": "וואלה חדשות",
+            "headline": "עסקי התיירות בצפון מזהירים שהשיקום כבר בסכנה"
           }
         ]
       },
@@ -506,65 +523,65 @@
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:45:19+03:00",
-          "title": "טראמפ: \"שוחחתי עם מנהיג סוריה על המאבק בחיזבאללה\"",
-          "url": "https://news.walla.co.il/item/3846478"
+          "publishedAt": "2026-06-18T00:31:38+03:00",
+          "title": "\"השותף הגדול והשותף הקטן\": כך שרטט טראמפ את יחסיו עם נתניהו מחדש",
+          "url": "https://news.walla.co.il/item/3846610"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:45:19+03:00",
-          "title": "לאחר הסערה: הרמטכ\"ל הבהיר - \"נשים וגברים לא ישולבו יחד בצוותי טנקים\"",
-          "url": "https://news.walla.co.il/item/3846509"
+          "publishedAt": "2026-06-18T00:31:38+03:00",
+          "title": "אחרי חודשים של השבתה: טרמינל 1 בנתב\"ג יפתח מחדש",
+          "url": "https://travel.walla.co.il/item/3846617"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:45:19+03:00",
-          "title": "מטוס סילון התרסק על כביש מהיר בטקסס - אדם נהרג וחמישה נפצעו",
-          "url": "https://news.walla.co.il/item/3846504"
+          "publishedAt": "2026-06-18T00:31:38+03:00",
+          "title": "פוליקר, אלי לוזון ו-50 אלף איש: כל מה שקרה בנשף רוק של אביב גפן",
+          "url": "https://e.walla.co.il/item/3846613"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:45:19+03:00",
-          "title": "בצל מאבק ההורים: מזכ\"לית ההסתדרות מתעקשת על הגבלת מספר התלמידים המשולבים",
-          "url": "https://news.walla.co.il/item/3846520"
+          "publishedAt": "2026-06-18T00:31:38+03:00",
+          "title": "עבריין מין פרץ לבית המתלוננת - ותקף אותה במיטה",
+          "url": "https://news.walla.co.il/item/3846616"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:45:19+03:00",
-          "title": "\"ראיות חדשות מסבכות אותו\": הוארך מעצר החשוד ברצח ליה עופרי מלכה כהן",
-          "url": "https://news.walla.co.il/item/3846501"
+          "publishedAt": "2026-06-18T00:25:00+03:00",
+          "title": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
+          "url": "https://news.walla.co.il/item/3846598"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:45:19+03:00",
-          "title": "צה\"ל: חוסלו שני מחבלים שהחזיקו חטופים ופשטו לבארי ב-7 באוקטובר",
-          "url": "https://news.walla.co.il/item/3846484"
+          "publishedAt": "2026-06-18T00:21:00+03:00",
+          "title": "חשד לרצח גבר כבן 40 בנגב - מסתמן: בשל סכסוך בין משפחות",
+          "url": "https://news.walla.co.il/item/3846600"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:39:00+03:00",
-          "title": "המשטרה הגישה כתב אישום נגד מורה בן 65 בצפת בגין עבירות מין בתלמידים",
-          "url": "https://news.walla.co.il/item/3846479"
+          "publishedAt": "2026-06-17T23:50:00+03:00",
+          "title": "דביי צ'ייס, הקול של לילו מהסרט \"לילו וסטיץ'\", מתה בגיל 35",
+          "url": "https://e.walla.co.il/item/3846595"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "וואלה חדשות",
-          "publishedAt": "2026-06-17T16:18:00+03:00",
-          "title": "הפגנות חרדים צפויות להתקיים במחנה בית ליד: פעילויות בוטלו - חשש מחסימות כבישים",
-          "url": "https://news.walla.co.il/item/3846472"
+          "publishedAt": "2026-06-17T23:35:00+03:00",
+          "title": "כשמה כן היא: פורסמו תוצאות הפריימריז לרשימת המילואימניקים",
+          "url": "https://news.walla.co.il/item/3846590"
         }
       ]
     },
@@ -583,29 +600,29 @@
       "qaPassSimulationCount": 0,
       "qaRejectedCount": 12,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T13:21:11+00:00",
-      "latestRawAgeHours": 0.4,
-      "latestValidAt": "2026-06-17T13:21:11+00:00",
-      "latestValidAgeHours": 0.4,
+      "latestRawAt": "2026-06-17T21:21:01+00:00",
+      "latestRawAgeHours": 0.18,
+      "latestValidAt": "2026-06-17T21:21:01+00:00",
+      "latestValidAgeHours": 0.18,
       "visibleMain": {
-        "count": 13,
-        "latestAt": "2026-06-17T13:19:49+00:00",
-        "latestAgeHours": 0.42,
+        "count": 10,
+        "latestAt": "2026-06-17T19:37:08+00:00",
+        "latestAgeHours": 1.91,
         "sample": [
           {
-            "publishedAt": "2026-06-17T13:19:49+00:00",
+            "publishedAt": "2026-06-17T19:37:08+00:00",
             "source": "ישראל היום - כל הכתבות",
-            "headline": "לינור סביניק: ״כולם חושבים שלהיות יפה זו מתנה, אבל מעטים מבינים שזו מלחמה״"
+            "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו"
           },
           {
-            "publishedAt": "2026-06-17T04:54:09+00:00",
+            "publishedAt": "2026-06-15T13:17:53+00:00",
             "source": "ישראל היום - כל הכתבות",
-            "headline": "אסיר משוחרר מיפיע ניסה לגנוב מרצדס - נתפס אחרי מרדף, ירי אזהרה וכתב אישום"
+            "headline": "משרדי הממשלה מזהירים מרחצה בנחלים מזוהמים"
           },
           {
-            "publishedAt": "2026-06-16T10:04:25+00:00",
+            "publishedAt": "2026-06-15T13:14:51+00:00",
             "source": "ישראל היום - כל הכתבות",
-            "headline": "הממשל האמריקני כיבה מודל קלוד אחרי חריגת גישה"
+            "headline": "יעל שלביה מתארת חזרה זהירה לזוגיות עם לאנס סטרול"
           }
         ]
       },
@@ -621,65 +638,65 @@
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:21:11+03:00",
-          "title": "ג'ניפר לופז חושפת משבר בריאותי: \"איבדתי את הראייה\"",
-          "url": "https://www.israelhayom.co.il/culture/music/article/20782509"
+          "publishedAt": "2026-06-18T00:21:01+03:00",
+          "title": "הכי חכמים בשוק? ההחמצה ההיסטורית של ישראל בגבולות הצפון",
+          "url": "https://www.israelhayom.co.il/news/geopolitics/article/20787005"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:19:49+03:00",
-          "title": "לינור סביניק נשברת: \"מעטים מבינים שזו מלחמה\"",
-          "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20784227"
+          "publishedAt": "2026-06-18T00:16:33+03:00",
+          "title": "המאבטחים התערבו: מקרה אלים באולפן \"האח הגדול\"",
+          "url": "https://www.israelhayom.co.il/forreal/15_minutes/article/20787174"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:18:32+03:00",
-          "title": "תזהה הידרדרות - ותמנע קריסה: מהפכת ה-AI שמצילה חיים",
-          "url": "https://www.israelhayom.co.il/tech/tech-news/article/20783277"
+          "publishedAt": "2026-06-17T23:57:42+03:00",
+          "title": "עובד בריאות באנגליה ניסה למכור מידע רפואי של הנסיכה קייט",
+          "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20787084"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:17:40+03:00",
-          "title": "לוחם שב\"כ שגוטליב חשפה: \"הפקרת חיים לטובת אינטרס פוליטי רגעי\"",
-          "url": "https://www.israelhayom.co.il/news/law/article/20784323"
+          "publishedAt": "2026-06-17T23:55:13+03:00",
+          "title": "אחרי 45 שנים: המוסד הקולינרי באוניברסיטה העברית נסגר",
+          "url": "https://www.israelhayom.co.il/news/education/article/20787000"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:03:36+03:00",
-          "title": "משבר בירה במונדיאל: אוהדי הנבחרת חיסלו את מלאי האלכוהול",
-          "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20783833"
+          "publishedAt": "2026-06-17T23:45:19+03:00",
+          "title": "יותר מ-400 חתולים גנובים חולצו בשלום: יועדו למאכל",
+          "url": "https://www.israelhayom.co.il/news/world-news/other/article/20787051"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:01:34+03:00",
-          "title": "קרן פלס שוברת את הכלים: ״הגיעו מים עד נפש״",
-          "url": "https://www.israelhayom.co.il/culture/music/article/20783789"
+          "publishedAt": "2026-06-17T23:38:37+03:00",
+          "title": "כריסטיאנו רונאלדו הפר את חוקי פיפ\"א? \"לא התרגלנו לשינויים\"",
+          "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20786849"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T16:01:32+03:00",
-          "title": "כונן קטן, מחיר אקסטרים: ה-SSD החדש של סאנדיסק שווה כל שקל",
-          "url": "https://www.israelhayom.co.il/tech/gadget-review/article/20781540"
+          "publishedAt": "2026-06-17T23:30:06+03:00",
+          "title": "מזל אריה - הורוסקופ יומי: עליכם לקבל החלטה מחייבת",
+          "url": "https://www.israelhayom.co.il/horoscopes/leo/article/20748656"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "ישראל היום - כל הכתבות",
-          "publishedAt": "2026-06-17T15:48:12+03:00",
-          "title": "הצעד החריג שנתניהו שוקל עוד יסייע לשיקום המערכת הפוליטית",
-          "url": "https://www.israelhayom.co.il/magazine/hashavua/article/20783032"
+          "publishedAt": "2026-06-17T23:30:06+03:00",
+          "title": "מזל מאזניים - הורוסקופ יומי: אתם זקוקים לתשומת לב ולחיזורים",
+          "url": "https://www.israelhayom.co.il/horoscopes/libra/article/20748718"
         }
       ]
     },
@@ -687,8 +704,8 @@
       "id": "globes",
       "label": "גלובס",
       "expectedRoute": "main",
-      "status": "source_live_qa_bridge_needed",
-      "problem": "יש מועמדים טריים אבל כולם נדחים/מסוננים לפני כרטיס פוינטה",
+      "status": "source_live_visible_missing",
+      "problem": "המקור חי, אבל אין כרטיס טרי בפיד הנראה",
       "treatment": "Simulation-only: audit whether fresh economy/legal/public-impact Globes candidates are present but lose to softer visible cards.",
       "configuredSources": [
         "גלובס - שוק ההון",
@@ -706,29 +723,29 @@
       "qaPassSimulationCount": 0,
       "qaRejectedCount": 108,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T13:30:00+00:00",
-      "latestRawAgeHours": 0.25,
-      "latestValidAt": "2026-06-17T13:30:00+00:00",
-      "latestValidAgeHours": 0.25,
+      "latestRawAt": "2026-06-17T20:05:00+00:00",
+      "latestRawAgeHours": 1.44,
+      "latestValidAt": "2026-06-17T20:05:00+00:00",
+      "latestValidAgeHours": 1.44,
       "visibleMain": {
         "count": 11,
-        "latestAt": "2026-06-17T12:37:00+00:00",
-        "latestAgeHours": 1.14,
+        "latestAt": "2026-06-15T13:29:00+00:00",
+        "latestAgeHours": 56.04,
         "sample": [
           {
-            "publishedAt": "2026-06-17T12:37:00+00:00",
-            "source": "גלובס - טכנולוגיה",
-            "headline": "פאנל TECH IL: ה-AI משנה את שוק ההייטק הישראלי - והמדינה צריכה להתעורר"
+            "publishedAt": "2026-06-15T13:29:00+00:00",
+            "source": "גלובס - שוק ההון",
+            "headline": "ננו דיימנשן מתמזגת עם חברת בריאות AI"
           },
           {
-            "publishedAt": "2026-06-17T10:22:00+00:00",
-            "source": "גלובס - שיווק וצרכנות",
-            "headline": "קאשבק ההצטרפות של FlyAll קוצץ בעקבות מעבר מועדון אל על לישראכרט"
+            "publishedAt": "2026-06-15T13:24:00+00:00",
+            "source": "גלובס - שוק ההון",
+            "headline": "Nuvei רוכשת את פיוניר ב-2.75 מיליארד דולר"
           },
           {
-            "publishedAt": "2026-06-16T10:00:00+00:00",
-            "source": "גלובס - בארץ",
-            "headline": "הלמ״ס עדכנה את ירידת התמ״ג ל־3.8% ברבעון הראשון"
+            "publishedAt": "2026-06-15T13:15:00+00:00",
+            "source": "גלובס - שוק ההון",
+            "headline": "בורסת תל אביב נחלשת בזמן שמניות השבבים מזנקות"
           }
         ]
       },
@@ -744,17 +761,41 @@
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "גלובס - שוק ההון",
-          "publishedAt": "2026-06-17T16:15:00+03:00",
-          "title": "עליות בחוזים בוול סטריט; ספייס אקס מזנקת ב-3% במסחר המוקדם",
+          "publishedAt": "2026-06-17T23:00:00+03:00",
+          "title": "בעקבות החלטת הריבית, וול סטריט ננעלה ירידות; תשואות האג\"ח זינקו",
           "url": "https://www.globes.co.il/news/article.aspx?did=1001546144#utm_source=RSS"
         },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "גלובס - שוק ההון",
-          "publishedAt": "2026-06-17T15:24:00+03:00",
-          "title": "הירידות בבורסה מתחזקות: המדדים נופלים ביותר מ-2%",
+          "publishedAt": "2026-06-17T22:08:00+03:00",
+          "title": "הפד הותיר את הריבית ללא שינוי ומאותת: העלאת ריבית הפכה לאפשרות ממשית",
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001545896#utm_source=RSS"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "גלובס - שוק ההון",
+          "publishedAt": "2026-06-17T17:34:00+03:00",
+          "title": "בורסת ת\"א סגרה יום שלישי של ירידות, מדד ת\"א 35 ירד ב-1.5%",
           "url": "https://www.globes.co.il/news/article.aspx?did=1001546077#utm_source=RSS"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "גלובס - שוק ההון",
+          "publishedAt": "2026-06-17T17:33:00+03:00",
+          "title": "למה הבורסה יורדת כבר 3 ימים? מה חושבים המומחים ואיפה ההזדמנויות",
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001546240#utm_source=RSS"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "גלובס - שוק ההון",
+          "publishedAt": "2026-06-17T16:21:00+03:00",
+          "title": "לקוחות לאומי קיבלו סמס בהפתעה: 700 שקל בדרך לחשבון הבנק שלכם. מי בזכאים?",
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001546173#utm_source=RSS"
         },
         {
           "status": "qa_rejected",
@@ -779,30 +820,6 @@
           "publishedAt": "2026-06-17T06:05:00+03:00",
           "title": "המניה קפצה 500% וסידרה לפרקליט הצמרת אקזיט של 200 מיליון שקל",
           "url": "https://www.globes.co.il/news/article.aspx?did=1001546102#utm_source=RSS"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "גלובס - שוק ההון",
-          "publishedAt": "2026-06-17T06:03:00+03:00",
-          "title": "הדוחות הכספיים בדרך למהפכה והבכיר שחושף: נדרוש דיווח על שכר ממוצע",
-          "url": "https://www.globes.co.il/news/article.aspx?did=1001546071#utm_source=RSS"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "גלובס - שוק ההון",
-          "publishedAt": "2026-06-17T05:58:00+03:00",
-          "title": "עד גיל 25 יהיו לילד שלכם 300 אלף שקל. אם תתנהלו נכון",
-          "url": "https://www.globes.co.il/news/article.aspx?did=1001546014#utm_source=RSS"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "גלובס - שוק ההון",
-          "publishedAt": "2026-06-17T05:55:00+03:00",
-          "title": "המדד הנמוך סלל את הדרך לרצף חריג של שלוש הפחתות ריבית",
-          "url": "https://www.globes.co.il/news/article.aspx?did=1001546058#utm_source=RSS"
         }
       ]
     },
@@ -821,10 +838,10 @@
       "qaPassSimulationCount": 0,
       "qaRejectedCount": 2,
       "relevanceFilteredCount": 10,
-      "latestRawAt": "2026-06-17T13:41:21+00:00",
-      "latestRawAgeHours": 0.06,
-      "latestValidAt": "2026-06-17T10:01:42+00:00",
-      "latestValidAgeHours": 3.72,
+      "latestRawAt": "2026-06-17T20:23:13+00:00",
+      "latestRawAgeHours": 1.14,
+      "latestValidAt": "2026-06-17T20:23:13+00:00",
+      "latestValidAgeHours": 1.14,
       "visibleMain": {
         "count": 0,
         "latestAt": null,
@@ -840,34 +857,34 @@
       "fetchErrors": [],
       "candidateSamples": [
         {
-          "status": "relevance_filtered",
-          "reason": "not Israel/Middle-East enough",
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T16:41:21+03:00",
-          "title": "UK investigating reports Russian warship fired warning shots near yacht in English Channel",
-          "url": "https://www.bbc.com/news/articles/c20yzm84r7lo?at_medium=RSS&at_campaign=rss"
+          "publishedAt": "2026-06-17T23:23:13+03:00",
+          "title": "Initial US-Iran agreement leaves many key issues to be negotiated",
+          "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss"
         },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T16:41:13+03:00",
-          "title": "Leader of South Africa's second biggest party wants his predecessor sacked as minister",
-          "url": "https://www.bbc.com/news/articles/ce8jg660r73o?at_medium=RSS&at_campaign=rss"
+          "publishedAt": "2026-06-17T22:03:10+03:00",
+          "title": "Ex-Nigeria oil minister cleared in UK bribery trial",
+          "url": "https://www.bbc.com/news/articles/c872pwx4x2vo?at_medium=RSS&at_campaign=rss"
         },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T15:01:04+03:00",
-          "title": "Bolivia signs $20m deal with US to fight drug trafficking, foreign ministry says",
-          "url": "https://www.bbc.com/news/articles/c9w28vzj0q0o?at_medium=RSS&at_campaign=rss"
+          "publishedAt": "2026-06-17T20:45:54+03:00",
+          "title": "Serial killer who murdered eight women in Long Island town imprisoned for life",
+          "url": "https://www.bbc.com/news/articles/clyw29kvlydo?at_medium=RSS&at_campaign=rss"
         },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T14:26:39+03:00",
+          "publishedAt": "2026-06-17T19:50:42+03:00",
           "title": "Search for six-year-old Ebola patient after armed men storm DR Congo hospital",
           "url": "https://www.bbc.com/news/articles/cvgep4l397eo?at_medium=RSS&at_campaign=rss"
         },
@@ -875,33 +892,33 @@
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T13:15:08+03:00",
-          "title": "Norway's crown princess undergoes successful lung transplant, palace says",
-          "url": "https://www.bbc.com/news/articles/c1eyg37qyqjo?at_medium=RSS&at_campaign=rss"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "BBC World",
-          "publishedAt": "2026-06-17T13:01:42+03:00",
-          "title": "Israel launches fresh strikes on Lebanon despite Trump criticism",
-          "url": "https://www.bbc.com/news/articles/c7vyn17g832o?at_medium=RSS&at_campaign=rss"
+          "publishedAt": "2026-06-17T19:37:41+03:00",
+          "title": "AI will create more jobs for humans, not replace them, Amazon founder Bezos says",
+          "url": "https://www.bbc.com/news/articles/ceqdrw2yy3vo?at_medium=RSS&at_campaign=rss"
         },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T12:56:40+03:00",
-          "title": "'They came with machetes' - deadline looms for migrants to leave South Africa",
-          "url": "https://www.bbc.com/news/articles/cg740l2jpr0o?at_medium=RSS&at_campaign=rss"
+          "publishedAt": "2026-06-17T18:52:47+03:00",
+          "title": "Mangione's lawyers plan psychiatric defence in state murder trial",
+          "url": "https://www.bbc.com/news/articles/c1lym76jyymo?at_medium=RSS&at_campaign=rss"
         },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
           "source": "BBC World",
-          "publishedAt": "2026-06-17T12:52:52+03:00",
-          "title": "Equatorial Guinea government resigns after failing to meet targets",
-          "url": "https://www.bbc.com/news/articles/c4gy27dyq0ro?at_medium=RSS&at_campaign=rss"
+          "publishedAt": "2026-06-17T17:33:39+03:00",
+          "title": "Nigerian man jailed for storing human faeces outside his home",
+          "url": "https://www.bbc.com/news/articles/ce8jgr3vggno?at_medium=RSS&at_campaign=rss"
+        },
+        {
+          "status": "relevance_filtered",
+          "reason": "not Israel/Middle-East enough",
+          "source": "BBC World",
+          "publishedAt": "2026-06-17T17:17:19+03:00",
+          "title": "Leader of South Africa's second biggest party wants his predecessor sacked as minister",
+          "url": "https://www.bbc.com/news/articles/ce8jg660r73o?at_medium=RSS&at_campaign=rss"
         }
       ]
     },
@@ -1013,14 +1030,14 @@
         "Fox News Politics"
       ],
       "rawCandidateCount": 24,
-      "validCandidateCount": 7,
+      "validCandidateCount": 10,
       "qaPassSimulationCount": 0,
-      "qaRejectedCount": 7,
-      "relevanceFilteredCount": 17,
-      "latestRawAt": "2026-06-17T12:31:51+00:00",
-      "latestRawAgeHours": 1.22,
-      "latestValidAt": "2026-06-17T12:31:51+00:00",
-      "latestValidAgeHours": 1.22,
+      "qaRejectedCount": 10,
+      "relevanceFilteredCount": 14,
+      "latestRawAt": "2026-06-17T20:46:11+00:00",
+      "latestRawAgeHours": 0.76,
+      "latestValidAt": "2026-06-17T20:46:11+00:00",
+      "latestValidAgeHours": 0.76,
       "visibleMain": {
         "count": 0,
         "latestAt": null,
@@ -1035,6 +1052,30 @@
       },
       "fetchErrors": [],
       "candidateSamples": [
+        {
+          "status": "relevance_filtered",
+          "reason": "not Israel/Middle-East enough",
+          "source": "Fox News World",
+          "publishedAt": "2026-06-17T22:37:53+03:00",
+          "title": "Colombian military neutralizes five terrorists accused in bus bombing that killed 20, injured 45 civilians",
+          "url": "https://www.foxnews.com/world/colombian-military-neutralizes-five-terrorists-accused-bus-bombing-killed-20-injured-45-civilians"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "Fox News World",
+          "publishedAt": "2026-06-17T21:50:05+03:00",
+          "title": "Israel launches 'Biblical Highway' amid campaign to erase Jewish history",
+          "url": "https://www.foxnews.com/world/israel-launches-biblical-highway-amid-campaign-erase-jewish-history"
+        },
+        {
+          "status": "relevance_filtered",
+          "reason": "not Israel/Middle-East enough",
+          "source": "Fox News World",
+          "publishedAt": "2026-06-17T21:22:47+03:00",
+          "title": "Elon Musk demands prison for politicians who 'turned a blind eye' to grooming gangs as new report released",
+          "url": "https://www.foxnews.com/world/elon-musk-demands-prison-politicians-who-turned-blind-eye-grooming-gangs-new-report-released"
+        },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
@@ -1074,30 +1115,6 @@
           "publishedAt": "2026-06-15T08:06:44+03:00",
           "title": "Anti-G7 protest turns violent as demonstrators torch Tesla and smash UN office windows",
           "url": "https://www.foxnews.com/world/anti-g7-protest-turns-violent-demonstrators-torch-tesla-smash-un-office-windows"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "Fox News World",
-          "publishedAt": "2026-06-15T00:16:01+03:00",
-          "title": "Khamenei's 'target-rich' funeral is Iran’s biggest security gamble, sends message to US: expert",
-          "url": "https://www.foxnews.com/world/khameneis-target-rich-funeral-irans-biggest-security-gamble-sends-message-us-expert"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "Fox News World",
-          "publishedAt": "2026-06-14T22:16:03+03:00",
-          "title": "Israel fears Trump weary of ‘highly suspicious’ Netanyahu and could 'flip' amid Iran deal: analyst",
-          "url": "https://www.foxnews.com/world/israel-fears-trump-weary-highly-suspicious-netanyahu-could-flip-amid-iran-deal-analyst"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "Fox News World",
-          "publishedAt": "2026-06-14T21:19:03+03:00",
-          "title": "IDF announces elimination of Hezbollah commander behind murder of 5 American soldiers",
-          "url": "https://www.foxnews.com/world/idf-announces-elimination-hezbollah-commander-behind-murder-5-american-soldiers"
         }
       ]
     },
@@ -1112,23 +1129,33 @@
         "The Guardian Middle East"
       ],
       "rawCandidateCount": 12,
-      "validCandidateCount": 9,
+      "validCandidateCount": 10,
       "qaPassSimulationCount": 0,
-      "qaRejectedCount": 9,
-      "relevanceFilteredCount": 3,
-      "latestRawAt": "2026-06-17T13:36:22+00:00",
-      "latestRawAgeHours": 0.15,
-      "latestValidAt": "2026-06-17T13:36:22+00:00",
-      "latestValidAgeHours": 0.15,
+      "qaRejectedCount": 10,
+      "relevanceFilteredCount": 2,
+      "latestRawAt": "2026-06-17T21:25:33+00:00",
+      "latestRawAgeHours": 0.1,
+      "latestValidAt": "2026-06-17T21:25:33+00:00",
+      "latestValidAgeHours": 0.1,
       "visibleMain": {
-        "count": 1,
-        "latestAt": "2026-06-17T10:18:02+00:00",
-        "latestAgeHours": 3.45,
+        "count": 3,
+        "latestAt": "2026-06-17T21:16:43+00:00",
+        "latestAgeHours": 0.25,
         "sample": [
           {
-            "publishedAt": "2026-06-17T10:18:02+00:00",
+            "publishedAt": "2026-06-17T21:16:43+00:00",
             "source": "The Guardian Middle East",
-            "headline": "בלונדון נחשף אירוע נדל״ן שפרסם מכירת קרקעות בהתנחלויות"
+            "headline": "ארה״ב פרסמה את ההסכם ה-14 נקודות עם איראן; טראמפ: ״מנענו מיתון עולמי״"
+          },
+          {
+            "publishedAt": "2026-06-17T20:00:12+00:00",
+            "source": "The Guardian Middle East",
+            "headline": "איראן הסכימה להשמיד את מלאי האורניום המועשר - וישראל הושארה מחוץ למשא ומתן"
+          },
+          {
+            "publishedAt": "2026-06-15T13:17:38+00:00",
+            "source": "The Guardian Middle East",
+            "headline": "מוצרי התנחלויות נמכרים באירופה כישראלים"
           }
         ]
       },
@@ -1144,9 +1171,25 @@
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
           "source": "The Guardian Middle East",
-          "publishedAt": "2026-06-17T16:36:22+03:00",
-          "title": "Middle East crisis live: Trump warns US will ‘go back to shooting’ if Iran ‘don’t behave’, as G7 leaders call for Lebanon ceasefire",
+          "publishedAt": "2026-06-18T00:25:33+03:00",
+          "title": "Middle East crisis live: Iran agrees to destroy enriched uranium stockpile, memorandum read out by US officials says",
           "url": "https://www.theguardian.com/world/live/2026/jun/17/middle-east-war-iran-israel-us-donald-trump-hezbollah-lebanon-peace-deal-netanyahu-latest-news-updated"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "The Guardian Middle East",
+          "publishedAt": "2026-06-18T00:16:43+03:00",
+          "title": "US releases text of Iran peace plan as Trump says deal averts ‘worldwide depression’",
+          "url": "https://www.theguardian.com/world/2026/jun/17/trump-us-iran-war-mou-deal"
+        },
+        {
+          "status": "relevance_filtered",
+          "reason": "not Israel/Middle-East enough",
+          "source": "The Guardian Middle East",
+          "publishedAt": "2026-06-17T22:40:45+03:00",
+          "title": "US-Iran deal takeaways: reopening the strait of Hormuz, waived oil sanctions and Lebanon",
+          "url": "https://www.theguardian.com/world/2026/jun/17/us-iran-deal-trump"
         },
         {
           "status": "qa_rejected",
@@ -1187,22 +1230,6 @@
           "publishedAt": "2026-06-17T00:19:34+03:00",
           "title": "US and Iran deal to end war allows Tehran to sell oil and fuel – as it happened",
           "url": "https://www.theguardian.com/world/live/2026/jun/16/iran-us-deal-trump-vance-strait-hormuz-israel-lebanon-middle-east-latest-news-updates"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "The Guardian Middle East",
-          "publishedAt": "2026-06-16T19:58:27+03:00",
-          "title": "Trump says Syria would do a better job than Israel of 'taking care of Hezbollah' – video",
-          "url": "https://www.theguardian.com/us-news/video/2026/jun/16/trump-says-syria-would-do-a-better-job-of-taking-care-of-hezbollah-than-israel-video"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "The Guardian Middle East",
-          "publishedAt": "2026-06-16T19:46:53+03:00",
-          "title": "Skeptical Republicans demand details of US-Iran outline peace deal",
-          "url": "https://www.theguardian.com/world/2026/jun/16/jd-vance-details-us-iran-agreement-scepticism-republicans"
         }
       ]
     },
@@ -1216,15 +1243,15 @@
       "configuredSources": [
         "Sky News World"
       ],
-      "rawCandidateCount": 9,
-      "validCandidateCount": 3,
+      "rawCandidateCount": 10,
+      "validCandidateCount": 4,
       "qaPassSimulationCount": 0,
-      "qaRejectedCount": 3,
+      "qaRejectedCount": 4,
       "relevanceFilteredCount": 6,
-      "latestRawAt": "2026-06-17T09:38:00+00:00",
-      "latestRawAgeHours": 4.12,
-      "latestValidAt": "2026-06-16T23:18:00+00:00",
-      "latestValidAgeHours": 14.45,
+      "latestRawAt": "2026-06-17T19:09:00+00:00",
+      "latestRawAgeHours": 2.38,
+      "latestValidAt": "2026-06-17T19:09:00+00:00",
+      "latestValidAgeHours": 2.38,
       "visibleMain": {
         "count": 0,
         "latestAt": null,
@@ -1239,6 +1266,30 @@
       },
       "fetchErrors": [],
       "candidateSamples": [
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "Sky News World",
+          "publishedAt": "2026-06-17T22:09:00+03:00",
+          "title": "The 14-point US-Iran deal - what is in it?",
+          "url": "https://news.sky.com/story/the-14-point-us-iran-deal-what-is-in-it-13555121"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "Sky News World",
+          "publishedAt": "2026-06-17T21:08:00+03:00",
+          "title": "Trump says 'nobody' attacked Iranian girls' school 'on purpose'",
+          "url": "https://news.sky.com/story/donald-trump-says-nobody-attacked-iranian-girls-school-on-purpose-13555105"
+        },
+        {
+          "status": "relevance_filtered",
+          "reason": "not Israel/Middle-East enough",
+          "source": "Sky News World",
+          "publishedAt": "2026-06-17T17:32:00+03:00",
+          "title": "Killing of Russian artist who criticised Putin 'has hallmarks of political murder'",
+          "url": "https://news.sky.com/story/killing-of-russian-artist-has-hallmarks-of-political-murder-says-polish-pm-13555018"
+        },
         {
           "status": "relevance_filtered",
           "reason": "not Israel/Middle-East enough",
@@ -1278,30 +1329,6 @@
           "publishedAt": "2026-06-16T23:32:00+03:00",
           "title": "The US-Iran agreement: Breakthrough or bluff?",
           "url": "https://news.sky.com/story/the-us-iran-agreement-breakthrough-or-bluff-13554796"
-        },
-        {
-          "status": "relevance_filtered",
-          "reason": "not Israel/Middle-East enough",
-          "source": "Sky News World",
-          "publishedAt": "2026-06-16T20:27:00+03:00",
-          "title": "What we know about Russian warship that fired warning shots in English Channel",
-          "url": "https://news.sky.com/story/what-we-know-about-russian-warship-that-fired-warning-shots-in-english-channel-13554751"
-        },
-        {
-          "status": "relevance_filtered",
-          "reason": "not Israel/Middle-East enough",
-          "source": "Sky News World",
-          "publishedAt": "2026-06-16T18:34:00+03:00",
-          "title": "Russian artist who criticised Putin is shot dead",
-          "url": "https://news.sky.com/story/russian-artist-who-criticised-putin-shot-dead-near-home-in-poland-13554708"
-        },
-        {
-          "status": "relevance_filtered",
-          "reason": "not Israel/Middle-East enough",
-          "source": "Sky News World",
-          "publishedAt": "2026-06-16T02:01:00+03:00",
-          "title": "'First line of defence' has collapsed in biggest ever outbreak of rare Ebola strain",
-          "url": "https://news.sky.com/story/ebola-largest-ever-outbreak-of-rare-strain-likely-even-greater-and-the-first-line-of-defence-has-collapsed-13554337"
         }
       ]
     },
@@ -1317,38 +1344,44 @@
       ],
       "rawCandidateCount": 12,
       "validCandidateCount": 12,
-      "qaPassSimulationCount": 10,
-      "qaRejectedCount": 2,
+      "qaPassSimulationCount": 11,
+      "qaRejectedCount": 1,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T12:15:17+00:00",
-      "latestRawAgeHours": 1.5,
-      "latestValidAt": "2026-06-17T12:15:17+00:00",
-      "latestValidAgeHours": 1.5,
+      "latestRawAt": "2026-06-17T19:03:55+00:00",
+      "latestRawAgeHours": 2.46,
+      "latestValidAt": "2026-06-17T19:03:55+00:00",
+      "latestValidAgeHours": 2.46,
       "visibleMain": {
-        "count": 0,
-        "latestAt": null,
-        "latestAgeHours": null,
-        "sample": []
+        "count": 1,
+        "latestAt": "2026-06-17T21:00:28+00:00",
+        "latestAgeHours": 0.52,
+        "sample": [
+          {
+            "publishedAt": "2026-06-17T21:00:28+00:00",
+            "source": "ynet - כל ערוץ החדשות",
+            "headline": "קצב האש בלבנון ירד; בכירים בצה״ל מזהירים: ״אסור לצאת מרצועת הביטחון״"
+          }
+        ]
       },
       "visibleBreaking": {
         "count": 3,
-        "latestAt": "2026-06-17T11:31:58+00:00",
-        "latestAgeHours": 2.22,
+        "latestAt": "2026-06-17T19:24:04+00:00",
+        "latestAgeHours": 2.12,
         "sample": [
           {
-            "publishedAt": "2026-06-17T11:31:58+00:00",
+            "publishedAt": "2026-06-17T19:24:04+00:00",
             "source": "רוטר",
-            "headline": "תגובת נאור נרקיס על הפרסום כי שירת ״רק״ 7 שנים כקצין בצה״ל."
+            "headline": "מבזקן 12דקות בודדות לאחר שחיזבאללה שיגר רקטות לעבר כוחות צה''ל: חיל האוויר תקף את המשגר שהיה טעון ומוכן לשגר רקטות נוספות. צילום: דובר צה''ל"
           },
           {
-            "publishedAt": "2026-06-17T10:38:54+00:00",
-            "source": "ynet",
-            "headline": "מתווה צה\"ל לפיילוט הטנקיסטיות יתקיים במערך הגנת הגבולות"
+            "publishedAt": "2026-06-17T16:27:00+00:00",
+            "source": "וואלה",
+            "headline": "דובר צה\"ל: שוגר מיירט לעבר מטרה אווירית חשודה בדרום לבנון"
           },
           {
-            "publishedAt": "2026-06-17T10:04:47+00:00",
+            "publishedAt": "2026-06-17T16:14:02+00:00",
             "source": "ynet",
-            "headline": "צה\"ל: האזעקות בצפון - זיהוי שווא"
+            "headline": "צה\"ל: חוסלו בעזה שני מחבלים שפשטו לישראל ב-7 באוקטובר"
           }
         ]
       },
@@ -1358,65 +1391,65 @@
           "status": "qa_pass_simulation",
           "reason": "would be available for simulation queue",
           "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T22:03:55+03:00",
+          "title": "תוך דקות בודדות: צה\"ל השמיד את המשגר ממנו חיזבאללה שיגר רקטות לעבר כוחות צה\"ל",
+          "url": "https://t.me/idf_telegram/24381"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T20:04:10+03:00",
+          "title": "לפני זמן קצר, חיל האוויר יירט מספר רקטות ששוגרו לעבר כוחות צה\"ל הפועלים בדרום לבנון. מספר רקטות נוספות נפלו בסמוך לכוחות, אין נפגעים.",
+          "url": "https://t.me/idf_telegram/24380"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T20:01:31+03:00",
+          "title": "בתום הערכת המצב, מדיניות ההתגוננות של פיקוד העורף נותרת ללא שינוי ותהיה בתוקף עד יום שבת, 20 ביוני 2026, בשעה 21:00.",
+          "url": "https://t.me/idf_telegram/24379"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T19:24:22+03:00",
+          "title": "לפני זמן קצר, שוגר מיירט לעבר מטרה אווירית חשודה שזוהתה במרחב בו פועלים כוחות צה\"ל בדרום לבנון. האירוע הסתיים, אין נפגעים.",
+          "url": "https://t.me/idf_telegram/24378"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T19:13:12+03:00",
+          "title": "צה\"ל חיסל שני מחבלים מהזרוע הצבאית של חמאס שפשטו לשטח ישראל ב-7 באוקטובר",
+          "url": "https://t.me/idf_telegram/24377"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T17:55:27+03:00",
+          "title": "\"הופה, זה קר, מישהו היה פה לאחרונה\"",
+          "url": "https://t.me/idf_telegram/24376"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דובר צה״ל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T17:01:48+03:00",
+          "title": "מוקדם יותר היום (ד'), לוחם צה\"ל נפצע באורח קשה, שני לוחמי צה\"ל נפצעו באורח בינוני ושני לוחמי צה\"ל נוספים נפצעו באורח קל, כתוצאה מפגיעת רחפן נפץ בדרום לבנון.",
+          "url": "https://t.me/idf_telegram/24375"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דובר צה״ל - טלגרם רשמי",
           "publishedAt": "2026-06-17T15:15:17+03:00",
           "title": "דיון היערכות לפיילוט לבחינת שילוב נשים במערך השריון המתמרן התקיים אתמול (ג׳), בראשות ראש המטה הכללי, רב-אלוף אייל זמיר, ובהשתתפות מפקד זרוע היבשה, אלוף נדב לוטן, ראש אגף כוח האדם, ",
           "url": "https://t.me/idf_telegram/24374"
-        },
-        {
-          "status": "qa_pass_simulation",
-          "reason": "would be available for simulation queue",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-17T14:17:03+03:00",
-          "title": "להסרת איום: צה\"ל חיסל מחבל שלקח חלק בהחזקת חטופים רבים בשבי חמאס ומחבל שפשט לקיבוץ בארי ב-7 באוקטובר",
-          "url": "https://t.me/idf_telegram/24372"
-        },
-        {
-          "status": "qa_pass_simulation",
-          "reason": "would be available for simulation queue",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-17T13:03:08+03:00",
-          "title": "בהמשך להתרעות שהופעלו לפני זמן קצר על חדירת כלי טיס עוין במרחב זרעית, מדובר בזיהוי שווא.",
-          "url": "https://t.me/idf_telegram/24371"
-        },
-        {
-          "status": "qa_pass_simulation",
-          "reason": "would be available for simulation queue",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-17T12:54:13+03:00",
-          "title": "הופעלו התרעות על חדירת כלי טיס עוין במרחב זרעית, הפרטים בבדיקה.",
-          "url": "https://t.me/idf_telegram/24370"
-        },
-        {
-          "status": "qa_pass_simulation",
-          "reason": "would be available for simulation queue",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-16T19:08:44+03:00",
-          "title": "צה\"ל תקף את המשגר ממנו נורו רקטות לעבר כוחותינו בדרום לבנון",
-          "url": "https://t.me/idf_telegram/24369"
-        },
-        {
-          "status": "qa_pass_simulation",
-          "reason": "would be available for simulation queue",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-16T19:01:57+03:00",
-          "title": "בתום הערכת המצב, מדיניות ההתגוננות של פיקוד העורף נותרת ללא שינוי ותהיה בתוקף עד יום רביעי, 17 ביוני 2026, בשעה 20:00.",
-          "url": "https://t.me/idf_telegram/24368"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-16T12:53:34+03:00",
-          "title": "בזמן תפיסת הקו הראשונה באיו\"ש",
-          "url": "https://t.me/idf_telegram/24367"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "publishedAt": "2026-06-16T09:11:46+03:00",
-          "title": "טקס מצטייני הרמטכ\"ל לאזרחים עובדי צה\"ל",
-          "url": "https://t.me/idf_telegram/24366"
         }
       ]
     },
@@ -1435,40 +1468,80 @@
       "qaPassSimulationCount": 4,
       "qaRejectedCount": 8,
       "relevanceFilteredCount": 0,
-      "latestRawAt": "2026-06-17T12:59:33+00:00",
-      "latestRawAgeHours": 0.76,
-      "latestValidAt": "2026-06-17T12:59:33+00:00",
-      "latestValidAgeHours": 0.76,
+      "latestRawAt": "2026-06-17T18:23:54+00:00",
+      "latestRawAgeHours": 3.13,
+      "latestValidAt": "2026-06-17T18:23:54+00:00",
+      "latestValidAgeHours": 3.13,
       "visibleMain": {
-        "count": 0,
-        "latestAt": null,
-        "latestAgeHours": null,
-        "sample": []
-      },
-      "visibleBreaking": {
-        "count": 9,
-        "latestAt": "2026-06-17T13:10:58+00:00",
-        "latestAgeHours": 0.57,
+        "count": 3,
+        "latestAt": "2026-06-17T21:25:00+00:00",
+        "latestAgeHours": 0.11,
         "sample": [
           {
-            "publishedAt": "2026-06-17T13:10:58+00:00",
-            "source": "ynet",
-            "headline": "המשטרה תפסה דגלים של הרשות הפלסטינית בבי\"ס במזרח ירושלים, המנהלת עוכבה"
+            "publishedAt": "2026-06-17T21:25:00+00:00",
+            "source": "וואלה חדשות",
+            "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4"
           },
           {
-            "publishedAt": "2026-06-17T12:53:08+00:00",
-            "source": "ynet",
-            "headline": "המשטרה איתרה 800 אלף שקלים, אלפי דולרים ומטבעות זהב ברהט"
+            "publishedAt": "2026-06-17T17:57:03+00:00",
+            "source": "The Jerusalem Post - Israel News",
+            "headline": "המשטרה תחקור תלונות על אלימות שוטרים נגד מפגינים חרדים שחסמו את כביש 4"
           },
           {
-            "publishedAt": "2026-06-17T10:40:34+00:00",
+            "publishedAt": "2026-06-15T12:54:10+00:00",
+            "source": "TMI - ראשי",
+            "headline": "שחקן הסתובב עם נשק שלוף בתל אביב"
+          }
+        ]
+      },
+      "visibleBreaking": {
+        "count": 4,
+        "latestAt": "2026-06-17T20:01:39+00:00",
+        "latestAgeHours": 1.5,
+        "sample": [
+          {
+            "publishedAt": "2026-06-17T20:01:39+00:00",
+            "source": "ynet",
+            "headline": "המשטרה מבקשת עזרה באיתור הנעדר דאניו אדוניה (82) שנראה לאחרונה בבני ברק"
+          },
+          {
+            "publishedAt": "2026-06-17T18:18:35+00:00",
             "source": "רוטר",
-            "headline": "פרשת הדרכונים: במשטרה סבורים - יש תשתית ראייתית נגד השר אלי כהן"
+            "headline": "המשטרה על הפגנת החרדים בכביש 4: ''זו אינה מחאה - אלא אנרכיה''"
+          },
+          {
+            "publishedAt": "2026-06-17T18:18:30+00:00",
+            "source": "רוטר",
+            "headline": "׳כאן 11׳: המשטרה בפנייה חריגה לציבור: בדקו שמוצרים שאתם רוכשים לילדים - סגורים ואטומים."
           }
         ]
       },
       "fetchErrors": [],
       "candidateSamples": [
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "דוברות משטרת ישראל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T21:23:54+03:00",
+          "title": "מפכ\"ל המשטרה, רנ\"צ דני לוי: \"אם לאחר בחינת הסרטונים מהמחאה בצומת בני ברק, נלמד שמפקדים ושוטרים פעלו שלא על פי הנהלים, לא נחשוש לטפל בחומרה ולהשעות מפעילות מבצעית. היו מפקדים בכירים",
+          "url": "https://t.me/Israel_Police_100/3965"
+        },
+        {
+          "status": "qa_pass_simulation",
+          "reason": "would be available for simulation queue",
+          "source": "דוברות משטרת ישראל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T20:06:49+03:00",
+          "title": "משטרת ישראל רואה בחומרה רבה את התנהלותם של מפרי הסדר, אשר חסמו הבוקר את כביש 4 והחזיקו עשרות אלפי נהגים ואזרחים כבני ערובה בפקקי ענק, תוך פגיעה קשה בעורק תחבורה ראשי ושיבוש מוחלט ש",
+          "url": "https://t.me/Israel_Police_100/3964"
+        },
+        {
+          "status": "qa_rejected",
+          "reason": "needs editor bridge / quality rewrite",
+          "source": "דוברות משטרת ישראל - טלגרם רשמי",
+          "publishedAt": "2026-06-17T18:31:42+03:00",
+          "title": "משטרת ישראל פתחה בחקירה בעקבות דיווח שהתקבל על גבר שנפצע אנוש לפי החשד באירוע אלימות על רקע פלילי, ככל הנראה במסגרת סכסוך בין משפחות",
+          "url": "https://t.me/Israel_Police_100/3963"
+        },
         {
           "status": "qa_rejected",
           "reason": "needs editor bridge / quality rewrite",
@@ -1508,30 +1581,6 @@
           "publishedAt": "2026-06-17T13:18:48+03:00",
           "title": "במהלך הלילה נעצרו 74 שוהים בלתי חוקיים ושני חשודים בהלנתם, במסגרת פעילות רחבת היקף בשכונת בית צפאפא בירושלים",
           "url": "https://t.me/Israel_Police_100/3956"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "דוברות משטרת ישראל - טלגרם רשמי",
-          "publishedAt": "2026-06-17T11:36:53+03:00",
-          "title": "כוחות של יחידת גבול ירדן במחוז ש״י תפסו בגבול המזרחי כשישה ק״ג של חומרים החשודים כסמים מסוכנים, שהוסלקו בשק בתוך מעבר מים עתיק, ועפ\"י החשד היו מיועדים להברחה שסוכלה לשטחי ירדן. החק",
-          "url": "https://t.me/Israel_Police_100/3953"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "דוברות משטרת ישראל - טלגרם רשמי",
-          "publishedAt": "2026-06-17T11:13:40+03:00",
-          "title": "היחידה הארצית לחקירות הונאה (יאח\"ה) בלהב 433 סיימה את החקירה שהתנהלה בעניינו של שר החוץ לשעבר ח\"כ אלי כהן, ובעניינם של עובדי ציבור מהמשרד, בחשד לעבירות מתחום טוהר המידות.",
-          "url": "https://t.me/Israel_Police_100/3952"
-        },
-        {
-          "status": "qa_rejected",
-          "reason": "needs editor bridge / quality rewrite",
-          "source": "דוברות משטרת ישראל - טלגרם רשמי",
-          "publishedAt": "2026-06-17T11:05:33+03:00",
-          "title": "היחידה ללוחמה בפשיעה של מרחב גלעד חשפה רשת לסחר והפצת סמים מסוכנים באזור ירושלים ומעלה אדומים – בתום חקירה סמויה נעצרו שני חשודים, תושבי אזור ירושלים, ונתפסו סכומי כסף גבוהים לצד ס",
-          "url": "https://t.me/Israel_Police_100/3951"
         }
       ]
     }
