@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 215
+Items checked: 197
 Errors: 0
-Warnings: 45
+Warnings: 44
 
 ## Category distribution
 
-- רכילות: 59
-- ביטחון: 55
-- ספורט: 29
-- תרבות: 9
+- רכילות: 52
+- ביטחון: 50
+- ספורט: 28
 - פוליטיקה: 9
-- חדשות: 8
+- תרבות: 8
 - כלכלה: 8
 - פלילים: 7
+- חדשות: 7
 - צרכנות: 6
-- משפט: 6
-- דעות: 6
 - בריאות: 5
+- משפט: 5
+- דעות: 5
 - רכב: 3
 - טכנולוגיה: 2
-- אקטואליה בעולם: 2
+- אקטואליה בעולם: 1
 - נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 38
+- takeaway_long: 37
 - summary_long: 6
 - category_sport_source: 1
 
@@ -59,7 +59,7 @@ Warnings: 45
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15912529/tay-keith-dead-nashville-drake-travis-scott-producer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · category_sport_source · item 20
+### WARNING · category_sport_source · item 18
 - Sport source should usually be ספורט
 - Headline: `דאעש פרסם איום על אצטדיוני המונדיאל`
 - Original: `דאעש מאיים על האוהדים במונדיאל: "נצית את היציעים"`
@@ -338,10 +338,3 @@ Warnings: 45
 - Original: `גיא גלבוע דלאל תיאר את הפגיעה המינית בשבי: "יש לי שליחות. האו"ם עוצם עיניים"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/bk41lkbmzx
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 99 > 95
-- Headline: `יותר מ-1,000 נהרגו בעזה מאז הפסקת האש`
-- Original: `More than 1,000 killed in Israel attacks on Gaza since ceasefire`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/video/newsfeed/2026/6/18/more-than-1000-killed-in-israel-attacks-on-gaza-since-ceasefire?traffic_source=rss
