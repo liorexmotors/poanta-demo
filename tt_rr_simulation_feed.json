@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-18T02:08:46+00:00",
+  "generatedAt": "2026-06-18T02:52:11+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
   "itemCount": 165,
   "simulationPoolWindow": {
@@ -14,14 +14,14 @@
     "coreHardTop10": 4,
     "softTop10": 6,
     "otherTop10": 0,
-    "top5Under60": 5,
-    "top10Under60": 10,
-    "top12Under60": 10,
-    "topItemAgeMinutes": 18,
+    "top5Under60": 0,
+    "top10Under60": 0,
+    "top12Under60": 0,
+    "topItemAgeMinutes": 61,
     "uniqueSourcesTop20": 8,
     "dominantSource": {
       "name": "וואלה",
-      "count": 7
+      "count": 5
     },
     "importantMissingTop20": [
       "N12",
@@ -32,21 +32,21 @@
       "NYT",
       "גלובס"
     ],
-    "duplicateTop20": 2,
+    "duplicateTop20": 1,
     "storyClusterTop20Max": 2,
     "eventClusterTop20Max": 2,
     "topSources": [
       {
         "name": "וואלה",
-        "count": 7
+        "count": 5
+      },
+      {
+        "name": "Daily Mail",
+        "count": 5
       },
       {
         "name": "Jerusalem Post",
         "count": 4
-      },
-      {
-        "name": "Daily Mail",
-        "count": 3
       },
       {
         "name": "ישראל היום",
@@ -70,41 +70,31 @@
       }
     ],
     "trendMatchedTop10": 1,
-    "trendMatchedTop20": 4,
+    "trendMatchedTop20": 3,
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 76,
-      "readyCount": 5,
-      "hardReadyCount": 5,
-      "hardReadyStrictCount": 5,
+      "score": 59,
+      "readyCount": 4,
+      "hardReadyCount": 4,
+      "hardReadyStrictCount": 4,
       "trendReadyCount": 1,
-      "cleanReadyCount": 5,
-      "cleanHardReadyCount": 5,
+      "cleanReadyCount": 4,
+      "cleanHardReadyCount": 4,
       "cleanTrendReadyCount": 0,
       "uniqueReadySources": 3,
       "uniqueCleanReadySources": 3,
-      "freshReadyUnder25Count": 2,
-      "cleanFreshReadyUnder25Count": 2,
+      "freshReadyUnder25Count": 0,
+      "cleanFreshReadyUnder25Count": 0,
       "blockers": [
         "ready_queue_below_6",
-        "clean_ready_queue_below_6"
+        "clean_ready_queue_below_6",
+        "ready_fresh_under25_below_1",
+        "clean_ready_fresh_under25_below_1",
+        "top_item_over_25m"
       ],
       "readyQueue": [
-        {
-          "rank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
         {
           "rank": 6,
           "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
@@ -113,7 +103,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
+          "ageMinutes": 82,
           "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
           "trendMatch": {
             "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
@@ -144,7 +134,20 @@
             "score": 46.88,
             "boost": 14.0
           },
-          "queueScore": 36.0
+          "queueScore": 33.0
+        },
+        {
+          "rank": 1,
+          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 61,
+          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
+          "trendMatch": null,
+          "queueScore": 23.0
         },
         {
           "rank": 2,
@@ -154,10 +157,10 @@
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 67,
           "url": "https://news.walla.co.il/item/3846627",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 23.0
         },
         {
           "rank": 5,
@@ -167,40 +170,14 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 80,
           "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 11,
-          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
-          "source": "וואלה חדשות - חדשות בארץ",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 76,
-          "url": "https://news.walla.co.il/item/3846630",
           "trendMatch": null,
           "queueScore": 23.0
         }
       ],
       "cleanReadyQueue": [
         {
-          "rank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
           "rank": 6,
           "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
           "source": "BBC World",
@@ -208,7 +185,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
+          "ageMinutes": 82,
           "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
           "trendMatch": {
             "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
@@ -239,7 +216,20 @@
             "score": 46.88,
             "boost": 14.0
           },
-          "queueScore": 36.0
+          "queueScore": 33.0
+        },
+        {
+          "rank": 1,
+          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 61,
+          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
+          "trendMatch": null,
+          "queueScore": 23.0
         },
         {
           "rank": 2,
@@ -249,10 +239,10 @@
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 67,
           "url": "https://news.walla.co.il/item/3846627",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 23.0
         },
         {
           "rank": 5,
@@ -262,21 +252,8 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 80,
           "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 11,
-          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
-          "source": "וואלה חדשות - חדשות בארץ",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 76,
-          "url": "https://news.walla.co.il/item/3846630",
           "trendMatch": null,
           "queueScore": 23.0
         }
@@ -284,372 +261,33 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 10,
-      "worthyFreshUnder60Count": 4,
-      "coreHardFreshUnder60Count": 4,
-      "softFreshUnder60Count": 6,
+      "freshUnder60Count": 0,
+      "worthyFreshUnder60Count": 0,
+      "coreHardFreshUnder60Count": 0,
+      "softFreshUnder60Count": 0,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 6,
-      "worthyUniqueSources": 3,
-      "freshSources": [
-        {
-          "name": "וואלה",
-          "count": 3
-        },
-        {
-          "name": "Daily Mail",
-          "count": 3
-        },
-        {
-          "name": "Jerusalem Post",
-          "count": 1
-        },
-        {
-          "name": "BBC",
-          "count": 1
-        },
-        {
-          "name": "Mirror",
-          "count": 1
-        },
-        {
-          "name": "ישראל היום",
-          "count": 1
-        }
-      ],
-      "worthySources": [
-        {
-          "name": "וואלה",
-          "count": 2
-        },
-        {
-          "name": "Jerusalem Post",
-          "count": 1
-        },
-        {
-          "name": "BBC",
-          "count": 1
-        }
-      ],
-      "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 9,
-        "quality_class_soft": 6
-      },
-      "staleOrUndatedCount": 70,
+      "freshUniqueSources": 0,
+      "worthyUniqueSources": 0,
+      "freshSources": [],
+      "worthySources": [],
+      "disqualifiedFreshCounts": {},
+      "staleOrUndatedCount": 80,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
-      "topFreshCandidates": [
-        {
-          "beforeRank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
-          "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "פלילים",
-          "class": "hard",
-          "ageMinutes": 23,
-          "url": "https://news.walla.co.il/item/3846627",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 3,
-          "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 34,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 4,
-          "headline": "ג׳קי O לא תפשר עם ARN: תמשיך לתבוע גם אחרי פשרת סנדילנדס",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 35,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-          "source": "BBC World",
-          "canonicalSource": "BBC",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 39,
-          "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-          "trendMatch": {
-            "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-            "clusterKey": "ארה לאיראן",
-            "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 3,
-            "sources": [
-              "דה מרקר",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-17T20:00:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846583",
-            "overlapTokens": [
-              "האורניום",
-              "ההסכם",
-              "לאיראן",
-              "לשיקום"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [],
-            "score": 46.88,
-            "boost": 14.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 7,
-          "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
-          "class": "soft",
-          "ageMinutes": 39,
-          "url": "https://sports.walla.co.il/item/3846625",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "מתה בגיל 77 אשתו של לו פריניו, כוכב האלמנה הירוקה המקורי",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 40,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "בעלה של קייטי פרייס עלול לחזור לכלא בדובאי בעוד 14 יום",
-          "source": "Mirror Celebs רכילות חו״ל",
-          "canonicalSource": "Mirror",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 57,
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "אקס מכבי תל אביב מוסקרה הצליח לשמור על שער נקי 95 דקות",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ספורט",
-          "class": "soft",
-          "ageMinutes": 60,
-          "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        }
-      ],
-      "topWorthyFreshCandidates": [
-        {
-          "beforeRank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
-          "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "פלילים",
-          "class": "hard",
-          "ageMinutes": 23,
-          "url": "https://news.walla.co.il/item/3846627",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-          "source": "BBC World",
-          "canonicalSource": "BBC",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 39,
-          "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-          "trendMatch": {
-            "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-            "clusterKey": "ארה לאיראן",
-            "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 3,
-            "sources": [
-              "דה מרקר",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-17T20:00:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846583",
-            "overlapTokens": [
-              "האורניום",
-              "ההסכם",
-              "לאיראן",
-              "לשיקום"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [],
-            "score": 46.88,
-            "boost": 14.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        }
-      ]
+      "topFreshCandidates": [],
+      "topWorthyFreshCandidates": []
     }
   },
   "after": {
-    "newsinessTop10": 10,
-    "coreHardTop10": 10,
-    "softTop10": 0,
+    "newsinessTop10": 9,
+    "coreHardTop10": 9,
+    "softTop10": 1,
     "otherTop10": 0,
-    "top5Under60": 4,
-    "top10Under60": 4,
-    "top12Under60": 6,
-    "topItemAgeMinutes": 18,
+    "top5Under60": 0,
+    "top10Under60": 0,
+    "top12Under60": 0,
+    "topItemAgeMinutes": 61,
     "uniqueSourcesTop20": 9,
     "dominantSource": {
       "name": "Jerusalem Post",
@@ -700,51 +338,41 @@
         "count": 1
       }
     ],
-    "trendMatchedTop10": 4,
-    "trendMatchedTop20": 4,
+    "trendMatchedTop10": 3,
+    "trendMatchedTop20": 3,
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 76,
-      "readyCount": 5,
-      "hardReadyCount": 5,
-      "hardReadyStrictCount": 5,
+      "score": 59,
+      "readyCount": 4,
+      "hardReadyCount": 4,
+      "hardReadyStrictCount": 4,
       "trendReadyCount": 1,
-      "cleanReadyCount": 5,
-      "cleanHardReadyCount": 5,
+      "cleanReadyCount": 4,
+      "cleanHardReadyCount": 4,
       "cleanTrendReadyCount": 0,
       "uniqueReadySources": 3,
       "uniqueCleanReadySources": 3,
-      "freshReadyUnder25Count": 2,
-      "cleanFreshReadyUnder25Count": 2,
+      "freshReadyUnder25Count": 0,
+      "cleanFreshReadyUnder25Count": 0,
       "blockers": [
         "ready_queue_below_6",
-        "clean_ready_queue_below_6"
+        "clean_ready_queue_below_6",
+        "ready_fresh_under25_below_1",
+        "clean_ready_fresh_under25_below_1",
+        "top_item_over_25m"
       ],
       "readyQueue": [
         {
-          "rank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 2,
+          "rank": 3,
           "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
           "source": "BBC World",
           "canonicalSource": "BBC",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
+          "ageMinutes": 82,
           "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
           "trendMatch": {
             "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
@@ -775,20 +403,33 @@
             "score": 46.88,
             "boost": 14.0
           },
-          "queueScore": 36.0
+          "queueScore": 33.0
         },
         {
-          "rank": 3,
+          "rank": 1,
+          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 61,
+          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 2,
           "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 67,
           "url": "https://news.walla.co.il/item/3846627",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 23.0
         },
         {
           "rank": 4,
@@ -798,48 +439,22 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 80,
           "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 6,
-          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
-          "source": "וואלה חדשות - חדשות בארץ",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 76,
-          "url": "https://news.walla.co.il/item/3846630",
           "trendMatch": null,
           "queueScore": 23.0
         }
       ],
       "cleanReadyQueue": [
         {
-          "rank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 2,
+          "rank": 3,
           "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
           "source": "BBC World",
           "canonicalSource": "BBC",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
+          "ageMinutes": 82,
           "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
           "trendMatch": {
             "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
@@ -870,20 +485,33 @@
             "score": 46.88,
             "boost": 14.0
           },
-          "queueScore": 36.0
+          "queueScore": 33.0
         },
         {
-          "rank": 3,
+          "rank": 1,
+          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 61,
+          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 2,
           "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 67,
           "url": "https://news.walla.co.il/item/3846627",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 23.0
         },
         {
           "rank": 4,
@@ -893,21 +521,8 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 80,
           "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 6,
-          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
-          "source": "וואלה חדשות - חדשות בארץ",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 76,
-          "url": "https://news.walla.co.il/item/3846630",
           "trendMatch": null,
           "queueScore": 23.0
         }
@@ -915,377 +530,39 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 10,
-      "worthyFreshUnder60Count": 4,
-      "coreHardFreshUnder60Count": 4,
-      "softFreshUnder60Count": 6,
+      "freshUnder60Count": 0,
+      "worthyFreshUnder60Count": 0,
+      "coreHardFreshUnder60Count": 0,
+      "softFreshUnder60Count": 0,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 6,
-      "worthyUniqueSources": 3,
-      "freshSources": [
-        {
-          "name": "וואלה",
-          "count": 3
-        },
-        {
-          "name": "Daily Mail",
-          "count": 3
-        },
-        {
-          "name": "Jerusalem Post",
-          "count": 1
-        },
-        {
-          "name": "BBC",
-          "count": 1
-        },
-        {
-          "name": "Mirror",
-          "count": 1
-        },
-        {
-          "name": "ישראל היום",
-          "count": 1
-        }
-      ],
-      "worthySources": [
-        {
-          "name": "וואלה",
-          "count": 2
-        },
-        {
-          "name": "Jerusalem Post",
-          "count": 1
-        },
-        {
-          "name": "BBC",
-          "count": 1
-        }
-      ],
-      "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 9,
-        "quality_class_soft": 6
-      },
-      "staleOrUndatedCount": 70,
+      "freshUniqueSources": 0,
+      "worthyUniqueSources": 0,
+      "freshSources": [],
+      "worthySources": [],
+      "disqualifiedFreshCounts": {},
+      "staleOrUndatedCount": 80,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
-      "topFreshCandidates": [
-        {
-          "beforeRank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
-          "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "פלילים",
-          "class": "hard",
-          "ageMinutes": 23,
-          "url": "https://news.walla.co.il/item/3846627",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 3,
-          "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 34,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 4,
-          "headline": "ג׳קי O לא תפשר עם ARN: תמשיך לתבוע גם אחרי פשרת סנדילנדס",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 35,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-          "source": "BBC World",
-          "canonicalSource": "BBC",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 39,
-          "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-          "trendMatch": {
-            "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-            "clusterKey": "ארה לאיראן",
-            "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 3,
-            "sources": [
-              "דה מרקר",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-17T20:00:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846583",
-            "overlapTokens": [
-              "האורניום",
-              "ההסכם",
-              "לאיראן",
-              "לשיקום"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [],
-            "score": 46.88,
-            "boost": 14.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 7,
-          "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
-          "class": "soft",
-          "ageMinutes": 39,
-          "url": "https://sports.walla.co.il/item/3846625",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "מתה בגיל 77 אשתו של לו פריניו, כוכב האלמנה הירוקה המקורי",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 40,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "בעלה של קייטי פרייס עלול לחזור לכלא בדובאי בעוד 14 יום",
-          "source": "Mirror Celebs רכילות חו״ל",
-          "canonicalSource": "Mirror",
-          "category": "רכילות",
-          "class": "soft",
-          "ageMinutes": 57,
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "אקס מכבי תל אביב מוסקרה הצליח לשמור על שער נקי 95 דקות",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ספורט",
-          "class": "soft",
-          "ageMinutes": 60,
-          "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        }
-      ],
-      "topWorthyFreshCandidates": [
-        {
-          "beforeRank": 1,
-          "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 18,
-          "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
-          "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "פלילים",
-          "class": "hard",
-          "ageMinutes": 23,
-          "url": "https://news.walla.co.il/item/3846627",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://news.walla.co.il/item/3846626",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-          "source": "BBC World",
-          "canonicalSource": "BBC",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 39,
-          "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-          "trendMatch": {
-            "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-            "clusterKey": "ארה לאיראן",
-            "domain": "חדשות",
-            "externalMentions": 4,
-            "sourceCount": 3,
-            "sources": [
-              "דה מרקר",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-17T20:00:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846583",
-            "overlapTokens": [
-              "האורניום",
-              "ההסכם",
-              "לאיראן",
-              "לשיקום"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [],
-            "score": 46.88,
-            "boost": 14.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        }
-      ]
+      "topFreshCandidates": [],
+      "topWorthyFreshCandidates": []
     }
   },
-  "beforeHealthScore": 52,
-  "afterHealthScore": 82,
+  "beforeHealthScore": 34,
+  "afterHealthScore": 66,
   "replacementReadiness": {
-    "score": 78,
+    "score": 56,
     "threshold": 80,
     "components": {
-      "freshness": 15.8,
+      "freshness": 0.0,
       "newsinessTop10": 25.0,
       "top20Quality": 13.2,
       "sourceBalance": 10.0,
-      "trendSignalUse": 8.67,
-      "criticalBlockersClear": 5.0
+      "trendSignalUse": 8.0,
+      "criticalBlockersClear": 0.0
     },
     "criticalBlockers": [
+      "top_item_stale_over_25m",
       "top12_under60_below_9",
       "fresh_candidate_supply_below_9"
     ],
@@ -1330,730 +607,52 @@
     "title": "TT RR Simulation Review — 2026-06-16 11:17"
   },
   "delta": {
-    "newsinessTop10": 6,
-    "coreHardTop10": 6,
-    "softTop10": -6,
-    "top12Under60": -4,
+    "newsinessTop10": 5,
+    "coreHardTop10": 5,
+    "softTop10": -5,
+    "top12Under60": 0,
     "uniqueSourcesTop20": 1,
-    "trendMatchedTop10": 3,
+    "trendMatchedTop10": 2,
     "trendMatchedTop20": 0,
-    "healthScore": 30
+    "healthScore": 32
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 10,
-    "worthyFreshUnder60Count": 4,
-    "coreHardFreshUnder60Count": 4,
-    "softFreshUnder60Count": 6,
+    "freshUnder60Count": 0,
+    "worthyFreshUnder60Count": 0,
+    "coreHardFreshUnder60Count": 0,
+    "softFreshUnder60Count": 0,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 6,
-    "worthyUniqueSources": 3,
-    "freshSources": [
-      {
-        "name": "וואלה",
-        "count": 3
-      },
-      {
-        "name": "Daily Mail",
-        "count": 3
-      },
-      {
-        "name": "Jerusalem Post",
-        "count": 1
-      },
-      {
-        "name": "BBC",
-        "count": 1
-      },
-      {
-        "name": "Mirror",
-        "count": 1
-      },
-      {
-        "name": "ישראל היום",
-        "count": 1
-      }
-    ],
-    "worthySources": [
-      {
-        "name": "וואלה",
-        "count": 2
-      },
-      {
-        "name": "Jerusalem Post",
-        "count": 1
-      },
-      {
-        "name": "BBC",
-        "count": 1
-      }
-    ],
-    "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 9,
-      "quality_class_soft": 6
-    },
-    "staleOrUndatedCount": 70,
+    "freshUniqueSources": 0,
+    "worthyUniqueSources": 0,
+    "freshSources": [],
+    "worthySources": [],
+    "disqualifiedFreshCounts": {},
+    "staleOrUndatedCount": 80,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
-    "topFreshCandidates": [
-      {
-        "beforeRank": 1,
-        "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-        "source": "The Jerusalem Post - Israel News",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 18,
-        "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 2,
-        "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "פלילים",
-        "class": "hard",
-        "ageMinutes": 23,
-        "url": "https://news.walla.co.il/item/3846627",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 3,
-        "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 34,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 4,
-        "headline": "ג׳קי O לא תפשר עם ARN: תמשיך לתבוע גם אחרי פשרת סנדילנדס",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 35,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://news.walla.co.il/item/3846626",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 39,
-        "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-        "trendMatch": {
-          "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-          "clusterKey": "ארה לאיראן",
-          "domain": "חדשות",
-          "externalMentions": 4,
-          "sourceCount": 3,
-          "sources": [
-            "דה מרקר",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-17T20:00:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846583",
-          "overlapTokens": [
-            "האורניום",
-            "ההסכם",
-            "לאיראן",
-            "לשיקום"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [],
-          "score": 46.88,
-          "boost": 14.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 7,
-        "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 39,
-        "url": "https://sports.walla.co.il/item/3846625",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "מתה בגיל 77 אשתו של לו פריניו, כוכב האלמנה הירוקה המקורי",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 40,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "בעלה של קייטי פרייס עלול לחזור לכלא בדובאי בעוד 14 יום",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 57,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "אקס מכבי תל אביב מוסקרה הצליח לשמור על שער נקי 95 דקות",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 60,
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      }
-    ],
-    "topWorthyFreshCandidates": [
-      {
-        "beforeRank": 1,
-        "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-        "source": "The Jerusalem Post - Israel News",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 18,
-        "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 2,
-        "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "פלילים",
-        "class": "hard",
-        "ageMinutes": 23,
-        "url": "https://news.walla.co.il/item/3846627",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://news.walla.co.il/item/3846626",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 39,
-        "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-        "trendMatch": {
-          "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-          "clusterKey": "ארה לאיראן",
-          "domain": "חדשות",
-          "externalMentions": 4,
-          "sourceCount": 3,
-          "sources": [
-            "דה מרקר",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-17T20:00:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846583",
-          "overlapTokens": [
-            "האורניום",
-            "ההסכם",
-            "לאיראן",
-            "לשיקום"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [],
-          "score": 46.88,
-          "boost": 14.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      }
-    ]
+    "topFreshCandidates": [],
+    "topWorthyFreshCandidates": []
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 10,
-    "worthyFreshUnder60Count": 4,
-    "coreHardFreshUnder60Count": 4,
-    "softFreshUnder60Count": 6,
+    "freshUnder60Count": 0,
+    "worthyFreshUnder60Count": 0,
+    "coreHardFreshUnder60Count": 0,
+    "softFreshUnder60Count": 0,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 6,
-    "worthyUniqueSources": 3,
-    "freshSources": [
-      {
-        "name": "וואלה",
-        "count": 3
-      },
-      {
-        "name": "Daily Mail",
-        "count": 3
-      },
-      {
-        "name": "Jerusalem Post",
-        "count": 1
-      },
-      {
-        "name": "BBC",
-        "count": 1
-      },
-      {
-        "name": "Mirror",
-        "count": 1
-      },
-      {
-        "name": "ישראל היום",
-        "count": 1
-      }
-    ],
-    "worthySources": [
-      {
-        "name": "וואלה",
-        "count": 2
-      },
-      {
-        "name": "Jerusalem Post",
-        "count": 1
-      },
-      {
-        "name": "BBC",
-        "count": 1
-      }
-    ],
-    "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 9,
-      "quality_class_soft": 6
-    },
-    "staleOrUndatedCount": 70,
+    "freshUniqueSources": 0,
+    "worthyUniqueSources": 0,
+    "freshSources": [],
+    "worthySources": [],
+    "disqualifiedFreshCounts": {},
+    "staleOrUndatedCount": 80,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
-    "topFreshCandidates": [
-      {
-        "beforeRank": 1,
-        "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-        "source": "The Jerusalem Post - Israel News",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 18,
-        "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 2,
-        "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "פלילים",
-        "class": "hard",
-        "ageMinutes": 23,
-        "url": "https://news.walla.co.il/item/3846627",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 3,
-        "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 34,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 4,
-        "headline": "ג׳קי O לא תפשר עם ARN: תמשיך לתבוע גם אחרי פשרת סנדילנדס",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 35,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://news.walla.co.il/item/3846626",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 39,
-        "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-        "trendMatch": {
-          "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-          "clusterKey": "ארה לאיראן",
-          "domain": "חדשות",
-          "externalMentions": 4,
-          "sourceCount": 3,
-          "sources": [
-            "דה מרקר",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-17T20:00:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846583",
-          "overlapTokens": [
-            "האורניום",
-            "ההסכם",
-            "לאיראן",
-            "לשיקום"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [],
-          "score": 46.88,
-          "boost": 14.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 7,
-        "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 39,
-        "url": "https://sports.walla.co.il/item/3846625",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "מתה בגיל 77 אשתו של לו פריניו, כוכב האלמנה הירוקה המקורי",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 40,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "בעלה של קייטי פרייס עלול לחזור לכלא בדובאי בעוד 14 יום",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "ageMinutes": 57,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "אקס מכבי תל אביב מוסקרה הצליח לשמור על שער נקי 95 דקות",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 60,
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      }
-    ],
-    "topWorthyFreshCandidates": [
-      {
-        "beforeRank": 1,
-        "headline": "ישראל החרימה רכוש בדואי ששימש להברחת רחפנים לעזה",
-        "source": "The Jerusalem Post - Israel News",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 18,
-        "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 2,
-        "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "פלילים",
-        "class": "hard",
-        "ageMinutes": 23,
-        "url": "https://news.walla.co.il/item/3846627",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://news.walla.co.il/item/3846626",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 39,
-        "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
-        "trendMatch": {
-          "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
-          "clusterKey": "ארה לאיראן",
-          "domain": "חדשות",
-          "externalMentions": 4,
-          "sourceCount": 3,
-          "sources": [
-            "דה מרקר",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-17T20:00:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846583",
-          "overlapTokens": [
-            "האורניום",
-            "ההסכם",
-            "לאיראן",
-            "לשיקום"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [],
-          "score": 46.88,
-          "boost": 14.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      }
-    ]
+    "topFreshCandidates": [],
+    "topWorthyFreshCandidates": []
   },
   "rawSourceBridge": {
     "status": "ok",
@@ -2075,9 +674,9 @@
         "id": "ynet",
         "label": "ynet חדשות",
         "configuredSourceCount": 24,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 6,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 6,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2111,18 +710,18 @@
         "id": "globes",
         "label": "גלובס",
         "configuredSourceCount": 9,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 7,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 7,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "bbc",
         "label": "BBC",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 2,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 2,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2147,9 +746,9 @@
         "id": "israel_hayom",
         "label": "ישראל היום",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 2,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 2,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2183,9 +782,9 @@
         "id": "inn",
         "label": "ערוץ 7 / INN",
         "configuredSourceCount": 2,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 4,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 4,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2200,6 +799,86 @@
     ],
     "accepted": [],
     "rejectedSample": [
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "headline": "גבר נורה למוות ברכב בקלנסווה, אשתו במצב אנוש",
+        "ageMinutes": 9,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.ynet.co.il/news/article/sjpeqaxzgl"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "headline": "התחזית: ירידה קלה בטמפרטורות",
+        "ageMinutes": 26,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.ynet.co.il/news/article/vm9rmluu0"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - מבזקי החדשות",
+        "canonicalSource": "ynet",
+        "headline": "גבר נורה למוות ברכב בקלנסווה, אשתו במצב אנוש",
+        "ageMinutes": 17,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source",
+          "summary_generic_or_mediated"
+        ],
+        "url": "https://www.ynet.co.il/news/article/r1xeb0gfmg"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - מבזקי החדשות",
+        "canonicalSource": "ynet",
+        "headline": "תחזית מזג האוויר: ירידה קלה בטמפרטורות",
+        "ageMinutes": 35,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source",
+          "summary_generic_or_mediated"
+        ],
+        "url": "https://www.ynet.co.il/news/article/hk8y4alfgg"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - כל ערוץ הספורט",
+        "canonicalSource": "ynet",
+        "headline": "דקה 44: אוזבקיסטן - קולומביה 1:0",
+        "ageMinutes": 50,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://livegame.ynet.co.il/games/525712"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - כל ערוץ ההורים",
+        "canonicalSource": "ynet",
+        "headline": "\"אין ברירה, כדי להיות אלוף צריך להשקיע\"",
+        "ageMinutes": 14,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.ynet.co.il/parents/article/b1d3ukxgme"
+      },
       {
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
@@ -2219,8 +898,22 @@
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
-        "headline": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "headline": "דיווח ברוסיה: הרוג ושני פצועים במתקפת כטב\"מים ברוסטוב",
         "ageMinutes": 0,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source",
+          "summary_generic_or_mediated"
+        ],
+        "url": "https://news.walla.co.il/break/3846637"
+      },
+      {
+        "sourceGroup": "וואלה חדשות",
+        "source": "וואלה חדשות - מבזקים",
+        "canonicalSource": "וואלה",
+        "headline": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "ageMinutes": 12,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2230,24 +923,106 @@
         "url": "https://news.walla.co.il/break/3846633"
       },
       {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות - מבזקים",
-        "canonicalSource": "וואלה",
-        "headline": "13 בני אדם נפגעו באורח בינוני וקל בשריפה בבניין מגורים בנתניה",
-        "ageMinutes": 45,
+        "sourceGroup": "גלובס",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "headline": "זינוק של 500% בשנה: טאואר עוקפת בשווי את הבנקים שהצילו אותה מקריסה",
+        "ageMinutes": 5,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546208#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "headline": "המניה קפצה 500% וסידרה לפרקליט הצמרת אקזיט של 200 מיליון שקל",
+        "ageMinutes": 5,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_copies_source"
         ],
-        "url": "https://news.walla.co.il/break/3846628"
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546102#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "headline": "הקרן שהניבה 266% בשלוש שנים, ואיזה סיכון אורב למוצר ההשקעה שהפך ללהיט",
+        "ageMinutes": 7,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546099#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "headline": "תוכנית המגירה של האוצר לתקציב הבא נחשפת: סוכני הביטוח וקרנות ההשתלמות במוקד הגזרות",
+        "ageMinutes": 12,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546256#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "headline": "ארה\"ב ואיראן חתמו על מזכר הבנות לסיום המלחמה",
+        "ageMinutes": 13,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546273#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - גלובלי ושוקי עולם",
+        "canonicalSource": "גלובס",
+        "headline": "קוואלקום מנסה להמציא את עצמה מחדש. האם השוק סוף סוף מזהה הזדמנות במניה",
+        "ageMinutes": 2,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546212#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - גלובלי ושוקי עולם",
+        "canonicalSource": "גלובס",
+        "headline": "המדינה האירופית שמאמנת את הצבא הלבנוני לפנות מוקשים",
+        "ageMinutes": 10,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546033#utm_source=RSS"
       },
       {
         "sourceGroup": "BBC",
         "source": "BBC World",
         "canonicalSource": "BBC",
         "headline": "Moment Trump signs US-Iran agreement at Palace of Versailles",
-        "ageMinutes": 9,
+        "ageMinutes": 52,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2258,26 +1033,25 @@
         "url": "https://www.bbc.com/news/videos/crm03y1xx2no?at_medium=RSS&at_campaign=rss"
       },
       {
-        "sourceGroup": "BBC",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "headline": "What's in the US-Iran agreement that's now in effect",
-        "ageMinutes": 40,
+        "sourceGroup": "ישראל היום",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "headline": "מחפש נקמה? טיאגו ספליטר עקץ: \"רוצה להשאיר את פורטלנד מאחור\"",
+        "ageMinutes": 28,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_copies_source",
-          "foreign_latin_leak",
-          "foreign_latin_leak"
+          "headline_looks_cut",
+          "headline_copies_source"
         ],
-        "url": "https://www.bbc.com/news/articles/cvgmqzr6p9mo?at_medium=RSS&at_campaign=rss"
+        "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20787731"
       },
       {
         "sourceGroup": "ישראל היום",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "headline": "חי מהמונדיאל: אוזבקיסטן - קולומביה 0:0",
-        "ageMinutes": 16,
+        "ageMinutes": 59,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2289,36 +1063,36 @@
         "sourceGroup": "NYT",
         "source": "New York Times Middle East",
         "canonicalSource": "NYT",
-        "headline": "Trump Defends Deal to End the War With Iran as Details Emerge",
-        "ageMinutes": 20,
+        "headline": "Allowing Iran to Charge Fees in Strait of Hormuz Would Set ‘Dangerous Precedent,’ Maersk CEO Says",
+        "ageMinutes": 14,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
           "headline_copies_source"
         ],
-        "url": "https://www.nytimes.com/2026/06/17/world/middleeast/trump-iran-deal-obama.html"
+        "url": "https://www.nytimes.com/2026/06/17/business/maersk-strait-hormuz-shipping-fees-iran-war.html"
       },
       {
         "sourceGroup": "NYT",
         "source": "New York Times Middle East",
         "canonicalSource": "NYT",
-        "headline": "Before Making a Deal, Trump Demanded Iran’s Surrender. He Got a Surprise.",
-        "ageMinutes": 47,
+        "headline": "How Does Trump’s Deal With Iran Compare to Obama’s?",
+        "ageMinutes": 36,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_too_long",
+          "headline_source_style",
           "headline_copies_source"
         ],
-        "url": "https://www.nytimes.com/2026/06/17/us/politics/trump-iran-deal-nuclear-program-strait.html"
+        "url": "https://www.nytimes.com/2026/06/17/world/middleeast/trump-obama-iran-deals.html"
       },
       {
         "sourceGroup": "Jerusalem Post",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "headline": "Israel Electric reveals telegrams showing Tel Aviv power station's role in British political battle",
-        "ageMinutes": 0,
+        "ageMinutes": 6,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2329,24 +1103,64 @@
       },
       {
         "sourceGroup": "ערוץ 7 / INN",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "הסנאטור לינדזי גראהם הודיע על תמיכה במזכר ההבנות עם איראן",
+        "ageMinutes": 20,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.inn.co.il/flashes/1118436"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "אוקראינה: מתקפת טילים על קייב, אזעקות הופעלו ברחבי המדינה",
+        "ageMinutes": 53,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.inn.co.il/flashes/1118435"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
-        "headline": "Nikki Haley slams US-Iran pact: A huge mistake to pay to rebuild the threat",
-        "ageMinutes": 59,
+        "headline": "Change of heart: Lindsey Graham supports US-Iran MOU after meeting Witkoff",
+        "ageMinutes": 36,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
           "headline_copies_source"
         ],
-        "url": "https://www.israelnationalnews.com/flashes/688003"
+        "url": "https://www.israelnationalnews.com/flashes/688005"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "Israel National News English",
+        "canonicalSource": "Israel National News English",
+        "headline": "Pakistan PM outlines immediate Hormuz reopening under new US-Iran pact",
+        "ageMinutes": 58,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.israelnationalnews.com/flashes/688004"
       }
     ],
     "dedupe": [],
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 10.52,
+      "elapsedSeconds": 8.01,
       "skippedForBudget": 0
     }
   },
@@ -2427,17 +1241,18 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 24.92,
-    "avgAfterHealthScore": 73.17,
+    "avgHealthDelta": 26.58,
+    "avgAfterHealthScore": 71.67,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 78,
-      "rollingScore": 64.58,
+      "latestScore": 56,
+      "rollingScore": 64.96,
       "readyRuns": 0,
       "criticalBlockers": [
+        "top_item_stale_over_25m",
         "top12_under60_below_9",
         "fresh_candidate_supply_below_9"
       ],
@@ -2455,10 +1270,10 @@
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-18T05:08:46+03:00",
+    "generatedAt": "2026-06-18T05:52:11+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 94,
+    "rssItemsScanned": 97,
     "webItemsScanned": 179,
     "topTrends": [
       {
@@ -2521,6 +1336,26 @@
         "strength": 43.8
       },
       {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "ואיראן חתמו",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "sources": [
+          "גלובס",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "strength": 42.8
+      },
+      {
         "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
         "clusterKey": "ארה לאיראן",
         "domain": "חדשות",
@@ -2561,6 +1396,25 @@
         "strength": 42.8
       },
       {
+        "trend": "דיווח ברוסיה: הרוג ושני פצועים במתקפת כטב\"מים ברוסטוב",
+        "clusterKey": "כטב מים",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-18T05:38:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846637",
+        "strength": 42.1
+      },
+      {
         "trend": "טראמפ: \"ייתכן שאחזיר את הסנקציות על רוסיה\"",
         "clusterKey": "הסנקציות רוסיה",
         "domain": "חדשות",
@@ -2580,23 +1434,24 @@
         "strength": 42.1
       },
       {
-        "trend": "דיווח באוקראינה: רוסיה תקפה את קייב בטילים",
-        "clusterKey": "רוסיה תקפה",
+        "trend": "נוח לעונה ואידיאלי לטיולים: סוף שבוע יציב ונעים לפנינו | תחזית מזג האוויר",
+        "clusterKey": "תחזית מזג האוויר",
         "domain": "חדשות",
         "externalMentions": 3,
-        "sourceCount": 2,
+        "sourceCount": 3,
         "sources": [
           "ynet",
+          "הארץ",
           "וואלה"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-18T03:28:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846634",
-        "strength": 42.1
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T06:00:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846636",
+        "strength": 41.1
       },
       {
         "trend": "דובר משרד החוץ האיראני: ארה\"ב התחייבה לבטל את כל סוגי הסנקציות",
@@ -2616,44 +1471,6 @@
         "latestAt": "2026-06-17T21:57:00+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846603",
         "strength": 37.5
-      },
-      {
-        "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
-        "clusterKey": "השוטר שבעט",
-        "domain": "חדשות",
-        "externalMentions": 5,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-17T21:25:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846598",
-        "strength": 37.5
-      },
-      {
-        "trend": "פיקוד העורף: בתום הערכת המצב - מדיניות ההתגוננות נותרת ללא שינוי",
-        "clusterKey": "ללא שינוי",
-        "domain": "כלכלה",
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "גלובס",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-17T20:11:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846584",
-        "strength": 35.8
       }
     ]
   },
@@ -2665,7 +1482,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 18,
+      "ageMinutes": 61,
       "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
       "beforeRank": 1,
       "afterRank": 1,
@@ -2679,7 +1496,7 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 23,
+      "ageMinutes": 67,
       "url": "https://news.walla.co.il/item/3846627",
       "beforeRank": 2,
       "afterRank": 2,
@@ -2693,7 +1510,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 34,
+      "ageMinutes": 77,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 3,
       "afterRank": 3,
@@ -2707,7 +1524,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 35,
+      "ageMinutes": 78,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 4,
       "afterRank": 4,
@@ -2721,7 +1538,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
+      "ageMinutes": 80,
       "url": "https://news.walla.co.il/item/3846626",
       "beforeRank": 5,
       "afterRank": 5,
@@ -2735,7 +1552,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 82,
       "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
       "beforeRank": 6,
       "afterRank": 6,
@@ -2777,11 +1594,11 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 39,
+      "ageMinutes": 83,
       "url": "https://sports.walla.co.il/item/3846625",
-      "beforeRank": 18,
+      "beforeRank": 21,
       "afterRank": 7,
-      "delta": 11,
+      "delta": 14,
       "trendMatch": null
     },
     {
@@ -2791,7 +1608,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 40,
+      "ageMinutes": 83,
       "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 8,
       "afterRank": 8,
@@ -2805,7 +1622,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 100,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
       "beforeRank": 9,
       "afterRank": 9,
@@ -2819,7 +1636,7 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 60,
+      "ageMinutes": 104,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
       "beforeRank": 10,
       "afterRank": 10,
@@ -2835,10 +1652,24 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 18,
+      "ageMinutes": 61,
       "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
       "beforeRank": 1,
       "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 67,
+      "url": "https://news.walla.co.il/item/3846627",
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": null
     },
@@ -2849,11 +1680,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 82,
       "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
       "beforeRank": 6,
-      "afterRank": 2,
-      "delta": 4,
+      "afterRank": 3,
+      "delta": 3,
       "trendMatch": {
         "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
         "clusterKey": "ארה לאיראן",
@@ -2885,27 +1716,13 @@
       }
     },
     {
-      "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 23,
-      "url": "https://news.walla.co.il/item/3846627",
-      "beforeRank": 2,
-      "afterRank": 3,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
       "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
       "source": "וואלה חדשות",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
+      "ageMinutes": 80,
       "url": "https://news.walla.co.il/item/3846626",
       "beforeRank": 5,
       "afterRank": 4,
@@ -2919,7 +1736,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 117,
+      "ageMinutes": 160,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
       "beforeRank": 14,
       "afterRank": 5,
@@ -2966,11 +1783,25 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 76,
+      "ageMinutes": 119,
       "url": "https://news.walla.co.il/item/3846630",
       "beforeRank": 11,
       "afterRank": 6,
       "delta": 5,
+      "trendMatch": null
+    },
+    {
+      "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 160,
+      "url": "https://www.jpost.com/israel-news/article-899762",
+      "beforeRank": 15,
+      "afterRank": 7,
+      "delta": 8,
       "trendMatch": null
     },
     {
@@ -2980,54 +1811,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 143,
+      "ageMinutes": 187,
       "url": "https://www.inn.co.il/flashes/1118430",
       "beforeRank": 17,
-      "afterRank": 7,
-      "delta": 10,
-      "trendMatch": {
-        "trend": "טראמפ חתם על מזכר ההבנות עם איראן בנוכחות נשיא צרפת עמנואל מקרון",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 14,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T04:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846635",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "מזכר"
-        ],
-        "entityOverlapTokens": [
-          "איראן"
-        ],
-        "eventOverlapTokens": [],
-        "score": 47.38,
-        "boost": 38.0
-      }
-    },
-    {
-      "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 117,
-      "url": "https://www.jpost.com/israel-news/article-899762",
-      "beforeRank": 15,
       "afterRank": 8,
-      "delta": 7,
+      "delta": 9,
       "trendMatch": null
     },
     {
@@ -3037,7 +1825,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 308,
+      "ageMinutes": 351,
       "url": "https://www.ynet.co.il/news/article/h1qqjrgzzg",
       "beforeRank": 35,
       "afterRank": 9,
@@ -3078,17 +1866,17 @@
       }
     },
     {
-      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 308,
-      "url": "https://www.ynet.co.il/news/article/s1zvyvlfge",
-      "beforeRank": 36,
+      "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 77,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 3,
       "afterRank": 10,
-      "delta": 26,
+      "delta": -7,
       "trendMatch": null
     }
   ],
@@ -3100,7 +1888,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 18,
+      "ageMinutes": 61,
       "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
       "beforeRank": 1,
       "afterRank": 1,
@@ -3114,7 +1902,7 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 23,
+      "ageMinutes": 67,
       "url": "https://news.walla.co.il/item/3846627",
       "beforeRank": 2,
       "afterRank": 2,
@@ -3128,7 +1916,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 34,
+      "ageMinutes": 77,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 3,
       "afterRank": 3,
@@ -3142,7 +1930,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 35,
+      "ageMinutes": 78,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 4,
       "afterRank": 4,
@@ -3156,7 +1944,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
+      "ageMinutes": 80,
       "url": "https://news.walla.co.il/item/3846626",
       "beforeRank": 5,
       "afterRank": 5,
@@ -3170,7 +1958,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 82,
       "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
       "beforeRank": 6,
       "afterRank": 6,
@@ -3212,11 +2000,11 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 39,
+      "ageMinutes": 83,
       "url": "https://sports.walla.co.il/item/3846625",
-      "beforeRank": 18,
+      "beforeRank": 21,
       "afterRank": 7,
-      "delta": 11,
+      "delta": 14,
       "trendMatch": null
     },
     {
@@ -3226,7 +2014,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 40,
+      "ageMinutes": 83,
       "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 8,
       "afterRank": 8,
@@ -3240,7 +2028,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 100,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
       "beforeRank": 9,
       "afterRank": 9,
@@ -3254,7 +2042,7 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 60,
+      "ageMinutes": 104,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
       "beforeRank": 10,
       "afterRank": 10,
@@ -3268,7 +2056,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 76,
+      "ageMinutes": 119,
       "url": "https://news.walla.co.il/item/3846630",
       "beforeRank": 11,
       "afterRank": 11,
@@ -3282,7 +2070,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 127,
       "url": "https://pagesix.com/2026/06/17/celebrity-news/anna-faris-reveals-what-led-to-her-shocking-exit-from-hit-sitcom-mom-after-7-seasons/",
       "beforeRank": 12,
       "afterRank": 12,
@@ -3296,7 +2084,7 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 94,
+      "ageMinutes": 137,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787609",
       "beforeRank": 13,
       "afterRank": 13,
@@ -3310,7 +2098,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 117,
+      "ageMinutes": 160,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
       "beforeRank": 14,
       "afterRank": 14,
@@ -3357,7 +2145,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 117,
+      "ageMinutes": 160,
       "url": "https://www.jpost.com/israel-news/article-899762",
       "beforeRank": 15,
       "afterRank": 15,
@@ -3371,7 +2159,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 118,
+      "ageMinutes": 161,
       "url": "https://news.walla.co.il/item/3846624",
       "beforeRank": 16,
       "afterRank": 16,
@@ -3418,53 +2206,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 143,
+      "ageMinutes": 187,
       "url": "https://www.inn.co.il/flashes/1118430",
       "beforeRank": 17,
       "afterRank": 17,
-      "delta": 0,
-      "trendMatch": {
-        "trend": "טראמפ חתם על מזכר ההבנות עם איראן בנוכחות נשיא צרפת עמנואל מקרון",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 14,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T04:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846635",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "מזכר"
-        ],
-        "entityOverlapTokens": [
-          "איראן"
-        ],
-        "eventOverlapTokens": [],
-        "score": 47.38,
-        "boost": 38.0
-      }
-    },
-    {
-      "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 188,
-      "url": "https://sports.walla.co.il/item/3846373",
-      "beforeRank": 18,
-      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -3475,22 +2220,36 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 190,
+      "ageMinutes": 233,
       "url": "https://www.jpost.com/middle-east/article-899763",
+      "beforeRank": 18,
+      "afterRank": 18,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "כוכבות Real Housewives מתעמתות בגלל הקשר של קרול ראדזוויל לג'פרי אפשטיין",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 235,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909169/carole-radziwill-sai-silva-epstein-real-housewives.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 19,
       "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "הפועל חיפה החתימה את טל נעים ממכבי הרצליה לעונה עם אופציה",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
+      "headline": "וירג'יניה טריולי, מגישת חדשות הבוקר של ABC, פורשת אחרי 27 שנה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 191,
-      "url": "https://sports.walla.co.il/item/3846619",
+      "ageMinutes": 235,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909279/ABC-News-Breakfast-Virginia-Trioli-leaving.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -3505,10 +2264,24 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 18,
+      "ageMinutes": 61,
       "url": "https://www.jpost.com/israel-news/crime-in-israel/article-899765",
       "beforeRank": 1,
       "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 67,
+      "url": "https://news.walla.co.il/item/3846627",
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": null
     },
@@ -3519,11 +2292,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 82,
       "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
       "beforeRank": 6,
-      "afterRank": 2,
-      "delta": 4,
+      "afterRank": 3,
+      "delta": 3,
       "trendMatch": {
         "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
         "clusterKey": "ארה לאיראן",
@@ -3555,27 +2328,13 @@
       }
     },
     {
-      "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 23,
-      "url": "https://news.walla.co.il/item/3846627",
-      "beforeRank": 2,
-      "afterRank": 3,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
       "headline": "אמריקאי מקליפורניה הואשם שגייס 600 אלף דולר לחמאס תחת כסות הומניטרית",
       "source": "וואלה חדשות",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
+      "ageMinutes": 80,
       "url": "https://news.walla.co.il/item/3846626",
       "beforeRank": 5,
       "afterRank": 4,
@@ -3589,7 +2348,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 117,
+      "ageMinutes": 160,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
       "beforeRank": 14,
       "afterRank": 5,
@@ -3636,11 +2395,25 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 76,
+      "ageMinutes": 119,
       "url": "https://news.walla.co.il/item/3846630",
       "beforeRank": 11,
       "afterRank": 6,
       "delta": 5,
+      "trendMatch": null
+    },
+    {
+      "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 160,
+      "url": "https://www.jpost.com/israel-news/article-899762",
+      "beforeRank": 15,
+      "afterRank": 7,
+      "delta": 8,
       "trendMatch": null
     },
     {
@@ -3650,54 +2423,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 143,
+      "ageMinutes": 187,
       "url": "https://www.inn.co.il/flashes/1118430",
       "beforeRank": 17,
-      "afterRank": 7,
-      "delta": 10,
-      "trendMatch": {
-        "trend": "טראמפ חתם על מזכר ההבנות עם איראן בנוכחות נשיא צרפת עמנואל מקרון",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 14,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T04:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846635",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "מזכר"
-        ],
-        "entityOverlapTokens": [
-          "איראן"
-        ],
-        "eventOverlapTokens": [],
-        "score": 47.38,
-        "boost": 38.0
-      }
-    },
-    {
-      "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 117,
-      "url": "https://www.jpost.com/israel-news/article-899762",
-      "beforeRank": 15,
       "afterRank": 8,
-      "delta": 7,
+      "delta": 9,
       "trendMatch": null
     },
     {
@@ -3707,7 +2437,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 308,
+      "ageMinutes": 351,
       "url": "https://www.ynet.co.il/news/article/h1qqjrgzzg",
       "beforeRank": 35,
       "afterRank": 9,
@@ -3748,31 +2478,17 @@
       }
     },
     {
-      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 308,
-      "url": "https://www.ynet.co.il/news/article/s1zvyvlfge",
-      "beforeRank": 36,
-      "afterRank": 10,
-      "delta": 26,
-      "trendMatch": null
-    },
-    {
       "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
       "source": "Daily Mail TVShowbiz רכילות חו״ל",
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 34,
+      "ageMinutes": 77,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909373/Katy-Perry-Justin-Trudeau-love-transformed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 3,
-      "afterRank": 11,
-      "delta": -8,
+      "afterRank": 10,
+      "delta": -7,
       "trendMatch": null
     },
     {
@@ -3782,25 +2498,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 35,
+      "ageMinutes": 78,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909591/Jackie-O-Henderson-NOT-settle-ARN-claim-Kyle-Sandilands-settlement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 4,
-      "afterRank": 12,
-      "delta": -8,
-      "trendMatch": null
-    },
-    {
-      "headline": "אקס מכבי תל אביב מוסקרה הצליח לשמור על שער נקי 95 דקות",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 60,
-      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
-      "beforeRank": 10,
-      "afterRank": 13,
-      "delta": -3,
+      "afterRank": 11,
+      "delta": -7,
       "trendMatch": null
     },
     {
@@ -3810,11 +2512,25 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 40,
+      "ageMinutes": 83,
       "url": "https://www.dailymail.com/tvshowbiz/article-15901257/lou-ferrigno-wife-death-carla-marriage-secrets.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 8,
-      "afterRank": 14,
-      "delta": -6,
+      "afterRank": 12,
+      "delta": -4,
+      "trendMatch": null
+    },
+    {
+      "headline": "אקס מכבי תל אביב מוסקרה הצליח לשמור על שער נקי 95 דקות",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 104,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787632",
+      "beforeRank": 10,
+      "afterRank": 13,
+      "delta": -3,
       "trendMatch": null
     },
     {
@@ -3824,11 +2540,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 100,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/lee-andrews-prison-return-debts-37312252",
       "beforeRank": 9,
-      "afterRank": 15,
-      "delta": -6,
+      "afterRank": 14,
+      "delta": -5,
       "trendMatch": null
     },
     {
@@ -3838,11 +2554,11 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 94,
+      "ageMinutes": 137,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787609",
       "beforeRank": 13,
-      "afterRank": 16,
-      "delta": -3,
+      "afterRank": 15,
+      "delta": -2,
       "trendMatch": null
     },
     {
@@ -3852,11 +2568,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 127,
       "url": "https://pagesix.com/2026/06/17/celebrity-news/anna-faris-reveals-what-led-to-her-shocking-exit-from-hit-sitcom-mom-after-7-seasons/",
       "beforeRank": 12,
-      "afterRank": 17,
-      "delta": -5,
+      "afterRank": 16,
+      "delta": -4,
       "trendMatch": null
     },
     {
@@ -3866,11 +2582,25 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 39,
+      "ageMinutes": 83,
       "url": "https://sports.walla.co.il/item/3846625",
-      "beforeRank": 18,
+      "beforeRank": 21,
+      "afterRank": 17,
+      "delta": 4,
+      "trendMatch": null
+    },
+    {
+      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 351,
+      "url": "https://www.ynet.co.il/news/article/s1zvyvlfge",
+      "beforeRank": 36,
       "afterRank": 18,
-      "delta": 0,
+      "delta": 18,
       "trendMatch": null
     },
     {
@@ -3880,11 +2610,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 190,
+      "ageMinutes": 233,
       "url": "https://www.jpost.com/middle-east/article-899763",
-      "beforeRank": 19,
+      "beforeRank": 18,
       "afterRank": 19,
-      "delta": 0,
+      "delta": -1,
       "trendMatch": null
     },
     {
@@ -3894,7 +2624,7 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 207,
+      "ageMinutes": 250,
       "url": "https://pagesix.com/2026/06/17/celebrity-news/daveigh-chase-shared-legacy-she-hoped-to-leave-behind/",
       "beforeRank": 23,
       "afterRank": 20,
@@ -3911,6 +2641,15 @@
       "trendMatch": null,
       "beforeRank": 1,
       "afterRank": 1
+    },
+    {
+      "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
+      "source": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 2,
+      "afterRank": 2
     },
     {
       "headline": "הסכם ארה״ב-איראן: פתיחת הורמוז מיידית, אך הגרעין נדחה ל-60 יום",
@@ -3947,15 +2686,6 @@
         "boost": 14.0
       },
       "beforeRank": 6,
-      "afterRank": 2
-    },
-    {
-      "headline": "צעיר ישראלי חשוד בניסיון רצח באיה נאפה אחרי דקירה במועדון",
-      "source": "וואלה",
-      "category": "פלילים",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 2,
       "afterRank": 3
     },
     {
@@ -4019,50 +2749,21 @@
       "afterRank": 6
     },
     {
-      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-      "source": "ערוץ 7 / INN עברית",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "טראמפ חתם על מזכר ההבנות עם איראן בנוכחות נשיא צרפת עמנואל מקרון",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 14,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T04:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846635",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "מזכר"
-        ],
-        "entityOverlapTokens": [
-          "איראן"
-        ],
-        "eventOverlapTokens": [],
-        "score": 47.38,
-        "boost": 38.0
-      },
-      "beforeRank": 17,
-      "afterRank": 7
-    },
-    {
       "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
       "source": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
       "beforeRank": 15,
+      "afterRank": 7
+    },
+    {
+      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
+      "source": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 17,
       "afterRank": 8
     },
     {
@@ -4108,22 +2809,13 @@
       "afterRank": 9
     },
     {
-      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
-      "source": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 36,
-      "afterRank": 10
-    },
-    {
       "headline": "קייטי פרי: האהבה של טרודו שינתה אותי אחרי השנה הקשה",
       "source": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 3,
-      "afterRank": 11
+      "afterRank": 10
     },
     {
       "headline": "ג׳קי O לא תפשר עם ARN: תמשיך לתבוע גם אחרי פשרת סנדילנדס",
@@ -4132,6 +2824,15 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 4,
+      "afterRank": 11
+    },
+    {
+      "headline": "מתה בגיל 77 אשתו של לו פריניו, כוכב האלמנה הירוקה המקורי",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 8,
       "afterRank": 12
     },
     {
@@ -4144,22 +2845,13 @@
       "afterRank": 13
     },
     {
-      "headline": "מתה בגיל 77 אשתו של לו פריניו, כוכב האלמנה הירוקה המקורי",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 8,
-      "afterRank": 14
-    },
-    {
       "headline": "בעלה של קייטי פרייס עלול לחזור לכלא בדובאי בעוד 14 יום",
       "source": "Mirror",
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 9,
-      "afterRank": 15
+      "afterRank": 14
     },
     {
       "headline": "הארי קיין עקף את מסי והפך למלך שערי הפנדלים בתולדות המונדיאל",
@@ -4168,7 +2860,7 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 13,
-      "afterRank": 16
+      "afterRank": 15
     },
     {
       "headline": "אנה פאריס חשפה למה עזבה את ״Mom״ אחרי שבע עונות: ״העומס היה אינטנסיבי מדי״",
@@ -4177,7 +2869,7 @@
       "class": "soft",
       "trendMatch": null,
       "beforeRank": 12,
-      "afterRank": 17
+      "afterRank": 16
     },
     {
       "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
@@ -4185,7 +2877,16 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 18,
+      "beforeRank": 21,
+      "afterRank": 17
+    },
+    {
+      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
+      "source": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 36,
       "afterRank": 18
     },
     {
@@ -4194,7 +2895,7 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 19,
+      "beforeRank": 18,
       "afterRank": 19
     },
     {
@@ -4230,7 +2931,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-18T02:09:00.082525+00:00",
+    "generatedAt": "2026-06-18T02:52:22.148499+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -4268,13 +2969,13 @@
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T22:01:46+00:00",
-        "latestRawAgeHours": 4.12,
+        "latestRawAgeHours": 4.84,
         "latestValidAt": "2026-06-17T22:01:46+00:00",
-        "latestValidAgeHours": 4.12,
+        "latestValidAgeHours": 4.84,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-15T11:38:59+00:00",
-          "latestAgeHours": 62.5,
+          "latestAgeHours": 63.22,
           "sample": [
             {
               "publishedAt": "2026-06-15T11:38:59+00:00",
@@ -4393,13 +3094,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T21:36:00+00:00",
-        "latestRawAgeHours": 4.55,
+        "latestRawAgeHours": 5.27,
         "latestValidAt": "2026-06-17T21:36:00+00:00",
-        "latestValidAgeHours": 4.55,
+        "latestValidAgeHours": 5.27,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-15T13:43:00+00:00",
-          "latestAgeHours": 60.43,
+          "latestAgeHours": 61.16,
           "sample": [
             {
               "publishedAt": "2026-06-15T13:43:00+00:00",
@@ -4525,19 +3226,19 @@
           "ynet - כל ערוץ מדע וטבע",
           "ynet - כל ערוץ יחסים"
         ],
-        "rawCandidateCount": 266,
-        "validCandidateCount": 266,
+        "rawCandidateCount": 267,
+        "validCandidateCount": 267,
         "qaPassSimulationCount": 0,
-        "qaRejectedCount": 266,
+        "qaRejectedCount": 267,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-18T01:03:31+00:00",
-        "latestRawAgeHours": 1.09,
-        "latestValidAt": "2026-06-18T01:03:31+00:00",
-        "latestValidAgeHours": 1.09,
+        "latestRawAt": "2026-06-18T02:42:51+00:00",
+        "latestRawAgeHours": 0.16,
+        "latestValidAt": "2026-06-18T02:42:51+00:00",
+        "latestValidAgeHours": 0.16,
         "visibleMain": {
           "count": 13,
           "latestAt": "2026-06-17T22:30:00+00:00",
-          "latestAgeHours": 3.65,
+          "latestAgeHours": 4.37,
           "sample": [
             {
               "publishedAt": "2026-06-17T22:30:00+00:00",
@@ -4557,29 +3258,45 @@
           ]
         },
         "visibleBreaking": {
-          "count": 23,
-          "latestAt": "2026-06-17T20:01:39+00:00",
-          "latestAgeHours": 6.12,
+          "count": 18,
+          "latestAt": "2026-06-18T02:35:06+00:00",
+          "latestAgeHours": 0.29,
           "sample": [
             {
-              "publishedAt": "2026-06-17T20:01:39+00:00",
+              "publishedAt": "2026-06-18T02:35:06+00:00",
               "source": "ynet",
-              "headline": "המשטרה מבקשת עזרה באיתור הנעדר דאניו אדוניה (82) שנראה לאחרונה בבני ברק"
+              "headline": "גבר נורה למוות ברכב בקלנסווה, אשתו במצב אנוש"
             },
             {
-              "publishedAt": "2026-06-17T18:59:23+00:00",
+              "publishedAt": "2026-06-18T01:03:31+00:00",
               "source": "ynet",
-              "headline": "הפתעה במונדיאל: רונאלדו ופורטוגל לא הצליחו לנצח את קונגו"
+              "headline": "גאנה כבשה בדקה ה-95 וניצחה את פנמה 0:1"
             },
             {
-              "publishedAt": "2026-06-17T18:25:45+00:00",
+              "publishedAt": "2026-06-18T00:32:40+00:00",
               "source": "ynet",
-              "headline": "דבי צ'ייס (סמארה מ\"הצלצול\") מתה בגיל 35"
+              "headline": "פקיסטן: מצר הורמוז ייפתח מחדש \"באופן מיידי\", גם המצור האמריקני יוסר"
             }
           ]
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ynet - כל ערוץ החדשות",
+            "publishedAt": "2026-06-18T05:42:51+03:00",
+            "title": "גבר נורה למוות ברכב בקלנסווה, אשתו במצב אנוש",
+            "url": "https://www.ynet.co.il/news/article/sjpeqaxzgl"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ynet - כל ערוץ החדשות",
+            "publishedAt": "2026-06-18T05:25:38+03:00",
+            "title": "התחזית: ירידה קלה בטמפרטורות",
+            "url": "https://www.ynet.co.il/news/article/vm9rmluu0"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -4627,22 +3344,6 @@
             "publishedAt": "2026-06-17T22:45:09+03:00",
             "title": "הסלפי בקלפי - והקשר לנתניהו: בג\"ץ ידון מחר בעתירות נגד מינוי ראבילו למבקר",
             "url": "https://www.ynet.co.il/news/article/h1hzuqxffx"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ynet - כל ערוץ החדשות",
-            "publishedAt": "2026-06-17T22:40:46+03:00",
-            "title": "נשיא סומלילנד ביקר ילדים חולים ממדינתו בישראל: \"שת\"פ שקדם ליחסים הרשמיים\"",
-            "url": "https://www.ynet.co.il/news/article/bybi3wggml"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ynet - כל ערוץ החדשות",
-            "publishedAt": "2026-06-17T22:02:33+03:00",
-            "title": "מלוני הפסיקה לעשן, מקרון שכח את השעון - וטראמפ איחר: \"אני הבוס!\"",
-            "url": "https://www.ynet.co.il/news/article/sjprm8lmfe"
           }
         ]
       },
@@ -4666,7 +3367,7 @@
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-15T11:21:45+00:00",
-          "latestAgeHours": 62.79,
+          "latestAgeHours": 63.51,
           "sample": [
             {
               "publishedAt": "2026-06-15T11:21:45+00:00",
@@ -4678,7 +3379,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-17T18:18:30+00:00",
-          "latestAgeHours": 7.84,
+          "latestAgeHours": 8.56,
           "sample": [
             {
               "publishedAt": "2026-06-17T18:18:30+00:00",
@@ -4716,14 +3417,14 @@
         "qaPassSimulationCount": 3,
         "qaRejectedCount": 135,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-18T02:09:07+00:00",
+        "latestRawAt": "2026-06-18T02:52:26+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-18T02:09:07+00:00",
+        "latestValidAt": "2026-06-18T02:52:26+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
           "count": 7,
           "latestAt": "2026-06-18T01:45:00+00:00",
-          "latestAgeHours": 0.4,
+          "latestAgeHours": 1.12,
           "sample": [
             {
               "publishedAt": "2026-06-18T01:45:00+00:00",
@@ -4831,14 +3532,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-18T01:52:23+00:00",
-        "latestRawAgeHours": 0.28,
-        "latestValidAt": "2026-06-18T01:52:23+00:00",
-        "latestValidAgeHours": 0.28,
+        "latestRawAt": "2026-06-18T02:23:44+00:00",
+        "latestRawAgeHours": 0.48,
+        "latestValidAt": "2026-06-18T02:23:44+00:00",
+        "latestValidAgeHours": 0.48,
         "visibleMain": {
           "count": 12,
           "latestAt": "2026-06-18T01:08:07+00:00",
-          "latestAgeHours": 1.01,
+          "latestAgeHours": 1.74,
           "sample": [
             {
               "publishedAt": "2026-06-18T01:08:07+00:00",
@@ -4865,6 +3566,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-18T05:23:44+03:00",
+            "title": "מחפש נקמה? טיאגו ספליטר עקץ: \"רוצה להשאיר את פורטלנד מאחור\"",
+            "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20787731"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -4920,14 +3629,6 @@
             "publishedAt": "2026-06-18T02:03:36+03:00",
             "title": "מזג האוויר: התקררות קלה לקראת החום הגדול",
             "url": "https://www.israelhayom.co.il/weather/article/20786755"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-18T02:01:00+03:00",
-            "title": "זעם על חמאס ברצועת עזה: \"מחלות ומכת עכברים - עדיף שישראל תשלוט\"",
-            "url": "https://www.israelhayom.co.il/news/geopolitics/palestinians/article/20786559"
           }
         ]
       },
@@ -4954,14 +3655,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-17T20:05:00+00:00",
-        "latestRawAgeHours": 6.07,
-        "latestValidAt": "2026-06-17T20:05:00+00:00",
-        "latestValidAgeHours": 6.07,
+        "latestRawAt": "2026-06-18T02:50:00+00:00",
+        "latestRawAgeHours": 0.04,
+        "latestValidAt": "2026-06-18T02:50:00+00:00",
+        "latestValidAgeHours": 0.04,
         "visibleMain": {
           "count": 11,
           "latestAt": "2026-06-15T13:29:00+00:00",
-          "latestAgeHours": 60.67,
+          "latestAgeHours": 61.39,
           "sample": [
             {
               "publishedAt": "2026-06-15T13:29:00+00:00",
@@ -4988,6 +3689,38 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "גלובס - שוק ההון",
+            "publishedAt": "2026-06-18T05:47:00+03:00",
+            "title": "זינוק של 500% בשנה: טאואר עוקפת בשווי את הבנקים שהצילו אותה מקריסה",
+            "url": "https://www.globes.co.il/news/article.aspx?did=1001546208#utm_source=RSS"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "גלובס - שוק ההון",
+            "publishedAt": "2026-06-18T05:47:00+03:00",
+            "title": "המניה קפצה 500% וסידרה לפרקליט הצמרת אקזיט של 200 מיליון שקל",
+            "url": "https://www.globes.co.il/news/article.aspx?did=1001546102#utm_source=RSS"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "גלובס - שוק ההון",
+            "publishedAt": "2026-06-18T05:45:00+03:00",
+            "title": "הקרן שהניבה 266% בשלוש שנים, ואיזה סיכון אורב למוצר ההשקעה שהפך ללהיט",
+            "url": "https://www.globes.co.il/news/article.aspx?did=1001546099#utm_source=RSS"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "גלובס - שוק ההון",
+            "publishedAt": "2026-06-18T05:40:00+03:00",
+            "title": "תוכנית המגירה של האוצר לתקציב הבא נחשפת: סוכני הביטוח וקרנות ההשתלמות במוקד הגזרות",
+            "url": "https://www.globes.co.il/news/article.aspx?did=1001546256#utm_source=RSS"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -5019,38 +3752,6 @@
             "publishedAt": "2026-06-17T17:33:00+03:00",
             "title": "למה הבורסה יורדת כבר 3 ימים? מה חושבים המומחים ואיפה ההזדמנויות",
             "url": "https://www.globes.co.il/news/article.aspx?did=1001546240#utm_source=RSS"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "גלובס - שוק ההון",
-            "publishedAt": "2026-06-17T16:21:00+03:00",
-            "title": "לקוחות לאומי קיבלו סמס בהפתעה: 700 שקל בדרך לחשבון הבנק שלכם. מי בזכאים?",
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001546173#utm_source=RSS"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "גלובס - שוק ההון",
-            "publishedAt": "2026-06-17T09:04:00+03:00",
-            "title": "בלי סוכנים: בית ההשקעות הקטן שכובש את צמרת טבלת התשואות",
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001546104#utm_source=RSS"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "גלובס - שוק ההון",
-            "publishedAt": "2026-06-17T06:11:00+03:00",
-            "title": "הקרן שהניבה 266% בשלוש שנים, ואיזה סיכון אורב למוצר ההשקעה שהפך ללהיט",
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001546099#utm_source=RSS"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "גלובס - שוק ההון",
-            "publishedAt": "2026-06-17T06:05:00+03:00",
-            "title": "המניה קפצה 500% וסידרה לפרקליט הצמרת אקזיט של 200 מיליון שקל",
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001546102#utm_source=RSS"
           }
         ]
       },
@@ -5070,13 +3771,13 @@
         "qaRejectedCount": 4,
         "relevanceFilteredCount": 8,
         "latestRawAt": "2026-06-18T01:59:38+00:00",
-        "latestRawAgeHours": 0.16,
+        "latestRawAgeHours": 0.88,
         "latestValidAt": "2026-06-18T01:59:38+00:00",
-        "latestValidAgeHours": 0.16,
+        "latestValidAgeHours": 0.88,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-18T01:29:32+00:00",
-          "latestAgeHours": 0.66,
+          "latestAgeHours": 1.38,
           "sample": [
             {
               "publishedAt": "2026-06-18T01:29:32+00:00",
@@ -5114,48 +3815,48 @@
             "reason": "needs editor bridge / quality rewrite",
             "source": "BBC World",
             "publishedAt": "2026-06-18T04:28:02+03:00",
-            "title": "What's in the US-Iran agreement that's now in effect",
+            "title": "What's in the US-Iran agreement?",
             "url": "https://www.bbc.com/news/articles/cvgmqzr6p9mo?at_medium=RSS&at_campaign=rss"
           },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
             "source": "BBC World",
-            "publishedAt": "2026-06-17T22:03:10+03:00",
-            "title": "Ex-Nigeria oil minister cleared in UK bribery trial",
-            "url": "https://www.bbc.com/news/articles/c872pwx4x2vo?at_medium=RSS&at_campaign=rss"
+            "publishedAt": "2026-06-18T02:57:36+03:00",
+            "title": "'I buried my parents one day after the other' - Ebola mourners learn how to grieve safely",
+            "url": "https://www.bbc.com/news/articles/cj3gx8jl6d5o?at_medium=RSS&at_campaign=rss"
           },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
             "source": "BBC World",
-            "publishedAt": "2026-06-17T20:45:54+03:00",
-            "title": "Serial killer who murdered eight women in Long Island town imprisoned for life",
-            "url": "https://www.bbc.com/news/articles/clyw29kvlydo?at_medium=RSS&at_campaign=rss"
+            "publishedAt": "2026-06-18T02:02:05+03:00",
+            "title": "'We had to get out of the way': The backlash over delivery robots",
+            "url": "https://www.bbc.com/news/articles/c0rygp005wjo?at_medium=RSS&at_campaign=rss"
           },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
             "source": "BBC World",
-            "publishedAt": "2026-06-17T19:50:42+03:00",
-            "title": "Search for six-year-old Ebola patient after armed men storm DR Congo hospital",
-            "url": "https://www.bbc.com/news/articles/cvgep4l397eo?at_medium=RSS&at_campaign=rss"
+            "publishedAt": "2026-06-18T01:55:46+03:00",
+            "title": "The Ring and Lilo & Stitch actress Daveigh Chase dies aged 35",
+            "url": "https://www.bbc.com/news/articles/cd0m2mg949yo?at_medium=RSS&at_campaign=rss"
           },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
             "source": "BBC World",
-            "publishedAt": "2026-06-17T19:37:41+03:00",
-            "title": "AI will create more jobs for humans, not replace them, Amazon founder Bezos says",
-            "url": "https://www.bbc.com/news/articles/ceqdrw2yy3vo?at_medium=RSS&at_campaign=rss"
+            "publishedAt": "2026-06-18T01:36:13+03:00",
+            "title": "Japan ramping up defence is 'critical' to prevent war, Defence Minister Koizumi tells BBC",
+            "url": "https://www.bbc.com/news/articles/cly8qd4595eo?at_medium=RSS&at_campaign=rss"
           },
           {
-            "status": "relevance_filtered",
-            "reason": "not Israel/Middle-East enough",
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
             "source": "BBC World",
-            "publishedAt": "2026-06-17T18:52:47+03:00",
-            "title": "Mangione's lawyers plan psychiatric defence in state murder trial",
-            "url": "https://www.bbc.com/news/articles/c1lym76jyymo?at_medium=RSS&at_campaign=rss"
+            "publishedAt": "2026-06-17T22:21:36+03:00",
+            "title": "UN experts demand Iranians free Foremans",
+            "url": "https://www.bbc.com/news/articles/c9w28e2vn57o?at_medium=RSS&at_campaign=rss"
           }
         ]
       },
@@ -5272,9 +3973,9 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 12,
         "latestRawAt": "2026-06-18T00:01:47+00:00",
-        "latestRawAgeHours": 2.12,
+        "latestRawAgeHours": 2.84,
         "latestValidAt": "2026-06-17T23:42:48+00:00",
-        "latestValidAgeHours": 2.44,
+        "latestValidAgeHours": 3.16,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5370,14 +4071,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 9,
         "relevanceFilteredCount": 3,
-        "latestRawAt": "2026-06-18T01:53:22+00:00",
-        "latestRawAgeHours": 0.26,
-        "latestValidAt": "2026-06-18T01:53:22+00:00",
-        "latestValidAgeHours": 0.26,
+        "latestRawAt": "2026-06-18T02:50:05+00:00",
+        "latestRawAgeHours": 0.04,
+        "latestValidAt": "2026-06-18T02:50:05+00:00",
+        "latestValidAgeHours": 0.04,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-17T21:16:43+00:00",
-          "latestAgeHours": 4.87,
+          "latestAgeHours": 5.59,
           "sample": [
             {
               "publishedAt": "2026-06-17T21:16:43+00:00",
@@ -5408,7 +4109,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "The Guardian Middle East",
-            "publishedAt": "2026-06-18T04:53:22+03:00",
+            "publishedAt": "2026-06-18T05:50:05+03:00",
             "title": "Middle East crisis live: agreement signed by US-Iran presidents; Tehran claims it will charge ships to transit strait of Hormuz",
             "url": "https://www.theguardian.com/world/live/2026/jun/17/middle-east-war-iran-israel-us-donald-trump-hezbollah-lebanon-peace-deal-netanyahu-latest-news-updated"
           },
@@ -5486,9 +4187,9 @@
         "qaRejectedCount": 3,
         "relevanceFilteredCount": 7,
         "latestRawAt": "2026-06-17T23:18:00+00:00",
-        "latestRawAgeHours": 2.85,
+        "latestRawAgeHours": 3.57,
         "latestValidAt": "2026-06-17T19:09:00+00:00",
-        "latestValidAgeHours": 7.0,
+        "latestValidAgeHours": 7.72,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5585,13 +4286,13 @@
         "qaRejectedCount": 1,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T19:03:55+00:00",
-        "latestRawAgeHours": 7.08,
+        "latestRawAgeHours": 7.81,
         "latestValidAt": "2026-06-17T19:03:55+00:00",
-        "latestValidAgeHours": 7.08,
+        "latestValidAgeHours": 7.81,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-17T21:00:28+00:00",
-          "latestAgeHours": 5.14,
+          "latestAgeHours": 5.87,
           "sample": [
             {
               "publishedAt": "2026-06-17T21:00:28+00:00",
@@ -5603,7 +4304,7 @@
         "visibleBreaking": {
           "count": 3,
           "latestAt": "2026-06-17T19:24:04+00:00",
-          "latestAgeHours": 6.75,
+          "latestAgeHours": 7.47,
           "sample": [
             {
               "publishedAt": "2026-06-17T19:24:04+00:00",
@@ -5706,13 +4407,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T18:23:54+00:00",
-        "latestRawAgeHours": 7.75,
+        "latestRawAgeHours": 8.47,
         "latestValidAt": "2026-06-17T18:23:54+00:00",
-        "latestValidAgeHours": 7.75,
+        "latestValidAgeHours": 8.47,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-17T21:25:00+00:00",
-          "latestAgeHours": 4.73,
+          "latestAgeHours": 5.46,
           "sample": [
             {
               "publishedAt": "2026-06-17T21:25:00+00:00",
@@ -5732,15 +4433,10 @@
           ]
         },
         "visibleBreaking": {
-          "count": 4,
-          "latestAt": "2026-06-17T20:01:39+00:00",
-          "latestAgeHours": 6.12,
+          "count": 3,
+          "latestAt": "2026-06-17T18:18:35+00:00",
+          "latestAgeHours": 8.56,
           "sample": [
-            {
-              "publishedAt": "2026-06-17T20:01:39+00:00",
-              "source": "ynet",
-              "headline": "המשטרה מבקשת עזרה באיתור הנעדר דאניו אדוניה (82) שנראה לאחרונה בבני ברק"
-            },
             {
               "publishedAt": "2026-06-17T18:18:35+00:00",
               "source": "רוטר",
@@ -5750,6 +4446,11 @@
               "publishedAt": "2026-06-17T18:18:30+00:00",
               "source": "רוטר",
               "headline": "׳כאן 11׳: המשטרה בפנייה חריגה לציבור: בדקו שמוצרים שאתם רוכשים לילדים - סגורים ואטומים."
+            },
+            {
+              "publishedAt": "2026-06-17T17:51:00+00:00",
+              "source": "וואלה",
+              "headline": "נקבע מותו של הפצוע באירוע האלימות בערערה - המשטרה פתחה בחקירה"
             }
           ]
         },
