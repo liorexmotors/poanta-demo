@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 226
+Items checked: 197
 Errors: 0
-Warnings: 46
+Warnings: 45
 
 ## Category distribution
 
-- רכילות: 69
-- ביטחון: 56
-- ספורט: 32
-- פוליטיקה: 10
+- רכילות: 58
+- ביטחון: 50
+- ספורט: 29
 - חדשות: 8
-- כלכלה: 8
+- פוליטיקה: 8
 - פלילים: 6
 - משפט: 6
+- כלכלה: 6
 - דעות: 6
 - בריאות: 5
 - תרבות: 5
 - צרכנות: 4
-- טכנולוגיה: 4
-- רכב: 3
 - אקטואליה בעולם: 2
-- נדל״ן: 2
+- רכב: 2
+- נדל״ן: 1
+- טכנולוגיה: 1
 
 ## Issue counts
 
-- takeaway_long: 39
+- takeaway_long: 38
 - summary_long: 6
 - category_sport_source: 1
 
@@ -59,7 +59,7 @@ Warnings: 46
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15912529/tay-keith-dead-nashville-drake-travis-scott-producer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · category_sport_source · item 17
+### WARNING · category_sport_source · item 16
 - Sport source should usually be ספורט
 - Headline: `דאעש פרסם איום על אצטדיוני המונדיאל`
 - Original: `דאעש מאיים על האוהדים במונדיאל: "נצית את היציעים"`
@@ -345,10 +345,3 @@ Warnings: 46
 - Original: `More than 1,000 killed in Israel attacks on Gaza since ceasefire`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/newsfeed/2026/6/18/more-than-1000-killed-in-israel-attacks-on-gaza-since-ceasefire?traffic_source=rss
-
-### WARNING · takeaway_long · item 212
-- Takeaway length 110 > 95
-- Headline: `שבבים זינקו בוול סטריט; ספייס־אקס נפלה אחרי ההנפקה`
-- Original: `מניות השבבים שוברות שיאים בוול סטריט; ספייס־אקס צנחה ב-13% תוך יומיים`
-- Source: דה מרקר - גלובל
-- URL: https://www.themarker.com/wallstreet/2026-06-18/ty-article-live/0000019e-c033-dd0a-a19f-d37f4d160000
