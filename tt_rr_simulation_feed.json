@@ -1,27 +1,27 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-18T00:21:33+00:00",
+  "generatedAt": "2026-06-18T00:57:47+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 152,
+  "itemCount": 153,
   "simulationPoolWindow": {
     "originalWindowItems": 180,
-    "rawPoolItems": 152,
-    "rankedPoolItems": 152
+    "rawPoolItems": 153,
+    "rankedPoolItems": 153
   },
   "before": {
-    "newsinessTop10": 5,
-    "coreHardTop10": 5,
-    "softTop10": 5,
+    "newsinessTop10": 6,
+    "coreHardTop10": 6,
+    "softTop10": 4,
     "otherTop10": 0,
     "top5Under60": 4,
     "top10Under60": 4,
     "top12Under60": 4,
-    "topItemAgeMinutes": 10,
+    "topItemAgeMinutes": 5,
     "uniqueSourcesTop20": 7,
     "dominantSource": {
       "name": "וואלה",
-      "count": 6
+      "count": 7
     },
     "importantMissingTop20": [
       "N12",
@@ -38,7 +38,7 @@
     "topSources": [
       {
         "name": "וואלה",
-        "count": 6
+        "count": 7
       },
       {
         "name": "Jerusalem Post",
@@ -46,7 +46,7 @@
       },
       {
         "name": "Daily Mail",
-        "count": 5
+        "count": 4
       },
       {
         "name": "ערוץ 7 / INN עברית",
@@ -71,18 +71,18 @@
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 90,
+      "score": 84,
       "readyCount": 5,
       "hardReadyCount": 5,
       "hardReadyStrictCount": 5,
       "trendReadyCount": 3,
       "cleanReadyCount": 5,
       "cleanHardReadyCount": 5,
-      "cleanTrendReadyCount": 3,
+      "cleanTrendReadyCount": 1,
       "uniqueReadySources": 3,
       "uniqueCleanReadySources": 3,
-      "freshReadyUnder25Count": 3,
-      "cleanFreshReadyUnder25Count": 3,
+      "freshReadyUnder25Count": 1,
+      "cleanFreshReadyUnder25Count": 1,
       "blockers": [
         "ready_queue_below_6",
         "clean_ready_queue_below_6"
@@ -90,21 +90,35 @@
       "readyQueue": [
         {
           "rank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
+          "rank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 14,
+            "sourceCount": 3,
             "sources": [
+              "ynet",
               "הארץ",
               "וואלה"
             ],
@@ -113,40 +127,35 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "איראן",
               "ההבנות",
-              "טראמפ",
               "מזכר",
-              "פזשכיאן"
+              "פקיסטן"
             ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
+            "score": 47.38,
+            "boost": 14.0
           },
-          "queueScore": 54.0
+          "queueScore": 36.0
         },
         {
-          "rank": 3,
+          "rank": 4,
           "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 11,
+          "ageMinutes": 47,
           "url": "https://news.walla.co.il/item/3846624",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -158,55 +167,38 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
-          "queueScore": 48.0
+          "queueScore": 36.0
         },
         {
-          "rank": 2,
-          "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 10,
-          "url": "https://www.jpost.com/israel-news/article-899762",
-          "trendMatch": null,
-          "queueScore": 44.0
-        },
-        {
-          "rank": 4,
+          "rank": 5,
           "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
           "source": "ערוץ 7 / INN עברית",
           "canonicalSource": "ערוץ 7 / INN עברית",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 72,
           "url": "https://www.inn.co.il/flashes/1118430",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -218,54 +210,65 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "ארה",
               "ההבנות",
               "מזכר"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
+            "score": 31.58,
+            "boost": 14.0
           },
-          "queueScore": 36.0
+          "queueScore": 33.0
         },
         {
-          "rank": 6,
-          "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
-          "source": "The Jerusalem Post - Middle East",
+          "rank": 3,
+          "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
+          "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 83,
-          "url": "https://www.jpost.com/middle-east/article-899763",
+          "ageMinutes": 46,
+          "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
-          "queueScore": 23.0
+          "queueScore": 26.0
         }
       ],
       "cleanReadyQueue": [
         {
           "rank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
+          "rank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 14,
+            "sourceCount": 3,
             "sources": [
+              "ynet",
               "הארץ",
               "וואלה"
             ],
@@ -274,40 +277,35 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "איראן",
               "ההבנות",
-              "טראמפ",
               "מזכר",
-              "פזשכיאן"
+              "פקיסטן"
             ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
+            "score": 47.38,
+            "boost": 14.0
           },
-          "queueScore": 54.0
+          "queueScore": 36.0
         },
         {
-          "rank": 3,
+          "rank": 4,
           "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 11,
+          "ageMinutes": 47,
           "url": "https://news.walla.co.il/item/3846624",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -319,55 +317,38 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
-          "queueScore": 48.0
+          "queueScore": 36.0
         },
         {
-          "rank": 2,
-          "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 10,
-          "url": "https://www.jpost.com/israel-news/article-899762",
-          "trendMatch": null,
-          "queueScore": 44.0
-        },
-        {
-          "rank": 4,
+          "rank": 5,
           "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
           "source": "ערוץ 7 / INN עברית",
           "canonicalSource": "ערוץ 7 / INN עברית",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 72,
           "url": "https://www.inn.co.il/flashes/1118430",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -379,34 +360,31 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "ארה",
               "ההבנות",
               "מזכר"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
+            "score": 31.58,
+            "boost": 14.0
           },
-          "queueScore": 36.0
+          "queueScore": 33.0
         },
         {
-          "rank": 6,
-          "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
-          "source": "The Jerusalem Post - Middle East",
+          "rank": 3,
+          "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
+          "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 83,
-          "url": "https://www.jpost.com/middle-east/article-899763",
+          "ageMinutes": 46,
+          "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
-          "queueScore": 23.0
+          "queueScore": 26.0
         }
       ]
     },
@@ -417,38 +395,30 @@
       "coreHardFreshUnder60Count": 4,
       "softFreshUnder60Count": 0,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 3,
-      "worthyUniqueSources": 3,
+      "freshUniqueSources": 2,
+      "worthyUniqueSources": 2,
       "freshSources": [
         {
-          "name": "Jerusalem Post",
+          "name": "וואלה",
           "count": 2
         },
         {
-          "name": "וואלה",
-          "count": 1
-        },
-        {
-          "name": "ערוץ 7 / INN עברית",
-          "count": 1
+          "name": "Jerusalem Post",
+          "count": 2
         }
       ],
       "worthySources": [
         {
-          "name": "Jerusalem Post",
+          "name": "וואלה",
           "count": 2
         },
         {
-          "name": "וואלה",
-          "count": 1
-        },
-        {
-          "name": "ערוץ 7 / INN עברית",
-          "count": 1
+          "name": "Jerusalem Post",
+          "count": 2
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 1
+        "weak_or_missing_trend_match": 2
       },
       "staleOrUndatedCount": 76,
       "blockers": [
@@ -457,20 +427,38 @@
       "topFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 14,
+            "sourceCount": 3,
             "sources": [
+              "ynet",
               "הארץ",
               "וואלה"
             ],
@@ -479,22 +467,17 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "איראן",
               "ההבנות",
-              "טראמפ",
               "מזכר",
-              "פזשכיאן"
+              "פקיסטן"
             ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
+            "score": 47.38,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -502,13 +485,13 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 3,
           "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
           "freshUnder60": true,
@@ -519,19 +502,19 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 4,
           "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 11,
+          "ageMinutes": 47,
           "url": "https://news.walla.co.il/item/3846624",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -543,68 +526,20 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 4,
-          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-          "source": "ערוץ 7 / INN עברית",
-          "canonicalSource": "ערוץ 7 / INN עברית",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://www.inn.co.il/flashes/1118430",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "clusterKey": "מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 12,
-            "sourceCount": 3,
-            "sources": [
-              "ynet",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
-            "overlapTokens": [
-              "ארה",
-              "ההבנות",
-              "מזכר"
-            ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
-            "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -615,20 +550,38 @@
       "topWorthyFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 14,
+            "sourceCount": 3,
             "sources": [
+              "ynet",
               "הארץ",
               "וואלה"
             ],
@@ -637,22 +590,17 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "איראן",
               "ההבנות",
-              "טראמפ",
               "מזכר",
-              "פזשכיאן"
+              "פקיסטן"
             ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
+            "score": 47.38,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -660,13 +608,13 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 3,
           "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
           "freshUnder60": true,
@@ -677,19 +625,19 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 4,
           "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 11,
+          "ageMinutes": 47,
           "url": "https://news.walla.co.il/item/3846624",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -701,68 +649,20 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 4,
-          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-          "source": "ערוץ 7 / INN עברית",
-          "canonicalSource": "ערוץ 7 / INN עברית",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://www.inn.co.il/flashes/1118430",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "clusterKey": "מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 12,
-            "sourceCount": 3,
-            "sources": [
-              "ynet",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
-            "overlapTokens": [
-              "ארה",
-              "ההבנות",
-              "מזכר"
-            ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
-            "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -773,14 +673,14 @@
     }
   },
   "after": {
-    "newsinessTop10": 9,
-    "coreHardTop10": 9,
-    "softTop10": 1,
+    "newsinessTop10": 10,
+    "coreHardTop10": 10,
+    "softTop10": 0,
     "otherTop10": 0,
     "top5Under60": 4,
     "top10Under60": 4,
     "top12Under60": 4,
-    "topItemAgeMinutes": 11,
+    "topItemAgeMinutes": 5,
     "uniqueSourcesTop20": 7,
     "dominantSource": {
       "name": "וואלה",
@@ -834,24 +734,37 @@
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 90,
+      "score": 84,
       "readyCount": 5,
       "hardReadyCount": 5,
       "hardReadyStrictCount": 5,
       "trendReadyCount": 3,
       "cleanReadyCount": 5,
       "cleanHardReadyCount": 5,
-      "cleanTrendReadyCount": 3,
+      "cleanTrendReadyCount": 1,
       "uniqueReadySources": 3,
       "uniqueCleanReadySources": 3,
-      "freshReadyUnder25Count": 3,
-      "cleanFreshReadyUnder25Count": 3,
+      "freshReadyUnder25Count": 1,
+      "cleanFreshReadyUnder25Count": 1,
       "blockers": [
         "ready_queue_below_6",
         "clean_ready_queue_below_6"
       ],
       "readyQueue": [
         {
+          "rank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
           "rank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
@@ -859,57 +772,13 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
-            "overlapTokens": [
-              "איראן",
-              "ההבנות",
-              "טראמפ",
-              "מזכר",
-              "פזשכיאן"
-            ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
-            "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
-          },
-          "queueScore": 54.0
-        },
-        {
-          "rank": 1,
-          "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 11,
-          "url": "https://news.walla.co.il/item/3846624",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -921,26 +790,101 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
+              "ההבנות",
+              "מזכר",
+              "פקיסטן"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 47.38,
+            "boost": 14.0
+          },
+          "queueScore": 36.0
+        },
+        {
+          "rank": 3,
+          "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 47,
+          "url": "https://news.walla.co.il/item/3846624",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
+            "domain": "חדשות",
+            "externalMentions": 14,
+            "sourceCount": 3,
+            "sources": [
+              "ynet",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
+            "overlapTokens": [
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
-          "queueScore": 48.0
+          "queueScore": 36.0
+        },
+        {
+          "rank": 5,
+          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
+          "source": "ערוץ 7 / INN עברית",
+          "canonicalSource": "ערוץ 7 / INN עברית",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 72,
+          "url": "https://www.inn.co.il/flashes/1118430",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
+            "domain": "חדשות",
+            "externalMentions": 14,
+            "sourceCount": 3,
+            "sources": [
+              "ynet",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
+            "overlapTokens": [
+              "ההבנות",
+              "מזכר"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 31.58,
+            "boost": 14.0
+          },
+          "queueScore": 33.0
         },
         {
           "rank": 4,
@@ -950,69 +894,27 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
-          "queueScore": 44.0
-        },
-        {
-          "rank": 3,
-          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-          "source": "ערוץ 7 / INN עברית",
-          "canonicalSource": "ערוץ 7 / INN עברית",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 36,
-          "url": "https://www.inn.co.il/flashes/1118430",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "clusterKey": "מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 12,
-            "sourceCount": 3,
-            "sources": [
-              "ynet",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
-            "overlapTokens": [
-              "ארה",
-              "ההבנות",
-              "מזכר"
-            ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
-            "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
-          },
-          "queueScore": 36.0
-        },
-        {
-          "rank": 5,
-          "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 83,
-          "url": "https://www.jpost.com/middle-east/article-899763",
-          "trendMatch": null,
-          "queueScore": 23.0
+          "queueScore": 26.0
         }
       ],
       "cleanReadyQueue": [
         {
+          "rank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
           "rank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
@@ -1020,57 +922,13 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
-            "overlapTokens": [
-              "איראן",
-              "ההבנות",
-              "טראמפ",
-              "מזכר",
-              "פזשכיאן"
-            ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
-            "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
-          },
-          "queueScore": 54.0
-        },
-        {
-          "rank": 1,
-          "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 11,
-          "url": "https://news.walla.co.il/item/3846624",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -1082,26 +940,101 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
+              "ההבנות",
+              "מזכר",
+              "פקיסטן"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 47.38,
+            "boost": 14.0
+          },
+          "queueScore": 36.0
+        },
+        {
+          "rank": 3,
+          "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 47,
+          "url": "https://news.walla.co.il/item/3846624",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
+            "domain": "חדשות",
+            "externalMentions": 14,
+            "sourceCount": 3,
+            "sources": [
+              "ynet",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
+            "overlapTokens": [
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
-          "queueScore": 48.0
+          "queueScore": 36.0
+        },
+        {
+          "rank": 5,
+          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
+          "source": "ערוץ 7 / INN עברית",
+          "canonicalSource": "ערוץ 7 / INN עברית",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 72,
+          "url": "https://www.inn.co.il/flashes/1118430",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
+            "domain": "חדשות",
+            "externalMentions": 14,
+            "sourceCount": 3,
+            "sources": [
+              "ynet",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
+            "overlapTokens": [
+              "ההבנות",
+              "מזכר"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 31.58,
+            "boost": 14.0
+          },
+          "queueScore": 33.0
         },
         {
           "rank": 4,
@@ -1111,65 +1044,10 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
-          "queueScore": 44.0
-        },
-        {
-          "rank": 3,
-          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-          "source": "ערוץ 7 / INN עברית",
-          "canonicalSource": "ערוץ 7 / INN עברית",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 36,
-          "url": "https://www.inn.co.il/flashes/1118430",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "clusterKey": "מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 12,
-            "sourceCount": 3,
-            "sources": [
-              "ynet",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
-            "overlapTokens": [
-              "ארה",
-              "ההבנות",
-              "מזכר"
-            ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
-            "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
-          },
-          "queueScore": 36.0
-        },
-        {
-          "rank": 5,
-          "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 83,
-          "url": "https://www.jpost.com/middle-east/article-899763",
-          "trendMatch": null,
-          "queueScore": 23.0
+          "queueScore": 26.0
         }
       ]
     },
@@ -1180,38 +1058,30 @@
       "coreHardFreshUnder60Count": 4,
       "softFreshUnder60Count": 0,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 3,
-      "worthyUniqueSources": 3,
+      "freshUniqueSources": 2,
+      "worthyUniqueSources": 2,
       "freshSources": [
         {
-          "name": "Jerusalem Post",
+          "name": "וואלה",
           "count": 2
         },
         {
-          "name": "וואלה",
-          "count": 1
-        },
-        {
-          "name": "ערוץ 7 / INN עברית",
-          "count": 1
+          "name": "Jerusalem Post",
+          "count": 2
         }
       ],
       "worthySources": [
         {
-          "name": "Jerusalem Post",
+          "name": "וואלה",
           "count": 2
         },
         {
-          "name": "וואלה",
-          "count": 1
-        },
-        {
-          "name": "ערוץ 7 / INN עברית",
-          "count": 1
+          "name": "Jerusalem Post",
+          "count": 2
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 1
+        "weak_or_missing_trend_match": 2
       },
       "staleOrUndatedCount": 76,
       "blockers": [
@@ -1220,20 +1090,38 @@
       "topFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 14,
+            "sourceCount": 3,
             "sources": [
+              "ynet",
               "הארץ",
               "וואלה"
             ],
@@ -1242,22 +1130,17 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "איראן",
               "ההבנות",
-              "טראמפ",
               "מזכר",
-              "פזשכיאן"
+              "פקיסטן"
             ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
+            "score": 47.38,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -1265,13 +1148,13 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 3,
           "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1282,19 +1165,19 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 4,
           "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 11,
+          "ageMinutes": 47,
           "url": "https://news.walla.co.il/item/3846624",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -1306,68 +1189,20 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 4,
-          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-          "source": "ערוץ 7 / INN עברית",
-          "canonicalSource": "ערוץ 7 / INN עברית",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://www.inn.co.il/flashes/1118430",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "clusterKey": "מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 12,
-            "sourceCount": 3,
-            "sources": [
-              "ynet",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
-            "overlapTokens": [
-              "ארה",
-              "ההבנות",
-              "מזכר"
-            ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
-            "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -1378,20 +1213,38 @@
       "topWorthyFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+          "source": "וואלה חדשות - חדשות בארץ",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3846630",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 2,
           "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
           "trendMatch": {
-            "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-            "clusterKey": "חתמו מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+            "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 14,
+            "sourceCount": 3,
             "sources": [
+              "ynet",
               "הארץ",
               "וואלה"
             ],
@@ -1400,22 +1253,17 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:33:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3846629",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "איראן",
               "ההבנות",
-              "טראמפ",
               "מזכר",
-              "פזשכיאן"
+              "פקיסטן"
             ],
-            "entityOverlapTokens": [
-              "איראן",
-              "טראמפ"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 49.73,
-            "boost": 24.0
+            "score": 47.38,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -1423,13 +1271,13 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 3,
           "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 10,
+          "ageMinutes": 46,
           "url": "https://www.jpost.com/israel-news/article-899762",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1440,19 +1288,19 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 4,
           "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 11,
+          "ageMinutes": 47,
           "url": "https://news.walla.co.il/item/3846624",
           "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
             "clusterKey": "מזכר ההבנות",
             "domain": "חדשות",
-            "externalMentions": 12,
+            "externalMentions": 14,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -1464,68 +1312,20 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
+            "latestAt": "2026-06-18T02:40:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3846633",
             "overlapTokens": [
-              "אישרו",
-              "ארה",
               "ההבנות",
               "ואיראן",
-              "חתימה",
               "מזכר",
-              "מרחוק",
-              "נשיאי"
+              "ממשלת",
+              "פקיסטן",
+              "ראש"
             ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
+            "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 128.91,
-            "boost": 38.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 4,
-          "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-          "source": "ערוץ 7 / INN עברית",
-          "canonicalSource": "ערוץ 7 / INN עברית",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://www.inn.co.il/flashes/1118430",
-          "trendMatch": {
-            "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "clusterKey": "מזכר ההבנות",
-            "domain": "חדשות",
-            "externalMentions": 12,
-            "sourceCount": 3,
-            "sources": [
-              "ynet",
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-18T00:36:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3846624",
-            "overlapTokens": [
-              "ארה",
-              "ההבנות",
-              "מזכר"
-            ],
-            "entityOverlapTokens": [
-              "ארה"
-            ],
-            "eventOverlapTokens": [],
-            "score": 48.34,
-            "boost": 38.0
+            "score": 94.75,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -1535,8 +1335,8 @@
       ]
     }
   },
-  "beforeHealthScore": 45,
-  "afterHealthScore": 72,
+  "beforeHealthScore": 54,
+  "afterHealthScore": 76,
   "replacementReadiness": {
     "score": 76,
     "threshold": 80,
@@ -1600,7 +1400,7 @@
     "uniqueSourcesTop20": 0,
     "trendMatchedTop10": 2,
     "trendMatchedTop20": 1,
-    "healthScore": 27
+    "healthScore": 22
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
@@ -1609,38 +1409,30 @@
     "coreHardFreshUnder60Count": 4,
     "softFreshUnder60Count": 0,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 3,
-    "worthyUniqueSources": 3,
+    "freshUniqueSources": 2,
+    "worthyUniqueSources": 2,
     "freshSources": [
       {
-        "name": "Jerusalem Post",
+        "name": "וואלה",
         "count": 2
       },
       {
-        "name": "וואלה",
-        "count": 1
-      },
-      {
-        "name": "ערוץ 7 / INN עברית",
-        "count": 1
+        "name": "Jerusalem Post",
+        "count": 2
       }
     ],
     "worthySources": [
       {
-        "name": "Jerusalem Post",
+        "name": "וואלה",
         "count": 2
       },
       {
-        "name": "וואלה",
-        "count": 1
-      },
-      {
-        "name": "ערוץ 7 / INN עברית",
-        "count": 1
+        "name": "Jerusalem Post",
+        "count": 2
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 1
+      "weak_or_missing_trend_match": 2
     },
     "staleOrUndatedCount": 76,
     "blockers": [
@@ -1649,20 +1441,38 @@
     "topFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+        "source": "וואלה חדשות - חדשות בארץ",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3846630",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 2,
         "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
         "trendMatch": {
-          "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-          "clusterKey": "חתמו מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+          "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
+          "externalMentions": 14,
+          "sourceCount": 3,
           "sources": [
+            "ynet",
             "הארץ",
             "וואלה"
           ],
@@ -1671,22 +1481,17 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:33:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3846629",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "איראן",
             "ההבנות",
-            "טראמפ",
             "מזכר",
-            "פזשכיאן"
+            "פקיסטן"
           ],
-          "entityOverlapTokens": [
-            "איראן",
-            "טראמפ"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 49.73,
-          "boost": 24.0
+          "score": 47.38,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -1694,13 +1499,13 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/israel-news/article-899762",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1711,19 +1516,19 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 4,
         "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 11,
+        "ageMinutes": 47,
         "url": "https://news.walla.co.il/item/3846624",
         "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
           "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 12,
+          "externalMentions": 14,
           "sourceCount": 3,
           "sources": [
             "ynet",
@@ -1735,68 +1540,20 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "אישרו",
-            "ארה",
             "ההבנות",
             "ואיראן",
-            "חתימה",
             "מזכר",
-            "מרחוק",
-            "נשיאי"
+            "ממשלת",
+            "פקיסטן",
+            "ראש"
           ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 128.91,
-          "boost": 38.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 4,
-        "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-        "source": "ערוץ 7 / INN עברית",
-        "canonicalSource": "ערוץ 7 / INN עברית",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://www.inn.co.il/flashes/1118430",
-        "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-          "clusterKey": "מזכר ההבנות",
-          "domain": "חדשות",
-          "externalMentions": 12,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
-          "overlapTokens": [
-            "ארה",
-            "ההבנות",
-            "מזכר"
-          ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
-          "eventOverlapTokens": [],
-          "score": 48.34,
-          "boost": 38.0
+          "score": 94.75,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -1807,20 +1564,38 @@
     "topWorthyFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+        "source": "וואלה חדשות - חדשות בארץ",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3846630",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 2,
         "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
         "trendMatch": {
-          "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-          "clusterKey": "חתמו מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+          "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
+          "externalMentions": 14,
+          "sourceCount": 3,
           "sources": [
+            "ynet",
             "הארץ",
             "וואלה"
           ],
@@ -1829,22 +1604,17 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:33:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3846629",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "איראן",
             "ההבנות",
-            "טראמפ",
             "מזכר",
-            "פזשכיאן"
+            "פקיסטן"
           ],
-          "entityOverlapTokens": [
-            "איראן",
-            "טראמפ"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 49.73,
-          "boost": 24.0
+          "score": 47.38,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -1852,13 +1622,13 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/israel-news/article-899762",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1869,19 +1639,19 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 4,
         "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 11,
+        "ageMinutes": 47,
         "url": "https://news.walla.co.il/item/3846624",
         "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
           "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 12,
+          "externalMentions": 14,
           "sourceCount": 3,
           "sources": [
             "ynet",
@@ -1893,68 +1663,20 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "אישרו",
-            "ארה",
             "ההבנות",
             "ואיראן",
-            "חתימה",
             "מזכר",
-            "מרחוק",
-            "נשיאי"
+            "ממשלת",
+            "פקיסטן",
+            "ראש"
           ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 128.91,
-          "boost": 38.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 4,
-        "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-        "source": "ערוץ 7 / INN עברית",
-        "canonicalSource": "ערוץ 7 / INN עברית",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://www.inn.co.il/flashes/1118430",
-        "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-          "clusterKey": "מזכר ההבנות",
-          "domain": "חדשות",
-          "externalMentions": 12,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
-          "overlapTokens": [
-            "ארה",
-            "ההבנות",
-            "מזכר"
-          ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
-          "eventOverlapTokens": [],
-          "score": 48.34,
-          "boost": 38.0
+          "score": 94.75,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -1970,38 +1692,30 @@
     "coreHardFreshUnder60Count": 4,
     "softFreshUnder60Count": 0,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 3,
-    "worthyUniqueSources": 3,
+    "freshUniqueSources": 2,
+    "worthyUniqueSources": 2,
     "freshSources": [
       {
-        "name": "Jerusalem Post",
+        "name": "וואלה",
         "count": 2
       },
       {
-        "name": "וואלה",
-        "count": 1
-      },
-      {
-        "name": "ערוץ 7 / INN עברית",
-        "count": 1
+        "name": "Jerusalem Post",
+        "count": 2
       }
     ],
     "worthySources": [
       {
-        "name": "Jerusalem Post",
+        "name": "וואלה",
         "count": 2
       },
       {
-        "name": "וואלה",
-        "count": 1
-      },
-      {
-        "name": "ערוץ 7 / INN עברית",
-        "count": 1
+        "name": "Jerusalem Post",
+        "count": 2
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 1
+      "weak_or_missing_trend_match": 2
     },
     "staleOrUndatedCount": 76,
     "blockers": [
@@ -2010,20 +1724,38 @@
     "topFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+        "source": "וואלה חדשות - חדשות בארץ",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3846630",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 2,
         "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
         "trendMatch": {
-          "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-          "clusterKey": "חתמו מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+          "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
+          "externalMentions": 14,
+          "sourceCount": 3,
           "sources": [
+            "ynet",
             "הארץ",
             "וואלה"
           ],
@@ -2032,22 +1764,17 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:33:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3846629",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "איראן",
             "ההבנות",
-            "טראמפ",
             "מזכר",
-            "פזשכיאן"
+            "פקיסטן"
           ],
-          "entityOverlapTokens": [
-            "איראן",
-            "טראמפ"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 49.73,
-          "boost": 24.0
+          "score": 47.38,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -2055,13 +1782,13 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/israel-news/article-899762",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2072,19 +1799,19 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 4,
         "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 11,
+        "ageMinutes": 47,
         "url": "https://news.walla.co.il/item/3846624",
         "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
           "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 12,
+          "externalMentions": 14,
           "sourceCount": 3,
           "sources": [
             "ynet",
@@ -2096,68 +1823,20 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "אישרו",
-            "ארה",
             "ההבנות",
             "ואיראן",
-            "חתימה",
             "מזכר",
-            "מרחוק",
-            "נשיאי"
+            "ממשלת",
+            "פקיסטן",
+            "ראש"
           ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 128.91,
-          "boost": 38.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 4,
-        "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-        "source": "ערוץ 7 / INN עברית",
-        "canonicalSource": "ערוץ 7 / INN עברית",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://www.inn.co.il/flashes/1118430",
-        "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-          "clusterKey": "מזכר ההבנות",
-          "domain": "חדשות",
-          "externalMentions": 12,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
-          "overlapTokens": [
-            "ארה",
-            "ההבנות",
-            "מזכר"
-          ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
-          "eventOverlapTokens": [],
-          "score": 48.34,
-          "boost": 38.0
+          "score": 94.75,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -2168,20 +1847,38 @@
     "topWorthyFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+        "source": "וואלה חדשות - חדשות בארץ",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3846630",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": [
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 2,
         "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
         "trendMatch": {
-          "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-          "clusterKey": "חתמו מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+          "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
+          "externalMentions": 14,
+          "sourceCount": 3,
           "sources": [
+            "ynet",
             "הארץ",
             "וואלה"
           ],
@@ -2190,22 +1887,17 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:33:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3846629",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "איראן",
             "ההבנות",
-            "טראמפ",
             "מזכר",
-            "פזשכיאן"
+            "פקיסטן"
           ],
-          "entityOverlapTokens": [
-            "איראן",
-            "טראמפ"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 49.73,
-          "boost": 24.0
+          "score": 47.38,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -2213,13 +1905,13 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 10,
+        "ageMinutes": 46,
         "url": "https://www.jpost.com/israel-news/article-899762",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2230,19 +1922,19 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 4,
         "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 11,
+        "ageMinutes": 47,
         "url": "https://news.walla.co.il/item/3846624",
         "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+          "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
           "clusterKey": "מזכר ההבנות",
           "domain": "חדשות",
-          "externalMentions": 12,
+          "externalMentions": 14,
           "sourceCount": 3,
           "sources": [
             "ynet",
@@ -2254,68 +1946,20 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
+          "latestAt": "2026-06-18T02:40:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3846633",
           "overlapTokens": [
-            "אישרו",
-            "ארה",
             "ההבנות",
             "ואיראן",
-            "חתימה",
             "מזכר",
-            "מרחוק",
-            "נשיאי"
+            "ממשלת",
+            "פקיסטן",
+            "ראש"
           ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
+          "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 128.91,
-          "boost": 38.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 4,
-        "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-        "source": "ערוץ 7 / INN עברית",
-        "canonicalSource": "ערוץ 7 / INN עברית",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://www.inn.co.il/flashes/1118430",
-        "trendMatch": {
-          "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-          "clusterKey": "מזכר ההבנות",
-          "domain": "חדשות",
-          "externalMentions": 12,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-18T00:36:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3846624",
-          "overlapTokens": [
-            "ארה",
-            "ההבנות",
-            "מזכר"
-          ],
-          "entityOverlapTokens": [
-            "ארה"
-          ],
-          "eventOverlapTokens": [],
-          "score": 48.34,
-          "boost": 38.0
+          "score": 94.75,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -2362,9 +2006,9 @@
         "id": "walla",
         "label": "וואלה חדשות",
         "configuredSourceCount": 12,
-        "freshUnder60Scanned": 7,
+        "freshUnder60Scanned": 5,
         "acceptedHardQaClean": 0,
-        "rejected": 7,
+        "rejected": 5,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2389,9 +2033,9 @@
         "id": "bbc",
         "label": "BBC",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2416,27 +2060,27 @@
         "id": "israel_hayom",
         "label": "ישראל היום",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 2,
+        "freshUnder60Scanned": 0,
         "acceptedHardQaClean": 0,
-        "rejected": 2,
+        "rejected": 0,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "guardian",
         "label": "Guardian",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 0,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 0,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "nyt",
         "label": "NYT",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 2,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 2,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2452,9 +2096,9 @@
         "id": "inn",
         "label": "ערוץ 7 / INN",
         "configuredSourceCount": 2,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 2,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 2,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2473,28 +2117,16 @@
         "sourceGroup": "ynet חדשות",
         "source": "ynet - מבזקי החדשות",
         "canonicalSource": "ynet",
-        "headline": "רוסיה תקפה את אוקראינה בטילים, לא דווח על נפגעים",
-        "ageMinutes": 57,
+        "headline": "פקיסטן: מצר הורמוז ייפתח מחדש \"באופן מיידי\", גם המצור האמריקני יוסר",
+        "ageMinutes": 25,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
+          "headline_too_long",
           "headline_copies_source",
           "summary_generic_or_mediated"
         ],
-        "url": "https://www.ynet.co.il/news/article/b1liioezzl"
-      },
-      {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "headline": "פרסום ראשון: בעקבות הרצח בערערה בנגב - ארבעה גני ילדים ייסגרו",
-        "ageMinutes": 0,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_copies_source"
-        ],
-        "url": "https://news.walla.co.il/item/3846630"
+        "url": "https://www.ynet.co.il/news/article/b1mc52gmfe"
       },
       {
         "sourceGroup": "וואלה חדשות",
@@ -2528,15 +2160,15 @@
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
-        "headline": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
+        "headline": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "ageMinutes": 0,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_copies_source",
-          "summary_generic_or_mediated"
+          "headline_too_long",
+          "headline_copies_source"
         ],
-        "url": "https://news.walla.co.il/break/3846629"
+        "url": "https://news.walla.co.il/break/3846633"
       },
       {
         "sourceGroup": "וואלה חדשות",
@@ -2555,67 +2187,59 @@
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
-        "headline": "על אף הכחשתו של טראמפ: באיראן טוענים כי קרן הסיוע בסך 300 מיליארד היא חלק מהמזכר",
-        "ageMinutes": 29,
+        "headline": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
+        "ageMinutes": 24,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source",
+          "summary_generic_or_mediated"
+        ],
+        "url": "https://news.walla.co.il/break/3846629"
+      },
+      {
+        "sourceGroup": "BBC",
+        "source": "BBC World",
+        "canonicalSource": "BBC",
+        "headline": "US-Iran deal leaves core sticking points unresolved - and a $300bn question",
+        "ageMinutes": 0,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
           "headline_copies_source",
-          "summary_generic_or_mediated"
+          "foreign_latin_leak",
+          "foreign_latin_leak"
         ],
-        "url": "https://news.walla.co.il/break/3846622"
+        "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss"
       },
       {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות - מבזקים",
-        "canonicalSource": "וואלה",
-        "headline": "מנהל המו\"מ באיראן: מיצרי הורמוז לא ישובו של לתנאים לפני המלחמה - ולא מדובר בהפרה",
-        "ageMinutes": 59,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_too_long",
-          "headline_copies_source",
-          "summary_generic_or_mediated"
-        ],
-        "url": "https://news.walla.co.il/break/3846618"
-      },
-      {
-        "sourceGroup": "ישראל היום",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "headline": "\"אוסקר גלוך קיבל חדשות טובות מאוד, הדברים הולכים להשתנות\"",
-        "ageMinutes": 35,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_copies_source"
-        ],
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20787569"
-      },
-      {
-        "sourceGroup": "ישראל היום",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "headline": "מי זה \"יצחק א־חמומי\": דוח מיוחד חושף את מבצעי התודעה של איראן בישראל",
-        "ageMinutes": 54,
+        "sourceGroup": "NYT",
+        "source": "New York Times Middle East",
+        "canonicalSource": "NYT",
+        "headline": "Before Making a Deal, Trump Demanded Iran’s Surrender. He Got a Surprise.",
+        "ageMinutes": 6,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
           "headline_copies_source"
         ],
-        "url": "https://www.israelhayom.co.il/news/geopolitics/article/20786616"
+        "url": "https://www.nytimes.com/2026/06/17/us/politics/trump-iran-deal-nuclear-program-strait.html"
       },
       {
-        "sourceGroup": "Guardian",
-        "source": "The Guardian Middle East",
-        "headline": "Top Republican decries Trump’s Iran deal: ‘Reagan is rolling over in his grave’",
-        "ageMinutes": 50,
+        "sourceGroup": "NYT",
+        "source": "New York Times Middle East",
+        "canonicalSource": "NYT",
+        "headline": "Trump Defends Deal to End the War With Iran as Details Emerge",
+        "ageMinutes": 7,
         "status": "rejected",
-        "reason": "foreign_relevance_filtered",
-        "url": "https://www.theguardian.com/us-news/2026/jun/17/trump-republicans-iran-deal"
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.nytimes.com/2026/06/17/world/middleeast/trump-iran-deal-obama.html"
       },
       {
         "sourceGroup": "Jerusalem Post",
@@ -2649,29 +2273,42 @@
         "sourceGroup": "ערוץ 7 / INN",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
-        "headline": "Iran won the war against US and Israel, chief negotiator Ghalibaf claims",
-        "ageMinutes": 56,
+        "headline": "Watch: Trump signs Iran memorandum of understanding",
+        "ageMinutes": 19,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.israelnationalnews.com/flashes/688002"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "Israel National News English",
+        "canonicalSource": "Israel National News English",
+        "headline": "Iranian Foreign Ministry announces start of 60-day clock for talks with US",
+        "ageMinutes": 41,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
           "headline_copies_source"
         ],
-        "url": "https://www.israelnationalnews.com/flashes/687999"
+        "url": "https://www.israelnationalnews.com/flashes/688001"
       }
     ],
     "dedupe": [],
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 12.94,
+      "elapsedSeconds": 9.49,
       "skippedForBudget": 0
     }
   },
   "semanticPoolDedupe": {
     "mode": "simulation_only_pool_semantic_dedupe_no_feed_mutation",
-    "inputCount": 152,
-    "uniqueCount": 146,
+    "inputCount": 153,
+    "uniqueCount": 147,
     "relegatedDuplicateCount": 6,
     "relegated": [
       {
@@ -2729,15 +2366,15 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 25.0,
-    "avgAfterHealthScore": 72.58,
+    "avgHealthDelta": 24.25,
+    "avgAfterHealthScore": 72.67,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
       "latestScore": 76,
-      "rollingScore": 63.42,
+      "rollingScore": 63.96,
       "readyRuns": 0,
       "criticalBlockers": [
         "top12_under60_below_9",
@@ -2757,17 +2394,17 @@
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-18T03:21:33+03:00",
+    "generatedAt": "2026-06-18T03:57:47+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 118,
+    "rssItemsScanned": 115,
     "webItemsScanned": 179,
     "topTrends": [
       {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -2779,9 +2416,9 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
-        "strength": 56.4
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "strength": 57.0
       },
       {
         "trend": "\"דילול האורניום\" - וסכום המיליארדים לשיקום: סעיפי ההסכם בין ארה\"ב לאיראן נחשפים",
@@ -2825,10 +2462,10 @@
         "strength": 50.8
       },
       {
-        "trend": "המציאות המורכבת בדרום לבנון - והאזהרה בצה\"ל: \"אסור לצאת מרצועת הביטחון\"",
-        "clusterKey": "בדרום לבנון",
+        "trend": "בזמן \"הפסקת האש\": 5 לוחמים נפצעו מפגיעת רחפן בדרום לבנון, אחד במצב קשה",
+        "clusterKey": "הפסקת האש",
         "domain": "חדשות",
-        "externalMentions": 6,
+        "externalMentions": 3,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -2839,10 +2476,10 @@
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-17T21:00:28+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/h1qqjrgzzg",
-        "strength": 46.2
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-17T17:01:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846534",
+        "strength": 49.1
       },
       {
         "trend": "צה\"ל השמיד את המשגר ממנו חיזבאללה שיגר רקטות לעבר כוחות צה\"ל",
@@ -2862,6 +2499,26 @@
         "latestAt": "2026-06-17T22:03:00+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846605",
         "strength": 45.5
+      },
+      {
+        "trend": "המציאות המורכבת בדרום לבנון - והאזהרה בצה\"ל: \"אסור לצאת מרצועת הביטחון\"",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-17T21:00:28+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/h1qqjrgzzg",
+        "strength": 44.5
       },
       {
         "trend": "פרשת פרינוק: צו סגירה של משרד הבריאות לשני סניפי זול ובגדול",
@@ -2903,26 +2560,6 @@
         "strength": 42.1
       },
       {
-        "trend": "בזמן \"הפסקת האש\": 5 לוחמים נפצעו מפגיעת רחפן בדרום לבנון, אחד במצב קשה",
-        "clusterKey": "בזמן הפסקת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-17T17:01:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846534",
-        "strength": 41.1
-      },
-      {
         "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
         "clusterKey": "השוטר שבעט",
         "domain": "חדשות",
@@ -2938,7 +2575,7 @@
         ],
         "mentionedInFeed": true,
         "latestAt": "2026-06-17T21:25:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846598",
+        "sampleUrl": "https://news.walla.co.il/break/3846599",
         "strength": 39.2
       },
       {
@@ -2964,24 +2601,39 @@
   },
   "top10Before": [
     {
+      "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+      "source": "וואלה חדשות - חדשות בארץ",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3846630",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
       "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
       "source": "The Jerusalem Post - Middle East",
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": {
-        "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-        "clusterKey": "חתמו מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
+        "externalMentions": 14,
+        "sourceCount": 3,
         "sources": [
+          "ynet",
           "הארץ",
           "וואלה"
         ],
@@ -2990,22 +2642,17 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:33:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846629",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "איראן",
           "ההבנות",
-          "טראמפ",
           "מזכר",
-          "פזשכיאן"
+          "פקיסטן"
         ],
-        "entityOverlapTokens": [
-          "איראן",
-          "טראמפ"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 49.73,
-        "boost": 24.0
+        "score": 47.38,
+        "boost": 14.0
       }
     },
     {
@@ -3015,10 +2662,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/israel-news/article-899762",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 3,
+      "afterRank": 3,
       "delta": 0,
       "trendMatch": null
     },
@@ -3029,16 +2676,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 11,
+      "ageMinutes": 47,
       "url": "https://news.walla.co.il/item/3846624",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3050,24 +2697,20 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "אישרו",
-          "ארה",
           "ההבנות",
           "ואיראן",
-          "חתימה",
           "מזכר",
-          "מרחוק",
-          "נשיאי"
+          "ממשלת",
+          "פקיסטן",
+          "ראש"
         ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 128.91,
-        "boost": 38.0
+        "score": 94.75,
+        "boost": 14.0
       }
     },
     {
@@ -3077,16 +2720,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
+      "ageMinutes": 72,
       "url": "https://www.inn.co.il/flashes/1118430",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3098,19 +2741,16 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "ארה",
           "ההבנות",
           "מזכר"
         ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 48.34,
-        "boost": 38.0
+        "score": 31.58,
+        "boost": 14.0
       }
     },
     {
@@ -3120,10 +2760,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 81,
+      "ageMinutes": 117,
       "url": "https://sports.walla.co.il/item/3846373",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -3134,10 +2774,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 83,
+      "ageMinutes": 119,
       "url": "https://www.jpost.com/middle-east/article-899763",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -3148,10 +2788,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 120,
       "url": "https://sports.walla.co.il/item/3846619",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -3162,10 +2802,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 85,
+      "ageMinutes": 121,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909169/carole-radziwill-sai-silva-epstein-real-housewives.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -3176,22 +2816,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 85,
+      "ageMinutes": 121,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909279/ABC-News-Breakfast-Virginia-Trioli-leaving.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "דאוויי צ'ייס, הקול של לילו בלילו וסטיץ', מתה בגיל 35 מדלקת קרום המוח",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 99,
-      "url": "https://pagesix.com/2026/06/17/celebrity-news/daveigh-chase-shared-legacy-she-hoped-to-leave-behind/",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -3200,52 +2826,18 @@
   ],
   "top10After": [
     {
-      "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
-      "source": "וואלה חדשות",
+      "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+      "source": "וואלה חדשות - חדשות בארץ",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 11,
-      "url": "https://news.walla.co.il/item/3846624",
-      "beforeRank": 3,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3846630",
+      "beforeRank": 1,
       "afterRank": 1,
-      "delta": 2,
-      "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 12,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
-        "overlapTokens": [
-          "אישרו",
-          "ארה",
-          "ההבנות",
-          "ואיראן",
-          "חתימה",
-          "מזכר",
-          "מרחוק",
-          "נשיאי"
-        ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
-        "eventOverlapTokens": [],
-        "score": 128.91,
-        "boost": 38.0
-      }
+      "delta": 0,
+      "trendMatch": null
     },
     {
       "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
@@ -3254,61 +2846,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
-      "beforeRank": 1,
+      "beforeRank": 2,
       "afterRank": 2,
-      "delta": -1,
+      "delta": 0,
       "trendMatch": {
-        "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-        "clusterKey": "חתמו מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:33:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846629",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "טראמפ",
-          "מזכר",
-          "פזשכיאן"
-        ],
-        "entityOverlapTokens": [
-          "איראן",
-          "טראמפ"
-        ],
-        "eventOverlapTokens": [],
-        "score": 49.73,
-        "boost": 24.0
-      }
-    },
-    {
-      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-      "source": "ערוץ 7 / INN עברית",
-      "canonicalSource": "ערוץ 7 / INN עברית",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 36,
-      "url": "https://www.inn.co.il/flashes/1118430",
-      "beforeRank": 4,
-      "afterRank": 3,
-      "delta": 1,
-      "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3320,19 +2867,61 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "ארה",
           "ההבנות",
-          "מזכר"
+          "מזכר",
+          "פקיסטן"
         ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 48.34,
-        "boost": 38.0
+        "score": 47.38,
+        "boost": 14.0
+      }
+    },
+    {
+      "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 47,
+      "url": "https://news.walla.co.il/item/3846624",
+      "beforeRank": 4,
+      "afterRank": 3,
+      "delta": 1,
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "ואיראן",
+          "מזכר",
+          "ממשלת",
+          "פקיסטן",
+          "ראש"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 94.75,
+        "boost": 14.0
       }
     },
     {
@@ -3342,12 +2931,52 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/israel-news/article-899762",
-      "beforeRank": 2,
+      "beforeRank": 3,
       "afterRank": 4,
-      "delta": -2,
+      "delta": -1,
       "trendMatch": null
+    },
+    {
+      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
+      "source": "ערוץ 7 / INN עברית",
+      "canonicalSource": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 72,
+      "url": "https://www.inn.co.il/flashes/1118430",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "מזכר"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 31.58,
+        "boost": 14.0
+      }
     },
     {
       "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
@@ -3356,57 +2985,12 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 83,
+      "ageMinutes": 119,
       "url": "https://www.jpost.com/middle-east/article-899763",
-      "beforeRank": 6,
-      "afterRank": 5,
+      "beforeRank": 7,
+      "afterRank": 6,
       "delta": 1,
       "trendMatch": null
-    },
-    {
-      "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 176,
-      "url": "https://news.walla.co.il/item/3846598",
-      "beforeRank": 14,
-      "afterRank": 6,
-      "delta": 8,
-      "trendMatch": {
-        "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
-        "clusterKey": "השוטר שבעט",
-        "domain": "חדשות",
-        "externalMentions": 6,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-17T21:25:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846598",
-        "overlapTokens": [
-          "במפגין",
-          "הושעה",
-          "השוטר",
-          "התיעוד",
-          "מתפקידו",
-          "סערה",
-          "שבעט",
-          "שעורר"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 88.11,
-        "boost": 14.0
-      }
     },
     {
       "headline": "קצב האש בלבנון ירד; בכירים בצה״ל מזהירים: ״אסור לצאת מרצועת הביטחון״",
@@ -3415,16 +2999,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 201,
+      "ageMinutes": 237,
       "url": "https://www.ynet.co.il/news/article/h1qqjrgzzg",
-      "beforeRank": 22,
+      "beforeRank": 23,
       "afterRank": 7,
-      "delta": 15,
+      "delta": 16,
       "trendMatch": {
         "trend": "המציאות המורכבת בדרום לבנון - והאזהרה בצה\"ל: \"אסור לצאת מרצועת הביטחון\"",
         "clusterKey": "בדרום לבנון",
         "domain": "חדשות",
-        "externalMentions": 6,
+        "externalMentions": 5,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3452,8 +3036,53 @@
           "לבנון"
         ],
         "eventOverlapTokens": [],
-        "score": 128.0,
+        "score": 123.29,
         "boost": 38.0
+      }
+    },
+    {
+      "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 212,
+      "url": "https://news.walla.co.il/item/3846598",
+      "beforeRank": 15,
+      "afterRank": 8,
+      "delta": 7,
+      "trendMatch": {
+        "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
+        "clusterKey": "השוטר שבעט",
+        "domain": "חדשות",
+        "externalMentions": 6,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-17T21:25:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846599",
+        "overlapTokens": [
+          "במפגין",
+          "הושעה",
+          "השוטר",
+          "התיעוד",
+          "מתפקידו",
+          "סערה",
+          "שבעט",
+          "שעורר"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 88.11,
+        "boost": 14.0
       }
     },
     {
@@ -3463,43 +3092,43 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 201,
+      "ageMinutes": 237,
       "url": "https://www.ynet.co.il/news/article/s1zvyvlfge",
-      "beforeRank": 23,
-      "afterRank": 8,
+      "beforeRank": 24,
+      "afterRank": 9,
       "delta": 15,
       "trendMatch": null
     },
     {
-      "headline": "סמוטריץ׳ העביר אישורי בנייה בחברון בלי אישור העירייה הפלסטינית",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "פוליטיקה",
+      "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 176,
-      "url": "https://www.jpost.com/israel-news/article-899747",
-      "beforeRank": 12,
-      "afterRank": 9,
-      "delta": 3,
-      "trendMatch": null
-    },
-    {
-      "headline": "וירג'יניה טריולי, מגישת חדשות הבוקר של ABC, פורשת אחרי 27 שנה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15909279/ABC-News-Breakfast-Virginia-Trioli-leaving.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
+      "ageMinutes": 320,
+      "url": "https://www.israelhayom.co.il/news/politics/article/20786790",
+      "beforeRank": 30,
       "afterRank": 10,
-      "delta": -1,
+      "delta": 20,
       "trendMatch": null
     }
   ],
   "top20Before": [
+    {
+      "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+      "source": "וואלה חדשות - חדשות בארץ",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3846630",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
     {
       "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
       "source": "The Jerusalem Post - Middle East",
@@ -3507,18 +3136,19 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": {
-        "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-        "clusterKey": "חתמו מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
+        "externalMentions": 14,
+        "sourceCount": 3,
         "sources": [
+          "ynet",
           "הארץ",
           "וואלה"
         ],
@@ -3527,22 +3157,17 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:33:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846629",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "איראן",
           "ההבנות",
-          "טראמפ",
           "מזכר",
-          "פזשכיאן"
+          "פקיסטן"
         ],
-        "entityOverlapTokens": [
-          "איראן",
-          "טראמפ"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 49.73,
-        "boost": 24.0
+        "score": 47.38,
+        "boost": 14.0
       }
     },
     {
@@ -3552,10 +3177,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/israel-news/article-899762",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 3,
+      "afterRank": 3,
       "delta": 0,
       "trendMatch": null
     },
@@ -3566,16 +3191,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 11,
+      "ageMinutes": 47,
       "url": "https://news.walla.co.il/item/3846624",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3587,24 +3212,20 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "אישרו",
-          "ארה",
           "ההבנות",
           "ואיראן",
-          "חתימה",
           "מזכר",
-          "מרחוק",
-          "נשיאי"
+          "ממשלת",
+          "פקיסטן",
+          "ראש"
         ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 128.91,
-        "boost": 38.0
+        "score": 94.75,
+        "boost": 14.0
       }
     },
     {
@@ -3614,16 +3235,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
+      "ageMinutes": 72,
       "url": "https://www.inn.co.il/flashes/1118430",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3635,19 +3256,16 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "ארה",
           "ההבנות",
           "מזכר"
         ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 48.34,
-        "boost": 38.0
+        "score": 31.58,
+        "boost": 14.0
       }
     },
     {
@@ -3657,10 +3275,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 81,
+      "ageMinutes": 117,
       "url": "https://sports.walla.co.il/item/3846373",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -3671,10 +3289,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 83,
+      "ageMinutes": 119,
       "url": "https://www.jpost.com/middle-east/article-899763",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -3685,10 +3303,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 120,
       "url": "https://sports.walla.co.il/item/3846619",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -3699,10 +3317,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 85,
+      "ageMinutes": 121,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909169/carole-radziwill-sai-silva-epstein-real-housewives.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -3713,10 +3331,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 85,
+      "ageMinutes": 121,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909279/ABC-News-Breakfast-Virginia-Trioli-leaving.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -3727,10 +3345,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 99,
+      "ageMinutes": 136,
       "url": "https://pagesix.com/2026/06/17/celebrity-news/daveigh-chase-shared-legacy-she-hoped-to-leave-behind/",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": null
     },
@@ -3741,10 +3359,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 111,
+      "ageMinutes": 147,
       "url": "https://www.ynet.co.il/sport/worldcup2026/article/i35jsknbl",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -3755,10 +3373,10 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 176,
+      "ageMinutes": 212,
       "url": "https://www.jpost.com/israel-news/article-899747",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -3769,10 +3387,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 176,
+      "ageMinutes": 212,
       "url": "https://www.jpost.com/middle-east/article-899754",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": null
     },
@@ -3783,10 +3401,10 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 176,
+      "ageMinutes": 212,
       "url": "https://news.walla.co.il/item/3846598",
-      "beforeRank": 14,
-      "afterRank": 14,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": {
         "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
@@ -3804,7 +3422,7 @@
         ],
         "mentionedInFeed": true,
         "latestAt": "2026-06-17T21:25:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846598",
+        "sampleUrl": "https://news.walla.co.il/break/3846599",
         "overlapTokens": [
           "במפגין",
           "הושעה",
@@ -3828,10 +3446,10 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 176,
+      "ageMinutes": 213,
       "url": "https://e.walla.co.il/item/3846613",
-      "beforeRank": 15,
-      "afterRank": 15,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -3842,10 +3460,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 177,
+      "ageMinutes": 213,
       "url": "https://sports.walla.co.il/item/3846405",
-      "beforeRank": 16,
-      "afterRank": 16,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -3856,10 +3474,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 183,
+      "ageMinutes": 220,
       "url": "https://www.dailymail.com/tvshowbiz/article-15908869/bachelor-star-colton-underwood-secret-reality-dating-show.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 17,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -3870,10 +3488,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 184,
+      "ageMinutes": 220,
       "url": "https://www.dailymail.com/tvshowbiz/article-15909035/Lee-Andrews-faces-return-prison-debts-denial-jailed-fraud.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 18,
-      "afterRank": 18,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -3884,22 +3502,8 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 184,
+      "ageMinutes": 221,
       "url": "https://www.theguardian.com/world/2026/jun/17/trump-us-iran-war-mou-deal",
-      "beforeRank": 19,
-      "afterRank": 19,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "אלי גולדינג חזרה לאירוע השנתי של V&A ארבעה חודשים אחרי הלידה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 189,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15908781/Ellie-Goulding-Maya-Jama-Zawe-Ashton-V-Summer-Partys-10th-Anniversary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -3908,52 +3512,18 @@
   ],
   "top20After": [
     {
-      "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
-      "source": "וואלה חדשות",
+      "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+      "source": "וואלה חדשות - חדשות בארץ",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 11,
-      "url": "https://news.walla.co.il/item/3846624",
-      "beforeRank": 3,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3846630",
+      "beforeRank": 1,
       "afterRank": 1,
-      "delta": 2,
-      "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 12,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
-        "overlapTokens": [
-          "אישרו",
-          "ארה",
-          "ההבנות",
-          "ואיראן",
-          "חתימה",
-          "מזכר",
-          "מרחוק",
-          "נשיאי"
-        ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
-        "eventOverlapTokens": [],
-        "score": 128.91,
-        "boost": 38.0
-      }
+      "delta": 0,
+      "trendMatch": null
     },
     {
       "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
@@ -3962,61 +3532,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899761",
-      "beforeRank": 1,
+      "beforeRank": 2,
       "afterRank": 2,
-      "delta": -1,
+      "delta": 0,
       "trendMatch": {
-        "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-        "clusterKey": "חתמו מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:33:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846629",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "טראמפ",
-          "מזכר",
-          "פזשכיאן"
-        ],
-        "entityOverlapTokens": [
-          "איראן",
-          "טראמפ"
-        ],
-        "eventOverlapTokens": [],
-        "score": 49.73,
-        "boost": 24.0
-      }
-    },
-    {
-      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-      "source": "ערוץ 7 / INN עברית",
-      "canonicalSource": "ערוץ 7 / INN עברית",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 36,
-      "url": "https://www.inn.co.il/flashes/1118430",
-      "beforeRank": 4,
-      "afterRank": 3,
-      "delta": 1,
-      "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
         "clusterKey": "מזכר ההבנות",
         "domain": "חדשות",
-        "externalMentions": 12,
+        "externalMentions": 14,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -4028,19 +3553,61 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
         "overlapTokens": [
-          "ארה",
           "ההבנות",
-          "מזכר"
+          "מזכר",
+          "פקיסטן"
         ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
+        "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 48.34,
-        "boost": 38.0
+        "score": 47.38,
+        "boost": 14.0
+      }
+    },
+    {
+      "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 47,
+      "url": "https://news.walla.co.il/item/3846624",
+      "beforeRank": 4,
+      "afterRank": 3,
+      "delta": 1,
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "ואיראן",
+          "מזכר",
+          "ממשלת",
+          "פקיסטן",
+          "ראש"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 94.75,
+        "boost": 14.0
       }
     },
     {
@@ -4050,12 +3617,52 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 10,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/israel-news/article-899762",
-      "beforeRank": 2,
+      "beforeRank": 3,
       "afterRank": 4,
-      "delta": -2,
+      "delta": -1,
       "trendMatch": null
+    },
+    {
+      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
+      "source": "ערוץ 7 / INN עברית",
+      "canonicalSource": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 72,
+      "url": "https://www.inn.co.il/flashes/1118430",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "מזכר"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 31.58,
+        "boost": 14.0
+      }
     },
     {
       "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
@@ -4064,57 +3671,12 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 83,
+      "ageMinutes": 119,
       "url": "https://www.jpost.com/middle-east/article-899763",
-      "beforeRank": 6,
-      "afterRank": 5,
+      "beforeRank": 7,
+      "afterRank": 6,
       "delta": 1,
       "trendMatch": null
-    },
-    {
-      "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 176,
-      "url": "https://news.walla.co.il/item/3846598",
-      "beforeRank": 14,
-      "afterRank": 6,
-      "delta": 8,
-      "trendMatch": {
-        "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
-        "clusterKey": "השוטר שבעט",
-        "domain": "חדשות",
-        "externalMentions": 6,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-17T21:25:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846598",
-        "overlapTokens": [
-          "במפגין",
-          "הושעה",
-          "השוטר",
-          "התיעוד",
-          "מתפקידו",
-          "סערה",
-          "שבעט",
-          "שעורר"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 88.11,
-        "boost": 14.0
-      }
     },
     {
       "headline": "קצב האש בלבנון ירד; בכירים בצה״ל מזהירים: ״אסור לצאת מרצועת הביטחון״",
@@ -4123,16 +3685,16 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 201,
+      "ageMinutes": 237,
       "url": "https://www.ynet.co.il/news/article/h1qqjrgzzg",
-      "beforeRank": 22,
+      "beforeRank": 23,
       "afterRank": 7,
-      "delta": 15,
+      "delta": 16,
       "trendMatch": {
         "trend": "המציאות המורכבת בדרום לבנון - והאזהרה בצה\"ל: \"אסור לצאת מרצועת הביטחון\"",
         "clusterKey": "בדרום לבנון",
         "domain": "חדשות",
-        "externalMentions": 6,
+        "externalMentions": 5,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -4160,338 +3722,22 @@
           "לבנון"
         ],
         "eventOverlapTokens": [],
-        "score": 128.0,
+        "score": 123.29,
         "boost": 38.0
       }
     },
     {
-      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 201,
-      "url": "https://www.ynet.co.il/news/article/s1zvyvlfge",
-      "beforeRank": 23,
-      "afterRank": 8,
-      "delta": 15,
-      "trendMatch": null
-    },
-    {
-      "headline": "סמוטריץ׳ העביר אישורי בנייה בחברון בלי אישור העירייה הפלסטינית",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 176,
-      "url": "https://www.jpost.com/israel-news/article-899747",
-      "beforeRank": 12,
-      "afterRank": 9,
-      "delta": 3,
-      "trendMatch": null
-    },
-    {
-      "headline": "וירג'יניה טריולי, מגישת חדשות הבוקר של ABC, פורשת אחרי 27 שנה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15909279/ABC-News-Breakfast-Virginia-Trioli-leaving.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
-      "afterRank": 10,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
-      "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 81,
-      "url": "https://sports.walla.co.il/item/3846373",
-      "beforeRank": 5,
-      "afterRank": 11,
-      "delta": -6,
-      "trendMatch": null
-    },
-    {
-      "headline": "כוכבות Real Housewives מתעמתות בגלל הקשר של קרול ראדזוויל לג'פרי אפשטיין",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15909169/carole-radziwill-sai-silva-epstein-real-housewives.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 12,
-      "delta": -4,
-      "trendMatch": null
-    },
-    {
-      "headline": "דאוויי צ'ייס, הקול של לילו בלילו וסטיץ', מתה בגיל 35 מדלקת קרום המוח",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 99,
-      "url": "https://pagesix.com/2026/06/17/celebrity-news/daveigh-chase-shared-legacy-she-hoped-to-leave-behind/",
-      "beforeRank": 10,
-      "afterRank": 13,
-      "delta": -3,
-      "trendMatch": null
-    },
-    {
-      "headline": "סון יונג-מין, שלא כבש ב-MLS מאז אוקטובר, פוגש את מקסיקו המארחת",
-      "source": "ynet - כל ערוץ הספורט",
-      "canonicalSource": "ynet",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 111,
-      "url": "https://www.ynet.co.il/sport/worldcup2026/article/i35jsknbl",
-      "beforeRank": 11,
-      "afterRank": 14,
-      "delta": -3,
-      "trendMatch": null
-    },
-    {
-      "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "חדשות",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 284,
-      "url": "https://www.israelhayom.co.il/news/politics/article/20786790",
-      "beforeRank": 29,
-      "afterRank": 15,
-      "delta": 14,
-      "trendMatch": null
-    },
-    {
-      "headline": "הפועל חיפה החתימה את טל נעים ממכבי הרצליה לעונה עם אופציה",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 83,
-      "url": "https://sports.walla.co.il/item/3846619",
-      "beforeRank": 7,
-      "afterRank": 16,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "בת זוגו של קארל־אנתוני טאונס זעמה על איסור הסקס של בעלי הניקס",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 189,
-      "url": "https://pagesix.com/2026/06/17/celebrity-news/karl-anthony-towns-fiancee-jordyn-woods-wasnt-happy-with-knicks-owners-sex-ban-request/",
-      "beforeRank": 21,
-      "afterRank": 17,
-      "delta": 4,
-      "trendMatch": null
-    },
-    {
-      "headline": "אלי גולדינג חזרה לאירוע השנתי של V&A ארבעה חודשים אחרי הלידה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 189,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15908781/Ellie-Goulding-Maya-Jama-Zawe-Ashton-V-Summer-Partys-10th-Anniversary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 20,
-      "afterRank": 18,
-      "delta": 2,
-      "trendMatch": null
-    },
-    {
-      "headline": "בתו של ג׳לי רול בת ה-18 ביקשה ״חמלה״ אחרי גל השנאה סביב הגירושין של הוריה",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 203,
-      "url": "https://pagesix.com/2026/06/17/celebrity-news/jelly-rolls-daughter-bailee-ann-begs-for-compassion-amid-onslaught-of-hate-after-dads-divorce/",
-      "beforeRank": 24,
-      "afterRank": 19,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "קולטון אנדרווד חשף שקיבל אבחון על HIV לפני הופעתו ב״רווק הבתול״",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 183,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15908869/bachelor-star-colton-underwood-secret-reality-dating-show.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 20,
-      "delta": -3,
-      "trendMatch": null
-    }
-  ],
-  "movement": [
-    {
-      "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
-      "source": "וואלה",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 12,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
-        "overlapTokens": [
-          "אישרו",
-          "ארה",
-          "ההבנות",
-          "ואיראן",
-          "חתימה",
-          "מזכר",
-          "מרחוק",
-          "נשיאי"
-        ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
-        "eventOverlapTokens": [],
-        "score": 128.91,
-        "boost": 38.0
-      },
-      "beforeRank": 3,
-      "afterRank": 1
-    },
-    {
-      "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "טראמפ ונשיא איראן פזשכיאן חתמו על מזכר ההבנות",
-        "clusterKey": "חתמו מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:33:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846629",
-        "overlapTokens": [
-          "איראן",
-          "ההבנות",
-          "טראמפ",
-          "מזכר",
-          "פזשכיאן"
-        ],
-        "entityOverlapTokens": [
-          "איראן",
-          "טראמפ"
-        ],
-        "eventOverlapTokens": [],
-        "score": 49.73,
-        "boost": 24.0
-      },
-      "beforeRank": 1,
-      "afterRank": 2
-    },
-    {
-      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
-      "source": "ערוץ 7 / INN עברית",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-        "clusterKey": "מזכר ההבנות",
-        "domain": "חדשות",
-        "externalMentions": 12,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-18T00:36:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846624",
-        "overlapTokens": [
-          "ארה",
-          "ההבנות",
-          "מזכר"
-        ],
-        "entityOverlapTokens": [
-          "ארה"
-        ],
-        "eventOverlapTokens": [],
-        "score": 48.34,
-        "boost": 38.0
-      },
-      "beforeRank": 4,
-      "afterRank": 3
-    },
-    {
-      "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 2,
-      "afterRank": 4
-    },
-    {
-      "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 6,
-      "afterRank": 5
-    },
-    {
       "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4",
-      "source": "וואלה",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
       "category": "פוליטיקה",
       "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 212,
+      "url": "https://news.walla.co.il/item/3846598",
+      "beforeRank": 15,
+      "afterRank": 8,
+      "delta": 7,
       "trendMatch": {
         "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
         "clusterKey": "השוטר שבעט",
@@ -4508,7 +3754,7 @@
         ],
         "mentionedInFeed": true,
         "latestAt": "2026-06-17T21:25:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3846598",
+        "sampleUrl": "https://news.walla.co.il/break/3846599",
         "overlapTokens": [
           "במפגין",
           "הושעה",
@@ -4523,8 +3769,313 @@
         "eventOverlapTokens": [],
         "score": 88.11,
         "boost": 14.0
+      }
+    },
+    {
+      "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 237,
+      "url": "https://www.ynet.co.il/news/article/s1zvyvlfge",
+      "beforeRank": 24,
+      "afterRank": 9,
+      "delta": 15,
+      "trendMatch": null
+    },
+    {
+      "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 320,
+      "url": "https://www.israelhayom.co.il/news/politics/article/20786790",
+      "beforeRank": 30,
+      "afterRank": 10,
+      "delta": 20,
+      "trendMatch": null
+    },
+    {
+      "headline": "וירג'יניה טריולי, מגישת חדשות הבוקר של ABC, פורשת אחרי 27 שנה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 121,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909279/ABC-News-Breakfast-Virginia-Trioli-leaving.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 10,
+      "afterRank": 11,
+      "delta": -1,
+      "trendMatch": null
+    },
+    {
+      "headline": "כוכבות Real Housewives מתעמתות בגלל הקשר של קרול ראדזוויל לג'פרי אפשטיין",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 121,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909169/carole-radziwill-sai-silva-epstein-real-housewives.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 9,
+      "afterRank": 12,
+      "delta": -3,
+      "trendMatch": null
+    },
+    {
+      "headline": "דאוויי צ'ייס, הקול של לילו בלילו וסטיץ', מתה בגיל 35 מדלקת קרום המוח",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 136,
+      "url": "https://pagesix.com/2026/06/17/celebrity-news/daveigh-chase-shared-legacy-she-hoped-to-leave-behind/",
+      "beforeRank": 11,
+      "afterRank": 13,
+      "delta": -2,
+      "trendMatch": null
+    },
+    {
+      "headline": "סון יונג-מין, שלא כבש ב-MLS מאז אוקטובר, פוגש את מקסיקו המארחת",
+      "source": "ynet - כל ערוץ הספורט",
+      "canonicalSource": "ynet",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 147,
+      "url": "https://www.ynet.co.il/sport/worldcup2026/article/i35jsknbl",
+      "beforeRank": 12,
+      "afterRank": 14,
+      "delta": -2,
+      "trendMatch": null
+    },
+    {
+      "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 117,
+      "url": "https://sports.walla.co.il/item/3846373",
+      "beforeRank": 6,
+      "afterRank": 15,
+      "delta": -9,
+      "trendMatch": null
+    },
+    {
+      "headline": "סמוטריץ׳ העביר אישורי בנייה בחברון בלי אישור העירייה הפלסטינית",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 212,
+      "url": "https://www.jpost.com/israel-news/article-899747",
+      "beforeRank": 13,
+      "afterRank": 16,
+      "delta": -3,
+      "trendMatch": null
+    },
+    {
+      "headline": "בת זוגו של קארל־אנתוני טאונס זעמה על איסור הסקס של בעלי הניקס",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 226,
+      "url": "https://pagesix.com/2026/06/17/celebrity-news/karl-anthony-towns-fiancee-jordyn-woods-wasnt-happy-with-knicks-owners-sex-ban-request/",
+      "beforeRank": 22,
+      "afterRank": 17,
+      "delta": 5,
+      "trendMatch": null
+    },
+    {
+      "headline": "אלי גולדינג חזרה לאירוע השנתי של V&A ארבעה חודשים אחרי הלידה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 225,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15908781/Ellie-Goulding-Maya-Jama-Zawe-Ashton-V-Summer-Partys-10th-Anniversary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 21,
+      "afterRank": 18,
+      "delta": 3,
+      "trendMatch": null
+    },
+    {
+      "headline": "בתו של ג׳לי רול בת ה-18 ביקשה ״חמלה״ אחרי גל השנאה סביב הגירושין של הוריה",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 239,
+      "url": "https://pagesix.com/2026/06/17/celebrity-news/jelly-rolls-daughter-bailee-ann-begs-for-compassion-amid-onslaught-of-hate-after-dads-divorce/",
+      "beforeRank": 25,
+      "afterRank": 19,
+      "delta": 6,
+      "trendMatch": null
+    },
+    {
+      "headline": "קולטון אנדרווד חשף שקיבל אבחון על HIV לפני הופעתו ב״רווק הבתול״",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 220,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15908869/bachelor-star-colton-underwood-secret-reality-dating-show.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 18,
+      "afterRank": 20,
+      "delta": -2,
+      "trendMatch": null
+    }
+  ],
+  "movement": [
+    {
+      "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות",
+      "source": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 1,
+      "afterRank": 1
+    },
+    {
+      "headline": "טראמפ חתם על מזכר ההבנות עם איראן; איראן: תקיפות ישראל בלבנון ייחשבו הפרה",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "מזכר",
+          "פקיסטן"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 47.38,
+        "boost": 14.0
       },
-      "beforeRank": 14,
+      "beforeRank": 2,
+      "afterRank": 2
+    },
+    {
+      "headline": "טראמפ חתם בצרפת על מזכר ההבנות, פקיסטן פתחה את מצר הורמוז",
+      "source": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "ואיראן",
+          "מזכר",
+          "ממשלת",
+          "פקיסטן",
+          "ראש"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 94.75,
+        "boost": 14.0
+      },
+      "beforeRank": 4,
+      "afterRank": 3
+    },
+    {
+      "headline": "טרמינל 1 בנתב״ג ייפתח מחדש ב-28 ביוני אחרי סגירת מלחמת איראן",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 3,
+      "afterRank": 4
+    },
+    {
+      "headline": "איראן מאיימת: תקיפות ישראל בלבנון ייחשבו הפרה של ההסכם עם ארה״ב",
+      "source": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן: ארצות הברית ואיראן חתמו אלקטרונית על מזכר ההבנות",
+        "clusterKey": "מזכר ההבנות",
+        "domain": "חדשות",
+        "externalMentions": 14,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-18T02:40:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846633",
+        "overlapTokens": [
+          "ההבנות",
+          "מזכר"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 31.58,
+        "boost": 14.0
+      },
+      "beforeRank": 5,
+      "afterRank": 5
+    },
+    {
+      "headline": "האו״ם מזהיר כי מתנחלים ישראליים ייכללו ברשימה השחורה על הפגיעה בילדים",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 7,
       "afterRank": 6
     },
     {
@@ -4536,7 +4087,7 @@
         "trend": "המציאות המורכבת בדרום לבנון - והאזהרה בצה\"ל: \"אסור לצאת מרצועת הביטחון\"",
         "clusterKey": "בדרום לבנון",
         "domain": "חדשות",
-        "externalMentions": 6,
+        "externalMentions": 5,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -4564,11 +4115,51 @@
           "לבנון"
         ],
         "eventOverlapTokens": [],
-        "score": 128.0,
+        "score": 123.29,
         "boost": 38.0
       },
-      "beforeRank": 22,
+      "beforeRank": 23,
       "afterRank": 7
+    },
+    {
+      "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4",
+      "source": "וואלה",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "אחרי התיעוד שעורר סערה: השוטר שבעט במפגין הושעה מתפקידו",
+        "clusterKey": "השוטר שבעט",
+        "domain": "חדשות",
+        "externalMentions": 6,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-17T21:25:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3846599",
+        "overlapTokens": [
+          "במפגין",
+          "הושעה",
+          "השוטר",
+          "התיעוד",
+          "מתפקידו",
+          "סערה",
+          "שבעט",
+          "שעורר"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 88.11,
+        "boost": 14.0
+      },
+      "beforeRank": 15,
+      "afterRank": 8
     },
     {
       "headline": "הסעיפים הבעייתיים בעיני ישראל: הסכם ארה״ב־איראן פותר פטור מסנקציות על נפט",
@@ -4576,17 +4167,17 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 23,
-      "afterRank": 8
+      "beforeRank": 24,
+      "afterRank": 9
     },
     {
-      "headline": "סמוטריץ׳ העביר אישורי בנייה בחברון בלי אישור העירייה הפלסטינית",
-      "source": "Jerusalem Post",
-      "category": "פוליטיקה",
+      "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
+      "source": "ישראל היום",
+      "category": "חדשות",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 12,
-      "afterRank": 9
+      "beforeRank": 30,
+      "afterRank": 10
     },
     {
       "headline": "וירג'יניה טריולי, מגישת חדשות הבוקר של ABC, פורשת אחרי 27 שנה",
@@ -4594,16 +4185,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 9,
-      "afterRank": 10
-    },
-    {
-      "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
-      "source": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 5,
+      "beforeRank": 10,
       "afterRank": 11
     },
     {
@@ -4612,7 +4194,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 8,
+      "beforeRank": 9,
       "afterRank": 12
     },
     {
@@ -4621,7 +4203,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 10,
+      "beforeRank": 11,
       "afterRank": 13
     },
     {
@@ -4630,25 +4212,25 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 11,
+      "beforeRank": 12,
       "afterRank": 14
     },
     {
-      "headline": "ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו",
-      "source": "ישראל היום",
-      "category": "חדשות",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 29,
-      "afterRank": 15
-    },
-    {
-      "headline": "הפועל חיפה החתימה את טל נעים ממכבי הרצליה לעונה עם אופציה",
+      "headline": "אנגליה גברה 2:4 על קרואטיה בפתיחת המונדיאל, קיין השווה את שיא ליניקר",
       "source": "וואלה",
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 7,
+      "beforeRank": 6,
+      "afterRank": 15
+    },
+    {
+      "headline": "סמוטריץ׳ העביר אישורי בנייה בחברון בלי אישור העירייה הפלסטינית",
+      "source": "Jerusalem Post",
+      "category": "פוליטיקה",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 13,
       "afterRank": 16
     },
     {
@@ -4657,7 +4239,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 21,
+      "beforeRank": 22,
       "afterRank": 17
     },
     {
@@ -4666,7 +4248,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 20,
+      "beforeRank": 21,
       "afterRank": 18
     },
     {
@@ -4675,7 +4257,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 24,
+      "beforeRank": 25,
       "afterRank": 19
     },
     {
@@ -4684,7 +4266,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 17,
+      "beforeRank": 18,
       "afterRank": 20
     }
   ],
@@ -4711,7 +4293,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-18T00:21:49.123814+00:00",
+    "generatedAt": "2026-06-18T00:57:59.409559+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -4749,13 +4331,13 @@
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T22:01:46+00:00",
-        "latestRawAgeHours": 2.33,
+        "latestRawAgeHours": 2.94,
         "latestValidAt": "2026-06-17T22:01:46+00:00",
-        "latestValidAgeHours": 2.33,
+        "latestValidAgeHours": 2.94,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-15T11:38:59+00:00",
-          "latestAgeHours": 60.71,
+          "latestAgeHours": 61.32,
           "sample": [
             {
               "publishedAt": "2026-06-15T11:38:59+00:00",
@@ -4874,13 +4456,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T21:36:00+00:00",
-        "latestRawAgeHours": 2.76,
+        "latestRawAgeHours": 3.37,
         "latestValidAt": "2026-06-17T21:36:00+00:00",
-        "latestValidAgeHours": 2.76,
+        "latestValidAgeHours": 3.37,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-15T13:43:00+00:00",
-          "latestAgeHours": 58.65,
+          "latestAgeHours": 59.25,
           "sample": [
             {
               "publishedAt": "2026-06-15T13:43:00+00:00",
@@ -5011,14 +4593,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 266,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-17T23:23:34+00:00",
-        "latestRawAgeHours": 0.97,
-        "latestValidAt": "2026-06-17T23:23:34+00:00",
-        "latestValidAgeHours": 0.97,
+        "latestRawAt": "2026-06-18T00:32:40+00:00",
+        "latestRawAgeHours": 0.42,
+        "latestValidAt": "2026-06-18T00:32:40+00:00",
+        "latestValidAgeHours": 0.42,
         "visibleMain": {
           "count": 13,
           "latestAt": "2026-06-17T22:30:00+00:00",
-          "latestAgeHours": 1.86,
+          "latestAgeHours": 2.47,
           "sample": [
             {
               "publishedAt": "2026-06-17T22:30:00+00:00",
@@ -5040,7 +4622,7 @@
         "visibleBreaking": {
           "count": 23,
           "latestAt": "2026-06-17T20:01:39+00:00",
-          "latestAgeHours": 4.34,
+          "latestAgeHours": 4.94,
           "sample": [
             {
               "publishedAt": "2026-06-17T20:01:39+00:00",
@@ -5147,7 +4729,7 @@
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-15T11:21:45+00:00",
-          "latestAgeHours": 61.0,
+          "latestAgeHours": 61.6,
           "sample": [
             {
               "publishedAt": "2026-06-15T11:21:45+00:00",
@@ -5159,7 +4741,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-17T18:18:30+00:00",
-          "latestAgeHours": 6.06,
+          "latestAgeHours": 6.66,
           "sample": [
             {
               "publishedAt": "2026-06-17T18:18:30+00:00",
@@ -5197,15 +4779,20 @@
         "qaPassSimulationCount": 3,
         "qaRejectedCount": 135,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-18T00:21:54+00:00",
+        "latestRawAt": "2026-06-18T00:58:05+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-18T00:21:54+00:00",
+        "latestValidAt": "2026-06-18T00:58:05+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
-          "count": 4,
-          "latestAt": "2026-06-18T00:10:32+00:00",
-          "latestAgeHours": 0.19,
+          "count": 5,
+          "latestAt": "2026-06-18T00:52:16+00:00",
+          "latestAgeHours": 0.1,
           "sample": [
+            {
+              "publishedAt": "2026-06-18T00:52:16+00:00",
+              "source": "וואלה חדשות - חדשות בארץ",
+              "headline": "משרד התפוצות חשף רשת איראנית של חשבונות מזויפים ברשתות"
+            },
             {
               "publishedAt": "2026-06-18T00:10:32+00:00",
               "source": "וואלה חדשות",
@@ -5215,11 +4802,6 @@
               "publishedAt": "2026-06-17T21:25:00+00:00",
               "source": "וואלה חדשות",
               "headline": "המשטרה השעתה את השוטר שבעט במפגין חרדי בכביש 4"
-            },
-            {
-              "publishedAt": "2026-06-15T11:04:11+00:00",
-              "source": "וואלה חדשות - חדשות המשפט",
-              "headline": "נהגים עלולים לגלות שרישיונם הותלה רק אחרי תאונה"
             }
           ]
         },
@@ -5235,15 +4817,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-18T03:21:53+03:00",
-            "title": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
-            "url": "https://news.walla.co.il/item/3846624"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "וואלה חדשות",
-            "publishedAt": "2026-06-18T03:21:53+03:00",
+            "publishedAt": "2026-06-18T03:58:04+03:00",
             "title": "פרסום ראשון: בעקבות הרצח בערערה בנגב - ארבעה גני ילדים ייסגרו",
             "url": "https://news.walla.co.il/item/3846630"
           },
@@ -5251,7 +4825,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-18T03:21:53+03:00",
+            "publishedAt": "2026-06-18T03:58:04+03:00",
             "title": "קטטה מחוץ למועדון באיה נאפה: ישראלי נעצר בחשד לניסיון רצח",
             "url": "https://news.walla.co.il/item/3846627"
           },
@@ -5259,9 +4833,17 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-18T03:21:53+03:00",
+            "publishedAt": "2026-06-18T03:58:04+03:00",
             "title": "גייס מאות אלפי דולרים ל\"סיוע הומניטרי\" - ונעצר בחשד שהעביר כסף לחמאס",
             "url": "https://news.walla.co.il/item/3846626"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "וואלה חדשות",
+            "publishedAt": "2026-06-18T03:36:00+03:00",
+            "title": "חתימה מרחוק: נשיאי ארה\"ב ואיראן אישרו את מזכר ההבנות",
+            "url": "https://news.walla.co.il/item/3846624"
           },
           {
             "status": "qa_rejected",
@@ -5313,13 +4895,13 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T23:46:28+00:00",
-        "latestRawAgeHours": 0.59,
+        "latestRawAgeHours": 1.19,
         "latestValidAt": "2026-06-17T23:46:28+00:00",
-        "latestValidAgeHours": 0.59,
+        "latestValidAgeHours": 1.19,
         "visibleMain": {
           "count": 10,
           "latestAt": "2026-06-17T19:37:08+00:00",
-          "latestAgeHours": 4.74,
+          "latestAgeHours": 5.35,
           "sample": [
             {
               "publishedAt": "2026-06-17T19:37:08+00:00",
@@ -5436,13 +5018,13 @@
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T20:05:00+00:00",
-        "latestRawAgeHours": 4.28,
+        "latestRawAgeHours": 4.88,
         "latestValidAt": "2026-06-17T20:05:00+00:00",
-        "latestValidAgeHours": 4.28,
+        "latestValidAgeHours": 4.88,
         "visibleMain": {
           "count": 11,
           "latestAt": "2026-06-15T13:29:00+00:00",
-          "latestAgeHours": 58.88,
+          "latestAgeHours": 59.48,
           "sample": [
             {
               "publishedAt": "2026-06-15T13:29:00+00:00",
@@ -5550,10 +5132,10 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 10,
-        "latestRawAt": "2026-06-17T22:57:46+00:00",
-        "latestRawAgeHours": 1.4,
-        "latestValidAt": "2026-06-17T22:57:46+00:00",
-        "latestValidAgeHours": 1.4,
+        "latestRawAt": "2026-06-18T00:57:20+00:00",
+        "latestRawAgeHours": 0.01,
+        "latestValidAt": "2026-06-18T00:57:20+00:00",
+        "latestValidAgeHours": 0.01,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5572,7 +5154,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "BBC World",
-            "publishedAt": "2026-06-18T01:57:46+03:00",
+            "publishedAt": "2026-06-18T03:57:20+03:00",
             "title": "US-Iran deal leaves core sticking points unresolved - and a $300bn question",
             "url": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss"
           },
@@ -5747,9 +5329,9 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 12,
         "latestRawAt": "2026-06-18T00:01:47+00:00",
-        "latestRawAgeHours": 0.33,
+        "latestRawAgeHours": 0.94,
         "latestValidAt": "2026-06-17T23:42:48+00:00",
-        "latestValidAgeHours": 0.65,
+        "latestValidAgeHours": 1.25,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5845,14 +5427,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 9,
         "relevanceFilteredCount": 3,
-        "latestRawAt": "2026-06-18T00:17:20+00:00",
-        "latestRawAgeHours": 0.07,
-        "latestValidAt": "2026-06-18T00:17:20+00:00",
-        "latestValidAgeHours": 0.07,
+        "latestRawAt": "2026-06-18T00:52:48+00:00",
+        "latestRawAgeHours": 0.09,
+        "latestValidAt": "2026-06-18T00:52:48+00:00",
+        "latestValidAgeHours": 0.09,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-17T21:16:43+00:00",
-          "latestAgeHours": 3.09,
+          "latestAgeHours": 3.69,
           "sample": [
             {
               "publishedAt": "2026-06-17T21:16:43+00:00",
@@ -5883,9 +5465,17 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "The Guardian Middle East",
-            "publishedAt": "2026-06-18T03:17:20+03:00",
+            "publishedAt": "2026-06-18T03:52:48+03:00",
             "title": "Middle East crisis live: agreement signed by US-Iran presidents; Tehran claims it will charge ships to transit strait of Hormuz",
             "url": "https://www.theguardian.com/world/live/2026/jun/17/middle-east-war-iran-israel-us-donald-trump-hezbollah-lebanon-peace-deal-netanyahu-latest-news-updated"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "The Guardian Middle East",
+            "publishedAt": "2026-06-18T03:36:22+03:00",
+            "title": "US releases text of Iran peace plan as Trump says deal averts ‘worldwide depression’",
+            "url": "https://www.theguardian.com/world/2026/jun/17/trump-us-iran-war-mou-deal"
           },
           {
             "status": "relevance_filtered",
@@ -5902,14 +5492,6 @@
             "publishedAt": "2026-06-18T01:17:12+03:00",
             "title": "Trump’s Iran deal is result of unrealistic ambitions for an untenable war",
             "url": "https://www.theguardian.com/world/2026/jun/17/trumps-iran-deal-is-result-of-unrealistic-ambitions-for-an-untenable-war"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "The Guardian Middle East",
-            "publishedAt": "2026-06-18T00:16:43+03:00",
-            "title": "US releases text of Iran peace plan as Trump says deal averts ‘worldwide depression’",
-            "url": "https://www.theguardian.com/world/2026/jun/17/trump-us-iran-war-mou-deal"
           },
           {
             "status": "relevance_filtered",
@@ -5961,9 +5543,9 @@
         "qaRejectedCount": 3,
         "relevanceFilteredCount": 7,
         "latestRawAt": "2026-06-17T23:18:00+00:00",
-        "latestRawAgeHours": 1.06,
+        "latestRawAgeHours": 1.67,
         "latestValidAt": "2026-06-17T19:09:00+00:00",
-        "latestValidAgeHours": 5.21,
+        "latestValidAgeHours": 5.82,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -6060,13 +5642,13 @@
         "qaRejectedCount": 1,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T19:03:55+00:00",
-        "latestRawAgeHours": 5.3,
+        "latestRawAgeHours": 5.9,
         "latestValidAt": "2026-06-17T19:03:55+00:00",
-        "latestValidAgeHours": 5.3,
+        "latestValidAgeHours": 5.9,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-17T21:00:28+00:00",
-          "latestAgeHours": 3.36,
+          "latestAgeHours": 3.96,
           "sample": [
             {
               "publishedAt": "2026-06-17T21:00:28+00:00",
@@ -6078,7 +5660,7 @@
         "visibleBreaking": {
           "count": 3,
           "latestAt": "2026-06-17T19:24:04+00:00",
-          "latestAgeHours": 4.96,
+          "latestAgeHours": 5.57,
           "sample": [
             {
               "publishedAt": "2026-06-17T19:24:04+00:00",
@@ -6181,13 +5763,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-17T18:23:54+00:00",
-        "latestRawAgeHours": 5.97,
+        "latestRawAgeHours": 6.57,
         "latestValidAt": "2026-06-17T18:23:54+00:00",
-        "latestValidAgeHours": 5.97,
+        "latestValidAgeHours": 6.57,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-17T21:25:00+00:00",
-          "latestAgeHours": 2.95,
+          "latestAgeHours": 3.55,
           "sample": [
             {
               "publishedAt": "2026-06-17T21:25:00+00:00",
@@ -6209,7 +5791,7 @@
         "visibleBreaking": {
           "count": 4,
           "latestAt": "2026-06-17T20:01:39+00:00",
-          "latestAgeHours": 4.34,
+          "latestAgeHours": 4.94,
           "sample": [
             {
               "publishedAt": "2026-06-17T20:01:39+00:00",
