@@ -5,20 +5,25 @@
     "name": "מרגל",
     "role": "איתור טרנדים חיצוניים והשוואה לפיד פואנטה"
   },
-  "generatedAt": "2026-06-18T18:01:46+03:00",
+  "generatedAt": "2026-06-18T18:31:42+03:00",
   "windowHours": 8,
   "sourcesChecked": 95,
   "rssSourcesChecked": 80,
   "webTargetsChecked": 15,
   "sourcesWithErrors": 5,
-  "itemsScanned": 389,
-  "rssItemsScanned": 209,
+  "itemsScanned": 388,
+  "rssItemsScanned": 208,
   "webItemsScanned": 180,
-  "durationSec": 1.94,
+  "durationSec": 3.7,
   "errorsSample": [
     {
       "source": "ישראל היום",
       "type": "RSS",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source": "ישראל היום",
+      "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
@@ -27,7 +32,7 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
     {
-      "source": "ישראל היום",
+      "source": "Axios",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 403: Forbidden"
     },
@@ -35,11 +40,6 @@
       "source": "Reuters",
       "type": "WEB",
       "error": "HTTPError: HTTP Error 401: HTTP Forbidden"
-    },
-    {
-      "source": "Axios",
-      "type": "WEB",
-      "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
   "trends": [
@@ -68,7 +68,7 @@
     {
       "domain": "חדשות",
       "trend": "בג\"ץ הציע לקיים הצבעה חוזרת לבחירת מבקר המדינה",
-      "clusterKey": "לקיים הצבעה",
+      "clusterKey": "לקיים הצבעה חוזרת",
       "externalMentions": 6,
       "sourceCount": 4,
       "sources": [
@@ -83,18 +83,19 @@
       ],
       "rssMentions": 3,
       "webMentions": 3,
-      "mentionedInFeed": false,
+      "mentionedInFeed": true,
       "latestAt": "2026-06-18T15:25:00+00:00",
       "sampleUrl": "https://news.walla.co.il/break/3846823"
     },
     {
       "domain": "כלכלה",
-      "trend": "רמי לוי ימכור דגמי רכב חשמלי סיני ב-100–165 אלף שקל",
-      "clusterKey": "אלף שקל",
-      "externalMentions": 7,
-      "sourceCount": 3,
+      "trend": "בעקבות אושר עד: גם רמי לוי ימכור מכוניות סיניות בהנחה",
+      "clusterKey": "רמי לוי",
+      "externalMentions": 6,
+      "sourceCount": 4,
       "sources": [
         "ynet",
+        "גלובס",
         "דה מרקר",
         "וואלה"
       ],
@@ -102,11 +103,11 @@
         "RSS",
         "WEB"
       ],
-      "rssMentions": 5,
+      "rssMentions": 4,
       "webMentions": 2,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-18T14:49:48+00:00",
-      "sampleUrl": "https://www.ynet.co.il/economy/article/r1uf7k11ggg"
+      "latestAt": "2026-06-18T17:45:00+00:00",
+      "sampleUrl": "https://cars.walla.co.il/item/3846853"
     },
     {
       "domain": "חדשות",
@@ -130,26 +131,6 @@
       "sampleUrl": "https://news.walla.co.il/break/3846771"
     },
     {
-      "domain": "חדשות",
-      "trend": "דיווחים: ראשי ממשלות פקיסטן ואיראן שוחחו לראשונה מאז החתימה על מזכר ההבנות",
-      "clusterKey": "מזכר ההבנות",
-      "externalMentions": 6,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "וואלה"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 3,
-      "webMentions": 3,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-18T14:26:55+00:00",
-      "sampleUrl": "https://www.ynet.co.il/news/article/ryiqt00zfgl"
-    },
-    {
       "domain": "רכב",
       "trend": "רגב וסמוטריץ' מגלגלים את התייקרות התחבורה הציבורית לממשלה הבאה",
       "clusterKey": "התחבורה הציבורית",
@@ -169,6 +150,26 @@
       "mentionedInFeed": true,
       "latestAt": "2026-06-18T16:22:00+00:00",
       "sampleUrl": "https://cars.walla.co.il/item/3846838"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "דיווחים: ראשי ממשלות פקיסטן ואיראן שוחחו לראשונה מאז החתימה על מזכר ההבנות",
+      "clusterKey": "מזכר ההבנות",
+      "externalMentions": 5,
+      "sourceCount": 2,
+      "sources": [
+        "ynet",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 3,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-18T14:26:55+00:00",
+      "sampleUrl": "https://www.ynet.co.il/news/article/ryiqt00zfgl"
     },
     {
       "domain": "חדשות",
@@ -212,33 +213,14 @@
       "sampleUrl": "https://finance.walla.co.il/item/3846722"
     },
     {
-      "domain": "אקטואליה בעולם",
-      "trend": "44 mins ago Weapons, money and ships: How is this Iran deal different from others? BBC Verify examines how the new deal between the US and Iran a",
-      "clusterKey": "iran deal",
-      "externalMentions": 3,
-      "sourceCount": 2,
-      "sources": [
-        "AP",
-        "BBC"
-      ],
-      "discoveryTypes": [
-        "WEB"
-      ],
-      "rssMentions": 0,
-      "webMentions": 3,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-18T15:01:46.438918+00:00",
-      "sampleUrl": "https://www.bbc.com/news/articles/c74ynmnrwmeo"
-    },
-    {
-      "domain": "כלכלה",
-      "trend": "נעילה ירוקה בתל אביב; פריורטק זינקה בחדות, נקסט ויז'ן נפלה",
-      "clusterKey": "נקסט ויז'ן",
+      "domain": "חדשות",
+      "trend": "נתניהו על לבנון: \"לא נצא משם כל עוד צורכי הביטחון של ישראל מחייבים זאת\"",
+      "clusterKey": "הביטחון ישראל",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
         "גלובס",
-        "דה מרקר"
+        "וואלה"
       ],
       "discoveryTypes": [
         "RSS",
@@ -246,14 +228,14 @@
       ],
       "rssMentions": 1,
       "webMentions": 2,
-      "mentionedInFeed": false,
-      "latestAt": "2026-06-18T14:31:00+00:00",
-      "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001546247#utm_source=RSS"
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-18T18:04:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/break/3846855"
     },
     {
       "domain": "כלכלה",
       "trend": "עליות בוול סטריט; אינטל מזנקת בחדות, הדולר בעולם בשיא של מעל שנה",
-      "clusterKey": "עליות בוול סטריט",
+      "clusterKey": "עליות בוול",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -267,13 +249,13 @@
       "rssMentions": 1,
       "webMentions": 2,
       "mentionedInFeed": true,
-      "latestAt": "2026-06-18T13:50:00+00:00",
+      "latestAt": "2026-06-18T15:00:00+00:00",
       "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001546277#utm_source=RSS"
     },
     {
       "domain": "חדשות",
       "trend": "גדעון סער הודיע על ניתוק הקשרים עם שרת החוץ של האיחוד האירופי",
-      "clusterKey": "סער הודיע ניתוק",
+      "clusterKey": "שרת החוץ",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -291,29 +273,9 @@
       "sampleUrl": "https://news.walla.co.il/break/3846750"
     },
     {
-      "domain": "כלכלה",
-      "trend": "2.7 מיליארד דולר לא הספיקו: נועם שזיר נפרד (שוב) מגוגל ועובר ל-OpenAI",
-      "clusterKey": "מיליארד דולר",
-      "externalMentions": 3,
-      "sourceCount": 2,
-      "sources": [
-        "ynet",
-        "דה מרקר"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 1,
-      "webMentions": 2,
-      "mentionedInFeed": true,
-      "latestAt": "2026-06-18T07:29:36+00:00",
-      "sampleUrl": "https://www.ynet.co.il/digital/technews/article/s1suhz11zml"
-    },
-    {
       "domain": "חדשות",
       "trend": "גבר נפצע קשה באירוע אלימות בצומת מי עמי",
-      "clusterKey": "נפצע קשה",
+      "clusterKey": "גבר נפצע",
       "externalMentions": 3,
       "sourceCount": 2,
       "sources": [
@@ -329,6 +291,45 @@
       "mentionedInFeed": false,
       "latestAt": "2026-06-18T17:00:00+00:00",
       "sampleUrl": "https://news.walla.co.il/break/3846843"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "\"זו הסיבה שהתגייסתי\": בחזרה לראיון המצמרר עם אלכסנדר פילין שנפל בלבנון",
+      "clusterKey": "אלכסנדר פילין",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "דה מרקר",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 2,
+      "webMentions": 1,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-18T13:08:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3846788"
+    },
+    {
+      "domain": "חדשות",
+      "trend": "ואנס: \"התגובה שלי לבן גביר וסמוטריץ': מה בדיוק ההצעה שלכם?\"",
+      "clusterKey": "גביר וסמוטריץ",
+      "externalMentions": 3,
+      "sourceCount": 2,
+      "sources": [
+        "ynet",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS"
+      ],
+      "rssMentions": 3,
+      "webMentions": 0,
+      "mentionedInFeed": true,
+      "latestAt": "2026-06-18T17:31:00+00:00",
+      "sampleUrl": "https://news.walla.co.il/item/3846849"
     }
   ]
 }
