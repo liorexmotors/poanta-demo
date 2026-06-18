@@ -1,26 +1,26 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 196
 Errors: 0
 Warnings: 137
 
 ## Category distribution
 
-- רכילות: 67
+- רכילות: 63
 - ביטחון: 27
 - כלכלה: 23
-- ספורט: 21
+- ספורט: 20
 - טכנולוגיה: 12
 - תרבות: 10
 - בריאות: 9
 - צרכנות: 7
-- פוליטיקה: 5
+- פוליטיקה: 6
 - חדשות: 4
 - מזג אוויר: 4
-- דעות: 3
 - פלילים: 3
+- משפט: 2
 - נדל״ן: 2
-- משפט: 1
+- דעות: 2
 - אקטואליה בעולם: 1
 - רכב: 1
 
@@ -33,217 +33,217 @@ Warnings: 137
 
 ## Issues
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 11
 - Takeaway length 98 > 95
 - Headline: `אוהד ישראלי טוען שדגלו הוחרם במשחק של איראן`
 - Original: `"ראש פיפ"א הצביע עלי, באצטדיון של 100 אלף איש - והורה להחרים את דגל ישראל"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3846702
 
-### WARNING · category_sport_source · item 13
+### WARNING · category_sport_source · item 11
 - Sport source should usually be ספורט
 - Headline: `אוהד ישראלי טוען שדגלו הוחרם במשחק של איראן`
 - Original: `"ראש פיפ"א הצביע עלי, באצטדיון של 100 אלף איש - והורה להחרים את דגל ישראל"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3846702
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 30
 - Takeaway length 107 > 95
 - Headline: `ג'רמי קלארקסון חשף סרטן ערמונית אגרסיבי ב'חוות קלארקסון'`
 - Original: `Jeremy Clarkson's girlfriend Lisa Hogan shares snap of him relaxing on their farm in health update after he revealed he's been diagnosed with 'aggressive' prostate cancer`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15908855/Jeremy-Clarkson-girlfriend-Lisa-Hogan-health-update.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 39
+### WARNING · takeaway_long · item 36
 - Takeaway length 113 > 95
 - Headline: `אורבניקה משיקה טיפוח שיער ומשדרגת את סניף סינמה סיטי ב-6 מיליון שקל`
 - Original: `השקעה של 6 מיליון שקל: רשת אורבניקה חושפת מהלך חדש`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/lifestyle/beauty/article/20790286
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 50
 - Takeaway length 108 > 95
 - Headline: `בית המשפט הרשיע שבעה נאשמים נוספים בלינץ' בבת ים`
 - Original: `שבעה הורשעו במעורבות בלינץ' בבת ים בשומר החומות, שישה מהם פעלו ממניע לאומני`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/law/2026-06-18/ty-article/.premium/0000019e-d95f-dae9-afdf-dbffb9ae0000
 
-### WARNING · summary_long · item 55
+### WARNING · summary_long · item 51
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
 - Original: `איזנקוט מפתיע: "הוא פוליטיקאי מיומן ואיש מתוחכם"`
 - Source: סרוגים - כל הכתבות
 - URL: https://www.srugim.co.il/101004450-איזנקוט-מפתיע-הוא-פוליטיקאי-מיומן-ואיש
 
-### WARNING · summary_long · item 56
+### WARNING · summary_long · item 52
 - Summary length 247 > 220
 - Headline: `נועה קירל חתמה חוזה פנים ייחודי עם רשת Fashion Club לחמש שנים`
 - Original: `ממשיכה לשבור שיאים: נועה קירל חתמה על חוזה ענק עם רשת אופנה`
 - Source: TMI - אופנה
 - URL: https://tmi.maariv.co.il/fashion-tmf/article-1334474
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 52
 - Takeaway length 145 > 95
 - Headline: `נועה קירל חתמה חוזה פנים ייחודי עם רשת Fashion Club לחמש שנים`
 - Original: `ממשיכה לשבור שיאים: נועה קירל חתמה על חוזה ענק עם רשת אופנה`
 - Source: TMI - אופנה
 - URL: https://tmi.maariv.co.il/fashion-tmf/article-1334474
 
-### WARNING · takeaway_long · item 57
+### WARNING · takeaway_long · item 53
 - Takeaway length 137 > 95
 - Headline: `שריפה פרצה בבניין מגורים בנתניה, 25 בני אדם חולצו`
 - Original: `Firefighters rescue 25 people from Netanya apartment building fire, 13 evacuated to hospital`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-899777
 
-### WARNING · summary_long · item 58
+### WARNING · summary_long · item 54
 - Summary length 288 > 220
 - Headline: `כוכבת The Pitt סיפרה שרוחו של דניס הופר רדפה אותה במשך שנים`
 - Original: `The Pitt star Katherine LaNasa says she was haunted by ghost of her Hollywood icon ex-husband`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15909833/pitt-star-katherine-lanasa-haunted-ghost-hollywood-icon-married.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 58
+### WARNING · takeaway_long · item 54
 - Takeaway length 141 > 95
 - Headline: `כוכבת The Pitt סיפרה שרוחו של דניס הופר רדפה אותה במשך שנים`
 - Original: `The Pitt star Katherine LaNasa says she was haunted by ghost of her Hollywood icon ex-husband`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15909833/pitt-star-katherine-lanasa-haunted-ghost-hollywood-icon-married.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 59
+### WARNING · summary_long · item 55
 - Summary length 239 > 220
 - Headline: `חשש לעתידו של כריס בראון בתוכנית חידושים אחרי עימות עם אדריאן פורטלי`
 - Original: `Fears for Dr Chris Brown's future on My Reno Rules as cocky Adrian Portelli 'is set to become the face of the franchise'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15909811/Fears-Dr-Chris-Browns-future-Reno-Rules-cocky-Adrian-Portelli-set-face-franchise.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 59
+### WARNING · takeaway_long · item 55
 - Takeaway length 111 > 95
 - Headline: `חשש לעתידו של כריס בראון בתוכנית חידושים אחרי עימות עם אדריאן פורטלי`
 - Original: `Fears for Dr Chris Brown's future on My Reno Rules as cocky Adrian Portelli 'is set to become the face of the franchise'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15909811/Fears-Dr-Chris-Browns-future-Reno-Rules-cocky-Adrian-Portelli-set-face-franchise.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 60
+### WARNING · summary_long · item 56
 - Summary length 236 > 220
 - Headline: `בעלי הניקס הכריזו שיגיעו לבית הלבן אם הקבוצה תזכה באליפות`
 - Original: `הבעלים של הניקס: נגיע לבית הלבן לחגוג את אליפות ה-NBA`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/nba/2026-06-18/ty-article/.premium/0000019e-d953-db7a-a9bf-ddd75daf0000
 
-### WARNING · takeaway_long · item 60
+### WARNING · takeaway_long · item 56
 - Takeaway length 146 > 95
 - Headline: `בעלי הניקס הכריזו שיגיעו לבית הלבן אם הקבוצה תזכה באליפות`
 - Original: `הבעלים של הניקס: נגיע לבית הלבן לחגוג את אליפות ה-NBA`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/nba/2026-06-18/ty-article/.premium/0000019e-d953-db7a-a9bf-ddd75daf0000
 
-### WARNING · summary_long · item 61
+### WARNING · summary_long · item 57
 - Summary length 304 > 220
 - Headline: `פרופ' כהן־אליה חוזר בתשובה פוליטית — ובשבע מזהירים מפני התופעה`
 - Original: `תסמונת החוזר בתשובה: רוצה להתבטל בפני טראמפ, ובעצם לא`
 - Source: בשבע - מגזין ודעות
 - URL: https://be7.co.il/24746
 
-### WARNING · takeaway_long · item 61
+### WARNING · takeaway_long · item 57
 - Takeaway length 139 > 95
 - Headline: `פרופ' כהן־אליה חוזר בתשובה פוליטית — ובשבע מזהירים מפני התופעה`
 - Original: `תסמונת החוזר בתשובה: רוצה להתבטל בפני טראמפ, ובעצם לא`
 - Source: בשבע - מגזין ודעות
 - URL: https://be7.co.il/24746
 
-### WARNING · summary_long · item 62
+### WARNING · summary_long · item 58
 - Summary length 250 > 220
 - Headline: `מניות האנרגיה צונחות בעקבות הסכם איראן-ארה״ב; טוקיו בעליות חדות`
 - Original: `עליות חדות בטוקיו, וירידות בסין; מחיר הנפט צונח`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546277#utm_source=RSS
 
-### WARNING · takeaway_long · item 62
+### WARNING · takeaway_long · item 58
 - Takeaway length 183 > 95
 - Headline: `מניות האנרגיה צונחות בעקבות הסכם איראן-ארה״ב; טוקיו בעליות חדות`
 - Original: `עליות חדות בטוקיו, וירידות בסין; מחיר הנפט צונח`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546277#utm_source=RSS
 
-### WARNING · summary_long · item 63
+### WARNING · summary_long · item 59
 - Summary length 274 > 220
 - Headline: `ברוקלין בקהאם עוקץ את משפחתו בפרסומת DoorDash החדשה`
 - Original: `Brooklyn Beckham jokes he 'gave away' his World Cup tickets in latest swipe at his estranged family in full DoorDash advert after facing backlash for 'cashing-in' on their feud`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15909293/Brooklyn-Beckham-gave-away-World-Cup-tickets-swipe-family.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 63
+### WARNING · takeaway_long · item 59
 - Takeaway length 132 > 95
 - Headline: `ברוקלין בקהאם עוקץ את משפחתו בפרסומת DoorDash החדשה`
 - Original: `Brooklyn Beckham jokes he 'gave away' his World Cup tickets in latest swipe at his estranged family in full DoorDash advert after facing backlash for 'cashing-in' on their feud`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15909293/Brooklyn-Beckham-gave-away-World-Cup-tickets-swipe-family.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 64
+### WARNING · summary_long · item 60
 - Summary length 252 > 220
 - Headline: `לוחם מילואים מאוגדה 36 נהרג ממטען חבלה בדרום לבנון, שבעה נפצעו`
 - Original: `IDF soldier killed, seven others wounded, by IED explosion in southern Lebanon`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/defense-news/article-899773
 
-### WARNING · takeaway_long · item 64
+### WARNING · takeaway_long · item 60
 - Takeaway length 133 > 95
 - Headline: `לוחם מילואים מאוגדה 36 נהרג ממטען חבלה בדרום לבנון, שבעה נפצעו`
 - Original: `IDF soldier killed, seven others wounded, by IED explosion in southern Lebanon`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/defense-news/article-899773
 
-### WARNING · summary_long · item 65
+### WARNING · summary_long · item 61
 - Summary length 245 > 220
 - Headline: `ירידות של עד 30% בכוכבי הבורסה; הסיכון הוא שינוי כיוון הכסף הגלובלי`
 - Original: `הכוכבים של הבורסה צונחים עד 30%. אבל יש דבר אחר שצריך להדאיג את המשקיעים`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-06-18/ty-article/.premium/0000019e-d8ff-deca-ab9e-dcff9ee10000
 
-### WARNING · takeaway_long · item 65
+### WARNING · takeaway_long · item 61
 - Takeaway length 175 > 95
 - Headline: `ירידות של עד 30% בכוכבי הבורסה; הסיכון הוא שינוי כיוון הכסף הגלובלי`
 - Original: `הכוכבים של הבורסה צונחים עד 30%. אבל יש דבר אחר שצריך להדאיג את המשקיעים`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-06-18/ty-article/.premium/0000019e-d8ff-deca-ab9e-dcff9ee10000
 
-### WARNING · summary_long · item 66
+### WARNING · summary_long · item 62
 - Summary length 252 > 220
 - Headline: `עולם היורה: עולם חדש עקף את שיא דיסני והפך לסרט היקר בהיסטוריה`
 - Original: `שבר את השיא של דיסני: הסרט שעלה יותר מכל סרט אחר בהיסטוריה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/sj00bnw11fmg
 
-### WARNING · takeaway_long · item 66
+### WARNING · takeaway_long · item 62
 - Takeaway length 151 > 95
 - Headline: `עולם היורה: עולם חדש עקף את שיא דיסני והפך לסרט היקר בהיסטוריה`
 - Original: `שבר את השיא של דיסני: הסרט שעלה יותר מכל סרט אחר בהיסטוריה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/sj00bnw11fmg
 
-### WARNING · summary_long · item 67
+### WARNING · summary_long · item 63
 - Summary length 300 > 220
 - Headline: `מצר הורמוז אמור להיפתח, אבל חברות הספנות עדיין לא יודעות איך זה יעבוד`
 - Original: `מצר הורמוז נפתח? "אף אחד לא יודע איך זה יעבוד"`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546279#utm_source=RSS
 
-### WARNING · takeaway_long · item 67
+### WARNING · takeaway_long · item 63
 - Takeaway length 153 > 95
 - Headline: `מצר הורמוז אמור להיפתח, אבל חברות הספנות עדיין לא יודעות איך זה יעבוד`
 - Original: `מצר הורמוז נפתח? "אף אחד לא יודע איך זה יעבוד"`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546279#utm_source=RSS
 
-### WARNING · summary_long · item 68
+### WARNING · summary_long · item 64
 - Summary length 266 > 220
 - Headline: `משטרת ישראל פענחה את 'החתונה האדומה': שני חשודים יואשמו בירי בבית לחם`
 - Original: `סכסוך משפחתי בחתונה: המתינו מחוץ לאולם האירועים - ופתחו בירי על קרוביהם ונמלטו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/crime/article/20788192
 
-### WARNING · takeaway_long · item 68
+### WARNING · takeaway_long · item 64
 - Takeaway length 182 > 95
 - Headline: `משטרת ישראל פענחה את 'החתונה האדומה': שני חשודים יואשמו בירי בבית לחם`
 - Original: `סכסוך משפחתי בחתונה: המתינו מחוץ לאולם האירועים - ופתחו בירי על קרוביהם ונמלטו`
