@@ -1,34 +1,33 @@
 # Pointa Quality Gate Report
 
-Items checked: 243
+Items checked: 200
 Errors: 0
-Warnings: 76
+Warnings: 69
 
 ## Category distribution
 
-- רכילות: 56
-- ביטחון: 37
-- כלכלה: 25
-- ספורט: 17
-- תרבות: 16
-- טכנולוגיה: 15
+- רכילות: 44
+- ביטחון: 30
+- כלכלה: 22
+- ספורט: 16
 - פלילים: 14
-- צרכנות: 13
-- משפט: 10
-- פוליטיקה: 8
-- בריאות: 7
-- רכב: 5
-- אקטואליה בעולם: 5
-- דעות: 5
+- תרבות: 13
+- טכנולוגיה: 12
+- צרכנות: 10
+- משפט: 9
+- פוליטיקה: 7
+- בריאות: 5
+- רכב: 4
+- אקטואליה בעולם: 4
 - מזג אוויר: 4
-- חדשות: 3
-- נדל״ן: 3
+- דעות: 3
+- חדשות: 2
+- נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 67
+- takeaway_long: 61
 - summary_long: 8
-- category_sport_source: 1
 
 ## Issues
 
@@ -514,52 +513,3 @@ Warnings: 76
 - Original: `האמא של החתן: רוית אסף מוכיחה שמלכה נשארת מלכה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/lifestyle/fashion/article/20790735
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 98 > 95
-- Headline: `אוהד ישראלי טוען שדגלו הוחרם במשחק של איראן`
-- Original: `"ראש פיפ"א הצביע עלי, באצטדיון של 100 אלף איש - והורה להחרים את דגל ישראל"`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3846702
-
-### WARNING · category_sport_source · item 200
-- Sport source should usually be ספורט
-- Headline: `אוהד ישראלי טוען שדגלו הוחרם במשחק של איראן`
-- Original: `"ראש פיפ"א הצביע עלי, באצטדיון של 100 אלף איש - והורה להחרים את דגל ישראל"`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3846702
-
-### WARNING · takeaway_long · item 201
-- Takeaway length 117 > 95
-- Headline: `קייטי פרייס תעבור תיקון שפתיים בלי הרדמה`
-- Original: `Katie Price to undergo agonising corrective cosmetic work - while awake`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/katie-price-undergo-agonising-corrective-37313114
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 112 > 95
-- Headline: `מתכוני השבת של הארץ עוברים לתפריט קיץ`
-- Original: `מה מבשלים לסוף השבוע? מתכונים לשבת חמימה`
-- Source: הארץ - כל הכתבות
-- URL: https://www.haaretz.co.il/food/cooking-for-shabbat/2026-06-18/ty-article-magazine/00000188-e284-d5fc-ab9d-fbecd7e00000
-
-### WARNING · takeaway_long · item 224
-- Takeaway length 107 > 95
-- Headline: `ג'רמי קלארקסון חשף סרטן ערמונית אגרסיבי ב'חוות קלארקסון'`
-- Original: `Jeremy Clarkson's girlfriend Lisa Hogan shares snap of him relaxing on their farm in health update after he revealed he's been diagnosed with 'aggressive' prostate cancer`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15908855/Jeremy-Clarkson-girlfriend-Lisa-Hogan-health-update.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 230
-- Takeaway length 113 > 95
-- Headline: `אורבניקה משיקה טיפוח שיער ומשדרגת את סניף סינמה סיטי ב-6 מיליון שקל`
-- Original: `השקעה של 6 מיליון שקל: רשת אורבניקה חושפת מהלך חדש`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/lifestyle/beauty/article/20790286
-
-### WARNING · takeaway_long · item 234
-- Takeaway length 97 > 95
-- Headline: `ערוץ משב פותח מסלול הכשרה ליוצרים צעירים`
-- Original: `תוכניות יוצרים צעירים של ערוץ "משב": ללמוד מהטובים ביותר`
-- Source: כיפה - חדשות
-- URL: https://www.kipa.co.il/1226230-0
