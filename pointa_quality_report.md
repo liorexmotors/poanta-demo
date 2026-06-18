@@ -1,25 +1,25 @@
 # Pointa Quality Gate Report
 
-Items checked: 209
+Items checked: 197
 Errors: 0
 Warnings: 45
 
 ## Category distribution
 
-- רכילות: 58
-- ביטחון: 53
-- ספורט: 28
+- רכילות: 57
+- ביטחון: 49
+- ספורט: 27
 - פוליטיקה: 10
 - תרבות: 8
 - כלכלה: 8
 - פלילים: 7
-- חדשות: 7
-- משפט: 6
 - צרכנות: 6
+- חדשות: 6
+- משפט: 5
 - בריאות: 5
-- דעות: 5
 - רכב: 4
-- טכנולוגיה: 2
+- דעות: 2
+- טכנולוגיה: 1
 - אקטואליה בעולם: 1
 - נדל״ן: 1
 
@@ -38,28 +38,28 @@ Warnings: 45
 - Source: וואלה רכב - ספורט מוטורי
 - URL: https://cars.walla.co.il/item/3846921
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 11
 - Takeaway length 138 > 95
 - Headline: `מפקד חיל הים לשעבר מזהיר מסבבי לחימה חוזרים מול איראן`
 - Original: `Diplomatic agreements may lead to Israel-Iran escalation, former Navy commander warns`
 - Source: The Jerusalem Post - Iran
 - URL: https://www.jpost.com/middle-east/iran-news/article-899906
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 12
 - Takeaway length 107 > 95
 - Headline: `שיקלי דורש שצה״ל יחזיק נקודות אסטרטגיות בלבנון`
 - Original: `IDF withdrawal from Lebanon would be a failure, must hold strategic points in north, Chikli says`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/defense-news/article-899904
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 13
 - Takeaway length 112 > 95
 - Headline: `קייל קוק עוזב את Summer House אחרי 10 עונות`
 - Original: `Kyle Cooke announces ‘heartbreaking’ exit from ‘Summer House’ after 10 seasons: ‘End of an era’`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/entertainment/kyle-cooke-announces-summer-house-exit-after-10-seasons/
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 22
 - Takeaway length 104 > 95
 - Headline: `המפיק טיי קית׳ נמצא מת בגיל 29 בנאשוויל`
 - Original: `Tay Keith dead at 29: Body of super producer who made Drake and Travis Scott's biggest hits discovered at Nashville apartment`
