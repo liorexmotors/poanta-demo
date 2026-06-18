@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 203
+Items checked: 200
 Errors: 0
-Warnings: 61
+Warnings: 60
 
 ## Category distribution
 
-- רכילות: 38
 - ביטחון: 36
+- רכילות: 36
 - ספורט: 22
 - כלכלה: 20
 - טכנולוגיה: 14
@@ -15,7 +15,7 @@ Warnings: 61
 - צרכנות: 12
 - פוליטיקה: 7
 - בריאות: 7
-- תרבות: 7
+- תרבות: 6
 - משפט: 6
 - חדשות: 5
 - רכב: 4
@@ -26,7 +26,7 @@ Warnings: 61
 
 ## Issue counts
 
-- takeaway_long: 54
+- takeaway_long: 53
 - summary_long: 7
 
 ## Issues
@@ -450,10 +450,3 @@ Warnings: 61
 - Original: `טוויסט בעלילה: הקשר המפתיע בין סשה ישראלוביץ' ללאנס סטרול`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3846763
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 100 > 95
-- Headline: `קלארקסון חשף סרטן, ובת זוגו הודתה לתומכים`
-- Original: `Jeremy Clarkson's girlfriend Lisa Hogan enjoys a day out at Royal Ascot after he revealed 'aggressive' prostate cancer diagnosis`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15910565/Jeremy-Clarksons-girlfriend-Lisa-Hogan-enjoys-day-Royal-Ascot-revealed-aggressive-prostate-cancer-diagnosis.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
