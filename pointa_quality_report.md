@@ -1,26 +1,26 @@
 # Pointa Quality Gate Report
 
-Items checked: 212
+Items checked: 200
 Errors: 0
 Warnings: 38
 
 ## Category distribution
 
-- ביטחון: 60
-- רכילות: 50
+- ביטחון: 55
+- רכילות: 46
 - ספורט: 32
 - דעות: 8
 - תרבות: 7
 - פלילים: 7
-- כלכלה: 6
-- פוליטיקה: 6
 - טכנולוגיה: 5
 - נדל״ן: 5
+- פוליטיקה: 5
 - רכב: 5
 - צרכנות: 4
 - חדשות: 4
-- מזג אוויר: 4
+- כלכלה: 4
 - משפט: 4
+- מזג אוויר: 4
 - בריאות: 3
 - אקטואליה בעולם: 2
 
@@ -172,126 +172,126 @@ Warnings: 38
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hk6000x3bzl
 
-### WARNING · summary_long · item 69
+### WARNING · summary_long · item 65
 - Summary length 232 > 220
 - Headline: `הנדל מנסה לגייס שני ח״כים שהתעמתו עם הקואליציה על חוק הגיוס`
 - Original: `עונת ההעברות בשיאה: ח"כים מהציונות הדתית והליכוד במגעים עם המילואימניקים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14806364
 
-### WARNING · takeaway_long · item 72
+### WARNING · takeaway_long · item 68
 - Takeaway length 102 > 95
 - Headline: `באני XO וג'לי רול ממשיכים בתוכנית לילד גם אחרי הגירושים`
 - Original: `Bunnie Xo says she and Jelly Roll are still having a baby together despite divorce`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/celebrity-news/bunnie-xo-says-she-and-jelly-roll-are-still-having-a-baby-together-despite-divorce/
 
-### WARNING · summary_long · item 75
+### WARNING · summary_long · item 71
 - Summary length 223 > 220
 - Headline: `ערוץ חשאי למוסקבה חושף שסעים באיחוד על שיחות שלום`
 - Original: `לא צפוי: האם האיחוד האירופי יפתח בדיאלוג עם פוטין?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20796329
 
-### WARNING · takeaway_long · item 75
+### WARNING · takeaway_long · item 71
 - Takeaway length 97 > 95
 - Headline: `ערוץ חשאי למוסקבה חושף שסעים באיחוד על שיחות שלום`
 - Original: `לא צפוי: האם האיחוד האירופי יפתח בדיאלוג עם פוטין?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20796329
 
-### WARNING · takeaway_long · item 80
+### WARNING · takeaway_long · item 76
 - Takeaway length 100 > 95
 - Headline: `דיווח שווא על מות אביו של מסי הפיל מגישה וצוות הפקה`
 - Original: `הודיעה בשידור חי כי אביו של ליונל מסי מת - והתפטרה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20796293
 
-### WARNING · category_sport_source · item 113
+### WARNING · category_sport_source · item 109
 - Sport source should usually be ספורט
 - Headline: `טויוטה עצרה את רצף הניצחונות של פרארי בלה מאן`
 - Original: `לה מאן זה לא כדורגל: כאן גרמניה לא תמיד מנצחת`
 - Source: וואלה רכב - ספורט מוטורי
 - URL: https://cars.walla.co.il/item/3846921
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 127
 - Takeaway length 138 > 95
 - Headline: `מפקד חיל הים לשעבר מזהיר מסבבי לחימה חוזרים מול איראן`
 - Original: `Diplomatic agreements may lead to Israel-Iran escalation, former Navy commander warns`
 - Source: The Jerusalem Post - Iran
 - URL: https://www.jpost.com/middle-east/iran-news/article-899906
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 128
 - Takeaway length 107 > 95
 - Headline: `שיקלי דורש שצה״ל יחזיק נקודות אסטרטגיות בלבנון`
 - Original: `IDF withdrawal from Lebanon would be a failure, must hold strategic points in north, Chikli says`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/defense-news/article-899904
 
-### WARNING · takeaway_long · item 133
+### WARNING · takeaway_long · item 129
 - Takeaway length 112 > 95
 - Headline: `קייל קוק עוזב את Summer House אחרי 10 עונות`
 - Original: `Kyle Cooke announces ‘heartbreaking’ exit from ‘Summer House’ after 10 seasons: ‘End of an era’`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/entertainment/kyle-cooke-announces-summer-house-exit-after-10-seasons/
 
-### WARNING · takeaway_long · item 134
+### WARNING · takeaway_long · item 130
 - Takeaway length 104 > 95
 - Headline: `המפיק טיי קית׳ נמצא מת בגיל 29 בנאשוויל`
 - Original: `Tay Keith dead at 29: Body of super producer who made Drake and Travis Scott's biggest hits discovered at Nashville apartment`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15912529/tay-keith-dead-nashville-drake-travis-scott-producer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · category_sport_source · item 148
+### WARNING · category_sport_source · item 144
 - Sport source should usually be ספורט
 - Headline: `דאעש פרסם איום על אצטדיוני המונדיאל`
 - Original: `דאעש מאיים על האוהדים במונדיאל: "נצית את היציעים"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3846910
 
-### WARNING · takeaway_long · item 169
+### WARNING · takeaway_long · item 165
 - Takeaway length 105 > 95
 - Headline: `ויטקוף: איראן תפתח את אתרי הגרעין לפקחים`
 - Original: `דיווח: איראן צפויה לפתוח את אתרי הגרעין בפני פקחים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20796126
 
-### WARNING · summary_long · item 173
+### WARNING · summary_long · item 169
 - Summary length 231 > 220
 - Headline: `מצעד הניקס הפך גם לתצוגת אופנה של סלבס`
 - Original: `Custom jerseys, puns and designer hoodies: The best celebrity fashion moments from the Knicks NBA Championship parade`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/style/knicks-parade-celebrity-outfits-timothee-chalamet-alicia-keys-more/
 
-### WARNING · takeaway_long · item 173
+### WARNING · takeaway_long · item 169
 - Takeaway length 104 > 95
 - Headline: `מצעד הניקס הפך גם לתצוגת אופנה של סלבס`
 - Original: `Custom jerseys, puns and designer hoodies: The best celebrity fashion moments from the Knicks NBA Championship parade`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/style/knicks-parade-celebrity-outfits-timothee-chalamet-alicia-keys-more/
 
-### WARNING · summary_long · item 177
+### WARNING · summary_long · item 173
 - Summary length 229 > 220
 - Headline: `סיירת עירונית בבאר שבע פועלת כמו כוח משטרה`
 - Original: `מרדפים, מעקבים במצלמות - וסיירת עירונית שיצאה משליטה: "זה שיקגו פה?"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hy93yrkzml
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 173
 - Takeaway length 121 > 95
 - Headline: `סיירת עירונית בבאר שבע פועלת כמו כוח משטרה`
 - Original: `מרדפים, מעקבים במצלמות - וסיירת עירונית שיצאה משליטה: "זה שיקגו פה?"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hy93yrkzml
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 183
 - Takeaway length 99 > 95
 - Headline: `מפקד סיירת גולני חושף את מחיר כיבוש הבופור`
 - Original: `"הייתי אמור למות. נשארתי בחיים ועליתי לבופור": מפקד סיירת גולני על המבצע המסוכן`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14803200
 
-### WARNING · takeaway_long · item 188
+### WARNING · takeaway_long · item 184
 - Takeaway length 99 > 95
 - Headline: `בג"ץ בוחן מינוי של עורך דין נתניהו למבקר המדינה`
 - Original: `מבקר תחת ביקורת: כמה הוא יתערב בבחירות?`
