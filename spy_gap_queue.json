@@ -6,8 +6,8 @@
     "name": "משה · פערי מרגל",
     "role": "הפיכת טרנדים חסרים למועמדי פיד בטוחים"
   },
-  "generatedAt": "2026-06-19T22:33:08+03:00",
-  "sourceSpyGeneratedAt": "2026-06-19T22:32:24+03:00",
+  "generatedAt": "2026-06-19T22:47:02+03:00",
+  "sourceSpyGeneratedAt": "2026-06-19T22:46:14+03:00",
   "policy": "missing spy trends enter a queue for משה/editor QA; no raw auto-publish",
   "mosheProcessor": {
     "lastRunAt": "2026-06-18T11:51:14+03:00",
@@ -973,13 +973,13 @@
     },
     {
       "id": "gap_a8d77066f56b27ee",
-      "status": "new",
-      "statusLabel": "חדש",
-      "mosheStage": "זוהה פער",
-      "mosheCurrentAction": "ממתין לשליחה לתור משה",
-      "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+      "status": "queued_for_moshe",
+      "statusLabel": "ממתין למשה",
+      "mosheStage": "בתור משה",
+      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
+      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
       "createdAt": "2026-06-19T22:32:06+03:00",
-      "updatedAt": "2026-06-19T22:33:08+03:00",
+      "updatedAt": "2026-06-19T22:47:02+03:00",
       "trend": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
       "domain": "חדשות",
       "clusterKey": "גברים נורו",
@@ -1028,7 +1028,34 @@
         "mentionedInFeed": false,
         "latestAt": "2026-06-19T22:00:00+00:00",
         "sampleUrl": "https://news.walla.co.il/item/3847048"
-      }
+      },
+      "preparedBy": "רכז מודיעין",
+      "intelligenceBriefingId": "intel_a8d77066f56b27ee",
+      "intelligenceBriefing": {
+        "headlineSeed": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
+        "source": "ynet",
+        "sourceUrl": "https://news.walla.co.il/item/3847048",
+        "supportingSources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 6,
+        "sourceCount": 3,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "mosheQueuedAt": "2026-06-19T22:39:56+03:00"
     },
     {
       "id": "gap_8a022798bbc0e5e0",
@@ -2830,92 +2857,6 @@
       },
       "mosheQueuedAt": "2026-06-19T16:24:32+03:00",
       "staleFromCurrentSpy": true
-    },
-    {
-      "id": "gap_9ffba5f4f1915dc8",
-      "status": "queued_for_moshe",
-      "statusLabel": "ממתין למשה",
-      "mosheStage": "בתור משה",
-      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
-      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
-      "createdAt": "2026-06-19T14:14:14+03:00",
-      "updatedAt": "2026-06-19T22:33:08+03:00",
-      "trend": "יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
-      "domain": "חדשות",
-      "clusterKey": "ועדת הבחירות",
-      "reason": "missing_from_feed",
-      "recommendedAction": "send_to_full_editor_rescue_queue",
-      "owner": "משה",
-      "priority": 19,
-      "externalMentions": 4,
-      "sourceCount": 3,
-      "sources": [
-        "הארץ",
-        "וואלה",
-        "סרוגים"
-      ],
-      "discoveryTypes": [
-        "RSS",
-        "WEB"
-      ],
-      "rssMentions": 2,
-      "webMentions": 2,
-      "latestAt": "2026-06-19T13:28:00+00:00",
-      "source": "הארץ",
-      "sourceGroup": "הארץ",
-      "sourceUrl": "https://news.walla.co.il/break/3846997",
-      "originalTitle": "יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
-      "deterministicHeadline": "יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
-      "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
-      "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-      "rawSpyTrend": {
-        "domain": "חדשות",
-        "trend": "יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
-        "clusterKey": "ועדת הבחירות",
-        "externalMentions": 4,
-        "sourceCount": 3,
-        "sources": [
-          "הארץ",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 2,
-        "webMentions": 2,
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-19T13:28:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3846997"
-      },
-      "preparedBy": "רכז מודיעין",
-      "intelligenceBriefingId": "intel_9ffba5f4f1915dc8",
-      "intelligenceBriefing": {
-        "headlineSeed": "יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
-        "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3846997",
-        "supportingSources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 4,
-        "sourceCount": 3,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "mosheQueuedAt": "2026-06-19T14:14:49+03:00"
     },
     {
       "id": "gap_38dce2de69b70126",
@@ -5264,6 +5205,65 @@
         "sampleUrl": "https://news.walla.co.il/item/3845823"
       },
       "staleFromCurrentSpy": true
+    },
+    {
+      "id": "gap_bc0cf0ce7d90f243",
+      "status": "new",
+      "statusLabel": "חדש",
+      "mosheStage": "זוהה פער",
+      "mosheCurrentAction": "ממתין לשליחה לתור משה",
+      "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+      "createdAt": "2026-06-19T22:45:55+03:00",
+      "updatedAt": "2026-06-19T22:47:02+03:00",
+      "trend": "בכיר ישראלי מאשר: \"אנחנו בהפסקת אש - אם חיזבאללה לא יתקפו אותנו\"",
+      "domain": "חדשות",
+      "clusterKey": "בכיר ישראלי",
+      "reason": "missing_from_feed",
+      "recommendedAction": "send_to_full_editor_rescue_queue",
+      "owner": "משה",
+      "priority": 17,
+      "externalMentions": 3,
+      "sourceCount": 3,
+      "sources": [
+        "דה מרקר",
+        "הארץ",
+        "סרוגים"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 1,
+      "webMentions": 2,
+      "latestAt": "2026-06-19T12:53:28+00:00",
+      "source": "דה מרקר",
+      "sourceGroup": "דה מרקר",
+      "sourceUrl": "https://www.srugim.co.il/101004565-דיווח-אמריקני-ישראל-וחיזבאללה-הסכימו",
+      "originalTitle": "בכיר ישראלי מאשר: \"אנחנו בהפסקת אש - אם חיזבאללה לא יתקפו אותנו\"",
+      "deterministicHeadline": "בכיר ישראלי מאשר: \"אנחנו בהפסקת אש - אם חיזבאללה לא יתקפו אותנו\"",
+      "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: בכיר ישראלי מאשר: \"אנחנו בהפסקת אש - אם חיזבאללה לא יתקפו אותנו\"",
+      "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+      "rawSpyTrend": {
+        "domain": "חדשות",
+        "trend": "בכיר ישראלי מאשר: \"אנחנו בהפסקת אש - אם חיזבאללה לא יתקפו אותנו\"",
+        "clusterKey": "בכיר ישראלי",
+        "externalMentions": 3,
+        "sourceCount": 3,
+        "sources": [
+          "דה מרקר",
+          "הארץ",
+          "סרוגים"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 1,
+        "webMentions": 2,
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-19T12:53:28+00:00",
+        "sampleUrl": "https://www.srugim.co.il/101004565-דיווח-אמריקני-ישראל-וחיזבאללה-הסכימו"
+      }
     }
   ]
 }
