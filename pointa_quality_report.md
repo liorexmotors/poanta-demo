@@ -1,31 +1,30 @@
 # Pointa Quality Gate Report
 
-Items checked: 211
+Items checked: 197
 Errors: 0
-Warnings: 44
+Warnings: 42
 
 ## Category distribution
 
-- רכילות: 61
-- ביטחון: 56
-- ספורט: 26
+- רכילות: 55
+- ביטחון: 53
+- ספורט: 24
 - פוליטיקה: 11
 - פלילים: 8
 - תרבות: 8
 - כלכלה: 8
 - משפט: 7
-- צרכנות: 6
 - חדשות: 6
-- רכב: 5
+- צרכנות: 5
 - בריאות: 5
+- רכב: 4
 - טכנולוגיה: 1
 - אקטואליה בעולם: 1
 - נדל״ן: 1
-- דעות: 1
 
 ## Issue counts
 
-- takeaway_long: 36
+- takeaway_long: 34
 - summary_long: 6
 - category_sport_source: 2
 
@@ -122,57 +121,64 @@ Warnings: 44
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14804425
 
-### WARNING · takeaway_long · item 120
+### WARNING · takeaway_long · item 119
 - Takeaway length 98 > 95
 - Headline: `כפר יונה זועמת אחרי מחאת חסידי גור`
 - Original: `20 אלף חסידים, בעיר של 23 אלף: "אם כולם כאן היו מתגייסים, היינו מסודרים. זה מרתיח"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hjsnnqzgfg
 
-### WARNING · takeaway_long · item 125
+### WARNING · takeaway_long · item 124
 - Takeaway length 106 > 95
 - Headline: `ביפו נעצר חשוד בירי אחד, והירי בטיקטוקרית עדיין פתוח`
 - Original: `חשוד בירי ביפו נעצר בדירת מסתור: היורה באושיית הרשת רג'ד עבד אלהדי עדיין חופשי`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3846893
 
-### WARNING · summary_long · item 127
+### WARNING · summary_long · item 126
 - Summary length 222 > 220
 - Headline: `חשוד בשוד חצי מיליון שקל בתל אביב בדרך לכתב אישום`
 - Original: `ריסס גז פלפל בפניו ושדד ממנו כחצי מיליון שקל: הצהרת תובע נגד תושב רמלה`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3846892
 
-### WARNING · takeaway_long · item 132
+### WARNING · takeaway_long · item 131
 - Takeaway length 103 > 95
 - Headline: `ג׳ניפר לופז הופכת את הגירושים לשיר דאנס חדש`
 - Original: `Jennifer Lopez worries fans with new song as she sings about feeling 'numb' and 'weird' after Ben Affleck divorce`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15911809/Jennifer-Lopez-feeling-numb-weird.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 135
+### WARNING · takeaway_long · item 134
 - Takeaway length 102 > 95
 - Headline: `מזכר טראמפ עם איראן נותן הקלות לפני הסכם סופי`
 - Original: `How does Donald Trump's MoU with Iran compare to Obama's 2015 nuclear deal? - explainer`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-899891
 
-### WARNING · takeaway_long · item 139
+### WARNING · takeaway_long · item 138
 - Takeaway length 105 > 95
 - Headline: `בסיסים סגורים הפכו למוקד כלבי הפרא בעוטף`
 - Original: `כלבי פרא משוטטים מטילים אימה על תושבי העוטף - וברשויות לא יכולים לטפל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20795374
 
-### WARNING · takeaway_long · item 143
+### WARNING · takeaway_long · item 142
 - Takeaway length 96 > 95
 - Headline: `ילד בן 3 הושלך למתחם תנינים באנגליה; חשוד נעצר`
 - Original: `חשד לרצח: ילד כבן 3 הושלך למתחם תנינים באנגליה - מצבו אנוש`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3846880
 
-### WARNING · summary_long · item 144
+### WARNING · summary_long · item 143
 - Summary length 234 > 220
+- Headline: `בנות אובמה חזרו לאור הזרקורים בפתיחת המרכז הנשיאותי`
+- Original: `Malia and Sasha Obama make rare public appearance to support parents at Obama Presidential Center opening`
+- Source: Page Six רכילות חו״ל
+- URL: https://pagesix.com/2026/06/18/celebrity-news/malia-sasha-obama-attend-obama-presidential-center-opening/
+
+### WARNING · takeaway_long · item 143
+- Takeaway length 112 > 95
 - Headline: `בנות אובמה חזרו לאור הזרקורים בפתיחת המרכז הנשיאותי`
 - Original: `Malia and Sasha Obama make rare public appearance to support parents at Obama Presidential Center opening`
 - Source: Page Six רכילות חו״ל
@@ -180,161 +186,140 @@ Warnings: 44
 
 ### WARNING · takeaway_long · item 144
 - Takeaway length 112 > 95
-- Headline: `בנות אובמה חזרו לאור הזרקורים בפתיחת המרכז הנשיאותי`
-- Original: `Malia and Sasha Obama make rare public appearance to support parents at Obama Presidential Center opening`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/18/celebrity-news/malia-sasha-obama-attend-obama-presidential-center-opening/
-
-### WARNING · takeaway_long · item 145
-- Takeaway length 112 > 95
 - Headline: `יועצי הזוגיות בטיקטוק מוכרים פתרונות בזק מסוכנים`
 - Original: `"בעלך כועס עלייך? תתפשטי": יועצי הזוגיות שכובשים את הטיקטוק`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/magazine/shishabat/article/20791094
 
-### WARNING · takeaway_long · item 146
+### WARNING · takeaway_long · item 145
 - Takeaway length 110 > 95
 - Headline: `קרלוס מנסיה יואשם בתיק הראשון של יחידת מס חדשה בלוס אנג׳לס`
 - Original: `Comedian Carlos Mencia, 58, set to face criminal charges by new LA tax fraud unit`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15911845/comedian-carlos-mencia-criminal-charges-tax-fraud-unit.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 147
+### WARNING · takeaway_long · item 146
 - Takeaway length 127 > 95
 - Headline: `טראמפ מצפה להפסקת אש מלאה מול חיזבאללה`
 - Original: `Trump says he expects 'complete ceasefire' with Hezbollah`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688066
 
-### WARNING · summary_long · item 148
+### WARNING · summary_long · item 147
 - Summary length 232 > 220
 - Headline: `קולין גוסלין יוציא ממואר על ילדותו בטלוויזיית הריאליטי`
 - Original: `Kate Gosselin's son Collin, 22, announces tell-all memoir about 'abuse, injustice'... 9 years after TLC show ended`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15911379/Kate-Gosselin-son-Collin-22-slams-mom-tell-memoir.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 148
+### WARNING · takeaway_long · item 147
 - Takeaway length 108 > 95
 - Headline: `קולין גוסלין יוציא ממואר על ילדותו בטלוויזיית הריאליטי`
 - Original: `Kate Gosselin's son Collin, 22, announces tell-all memoir about 'abuse, injustice'... 9 years after TLC show ended`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15911379/Kate-Gosselin-son-Collin-22-slams-mom-tell-memoir.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 151
 - Takeaway length 118 > 95
 - Headline: `כוכבי Calabasas Confidential חושפים מה קרה מאחורי הצילומים`
 - Original: `‘Calabasas Confidential’ stars Emilie Nelson, Dylan Wolf give ‘VRT’ the tea on new Netflix show`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/video/calabasas-confidential-stars-emilie-nelson-dylan-wolf-give-vrt-the-tea-on-new-netflix-show/
 
-### WARNING · takeaway_long · item 160
+### WARNING · takeaway_long · item 159
 - Takeaway length 99 > 95
 - Headline: `שורד השבי גיא גלבוע־דלל סיפר על פגיעות בשבי בעזה`
 - Original: `Captivity survivor reveals the abuse he suffered`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688064
 
-### WARNING · takeaway_long · item 162
+### WARNING · takeaway_long · item 161
 - Takeaway length 99 > 95
 - Headline: `נדב לפיד: פסטיבלים מפחדים מסרטים על ישראל ופלסטינים`
 - Original: `נדב לפיד על כך שנאלץ לפרוש מפסטיבל בינלאומי: "אנחנו עוסקים בכיתת אמן בזמן שזוועה מתרחשת"`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/skg11w2wzml
 
-### WARNING · takeaway_long · item 174
+### WARNING · takeaway_long · item 173
 - Takeaway length 96 > 95
 - Headline: `רמי לוי מוכר רכב חשמלי בפחות מ-100 אלף שקל`
 - Original: `רמי לוי הודיע: רכב חשמלי, בפחות ממאה אלף שקלים`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226262-0
 
-### WARNING · summary_long · item 177
+### WARNING · summary_long · item 176
 - Summary length 222 > 220
 - Headline: `צ׳כיה ודרום אפריקה איבדו סיכוי נוח להתקדם במונדיאל`
 - Original: `צ'כיה ודרום אפריקה סיימו ב-1:1, והשיגו נקודה ראשונה במונדיאל`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-06-18/ty-article-game/0000019e-dbd2-d6a3-a5be-fff2fcce0000
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 137 > 95
 - Headline: `אונדס נהפכה לשחקנית ביטחון של כמעט 5 מיליארד דולר`
 - Original: `מנכ"ל אונדס מדבר לראשונה: "מה שישראל משלמת על הביטחון שלה - הוא לא נורמלי"`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546433#utm_source=RSS
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 180
 - Takeaway length 111 > 95
 - Headline: `כוח הייצוב לעזה מתחיל להתמקם בכרם שלום`
 - Original: `קצינים מכוח הייצוב בעזה הגיעו לישראל. בכיר ב"מועצת השלום": נמשיך בלי חמאס`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/ryebnqbzzg
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 183
 - Takeaway length 97 > 95
 - Headline: `משפחת מסי אישרה שחורחה מסי תחת השגחה רפואית`
 - Original: `משפחת מסי הגיבה לשמועות: "חוסר רגישות. רק אנחנו יודעים את האמת"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3846874
 
-### WARNING · takeaway_long · item 185
+### WARNING · takeaway_long · item 184
 - Takeaway length 97 > 95
 - Headline: `חמינאי אישר מזכר הבנות עם ארה״ב בתנאים`
 - Original: `מוג'תבא חמינאי: "הייתה לי דעה שונה בנוגע להסכם, אבל הסכמתי בגלל התחייבותו של פזשכיאן"`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3846883
 
-### WARNING · takeaway_long · item 190
+### WARNING · takeaway_long · item 189
 - Takeaway length 97 > 95
 - Headline: `נפילה מגובה באזור הסתיימה בפציעה בינונית`
 - Original: `אזור: גבר בן 40 נפצע בינוני לאחר שנפל מגובה`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1118578
 
-### WARNING · takeaway_long · item 191
+### WARNING · takeaway_long · item 190
 - Takeaway length 103 > 95
 - Headline: `מוג׳תבא חמינאי אותת שאישר את ההבנות עם ארה״ב`
 - Original: `מוג'תבא חמינאי: "הייתה לי עמדה אחרת, אך אישרתי את ההסכם"`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1118576
 
-### WARNING · takeaway_long · item 193
+### WARNING · takeaway_long · item 192
 - Takeaway length 112 > 95
 - Headline: `סגנון ההיקשרות קובע איך זוגות מפרשים ריחוק`
 - Original: `זה הדבר הכי חשוב שמומחי חתונמי לא חשבו עליו בשידוכים שעשו`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3846118
 
-### WARNING · takeaway_long · item 194
+### WARNING · takeaway_long · item 193
 - Takeaway length 106 > 95
 - Headline: `איראן מתכננת אגרות שיט במצר הורמוז בעוד חודשיים`
 - Original: `Iran announces plans to bring in maritime fees for strait of Hormuz`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/18/iran-announces-plans-to-bring-in-maritime-fees-for-strait-of-hormuz
 
-### WARNING · takeaway_long · item 195
+### WARNING · takeaway_long · item 194
 - Takeaway length 115 > 95
 - Headline: `קטאר מנסה לבלום עסקת רפאל לרכישת מפעל פולקסווגן`
 - Original: `דיווח: קטאר מנסה לטרפד את העסקה בין רפאל ופולקסווגן`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3846878
 
-### WARNING · takeaway_long · item 196
+### WARNING · takeaway_long · item 195
 - Takeaway length 101 > 95
 - Headline: `שוויץ משנה הרכב, דז׳קו פותח בבוסניה במונדיאל`
 - Original: `, ספורט1: שני שינויים בשוויץ, דז'קו בהרכב בוסניה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3846740
-
-### WARNING · takeaway_long · item 201
-- Takeaway length 101 > 95
-- Headline: `ואנס קבע דדליין של 17 באוגוסט להסכם סופי עם איראן`
-- Original: `Middle East crisis live: Vance says 60-day-period to reach final peace agreement starts today and US ‘isn’t giving up a cent’ to Iran`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/world/live/2026/jun/18/middle-east-crisis-live-us-iran-presidents-sign-peace-deal-mou-trump-tehran-strait-of-hormuz-toll-lebanon-israel
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 111 > 95
-- Headline: `מאמר דעה: חסינות גוטליב נבחנת מול תקדים בשארה`
-- Original: `מה שאסור לגוטליב ומותר לעזמי בשארה`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/magazine/hashavua/article/20790293
