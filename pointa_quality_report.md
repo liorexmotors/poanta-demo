@@ -1,29 +1,29 @@
 # Pointa Quality Gate Report
 
-Items checked: 208
+Items checked: 198
 Errors: 0
-Warnings: 43
+Warnings: 42
 
 ## Category distribution
 
-- ביטחון: 62
 - רכילות: 58
-- ספורט: 29
+- ביטחון: 57
+- ספורט: 27
 - בריאות: 10
-- חדשות: 9
 - פוליטיקה: 9
+- חדשות: 8
 - פלילים: 6
 - דעות: 6
-- כלכלה: 6
 - תרבות: 5
+- כלכלה: 5
 - טכנולוגיה: 3
-- אקטואליה בעולם: 3
+- אקטואליה בעולם: 2
 - משפט: 1
 - רכב: 1
 
 ## Issue counts
 
-- takeaway_long: 41
+- takeaway_long: 40
 - summary_long: 2
 
 ## Issues
@@ -273,58 +273,51 @@ Warnings: 43
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/19/entertainment/maggie-rogers-loser-new-york-times-mystery-date-revealed/
 
-### WARNING · takeaway_long · item 165
+### WARNING · takeaway_long · item 164
 - Takeaway length 103 > 95
 - Headline: `נבטייה ציינה עשורא בין הריסות והפסקת אש שברירית`
 - Original: `‘We wanted a reason for people to come back’: Lebanese city marks Ashura after destruction of war`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/19/lebanon-nabatieh-city-ashura-ceremony-hezbollah-israel
 
-### WARNING · takeaway_long · item 176
+### WARNING · takeaway_long · item 175
 - Takeaway length 101 > 95
 - Headline: `צה״ל תקף בבקעת הלבנון אחרי הפרות חוזרות של חיזבאללה`
 - Original: `IDF strikes Hezbollah sites in Beqaa Valley after Hezbollah attacks`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688099
 
-### WARNING · summary_long · item 177
+### WARNING · summary_long · item 176
 - Summary length 228 > 220
 - Headline: `סאלי רוני האשימה את ישראל בעליית הפשיזם באירופה`
 - Original: `הסופרת הבינלאומית מאשימה: ישראל אחרית לעלייית הפשיזם באירופה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1334947
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 111 > 95
 - Headline: `מסגד ביפו טוען שקיבל קנסות על קריאה ברמקולים לתפילה`
 - Original: `Jaffa Mosque: We received fines over the loudspeaker call to prayer`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688098
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 180
 - Takeaway length 108 > 95
 - Headline: `ביטול שיחות איראן-ארה"ב מעיב על פתיחת המסחר באירופה`
 - Original: `עליות קלות באירופה, בצל ביטול שיחות איראן-ארה"ב בשווייץ`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546490#utm_source=RSS
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 186
 - Takeaway length 97 > 95
 - Headline: `שיחות ארה״ב-איראן נדחו אחרי ביטול נסיעת ואנס`
 - Original: `US-Iran talks postponed as Vance pulls out of Switzerland trip`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/c8r2eme2n5do?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 194
+### WARNING · takeaway_long · item 193
 - Takeaway length 114 > 95
 - Headline: `קייל סנדילנדס מסלים את הקרב אחרי פשרת ARN`
 - Original: `Kyle Sandilands melts down and threatens to SLAP Ben Fordham for comments about his failed $100m radio contract - before 2GB host hits him with a cutting comeback`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15912527/Kyle-Sandilands-threatens-slap-Ben-Fordham-fiery-clash-F-k-you.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 108 > 95
-- Headline: `הנפט חזר לעלות כשמעבר הורמוז נשאר מוגבל`
-- Original: `Oil prices rise as Lebanon fighting erupts and Hormuz traffic still slow`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/economy/2026/6/19/oil-prices-rise-as-lebanon-fighting-erupts-and-hormuz-traffic-still-slow?traffic_source=rss
