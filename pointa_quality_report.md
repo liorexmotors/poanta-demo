@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 198
+Items checked: 197
 Errors: 0
 Warnings: 44
 
@@ -9,7 +9,7 @@ Warnings: 44
 - רכילות: 57
 - ביטחון: 52
 - ספורט: 24
-- פוליטיקה: 10
+- פוליטיקה: 9
 - פלילים: 8
 - תרבות: 8
 - כלכלה: 8
@@ -38,14 +38,14 @@ Warnings: 44
 - Source: וואלה רכב - ספורט מוטורי
 - URL: https://cars.walla.co.il/item/3846921
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 18
 - Takeaway length 138 > 95
 - Headline: `מפקד חיל הים לשעבר מזהיר מסבבי לחימה חוזרים מול איראן`
 - Original: `Diplomatic agreements may lead to Israel-Iran escalation, former Navy commander warns`
 - Source: The Jerusalem Post - Iran
 - URL: https://www.jpost.com/middle-east/iran-news/article-899906
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 19
 - Takeaway length 107 > 95
 - Headline: `שיקלי דורש שצה״ל יחזיק נקודות אסטרטגיות בלבנון`
 - Original: `IDF withdrawal from Lebanon would be a failure, must hold strategic points in north, Chikli says`
