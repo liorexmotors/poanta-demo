@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 199
+Items checked: 198
 Errors: 0
 Warnings: 43
 
 ## Category distribution
 
 - רכילות: 70
-- ביטחון: 56
+- ביטחון: 55
 - ספורט: 24
 - פוליטיקה: 8
 - פלילים: 7
@@ -34,21 +34,21 @@ Warnings: 43
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20800934
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 17
 - Takeaway length 103 > 95
 - Headline: `הילדים של הארי ומייגן צפויים לפגוש את המלך בבריטניה`
 - Original: `King Charles overjoyed to see Prince Harry, Meghan Markle’s kids in long-awaited reunion`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/19/royal-family/king-charles-overjoyed-to-see-prince-harry-meghan-markles-kids-in-long-awaited-reunion/
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 25
 - Takeaway length 111 > 95
 - Headline: `אן האת'וויי הסתירה הריון במסע יחסי ציבור`
 - Original: `How Anne Hathaway hid her baby bump during Devil Wears Prada promo tour: Expecting star, 43, used clever styling tricks to keep pregnancy under wraps`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914919/anne-hathaway-pregnant-devil-wears-prada.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 26
 - Takeaway length 100 > 95
 - Headline: `כוכבת 'אל' לבשה את שמלת הבכורה של ריס ויתרספון`
 - Original: `Reese Witherspoon's Legally Blonde premiere dress is borrowed by the star of her new spinoff series Elle`
