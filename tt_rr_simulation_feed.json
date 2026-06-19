@@ -1,27 +1,27 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-19T23:33:56+00:00",
+  "generatedAt": "2026-06-19T23:58:24+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 199,
+  "itemCount": 198,
   "simulationPoolWindow": {
     "originalWindowItems": 180,
     "rawPoolItems": 182,
     "rankedPoolItems": 182
   },
   "before": {
-    "newsinessTop10": 3,
-    "coreHardTop10": 3,
+    "newsinessTop10": 2,
+    "coreHardTop10": 2,
     "softTop10": 7,
-    "otherTop10": 0,
+    "otherTop10": 1,
     "top5Under60": 5,
-    "top10Under60": 9,
-    "top12Under60": 9,
-    "topItemAgeMinutes": 28,
-    "uniqueSourcesTop20": 8,
+    "top10Under60": 5,
+    "top12Under60": 5,
+    "topItemAgeMinutes": 42,
+    "uniqueSourcesTop20": 9,
     "dominantSource": {
       "name": "Daily Mail",
-      "count": 10
+      "count": 5
     },
     "importantMissingTop20": [
       "N12",
@@ -29,27 +29,30 @@
       "הארץ",
       "BBC",
       "Guardian",
-      "NYT",
       "גלובס"
     ],
     "duplicateTop20": 0,
     "storyClusterTop20Max": 1,
-    "eventClusterTop20Max": 1,
+    "eventClusterTop20Max": 0,
     "topSources": [
       {
         "name": "Daily Mail",
-        "count": 10
+        "count": 5
+      },
+      {
+        "name": "Page Six",
+        "count": 4
+      },
+      {
+        "name": "Israel National News English",
+        "count": 3
       },
       {
         "name": "ישראל היום",
         "count": 2
       },
       {
-        "name": "Israel National News English",
-        "count": 2
-      },
-      {
-        "name": "Page Six",
+        "name": "ynet",
         "count": 2
       },
       {
@@ -63,10 +66,6 @@
       {
         "name": "וואלה",
         "count": 1
-      },
-      {
-        "name": "ynet",
-        "count": 1
       }
     ],
     "trendMatchedTop10": 1,
@@ -75,21 +74,24 @@
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 59,
+      "score": 43,
       "readyCount": 4,
-      "hardReadyCount": 4,
-      "hardReadyStrictCount": 4,
+      "hardReadyCount": 3,
+      "hardReadyStrictCount": 3,
       "trendReadyCount": 1,
-      "cleanReadyCount": 4,
-      "cleanHardReadyCount": 4,
+      "cleanReadyCount": 3,
+      "cleanHardReadyCount": 3,
       "cleanTrendReadyCount": 0,
       "uniqueReadySources": 3,
-      "uniqueCleanReadySources": 3,
+      "uniqueCleanReadySources": 2,
       "freshReadyUnder25Count": 0,
       "cleanFreshReadyUnder25Count": 0,
       "blockers": [
         "ready_queue_below_6",
         "clean_ready_queue_below_6",
+        "hard_ready_below_4",
+        "clean_hard_ready_below_4",
+        "clean_ready_sources_below_3",
         "ready_fresh_under25_below_1",
         "clean_ready_fresh_under25_below_1",
         "top_item_over_25m"
@@ -103,7 +105,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 88,
           "url": "https://www.israelnationalnews.com/flashes/688133",
           "trendMatch": {
             "trend": "רוביו שוחח עם נתניהו; טראמפ ל-NBC: ביקשתי מישראל הפסקת אש בלבנון",
@@ -135,27 +137,14 @@
           "queueScore": 33.0
         },
         {
-          "rank": 1,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-          "trendMatch": null,
-          "queueScore": 31.0
-        },
-        {
-          "rank": 2,
+          "rank": 3,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "queueScore": 26.0
@@ -168,10 +157,23 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 89,
           "url": "https://www.jpost.com/israel-news/article-899950",
           "trendMatch": null,
           "queueScore": 23.0
+        },
+        {
+          "rank": 2,
+          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ביטחון",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 53,
+          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+          "trendMatch": null,
+          "queueScore": 14.0
         }
       ],
       "cleanReadyQueue": [
@@ -183,7 +185,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 88,
           "url": "https://www.israelnationalnews.com/flashes/688133",
           "trendMatch": {
             "trend": "רוביו שוחח עם נתניהו; טראמפ ל-NBC: ביקשתי מישראל הפסקת אש בלבנון",
@@ -215,27 +217,14 @@
           "queueScore": 33.0
         },
         {
-          "rank": 1,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-          "trendMatch": null,
-          "queueScore": 31.0
-        },
-        {
-          "rank": 2,
+          "rank": 3,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "queueScore": 26.0
@@ -248,7 +237,7 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 89,
           "url": "https://www.jpost.com/israel-news/article-899950",
           "trendMatch": null,
           "queueScore": 23.0
@@ -257,17 +246,21 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 9,
-      "worthyFreshUnder60Count": 2,
-      "coreHardFreshUnder60Count": 2,
-      "softFreshUnder60Count": 7,
-      "otherFreshUnder60Count": 0,
+      "freshUnder60Count": 5,
+      "worthyFreshUnder60Count": 1,
+      "coreHardFreshUnder60Count": 1,
+      "softFreshUnder60Count": 3,
+      "otherFreshUnder60Count": 1,
       "freshUniqueSources": 4,
-      "worthyUniqueSources": 2,
+      "worthyUniqueSources": 1,
       "freshSources": [
         {
           "name": "Daily Mail",
-          "count": 6
+          "count": 2
+        },
+        {
+          "name": "Page Six",
+          "count": 1
         },
         {
           "name": "ישראל היום",
@@ -276,58 +269,71 @@
         {
           "name": "Israel National News English",
           "count": 1
-        },
-        {
-          "name": "Page Six",
-          "count": 1
         }
       ],
       "worthySources": [
-        {
-          "name": "ישראל היום",
-          "count": 1
-        },
         {
           "name": "Israel National News English",
           "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 9,
-        "quality_class_soft": 7
+        "quality_class_soft": 3,
+        "weak_or_missing_trend_match": 5,
+        "quality_class_other": 1
       },
-      "staleOrUndatedCount": 71,
+      "staleOrUndatedCount": 75,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+          "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+          "source": "Page Six רכילות חו״ל",
+          "canonicalSource": "Page Six",
+          "category": "רכילות",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 42,
+          "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
           "trendMatch": null,
           "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
           "disqualifiers": [
+            "quality_class_soft",
             "weak_or_missing_trend_match"
           ]
         },
         {
           "beforeRank": 2,
+          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ביטחון",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 53,
+          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 3,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "freshUnder60": true,
@@ -338,14 +344,14 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 4,
           "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 32,
+          "ageMinutes": 56,
           "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
@@ -357,110 +363,15 @@
           ]
         },
         {
-          "beforeRank": 4,
+          "beforeRank": 5,
           "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 32,
+          "ageMinutes": 57,
           "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "פרי אדוארדס מחזקת את סיפור החתונה על הבמה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 40,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "ג'ורג'ינה רודריגז מקבלת קמפיין ספרדי חדש",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 54,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915221/Cristiano-Ronaldos-fiancee-Georgina-Rodriguez-swimwear-Harpers-Bazaar-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 7,
-          "headline": "מתיחות מאחורי הקאמבק של Mis-Teeq",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 57,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915087/Mis-Teeqs-reunion-toxic-infighting.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "בנה של NeNe Leakes נעצר בהפרת תנאי מבחן",
-          "source": "Page Six רכילות חו״ל",
-          "canonicalSource": "Page Six",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 57,
-          "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "מייגן פיקפורד תופסת את מרכז יציע ה-WAGs",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 58,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915001/Megan-Pickford-idolised-Coleen-Rooney-KATIE-HIND-reveals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -473,32 +384,14 @@
       ],
       "topWorthyFreshCandidates": [
         {
-          "beforeRank": 1,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
+          "beforeRank": 3,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "freshUnder60": true,
@@ -516,9 +409,9 @@
     "coreHardTop10": 10,
     "softTop10": 0,
     "otherTop10": 0,
-    "top5Under60": 4,
-    "top10Under60": 4,
-    "top12Under60": 5,
+    "top5Under60": 3,
+    "top10Under60": 3,
+    "top12Under60": 4,
     "topItemAgeMinutes": 0,
     "uniqueSourcesTop20": 10,
     "dominantSource": {
@@ -557,7 +450,7 @@
         "count": 2
       },
       {
-        "name": "Al Jazeera RSS מסונן מזרח תיכון",
+        "name": "Page Six",
         "count": 2
       },
       {
@@ -574,20 +467,22 @@
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 10,
-      "score": 94,
+      "estimatedVisibleChangeMinutes": 20,
+      "score": 84,
       "readyCount": 6,
-      "hardReadyCount": 6,
-      "hardReadyStrictCount": 6,
+      "hardReadyCount": 5,
+      "hardReadyStrictCount": 5,
       "trendReadyCount": 2,
-      "cleanReadyCount": 6,
-      "cleanHardReadyCount": 6,
+      "cleanReadyCount": 5,
+      "cleanHardReadyCount": 5,
       "cleanTrendReadyCount": 1,
       "uniqueReadySources": 4,
-      "uniqueCleanReadySources": 4,
+      "uniqueCleanReadySources": 3,
       "freshReadyUnder25Count": 2,
       "cleanFreshReadyUnder25Count": 2,
-      "blockers": [],
+      "blockers": [
+        "clean_ready_queue_below_6"
+      ],
       "readyQueue": [
         {
           "rank": 1,
@@ -646,14 +541,14 @@
           "queueScore": 44.0
         },
         {
-          "rank": 5,
+          "rank": 4,
           "headline": "רוביו לוחץ על לבנון לקדם פירוק חיזבאללה",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 88,
           "url": "https://www.israelnationalnews.com/flashes/688133",
           "trendMatch": {
             "trend": "רוביו שוחח עם נתניהו; טראמפ ל-NBC: ביקשתי מישראל הפסקת אש בלבנון",
@@ -686,42 +581,42 @@
         },
         {
           "rank": 3,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-          "trendMatch": null,
-          "queueScore": 31.0
-        },
-        {
-          "rank": 4,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "queueScore": 26.0
         },
         {
-          "rank": 6,
+          "rank": 5,
           "headline": "דנון התעמת עם בכירות האו״ם על רשימות הפגיעה בילדים",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 89,
           "url": "https://www.jpost.com/israel-news/article-899950",
           "trendMatch": null,
           "queueScore": 23.0
+        },
+        {
+          "rank": 11,
+          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ביטחון",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 53,
+          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+          "trendMatch": null,
+          "queueScore": 14.0
         }
       ],
       "cleanReadyQueue": [
@@ -782,14 +677,14 @@
           "queueScore": 44.0
         },
         {
-          "rank": 5,
+          "rank": 4,
           "headline": "רוביו לוחץ על לבנון לקדם פירוק חיזבאללה",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 88,
           "url": "https://www.israelnationalnews.com/flashes/688133",
           "trendMatch": {
             "trend": "רוביו שוחח עם נתניהו; טראמפ ל-NBC: ביקשתי מישראל הפסקת אש בלבנון",
@@ -822,39 +717,26 @@
         },
         {
           "rank": 3,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-          "trendMatch": null,
-          "queueScore": 31.0
-        },
-        {
-          "rank": 4,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "queueScore": 26.0
         },
         {
-          "rank": 6,
+          "rank": 5,
           "headline": "דנון התעמת עם בכירות האו״ם על רשימות הפגיעה בילדים",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 89,
           "url": "https://www.jpost.com/israel-news/article-899950",
           "trendMatch": null,
           "queueScore": 23.0
@@ -863,21 +745,25 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 11,
-      "worthyFreshUnder60Count": 4,
-      "coreHardFreshUnder60Count": 4,
-      "softFreshUnder60Count": 7,
-      "otherFreshUnder60Count": 0,
+      "freshUnder60Count": 7,
+      "worthyFreshUnder60Count": 3,
+      "coreHardFreshUnder60Count": 3,
+      "softFreshUnder60Count": 3,
+      "otherFreshUnder60Count": 1,
       "freshUniqueSources": 5,
-      "worthyUniqueSources": 3,
+      "worthyUniqueSources": 2,
       "freshSources": [
-        {
-          "name": "Daily Mail",
-          "count": 6
-        },
         {
           "name": "וואלה",
           "count": 2
+        },
+        {
+          "name": "Daily Mail",
+          "count": 2
+        },
+        {
+          "name": "Page Six",
+          "count": 1
         },
         {
           "name": "ישראל היום",
@@ -885,10 +771,6 @@
         },
         {
           "name": "Israel National News English",
-          "count": 1
-        },
-        {
-          "name": "Page Six",
           "count": 1
         }
       ],
@@ -898,19 +780,16 @@
           "count": 2
         },
         {
-          "name": "ישראל היום",
-          "count": 1
-        },
-        {
           "name": "Israel National News English",
           "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 10,
-        "quality_class_soft": 7
+        "weak_or_missing_trend_match": 6,
+        "quality_class_soft": 3,
+        "quality_class_other": 1
       },
-      "staleOrUndatedCount": 69,
+      "staleOrUndatedCount": 73,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -981,31 +860,51 @@
         },
         {
           "beforeRank": 3,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+          "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+          "source": "Page Six רכילות חו״ל",
+          "canonicalSource": "Page Six",
+          "category": "רכילות",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 42,
+          "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
           "trendMatch": null,
           "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
           "disqualifiers": [
+            "quality_class_soft",
             "weak_or_missing_trend_match"
           ]
         },
         {
           "beforeRank": 4,
+          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ביטחון",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 53,
+          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 5,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1016,14 +915,14 @@
           ]
         },
         {
-          "beforeRank": 5,
+          "beforeRank": 6,
           "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 32,
+          "ageMinutes": 56,
           "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1035,110 +934,15 @@
           ]
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 7,
           "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 32,
+          "ageMinutes": 57,
           "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 7,
-          "headline": "פרי אדוארדס מחזקת את סיפור החתונה על הבמה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 40,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "ג'ורג'ינה רודריגז מקבלת קמפיין ספרדי חדש",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 54,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915221/Cristiano-Ronaldos-fiancee-Georgina-Rodriguez-swimwear-Harpers-Bazaar-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "מתיחות מאחורי הקאמבק של Mis-Teeq",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 57,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915087/Mis-Teeqs-reunion-toxic-infighting.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "בנה של NeNe Leakes נעצר בהפרת תנאי מבחן",
-          "source": "Page Six רכילות חו״ל",
-          "canonicalSource": "Page Six",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 57,
-          "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 11,
-          "headline": "מייגן פיקפורד תופסת את מרכז יציע ה-WAGs",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 58,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915001/Megan-Pickford-idolised-Coleen-Rooney-KATIE-HIND-reveals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -1215,32 +1019,14 @@
           ]
         },
         {
-          "beforeRank": 3,
-          "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 4,
+          "beforeRank": 5,
           "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 31,
+          "ageMinutes": 56,
           "url": "https://www.israelnationalnews.com/flashes/688134",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1253,13 +1039,13 @@
       ]
     }
   },
-  "beforeHealthScore": 44,
-  "afterHealthScore": 85,
+  "beforeHealthScore": 33,
+  "afterHealthScore": 83,
   "replacementReadiness": {
-    "score": 79,
+    "score": 77,
     "threshold": 80,
     "components": {
-      "freshness": 15.3,
+      "freshness": 13.6,
       "newsinessTop10": 25.0,
       "top20Quality": 15.5,
       "sourceBalance": 10.0,
@@ -1311,32 +1097,36 @@
     "title": "TT RR Simulation Review — 2026-06-20 01:06"
   },
   "delta": {
-    "newsinessTop10": 7,
-    "coreHardTop10": 7,
+    "newsinessTop10": 8,
+    "coreHardTop10": 8,
     "softTop10": -7,
-    "top12Under60": -4,
-    "uniqueSourcesTop20": 2,
+    "top12Under60": -1,
+    "uniqueSourcesTop20": 1,
     "trendMatchedTop10": 2,
     "trendMatchedTop20": 1,
-    "healthScore": 41
+    "healthScore": 50
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 11,
-    "worthyFreshUnder60Count": 4,
-    "coreHardFreshUnder60Count": 4,
-    "softFreshUnder60Count": 7,
-    "otherFreshUnder60Count": 0,
+    "freshUnder60Count": 7,
+    "worthyFreshUnder60Count": 3,
+    "coreHardFreshUnder60Count": 3,
+    "softFreshUnder60Count": 3,
+    "otherFreshUnder60Count": 1,
     "freshUniqueSources": 5,
-    "worthyUniqueSources": 3,
+    "worthyUniqueSources": 2,
     "freshSources": [
-      {
-        "name": "Daily Mail",
-        "count": 6
-      },
       {
         "name": "וואלה",
         "count": 2
+      },
+      {
+        "name": "Daily Mail",
+        "count": 2
+      },
+      {
+        "name": "Page Six",
+        "count": 1
       },
       {
         "name": "ישראל היום",
@@ -1344,10 +1134,6 @@
       },
       {
         "name": "Israel National News English",
-        "count": 1
-      },
-      {
-        "name": "Page Six",
         "count": 1
       }
     ],
@@ -1357,19 +1143,16 @@
         "count": 2
       },
       {
-        "name": "ישראל היום",
-        "count": 1
-      },
-      {
         "name": "Israel National News English",
         "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 10,
-      "quality_class_soft": 7
+      "weak_or_missing_trend_match": 6,
+      "quality_class_soft": 3,
+      "quality_class_other": 1
     },
-    "staleOrUndatedCount": 69,
+    "staleOrUndatedCount": 73,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
@@ -1440,31 +1223,51 @@
       },
       {
         "beforeRank": 3,
-        "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+        "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+        "source": "Page Six רכילות חו״ל",
+        "canonicalSource": "Page Six",
+        "category": "רכילות",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 42,
+        "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
         "trendMatch": null,
         "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
         "disqualifiers": [
+          "quality_class_soft",
           "weak_or_missing_trend_match"
         ]
       },
       {
         "beforeRank": 4,
+        "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 53,
+        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 5,
         "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 31,
+        "ageMinutes": 56,
         "url": "https://www.israelnationalnews.com/flashes/688134",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1475,14 +1278,14 @@
         ]
       },
       {
-        "beforeRank": 5,
+        "beforeRank": 6,
         "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 32,
+        "ageMinutes": 56,
         "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1494,110 +1297,15 @@
         ]
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 7,
         "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 32,
+        "ageMinutes": 57,
         "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 7,
-        "headline": "פרי אדוארדס מחזקת את סיפור החתונה על הבמה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 40,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "ג'ורג'ינה רודריגז מקבלת קמפיין ספרדי חדש",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 54,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915221/Cristiano-Ronaldos-fiancee-Georgina-Rodriguez-swimwear-Harpers-Bazaar-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "מתיחות מאחורי הקאמבק של Mis-Teeq",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 57,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915087/Mis-Teeqs-reunion-toxic-infighting.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "בנה של NeNe Leakes נעצר בהפרת תנאי מבחן",
-        "source": "Page Six רכילות חו״ל",
-        "canonicalSource": "Page Six",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 57,
-        "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 11,
-        "headline": "מייגן פיקפורד תופסת את מרכז יציע ה-WAGs",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 58,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915001/Megan-Pickford-idolised-Coleen-Rooney-KATIE-HIND-reveals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1674,32 +1382,14 @@
         ]
       },
       {
-        "beforeRank": 3,
-        "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 4,
+        "beforeRank": 5,
         "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 31,
+        "ageMinutes": 56,
         "url": "https://www.israelnationalnews.com/flashes/688134",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1713,17 +1403,21 @@
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 9,
-    "worthyFreshUnder60Count": 2,
-    "coreHardFreshUnder60Count": 2,
-    "softFreshUnder60Count": 7,
-    "otherFreshUnder60Count": 0,
+    "freshUnder60Count": 5,
+    "worthyFreshUnder60Count": 1,
+    "coreHardFreshUnder60Count": 1,
+    "softFreshUnder60Count": 3,
+    "otherFreshUnder60Count": 1,
     "freshUniqueSources": 4,
-    "worthyUniqueSources": 2,
+    "worthyUniqueSources": 1,
     "freshSources": [
       {
         "name": "Daily Mail",
-        "count": 6
+        "count": 2
+      },
+      {
+        "name": "Page Six",
+        "count": 1
       },
       {
         "name": "ישראל היום",
@@ -1732,58 +1426,71 @@
       {
         "name": "Israel National News English",
         "count": 1
-      },
-      {
-        "name": "Page Six",
-        "count": 1
       }
     ],
     "worthySources": [
-      {
-        "name": "ישראל היום",
-        "count": 1
-      },
       {
         "name": "Israel National News English",
         "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 9,
-      "quality_class_soft": 7
+      "quality_class_soft": 3,
+      "weak_or_missing_trend_match": 5,
+      "quality_class_other": 1
     },
-    "staleOrUndatedCount": 71,
+    "staleOrUndatedCount": 75,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
-        "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+        "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+        "source": "Page Six רכילות חו״ל",
+        "canonicalSource": "Page Six",
+        "category": "רכילות",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 42,
+        "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
         "trendMatch": null,
         "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
         "disqualifiers": [
+          "quality_class_soft",
           "weak_or_missing_trend_match"
         ]
       },
       {
         "beforeRank": 2,
+        "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 53,
+        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 3,
         "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 31,
+        "ageMinutes": 56,
         "url": "https://www.israelnationalnews.com/flashes/688134",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1794,14 +1501,14 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 4,
         "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 32,
+        "ageMinutes": 56,
         "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1813,110 +1520,15 @@
         ]
       },
       {
-        "beforeRank": 4,
+        "beforeRank": 5,
         "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 32,
+        "ageMinutes": 57,
         "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "פרי אדוארדס מחזקת את סיפור החתונה על הבמה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 40,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "ג'ורג'ינה רודריגז מקבלת קמפיין ספרדי חדש",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 54,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915221/Cristiano-Ronaldos-fiancee-Georgina-Rodriguez-swimwear-Harpers-Bazaar-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 7,
-        "headline": "מתיחות מאחורי הקאמבק של Mis-Teeq",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 57,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915087/Mis-Teeqs-reunion-toxic-infighting.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "בנה של NeNe Leakes נעצר בהפרת תנאי מבחן",
-        "source": "Page Six רכילות חו״ל",
-        "canonicalSource": "Page Six",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 57,
-        "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "מייגן פיקפורד תופסת את מרכז יציע ה-WAGs",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 58,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915001/Megan-Pickford-idolised-Coleen-Rooney-KATIE-HIND-reveals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1929,32 +1541,14 @@
     ],
     "topWorthyFreshCandidates": [
       {
-        "beforeRank": 1,
-        "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 31,
+        "ageMinutes": 56,
         "url": "https://www.israelnationalnews.com/flashes/688134",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2004,27 +1598,27 @@
         "id": "walla",
         "label": "וואלה חדשות",
         "configuredSourceCount": 12,
-        "freshUnder60Scanned": 4,
+        "freshUnder60Scanned": 3,
         "acceptedHardQaClean": 3,
-        "rejected": 1,
+        "rejected": 0,
         "status": "has_bridge_supply"
       },
       {
         "id": "haaretz",
         "label": "הארץ",
         "configuredSourceCount": 12,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "bbc",
         "label": "BBC",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2067,9 +1661,9 @@
         "id": "nyt",
         "label": "NYT",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 2,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 2,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2175,7 +1769,7 @@
         "source": "ynet - מבזקי החדשות",
         "canonicalSource": "ynet",
         "headline": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
-        "ageMinutes": 31,
+        "ageMinutes": 56,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2211,25 +1805,61 @@
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
         "headline": "חשד לאבולה בישראל אחרי חזרה מקונגו",
-        "ageMinutes": 33,
+        "ageMinutes": 58,
         "status": "accepted",
         "reason": "deterministic_bridge_pass",
         "errorCodes": [],
         "url": "https://news.walla.co.il/break/3847054"
       },
       {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות - מבזקים",
-        "canonicalSource": "וואלה",
-        "headline": "המטוס הנשיאותי החדש של טראמפ נחת בארה\"ב מקטאר",
-        "ageMinutes": 51,
+        "sourceGroup": "הארץ",
+        "source": "הארץ - חדשות",
+        "canonicalSource": "הארץ",
+        "headline": "דיווח: ויטקוף בדרך לשווייץ לשיחות על הסכם הגרעין עם איראן",
+        "ageMinutes": 23,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_copies_source",
           "summary_generic_or_mediated"
         ],
-        "url": "https://news.walla.co.il/break/3847055"
+        "url": "https://www.haaretz.co.il/news/world/middle-east/2026-06-20/ty-article/.premium/0000019e-e22f-d2b1-a5bf-fa3ffd300000"
+      },
+      {
+        "sourceGroup": "BBC",
+        "source": "BBC World",
+        "headline": "US to stop funding HIV programmes in South Africa",
+        "ageMinutes": 23,
+        "status": "rejected",
+        "reason": "foreign_relevance_filtered",
+        "url": "https://www.bbc.com/news/articles/cdr457lxr71o?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "sourceGroup": "NYT",
+        "source": "New York Times Middle East",
+        "canonicalSource": "NYT",
+        "headline": "Oil Prices Rise as U.S.-Iran Deal Faces Tests",
+        "ageMinutes": 6,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.nytimes.com/2026/06/19/business/oil-gas-prices-iran.html"
+      },
+      {
+        "sourceGroup": "NYT",
+        "source": "New York Times Middle East",
+        "canonicalSource": "NYT",
+        "headline": "How Deal With U.S. Could Reconnect Iran to the Global Economy",
+        "ageMinutes": 8,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.nytimes.com/2026/06/19/business/economy/iran-sanctions-oil.html"
       }
     ],
     "dedupe": [
@@ -2243,24 +1873,16 @@
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 13.68,
+      "elapsedSeconds": 13.82,
       "skippedForBudget": 0
     }
   },
   "semanticPoolDedupe": {
     "mode": "simulation_only_pool_semantic_dedupe_no_feed_mutation",
     "inputCount": 182,
-    "uniqueCount": 164,
-    "relegatedDuplicateCount": 18,
+    "uniqueCount": 165,
+    "relegatedDuplicateCount": 17,
     "relegated": [
-      {
-        "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-        "relegated": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
-        "keeperSource": "ישראל היום",
-        "relegatedSource": "Israel National News English",
-        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
-      },
       {
         "clusterKey": "ורנון קיי סימן פיוס אחרי הפרידה מטס דיילי",
         "keeper": "ורנון קיי סימן פיוס אחרי הפרידה מטס דיילי",
@@ -2303,9 +1925,9 @@
       },
       {
         "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
         "relegated": "בישראל זועמים על הסכם איראן וארה״ב אחרי נזיפה מוושינגטון",
-        "keeperSource": "ישראל היום",
+        "keeperSource": "Israel National News English",
         "relegatedSource": "Al Jazeera RSS מסונן מזרח תיכון",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2319,9 +1941,9 @@
       },
       {
         "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
         "relegated": "המודיעין האמריקני חושש שנתניהו יפגע בהסכם איראן",
-        "keeperSource": "ישראל היום",
+        "keeperSource": "Israel National News English",
         "relegatedSource": "וואלה",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2335,25 +1957,25 @@
       },
       {
         "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
         "relegated": "מודיעין אמריקני מזהיר שנתניהו עלול לסכל הסכם איראן",
-        "keeperSource": "ישראל היום",
+        "keeperSource": "Israel National News English",
         "relegatedSource": "Israel National News English",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
         "relegated": "ארה״ב חוששת שנתניהו יחריף את הלחימה בלבנון",
-        "keeperSource": "ישראל היום",
+        "keeperSource": "Israel National News English",
         "relegatedSource": "ישראל היום",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
         "relegated": "וושינגטון חוששת שנתניהו יסכן את הסכם איראן בלבנון",
-        "keeperSource": "ישראל היום",
+        "keeperSource": "Israel National News English",
         "relegatedSource": "N12",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2367,9 +1989,9 @@
       },
       {
         "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
         "relegated": "המודיעין האמריקני חושש שנתניהו יחבל בהסכם איראן",
-        "keeperSource": "ישראל היום",
+        "keeperSource": "Israel National News English",
         "relegatedSource": "ynet",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2404,16 +2026,16 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 44.25,
-    "avgAfterHealthScore": 87.5,
+    "avgHealthDelta": 43.17,
+    "avgAfterHealthScore": 86.0,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 79,
-      "rollingScore": 82.73,
-      "readyRuns": 11,
+      "latestScore": 77,
+      "rollingScore": 81.81,
+      "readyRuns": 9,
       "criticalBlockers": [
         "top12_under60_below_9",
         "fresh_candidate_supply_below_9"
@@ -2425,17 +2047,17 @@
       "latestSummaryLine": "בינוני",
       "latestReportName": "tt-rr-simulation-review-2026-06-20-0106.md",
       "window": 48,
-      "averageScore": 81.0,
-      "positiveReports": 45
+      "averageScore": 81.5,
+      "positiveReports": 48
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-20T02:33:56+03:00",
+    "generatedAt": "2026-06-20T02:58:24+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 70,
+    "rssItemsScanned": 69,
     "webItemsScanned": 180,
     "topTrends": [
       {
@@ -2530,7 +2152,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-19T23:33:56.676591+00:00",
+        "latestAt": "2026-06-19T23:58:24.140339+00:00",
         "sampleUrl": "https://www.ynet.co.il/news/article/bkbtjumgme#autoplay",
         "strength": 39.8
       },
@@ -2548,7 +2170,7 @@
           "WEB"
         ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-19T23:33:56.683995+00:00",
+        "latestAt": "2026-06-19T23:58:24.147064+00:00",
         "sampleUrl": "https://apnews.com/article/world-cup-hugo-broos-south-africa-71a0041581c159bae1693778ff1cd09d",
         "strength": 37.4
       },
@@ -2566,26 +2188,8 @@
           "WEB"
         ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-19T23:33:56.682576+00:00",
+        "latestAt": "2026-06-19T23:58:24.146205+00:00",
         "sampleUrl": "https://www.bbc.com/news/videos/cgqjv5w2dg1o",
-        "strength": 37.4
-      },
-      {
-        "trend": "בכיר ישראלי: נכנסה לתוקף הפסקת אש בלבנון, נגיב אם חיזבאללה יתקוף",
-        "clusterKey": "ישראלי נכנסה לתוקף",
-        "domain": "כלכלה",
-        "externalMentions": 2,
-        "sourceCount": 2,
-        "sources": [
-          "דה מרקר",
-          "הארץ"
-        ],
-        "discoveryTypes": [
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-19T23:33:56.679254+00:00",
-        "sampleUrl": "https://www.themarker.com/hrtz/news/politics/2026-06-19/ty-article/.premium/0000019e-df36-d2b1-a5bf-ff3712f30000",
         "strength": 37.4
       },
       {
@@ -2625,21 +2229,54 @@
         "latestAt": "2026-06-19T21:22:30+00:00",
         "sampleUrl": "https://www.ynet.co.il/news/article/bkk5tcfmzg",
         "strength": 34.1
+      },
+      {
+        "trend": "המודיעין האמריקני חושש מחבלה בהסכם, טראמפ: \"דיברתי עם ישראל על הפסקת אש\"",
+        "clusterKey": "המודיעין האמריקני",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "גלובס"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T16:21:43+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rk7v9j7fmg",
+        "strength": 34.1
       }
     ]
   },
   "top10Before": [
     {
+      "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 42,
+      "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
       "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 28,
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 53,
       "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": null
     },
@@ -2650,10 +2287,10 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 31,
+      "ageMinutes": 56,
       "url": "https://www.israelnationalnews.com/flashes/688134",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 3,
+      "afterRank": 3,
       "delta": 0,
       "trendMatch": null
     },
@@ -2664,10 +2301,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 32,
+      "ageMinutes": 56,
       "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -2678,10 +2315,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 32,
+      "ageMinutes": 57,
       "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -2692,10 +2329,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 40,
+      "ageMinutes": 64,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -2706,10 +2343,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 54,
+      "ageMinutes": 79,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915221/Cristiano-Ronaldos-fiancee-Georgina-Rodriguez-swimwear-Harpers-Bazaar-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -2720,10 +2357,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 81,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915087/Mis-Teeqs-reunion-toxic-infighting.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -2734,22 +2371,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 82,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מייגן פיקפורד תופסת את מרכז יציע ה-WAGs",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 58,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915001/Megan-Pickford-idolised-Coleen-Rooney-KATIE-HIND-reveals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 9,
       "afterRank": 9,
       "delta": 0,
@@ -2762,7 +2385,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 88,
       "url": "https://www.israelnationalnews.com/flashes/688133",
       "beforeRank": 10,
       "afterRank": 10,
@@ -2856,31 +2479,17 @@
       "trendMatch": null
     },
     {
-      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 28,
-      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-      "beforeRank": 1,
-      "afterRank": 3,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
       "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
       "source": "Israel National News English",
       "canonicalSource": "Israel National News English",
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 31,
+      "ageMinutes": 56,
       "url": "https://www.israelnationalnews.com/flashes/688134",
-      "beforeRank": 2,
-      "afterRank": 4,
-      "delta": -2,
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
       "trendMatch": null
     },
     {
@@ -2890,11 +2499,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 88,
       "url": "https://www.israelnationalnews.com/flashes/688133",
       "beforeRank": 10,
-      "afterRank": 5,
-      "delta": 5,
+      "afterRank": 4,
+      "delta": 6,
       "trendMatch": {
         "trend": "רוביו שוחח עם נתניהו; טראמפ ל-NBC: ביקשתי מישראל הפסקת אש בלבנון",
         "clusterKey": "הפסקת בלבנון",
@@ -2930,11 +2539,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 89,
       "url": "https://www.jpost.com/israel-news/article-899950",
       "beforeRank": 11,
-      "afterRank": 6,
-      "delta": 5,
+      "afterRank": 5,
+      "delta": 6,
       "trendMatch": null
     },
     {
@@ -2944,25 +2553,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 99,
+      "ageMinutes": 123,
       "url": "https://www.ynet.co.il/news/article/rknda7xggg",
-      "beforeRank": 22,
-      "afterRank": 7,
-      "delta": 15,
-      "trendMatch": null
-    },
-    {
-      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
-      "source": "New York Times Middle East",
-      "canonicalSource": "NYT",
-      "category": "כלכלה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 116,
-      "url": "https://www.nytimes.com/2026/06/19/business/iran-us-hormuz-shipping.html",
-      "beforeRank": 26,
-      "afterRank": 8,
-      "delta": 18,
+      "beforeRank": 18,
+      "afterRank": 6,
+      "delta": 12,
       "trendMatch": null
     },
     {
@@ -2972,11 +2567,11 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 92,
+      "ageMinutes": 117,
       "url": "https://news.walla.co.il/item/3847059",
-      "beforeRank": 17,
-      "afterRank": 9,
-      "delta": 8,
+      "beforeRank": 14,
+      "afterRank": 7,
+      "delta": 7,
       "trendMatch": {
         "trend": "13:28 יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
         "clusterKey": "ועדת הבחירות",
@@ -2991,7 +2586,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-19T23:33:56.681456+00:00",
+        "latestAt": "2026-06-19T23:58:24.143060+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -3009,32 +2604,74 @@
       }
     },
     {
+      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
+      "source": "New York Times Middle East",
+      "canonicalSource": "NYT",
+      "category": "כלכלה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 140,
+      "url": "https://www.nytimes.com/2026/06/19/business/iran-us-hormuz-shipping.html",
+      "beforeRank": 20,
+      "afterRank": 8,
+      "delta": 12,
+      "trendMatch": null
+    },
+    {
       "headline": "מודיעין אמריקאי: נתניהו עלול לפגוע בהסכם עם איראן",
       "source": "הארץ - כל הכתבות",
       "canonicalSource": "הארץ",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 146,
+      "ageMinutes": 170,
       "url": "https://www.haaretz.co.il/news/dailynews/2026-06-20/ty-article-live/0000019e-e1b5-d2b1-a5bf-fbb7059d0000",
-      "beforeRank": 38,
+      "beforeRank": 39,
+      "afterRank": 9,
+      "delta": 30,
+      "trendMatch": null
+    },
+    {
+      "headline": "ישראל שוב נגררת להפסקות אש דרך מתווכים",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 157,
+      "url": "https://www.ynet.co.il/news/article/bynurtzfge",
+      "beforeRank": 35,
       "afterRank": 10,
-      "delta": 28,
+      "delta": 25,
       "trendMatch": null
     }
   ],
   "top20Before": [
     {
+      "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 42,
+      "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
       "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 28,
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 53,
       "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": null
     },
@@ -3045,10 +2682,10 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 31,
+      "ageMinutes": 56,
       "url": "https://www.israelnationalnews.com/flashes/688134",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 3,
+      "afterRank": 3,
       "delta": 0,
       "trendMatch": null
     },
@@ -3059,10 +2696,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 32,
+      "ageMinutes": 56,
       "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -3073,10 +2710,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 32,
+      "ageMinutes": 57,
       "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -3087,10 +2724,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 40,
+      "ageMinutes": 64,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -3101,10 +2738,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 54,
+      "ageMinutes": 79,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915221/Cristiano-Ronaldos-fiancee-Georgina-Rodriguez-swimwear-Harpers-Bazaar-Spain.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -3115,10 +2752,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 81,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915087/Mis-Teeqs-reunion-toxic-infighting.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -3129,22 +2766,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 82,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מייגן פיקפורד תופסת את מרכז יציע ה-WAGs",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 58,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915001/Megan-Pickford-idolised-Coleen-Rooney-KATIE-HIND-reveals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 9,
       "afterRank": 9,
       "delta": 0,
@@ -3157,7 +2780,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 88,
       "url": "https://www.israelnationalnews.com/flashes/688133",
       "beforeRank": 10,
       "afterRank": 10,
@@ -3197,7 +2820,7 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 89,
       "url": "https://www.jpost.com/israel-news/article-899950",
       "beforeRank": 11,
       "afterRank": 11,
@@ -3211,52 +2834,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 68,
+      "ageMinutes": 93,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20800875",
       "beforeRank": 12,
       "afterRank": 12,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מולי-מיי יצאה במרצדס שהיא כבר לא אוהבת",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 70,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914365/Molly-Mae-Hague-spotted-leaving-nail-salon-snazzy-250K-gold-Mercedes-G-Wagon-new-mum-reveals-shes-doesnt-like-pricey-purchase.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 13,
-      "afterRank": 13,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ג׳וליה רוברטס נראתה עם ילדיה בניו יורק",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 73,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915121/Julia-Roberts-son-Henry-daughter-Hazel.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 14,
-      "afterRank": 14,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "שרון אוסבורן החמיצה אירוע לזכר אוזי בגלל אשפוז",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 77,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915191/sharon-osbourne-hospital-ozzy-statue.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 15,
-      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -3267,10 +2848,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 82,
+      "ageMinutes": 107,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/harry-styles-wembley-gig-fan-37323265",
-      "beforeRank": 16,
-      "afterRank": 16,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -3281,10 +2862,10 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 92,
+      "ageMinutes": 117,
       "url": "https://news.walla.co.il/item/3847059",
-      "beforeRank": 17,
-      "afterRank": 17,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": {
         "trend": "13:28 יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
@@ -3300,7 +2881,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-19T23:33:56.681456+00:00",
+        "latestAt": "2026-06-19T23:58:24.143060+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -3324,24 +2905,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 93,
+      "ageMinutes": 117,
       "url": "https://livegame.ynet.co.il/games/525877",
-      "beforeRank": 18,
-      "afterRank": 18,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ג׳סי נלסון תקדם בפרלמנט בדיקות SMA",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 93,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915057/Jesy-Nelson-reveals-shell-soon-heading-Parliament-debate-life-changing-SMA-screening-tearfully-blasts-postcode-lottery-NHS-schemes-roll-out.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 19,
-      "afterRank": 19,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -3352,8 +2919,64 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 95,
+      "ageMinutes": 120,
       "url": "https://pagesix.com/2026/06/19/parents/hailee-steinfeld-reveals-name-of-her-and-husband-josh-allens-baby-daughter/",
+      "beforeRank": 16,
+      "afterRank": 16,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "מפקד הצפון לשעבר נפרד מדור בן שמחון",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 123,
+      "url": "https://www.israelnationalnews.com/flashes/688132",
+      "beforeRank": 17,
+      "afterRank": 17,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "אובמה תקף את טראמפ על ההסכם עם איראן",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 123,
+      "url": "https://www.ynet.co.il/news/article/rknda7xggg",
+      "beforeRank": 18,
+      "afterRank": 18,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "הילדים של הארי ומייגן צפויים לפגוש את המלך בבריטניה",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 126,
+      "url": "https://pagesix.com/2026/06/19/royal-family/king-charles-overjoyed-to-see-prince-harry-meghan-markles-kids-in-long-awaited-reunion/",
+      "beforeRank": 19,
+      "afterRank": 19,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
+      "source": "New York Times Middle East",
+      "canonicalSource": "NYT",
+      "category": "כלכלה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 140,
+      "url": "https://www.nytimes.com/2026/06/19/business/iran-us-hormuz-shipping.html",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -3420,31 +3043,17 @@
       "trendMatch": null
     },
     {
-      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 28,
-      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-      "beforeRank": 1,
-      "afterRank": 3,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
       "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
       "source": "Israel National News English",
       "canonicalSource": "Israel National News English",
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 31,
+      "ageMinutes": 56,
       "url": "https://www.israelnationalnews.com/flashes/688134",
-      "beforeRank": 2,
-      "afterRank": 4,
-      "delta": -2,
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
       "trendMatch": null
     },
     {
@@ -3454,11 +3063,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 88,
       "url": "https://www.israelnationalnews.com/flashes/688133",
       "beforeRank": 10,
-      "afterRank": 5,
-      "delta": 5,
+      "afterRank": 4,
+      "delta": 6,
       "trendMatch": {
         "trend": "רוביו שוחח עם נתניהו; טראמפ ל-NBC: ביקשתי מישראל הפסקת אש בלבנון",
         "clusterKey": "הפסקת בלבנון",
@@ -3494,11 +3103,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 89,
       "url": "https://www.jpost.com/israel-news/article-899950",
       "beforeRank": 11,
-      "afterRank": 6,
-      "delta": 5,
+      "afterRank": 5,
+      "delta": 6,
       "trendMatch": null
     },
     {
@@ -3508,25 +3117,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 99,
+      "ageMinutes": 123,
       "url": "https://www.ynet.co.il/news/article/rknda7xggg",
-      "beforeRank": 22,
-      "afterRank": 7,
-      "delta": 15,
-      "trendMatch": null
-    },
-    {
-      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
-      "source": "New York Times Middle East",
-      "canonicalSource": "NYT",
-      "category": "כלכלה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 116,
-      "url": "https://www.nytimes.com/2026/06/19/business/iran-us-hormuz-shipping.html",
-      "beforeRank": 26,
-      "afterRank": 8,
-      "delta": 18,
+      "beforeRank": 18,
+      "afterRank": 6,
+      "delta": 12,
       "trendMatch": null
     },
     {
@@ -3536,11 +3131,11 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 92,
+      "ageMinutes": 117,
       "url": "https://news.walla.co.il/item/3847059",
-      "beforeRank": 17,
-      "afterRank": 9,
-      "delta": 8,
+      "beforeRank": 14,
+      "afterRank": 7,
+      "delta": 7,
       "trendMatch": {
         "trend": "13:28 יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
         "clusterKey": "ועדת הבחירות",
@@ -3555,7 +3150,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-19T23:33:56.681456+00:00",
+        "latestAt": "2026-06-19T23:58:24.143060+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -3573,101 +3168,31 @@
       }
     },
     {
+      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
+      "source": "New York Times Middle East",
+      "canonicalSource": "NYT",
+      "category": "כלכלה",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 140,
+      "url": "https://www.nytimes.com/2026/06/19/business/iran-us-hormuz-shipping.html",
+      "beforeRank": 20,
+      "afterRank": 8,
+      "delta": 12,
+      "trendMatch": null
+    },
+    {
       "headline": "מודיעין אמריקאי: נתניהו עלול לפגוע בהסכם עם איראן",
       "source": "הארץ - כל הכתבות",
       "canonicalSource": "הארץ",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 146,
+      "ageMinutes": 170,
       "url": "https://www.haaretz.co.il/news/dailynews/2026-06-20/ty-article-live/0000019e-e1b5-d2b1-a5bf-fbb7059d0000",
-      "beforeRank": 38,
-      "afterRank": 10,
-      "delta": 28,
-      "trendMatch": null
-    },
-    {
-      "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 32,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 11,
-      "delta": -8,
-      "trendMatch": null
-    },
-    {
-      "headline": "הקונגרס דורש בחינה של מזכר איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 143,
-      "url": "https://www.aljazeera.com/news/2026/6/19/does-trump-have-to-submit-the-iran-memorandum-of-understanding-to-congress?traffic_source=rss",
-      "beforeRank": 36,
-      "afterRank": 12,
-      "delta": 24,
-      "trendMatch": null
-    },
-    {
-      "headline": "גדוד 52 איבד שוב ושוב את שרשרת הפיקוד",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 138,
-      "url": "https://www.ynet.co.il/news/article/ryo00dfzggg",
-      "beforeRank": 35,
-      "afterRank": 13,
-      "delta": 22,
-      "trendMatch": null
-    },
-    {
-      "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 32,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 4,
-      "afterRank": 14,
-      "delta": -10,
-      "trendMatch": null
-    },
-    {
-      "headline": "מפקד הצפון לשעבר נפרד מדור בן שמחון",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 98,
-      "url": "https://www.israelnationalnews.com/flashes/688132",
-      "beforeRank": 21,
-      "afterRank": 15,
-      "delta": 6,
-      "trendMatch": null
-    },
-    {
-      "headline": "מטוס קטארי זמני נכנס לצי הנשיאות של טראמפ",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 118,
-      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800827",
-      "beforeRank": 28,
-      "afterRank": 16,
-      "delta": 12,
+      "beforeRank": 39,
+      "afterRank": 9,
+      "delta": 30,
       "trendMatch": null
     },
     {
@@ -3677,25 +3202,67 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 133,
+      "ageMinutes": 157,
       "url": "https://www.ynet.co.il/news/article/bynurtzfge",
-      "beforeRank": 34,
-      "afterRank": 17,
-      "delta": 17,
+      "beforeRank": 35,
+      "afterRank": 10,
+      "delta": 25,
       "trendMatch": null
     },
     {
-      "headline": "שיחות ישראל-לבנון יתחדשו בוושינגטון",
+      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 53,
+      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
+      "beforeRank": 2,
+      "afterRank": 11,
+      "delta": -9,
+      "trendMatch": null
+    },
+    {
+      "headline": "הקונגרס דורש בחינה של מזכר איראן",
       "source": "Al Jazeera RSS מסונן מזרח תיכון",
       "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 151,
-      "url": "https://www.aljazeera.com/news/2026/6/19/us-announces-new-round-of-israel-lebanon-talks-in-washington-next-week?traffic_source=rss",
-      "beforeRank": 40,
-      "afterRank": 18,
-      "delta": 22,
+      "ageMinutes": 167,
+      "url": "https://www.aljazeera.com/news/2026/6/19/does-trump-have-to-submit-the-iran-memorandum-of-understanding-to-congress?traffic_source=rss",
+      "beforeRank": 37,
+      "afterRank": 12,
+      "delta": 25,
+      "trendMatch": null
+    },
+    {
+      "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 42,
+      "url": "https://pagesix.com/2026/06/19/entertainment/lisa-kudrow-and-mira-sorvino-spotted-filming-romy-and-michele-sequel/",
+      "beforeRank": 1,
+      "afterRank": 13,
+      "delta": -12,
+      "trendMatch": null
+    },
+    {
+      "headline": "מפקד הצפון לשעבר נפרד מדור בן שמחון",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 123,
+      "url": "https://www.israelnationalnews.com/flashes/688132",
+      "beforeRank": 17,
+      "afterRank": 14,
+      "delta": 3,
       "trendMatch": null
     },
     {
@@ -3705,11 +3272,53 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 40,
+      "ageMinutes": 64,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915125/Perrie-Edwards-gushes-obsessed-new-husband-Alex.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 5,
-      "afterRank": 19,
-      "delta": -14,
+      "beforeRank": 6,
+      "afterRank": 15,
+      "delta": -9,
+      "trendMatch": null
+    },
+    {
+      "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 56,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15914393/Alex-Jones-husband-Charlie-Thomson-moving-New-Zealand.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 4,
+      "afterRank": 16,
+      "delta": -12,
+      "trendMatch": null
+    },
+    {
+      "headline": "גדוד 52 איבד שוב ושוב את שרשרת הפיקוד",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 163,
+      "url": "https://www.ynet.co.il/news/article/ryo00dfzggg",
+      "beforeRank": 36,
+      "afterRank": 17,
+      "delta": 19,
+      "trendMatch": null
+    },
+    {
+      "headline": "מטוס קטארי זמני נכנס לצי הנשיאות של טראמפ",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 143,
+      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800827",
+      "beforeRank": 29,
+      "afterRank": 18,
+      "delta": 11,
       "trendMatch": null
     },
     {
@@ -3719,11 +3328,25 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 57,
+      "ageMinutes": 82,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/nene-leakes-son-bryson-arrested-for-violating-probation/",
-      "beforeRank": 8,
+      "beforeRank": 9,
+      "afterRank": 19,
+      "delta": -10,
+      "trendMatch": null
+    },
+    {
+      "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 57,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15912301/Sonia-Kruger-Craig-McPherson-Sydney-home-leave-neighbours-traumatised.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 5,
       "afterRank": 20,
-      "delta": -12,
+      "delta": -15,
       "trendMatch": null
     }
   ],
@@ -3777,22 +3400,13 @@
       "afterRank": 2
     },
     {
-      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-      "source": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 1,
-      "afterRank": 3
-    },
-    {
       "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
       "source": "Israel National News English",
       "category": "פלילים",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 2,
-      "afterRank": 4
+      "beforeRank": 3,
+      "afterRank": 3
     },
     {
       "headline": "רוביו לוחץ על לבנון לקדם פירוק חיזבאללה",
@@ -3827,7 +3441,7 @@
         "boost": 14.0
       },
       "beforeRank": 10,
-      "afterRank": 5
+      "afterRank": 4
     },
     {
       "headline": "דנון התעמת עם בכירות האו״ם על רשימות הפגיעה בילדים",
@@ -3836,7 +3450,7 @@
       "class": "hard",
       "trendMatch": null,
       "beforeRank": 11,
-      "afterRank": 6
+      "afterRank": 5
     },
     {
       "headline": "אובמה תקף את טראמפ על ההסכם עם איראן",
@@ -3844,17 +3458,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 22,
-      "afterRank": 7
-    },
-    {
-      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
-      "source": "NYT",
-      "category": "כלכלה",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 26,
-      "afterRank": 8
+      "beforeRank": 18,
+      "afterRank": 6
     },
     {
       "headline": "ועדת הבחירות הורתה לבן גביר להסיר סרטון מהמשט",
@@ -3875,7 +3480,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-19T23:33:56.681456+00:00",
+        "latestAt": "2026-06-19T23:58:24.143060+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -3891,8 +3496,17 @@
         "score": 57.82,
         "boost": 14.0
       },
-      "beforeRank": 17,
-      "afterRank": 9
+      "beforeRank": 14,
+      "afterRank": 7
+    },
+    {
+      "headline": "אוניות ממתינות ליציאה בטוחה מהורמוז",
+      "source": "NYT",
+      "category": "כלכלה",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 20,
+      "afterRank": 8
     },
     {
       "headline": "מודיעין אמריקאי: נתניהו עלול לפגוע בהסכם עם איראן",
@@ -3900,16 +3514,25 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 38,
+      "beforeRank": 39,
+      "afterRank": 9
+    },
+    {
+      "headline": "ישראל שוב נגררת להפסקות אש דרך מתווכים",
+      "source": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 35,
       "afterRank": 10
     },
     {
-      "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
+      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
+      "source": "ישראל היום",
+      "category": "ביטחון",
+      "class": "other",
       "trendMatch": null,
-      "beforeRank": 3,
+      "beforeRank": 2,
       "afterRank": 11
     },
     {
@@ -3918,26 +3541,17 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 36,
+      "beforeRank": 37,
       "afterRank": 12
     },
     {
-      "headline": "גדוד 52 איבד שוב ושוב את שרשרת הפיקוד",
-      "source": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 35,
-      "afterRank": 13
-    },
-    {
-      "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
-      "source": "Daily Mail",
+      "headline": "סרט ההמשך של רומי ומישל נכנס לצילומים",
+      "source": "Page Six",
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 4,
-      "afterRank": 14
+      "beforeRank": 1,
+      "afterRank": 13
     },
     {
       "headline": "מפקד הצפון לשעבר נפרד מדור בן שמחון",
@@ -3945,35 +3559,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 21,
-      "afterRank": 15
-    },
-    {
-      "headline": "מטוס קטארי זמני נכנס לצי הנשיאות של טראמפ",
-      "source": "ישראל היום",
-      "category": "ביטחון",
-      "class": "other",
-      "trendMatch": null,
-      "beforeRank": 28,
-      "afterRank": 16
-    },
-    {
-      "headline": "ישראל שוב נגררת להפסקות אש דרך מתווכים",
-      "source": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 34,
-      "afterRank": 17
-    },
-    {
-      "headline": "שיחות ישראל-לבנון יתחדשו בוושינגטון",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 40,
-      "afterRank": 18
+      "beforeRank": 17,
+      "afterRank": 14
     },
     {
       "headline": "פרי אדוארדס מחזקת את סיפור החתונה על הבמה",
@@ -3981,8 +3568,35 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 5,
-      "afterRank": 19
+      "beforeRank": 6,
+      "afterRank": 15
+    },
+    {
+      "headline": "אלכס ג׳ונס חושפת כמעט־מעבר ששינה את נישואיה",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 4,
+      "afterRank": 16
+    },
+    {
+      "headline": "גדוד 52 איבד שוב ושוב את שרשרת הפיקוד",
+      "source": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 36,
+      "afterRank": 17
+    },
+    {
+      "headline": "מטוס קטארי זמני נכנס לצי הנשיאות של טראמפ",
+      "source": "ישראל היום",
+      "category": "ביטחון",
+      "class": "other",
+      "trendMatch": null,
+      "beforeRank": 29,
+      "afterRank": 18
     },
     {
       "headline": "בנה של NeNe Leakes נעצר בהפרת תנאי מבחן",
@@ -3990,7 +3604,16 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 8,
+      "beforeRank": 9,
+      "afterRank": 19
+    },
+    {
+      "headline": "תוכנית הבית של סוניה קרוגר מסעירה את השכנים",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 5,
       "afterRank": 20
     }
   ],
@@ -4017,7 +3640,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-19T23:34:14.342680+00:00",
+    "generatedAt": "2026-06-19T23:58:41.733106+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -4054,14 +3677,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-19T21:07:37+00:00",
-        "latestRawAgeHours": 2.44,
-        "latestValidAt": "2026-06-19T21:07:37+00:00",
-        "latestValidAgeHours": 2.44,
+        "latestRawAt": "2026-06-19T23:35:17+00:00",
+        "latestRawAgeHours": 0.39,
+        "latestValidAt": "2026-06-19T23:35:17+00:00",
+        "latestValidAgeHours": 0.39,
         "visibleMain": {
           "count": 12,
           "latestAt": "2026-06-19T21:07:37+00:00",
-          "latestAgeHours": 2.44,
+          "latestAgeHours": 2.85,
           "sample": [
             {
               "publishedAt": "2026-06-19T21:07:37+00:00",
@@ -4083,7 +3706,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T15:26:53+00:00",
-          "latestAgeHours": 8.12,
+          "latestAgeHours": 8.53,
           "sample": [
             {
               "publishedAt": "2026-06-19T15:26:53+00:00",
@@ -4186,13 +3809,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T20:03:00+00:00",
-        "latestRawAgeHours": 3.52,
+        "latestRawAgeHours": 3.93,
         "latestValidAt": "2026-06-19T20:03:00+00:00",
-        "latestValidAgeHours": 3.52,
+        "latestValidAgeHours": 3.93,
         "visibleMain": {
           "count": 4,
           "latestAt": "2026-06-19T20:03:00+00:00",
-          "latestAgeHours": 3.52,
+          "latestAgeHours": 3.93,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:03:00+00:00",
@@ -4324,13 +3947,13 @@
         "qaRejectedCount": 267,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T23:02:03+00:00",
-        "latestRawAgeHours": 0.54,
+        "latestRawAgeHours": 0.94,
         "latestValidAt": "2026-06-19T23:02:03+00:00",
-        "latestValidAgeHours": 0.54,
+        "latestValidAgeHours": 0.94,
         "visibleMain": {
           "count": 14,
           "latestAt": "2026-06-19T22:00:25+00:00",
-          "latestAgeHours": 1.56,
+          "latestAgeHours": 1.97,
           "sample": [
             {
               "publishedAt": "2026-06-19T22:00:25+00:00",
@@ -4352,7 +3975,7 @@
         "visibleBreaking": {
           "count": 27,
           "latestAt": "2026-06-19T23:02:03+00:00",
-          "latestAgeHours": 0.54,
+          "latestAgeHours": 0.94,
           "sample": [
             {
               "publishedAt": "2026-06-19T23:02:03+00:00",
@@ -4497,14 +4120,14 @@
         "qaPassSimulationCount": 2,
         "qaRejectedCount": 136,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-19T23:34:19+00:00",
+        "latestRawAt": "2026-06-19T23:58:46+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-19T23:34:19+00:00",
+        "latestValidAt": "2026-06-19T23:58:46+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
           "count": 13,
           "latestAt": "2026-06-19T22:01:15+00:00",
-          "latestAgeHours": 1.55,
+          "latestAgeHours": 1.96,
           "sample": [
             {
               "publishedAt": "2026-06-19T22:01:15+00:00",
@@ -4535,7 +4158,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T02:34:19+03:00",
+            "publishedAt": "2026-06-20T02:58:45+03:00",
             "title": "בין וושינגטון, לבנון וטהרן: כרוניקת המזה\"ת במסלולה",
             "url": "https://news.walla.co.il/item/3847056"
           },
@@ -4543,7 +4166,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T02:34:19+03:00",
+            "publishedAt": "2026-06-20T02:58:45+03:00",
             "title": "סולברג קבע: בן גביר יסיר את סרטון המשט - ויחויב בעשרות אלפים",
             "url": "https://news.walla.co.il/item/3847059"
           },
@@ -4613,13 +4236,13 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T23:05:24+00:00",
-        "latestRawAgeHours": 0.48,
+        "latestRawAgeHours": 0.89,
         "latestValidAt": "2026-06-19T23:05:24+00:00",
-        "latestValidAgeHours": 0.48,
+        "latestValidAgeHours": 0.89,
         "visibleMain": {
           "count": 17,
           "latestAt": "2026-06-19T23:05:24+00:00",
-          "latestAgeHours": 0.48,
+          "latestAgeHours": 0.89,
           "sample": [
             {
               "publishedAt": "2026-06-19T23:05:24+00:00",
@@ -4641,7 +4264,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T14:52:08+00:00",
-          "latestAgeHours": 8.7,
+          "latestAgeHours": 9.11,
           "sample": [
             {
               "publishedAt": "2026-06-19T14:52:08+00:00",
@@ -4741,10 +4364,10 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-19T12:00:00+00:00",
-        "latestRawAgeHours": 11.57,
-        "latestValidAt": "2026-06-19T12:00:00+00:00",
-        "latestValidAgeHours": 11.57,
+        "latestRawAt": "2026-06-19T11:21:00+00:00",
+        "latestRawAgeHours": 12.63,
+        "latestValidAt": "2026-06-19T11:21:00+00:00",
+        "latestValidAgeHours": 12.63,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -4840,14 +4463,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 10,
-        "latestRawAt": "2026-06-19T21:46:07+00:00",
-        "latestRawAgeHours": 1.8,
+        "latestRawAt": "2026-06-19T23:35:07+00:00",
+        "latestRawAgeHours": 0.39,
         "latestValidAt": "2026-06-19T19:36:10+00:00",
-        "latestValidAgeHours": 3.97,
+        "latestValidAgeHours": 4.38,
         "visibleMain": {
           "count": 2,
           "latestAt": "2026-06-19T20:58:02+00:00",
-          "latestAgeHours": 2.6,
+          "latestAgeHours": 3.01,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:58:02+00:00",
@@ -4869,6 +4492,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "relevance_filtered",
+            "reason": "not Israel/Middle-East enough",
+            "source": "BBC World",
+            "publishedAt": "2026-06-20T02:35:07+03:00",
+            "title": "US to stop funding HIV programmes in South Africa",
+            "url": "https://www.bbc.com/news/articles/cdr457lxr71o?at_medium=RSS&at_campaign=rss"
+          },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
@@ -4908,14 +4539,6 @@
             "publishedAt": "2026-06-19T20:30:24+03:00",
             "title": "Pétanque player, 68, dies after being 'hit in head with metal boule'",
             "url": "https://www.bbc.com/news/articles/cvgmny9v14no?at_medium=RSS&at_campaign=rss"
-          },
-          {
-            "status": "relevance_filtered",
-            "reason": "not Israel/Middle-East enough",
-            "source": "BBC World",
-            "publishedAt": "2026-06-19T20:02:02+03:00",
-            "title": "US to end funding of South Africa's HIV programmes over claims of Afrikaner persecution",
-            "url": "https://www.bbc.com/news/articles/cdr457lxr71o?at_medium=RSS&at_campaign=rss"
           },
           {
             "status": "relevance_filtered",
@@ -5025,7 +4648,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T11:59:42+00:00",
-          "latestAgeHours": 11.58,
+          "latestAgeHours": 11.98,
           "sample": [
             {
               "publishedAt": "2026-06-19T11:59:42+00:00",
@@ -5054,9 +4677,9 @@
         "qaRejectedCount": 4,
         "relevanceFilteredCount": 20,
         "latestRawAt": "2026-06-19T21:35:40+00:00",
-        "latestRawAgeHours": 1.98,
+        "latestRawAgeHours": 2.38,
         "latestValidAt": "2026-06-19T16:16:28+00:00",
-        "latestValidAgeHours": 7.3,
+        "latestValidAgeHours": 7.7,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5153,13 +4776,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 4,
         "latestRawAt": "2026-06-19T20:09:10+00:00",
-        "latestRawAgeHours": 3.42,
+        "latestRawAgeHours": 3.83,
         "latestValidAt": "2026-06-19T20:09:10+00:00",
-        "latestValidAgeHours": 3.42,
+        "latestValidAgeHours": 3.83,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-19T20:09:10+00:00",
-          "latestAgeHours": 3.42,
+          "latestAgeHours": 3.83,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:09:10+00:00",
@@ -5268,7 +4891,7 @@
         "qaRejectedCount": 0,
         "relevanceFilteredCount": 5,
         "latestRawAt": "2026-06-19T12:03:00+00:00",
-        "latestRawAgeHours": 11.52,
+        "latestRawAgeHours": 11.93,
         "latestValidAt": null,
         "latestValidAgeHours": null,
         "visibleMain": {
@@ -5343,13 +4966,13 @@
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T14:58:11+00:00",
-        "latestRawAgeHours": 8.6,
+        "latestRawAgeHours": 9.01,
         "latestValidAt": "2026-06-19T14:58:11+00:00",
-        "latestValidAgeHours": 8.6,
+        "latestValidAgeHours": 9.01,
         "visibleMain": {
           "count": 5,
           "latestAt": "2026-06-19T20:12:50+00:00",
-          "latestAgeHours": 3.36,
+          "latestAgeHours": 3.76,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:12:50+00:00",
@@ -5371,7 +4994,7 @@
         "visibleBreaking": {
           "count": 5,
           "latestAt": "2026-06-19T17:22:56+00:00",
-          "latestAgeHours": 6.19,
+          "latestAgeHours": 6.6,
           "sample": [
             {
               "publishedAt": "2026-06-19T17:22:56+00:00",
@@ -5474,13 +5097,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T10:05:43+00:00",
-        "latestRawAgeHours": 13.48,
+        "latestRawAgeHours": 13.88,
         "latestValidAt": "2026-06-19T10:05:43+00:00",
-        "latestValidAgeHours": 13.48,
+        "latestValidAgeHours": 13.88,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-19T19:44:23+00:00",
-          "latestAgeHours": 3.83,
+          "latestAgeHours": 4.24,
           "sample": [
             {
               "publishedAt": "2026-06-19T19:44:23+00:00",
