@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 220
+Items checked: 200
 Errors: 0
-Warnings: 33
+Warnings: 29
 
 ## Category distribution
 
-- ביטחון: 64
-- רכילות: 42
-- ספורט: 35
+- ביטחון: 58
+- רכילות: 40
+- ספורט: 31
 - פוליטיקה: 13
-- כלכלה: 12
-- חדשות: 8
-- דעות: 7
-- טכנולוגיה: 6
+- כלכלה: 10
+- חדשות: 7
+- דעות: 6
 - בריאות: 6
 - תרבות: 5
 - פלילים: 5
 - מזג אוויר: 5
+- טכנולוגיה: 4
 - אקטואליה בעולם: 4
-- רכב: 4
-- צרכנות: 3
+- רכב: 3
+- צרכנות: 2
 - משפט: 1
 
 ## Issue counts
 
-- takeaway_long: 28
+- takeaway_long: 24
 - summary_long: 5
 
 ## Issues
@@ -232,31 +232,3 @@ Warnings: 33
 - Original: `איך תושפע הבורסה מדחיית המו"מ בין ארה"ב לאיראן - והמניות שיעמדו במוקד`
 - Source: דה מרקר - שוק ההון
 - URL: https://www.themarker.com/markets/2026-06-19/ty-article/.premium/0000019e-de5d-dc8a-afbe-df7d7c790000
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 112 > 95
-- Headline: `ספרד הכשירה חיילים לבנונים לפינוי מוקשים`
-- Original: `הדרכה בפינוי מוקשים ממדינה שונאת ישראל`
-- Source: גלובס - גלובלי ושוקי עולם
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546033#utm_source=RSS
-
-### WARNING · takeaway_long · item 212
-- Takeaway length 123 > 95
-- Headline: `לייפציג דחתה 100 מיליון יורו מליברפול על דיומנדה`
-- Original: `100 מיליון יורו לא הספיקו: הצעת הענק של ליברפול נדחתה`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3846937
-
-### WARNING · takeaway_long · item 213
-- Takeaway length 97 > 95
-- Headline: `הפועל ת"א חייבת שלושה ניצחונות אחרי 2:0 בגמר`
-- Original: `ביקורת על מיציץ', בהפועל ת"א מתכננים את "הקאמבק הגדול ביותר"`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3846939
-
-### WARNING · takeaway_long · item 215
-- Takeaway length 111 > 95
-- Headline: `אמו של אוליבר טרי ספדה לו אחרי התרסקות המסוק`
-- Original: `Oliver Tree's mother breaks silence after tragic death of singer, 32, in Brazil horror crash`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15912921/oliver-tree-mother-breaks-silence-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
