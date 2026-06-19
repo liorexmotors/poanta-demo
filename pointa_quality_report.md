@@ -1,30 +1,30 @@
 # Pointa Quality Gate Report
 
-Items checked: 207
+Items checked: 200
 Errors: 0
-Warnings: 37
+Warnings: 34
 
 ## Category distribution
 
-- ביטחון: 60
-- רכילות: 52
+- ביטחון: 59
+- רכילות: 51
 - ספורט: 29
-- חדשות: 11
-- דעות: 8
+- חדשות: 9
 - פוליטיקה: 8
 - כלכלה: 7
 - תרבות: 6
 - פלילים: 6
+- דעות: 6
 - בריאות: 5
 - טכנולוגיה: 4
 - אקטואליה בעולם: 4
 - מזג אוויר: 4
-- רכב: 2
 - משפט: 1
+- רכב: 1
 
 ## Issue counts
 
-- takeaway_long: 34
+- takeaway_long: 31
 - summary_long: 3
 
 ## Issues
@@ -266,24 +266,3 @@ Warnings: 37
 - Original: `אסון בדרום לבנון: ארבעה לוחמי צה"ל נהרגו מפגיעה של חיזבאללה בטנק`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/military/article-1334908
-
-### WARNING · takeaway_long · item 196
-- Takeaway length 104 > 95
-- Headline: `מטרה חשודה פגעה בטנק: מג"ד 52 ועוד 3 לוחמים נהרגו`
-- Original: `הותר לפרסום: 4 לוחמים נהרגו מפגיעת רחפן נפץ בדרום לבנון, בהם מג"ד 52 בשריון`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/bkbtjumgme
-
-### WARNING · takeaway_long · item 201
-- Takeaway length 110 > 95
-- Headline: `אהוד בנאי, רס״ר מחנה 80, מת בגיל 78`
-- Original: `הרס"ר המיתולוגי אהוד בנאי הלך לעולמו`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/bywkjwggme
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 119 > 95
-- Headline: `הונאות קשישים בישראל זינקו ב-61% ב-2025`
-- Original: `Elder fraud cases jump 61% in Israel as abuse reports rise, Welfare Ministry says`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/crime-in-israel/article-899922
