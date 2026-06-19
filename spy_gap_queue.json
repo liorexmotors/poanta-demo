@@ -6,8 +6,8 @@
     "name": "משה · פערי מרגל",
     "role": "הפיכת טרנדים חסרים למועמדי פיד בטוחים"
   },
-  "generatedAt": "2026-06-19T22:05:08+03:00",
-  "sourceSpyGeneratedAt": "2026-06-19T22:04:16+03:00",
+  "generatedAt": "2026-06-19T22:33:08+03:00",
+  "sourceSpyGeneratedAt": "2026-06-19T22:32:24+03:00",
   "policy": "missing spy trends enter a queue for משה/editor QA; no raw auto-publish",
   "mosheProcessor": {
     "lastRunAt": "2026-06-18T11:51:14+03:00",
@@ -16,10 +16,10 @@
     "schedule": "כל 10 דקות",
     "policy": "no raw publish; candidate/editor/QA only"
   },
-  "missingInCurrentSpy": 7,
+  "missingInCurrentSpy": 5,
   "queueItems": 80,
-  "newItems": 63,
-  "queuedForMoshe": 17,
+  "newItems": 62,
+  "queuedForMoshe": 18,
   "sentToEditor": 0,
   "candidateFound": 0,
   "published": 0,
@@ -27,13 +27,13 @@
   "items": [
     {
       "id": "gap_a0d9fa24f245863a",
-      "status": "new",
-      "statusLabel": "חדש",
-      "mosheStage": "זוהה פער",
-      "mosheCurrentAction": "ממתין לשליחה לתור משה",
-      "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+      "status": "queued_for_moshe",
+      "statusLabel": "ממתין למשה",
+      "mosheStage": "בתור משה",
+      "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
+      "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
       "createdAt": "2026-06-19T21:58:38+03:00",
-      "updatedAt": "2026-06-19T22:05:08+03:00",
+      "updatedAt": "2026-06-19T22:23:20+03:00",
       "trend": "בן 35 נפצע באורח קשה ובן 9 במצב בינוני בהתהפכות טרקטורון בכפר ברא",
       "domain": "חדשות",
       "clusterKey": "נפצע באורח",
@@ -78,7 +78,33 @@
         "mentionedInFeed": false,
         "latestAt": "2026-06-19T21:20:00+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847044"
-      }
+      },
+      "preparedBy": "רכז מודיעין",
+      "intelligenceBriefingId": "intel_a0d9fa24f245863a",
+      "intelligenceBriefing": {
+        "headlineSeed": "בן 35 נפצע באורח קשה ובן 9 במצב בינוני בהתהפכות טרקטורון בכפר ברא",
+        "source": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3847044",
+        "supportingSources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 16,
+        "sourceCount": 1,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "mosheQueuedAt": "2026-06-19T22:07:55+03:00",
+      "staleFromCurrentSpy": true
     },
     {
       "id": "gap_0da10a8973a0f30e",
@@ -944,6 +970,65 @@
       },
       "mosheQueuedAt": "2026-06-19T16:24:32+03:00",
       "staleFromCurrentSpy": true
+    },
+    {
+      "id": "gap_a8d77066f56b27ee",
+      "status": "new",
+      "statusLabel": "חדש",
+      "mosheStage": "זוהה פער",
+      "mosheCurrentAction": "ממתין לשליחה לתור משה",
+      "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+      "createdAt": "2026-06-19T22:32:06+03:00",
+      "updatedAt": "2026-06-19T22:33:08+03:00",
+      "trend": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
+      "domain": "חדשות",
+      "clusterKey": "גברים נורו",
+      "reason": "missing_from_feed",
+      "recommendedAction": "send_to_full_editor_rescue_queue",
+      "owner": "משה",
+      "priority": 23,
+      "externalMentions": 6,
+      "sourceCount": 3,
+      "sources": [
+        "ynet",
+        "הארץ",
+        "וואלה"
+      ],
+      "discoveryTypes": [
+        "RSS",
+        "WEB"
+      ],
+      "rssMentions": 4,
+      "webMentions": 2,
+      "latestAt": "2026-06-19T22:00:00+00:00",
+      "source": "ynet",
+      "sourceGroup": "ynet",
+      "sourceUrl": "https://news.walla.co.il/item/3847048",
+      "originalTitle": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
+      "deterministicHeadline": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
+      "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
+      "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+      "rawSpyTrend": {
+        "domain": "חדשות",
+        "trend": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
+        "clusterKey": "גברים נורו",
+        "externalMentions": 6,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 4,
+        "webMentions": 2,
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-19T22:00:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3847048"
+      }
     },
     {
       "id": "gap_8a022798bbc0e5e0",
@@ -2667,7 +2752,7 @@
       "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
       "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
       "createdAt": "2026-06-19T16:23:55+03:00",
-      "updatedAt": "2026-06-19T22:05:08+03:00",
+      "updatedAt": "2026-06-19T22:23:20+03:00",
       "trend": "שני גברים נורו בישוב בוקעתא שברמת הגולן, מצבם אנוש",
       "domain": "חדשות",
       "clusterKey": "גברים נורו",
@@ -2743,7 +2828,8 @@
         ],
         "doNotRawPublish": true
       },
-      "mosheQueuedAt": "2026-06-19T16:24:32+03:00"
+      "mosheQueuedAt": "2026-06-19T16:24:32+03:00",
+      "staleFromCurrentSpy": true
     },
     {
       "id": "gap_9ffba5f4f1915dc8",
@@ -2753,7 +2839,7 @@
       "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
       "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
       "createdAt": "2026-06-19T14:14:14+03:00",
-      "updatedAt": "2026-06-19T22:05:08+03:00",
+      "updatedAt": "2026-06-19T22:33:08+03:00",
       "trend": "יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
       "domain": "חדשות",
       "clusterKey": "ועדת הבחירות",
@@ -5173,64 +5259,6 @@
         ],
         "rssMentions": 1,
         "webMentions": 3,
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-15T09:48:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3845823"
-      },
-      "staleFromCurrentSpy": true
-    },
-    {
-      "id": "gap_37af32671df97708",
-      "status": "new",
-      "statusLabel": "חדש",
-      "mosheStage": "זוהה פער",
-      "mosheCurrentAction": "ממתין לשליחה לתור משה",
-      "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
-      "createdAt": "2026-06-15T10:13:46+03:00",
-      "updatedAt": "2026-06-15T10:13:46+03:00",
-      "trend": "\"סבירות גבוהה למימוש תקיפה\": הממשלה האריכה את המצב המיוחד בעורף",
-      "domain": "חדשות",
-      "clusterKey": "המצב המיוחד",
-      "reason": "missing_from_feed",
-      "recommendedAction": "send_to_full_editor_rescue_queue",
-      "owner": "משה",
-      "priority": 17,
-      "externalMentions": 4,
-      "sourceCount": 3,
-      "sources": [
-        "ynet",
-        "וואלה",
-        "סרוגים"
-      ],
-      "discoveryTypes": [
-        "RSS"
-      ],
-      "rssMentions": 4,
-      "webMentions": 0,
-      "latestAt": "2026-06-15T09:48:00+00:00",
-      "source": "ynet",
-      "sourceGroup": "ynet",
-      "sourceUrl": "https://news.walla.co.il/item/3845823",
-      "originalTitle": "\"סבירות גבוהה למימוש תקיפה\": הממשלה האריכה את המצב המיוחד בעורף",
-      "deterministicHeadline": "\"סבירות גבוהה למימוש תקיפה\": הממשלה האריכה את המצב המיוחד בעורף",
-      "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: \"סבירות גבוהה למימוש תקיפה\": הממשלה האריכה את המצב המיוחד בעורף",
-      "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-      "rawSpyTrend": {
-        "domain": "חדשות",
-        "trend": "\"סבירות גבוהה למימוש תקיפה\": הממשלה האריכה את המצב המיוחד בעורף",
-        "clusterKey": "המצב המיוחד",
-        "externalMentions": 4,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS"
-        ],
-        "rssMentions": 4,
-        "webMentions": 0,
         "mentionedInFeed": false,
         "latestAt": "2026-06-15T09:48:00+00:00",
         "sampleUrl": "https://news.walla.co.il/item/3845823"
