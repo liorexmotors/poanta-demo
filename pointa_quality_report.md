@@ -269,35 +269,35 @@ Warnings: 39
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hk6000x3bzl
 
-### WARNING · summary_long · item 172
+### WARNING · summary_long · item 168
 - Summary length 232 > 220
 - Headline: `הנדל מנסה לגייס שני ח״כים שהתעמתו עם הקואליציה על חוק הגיוס`
 - Original: `עונת ההעברות בשיאה: ח"כים מהציונות הדתית והליכוד במגעים עם המילואימניקים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14806364
 
-### WARNING · takeaway_long · item 175
+### WARNING · takeaway_long · item 171
 - Takeaway length 102 > 95
 - Headline: `באני XO וג'לי רול ממשיכים בתוכנית לילד גם אחרי הגירושים`
 - Original: `Bunnie Xo says she and Jelly Roll are still having a baby together despite divorce`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/celebrity-news/bunnie-xo-says-she-and-jelly-roll-are-still-having-a-baby-together-despite-divorce/
 
-### WARNING · summary_long · item 178
+### WARNING · summary_long · item 174
 - Summary length 223 > 220
 - Headline: `ערוץ חשאי למוסקבה חושף שסעים באיחוד על שיחות שלום`
 - Original: `לא צפוי: האם האיחוד האירופי יפתח בדיאלוג עם פוטין?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20796329
 
-### WARNING · takeaway_long · item 178
+### WARNING · takeaway_long · item 174
 - Takeaway length 97 > 95
 - Headline: `ערוץ חשאי למוסקבה חושף שסעים באיחוד על שיחות שלום`
 - Original: `לא צפוי: האם האיחוד האירופי יפתח בדיאלוג עם פוטין?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20796329
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 179
 - Takeaway length 100 > 95
 - Headline: `דיווח שווא על מות אביו של מסי הפיל מגישה וצוות הפקה`
 - Original: `הודיעה בשידור חי כי אביו של ליונל מסי מת - והתפטרה`
