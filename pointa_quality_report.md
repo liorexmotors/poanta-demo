@@ -1,20 +1,20 @@
 # Pointa Quality Gate Report
 
-Items checked: 205
+Items checked: 198
 Errors: 0
-Warnings: 44
+Warnings: 41
 
 ## Category distribution
 
-- רכילות: 60
-- ביטחון: 57
-- ספורט: 28
-- חדשות: 10
+- רכילות: 58
+- ביטחון: 55
+- ספורט: 27
 - בריאות: 9
+- חדשות: 9
 - פוליטיקה: 9
-- כלכלה: 7
 - פלילים: 6
 - דעות: 6
+- כלכלה: 6
 - תרבות: 5
 - טכנולוגיה: 3
 - אקטואליה בעולם: 3
@@ -23,7 +23,7 @@ Warnings: 44
 
 ## Issue counts
 
-- takeaway_long: 42
+- takeaway_long: 39
 - summary_long: 2
 
 ## Issues
@@ -35,103 +35,96 @@ Warnings: 44
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bj11oqq7gfg
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 9
 - Takeaway length 100 > 95
 - Headline: `אן האת'וויי חשפה שתהיה אם לשלושה`
 - Original: `בגיל 43: אן האת'וויי בהיריון שלישי`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3847053
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 10
 - Takeaway length 96 > 95
 - Headline: `ארה״ב נהנתה משערים עצמיים בשני משחקי מונדיאל רצופים`
 - Original: `ארה"ב קבעה תקדים במונדיאל, בלי לעשות דבר בעצמה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847051
 
-### WARNING · takeaway_long · item 11
+### WARNING · takeaway_long · item 12
 - Takeaway length 126 > 95
 - Headline: `חשד לאבולה בישראל אחרי חזרת נוסע מקונגו`
 - Original: `משרד הבריאות: התקבל דיווח על אדם החשוד כחולה באבולה - לאחר ששב מקונגו`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3847052
 
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 13
 - Takeaway length 121 > 95
 - Headline: `חשד לאבולה בישראל מפעיל בידוד וחקירת מגעים`
 - Original: `משרד הבריאות: אדם החשוד כחולה באבולה הגיע לישראל - הוא מטופל בתנאי בידוד`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/health/article/20800758
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 15
 - Takeaway length 125 > 95
 - Headline: `שירלי מקליין נראתה פעילה בזמן שאחיה מסתגר`
 - Original: `Shirley MacLaine, 92, enjoys lunch in Malibu… after news her brother Warren Beatty, 89, is now a recluse`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914573/Shirley-MacLaine-lunch-Warren-Beatty-recluse.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 16
 - Takeaway length 122 > 95
 - Headline: `נוסע מקונגו בבידוד ברמב״ם בחשד לאבולה`
 - Original: `חשד למקרה אבולה ראשון בישראל: אדם ששב מקונגו מאושפז בבידוד ברמב"ם`
 - Source: ynet - כל ערוץ הבריאות
 - URL: https://www.ynet.co.il/health/article/hktuwx7gzx
 
-### WARNING · takeaway_long · item 16
-- Takeaway length 107 > 95
-- Headline: `קייטלין אוקונור מציגה שגרת כושר ותזונה מותאמת`
-- Original: `Joe Manganiello's fiancee Caitlin O'Connor sizzles in a swimsuit in South Africa after sharing her diet secrets`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15914307/Caitlin-OConnor-Sports-Illustrated-bikini.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
 ### WARNING · takeaway_long · item 17
-- Takeaway length 109 > 95
-- Headline: `קט וון די מכחישה טענות על שריפת אחוזת הוליווד`
-- Original: `Kat Von D accused of burning her cat ALIVE in Hollywood castle scandal: Read incendiary claims`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15911005/Kat-Von-D-fire-cat-hollywood-castle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 18
-- Takeaway length 119 > 95
-- Headline: `אוליביה רודריגו שוברת שיא אישי במצעד הבריטי`
-- Original: `Olivia Rodrigo achieves the biggest opening week of her career as You Seem Pretty Sad for a Girl So in Love clinches Number 1 in the album charts`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15914895/Olivia-Rodrigo-biggest-opening-week-career-number-1.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 19
 - Takeaway length 98 > 95
 - Headline: `חשד לאבולה מפעיל את נוהל הבידוד ברמב"ם`
 - Original: `אדם חזר לישראל מאפריקה - חשד כבד כי הוא נדבק בנגיף האבולה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/health/article-1335100
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 18
 - Takeaway length 103 > 95
 - Headline: `ספר חדש חושף את פער טראמפ בין הבטחה לאיראן למלחמה`
 - Original: `Trump assured Musk and Carlson he wouldn’t go to war with Iran, new book claims`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/us-news/2026/jun/19/trump-musk-carlson-iran-war
 
+### WARNING · takeaway_long · item 20
+- Takeaway length 107 > 95
+- Headline: `קייטלין אוקונור מציגה שגרת כושר ותזונה מותאמת`
+- Original: `Joe Manganiello's fiancee Caitlin O'Connor sizzles in a swimsuit in South Africa after sharing her diet secrets`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15914307/Caitlin-OConnor-Sports-Illustrated-bikini.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · takeaway_long · item 21
+- Takeaway length 109 > 95
+- Headline: `קט וון די מכחישה טענות על שריפת אחוזת הוליווד`
+- Original: `Kat Von D accused of burning her cat ALIVE in Hollywood castle scandal: Read incendiary claims`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15911005/Kat-Von-D-fire-cat-hollywood-castle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
 ### WARNING · takeaway_long · item 22
+- Takeaway length 119 > 95
+- Headline: `אוליביה רודריגו שוברת שיא אישי במצעד הבריטי`
+- Original: `Olivia Rodrigo achieves the biggest opening week of her career as You Seem Pretty Sad for a Girl So in Love clinches Number 1 in the album charts`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15914895/Olivia-Rodrigo-biggest-opening-week-career-number-1.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · takeaway_long · item 23
 - Takeaway length 96 > 95
 - Headline: `איראן מתנה את המשך המו״מ בהרגעת החזית בלבנון`
 - Original: `Iran deputy FM says ‘ready to move forward’ in deal with US`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/19/iran-deputy-fm-says-ready-to-move-forward-in-deal-with-us?traffic_source=rss
 
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 26
 - Takeaway length 101 > 95
 - Headline: `טראמפ הכניס לשירות את המטוס שקיבל מקטאר`
 - Original: `טראמפ חנך את "הארמון המעופף" שקיבל מקטאר: "תודה לאמיר, אדם פנטסטי"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/by11fkgmzmg
-
-### WARNING · takeaway_long · item 30
-- Takeaway length 101 > 95
-- Headline: `העימות עם איראן מרחיק את מלוני מטראמפ`
-- Original: `Italy's Meloni says Trump 'made up' story that she 'begged' him for photo at G7`
-- Source: BBC World
-- URL: https://www.bbc.com/news/articles/c20y1ygn707o?at_medium=RSS&at_campaign=rss
 
 ### WARNING · takeaway_long · item 33
 - Takeaway length 115 > 95
@@ -321,17 +314,3 @@ Warnings: 44
 - Original: `Oil prices rise as Lebanon fighting erupts and Hormuz traffic still slow`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/economy/2026/6/19/oil-prices-rise-as-lebanon-fighting-erupts-and-hormuz-traffic-still-slow?traffic_source=rss
-
-### WARNING · takeaway_long · item 201
-- Takeaway length 96 > 95
-- Headline: `החשד לחבלה בפרינוק מתחזק בגלל אריזות פתוחות`
-- Original: `החשד לחבלה מכוונת מתחזק: אריזות מחיות "פרינוק" נפתחו טרם הרכישה`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/health/article/20796981
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 100 > 95
-- Headline: `רפאלה טווינה מבית האח הגדול נחשפה כבתה של נשיאת ויצו`
-- Original: `הייחוס המפתיע של דיירת "האח הגדול": זו האמא המפורסמת של רפאלה טווינה`
-- Source: TMI - ראשי
-- URL: https://tmi.maariv.co.il/celebs-news/article-1334669
