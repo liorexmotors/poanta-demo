@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 198
+Items checked: 199
 Errors: 0
-Warnings: 42
+Warnings: 43
 
 ## Category distribution
 
-- ביטחון: 56
+- ביטחון: 57
 - רכילות: 55
 - ספורט: 28
 - חדשות: 10
@@ -23,7 +23,7 @@ Warnings: 42
 
 ## Issue counts
 
-- takeaway_long: 40
+- takeaway_long: 41
 - summary_long: 2
 
 ## Issues
@@ -119,203 +119,210 @@ Warnings: 42
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/by11fkgmzmg
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 24
+- Takeaway length 101 > 95
+- Headline: `העימות עם איראן מרחיק את מלוני מטראמפ`
+- Original: `Italy's Meloni says Trump 'made up' story that she 'begged' him for photo at G7`
+- Source: BBC World
+- URL: https://www.bbc.com/news/articles/c20y1ygn707o?at_medium=RSS&at_campaign=rss
+
+### WARNING · takeaway_long · item 27
 - Takeaway length 115 > 95
 - Headline: `ישראל וחיזבאללה חידשו הפסקת אש אחרי יום קטלני`
 - Original: `‘You just gotta calm down’: Trump says he told Israel to agree ceasefire with Hezbollah – as it happened`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/jun/19/middle-east-crisis-live-israel-strikes-targets-in-lebanon-as-us-iran-talks-in-switzerland-called-off
 
-### WARNING · takeaway_long · item 29
+### WARNING · takeaway_long · item 30
 - Takeaway length 108 > 95
 - Headline: `מותגים בישראל מתחילים להפעיל משפיעניות AI`
 - Original: `תגידי, את אמיתית? משפיעניות ה-AI שוברות את הרשת - ויש לזה סיבה טובה`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/tech/article-1334712
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 34
 - Takeaway length 106 > 95
 - Headline: `כוכבת איסטאנדרס ג'סיקה פלאמר חשפה בן זוג חדש`
 - Original: `EastEnders star Jessica Plummer shows off new boyfriend after Ben Hardy split`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/jessica-plummer-new-boyfriend-instagram-37322906
 
-### WARNING · takeaway_long · item 34
+### WARNING · takeaway_long · item 35
 - Takeaway length 104 > 95
 - Headline: `ירושלים קנסה סטודנטים שמחו נגד מחיקת נשים משלטים`
 - Original: `עיריית ירושלים קנסה פעילים שתלו שלטי מחאה נגד השחתת תמונות נשים`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/education/2026-06-19/ty-article/.premium/0000019e-e110-dbb3-ad9f-f3dfe76a0000
 
-### WARNING · takeaway_long · item 36
+### WARNING · takeaway_long · item 37
 - Takeaway length 118 > 95
 - Headline: `באל-ג׳זירה בוחנים את מחיר התקיפות על איראן`
 - Original: `Iran war: Success or disaster? Mehdi Hasan and David Des Roches`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/head-to-head/2026/6/19/iran-war-success-or-disaster-mehdi-hasan-and-david-des-roches?traffic_source=rss
 
-### WARNING · takeaway_long · item 41
+### WARNING · takeaway_long · item 42
 - Takeaway length 102 > 95
 - Headline: `בני זוג מקלנסווה נרצחו אף שלא היו יעד הסכסוך`
 - Original: `רוכבי אופנוע התקרבו לרכב הזוג בשרון - ורצחו מטווח קצר: "הרחובות - זירת דמים"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/synsqzmfgx
 
-### WARNING · takeaway_long · item 42
+### WARNING · takeaway_long · item 43
 - Takeaway length 98 > 95
 - Headline: `ארה״ב ואוסטרליה נפגשות לקרב על כרטיס הנוקאאוט`
 - Original: `דקה 2: ארה"ב - אוסטרליה 0:0`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://livegame.ynet.co.il/games/525879
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 45
 - Takeaway length 96 > 95
 - Headline: `צעצוע של סיפור 5 בדרך לפתיחה של עד 172 מיליון דולר`
 - Original: `More good news for Taylor Swift as her film Toy Story 5 is heading for a record-breaking opening weekend`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914771/Taylor-Swift-Toy-Story-5-record-breaking.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 45
+### WARNING · takeaway_long · item 46
 - Takeaway length 105 > 95
 - Headline: `פוליסיק מחוץ לסגל בקרב ארה״ב-אוסטרליה על בית ד׳`
 - Original: `חי מהמונדיאל: נבחרת ארצות הברית - אוסטרליה 0:0`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20800425
 
-### WARNING · takeaway_long · item 49
+### WARNING · takeaway_long · item 50
 - Takeaway length 98 > 95
 - Headline: `שיחות ישראל-לבנון יתחדשו בוושינגטון ב־23 ביוני`
 - Original: `Lebanon-Israel talks to resume next week in Washington, State Department says`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-899944
 
-### WARNING · summary_long · item 52
+### WARNING · summary_long · item 53
 - Summary length 226 > 220
 - Headline: `פרננדו גאגו עבר ניתוח חירום אחרי משחק בצ׳ילה`
 - Original: `מיד לאחר המשחק: פרננדו גאגו עבר ניתוח חירום בעקבות התקף לב`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847046
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 54
 - Takeaway length 103 > 95
 - Headline: `מודיעין ישראלי הופתע מהחתימה האיראנית על מזכר ההבנות`
 - Original: `בקהילת המודיעין העריכו כי האיראנים יחבלו במזכר ההבנות - אך התבדו`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3846856
 
-### WARNING · takeaway_long · item 54
+### WARNING · takeaway_long · item 55
 - Takeaway length 97 > 95
 - Headline: `האוקיינוסים מייצרים את רוב החמצן שאנחנו נושמים`
 - Original: `הטעות המדעית שכולנו מאמינים בה: מאיפה באמת מגיע החמצן`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/space/article/20799682
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 57
 - Takeaway length 108 > 95
 - Headline: `בישראל זועמים על הסכם איראן וארה״ב אחרי נזיפה מוושינגטון`
 - Original: `How is the Iran-US agreement being viewed in Israel?`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/inside-story/2026/6/19/how-is-the-iran-us-agreement-being-viewed-in-israel?traffic_source=rss
 
-### WARNING · takeaway_long · item 58
+### WARNING · takeaway_long · item 59
 - Takeaway length 102 > 95
 - Headline: `צרפת מציבה וטו להסרת סנקציות מאיראן`
 - Original: `צרפת מפגינה שרירים: "הסרת הסנקציות על איראן? רק באישורנו"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20800432
 
-### WARNING · takeaway_long · item 66
+### WARNING · takeaway_long · item 67
 - Takeaway length 99 > 95
 - Headline: `צה"ל בודק אם פיצוץ פנימי גרם לאסון הטנק בלבנון`
 - Original: `האסון בלבנון: נבדק אם תחמושת התפוצצה בטנק בעקבות תקלה`
 - Source: N12 - ביטחוני ופוליטי
 - URL: https://www.mako.co.il/news-military/2026_q2/Article-57f13c22cf0ee91026.htm
 
-### WARNING · takeaway_long · item 103
+### WARNING · takeaway_long · item 104
 - Takeaway length 100 > 95
 - Headline: `הארי סטיילס בונה סיבוב הופעות על רזידנסיז ארוכות`
 - Original: `‘I went to secret Harry Styles concert and here’s my honest verdict’`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/harry-styles-together-together-tour-37321717
 
-### WARNING · takeaway_long · item 116
+### WARNING · takeaway_long · item 117
 - Takeaway length 97 > 95
 - Headline: `דסק ישראל של ערוץ 7 עוצר עדכונים עד צאת שבת`
 - Original: `Shabbat Shalom from Israel!`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/227155
 
-### WARNING · takeaway_long · item 117
+### WARNING · takeaway_long · item 118
 - Takeaway length 108 > 95
 - Headline: `נחשף כתב הניו יורק טיימס שמגי רוג'רס האשימה בבגידה`
 - Original: `Identity of NYT journalist exposed as a love cheat by Maggie Rogers revealed`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/19/entertainment/maggie-rogers-loser-new-york-times-mystery-date-revealed/
 
-### WARNING · takeaway_long · item 148
+### WARNING · takeaway_long · item 149
 - Takeaway length 103 > 95
 - Headline: `נבטייה ציינה עשורא בין הריסות והפסקת אש שברירית`
 - Original: `‘We wanted a reason for people to come back’: Lebanese city marks Ashura after destruction of war`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/19/lebanon-nabatieh-city-ashura-ceremony-hezbollah-israel
 
-### WARNING · takeaway_long · item 159
+### WARNING · takeaway_long · item 160
 - Takeaway length 101 > 95
 - Headline: `צה״ל תקף בבקעת הלבנון אחרי הפרות חוזרות של חיזבאללה`
 - Original: `IDF strikes Hezbollah sites in Beqaa Valley after Hezbollah attacks`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688099
 
-### WARNING · summary_long · item 160
+### WARNING · summary_long · item 161
 - Summary length 228 > 220
 - Headline: `סאלי רוני האשימה את ישראל בעליית הפשיזם באירופה`
 - Original: `הסופרת הבינלאומית מאשימה: ישראל אחרית לעלייית הפשיזם באירופה`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1334947
 
-### WARNING · takeaway_long · item 162
+### WARNING · takeaway_long · item 163
 - Takeaway length 111 > 95
 - Headline: `מסגד ביפו טוען שקיבל קנסות על קריאה ברמקולים לתפילה`
 - Original: `Jaffa Mosque: We received fines over the loudspeaker call to prayer`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688098
 
-### WARNING · takeaway_long · item 164
+### WARNING · takeaway_long · item 165
 - Takeaway length 108 > 95
 - Headline: `ביטול שיחות איראן-ארה"ב מעיב על פתיחת המסחר באירופה`
 - Original: `עליות קלות באירופה, בצל ביטול שיחות איראן-ארה"ב בשווייץ`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546490#utm_source=RSS
 
-### WARNING · takeaway_long · item 170
+### WARNING · takeaway_long · item 171
 - Takeaway length 97 > 95
 - Headline: `שיחות ארה״ב-איראן נדחו אחרי ביטול נסיעת ואנס`
 - Original: `US-Iran talks postponed as Vance pulls out of Switzerland trip`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/c8r2eme2n5do?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 178
 - Takeaway length 114 > 95
 - Headline: `קייל סנדילנדס מסלים את הקרב אחרי פשרת ARN`
 - Original: `Kyle Sandilands melts down and threatens to SLAP Ben Fordham for comments about his failed $100m radio contract - before 2GB host hits him with a cutting comeback`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15912527/Kyle-Sandilands-threatens-slap-Ben-Fordham-fiery-clash-F-k-you.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 184
 - Takeaway length 108 > 95
 - Headline: `הנפט חזר לעלות כשמעבר הורמוז נשאר מוגבל`
 - Original: `Oil prices rise as Lebanon fighting erupts and Hormuz traffic still slow`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/economy/2026/6/19/oil-prices-rise-as-lebanon-fighting-erupts-and-hormuz-traffic-still-slow?traffic_source=rss
 
-### WARNING · takeaway_long · item 194
+### WARNING · takeaway_long · item 195
 - Takeaway length 96 > 95
 - Headline: `החשד לחבלה בפרינוק מתחזק בגלל אריזות פתוחות`
 - Original: `החשד לחבלה מכוונת מתחזק: אריזות מחיות "פרינוק" נפתחו טרם הרכישה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/health/article/20796981
 
-### WARNING · takeaway_long · item 196
+### WARNING · takeaway_long · item 197
 - Takeaway length 100 > 95
 - Headline: `רפאלה טווינה מבית האח הגדול נחשפה כבתה של נשיאת ויצו`
 - Original: `הייחוס המפתיע של דיירת "האח הגדול": זו האמא המפורסמת של רפאלה טווינה`
