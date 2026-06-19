@@ -1,36 +1,36 @@
 # Pointa Quality Gate Report
 
-Items checked: 202
+Items checked: 197
 Errors: 0
-Warnings: 42
+Warnings: 38
 
 ## Category distribution
 
-- רכילות: 59
-- ביטחון: 53
-- ספורט: 24
+- רכילות: 58
+- ביטחון: 52
+- ספורט: 23
 - פוליטיקה: 11
 - פלילים: 8
 - תרבות: 8
-- כלכלה: 8
 - משפט: 7
+- כלכלה: 7
 - חדשות: 6
 - רכב: 5
 - צרכנות: 5
-- בריאות: 5
+- בריאות: 4
 - טכנולוגיה: 1
 - אקטואליה בעולם: 1
 - נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 34
+- takeaway_long: 30
 - summary_long: 6
 - category_sport_source: 2
 
 ## Issues
 
-### WARNING · category_sport_source · item 16
+### WARNING · category_sport_source · item 14
 - Sport source should usually be ספורט
 - Headline: `טויוטה עצרה את רצף הניצחונות של פרארי בלה מאן`
 - Original: `לה מאן זה לא כדורגל: כאן גרמניה לא תמיד מנצחת`
@@ -295,31 +295,3 @@ Warnings: 42
 - Original: `מוג'תבא חמינאי: "הייתה לי עמדה אחרת, אך אישרתי את ההסכם"`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1118576
-
-### WARNING · takeaway_long · item 197
-- Takeaway length 112 > 95
-- Headline: `סגנון ההיקשרות קובע איך זוגות מפרשים ריחוק`
-- Original: `זה הדבר הכי חשוב שמומחי חתונמי לא חשבו עליו בשידוכים שעשו`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3846118
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 106 > 95
-- Headline: `איראן מתכננת אגרות שיט במצר הורמוז בעוד חודשיים`
-- Original: `Iran announces plans to bring in maritime fees for strait of Hormuz`
-- Source: The Guardian Middle East
-- URL: https://www.theguardian.com/world/2026/jun/18/iran-announces-plans-to-bring-in-maritime-fees-for-strait-of-hormuz
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 115 > 95
-- Headline: `קטאר מנסה לבלום עסקת רפאל לרכישת מפעל פולקסווגן`
-- Original: `דיווח: קטאר מנסה לטרפד את העסקה בין רפאל ופולקסווגן`
-- Source: וואלה כסף
-- URL: https://finance.walla.co.il/item/3846878
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 101 > 95
-- Headline: `שוויץ משנה הרכב, דז׳קו פותח בבוסניה במונדיאל`
-- Original: `, ספורט1: שני שינויים בשוויץ, דז'קו בהרכב בוסניה`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3846740
