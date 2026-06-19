@@ -1,14 +1,14 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 197
 Errors: 0
-Warnings: 36
+Warnings: 34
 
 ## Category distribution
 
-- רכילות: 59
-- ביטחון: 54
-- ספורט: 24
+- רכילות: 58
+- ביטחון: 53
+- ספורט: 23
 - פוליטיקה: 11
 - פלילים: 9
 - תרבות: 8
@@ -23,7 +23,7 @@ Warnings: 36
 
 ## Issue counts
 
-- takeaway_long: 28
+- takeaway_long: 26
 - summary_long: 6
 - category_sport_source: 2
 
@@ -266,17 +266,3 @@ Warnings: 36
 - Original: `קצינים מכוח הייצוב בעזה הגיעו לישראל. בכיר ב"מועצת השלום": נמשיך בלי חמאס`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/ryebnqbzzg
-
-### WARNING · takeaway_long · item 197
-- Takeaway length 97 > 95
-- Headline: `משפחת מסי אישרה שחורחה מסי תחת השגחה רפואית`
-- Original: `משפחת מסי הגיבה לשמועות: "חוסר רגישות. רק אנחנו יודעים את האמת"`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3846874
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 97 > 95
-- Headline: `חמינאי אישר מזכר הבנות עם ארה״ב בתנאים`
-- Original: `מוג'תבא חמינאי: "הייתה לי דעה שונה בנוגע להסכם, אבל הסכמתי בגלל התחייבותו של פזשכיאן"`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3846883
