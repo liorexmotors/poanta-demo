@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 207
+Items checked: 200
 Errors: 0
-Warnings: 35
+Warnings: 31
 
 ## Category distribution
 
-- ביטחון: 56
-- רכילות: 40
+- ביטחון: 52
+- רכילות: 37
 - ספורט: 27
 - דעות: 15
 - כלכלה: 10
@@ -25,7 +25,7 @@ Warnings: 35
 
 ## Issue counts
 
-- takeaway_long: 30
+- takeaway_long: 26
 - summary_long: 4
 - category_sport_source: 1
 
@@ -206,72 +206,44 @@ Warnings: 35
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hk6000x3bzl
 
-### WARNING · summary_long · item 141
+### WARNING · summary_long · item 137
 - Summary length 232 > 220
 - Headline: `הנדל מנסה לגייס שני ח״כים שהתעמתו עם הקואליציה על חוק הגיוס`
 - Original: `עונת ההעברות בשיאה: ח"כים מהציונות הדתית והליכוד במגעים עם המילואימניקים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14806364
 
-### WARNING · takeaway_long · item 144
+### WARNING · takeaway_long · item 140
 - Takeaway length 102 > 95
 - Headline: `באני XO וג'לי רול ממשיכים בתוכנית לילד גם אחרי הגירושים`
 - Original: `Bunnie Xo says she and Jelly Roll are still having a baby together despite divorce`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/18/celebrity-news/bunnie-xo-says-she-and-jelly-roll-are-still-having-a-baby-together-despite-divorce/
 
-### WARNING · summary_long · item 147
+### WARNING · summary_long · item 143
 - Summary length 223 > 220
 - Headline: `ערוץ חשאי למוסקבה חושף שסעים באיחוד על שיחות שלום`
 - Original: `לא צפוי: האם האיחוד האירופי יפתח בדיאלוג עם פוטין?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20796329
 
-### WARNING · takeaway_long · item 147
+### WARNING · takeaway_long · item 143
 - Takeaway length 97 > 95
 - Headline: `ערוץ חשאי למוסקבה חושף שסעים באיחוד על שיחות שלום`
 - Original: `לא צפוי: האם האיחוד האירופי יפתח בדיאלוג עם פוטין?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/europe/article/20796329
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 148
 - Takeaway length 100 > 95
 - Headline: `דיווח שווא על מות אביו של מסי הפיל מגישה וצוות הפקה`
 - Original: `הודיעה בשידור חי כי אביו של ליונל מסי מת - והתפטרה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20796293
 
-### WARNING · category_sport_source · item 185
+### WARNING · category_sport_source · item 181
 - Sport source should usually be ספורט
 - Headline: `טויוטה עצרה את רצף הניצחונות של פרארי בלה מאן`
 - Original: `לה מאן זה לא כדורגל: כאן גרמניה לא תמיד מנצחת`
 - Source: וואלה רכב - ספורט מוטורי
 - URL: https://cars.walla.co.il/item/3846921
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 138 > 95
-- Headline: `מפקד חיל הים לשעבר מזהיר מסבבי לחימה חוזרים מול איראן`
-- Original: `Diplomatic agreements may lead to Israel-Iran escalation, former Navy commander warns`
-- Source: The Jerusalem Post - Iran
-- URL: https://www.jpost.com/middle-east/iran-news/article-899906
-
-### WARNING · takeaway_long · item 204
-- Takeaway length 107 > 95
-- Headline: `שיקלי דורש שצה״ל יחזיק נקודות אסטרטגיות בלבנון`
-- Original: `IDF withdrawal from Lebanon would be a failure, must hold strategic points in north, Chikli says`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/defense-news/article-899904
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 112 > 95
-- Headline: `קייל קוק עוזב את Summer House אחרי 10 עונות`
-- Original: `Kyle Cooke announces ‘heartbreaking’ exit from ‘Summer House’ after 10 seasons: ‘End of an era’`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/18/entertainment/kyle-cooke-announces-summer-house-exit-after-10-seasons/
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 104 > 95
-- Headline: `המפיק טיי קית׳ נמצא מת בגיל 29 בנאשוויל`
-- Original: `Tay Keith dead at 29: Body of super producer who made Drake and Travis Scott's biggest hits discovered at Nashville apartment`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15912529/tay-keith-dead-nashville-drake-travis-scott-producer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
