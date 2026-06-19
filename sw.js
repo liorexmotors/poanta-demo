@@ -1,4 +1,4 @@
-const CACHE_NAME = 'poenta-v106-tt-rr-source-simulation-202606140900';
+const CACHE_NAME = 'poenta-v105-tt-rr-breaking-open-simulation-202606131156';
 const ASSETS = ['./', './index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
@@ -20,7 +20,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(request));
     return;
   }
-  if (/\/(feed|breaking_feed|dashboard_ops_snapshot|dashboard_simulation_history|tt_rr_simulation_feed|tt_rr_source_simulation_report|tt_rr_breaking_simulation_feed|spy_trends|spy_gap_queue|intelligence_briefing_queue)\.json$/.test(new URL(request.url).pathname)) {
+  if (/\/(feed|breaking_feed|dashboard_ops_snapshot|dashboard_simulation_history|tt_rr_simulation_feed|tt_rr_breaking_simulation_feed|spy_trends|spy_gap_queue|intelligence_briefing_queue)\.json$/.test(new URL(request.url).pathname)) {
     event.respondWith(fetch(request).catch(() => caches.match(request)));
     return;
   }
