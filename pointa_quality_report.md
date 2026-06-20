@@ -1,20 +1,20 @@
 # Pointa Quality Gate Report
 
-Items checked: 209
+Items checked: 200
 Errors: 0
-Warnings: 51
+Warnings: 50
 
 ## Category distribution
 
-- ספורט: 60
-- רכילות: 51
-- ביטחון: 44
+- ספורט: 58
+- רכילות: 49
+- ביטחון: 41
 - תרבות: 9
-- כלכלה: 8
+- כלכלה: 7
 - דעות: 5
-- משפט: 5
 - מזג אוויר: 5
 - פלילים: 4
+- משפט: 4
 - טכנולוגיה: 3
 - אקטואליה בעולם: 3
 - פוליטיקה: 3
@@ -25,7 +25,7 @@ Warnings: 51
 
 ## Issue counts
 
-- takeaway_long: 47
+- takeaway_long: 46
 - summary_long: 4
 
 ## Issues
@@ -366,23 +366,16 @@ Warnings: 51
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847071
 
-### WARNING · takeaway_long · item 186
+### WARNING · takeaway_long · item 182
 - Takeaway length 107 > 95
 - Headline: `איראן קושרת את שיחות הגרעין להפסקת אש בלבנון`
 - Original: `האיראנים עדיין מציבים תנאים: ויטקוף יצא לשיחות בשווייץ לקידום ההסכם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 183
 - Takeaway length 102 > 95
 - Headline: `משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו`
 - Original: `Daveigh Chase’s ‘devastated’ mom breaks silence on actress’ shock Skid Row death: ‘I am in so much pain’`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 122 > 95
-- Headline: `וויטקוף יוצא לשווייץ לשיחות גרעין עם איראן`
-- Original: `דיווח: ויטקוף בדרך לשווייץ לשיחות על הסכם הגרעין עם איראן`
-- Source: הארץ - חדשות
-- URL: https://www.haaretz.co.il/news/world/middle-east/2026-06-20/ty-article/.premium/0000019e-e22f-d2b1-a5bf-fa3ffd300000
