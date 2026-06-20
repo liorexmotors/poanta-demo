@@ -35,19 +35,40 @@ jobs:
       - name: Commit feed update
         id: commit-feed
         run: |
-          if git diff --quiet feed.json breaking_feed.json .poanta-state.json; then
-            echo "No feed changes"
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
           git config user.name "poanta-feed-bot"
           git config user.email "poanta-feed-bot@users.noreply.github.com"
-          git add feed.json breaking_feed.json .poanta-state.json
-          git commit -m "Auto-update Poanta feeds"
-          git reset --hard HEAD
-          git pull --rebase origin main
-          git push
-          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          for attempt in 1 2 3; do
+            if [ "$attempt" -gt 1 ]; then
+              git fetch origin main
+              git reset --hard origin/main
+              python scripts/update_feed.py
+              python scripts/update_breaking_feed.py
+              python -m json.tool feed.json >/dev/null
+              python -m json.tool breaking_feed.json >/dev/null
+              python scripts/pointa_main_feed_no_breaking_guard.py --feed feed.json
+            fi
+
+            if git diff --quiet feed.json breaking_feed.json .poanta-state.json; then
+              echo "No feed changes"
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            git add feed.json breaking_feed.json .poanta-state.json
+            git commit -m "Auto-update Poanta feeds"
+            if git push origin HEAD:main; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            echo "Push failed, refreshing from origin/main and retrying attempt $attempt" >&2
+            git reset --hard HEAD~1
+            sleep 5
+          done
+
+          echo "Failed to push feed update after retries" >&2
+          exit 1
       - name: Build static dist for public deploy
         if: steps.commit-feed.outputs.changed == 'true'
         run: npm run build
