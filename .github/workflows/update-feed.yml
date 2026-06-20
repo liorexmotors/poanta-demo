@@ -44,6 +44,7 @@ jobs:
           git config user.email "poanta-feed-bot@users.noreply.github.com"
           git add feed.json breaking_feed.json .poanta-state.json
           git commit -m "Auto-update Poanta feeds"
+          git reset --hard HEAD
           git pull --rebase origin main
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -69,6 +70,7 @@ jobs:
           git config user.email "poanta-feed-bot@users.noreply.github.com"
           git add breaking_feed.json sw.js _headers _redirects
           git commit -m "Auto-update Poanta breaking feed"
+          git reset --hard HEAD
           git pull --rebase origin gh-pages
           git push origin HEAD:gh-pages
       - name: Deploy Cloudflare Pages if token is configured
