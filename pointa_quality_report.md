@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 209
+Items checked: 200
 Errors: 0
-Warnings: 71
+Warnings: 69
 
 ## Category distribution
 
-- ספורט: 53
-- ביטחון: 51
+- ביטחון: 50
+- ספורט: 49
 - רכילות: 46
-- כלכלה: 8
 - תרבות: 8
 - אקטואליה בעולם: 7
+- כלכלה: 7
 - פלילים: 6
 - דעות: 5
-- חדשות: 4
 - פוליטיקה: 4
 - משפט: 4
 - מזג אוויר: 4
-- טכנולוגיה: 3
+- חדשות: 3
 - בריאות: 3
-- צרכנות: 2
+- טכנולוגיה: 2
+- צרכנות: 1
 - רכב: 1
 
 ## Issue counts
 
-- takeaway_long: 65
+- takeaway_long: 63
 - summary_long: 6
 
 ## Issues
@@ -512,17 +512,3 @@ Warnings: 71
 - Original: `הרוגים ב"גל תקיפות" בלבנון; וויטקוף בדרך לשיחות גרעין בשווייץ; ההצעה: מיליארדים לאיראן - מקטאר`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/rkjgcymmml
-
-### WARNING · takeaway_long · item 197
-- Takeaway length 114 > 95
-- Headline: `וויטקוף נוסע לשווייץ לשיחות גרעין עם איראן`
-- Original: `הדרמה שמתפתחת סביב ההסכם עם איראן: "להיות או לחדול"`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/world/article-1335119
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 125 > 95
-- Headline: `מומחי נסיעות מסמנים את נקודות החיידקים בחופשה`
-- Original: `"יותר מלוכלך מאסלה": 5 הרגלים שאתם חייבים להפסיק לעשות בטיול הבא`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/travel/tourism-news/article/20774730
