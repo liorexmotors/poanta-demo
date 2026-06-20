@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-20T09:53:08+00:00",
+  "generatedAt": "2026-06-20T10:10:43+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
   "itemCount": 200,
   "simulationPoolWindow": {
@@ -15,13 +15,13 @@
     "softTop10": 3,
     "otherTop10": 3,
     "top5Under60": 5,
-    "top10Under60": 10,
-    "top12Under60": 10,
-    "topItemAgeMinutes": 18,
+    "top10Under60": 9,
+    "top12Under60": 9,
+    "topItemAgeMinutes": 16,
     "uniqueSourcesTop20": 6,
     "dominantSource": {
       "name": "ישראל היום",
-      "count": 6
+      "count": 5
     },
     "importantMissingTop20": [
       "N12",
@@ -37,15 +37,15 @@
     "topSources": [
       {
         "name": "ישראל היום",
-        "count": 6
-      },
-      {
-        "name": "Daily Mail",
         "count": 5
       },
       {
         "name": "ynet",
-        "count": 3
+        "count": 4
+      },
+      {
+        "name": "Daily Mail",
+        "count": 4
       },
       {
         "name": "וואלה",
@@ -53,45 +53,95 @@
       },
       {
         "name": "מעריב",
-        "count": 2
+        "count": 3
       },
       {
         "name": "Jerusalem Post",
         "count": 1
       }
     ],
-    "trendMatchedTop10": 2,
-    "trendMatchedTop20": 3,
+    "trendMatchedTop10": 3,
+    "trendMatchedTop20": 4,
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 10,
-      "score": 89,
+      "estimatedVisibleChangeMinutes": 20,
+      "score": 91,
       "readyCount": 11,
-      "hardReadyCount": 6,
-      "hardReadyStrictCount": 6,
-      "trendReadyCount": 3,
-      "cleanReadyCount": 6,
-      "cleanHardReadyCount": 6,
-      "cleanTrendReadyCount": 2,
+      "hardReadyCount": 5,
+      "hardReadyStrictCount": 5,
+      "trendReadyCount": 4,
+      "cleanReadyCount": 5,
+      "cleanHardReadyCount": 5,
+      "cleanTrendReadyCount": 3,
       "uniqueReadySources": 5,
-      "uniqueCleanReadySources": 3,
+      "uniqueCleanReadySources": 4,
       "freshReadyUnder25Count": 2,
       "cleanFreshReadyUnder25Count": 1,
-      "blockers": [],
+      "blockers": [
+        "clean_ready_queue_below_6"
+      ],
       "readyQueue": [
         {
-          "rank": 4,
+          "rank": 1,
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 7,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -125,30 +175,17 @@
             "score": 94.67,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 36.0
         },
         {
-          "rank": 1,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 5,
+          "rank": 8,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -165,7 +202,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -181,14 +218,14 @@
           "queueScore": 36.0
         },
         {
-          "rank": 11,
+          "rank": 14,
           "headline": "צבא לבנון מאשים את ישראל בשיבוש היציבות אחרי תקיפות",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 63,
+          "ageMinutes": 80,
           "url": "https://www.jpost.com/middle-east/article-899964",
           "trendMatch": {
             "trend": "לבנון: 5 נהרגו בתקיפה ישראלית בדרום המדינה",
@@ -226,53 +263,53 @@
           "queueScore": 33.0
         },
         {
-          "rank": 7,
+          "rank": 2,
+          "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 20,
+          "url": "https://www.maariv.co.il/news/military/article-1335169",
+          "trendMatch": null,
+          "queueScore": 26.0
+        },
+        {
+          "rank": 10,
           "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 49,
+          "ageMinutes": 67,
           "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 18,
-          "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "פלילים",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
           "trendMatch": null,
           "queueScore": 23.0
         },
         {
-          "rank": 2,
-          "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
-          "class": "other",
+          "rank": 4,
+          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+          "source": "ynet - כל ערוץ מעורבות",
+          "canonicalSource": "ynet",
+          "category": "ביטחון",
+          "class": "soft",
           "strictHard": false,
-          "ageMinutes": 21,
-          "url": "https://sports.walla.co.il/item/3847107",
+          "ageMinutes": 35,
+          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
           "trendMatch": null,
-          "queueScore": 11.0
+          "queueScore": 14.0
         },
         {
-          "rank": 13,
+          "rank": 16,
           "headline": "יצרני המזון טוענים שהמחיר במפעל לא עלה שנתיים",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "כלכלה",
           "class": "other",
           "strictHard": false,
-          "ageMinutes": 64,
+          "ageMinutes": 82,
           "url": "https://www.israelhayom.co.il/business/article/20801634",
           "trendMatch": null,
           "queueScore": 11.0
@@ -280,17 +317,65 @@
       ],
       "cleanReadyQueue": [
         {
-          "rank": 4,
+          "rank": 1,
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 7,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -324,30 +409,17 @@
             "score": 94.67,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 36.0
         },
         {
-          "rank": 1,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 5,
+          "rank": 8,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -364,7 +436,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -380,14 +452,14 @@
           "queueScore": 36.0
         },
         {
-          "rank": 11,
+          "rank": 14,
           "headline": "צבא לבנון מאשים את ישראל בשיבוש היציבות אחרי תקיפות",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 63,
+          "ageMinutes": 80,
           "url": "https://www.jpost.com/middle-east/article-899964",
           "trendMatch": {
             "trend": "לבנון: 5 נהרגו בתקיפה ישראלית בדרום המדינה",
@@ -425,28 +497,15 @@
           "queueScore": 33.0
         },
         {
-          "rank": 7,
+          "rank": 10,
           "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 49,
+          "ageMinutes": 67,
           "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 18,
-          "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "פלילים",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
           "trendMatch": null,
           "queueScore": 23.0
         }
@@ -454,83 +513,120 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 10,
-      "worthyFreshUnder60Count": 4,
-      "coreHardFreshUnder60Count": 4,
+      "freshUnder60Count": 9,
+      "worthyFreshUnder60Count": 3,
+      "coreHardFreshUnder60Count": 3,
       "softFreshUnder60Count": 3,
       "otherFreshUnder60Count": 3,
       "freshUniqueSources": 5,
-      "worthyUniqueSources": 2,
+      "worthyUniqueSources": 3,
       "freshSources": [
         {
           "name": "ynet",
           "count": 3
         },
         {
-          "name": "ישראל היום",
-          "count": 3
-        },
-        {
-          "name": "Daily Mail",
+          "name": "וואלה",
           "count": 2
         },
         {
-          "name": "וואלה",
+          "name": "מעריב",
+          "count": 2
+        },
+        {
+          "name": "Daily Mail",
           "count": 1
         },
         {
-          "name": "מעריב",
+          "name": "ישראל היום",
           "count": 1
         }
       ],
       "worthySources": [
         {
+          "name": "וואלה",
+          "count": 1
+        },
+        {
           "name": "ynet",
-          "count": 2
+          "count": 1
         },
         {
           "name": "ישראל היום",
-          "count": 2
+          "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 8,
         "quality_class_other": 3,
+        "weak_or_missing_trend_match": 6,
         "quality_class_soft": 3
       },
-      "staleOrUndatedCount": 70,
+      "staleOrUndatedCount": 71,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
           "beforeRank": 2,
-          "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
+          "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
           "class": "other",
           "strictHard": false,
-          "ageMinutes": 21,
-          "url": "https://sports.walla.co.il/item/3847107",
+          "ageMinutes": 20,
+          "url": "https://www.maariv.co.il/news/military/article-1335169",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -542,14 +638,14 @@
         },
         {
           "beforeRank": 3,
-          "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
+          "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+          "source": "ynet - כל ערוץ הספורט",
+          "canonicalSource": "ynet",
+          "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 27,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "ageMinutes": 24,
+          "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -561,16 +657,73 @@
         },
         {
           "beforeRank": 4,
+          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+          "source": "ynet - כל ערוץ מעורבות",
+          "canonicalSource": "ynet",
+          "category": "ביטחון",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 35,
+          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 5,
+          "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+          "source": "וואלה ספורט",
+          "canonicalSource": "וואלה",
+          "category": "ספורט",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 39,
+          "url": "https://sports.walla.co.il/item/3847107",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 6,
+          "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "canonicalSource": "Daily Mail",
+          "category": "רכילות",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 44,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 7,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -610,14 +763,14 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 5,
+          "beforeRank": 8,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -634,7 +787,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -653,90 +806,15 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 9,
           "headline": "איזנקוט מתבסס כמועמד מרכזי ליום שאחרי נתניהו",
           "source": "מעריב - דעות",
           "canonicalSource": "מעריב",
           "category": "דעות",
           "class": "other",
           "strictHard": false,
-          "ageMinutes": 34,
+          "ageMinutes": 52,
           "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_other",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 7,
-          "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 49,
-          "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "לואיס קפלדי חזר לבמה אחרי משבר נפשי וטורט",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 50,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "אליפות הניקס מציגה ניצחון של חוסן מנטלי",
-          "source": "ynet - כל ערוץ הספורט",
-          "canonicalSource": "ynet",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 53,
-          "url": "https://www.ynet.co.il/sport/article/skmhoslmfl",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "לוויין ניסיוני מיפה שיבושי GPS מעל ישראל והאזור",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "טכנולוגיה",
-          "class": "other",
-          "strictHard": false,
-          "ageMinutes": 59,
-          "url": "https://www.israelhayom.co.il/tech/space/article/20801670",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -750,34 +828,67 @@
       "topWorthyFreshCandidates": [
         {
           "beforeRank": 1,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
-          "beforeRank": 4,
+          "beforeRank": 7,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -817,14 +928,14 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 5,
+          "beforeRank": 8,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -841,7 +952,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -858,24 +969,6 @@
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": []
-        },
-        {
-          "beforeRank": 7,
-          "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 49,
-          "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
         }
       ]
     }
@@ -886,12 +979,12 @@
     "softTop10": 0,
     "otherTop10": 0,
     "top5Under60": 5,
-    "top10Under60": 6,
-    "top12Under60": 8,
+    "top10Under60": 5,
+    "top12Under60": 7,
     "topItemAgeMinutes": 0,
     "uniqueSourcesTop20": 8,
     "dominantSource": {
-      "name": "ישראל היום",
+      "name": "וואלה",
       "count": 4
     },
     "importantMissingTop20": [
@@ -907,15 +1000,15 @@
     "eventClusterTop20Max": 1,
     "topSources": [
       {
-        "name": "ישראל היום",
+        "name": "וואלה",
         "count": 4
       },
       {
-        "name": "וואלה",
+        "name": "ynet",
         "count": 3
       },
       {
-        "name": "ynet",
+        "name": "ישראל היום",
         "count": 3
       },
       {
@@ -939,24 +1032,24 @@
         "count": 1
       }
     ],
-    "trendMatchedTop10": 3,
-    "trendMatchedTop20": 3,
-    "trendGapMatchedTop20": 0,
+    "trendMatchedTop10": 5,
+    "trendMatchedTop20": 5,
+    "trendGapMatchedTop20": 1,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 10,
-      "score": 93,
+      "score": 95,
       "readyCount": 12,
-      "hardReadyCount": 7,
-      "hardReadyStrictCount": 7,
-      "trendReadyCount": 3,
-      "cleanReadyCount": 7,
-      "cleanHardReadyCount": 7,
-      "cleanTrendReadyCount": 2,
+      "hardReadyCount": 6,
+      "hardReadyStrictCount": 6,
+      "trendReadyCount": 5,
+      "cleanReadyCount": 6,
+      "cleanHardReadyCount": 6,
+      "cleanTrendReadyCount": 4,
       "uniqueReadySources": 4,
       "uniqueCleanReadySources": 3,
-      "freshReadyUnder25Count": 4,
-      "cleanFreshReadyUnder25Count": 3,
+      "freshReadyUnder25Count": 3,
+      "cleanFreshReadyUnder25Count": 2,
       "blockers": [],
       "readyQueue": [
         {
@@ -969,21 +1062,95 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847094",
-          "trendMatch": null,
-          "queueScore": 44.0
+          "trendMatch": {
+            "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+            "clusterKey": "תחילה מקטאר",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 1,
+            "sources": [
+              "ynet"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T05:23:43+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+            "overlapTokens": [
+              "איראן",
+              "עבור"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 19.72,
+            "boost": 19.72
+          },
+          "queueScore": 54.0
         },
         {
           "rank": 2,
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 4,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -1017,30 +1184,17 @@
             "score": 94.67,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 36.0
         },
         {
-          "rank": 4,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 3,
+          "rank": 5,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -1057,7 +1211,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -1073,18 +1227,18 @@
           "queueScore": 36.0
         },
         {
-          "rank": 5,
+          "rank": 3,
           "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 40,
           "url": "https://news.walla.co.il/break/3847086",
           "trendMatch": {
             "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-            "clusterKey": "נשיא בוליביה",
+            "clusterKey": "מצב חירום",
             "domain": "חדשות",
             "externalMentions": 3,
             "sourceCount": 2,
@@ -1114,7 +1268,20 @@
             "score": 85.03,
             "boost": 14.0
           },
-          "queueScore": 33.0
+          "queueScore": 28.0
+        },
+        {
+          "rank": 11,
+          "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 20,
+          "url": "https://www.maariv.co.il/news/military/article-1335169",
+          "trendMatch": null,
+          "queueScore": 26.0
         },
         {
           "rank": 6,
@@ -1124,36 +1291,23 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 49,
+          "ageMinutes": 67,
           "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 9,
-          "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "פלילים",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
           "trendMatch": null,
           "queueScore": 23.0
         },
         {
-          "rank": 11,
-          "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
-          "class": "other",
+          "rank": 12,
+          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+          "source": "ynet - כל ערוץ מעורבות",
+          "canonicalSource": "ynet",
+          "category": "ביטחון",
+          "class": "soft",
           "strictHard": false,
-          "ageMinutes": 21,
-          "url": "https://sports.walla.co.il/item/3847107",
+          "ageMinutes": 35,
+          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
           "trendMatch": null,
-          "queueScore": 11.0
+          "queueScore": 14.0
         }
       ],
       "cleanReadyQueue": [
@@ -1167,21 +1321,95 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847094",
-          "trendMatch": null,
-          "queueScore": 44.0
+          "trendMatch": {
+            "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+            "clusterKey": "תחילה מקטאר",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 1,
+            "sources": [
+              "ynet"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T05:23:43+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+            "overlapTokens": [
+              "איראן",
+              "עבור"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 19.72,
+            "boost": 19.72
+          },
+          "queueScore": 54.0
         },
         {
           "rank": 2,
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 4,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -1215,30 +1443,17 @@
             "score": 94.67,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 36.0
         },
         {
-          "rank": 4,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 3,
+          "rank": 5,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -1255,7 +1470,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -1271,18 +1486,18 @@
           "queueScore": 36.0
         },
         {
-          "rank": 5,
+          "rank": 3,
           "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 40,
           "url": "https://news.walla.co.il/break/3847086",
           "trendMatch": {
             "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-            "clusterKey": "נשיא בוליביה",
+            "clusterKey": "מצב חירום",
             "domain": "חדשות",
             "externalMentions": 3,
             "sourceCount": 2,
@@ -1312,7 +1527,7 @@
             "score": 85.03,
             "boost": 14.0
           },
-          "queueScore": 33.0
+          "queueScore": 28.0
         },
         {
           "rank": 6,
@@ -1322,21 +1537,8 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 49,
+          "ageMinutes": 67,
           "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 9,
-          "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "פלילים",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
           "trendMatch": null,
           "queueScore": 23.0
         }
@@ -1344,9 +1546,9 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 12,
-      "worthyFreshUnder60Count": 6,
-      "coreHardFreshUnder60Count": 6,
+      "freshUnder60Count": 11,
+      "worthyFreshUnder60Count": 5,
+      "coreHardFreshUnder60Count": 5,
       "softFreshUnder60Count": 3,
       "otherFreshUnder60Count": 3,
       "freshUniqueSources": 5,
@@ -1354,45 +1556,45 @@
       "freshSources": [
         {
           "name": "וואלה",
-          "count": 3
+          "count": 4
         },
         {
           "name": "ynet",
           "count": 3
         },
         {
-          "name": "ישראל היום",
-          "count": 3
-        },
-        {
-          "name": "Daily Mail",
+          "name": "מעריב",
           "count": 2
         },
         {
-          "name": "מעריב",
+          "name": "Daily Mail",
+          "count": 1
+        },
+        {
+          "name": "ישראל היום",
           "count": 1
         }
       ],
       "worthySources": [
         {
           "name": "וואלה",
-          "count": 2
+          "count": 3
         },
         {
           "name": "ynet",
-          "count": 2
+          "count": 1
         },
         {
           "name": "ישראל היום",
-          "count": 2
+          "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 9,
         "quality_class_other": 3,
+        "weak_or_missing_trend_match": 6,
         "quality_class_soft": 3
       },
-      "staleOrUndatedCount": 68,
+      "staleOrUndatedCount": 69,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -1407,13 +1609,37 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847094",
-          "trendMatch": null,
+          "trendMatch": {
+            "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+            "clusterKey": "תחילה מקטאר",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 1,
+            "sources": [
+              "ynet"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T05:23:43+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+            "overlapTokens": [
+              "איראן",
+              "עבור"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 19.72,
+            "boost": 19.72
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
           "beforeRank": 2,
@@ -1423,11 +1649,11 @@
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 40,
           "url": "https://news.walla.co.il/break/3847086",
           "trendMatch": {
             "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-            "clusterKey": "נשיא בוליביה",
+            "clusterKey": "מצב חירום",
             "domain": "חדשות",
             "externalMentions": 3,
             "sourceCount": 2,
@@ -1464,32 +1690,65 @@
         },
         {
           "beforeRank": 3,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
           "beforeRank": 4,
-          "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
+          "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
           "class": "other",
           "strictHard": false,
-          "ageMinutes": 21,
-          "url": "https://sports.walla.co.il/item/3847107",
+          "ageMinutes": 20,
+          "url": "https://www.maariv.co.il/news/military/article-1335169",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -1501,14 +1760,14 @@
         },
         {
           "beforeRank": 5,
-          "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
+          "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+          "source": "ynet - כל ערוץ הספורט",
+          "canonicalSource": "ynet",
+          "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 27,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "ageMinutes": 24,
+          "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -1520,16 +1779,73 @@
         },
         {
           "beforeRank": 6,
+          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+          "source": "ynet - כל ערוץ מעורבות",
+          "canonicalSource": "ynet",
+          "category": "ביטחון",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 35,
+          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 7,
+          "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+          "source": "וואלה ספורט",
+          "canonicalSource": "וואלה",
+          "category": "ספורט",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 39,
+          "url": "https://sports.walla.co.il/item/3847107",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 8,
+          "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "canonicalSource": "Daily Mail",
+          "category": "רכילות",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 44,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 9,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -1569,14 +1885,14 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 7,
+          "beforeRank": 10,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -1593,7 +1909,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -1612,90 +1928,15 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 8,
+          "beforeRank": 11,
           "headline": "איזנקוט מתבסס כמועמד מרכזי ליום שאחרי נתניהו",
           "source": "מעריב - דעות",
           "canonicalSource": "מעריב",
           "category": "דעות",
           "class": "other",
           "strictHard": false,
-          "ageMinutes": 34,
+          "ageMinutes": 52,
           "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_other",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 49,
-          "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "לואיס קפלדי חזר לבמה אחרי משבר נפשי וטורט",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 50,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 11,
-          "headline": "אליפות הניקס מציגה ניצחון של חוסן מנטלי",
-          "source": "ynet - כל ערוץ הספורט",
-          "canonicalSource": "ynet",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 53,
-          "url": "https://www.ynet.co.il/sport/article/skmhoslmfl",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 12,
-          "headline": "לוויין ניסיוני מיפה שיבושי GPS מעל ישראל והאזור",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "טכנולוגיה",
-          "class": "other",
-          "strictHard": false,
-          "ageMinutes": 59,
-          "url": "https://www.israelhayom.co.il/tech/space/article/20801670",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -1717,13 +1958,37 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847094",
-          "trendMatch": null,
+          "trendMatch": {
+            "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+            "clusterKey": "תחילה מקטאר",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 1,
+            "sources": [
+              "ynet"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T05:23:43+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+            "overlapTokens": [
+              "איראן",
+              "עבור"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 19.72,
+            "boost": 19.72
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
           "beforeRank": 2,
@@ -1733,11 +1998,11 @@
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 23,
+          "ageMinutes": 40,
           "url": "https://news.walla.co.il/break/3847086",
           "trendMatch": {
             "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-            "clusterKey": "נשיא בוליביה",
+            "clusterKey": "מצב חירום",
             "domain": "חדשות",
             "externalMentions": 3,
             "sourceCount": 2,
@@ -1774,34 +2039,67 @@
         },
         {
           "beforeRank": 3,
-          "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-          "source": "ynet - כל ערוץ מעורבות",
-          "canonicalSource": "ynet",
+          "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+          "source": "וואלה חדשות",
+          "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 18,
-          "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-          "trendMatch": null,
+          "ageMinutes": 16,
+          "url": "https://news.walla.co.il/item/3846991",
+          "trendMatch": {
+            "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+            "clusterKey": "בדרום לבנון",
+            "domain": "חדשות",
+            "externalMentions": 5,
+            "sourceCount": 4,
+            "sources": [
+              "ynet",
+              "דה מרקר",
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T12:42:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/item/3846991",
+            "overlapTokens": [
+              "בדרום",
+              "ביותר",
+              "הלחימה",
+              "המורכבת",
+              "הרגישה",
+              "הרובוטים",
+              "הרחפנים",
+              "השריון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 142.68,
+            "boost": 38.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 9,
           "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 29,
+          "ageMinutes": 47,
           "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
           "trendMatch": {
-            "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "clusterKey": "הפסקה בלבנון",
             "domain": "חדשות",
             "externalMentions": 3,
@@ -1841,14 +2139,14 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 7,
+          "beforeRank": 10,
           "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "חדשות",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 33,
+          "ageMinutes": 51,
           "url": "https://www.israelhayom.co.il/health/article/20801774",
           "trendMatch": {
             "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -1865,7 +2163,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T09:53:08.337660+00:00",
+            "latestAt": "2026-06-20T10:10:42.898765+00:00",
             "sampleUrl": "https://news.walla.co.il/break/3847054",
             "overlapTokens": [
               "אדם",
@@ -1882,39 +2180,21 @@
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": []
-        },
-        {
-          "beforeRank": 9,
-          "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 49,
-          "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
         }
       ]
     }
   },
   "beforeHealthScore": 58,
-  "afterHealthScore": 85,
+  "afterHealthScore": 83,
   "replacementReadiness": {
-    "score": 78,
+    "score": 79,
     "threshold": 80,
     "components": {
-      "freshness": 18.0,
+      "freshness": 17.5,
       "newsinessTop10": 25.0,
       "top20Quality": 12.4,
       "sourceBalance": 10.0,
-      "trendSignalUse": 8.0,
+      "trendSignalUse": 9.33,
       "criticalBlockersClear": 5.0
     },
     "criticalBlockers": [
@@ -1928,38 +2208,38 @@
     "score": 82,
     "scoreSource": "explicit_report_score",
     "readyForMain": false,
-    "improvingVsBaseline": true,
+    "improvingVsBaseline": false,
     "summaryLine": "בינוני",
-    "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-20-1205.md",
-    "reportName": "tt-rr-simulation-review-2026-06-20-1205.md",
-    "reportGeneratedAt": "2026-06-20T09:02:05+00:00",
+    "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-20-1307.md",
+    "reportName": "tt-rr-simulation-review-2026-06-20-1307.md",
+    "reportGeneratedAt": "2026-06-20T09:53:08+00:00",
     "metrics": {
       "ציון עליזה": 82,
       "generatedAt": 2026,
-      "afterHealthScore": 86,
-      "healthDelta": 43,
-      "replacementReadiness score": 79,
-      "rollingScore": 77.6,
+      "afterHealthScore": 85,
+      "healthDelta": 27,
+      "replacementReadiness score": 78,
+      "rollingScore": 77.65,
       "newsinessTop10": 10,
       "softTop10": 0,
-      "top12Under60": 6,
-      "trendMatchedTop10": 4,
-      "trendMatchedTop20": 5,
-      "dominantSource": 3,
-      "uniqueSourcesTop20": 9,
-      "estimatedVisibleChangeMinutes": 20,
+      "top12Under60": 8,
+      "trendMatchedTop10": 3,
+      "trendMatchedTop20": 3,
+      "dominantSource": 4,
+      "uniqueSourcesTop20": 8,
+      "estimatedVisibleChangeMinutes": 10,
       "readyCount": 12,
-      "hardReadyCount": 5,
-      "trendReadyCount": 7,
-      "uniqueReadySources": 6,
-      "blockers": 6
+      "hardReadyCount": 7,
+      "trendReadyCount": 3,
+      "uniqueReadySources": 4,
+      "blockers": 12
     },
     "recommendedActions": [
-      "להוסיף `top12FreshnessGuard` בסימולציה: יעד 9/12 טריים, decay מעל 75 דקות, וחסימה של `soft`/`other` כמילוי עד שיש מספיק hard-news טרי.",
-      "לפתוח `sourceLiveToEditorBridgeDiagnostics` למקורות חיים עם 0 QA pass, במיוחד הארץ, N12, ynet, Guardian וגלובס, כולל סיבת דחייה מפורטת ומועמדים לשכתוב.",
-      "להקשיח `trendMatchBoost`: boost מלא רק עם entity+event/topic overlap; boost חלש או אפס להתאמות כלליות מדי כמו איראן/לבנון בלי אירוע ספציפי משותף."
+      "להוסיף simulation-only QA bridge למקורות חיים עם valid candidates ו-qaPass=0, בעדיפות הארץ, N12, Guardian, גלובס ו-BBC, עם rewrite מינימלי לכרטיס פוינטה במקום פסילה מלאה.",
+      "לשנות את penalty של weak_or_missing_trend_match: ב-hard-news טרי מתחת ל-60 דקות זה יהיה עונש דירוג בלבד, לא סיבה שמורידה מועמד מ-worthy supply.",
+      "להקשיח fallback לזנב Top 20: אם יש פחות מ-9 worthyFreshUnder60, למשוך hard-news חיים ממקורות bridge לפני שמעלים Daily Mail/Mirror/ספורט/דעות."
     ],
-    "title": "TT RR Simulation Review — 2026-06-20 12:05"
+    "title": "TT RR Simulation Review — 2026-06-20 13:07"
   },
   "delta": {
     "newsinessTop10": 6,
@@ -1967,15 +2247,15 @@
     "softTop10": -3,
     "top12Under60": -2,
     "uniqueSourcesTop20": 2,
-    "trendMatchedTop10": 1,
-    "trendMatchedTop20": 0,
-    "healthScore": 27
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 1,
+    "healthScore": 25
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 12,
-    "worthyFreshUnder60Count": 6,
-    "coreHardFreshUnder60Count": 6,
+    "freshUnder60Count": 11,
+    "worthyFreshUnder60Count": 5,
+    "coreHardFreshUnder60Count": 5,
     "softFreshUnder60Count": 3,
     "otherFreshUnder60Count": 3,
     "freshUniqueSources": 5,
@@ -1983,45 +2263,45 @@
     "freshSources": [
       {
         "name": "וואלה",
-        "count": 3
+        "count": 4
       },
       {
         "name": "ynet",
         "count": 3
       },
       {
-        "name": "ישראל היום",
-        "count": 3
-      },
-      {
-        "name": "Daily Mail",
+        "name": "מעריב",
         "count": 2
       },
       {
-        "name": "מעריב",
+        "name": "Daily Mail",
+        "count": 1
+      },
+      {
+        "name": "ישראל היום",
         "count": 1
       }
     ],
     "worthySources": [
       {
         "name": "וואלה",
-        "count": 2
+        "count": 3
       },
       {
         "name": "ynet",
-        "count": 2
+        "count": 1
       },
       {
         "name": "ישראל היום",
-        "count": 2
+        "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 9,
       "quality_class_other": 3,
+      "weak_or_missing_trend_match": 6,
       "quality_class_soft": 3
     },
-    "staleOrUndatedCount": 68,
+    "staleOrUndatedCount": 69,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
@@ -2036,13 +2316,37 @@
         "strictHard": true,
         "ageMinutes": 0,
         "url": "https://news.walla.co.il/break/3847094",
-        "trendMatch": null,
+        "trendMatch": {
+          "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+          "clusterKey": "תחילה מקטאר",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 1,
+          "sources": [
+            "ynet"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-20T05:23:43+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+          "overlapTokens": [
+            "איראן",
+            "עבור"
+          ],
+          "entityOverlapTokens": [
+            "איראן"
+          ],
+          "eventOverlapTokens": [],
+          "score": 19.72,
+          "boost": 19.72
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
         "beforeRank": 2,
@@ -2052,11 +2356,11 @@
         "category": "אקטואליה בעולם",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 23,
+        "ageMinutes": 40,
         "url": "https://news.walla.co.il/break/3847086",
         "trendMatch": {
           "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-          "clusterKey": "נשיא בוליביה",
+          "clusterKey": "מצב חירום",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -2093,32 +2397,65 @@
       },
       {
         "beforeRank": 3,
-        "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-        "source": "ynet - כל ערוץ מעורבות",
-        "canonicalSource": "ynet",
+        "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 18,
-        "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-        "trendMatch": null,
+        "ageMinutes": 16,
+        "url": "https://news.walla.co.il/item/3846991",
+        "trendMatch": {
+          "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+          "clusterKey": "בדרום לבנון",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 4,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T12:42:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3846991",
+          "overlapTokens": [
+            "בדרום",
+            "ביותר",
+            "הלחימה",
+            "המורכבת",
+            "הרגישה",
+            "הרובוטים",
+            "הרחפנים",
+            "השריון"
+          ],
+          "entityOverlapTokens": [
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 142.68,
+          "boost": 38.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
         "beforeRank": 4,
-        "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
+        "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
         "class": "other",
         "strictHard": false,
-        "ageMinutes": 21,
-        "url": "https://sports.walla.co.il/item/3847107",
+        "ageMinutes": 20,
+        "url": "https://www.maariv.co.il/news/military/article-1335169",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -2130,14 +2467,14 @@
       },
       {
         "beforeRank": 5,
-        "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
+        "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+        "source": "ynet - כל ערוץ הספורט",
+        "canonicalSource": "ynet",
+        "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 27,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "ageMinutes": 24,
+        "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -2149,16 +2486,73 @@
       },
       {
         "beforeRank": 6,
+        "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+        "source": "ynet - כל ערוץ מעורבות",
+        "canonicalSource": "ynet",
+        "category": "ביטחון",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 35,
+        "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 7,
+        "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+        "source": "וואלה ספורט",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 39,
+        "url": "https://sports.walla.co.il/item/3847107",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 8,
+        "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 44,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 9,
         "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 29,
+        "ageMinutes": 47,
         "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
         "trendMatch": {
-          "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+          "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
           "clusterKey": "הפסקה בלבנון",
           "domain": "חדשות",
           "externalMentions": 3,
@@ -2198,14 +2592,14 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 7,
+        "beforeRank": 10,
         "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 33,
+        "ageMinutes": 51,
         "url": "https://www.israelhayom.co.il/health/article/20801774",
         "trendMatch": {
           "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -2222,7 +2616,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T09:53:08.337660+00:00",
+          "latestAt": "2026-06-20T10:10:42.898765+00:00",
           "sampleUrl": "https://news.walla.co.il/break/3847054",
           "overlapTokens": [
             "אדם",
@@ -2241,90 +2635,15 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 8,
+        "beforeRank": 11,
         "headline": "איזנקוט מתבסס כמועמד מרכזי ליום שאחרי נתניהו",
         "source": "מעריב - דעות",
         "canonicalSource": "מעריב",
         "category": "דעות",
         "class": "other",
         "strictHard": false,
-        "ageMinutes": 34,
+        "ageMinutes": 52,
         "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_other",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 49,
-        "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "לואיס קפלדי חזר לבמה אחרי משבר נפשי וטורט",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 50,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 11,
-        "headline": "אליפות הניקס מציגה ניצחון של חוסן מנטלי",
-        "source": "ynet - כל ערוץ הספורט",
-        "canonicalSource": "ynet",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 53,
-        "url": "https://www.ynet.co.il/sport/article/skmhoslmfl",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 12,
-        "headline": "לוויין ניסיוני מיפה שיבושי GPS מעל ישראל והאזור",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "טכנולוגיה",
-        "class": "other",
-        "strictHard": false,
-        "ageMinutes": 59,
-        "url": "https://www.israelhayom.co.il/tech/space/article/20801670",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -2346,13 +2665,37 @@
         "strictHard": true,
         "ageMinutes": 0,
         "url": "https://news.walla.co.il/break/3847094",
-        "trendMatch": null,
+        "trendMatch": {
+          "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+          "clusterKey": "תחילה מקטאר",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 1,
+          "sources": [
+            "ynet"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-20T05:23:43+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+          "overlapTokens": [
+            "איראן",
+            "עבור"
+          ],
+          "entityOverlapTokens": [
+            "איראן"
+          ],
+          "eventOverlapTokens": [],
+          "score": 19.72,
+          "boost": 19.72
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
         "beforeRank": 2,
@@ -2362,11 +2705,11 @@
         "category": "אקטואליה בעולם",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 23,
+        "ageMinutes": 40,
         "url": "https://news.walla.co.il/break/3847086",
         "trendMatch": {
           "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-          "clusterKey": "נשיא בוליביה",
+          "clusterKey": "מצב חירום",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -2403,34 +2746,67 @@
       },
       {
         "beforeRank": 3,
-        "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-        "source": "ynet - כל ערוץ מעורבות",
-        "canonicalSource": "ynet",
+        "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 18,
-        "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-        "trendMatch": null,
+        "ageMinutes": 16,
+        "url": "https://news.walla.co.il/item/3846991",
+        "trendMatch": {
+          "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+          "clusterKey": "בדרום לבנון",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 4,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T12:42:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3846991",
+          "overlapTokens": [
+            "בדרום",
+            "ביותר",
+            "הלחימה",
+            "המורכבת",
+            "הרגישה",
+            "הרובוטים",
+            "הרחפנים",
+            "השריון"
+          ],
+          "entityOverlapTokens": [
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 142.68,
+          "boost": 38.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 9,
         "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 29,
+        "ageMinutes": 47,
         "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
         "trendMatch": {
-          "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+          "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
           "clusterKey": "הפסקה בלבנון",
           "domain": "חדשות",
           "externalMentions": 3,
@@ -2470,14 +2846,14 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 7,
+        "beforeRank": 10,
         "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 33,
+        "ageMinutes": 51,
         "url": "https://www.israelhayom.co.il/health/article/20801774",
         "trendMatch": {
           "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -2494,7 +2870,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T09:53:08.337660+00:00",
+          "latestAt": "2026-06-20T10:10:42.898765+00:00",
           "sampleUrl": "https://news.walla.co.il/break/3847054",
           "overlapTokens": [
             "אדם",
@@ -2511,106 +2887,125 @@
         "coreHard": true,
         "worthyFreshUnder60": true,
         "disqualifiers": []
-      },
-      {
-        "beforeRank": 9,
-        "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 49,
-        "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
       }
     ]
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 10,
-    "worthyFreshUnder60Count": 4,
-    "coreHardFreshUnder60Count": 4,
+    "freshUnder60Count": 9,
+    "worthyFreshUnder60Count": 3,
+    "coreHardFreshUnder60Count": 3,
     "softFreshUnder60Count": 3,
     "otherFreshUnder60Count": 3,
     "freshUniqueSources": 5,
-    "worthyUniqueSources": 2,
+    "worthyUniqueSources": 3,
     "freshSources": [
       {
         "name": "ynet",
         "count": 3
       },
       {
-        "name": "ישראל היום",
-        "count": 3
-      },
-      {
-        "name": "Daily Mail",
+        "name": "וואלה",
         "count": 2
       },
       {
-        "name": "וואלה",
+        "name": "מעריב",
+        "count": 2
+      },
+      {
+        "name": "Daily Mail",
         "count": 1
       },
       {
-        "name": "מעריב",
+        "name": "ישראל היום",
         "count": 1
       }
     ],
     "worthySources": [
       {
+        "name": "וואלה",
+        "count": 1
+      },
+      {
         "name": "ynet",
-        "count": 2
+        "count": 1
       },
       {
         "name": "ישראל היום",
-        "count": 2
+        "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 8,
       "quality_class_other": 3,
+      "weak_or_missing_trend_match": 6,
       "quality_class_soft": 3
     },
-    "staleOrUndatedCount": 70,
+    "staleOrUndatedCount": 71,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
-        "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-        "source": "ynet - כל ערוץ מעורבות",
-        "canonicalSource": "ynet",
+        "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 18,
-        "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-        "trendMatch": null,
+        "ageMinutes": 16,
+        "url": "https://news.walla.co.il/item/3846991",
+        "trendMatch": {
+          "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+          "clusterKey": "בדרום לבנון",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 4,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T12:42:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3846991",
+          "overlapTokens": [
+            "בדרום",
+            "ביותר",
+            "הלחימה",
+            "המורכבת",
+            "הרגישה",
+            "הרובוטים",
+            "הרחפנים",
+            "השריון"
+          ],
+          "entityOverlapTokens": [
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 142.68,
+          "boost": 38.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
         "beforeRank": 2,
-        "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
+        "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
         "class": "other",
         "strictHard": false,
-        "ageMinutes": 21,
-        "url": "https://sports.walla.co.il/item/3847107",
+        "ageMinutes": 20,
+        "url": "https://www.maariv.co.il/news/military/article-1335169",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -2622,14 +3017,14 @@
       },
       {
         "beforeRank": 3,
-        "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
+        "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+        "source": "ynet - כל ערוץ הספורט",
+        "canonicalSource": "ynet",
+        "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 27,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "ageMinutes": 24,
+        "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -2641,16 +3036,73 @@
       },
       {
         "beforeRank": 4,
+        "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+        "source": "ynet - כל ערוץ מעורבות",
+        "canonicalSource": "ynet",
+        "category": "ביטחון",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 35,
+        "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 5,
+        "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+        "source": "וואלה ספורט",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 39,
+        "url": "https://sports.walla.co.il/item/3847107",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 6,
+        "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
+        "category": "רכילות",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 44,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 7,
         "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 29,
+        "ageMinutes": 47,
         "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
         "trendMatch": {
-          "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+          "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
           "clusterKey": "הפסקה בלבנון",
           "domain": "חדשות",
           "externalMentions": 3,
@@ -2690,14 +3142,14 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 5,
+        "beforeRank": 8,
         "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 33,
+        "ageMinutes": 51,
         "url": "https://www.israelhayom.co.il/health/article/20801774",
         "trendMatch": {
           "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -2714,7 +3166,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T09:53:08.337660+00:00",
+          "latestAt": "2026-06-20T10:10:42.898765+00:00",
           "sampleUrl": "https://news.walla.co.il/break/3847054",
           "overlapTokens": [
             "אדם",
@@ -2733,90 +3185,15 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 9,
         "headline": "איזנקוט מתבסס כמועמד מרכזי ליום שאחרי נתניהו",
         "source": "מעריב - דעות",
         "canonicalSource": "מעריב",
         "category": "דעות",
         "class": "other",
         "strictHard": false,
-        "ageMinutes": 34,
+        "ageMinutes": 52,
         "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_other",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 7,
-        "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 49,
-        "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "לואיס קפלדי חזר לבמה אחרי משבר נפשי וטורט",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 50,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "אליפות הניקס מציגה ניצחון של חוסן מנטלי",
-        "source": "ynet - כל ערוץ הספורט",
-        "canonicalSource": "ynet",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 53,
-        "url": "https://www.ynet.co.il/sport/article/skmhoslmfl",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "לוויין ניסיוני מיפה שיבושי GPS מעל ישראל והאזור",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "טכנולוגיה",
-        "class": "other",
-        "strictHard": false,
-        "ageMinutes": 59,
-        "url": "https://www.israelhayom.co.il/tech/space/article/20801670",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -2830,34 +3207,67 @@
     "topWorthyFreshCandidates": [
       {
         "beforeRank": 1,
-        "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-        "source": "ynet - כל ערוץ מעורבות",
-        "canonicalSource": "ynet",
+        "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 18,
-        "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-        "trendMatch": null,
+        "ageMinutes": 16,
+        "url": "https://news.walla.co.il/item/3846991",
+        "trendMatch": {
+          "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+          "clusterKey": "בדרום לבנון",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 4,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T12:42:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3846991",
+          "overlapTokens": [
+            "בדרום",
+            "ביותר",
+            "הלחימה",
+            "המורכבת",
+            "הרגישה",
+            "הרובוטים",
+            "הרחפנים",
+            "השריון"
+          ],
+          "entityOverlapTokens": [
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 142.68,
+          "boost": 38.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
-        "beforeRank": 4,
+        "beforeRank": 7,
         "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 29,
+        "ageMinutes": 47,
         "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
         "trendMatch": {
-          "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+          "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
           "clusterKey": "הפסקה בלבנון",
           "domain": "חדשות",
           "externalMentions": 3,
@@ -2897,14 +3307,14 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 5,
+        "beforeRank": 8,
         "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 33,
+        "ageMinutes": 51,
         "url": "https://www.israelhayom.co.il/health/article/20801774",
         "trendMatch": {
           "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -2921,7 +3331,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T09:53:08.337660+00:00",
+          "latestAt": "2026-06-20T10:10:42.898765+00:00",
           "sampleUrl": "https://news.walla.co.il/break/3847054",
           "overlapTokens": [
             "אדם",
@@ -2938,24 +3348,6 @@
         "coreHard": true,
         "worthyFreshUnder60": true,
         "disqualifiers": []
-      },
-      {
-        "beforeRank": 7,
-        "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 49,
-        "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
       }
     ]
   },
@@ -2970,18 +3362,18 @@
         "id": "n12",
         "label": "N12 / mako",
         "configuredSourceCount": 11,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "ynet",
         "label": "ynet חדשות",
         "configuredSourceCount": 24,
-        "freshUnder60Scanned": 2,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 2,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2997,9 +3389,9 @@
         "id": "walla",
         "label": "וואלה חדשות",
         "configuredSourceCount": 12,
-        "freshUnder60Scanned": 5,
+        "freshUnder60Scanned": 4,
         "acceptedHardQaClean": 2,
-        "rejected": 3,
+        "rejected": 2,
         "status": "has_bridge_supply"
       },
       {
@@ -3042,27 +3434,27 @@
         "id": "israel_hayom",
         "label": "ישראל היום",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "guardian",
         "label": "Guardian",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "nyt",
         "label": "NYT",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 2,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 2,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -3115,7 +3507,33 @@
         "beforeRank": null,
         "afterRank": null,
         "delta": null,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+          "clusterKey": "תחילה מקטאר",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 1,
+          "sources": [
+            "ynet"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-20T05:23:43+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+          "overlapTokens": [
+            "איראן",
+            "עבור"
+          ],
+          "entityOverlapTokens": [
+            "איראן"
+          ],
+          "eventOverlapTokens": [],
+          "score": 19.72,
+          "boost": 19.72
+        }
       },
       {
         "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
@@ -3124,14 +3542,14 @@
         "category": "אקטואליה בעולם",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 23,
+        "ageMinutes": 40,
         "url": "https://news.walla.co.il/break/3847086",
         "beforeRank": null,
         "afterRank": null,
         "delta": null,
         "trendMatch": {
           "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-          "clusterKey": "נשיא בוליביה",
+          "clusterKey": "מצב חירום",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -3165,45 +3583,32 @@
     ],
     "rejectedSample": [
       {
-        "sourceGroup": "ynet חדשות",
-        "source": "ynet - מבזקי החדשות",
-        "canonicalSource": "ynet",
-        "headline": "צה\"ל: חיזבאללה ירה יותר מ-50 חימושים לעבר הכוחות בדרום לבנון",
-        "ageMinutes": 49,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_copies_source",
-          "summary_generic_or_mediated"
-        ],
-        "url": "https://www.ynet.co.il/news/article/hk4w4rqgzx"
-      },
-      {
-        "sourceGroup": "ynet חדשות",
-        "source": "ynet - כל ערוץ הספורט",
-        "canonicalSource": "ynet",
-        "headline": "בגיל 46: רונאלדיניו חוזר לשחק כדורגל - זו קבוצתו החדשה",
-        "ageMinutes": 7,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_copies_source"
-        ],
-        "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml"
-      },
-      {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "headline": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
-        "ageMinutes": 0,
+        "sourceGroup": "N12 / mako",
+        "source": "N12 - ביטחוני ופוליטי",
+        "canonicalSource": "N12",
+        "headline": "פגיעה באחד מהנכסים האסטרטגיים של חיזבאללה: הסיבה לפעילות הקרקעית בדרום לבנון",
+        "ageMinutes": 26,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
           "headline_copies_source"
         ],
-        "url": "https://news.walla.co.il/item/3846991"
+        "url": "https://www.mako.co.il/news-military/2026_q2/Article-7e5f57a68f3ee91027.htm"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - כל ערוץ הספורט",
+        "canonicalSource": "ynet",
+        "headline": "הולנד מחפשת ניצחון בכורה, גרמניה תמשיך במומנטום?",
+        "ageMinutes": 10,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_source_style",
+          "headline_copies_source"
+        ],
+        "url": "https://www.ynet.co.il/sport/worldcup2026/article/b1totamfmx"
       },
       {
         "sourceGroup": "וואלה חדשות",
@@ -3249,41 +3654,55 @@
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
         "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
-        "ageMinutes": 23,
+        "ageMinutes": 40,
         "status": "accepted",
         "reason": "deterministic_bridge_pass",
         "errorCodes": [],
         "url": "https://news.walla.co.il/break/3847086"
       },
       {
-        "sourceGroup": "NYT",
-        "source": "New York Times Middle East",
-        "headline": "Here’s the latest.",
-        "ageMinutes": 7,
+        "sourceGroup": "ישראל היום",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "headline": "אילנית לוי נשברה בשידור חי: ''המיץ של המתחת של המיץ''",
+        "ageMinutes": 17,
         "status": "rejected",
-        "reason": "foreign_relevance_filtered",
-        "url": "https://www.nytimes.com/live/2026/06/20/world/iran-trump-israel-lebanon/heres-the-latest"
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20801868"
       },
       {
-        "sourceGroup": "NYT",
-        "source": "New York Times Middle East",
-        "canonicalSource": "NYT",
-        "headline": "Mines, Logistics and Deep Uncertainty Threaten a Middle East Oil Rebound",
-        "ageMinutes": 50,
+        "sourceGroup": "Guardian",
+        "source": "The Guardian Middle East",
+        "canonicalSource": "Guardian",
+        "headline": "What lessons will Iran’s new leadership draw from the 110-day war?",
+        "ageMinutes": 10,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_too_long",
+          "headline_source_style",
           "headline_copies_source"
         ],
-        "url": "https://www.nytimes.com/2026/06/20/business/iran-us-persian-gulf-oil-production.html"
+        "url": "https://www.theguardian.com/world/2026/jun/20/what-lessons-will-irans-new-leadership-draw-from-the-110-day-war"
+      },
+      {
+        "sourceGroup": "NYT",
+        "source": "New York Times Middle East",
+        "headline": "Here’s the latest.",
+        "ageMinutes": 4,
+        "status": "rejected",
+        "reason": "foreign_relevance_filtered",
+        "url": "https://www.nytimes.com/live/2026/06/20/world/iran-trump-israel-lebanon/heres-the-latest"
       }
     ],
     "dedupe": [],
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 14.57,
+      "elapsedSeconds": 14.68,
       "skippedForBudget": 0
     }
   },
@@ -3400,19 +3819,19 @@
     ]
   },
   "historySummary": {
-    "sampleCount": 144,
+    "sampleCount": 62,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 46.33,
-    "avgAfterHealthScore": 84.33,
+    "avgHealthDelta": 35.92,
+    "avgAfterHealthScore": 83.25,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 78,
-      "rollingScore": 77.65,
+      "latestScore": 79,
+      "rollingScore": 77.67,
       "readyRuns": 0,
       "criticalBlockers": [
         "top12_under60_below_9",
@@ -3423,19 +3842,19 @@
     "alizaReview": {
       "latestScore": 82,
       "latestSummaryLine": "בינוני",
-      "latestReportName": "tt-rr-simulation-review-2026-06-20-1205.md",
+      "latestReportName": "tt-rr-simulation-review-2026-06-20-1307.md",
       "window": 48,
-      "averageScore": 81.94,
-      "positiveReports": 43
+      "averageScore": 82.35,
+      "positiveReports": 46
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-20T12:53:08+03:00",
+    "generatedAt": "2026-06-20T13:10:42+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 52,
+    "rssItemsScanned": 51,
     "webItemsScanned": 180,
     "topTrends": [
       {
@@ -3461,7 +3880,7 @@
       },
       {
         "trend": "צבא לבנון: \"חייל נהרג כתוצאה מתקיפה ישראלית\"",
-        "clusterKey": "חייל נהרג",
+        "clusterKey": "לבנון חייל נהרג",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -3480,7 +3899,7 @@
       },
       {
         "trend": "אלמנתו של סא\"ל דור גדליה בן שמחון ספדה לו במכתב: \"קודקוד אהובי, כאן קודקוד אהובה\"",
-        "clusterKey": "דור גדליה שמחון",
+        "clusterKey": "גדליה שמחון",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 3,
@@ -3531,7 +3950,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:53:08.337660+00:00",
+        "latestAt": "2026-06-20T10:10:42.898765+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847054",
         "strength": 38.1
       },
@@ -3549,26 +3968,8 @@
           "WEB"
         ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-20T09:53:08.343818+00:00",
+        "latestAt": "2026-06-20T10:10:42.902940+00:00",
         "sampleUrl": "https://apnews.com/article/world-cup-hugo-broos-south-africa-71a0041581c159bae1693778ff1cd09d",
-        "strength": 37.4
-      },
-      {
-        "trend": "\"השינוי קשה, בלתי רגיל\": ערן זינמן מספר על המהלך הגדול בתולדות מאנדיי",
-        "clusterKey": "הגדול בתולדות",
-        "domain": "כלכלה",
-        "externalMentions": 2,
-        "sourceCount": 2,
-        "sources": [
-          "גלובס",
-          "דה מרקר"
-        ],
-        "discoveryTypes": [
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-20T09:53:08.342683+00:00",
-        "sampleUrl": "https://www.themarker.com/weekend/2026-06-19/ty-article-magazine/.highlight/0000019e-da59-db7a-a9bf-dfdd3a890000",
         "strength": 37.4
       },
       {
@@ -3591,8 +3992,26 @@
         "strength": 35.8
       },
       {
+        "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+        "clusterKey": "תחילה מקטאר",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 1,
+        "sources": [
+          "ynet"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T05:23:43+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+        "strength": 35.1
+      },
+      {
         "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-        "clusterKey": "נשיא בוליביה",
+        "clusterKey": "מצב חירום",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -3632,16 +4051,93 @@
   },
   "top10Before": [
     {
+      "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 16,
+      "url": "https://news.walla.co.il/item/3846991",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 4,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T12:42:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846991",
+        "overlapTokens": [
+          "בדרום",
+          "ביותר",
+          "הלחימה",
+          "המורכבת",
+          "הרגישה",
+          "הרובוטים",
+          "הרחפנים",
+          "השריון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 142.68,
+        "boost": 38.0
+      }
+    },
+    {
+      "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "ביטחון",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.maariv.co.il/news/military/article-1335169",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+      "source": "ynet - כל ערוץ הספורט",
+      "canonicalSource": "ynet",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 24,
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
       "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
       "source": "ynet - כל ערוץ מעורבות",
       "canonicalSource": "ynet",
       "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 18,
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 35,
       "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -3652,10 +4148,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 21,
+      "ageMinutes": 39,
       "url": "https://sports.walla.co.il/item/3847107",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -3666,10 +4162,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 27,
+      "ageMinutes": 44,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -3680,13 +4176,13 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 29,
+      "ageMinutes": 47,
       "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": {
-        "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+        "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
         "clusterKey": "הפסקה בלבנון",
         "domain": "חדשות",
         "externalMentions": 3,
@@ -3728,10 +4224,10 @@
       "category": "חדשות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 33,
+      "ageMinutes": 51,
       "url": "https://www.israelhayom.co.il/health/article/20801774",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": {
         "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -3748,7 +4244,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:53:08.337660+00:00",
+        "latestAt": "2026-06-20T10:10:42.898765+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847054",
         "overlapTokens": [
           "אדם",
@@ -3769,10 +4265,10 @@
       "category": "דעות",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 34,
+      "ageMinutes": 52,
       "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -3783,50 +4279,8 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 49,
+      "ageMinutes": 67,
       "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-      "beforeRank": 7,
-      "afterRank": 7,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "לואיס קפלדי חזר לבמה אחרי משבר נפשי וטורט",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 50,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "אליפות הניקס מציגה ניצחון של חוסן מנטלי",
-      "source": "ynet - כל ערוץ הספורט",
-      "canonicalSource": "ynet",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 53,
-      "url": "https://www.ynet.co.il/sport/article/skmhoslmfl",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "לוויין ניסיוני מיפה שיבושי GPS מעל ישראל והאזור",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "טכנולוגיה",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 59,
-      "url": "https://www.israelhayom.co.il/tech/space/article/20801670",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -3846,23 +4300,9 @@
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
-    },
-    {
-      "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 29,
-      "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
-      "beforeRank": 4,
-      "afterRank": 2,
-      "delta": 2,
       "trendMatch": {
-        "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
-        "clusterKey": "הפסקה בלבנון",
+        "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+        "clusterKey": "תחילה מקטאר",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 1,
@@ -3873,83 +4313,69 @@
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:23:42+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T05:23:43+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
         "overlapTokens": [
-          "בלבנון",
-          "בלי",
-          "בלילה",
-          "הפסקה",
-          "הרוגים",
-          "חופש",
-          "חיזבאללה",
-          "חימושים"
+          "איראן",
+          "עבור"
         ],
         "entityOverlapTokens": [
-          "חיזבאללה"
+          "איראן"
         ],
-        "eventOverlapTokens": [
-          "הרוגים"
-        ],
-        "score": 94.67,
-        "boost": 24.0
+        "eventOverlapTokens": [],
+        "score": 19.72,
+        "boost": 19.72
       }
     },
     {
-      "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "חדשות",
+      "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 33,
-      "url": "https://www.israelhayom.co.il/health/article/20801774",
-      "beforeRank": 5,
-      "afterRank": 3,
-      "delta": 2,
+      "ageMinutes": 16,
+      "url": "https://news.walla.co.il/item/3846991",
+      "beforeRank": 1,
+      "afterRank": 2,
+      "delta": -1,
       "trendMatch": {
-        "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
-        "clusterKey": "משרד הבריאות",
+        "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+        "clusterKey": "בדרום לבנון",
         "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 3,
+        "externalMentions": 5,
+        "sourceCount": 4,
         "sources": [
+          "ynet",
           "דה מרקר",
           "הארץ",
           "וואלה"
         ],
         "discoveryTypes": [
+          "RSS",
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:53:08.337660+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847054",
+        "latestAt": "2026-06-20T12:42:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846991",
         "overlapTokens": [
-          "אדם",
-          "הבריאות",
-          "החשוד",
-          "מקונגו"
+          "בדרום",
+          "ביותר",
+          "הלחימה",
+          "המורכבת",
+          "הרגישה",
+          "הרובוטים",
+          "הרחפנים",
+          "השריון"
         ],
-        "entityOverlapTokens": [],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
         "eventOverlapTokens": [],
-        "score": 41.73,
-        "boost": 14.0
+        "score": 142.68,
+        "boost": 38.0
       }
-    },
-    {
-      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-      "source": "ynet - כל ערוץ מעורבות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 18,
-      "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-      "beforeRank": 1,
-      "afterRank": 4,
-      "delta": -3,
-      "trendMatch": null
     },
     {
       "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
@@ -3958,14 +4384,14 @@
       "category": "אקטואליה בעולם",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 23,
+      "ageMinutes": 40,
       "url": "https://news.walla.co.il/break/3847086",
       "beforeRank": null,
-      "afterRank": 5,
+      "afterRank": 3,
       "delta": null,
       "trendMatch": {
         "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-        "clusterKey": "נשיא בוליביה",
+        "clusterKey": "מצב חירום",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -3997,133 +4423,19 @@
       }
     },
     {
-      "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 49,
-      "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-      "beforeRank": 7,
-      "afterRank": 6,
-      "delta": 1,
-      "trendMatch": null
-    },
-    {
-      "headline": "תקיפה ישראלית בעזה הרגה לפחות חמישה בני אדם",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 95,
-      "url": "https://www.aljazeera.com/news/2026/6/20/family-including-two-daughters-killed-in-israeli-strikes-on-gaza?traffic_source=rss",
-      "beforeRank": 24,
-      "afterRank": 7,
-      "delta": 17,
-      "trendMatch": null
-    },
-    {
-      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
-      "source": "מעריב - חדשות",
-      "canonicalSource": "מעריב",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 145,
-      "url": "https://www.maariv.co.il/news/military/article-1335145",
-      "beforeRank": 44,
-      "afterRank": 8,
-      "delta": 36,
-      "trendMatch": null
-    },
-    {
-      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 79,
-      "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
-      "beforeRank": 18,
-      "afterRank": 9,
-      "delta": 9,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 156,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
-      "beforeRank": 45,
-      "afterRank": 10,
-      "delta": 35,
-      "trendMatch": null
-    }
-  ],
-  "top20Before": [
-    {
-      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-      "source": "ynet - כל ערוץ מעורבות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 18,
-      "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-      "beforeRank": 1,
-      "afterRank": 1,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 21,
-      "url": "https://sports.walla.co.il/item/3847107",
-      "beforeRank": 2,
-      "afterRank": 2,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 27,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 3,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
       "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
       "source": "ynet - כל ערוץ החדשות",
       "canonicalSource": "ynet",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 29,
+      "ageMinutes": 47,
       "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
-      "beforeRank": 4,
+      "beforeRank": 7,
       "afterRank": 4,
-      "delta": 0,
+      "delta": 3,
       "trendMatch": {
-        "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+        "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
         "clusterKey": "הפסקה בלבנון",
         "domain": "חדשות",
         "externalMentions": 3,
@@ -4165,10 +4477,290 @@
       "category": "חדשות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 33,
+      "ageMinutes": 51,
       "url": "https://www.israelhayom.co.il/health/article/20801774",
+      "beforeRank": 8,
+      "afterRank": 5,
+      "delta": 3,
+      "trendMatch": {
+        "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
+        "clusterKey": "משרד הבריאות",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 3,
+        "sources": [
+          "דה מרקר",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T10:10:42.898765+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847054",
+        "overlapTokens": [
+          "אדם",
+          "הבריאות",
+          "החשוד",
+          "מקונגו"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 41.73,
+        "boost": 14.0
+      }
+    },
+    {
+      "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 67,
+      "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
+      "beforeRank": 10,
+      "afterRank": 6,
+      "delta": 4,
+      "trendMatch": null
+    },
+    {
+      "headline": "תקיפה ישראלית בעזה הרגה לפחות חמישה בני אדם",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 112,
+      "url": "https://www.aljazeera.com/news/2026/6/20/family-including-two-daughters-killed-in-israeli-strikes-on-gaza?traffic_source=rss",
+      "beforeRank": 27,
+      "afterRank": 7,
+      "delta": 20,
+      "trendMatch": null
+    },
+    {
+      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 162,
+      "url": "https://www.maariv.co.il/news/military/article-1335145",
+      "beforeRank": 47,
+      "afterRank": 8,
+      "delta": 39,
+      "trendMatch": null
+    },
+    {
+      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 174,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "beforeRank": 48,
+      "afterRank": 9,
+      "delta": 39,
+      "trendMatch": null
+    },
+    {
+      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 96,
+      "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
+      "beforeRank": 21,
+      "afterRank": 10,
+      "delta": 11,
+      "trendMatch": null
+    }
+  ],
+  "top20Before": [
+    {
+      "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 16,
+      "url": "https://news.walla.co.il/item/3846991",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 4,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T12:42:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846991",
+        "overlapTokens": [
+          "בדרום",
+          "ביותר",
+          "הלחימה",
+          "המורכבת",
+          "הרגישה",
+          "הרובוטים",
+          "הרחפנים",
+          "השריון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 142.68,
+        "boost": 38.0
+      }
+    },
+    {
+      "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "ביטחון",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.maariv.co.il/news/military/article-1335169",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+      "source": "ynet - כל ערוץ הספורט",
+      "canonicalSource": "ynet",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 24,
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+      "source": "ynet - כל ערוץ מעורבות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 35,
+      "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
+      "beforeRank": 4,
+      "afterRank": 4,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://sports.walla.co.il/item/3847107",
       "beforeRank": 5,
       "afterRank": 5,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 44,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 47,
+      "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
+      "beforeRank": 7,
+      "afterRank": 7,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+        "clusterKey": "הפסקה בלבנון",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 1,
+        "sources": [
+          "ynet"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T09:23:42+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
+        "overlapTokens": [
+          "בלבנון",
+          "בלי",
+          "בלילה",
+          "הפסקה",
+          "הרוגים",
+          "חופש",
+          "חיזבאללה",
+          "חימושים"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה"
+        ],
+        "eventOverlapTokens": [
+          "הרוגים"
+        ],
+        "score": 94.67,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 51,
+      "url": "https://www.israelhayom.co.il/health/article/20801774",
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": {
         "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
@@ -4185,7 +4777,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:53:08.337660+00:00",
+        "latestAt": "2026-06-20T10:10:42.898765+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847054",
         "overlapTokens": [
           "אדם",
@@ -4206,10 +4798,10 @@
       "category": "דעות",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 34,
+      "ageMinutes": 52,
       "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -4220,10 +4812,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 49,
+      "ageMinutes": 67,
       "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -4234,10 +4826,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 50,
+      "ageMinutes": 68,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": null
     },
@@ -4248,10 +4840,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 53,
+      "ageMinutes": 70,
       "url": "https://www.ynet.co.il/sport/article/skmhoslmfl",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -4262,10 +4854,10 @@
       "category": "טכנולוגיה",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 59,
+      "ageMinutes": 77,
       "url": "https://www.israelhayom.co.il/tech/space/article/20801670",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -4276,10 +4868,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 63,
+      "ageMinutes": 80,
       "url": "https://www.jpost.com/middle-east/article-899964",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": {
         "trend": "לבנון: 5 נהרגו בתקיפה ישראלית בדרום המדינה",
@@ -4322,10 +4914,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 64,
+      "ageMinutes": 81,
       "url": "https://sports.walla.co.il/item/3847104",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -4336,10 +4928,10 @@
       "category": "כלכלה",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 64,
+      "ageMinutes": 82,
       "url": "https://www.israelhayom.co.il/business/article/20801634",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -4350,10 +4942,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 69,
+      "ageMinutes": 87,
       "url": "https://www.dailymail.com/tvshowbiz/article-15854833/EastEnders-Toby-Alexander-Smith-details-battle-postnatal-depression-challenge-welcoming-second-child-Emmerdale-star-wife-Amy-Walsh.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 14,
-      "afterRank": 14,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -4364,10 +4956,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 74,
+      "ageMinutes": 91,
       "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20801614",
-      "beforeRank": 15,
-      "afterRank": 15,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -4378,10 +4970,10 @@
       "category": "ביטחון",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 76,
+      "ageMinutes": 94,
       "url": "https://www.maariv.co.il/news/opinions/article-1334750",
-      "beforeRank": 16,
-      "afterRank": 16,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -4392,50 +4984,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 77,
+      "ageMinutes": 94,
       "url": "https://www.dailymail.com/tvshowbiz/article-15913579/Jon-Snow-Alzheimers-diagnosis-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 17,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 79,
-      "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
-      "beforeRank": 18,
-      "afterRank": 18,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "אמילי בלאקוול פתחה במיורקה את חגיגות החתונה השנייה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915741/Emily-Blackwell-wedding-Mallorca-Chelsea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 19,
-      "afterRank": 19,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "בונגה מתרחק מהפועל תל אביב עם עניין משלוש ענקיות",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 91,
-      "url": "https://sports.walla.co.il/item/3847099",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -4455,7 +5005,127 @@
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
+      "trendMatch": {
+        "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+        "clusterKey": "תחילה מקטאר",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 1,
+        "sources": [
+          "ynet"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T05:23:43+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+        "overlapTokens": [
+          "איראן",
+          "עבור"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 19.72,
+        "boost": 19.72
+      }
+    },
+    {
+      "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 16,
+      "url": "https://news.walla.co.il/item/3846991",
+      "beforeRank": 1,
+      "afterRank": 2,
+      "delta": -1,
+      "trendMatch": {
+        "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 4,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T12:42:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846991",
+        "overlapTokens": [
+          "בדרום",
+          "ביותר",
+          "הלחימה",
+          "המורכבת",
+          "הרגישה",
+          "הרובוטים",
+          "הרחפנים",
+          "השריון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 142.68,
+        "boost": 38.0
+      }
+    },
+    {
+      "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
+      "source": "וואלה חדשות - מבזקים",
+      "canonicalSource": "וואלה",
+      "category": "אקטואליה בעולם",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 40,
+      "url": "https://news.walla.co.il/break/3847086",
+      "beforeRank": null,
+      "afterRank": 3,
+      "delta": null,
+      "trendMatch": {
+        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+        "clusterKey": "מצב חירום",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T09:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847086",
+        "overlapTokens": [
+          "בוליביה",
+          "הכריז",
+          "המדינה",
+          "הצבא",
+          "חירום",
+          "להיפרס",
+          "מצב",
+          "נשיא"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 85.03,
+        "boost": 14.0
+      }
     },
     {
       "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
@@ -4464,13 +5134,13 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 29,
+      "ageMinutes": 47,
       "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg",
-      "beforeRank": 4,
-      "afterRank": 2,
-      "delta": 2,
+      "beforeRank": 7,
+      "afterRank": 4,
+      "delta": 3,
       "trendMatch": {
-        "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+        "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
         "clusterKey": "הפסקה בלבנון",
         "domain": "חדשות",
         "externalMentions": 3,
@@ -4512,11 +5182,11 @@
       "category": "חדשות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 33,
+      "ageMinutes": 51,
       "url": "https://www.israelhayom.co.il/health/article/20801774",
-      "beforeRank": 5,
-      "afterRank": 3,
-      "delta": 2,
+      "beforeRank": 8,
+      "afterRank": 5,
+      "delta": 3,
       "trendMatch": {
         "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
         "clusterKey": "משרד הבריאות",
@@ -4532,7 +5202,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:53:08.337660+00:00",
+        "latestAt": "2026-06-20T10:10:42.898765+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847054",
         "overlapTokens": [
           "אדם",
@@ -4547,76 +5217,17 @@
       }
     },
     {
-      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-      "source": "ynet - כל ערוץ מעורבות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 18,
-      "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
-      "beforeRank": 1,
-      "afterRank": 4,
-      "delta": -3,
-      "trendMatch": null
-    },
-    {
-      "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
-      "source": "וואלה חדשות - מבזקים",
-      "canonicalSource": "וואלה",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 23,
-      "url": "https://news.walla.co.il/break/3847086",
-      "beforeRank": null,
-      "afterRank": 5,
-      "delta": null,
-      "trendMatch": {
-        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-        "clusterKey": "נשיא בוליביה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:30:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847086",
-        "overlapTokens": [
-          "בוליביה",
-          "הכריז",
-          "המדינה",
-          "הצבא",
-          "חירום",
-          "להיפרס",
-          "מצב",
-          "נשיא"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 85.03,
-        "boost": 14.0
-      }
-    },
-    {
       "headline": "דיווח: נוסח חדש מרחיב את פירוק הנשק של חמאס",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 49,
+      "ageMinutes": 67,
       "url": "https://www.israelhayom.co.il/news/defense/article/20801727",
-      "beforeRank": 7,
+      "beforeRank": 10,
       "afterRank": 6,
-      "delta": 1,
+      "delta": 4,
       "trendMatch": null
     },
     {
@@ -4626,11 +5237,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 95,
+      "ageMinutes": 112,
       "url": "https://www.aljazeera.com/news/2026/6/20/family-including-two-daughters-killed-in-israeli-strikes-on-gaza?traffic_source=rss",
-      "beforeRank": 24,
+      "beforeRank": 27,
       "afterRank": 7,
-      "delta": 17,
+      "delta": 20,
       "trendMatch": null
     },
     {
@@ -4640,25 +5251,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 145,
+      "ageMinutes": 162,
       "url": "https://www.maariv.co.il/news/military/article-1335145",
-      "beforeRank": 44,
+      "beforeRank": 47,
       "afterRank": 8,
-      "delta": 36,
-      "trendMatch": null
-    },
-    {
-      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 79,
-      "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
-      "beforeRank": 18,
-      "afterRank": 9,
-      "delta": 9,
+      "delta": 39,
       "trendMatch": null
     },
     {
@@ -4668,39 +5265,67 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 156,
+      "ageMinutes": 174,
       "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
-      "beforeRank": 45,
-      "afterRank": 10,
-      "delta": 35,
+      "beforeRank": 48,
+      "afterRank": 9,
+      "delta": 39,
       "trendMatch": null
     },
     {
-      "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
+      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 96,
+      "url": "https://www.israelhayom.co.il/news/crime/article/20801591",
+      "beforeRank": 21,
+      "afterRank": 10,
+      "delta": 11,
+      "trendMatch": null
+    },
+    {
+      "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "ביטחון",
+      "class": "other",
       "strictHard": false,
-      "ageMinutes": 21,
-      "url": "https://sports.walla.co.il/item/3847107",
+      "ageMinutes": 20,
+      "url": "https://www.maariv.co.il/news/military/article-1335169",
       "beforeRank": 2,
       "afterRank": 11,
       "delta": -9,
       "trendMatch": null
     },
     {
-      "headline": "איזנקוט מתבסס כמועמד מרכזי ליום שאחרי נתניהו",
-      "source": "מעריב - דעות",
-      "canonicalSource": "מעריב",
-      "category": "דעות",
-      "class": "other",
+      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+      "source": "ynet - כל ערוץ מעורבות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "soft",
       "strictHard": false,
-      "ageMinutes": 34,
-      "url": "https://www.maariv.co.il/news/opinions/article-1334767",
-      "beforeRank": 6,
+      "ageMinutes": 35,
+      "url": "https://www.ynet.co.il/activism/article/s1pkkq7fgl",
+      "beforeRank": 4,
       "afterRank": 12,
-      "delta": -6,
+      "delta": -8,
+      "trendMatch": null
+    },
+    {
+      "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+      "source": "ynet - כל ערוץ הספורט",
+      "canonicalSource": "ynet",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 24,
+      "url": "https://www.ynet.co.il/sport/worldsoccer/article/syias0mgml",
+      "beforeRank": 3,
+      "afterRank": 13,
+      "delta": -10,
       "trendMatch": null
     },
     {
@@ -4710,11 +5335,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 27,
+      "ageMinutes": 44,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915779/Pregnant-Kelsey-Parker-Fathers-Day-anniversary-stillborn-son-Phoenix-death.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 13,
-      "delta": -10,
+      "beforeRank": 6,
+      "afterRank": 14,
+      "delta": -8,
       "trendMatch": null
     },
     {
@@ -4724,25 +5349,11 @@
       "category": "ביטחון",
       "class": "other",
       "strictHard": false,
-      "ageMinutes": 76,
-      "url": "https://www.maariv.co.il/news/opinions/article-1334750",
-      "beforeRank": 16,
-      "afterRank": 14,
-      "delta": 2,
-      "trendMatch": null
-    },
-    {
-      "headline": "פרויקט הבריכה של טראמפ הסתבך באצות ובטענות להשחתה",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "פוליטיקה",
-      "class": "other",
-      "strictHard": false,
       "ageMinutes": 94,
-      "url": "https://www.ynet.co.il/news/article/r11muoxzml",
-      "beforeRank": 23,
+      "url": "https://www.maariv.co.il/news/opinions/article-1334750",
+      "beforeRank": 19,
       "afterRank": 15,
-      "delta": 8,
+      "delta": 4,
       "trendMatch": null
     },
     {
@@ -4752,11 +5363,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 50,
+      "ageMinutes": 68,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915753/Lewis-Capaldi-says-good-addresses-complete-utter-mental-f-g-breakdown-headlining-Isle-Wight-festival.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
+      "beforeRank": 11,
       "afterRank": 16,
-      "delta": -8,
+      "delta": -5,
       "trendMatch": null
     },
     {
@@ -4766,11 +5377,25 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 69,
+      "ageMinutes": 87,
       "url": "https://www.dailymail.com/tvshowbiz/article-15854833/EastEnders-Toby-Alexander-Smith-details-battle-postnatal-depression-challenge-welcoming-second-child-Emmerdale-star-wife-Amy-Walsh.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 14,
+      "beforeRank": 17,
       "afterRank": 17,
-      "delta": -3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://sports.walla.co.il/item/3847107",
+      "beforeRank": 5,
+      "afterRank": 18,
+      "delta": -13,
       "trendMatch": null
     },
     {
@@ -4780,11 +5405,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 111,
+      "ageMinutes": 128,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/dawn-french-explains-how-weird-37315579",
-      "beforeRank": 32,
-      "afterRank": 18,
-      "delta": 14,
+      "beforeRank": 35,
+      "afterRank": 19,
+      "delta": 16,
       "trendMatch": null
     },
     {
@@ -4794,25 +5419,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 102,
+      "ageMinutes": 119,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/jesy-nelson-twins-daughters-sma-37323888",
-      "beforeRank": 26,
-      "afterRank": 19,
-      "delta": 7,
-      "trendMatch": null
-    },
-    {
-      "headline": "יצרני המזון טוענים שהמחיר במפעל לא עלה שנתיים",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "כלכלה",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 64,
-      "url": "https://www.israelhayom.co.il/business/article/20801634",
-      "beforeRank": 13,
+      "beforeRank": 29,
       "afterRank": 20,
-      "delta": -7,
+      "delta": 9,
       "trendMatch": null
     }
   ],
@@ -4822,9 +5433,119 @@
       "source": "וואלה",
       "category": "ביטחון",
       "class": "hard",
-      "trendMatch": null,
+      "trendMatch": {
+        "trend": "וול סטריט ג'ורנל: \"מיליארדים יופשרו עבור איראן - תחילה מקטאר\"",
+        "clusterKey": "תחילה מקטאר",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 1,
+        "sources": [
+          "ynet"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T05:23:43+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/bkpqqiqfze",
+        "overlapTokens": [
+          "איראן",
+          "עבור"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 19.72,
+        "boost": 19.72
+      },
       "beforeRank": null,
       "afterRank": 1
+    },
+    {
+      "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון",
+      "source": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
+        "clusterKey": "בדרום לבנון",
+        "domain": "חדשות",
+        "externalMentions": 5,
+        "sourceCount": 4,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T12:42:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3846991",
+        "overlapTokens": [
+          "בדרום",
+          "ביותר",
+          "הלחימה",
+          "המורכבת",
+          "הרגישה",
+          "הרובוטים",
+          "הרחפנים",
+          "השריון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 142.68,
+        "boost": 38.0
+      },
+      "beforeRank": 1,
+      "afterRank": 2
+    },
+    {
+      "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
+      "source": "וואלה",
+      "category": "אקטואליה בעולם",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+        "clusterKey": "מצב חירום",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T09:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847086",
+        "overlapTokens": [
+          "בוליביה",
+          "הכריז",
+          "המדינה",
+          "הצבא",
+          "חירום",
+          "להיפרס",
+          "מצב",
+          "נשיא"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 85.03,
+        "boost": 14.0
+      },
+      "beforeRank": null,
+      "afterRank": 3
     },
     {
       "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון",
@@ -4832,7 +5553,7 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": {
-        "trend": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+        "trend": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
         "clusterKey": "הפסקה בלבנון",
         "domain": "חדשות",
         "externalMentions": 3,
@@ -4866,8 +5587,8 @@
         "score": 94.67,
         "boost": 24.0
       },
-      "beforeRank": 4,
-      "afterRank": 2
+      "beforeRank": 7,
+      "afterRank": 4
     },
     {
       "headline": "משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת",
@@ -4889,7 +5610,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:53:08.337660+00:00",
+        "latestAt": "2026-06-20T10:10:42.898765+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847054",
         "overlapTokens": [
           "אדם",
@@ -4902,56 +5623,7 @@
         "score": 41.73,
         "boost": 14.0
       },
-      "beforeRank": 5,
-      "afterRank": 3
-    },
-    {
-      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
-      "source": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 1,
-      "afterRank": 4
-    },
-    {
-      "headline": "בוליביה הכריזה מצב חירום והצבא בכוננות",
-      "source": "וואלה",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
-        "clusterKey": "נשיא בוליביה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T09:30:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847086",
-        "overlapTokens": [
-          "בוליביה",
-          "הכריז",
-          "המדינה",
-          "הצבא",
-          "חירום",
-          "להיפרס",
-          "מצב",
-          "נשיא"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 85.03,
-        "boost": 14.0
-      },
-      "beforeRank": null,
+      "beforeRank": 8,
       "afterRank": 5
     },
     {
@@ -4960,7 +5632,7 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 7,
+      "beforeRank": 10,
       "afterRank": 6
     },
     {
@@ -4969,7 +5641,7 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 24,
+      "beforeRank": 27,
       "afterRank": 7
     },
     {
@@ -4978,17 +5650,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 44,
+      "beforeRank": 47,
       "afterRank": 8
-    },
-    {
-      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
-      "source": "ישראל היום",
-      "category": "פלילים",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 18,
-      "afterRank": 9
     },
     {
       "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
@@ -4996,26 +5659,44 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 45,
+      "beforeRank": 48,
+      "afterRank": 9
+    },
+    {
+      "headline": "36 ארגזי סיגריות אלקטרוניות נתפסו ברכב ליד מודיעין",
+      "source": "ישראל היום",
+      "category": "פלילים",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 21,
       "afterRank": 10
     },
     {
-      "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
-      "source": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
+      "headline": "שטייניץ מזהיר מהסכם שישאיר לאיראן העשרת אורניום",
+      "source": "מעריב",
+      "category": "ביטחון",
+      "class": "other",
       "trendMatch": null,
       "beforeRank": 2,
       "afterRank": 11
     },
     {
-      "headline": "איזנקוט מתבסס כמועמד מרכזי ליום שאחרי נתניהו",
-      "source": "מעריב",
-      "category": "דעות",
-      "class": "other",
+      "headline": "אנשי הזיהוי של חללי המלחמה יצאו לעבד יחד את הטראומה",
+      "source": "ynet",
+      "category": "ביטחון",
+      "class": "soft",
       "trendMatch": null,
-      "beforeRank": 6,
+      "beforeRank": 4,
       "afterRank": 12
+    },
+    {
+      "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית",
+      "source": "ynet",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 3,
+      "afterRank": 13
     },
     {
       "headline": "קלסי פרקר מתמודדת עם יום האב אחרי מות בנה",
@@ -5023,8 +5704,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 3,
-      "afterRank": 13
+      "beforeRank": 6,
+      "afterRank": 14
     },
     {
       "headline": "מקסים הרקין מתאר כיצד הסתירו מחמאס שהיה קצין",
@@ -5032,16 +5713,7 @@
       "category": "ביטחון",
       "class": "other",
       "trendMatch": null,
-      "beforeRank": 16,
-      "afterRank": 14
-    },
-    {
-      "headline": "פרויקט הבריכה של טראמפ הסתבך באצות ובטענות להשחתה",
-      "source": "ynet",
-      "category": "פוליטיקה",
-      "class": "other",
-      "trendMatch": null,
-      "beforeRank": 23,
+      "beforeRank": 19,
       "afterRank": 15
     },
     {
@@ -5050,7 +5722,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 8,
+      "beforeRank": 11,
       "afterRank": 16
     },
     {
@@ -5059,8 +5731,17 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 14,
+      "beforeRank": 17,
       "afterRank": 17
+    },
+    {
+      "headline": "הבית הלבן שוקל להקל על נסיעות נבחרת איראן",
+      "source": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 5,
+      "afterRank": 18
     },
     {
       "headline": "דון פרנץ' מסבירה למה כתבה ללני הנרי",
@@ -5068,8 +5749,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 32,
-      "afterRank": 18
+      "beforeRank": 35,
+      "afterRank": 19
     },
     {
       "headline": "ג'סי נלסון דוחפת בדיקות SMA לכל יילוד באנגליה",
@@ -5077,16 +5758,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 26,
-      "afterRank": 19
-    },
-    {
-      "headline": "יצרני המזון טוענים שהמחיר במפעל לא עלה שנתיים",
-      "source": "ישראל היום",
-      "category": "כלכלה",
-      "class": "other",
-      "trendMatch": null,
-      "beforeRank": 13,
+      "beforeRank": 29,
       "afterRank": 20
     }
   ],
@@ -5113,7 +5785,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-20T09:53:26.354996+00:00",
+    "generatedAt": "2026-06-20T10:11:00.990029+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -5151,13 +5823,13 @@
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T07:50:47+00:00",
-        "latestRawAgeHours": 2.04,
+        "latestRawAgeHours": 2.34,
         "latestValidAt": "2026-06-20T07:50:47+00:00",
-        "latestValidAgeHours": 2.04,
+        "latestValidAgeHours": 2.34,
         "visibleMain": {
           "count": 10,
           "latestAt": "2026-06-20T07:50:47+00:00",
-          "latestAgeHours": 2.04,
+          "latestAgeHours": 2.34,
           "sample": [
             {
               "publishedAt": "2026-06-20T07:50:47+00:00",
@@ -5275,14 +5947,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T02:09:00+00:00",
-        "latestRawAgeHours": 7.74,
-        "latestValidAt": "2026-06-20T02:09:00+00:00",
-        "latestValidAgeHours": 7.74,
+        "latestRawAt": "2026-06-20T09:44:00+00:00",
+        "latestRawAgeHours": 0.45,
+        "latestValidAt": "2026-06-20T09:44:00+00:00",
+        "latestValidAgeHours": 0.45,
         "visibleMain": {
           "count": 2,
           "latestAt": "2026-06-20T02:09:00+00:00",
-          "latestAgeHours": 7.74,
+          "latestAgeHours": 8.03,
           "sample": [
             {
               "publishedAt": "2026-06-20T02:09:00+00:00",
@@ -5304,6 +5976,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "N12 - ביטחוני ופוליטי",
+            "publishedAt": "2026-06-20T12:44:00+03:00",
+            "title": "פגיעה באחד מהנכסים האסטרטגיים של חיזבאללה: הסיבה לפעילות הקרקעית בדרום לבנון",
+            "url": "https://www.mako.co.il/news-military/2026_q2/Article-7e5f57a68f3ee91027.htm"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -5359,14 +6039,6 @@
             "publishedAt": "2026-06-18T09:10:00+03:00",
             "title": "אלכס שנפל בלבנון עלה לבד לארץ, חיסל מחבל בפיגוע - ונבחר למצטיין הנשיא",
             "url": "https://www.mako.co.il/news-military/2026_q2/Article-43601020f49de91027.htm"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "N12 - ביטחוני ופוליטי",
-            "publishedAt": "2026-06-18T07:50:00+03:00",
-            "title": "הנשק הישראלי החדש שנחשף בפריז: לייזר אווירי ליירוט כטב\"מים ממסוקים",
-            "url": "https://www.mako.co.il/news-military/2026_q2/Article-6f7250a41f8de91027.htm"
           }
         ]
       },
@@ -5408,15 +6080,20 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 268,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T09:45:49+00:00",
-        "latestRawAgeHours": 0.13,
-        "latestValidAt": "2026-06-20T09:45:49+00:00",
-        "latestValidAgeHours": 0.13,
+        "latestRawAt": "2026-06-20T10:00:00+00:00",
+        "latestRawAgeHours": 0.18,
+        "latestValidAt": "2026-06-20T10:00:00+00:00",
+        "latestValidAgeHours": 0.18,
         "visibleMain": {
-          "count": 24,
-          "latestAt": "2026-06-20T09:34:59+00:00",
-          "latestAgeHours": 0.31,
+          "count": 25,
+          "latestAt": "2026-06-20T09:45:49+00:00",
+          "latestAgeHours": 0.42,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T09:45:49+00:00",
+              "source": "ynet - כל ערוץ הספורט",
+              "headline": "רונאלדיניו צפוי לחזור למגרש במדי ראבנה האיטלקית"
+            },
             {
               "publishedAt": "2026-06-20T09:34:59+00:00",
               "source": "ynet - כל ערוץ מעורבות",
@@ -5426,18 +6103,13 @@
               "publishedAt": "2026-06-20T09:23:42+00:00",
               "source": "ynet - כל ערוץ החדשות",
               "headline": "חיזבאללה ירה 50 חימושים וישראל הרחיבה תקיפות בלבנון"
-            },
-            {
-              "publishedAt": "2026-06-20T09:00:00+00:00",
-              "source": "ynet - כל ערוץ הספורט",
-              "headline": "אליפות הניקס מציגה ניצחון של חוסן מנטלי"
             }
           ]
         },
         "visibleBreaking": {
           "count": 26,
           "latestAt": "2026-06-20T09:04:08+00:00",
-          "latestAgeHours": 0.82,
+          "latestAgeHours": 1.11,
           "sample": [
             {
               "publishedAt": "2026-06-20T09:04:08+00:00",
@@ -5463,7 +6135,7 @@
             "reason": "needs editor bridge / quality rewrite",
             "source": "ynet - כל ערוץ החדשות",
             "publishedAt": "2026-06-20T12:23:42+03:00",
-            "title": "20 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
+            "title": "22 הרוגים ב\"תקיפות בלי הפסקה\" בלבנון, חיזבאללה שיגר 50 חימושים בלילה: \"לא ניתן לכם חופש פעולה\"",
             "url": "https://www.ynet.co.il/news/article/sy9gyrxfzg"
           },
           {
@@ -5544,7 +6216,7 @@
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-20T07:32:10+00:00",
-          "latestAgeHours": 2.35,
+          "latestAgeHours": 2.65,
           "sample": [
             {
               "publishedAt": "2026-06-20T07:32:10+00:00",
@@ -5556,7 +6228,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-20T07:34:06+00:00",
-          "latestAgeHours": 2.32,
+          "latestAgeHours": 2.62,
           "sample": [
             {
               "publishedAt": "2026-06-20T07:34:06+00:00",
@@ -5594,15 +6266,20 @@
         "qaPassSimulationCount": 2,
         "qaRejectedCount": 136,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T09:53:32+00:00",
+        "latestRawAt": "2026-06-20T10:11:06+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-20T09:53:32+00:00",
+        "latestValidAt": "2026-06-20T10:11:06+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
-          "count": 5,
-          "latestAt": "2026-06-20T08:07:10+00:00",
-          "latestAgeHours": 1.77,
+          "count": 6,
+          "latestAt": "2026-06-20T09:53:56+00:00",
+          "latestAgeHours": 0.28,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T09:53:56+00:00",
+              "source": "וואלה חדשות",
+              "headline": "מח״ט 7: רחפני חיזבאללה מחייבים שינוי בלחימת השריון"
+            },
             {
               "publishedAt": "2026-06-20T08:07:10+00:00",
               "source": "וואלה חדשות",
@@ -5612,11 +6289,6 @@
               "publishedAt": "2026-06-20T06:55:49+00:00",
               "source": "וואלה חדשות",
               "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות"
-            },
-            {
-              "publishedAt": "2026-06-20T05:38:30+00:00",
-              "source": "וואלה חדשות",
-              "headline": "חשוד שלישי הואשם בהצתת בית כנסת במלבורן"
             }
           ]
         },
@@ -5632,7 +6304,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T12:53:31+03:00",
+            "publishedAt": "2026-06-20T13:11:05+03:00",
             "title": "הרחפנים, הרובוטים והנקודה הרגישה ביותר: מח\"ט השריון על הלחימה המורכבת בדרום לבנון",
             "url": "https://news.walla.co.il/item/3846991"
           },
@@ -5640,7 +6312,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T12:53:31+03:00",
+            "publishedAt": "2026-06-20T13:11:05+03:00",
             "title": "\"בפעם האחרונה: קודקוד אהוב, אוהב אותך לנצח\": אלמנתו של דור בן שמחון בהספד קורע לב",
             "url": "https://news.walla.co.il/item/3847097"
           },
@@ -5709,14 +6381,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T09:19:12+00:00",
-        "latestRawAgeHours": 0.57,
-        "latestValidAt": "2026-06-20T09:19:12+00:00",
-        "latestValidAgeHours": 0.57,
+        "latestRawAt": "2026-06-20T09:53:14+00:00",
+        "latestRawAgeHours": 0.3,
+        "latestValidAt": "2026-06-20T09:53:14+00:00",
+        "latestValidAgeHours": 0.3,
         "visibleMain": {
           "count": 30,
           "latestAt": "2026-06-20T09:19:12+00:00",
-          "latestAgeHours": 0.57,
+          "latestAgeHours": 0.86,
           "sample": [
             {
               "publishedAt": "2026-06-20T09:19:12+00:00",
@@ -5738,7 +6410,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T14:52:08+00:00",
-          "latestAgeHours": 19.02,
+          "latestAgeHours": 19.31,
           "sample": [
             {
               "publishedAt": "2026-06-19T14:52:08+00:00",
@@ -5749,6 +6421,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-20T12:53:14+03:00",
+            "title": "אילנית לוי נשברה בשידור חי: ''המיץ של המתחת של המיץ''",
+            "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20801868"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -5804,14 +6484,6 @@
             "publishedAt": "2026-06-20T11:33:24+03:00",
             "title": "עם פציעה קשה בקרסול: הבלם שהוצע למכבי חיפה",
             "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801612"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-20T11:20:40+03:00",
-            "title": "בגיל 46: רונאלדיניו חתם בקבוצה מהליגה השלישית באיטליה",
-            "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20801475"
           }
         ]
       },
@@ -5839,9 +6511,9 @@
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T19:51:00+00:00",
-        "latestRawAgeHours": 14.04,
+        "latestRawAgeHours": 14.33,
         "latestValidAt": "2026-06-19T19:51:00+00:00",
-        "latestValidAgeHours": 14.04,
+        "latestValidAgeHours": 14.33,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5938,13 +6610,13 @@
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 10,
         "latestRawAt": "2026-06-20T03:13:18+00:00",
-        "latestRawAgeHours": 6.67,
+        "latestRawAgeHours": 6.96,
         "latestValidAt": "2026-06-19T19:36:10+00:00",
-        "latestValidAgeHours": 14.29,
+        "latestValidAgeHours": 14.58,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-20T08:02:43+00:00",
-          "latestAgeHours": 1.85,
+          "latestAgeHours": 2.14,
           "sample": [
             {
               "publishedAt": "2026-06-20T08:02:43+00:00",
@@ -6139,10 +6811,10 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 19,
-        "latestRawAt": "2026-06-20T08:00:18+00:00",
-        "latestRawAgeHours": 1.89,
+        "latestRawAt": "2026-06-20T10:00:13+00:00",
+        "latestRawAgeHours": 0.18,
         "latestValidAt": "2026-06-20T08:00:02+00:00",
-        "latestValidAgeHours": 1.89,
+        "latestValidAgeHours": 2.18,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -6157,6 +6829,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "relevance_filtered",
+            "reason": "not Israel/Middle-East enough",
+            "source": "Fox News World",
+            "publishedAt": "2026-06-20T13:00:13+03:00",
+            "title": "Man charged with attempted murder, released after allegedly forcing toddler into crocodile enclosure at zoo",
+            "url": "https://www.foxnews.com/world/man-charged-attempted-murder-released-allegedly-forcing-toddler-crocodile-enclosure-zoo"
+          },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
@@ -6212,14 +6892,6 @@
             "publishedAt": "2026-06-18T03:01:47+03:00",
             "title": "Finland's parliament votes to lift decades-old ban on nuclear weapons in historic NATO defense shift",
             "url": "https://www.foxnews.com/world/finlands-parliament-votes-lift-decades-old-ban-nuclear-weapons-historic-nato-defense-shift"
-          },
-          {
-            "status": "relevance_filtered",
-            "reason": "not Israel/Middle-East enough",
-            "source": "Fox News World",
-            "publishedAt": "2026-06-17T22:37:53+03:00",
-            "title": "Colombian military neutralizes five terrorists accused in bus bombing that killed 20, injured 45 civilians",
-            "url": "https://www.foxnews.com/world/colombian-military-neutralizes-five-terrorists-accused-bus-bombing-killed-20-injured-45-civilians"
           }
         ]
       },
@@ -6238,14 +6910,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 4,
-        "latestRawAt": "2026-06-20T05:29:54+00:00",
-        "latestRawAgeHours": 4.39,
-        "latestValidAt": "2026-06-20T05:00:55+00:00",
-        "latestValidAgeHours": 4.88,
+        "latestRawAt": "2026-06-20T10:00:01+00:00",
+        "latestRawAgeHours": 0.18,
+        "latestValidAt": "2026-06-20T10:00:01+00:00",
+        "latestValidAgeHours": 0.18,
         "visibleMain": {
           "count": 2,
           "latestAt": "2026-06-20T05:00:55+00:00",
-          "latestAgeHours": 4.88,
+          "latestAgeHours": 5.17,
           "sample": [
             {
               "publishedAt": "2026-06-20T05:00:55+00:00",
@@ -6267,6 +6939,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "The Guardian Middle East",
+            "publishedAt": "2026-06-20T13:00:01+03:00",
+            "title": "What lessons will Iran’s new leadership draw from the 110-day war?",
+            "url": "https://www.theguardian.com/world/2026/jun/20/what-lessons-will-irans-new-leadership-draw-from-the-110-day-war"
+          },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
@@ -6322,14 +7002,6 @@
             "publishedAt": "2026-06-19T20:06:26+03:00",
             "title": "The week around the world in 20 pictures",
             "url": "https://www.theguardian.com/artanddesign/gallery/2026/jun/19/the-week-around-the-world-in-20-pictures"
-          },
-          {
-            "status": "relevance_filtered",
-            "reason": "not Israel/Middle-East enough",
-            "source": "The Guardian Middle East",
-            "publishedAt": "2026-06-19T19:03:45+03:00",
-            "title": "Palestine Action ban and the right to protest",
-            "url": "https://www.theguardian.com/uk-news/2026/jun/19/palestine-action-ban-and-the-right-to-protest"
           }
         ]
       },
@@ -6349,9 +7021,9 @@
         "qaRejectedCount": 1,
         "relevanceFilteredCount": 6,
         "latestRawAt": "2026-06-20T05:20:00+00:00",
-        "latestRawAgeHours": 4.56,
+        "latestRawAgeHours": 4.85,
         "latestValidAt": "2026-06-20T05:20:00+00:00",
-        "latestValidAgeHours": 4.56,
+        "latestValidAgeHours": 4.85,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -6440,13 +7112,13 @@
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T14:58:11+00:00",
-        "latestRawAgeHours": 18.92,
+        "latestRawAgeHours": 19.21,
         "latestValidAt": "2026-06-19T14:58:11+00:00",
-        "latestValidAgeHours": 18.92,
+        "latestValidAgeHours": 19.21,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-20T07:27:59+00:00",
-          "latestAgeHours": 2.42,
+          "latestAgeHours": 2.72,
           "sample": [
             {
               "publishedAt": "2026-06-20T07:27:59+00:00",
@@ -6468,7 +7140,7 @@
         "visibleBreaking": {
           "count": 4,
           "latestAt": "2026-06-20T09:04:08+00:00",
-          "latestAgeHours": 0.82,
+          "latestAgeHours": 1.11,
           "sample": [
             {
               "publishedAt": "2026-06-20T09:04:08+00:00",
@@ -6571,13 +7243,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T10:05:43+00:00",
-        "latestRawAgeHours": 23.8,
+        "latestRawAgeHours": 24.09,
         "latestValidAt": "2026-06-19T10:05:43+00:00",
-        "latestValidAgeHours": 23.8,
+        "latestValidAgeHours": 24.09,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-20T05:48:37+00:00",
-          "latestAgeHours": 4.08,
+          "latestAgeHours": 4.37,
           "sample": [
             {
               "publishedAt": "2026-06-20T05:48:37+00:00",
