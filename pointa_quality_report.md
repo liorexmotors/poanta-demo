@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 198
 Errors: 0
 Warnings: 48
 
@@ -14,11 +14,11 @@ Warnings: 48
 - פלילים: 8
 - דעות: 8
 - תרבות: 5
-- מזג אוויר: 5
 - אקטואליה בעולם: 5
 - חדשות: 4
 - רכב: 4
 - בריאות: 4
+- מזג אוויר: 3
 - טכנולוגיה: 1
 
 ## Issue counts
