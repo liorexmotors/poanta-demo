@@ -1,30 +1,30 @@
 # Pointa Quality Gate Report
 
-Items checked: 209
+Items checked: 198
 Errors: 0
-Warnings: 59
+Warnings: 57
 
 ## Category distribution
 
-- ביטחון: 66
-- רכילות: 54
-- ספורט: 28
-- כלכלה: 9
+- ביטחון: 62
+- רכילות: 52
+- ספורט: 27
 - פלילים: 8
-- רכב: 7
+- כלכלה: 8
 - דעות: 7
 - פוליטיקה: 7
+- רכב: 6
 - תרבות: 6
 - חדשות: 4
-- בריאות: 4
 - אקטואליה בעולם: 4
-- מזג אוויר: 2
+- בריאות: 3
 - טכנולוגיה: 2
 - צרכנות: 1
+- מזג אוויר: 1
 
 ## Issue counts
 
-- takeaway_long: 49
+- takeaway_long: 47
 - summary_long: 9
 - category_sport_source: 1
 
@@ -289,156 +289,142 @@ Warnings: 59
 - Source: N12 - ביטחוני ופוליטי
 - URL: https://www.mako.co.il/news-military/2026_q2/Article-b2c29ccb835ee91027.htm
 
-### WARNING · takeaway_long · item 129
-- Takeaway length 100 > 95
-- Headline: `ראשון יהיה רגיל לעונה; התחממות קלה תגיע ברביעי`
-- Original: `תחזית מזג האוויר ליום ראשון: מעונן חלקית עד בהיר`
-- Source: הארץ - חדשות
-- URL: https://www.haaretz.co.il/news/weather/2026-06-20/ty-article/0000019e-e605-d698-adbf-e7277e980000
-
-### WARNING · summary_long · item 130
+### WARNING · summary_long · item 129
 - Summary length 221 > 220
 - Headline: `איראן איימה לסגור את הורמוז בגלל התקיפות בלבנון`
 - Original: `Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire
 
-### WARNING · takeaway_long · item 130
+### WARNING · takeaway_long · item 129
 - Takeaway length 98 > 95
 - Headline: `איראן איימה לסגור את הורמוז בגלל התקיפות בלבנון`
 - Original: `Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 130
 - Takeaway length 104 > 95
 - Headline: `אשלי סנט קלייר טוענת שמאסק הציע לה מיליונים תמורת שתיקה`
 - Original: `40 מיליון דולר תמורת שתיקה: אם בנו של אילון מאסק חושפת`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/forreal/global/article/20803547
 
-### WARNING · summary_long · item 135
+### WARNING · summary_long · item 134
 - Summary length 224 > 220
 - Headline: `רשות האוכלוסין מרחיבה את עמדות הדרכון העצמי`
 - Original: `דרכון בארבע דקות: המהפכה שתקצר את התורים בישראל`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/israel/article-1335275
 
-### WARNING · takeaway_long · item 135
+### WARNING · takeaway_long · item 134
 - Takeaway length 102 > 95
 - Headline: `רשות האוכלוסין מרחיבה את עמדות הדרכון העצמי`
 - Original: `דרכון בארבע דקות: המהפכה שתקצר את התורים בישראל`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/israel/article-1335275
 
-### WARNING · summary_long · item 136
+### WARNING · summary_long · item 135
 - Summary length 237 > 220
 - Headline: `משמרות המהפכה נערכות לרווח מהסרת הסנקציות`
 - Original: `הכוח האמיתי בטהרן נחשף: מי ירוויח מיליארדים מהסרת הסנקציות?`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/international/article-1335274
 
-### WARNING · takeaway_long · item 136
+### WARNING · takeaway_long · item 135
 - Takeaway length 107 > 95
 - Headline: `משמרות המהפכה נערכות לרווח מהסרת הסנקציות`
 - Original: `הכוח האמיתי בטהרן נחשף: מי ירוויח מיליארדים מהסרת הסנקציות?`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/international/article-1335274
 
-### WARNING · takeaway_long · item 138
+### WARNING · takeaway_long · item 137
 - Takeaway length 109 > 95
 - Headline: `ההסכם עם איראן פותח קרע גלוי בין טראמפ לישראל`
 - Original: `‘You could’ve been the greatest’: Trump faces Israeli anger over Iran deal`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/20/you-could-have-been-the-greatest-trump-faces-israeli-anger-over-iran-deal?traffic_source=rss
 
-### WARNING · takeaway_long · item 139
+### WARNING · takeaway_long · item 138
 - Takeaway length 97 > 95
 - Headline: `בדרום לבנון נחשף עומק אזור החיץ הישראלי`
 - Original: `BBC sees destroyed villages in Israeli-occupied southern Lebanon`
 - Source: BBC World
 - URL: https://www.bbc.com/news/videos/c8r2pyv3e2po?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 140
+### WARNING · takeaway_long · item 139
 - Takeaway length 96 > 95
 - Headline: `חשש להתפשטות אבולה במחנה עקורים בקונגו`
 - Original: `המחלה הקטלנית מתפשטת במהירות: "אנשים לא מתו כך בעבר"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1335260
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 151
 - Takeaway length 100 > 95
 - Headline: `קובה פותחת את סחר החוץ לרפורמת שוק`
 - Original: `סוף הקומוניזם בקובה: הממשלה העבירה רפורמה כלכלית חסרת תקדים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/other/article/20802920
 
-### WARNING · takeaway_long · item 167
+### WARNING · takeaway_long · item 166
 - Takeaway length 98 > 95
 - Headline: `סרינה וויליאמס חוזרת לזוגות בווימבלדון`
 - Original: `סרינה וויליאמס חוזרת לשחק טניס, אבל למה לה לעשות את זה?`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/other/2026-06-20/ty-article-magazine/.premium/0000019e-e4f2-d1c0-a5be-ecfad4630000
 
-### WARNING · takeaway_long · item 171
+### WARNING · takeaway_long · item 170
 - Takeaway length 136 > 95
 - Headline: `מונדיאל 2026 נפתח בקצב שערים שלא נראה מאז 1958`
 - Original: `עשרה ימים בגן עדן: סיכום ביניים למונדיאל מופלא`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3847093
 
-### WARNING · takeaway_long · item 172
+### WARNING · takeaway_long · item 171
 - Takeaway length 128 > 95
 - Headline: `הביקוש למנויי הפועל תל אביב מתקרב לשיא חדש`
 - Original: `הפועל תל אביב מכרה למעלה מ-7,000 מנויים בתוך יומיים`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847155
 
-### WARNING · takeaway_long · item 173
+### WARNING · takeaway_long · item 172
 - Takeaway length 106 > 95
 - Headline: `ג׳לי רול ובאני XO מתגרשים אך ממשיכים בטיפולי IVF`
 - Original: `Jelly Roll divorce takes unexpected turn as cozy call with Bunnie Xo emerges`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/20/celebrity-news/jelly-roll-divorce-takes-unexpected-turn-as-cozy-call-with-bunnie-xo-emerges/
 
-### WARNING · takeaway_long · item 176
+### WARNING · takeaway_long · item 175
 - Takeaway length 98 > 95
 - Headline: `טראמפ חתם בעצמו על הסכם עם איראן בוורסאי`
 - Original: `הסכם היסטורי על מפת שולחן וחיפוש אחר מדפסת בארמון ורסאי: הקרקס הדיפלומטי של טראמפ ואיראן`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1335231
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 110 > 95
 - Headline: `קובה פותחת את הכלכלה לרפורמת שוק רחבה`
 - Original: `מהפכה קפיטליסטית? הצעדים הדרמטיים עליהם הודיעה קובה`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/bk900lxezzx
 
-### WARNING · takeaway_long · item 189
+### WARNING · takeaway_long · item 188
 - Takeaway length 100 > 95
 - Headline: `יובל לוי מ״האח הגדול״ התארסה ברומא`
 - Original: `יוצאת "האח הגדול" התארסה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/forreal/localy/article/20802461
 
-### WARNING · takeaway_long · item 193
+### WARNING · takeaway_long · item 192
 - Takeaway length 97 > 95
 - Headline: `איראן טוענת שסגרה את מצר הורמוז`
 - Original: `Iran claims Strait of Hormuz closed in retaliation for US, Israel breaches of MoU - report`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-899969
 
-### WARNING · takeaway_long · item 195
+### WARNING · takeaway_long · item 194
 - Takeaway length 107 > 95
 - Headline: `כוכבי "חברים" נפרדים מהבמאי ג'יימס בורוז`
 - Original: `Matt LeBlanc, Lisa Kudrow and David Schwimmer mourn beloved ‘Friends’ director James Burrows`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/20/entertainment/matt-leblanc-lisa-kudrow-and-david-schwimmer-mourn-beloved-friends-director-james-burrows/
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 96 > 95
-- Headline: `איראן מציגה את סגירת הורמוז כצעד ראשון`
-- Original: `איראן בהודעה דרמטית: "סוגרים את מצר הורמוז בשל הפרות של ישראל וארה"ב"`
-- Source: וואלה חדשות - חדשות בעולם
-- URL: https://news.walla.co.il/item/3847141
