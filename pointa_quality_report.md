@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 211
+Items checked: 200
 Errors: 0
-Warnings: 66
+Warnings: 65
 
 ## Category distribution
 
-- ספורט: 60
+- ספורט: 54
 - ביטחון: 47
-- רכילות: 46
+- רכילות: 44
 - כלכלה: 8
 - תרבות: 8
 - אקטואליה בעולם: 6
 - פלילים: 6
-- דעות: 6
+- דעות: 5
 - משפט: 4
 - מזג אוויר: 4
 - פוליטיקה: 3
 - חדשות: 3
 - טכנולוגיה: 3
 - בריאות: 3
-- צרכנות: 3
 - רכב: 1
+- צרכנות: 1
 
 ## Issue counts
 
-- takeaway_long: 60
+- takeaway_long: 59
 - summary_long: 6
 
 ## Issues
@@ -484,10 +484,3 @@ Warnings: 66
 - Original: `כריך סטייק, בון ג'ובי וגולים לחיבורים: הקרנבל הצהוב השתלט על פילדלפיה`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/bke01qmzfg
-
-### WARNING · takeaway_long · item 196
-- Takeaway length 108 > 95
-- Headline: `אלמירון הורחק במונדיאל על כיסוי פה בעימות`
-- Original: `מונדיאל 2026 מציג: הכרטיס האדום שנכנס לספרי ההיסטוריה`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847071
