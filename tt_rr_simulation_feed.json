@@ -1,31 +1,30 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-20T07:38:58+00:00",
+  "generatedAt": "2026-06-20T07:54:53+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 201,
+  "itemCount": 200,
   "simulationPoolWindow": {
     "originalWindowItems": 180,
     "rawPoolItems": 181,
     "rankedPoolItems": 181
   },
   "before": {
-    "newsinessTop10": 4,
-    "coreHardTop10": 4,
-    "softTop10": 6,
-    "otherTop10": 0,
+    "newsinessTop10": 3,
+    "coreHardTop10": 3,
+    "softTop10": 5,
+    "otherTop10": 2,
     "top5Under60": 5,
     "top10Under60": 10,
-    "top12Under60": 10,
-    "topItemAgeMinutes": 22,
+    "top12Under60": 11,
+    "topItemAgeMinutes": 18,
     "uniqueSourcesTop20": 9,
     "dominantSource": {
       "name": "וואלה",
-      "count": 5
+      "count": 4
     },
     "importantMissingTop20": [
       "N12",
-      "הארץ",
       "BBC",
       "Guardian",
       "NYT",
@@ -37,7 +36,11 @@
     "topSources": [
       {
         "name": "וואלה",
-        "count": 5
+        "count": 4
+      },
+      {
+        "name": "מעריב",
+        "count": 3
       },
       {
         "name": "Jerusalem Post",
@@ -48,57 +51,95 @@
         "count": 3
       },
       {
-        "name": "Mirror",
-        "count": 3
+        "name": "ynet",
+        "count": 2
       },
       {
-        "name": "מעריב",
+        "name": "Mirror",
         "count": 2
+      },
+      {
+        "name": "הארץ",
+        "count": 1
       },
       {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
         "count": 1
-      },
-      {
-        "name": "ynet",
-        "count": 1
-      },
-      {
-        "name": "Daily Mail",
-        "count": 1
       }
     ],
-    "trendMatchedTop10": 1,
-    "trendMatchedTop20": 1,
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 3,
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 85,
-      "readyCount": 7,
-      "hardReadyCount": 5,
-      "hardReadyStrictCount": 5,
-      "trendReadyCount": 1,
-      "cleanReadyCount": 5,
-      "cleanHardReadyCount": 5,
-      "cleanTrendReadyCount": 1,
-      "uniqueReadySources": 6,
-      "uniqueCleanReadySources": 4,
+      "score": 96,
+      "readyCount": 11,
+      "hardReadyCount": 7,
+      "hardReadyStrictCount": 7,
+      "trendReadyCount": 3,
+      "cleanReadyCount": 7,
+      "cleanHardReadyCount": 7,
+      "cleanTrendReadyCount": 3,
+      "uniqueReadySources": 7,
+      "uniqueCleanReadySources": 5,
       "freshReadyUnder25Count": 1,
-      "cleanFreshReadyUnder25Count": 1,
+      "cleanFreshReadyUnder25Count": 0,
       "blockers": [
-        "clean_ready_queue_below_6"
+        "clean_ready_fresh_under25_below_1"
       ],
       "readyQueue": [
         {
-          "rank": 3,
+          "rank": 4,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "queueScore": 41.0
+        },
+        {
+          "rank": 8,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -114,7 +155,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -132,94 +173,164 @@
           "queueScore": 36.0
         },
         {
-          "rank": 1,
+          "rank": 12,
+          "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+          "source": "מעריב - צבא וביטחון",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 63,
+          "url": "https://www.maariv.co.il/news/military/article-1335022",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 24.78,
+            "boost": 24.0
+          },
+          "queueScore": 33.0
+        },
+        {
+          "rank": 5,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 26.0
         },
         {
-          "rank": 6,
+          "rank": 11,
           "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
           "trendMatch": null,
           "queueScore": 26.0
         },
         {
-          "rank": 7,
+          "rank": 13,
           "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 48,
-          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-          "trendMatch": null,
-          "queueScore": 26.0
-        },
-        {
-          "rank": 11,
-          "headline": "סולברג הורה לבן גביר להסיר סרטון ממשט",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "משפט",
-          "class": "hard",
-          "strictHard": true,
           "ageMinutes": 64,
-          "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
           "trendMatch": null,
           "queueScore": 23.0
         },
         {
           "rank": 17,
-          "headline": "MYSHOP מכוונת לנאסד״ק אחרי צמיחה בישראל",
-          "source": "מעריב - כלכלה",
+          "headline": "סולברג הורה לבן גביר להסיר סרטון ממשט",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "משפט",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 80,
+          "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 2,
+          "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+          "source": "מעריב - חדשות",
           "canonicalSource": "מעריב",
           "category": "כלכלה",
           "class": "other",
           "strictHard": false,
-          "ageMinutes": 69,
-          "url": "https://www.maariv.co.il/economy/israel/article-1334734",
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/world/article-1335146",
           "trendMatch": null,
-          "queueScore": 11.0
-        },
-        {
-          "rank": 18,
-          "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
-          "source": "דה מרקר - גלובל",
-          "canonicalSource": "דה מרקר",
-          "category": "פוליטיקה",
-          "class": "other",
-          "strictHard": false,
-          "ageMinutes": 73,
-          "url": "https://www.themarker.com/wallstreet/2026-06-20/ty-article/.premium/0000019e-e37a-dc8a-afbe-f77f73cd0000",
-          "trendMatch": null,
-          "queueScore": 11.0
+          "queueScore": 19.0
         }
       ],
       "cleanReadyQueue": [
         {
-          "rank": 3,
+          "rank": 4,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "queueScore": 41.0
+        },
+        {
+          "rank": 8,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -235,7 +346,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -253,53 +364,94 @@
           "queueScore": 36.0
         },
         {
-          "rank": 1,
+          "rank": 12,
+          "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+          "source": "מעריב - צבא וביטחון",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 63,
+          "url": "https://www.maariv.co.il/news/military/article-1335022",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 24.78,
+            "boost": 24.0
+          },
+          "queueScore": 33.0
+        },
+        {
+          "rank": 5,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 26.0
         },
         {
-          "rank": 6,
+          "rank": 11,
           "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
           "trendMatch": null,
           "queueScore": 26.0
         },
         {
-          "rank": 7,
+          "rank": 13,
           "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 48,
+          "ageMinutes": 64,
           "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
           "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 23.0
         },
         {
-          "rank": 11,
+          "rank": 17,
           "headline": "סולברג הורה לבן גביר להסיר סרטון ממשט",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 80,
           "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
           "trendMatch": null,
           "queueScore": 23.0
@@ -308,11 +460,11 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 10,
+      "freshUnder60Count": 11,
       "worthyFreshUnder60Count": 4,
       "coreHardFreshUnder60Count": 4,
-      "softFreshUnder60Count": 6,
-      "otherFreshUnder60Count": 0,
+      "softFreshUnder60Count": 5,
+      "otherFreshUnder60Count": 2,
       "freshUniqueSources": 7,
       "worthyUniqueSources": 4,
       "freshSources": [
@@ -321,31 +473,35 @@
           "count": 3
         },
         {
-          "name": "ישראל היום",
+          "name": "מעריב",
           "count": 2
+        },
+        {
+          "name": "ynet",
+          "count": 2
+        },
+        {
+          "name": "הארץ",
+          "count": 1
         },
         {
           "name": "Jerusalem Post",
           "count": 1
         },
         {
+          "name": "ישראל היום",
+          "count": 1
+        },
+        {
           "name": "Al Jazeera RSS מסונן מזרח תיכון",
-          "count": 1
-        },
-        {
-          "name": "ynet",
-          "count": 1
-        },
-        {
-          "name": "Daily Mail",
-          "count": 1
-        },
-        {
-          "name": "Mirror",
           "count": 1
         }
       ],
       "worthySources": [
+        {
+          "name": "מעריב",
+          "count": 1
+        },
         {
           "name": "Jerusalem Post",
           "count": 1
@@ -357,30 +513,129 @@
         {
           "name": "וואלה",
           "count": 1
-        },
-        {
-          "name": "ישראל היום",
-          "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
+        "quality_class_soft": 5,
         "weak_or_missing_trend_match": 9,
-        "quality_class_soft": 6
+        "quality_class_other": 2
       },
-      "staleOrUndatedCount": 70,
+      "staleOrUndatedCount": 69,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+          "source": "הארץ - ספורט",
+          "canonicalSource": "הארץ",
+          "category": "ספורט",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 18,
+          "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 2,
+          "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "כלכלה",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/world/article-1335146",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 3,
+          "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "דעות",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 26,
+          "url": "https://www.ynet.co.il/news/article/yokra14805403",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 4,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 5,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
           "freshUnder60": true,
@@ -391,14 +646,14 @@
           ]
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 6,
           "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
           "source": "וואלה ספורט - כדורגל עולמי",
           "canonicalSource": "וואלה",
           "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 23,
+          "ageMinutes": 39,
           "url": "https://sports.walla.co.il/item/3847092",
           "trendMatch": null,
           "freshUnder60": true,
@@ -410,14 +665,33 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 7,
+          "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ספורט",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 39,
+          "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 8,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -433,7 +707,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -454,14 +728,14 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 4,
+          "beforeRank": 9,
           "headline": "אלכס פרימן העלה את ארה״ב שלב במונדיאל",
           "source": "ynet - כל ערוץ הספורט",
           "canonicalSource": "ynet",
           "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 38,
+          "ageMinutes": 54,
           "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
           "trendMatch": null,
           "freshUnder60": true,
@@ -473,14 +747,14 @@
           ]
         },
         {
-          "beforeRank": 5,
+          "beforeRank": 10,
           "headline": "ה-NBA מאיצה את הקמת הליגה האירופית",
           "source": "וואלה ספורט - NBA",
           "canonicalSource": "וואלה",
           "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://sports.walla.co.il/item/3847090",
           "trendMatch": null,
           "freshUnder60": true,
@@ -492,14 +766,14 @@
           ]
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 11,
           "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
           "trendMatch": null,
           "freshUnder60": true,
@@ -508,93 +782,63 @@
           "disqualifiers": [
             "weak_or_missing_trend_match"
           ]
-        },
-        {
-          "beforeRank": 7,
-          "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 48,
-          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "דרייק ספד למפיק טיי קית' אחרי מותו",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 49,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-          "source": "Mirror Celebs רכילות חו״ל",
-          "canonicalSource": "Mirror",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 53,
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "בולדווין נתן לפנרבחצ׳ה אליפות שלישית ברצף",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 58,
-          "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20801399",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
         }
       ],
       "topWorthyFreshCandidates": [
         {
-          "beforeRank": 1,
+          "beforeRank": 4,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 5,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
           "freshUnder60": true,
@@ -605,14 +849,14 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 8,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -628,7 +872,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -649,33 +893,15 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 11,
           "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 7,
-          "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 48,
-          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -703,7 +929,6 @@
     },
     "importantMissingTop20": [
       "N12",
-      "הארץ",
       "BBC",
       "NYT",
       "גלובס"
@@ -717,11 +942,15 @@
         "count": 3
       },
       {
+        "name": "מעריב",
+        "count": 3
+      },
+      {
         "name": "Jerusalem Post",
         "count": 3
       },
       {
-        "name": "מעריב",
+        "name": "ישראל היום",
         "count": 3
       },
       {
@@ -729,40 +958,36 @@
         "count": 2
       },
       {
-        "name": "ישראל היום",
-        "count": 2
-      },
-      {
         "name": "ynet",
-        "count": 2
-      },
-      {
-        "name": "Mirror",
         "count": 2
       },
       {
         "name": "Guardian",
         "count": 1
+      },
+      {
+        "name": "דה מרקר",
+        "count": 1
       }
     ],
-    "trendMatchedTop10": 1,
-    "trendMatchedTop20": 1,
-    "trendGapMatchedTop20": 0,
+    "trendMatchedTop10": 4,
+    "trendMatchedTop20": 4,
+    "trendGapMatchedTop20": 1,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 10,
-      "score": 94,
-      "readyCount": 8,
-      "hardReadyCount": 6,
-      "hardReadyStrictCount": 6,
-      "trendReadyCount": 1,
-      "cleanReadyCount": 6,
-      "cleanHardReadyCount": 6,
-      "cleanTrendReadyCount": 1,
-      "uniqueReadySources": 6,
-      "uniqueCleanReadySources": 4,
+      "score": 100,
+      "readyCount": 12,
+      "hardReadyCount": 8,
+      "hardReadyStrictCount": 8,
+      "trendReadyCount": 4,
+      "cleanReadyCount": 8,
+      "cleanHardReadyCount": 8,
+      "cleanTrendReadyCount": 4,
+      "uniqueReadySources": 7,
+      "uniqueCleanReadySources": 5,
       "freshReadyUnder25Count": 2,
-      "cleanFreshReadyUnder25Count": 2,
+      "cleanFreshReadyUnder25Count": 1,
       "blockers": [],
       "readyQueue": [
         {
@@ -775,18 +1000,91 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847086",
-          "trendMatch": null,
-          "queueScore": 36.0
+          "trendMatch": {
+            "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+            "clusterKey": "נשיא בוליביה הכריז",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T09:30:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847086",
+            "overlapTokens": [
+              "בוליביה",
+              "הכריז",
+              "המדינה",
+              "הצבא",
+              "חירום",
+              "להיפרס",
+              "מצב",
+              "נשיא"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 104.98,
+            "boost": 14.0
+          },
+          "queueScore": 46.0
         },
         {
           "rank": 2,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "queueScore": 41.0
+        },
+        {
+          "rank": 4,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -802,7 +1100,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -820,6 +1118,47 @@
           "queueScore": 36.0
         },
         {
+          "rank": 6,
+          "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+          "source": "מעריב - צבא וביטחון",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 63,
+          "url": "https://www.maariv.co.il/news/military/article-1335022",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 24.78,
+            "boost": 24.0
+          },
+          "queueScore": 33.0
+        },
+        {
           "rank": 3,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
@@ -827,10 +1166,10 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 26.0
         },
         {
           "rank": 5,
@@ -840,62 +1179,36 @@
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
           "trendMatch": null,
           "queueScore": 26.0
         },
         {
-          "rank": 4,
+          "rank": 7,
           "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 48,
+          "ageMinutes": 64,
           "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
           "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 23.0
         },
         {
-          "rank": 6,
+          "rank": 8,
           "headline": "סולברג הורה לבן גביר להסיר סרטון ממשט",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 80,
           "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
           "trendMatch": null,
           "queueScore": 23.0
-        },
-        {
-          "rank": 15,
-          "headline": "MYSHOP מכוונת לנאסד״ק אחרי צמיחה בישראל",
-          "source": "מעריב - כלכלה",
-          "canonicalSource": "מעריב",
-          "category": "כלכלה",
-          "class": "other",
-          "strictHard": false,
-          "ageMinutes": 69,
-          "url": "https://www.maariv.co.il/economy/israel/article-1334734",
-          "trendMatch": null,
-          "queueScore": 11.0
-        },
-        {
-          "rank": 12,
-          "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
-          "source": "דה מרקר - גלובל",
-          "canonicalSource": "דה מרקר",
-          "category": "פוליטיקה",
-          "class": "other",
-          "strictHard": false,
-          "ageMinutes": 73,
-          "url": "https://www.themarker.com/wallstreet/2026-06-20/ty-article/.premium/0000019e-e37a-dc8a-afbe-f77f73cd0000",
-          "trendMatch": null,
-          "queueScore": 11.0
         }
       ],
       "cleanReadyQueue": [
@@ -909,18 +1222,91 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847086",
-          "trendMatch": null,
-          "queueScore": 36.0
+          "trendMatch": {
+            "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+            "clusterKey": "נשיא בוליביה הכריז",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T09:30:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847086",
+            "overlapTokens": [
+              "בוליביה",
+              "הכריז",
+              "המדינה",
+              "הצבא",
+              "חירום",
+              "להיפרס",
+              "מצב",
+              "נשיא"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 104.98,
+            "boost": 14.0
+          },
+          "queueScore": 46.0
         },
         {
           "rank": 2,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "queueScore": 41.0
+        },
+        {
+          "rank": 4,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -936,7 +1322,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -954,6 +1340,47 @@
           "queueScore": 36.0
         },
         {
+          "rank": 6,
+          "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+          "source": "מעריב - צבא וביטחון",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 63,
+          "url": "https://www.maariv.co.il/news/military/article-1335022",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 24.78,
+            "boost": 24.0
+          },
+          "queueScore": 33.0
+        },
+        {
           "rank": 3,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
@@ -961,10 +1388,10 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
-          "queueScore": 31.0
+          "queueScore": 26.0
         },
         {
           "rank": 5,
@@ -974,33 +1401,33 @@
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
           "trendMatch": null,
           "queueScore": 26.0
         },
         {
-          "rank": 4,
+          "rank": 7,
           "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
           "source": "ישראל היום - כל הכתבות",
           "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 48,
+          "ageMinutes": 64,
           "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
           "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 23.0
         },
         {
-          "rank": 6,
+          "rank": 8,
           "headline": "סולברג הורה לבן גביר להסיר סרטון ממשט",
           "source": "The Jerusalem Post - Israel News",
           "canonicalSource": "Jerusalem Post",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 64,
+          "ageMinutes": 80,
           "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
           "trendMatch": null,
           "queueScore": 23.0
@@ -1009,11 +1436,11 @@
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 11,
+      "freshUnder60Count": 12,
       "worthyFreshUnder60Count": 5,
       "coreHardFreshUnder60Count": 5,
-      "softFreshUnder60Count": 6,
-      "otherFreshUnder60Count": 0,
+      "softFreshUnder60Count": 5,
+      "otherFreshUnder60Count": 2,
       "freshUniqueSources": 7,
       "worthyUniqueSources": 4,
       "freshSources": [
@@ -1022,27 +1449,27 @@
           "count": 4
         },
         {
-          "name": "ישראל היום",
+          "name": "מעריב",
           "count": 2
+        },
+        {
+          "name": "ynet",
+          "count": 2
+        },
+        {
+          "name": "הארץ",
+          "count": 1
         },
         {
           "name": "Jerusalem Post",
           "count": 1
         },
         {
+          "name": "ישראל היום",
+          "count": 1
+        },
+        {
           "name": "Al Jazeera RSS מסונן מזרח תיכון",
-          "count": 1
-        },
-        {
-          "name": "ynet",
-          "count": 1
-        },
-        {
-          "name": "Daily Mail",
-          "count": 1
-        },
-        {
-          "name": "Mirror",
           "count": 1
         }
       ],
@@ -1052,23 +1479,24 @@
           "count": 2
         },
         {
+          "name": "מעריב",
+          "count": 1
+        },
+        {
           "name": "Jerusalem Post",
           "count": 1
         },
         {
           "name": "Al Jazeera RSS מסונן מזרח תיכון",
           "count": 1
-        },
-        {
-          "name": "ישראל היום",
-          "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 10,
-        "quality_class_soft": 6
+        "quality_class_soft": 5,
+        "weak_or_missing_trend_match": 9,
+        "quality_class_other": 2
       },
-      "staleOrUndatedCount": 69,
+      "staleOrUndatedCount": 68,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -1083,23 +1511,154 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847086",
-          "trendMatch": null,
+          "trendMatch": {
+            "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+            "clusterKey": "נשיא בוליביה הכריז",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T09:30:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847086",
+            "overlapTokens": [
+              "בוליביה",
+              "הכריז",
+              "המדינה",
+              "הצבא",
+              "חירום",
+              "להיפרס",
+              "מצב",
+              "נשיא"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 104.98,
+            "boost": 14.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 2,
+          "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+          "source": "הארץ - ספורט",
+          "canonicalSource": "הארץ",
+          "category": "ספורט",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 18,
+          "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
           "disqualifiers": [
+            "quality_class_soft",
             "weak_or_missing_trend_match"
           ]
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 3,
+          "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "כלכלה",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 22,
+          "url": "https://www.maariv.co.il/news/world/article-1335146",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 4,
+          "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "דעות",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 26,
+          "url": "https://www.ynet.co.il/news/article/yokra14805403",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 5,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 6,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1110,14 +1669,14 @@
           ]
         },
         {
-          "beforeRank": 3,
+          "beforeRank": 7,
           "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
           "source": "וואלה ספורט - כדורגל עולמי",
           "canonicalSource": "וואלה",
           "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 23,
+          "ageMinutes": 39,
           "url": "https://sports.walla.co.il/item/3847092",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1129,14 +1688,33 @@
           ]
         },
         {
-          "beforeRank": 4,
+          "beforeRank": 8,
+          "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ספורט",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 39,
+          "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 9,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -1152,7 +1730,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -1173,14 +1751,14 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 5,
+          "beforeRank": 10,
           "headline": "אלכס פרימן העלה את ארה״ב שלב במונדיאל",
           "source": "ynet - כל ערוץ הספורט",
           "canonicalSource": "ynet",
           "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 38,
+          "ageMinutes": 54,
           "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1192,14 +1770,14 @@
           ]
         },
         {
-          "beforeRank": 6,
+          "beforeRank": 11,
           "headline": "ה-NBA מאיצה את הקמת הליגה האירופית",
           "source": "וואלה ספורט - NBA",
           "canonicalSource": "וואלה",
           "category": "ספורט",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://sports.walla.co.il/item/3847090",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1211,95 +1789,20 @@
           ]
         },
         {
-          "beforeRank": 7,
+          "beforeRank": 12,
           "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 48,
-          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 9,
-          "headline": "דרייק ספד למפיק טיי קית' אחרי מותו",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 49,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 10,
-          "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-          "source": "Mirror Celebs רכילות חו״ל",
-          "canonicalSource": "Mirror",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 53,
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 11,
-          "headline": "בולדווין נתן לפנרבחצ׳ה אליפות שלישית ברצף",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 58,
-          "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20801399",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
             "weak_or_missing_trend_match"
           ]
         }
@@ -1315,23 +1818,97 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847086",
-          "trendMatch": null,
+          "trendMatch": {
+            "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+            "clusterKey": "נשיא בוליביה הכריז",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "הארץ",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": false,
+            "latestAt": "2026-06-20T09:30:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847086",
+            "overlapTokens": [
+              "בוליביה",
+              "הכריז",
+              "המדינה",
+              "הצבא",
+              "חירום",
+              "להיפרס",
+              "מצב",
+              "נשיא"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 104.98,
+            "boost": 14.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 5,
+          "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+          "source": "מעריב - חדשות",
+          "canonicalSource": "מעריב",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 26,
+          "url": "https://www.maariv.co.il/news/military/article-1335145",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "כלכלה",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "בלבנון",
+              "הפסקת",
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "חיזבאללה",
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 33.04,
+            "boost": 24.0
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 6,
           "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 22,
+          "ageMinutes": 38,
           "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1342,14 +1919,14 @@
           ]
         },
         {
-          "beforeRank": 4,
+          "beforeRank": 9,
           "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
           "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 36,
+          "ageMinutes": 52,
           "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -1365,7 +1942,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T07:38:57.996627+00:00",
+            "latestAt": "2026-06-20T07:54:53.411740+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -1386,33 +1963,15 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 7,
+          "beforeRank": 12,
           "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "משפט",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 43,
+          "ageMinutes": 59,
           "url": "https://news.walla.co.il/item/3846850",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 48,
-          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -1424,17 +1983,17 @@
       ]
     }
   },
-  "beforeHealthScore": 55,
+  "beforeHealthScore": 53,
   "afterHealthScore": 87,
   "replacementReadiness": {
-    "score": 75,
+    "score": 79,
     "threshold": 80,
     "components": {
       "freshness": 17.0,
       "newsinessTop10": 25.0,
-      "top20Quality": 15.5,
+      "top20Quality": 17.0,
       "sourceBalance": 10.0,
-      "trendSignalUse": 2.67,
+      "trendSignalUse": 8.67,
       "criticalBlockersClear": 5.0
     },
     "criticalBlockers": [
@@ -1482,22 +2041,22 @@
     "title": "TT RR Simulation Review — 2026-06-20 10:00"
   },
   "delta": {
-    "newsinessTop10": 6,
-    "coreHardTop10": 6,
-    "softTop10": -6,
-    "top12Under60": -4,
+    "newsinessTop10": 7,
+    "coreHardTop10": 7,
+    "softTop10": -5,
+    "top12Under60": -5,
     "uniqueSourcesTop20": 1,
-    "trendMatchedTop10": 0,
-    "trendMatchedTop20": 0,
-    "healthScore": 32
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 1,
+    "healthScore": 34
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 11,
+    "freshUnder60Count": 12,
     "worthyFreshUnder60Count": 5,
     "coreHardFreshUnder60Count": 5,
-    "softFreshUnder60Count": 6,
-    "otherFreshUnder60Count": 0,
+    "softFreshUnder60Count": 5,
+    "otherFreshUnder60Count": 2,
     "freshUniqueSources": 7,
     "worthyUniqueSources": 4,
     "freshSources": [
@@ -1506,27 +2065,27 @@
         "count": 4
       },
       {
-        "name": "ישראל היום",
+        "name": "מעריב",
         "count": 2
+      },
+      {
+        "name": "ynet",
+        "count": 2
+      },
+      {
+        "name": "הארץ",
+        "count": 1
       },
       {
         "name": "Jerusalem Post",
         "count": 1
       },
       {
+        "name": "ישראל היום",
+        "count": 1
+      },
+      {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
-        "count": 1
-      },
-      {
-        "name": "ynet",
-        "count": 1
-      },
-      {
-        "name": "Daily Mail",
-        "count": 1
-      },
-      {
-        "name": "Mirror",
         "count": 1
       }
     ],
@@ -1536,23 +2095,24 @@
         "count": 2
       },
       {
+        "name": "מעריב",
+        "count": 1
+      },
+      {
         "name": "Jerusalem Post",
         "count": 1
       },
       {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
         "count": 1
-      },
-      {
-        "name": "ישראל היום",
-        "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 10,
-      "quality_class_soft": 6
+      "quality_class_soft": 5,
+      "weak_or_missing_trend_match": 9,
+      "quality_class_other": 2
     },
-    "staleOrUndatedCount": 69,
+    "staleOrUndatedCount": 68,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
@@ -1567,23 +2127,154 @@
         "strictHard": true,
         "ageMinutes": 0,
         "url": "https://news.walla.co.il/break/3847086",
-        "trendMatch": null,
+        "trendMatch": {
+          "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+          "clusterKey": "נשיא בוליביה הכריז",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-20T09:30:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3847086",
+          "overlapTokens": [
+            "בוליביה",
+            "הכריז",
+            "המדינה",
+            "הצבא",
+            "חירום",
+            "להיפרס",
+            "מצב",
+            "נשיא"
+          ],
+          "entityOverlapTokens": [],
+          "eventOverlapTokens": [],
+          "score": 104.98,
+          "boost": 14.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 2,
+        "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+        "source": "הארץ - ספורט",
+        "canonicalSource": "הארץ",
+        "category": "ספורט",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 18,
+        "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
         "disqualifiers": [
+          "quality_class_soft",
           "weak_or_missing_trend_match"
         ]
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
+        "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "כלכלה",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 22,
+        "url": "https://www.maariv.co.il/news/world/article-1335146",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 4,
+        "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "דעות",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 26,
+        "url": "https://www.ynet.co.il/news/article/yokra14805403",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 5,
+        "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 26,
+        "url": "https://www.maariv.co.il/news/military/article-1335145",
+        "trendMatch": {
+          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+          "clusterKey": "הפסקת האש",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "overlapTokens": [
+            "בלבנון",
+            "הפסקת",
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "entityOverlapTokens": [
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 33.04,
+          "boost": 24.0
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 6,
         "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 22,
+        "ageMinutes": 38,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1594,14 +2285,14 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 7,
         "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
         "source": "וואלה ספורט - כדורגל עולמי",
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 23,
+        "ageMinutes": 39,
         "url": "https://sports.walla.co.il/item/3847092",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1613,14 +2304,33 @@
         ]
       },
       {
-        "beforeRank": 4,
+        "beforeRank": 8,
+        "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ספורט",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 39,
+        "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 9,
         "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
         "source": "Al Jazeera RSS מסונן מזרח תיכון",
         "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 36,
+        "ageMinutes": 52,
         "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
         "trendMatch": {
           "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -1636,7 +2346,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T07:38:57.996627+00:00",
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
           "overlapTokens": [
             "בלבנון",
@@ -1657,14 +2367,14 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 5,
+        "beforeRank": 10,
         "headline": "אלכס פרימן העלה את ארה״ב שלב במונדיאל",
         "source": "ynet - כל ערוץ הספורט",
         "canonicalSource": "ynet",
         "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 38,
+        "ageMinutes": 54,
         "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1676,14 +2386,14 @@
         ]
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 11,
         "headline": "ה-NBA מאיצה את הקמת הליגה האירופית",
         "source": "וואלה ספורט - NBA",
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 43,
+        "ageMinutes": 59,
         "url": "https://sports.walla.co.il/item/3847090",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1695,95 +2405,20 @@
         ]
       },
       {
-        "beforeRank": 7,
+        "beforeRank": 12,
         "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "משפט",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 43,
+        "ageMinutes": 59,
         "url": "https://news.walla.co.il/item/3846850",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
         "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 48,
-        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "דרייק ספד למפיק טיי קית' אחרי מותו",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 49,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 53,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 11,
-        "headline": "בולדווין נתן לפנרבחצ׳ה אליפות שלישית ברצף",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 58,
-        "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20801399",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
           "weak_or_missing_trend_match"
         ]
       }
@@ -1799,23 +2434,97 @@
         "strictHard": true,
         "ageMinutes": 0,
         "url": "https://news.walla.co.il/break/3847086",
-        "trendMatch": null,
+        "trendMatch": {
+          "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+          "clusterKey": "נשיא בוליביה הכריז",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-20T09:30:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3847086",
+          "overlapTokens": [
+            "בוליביה",
+            "הכריז",
+            "המדינה",
+            "הצבא",
+            "חירום",
+            "להיפרס",
+            "מצב",
+            "נשיא"
+          ],
+          "entityOverlapTokens": [],
+          "eventOverlapTokens": [],
+          "score": 104.98,
+          "boost": 14.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 5,
+        "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 26,
+        "url": "https://www.maariv.co.il/news/military/article-1335145",
+        "trendMatch": {
+          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+          "clusterKey": "הפסקת האש",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "overlapTokens": [
+            "בלבנון",
+            "הפסקת",
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "entityOverlapTokens": [
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 33.04,
+          "boost": 24.0
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 6,
         "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 22,
+        "ageMinutes": 38,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1826,14 +2535,14 @@
         ]
       },
       {
-        "beforeRank": 4,
+        "beforeRank": 9,
         "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
         "source": "Al Jazeera RSS מסונן מזרח תיכון",
         "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 36,
+        "ageMinutes": 52,
         "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
         "trendMatch": {
           "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -1849,7 +2558,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T07:38:57.996627+00:00",
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
           "overlapTokens": [
             "בלבנון",
@@ -1870,33 +2579,15 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 7,
+        "beforeRank": 12,
         "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "משפט",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 43,
+        "ageMinutes": 59,
         "url": "https://news.walla.co.il/item/3846850",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 48,
-        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
@@ -1909,11 +2600,11 @@
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 10,
+    "freshUnder60Count": 11,
     "worthyFreshUnder60Count": 4,
     "coreHardFreshUnder60Count": 4,
-    "softFreshUnder60Count": 6,
-    "otherFreshUnder60Count": 0,
+    "softFreshUnder60Count": 5,
+    "otherFreshUnder60Count": 2,
     "freshUniqueSources": 7,
     "worthyUniqueSources": 4,
     "freshSources": [
@@ -1922,31 +2613,35 @@
         "count": 3
       },
       {
-        "name": "ישראל היום",
+        "name": "מעריב",
         "count": 2
+      },
+      {
+        "name": "ynet",
+        "count": 2
+      },
+      {
+        "name": "הארץ",
+        "count": 1
       },
       {
         "name": "Jerusalem Post",
         "count": 1
       },
       {
+        "name": "ישראל היום",
+        "count": 1
+      },
+      {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
-        "count": 1
-      },
-      {
-        "name": "ynet",
-        "count": 1
-      },
-      {
-        "name": "Daily Mail",
-        "count": 1
-      },
-      {
-        "name": "Mirror",
         "count": 1
       }
     ],
     "worthySources": [
+      {
+        "name": "מעריב",
+        "count": 1
+      },
       {
         "name": "Jerusalem Post",
         "count": 1
@@ -1958,30 +2653,129 @@
       {
         "name": "וואלה",
         "count": 1
-      },
-      {
-        "name": "ישראל היום",
-        "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
+      "quality_class_soft": 5,
       "weak_or_missing_trend_match": 9,
-      "quality_class_soft": 6
+      "quality_class_other": 2
     },
-    "staleOrUndatedCount": 70,
+    "staleOrUndatedCount": 69,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+        "source": "הארץ - ספורט",
+        "canonicalSource": "הארץ",
+        "category": "ספורט",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 18,
+        "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 2,
+        "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "כלכלה",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 22,
+        "url": "https://www.maariv.co.il/news/world/article-1335146",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 3,
+        "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "דעות",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 26,
+        "url": "https://www.ynet.co.il/news/article/yokra14805403",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 4,
+        "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 26,
+        "url": "https://www.maariv.co.il/news/military/article-1335145",
+        "trendMatch": {
+          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+          "clusterKey": "הפסקת האש",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "overlapTokens": [
+            "בלבנון",
+            "הפסקת",
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "entityOverlapTokens": [
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 33.04,
+          "boost": 24.0
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 5,
         "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 22,
+        "ageMinutes": 38,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1992,14 +2786,14 @@
         ]
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 6,
         "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
         "source": "וואלה ספורט - כדורגל עולמי",
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 23,
+        "ageMinutes": 39,
         "url": "https://sports.walla.co.il/item/3847092",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2011,14 +2805,33 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 7,
+        "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ספורט",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 39,
+        "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 8,
         "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
         "source": "Al Jazeera RSS מסונן מזרח תיכון",
         "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 36,
+        "ageMinutes": 52,
         "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
         "trendMatch": {
           "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -2034,7 +2847,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T07:38:57.996627+00:00",
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
           "overlapTokens": [
             "בלבנון",
@@ -2055,14 +2868,14 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 4,
+        "beforeRank": 9,
         "headline": "אלכס פרימן העלה את ארה״ב שלב במונדיאל",
         "source": "ynet - כל ערוץ הספורט",
         "canonicalSource": "ynet",
         "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 38,
+        "ageMinutes": 54,
         "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2074,14 +2887,14 @@
         ]
       },
       {
-        "beforeRank": 5,
+        "beforeRank": 10,
         "headline": "ה-NBA מאיצה את הקמת הליגה האירופית",
         "source": "וואלה ספורט - NBA",
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 43,
+        "ageMinutes": 59,
         "url": "https://sports.walla.co.il/item/3847090",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2093,14 +2906,14 @@
         ]
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 11,
         "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "משפט",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 43,
+        "ageMinutes": 59,
         "url": "https://news.walla.co.il/item/3846850",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2109,93 +2922,63 @@
         "disqualifiers": [
           "weak_or_missing_trend_match"
         ]
-      },
-      {
-        "beforeRank": 7,
-        "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 48,
-        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "דרייק ספד למפיק טיי קית' אחרי מותו",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 49,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 9,
-        "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 53,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 10,
-        "headline": "בולדווין נתן לפנרבחצ׳ה אליפות שלישית ברצף",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 58,
-        "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20801399",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
       }
     ],
     "topWorthyFreshCandidates": [
       {
-        "beforeRank": 1,
+        "beforeRank": 4,
+        "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 26,
+        "url": "https://www.maariv.co.il/news/military/article-1335145",
+        "trendMatch": {
+          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+          "clusterKey": "הפסקת האש",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "overlapTokens": [
+            "בלבנון",
+            "הפסקת",
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "entityOverlapTokens": [
+            "חיזבאללה",
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 33.04,
+          "boost": 24.0
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 5,
         "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
         "source": "The Jerusalem Post - Middle East",
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 22,
+        "ageMinutes": 38,
         "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
         "trendMatch": null,
         "freshUnder60": true,
@@ -2206,14 +2989,14 @@
         ]
       },
       {
-        "beforeRank": 3,
+        "beforeRank": 8,
         "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
         "source": "Al Jazeera RSS מסונן מזרח תיכון",
         "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 36,
+        "ageMinutes": 52,
         "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
         "trendMatch": {
           "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -2229,7 +3012,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T07:38:57.996627+00:00",
+          "latestAt": "2026-06-20T07:54:53.411740+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
           "overlapTokens": [
             "בלבנון",
@@ -2250,33 +3033,15 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 6,
+        "beforeRank": 11,
         "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "משפט",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 43,
+        "ageMinutes": 59,
         "url": "https://news.walla.co.il/item/3846850",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 7,
-        "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 48,
-        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
@@ -2307,9 +3072,9 @@
         "id": "ynet",
         "label": "ynet חדשות",
         "configuredSourceCount": 24,
-        "freshUnder60Scanned": 4,
+        "freshUnder60Scanned": 3,
         "acceptedHardQaClean": 0,
-        "rejected": 4,
+        "rejected": 3,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2334,9 +3099,9 @@
         "id": "haaretz",
         "label": "הארץ",
         "configuredSourceCount": 12,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2370,9 +3135,9 @@
         "id": "israel_hayom",
         "label": "ישראל היום",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 0,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 0,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2443,7 +3208,38 @@
         "beforeRank": null,
         "afterRank": null,
         "delta": null,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+          "clusterKey": "נשיא בוליביה הכריז",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-20T09:30:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3847086",
+          "overlapTokens": [
+            "בוליביה",
+            "הכריז",
+            "המדינה",
+            "הצבא",
+            "חירום",
+            "להיפרס",
+            "מצב",
+            "נשיא"
+          ],
+          "entityOverlapTokens": [],
+          "eventOverlapTokens": [],
+          "score": 104.98,
+          "boost": 14.0
+        }
       }
     ],
     "rejectedSample": [
@@ -2452,7 +3248,7 @@
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "headline": "\"קודקוד אהובי, כאן קודקוד אהובה\": המכתב המרגש של אלמנת המג\"ד שנפל בלבנון",
-        "ageMinutes": 6,
+        "ageMinutes": 22,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2464,24 +3260,10 @@
       },
       {
         "sourceGroup": "ynet חדשות",
-        "source": "ynet - כל ערוץ החדשות",
-        "canonicalSource": "ynet",
-        "headline": "נתניהו מנפח סכנה לממדי ענק, מתעלם מאחריותו ואז אומר שהציל אותנו מהשמדה",
-        "ageMinutes": 10,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_too_long",
-          "headline_copies_source"
-        ],
-        "url": "https://www.ynet.co.il/news/article/yokra14805403"
-      },
-      {
-        "sourceGroup": "ynet חדשות",
         "source": "ynet - מבזקי החדשות",
         "canonicalSource": "ynet",
         "headline": "אלמנתו של סא\"ל דור גדליה בן שמחון ספדה לו במכתב: \"קודקוד אהובי, כאן קודקוד אהובה\"",
-        "ageMinutes": 4,
+        "ageMinutes": 20,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2494,19 +3276,16 @@
       },
       {
         "sourceGroup": "ynet חדשות",
-        "source": "ynet - מבזקי החדשות",
+        "source": "ynet - כל ערוץ הרכב",
         "canonicalSource": "ynet",
-        "headline": "פעילות מארגון \"אמא ערה\" הפגינו מול ביתו של הרמטכ\"ל: \"מפקירים את בנינו לשווא\"",
-        "ageMinutes": 50,
+        "headline": "רנו סימביוז (מבחן ראשון) - תשובה צרפתית לצונאמי סיני",
+        "ageMinutes": 20,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_too_long",
-          "headline_looks_cut",
-          "headline_copies_source",
-          "summary_generic_or_mediated"
+          "headline_copies_source"
         ],
-        "url": "https://www.ynet.co.il/news/article/hkidlh7zfl"
+        "url": "https://icar.co.il/test_drive/byej118wzzg"
       },
       {
         "sourceGroup": "וואלה חדשות",
@@ -2539,7 +3318,7 @@
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
         "headline": "בן 16 נפצע באורח בינוני בתאונת אופנוע בהוד השרון",
-        "ageMinutes": 27,
+        "ageMinutes": 43,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -2548,24 +3327,25 @@
         "url": "https://news.walla.co.il/break/3847072"
       },
       {
-        "sourceGroup": "ישראל היום",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "headline": "\"העניין של נאפולי בענאן חלאילי נותר בעינו\"",
-        "ageMinutes": 23,
+        "sourceGroup": "הארץ",
+        "source": "הארץ - חדשות",
+        "canonicalSource": "הארץ",
+        "headline": "לאחר שבועות של מחאה, נשיא בוליביה הכריז על מצב חירום שיאפשר לו להשתמש בצבא",
+        "ageMinutes": 4,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
+          "headline_too_long",
           "headline_copies_source"
         ],
-        "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427"
+        "url": "https://www.haaretz.co.il/news/world/america/2026-06-20/ty-article/.premium/0000019e-e3d5-d1c0-a5be-ebdd57f30000"
       }
     ],
     "dedupe": [],
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 14.7,
+      "elapsedSeconds": 14.75,
       "skippedForBudget": 0
     }
   },
@@ -2686,15 +3466,15 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 37.08,
-    "avgAfterHealthScore": 85.92,
+    "avgHealthDelta": 34.08,
+    "avgAfterHealthScore": 86.5,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 75,
-      "rollingScore": 70.85,
+      "latestScore": 79,
+      "rollingScore": 72.06,
       "readyRuns": 0,
       "criticalBlockers": [
         "top12_under60_below_9",
@@ -2707,39 +3487,19 @@
       "latestSummaryLine": "בינוני",
       "latestReportName": "tt-rr-simulation-review-2026-06-20-1000.md",
       "window": 48,
-      "averageScore": 74.12,
-      "positiveReports": 10
+      "averageScore": 74.96,
+      "positiveReports": 14
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-20T10:38:58+03:00",
+    "generatedAt": "2026-06-20T10:54:53+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 46,
+    "rssItemsScanned": 47,
     "webItemsScanned": 180,
     "topTrends": [
-      {
-        "trend": "אלמנתו של סא\"ל דור גדליה בן שמחון ספדה לו במכתב: \"קודקוד אהובי, כאן קודקוד אהובה\"",
-        "clusterKey": "גדליה שמחון",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "דה מרקר",
-          "הארץ"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-20T07:34:06+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sjom116xfml",
-        "strength": 49.1
-      },
       {
         "trend": "בן 16 נפצע באורח בינוני בתאונת אופנוע בהוד השרון",
         "clusterKey": "נפצע באורח",
@@ -2757,6 +3517,25 @@
         "latestAt": "2026-06-20T07:11:00+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847072",
         "strength": 43.6
+      },
+      {
+        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+        "clusterKey": "נשיא בוליביה הכריז",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T09:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847086",
+        "strength": 42.1
       },
       {
         "trend": "צעיר פלסטיני נהרג בתאונת דרכים בכביש 1",
@@ -2778,6 +3557,26 @@
         "strength": 42.1
       },
       {
+        "trend": "אלמנתו של סא\"ל דור גדליה בן שמחון ספדה לו במכתב: \"קודקוד אהובי, כאן קודקוד אהובה\"",
+        "clusterKey": "דור גדליה שמחון",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:34:06+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/sjom116xfml",
+        "strength": 41.1
+      },
+      {
         "trend": "23:00 משרד הבריאות: אדם החשוד כחולה באבולה נשלח לבידוד - לאחר ששב מקונגו",
         "clusterKey": "משרד הבריאות",
         "domain": "חדשות",
@@ -2792,7 +3591,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T07:38:58.001497+00:00",
+        "latestAt": "2026-06-20T07:54:53.407371+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847054",
         "strength": 38.1
       },
@@ -2829,26 +3628,8 @@
           "WEB"
         ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-20T07:38:58.029556+00:00",
+        "latestAt": "2026-06-20T07:54:53.414095+00:00",
         "sampleUrl": "https://apnews.com/article/world-cup-hugo-broos-south-africa-71a0041581c159bae1693778ff1cd09d",
-        "strength": 37.4
-      },
-      {
-        "trend": "Three key takeaways from US-Iran agreement The BBC's Gary O'Donoghue breaks down the 14-paragraph memorandum of understanding between both two co",
-        "clusterKey": "breaks down",
-        "domain": "אקטואליה בעולם",
-        "externalMentions": 2,
-        "sourceCount": 2,
-        "sources": [
-          "AP",
-          "BBC"
-        ],
-        "discoveryTypes": [
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-20T07:38:58.029155+00:00",
-        "sampleUrl": "https://www.bbc.com/news/videos/cgqjv5w2dg1o",
         "strength": 37.4
       },
       {
@@ -2865,32 +3646,31 @@
           "WEB"
         ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-20T07:38:58.001702+00:00",
+        "latestAt": "2026-06-20T07:54:53.411338+00:00",
         "sampleUrl": "https://www.themarker.com/weekend/2026-06-19/ty-article-magazine/.highlight/0000019e-da59-db7a-a9bf-dfdd3a890000",
         "strength": 37.4
       },
       {
-        "trend": "לבנון: 5 נהרגו בתקיפה ישראלית בדרום המדינה",
-        "clusterKey": "בדרום המדינה",
-        "domain": "חדשות",
-        "externalMentions": 3,
+        "trend": "Three key takeaways from US-Iran agreement The BBC's Gary O'Donoghue breaks down the 14-paragraph memorandum of understanding between both two co",
+        "clusterKey": "breaks down",
+        "domain": "אקטואליה בעולם",
+        "externalMentions": 2,
         "sourceCount": 2,
         "sources": [
-          "ynet",
-          "הארץ"
+          "AP",
+          "BBC"
         ],
         "discoveryTypes": [
-          "RSS",
           "WEB"
         ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T05:26:19+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyf4nsqgze",
-        "strength": 34.1
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T07:54:53.406519+00:00",
+        "sampleUrl": "https://www.bbc.com/news/videos/cgqjv5w2dg1o",
+        "strength": 37.4
       },
       {
         "trend": "מונדיאל: מרוקו ניצחה את סקוטלנד בתוצאה 1:0",
-        "clusterKey": "מרוקו ניצחה",
+        "clusterKey": "ניצחה סקוטלנד",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -2911,44 +3691,58 @@
   },
   "top10Before": [
     {
-      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 22,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+      "source": "הארץ - ספורט",
+      "canonicalSource": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 18,
+      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
       "beforeRank": 1,
       "afterRank": 1,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
-      "source": "וואלה ספורט - כדורגל עולמי",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
+      "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "כלכלה",
+      "class": "other",
       "strictHard": false,
-      "ageMinutes": 23,
-      "url": "https://sports.walla.co.il/item/3847092",
+      "ageMinutes": 22,
+      "url": "https://www.maariv.co.il/news/world/article-1335146",
       "beforeRank": 2,
       "afterRank": 2,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "דעות",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 26,
+      "url": "https://www.ynet.co.il/news/article/yokra14805403",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
-      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "ageMinutes": 26,
+      "url": "https://www.maariv.co.il/news/military/article-1335145",
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -2964,7 +3758,92 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T07:38:57.996627+00:00",
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "הפסקת",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 33.04,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 38,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
+      "source": "וואלה ספורט - כדורגל עולמי",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://sports.walla.co.il/item/3847092",
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+      "beforeRank": 7,
+      "afterRank": 7,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 52,
+      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
+      "beforeRank": 8,
+      "afterRank": 8,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -2987,10 +3866,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 38,
+      "ageMinutes": 54,
       "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -3001,78 +3880,8 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 43,
+      "ageMinutes": 59,
       "url": "https://sports.walla.co.il/item/3847090",
-      "beforeRank": 5,
-      "afterRank": 5,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "משפט",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 43,
-      "url": "https://news.walla.co.il/item/3846850",
-      "beforeRank": 6,
-      "afterRank": 6,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 48,
-      "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-      "beforeRank": 7,
-      "afterRank": 7,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "דרייק ספד למפיק טיי קית' אחרי מותו",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 49,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 53,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "בולדווין נתן לפנרבחצ׳ה אליפות שלישית ברצף",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 58,
-      "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20801399",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -3092,20 +3901,51 @@
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
+      "trendMatch": {
+        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+        "clusterKey": "נשיא בוליביה הכריז",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T09:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847086",
+        "overlapTokens": [
+          "בוליביה",
+          "הכריז",
+          "המדינה",
+          "הצבא",
+          "חירום",
+          "להיפרס",
+          "מצב",
+          "נשיא"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 104.98,
+        "boost": 14.0
+      }
     },
     {
-      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
-      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
-      "beforeRank": 3,
+      "ageMinutes": 26,
+      "url": "https://www.maariv.co.il/news/military/article-1335145",
+      "beforeRank": 4,
       "afterRank": 2,
-      "delta": 1,
+      "delta": 2,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
         "clusterKey": "הפסקת האש",
@@ -3120,7 +3960,64 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T07:38:57.996627+00:00",
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "הפסקת",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 33.04,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 38,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "beforeRank": 5,
+      "afterRank": 3,
+      "delta": 2,
+      "trendMatch": null
+    },
+    {
+      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 52,
+      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
+      "beforeRank": 8,
+      "afterRank": 4,
+      "delta": 4,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -3137,18 +4034,60 @@
       }
     },
     {
-      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
+      "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "משפט",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 59,
+      "url": "https://news.walla.co.il/item/3846850",
+      "beforeRank": 11,
+      "afterRank": 5,
+      "delta": 6,
+      "trendMatch": null
+    },
+    {
+      "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+      "source": "מעריב - צבא וביטחון",
+      "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 22,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
-      "beforeRank": 1,
-      "afterRank": 3,
-      "delta": -2,
-      "trendMatch": null
+      "ageMinutes": 63,
+      "url": "https://www.maariv.co.il/news/military/article-1335022",
+      "beforeRank": 12,
+      "afterRank": 6,
+      "delta": 6,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      }
     },
     {
       "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
@@ -3157,25 +4096,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 48,
+      "ageMinutes": 64,
       "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-      "beforeRank": 7,
-      "afterRank": 4,
-      "delta": 3,
-      "trendMatch": null
-    },
-    {
-      "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "משפט",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 43,
-      "url": "https://news.walla.co.il/item/3846850",
-      "beforeRank": 6,
-      "afterRank": 5,
-      "delta": 1,
+      "beforeRank": 13,
+      "afterRank": 7,
+      "delta": 6,
       "trendMatch": null
     },
     {
@@ -3185,25 +4110,11 @@
       "category": "משפט",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 80,
       "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
-      "beforeRank": 11,
-      "afterRank": 6,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארה\"ב וקטאר מקדמות שחרור כספים מוקפאים לאיראן",
-      "source": "מעריב - כלכלה",
-      "canonicalSource": "מעריב",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 116,
-      "url": "https://www.maariv.co.il/economy/international/article-1335127",
-      "beforeRank": 34,
-      "afterRank": 7,
-      "delta": 27,
+      "beforeRank": 17,
+      "afterRank": 8,
+      "delta": 9,
       "trendMatch": null
     },
     {
@@ -3213,11 +4124,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 100,
+      "ageMinutes": 116,
       "url": "https://www.aljazeera.com/news/2026/6/20/iran-war-day-113-tehran-presses-us-over-lebanon-ceasefire?traffic_source=rss",
-      "beforeRank": 30,
-      "afterRank": 8,
-      "delta": 22,
+      "beforeRank": 36,
+      "afterRank": 9,
+      "delta": 27,
       "trendMatch": null
     },
     {
@@ -3227,68 +4138,68 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 110,
+      "ageMinutes": 126,
       "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20801332",
-      "beforeRank": 33,
-      "afterRank": 9,
-      "delta": 24,
-      "trendMatch": null
-    },
-    {
-      "headline": "ישראלים חוששים שהסכם איראן משאיר אותם לבד",
-      "source": "The Guardian Middle East",
-      "canonicalSource": "Guardian",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 158,
-      "url": "https://www.theguardian.com/world/2026/jun/20/israelis-betrayed-angry-after-iran-peace-deal-donald-trump",
-      "beforeRank": 49,
+      "beforeRank": 39,
       "afterRank": 10,
-      "delta": 39,
+      "delta": 29,
       "trendMatch": null
     }
   ],
   "top20Before": [
     {
-      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 22,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+      "source": "הארץ - ספורט",
+      "canonicalSource": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 18,
+      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
       "beforeRank": 1,
       "afterRank": 1,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
-      "source": "וואלה ספורט - כדורגל עולמי",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
+      "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "כלכלה",
+      "class": "other",
       "strictHard": false,
-      "ageMinutes": 23,
-      "url": "https://sports.walla.co.il/item/3847092",
+      "ageMinutes": 22,
+      "url": "https://www.maariv.co.il/news/world/article-1335146",
       "beforeRank": 2,
       "afterRank": 2,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "דעות",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 26,
+      "url": "https://www.ynet.co.il/news/article/yokra14805403",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
-      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "ageMinutes": 26,
+      "url": "https://www.maariv.co.il/news/military/article-1335145",
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -3304,7 +4215,92 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T07:38:57.996627+00:00",
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "הפסקת",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 33.04,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 38,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
+      "source": "וואלה ספורט - כדורגל עולמי",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://sports.walla.co.il/item/3847092",
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+      "beforeRank": 7,
+      "afterRank": 7,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 52,
+      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
+      "beforeRank": 8,
+      "afterRank": 8,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -3327,10 +4323,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 38,
+      "ageMinutes": 54,
       "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -3341,10 +4337,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 43,
+      "ageMinutes": 59,
       "url": "https://sports.walla.co.il/item/3847090",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -3355,12 +4351,54 @@
       "category": "משפט",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 43,
+      "ageMinutes": 59,
       "url": "https://news.walla.co.il/item/3846850",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": null
+    },
+    {
+      "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+      "source": "מעריב - צבא וביטחון",
+      "canonicalSource": "מעריב",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 63,
+      "url": "https://www.maariv.co.il/news/military/article-1335022",
+      "beforeRank": 12,
+      "afterRank": 12,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      }
     },
     {
       "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
@@ -3369,10 +4407,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 48,
+      "ageMinutes": 64,
       "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -3383,10 +4421,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 49,
+      "ageMinutes": 65,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": null
     },
@@ -3397,10 +4435,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 53,
+      "ageMinutes": 68,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -3411,10 +4449,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 58,
+      "ageMinutes": 74,
       "url": "https://www.israelhayom.co.il/sport/world-basketball/article/20801399",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -3425,10 +4463,10 @@
       "category": "משפט",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 80,
       "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -3439,10 +4477,10 @@
       "category": "בריאות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 64,
+      "ageMinutes": 80,
       "url": "https://www.jpost.com/israel-news/article-899859",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -3453,10 +4491,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 65,
+      "ageMinutes": 81,
       "url": "https://sports.walla.co.il/item/3847085",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -3467,92 +4505,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 67,
+      "ageMinutes": 83,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/kerry-katona-opens-up-topless-37323428",
-      "beforeRank": 14,
-      "afterRank": 14,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "המונדיאל בארה״ב נהפך גם לזירת דייטים",
-      "source": "מעריב - חדשות",
-      "canonicalSource": "מעריב",
-      "category": "תרבות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 67,
-      "url": "https://www.maariv.co.il/news/viral/article-1335089",
-      "beforeRank": 15,
-      "afterRank": 15,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "אורחי ג׳יימס מרטין גילו את אוסף הרכב שלו",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 68,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/we-went-james-martins-show-37314208",
-      "beforeRank": 16,
-      "afterRank": 16,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "MYSHOP מכוונת לנאסד״ק אחרי צמיחה בישראל",
-      "source": "מעריב - כלכלה",
-      "canonicalSource": "מעריב",
-      "category": "כלכלה",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 69,
-      "url": "https://www.maariv.co.il/economy/israel/article-1334734",
-      "beforeRank": 17,
-      "afterRank": 17,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
-      "source": "דה מרקר - גלובל",
-      "canonicalSource": "דה מרקר",
-      "category": "פוליטיקה",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 73,
-      "url": "https://www.themarker.com/wallstreet/2026-06-20/ty-article/.premium/0000019e-e37a-dc8a-afbe-f77f73cd0000",
-      "beforeRank": 18,
-      "afterRank": 18,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ברזיל התאוששה עם 0:3 על האיטי וקיבלה תשובה מקוניה",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 80,
-      "url": "https://sports.walla.co.il/item/3847083",
-      "beforeRank": 19,
-      "afterRank": 19,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "שיבא פתח מתחם גוף-נפש לנפגעי טראומת המלחמה",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "בריאות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.israelhayom.co.il/health/article/20801366",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -3572,20 +4526,51 @@
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
+      "trendMatch": {
+        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+        "clusterKey": "נשיא בוליביה הכריז",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T09:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847086",
+        "overlapTokens": [
+          "בוליביה",
+          "הכריז",
+          "המדינה",
+          "הצבא",
+          "חירום",
+          "להיפרס",
+          "מצב",
+          "נשיא"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 104.98,
+        "boost": 14.0
+      }
     },
     {
-      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 36,
-      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
-      "beforeRank": 3,
+      "ageMinutes": 26,
+      "url": "https://www.maariv.co.il/news/military/article-1335145",
+      "beforeRank": 4,
       "afterRank": 2,
-      "delta": 1,
+      "delta": 2,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
         "clusterKey": "הפסקת האש",
@@ -3600,7 +4585,64 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T07:38:57.996627+00:00",
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "הפסקת",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 33.04,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 38,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
+      "beforeRank": 5,
+      "afterRank": 3,
+      "delta": 2,
+      "trendMatch": null
+    },
+    {
+      "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 52,
+      "url": "https://www.aljazeera.com/news/2026/6/20/us-envoy-headed-for-switzerland-israeli-strikes-on-lebanon-threaten-talks?traffic_source=rss",
+      "beforeRank": 8,
+      "afterRank": 4,
+      "delta": 4,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -3617,18 +4659,60 @@
       }
     },
     {
-      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
+      "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "משפט",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 59,
+      "url": "https://news.walla.co.il/item/3846850",
+      "beforeRank": 11,
+      "afterRank": 5,
+      "delta": 6,
+      "trendMatch": null
+    },
+    {
+      "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+      "source": "מעריב - צבא וביטחון",
+      "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 22,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899961",
-      "beforeRank": 1,
-      "afterRank": 3,
-      "delta": -2,
-      "trendMatch": null
+      "ageMinutes": 63,
+      "url": "https://www.maariv.co.il/news/military/article-1335022",
+      "beforeRank": 12,
+      "afterRank": 6,
+      "delta": 6,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      }
     },
     {
       "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
@@ -3637,25 +4721,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 48,
+      "ageMinutes": 64,
       "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801420",
-      "beforeRank": 7,
-      "afterRank": 4,
-      "delta": 3,
-      "trendMatch": null
-    },
-    {
-      "headline": "חקירת נתניהו הסתיימה עם סתירות פתוחות",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "משפט",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 43,
-      "url": "https://news.walla.co.il/item/3846850",
-      "beforeRank": 6,
-      "afterRank": 5,
-      "delta": 1,
+      "beforeRank": 13,
+      "afterRank": 7,
+      "delta": 6,
       "trendMatch": null
     },
     {
@@ -3665,25 +4735,11 @@
       "category": "משפט",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 64,
+      "ageMinutes": 80,
       "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-899958",
-      "beforeRank": 11,
-      "afterRank": 6,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארה\"ב וקטאר מקדמות שחרור כספים מוקפאים לאיראן",
-      "source": "מעריב - כלכלה",
-      "canonicalSource": "מעריב",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 116,
-      "url": "https://www.maariv.co.il/economy/international/article-1335127",
-      "beforeRank": 34,
-      "afterRank": 7,
-      "delta": 27,
+      "beforeRank": 17,
+      "afterRank": 8,
+      "delta": 9,
       "trendMatch": null
     },
     {
@@ -3693,11 +4749,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 100,
+      "ageMinutes": 116,
       "url": "https://www.aljazeera.com/news/2026/6/20/iran-war-day-113-tehran-presses-us-over-lebanon-ceasefire?traffic_source=rss",
-      "beforeRank": 30,
-      "afterRank": 8,
-      "delta": 22,
+      "beforeRank": 36,
+      "afterRank": 9,
+      "delta": 27,
       "trendMatch": null
     },
     {
@@ -3707,11 +4763,25 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 110,
+      "ageMinutes": 126,
       "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20801332",
-      "beforeRank": 33,
-      "afterRank": 9,
-      "delta": 24,
+      "beforeRank": 39,
+      "afterRank": 10,
+      "delta": 29,
+      "trendMatch": null
+    },
+    {
+      "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "כלכלה",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 22,
+      "url": "https://www.maariv.co.il/news/world/article-1335146",
+      "beforeRank": 2,
+      "afterRank": 11,
+      "delta": -9,
       "trendMatch": null
     },
     {
@@ -3721,81 +4791,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 158,
+      "ageMinutes": 173,
       "url": "https://www.theguardian.com/world/2026/jun/20/israelis-betrayed-angry-after-iran-peace-deal-donald-trump",
-      "beforeRank": 49,
-      "afterRank": 10,
-      "delta": 39,
-      "trendMatch": null
-    },
-    {
-      "headline": "אלכס פרימן העלה את ארה״ב שלב במונדיאל",
-      "source": "ynet - כל ערוץ הספורט",
-      "canonicalSource": "ynet",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 38,
-      "url": "https://www.ynet.co.il/sport/worldcup2026/article/hkupfh7ffl",
-      "beforeRank": 4,
-      "afterRank": 11,
-      "delta": -7,
-      "trendMatch": null
-    },
-    {
-      "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
-      "source": "דה מרקר - גלובל",
-      "canonicalSource": "דה מרקר",
-      "category": "פוליטיקה",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 73,
-      "url": "https://www.themarker.com/wallstreet/2026-06-20/ty-article/.premium/0000019e-e37a-dc8a-afbe-f77f73cd0000",
-      "beforeRank": 18,
+      "beforeRank": 55,
       "afterRank": 12,
-      "delta": 6,
-      "trendMatch": null
-    },
-    {
-      "headline": "משמרות המהפכה צפויים להרוויח מהקלות הסנקציות",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 93,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899960",
-      "beforeRank": 26,
-      "afterRank": 13,
-      "delta": 13,
-      "trendMatch": null
-    },
-    {
-      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
-      "source": "וואלה ספורט - כדורגל עולמי",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 23,
-      "url": "https://sports.walla.co.il/item/3847092",
-      "beforeRank": 2,
-      "afterRank": 14,
-      "delta": -12,
-      "trendMatch": null
-    },
-    {
-      "headline": "MYSHOP מכוונת לנאסד״ק אחרי צמיחה בישראל",
-      "source": "מעריב - כלכלה",
-      "canonicalSource": "מעריב",
-      "category": "כלכלה",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 69,
-      "url": "https://www.maariv.co.il/economy/israel/article-1334734",
-      "beforeRank": 17,
-      "afterRank": 15,
-      "delta": 2,
+      "delta": 43,
       "trendMatch": null
     },
     {
@@ -3805,11 +4805,95 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 161,
+      "ageMinutes": 177,
       "url": "https://www.ynet.co.il/news/article/rkjgcymmml",
-      "beforeRank": 55,
+      "beforeRank": null,
+      "afterRank": 13,
+      "delta": null,
+      "trendMatch": null
+    },
+    {
+      "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
+      "source": "דה מרקר - גלובל",
+      "canonicalSource": "דה מרקר",
+      "category": "פוליטיקה",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 89,
+      "url": "https://www.themarker.com/wallstreet/2026-06-20/ty-article/.premium/0000019e-e37a-dc8a-afbe-f77f73cd0000",
+      "beforeRank": 24,
+      "afterRank": 14,
+      "delta": 10,
+      "trendMatch": null
+    },
+    {
+      "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "דעות",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 26,
+      "url": "https://www.ynet.co.il/news/article/yokra14805403",
+      "beforeRank": 3,
+      "afterRank": 15,
+      "delta": -12,
+      "trendMatch": null
+    },
+    {
+      "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+      "source": "הארץ - ספורט",
+      "canonicalSource": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 18,
+      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-20/ty-article/0000019e-e3ea-d698-adbf-e3ea171b0000",
+      "beforeRank": 1,
       "afterRank": 16,
-      "delta": 39,
+      "delta": -15,
+      "trendMatch": null
+    },
+    {
+      "headline": "משמרות המהפכה צפויים להרוויח מהקלות הסנקציות",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 109,
+      "url": "https://www.jpost.com/middle-east/iran-news/article-899960",
+      "beforeRank": 32,
+      "afterRank": 17,
+      "delta": 15,
+      "trendMatch": null
+    },
+    {
+      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
+      "source": "וואלה ספורט - כדורגל עולמי",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://sports.walla.co.il/item/3847092",
+      "beforeRank": 6,
+      "afterRank": 18,
+      "delta": -12,
+      "trendMatch": null
+    },
+    {
+      "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 39,
+      "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20801427",
+      "beforeRank": 7,
+      "afterRank": 19,
+      "delta": -12,
       "trendMatch": null
     },
     {
@@ -3819,53 +4903,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 49,
+      "ageMinutes": 65,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915613/drake-tay-keith-music-producer-death-tribute.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 17,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 53,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/harper-beckham-brooklyn-doordash-ad-37308662",
-      "beforeRank": 9,
-      "afterRank": 18,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "קרי קטונה מגיבה לתמונה האינטימית עם פאולו",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 67,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/kerry-katona-opens-up-topless-37323428",
       "beforeRank": 14,
-      "afterRank": 19,
-      "delta": -5,
-      "trendMatch": null
-    },
-    {
-      "headline": "המונדיאל בארה״ב נהפך גם לזירת דייטים",
-      "source": "מעריב - חדשות",
-      "canonicalSource": "מעריב",
-      "category": "תרבות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 67,
-      "url": "https://www.maariv.co.il/news/viral/article-1335089",
-      "beforeRank": 15,
       "afterRank": 20,
-      "delta": -5,
+      "delta": -6,
       "trendMatch": null
     }
   ],
@@ -3875,9 +4917,87 @@
       "source": "וואלה",
       "category": "אקטואליה בעולם",
       "class": "hard",
-      "trendMatch": null,
+      "trendMatch": {
+        "trend": "נשיא בוליביה הכריז על מצב חירום: הצבא עשוי להיפרס ברחבי המדינה",
+        "clusterKey": "נשיא בוליביה הכריז",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T09:30:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847086",
+        "overlapTokens": [
+          "בוליביה",
+          "הכריז",
+          "המדינה",
+          "הצבא",
+          "חירום",
+          "להיפרס",
+          "מצב",
+          "נשיא"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 104.98,
+        "boost": 14.0
+      },
       "beforeRank": null,
       "afterRank": 1
+    },
+    {
+      "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה",
+      "source": "מעריב",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "הפסקת",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 33.04,
+        "boost": 24.0
+      },
+      "beforeRank": 4,
+      "afterRank": 2
+    },
+    {
+      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 5,
+      "afterRank": 3
     },
     {
       "headline": "תקיפות ישראל בלבנון מאיימות על שיחות ארה״ב-איראן",
@@ -3898,7 +5018,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T07:38:57.996627+00:00",
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -3913,25 +5033,7 @@
         "score": 33.04,
         "boost": 24.0
       },
-      "beforeRank": 3,
-      "afterRank": 2
-    },
-    {
-      "headline": "ארה״ב וקטאר מקדמות הפשרת 6 מיליארד דולר לאיראן",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 1,
-      "afterRank": 3
-    },
-    {
-      "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
-      "source": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 7,
+      "beforeRank": 8,
       "afterRank": 4
     },
     {
@@ -3940,8 +5042,54 @@
       "category": "משפט",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 6,
+      "beforeRank": 11,
       "afterRank": 5
+    },
+    {
+      "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון",
+      "source": "מעריב",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "כלכלה",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T07:54:53.411740+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "בלבנון",
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "חיזבאללה",
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      },
+      "beforeRank": 12,
+      "afterRank": 6
+    },
+    {
+      "headline": "איראן רואה בחיזבאללה חלק מזהות המשטר",
+      "source": "ישראל היום",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 13,
+      "afterRank": 7
     },
     {
       "headline": "סולברג הורה לבן גביר להסיר סרטון ממשט",
@@ -3949,17 +5097,8 @@
       "category": "משפט",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 11,
-      "afterRank": 6
-    },
-    {
-      "headline": "ארה\"ב וקטאר מקדמות שחרור כספים מוקפאים לאיראן",
-      "source": "מעריב",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 34,
-      "afterRank": 7
+      "beforeRank": 17,
+      "afterRank": 8
     },
     {
       "headline": "טהרן קושרת את לבנון לשיחות עם וושינגטון",
@@ -3967,8 +5106,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 30,
-      "afterRank": 8
+      "beforeRank": 36,
+      "afterRank": 9
     },
     {
       "headline": "פעלול הצתה בנמל ולנסיה הגיע לחקירת משטרה",
@@ -3976,8 +5115,17 @@
       "category": "פלילים",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 33,
-      "afterRank": 9
+      "beforeRank": 39,
+      "afterRank": 10
+    },
+    {
+      "headline": "מומחה טוען שארה״ב מרוויחה מהברית עם ישראל",
+      "source": "מעריב",
+      "category": "כלכלה",
+      "class": "other",
+      "trendMatch": null,
+      "beforeRank": 2,
+      "afterRank": 11
     },
     {
       "headline": "ישראלים חוששים שהסכם איראן משאיר אותם לבד",
@@ -3985,53 +5133,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 49,
-      "afterRank": 10
-    },
-    {
-      "headline": "אלכס פרימן העלה את ארה״ב שלב במונדיאל",
-      "source": "ynet",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 4,
-      "afterRank": 11
-    },
-    {
-      "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
-      "source": "דה מרקר",
-      "category": "פוליטיקה",
-      "class": "other",
-      "trendMatch": null,
-      "beforeRank": 18,
+      "beforeRank": 55,
       "afterRank": 12
-    },
-    {
-      "headline": "משמרות המהפכה צפויים להרוויח מהקלות הסנקציות",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 26,
-      "afterRank": 13
-    },
-    {
-      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
-      "source": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 2,
-      "afterRank": 14
-    },
-    {
-      "headline": "MYSHOP מכוונת לנאסד״ק אחרי צמיחה בישראל",
-      "source": "מעריב",
-      "category": "כלכלה",
-      "class": "other",
-      "trendMatch": null,
-      "beforeRank": 17,
-      "afterRank": 15
     },
     {
       "headline": "תקיפות בלבנון ושיחות איראן מתכנסות לאותו משבר",
@@ -4039,8 +5142,62 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 55,
+      "beforeRank": null,
+      "afterRank": 13
+    },
+    {
+      "headline": "המטוס הקטארי של טראמפ נכנס לשירות הנשיאותי",
+      "source": "דה מרקר",
+      "category": "פוליטיקה",
+      "class": "other",
+      "trendMatch": null,
+      "beforeRank": 24,
+      "afterRank": 14
+    },
+    {
+      "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן",
+      "source": "ynet",
+      "category": "דעות",
+      "class": "other",
+      "trendMatch": null,
+      "beforeRank": 3,
+      "afterRank": 15
+    },
+    {
+      "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל",
+      "source": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 1,
       "afterRank": 16
+    },
+    {
+      "headline": "משמרות המהפכה צפויים להרוויח מהקלות הסנקציות",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 32,
+      "afterRank": 17
+    },
+    {
+      "headline": "יפן מגיעה לתוניסיה בלי קובו ועם סיכוי להתקרב לשמינית",
+      "source": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 6,
+      "afterRank": 18
+    },
+    {
+      "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף",
+      "source": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 7,
+      "afterRank": 19
     },
     {
       "headline": "דרייק ספד למפיק טיי קית' אחרי מותו",
@@ -4048,34 +5205,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 8,
-      "afterRank": 17
-    },
-    {
-      "headline": "הקרע במשפחת בקהאם מגיע להארפר",
-      "source": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 9,
-      "afterRank": 18
-    },
-    {
-      "headline": "קרי קטונה מגיבה לתמונה האינטימית עם פאולו",
-      "source": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
       "beforeRank": 14,
-      "afterRank": 19
-    },
-    {
-      "headline": "המונדיאל בארה״ב נהפך גם לזירת דייטים",
-      "source": "מעריב",
-      "category": "תרבות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 15,
       "afterRank": 20
     }
   ],
@@ -4102,7 +5232,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-20T07:39:16.371915+00:00",
+    "generatedAt": "2026-06-20T07:55:11.695799+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -4139,15 +5269,20 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T05:51:12+00:00",
-        "latestRawAgeHours": 1.8,
-        "latestValidAt": "2026-06-20T05:51:12+00:00",
-        "latestValidAgeHours": 1.8,
+        "latestRawAt": "2026-06-20T07:50:47+00:00",
+        "latestRawAgeHours": 0.07,
+        "latestValidAt": "2026-06-20T07:50:47+00:00",
+        "latestValidAgeHours": 0.07,
         "visibleMain": {
-          "count": 11,
-          "latestAt": "2026-06-20T05:51:12+00:00",
-          "latestAgeHours": 1.8,
+          "count": 12,
+          "latestAt": "2026-06-20T07:35:56+00:00",
+          "latestAgeHours": 0.32,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T07:35:56+00:00",
+              "source": "הארץ - ספורט",
+              "headline": "ניימאר מתקרב לחזרה בהרכב ברזיל"
+            },
             {
               "publishedAt": "2026-06-20T05:51:12+00:00",
               "source": "הארץ - תרבות",
@@ -4157,11 +5292,6 @@
               "publishedAt": "2026-06-20T05:19:57+00:00",
               "source": "הארץ - ספורט",
               "headline": "טורקיה הודחה מהמונדיאל למרות יתרון מספרי"
-            },
-            {
-              "publishedAt": "2026-06-20T05:03:42+00:00",
-              "source": "הארץ - חדשות",
-              "headline": "תקיפות ישראליות בלבנון אירעו בתוך הפסקת האש החדשה"
             }
           ]
         },
@@ -4265,13 +5395,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T02:09:00+00:00",
-        "latestRawAgeHours": 5.5,
+        "latestRawAgeHours": 5.77,
         "latestValidAt": "2026-06-20T02:09:00+00:00",
-        "latestValidAgeHours": 5.5,
+        "latestValidAgeHours": 5.77,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-20T02:09:00+00:00",
-          "latestAgeHours": 5.5,
+          "latestAgeHours": 5.77,
           "sample": [
             {
               "publishedAt": "2026-06-20T02:09:00+00:00",
@@ -4403,14 +5533,19 @@
         "qaRejectedCount": 268,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T07:34:06+00:00",
-        "latestRawAgeHours": 0.09,
+        "latestRawAgeHours": 0.35,
         "latestValidAt": "2026-06-20T07:34:06+00:00",
-        "latestValidAgeHours": 0.09,
+        "latestValidAgeHours": 0.35,
         "visibleMain": {
           "count": 23,
-          "latestAt": "2026-06-20T07:00:43+00:00",
-          "latestAgeHours": 0.64,
+          "latestAt": "2026-06-20T07:28:05+00:00",
+          "latestAgeHours": 0.45,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T07:28:05+00:00",
+              "source": "ynet - כל ערוץ החדשות",
+              "headline": "טור דעה תוקף את ניהול נתניהו סביב איראן"
+            },
             {
               "publishedAt": "2026-06-20T07:00:43+00:00",
               "source": "ynet - כל ערוץ הספורט",
@@ -4420,19 +5555,19 @@
               "publishedAt": "2026-06-20T06:09:20+00:00",
               "source": "ynet - כל ערוץ הספורט",
               "headline": "אלמירון הורחק במונדיאל בגלל הסתרת הפה בעימות"
-            },
-            {
-              "publishedAt": "2026-06-20T06:00:00+00:00",
-              "source": "ynet - כל ערוץ הספורט",
-              "headline": "גורבנקו מכוונת לאולימפיאדה רביעית אחרי שנת קולג׳"
             }
           ]
         },
         "visibleBreaking": {
           "count": 27,
-          "latestAt": "2026-06-20T06:48:39+00:00",
-          "latestAgeHours": 0.84,
+          "latestAt": "2026-06-20T07:34:06+00:00",
+          "latestAgeHours": 0.35,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T07:34:06+00:00",
+              "source": "ynet",
+              "headline": "אלמנתו של סא\"ל דור גדליה בן שמחון ספדה לו במכתב: \"קודקוד אהובי, כאן קודקוד אהובה\""
+            },
             {
               "publishedAt": "2026-06-20T06:48:39+00:00",
               "source": "ynet",
@@ -4442,11 +5577,6 @@
               "publishedAt": "2026-06-20T06:21:26+00:00",
               "source": "ynet",
               "headline": "ניסיון חיסול ברצועה: 4 נהרגו בתקיפה בדירה בעיר עזה"
-            },
-            {
-              "publishedAt": "2026-06-20T05:32:13+00:00",
-              "source": "ynet",
-              "headline": "לאחר הפסד מפתיע לפרגוואי: טורקיה הודחה מהמונדיאל"
             }
           ]
         },
@@ -4542,10 +5672,16 @@
           "sample": []
         },
         "visibleBreaking": {
-          "count": 0,
-          "latestAt": null,
-          "latestAgeHours": null,
-          "sample": []
+          "count": 1,
+          "latestAt": "2026-06-20T07:34:06+00:00",
+          "latestAgeHours": 0.35,
+          "sample": [
+            {
+              "publishedAt": "2026-06-20T07:34:06+00:00",
+              "source": "ynet",
+              "headline": "אלמנתו של סא\"ל דור גדליה בן שמחון ספדה לו במכתב: \"קודקוד אהובי, כאן קודקוד אהובה\""
+            }
+          ]
         },
         "fetchErrors": [],
         "candidateSamples": []
@@ -4576,14 +5712,14 @@
         "qaPassSimulationCount": 2,
         "qaRejectedCount": 136,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T07:39:24+00:00",
+        "latestRawAt": "2026-06-20T07:55:20+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-20T07:39:24+00:00",
+        "latestValidAt": "2026-06-20T07:55:20+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
-          "count": 8,
+          "count": 7,
           "latestAt": "2026-06-20T06:55:49+00:00",
-          "latestAgeHours": 0.72,
+          "latestAgeHours": 0.99,
           "sample": [
             {
               "publishedAt": "2026-06-20T06:55:49+00:00",
@@ -4614,15 +5750,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T10:39:23+03:00",
-            "title": "הצתת בית הכנסת במלבורן: כתב אישום מרוכך הוגש נגד חשוד שלישי במעשה",
-            "url": "https://news.walla.co.il/item/3847076"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T10:39:23+03:00",
+            "publishedAt": "2026-06-20T10:55:20+03:00",
             "title": "תוכנית ההונאה של חמאס: כך נבנתה אשליית \"ההרתעה\" לפני טבח ה-7 באוקטובר",
             "url": "https://news.walla.co.il/item/3846879"
           },
@@ -4630,9 +5758,17 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-20T10:39:23+03:00",
+            "publishedAt": "2026-06-20T10:55:20+03:00",
             "title": "החורים בזיכרון, הנזיפות ובאגס באני: סיכום החקירה הנגדית בעדות נתניהו",
             "url": "https://news.walla.co.il/item/3846850"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "וואלה חדשות",
+            "publishedAt": "2026-06-20T10:49:00+03:00",
+            "title": "הצתת בית הכנסת במלבורן: כתב אישום מרוכך הוגש נגד חשוד שלישי במעשה",
+            "url": "https://news.walla.co.il/item/3847076"
           },
           {
             "status": "qa_rejected",
@@ -4692,14 +5828,19 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T07:15:05+00:00",
-        "latestRawAgeHours": 0.4,
+        "latestRawAgeHours": 0.67,
         "latestValidAt": "2026-06-20T07:15:05+00:00",
-        "latestValidAgeHours": 0.4,
+        "latestValidAgeHours": 0.67,
         "visibleMain": {
-          "count": 23,
-          "latestAt": "2026-06-20T06:50:01+00:00",
-          "latestAgeHours": 0.82,
+          "count": 24,
+          "latestAt": "2026-06-20T07:15:05+00:00",
+          "latestAgeHours": 0.67,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T07:15:05+00:00",
+              "source": "ישראל היום - כל הכתבות",
+              "headline": "נאפולי משאירה את חלאילי בראש רשימת האגף"
+            },
             {
               "publishedAt": "2026-06-20T06:50:01+00:00",
               "source": "ישראל היום - כל הכתבות",
@@ -4709,18 +5850,13 @@
               "publishedAt": "2026-06-20T06:40:05+00:00",
               "source": "ישראל היום - כל הכתבות",
               "headline": "בולדווין נתן לפנרבחצ׳ה אליפות שלישית ברצף"
-            },
-            {
-              "publishedAt": "2026-06-20T06:13:36+00:00",
-              "source": "ישראל היום - כל הכתבות",
-              "headline": "שיבא פתח מתחם גוף-נפש לנפגעי טראומת המלחמה"
             }
           ]
         },
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T14:52:08+00:00",
-          "latestAgeHours": 16.79,
+          "latestAgeHours": 17.05,
           "sample": [
             {
               "publishedAt": "2026-06-19T14:52:08+00:00",
@@ -4821,9 +5957,9 @@
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T19:51:00+00:00",
-        "latestRawAgeHours": 11.8,
+        "latestRawAgeHours": 12.07,
         "latestValidAt": "2026-06-19T19:51:00+00:00",
-        "latestValidAgeHours": 11.8,
+        "latestValidAgeHours": 12.07,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -4920,13 +6056,13 @@
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 10,
         "latestRawAt": "2026-06-20T03:13:18+00:00",
-        "latestRawAgeHours": 4.43,
+        "latestRawAgeHours": 4.7,
         "latestValidAt": "2026-06-19T19:36:10+00:00",
-        "latestValidAgeHours": 12.05,
+        "latestValidAgeHours": 12.32,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-19T20:58:02+00:00",
-          "latestAgeHours": 10.69,
+          "latestAgeHours": 10.95,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:58:02+00:00",
@@ -5122,9 +6258,9 @@
         "qaRejectedCount": 4,
         "relevanceFilteredCount": 20,
         "latestRawAt": "2026-06-19T21:35:40+00:00",
-        "latestRawAgeHours": 10.06,
+        "latestRawAgeHours": 10.33,
         "latestValidAt": "2026-06-19T16:16:28+00:00",
-        "latestValidAgeHours": 15.38,
+        "latestValidAgeHours": 15.65,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5221,13 +6357,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 4,
         "latestRawAt": "2026-06-20T05:29:54+00:00",
-        "latestRawAgeHours": 2.16,
+        "latestRawAgeHours": 2.42,
         "latestValidAt": "2026-06-20T05:00:55+00:00",
-        "latestValidAgeHours": 2.64,
+        "latestValidAgeHours": 2.9,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-20T05:00:55+00:00",
-          "latestAgeHours": 2.64,
+          "latestAgeHours": 2.9,
           "sample": [
             {
               "publishedAt": "2026-06-20T05:00:55+00:00",
@@ -5330,15 +6466,15 @@
         "configuredSources": [
           "Sky News World"
         ],
-        "rawCandidateCount": 6,
-        "validCandidateCount": 0,
+        "rawCandidateCount": 7,
+        "validCandidateCount": 1,
         "qaPassSimulationCount": 0,
-        "qaRejectedCount": 0,
+        "qaRejectedCount": 1,
         "relevanceFilteredCount": 6,
-        "latestRawAt": "2026-06-20T03:07:00+00:00",
-        "latestRawAgeHours": 4.54,
-        "latestValidAt": null,
-        "latestValidAgeHours": null,
+        "latestRawAt": "2026-06-20T05:20:00+00:00",
+        "latestRawAgeHours": 2.59,
+        "latestValidAt": "2026-06-20T05:20:00+00:00",
+        "latestValidAgeHours": 2.59,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5353,6 +6489,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "Sky News World",
+            "publishedAt": "2026-06-20T08:20:00+03:00",
+            "title": "Trump unveils new converted Air Force One jet he accepted as gift from Qatar",
+            "url": "https://news.sky.com/story/trump-unveils-new-converted-air-force-one-jet-he-accepted-as-gift-from-qatar-13556018"
+          },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
@@ -5419,30 +6563,35 @@
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T14:58:11+00:00",
-        "latestRawAgeHours": 16.68,
+        "latestRawAgeHours": 16.95,
         "latestValidAt": "2026-06-19T14:58:11+00:00",
-        "latestValidAgeHours": 16.68,
+        "latestValidAgeHours": 16.95,
         "visibleMain": {
-          "count": 2,
-          "latestAt": "2026-06-20T05:34:47+00:00",
-          "latestAgeHours": 2.07,
+          "count": 4,
+          "latestAt": "2026-06-20T07:27:59+00:00",
+          "latestAgeHours": 0.45,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T07:27:59+00:00",
+              "source": "מעריב - חדשות",
+              "headline": "נבטייה נשארת מוקד תקיפה מול חיזבאללה"
+            },
+            {
+              "publishedAt": "2026-06-20T06:51:35+00:00",
+              "source": "מעריב - צבא וביטחון",
+              "headline": "מנהל בנק המטרות חשף תקיפה שנועדה לשנות את לבנון"
+            },
             {
               "publishedAt": "2026-06-20T05:34:47+00:00",
               "source": "ישראל היום - כל הכתבות",
               "headline": "חמישה נהרגו בתקיפות שיוחסו לישראל אחרי הפסקת האש"
-            },
-            {
-              "publishedAt": "2026-06-19T20:12:50+00:00",
-              "source": "ynet - כל ערוץ החדשות",
-              "headline": "צה״ל בודק אם אסון הטנק בלבנון נגרם מתקלה"
             }
           ]
         },
         "visibleBreaking": {
           "count": 3,
           "latestAt": "2026-06-20T05:28:00+00:00",
-          "latestAgeHours": 2.19,
+          "latestAgeHours": 2.45,
           "sample": [
             {
               "publishedAt": "2026-06-20T05:28:00+00:00",
@@ -5545,23 +6694,18 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T10:05:43+00:00",
-        "latestRawAgeHours": 21.56,
+        "latestRawAgeHours": 21.82,
         "latestValidAt": "2026-06-19T10:05:43+00:00",
-        "latestValidAgeHours": 21.56,
+        "latestValidAgeHours": 21.82,
         "visibleMain": {
-          "count": 2,
+          "count": 1,
           "latestAt": "2026-06-20T05:48:37+00:00",
-          "latestAgeHours": 1.84,
+          "latestAgeHours": 2.11,
           "sample": [
             {
               "publishedAt": "2026-06-20T05:48:37+00:00",
               "source": "ישראל היום - כל הכתבות",
               "headline": "פעלול הצתה בנמל ולנסיה הגיע לחקירת משטרה"
-            },
-            {
-              "publishedAt": "2026-06-19T19:44:23+00:00",
-              "source": "וואלה חדשות",
-              "headline": "שני גברים נורו למוות בבוקעאתא; המשטרה בודקת חשד לחיסול"
             }
           ]
         },
