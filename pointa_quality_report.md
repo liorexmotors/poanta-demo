@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 205
+Items checked: 198
 Errors: 0
-Warnings: 59
+Warnings: 56
 
 ## Category distribution
 
-- ביטחון: 68
-- רכילות: 50
+- ביטחון: 62
+- רכילות: 49
 - ספורט: 28
 - כלכלה: 9
 - פלילים: 8
@@ -24,7 +24,7 @@ Warnings: 59
 
 ## Issue counts
 
-- takeaway_long: 50
+- takeaway_long: 47
 - summary_long: 8
 - category_sport_source: 1
 
@@ -107,7 +107,7 @@ Warnings: 59
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688148
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 19
 - Takeaway length 112 > 95
 - Headline: `הרב יצחק יוסף קשר בין מעצרי ישיבות ליחס טראמפ`
 - Original: `הרב יצחק יוסף: טראמפ "התהפך עלינו" בגלל היועמ"שית`
@@ -249,196 +249,175 @@ Warnings: 59
 
 ### WARNING · takeaway_long · item 102
 - Takeaway length 104 > 95
-- Headline: `אל-ג'זירה: צלם הרשת נהרג בתקיפה ישראלית בעזה`
-- Original: `Al Jazeera cameraman Ahmed Wishah killed in Israeli attack in Gaza`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/news/2026/6/20/al-jazeera-cameraman-ahmad-wishah-killed-in-israeli-attack-in-gaza?traffic_source=rss
-
-### WARNING · takeaway_long · item 103
-- Takeaway length 104 > 95
 - Headline: `קיירי אירווינג נעדר מאיחוד אלופי קליבלנד`
 - Original: `קיירי אירווינג הבריז מהאיחוד עם לברון ג'יימס - והעביר מסר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-basketball/article/20803953
 
-### WARNING · takeaway_long · item 107
+### WARNING · takeaway_long · item 105
 - Takeaway length 106 > 95
 - Headline: `פיקוד העורף שוב במבחן מול שגרת המשק וההורים`
 - Original: `"במסלול להיות רמטכ"ל": האלוף שלוחץ על הכפתור האדום של המשק`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546126#utm_source=RSS
 
-### WARNING · takeaway_long · item 109
+### WARNING · takeaway_long · item 107
 - Takeaway length 100 > 95
 - Headline: `צה״ל פרסם שני חללים מקרבות דרום לבנון`
 - Original: `הותרו לפרסום שמותיהם של שני חללי צה"ל: רס"ל ניר בן ארי לוחם ביחידת מגלן, וסמ"ר יואב קליין מגדוד 52 של חטיבה 401`
 - Source: N12 - ביטחוני ופוליטי
 - URL: https://www.mako.co.il/news-military/2026_q2/Article-b2c29ccb835ee91027.htm
 
-### WARNING · takeaway_long · item 120
+### WARNING · takeaway_long · item 118
 - Takeaway length 100 > 95
 - Headline: `ראשון יהיה רגיל לעונה; התחממות קלה תגיע ברביעי`
 - Original: `תחזית מזג האוויר ליום ראשון: מעונן חלקית עד בהיר`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/weather/2026-06-20/ty-article/0000019e-e605-d698-adbf-e7277e980000
 
-### WARNING · summary_long · item 121
+### WARNING · summary_long · item 119
 - Summary length 221 > 220
 - Headline: `איראן איימה לסגור את הורמוז בגלל התקיפות בלבנון`
 - Original: `Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire
 
-### WARNING · takeaway_long · item 121
+### WARNING · takeaway_long · item 119
 - Takeaway length 98 > 95
 - Headline: `איראן איימה לסגור את הורמוז בגלל התקיפות בלבנון`
 - Original: `Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire
 
-### WARNING · takeaway_long · item 122
+### WARNING · takeaway_long · item 120
 - Takeaway length 104 > 95
 - Headline: `אשלי סנט קלייר טוענת שמאסק הציע לה מיליונים תמורת שתיקה`
 - Original: `40 מיליון דולר תמורת שתיקה: אם בנו של אילון מאסק חושפת`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/forreal/global/article/20803547
 
-### WARNING · summary_long · item 126
+### WARNING · summary_long · item 124
 - Summary length 224 > 220
 - Headline: `רשות האוכלוסין מרחיבה את עמדות הדרכון העצמי`
 - Original: `דרכון בארבע דקות: המהפכה שתקצר את התורים בישראל`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/israel/article-1335275
 
-### WARNING · takeaway_long · item 126
+### WARNING · takeaway_long · item 124
 - Takeaway length 102 > 95
 - Headline: `רשות האוכלוסין מרחיבה את עמדות הדרכון העצמי`
 - Original: `דרכון בארבע דקות: המהפכה שתקצר את התורים בישראל`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/israel/article-1335275
 
-### WARNING · summary_long · item 127
+### WARNING · summary_long · item 125
 - Summary length 237 > 220
 - Headline: `משמרות המהפכה נערכות לרווח מהסרת הסנקציות`
 - Original: `הכוח האמיתי בטהרן נחשף: מי ירוויח מיליארדים מהסרת הסנקציות?`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/international/article-1335274
 
-### WARNING · takeaway_long · item 127
+### WARNING · takeaway_long · item 125
 - Takeaway length 107 > 95
 - Headline: `משמרות המהפכה נערכות לרווח מהסרת הסנקציות`
 - Original: `הכוח האמיתי בטהרן נחשף: מי ירוויח מיליארדים מהסרת הסנקציות?`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/international/article-1335274
 
-### WARNING · takeaway_long · item 129
+### WARNING · takeaway_long · item 127
 - Takeaway length 109 > 95
 - Headline: `ההסכם עם איראן פותח קרע גלוי בין טראמפ לישראל`
 - Original: `‘You could’ve been the greatest’: Trump faces Israeli anger over Iran deal`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/20/you-could-have-been-the-greatest-trump-faces-israeli-anger-over-iran-deal?traffic_source=rss
 
-### WARNING · takeaway_long · item 130
+### WARNING · takeaway_long · item 128
 - Takeaway length 97 > 95
 - Headline: `בדרום לבנון נחשף עומק אזור החיץ הישראלי`
 - Original: `BBC sees destroyed villages in Israeli-occupied southern Lebanon`
 - Source: BBC World
 - URL: https://www.bbc.com/news/videos/c8r2pyv3e2po?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 129
 - Takeaway length 96 > 95
 - Headline: `חשש להתפשטות אבולה במחנה עקורים בקונגו`
 - Original: `המחלה הקטלנית מתפשטת במהירות: "אנשים לא מתו כך בעבר"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1335260
 
-### WARNING · takeaway_long · item 143
+### WARNING · takeaway_long · item 141
 - Takeaway length 100 > 95
 - Headline: `קובה פותחת את סחר החוץ לרפורמת שוק`
 - Original: `סוף הקומוניזם בקובה: הממשלה העבירה רפורמה כלכלית חסרת תקדים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/other/article/20802920
 
-### WARNING · takeaway_long · item 158
+### WARNING · takeaway_long · item 156
 - Takeaway length 98 > 95
 - Headline: `סרינה וויליאמס חוזרת לזוגות בווימבלדון`
 - Original: `סרינה וויליאמס חוזרת לשחק טניס, אבל למה לה לעשות את זה?`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/other/2026-06-20/ty-article-magazine/.premium/0000019e-e4f2-d1c0-a5be-ecfad4630000
 
-### WARNING · takeaway_long · item 162
+### WARNING · takeaway_long · item 160
 - Takeaway length 136 > 95
 - Headline: `מונדיאל 2026 נפתח בקצב שערים שלא נראה מאז 1958`
 - Original: `עשרה ימים בגן עדן: סיכום ביניים למונדיאל מופלא`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3847093
 
-### WARNING · takeaway_long · item 163
+### WARNING · takeaway_long · item 161
 - Takeaway length 128 > 95
 - Headline: `הביקוש למנויי הפועל תל אביב מתקרב לשיא חדש`
 - Original: `הפועל תל אביב מכרה למעלה מ-7,000 מנויים בתוך יומיים`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847155
 
-### WARNING · takeaway_long · item 164
+### WARNING · takeaway_long · item 162
 - Takeaway length 106 > 95
 - Headline: `ג׳לי רול ובאני XO מתגרשים אך ממשיכים בטיפולי IVF`
 - Original: `Jelly Roll divorce takes unexpected turn as cozy call with Bunnie Xo emerges`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/20/celebrity-news/jelly-roll-divorce-takes-unexpected-turn-as-cozy-call-with-bunnie-xo-emerges/
 
-### WARNING · takeaway_long · item 167
+### WARNING · takeaway_long · item 165
 - Takeaway length 98 > 95
 - Headline: `טראמפ חתם בעצמו על הסכם עם איראן בוורסאי`
 - Original: `הסכם היסטורי על מפת שולחן וחיפוש אחר מדפסת בארמון ורסאי: הקרקס הדיפלומטי של טראמפ ואיראן`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1335231
 
-### WARNING · takeaway_long · item 170
+### WARNING · takeaway_long · item 168
 - Takeaway length 110 > 95
 - Headline: `קובה פותחת את הכלכלה לרפורמת שוק רחבה`
 - Original: `מהפכה קפיטליסטית? הצעדים הדרמטיים עליהם הודיעה קובה`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/bk900lxezzx
 
-### WARNING · takeaway_long · item 180
+### WARNING · takeaway_long · item 178
 - Takeaway length 100 > 95
 - Headline: `יובל לוי מ״האח הגדול״ התארסה ברומא`
 - Original: `יוצאת "האח הגדול" התארסה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/forreal/localy/article/20802461
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 182
 - Takeaway length 97 > 95
 - Headline: `איראן טוענת שסגרה את מצר הורמוז`
 - Original: `Iran claims Strait of Hormuz closed in retaliation for US, Israel breaches of MoU - report`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-899969
 
-### WARNING · takeaway_long · item 186
+### WARNING · takeaway_long · item 184
 - Takeaway length 107 > 95
 - Headline: `כוכבי "חברים" נפרדים מהבמאי ג'יימס בורוז`
 - Original: `Matt LeBlanc, Lisa Kudrow and David Schwimmer mourn beloved ‘Friends’ director James Burrows`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/20/entertainment/matt-leblanc-lisa-kudrow-and-david-schwimmer-mourn-beloved-friends-director-james-burrows/
 
-### WARNING · takeaway_long · item 191
+### WARNING · takeaway_long · item 189
 - Takeaway length 96 > 95
 - Headline: `איראן מציגה את סגירת הורמוז כצעד ראשון`
 - Original: `איראן בהודעה דרמטית: "סוגרים את מצר הורמוז בשל הפרות של ישראל וארה"ב"`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3847141
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 99 > 95
-- Headline: `המיעוטים בסוריה מתנגדים לריכוז הכוח של א-שרע`
-- Original: `Cold war brewing in Syria as Druze, Kurds, and Alawites resist al-Sharaa's rule`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/article-899896
-
-### WARNING · takeaway_long · item 204
-- Takeaway length 98 > 95
-- Headline: `דואה ליפה חשפה תמונות מחתונת היוקרה בסיציליה`
-- Original: `Dua Lipa stuns in a bespoke Chanel bridal gown and parties into the early hours as she shares the first pictures from her £1.5million Sicily wedding to Callum Turner`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15915959/Dua-Lipa-Chanel-bridal-gown-Sicily-wedding-Callum-Turner.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
