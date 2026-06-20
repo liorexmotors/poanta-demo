@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 198
 Errors: 0
 Warnings: 45
 
 ## Category distribution
 
 - רכילות: 74
-- ביטחון: 57
+- ביטחון: 55
 - ספורט: 26
 - בריאות: 7
 - חדשות: 6
