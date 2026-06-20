@@ -1,14 +1,14 @@
 # Pointa Quality Gate Report
 
-Items checked: 201
+Items checked: 198
 Errors: 0
-Warnings: 53
+Warnings: 50
 
 ## Category distribution
 
 - ביטחון: 65
-- רכילות: 55
-- ספורט: 27
+- רכילות: 54
+- ספורט: 25
 - פוליטיקה: 10
 - דעות: 7
 - פלילים: 7
@@ -24,7 +24,7 @@ Warnings: 53
 
 ## Issue counts
 
-- takeaway_long: 43
+- takeaway_long: 40
 - summary_long: 9
 - category_sport_source: 1
 
@@ -379,24 +379,3 @@ Warnings: 53
 - Original: `סרינה וויליאמס חוזרת לשחק טניס, אבל למה לה לעשות את זה?`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/other/2026-06-20/ty-article-magazine/.premium/0000019e-e4f2-d1c0-a5be-ecfad4630000
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 136 > 95
-- Headline: `מונדיאל 2026 נפתח בקצב שערים שלא נראה מאז 1958`
-- Original: `עשרה ימים בגן עדן: סיכום ביניים למונדיאל מופלא`
-- Source: וואלה ספורט - כדורגל עולמי
-- URL: https://sports.walla.co.il/item/3847093
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 128 > 95
-- Headline: `הביקוש למנויי הפועל תל אביב מתקרב לשיא חדש`
-- Original: `הפועל תל אביב מכרה למעלה מ-7,000 מנויים בתוך יומיים`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847155
-
-### WARNING · takeaway_long · item 200
-- Takeaway length 106 > 95
-- Headline: `ג׳לי רול ובאני XO מתגרשים אך ממשיכים בטיפולי IVF`
-- Original: `Jelly Roll divorce takes unexpected turn as cozy call with Bunnie Xo emerges`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/20/celebrity-news/jelly-roll-divorce-takes-unexpected-turn-as-cozy-call-with-bunnie-xo-emerges/
