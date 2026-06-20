@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 207
+Items checked: 200
 Errors: 0
-Warnings: 57
+Warnings: 55
 
 ## Category distribution
 
 - ספורט: 61
-- רכילות: 47
-- ביטחון: 45
+- רכילות: 45
+- ביטחון: 43
 - כלכלה: 8
 - תרבות: 8
 - אקטואליה בעולם: 5
 - דעות: 5
-- מזג אוויר: 5
-- פלילים: 4
 - משפט: 4
+- מזג אוויר: 4
 - טכנולוגיה: 3
-- פוליטיקה: 3
+- פלילים: 3
 - בריאות: 3
 - צרכנות: 3
 - חדשות: 2
+- פוליטיקה: 2
 - רכב: 1
 
 ## Issue counts
 
-- takeaway_long: 51
+- takeaway_long: 49
 - summary_long: 6
 
 ## Issues
@@ -414,17 +414,3 @@ Warnings: 57
 - Original: `מונדיאל 2026 מציג: הכרטיס האדום שנכנס לספרי ההיסטוריה`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847071
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 107 > 95
-- Headline: `איראן קושרת את שיחות הגרעין להפסקת אש בלבנון`
-- Original: `האיראנים עדיין מציבים תנאים: ויטקוף יצא לשיחות בשווייץ לקידום ההסכם`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 102 > 95
-- Headline: `משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו`
-- Original: `Daveigh Chase’s ‘devastated’ mom breaks silence on actress’ shock Skid Row death: ‘I am in so much pain’`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/
