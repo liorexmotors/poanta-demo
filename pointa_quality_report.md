@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 229
+Items checked: 200
 Errors: 0
-Warnings: 59
+Warnings: 49
 
 ## Category distribution
 
-- ביטחון: 63
-- רכילות: 56
-- ספורט: 43
-- כלכלה: 12
+- ביטחון: 56
+- רכילות: 48
+- ספורט: 37
+- כלכלה: 10
 - אקטואליה בעולם: 10
-- דעות: 9
-- תרבות: 7
-- פלילים: 7
-- חדשות: 4
-- פוליטיקה: 4
+- דעות: 8
+- תרבות: 6
+- פלילים: 6
 - מזג אוויר: 4
-- טכנולוגיה: 3
+- חדשות: 3
 - בריאות: 3
+- פוליטיקה: 3
+- טכנולוגיה: 2
 - רכב: 2
 - משפט: 1
 - צרכנות: 1
 
 ## Issue counts
 
-- takeaway_long: 54
-- summary_long: 4
+- takeaway_long: 46
+- summary_long: 2
 - category_sport_source: 1
 
 ## Issues
@@ -373,73 +373,3 @@ Warnings: 59
 - Original: `"הנאצים הפכו אנשים למספרים. אנחנו הפכנו מספרים לאנשים"`
 - Source: ynet - כל ערוץ מעורבות
 - URL: https://www.ynet.co.il/activism/article/s1pkkq7fgl
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 97 > 95
-- Headline: `משרד הבריאות: חשד לאבולה, עדיין אין מקרה מאומת`
-- Original: `סכנת האבולה: החולה החשוד אושפז בבידוד`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/health/article/20801774
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 107 > 95
-- Headline: `לוויין ניסיוני מיפה שיבושי GPS מעל ישראל והאזור`
-- Original: `לראשונה מהחלל: כך נראים שיבושי ה-GPS מעל ישראל`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/tech/space/article/20801670
-
-### WARNING · summary_long · item 210
-- Summary length 246 > 220
-- Headline: `יצרני המזון טוענים שהמחיר במפעל לא עלה שנתיים`
-- Original: `המאבק על יוקר המחיה: "תעשיית המזון לא העלתה את המחירים בשערי המפעל במשך שנתיים"`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/business/article/20801634
-
-### WARNING · takeaway_long · item 214
-- Takeaway length 111 > 95
-- Headline: `ג׳ון סנואו חושף בסרט חדש את ההתמודדות עם אלצהיימר`
-- Original: `Jon Snow, 78, admits 'I thought I was dead' as he talks about his devastating Alzheimer's diagnosis: 'The creaking of what was left of the brain was outspinning the sound of my voice'`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15913579/Jon-Snow-Alzheimers-diagnosis-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 216
-- Takeaway length 102 > 95
-- Headline: `אמילי בלאקוול פתחה במיורקה את חגיגות החתונה השנייה`
-- Original: `Emily Blackwell kicks off her wedding festivities in Mallorca with cocktails alongside Made In Chelsea co-stars and husband Jordan Oldershaw ahead of their second ceremony`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15915741/Emily-Blackwell-wedding-Mallorca-Chelsea.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 217
-- Takeaway length 103 > 95
-- Headline: `בונגה מתרחק מהפועל תל אביב עם עניין משלוש ענקיות`
-- Original: `המועמד להפועל תל אביב מסקרן את הקבוצות הכי הגדולות ביורוליג`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847099
-
-### WARNING · takeaway_long · item 218
-- Takeaway length 111 > 95
-- Headline: `סאהה קורא לפורטוגל לספסל את רונאלדו במונדיאל`
-- Original: `סערת כריסטיאנו רונאלדו לא דועכת: "צריך להציל אותו מעצמו"`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847095
-
-### WARNING · takeaway_long · item 222
-- Takeaway length 98 > 95
-- Headline: `במאי הסיטקומים ג'יימס בורוז מת בגיל 85`
-- Original: `בגיל 85: הבמאי של "חברים" ו"המפץ הגדול" הלך לעולמו`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/culture/tv/article/20801513
-
-### WARNING · takeaway_long · item 223
-- Takeaway length 100 > 95
-- Headline: `ג'סי נלסון דוחפת בדיקות SMA לכל יילוד באנגליה`
-- Original: `Jesy Nelson breaks down over twin daughters as she prepares for parliamentary debate on SMA testing`
-- Source: Mirror Celebs רכילות חו״ל
-- URL: https://www.mirror.co.uk/3am/celebrity-news/jesy-nelson-twins-daughters-sma-37323888
-
-### WARNING · summary_long · item 224
-- Summary length 228 > 220
-- Headline: `ד"ר הוכברג מרום מזהירה שהרגיעה מול איראן תחזק אותה`
-- Original: `יוצאים לדרך: הדבר המסוכן ביותר בהסכם מול איראן ברור`
-- Source: מעריב - דעות
-- URL: https://www.maariv.co.il/news/opinions/article-1334683
