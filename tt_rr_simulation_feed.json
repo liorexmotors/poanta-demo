@@ -1,27 +1,27 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-20T01:59:35+00:00",
+  "generatedAt": "2026-06-20T02:34:31+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 199,
+  "itemCount": 200,
   "simulationPoolWindow": {
     "originalWindowItems": 180,
-    "rawPoolItems": 181,
-    "rankedPoolItems": 181
+    "rawPoolItems": 182,
+    "rankedPoolItems": 182
   },
   "before": {
-    "newsinessTop10": 1,
-    "coreHardTop10": 1,
-    "softTop10": 9,
-    "otherTop10": 0,
-    "top5Under60": 3,
-    "top10Under60": 3,
-    "top12Under60": 3,
-    "topItemAgeMinutes": 19,
-    "uniqueSourcesTop20": 8,
+    "newsinessTop10": 2,
+    "coreHardTop10": 2,
+    "softTop10": 7,
+    "otherTop10": 1,
+    "top5Under60": 4,
+    "top10Under60": 4,
+    "top12Under60": 4,
+    "topItemAgeMinutes": 11,
+    "uniqueSourcesTop20": 7,
     "dominantSource": {
-      "name": "Page Six",
-      "count": 5
+      "name": "Daily Mail",
+      "count": 6
     },
     "importantMissingTop20": [
       "N12",
@@ -37,16 +37,20 @@
     "eventClusterTop20Max": 1,
     "topSources": [
       {
-        "name": "Page Six",
-        "count": 5
+        "name": "Daily Mail",
+        "count": 6
       },
       {
-        "name": "Daily Mail",
-        "count": 5
+        "name": "Page Six",
+        "count": 4
       },
       {
         "name": "ישראל היום",
         "count": 3
+      },
+      {
+        "name": "ynet",
+        "count": 2
       },
       {
         "name": "Jerusalem Post",
@@ -57,59 +61,87 @@
         "count": 2
       },
       {
-        "name": "ynet",
-        "count": 1
-      },
-      {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
-        "count": 1
-      },
-      {
-        "name": "Israel National News English",
         "count": 1
       }
     ],
-    "trendMatchedTop10": 1,
-    "trendMatchedTop20": 1,
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 2,
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 30,
-      "score": 26,
-      "readyCount": 1,
-      "hardReadyCount": 1,
-      "hardReadyStrictCount": 1,
-      "trendReadyCount": 1,
-      "cleanReadyCount": 1,
-      "cleanHardReadyCount": 1,
-      "cleanTrendReadyCount": 1,
-      "uniqueReadySources": 1,
-      "uniqueCleanReadySources": 1,
-      "freshReadyUnder25Count": 0,
+      "estimatedVisibleChangeMinutes": 20,
+      "score": 50,
+      "readyCount": 3,
+      "hardReadyCount": 2,
+      "hardReadyStrictCount": 2,
+      "trendReadyCount": 2,
+      "cleanReadyCount": 2,
+      "cleanHardReadyCount": 2,
+      "cleanTrendReadyCount": 2,
+      "uniqueReadySources": 3,
+      "uniqueCleanReadySources": 2,
+      "freshReadyUnder25Count": 1,
       "cleanFreshReadyUnder25Count": 0,
       "blockers": [
         "ready_queue_below_6",
         "clean_ready_queue_below_6",
         "hard_ready_below_4",
         "clean_hard_ready_below_4",
-        "ready_queue_below_3",
-        "hard_ready_below_2",
-        "ready_sources_below_2_hard_block",
-        "ready_sources_below_3",
         "clean_ready_sources_below_3",
-        "ready_fresh_under25_below_1",
         "clean_ready_fresh_under25_below_1"
       ],
       "readyQueue": [
         {
-          "rank": 2,
+          "rank": 3,
+          "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 49,
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
+          "trendMatch": {
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+            "overlapTokens": [
+              "איראן",
+              "לשווייץ",
+              "לשיחות"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 28.35,
+            "boost": 24.0
+          },
+          "queueScore": 36.0
+        },
+        {
+          "rank": 5,
           "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
+          "ageMinutes": 63,
           "url": "https://www.jpost.com/middle-east/article-899956",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -125,7 +157,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -142,19 +174,73 @@
             "score": 41.3,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 33.0
+        },
+        {
+          "rank": 2,
+          "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "מזג אוויר",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 20,
+          "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+          "trendMatch": null,
+          "queueScore": 18.0
         }
       ],
       "cleanReadyQueue": [
         {
-          "rank": 2,
+          "rank": 3,
+          "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 49,
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
+          "trendMatch": {
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+            "overlapTokens": [
+              "איראן",
+              "לשווייץ",
+              "לשיחות"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 28.35,
+            "boost": 24.0
+          },
+          "queueScore": 36.0
+        },
+        {
+          "rank": 5,
           "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
+          "ageMinutes": 63,
           "url": "https://www.jpost.com/middle-east/article-899956",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -170,7 +256,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -187,58 +273,63 @@
             "score": 41.3,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 33.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 3,
+      "freshUnder60Count": 4,
       "worthyFreshUnder60Count": 1,
       "coreHardFreshUnder60Count": 1,
       "softFreshUnder60Count": 2,
-      "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 3,
+      "otherFreshUnder60Count": 1,
+      "freshUniqueSources": 4,
       "worthyUniqueSources": 1,
       "freshSources": [
         {
-          "name": "Page Six",
-          "count": 1
-        },
-        {
-          "name": "Jerusalem Post",
-          "count": 1
-        },
-        {
           "name": "Daily Mail",
+          "count": 1
+        },
+        {
+          "name": "ynet",
+          "count": 1
+        },
+        {
+          "name": "ישראל היום",
+          "count": 1
+        },
+        {
+          "name": "Page Six",
           "count": 1
         }
       ],
       "worthySources": [
         {
-          "name": "Jerusalem Post",
+          "name": "ישראל היום",
           "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
         "quality_class_soft": 2,
-        "weak_or_missing_trend_match": 2
+        "weak_or_missing_trend_match": 3,
+        "quality_class_other": 1
       },
-      "staleOrUndatedCount": 77,
+      "staleOrUndatedCount": 76,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
-          "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
-          "source": "Page Six רכילות חו״ל",
-          "canonicalSource": "Page Six",
+          "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
+          "source": "Daily Mail TVShowbiz רכילות חו״ל",
+          "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 19,
-          "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
+          "ageMinutes": 11,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -250,43 +341,60 @@
         },
         {
           "beforeRank": 2,
-          "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
+          "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "מזג אוויר",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 20,
+          "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 3,
+          "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.jpost.com/middle-east/article-899956",
+          "ageMinutes": 49,
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
           "trendMatch": {
-            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
-            "clusterKey": "הפסקת האש",
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
             "domain": "חדשות",
             "externalMentions": 2,
             "sourceCount": 2,
             "sources": [
-              "דה מרקר",
+              "ynet",
               "הארץ"
             ],
             "discoveryTypes": [
+              "RSS",
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
-            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
             "overlapTokens": [
-              "בלבנון",
-              "האש",
-              "הפסקת",
-              "חיזבאללה",
-              "לבנון"
+              "איראן",
+              "לשווייץ",
+              "לשיחות"
             ],
             "entityOverlapTokens": [
-              "חיזבאללה",
-              "לבנון"
+              "איראן"
             ],
             "eventOverlapTokens": [],
-            "score": 41.3,
+            "score": 28.35,
             "boost": 24.0
           },
           "freshUnder60": true,
@@ -295,15 +403,15 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 3,
-          "headline": "ג׳קי או תעבור בדיקה רפואית במסגרת תביעתה",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
+          "beforeRank": 4,
+          "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
+          "source": "Page Six רכילות חו״ל",
+          "canonicalSource": "Page Six",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 45,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "ageMinutes": 53,
+          "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -316,44 +424,42 @@
       ],
       "topWorthyFreshCandidates": [
         {
-          "beforeRank": 2,
-          "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
+          "beforeRank": 3,
+          "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.jpost.com/middle-east/article-899956",
+          "ageMinutes": 49,
+          "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
           "trendMatch": {
-            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
-            "clusterKey": "הפסקת האש",
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
             "domain": "חדשות",
             "externalMentions": 2,
             "sourceCount": 2,
             "sources": [
-              "דה מרקר",
+              "ynet",
               "הארץ"
             ],
             "discoveryTypes": [
+              "RSS",
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
-            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
             "overlapTokens": [
-              "בלבנון",
-              "האש",
-              "הפסקת",
-              "חיזבאללה",
-              "לבנון"
+              "איראן",
+              "לשווייץ",
+              "לשיחות"
             ],
             "entityOverlapTokens": [
-              "חיזבאללה",
-              "לבנון"
+              "איראן"
             ],
             "eventOverlapTokens": [],
-            "score": 41.3,
+            "score": 28.35,
             "boost": 24.0
           },
           "freshUnder60": true,
@@ -372,8 +478,8 @@
     "top5Under60": 2,
     "top10Under60": 2,
     "top12Under60": 4,
-    "topItemAgeMinutes": 0,
-    "uniqueSourcesTop20": 9,
+    "topItemAgeMinutes": 32,
+    "uniqueSourcesTop20": 10,
     "dominantSource": {
       "name": "Jerusalem Post",
       "count": 3
@@ -383,7 +489,6 @@
       "מעריב",
       "הארץ",
       "BBC",
-      "Guardian",
       "גלובס"
     ],
     "duplicateTop20": 0,
@@ -396,10 +501,6 @@
       },
       {
         "name": "Page Six",
-        "count": 3
-      },
-      {
-        "name": "ישראל היום",
         "count": 3
       },
       {
@@ -421,34 +522,37 @@
       {
         "name": "Daily Mail",
         "count": 2
+      },
+      {
+        "name": "ישראל היום",
+        "count": 2
       }
     ],
-    "trendMatchedTop10": 2,
-    "trendMatchedTop20": 2,
+    "trendMatchedTop10": 4,
+    "trendMatchedTop20": 4,
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 46,
-      "readyCount": 2,
-      "hardReadyCount": 2,
-      "hardReadyStrictCount": 2,
-      "trendReadyCount": 1,
-      "cleanReadyCount": 2,
-      "cleanHardReadyCount": 2,
-      "cleanTrendReadyCount": 1,
-      "uniqueReadySources": 2,
-      "uniqueCleanReadySources": 2,
+      "score": 58,
+      "readyCount": 4,
+      "hardReadyCount": 3,
+      "hardReadyStrictCount": 3,
+      "trendReadyCount": 3,
+      "cleanReadyCount": 3,
+      "cleanHardReadyCount": 3,
+      "cleanTrendReadyCount": 3,
+      "uniqueReadySources": 4,
+      "uniqueCleanReadySources": 3,
       "freshReadyUnder25Count": 1,
-      "cleanFreshReadyUnder25Count": 1,
+      "cleanFreshReadyUnder25Count": 0,
       "blockers": [
         "ready_queue_below_6",
         "clean_ready_queue_below_6",
         "hard_ready_below_4",
         "clean_hard_ready_below_4",
-        "ready_queue_below_3",
-        "ready_sources_below_3",
-        "clean_ready_sources_below_3"
+        "clean_ready_fresh_under25_below_1",
+        "top_item_over_25m"
       ],
       "readyQueue": [
         {
@@ -459,20 +563,89 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 32,
           "url": "https://news.walla.co.il/break/3847061",
-          "trendMatch": null,
-          "queueScore": 44.0
+          "trendMatch": {
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+            "overlapTokens": [
+              "איראן",
+              "וויטקוף",
+              "לשווייץ",
+              "לשיחות"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 37.8,
+            "boost": 24.0
+          },
+          "queueScore": 36.0
         },
         {
           "rank": 2,
+          "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+          "source": "The Guardian Middle East",
+          "canonicalSource": "Guardian",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 52,
+          "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "האש",
+              "הפסקת",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 24.78,
+            "boost": 24.0
+          },
+          "queueScore": 36.0
+        },
+        {
+          "rank": 3,
           "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
+          "ageMinutes": 63,
           "url": "https://www.jpost.com/middle-east/article-899956",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -488,7 +661,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -505,7 +678,20 @@
             "score": 41.3,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 33.0
+        },
+        {
+          "rank": 11,
+          "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "מזג אוויר",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 20,
+          "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+          "trendMatch": null,
+          "queueScore": 18.0
         }
       ],
       "cleanReadyQueue": [
@@ -517,20 +703,89 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 32,
           "url": "https://news.walla.co.il/break/3847061",
-          "trendMatch": null,
-          "queueScore": 44.0
+          "trendMatch": {
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+            "overlapTokens": [
+              "איראן",
+              "וויטקוף",
+              "לשווייץ",
+              "לשיחות"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 37.8,
+            "boost": 24.0
+          },
+          "queueScore": 36.0
         },
         {
           "rank": 2,
+          "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+          "source": "The Guardian Middle East",
+          "canonicalSource": "Guardian",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 52,
+          "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
+          "trendMatch": {
+            "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+            "clusterKey": "הפסקת האש",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "דה מרקר",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
+            "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+            "overlapTokens": [
+              "האש",
+              "הפסקת",
+              "לבנון"
+            ],
+            "entityOverlapTokens": [
+              "לבנון"
+            ],
+            "eventOverlapTokens": [],
+            "score": 24.78,
+            "boost": 24.0
+          },
+          "queueScore": 36.0
+        },
+        {
+          "rank": 3,
           "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
+          "ageMinutes": 63,
           "url": "https://www.jpost.com/middle-east/article-899956",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -546,7 +801,7 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
               "בלבנון",
@@ -563,18 +818,18 @@
             "score": 41.3,
             "boost": 24.0
           },
-          "queueScore": 41.0
+          "queueScore": 33.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 4,
+      "freshUnder60Count": 5,
       "worthyFreshUnder60Count": 2,
       "coreHardFreshUnder60Count": 2,
       "softFreshUnder60Count": 2,
-      "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 4,
+      "otherFreshUnder60Count": 1,
+      "freshUniqueSources": 5,
       "worthyUniqueSources": 2,
       "freshSources": [
         {
@@ -582,15 +837,19 @@
           "count": 1
         },
         {
-          "name": "Page Six",
-          "count": 1
-        },
-        {
-          "name": "Jerusalem Post",
+          "name": "Guardian",
           "count": 1
         },
         {
           "name": "Daily Mail",
+          "count": 1
+        },
+        {
+          "name": "ynet",
+          "count": 1
+        },
+        {
+          "name": "Page Six",
           "count": 1
         }
       ],
@@ -600,15 +859,16 @@
           "count": 1
         },
         {
-          "name": "Jerusalem Post",
+          "name": "Guardian",
           "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
+        "quality_class_soft": 2,
         "weak_or_missing_trend_match": 3,
-        "quality_class_soft": 2
+        "quality_class_other": 1
       },
-      "staleOrUndatedCount": 76,
+      "staleOrUndatedCount": 75,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -621,45 +881,53 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 32,
           "url": "https://news.walla.co.il/break/3847061",
-          "trendMatch": null,
+          "trendMatch": {
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+            "overlapTokens": [
+              "איראן",
+              "וויטקוף",
+              "לשווייץ",
+              "לשיחות"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 37.8,
+            "boost": 24.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
           "beforeRank": 2,
-          "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
-          "source": "Page Six רכילות חו״ל",
-          "canonicalSource": "Page Six",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 19,
-          "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 3,
-          "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
+          "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+          "source": "The Guardian Middle East",
+          "canonicalSource": "Guardian",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.jpost.com/middle-east/article-899956",
+          "ageMinutes": 52,
+          "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
             "clusterKey": "הפסקת האש",
@@ -674,21 +942,18 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
-              "בלבנון",
               "האש",
               "הפסקת",
-              "חיזבאללה",
               "לבנון"
             ],
             "entityOverlapTokens": [
-              "חיזבאללה",
               "לבנון"
             ],
             "eventOverlapTokens": [],
-            "score": 41.3,
+            "score": 24.78,
             "boost": 24.0
           },
           "freshUnder60": true,
@@ -697,15 +962,53 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 4,
-          "headline": "ג׳קי או תעבור בדיקה רפואית במסגרת תביעתה",
+          "beforeRank": 3,
+          "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 45,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "ageMinutes": 11,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_soft",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 4,
+          "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "מזג אוויר",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 20,
+          "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
+          "disqualifiers": [
+            "quality_class_other",
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 5,
+          "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
+          "source": "Page Six רכילות חו״ל",
+          "canonicalSource": "Page Six",
+          "category": "רכילות",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 53,
+          "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -725,26 +1028,53 @@
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 32,
           "url": "https://news.walla.co.il/break/3847061",
-          "trendMatch": null,
+          "trendMatch": {
+            "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+            "clusterKey": "בדרך לשווייץ לשיחות",
+            "domain": "חדשות",
+            "externalMentions": 2,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "הארץ"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-19T23:02:03+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+            "overlapTokens": [
+              "איראן",
+              "וויטקוף",
+              "לשווייץ",
+              "לשיחות"
+            ],
+            "entityOverlapTokens": [
+              "איראן"
+            ],
+            "eventOverlapTokens": [],
+            "score": 37.8,
+            "boost": 24.0
+          },
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
+          "disqualifiers": []
         },
         {
-          "beforeRank": 3,
-          "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
+          "beforeRank": 2,
+          "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+          "source": "The Guardian Middle East",
+          "canonicalSource": "Guardian",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 28,
-          "url": "https://www.jpost.com/middle-east/article-899956",
+          "ageMinutes": 52,
+          "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
           "trendMatch": {
             "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
             "clusterKey": "הפסקת האש",
@@ -759,21 +1089,18 @@
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-20T01:59:35.503681+00:00",
+            "latestAt": "2026-06-20T02:34:30.933174+00:00",
             "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
             "overlapTokens": [
-              "בלבנון",
               "האש",
               "הפסקת",
-              "חיזבאללה",
               "לבנון"
             ],
             "entityOverlapTokens": [
-              "חיזבאללה",
               "לבנון"
             ],
             "eventOverlapTokens": [],
-            "score": 41.3,
+            "score": 24.78,
             "boost": 24.0
           },
           "freshUnder60": true,
@@ -784,20 +1111,21 @@
       ]
     }
   },
-  "beforeHealthScore": 22,
-  "afterHealthScore": 82,
+  "beforeHealthScore": 27,
+  "afterHealthScore": 83,
   "replacementReadiness": {
-    "score": 71,
+    "score": 68,
     "threshold": 80,
     "components": {
-      "freshness": 12.4,
+      "freshness": 9.25,
       "newsinessTop10": 25.0,
-      "top20Quality": 13.2,
+      "top20Quality": 15.5,
       "sourceBalance": 10.0,
-      "trendSignalUse": 5.33,
-      "criticalBlockersClear": 5.0
+      "trendSignalUse": 8.67,
+      "criticalBlockersClear": 0.0
     },
     "criticalBlockers": [
+      "top_item_stale_over_25m",
       "top12_under60_below_9",
       "fresh_candidate_supply_below_9"
     ],
@@ -805,60 +1133,60 @@
   },
   "alizaReview": {
     "status": "ok",
-    "score": 67,
+    "score": 62,
     "scoreSource": "explicit_report_score",
     "readyForMain": false,
     "improvingVsBaseline": false,
     "summaryLine": "בעייתי",
-    "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-20-0401.md",
-    "reportName": "tt-rr-simulation-review-2026-06-20-0401.md",
-    "reportGeneratedAt": "2026-06-20T00:58:47+00:00",
+    "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-20-0512.md",
+    "reportName": "tt-rr-simulation-review-2026-06-20-0512.md",
+    "reportGeneratedAt": "2026-06-20T02:02:17+00:00",
     "metrics": {
-      "ציון עליזה": 67,
+      "ציון עליזה": 62,
       "generatedAt": 2026,
       "afterHealthScore": 70,
-      "healthDelta": 35,
-      "replacementReadiness score": 73,
-      "rollingScore": 76.85,
+      "healthDelta": 48,
+      "replacementReadiness score": 65,
+      "rollingScore": 76.69,
       "newsinessTop10": 7,
       "softTop10": 3,
-      "top12Under60": 6,
-      "trendMatchedTop10": 4,
+      "top12Under60": 3,
+      "trendMatchedTop10": 6,
       "trendMatchedTop20": 10,
-      "dominantSource": 4,
-      "uniqueSourcesTop20": 9,
-      "estimatedVisibleChangeMinutes": 40,
-      "readyCount": 0,
-      "hardReadyCount": 0,
-      "trendReadyCount": 0,
-      "uniqueReadySources": 0,
+      "dominantSource": 3,
+      "uniqueSourcesTop20": 11,
+      "estimatedVisibleChangeMinutes": 30,
+      "readyCount": 1,
+      "hardReadyCount": 1,
+      "trendReadyCount": 1,
+      "uniqueReadySources": 1,
       "blockers": 3
     },
     "recommendedActions": [
-      "לתקן את continuousPublishing candidate selection: להוריד סף כניסה או להוסיף fallback ל-hard-news טרי, כדי להגיע לפחות ל-readyCount 3, hardReadyCount 2, uniqueReadySources 2.",
-      "להקשיח soft cap ב-Top 5: פריט soft ללא trendMatch לא יכול להיות מקום 1, ורכילות לא יכולה להופיע פעמיים ב-Top 5 כשיש hard-news זמין.",
-      "לכייל freshness decay ל-Top 12: פריטים מעל 120 דקות יקבלו קנס משמעותי גם אם הם hard, אלא אם trendMatch חזק ומרובה מקורות."
+      "להקשיח את continuousPublishing.readyQueue: אם readyCount<3 או uniqueReadySources<2, להפעיל הרחבת candidates אגרסיבית ממקורות hard-news לפני החישוב הסופי, ולא להסתפק במועמד יחיד.",
+      "להוסיף decay חזק לפריטים מעל 90/120 דקות, גם עם trend boost, כך שפריטים בני 146-279 דקות לא יעלו ל-Top 20 בלי הוכחת טרנד חזקה במיוחד ומחסור באלטרנטיבות.",
+      "לתקן soft/sport classification ו-trend matching: ספורט, רכילות ותרבות לא יקבלו hard או boost משמעותי בלי התאמת ישות/אירוע חזקה; token overlap כללי כמו \"משפחה\" צריך להיחסם."
     ],
-    "title": "TT RR Simulation Review — 2026-06-20 04:01"
+    "title": "TT RR Simulation Review — 2026-06-20 05:12"
   },
   "delta": {
-    "newsinessTop10": 9,
-    "coreHardTop10": 9,
-    "softTop10": -9,
-    "top12Under60": 1,
-    "uniqueSourcesTop20": 1,
-    "trendMatchedTop10": 1,
-    "trendMatchedTop20": 1,
-    "healthScore": 60
+    "newsinessTop10": 8,
+    "coreHardTop10": 8,
+    "softTop10": -7,
+    "top12Under60": 0,
+    "uniqueSourcesTop20": 3,
+    "trendMatchedTop10": 2,
+    "trendMatchedTop20": 2,
+    "healthScore": 56
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 4,
+    "freshUnder60Count": 5,
     "worthyFreshUnder60Count": 2,
     "coreHardFreshUnder60Count": 2,
     "softFreshUnder60Count": 2,
-    "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 4,
+    "otherFreshUnder60Count": 1,
+    "freshUniqueSources": 5,
     "worthyUniqueSources": 2,
     "freshSources": [
       {
@@ -866,15 +1194,19 @@
         "count": 1
       },
       {
-        "name": "Page Six",
-        "count": 1
-      },
-      {
-        "name": "Jerusalem Post",
+        "name": "Guardian",
         "count": 1
       },
       {
         "name": "Daily Mail",
+        "count": 1
+      },
+      {
+        "name": "ynet",
+        "count": 1
+      },
+      {
+        "name": "Page Six",
         "count": 1
       }
     ],
@@ -884,15 +1216,16 @@
         "count": 1
       },
       {
-        "name": "Jerusalem Post",
+        "name": "Guardian",
         "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
+      "quality_class_soft": 2,
       "weak_or_missing_trend_match": 3,
-      "quality_class_soft": 2
+      "quality_class_other": 1
     },
-    "staleOrUndatedCount": 76,
+    "staleOrUndatedCount": 75,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
@@ -905,45 +1238,53 @@
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 0,
+        "ageMinutes": 32,
         "url": "https://news.walla.co.il/break/3847061",
-        "trendMatch": null,
+        "trendMatch": {
+          "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+          "clusterKey": "בדרך לשווייץ לשיחות",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-19T23:02:03+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+          "overlapTokens": [
+            "איראן",
+            "וויטקוף",
+            "לשווייץ",
+            "לשיחות"
+          ],
+          "entityOverlapTokens": [
+            "איראן"
+          ],
+          "eventOverlapTokens": [],
+          "score": 37.8,
+          "boost": 24.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
         "beforeRank": 2,
-        "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
-        "source": "Page Six רכילות חו״ל",
-        "canonicalSource": "Page Six",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 19,
-        "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 3,
-        "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
+        "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+        "source": "The Guardian Middle East",
+        "canonicalSource": "Guardian",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.jpost.com/middle-east/article-899956",
+        "ageMinutes": 52,
+        "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
         "trendMatch": {
           "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
           "clusterKey": "הפסקת האש",
@@ -958,21 +1299,18 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T01:59:35.503681+00:00",
+          "latestAt": "2026-06-20T02:34:30.933174+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
           "overlapTokens": [
-            "בלבנון",
             "האש",
             "הפסקת",
-            "חיזבאללה",
             "לבנון"
           ],
           "entityOverlapTokens": [
-            "חיזבאללה",
             "לבנון"
           ],
           "eventOverlapTokens": [],
-          "score": 41.3,
+          "score": 24.78,
           "boost": 24.0
         },
         "freshUnder60": true,
@@ -981,15 +1319,53 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 4,
-        "headline": "ג׳קי או תעבור בדיקה רפואית במסגרת תביעתה",
+        "beforeRank": 3,
+        "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 45,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "ageMinutes": 11,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_soft",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 4,
+        "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "מזג אוויר",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 20,
+        "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 5,
+        "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
+        "source": "Page Six רכילות חו״ל",
+        "canonicalSource": "Page Six",
+        "category": "רכילות",
+        "class": "soft",
+        "strictHard": false,
+        "ageMinutes": 53,
+        "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1009,26 +1385,53 @@
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 0,
+        "ageMinutes": 32,
         "url": "https://news.walla.co.il/break/3847061",
-        "trendMatch": null,
+        "trendMatch": {
+          "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+          "clusterKey": "בדרך לשווייץ לשיחות",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-19T23:02:03+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+          "overlapTokens": [
+            "איראן",
+            "וויטקוף",
+            "לשווייץ",
+            "לשיחות"
+          ],
+          "entityOverlapTokens": [
+            "איראן"
+          ],
+          "eventOverlapTokens": [],
+          "score": 37.8,
+          "boost": 24.0
+        },
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
+        "disqualifiers": []
       },
       {
-        "beforeRank": 3,
-        "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
+        "beforeRank": 2,
+        "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+        "source": "The Guardian Middle East",
+        "canonicalSource": "Guardian",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.jpost.com/middle-east/article-899956",
+        "ageMinutes": 52,
+        "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
         "trendMatch": {
           "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
           "clusterKey": "הפסקת האש",
@@ -1043,21 +1446,18 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T01:59:35.503681+00:00",
+          "latestAt": "2026-06-20T02:34:30.933174+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
           "overlapTokens": [
-            "בלבנון",
             "האש",
             "הפסקת",
-            "חיזבאללה",
             "לבנון"
           ],
           "entityOverlapTokens": [
-            "חיזבאללה",
             "לבנון"
           ],
           "eventOverlapTokens": [],
-          "score": 41.3,
+          "score": 24.78,
           "boost": 24.0
         },
         "freshUnder60": true,
@@ -1069,52 +1469,57 @@
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 3,
+    "freshUnder60Count": 4,
     "worthyFreshUnder60Count": 1,
     "coreHardFreshUnder60Count": 1,
     "softFreshUnder60Count": 2,
-    "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 3,
+    "otherFreshUnder60Count": 1,
+    "freshUniqueSources": 4,
     "worthyUniqueSources": 1,
     "freshSources": [
       {
-        "name": "Page Six",
-        "count": 1
-      },
-      {
-        "name": "Jerusalem Post",
-        "count": 1
-      },
-      {
         "name": "Daily Mail",
+        "count": 1
+      },
+      {
+        "name": "ynet",
+        "count": 1
+      },
+      {
+        "name": "ישראל היום",
+        "count": 1
+      },
+      {
+        "name": "Page Six",
         "count": 1
       }
     ],
     "worthySources": [
       {
-        "name": "Jerusalem Post",
+        "name": "ישראל היום",
         "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
       "quality_class_soft": 2,
-      "weak_or_missing_trend_match": 2
+      "weak_or_missing_trend_match": 3,
+      "quality_class_other": 1
     },
-    "staleOrUndatedCount": 77,
+    "staleOrUndatedCount": 76,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
-        "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
-        "source": "Page Six רכילות חו״ל",
-        "canonicalSource": "Page Six",
+        "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 19,
-        "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
+        "ageMinutes": 11,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1126,43 +1531,60 @@
       },
       {
         "beforeRank": 2,
-        "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
+        "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "מזג אוויר",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 20,
+        "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+        "trendMatch": null,
+        "freshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
+        "disqualifiers": [
+          "quality_class_other",
+          "weak_or_missing_trend_match"
+        ]
+      },
+      {
+        "beforeRank": 3,
+        "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.jpost.com/middle-east/article-899956",
+        "ageMinutes": 49,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
         "trendMatch": {
-          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
-          "clusterKey": "הפסקת האש",
+          "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+          "clusterKey": "בדרך לשווייץ לשיחות",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
           "sources": [
-            "דה מרקר",
+            "ynet",
             "הארץ"
           ],
           "discoveryTypes": [
+            "RSS",
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T01:59:35.503681+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "latestAt": "2026-06-19T23:02:03+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
           "overlapTokens": [
-            "בלבנון",
-            "האש",
-            "הפסקת",
-            "חיזבאללה",
-            "לבנון"
+            "איראן",
+            "לשווייץ",
+            "לשיחות"
           ],
           "entityOverlapTokens": [
-            "חיזבאללה",
-            "לבנון"
+            "איראן"
           ],
           "eventOverlapTokens": [],
-          "score": 41.3,
+          "score": 28.35,
           "boost": 24.0
         },
         "freshUnder60": true,
@@ -1171,15 +1593,15 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 3,
-        "headline": "ג׳קי או תעבור בדיקה רפואית במסגרת תביעתה",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
+        "beforeRank": 4,
+        "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
+        "source": "Page Six רכילות חו״ל",
+        "canonicalSource": "Page Six",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 45,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "ageMinutes": 53,
+        "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1192,44 +1614,42 @@
     ],
     "topWorthyFreshCandidates": [
       {
-        "beforeRank": 2,
-        "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
+        "beforeRank": 3,
+        "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 28,
-        "url": "https://www.jpost.com/middle-east/article-899956",
+        "ageMinutes": 49,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
         "trendMatch": {
-          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
-          "clusterKey": "הפסקת האש",
+          "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+          "clusterKey": "בדרך לשווייץ לשיחות",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
           "sources": [
-            "דה מרקר",
+            "ynet",
             "הארץ"
           ],
           "discoveryTypes": [
+            "RSS",
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-20T01:59:35.503681+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "latestAt": "2026-06-19T23:02:03+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
           "overlapTokens": [
-            "בלבנון",
-            "האש",
-            "הפסקת",
-            "חיזבאללה",
-            "לבנון"
+            "איראן",
+            "לשווייץ",
+            "לשיחות"
           ],
           "entityOverlapTokens": [
-            "חיזבאללה",
-            "לבנון"
+            "איראן"
           ],
           "eventOverlapTokens": [],
-          "score": 41.3,
+          "score": 28.35,
           "boost": 24.0
         },
         "freshUnder60": true,
@@ -1242,8 +1662,8 @@
   "rawSourceBridge": {
     "status": "ok",
     "mode": "simulation_only_raw_source_bridge_no_feed_mutation",
-    "acceptedCount": 1,
-    "acceptedBeforeDedupe": 1,
+    "acceptedCount": 2,
+    "acceptedBeforeDedupe": 2,
     "relegatedDuplicateCount": 0,
     "sourceGroups": [
       {
@@ -1259,9 +1679,9 @@
         "id": "ynet",
         "label": "ynet חדשות",
         "configuredSourceCount": 24,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 0,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 0,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -1332,9 +1752,9 @@
         "label": "Guardian",
         "configuredSourceCount": 1,
         "freshUnder60Scanned": 1,
-        "acceptedHardQaClean": 0,
-        "rejected": 1,
-        "status": "no_clean_bridge_supply"
+        "acceptedHardQaClean": 1,
+        "rejected": 0,
+        "status": "has_bridge_supply"
       },
       {
         "id": "nyt",
@@ -1390,41 +1810,85 @@
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 0,
+        "ageMinutes": 32,
         "url": "https://news.walla.co.il/break/3847061",
         "beforeRank": null,
         "afterRank": null,
         "delta": null,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+          "clusterKey": "בדרך לשווייץ לשיחות",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-19T23:02:03+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+          "overlapTokens": [
+            "איראן",
+            "וויטקוף",
+            "לשווייץ",
+            "לשיחות"
+          ],
+          "entityOverlapTokens": [
+            "איראן"
+          ],
+          "eventOverlapTokens": [],
+          "score": 37.8,
+          "boost": 24.0
+        }
+      },
+      {
+        "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+        "source": "The Guardian Middle East",
+        "canonicalSource": "Guardian",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 52,
+        "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
+        "beforeRank": null,
+        "afterRank": null,
+        "delta": null,
+        "trendMatch": {
+          "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+          "clusterKey": "הפסקת האש",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T02:34:30.933174+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+          "overlapTokens": [
+            "האש",
+            "הפסקת",
+            "לבנון"
+          ],
+          "entityOverlapTokens": [
+            "לבנון"
+          ],
+          "eventOverlapTokens": [],
+          "score": 24.78,
+          "boost": 24.0
+        }
       }
     ],
     "rejectedSample": [
-      {
-        "sourceGroup": "ynet חדשות",
-        "source": "ynet - מבזקי החדשות",
-        "canonicalSource": "ynet",
-        "headline": "אחרי גילוי צלבי קרס בספרי מחזור: ביה\"ס של האו\"ם בניו יורק ביטל את מסיבת הסיום",
-        "ageMinutes": 58,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_too_long",
-          "headline_copies_source",
-          "summary_generic_or_mediated"
-        ],
-        "url": "https://www.ynet.co.il/news/article/s1z118s7gml"
-      },
-      {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות - מבזקים",
-        "canonicalSource": "וואלה",
-        "headline": "וויטקוף יצא לשווייץ לשיחות עם איראן",
-        "ageMinutes": 0,
-        "status": "accepted",
-        "reason": "deterministic_bridge_pass",
-        "errorCodes": [],
-        "url": "https://news.walla.co.il/break/3847061"
-      },
       {
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
@@ -1466,17 +1930,25 @@
         "url": "https://news.walla.co.il/break/3847062"
       },
       {
+        "sourceGroup": "וואלה חדשות",
+        "source": "וואלה חדשות - מבזקים",
+        "canonicalSource": "וואלה",
+        "headline": "וויטקוף יצא לשווייץ לשיחות עם איראן",
+        "ageMinutes": 32,
+        "status": "accepted",
+        "reason": "deterministic_bridge_pass",
+        "errorCodes": [],
+        "url": "https://news.walla.co.il/break/3847061"
+      },
+      {
         "sourceGroup": "Guardian",
         "source": "The Guardian Middle East",
         "canonicalSource": "Guardian",
-        "headline": "Israel and Hezbollah renew ceasefire after deadly flareup disrupts opening of Iran talks",
-        "ageMinutes": 17,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_too_long",
-          "headline_copies_source"
-        ],
+        "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+        "ageMinutes": 52,
+        "status": "accepted",
+        "reason": "deterministic_bridge_pass",
+        "errorCodes": [],
         "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement"
       }
     ],
@@ -1484,16 +1956,24 @@
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 12.02,
+      "elapsedSeconds": 16.12,
       "skippedForBudget": 0
     }
   },
   "semanticPoolDedupe": {
     "mode": "simulation_only_pool_semantic_dedupe_no_feed_mutation",
-    "inputCount": 181,
-    "uniqueCount": 165,
+    "inputCount": 182,
+    "uniqueCount": 166,
     "relegatedDuplicateCount": 16,
     "relegated": [
+      {
+        "clusterKey": "event:iran_talks:witkoff_switzerland_talks",
+        "keeper": "וויטקוף יצא לשווייץ לשיחות עם איראן",
+        "relegated": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+        "keeperSource": "וואלה",
+        "relegatedSource": "ישראל היום",
+        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
+      },
       {
         "clusterKey": "event:iran_talks:witkoff_switzerland_talks",
         "keeper": "וויטקוף יצא לשווייץ לשיחות עם איראן",
@@ -1613,14 +2093,6 @@
         "keeperSource": "Israel National News English",
         "relegatedSource": "ישראל היום",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
-      },
-      {
-        "clusterKey": "event:iran_deal:netanyahu_current_response",
-        "keeper": "טראמפ שיבח את נתניהו לצד אולטימטום לאיראן",
-        "relegated": "וושינגטון חוששת שנתניהו יסכן את הסכם איראן בלבנון",
-        "keeperSource": "Israel National News English",
-        "relegatedSource": "N12",
-        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       }
     ]
   },
@@ -1629,38 +2101,39 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 54.75,
-    "avgAfterHealthScore": 80.42,
+    "avgHealthDelta": 56.5,
+    "avgAfterHealthScore": 81.92,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 71,
-      "rollingScore": 75.17,
+      "latestScore": 68,
+      "rollingScore": 74.15,
       "readyRuns": 0,
       "criticalBlockers": [
+        "top_item_stale_over_25m",
         "top12_under60_below_9",
         "fresh_candidate_supply_below_9"
       ],
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 67,
+      "latestScore": 62,
       "latestSummaryLine": "בעייתי",
-      "latestReportName": "tt-rr-simulation-review-2026-06-20-0401.md",
+      "latestReportName": "tt-rr-simulation-review-2026-06-20-0512.md",
       "window": 48,
-      "averageScore": 70.75,
-      "positiveReports": 17
+      "averageScore": 67.62,
+      "positiveReports": 9
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-20T04:59:35+03:00",
+    "generatedAt": "2026-06-20T05:34:30+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 59,
+    "rssItemsScanned": 53,
     "webItemsScanned": 180,
     "topTrends": [
       {
@@ -1684,24 +2157,6 @@
         "strength": 46.2
       },
       {
-        "trend": "בן 35 נפצע באורח קשה ובן 9 במצב בינוני בהתהפכות טרקטורון בכפר ברא",
-        "clusterKey": "נפצע באורח",
-        "domain": "חדשות",
-        "externalMentions": 12,
-        "sourceCount": 1,
-        "sources": [
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-19T21:20:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847044",
-        "strength": 42.4
-      },
-      {
         "trend": "צעיר פלסטיני נהרג בתאונת דרכים בכביש 1",
         "clusterKey": "פלסטיני נהרג",
         "domain": "חדשות",
@@ -1721,6 +2176,24 @@
         "strength": 42.1
       },
       {
+        "trend": "בן 35 נפצע באורח קשה ובן 9 במצב בינוני בהתהפכות טרקטורון בכפר ברא",
+        "clusterKey": "נפצע באורח",
+        "domain": "חדשות",
+        "externalMentions": 11,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T21:20:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847044",
+        "strength": 40.7
+      },
+      {
         "trend": "הותר לפרסום: מג\"ד 52 בשריון סא\"ל דור בן שמחון ו-3 לוחמים נוספים נהרגו בדרום לבנון",
         "clusterKey": "בדרום לבנון",
         "domain": "חדשות",
@@ -1735,27 +2208,9 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.503350+00:00",
+        "latestAt": "2026-06-20T02:34:30.919530+00:00",
         "sampleUrl": "https://www.ynet.co.il/news/article/bkbtjumgme#autoplay",
         "strength": 39.8
-      },
-      {
-        "trend": "Three key takeaways from US-Iran agreement The BBC's Gary O'Donoghue breaks down the 14-paragraph memorandum of understanding between both two co",
-        "clusterKey": "breaks down",
-        "domain": "אקטואליה בעולם",
-        "externalMentions": 2,
-        "sourceCount": 2,
-        "sources": [
-          "AP",
-          "BBC"
-        ],
-        "discoveryTypes": [
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-20T01:59:35.507189+00:00",
-        "sampleUrl": "https://www.bbc.com/news/videos/cgqjv5w2dg1o",
-        "strength": 37.4
       },
       {
         "trend": "South Africa's no-nonsense coach who shut down Trump question and told critics back home to shut up",
@@ -1771,8 +2226,26 @@
           "WEB"
         ],
         "mentionedInFeed": false,
-        "latestAt": "2026-06-20T01:59:35.505511+00:00",
+        "latestAt": "2026-06-20T02:34:30.940240+00:00",
         "sampleUrl": "https://apnews.com/article/world-cup-hugo-broos-south-africa-71a0041581c159bae1693778ff1cd09d",
+        "strength": 37.4
+      },
+      {
+        "trend": "Three key takeaways from US-Iran agreement The BBC's Gary O'Donoghue breaks down the 14-paragraph memorandum of understanding between both two co",
+        "clusterKey": "breaks down",
+        "domain": "אקטואליה בעולם",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "AP",
+          "BBC"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T02:34:30.934569+00:00",
+        "sampleUrl": "https://www.bbc.com/news/videos/cgqjv5w2dg1o",
         "strength": 37.4
       },
       {
@@ -1815,7 +2288,7 @@
       },
       {
         "trend": "חשד לחיסול כפול ברמת הגולן: שני גברים נורו למוות",
-        "clusterKey": "גברים נורו למוות",
+        "clusterKey": "גברים נורו",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -1855,16 +2328,86 @@
   },
   "top10Before": [
     {
+      "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 11,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "מזג אוויר",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 49,
+      "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+        "clusterKey": "בדרך לשווייץ לשיחות",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T23:02:03+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+        "overlapTokens": [
+          "איראן",
+          "לשווייץ",
+          "לשיחות"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 28.35,
+        "boost": 24.0
+      }
+    },
+    {
       "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
       "source": "Page Six רכילות חו״ל",
       "canonicalSource": "Page Six",
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 19,
+      "ageMinutes": 53,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -1875,10 +2418,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 28,
+      "ageMinutes": 63,
       "url": "https://www.jpost.com/middle-east/article-899956",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -1894,7 +2437,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.503681+00:00",
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -1919,10 +2462,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 45,
+      "ageMinutes": 80,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -1933,10 +2476,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 67,
+      "ageMinutes": 101,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/snl-alum-garrett-morris-89-goes-viral-with-bulge-photo/",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -1947,10 +2490,10 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 70,
+      "ageMinutes": 105,
       "url": "https://www.jpost.com/israel-news/culture/article-899885",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -1961,10 +2504,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 80,
+      "ageMinutes": 115,
       "url": "https://pagesix.com/2026/06/19/parents/julia-roberts-son-henry-towers-over-her-in-nyc/",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -1975,50 +2518,8 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 91,
+      "ageMinutes": 125,
       "url": "https://livegame.ynet.co.il/games/525876",
-      "beforeRank": 7,
-      "afterRank": 7,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "קוניה העלה את ברזיל ליתרון מול האיטי",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 96,
-      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20801016",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מותה של דייבי צ׳ייס חושף שנים של ניתוק והתמכרות",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 98,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914703/Daveigh-Chase-death-ring-drug-mother.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "דארה לוויטן אישרה פרידה מ-KJ דילארד",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 104,
-      "url": "https://pagesix.com/2026/06/19/celebrity-news/summer-house-star-dara-levitan-confirms-split-from-kj-dillard/",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -2033,25 +2534,54 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 0,
+      "ageMinutes": 32,
       "url": "https://news.walla.co.il/break/3847061",
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
+      "trendMatch": {
+        "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+        "clusterKey": "בדרך לשווייץ לשיחות",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T23:02:03+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+        "overlapTokens": [
+          "איראן",
+          "וויטקוף",
+          "לשווייץ",
+          "לשיחות"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 37.8,
+        "boost": 24.0
+      }
     },
     {
-      "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
+      "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+      "source": "The Guardian Middle East",
+      "canonicalSource": "Guardian",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 28,
-      "url": "https://www.jpost.com/middle-east/article-899956",
-      "beforeRank": 2,
+      "ageMinutes": 52,
+      "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
+      "beforeRank": null,
       "afterRank": 2,
-      "delta": 0,
+      "delta": null,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
         "clusterKey": "הפסקת האש",
@@ -2066,7 +2596,48 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.503681+00:00",
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "האש",
+          "הפסקת",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 63,
+      "url": "https://www.jpost.com/middle-east/article-899956",
+      "beforeRank": 5,
+      "afterRank": 3,
+      "delta": 2,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -2091,11 +2662,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 119,
+      "ageMinutes": 154,
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/20/iran-war-live-tehran-says-us-must-ensure-israel-ends-attacks-on-lebanon?traffic_source=rss",
-      "beforeRank": 13,
-      "afterRank": 3,
-      "delta": 10,
+      "beforeRank": 16,
+      "afterRank": 4,
+      "delta": 12,
       "trendMatch": null
     },
     {
@@ -2105,11 +2676,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 129,
+      "ageMinutes": 164,
       "url": "https://www.nytimes.com/2026/06/19/business/economy/iran-sanctions-oil.html",
-      "beforeRank": 17,
-      "afterRank": 4,
-      "delta": 13,
+      "beforeRank": 20,
+      "afterRank": 5,
+      "delta": 15,
       "trendMatch": null
     },
     {
@@ -2119,11 +2690,11 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 163,
       "url": "https://www.nytimes.com/2026/06/19/business/oil-gas-prices-iran.html",
-      "beforeRank": 16,
-      "afterRank": 5,
-      "delta": 11,
+      "beforeRank": 19,
+      "afterRank": 6,
+      "delta": 13,
       "trendMatch": null
     },
     {
@@ -2133,25 +2704,11 @@
       "category": "משפט",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 143,
+      "ageMinutes": 178,
       "url": "https://www.israelnationalnews.com/flashes/688136",
-      "beforeRank": 20,
-      "afterRank": 6,
-      "delta": 14,
-      "trendMatch": null
-    },
-    {
-      "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 177,
-      "url": "https://www.israelnationalnews.com/flashes/688134",
-      "beforeRank": 25,
+      "beforeRank": 23,
       "afterRank": 7,
-      "delta": 18,
+      "delta": 16,
       "trendMatch": null
     },
     {
@@ -2161,11 +2718,11 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 238,
+      "ageMinutes": 273,
       "url": "https://news.walla.co.il/item/3847059",
-      "beforeRank": 41,
+      "beforeRank": 44,
       "afterRank": 8,
-      "delta": 33,
+      "delta": 36,
       "trendMatch": {
         "trend": "13:28 יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
         "clusterKey": "ועדת הבחירות",
@@ -2180,7 +2737,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.501328+00:00",
+        "latestAt": "2026-06-20T02:34:30.927991+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -2198,35 +2755,105 @@
       }
     },
     {
+      "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 212,
+      "url": "https://www.israelnationalnews.com/flashes/688134",
+      "beforeRank": 28,
+      "afterRank": 9,
+      "delta": 19,
+      "trendMatch": null
+    },
+    {
       "headline": "דנון התעמת עם בכירות האו״ם על רשימות הפגיעה בילדים",
       "source": "The Jerusalem Post - Israel News",
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 210,
-      "url": "https://www.jpost.com/israel-news/article-899950",
-      "beforeRank": 35,
-      "afterRank": 9,
-      "delta": 26,
-      "trendMatch": null
-    },
-    {
-      "headline": "אובמה תקף את טראמפ על ההסכם עם איראן",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
       "ageMinutes": 245,
-      "url": "https://www.ynet.co.il/news/article/rknda7xggg",
-      "beforeRank": 46,
+      "url": "https://www.jpost.com/israel-news/article-899950",
+      "beforeRank": 38,
       "afterRank": 10,
-      "delta": 36,
+      "delta": 28,
       "trendMatch": null
     }
   ],
   "top20Before": [
+    {
+      "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 11,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "מזג אוויר",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 49,
+      "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+        "clusterKey": "בדרך לשווייץ לשיחות",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T23:02:03+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+        "overlapTokens": [
+          "איראן",
+          "לשווייץ",
+          "לשיחות"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 28.35,
+        "boost": 24.0
+      }
+    },
     {
       "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
       "source": "Page Six רכילות חו״ל",
@@ -2234,10 +2861,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 19,
+      "ageMinutes": 53,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -2248,10 +2875,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 28,
+      "ageMinutes": 63,
       "url": "https://www.jpost.com/middle-east/article-899956",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
@@ -2267,7 +2894,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.503681+00:00",
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -2292,10 +2919,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 45,
+      "ageMinutes": 80,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -2306,10 +2933,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 67,
+      "ageMinutes": 101,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/snl-alum-garrett-morris-89-goes-viral-with-bulge-photo/",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -2320,10 +2947,10 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 70,
+      "ageMinutes": 105,
       "url": "https://www.jpost.com/israel-news/culture/article-899885",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -2334,10 +2961,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 80,
+      "ageMinutes": 115,
       "url": "https://pagesix.com/2026/06/19/parents/julia-roberts-son-henry-towers-over-her-in-nyc/",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -2348,10 +2975,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 91,
+      "ageMinutes": 125,
       "url": "https://livegame.ynet.co.il/games/525876",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -2362,10 +2989,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 96,
+      "ageMinutes": 131,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20801016",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": null
     },
@@ -2376,10 +3003,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 98,
+      "ageMinutes": 133,
       "url": "https://www.dailymail.com/tvshowbiz/article-15914703/Daveigh-Chase-death-ring-drug-mother.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -2390,10 +3017,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 104,
+      "ageMinutes": 139,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/summer-house-star-dara-levitan-confirms-split-from-kj-dillard/",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -2404,10 +3031,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 110,
+      "ageMinutes": 145,
       "url": "https://www.dailymail.com/tvshowbiz/article-15890871/Australia-successful-escort-boasts-making-money-surgeons-Henry-Brayshaw-reveals-heartbreaking-ridicule-receives-Annie-Knight-Stan-Turned-Dirty-Sexy-Money.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": null
     },
@@ -2418,10 +3045,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 117,
+      "ageMinutes": 152,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915183/Madonna-adopted-twins-Britain-girls-school.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -2432,10 +3059,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 119,
+      "ageMinutes": 154,
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/20/iran-war-live-tehran-says-us-must-ensure-israel-ends-attacks-on-lebanon?traffic_source=rss",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -2446,10 +3073,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 120,
+      "ageMinutes": 155,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20800918",
-      "beforeRank": 14,
-      "afterRank": 14,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -2460,10 +3087,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 125,
+      "ageMinutes": 160,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915227/Heidi-Montag-masterpiece-album-cover.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 15,
-      "afterRank": 15,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -2474,10 +3101,10 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 163,
       "url": "https://www.nytimes.com/2026/06/19/business/oil-gas-prices-iran.html",
-      "beforeRank": 16,
-      "afterRank": 16,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -2488,50 +3115,8 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 129,
+      "ageMinutes": 164,
       "url": "https://www.nytimes.com/2026/06/19/business/economy/iran-sanctions-oil.html",
-      "beforeRank": 17,
-      "afterRank": 17,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ראיין לוכטה התארס אחרי 14 חודשי זוגיות",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 134,
-      "url": "https://pagesix.com/2026/06/19/celebrity-news/ryan-lochte-engaged-to-girlfriend-molly-gillihan/",
-      "beforeRank": 18,
-      "afterRank": 18,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "שופט המונדיאל התאושש באמצע משחק ארה״ב",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 141,
-      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20800956",
-      "beforeRank": 19,
-      "afterRank": 19,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "התובע של בית הדין בהאג הושעה בבריטניה",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
-      "category": "משפט",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 143,
-      "url": "https://www.israelnationalnews.com/flashes/688136",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -2546,25 +3131,54 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 0,
+      "ageMinutes": 32,
       "url": "https://news.walla.co.il/break/3847061",
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
+      "trendMatch": {
+        "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+        "clusterKey": "בדרך לשווייץ לשיחות",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T23:02:03+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+        "overlapTokens": [
+          "איראן",
+          "וויטקוף",
+          "לשווייץ",
+          "לשיחות"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 37.8,
+        "boost": 24.0
+      }
     },
     {
-      "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
+      "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+      "source": "The Guardian Middle East",
+      "canonicalSource": "Guardian",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 28,
-      "url": "https://www.jpost.com/middle-east/article-899956",
-      "beforeRank": 2,
+      "ageMinutes": 52,
+      "url": "https://www.theguardian.com/world/2026/jun/19/israel-hezbollah-renew-ceasefire-lebanon-us-iran-agreement",
+      "beforeRank": null,
       "afterRank": 2,
-      "delta": 0,
+      "delta": null,
       "trendMatch": {
         "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
         "clusterKey": "הפסקת האש",
@@ -2579,7 +3193,48 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.503681+00:00",
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "האש",
+          "הפסקת",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 63,
+      "url": "https://www.jpost.com/middle-east/article-899956",
+      "beforeRank": 5,
+      "afterRank": 3,
+      "delta": 2,
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -2604,11 +3259,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 119,
+      "ageMinutes": 154,
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/20/iran-war-live-tehran-says-us-must-ensure-israel-ends-attacks-on-lebanon?traffic_source=rss",
-      "beforeRank": 13,
-      "afterRank": 3,
-      "delta": 10,
+      "beforeRank": 16,
+      "afterRank": 4,
+      "delta": 12,
       "trendMatch": null
     },
     {
@@ -2618,11 +3273,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 129,
+      "ageMinutes": 164,
       "url": "https://www.nytimes.com/2026/06/19/business/economy/iran-sanctions-oil.html",
-      "beforeRank": 17,
-      "afterRank": 4,
-      "delta": 13,
+      "beforeRank": 20,
+      "afterRank": 5,
+      "delta": 15,
       "trendMatch": null
     },
     {
@@ -2632,11 +3287,11 @@
       "category": "כלכלה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 163,
       "url": "https://www.nytimes.com/2026/06/19/business/oil-gas-prices-iran.html",
-      "beforeRank": 16,
-      "afterRank": 5,
-      "delta": 11,
+      "beforeRank": 19,
+      "afterRank": 6,
+      "delta": 13,
       "trendMatch": null
     },
     {
@@ -2646,25 +3301,11 @@
       "category": "משפט",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 143,
+      "ageMinutes": 178,
       "url": "https://www.israelnationalnews.com/flashes/688136",
-      "beforeRank": 20,
-      "afterRank": 6,
-      "delta": 14,
-      "trendMatch": null
-    },
-    {
-      "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 177,
-      "url": "https://www.israelnationalnews.com/flashes/688134",
-      "beforeRank": 25,
+      "beforeRank": 23,
       "afterRank": 7,
-      "delta": 18,
+      "delta": 16,
       "trendMatch": null
     },
     {
@@ -2674,11 +3315,11 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 238,
+      "ageMinutes": 273,
       "url": "https://news.walla.co.il/item/3847059",
-      "beforeRank": 41,
+      "beforeRank": 44,
       "afterRank": 8,
-      "delta": 33,
+      "delta": 36,
       "trendMatch": {
         "trend": "13:28 יו\"ר ועדת הבחירות המרכזית קבע: איתמר בן גביר יסיר את סרטון המשט",
         "clusterKey": "ועדת הבחירות",
@@ -2693,7 +3334,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.501328+00:00",
+        "latestAt": "2026-06-20T02:34:30.927991+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -2711,31 +3352,59 @@
       }
     },
     {
+      "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 212,
+      "url": "https://www.israelnationalnews.com/flashes/688134",
+      "beforeRank": 28,
+      "afterRank": 9,
+      "delta": 19,
+      "trendMatch": null
+    },
+    {
       "headline": "דנון התעמת עם בכירות האו״ם על רשימות הפגיעה בילדים",
       "source": "The Jerusalem Post - Israel News",
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 210,
+      "ageMinutes": 245,
       "url": "https://www.jpost.com/israel-news/article-899950",
-      "beforeRank": 35,
-      "afterRank": 9,
-      "delta": 26,
+      "beforeRank": 38,
+      "afterRank": 10,
+      "delta": 28,
       "trendMatch": null
     },
     {
-      "headline": "אובמה תקף את טראמפ על ההסכם עם איראן",
+      "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
       "source": "ynet - כל ערוץ החדשות",
       "canonicalSource": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 245,
-      "url": "https://www.ynet.co.il/news/article/rknda7xggg",
-      "beforeRank": 46,
-      "afterRank": 10,
-      "delta": 36,
+      "category": "מזג אוויר",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 20,
+      "url": "https://www.ynet.co.il/news/article/ooey2co9b",
+      "beforeRank": 2,
+      "afterRank": 11,
+      "delta": -9,
+      "trendMatch": null
+    },
+    {
+      "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 11,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15902395/taylor-swift-blake-lively-wedding-invite-phone-call-reconciliation-travis-kelce.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 1,
+      "afterRank": 12,
+      "delta": -11,
       "trendMatch": null
     },
     {
@@ -2745,11 +3414,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 19,
+      "ageMinutes": 53,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/",
-      "beforeRank": 1,
-      "afterRank": 11,
-      "delta": -10,
+      "beforeRank": 4,
+      "afterRank": 13,
+      "delta": -9,
       "trendMatch": null
     },
     {
@@ -2759,25 +3428,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 45,
+      "ageMinutes": 80,
       "url": "https://www.dailymail.com/tvshowbiz/article-15915225/ARN-force-Jackie-O-Henderson-undergo-medical-exam-amid-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 3,
-      "afterRank": 12,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "other",
-      "strictHard": false,
-      "ageMinutes": 174,
-      "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800934",
-      "beforeRank": 24,
-      "afterRank": 13,
-      "delta": 11,
+      "beforeRank": 6,
+      "afterRank": 14,
+      "delta": -8,
       "trendMatch": null
     },
     {
@@ -2787,11 +3442,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 67,
+      "ageMinutes": 101,
       "url": "https://pagesix.com/2026/06/19/celebrity-news/snl-alum-garrett-morris-89-goes-viral-with-bulge-photo/",
-      "beforeRank": 4,
-      "afterRank": 14,
-      "delta": -10,
+      "beforeRank": 7,
+      "afterRank": 15,
+      "delta": -8,
       "trendMatch": null
     },
     {
@@ -2801,11 +3456,11 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 91,
+      "ageMinutes": 125,
       "url": "https://livegame.ynet.co.il/games/525876",
-      "beforeRank": 7,
-      "afterRank": 15,
-      "delta": -8,
+      "beforeRank": 10,
+      "afterRank": 16,
+      "delta": -6,
       "trendMatch": null
     },
     {
@@ -2815,11 +3470,11 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 96,
+      "ageMinutes": 131,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20801016",
-      "beforeRank": 8,
-      "afterRank": 16,
-      "delta": -8,
+      "beforeRank": 11,
+      "afterRank": 17,
+      "delta": -6,
       "trendMatch": null
     },
     {
@@ -2829,39 +3484,11 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 70,
+      "ageMinutes": 105,
       "url": "https://www.jpost.com/israel-news/culture/article-899885",
-      "beforeRank": 5,
-      "afterRank": 17,
-      "delta": -12,
-      "trendMatch": null
-    },
-    {
-      "headline": "מותה של דייבי צ׳ייס חושף שנים של ניתוק והתמכרות",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 98,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914703/Daveigh-Chase-death-ring-drug-mother.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 9,
+      "beforeRank": 8,
       "afterRank": 18,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "בנה של ג׳וליה רוברטס הופיע איתה בניו יורק",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 80,
-      "url": "https://pagesix.com/2026/06/19/parents/julia-roberts-son-henry-towers-over-her-in-nyc/",
-      "beforeRank": 6,
-      "afterRank": 19,
-      "delta": -13,
+      "delta": -10,
       "trendMatch": null
     },
     {
@@ -2871,11 +3498,25 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 120,
+      "ageMinutes": 155,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20800918",
-      "beforeRank": 14,
+      "beforeRank": 17,
+      "afterRank": 19,
+      "delta": -2,
+      "trendMatch": null
+    },
+    {
+      "headline": "בנה של ג׳וליה רוברטס הופיע איתה בניו יורק",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 115,
+      "url": "https://pagesix.com/2026/06/19/parents/julia-roberts-son-henry-towers-over-her-in-nyc/",
+      "beforeRank": 9,
       "afterRank": 20,
-      "delta": -6,
+      "delta": -11,
       "trendMatch": null
     }
   ],
@@ -2885,9 +3526,74 @@
       "source": "וואלה",
       "category": "ביטחון",
       "class": "hard",
-      "trendMatch": null,
+      "trendMatch": {
+        "trend": "בכיר אמריקני: וויטקוף בדרך לשווייץ לשיחות עם איראן",
+        "clusterKey": "בדרך לשווייץ לשיחות",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-19T23:02:03+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rkom5bqggx",
+        "overlapTokens": [
+          "איראן",
+          "וויטקוף",
+          "לשווייץ",
+          "לשיחות"
+        ],
+        "entityOverlapTokens": [
+          "איראן"
+        ],
+        "eventOverlapTokens": [],
+        "score": 37.8,
+        "boost": 24.0
+      },
       "beforeRank": null,
       "afterRank": 1
+    },
+    {
+      "headline": "ישראל וחיזבאללה חידשו את הפסקת האש לפני שיחות איראן",
+      "source": "Guardian",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "צה\"ל: תקפנו בלבנון בגלל הפרות הפסקת האש של חיזבאללה; לבנון: 18 נהרגו",
+        "clusterKey": "הפסקת האש",
+        "domain": "חדשות",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
+        "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
+        "overlapTokens": [
+          "האש",
+          "הפסקת",
+          "לבנון"
+        ],
+        "entityOverlapTokens": [
+          "לבנון"
+        ],
+        "eventOverlapTokens": [],
+        "score": 24.78,
+        "boost": 24.0
+      },
+      "beforeRank": null,
+      "afterRank": 2
     },
     {
       "headline": "וושינגטון חוששת שפעולות ישראל בלבנון יפגעו בהסכם איראן",
@@ -2908,7 +3614,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.503681+00:00",
+        "latestAt": "2026-06-20T02:34:30.933174+00:00",
         "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-06-19/ty-article/0000019e-de4d-dc8a-afbe-df7d5d060000",
         "overlapTokens": [
           "בלבנון",
@@ -2925,8 +3631,8 @@
         "score": 41.3,
         "boost": 24.0
       },
-      "beforeRank": 2,
-      "afterRank": 2
+      "beforeRank": 5,
+      "afterRank": 3
     },
     {
       "headline": "איראן דורשת שישראל תעצור גם בלבנון",
@@ -2934,8 +3640,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 13,
-      "afterRank": 3
+      "beforeRank": 16,
+      "afterRank": 4
     },
     {
       "headline": "הסכם עם ארה״ב עשוי לפתוח לאיראן את הכלכלה",
@@ -2943,8 +3649,8 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 17,
-      "afterRank": 4
+      "beforeRank": 20,
+      "afterRank": 5
     },
     {
       "headline": "מחירי הנפט בוחנים את הסכם ארה״ב-איראן",
@@ -2952,8 +3658,8 @@
       "category": "כלכלה",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 16,
-      "afterRank": 5
+      "beforeRank": 19,
+      "afterRank": 6
     },
     {
       "headline": "התובע של בית הדין בהאג הושעה בבריטניה",
@@ -2961,16 +3667,7 @@
       "category": "משפט",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 20,
-      "afterRank": 6
-    },
-    {
-      "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
-      "source": "Israel National News English",
-      "category": "פלילים",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 25,
+      "beforeRank": 23,
       "afterRank": 7
     },
     {
@@ -2992,7 +3689,7 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T01:59:35.501328+00:00",
+        "latestAt": "2026-06-20T02:34:30.927991+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3846997",
         "overlapTokens": [
           "גביר",
@@ -3008,8 +3705,17 @@
         "score": 57.82,
         "boost": 14.0
       },
-      "beforeRank": 41,
+      "beforeRank": 44,
       "afterRank": 8
+    },
+    {
+      "headline": "נאשם שלישי נכלא על הצתת בית כנסת במלבורן",
+      "source": "Israel National News English",
+      "category": "פלילים",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 28,
+      "afterRank": 9
     },
     {
       "headline": "דנון התעמת עם בכירות האו״ם על רשימות הפגיעה בילדים",
@@ -3017,17 +3723,26 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 35,
-      "afterRank": 9
+      "beforeRank": 38,
+      "afterRank": 10
     },
     {
-      "headline": "אובמה תקף את טראמפ על ההסכם עם איראן",
+      "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית",
       "source": "ynet",
-      "category": "ביטחון",
-      "class": "hard",
+      "category": "מזג אוויר",
+      "class": "other",
       "trendMatch": null,
-      "beforeRank": 46,
-      "afterRank": 10
+      "beforeRank": 2,
+      "afterRank": 11
+    },
+    {
+      "headline": "טיילור סוויפט הציעה פיוס לבלייק לייבלי",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 1,
+      "afterRank": 12
     },
     {
       "headline": "משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו",
@@ -3035,8 +3750,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 1,
-      "afterRank": 11
+      "beforeRank": 4,
+      "afterRank": 13
     },
     {
       "headline": "ג׳קי או תעבור בדיקה רפואית במסגרת תביעתה",
@@ -3044,17 +3759,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 3,
-      "afterRank": 12
-    },
-    {
-      "headline": "ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי",
-      "source": "ישראל היום",
-      "category": "ביטחון",
-      "class": "other",
-      "trendMatch": null,
-      "beforeRank": 24,
-      "afterRank": 13
+      "beforeRank": 6,
+      "afterRank": 14
     },
     {
       "headline": "גארט מוריס הפך בדיחה ויראלית לקידום ספרו",
@@ -3062,8 +3768,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 4,
-      "afterRank": 14
+      "beforeRank": 7,
+      "afterRank": 15
     },
     {
       "headline": "ברזיל פתחה מול האיטי כשהלחץ כבר מורגש",
@@ -3071,8 +3777,8 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 7,
-      "afterRank": 15
+      "beforeRank": 10,
+      "afterRank": 16
     },
     {
       "headline": "קוניה העלה את ברזיל ליתרון מול האיטי",
@@ -3080,8 +3786,8 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 8,
-      "afterRank": 16
+      "beforeRank": 11,
+      "afterRank": 17
     },
     {
       "headline": "סדרת מתח ישראלית שואלת כמה הורים באמת יודעים",
@@ -3089,26 +3795,8 @@
       "category": "תרבות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 5,
-      "afterRank": 17
-    },
-    {
-      "headline": "מותה של דייבי צ׳ייס חושף שנים של ניתוק והתמכרות",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 9,
+      "beforeRank": 8,
       "afterRank": 18
-    },
-    {
-      "headline": "בנה של ג׳וליה רוברטס הופיע איתה בניו יורק",
-      "source": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 6,
-      "afterRank": 19
     },
     {
       "headline": "מרוקו התקרבה לשלב 32 האחרונות",
@@ -3116,7 +3804,16 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 14,
+      "beforeRank": 17,
+      "afterRank": 19
+    },
+    {
+      "headline": "בנה של ג׳וליה רוברטס הופיע איתה בניו יורק",
+      "source": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 9,
       "afterRank": 20
     }
   ],
@@ -3143,7 +3840,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-20T01:59:51.137909+00:00",
+    "generatedAt": "2026-06-20T02:34:50.942083+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -3181,13 +3878,13 @@
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T23:35:17+00:00",
-        "latestRawAgeHours": 2.41,
+        "latestRawAgeHours": 2.99,
         "latestValidAt": "2026-06-19T23:35:17+00:00",
-        "latestValidAgeHours": 2.41,
+        "latestValidAgeHours": 2.99,
         "visibleMain": {
           "count": 9,
           "latestAt": "2026-06-19T23:35:17+00:00",
-          "latestAgeHours": 2.41,
+          "latestAgeHours": 2.99,
           "sample": [
             {
               "publishedAt": "2026-06-19T23:35:17+00:00",
@@ -3209,7 +3906,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T15:26:53+00:00",
-          "latestAgeHours": 10.55,
+          "latestAgeHours": 11.13,
           "sample": [
             {
               "publishedAt": "2026-06-19T15:26:53+00:00",
@@ -3312,13 +4009,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T22:58:00+00:00",
-        "latestRawAgeHours": 3.03,
+        "latestRawAgeHours": 3.61,
         "latestValidAt": "2026-06-19T22:58:00+00:00",
-        "latestValidAgeHours": 3.03,
+        "latestValidAgeHours": 3.61,
         "visibleMain": {
           "count": 5,
           "latestAt": "2026-06-19T22:58:00+00:00",
-          "latestAgeHours": 3.03,
+          "latestAgeHours": 3.61,
           "sample": [
             {
               "publishedAt": "2026-06-19T22:58:00+00:00",
@@ -3449,15 +4146,20 @@
         "qaPassSimulationCount": 1,
         "qaRejectedCount": 267,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T01:01:21+00:00",
-        "latestRawAgeHours": 0.98,
-        "latestValidAt": "2026-06-20T01:01:21+00:00",
-        "latestValidAgeHours": 0.98,
+        "latestRawAt": "2026-06-20T02:14:07+00:00",
+        "latestRawAgeHours": 0.35,
+        "latestValidAt": "2026-06-20T02:14:07+00:00",
+        "latestValidAgeHours": 0.35,
         "visibleMain": {
-          "count": 15,
-          "latestAt": "2026-06-20T00:28:32+00:00",
-          "latestAgeHours": 1.52,
+          "count": 16,
+          "latestAt": "2026-06-20T02:14:07+00:00",
+          "latestAgeHours": 0.35,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T02:14:07+00:00",
+              "source": "ynet - כל ערוץ החדשות",
+              "headline": "היום יתחמם מעט והקרינה תגיע לרמה קיצונית"
+            },
             {
               "publishedAt": "2026-06-20T00:28:32+00:00",
               "source": "ynet - כל ערוץ הספורט",
@@ -3467,18 +4169,13 @@
               "publishedAt": "2026-06-19T22:00:25+00:00",
               "source": "ynet - כל ערוץ הספורט",
               "headline": "מרוקו פותחת מהר מול סקוטלנד"
-            },
-            {
-              "publishedAt": "2026-06-19T21:54:26+00:00",
-              "source": "ynet - כל ערוץ החדשות",
-              "headline": "אובמה תקף את טראמפ על ההסכם עם איראן"
             }
           ]
         },
         "visibleBreaking": {
           "count": 27,
           "latestAt": "2026-06-20T01:01:21+00:00",
-          "latestAgeHours": 0.98,
+          "latestAgeHours": 1.56,
           "sample": [
             {
               "publishedAt": "2026-06-20T01:01:21+00:00",
@@ -3499,6 +4196,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ynet - כל ערוץ החדשות",
+            "publishedAt": "2026-06-20T05:14:07+03:00",
+            "title": "התחממות קלה בהרים, אינדקס קרינה קיצוני",
+            "url": "https://www.ynet.co.il/news/article/ooey2co9b"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -3554,14 +4259,6 @@
             "publishedAt": "2026-06-19T22:02:38+03:00",
             "title": "רוכבי האופנוע התקרבו לרכב הזוג בשרון - ורצחו מטווח קצר: \"הרחובות - זירת דמים\"",
             "url": "https://www.ynet.co.il/news/article/synsqzmfgx"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ynet - כל ערוץ החדשות",
-            "publishedAt": "2026-06-19T20:21:23+03:00",
-            "title": "פיצוץ בין מלוני לטראמפ: \"אנחנו אף פעם לא מתחננים!\"",
-            "url": "https://www.ynet.co.il/news/article/bysomnfggg"
           }
         ]
       },
@@ -3623,14 +4320,14 @@
         "qaPassSimulationCount": 2,
         "qaRejectedCount": 136,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T02:02:00+00:00",
+        "latestRawAt": "2026-06-20T02:34:55+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-20T02:02:00+00:00",
+        "latestValidAt": "2026-06-20T02:34:55+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
           "count": 11,
           "latestAt": "2026-06-19T22:01:15+00:00",
-          "latestAgeHours": 3.98,
+          "latestAgeHours": 4.56,
           "sample": [
             {
               "publishedAt": "2026-06-19T22:01:15+00:00",
@@ -3738,15 +4435,20 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T00:23:30+00:00",
-        "latestRawAgeHours": 1.61,
-        "latestValidAt": "2026-06-20T00:23:30+00:00",
-        "latestValidAgeHours": 1.61,
+        "latestRawAt": "2026-06-20T01:45:19+00:00",
+        "latestRawAgeHours": 0.83,
+        "latestValidAt": "2026-06-20T01:45:19+00:00",
+        "latestValidAgeHours": 0.83,
         "visibleMain": {
-          "count": 17,
-          "latestAt": "2026-06-20T00:23:30+00:00",
-          "latestAgeHours": 1.61,
+          "count": 18,
+          "latestAt": "2026-06-20T01:45:19+00:00",
+          "latestAgeHours": 0.83,
           "sample": [
+            {
+              "publishedAt": "2026-06-20T01:45:19+00:00",
+              "source": "ישראל היום - כל הכתבות",
+              "headline": "איראן קושרת את שיחות הגרעין להפסקת אש בלבנון"
+            },
             {
               "publishedAt": "2026-06-20T00:23:30+00:00",
               "source": "ישראל היום - כל הכתבות",
@@ -3756,18 +4458,13 @@
               "publishedAt": "2026-06-19T23:59:13+00:00",
               "source": "ישראל היום - כל הכתבות",
               "headline": "מרוקו התקרבה לשלב 32 האחרונות"
-            },
-            {
-              "publishedAt": "2026-06-19T23:38:17+00:00",
-              "source": "ישראל היום - כל הכתבות",
-              "headline": "שופט המונדיאל התאושש באמצע משחק ארה״ב"
             }
           ]
         },
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T14:52:08+00:00",
-          "latestAgeHours": 11.13,
+          "latestAgeHours": 11.71,
           "sample": [
             {
               "publishedAt": "2026-06-19T14:52:08+00:00",
@@ -3778,6 +4475,22 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-20T04:45:19+03:00",
+            "title": "האיראנים עדיין מציבים תנאים: ויטקוף יצא לשיחות בשווייץ לקידום ההסכם",
+            "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-20T04:31:33+03:00",
+            "title": "התחממות קלה - אבל בלי דרמות: כך ייראה מזג האוויר השבוע",
+            "url": "https://www.israelhayom.co.il/weather/article/20801117"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -3825,22 +4538,6 @@
             "publishedAt": "2026-06-20T00:36:40+03:00",
             "title": "נשיא ברזיל משפיל את ניימאר: \"הראשון במונדיאל שעובד מהבית\"",
             "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20800851"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-20T00:35:02+03:00",
-            "title": "האייר פורס וואן מקטאר: טראמפ חושף את המטוס שניתן לו במתנה",
-            "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20800827"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-19T23:13:27+03:00",
-            "title": "משרד הבריאות: אדם החשוד כחולה באבולה הגיע לישראל - הוא מטופל בתנאי בידוד",
-            "url": "https://www.israelhayom.co.il/health/article/20800758"
           }
         ]
       },
@@ -3867,10 +4564,10 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-19T12:00:00+00:00",
-        "latestRawAgeHours": 14.0,
-        "latestValidAt": "2026-06-19T12:00:00+00:00",
-        "latestValidAgeHours": 14.0,
+        "latestRawAt": "2026-06-19T11:21:00+00:00",
+        "latestRawAgeHours": 15.23,
+        "latestValidAt": "2026-06-19T11:21:00+00:00",
+        "latestValidAgeHours": 15.23,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -3967,13 +4664,13 @@
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 10,
         "latestRawAt": "2026-06-19T23:35:07+00:00",
-        "latestRawAgeHours": 2.41,
+        "latestRawAgeHours": 3.0,
         "latestValidAt": "2026-06-19T19:36:10+00:00",
-        "latestValidAgeHours": 6.39,
+        "latestValidAgeHours": 6.98,
         "visibleMain": {
           "count": 2,
           "latestAt": "2026-06-19T20:58:02+00:00",
-          "latestAgeHours": 5.03,
+          "latestAgeHours": 5.61,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:58:02+00:00",
@@ -4151,7 +4848,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-19T11:59:42+00:00",
-          "latestAgeHours": 14.0,
+          "latestAgeHours": 14.59,
           "sample": [
             {
               "publishedAt": "2026-06-19T11:59:42+00:00",
@@ -4180,9 +4877,9 @@
         "qaRejectedCount": 4,
         "relevanceFilteredCount": 20,
         "latestRawAt": "2026-06-19T21:35:40+00:00",
-        "latestRawAgeHours": 4.4,
+        "latestRawAgeHours": 4.99,
         "latestValidAt": "2026-06-19T16:16:28+00:00",
-        "latestValidAgeHours": 9.72,
+        "latestValidAgeHours": 10.31,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -4279,13 +4976,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 4,
         "latestRawAt": "2026-06-20T01:42:01+00:00",
-        "latestRawAgeHours": 0.3,
+        "latestRawAgeHours": 0.88,
         "latestValidAt": "2026-06-19T20:09:10+00:00",
-        "latestValidAgeHours": 5.84,
+        "latestValidAgeHours": 6.43,
         "visibleMain": {
           "count": 2,
           "latestAt": "2026-06-19T20:09:10+00:00",
-          "latestAgeHours": 5.84,
+          "latestAgeHours": 6.43,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:09:10+00:00",
@@ -4389,9 +5086,9 @@
         "qaRejectedCount": 1,
         "relevanceFilteredCount": 5,
         "latestRawAt": "2026-06-19T12:03:00+00:00",
-        "latestRawAgeHours": 13.95,
+        "latestRawAgeHours": 14.53,
         "latestValidAt": "2026-06-17T19:09:00+00:00",
-        "latestValidAgeHours": 54.85,
+        "latestValidAgeHours": 55.43,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -4472,13 +5169,13 @@
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T14:58:11+00:00",
-        "latestRawAgeHours": 11.03,
+        "latestRawAgeHours": 11.61,
         "latestValidAt": "2026-06-19T14:58:11+00:00",
-        "latestValidAgeHours": 11.03,
+        "latestValidAgeHours": 11.61,
         "visibleMain": {
           "count": 5,
           "latestAt": "2026-06-19T20:12:50+00:00",
-          "latestAgeHours": 5.78,
+          "latestAgeHours": 6.37,
           "sample": [
             {
               "publishedAt": "2026-06-19T20:12:50+00:00",
@@ -4500,7 +5197,7 @@
         "visibleBreaking": {
           "count": 3,
           "latestAt": "2026-06-19T17:22:56+00:00",
-          "latestAgeHours": 8.62,
+          "latestAgeHours": 9.2,
           "sample": [
             {
               "publishedAt": "2026-06-19T17:22:56+00:00",
@@ -4603,13 +5300,13 @@
         "qaRejectedCount": 8,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-19T10:05:43+00:00",
-        "latestRawAgeHours": 15.9,
+        "latestRawAgeHours": 16.49,
         "latestValidAt": "2026-06-19T10:05:43+00:00",
-        "latestValidAgeHours": 15.9,
+        "latestValidAgeHours": 16.49,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-19T19:44:23+00:00",
-          "latestAgeHours": 6.26,
+          "latestAgeHours": 6.84,
           "sample": [
             {
               "publishedAt": "2026-06-19T19:44:23+00:00",
