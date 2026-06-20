@@ -1,31 +1,31 @@
 # Pointa Quality Gate Report
 
-Items checked: 211
+Items checked: 200
 Errors: 0
-Warnings: 52
+Warnings: 46
 
 ## Category distribution
 
-- רכילות: 62
-- ספורט: 51
-- ביטחון: 48
+- רכילות: 58
+- ספורט: 50
+- ביטחון: 47
 - תרבות: 8
-- בריאות: 7
 - כלכלה: 6
 - משפט: 5
 - מזג אוויר: 5
 - פלילים: 4
 - דעות: 4
+- בריאות: 3
 - פוליטיקה: 3
 - צרכנות: 3
-- חדשות: 2
 - רכב: 1
 - טכנולוגיה: 1
+- חדשות: 1
 - אקטואליה בעולם: 1
 
 ## Issue counts
 
-- takeaway_long: 48
+- takeaway_long: 42
 - summary_long: 4
 
 ## Issues
@@ -261,135 +261,93 @@ Warnings: 52
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847071
 
-### WARNING · takeaway_long · item 127
+### WARNING · takeaway_long · item 123
 - Takeaway length 107 > 95
 - Headline: `איראן קושרת את שיחות הגרעין להפסקת אש בלבנון`
 - Original: `האיראנים עדיין מציבים תנאים: ויטקוף יצא לשיחות בשווייץ לקידום ההסכם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20801129
 
-### WARNING · takeaway_long · item 128
+### WARNING · takeaway_long · item 124
 - Takeaway length 102 > 95
 - Headline: `משפחת דייבי צ׳ייס מתמודדת עם מותה בסקיד רו`
 - Original: `Daveigh Chase’s ‘devastated’ mom breaks silence on actress’ shock Skid Row death: ‘I am in so much pain’`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/19/celebrity-news/daveigh-chases-mom-breaks-silence-on-actress-death/
 
-### WARNING · takeaway_long · item 149
+### WARNING · takeaway_long · item 145
 - Takeaway length 122 > 95
 - Headline: `וויטקוף יוצא לשווייץ לשיחות גרעין עם איראן`
 - Original: `דיווח: ויטקוף בדרך לשווייץ לשיחות על הסכם הגרעין עם איראן`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/world/middle-east/2026-06-20/ty-article/.premium/0000019e-e22f-d2b1-a5bf-fa3ffd300000
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 148
 - Takeaway length 109 > 95
 - Headline: `ספר חדש מציג את טראמפ כנשיא שמרכז כוח אישי`
 - Original: `מאחורי הקלעים של טראמפ: נקמה, כוח בלתי מרוסן והחלטות דרמטיות`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20800934
 
-### WARNING · takeaway_long · item 175
+### WARNING · takeaway_long · item 171
 - Takeaway length 103 > 95
 - Headline: `הילדים של הארי ומייגן צפויים לפגוש את המלך בבריטניה`
 - Original: `King Charles overjoyed to see Prince Harry, Meghan Markle’s kids in long-awaited reunion`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/19/royal-family/king-charles-overjoyed-to-see-prince-harry-meghan-markles-kids-in-long-awaited-reunion/
 
-### WARNING · takeaway_long · item 176
+### WARNING · takeaway_long · item 172
 - Takeaway length 111 > 95
 - Headline: `אן האת'וויי הסתירה הריון במסע יחסי ציבור`
 - Original: `How Anne Hathaway hid her baby bump during Devil Wears Prada promo tour: Expecting star, 43, used clever styling tricks to keep pregnancy under wraps`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914919/anne-hathaway-pregnant-devil-wears-prada.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 173
 - Takeaway length 100 > 95
 - Headline: `כוכבת 'אל' לבשה את שמלת הבכורה של ריס ויתרספון`
 - Original: `Reese Witherspoon's Legally Blonde premiere dress is borrowed by the star of her new spinoff series Elle`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914875/Reese-Witherspoons-Legally-Blonde-dress-borrowed.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 183
+### WARNING · summary_long · item 179
 - Summary length 243 > 220
 - Headline: `אולנדריה מ'לאב איילנד' הסתבכה בגלל פרטיות הזוגיות`
 - Original: `Love Island star Olandria sparks fan backlash for claiming she's 'creeped out' by interest in her dating life: 'Why are you so invested?'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914915/Love-Island-Olandria-nic-cosmopolitan.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 179
 - Takeaway length 110 > 95
 - Headline: `אולנדריה מ'לאב איילנד' הסתבכה בגלל פרטיות הזוגיות`
 - Original: `Love Island star Olandria sparks fan backlash for claiming she's 'creeped out' by interest in her dating life: 'Why are you so invested?'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914915/Love-Island-Olandria-nic-cosmopolitan.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 188
+### WARNING · takeaway_long · item 184
 - Takeaway length 105 > 95
 - Headline: `הקונגרס דורש בחינה של מזכר איראן`
 - Original: `Does Trump have to submit the Iran memorandum of understanding to Congress?`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/19/does-trump-have-to-submit-the-iran-memorandum-of-understanding-to-congress?traffic_source=rss
 
-### WARNING · takeaway_long · item 190
+### WARNING · takeaway_long · item 186
 - Takeaway length 99 > 95
 - Headline: `מודיעין אמריקאי: נתניהו עלול לפגוע בהסכם עם איראן`
 - Original: `חדשות היום, 20 ביוני`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/dailynews/2026-06-20/ty-article-live/0000019e-e1b5-d2b1-a5bf-fbb7059d0000
 
-### WARNING · takeaway_long · item 192
+### WARNING · takeaway_long · item 188
 - Takeaway length 102 > 95
 - Headline: `שיחות ישראל-לבנון יתחדשו בוושינגטון`
 - Original: `US announces new round of Israel-Lebanon talks in Washington next week`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/19/us-announces-new-round-of-israel-lebanon-talks-in-washington-next-week?traffic_source=rss
 
-### WARNING · takeaway_long · item 196
+### WARNING · takeaway_long · item 192
 - Takeaway length 103 > 95
 - Headline: `במאי הסיטקומים ג׳יימס בורוז מת בגיל 85`
 - Original: `במאי הטלוויזיה האגדי ג'יימס בורוז הלך לעולמו`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/bj11oqq7gfg
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 100 > 95
-- Headline: `אן האת'וויי חשפה שתהיה אם לשלושה`
-- Original: `בגיל 43: אן האת'וויי בהיריון שלישי`
-- Source: וואלה סלבס - כל הכתבות
-- URL: https://celebs.walla.co.il/item/3847053
-
-### WARNING · takeaway_long · item 204
-- Takeaway length 96 > 95
-- Headline: `ארה״ב נהנתה משערים עצמיים בשני משחקי מונדיאל רצופים`
-- Original: `ארה"ב קבעה תקדים במונדיאל, בלי לעשות דבר בעצמה`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847051
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 126 > 95
-- Headline: `חשד לאבולה בישראל אחרי חזרת נוסע מקונגו`
-- Original: `משרד הבריאות: התקבל דיווח על אדם החשוד כחולה באבולה - לאחר ששב מקונגו`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3847052
-
-### WARNING · takeaway_long · item 207
-- Takeaway length 121 > 95
-- Headline: `חשד לאבולה בישראל מפעיל בידוד וחקירת מגעים`
-- Original: `משרד הבריאות: אדם החשוד כחולה באבולה הגיע לישראל - הוא מטופל בתנאי בידוד`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/health/article/20800758
-
-### WARNING · takeaway_long · item 209
-- Takeaway length 125 > 95
-- Headline: `שירלי מקליין נראתה פעילה בזמן שאחיה מסתגר`
-- Original: `Shirley MacLaine, 92, enjoys lunch in Malibu… after news her brother Warren Beatty, 89, is now a recluse`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15914573/Shirley-MacLaine-lunch-Warren-Beatty-recluse.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 210
-- Takeaway length 122 > 95
-- Headline: `נוסע מקונגו בבידוד ברמב״ם בחשד לאבולה`
-- Original: `חשד למקרה אבולה ראשון בישראל: אדם ששב מקונגו מאושפז בבידוד ברמב"ם`
-- Source: ynet - כל ערוץ הבריאות
-- URL: https://www.ynet.co.il/health/article/hktuwx7gzx
