@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 221
+Items checked: 200
 Errors: 0
-Warnings: 57
+Warnings: 55
 
 ## Category distribution
 
-- ביטחון: 72
-- רכילות: 36
-- ספורט: 34
-- פוליטיקה: 13
+- ביטחון: 69
+- רכילות: 34
+- ספורט: 30
 - צרכנות: 13
-- חדשות: 10
-- כלכלה: 8
-- תרבות: 6
+- פוליטיקה: 11
+- כלכלה: 7
+- חדשות: 6
 - פלילים: 5
 - טכנולוגיה: 4
 - אקטואליה בעולם: 4
-- בריאות: 4
+- תרבות: 4
 - מזג אוויר: 4
 - דעות: 2
 - נדל״ן: 2
 - רכב: 2
-- משפט: 2
+- בריאות: 2
+- משפט: 1
 
 ## Issue counts
 
-- takeaway_long: 45
+- takeaway_long: 43
 - summary_long: 10
 - headline_near_duplicate_summary: 1
 - category_sport_source: 1
@@ -75,359 +75,345 @@ Warnings: 57
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20813402
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 13
 - Takeaway length 107 > 95
 - Headline: `המאמר קורא לישראל להיערך לעימות עצמאי עם איראן`
 - Original: `המלחמה תתחדש - עם או בלי אמריקה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20813317
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 15
 - Takeaway length 103 > 95
 - Headline: `נסיגה מלבנון מוצגת כקו אדום מול לחץ איראני`
 - Original: `הקו האדום של ישראל - נסיגה מלבנון`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/defense/article/20813151
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 17
 - Takeaway length 108 > 95
 - Headline: `הטור מציג את טראמפ כמשענת לא יציבה לנתניהו`
 - Original: `דה ז'ה וו מ-2015: ההיבריס של נתניהו חזר אליו כבומרנג`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20813225
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 21
 - Takeaway length 109 > 95
 - Headline: `הספד משפחתי מסמן 50 שנה לנפילת יוני נתניהו`
 - Original: `אני וביבי הרגשנו שזו זכות להיות אחיך: 50 שנה לנפילת יוני נתניהו`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20812732
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 23
 - Takeaway length 108 > 95
 - Headline: `בריטני ספירס אומרת שהיא רוצה עוד ילד`
 - Original: `Britney Spears says she wants to have ‘another baby’ after reconciling with sons`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/21/celebrity-news/britney-spears-says-she-wants-to-have-another-baby/
 
-### WARNING · summary_long · item 33
+### WARNING · summary_long · item 32
 - Summary length 234 > 220
 - Headline: `בדרום עזה חוסל מפקד ג׳יהאד שהיה מעורב בחטיפת יגיל יעקב`
 - Original: `צה"ל הודיע: חוסל מחבל שלקח חלק בחטיפת יגיל יעקב ב-7 באוקטובר`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3847476
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 32
 - Takeaway length 99 > 95
 - Headline: `בדרום עזה חוסל מפקד ג׳יהאד שהיה מעורב בחטיפת יגיל יעקב`
 - Original: `צה"ל הודיע: חוסל מחבל שלקח חלק בחטיפת יגיל יעקב ב-7 באוקטובר`
 - Source: וואלה חדשות - צבא וביטחון
 - URL: https://news.walla.co.il/item/3847476
 
-### WARNING · takeaway_long · item 34
+### WARNING · takeaway_long · item 33
 - Takeaway length 109 > 95
 - Headline: `תושבי העוטף קיימו עצרת תמיכה ביישובי הצפון`
 - Original: `מאות מתושבי העוטף בעצרת תמיכה בצפון: "אתם לא לבד"`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3847481
 
-### WARNING · takeaway_long · item 35
+### WARNING · takeaway_long · item 34
 - Takeaway length 99 > 95
 - Headline: `נתניהו מציג דוקטרינת ביטחון חדשה מול איראן`
 - Original: `Netanyahu responds to Trump: 'What would the US do?'`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688218
 
-### WARNING · takeaway_long · item 36
+### WARNING · takeaway_long · item 35
 - Takeaway length 104 > 95
 - Headline: `המונים בביתר עילית קיבלו עריקים משוחררים בתהלוכה`
 - Original: `תהלוכה, בגדי שבת וממתקים: בביתר עילית חגגו שחרור עריקים מהכלא`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/r17xfhbmzl
 
-### WARNING · summary_long · item 39
+### WARNING · summary_long · item 38
 - Summary length 230 > 220
 - Headline: `ישראל בוחנת פיילוט לצבא לבנון בלי לסגת מרצועת הביטחון`
 - Original: `לא נסוגים, כן מכניסים את צבא לבנון: "ארה"ב הייתה מסירה איומים, וגם אנחנו"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s15f1ohzze
 
-### WARNING · takeaway_long · item 39
+### WARNING · takeaway_long · item 38
 - Takeaway length 101 > 95
 - Headline: `ישראל בוחנת פיילוט לצבא לבנון בלי לסגת מרצועת הביטחון`
 - Original: `לא נסוגים, כן מכניסים את צבא לבנון: "ארה"ב הייתה מסירה איומים, וגם אנחנו"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/s15f1ohzze
 
-### WARNING · headline_near_duplicate_summary · item 49
+### WARNING · headline_near_duplicate_summary · item 48
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `גבר נפצע קשה באירוע אלימות בלוד`
 - Original: `פצוע באורח קשה באירוע אלימות בלוד`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1118934
 
-### WARNING · takeaway_long · item 89
+### WARNING · takeaway_long · item 88
 - Takeaway length 102 > 95
 - Headline: `צה"ל השתלט על מנהרת ירי של חיזבאללה בדרום לבנון`
 - Original: `WATCH: IDF takes over massive Hezbollah tunnel full of rocket firing shafts in southern Lebanon`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/defense-news/article-900067
 
-### WARNING · takeaway_long · item 109
+### WARNING · takeaway_long · item 108
 - Takeaway length 123 > 95
 - Headline: `שיחות ארה״ב-איראן נמשכות תחת איום חדש של טראמפ`
 - Original: `Middle East live: US-Iran peace talks underway as strait of Hormuz remains closed`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/live/2026/jun/21/iran-us-israel-war-middle-east-lebanon-peace-talks-switzerland-vance-trump-strait-of-hormuz-latest-news-updates
 
-### WARNING · takeaway_long · item 110
+### WARNING · takeaway_long · item 109
 - Takeaway length 101 > 95
 - Headline: `הצפון חוזר לשגרה מלאה על רקע רגיעה בלבנון`
 - Original: `פיקוד העורף הודיע על ביטול כל הנחיות ההתגוננות ביישובי הצפון`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-21/ty-article/0000019e-eaca-db90-adff-eada50280000
 
-### WARNING · takeaway_long · item 113
+### WARNING · takeaway_long · item 112
 - Takeaway length 101 > 95
 - Headline: `באיראן מתווכחים על מזכר ההבנות עם ארה"ב`
 - Original: `Khamenei’s MoU stance stirs debate as Iran and US meet in Switzerland`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/21/khameneis-mou-stance-stirs-debate-as-iran-and-us-meet-in-switzerland?traffic_source=rss
 
-### WARNING · category_sport_source · item 127
+### WARNING · category_sport_source · item 126
 - Sport source should usually be ספורט
 - Headline: `מותג החלבון של דני אבדיה נכנס גם לחטיפים טבעוניים`
 - Original: `מותג החלבון של דני אבדיה מתרחב - ומקבל ברכה רשמית ממנכ"ל ה-NBA`
 - Source: וואלה כסף - ספורט ביזנס
 - URL: https://finance.walla.co.il/item/3847379
 
-### WARNING · takeaway_long · item 133
+### WARNING · takeaway_long · item 132
 - Takeaway length 101 > 95
 - Headline: `אתרי דופמין מחקים קניות בלי רכישה ומעלים סיכוני מידע`
 - Original: `חנות מזויפת לצרכנים כפייתיים: אותה חווית קניות — בלי לשלם דבר`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-21/ty-article/.premium/0000019e-e974-d58e-afbf-fd7f78e50000
 
-### WARNING · summary_long · item 134
+### WARNING · summary_long · item 133
 - Summary length 228 > 220
 - Headline: `דוח הגז מציג עתודות עד 2062 וירידת מחירים בישראל`
 - Original: `בחנו את עצמכם: מה אתם יודעים על הגז של ישראל?`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/sji9q3gzmg
 
-### WARNING · summary_long · item 137
+### WARNING · summary_long · item 136
 - Summary length 235 > 220
 - Headline: `סינגפור דורשת כמעט 8 מיליון דולר לוויזת משקיעים`
 - Original: `הוויזה הכי יקרה בעולם: תצטרכו לשלם כמעט 8 מיליון דולר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/travel/tourism-news/article/20808856
 
-### WARNING · takeaway_long · item 138
+### WARNING · takeaway_long · item 137
 - Takeaway length 96 > 95
 - Headline: `אנדוריל בוחנת פתיחת פעילות עסקית בישראל`
 - Original: `ענקית הדיפנס־טק אנדוריל בדרך לפתיחת פעילות עסקית בישראל`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/technation/2026-06-21/ty-article/.highlight/0000019e-e932-d2b1-a5bf-fb379e680000
 
-### WARNING · summary_long · item 139
+### WARNING · summary_long · item 138
 - Summary length 260 > 220
 - Headline: `בארה"ב גובר החשש להסתרת חקירת הפצצת בית הספר באיראן`
 - Original: `Four months after the horrific Iran school bombing, fears grow that Trump and Hegseth will bury the truth`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/21/iran-school-bombing-minab-fears-trump-hegseth-bury-truth-investigation-findings
 
-### WARNING · takeaway_long · item 142
+### WARNING · takeaway_long · item 141
 - Takeaway length 100 > 95
 - Headline: `סנדרה קווואס הפכה לכוכבת רשת ביציעי המונדיאל`
 - Original: `בלבוש מינימלי: הפוליטיקאית המקסיקנית שמציתה סערה במונדיאל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20808881
 
-### WARNING · takeaway_long · item 149
+### WARNING · takeaway_long · item 148
 - Takeaway length 98 > 95
 - Headline: `כתב אישום: תושב רהט רצח קטין ונמלט לרשות הפלסטינית`
 - Original: `תושב רהט נמלט לרשות הפלסטינית לאחר שחטף ורצח - ונעצר רק אחרי שנה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/law/article/20808773
 
-### WARNING · takeaway_long · item 153
+### WARNING · takeaway_long · item 152
 - Takeaway length 102 > 95
 - Headline: `בנק ישראל מגביל עמלות עו״ש ל-10 שקלים מ-2027`
 - Original: `בקרוב - מהפכה בעמלות הבנקים: הפיקוח על הבנקים מבטל את שיטת המסלולים`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226346-0
 
-### WARNING · takeaway_long · item 154
+### WARNING · takeaway_long · item 153
 - Takeaway length 105 > 95
 - Headline: `ישראל דוחה נסיגה מלבנון למרות לחץ אמריקני`
 - Original: `בצל הדיווחים על לחץ אמריקני: שר הביטחון מבהיר כי צה"ל לא יסוג מלבנון`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226345-0
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 154
 - Takeaway length 107 > 95
 - Headline: `הרב יוסף קשר בין עסקת איראן לאכיפת גיוס חרדים`
 - Original: `Shas spiritual leader: Iran deal is punishment for draft dodger arrests, A-G is 'wicked woman'`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-900034
 
-### WARNING · takeaway_long · item 158
+### WARNING · takeaway_long · item 157
 - Takeaway length 110 > 95
 - Headline: `מבקר המדינה: קרן הביטוח הלאומי עלולה להתרוקן ב-2035`
 - Original: `ישראל מזדקנת: כספי הביטוח הלאומי עלולים להיגמר תוך פחות מעשור`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3847213
 
-### WARNING · takeaway_long · item 167
+### WARNING · takeaway_long · item 166
 - Takeaway length 103 > 95
 - Headline: `ארה"ב וטורקיה מרחיבות את שיחות האזור בקהיר`
 - Original: `Turkey, US, Egypt, Saudi Arabia hold Cairo talks on Iran, Libya, Gaza`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-900008
 
-### WARNING · takeaway_long · item 169
+### WARNING · takeaway_long · item 168
 - Takeaway length 108 > 95
 - Headline: `DNA קדום חשף מגפת דבר קטלנית בסיביר לפני 5,500 שנה`
 - Original: `מגפת הדבר הכתה באדם עוד כשחי בקבוצות קטנות של ציידים־לקטים`
 - Source: הארץ - מדע
 - URL: https://www.haaretz.co.il/science/archeology/2026-06-21/ty-article-magazine/0000019e-da05-db7a-a9bf-dfd513130000
 
-### WARNING · takeaway_long · item 171
+### WARNING · takeaway_long · item 170
 - Takeaway length 97 > 95
 - Headline: `לאנס סטיבנסון הורחק אחרי קטטה בליגת BIG3`
 - Original: `שום דבר לא השתנה: ההסתבכות החדשה של לאנס סטיבנסון`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3847356
 
-### WARNING · takeaway_long · item 174
+### WARNING · takeaway_long · item 173
 - Takeaway length 103 > 95
 - Headline: `בוני בלו מסרבת לחשוף את אבי התינוק`
 - Original: `ההיריון הפרובוקטיבי מסתבך: כוכבת הרשת נשאלה מי האב - וזו התשובה שלה`
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3846818
 
-### WARNING · takeaway_long · item 175
+### WARNING · takeaway_long · item 174
 - Takeaway length 96 > 95
 - Headline: `פוליסה שבוטלה עדיין יכולה לזכות בפיצוי`
 - Original: `לא הכל אבוד: שלושת המצבים שבהם פוליסה מבוטלת עדיין שווה כסף`
 - Source: וואלה חדשות - חדשות המשפט
 - URL: https://news.walla.co.il/item/3847351
 
-### WARNING · takeaway_long · item 177
+### WARNING · takeaway_long · item 176
 - Takeaway length 105 > 95
 - Headline: `מודי ספורי בזוגיות חדשה עם נסטיה שבצ'נקו`
 - Original: `גל רובין עוד לא יודעת: זו בת הזוג החדשה של מודי ספורי`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/celebs-news/article-1335520
 
-### WARNING · takeaway_long · item 178
+### WARNING · takeaway_long · item 177
 - Takeaway length 110 > 95
 - Headline: `ג׳פרי סאקס: חזון ישראל הגדולה חוסם שלום אזורי`
 - Original: `Stop ‘Greater Israel’ to make peace`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/opinions/2026/6/21/stop-greater-israel-to-make-peace?traffic_source=rss
 
-### WARNING · summary_long · item 179
+### WARNING · summary_long · item 178
 - Summary length 230 > 220
 - Headline: `הקו הצהוב בלבנון עלול להפוך למלכודת מדינית`
 - Original: `בין תיבנית להורמוז: המחיר של עוד גבעה בלי מטרה`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14807514
 
-### WARNING · takeaway_long · item 179
+### WARNING · takeaway_long · item 178
 - Takeaway length 117 > 95
 - Headline: `הקו הצהוב בלבנון עלול להפוך למלכודת מדינית`
 - Original: `בין תיבנית להורמוז: המחיר של עוד גבעה בלי מטרה`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14807514
 
-### WARNING · takeaway_long · item 180
+### WARNING · takeaway_long · item 179
 - Takeaway length 110 > 95
 - Headline: `מורים מתארים אלימות בכיתות עם סיום שנת הלימודים`
 - Original: `"איימו לשבור לי את הרכב, נעלו אותי בכיתה": המורים חושפים מה באמת קורה בכיתות`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/education/article/20808291
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 180
 - Takeaway length 96 > 95
 - Headline: `פעילת טבע לבנונית מתה מפציעות שנגרמו בתקיפה ישראלית`
 - Original: `Famed Lebanese turtle conservationist Mona Khalil dies of injuries sustained from Israeli strike`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-900023
 
-### WARNING · takeaway_long · item 183
+### WARNING · takeaway_long · item 182
 - Takeaway length 106 > 95
 - Headline: `בנק ישראל יקבע 10 שקלים ל-100 פעולות עו״ש`
 - Original: `העמלות כבדות? המהפכה בבנקים בישראל שתחסוך לכם מאות שקלים`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/business/article/20808419
 
-### WARNING · summary_long · item 184
+### WARNING · summary_long · item 183
 - Summary length 223 > 220
 - Headline: `נבחרת ישראל מגיעה לחלון יולי בסגל חסר במיוחד`
 - Original: `גינת בספק לקמפיין הנבחרת, בית הלחמי: "הצטברו כמה פציעות"`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3847333
 
-### WARNING · takeaway_long · item 184
+### WARNING · takeaway_long · item 183
 - Takeaway length 118 > 95
 - Headline: `נבחרת ישראל מגיעה לחלון יולי בסגל חסר במיוחד`
 - Original: `גינת בספק לקמפיין הנבחרת, בית הלחמי: "הצטברו כמה פציעות"`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3847333
 
-### WARNING · summary_long · item 185
+### WARNING · summary_long · item 184
 - Summary length 238 > 220
 - Headline: `הפועל תל אביב על סף עונה ללא תואר בגלל ניהול הסגל`
 - Original: `דייסה של עונה שלמה: על מצבה של הפועל תל אביב במאני טיים`
 - Source: וואלה ספורט - כדורסל
 - URL: https://sports.walla.co.il/item/3847297
 
-### WARNING · summary_long · item 187
+### WARNING · summary_long · item 186
 - Summary length 228 > 220
 - Headline: `מסמכי עב״מים בארה״ב הופכים תעלומה לשאלת מודיעין`
 - Original: `מסמכי העב"מים חושפים: סין ורוסיה אספו כלים שהתרסקו וניסו לשכפל אותם`
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3847298
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 186
 - Takeaway length 101 > 95
 - Headline: `מסמכי עב״מים בארה״ב הופכים תעלומה לשאלת מודיעין`
 - Original: `מסמכי העב"מים חושפים: סין ורוסיה אספו כלים שהתרסקו וניסו לשכפל אותם`
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3847298
 
-### WARNING · takeaway_long · item 189
+### WARNING · takeaway_long · item 188
 - Takeaway length 124 > 95
 - Headline: `אתרי המורשת בצור נפגעים מאש ישראלית`
 - Original: `Lebanon’s ancient monuments remain at risk from Israeli attack`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/newsfeed/2026/6/21/lebanons-ancient-monuments-remain-at-risk-from-israeli-attack?traffic_source=rss
 
-### WARNING · summary_long · item 193
+### WARNING · summary_long · item 192
 - Summary length 236 > 220
 - Headline: `ספרד מגיעה למשחק השני בלי פתרון התקפי ברור`
 - Original: `ספרד תלויה בילד הפלא, איראן מתכוננת לבוז`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/bywynovgzx
 
-### WARNING · takeaway_long · item 193
+### WARNING · takeaway_long · item 192
 - Takeaway length 112 > 95
 - Headline: `ספרד מגיעה למשחק השני בלי פתרון התקפי ברור`
 - Original: `ספרד תלויה בילד הפלא, איראן מתכוננת לבוז`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/bywynovgzx
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 99 > 95
-- Headline: `מכת החיסורים משאירה את נבחרת הכדורסל עם סגל קצר`
-- Original: `בית הלחמי על מכת החיסורים בנבחרת: "זה שאנחנו עדיין משחקים זה נס, אין לנו מה לבכות"`
-- Source: ynet - כל ערוץ הספורט
-- URL: https://www.ynet.co.il/sport/israelibasketball/article/bkynm4bzzl
-
-### WARNING · takeaway_long · item 207
-- Takeaway length 104 > 95
-- Headline: `נשיא בוליביה מכניס את הצבא למשבר המחאות`
-- Original: `הוכרז מצב חירום: נשיא בוליביה שלח לראשונה כוחות להפגנות במדינה`
-- Source: N12 - בעולם
-- URL: https://www.mako.co.il/news-world/2026_q2/Article-13f11823299ee91026.htm
