@@ -1,70 +1,70 @@
 # Pointa Quality Gate Report
 
-Items checked: 214
+Items checked: 196
 Errors: 0
-Warnings: 43
+Warnings: 38
 
 ## Category distribution
 
-- ביטחון: 69
-- רכילות: 43
+- ביטחון: 65
 - ספורט: 39
-- פוליטיקה: 13
-- צרכנות: 11
+- רכילות: 39
+- פוליטיקה: 12
+- צרכנות: 8
 - חדשות: 7
-- פלילים: 6
-- תרבות: 5
-- כלכלה: 5
+- פלילים: 4
 - טכנולוגיה: 4
+- תרבות: 3
 - דעות: 3
 - אקטואליה בעולם: 3
+- כלכלה: 3
 - משפט: 2
 - נדל״ן: 2
 - רכב: 2
 
 ## Issue counts
 
-- takeaway_long: 33
+- takeaway_long: 28
 - summary_long: 8
 - headline_near_duplicate_summary: 1
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · takeaway_long · item 20
-- Takeaway length 100 > 95
-- Headline: `בלגיה שוב נתקעה בלי שער מול איראן במונדיאל`
-- Original: `דה בראונה חוטף אש: "מתקרב לסוף". מדוע הבן שלו בכה ביציע?`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847516
-
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 16
 - Takeaway length 108 > 95
 - Headline: `רוברט אירווין וג׳וליה מוריס יתחרו על גולד לוגי`
 - Original: `2026 Logie Award nominations: I'm a Celebrity hosts Robert Irwin and Julia Morris to battle for coveted Gold Logie`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15918165/2026-Logie-Award-Im-Celebrity-hosts-set-battle-Gold-Logie.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 23
+### WARNING · summary_long · item 17
 - Summary length 228 > 220
 - Headline: `אמבאפה פורח בצרפת, אבל מטלטל את המועדונים`
 - Original: `למה צרפת פורחת עם אמבאפה, אבל הקבוצות מצליחות יותר בלעדיו?`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/sjkd36bgfe
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 17
 - Takeaway length 103 > 95
 - Headline: `אמבאפה פורח בצרפת, אבל מטלטל את המועדונים`
 - Original: `למה צרפת פורחת עם אמבאפה, אבל הקבוצות מצליחות יותר בלעדיו?`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/sjkd36bgfe
 
-### WARNING · summary_long · item 24
+### WARNING · summary_long · item 18
 - Summary length 223 > 220
 - Headline: `המונדיאל הפך את מיאמי לבירת אוהדים לטינית`
 - Original: `חגיגה לטינית: העיר בארה"ב שנכבשה ע"י האוהדים מדרום אמריקה`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/article/s10tbtbmzx
+
+### WARNING · takeaway_long · item 24
+- Takeaway length 100 > 95
+- Headline: `בלגיה שוב נתקעה בלי שער מול איראן במונדיאל`
+- Original: `דה בראונה חוטף אש: "מתקרב לסוף". מדוע הבן שלו בכה ביציע?`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3847516
 
 ### WARNING · takeaway_long · item 26
 - Takeaway length 97 > 95
@@ -296,38 +296,3 @@ Warnings: 43
 - Original: `בלבוש מינימלי: הפוליטיקאית המקסיקנית שמציתה סערה במונדיאל`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-soccer/article/20808881
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 98 > 95
-- Headline: `כתב אישום: תושב רהט רצח קטין ונמלט לרשות הפלסטינית`
-- Original: `תושב רהט נמלט לרשות הפלסטינית לאחר שחטף ורצח - ונעצר רק אחרי שנה`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/law/article/20808773
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 102 > 95
-- Headline: `בנק ישראל מגביל עמלות עו״ש ל-10 שקלים מ-2027`
-- Original: `בקרוב - מהפכה בעמלות הבנקים: הפיקוח על הבנקים מבטל את שיטת המסלולים`
-- Source: כיפה - חדשות
-- URL: https://www.kipa.co.il/1226346-0
-
-### WARNING · takeaway_long · item 207
-- Takeaway length 105 > 95
-- Headline: `ישראל דוחה נסיגה מלבנון למרות לחץ אמריקני`
-- Original: `בצל הדיווחים על לחץ אמריקני: שר הביטחון מבהיר כי צה"ל לא יסוג מלבנון`
-- Source: כיפה - חדשות
-- URL: https://www.kipa.co.il/1226345-0
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 107 > 95
-- Headline: `הרב יוסף קשר בין עסקת איראן לאכיפת גיוס חרדים`
-- Original: `Shas spiritual leader: Iran deal is punishment for draft dodger arrests, A-G is 'wicked woman'`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-900034
-
-### WARNING · takeaway_long · item 211
-- Takeaway length 110 > 95
-- Headline: `מבקר המדינה: קרן הביטוח הלאומי עלולה להתרוקן ב-2035`
-- Original: `ישראל מזדקנת: כספי הביטוח הלאומי עלולים להיגמר תוך פחות מעשור`
-- Source: וואלה חדשות - חדשות בארץ
-- URL: https://news.walla.co.il/item/3847213
