@@ -1,27 +1,27 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-21T01:50:08+00:00",
+  "generatedAt": "2026-06-21T02:46:27+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 199,
+  "itemCount": 197,
   "simulationPoolWindow": {
     "originalWindowItems": 180,
     "rawPoolItems": 184,
     "rankedPoolItems": 184
   },
   "before": {
-    "newsinessTop10": 2,
-    "coreHardTop10": 2,
+    "newsinessTop10": 3,
+    "coreHardTop10": 3,
     "softTop10": 7,
-    "otherTop10": 1,
-    "top5Under60": 4,
-    "top10Under60": 4,
-    "top12Under60": 4,
-    "topItemAgeMinutes": 17,
+    "otherTop10": 0,
+    "top5Under60": 1,
+    "top10Under60": 1,
+    "top12Under60": 1,
+    "topItemAgeMinutes": 38,
     "uniqueSourcesTop20": 8,
     "dominantSource": {
       "name": "Daily Mail",
-      "count": 9
+      "count": 6
     },
     "importantMissingTop20": [
       "N12",
@@ -38,15 +38,23 @@
     "topSources": [
       {
         "name": "Daily Mail",
-        "count": 9
+        "count": 6
       },
       {
         "name": "ישראל היום",
-        "count": 3
+        "count": 4
       },
       {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
         "count": 3
+      },
+      {
+        "name": "ynet",
+        "count": 2
+      },
+      {
+        "name": "Page Six",
+        "count": 2
       },
       {
         "name": "וואלה",
@@ -59,14 +67,6 @@
       {
         "name": "Jerusalem Post",
         "count": 1
-      },
-      {
-        "name": "Page Six",
-        "count": 1
-      },
-      {
-        "name": "ynet",
-        "count": 1
       }
     ],
     "trendMatchedTop10": 2,
@@ -74,17 +74,17 @@
     "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 20,
-      "score": 46,
-      "readyCount": 2,
-      "hardReadyCount": 2,
-      "hardReadyStrictCount": 2,
-      "trendReadyCount": 2,
-      "cleanReadyCount": 2,
-      "cleanHardReadyCount": 2,
-      "cleanTrendReadyCount": 2,
-      "uniqueReadySources": 2,
-      "uniqueCleanReadySources": 2,
+      "estimatedVisibleChangeMinutes": 30,
+      "score": 16,
+      "readyCount": 1,
+      "hardReadyCount": 1,
+      "hardReadyStrictCount": 1,
+      "trendReadyCount": 1,
+      "cleanReadyCount": 1,
+      "cleanHardReadyCount": 1,
+      "cleanTrendReadyCount": 0,
+      "uniqueReadySources": 1,
+      "uniqueCleanReadySources": 1,
       "freshReadyUnder25Count": 0,
       "cleanFreshReadyUnder25Count": 0,
       "blockers": [
@@ -93,330 +93,132 @@
         "hard_ready_below_4",
         "clean_hard_ready_below_4",
         "ready_queue_below_3",
+        "hard_ready_below_2",
+        "ready_sources_below_2_hard_block",
         "ready_sources_below_3",
         "clean_ready_sources_below_3",
         "ready_fresh_under25_below_1",
-        "clean_ready_fresh_under25_below_1"
+        "clean_ready_fresh_under25_below_1",
+        "top_item_over_25m"
       ],
       "readyQueue": [
         {
-          "rank": 6,
-          "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-          "trendMatch": {
-            "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-            "clusterKey": "הותר לפרסום",
-            "domain": "חדשות",
-            "externalMentions": 8,
-            "sourceCount": 4,
-            "sources": [
-              "ynet",
-              "גלובס",
-              "וואלה",
-              "סרוגים"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-20T21:03:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3847182",
-            "overlapTokens": [
-              "בדרום",
-              "לבנון"
-            ],
-            "entityOverlapTokens": [
-              "לבנון"
-            ],
-            "eventOverlapTokens": [],
-            "score": 31.0,
-            "boost": 31.0
-          },
-          "queueScore": 33.0
-        },
-        {
-          "rank": 2,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
+          "rank": 4,
+          "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
+          "ageMinutes": 88,
+          "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
           "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
+            "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+            "clusterKey": "ראש הממשלה",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 4,
+            "sourceCount": 3,
             "sources": [
-              "הארץ",
-              "וואלה"
+              "ynet",
+              "דה מרקר",
+              "הארץ"
             ],
             "discoveryTypes": [
               "RSS",
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
+            "latestAt": "2026-06-21T02:02:00+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
             "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
+              "הממשלה",
+              "ראש"
             ],
             "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
+            "eventOverlapTokens": [],
+            "score": 24.46,
+            "boost": 14.0
           },
-          "queueScore": 28.0
+          "queueScore": 25.0
         }
       ],
       "cleanReadyQueue": [
         {
-          "rank": 6,
-          "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-          "trendMatch": {
-            "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-            "clusterKey": "הותר לפרסום",
-            "domain": "חדשות",
-            "externalMentions": 8,
-            "sourceCount": 4,
-            "sources": [
-              "ynet",
-              "גלובס",
-              "וואלה",
-              "סרוגים"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-20T21:03:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3847182",
-            "overlapTokens": [
-              "בדרום",
-              "לבנון"
-            ],
-            "entityOverlapTokens": [
-              "לבנון"
-            ],
-            "eventOverlapTokens": [],
-            "score": 31.0,
-            "boost": 31.0
-          },
-          "queueScore": 33.0
-        },
-        {
-          "rank": 2,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
+          "rank": 4,
+          "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
+          "ageMinutes": 88,
+          "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
           "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
+            "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+            "clusterKey": "ראש הממשלה",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
+            "externalMentions": 4,
+            "sourceCount": 3,
             "sources": [
-              "הארץ",
-              "וואלה"
+              "ynet",
+              "דה מרקר",
+              "הארץ"
             ],
             "discoveryTypes": [
               "RSS",
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
+            "latestAt": "2026-06-21T02:02:00+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
             "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
+              "הממשלה",
+              "ראש"
             ],
             "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
+            "eventOverlapTokens": [],
+            "score": 24.46,
+            "boost": 14.0
           },
-          "queueScore": 28.0
+          "queueScore": 25.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 4,
-      "worthyFreshUnder60Count": 1,
-      "coreHardFreshUnder60Count": 1,
-      "softFreshUnder60Count": 3,
+      "freshUnder60Count": 1,
+      "worthyFreshUnder60Count": 0,
+      "coreHardFreshUnder60Count": 0,
+      "softFreshUnder60Count": 1,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 3,
-      "worthyUniqueSources": 1,
+      "freshUniqueSources": 1,
+      "worthyUniqueSources": 0,
       "freshSources": [
         {
           "name": "Daily Mail",
-          "count": 2
-        },
-        {
-          "name": "וואלה",
-          "count": 1
-        },
-        {
-          "name": "Mirror",
           "count": 1
         }
       ],
-      "worthySources": [
-        {
-          "name": "וואלה",
-          "count": 1
-        }
-      ],
+      "worthySources": [],
       "disqualifiedFreshCounts": {
-        "quality_class_soft": 3,
-        "weak_or_missing_trend_match": 3
+        "quality_class_soft": 1,
+        "weak_or_missing_trend_match": 1
       },
-      "staleOrUndatedCount": 76,
+      "staleOrUndatedCount": 79,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
-          "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+          "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 17,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
-            "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 3,
-          "headline": "ונצואלה פיורי מתכננת משפחה ותוכנית טלוויזיה",
-          "source": "Mirror Celebs רכילות חו״ל",
-          "canonicalSource": "Mirror",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 44,
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 4,
-          "headline": "מירנדה הארט קושרת בין תהילה להידרדרות בריאותית",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 48,
-          "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "ageMinutes": 38,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -427,58 +229,7 @@
           ]
         }
       ],
-      "topWorthyFreshCandidates": [
-        {
-          "beforeRank": 2,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
-            "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        }
-      ]
+      "topWorthyFreshCandidates": []
     }
   },
   "after": {
@@ -486,9 +237,9 @@
     "coreHardTop10": 10,
     "softTop10": 0,
     "otherTop10": 0,
-    "top5Under60": 5,
-    "top10Under60": 5,
-    "top12Under60": 7,
+    "top5Under60": 4,
+    "top10Under60": 4,
+    "top12Under60": 5,
     "topItemAgeMinutes": 0,
     "uniqueSourcesTop20": 9,
     "dominantSource": {
@@ -501,8 +252,7 @@
       "הארץ",
       "BBC",
       "Guardian",
-      "NYT",
-      "גלובס"
+      "NYT"
     ],
     "duplicateTop20": 0,
     "storyClusterTop20Max": 1,
@@ -513,10 +263,6 @@
         "count": 4
       },
       {
-        "name": "ynet",
-        "count": 3
-      },
-      {
         "name": "Jerusalem Post",
         "count": 3
       },
@@ -525,15 +271,19 @@
         "count": 3
       },
       {
+        "name": "ישראל היום",
+        "count": 3
+      },
+      {
+        "name": "ynet",
+        "count": 2
+      },
+      {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
         "count": 2
       },
       {
-        "name": "ישראל היום",
-        "count": 2
-      },
-      {
-        "name": "כיפה",
+        "name": "גלובס",
         "count": 1
       },
       {
@@ -541,28 +291,118 @@
         "count": 1
       }
     ],
-    "trendMatchedTop10": 4,
-    "trendMatchedTop20": 4,
-    "trendGapMatchedTop20": 1,
+    "trendMatchedTop10": 5,
+    "trendMatchedTop20": 5,
+    "trendGapMatchedTop20": 0,
     "continuousPublishing": {
       "targetMinutes": 10,
-      "estimatedVisibleChangeMinutes": 10,
-      "score": 95,
-      "readyCount": 6,
-      "hardReadyCount": 6,
-      "hardReadyStrictCount": 6,
+      "estimatedVisibleChangeMinutes": 20,
+      "score": 88,
+      "readyCount": 5,
+      "hardReadyCount": 5,
+      "hardReadyStrictCount": 5,
       "trendReadyCount": 3,
-      "cleanReadyCount": 6,
-      "cleanHardReadyCount": 6,
-      "cleanTrendReadyCount": 3,
+      "cleanReadyCount": 5,
+      "cleanHardReadyCount": 5,
+      "cleanTrendReadyCount": 2,
       "uniqueReadySources": 3,
       "uniqueCleanReadySources": 3,
-      "freshReadyUnder25Count": 2,
-      "cleanFreshReadyUnder25Count": 2,
-      "blockers": [],
+      "freshReadyUnder25Count": 4,
+      "cleanFreshReadyUnder25Count": 4,
+      "blockers": [
+        "ready_queue_below_6",
+        "clean_ready_queue_below_6"
+      ],
       "readyQueue": [
         {
           "rank": 1,
+          "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+          "source": "וואלה חדשות - מבזקים",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 0,
+          "url": "https://news.walla.co.il/break/3847220",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+            "clusterKey": "ראש ממשלת",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-21T04:43:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847220",
+            "overlapTokens": [
+              "בשוויץ",
+              "ההבנות",
+              "יצא",
+              "לבירגנשטור",
+              "להמשך",
+              "מזכר",
+              "ממשלת",
+              "פקיסטן"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 94.48,
+            "boost": 14.0
+          },
+          "queueScore": 54.0
+        },
+        {
+          "rank": 2,
+          "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+          "source": "גלובס - בארץ",
+          "canonicalSource": "גלובס",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 10,
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
+          "trendMatch": {
+            "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+            "clusterKey": "ליאב כבביה",
+            "domain": "חדשות",
+            "externalMentions": 7,
+            "sourceCount": 5,
+            "sources": [
+              "ynet",
+              "גלובס",
+              "הארץ",
+              "וואלה",
+              "סרוגים"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T20:57:46+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
+            "overlapTokens": [
+              "המג",
+              "טנק",
+              "כבביה",
+              "ליאב"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 65.14,
+            "boost": 14.0
+          },
+          "queueScore": 54.0
+        },
+        {
+          "rank": 3,
           "headline": "עזה: תשעה הרוגים בבניין דירות",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
@@ -575,75 +415,33 @@
           "queueScore": 44.0
         },
         {
-          "rank": 2,
+          "rank": 4,
           "headline": "ירי בשיבלי: גבר נפצע קשה",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 9,
           "url": "https://news.walla.co.il/break/3847217",
           "trendMatch": null,
           "queueScore": 44.0
         },
         {
-          "rank": 6,
-          "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-          "trendMatch": {
-            "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-            "clusterKey": "הותר לפרסום",
-            "domain": "חדשות",
-            "externalMentions": 8,
-            "sourceCount": 4,
-            "sources": [
-              "ynet",
-              "גלובס",
-              "וואלה",
-              "סרוגים"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-20T21:03:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3847182",
-            "overlapTokens": [
-              "בדרום",
-              "לבנון"
-            ],
-            "entityOverlapTokens": [
-              "לבנון"
-            ],
-            "eventOverlapTokens": [],
-            "score": 31.0,
-            "boost": 31.0
-          },
-          "queueScore": 33.0
-        },
-        {
-          "rank": 3,
-          "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
+          "rank": 5,
+          "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 32,
+          "ageMinutes": 88,
           "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
           "trendMatch": {
-            "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
+            "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
             "clusterKey": "ראש הממשלה",
             "domain": "חדשות",
-            "externalMentions": 3,
+            "externalMentions": 4,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -654,89 +452,111 @@
               "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-21T01:17:29+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-21T02:02:00+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
             "overlapTokens": [
-              "בבריטניה",
               "הממשלה",
-              "התפטרותו",
-              "להודיע",
-              "סטרמר",
-              "צפוי",
               "ראש"
             ],
             "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 98.2,
+            "score": 24.46,
             "boost": 14.0
           },
-          "queueScore": 28.0
-        },
-        {
-          "rank": 4,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
-            "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
-          },
-          "queueScore": 28.0
-        },
-        {
-          "rank": 5,
-          "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-          "source": "ynet - מבזקי החדשות",
-          "canonicalSource": "ynet",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 57,
-          "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-          "trendMatch": null,
-          "queueScore": 18.0
+          "queueScore": 25.0
         }
       ],
       "cleanReadyQueue": [
         {
           "rank": 1,
+          "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+          "source": "וואלה חדשות - מבזקים",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 0,
+          "url": "https://news.walla.co.il/break/3847220",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+            "clusterKey": "ראש ממשלת",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-21T04:43:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847220",
+            "overlapTokens": [
+              "בשוויץ",
+              "ההבנות",
+              "יצא",
+              "לבירגנשטור",
+              "להמשך",
+              "מזכר",
+              "ממשלת",
+              "פקיסטן"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 94.48,
+            "boost": 14.0
+          },
+          "queueScore": 54.0
+        },
+        {
+          "rank": 2,
+          "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+          "source": "גלובס - בארץ",
+          "canonicalSource": "גלובס",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 10,
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
+          "trendMatch": {
+            "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+            "clusterKey": "ליאב כבביה",
+            "domain": "חדשות",
+            "externalMentions": 7,
+            "sourceCount": 5,
+            "sources": [
+              "ynet",
+              "גלובס",
+              "הארץ",
+              "וואלה",
+              "סרוגים"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T20:57:46+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
+            "overlapTokens": [
+              "המג",
+              "טנק",
+              "כבביה",
+              "ליאב"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 65.14,
+            "boost": 14.0
+          },
+          "queueScore": 54.0
+        },
+        {
+          "rank": 3,
           "headline": "עזה: תשעה הרוגים בבניין דירות",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
@@ -749,75 +569,33 @@
           "queueScore": 44.0
         },
         {
-          "rank": 2,
+          "rank": 4,
           "headline": "ירי בשיבלי: גבר נפצע קשה",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 9,
           "url": "https://news.walla.co.il/break/3847217",
           "trendMatch": null,
           "queueScore": 44.0
         },
         {
-          "rank": 6,
-          "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-          "source": "The Jerusalem Post - Israel News",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 79,
-          "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-          "trendMatch": {
-            "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-            "clusterKey": "הותר לפרסום",
-            "domain": "חדשות",
-            "externalMentions": 8,
-            "sourceCount": 4,
-            "sources": [
-              "ynet",
-              "גלובס",
-              "וואלה",
-              "סרוגים"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-20T21:03:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3847182",
-            "overlapTokens": [
-              "בדרום",
-              "לבנון"
-            ],
-            "entityOverlapTokens": [
-              "לבנון"
-            ],
-            "eventOverlapTokens": [],
-            "score": 31.0,
-            "boost": 31.0
-          },
-          "queueScore": 33.0
-        },
-        {
-          "rank": 3,
-          "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
+          "rank": 5,
+          "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
           "source": "ynet - כל ערוץ החדשות",
           "canonicalSource": "ynet",
           "category": "אקטואליה בעולם",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 32,
+          "ageMinutes": 88,
           "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
           "trendMatch": {
-            "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
+            "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
             "clusterKey": "ראש הממשלה",
             "domain": "חדשות",
-            "externalMentions": 3,
+            "externalMentions": 4,
             "sourceCount": 3,
             "sources": [
               "ynet",
@@ -828,95 +606,30 @@
               "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-21T01:17:29+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-21T02:02:00+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
             "overlapTokens": [
-              "בבריטניה",
               "הממשלה",
-              "התפטרותו",
-              "להודיע",
-              "סטרמר",
-              "צפוי",
               "ראש"
             ],
             "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 98.2,
+            "score": 24.46,
             "boost": 14.0
           },
-          "queueScore": 28.0
-        },
-        {
-          "rank": 4,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
-            "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
-          },
-          "queueScore": 28.0
-        },
-        {
-          "rank": 5,
-          "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-          "source": "ynet - מבזקי החדשות",
-          "canonicalSource": "ynet",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 57,
-          "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-          "trendMatch": null,
-          "queueScore": 18.0
+          "queueScore": 25.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 8,
-      "worthyFreshUnder60Count": 5,
-      "coreHardFreshUnder60Count": 5,
-      "softFreshUnder60Count": 3,
+      "freshUnder60Count": 5,
+      "worthyFreshUnder60Count": 4,
+      "coreHardFreshUnder60Count": 4,
+      "softFreshUnder60Count": 1,
       "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 4,
+      "freshUniqueSources": 3,
       "worthyUniqueSources": 2,
       "freshSources": [
         {
@@ -924,15 +637,11 @@
           "count": 3
         },
         {
-          "name": "ynet",
-          "count": 2
+          "name": "גלובס",
+          "count": 1
         },
         {
           "name": "Daily Mail",
-          "count": 2
-        },
-        {
-          "name": "Mirror",
           "count": 1
         }
       ],
@@ -942,21 +651,68 @@
           "count": 3
         },
         {
-          "name": "ynet",
-          "count": 2
+          "name": "גלובס",
+          "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 6,
-        "quality_class_soft": 3
+        "weak_or_missing_trend_match": 3,
+        "quality_class_soft": 1
       },
-      "staleOrUndatedCount": 72,
+      "staleOrUndatedCount": 75,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+          "source": "וואלה חדשות - מבזקים",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 0,
+          "url": "https://news.walla.co.il/break/3847220",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+            "clusterKey": "ראש ממשלת",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-21T04:43:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847220",
+            "overlapTokens": [
+              "בשוויץ",
+              "ההבנות",
+              "יצא",
+              "לבירגנשטור",
+              "להמשך",
+              "מזכר",
+              "ממשלת",
+              "פקיסטן"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 94.48,
+            "boost": 14.0
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 2,
           "headline": "עזה: תשעה הרוגים בבניין דירות",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
@@ -965,24 +721,6 @@
           "strictHard": true,
           "ageMinutes": 0,
           "url": "https://news.walla.co.il/break/3847219",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 2,
-          "headline": "ירי בשיבלי: גבר נפצע קשה",
-          "source": "וואלה חדשות - מבזקים",
-          "canonicalSource": "וואלה",
-          "category": "פלילים",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 0,
-          "url": "https://news.walla.co.il/break/3847217",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -993,44 +731,61 @@
         },
         {
           "beforeRank": 3,
-          "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-          "source": "ynet - כל ערוץ החדשות",
-          "canonicalSource": "ynet",
-          "category": "אקטואליה בעולם",
+          "headline": "ירי בשיבלי: גבר נפצע קשה",
+          "source": "וואלה חדשות - מבזקים",
+          "canonicalSource": "וואלה",
+          "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 32,
-          "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+          "ageMinutes": 9,
+          "url": "https://news.walla.co.il/break/3847217",
+          "trendMatch": null,
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": [
+            "weak_or_missing_trend_match"
+          ]
+        },
+        {
+          "beforeRank": 4,
+          "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+          "source": "גלובס - בארץ",
+          "canonicalSource": "גלובס",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 10,
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
           "trendMatch": {
-            "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-            "clusterKey": "ראש הממשלה",
+            "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+            "clusterKey": "ליאב כבביה",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 3,
+            "externalMentions": 7,
+            "sourceCount": 5,
             "sources": [
               "ynet",
-              "דה מרקר",
-              "הארץ"
+              "גלובס",
+              "הארץ",
+              "וואלה",
+              "סרוגים"
             ],
             "discoveryTypes": [
               "RSS",
               "WEB"
             ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-21T01:17:29+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-20T20:57:46+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
             "overlapTokens": [
-              "בבריטניה",
-              "הממשלה",
-              "התפטרותו",
-              "להודיע",
-              "סטרמר",
-              "צפוי",
-              "ראש"
+              "המג",
+              "טנק",
+              "כבביה",
+              "ליאב"
             ],
             "entityOverlapTokens": [],
             "eventOverlapTokens": [],
-            "score": 98.2,
+            "score": 65.14,
             "boost": 14.0
           },
           "freshUnder60": true,
@@ -1039,121 +794,15 @@
           "disqualifiers": []
         },
         {
-          "beforeRank": 4,
-          "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-          "source": "ynet - מבזקי החדשות",
-          "canonicalSource": "ynet",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 57,
-          "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
           "beforeRank": 5,
-          "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+          "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
           "canonicalSource": "Daily Mail",
           "category": "רכילות",
           "class": "soft",
           "strictHard": false,
-          "ageMinutes": 17,
-          "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "הארץ",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
-            "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 7,
-          "headline": "ונצואלה פיורי מתכננת משפחה ותוכנית טלוויזיה",
-          "source": "Mirror Celebs רכילות חו״ל",
-          "canonicalSource": "Mirror",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 44,
-          "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 8,
-          "headline": "מירנדה הארט קושרת בין תהילה להידרדרות בריאותית",
-          "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "canonicalSource": "Daily Mail",
-          "category": "רכילות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 48,
-          "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+          "ageMinutes": 38,
+          "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
@@ -1167,6 +816,53 @@
       "topWorthyFreshCandidates": [
         {
           "beforeRank": 1,
+          "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+          "source": "וואלה חדשות - מבזקים",
+          "canonicalSource": "וואלה",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 0,
+          "url": "https://news.walla.co.il/break/3847220",
+          "trendMatch": {
+            "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+            "clusterKey": "ראש ממשלת",
+            "domain": "חדשות",
+            "externalMentions": 3,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "וואלה"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-06-21T04:43:00+00:00",
+            "sampleUrl": "https://news.walla.co.il/break/3847220",
+            "overlapTokens": [
+              "בשוויץ",
+              "ההבנות",
+              "יצא",
+              "לבירגנשטור",
+              "להמשך",
+              "מזכר",
+              "ממשלת",
+              "פקיסטן"
+            ],
+            "entityOverlapTokens": [],
+            "eventOverlapTokens": [],
+            "score": 94.48,
+            "boost": 14.0
+          },
+          "freshUnder60": true,
+          "coreHard": true,
+          "worthyFreshUnder60": true,
+          "disqualifiers": []
+        },
+        {
+          "beforeRank": 2,
           "headline": "עזה: תשעה הרוגים בבניין דירות",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
@@ -1184,14 +880,14 @@
           ]
         },
         {
-          "beforeRank": 2,
+          "beforeRank": 3,
           "headline": "ירי בשיבלי: גבר נפצע קשה",
           "source": "וואלה חדשות - מבזקים",
           "canonicalSource": "וואלה",
           "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 0,
+          "ageMinutes": 9,
           "url": "https://news.walla.co.il/break/3847217",
           "trendMatch": null,
           "freshUnder60": true,
@@ -1202,114 +898,45 @@
           ]
         },
         {
-          "beforeRank": 3,
-          "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-          "source": "ynet - כל ערוץ החדשות",
-          "canonicalSource": "ynet",
-          "category": "אקטואליה בעולם",
+          "beforeRank": 4,
+          "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+          "source": "גלובס - בארץ",
+          "canonicalSource": "גלובס",
+          "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 32,
-          "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+          "ageMinutes": 10,
+          "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
           "trendMatch": {
-            "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-            "clusterKey": "ראש הממשלה",
+            "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+            "clusterKey": "ליאב כבביה",
             "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 3,
+            "externalMentions": 7,
+            "sourceCount": 5,
             "sources": [
               "ynet",
-              "דה מרקר",
-              "הארץ"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": false,
-            "latestAt": "2026-06-21T01:17:29+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
-            "overlapTokens": [
-              "בבריטניה",
-              "הממשלה",
-              "התפטרותו",
-              "להודיע",
-              "סטרמר",
-              "צפוי",
-              "ראש"
-            ],
-            "entityOverlapTokens": [],
-            "eventOverlapTokens": [],
-            "score": 98.2,
-            "boost": 14.0
-          },
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": []
-        },
-        {
-          "beforeRank": 4,
-          "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-          "source": "ynet - מבזקי החדשות",
-          "canonicalSource": "ynet",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 57,
-          "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "אקטואליה בעולם",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://news.walla.co.il/item/3847215",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "clusterKey": "מצב חירום",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
+              "גלובס",
               "הארץ",
-              "וואלה"
+              "וואלה",
+              "סרוגים"
             ],
             "discoveryTypes": [
               "RSS",
               "WEB"
             ],
             "mentionedInFeed": true,
-            "latestAt": "2026-06-21T02:08:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3847215",
+            "latestAt": "2026-06-20T20:57:46+00:00",
+            "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
             "overlapTokens": [
-              "בוליביה",
-              "הכריז",
-              "הרוגים",
-              "חירום",
-              "ימי",
-              "מחאה",
-              "מצב",
-              "נשיא"
+              "המג",
+              "טנק",
+              "כבביה",
+              "ליאב"
             ],
             "entityOverlapTokens": [],
-            "eventOverlapTokens": [
-              "הרוגים",
-              "מחאה"
-            ],
-            "score": 75.58,
-            "boost": 24.0
+            "eventOverlapTokens": [],
+            "score": 65.14,
+            "boost": 14.0
           },
           "freshUnder60": true,
           "coreHard": true,
@@ -1320,16 +947,16 @@
     }
   },
   "beforeHealthScore": 28,
-  "afterHealthScore": 84,
+  "afterHealthScore": 80,
   "replacementReadiness": {
-    "score": 79,
+    "score": 78,
     "threshold": 80,
     "components": {
-      "freshness": 17.5,
+      "freshness": 15.3,
       "newsinessTop10": 25.0,
       "top20Quality": 13.2,
       "sourceBalance": 10.0,
-      "trendSignalUse": 8.67,
+      "trendSignalUse": 9.33,
       "criticalBlockersClear": 5.0
     },
     "criticalBlockers": [
@@ -1340,60 +967,60 @@
   },
   "alizaReview": {
     "status": "ok",
-    "score": 62,
+    "score": 58,
     "scoreSource": "explicit_report_score",
     "readyForMain": false,
-    "improvingVsBaseline": true,
+    "improvingVsBaseline": false,
     "summaryLine": "בעייתי",
-    "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-21-0405.md",
-    "reportName": "tt-rr-simulation-review-2026-06-21-0405.md",
-    "reportGeneratedAt": "2026-06-21T01:01:11+00:00",
+    "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-21-0531.md",
+    "reportName": "tt-rr-simulation-review-2026-06-21-0531.md",
+    "reportGeneratedAt": "2026-06-21T02:28:53+00:00",
     "metrics": {
-      "ציון עליזה": 62,
+      "ציון עליזה": 58,
       "generatedAt": 2026,
-      "afterHealthScore": 74,
-      "healthDelta": 29,
-      "replacementReadiness score": 66,
-      "rollingScore": 76.71,
+      "afterHealthScore": 66,
+      "healthDelta": 36,
+      "replacementReadiness score": 53,
+      "rollingScore": 76.44,
       "newsinessTop10": 7,
       "softTop10": 3,
-      "top12Under60": 5,
-      "trendMatchedTop10": 6,
-      "trendMatchedTop20": 12,
+      "top12Under60": 1,
+      "trendMatchedTop10": 5,
+      "trendMatchedTop20": 11,
       "dominantSource": 3,
       "uniqueSourcesTop20": 11,
-      "estimatedVisibleChangeMinutes": 30,
-      "readyCount": 1,
-      "hardReadyCount": 1,
-      "trendReadyCount": 1,
-      "uniqueReadySources": 1,
+      "estimatedVisibleChangeMinutes": 40,
+      "readyCount": 0,
+      "hardReadyCount": 0,
+      "trendReadyCount": 0,
+      "uniqueReadySources": 0,
       "blockers": 3
     },
     "recommendedActions": [
-      "להוסיף rule שמונע כניסת soft/sport/rich entertainment ל-Top 5 אלא אם אין לפחות 5 hard-news טריים, ולהוריד אותם אוטומטית מתחת ל-hard-news בני פחות מ-90 דקות.",
-      "לשנות את continuous publishing כך שה-readyQueue ייבנה ממאגר מועמדים רחב יותר ולא רק מהפריט החזק ביותר: יעד מינימלי 4 מועמדים, 3 hard, 3 מקורות, עם fallback לפריטי hard-news עד 45 דקות.",
-      "להוסיף freshness rescue ל-Top 12: אם top12Under60 נמוך מ-9, להפעיל boost לפריטים בני פחות מ-60 דקות ולהחליש פריטים בני 90+ דקות גם אם יש להם trendMatch."
+      "להעלות את משקל fresh candidate discovery בתור ה־continuous publishing ולהוריד את סף הכניסה לתור עבור hard-news בני 0-45 דקות ממקורות ליבה, כדי למנוע readyCount 0.",
+      "להקשיח סיווג hard/soft: רכילות, ספורט וטכנולוגיה צרכנית לא יקבלו hard כברירת מחדל; נדרש מקור/קטגוריה/מילות אירוע שמצביעות על חדשותיות רחבה.",
+      "להוסיף guard ל־Top 3: אם הפריט הראשון soft או מעל 25 דקות, להריץ rerank שמעדיף hard-news טרי או trend-news עם entity overlap חזק."
     ],
-    "title": "TT RR Simulation Review — 2026-06-21 04:05"
+    "title": "TT RR Simulation Review — 2026-06-21 05:31"
   },
   "delta": {
-    "newsinessTop10": 8,
-    "coreHardTop10": 8,
+    "newsinessTop10": 7,
+    "coreHardTop10": 7,
     "softTop10": -7,
-    "top12Under60": 3,
+    "top12Under60": 4,
     "uniqueSourcesTop20": 1,
-    "trendMatchedTop10": 2,
-    "trendMatchedTop20": 2,
-    "healthScore": 56
+    "trendMatchedTop10": 3,
+    "trendMatchedTop20": 3,
+    "healthScore": 52
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 8,
-    "worthyFreshUnder60Count": 5,
-    "coreHardFreshUnder60Count": 5,
-    "softFreshUnder60Count": 3,
+    "freshUnder60Count": 5,
+    "worthyFreshUnder60Count": 4,
+    "coreHardFreshUnder60Count": 4,
+    "softFreshUnder60Count": 1,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 4,
+    "freshUniqueSources": 3,
     "worthyUniqueSources": 2,
     "freshSources": [
       {
@@ -1401,15 +1028,11 @@
         "count": 3
       },
       {
-        "name": "ynet",
-        "count": 2
+        "name": "גלובס",
+        "count": 1
       },
       {
         "name": "Daily Mail",
-        "count": 2
-      },
-      {
-        "name": "Mirror",
         "count": 1
       }
     ],
@@ -1419,21 +1042,68 @@
         "count": 3
       },
       {
-        "name": "ynet",
-        "count": 2
+        "name": "גלובס",
+        "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 6,
-      "quality_class_soft": 3
+      "weak_or_missing_trend_match": 3,
+      "quality_class_soft": 1
     },
-    "staleOrUndatedCount": 72,
+    "staleOrUndatedCount": 75,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+        "source": "וואלה חדשות - מבזקים",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 0,
+        "url": "https://news.walla.co.il/break/3847220",
+        "trendMatch": {
+          "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+          "clusterKey": "ראש ממשלת",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-21T04:43:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3847220",
+          "overlapTokens": [
+            "בשוויץ",
+            "ההבנות",
+            "יצא",
+            "לבירגנשטור",
+            "להמשך",
+            "מזכר",
+            "ממשלת",
+            "פקיסטן"
+          ],
+          "entityOverlapTokens": [],
+          "eventOverlapTokens": [],
+          "score": 94.48,
+          "boost": 14.0
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 2,
         "headline": "עזה: תשעה הרוגים בבניין דירות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
@@ -1451,14 +1121,14 @@
         ]
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "ירי בשיבלי: גבר נפצע קשה",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 0,
+        "ageMinutes": 9,
         "url": "https://news.walla.co.il/break/3847217",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1469,45 +1139,44 @@
         ]
       },
       {
-        "beforeRank": 3,
-        "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-        "source": "ynet - כל ערוץ החדשות",
-        "canonicalSource": "ynet",
-        "category": "אקטואליה בעולם",
+        "beforeRank": 4,
+        "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 32,
-        "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+        "ageMinutes": 10,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
         "trendMatch": {
-          "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-          "clusterKey": "ראש הממשלה",
+          "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+          "clusterKey": "ליאב כבביה",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 3,
+          "externalMentions": 7,
+          "sourceCount": 5,
           "sources": [
             "ynet",
-            "דה מרקר",
-            "הארץ"
+            "גלובס",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
           ],
           "discoveryTypes": [
             "RSS",
             "WEB"
           ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-21T01:17:29+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T20:57:46+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
           "overlapTokens": [
-            "בבריטניה",
-            "הממשלה",
-            "התפטרותו",
-            "להודיע",
-            "סטרמר",
-            "צפוי",
-            "ראש"
+            "המג",
+            "טנק",
+            "כבביה",
+            "ליאב"
           ],
           "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 98.2,
+          "score": 65.14,
           "boost": 14.0
         },
         "freshUnder60": true,
@@ -1516,121 +1185,15 @@
         "disqualifiers": []
       },
       {
-        "beforeRank": 4,
-        "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-        "source": "ynet - מבזקי החדשות",
-        "canonicalSource": "ynet",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 57,
-        "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
         "beforeRank": 5,
-        "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+        "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 17,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://news.walla.co.il/item/3847215",
-        "trendMatch": {
-          "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-          "clusterKey": "מצב חירום",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-21T02:08:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3847215",
-          "overlapTokens": [
-            "בוליביה",
-            "הכריז",
-            "הרוגים",
-            "חירום",
-            "ימי",
-            "מחאה",
-            "מצב",
-            "נשיא"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [
-            "הרוגים",
-            "מחאה"
-          ],
-          "score": 75.58,
-          "boost": 24.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 7,
-        "headline": "ונצואלה פיורי מתכננת משפחה ותוכנית טלוויזיה",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 44,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 8,
-        "headline": "מירנדה הארט קושרת בין תהילה להידרדרות בריאותית",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 48,
-        "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "ageMinutes": 38,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1644,6 +1207,53 @@
     "topWorthyFreshCandidates": [
       {
         "beforeRank": 1,
+        "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+        "source": "וואלה חדשות - מבזקים",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 0,
+        "url": "https://news.walla.co.il/break/3847220",
+        "trendMatch": {
+          "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+          "clusterKey": "ראש ממשלת",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-21T04:43:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3847220",
+          "overlapTokens": [
+            "בשוויץ",
+            "ההבנות",
+            "יצא",
+            "לבירגנשטור",
+            "להמשך",
+            "מזכר",
+            "ממשלת",
+            "פקיסטן"
+          ],
+          "entityOverlapTokens": [],
+          "eventOverlapTokens": [],
+          "score": 94.48,
+          "boost": 14.0
+        },
+        "freshUnder60": true,
+        "coreHard": true,
+        "worthyFreshUnder60": true,
+        "disqualifiers": []
+      },
+      {
+        "beforeRank": 2,
         "headline": "עזה: תשעה הרוגים בבניין דירות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
@@ -1661,14 +1271,14 @@
         ]
       },
       {
-        "beforeRank": 2,
+        "beforeRank": 3,
         "headline": "ירי בשיבלי: גבר נפצע קשה",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 0,
+        "ageMinutes": 9,
         "url": "https://news.walla.co.il/break/3847217",
         "trendMatch": null,
         "freshUnder60": true,
@@ -1679,114 +1289,45 @@
         ]
       },
       {
-        "beforeRank": 3,
-        "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-        "source": "ynet - כל ערוץ החדשות",
-        "canonicalSource": "ynet",
-        "category": "אקטואליה בעולם",
+        "beforeRank": 4,
+        "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 32,
-        "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+        "ageMinutes": 10,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
         "trendMatch": {
-          "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-          "clusterKey": "ראש הממשלה",
+          "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+          "clusterKey": "ליאב כבביה",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 3,
+          "externalMentions": 7,
+          "sourceCount": 5,
           "sources": [
             "ynet",
-            "דה מרקר",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-21T01:17:29+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
-          "overlapTokens": [
-            "בבריטניה",
-            "הממשלה",
-            "התפטרותו",
-            "להודיע",
-            "סטרמר",
-            "צפוי",
-            "ראש"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [],
-          "score": 98.2,
-          "boost": 14.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 4,
-        "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-        "source": "ynet - מבזקי החדשות",
-        "canonicalSource": "ynet",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 57,
-        "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://news.walla.co.il/item/3847215",
-        "trendMatch": {
-          "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-          "clusterKey": "מצב חירום",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
+            "גלובס",
             "הארץ",
-            "וואלה"
+            "וואלה",
+            "סרוגים"
           ],
           "discoveryTypes": [
             "RSS",
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-06-21T02:08:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3847215",
+          "latestAt": "2026-06-20T20:57:46+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
           "overlapTokens": [
-            "בוליביה",
-            "הכריז",
-            "הרוגים",
-            "חירום",
-            "ימי",
-            "מחאה",
-            "מצב",
-            "נשיא"
+            "המג",
+            "טנק",
+            "כבביה",
+            "ליאב"
           ],
           "entityOverlapTokens": [],
-          "eventOverlapTokens": [
-            "הרוגים",
-            "מחאה"
-          ],
-          "score": 75.58,
-          "boost": 24.0
+          "eventOverlapTokens": [],
+          "score": 65.14,
+          "boost": 14.0
         },
         "freshUnder60": true,
         "coreHard": true,
@@ -1797,140 +1338,39 @@
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 4,
-    "worthyFreshUnder60Count": 1,
-    "coreHardFreshUnder60Count": 1,
-    "softFreshUnder60Count": 3,
+    "freshUnder60Count": 1,
+    "worthyFreshUnder60Count": 0,
+    "coreHardFreshUnder60Count": 0,
+    "softFreshUnder60Count": 1,
     "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 3,
-    "worthyUniqueSources": 1,
+    "freshUniqueSources": 1,
+    "worthyUniqueSources": 0,
     "freshSources": [
       {
         "name": "Daily Mail",
-        "count": 2
-      },
-      {
-        "name": "וואלה",
-        "count": 1
-      },
-      {
-        "name": "Mirror",
         "count": 1
       }
     ],
-    "worthySources": [
-      {
-        "name": "וואלה",
-        "count": 1
-      }
-    ],
+    "worthySources": [],
     "disqualifiedFreshCounts": {
-      "quality_class_soft": 3,
-      "weak_or_missing_trend_match": 3
+      "quality_class_soft": 1,
+      "weak_or_missing_trend_match": 1
     },
-    "staleOrUndatedCount": 76,
+    "staleOrUndatedCount": 79,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
-        "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+        "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
         "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
         "strictHard": false,
-        "ageMinutes": 17,
-        "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 2,
-        "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://news.walla.co.il/item/3847215",
-        "trendMatch": {
-          "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-          "clusterKey": "מצב חירום",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-21T02:08:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3847215",
-          "overlapTokens": [
-            "בוליביה",
-            "הכריז",
-            "הרוגים",
-            "חירום",
-            "ימי",
-            "מחאה",
-            "מצב",
-            "נשיא"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [
-            "הרוגים",
-            "מחאה"
-          ],
-          "score": 75.58,
-          "boost": 24.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      },
-      {
-        "beforeRank": 3,
-        "headline": "ונצואלה פיורי מתכננת משפחה ותוכנית טלוויזיה",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "canonicalSource": "Mirror",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 44,
-        "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 4,
-        "headline": "מירנדה הארט קושרת בין תהילה להידרדרות בריאותית",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "canonicalSource": "Daily Mail",
-        "category": "רכילות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 48,
-        "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+        "ageMinutes": 38,
+        "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
@@ -1941,58 +1381,7 @@
         ]
       }
     ],
-    "topWorthyFreshCandidates": [
-      {
-        "beforeRank": 2,
-        "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://news.walla.co.il/item/3847215",
-        "trendMatch": {
-          "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-          "clusterKey": "מצב חירום",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-06-21T02:08:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3847215",
-          "overlapTokens": [
-            "בוליביה",
-            "הכריז",
-            "הרוגים",
-            "חירום",
-            "ימי",
-            "מחאה",
-            "מצב",
-            "נשיא"
-          ],
-          "entityOverlapTokens": [],
-          "eventOverlapTokens": [
-            "הרוגים",
-            "מחאה"
-          ],
-          "score": 75.58,
-          "boost": 24.0
-        },
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": []
-      }
-    ]
+    "topWorthyFreshCandidates": []
   },
   "rawSourceBridge": {
     "status": "ok",
@@ -2015,9 +1404,9 @@
         "label": "ynet חדשות",
         "configuredSourceCount": 24,
         "freshUnder60Scanned": 3,
-        "acceptedHardQaClean": 2,
-        "rejected": 1,
-        "status": "has_bridge_supply"
+        "acceptedHardQaClean": 0,
+        "rejected": 3,
+        "status": "no_clean_bridge_supply"
       },
       {
         "id": "kan",
@@ -2032,9 +1421,9 @@
         "id": "walla",
         "label": "וואלה חדשות",
         "configuredSourceCount": 12,
-        "freshUnder60Scanned": 4,
-        "acceptedHardQaClean": 2,
-        "rejected": 2,
+        "freshUnder60Scanned": 3,
+        "acceptedHardQaClean": 3,
+        "rejected": 0,
         "status": "has_bridge_supply"
       },
       {
@@ -2077,9 +1466,9 @@
         "id": "israel_hayom",
         "label": "ישראל היום",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 1,
+        "freshUnder60Scanned": 3,
         "acceptedHardQaClean": 0,
-        "rejected": 1,
+        "rejected": 3,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -2113,19 +1502,19 @@
         "id": "inn",
         "label": "ערוץ 7 / INN",
         "configuredSourceCount": 2,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 3,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 3,
         "status": "no_clean_bridge_supply"
       },
       {
         "id": "globes",
         "label": "גלובס",
         "configuredSourceCount": 9,
-        "freshUnder60Scanned": 0,
-        "acceptedHardQaClean": 0,
-        "rejected": 0,
-        "status": "no_clean_bridge_supply"
+        "freshUnder60Scanned": 2,
+        "acceptedHardQaClean": 1,
+        "rejected": 1,
+        "status": "has_bridge_supply"
       },
       {
         "id": "srugim",
@@ -2138,6 +1527,51 @@
       }
     ],
     "accepted": [
+      {
+        "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+        "source": "וואלה חדשות - מבזקים",
+        "canonicalSource": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 0,
+        "url": "https://news.walla.co.il/break/3847220",
+        "beforeRank": null,
+        "afterRank": null,
+        "delta": null,
+        "trendMatch": {
+          "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+          "clusterKey": "ראש ממשלת",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-21T04:43:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3847220",
+          "overlapTokens": [
+            "בשוויץ",
+            "ההבנות",
+            "יצא",
+            "לבירגנשטור",
+            "להמשך",
+            "מזכר",
+            "ממשלת",
+            "פקיסטן"
+          ],
+          "entityOverlapTokens": [],
+          "eventOverlapTokens": [],
+          "score": 94.48,
+          "boost": 14.0
+        }
+      },
       {
         "headline": "עזה: תשעה הרוגים בבניין דירות",
         "source": "וואלה חדשות - מבזקים",
@@ -2159,7 +1593,7 @@
         "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 0,
+        "ageMinutes": 9,
         "url": "https://news.walla.co.il/break/3847217",
         "beforeRank": null,
         "afterRank": null,
@@ -2167,63 +1601,48 @@
         "trendMatch": null
       },
       {
-        "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-        "source": "ynet - כל ערוץ החדשות",
-        "canonicalSource": "ynet",
-        "category": "אקטואליה בעולם",
+        "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 32,
-        "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+        "ageMinutes": 10,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
         "beforeRank": null,
         "afterRank": null,
         "delta": null,
         "trendMatch": {
-          "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-          "clusterKey": "ראש הממשלה",
+          "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+          "clusterKey": "ליאב כבביה",
           "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 3,
+          "externalMentions": 7,
+          "sourceCount": 5,
           "sources": [
             "ynet",
-            "דה מרקר",
-            "הארץ"
+            "גלובס",
+            "הארץ",
+            "וואלה",
+            "סרוגים"
           ],
           "discoveryTypes": [
             "RSS",
             "WEB"
           ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-21T01:17:29+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+          "mentionedInFeed": true,
+          "latestAt": "2026-06-20T20:57:46+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
           "overlapTokens": [
-            "בבריטניה",
-            "הממשלה",
-            "התפטרותו",
-            "להודיע",
-            "סטרמר",
-            "צפוי",
-            "ראש"
+            "המג",
+            "טנק",
+            "כבביה",
+            "ליאב"
           ],
           "entityOverlapTokens": [],
           "eventOverlapTokens": [],
-          "score": 98.2,
+          "score": 65.14,
           "boost": 14.0
         }
-      },
-      {
-        "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-        "source": "ynet - מבזקי החדשות",
-        "canonicalSource": "ynet",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 57,
-        "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-        "beforeRank": null,
-        "afterRank": null,
-        "delta": null,
-        "trendMatch": null
       }
     ],
     "rejectedSample": [
@@ -2231,50 +1650,53 @@
         "sourceGroup": "ynet חדשות",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
-        "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-        "ageMinutes": 32,
-        "status": "accepted",
-        "reason": "deterministic_bridge_pass",
-        "errorCodes": [],
-        "url": "https://www.ynet.co.il/news/article/h16wyfegfx"
+        "headline": "המגן שהפך לחרב: מי באמת מרוויח מהתביעות הייצוגיות?",
+        "ageMinutes": 46,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_source_style",
+          "headline_copies_source"
+        ],
+        "url": "https://www.ynet.co.il/news/theheadline/article/87lcahj5a"
       },
       {
         "sourceGroup": "ynet חדשות",
         "source": "ynet - מבזקי החדשות",
         "canonicalSource": "ynet",
-        "headline": "סקוטלנד: גבר נאשם שתקף חמישה בני אדם מ\"שנאה אנטי-מוסלמית\"",
-        "ageMinutes": 10,
+        "headline": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+        "ageMinutes": 44,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_copies_source",
           "summary_generic_or_mediated"
         ],
-        "url": "https://www.ynet.co.il/news/article/ryigpnvzzl"
+        "url": "https://www.ynet.co.il/news/article/rjpv33vmzg"
       },
       {
         "sourceGroup": "ynet חדשות",
         "source": "ynet - מבזקי החדשות",
         "canonicalSource": "ynet",
-        "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-        "ageMinutes": 57,
-        "status": "accepted",
-        "reason": "deterministic_bridge_pass",
-        "errorCodes": [],
-        "url": "https://www.ynet.co.il/news/article/hjip7ivmzx"
+        "headline": "נקודה היסטורית לקורסאו במונדיאל, אחרי 0:0 עם אקוודור",
+        "ageMinutes": 50,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source",
+          "summary_generic_or_mediated"
+        ],
+        "url": "https://www.ynet.co.il/news/article/r1fjqt4mze"
       },
       {
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
-        "headline": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+        "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
         "ageMinutes": 0,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_too_long",
-          "headline_copies_source"
-        ],
+        "status": "accepted",
+        "reason": "deterministic_bridge_pass",
+        "errorCodes": [],
         "url": "https://news.walla.co.il/break/3847220"
       },
       {
@@ -2293,47 +1715,125 @@
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
         "headline": "ירי בשיבלי: גבר נפצע קשה",
-        "ageMinutes": 0,
+        "ageMinutes": 9,
         "status": "accepted",
         "reason": "deterministic_bridge_pass",
         "errorCodes": [],
         "url": "https://news.walla.co.il/break/3847217"
       },
       {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות - מבזקים",
-        "canonicalSource": "וואלה",
-        "headline": "רוכב אופנוע כבן 24 נהרג מפגיעת רכב בכביש 4",
-        "ageMinutes": 16,
+        "sourceGroup": "ישראל היום",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "headline": "המלכוד הלבנוני: ידי צה\"ל כבולות - והממשלה נשארה רק עם סיסמאות",
+        "ageMinutes": 18,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_copies_source",
-          "summary_generic_or_mediated"
+          "headline_too_long",
+          "headline_copies_source"
         ],
-        "url": "https://news.walla.co.il/break/3847216"
+        "url": "https://www.israelhayom.co.il/news/defense/article/20804131"
       },
       {
         "sourceGroup": "ישראל היום",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
-        "headline": "פרויקט הדגל של טראמפ הפך לירוק - הנשיא האשים: \"ונדליזם!\"",
-        "ageMinutes": 47,
+        "headline": "הסנסציה החדשה: השוער שניפץ את שיא המונדיאל בענק",
+        "ageMinutes": 24,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_looks_cut",
-          "headline_copies_source",
-          "summary_generic_or_mediated"
+          "headline_copies_source"
         ],
-        "url": "https://www.israelhayom.co.il/news/world-news/usa/article/20805203"
+        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805428"
+      },
+      {
+        "sourceGroup": "ישראל היום",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "headline": "היום הארוך בשנה: זה מה שמחכה לנו במזג האוויר",
+        "ageMinutes": 35,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_generic",
+          "headline_copies_source"
+        ],
+        "url": "https://www.israelhayom.co.il/weather/article/20804821"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "היסטוריה במונדיאל: נקודה ראשונה לנבחרת קורסאו לאחר תיקו מול אקוודור",
+        "ageMinutes": 10,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.inn.co.il/flashes/1118779"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "גבר נורה ביישוב שיבלי, מצבו קשה",
+        "ageMinutes": 39,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.inn.co.il/flashes/1118778"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "Israel National News English",
+        "canonicalSource": "Israel National News English",
+        "headline": "Vance arrives in Switzerland for high-stakes negotiations with Iran",
+        "ageMinutes": 29,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_copies_source"
+        ],
+        "url": "https://www.israelnationalnews.com/flashes/688154"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "headline": "\"לא האמנו שהוא יסכים לבוא\": המנכ\"ל שנבחר לנווט את צים במים סוערים בדרך למכירתה",
+        "ageMinutes": 8,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_too_long",
+          "headline_looks_cut",
+          "headline_copies_source"
+        ],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546409#utm_source=RSS"
+      },
+      {
+        "sourceGroup": "גלובס",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+        "ageMinutes": 10,
+        "status": "accepted",
+        "reason": "deterministic_bridge_pass",
+        "errorCodes": [],
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS"
       }
     ],
     "dedupe": [],
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 13.52,
+      "elapsedSeconds": 15.23,
       "skippedForBudget": 0
     }
   },
@@ -2345,17 +1845,25 @@
     "relegated": [
       {
         "clusterKey": "event:iran_talks:switzerland_nuclear_track",
-        "keeper": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
-        "relegated": "המשלחת האיראנית פתחה את סבב השיחות בשווייץ",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeper": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+        "relegated": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
+        "keeperSource": "וואלה",
         "relegatedSource": "Al Jazeera RSS מסונן מזרח תיכון",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:iran_talks:switzerland_nuclear_track",
-        "keeper": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
+        "keeper": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+        "relegated": "המשלחת האיראנית פתחה את סבב השיחות בשווייץ",
+        "keeperSource": "וואלה",
+        "relegatedSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
+      },
+      {
+        "clusterKey": "event:iran_talks:switzerland_nuclear_track",
+        "keeper": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
         "relegated": "נציגי ארה״ב ואיראן ייפגשו לשיחות בשווייץ",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeperSource": "וואלה",
         "relegatedSource": "NYT",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2368,18 +1876,26 @@
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
+        "clusterKey": "event:lebanon_tank_disaster:soldier_names_and_probe",
+        "keeper": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+        "relegated": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
+        "keeperSource": "גלובס",
+        "relegatedSource": "כיפה",
+        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
+      },
+      {
         "clusterKey": "event:iran_talks:switzerland_nuclear_track",
-        "keeper": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
+        "keeper": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
         "relegated": "ואנס פותח בשווייץ מסלול מול איראן",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeperSource": "וואלה",
         "relegatedSource": "ישראל היום",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:iran_talks:switzerland_nuclear_track",
-        "keeper": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
+        "keeper": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
         "relegated": "איראן מגיעה לשיחות בשווייץ תוך לחץ דרך הורמוז ולבנון",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeperSource": "וואלה",
         "relegatedSource": "ynet",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2393,33 +1909,33 @@
       },
       {
         "clusterKey": "event:lebanon_tank_disaster:soldier_names_and_probe",
-        "keeper": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
+        "keeper": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
         "relegated": "חמישה לוחמים נהרגו בשתי תקריות בדרום לבנון",
-        "keeperSource": "כיפה",
+        "keeperSource": "גלובס",
         "relegatedSource": "ynet",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:lebanon_tank_disaster:soldier_names_and_probe",
-        "keeper": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
+        "keeper": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
         "relegated": "פורסם שמו של לוחם נוסף מאסון הטנק בלבנון",
-        "keeperSource": "כיפה",
+        "keeperSource": "גלובס",
         "relegatedSource": "ערוץ 7 / INN עברית",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:lebanon_tank_disaster:soldier_names_and_probe",
-        "keeper": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
+        "keeper": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
         "relegated": "חלל רביעי נקשר לאסון הטנק בדרום לבנון",
-        "keeperSource": "כיפה",
+        "keeperSource": "גלובס",
         "relegatedSource": "סרוגים",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:lebanon_tank_disaster:soldier_names_and_probe",
-        "keeper": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
+        "keeper": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
         "relegated": "חיזבאללה שילב טיל נ״ט ורחפן בפגיעת הטנק",
-        "keeperSource": "כיפה",
+        "keeperSource": "גלובס",
         "relegatedSource": "Israel National News English",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2465,9 +1981,9 @@
       },
       {
         "clusterKey": "event:iran_talks:switzerland_nuclear_track",
-        "keeper": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
+        "keeper": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
         "relegated": "ההסכם עם איראן נבחן קודם כל בלבנון",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeperSource": "וואלה",
         "relegatedSource": "וואלה",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -2510,22 +2026,6 @@
         "keeperSource": "כיפה",
         "relegatedSource": "גלובס",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
-      },
-      {
-        "clusterKey": "event:lebanon_south_strikes:casualties",
-        "keeper": "עוד חייל נהרג בדרום לבנון; מניין ההרוגים בצפון עלה ל-36",
-        "relegated": "צה״ל פרסם שני חללים מקרבות דרום לבנון",
-        "keeperSource": "הארץ",
-        "relegatedSource": "N12",
-        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
-      },
-      {
-        "clusterKey": "event:lebanon_south_strikes:casualties",
-        "keeper": "עוד חייל נהרג בדרום לבנון; מניין ההרוגים בצפון עלה ל-36",
-        "relegated": "שני חללי צה\"ל נוספו ללחימה בדרום לבנון",
-        "keeperSource": "הארץ",
-        "relegatedSource": "כיפה",
-        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       }
     ]
   },
@@ -2534,15 +2034,15 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 55.0,
-    "avgAfterHealthScore": 85.33,
+    "avgHealthDelta": 56.25,
+    "avgAfterHealthScore": 83.42,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 79,
-      "rollingScore": 77.88,
+      "latestScore": 78,
+      "rollingScore": 77.71,
       "readyRuns": 0,
       "criticalBlockers": [
         "top12_under60_below_9",
@@ -2551,52 +2051,32 @@
       "matureForProduction": false
     },
     "alizaReview": {
-      "latestScore": 62,
+      "latestScore": 58,
       "latestSummaryLine": "בעייתי",
-      "latestReportName": "tt-rr-simulation-review-2026-06-21-0405.md",
+      "latestReportName": "tt-rr-simulation-review-2026-06-21-0531.md",
       "window": 48,
-      "averageScore": 67.88,
-      "positiveReports": 24
+      "averageScore": 65.75,
+      "positiveReports": 28
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-21T04:50:07+03:00",
+    "generatedAt": "2026-06-21T05:46:27+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 104,
+    "rssItemsScanned": 96,
     "webItemsScanned": 180,
     "topTrends": [
-      {
-        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-        "clusterKey": "הותר לפרסום",
-        "domain": "חדשות",
-        "externalMentions": 8,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "גלובס",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847182",
-        "strength": 56.6
-      },
       {
         "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
         "clusterKey": "ליאב כבביה",
         "domain": "חדשות",
-        "externalMentions": 6,
-        "sourceCount": 4,
+        "externalMentions": 7,
+        "sourceCount": 5,
         "sources": [
           "ynet",
+          "גלובס",
           "הארץ",
           "וואלה",
           "סרוגים"
@@ -2608,47 +2088,27 @@
         "mentionedInFeed": true,
         "latestAt": "2026-06-20T20:57:46+00:00",
         "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
-        "strength": 53.2
+        "strength": 57.0
       },
       {
-        "trend": "\"כשהוא רצה משהו, שום דבר לא עצר אותו\": המורה של רס\"ל ניר בן ארי נפרד",
-        "clusterKey": "ניר ארי",
+        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
+        "clusterKey": "הותר לפרסום",
         "domain": "חדשות",
-        "externalMentions": 9,
+        "externalMentions": 7,
         "sourceCount": 3,
         "sources": [
-          "גלובס",
-          "דה מרקר",
-          "וואלה"
+          "ynet",
+          "וואלה",
+          "סרוגים"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T23:00:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3847193",
-        "strength": 51.3
-      },
-      {
-        "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-        "clusterKey": "ראש הממשלה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "דה מרקר",
-          "הארץ"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-21T01:17:29+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
-        "strength": 49.1
+        "latestAt": "2026-06-20T21:03:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847182",
+        "strength": 47.9
       },
       {
         "trend": "לחנוק את חיזבאללה: האיום על נכסי הענק, והפעילות חרף הפסקת האש | תמונת מצב",
@@ -2671,10 +2131,10 @@
         "strength": 42.8
       },
       {
-        "trend": "באיראן הודיעו על סגירת מצר הורמוז. ארה\"ב: המצר עדיין פתוח, נגיע מחר לשיחות",
-        "clusterKey": "מצר הורמוז",
+        "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+        "clusterKey": "ראש הממשלה",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 4,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -2686,15 +2146,53 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T18:14:26+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/rypbwzeggx",
-        "strength": 41.1
+        "latestAt": "2026-06-21T02:02:00+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
+        "strength": 42.8
+      },
+      {
+        "trend": "\"כשהוא רצה משהו, שום דבר לא עצר אותו\": המורה של רס\"ל ניר בן ארי נפרד",
+        "clusterKey": "ניר ארי",
+        "domain": "חדשות",
+        "externalMentions": 8,
+        "sourceCount": 2,
+        "sources": [
+          "דה מרקר",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T23:00:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3847193",
+        "strength": 42.6
+      },
+      {
+        "trend": "19 מוקדי מחאה נגד הממשלה יתקיימו הערב בצפון ובאזור חיפה",
+        "clusterKey": "נגד הממשלה",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-20T19:08:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847167",
+        "strength": 42.1
       },
       {
         "trend": "רוכב אופנוע בן 31 נפצע בכביש 2 - מצבו בינוני",
         "clusterKey": "מצבו בינוני",
         "domain": "חדשות",
-        "externalMentions": 6,
+        "externalMentions": 5,
         "sourceCount": 1,
         "sources": [
           "וואלה"
@@ -2706,7 +2204,25 @@
         "mentionedInFeed": false,
         "latestAt": "2026-06-20T18:49:00+00:00",
         "sampleUrl": "https://news.walla.co.il/break/3847163",
-        "strength": 40.2
+        "strength": 38.5
+      },
+      {
+        "trend": "Three key takeaways from US-Iran agreement The BBC's Gary O'Donoghue breaks down the 14-paragraph memorandum of understanding between both two co",
+        "clusterKey": "breaks down",
+        "domain": "אקטואליה בעולם",
+        "externalMentions": 2,
+        "sourceCount": 2,
+        "sources": [
+          "AP",
+          "BBC"
+        ],
+        "discoveryTypes": [
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-21T02:46:27.586967+00:00",
+        "sampleUrl": "https://www.bbc.com/news/videos/cgqjv5w2dg1o",
+        "strength": 37.4
       },
       {
         "trend": "גבר כבן 35 נפצע באירוע אלימות בשבלי, מצבו קשה",
@@ -2727,32 +2243,13 @@
         "strength": 36.8
       },
       {
-        "trend": "פיקוד העורף: מדיניות ההתגוננות נותרת ללא שינוי עד יום ראשון",
-        "clusterKey": "פיקוד העורף",
-        "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:01:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847180",
-        "strength": 35.8
-      },
-      {
-        "trend": "19 מוקדי מחאה נגד הממשלה יתקיימו הערב בצפון ובאזור חיפה",
-        "clusterKey": "מחאה נגד",
+        "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+        "clusterKey": "ראש ממשלת",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
         "sources": [
-          "הארץ",
+          "ynet",
           "וואלה"
         ],
         "discoveryTypes": [
@@ -2760,13 +2257,41 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T19:08:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847167",
+        "latestAt": "2026-06-21T04:43:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847220",
         "strength": 34.1
       }
     ]
   },
   "top10Before": [
+    {
+      "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 38,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "עיתונאי אלג'יראי תקף את מסי באמירה אנטישמית",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 67,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805265",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
     {
       "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
       "source": "Daily Mail TVShowbiz רכילות חו״ל",
@@ -2774,12 +2299,52 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 17,
+      "ageMinutes": 73,
       "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 3,
+      "afterRank": 3,
       "delta": 0,
       "trendMatch": null
+    },
+    {
+      "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "אקטואליה בעולם",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 88,
+      "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+      "beforeRank": 4,
+      "afterRank": 4,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+        "clusterKey": "ראש הממשלה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T02:02:00+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
+        "overlapTokens": [
+          "הממשלה",
+          "ראש"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 24.46,
+        "boost": 14.0
+      }
     },
     {
       "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
@@ -2788,14 +2353,14 @@
       "category": "אקטואליה בעולם",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 95,
       "url": "https://news.walla.co.il/item/3847215",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": {
         "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-        "clusterKey": "מצב חירום",
+        "clusterKey": "הכריז מצב חירום",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -2836,10 +2401,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 44,
+      "ageMinutes": 101,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -2850,10 +2415,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 48,
+      "ageMinutes": 104,
       "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -2864,10 +2429,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 61,
+      "ageMinutes": 117,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805121",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -2878,41 +2443,12 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 79,
+      "ageMinutes": 135,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
-      "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-        "clusterKey": "הותר לפרסום",
-        "domain": "חדשות",
-        "externalMentions": 8,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "גלובס",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847182",
-        "overlapTokens": [
-          "בדרום",
-          "לבנון"
-        ],
-        "entityOverlapTokens": [
-          "לבנון"
-        ],
-        "eventOverlapTokens": [],
-        "score": 31.0,
-        "boost": 31.0
-      }
+      "trendMatch": null
     },
     {
       "headline": "זנדאיה סיפרה מתי התאהבה בטום הולנד",
@@ -2921,50 +2457,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 139,
       "url": "https://pagesix.com/2026/06/20/celebrity-news/zendaya-reveals-moment-she-fell-hard-for-tom-holland/",
-      "beforeRank": 7,
-      "afterRank": 7,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "בנו של ליאם פיין יירש את כל הונו",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914131/Liam-Paynes-eight-year-old-son-Bear-inherit-tragic-One-Direction-stars-21million-fortune.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ז׳רמי דוקו יחמיץ את המשחק של בלגיה מול איראן",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 98,
-      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805114",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "מיקאלה טסטה התחתנה בחתונה כפרית מצומצמת",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 99,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15916871/Mikaela-Testa-marries-Maxwell-Krause.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -2973,98 +2467,25 @@
   ],
   "top10After": [
     {
-      "headline": "עזה: תשעה הרוגים בבניין דירות",
+      "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
       "source": "וואלה חדשות - מבזקים",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
       "ageMinutes": 0,
-      "url": "https://news.walla.co.il/break/3847219",
+      "url": "https://news.walla.co.il/break/3847220",
       "beforeRank": null,
       "afterRank": 1,
       "delta": null,
-      "trendMatch": null
-    },
-    {
-      "headline": "ירי בשיבלי: גבר נפצע קשה",
-      "source": "וואלה חדשות - מבזקים",
-      "canonicalSource": "וואלה",
-      "category": "פלילים",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 0,
-      "url": "https://news.walla.co.il/break/3847217",
-      "beforeRank": null,
-      "afterRank": 2,
-      "delta": null,
-      "trendMatch": null
-    },
-    {
-      "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
-      "source": "ynet - כל ערוץ החדשות",
-      "canonicalSource": "ynet",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 32,
-      "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
-      "beforeRank": null,
-      "afterRank": 3,
-      "delta": null,
       "trendMatch": {
-        "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
-        "clusterKey": "ראש הממשלה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "דה מרקר",
-          "הארץ"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-21T01:17:29+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
-        "overlapTokens": [
-          "בבריטניה",
-          "הממשלה",
-          "התפטרותו",
-          "להודיע",
-          "סטרמר",
-          "צפוי",
-          "ראש"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 98.2,
-        "boost": 14.0
-      }
-    },
-    {
-      "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 39,
-      "url": "https://news.walla.co.il/item/3847215",
-      "beforeRank": 2,
-      "afterRank": 4,
-      "delta": -2,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-        "clusterKey": "מצב חירום",
+        "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+        "clusterKey": "ראש ממשלת",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
         "sources": [
-          "הארץ",
+          "ynet",
           "וואלה"
         ],
         "discoveryTypes": [
@@ -3072,132 +2493,45 @@
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-21T02:08:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3847215",
+        "latestAt": "2026-06-21T04:43:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847220",
         "overlapTokens": [
-          "בוליביה",
-          "הכריז",
-          "הרוגים",
-          "חירום",
-          "ימי",
-          "מחאה",
-          "מצב",
-          "נשיא"
+          "בשוויץ",
+          "ההבנות",
+          "יצא",
+          "לבירגנשטור",
+          "להמשך",
+          "מזכר",
+          "ממשלת",
+          "פקיסטן"
         ],
         "entityOverlapTokens": [],
-        "eventOverlapTokens": [
-          "הרוגים",
-          "מחאה"
-        ],
-        "score": 75.58,
-        "boost": 24.0
-      }
-    },
-    {
-      "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-      "source": "ynet - מבזקי החדשות",
-      "canonicalSource": "ynet",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 57,
-      "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-      "beforeRank": null,
-      "afterRank": 5,
-      "delta": null,
-      "trendMatch": null
-    },
-    {
-      "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 79,
-      "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-      "beforeRank": 6,
-      "afterRank": 6,
-      "delta": 0,
-      "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-        "clusterKey": "הותר לפרסום",
-        "domain": "חדשות",
-        "externalMentions": 8,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "גלובס",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847182",
-        "overlapTokens": [
-          "בדרום",
-          "לבנון"
-        ],
-        "entityOverlapTokens": [
-          "לבנון"
-        ],
         "eventOverlapTokens": [],
-        "score": 31.0,
-        "boost": 31.0
+        "score": 94.48,
+        "boost": 14.0
       }
     },
     {
-      "headline": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+      "source": "גלובס - בארץ",
+      "canonicalSource": "גלובס",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 110,
-      "url": "https://www.aljazeera.com/news/liveblog/2026/6/21/iran-war-live-vance-heads-to-switzerland-israel-kills-16-in-lebanon?traffic_source=rss",
-      "beforeRank": 12,
-      "afterRank": 7,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "צה״ל: צלם אל־ג׳זירה היה צלף חמאס",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 177,
-      "url": "https://www.jpost.com/israel-news/defense-news/article-899982",
-      "beforeRank": 26,
-      "afterRank": 8,
-      "delta": 18,
-      "trendMatch": null
-    },
-    {
-      "headline": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
-      "source": "כיפה - חדשות",
-      "canonicalSource": "כיפה",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 248,
-      "url": "https://www.kipa.co.il/1226305-0",
-      "beforeRank": 49,
-      "afterRank": 9,
-      "delta": 40,
+      "ageMinutes": 10,
+      "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
+      "beforeRank": null,
+      "afterRank": 2,
+      "delta": null,
       "trendMatch": {
         "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
         "clusterKey": "ליאב כבביה",
         "domain": "חדשות",
-        "externalMentions": 6,
-        "sourceCount": 4,
+        "externalMentions": 7,
+        "sourceCount": 5,
         "sources": [
           "ynet",
+          "גלובס",
           "הארץ",
           "וואלה",
           "סרוגים"
@@ -3210,47 +2544,97 @@
         "latestAt": "2026-06-20T20:57:46+00:00",
         "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
         "overlapTokens": [
-          "הותר",
           "המג",
           "טנק",
           "כבביה",
-          "ליאב",
-          "לפרסום"
+          "ליאב"
         ],
         "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 91.2,
+        "score": 65.14,
         "boost": 14.0
       }
     },
     {
-      "headline": "הלחץ בלייבור דוחף את סטארמר לקצה",
-      "source": "וואלה חדשות - חדשות בעולם",
+      "headline": "עזה: תשעה הרוגים בבניין דירות",
+      "source": "וואלה חדשות - מבזקים",
       "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 0,
+      "url": "https://news.walla.co.il/break/3847219",
+      "beforeRank": null,
+      "afterRank": 3,
+      "delta": null,
+      "trendMatch": null
+    },
+    {
+      "headline": "ירי בשיבלי: גבר נפצע קשה",
+      "source": "וואלה חדשות - מבזקים",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 9,
+      "url": "https://news.walla.co.il/break/3847217",
+      "beforeRank": null,
+      "afterRank": 4,
+      "delta": null,
+      "trendMatch": null
+    },
+    {
+      "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
       "category": "אקטואליה בעולם",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 178,
-      "url": "https://news.walla.co.il/item/3847210",
-      "beforeRank": 28,
-      "afterRank": 10,
-      "delta": 18,
-      "trendMatch": null
-    }
-  ],
-  "top20Before": [
+      "ageMinutes": 88,
+      "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+      "beforeRank": 4,
+      "afterRank": 5,
+      "delta": -1,
+      "trendMatch": {
+        "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+        "clusterKey": "ראש הממשלה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T02:02:00+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
+        "overlapTokens": [
+          "הממשלה",
+          "ראש"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 24.46,
+        "boost": 14.0
+      }
+    },
     {
-      "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 17,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 1,
-      "afterRank": 1,
-      "delta": 0,
+      "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 135,
+      "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
+      "beforeRank": 9,
+      "afterRank": 6,
+      "delta": 3,
       "trendMatch": null
     },
     {
@@ -3260,14 +2644,221 @@
       "category": "אקטואליה בעולם",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 95,
       "url": "https://news.walla.co.il/item/3847215",
+      "beforeRank": 5,
+      "afterRank": 7,
+      "delta": -2,
+      "trendMatch": {
+        "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
+        "clusterKey": "הכריז מצב חירום",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T02:08:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3847215",
+        "overlapTokens": [
+          "בוליביה",
+          "הכריז",
+          "הרוגים",
+          "חירום",
+          "ימי",
+          "מחאה",
+          "מצב",
+          "נשיא"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [
+          "הרוגים",
+          "מחאה"
+        ],
+        "score": 75.58,
+        "boost": 24.0
+      }
+    },
+    {
+      "headline": "צה״ל: צלם אל־ג׳זירה היה צלף חמאס",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 233,
+      "url": "https://www.jpost.com/israel-news/defense-news/article-899982",
+      "beforeRank": 29,
+      "afterRank": 8,
+      "delta": 21,
+      "trendMatch": null
+    },
+    {
+      "headline": "צה\"ל כיתר כ-30 אנשי חיזבאללה במפקדת מנהרות בטבנין",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 287,
+      "url": "https://www.jpost.com/israel-news/defense-news/article-899980",
+      "beforeRank": 44,
+      "afterRank": 9,
+      "delta": 35,
+      "trendMatch": null
+    },
+    {
+      "headline": "טראמפ משאיר פתח לאגרה אמריקנית בהורמוז",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 291,
+      "url": "https://www.aljazeera.com/news/2026/6/20/trump-vows-iran-will-not-charge-strait-of-hormuz-tolls-but-says-us-might?traffic_source=rss",
+      "beforeRank": 49,
+      "afterRank": 10,
+      "delta": 39,
+      "trendMatch": {
+        "trend": "טראמפ: \"לא יהיו אגרות מעבר במצר הורמוז לאחר 60 הימים\"",
+        "clusterKey": "במצר הורמוז",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T22:28:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847196",
+        "overlapTokens": [
+          "אגרות",
+          "במצר",
+          "הורמוז",
+          "טראמפ",
+          "יהיו"
+        ],
+        "entityOverlapTokens": [
+          "הורמוז",
+          "טראמפ"
+        ],
+        "eventOverlapTokens": [
+          "הורמוז"
+        ],
+        "score": 48.71,
+        "boost": 24.0
+      }
+    }
+  ],
+  "top20Before": [
+    {
+      "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 38,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "עיתונאי אלג'יראי תקף את מסי באמירה אנטישמית",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 67,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805265",
       "beforeRank": 2,
       "afterRank": 2,
       "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 73,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "אקטואליה בעולם",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 88,
+      "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
+      "beforeRank": 4,
+      "afterRank": 4,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
+        "clusterKey": "ראש הממשלה",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T02:02:00+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
+        "overlapTokens": [
+          "הממשלה",
+          "ראש"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 24.46,
+        "boost": 14.0
+      }
+    },
+    {
+      "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
+      "source": "וואלה חדשות",
+      "canonicalSource": "וואלה",
+      "category": "אקטואליה בעולם",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 95,
+      "url": "https://news.walla.co.il/item/3847215",
+      "beforeRank": 5,
+      "afterRank": 5,
+      "delta": 0,
       "trendMatch": {
         "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-        "clusterKey": "מצב חירום",
+        "clusterKey": "הכריז מצב חירום",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -3308,10 +2899,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 44,
+      "ageMinutes": 101,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -3322,10 +2913,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 48,
+      "ageMinutes": 104,
       "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -3336,10 +2927,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 61,
+      "ageMinutes": 117,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805121",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -3350,41 +2941,12 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 79,
+      "ageMinutes": 135,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
-      "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-        "clusterKey": "הותר לפרסום",
-        "domain": "חדשות",
-        "externalMentions": 8,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "גלובס",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847182",
-        "overlapTokens": [
-          "בדרום",
-          "לבנון"
-        ],
-        "entityOverlapTokens": [
-          "לבנון"
-        ],
-        "eventOverlapTokens": [],
-        "score": 31.0,
-        "boost": 31.0
-      }
+      "trendMatch": null
     },
     {
       "headline": "זנדאיה סיפרה מתי התאהבה בטום הולנד",
@@ -3393,10 +2955,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 139,
       "url": "https://pagesix.com/2026/06/20/celebrity-news/zendaya-reveals-moment-she-fell-hard-for-tom-holland/",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -3407,10 +2969,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 85,
+      "ageMinutes": 141,
       "url": "https://www.dailymail.com/tvshowbiz/article-15914131/Liam-Paynes-eight-year-old-son-Bear-inherit-tragic-One-Direction-stars-21million-fortune.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": null
     },
@@ -3421,10 +2983,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 98,
+      "ageMinutes": 154,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805114",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -3435,24 +2997,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 99,
+      "ageMinutes": 156,
       "url": "https://www.dailymail.com/tvshowbiz/article-15916871/Mikaela-Testa-marries-Maxwell-Krause.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 10,
-      "afterRank": 10,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "יוצר ״אופוריה״ הגן על עלילת האונליפאנס של קאסי",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 109,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15916715/sydney-sweeney-onlyfans-euphoria-sam-levinson.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -3463,24 +3011,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 110,
+      "ageMinutes": 166,
       "url": "https://www.aljazeera.com/news/liveblog/2026/6/21/iran-war-live-vance-heads-to-switzerland-israel-kills-16-in-lebanon?traffic_source=rss",
-      "beforeRank": 12,
-      "afterRank": 12,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "חבריו של דייוויד הוקני טוענים שנחסם מהם לפני מותו",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 110,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15916415/David-Hockney-partner-secret-collection.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": null
     },
@@ -3491,10 +3025,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 111,
+      "ageMinutes": 167,
       "url": "https://livegame.ynet.co.il/games/525953",
-      "beforeRank": 14,
-      "afterRank": 14,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -3505,22 +3039,8 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 124,
+      "ageMinutes": 180,
       "url": "https://www.aljazeera.com/sports/2026/6/20/us-refuses-to-ease-iran-world-cup-travel-restrictions-for-belgium-match?traffic_source=rss",
-      "beforeRank": 15,
-      "afterRank": 15,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ארין מקנוט מספרת על ההתאוששות של בנה אחרי ניתוח מוח",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 127,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15916705/Erin-McNaught-shares-update-son-devastating-brain-tumour.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 16,
       "afterRank": 16,
       "delta": 0,
@@ -3533,24 +3053,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 130,
+      "ageMinutes": 186,
       "url": "https://www.aljazeera.com/video/newsfeed/2026/6/20/iranian-delegation-arrives-in-switzerland-for-us-peace-talks?traffic_source=rss",
       "beforeRank": 17,
       "afterRank": 17,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "ג׳ניפר אניסטון נפרדה מבמאי ״חברים״ ג׳יימס בורוז",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 131,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15916677/jennifer-aniston-friends-tribute-director-james-burrows.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 18,
-      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -3561,22 +3067,36 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 132,
+      "ageMinutes": 188,
       "url": "https://www.israelhayom.co.il/sport/article/20805077",
+      "beforeRank": 18,
+      "afterRank": 18,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "אמה המינג חגגה 50 לצד דמי מור בצל מחלת ברוס ויליס",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 205,
+      "url": "https://pagesix.com/2026/06/20/celebrity-news/emma-heming-celebrates-50th-birthday-with-bruce-willis-ex-wife-demi-moore/",
       "beforeRank": 19,
       "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
     {
-      "headline": "כוכבת ״הצלצול״ דייבי צ׳ייס מתה אחרי התמכרות וחסרות בית",
+      "headline": "יוצר ״אופוריה״ הגן על עלילת האונליפאנס של קאסי",
       "source": "Daily Mail TVShowbiz רכילות חו״ל",
       "canonicalSource": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 146,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914703/Daveigh-Chase-death-ring-drug-mother.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "ageMinutes": 165,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15916715/sydney-sweeney-onlyfans-euphoria-sam-levinson.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -3584,6 +3104,95 @@
     }
   ],
   "top20After": [
+    {
+      "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+      "source": "וואלה חדשות - מבזקים",
+      "canonicalSource": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 0,
+      "url": "https://news.walla.co.il/break/3847220",
+      "beforeRank": null,
+      "afterRank": 1,
+      "delta": null,
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+        "clusterKey": "ראש ממשלת",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T04:43:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847220",
+        "overlapTokens": [
+          "בשוויץ",
+          "ההבנות",
+          "יצא",
+          "לבירגנשטור",
+          "להמשך",
+          "מזכר",
+          "ממשלת",
+          "פקיסטן"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 94.48,
+        "boost": 14.0
+      }
+    },
+    {
+      "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+      "source": "גלובס - בארץ",
+      "canonicalSource": "גלובס",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 10,
+      "url": "https://www.globes.co.il/news/article.aspx?did=1001546496#utm_source=RSS",
+      "beforeRank": null,
+      "afterRank": 2,
+      "delta": null,
+      "trendMatch": {
+        "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+        "clusterKey": "ליאב כבביה",
+        "domain": "חדשות",
+        "externalMentions": 7,
+        "sourceCount": 5,
+        "sources": [
+          "ynet",
+          "גלובס",
+          "הארץ",
+          "וואלה",
+          "סרוגים"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T20:57:46+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
+        "overlapTokens": [
+          "המג",
+          "טנק",
+          "כבביה",
+          "ליאב"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 65.14,
+        "boost": 14.0
+      }
+    },
     {
       "headline": "עזה: תשעה הרוגים בבניין דירות",
       "source": "וואלה חדשות - מבזקים",
@@ -3594,7 +3203,7 @@
       "ageMinutes": 0,
       "url": "https://news.walla.co.il/break/3847219",
       "beforeRank": null,
-      "afterRank": 1,
+      "afterRank": 3,
       "delta": null,
       "trendMatch": null
     },
@@ -3605,30 +3214,30 @@
       "category": "פלילים",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 0,
+      "ageMinutes": 9,
       "url": "https://news.walla.co.il/break/3847217",
       "beforeRank": null,
-      "afterRank": 2,
+      "afterRank": 4,
       "delta": null,
       "trendMatch": null
     },
     {
-      "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
+      "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
       "source": "ynet - כל ערוץ החדשות",
       "canonicalSource": "ynet",
       "category": "אקטואליה בעולם",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 32,
+      "ageMinutes": 88,
       "url": "https://www.ynet.co.il/news/article/h16wyfegfx",
-      "beforeRank": null,
-      "afterRank": 3,
-      "delta": null,
+      "beforeRank": 4,
+      "afterRank": 5,
+      "delta": -1,
       "trendMatch": {
-        "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
+        "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
         "clusterKey": "ראש הממשלה",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 4,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -3639,23 +3248,32 @@
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-21T01:17:29+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T02:02:00+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
         "overlapTokens": [
-          "בבריטניה",
           "הממשלה",
-          "התפטרותו",
-          "להודיע",
-          "סטרמר",
-          "צפוי",
           "ראש"
         ],
         "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 98.2,
+        "score": 24.46,
         "boost": 14.0
       }
+    },
+    {
+      "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 135,
+      "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
+      "beforeRank": 9,
+      "afterRank": 6,
+      "delta": 3,
+      "trendMatch": null
     },
     {
       "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
@@ -3664,14 +3282,14 @@
       "category": "אקטואליה בעולם",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 95,
       "url": "https://news.walla.co.il/item/3847215",
-      "beforeRank": 2,
-      "afterRank": 4,
+      "beforeRank": 5,
+      "afterRank": 7,
       "delta": -2,
       "trendMatch": {
         "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-        "clusterKey": "מצב חירום",
+        "clusterKey": "הכריז מצב חירום",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -3706,147 +3324,106 @@
       }
     },
     {
-      "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-      "source": "ynet - מבזקי החדשות",
-      "canonicalSource": "ynet",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 57,
-      "url": "https://www.ynet.co.il/news/article/hjip7ivmzx",
-      "beforeRank": null,
-      "afterRank": 5,
-      "delta": null,
-      "trendMatch": null
-    },
-    {
-      "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 79,
-      "url": "https://www.jpost.com/israel-news/defense-news/article-899985",
-      "beforeRank": 6,
-      "afterRank": 6,
-      "delta": 0,
-      "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-        "clusterKey": "הותר לפרסום",
-        "domain": "חדשות",
-        "externalMentions": 8,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "גלובס",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847182",
-        "overlapTokens": [
-          "בדרום",
-          "לבנון"
-        ],
-        "entityOverlapTokens": [
-          "לבנון"
-        ],
-        "eventOverlapTokens": [],
-        "score": 31.0,
-        "boost": 31.0
-      }
-    },
-    {
-      "headline": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 110,
-      "url": "https://www.aljazeera.com/news/liveblog/2026/6/21/iran-war-live-vance-heads-to-switzerland-israel-kills-16-in-lebanon?traffic_source=rss",
-      "beforeRank": 12,
-      "afterRank": 7,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
       "headline": "צה״ל: צלם אל־ג׳זירה היה צלף חמאס",
       "source": "The Jerusalem Post - Israel News",
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 177,
+      "ageMinutes": 233,
       "url": "https://www.jpost.com/israel-news/defense-news/article-899982",
-      "beforeRank": 26,
+      "beforeRank": 29,
       "afterRank": 8,
-      "delta": 18,
+      "delta": 21,
       "trendMatch": null
     },
     {
-      "headline": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
-      "source": "כיפה - חדשות",
-      "canonicalSource": "כיפה",
+      "headline": "צה\"ל כיתר כ-30 אנשי חיזבאללה במפקדת מנהרות בטבנין",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 248,
-      "url": "https://www.kipa.co.il/1226305-0",
-      "beforeRank": 49,
+      "ageMinutes": 287,
+      "url": "https://www.jpost.com/israel-news/defense-news/article-899980",
+      "beforeRank": 44,
       "afterRank": 9,
-      "delta": 40,
+      "delta": 35,
+      "trendMatch": null
+    },
+    {
+      "headline": "טראמפ משאיר פתח לאגרה אמריקנית בהורמוז",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 291,
+      "url": "https://www.aljazeera.com/news/2026/6/20/trump-vows-iran-will-not-charge-strait-of-hormuz-tolls-but-says-us-might?traffic_source=rss",
+      "beforeRank": 49,
+      "afterRank": 10,
+      "delta": 39,
       "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
-        "clusterKey": "ליאב כבביה",
+        "trend": "טראמפ: \"לא יהיו אגרות מעבר במצר הורמוז לאחר 60 הימים\"",
+        "clusterKey": "במצר הורמוז",
         "domain": "חדשות",
-        "externalMentions": 6,
-        "sourceCount": 4,
+        "externalMentions": 3,
+        "sourceCount": 2,
         "sources": [
           "ynet",
-          "הארץ",
-          "וואלה",
-          "סרוגים"
+          "וואלה"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T20:57:46+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
+        "latestAt": "2026-06-20T22:28:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847196",
         "overlapTokens": [
-          "הותר",
-          "המג",
-          "טנק",
-          "כבביה",
-          "ליאב",
-          "לפרסום"
+          "אגרות",
+          "במצר",
+          "הורמוז",
+          "טראמפ",
+          "יהיו"
         ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 91.2,
-        "boost": 14.0
+        "entityOverlapTokens": [
+          "הורמוז",
+          "טראמפ"
+        ],
+        "eventOverlapTokens": [
+          "הורמוז"
+        ],
+        "score": 48.71,
+        "boost": 24.0
       }
     },
     {
-      "headline": "הלחץ בלייבור דוחף את סטארמר לקצה",
-      "source": "וואלה חדשות - חדשות בעולם",
-      "canonicalSource": "וואלה",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 178,
-      "url": "https://news.walla.co.il/item/3847210",
-      "beforeRank": 28,
-      "afterRank": 10,
-      "delta": 18,
+      "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 38,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15909805/Zoe-Marshall-reveals-eye-watering-MDMA-therapy-bill-exactly-husband-Benji-thought-controversial-treatment.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 1,
+      "afterRank": 11,
+      "delta": -10,
+      "trendMatch": null
+    },
+    {
+      "headline": "עיתונאי אלג'יראי תקף את מסי באמירה אנטישמית",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 67,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805265",
+      "beforeRank": 2,
+      "afterRank": 12,
+      "delta": -10,
       "trendMatch": null
     },
     {
@@ -3856,10 +3433,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 17,
+      "ageMinutes": 73,
       "url": "https://www.dailymail.com/tvshowbiz/article-15916789/angelina-jolie-son-pax-surfaces-la-bombshell-revelation-relationship-brad-pitt.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 1,
-      "afterRank": 11,
+      "beforeRank": 3,
+      "afterRank": 13,
       "delta": -10,
       "trendMatch": null
     },
@@ -3870,25 +3447,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 44,
+      "ageMinutes": 101,
       "url": "https://www.mirror.co.uk/3am/celebrity-news/venezuela-fury-share-baby-plans-37325983",
-      "beforeRank": 3,
-      "afterRank": 12,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "ז׳רמי דוקו יחמיץ את המשחק של בלגיה מול איראן",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 98,
-      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805114",
-      "beforeRank": 9,
-      "afterRank": 13,
-      "delta": -4,
+      "beforeRank": 6,
+      "afterRank": 14,
+      "delta": -8,
       "trendMatch": null
     },
     {
@@ -3898,11 +3461,11 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 61,
+      "ageMinutes": 117,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805121",
-      "beforeRank": 5,
-      "afterRank": 14,
-      "delta": -9,
+      "beforeRank": 8,
+      "afterRank": 15,
+      "delta": -7,
       "trendMatch": null
     },
     {
@@ -3912,25 +3475,11 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 48,
+      "ageMinutes": 104,
       "url": "https://www.dailymail.com/news/article-15916925/Miranda-Hart-hopes-Gen-Z-realise-fame-meaningless.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 4,
-      "afterRank": 15,
-      "delta": -11,
-      "trendMatch": null
-    },
-    {
-      "headline": "הורמוז לא צפוי לחזור לשגרה לפני סוף השנה",
-      "source": "The Jerusalem Post - Iran",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": false,
-      "ageMinutes": 150,
-      "url": "https://www.jpost.com/middle-east/iran-news/article-899983",
-      "beforeRank": 24,
+      "beforeRank": 7,
       "afterRank": 16,
-      "delta": 8,
+      "delta": -9,
       "trendMatch": null
     },
     {
@@ -3940,39 +3489,25 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 83,
+      "ageMinutes": 139,
       "url": "https://pagesix.com/2026/06/20/celebrity-news/zendaya-reveals-moment-she-fell-hard-for-tom-holland/",
-      "beforeRank": 7,
+      "beforeRank": 10,
       "afterRank": 17,
-      "delta": -10,
+      "delta": -7,
       "trendMatch": null
     },
     {
-      "headline": "ארה״ב משאירה את מגבלות הנסיעה על נבחרת איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "ז׳רמי דוקו יחמיץ את המשחק של בלגיה מול איראן",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 124,
-      "url": "https://www.aljazeera.com/sports/2026/6/20/us-refuses-to-ease-iran-world-cup-travel-restrictions-for-belgium-match?traffic_source=rss",
-      "beforeRank": 15,
+      "ageMinutes": 154,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805114",
+      "beforeRank": 12,
       "afterRank": 18,
-      "delta": -3,
-      "trendMatch": null
-    },
-    {
-      "headline": "בנו של ליאם פיין יירש את כל הונו",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 85,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15914131/Liam-Paynes-eight-year-old-son-Bear-inherit-tragic-One-Direction-stars-21million-fortune.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 8,
-      "afterRank": 19,
-      "delta": -11,
+      "delta": -6,
       "trendMatch": null
     },
     {
@@ -3982,15 +3517,108 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 111,
+      "ageMinutes": 167,
       "url": "https://livegame.ynet.co.il/games/525953",
-      "beforeRank": 14,
+      "beforeRank": 15,
+      "afterRank": 19,
+      "delta": -4,
+      "trendMatch": null
+    },
+    {
+      "headline": "ארה״ב משאירה את מגבלות הנסיעה על נבחרת איראן",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 180,
+      "url": "https://www.aljazeera.com/sports/2026/6/20/us-refuses-to-ease-iran-world-cup-travel-restrictions-for-belgium-match?traffic_source=rss",
+      "beforeRank": 16,
       "afterRank": 20,
-      "delta": -6,
+      "delta": -4,
       "trendMatch": null
     }
   ],
   "movement": [
+    {
+      "headline": "פקיסטן מצטרפת לשיחות ההבנות בשווייץ",
+      "source": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "ראש ממשלת פקיסטן יצא לבירגנשטור בשוויץ להמשך שיחות מזכר ההבנות",
+        "clusterKey": "ראש ממשלת",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T04:43:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847220",
+        "overlapTokens": [
+          "בשוויץ",
+          "ההבנות",
+          "יצא",
+          "לבירגנשטור",
+          "להמשך",
+          "מזכר",
+          "ממשלת",
+          "פקיסטן"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 94.48,
+        "boost": 14.0
+      },
+      "beforeRank": null,
+      "afterRank": 1
+    },
+    {
+      "headline": "צה״ל בודק את נסיבות אסון הטנק בלבנון",
+      "source": "גלובס",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
+        "clusterKey": "ליאב כבביה",
+        "domain": "חדשות",
+        "externalMentions": 7,
+        "sourceCount": 5,
+        "sources": [
+          "ynet",
+          "גלובס",
+          "הארץ",
+          "וואלה",
+          "סרוגים"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-20T20:57:46+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
+        "overlapTokens": [
+          "המג",
+          "טנק",
+          "כבביה",
+          "ליאב"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 65.14,
+        "boost": 14.0
+      },
+      "beforeRank": null,
+      "afterRank": 2
+    },
     {
       "headline": "עזה: תשעה הרוגים בבניין דירות",
       "source": "וואלה",
@@ -3998,7 +3626,7 @@
       "class": "hard",
       "trendMatch": null,
       "beforeRank": null,
-      "afterRank": 1
+      "afterRank": 3
     },
     {
       "headline": "ירי בשיבלי: גבר נפצע קשה",
@@ -4007,18 +3635,18 @@
       "class": "hard",
       "trendMatch": null,
       "beforeRank": null,
-      "afterRank": 2
+      "afterRank": 4
     },
     {
-      "headline": "דיווח: סטרמר צפוי להודיע על התפטרותו",
+      "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור",
       "source": "ynet",
       "category": "אקטואליה בעולם",
       "class": "hard",
       "trendMatch": {
-        "trend": "דיווח בבריטניה: \"ראש הממשלה סטרמר צפוי להודיע על התפטרותו\"",
+        "trend": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן",
         "clusterKey": "ראש הממשלה",
         "domain": "חדשות",
-        "externalMentions": 3,
+        "externalMentions": 4,
         "sourceCount": 3,
         "sources": [
           "ynet",
@@ -4029,25 +3657,29 @@
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-21T01:17:29+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/h16wyfegfx",
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-21T02:02:00+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/rjpv33vmzg",
         "overlapTokens": [
-          "בבריטניה",
           "הממשלה",
-          "התפטרותו",
-          "להודיע",
-          "סטרמר",
-          "צפוי",
           "ראש"
         ],
         "entityOverlapTokens": [],
         "eventOverlapTokens": [],
-        "score": 98.2,
+        "score": 24.46,
         "boost": 14.0
       },
-      "beforeRank": null,
-      "afterRank": 3
+      "beforeRank": 4,
+      "afterRank": 5
+    },
+    {
+      "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 9,
+      "afterRank": 6
     },
     {
       "headline": "בוליביה הפעילה מצב חירום נגד חסימות המחאה",
@@ -4056,7 +3688,7 @@
       "class": "hard",
       "trendMatch": {
         "trend": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-        "clusterKey": "מצב חירום",
+        "clusterKey": "הכריז מצב חירום",
         "domain": "חדשות",
         "externalMentions": 3,
         "sourceCount": 2,
@@ -4089,63 +3721,7 @@
         "score": 75.58,
         "boost": 24.0
       },
-      "beforeRank": 2,
-      "afterRank": 4
-    },
-    {
-      "headline": "מוסקבה שחררה 24 עצורים מהפיליפינים",
-      "source": "ynet",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": null,
-      "afterRank": 5
-    },
-    {
-      "headline": "חטיבה 7 פתחה לצה״ל נתיב עד הליטני",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר יואב קליין ורס\"ל ניר בן ארי נפלו בקרב בדרום לבנון",
-        "clusterKey": "הותר לפרסום",
-        "domain": "חדשות",
-        "externalMentions": 8,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "גלובס",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-06-20T21:03:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/break/3847182",
-        "overlapTokens": [
-          "בדרום",
-          "לבנון"
-        ],
-        "entityOverlapTokens": [
-          "לבנון"
-        ],
-        "eventOverlapTokens": [],
-        "score": 31.0,
-        "boost": 31.0
-      },
-      "beforeRank": 6,
-      "afterRank": 6
-    },
-    {
-      "headline": "ואנס יצא לשיחות עם איראן בזמן איום על הורמוז",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 12,
+      "beforeRank": 5,
       "afterRank": 7
     },
     {
@@ -4154,60 +3730,62 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 26,
+      "beforeRank": 29,
       "afterRank": 8
     },
     {
-      "headline": "ליאב כבביה הוא החלל השלישי מטנק המג״ד",
-      "source": "כיפה",
+      "headline": "צה\"ל כיתר כ-30 אנשי חיזבאללה במפקדת מנהרות בטבנין",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 44,
+      "afterRank": 9
+    },
+    {
+      "headline": "טראמפ משאיר פתח לאגרה אמריקנית בהורמוז",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": {
-        "trend": "הותר לפרסום: סמ\"ר ליאב כבביה נפל באסון טנק המג\"ד",
-        "clusterKey": "ליאב כבביה",
+        "trend": "טראמפ: \"לא יהיו אגרות מעבר במצר הורמוז לאחר 60 הימים\"",
+        "clusterKey": "במצר הורמוז",
         "domain": "חדשות",
-        "externalMentions": 6,
-        "sourceCount": 4,
+        "externalMentions": 3,
+        "sourceCount": 2,
         "sources": [
           "ynet",
-          "הארץ",
-          "וואלה",
-          "סרוגים"
+          "וואלה"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-06-20T20:57:46+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/HyfRAO4zGe",
+        "latestAt": "2026-06-20T22:28:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3847196",
         "overlapTokens": [
-          "הותר",
-          "המג",
-          "טנק",
-          "כבביה",
-          "ליאב",
-          "לפרסום"
+          "אגרות",
+          "במצר",
+          "הורמוז",
+          "טראמפ",
+          "יהיו"
         ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 91.2,
-        "boost": 14.0
+        "entityOverlapTokens": [
+          "הורמוז",
+          "טראמפ"
+        ],
+        "eventOverlapTokens": [
+          "הורמוז"
+        ],
+        "score": 48.71,
+        "boost": 24.0
       },
       "beforeRank": 49,
-      "afterRank": 9
-    },
-    {
-      "headline": "הלחץ בלייבור דוחף את סטארמר לקצה",
-      "source": "וואלה",
-      "category": "אקטואליה בעולם",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 28,
       "afterRank": 10
     },
     {
-      "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+      "headline": "טיפול MDMA חוקי עלה לזואי מרשל עשרות אלפי דולרים",
       "source": "Daily Mail",
       "category": "רכילות",
       "class": "soft",
@@ -4216,22 +3794,31 @@
       "afterRank": 11
     },
     {
+      "headline": "עיתונאי אלג'יראי תקף את מסי באמירה אנטישמית",
+      "source": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 2,
+      "afterRank": 12
+    },
+    {
+      "headline": "פקס ג׳ולי־פיט נראה בלוס אנג׳לס למרות הקרע המשפחתי",
+      "source": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 3,
+      "afterRank": 13
+    },
+    {
       "headline": "ונצואלה פיורי מתכננת משפחה ותוכנית טלוויזיה",
       "source": "Mirror",
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 3,
-      "afterRank": 12
-    },
-    {
-      "headline": "ז׳רמי דוקו יחמיץ את המשחק של בלגיה מול איראן",
-      "source": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 9,
-      "afterRank": 13
+      "beforeRank": 6,
+      "afterRank": 14
     },
     {
       "headline": "פרגוואי הדיחה את טורקיה אחרי שער מוקדם ומהומה",
@@ -4239,8 +3826,8 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 5,
-      "afterRank": 14
+      "beforeRank": 8,
+      "afterRank": 15
     },
     {
       "headline": "מירנדה הארט קושרת בין תהילה להידרדרות בריאותית",
@@ -4248,16 +3835,7 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 4,
-      "afterRank": 15
-    },
-    {
-      "headline": "הורמוז לא צפוי לחזור לשגרה לפני סוף השנה",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 24,
+      "beforeRank": 7,
       "afterRank": 16
     },
     {
@@ -4266,26 +3844,17 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 7,
+      "beforeRank": 10,
       "afterRank": 17
     },
     {
-      "headline": "ארה״ב משאירה את מגבלות הנסיעה על נבחרת איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "ז׳רמי דוקו יחמיץ את המשחק של בלגיה מול איראן",
+      "source": "ישראל היום",
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 15,
+      "beforeRank": 12,
       "afterRank": 18
-    },
-    {
-      "headline": "בנו של ליאם פיין יירש את כל הונו",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 8,
-      "afterRank": 19
     },
     {
       "headline": "אקוודור וקורסאו נלחמות על הישארות במונדיאל",
@@ -4293,7 +3862,16 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 14,
+      "beforeRank": 15,
+      "afterRank": 19
+    },
+    {
+      "headline": "ארה״ב משאירה את מגבלות הנסיעה על נבחרת איראן",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 16,
       "afterRank": 20
     }
   ],
@@ -4320,7 +3898,7 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-21T01:50:24.949802+00:00",
+    "generatedAt": "2026-06-21T02:46:47.323118+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
@@ -4357,14 +3935,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 142,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-21T01:50:26+00:00",
+        "latestRawAt": "2026-06-21T02:46:49+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-21T01:50:26+00:00",
+        "latestValidAt": "2026-06-21T02:46:49+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
           "count": 7,
           "latestAt": "2026-06-20T22:00:48+00:00",
-          "latestAgeHours": 3.83,
+          "latestAgeHours": 4.77,
           "sample": [
             {
               "publishedAt": "2026-06-20T22:00:48+00:00",
@@ -4483,13 +4061,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T20:07:00+00:00",
-        "latestRawAgeHours": 5.72,
+        "latestRawAgeHours": 6.66,
         "latestValidAt": "2026-06-20T20:07:00+00:00",
-        "latestValidAgeHours": 5.72,
+        "latestValidAgeHours": 6.66,
         "visibleMain": {
           "count": 6,
           "latestAt": "2026-06-20T20:07:00+00:00",
-          "latestAgeHours": 5.72,
+          "latestAgeHours": 6.66,
           "sample": [
             {
               "publishedAt": "2026-06-20T20:07:00+00:00",
@@ -4511,7 +4089,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-20T18:34:57+00:00",
-          "latestAgeHours": 7.26,
+          "latestAgeHours": 8.2,
           "sample": [
             {
               "publishedAt": "2026-06-20T18:34:57+00:00",
@@ -4626,15 +4204,20 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 269,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-21T01:40:02+00:00",
-        "latestRawAgeHours": 0.17,
-        "latestValidAt": "2026-06-21T01:40:02+00:00",
-        "latestValidAgeHours": 0.17,
+        "latestRawAt": "2026-06-21T02:02:00+00:00",
+        "latestRawAgeHours": 0.75,
+        "latestValidAt": "2026-06-21T02:02:00+00:00",
+        "latestValidAgeHours": 0.75,
         "visibleMain": {
-          "count": 17,
-          "latestAt": "2026-06-20T23:58:46+00:00",
-          "latestAgeHours": 1.86,
+          "count": 18,
+          "latestAt": "2026-06-21T01:17:29+00:00",
+          "latestAgeHours": 1.49,
           "sample": [
+            {
+              "publishedAt": "2026-06-21T01:17:29+00:00",
+              "source": "ynet - כל ערוץ החדשות",
+              "headline": "סטרמר מתקרב לפרישה אחרי מרד מתרחב בלייבור"
+            },
             {
               "publishedAt": "2026-06-20T23:58:46+00:00",
               "source": "ynet - כל ערוץ הספורט",
@@ -4644,38 +4227,41 @@
               "publishedAt": "2026-06-20T22:30:00+00:00",
               "source": "ynet - כל ערוץ הספורט",
               "headline": "דיברתולומאו שוב הופך לנשק של מכבי"
-            },
-            {
-              "publishedAt": "2026-06-20T22:30:00+00:00",
-              "source": "ynet - כל ערוץ הספורט",
-              "headline": "ספרד ממתינה לימאל מול הלחץ מהמונדיאל"
             }
           ]
         },
         "visibleBreaking": {
           "count": 24,
-          "latestAt": "2026-06-21T00:52:39+00:00",
-          "latestAgeHours": 0.96,
+          "latestAt": "2026-06-21T02:02:00+00:00",
+          "latestAgeHours": 0.75,
           "sample": [
             {
-              "publishedAt": "2026-06-21T00:52:39+00:00",
+              "publishedAt": "2026-06-21T02:02:00+00:00",
               "source": "ynet",
-              "headline": "רוסיה: שוחררו ממעצר 24 אזרחים פיליפינים"
+              "headline": "פקיסטן: ראש הממשלה ייפגש בשווייץ עם משלחות ארה\"ב ואיראן"
             },
             {
-              "publishedAt": "2026-06-20T23:40:41+00:00",
+              "publishedAt": "2026-06-21T01:56:02+00:00",
               "source": "ynet",
-              "headline": "גבר נפצע קשה מירי בשיבלי שבגליל התחתון"
+              "headline": "נקודה היסטורית לקורסאו במונדיאל, אחרי 0:0 עם אקוודור"
             },
             {
-              "publishedAt": "2026-06-20T22:10:02+00:00",
+              "publishedAt": "2026-06-21T01:40:02+00:00",
               "source": "ynet",
-              "headline": "לונדון: שלושה הרוגים בשריפה במערב העיר"
+              "headline": "סקוטלנד: גבר נאשם שתקף חמישה בני אדם מ\"שנאה אנטי-מוסלמית\""
             }
           ]
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ynet - כל ערוץ החדשות",
+            "publishedAt": "2026-06-21T05:00:00+03:00",
+            "title": "המגן שהפך לחרב: מי באמת מרוויח מהתביעות הייצוגיות?",
+            "url": "https://www.ynet.co.il/news/theheadline/article/87lcahj5a"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -4731,14 +4317,6 @@
             "publishedAt": "2026-06-21T00:00:00+03:00",
             "title": "\"הטיוח הושלם\": נסגרה הוועדה שבדקה את מעורבות גורמי הרפואה בפרשת ילדי תימן",
             "url": "https://www.ynet.co.il/news/article/yokra14807056"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ynet - כל ערוץ החדשות",
-            "publishedAt": "2026-06-20T23:56:42+03:00",
-            "title": "כינה את נתניהו \"נוכל\", ו\"הוקסם וזועזע\" בו זמנית ממתקפת הביפרים",
-            "url": "https://www.ynet.co.il/news/article/b13owdvmml"
           }
         ]
       },
@@ -4800,14 +4378,14 @@
         "qaPassSimulationCount": 2,
         "qaRejectedCount": 136,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-21T01:50:31+00:00",
+        "latestRawAt": "2026-06-21T02:46:54+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-21T01:50:31+00:00",
+        "latestValidAt": "2026-06-21T02:46:54+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
           "count": 15,
           "latestAt": "2026-06-21T01:10:50+00:00",
-          "latestAgeHours": 0.66,
+          "latestAgeHours": 1.6,
           "sample": [
             {
               "publishedAt": "2026-06-21T01:10:50+00:00",
@@ -4838,17 +4416,17 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-21T04:50:30+03:00",
-            "title": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
-            "url": "https://news.walla.co.il/item/3847215"
+            "publishedAt": "2026-06-21T05:46:52+03:00",
+            "title": "ההיריון הפרובוקטיבי מסתבך: כוכבת הרשת נשאלה מי האב - וזו התשובה שלה",
+            "url": "https://news.walla.co.il/item/3846818"
           },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-21T04:50:29+03:00",
-            "title": "ההיריון הפרובוקטיבי מסתבך: כוכבת הרשת נשאלה מי האב - וזו התשובה שלה",
-            "url": "https://news.walla.co.il/item/3846818"
+            "publishedAt": "2026-06-21T05:08:00+03:00",
+            "title": "אחרי יותר מ-50 ימי מחאה ו-14 הרוגים: נשיא בוליביה הכריז על מצב חירום",
+            "url": "https://news.walla.co.il/item/3847215"
           },
           {
             "status": "qa_rejected",
@@ -4915,15 +4493,20 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-21T01:02:32+00:00",
-        "latestRawAgeHours": 0.8,
-        "latestValidAt": "2026-06-21T01:02:32+00:00",
-        "latestValidAgeHours": 0.8,
+        "latestRawAt": "2026-06-21T02:27:42+00:00",
+        "latestRawAgeHours": 0.32,
+        "latestValidAt": "2026-06-21T02:27:42+00:00",
+        "latestValidAgeHours": 0.32,
         "visibleMain": {
-          "count": 21,
-          "latestAt": "2026-06-21T00:48:40+00:00",
-          "latestAgeHours": 1.03,
+          "count": 22,
+          "latestAt": "2026-06-21T01:39:18+00:00",
+          "latestAgeHours": 1.12,
           "sample": [
+            {
+              "publishedAt": "2026-06-21T01:39:18+00:00",
+              "source": "ישראל היום - כל הכתבות",
+              "headline": "עיתונאי אלג'יראי תקף את מסי באמירה אנטישמית"
+            },
             {
               "publishedAt": "2026-06-21T00:48:40+00:00",
               "source": "ישראל היום - כל הכתבות",
@@ -4933,11 +4516,6 @@
               "publishedAt": "2026-06-21T00:12:01+00:00",
               "source": "ישראל היום - כל הכתבות",
               "headline": "ז׳רמי דוקו יחמיץ את המשחק של בלגיה מול איראן"
-            },
-            {
-              "publishedAt": "2026-06-20T23:37:39+00:00",
-              "source": "ישראל היום - כל הכתבות",
-              "headline": "מלאגה חזרה ללה ליגה אחרי שמונה שנים"
             }
           ]
         },
@@ -4949,6 +4527,38 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-21T05:27:42+03:00",
+            "title": "המלכוד הלבנוני: ידי צה\"ל כבולות - והממשלה נשארה רק עם סיסמאות",
+            "url": "https://www.israelhayom.co.il/news/defense/article/20804131"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-21T05:22:22+03:00",
+            "title": "הסנסציה החדשה: השוער שניפץ את שיא המונדיאל בענק",
+            "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805428"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-21T05:10:37+03:00",
+            "title": "היום הארוך בשנה: זה מה שמחכה לנו במזג האוויר",
+            "url": "https://www.israelhayom.co.il/weather/article/20804821"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "ישראל היום - כל הכתבות",
+            "publishedAt": "2026-06-21T04:39:18+03:00",
+            "title": "אנטישמיות במונדיאל: \"ליונל מסי מוגן על ידי הלובי היהודי\"",
+            "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20805265"
+          },
           {
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
@@ -4980,38 +4590,6 @@
             "publishedAt": "2026-06-21T02:37:39+03:00",
             "title": "אחרי 8 שנים: הקבוצה שחזרה לליגה הספרדית הבכירה",
             "url": "https://www.israelhayom.co.il/sport/article/20805077"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-21T02:20:06+03:00",
-            "title": "אחרי שנפצעה בחו\"ל: עדן הראל בעדכון רפואי מדאיג",
-            "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20805042"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-21T02:11:32+03:00",
-            "title": "הישג שלא נראה 36 שנה: נבחרת גרמניה ניפצה את הקללה",
-            "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20804917"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-21T01:52:05+03:00",
-            "title": "לראשונה: המלך צ'רלס יחשוף כמה מס הוא משלם",
-            "url": "https://www.israelhayom.co.il/news/world-news/other/article/20804962"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-21T00:23:18+03:00",
-            "title": "\"מקווים להתקדם מול איראן\": ואנס המריא לשיחות בשוויץ",
-            "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20804760"
           }
         ]
       },
@@ -5038,14 +4616,14 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 108,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-20T18:01:00+00:00",
-        "latestRawAgeHours": 7.82,
-        "latestValidAt": "2026-06-20T18:01:00+00:00",
-        "latestValidAgeHours": 7.82,
+        "latestRawAt": "2026-06-21T02:38:00+00:00",
+        "latestRawAgeHours": 0.15,
+        "latestValidAt": "2026-06-21T02:38:00+00:00",
+        "latestValidAgeHours": 0.15,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-20T18:00:00+00:00",
-          "latestAgeHours": 7.84,
+          "latestAgeHours": 8.78,
           "sample": [
             {
               "publishedAt": "2026-06-20T18:00:00+00:00",
@@ -5066,8 +4644,16 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "גלובס - שוק ההון",
+            "publishedAt": "2026-06-21T05:38:00+03:00",
+            "title": "\"לא האמנו שהוא יסכים לבוא\": המנכ\"ל שנבחר לנווט את צים במים סוערים בדרך למכירתה",
+            "url": "https://www.globes.co.il/news/article.aspx?did=1001546409#utm_source=RSS"
+          },
+          {
+            "status": "qa_rejected",
+            "reason": "needs editor bridge / quality rewrite",
+            "source": "גלובס - שוק ההון",
             "publishedAt": "2026-06-20T15:54:00+03:00",
-            "title": "המשקיע שמזהיר מקריסה של 35% בוול סטריט - ועוד 4 כתבות על המצב בשווקים",
+            "title": "בית ההשקעות הקטן שכבש את צמרת התשואות – ועוד 4 כתבות על המצב בשווקים",
             "url": "https://www.globes.co.il/news/article.aspx?did=1001546323#utm_source=RSS"
           },
           {
@@ -5117,14 +4703,6 @@
             "publishedAt": "2026-06-19T07:00:00+03:00",
             "title": "משווי של 400 מיליון שקל ל-26 מיליארד: \"אף אחד לא חלם על המספרים האלה\"",
             "url": "https://www.globes.co.il/news/article.aspx?did=1001546390#utm_source=RSS"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "גלובס - שוק ההון",
-            "publishedAt": "2026-06-18T23:02:00+03:00",
-            "title": "נעילה ירוקה בוול סטריט; הנאסד\"ק קפץ בכ-2%, אינטל זינקה בחדות",
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001546277#utm_source=RSS"
           }
         ]
       },
@@ -5144,13 +4722,13 @@
         "qaRejectedCount": 4,
         "relevanceFilteredCount": 8,
         "latestRawAt": "2026-06-21T01:46:31+00:00",
-        "latestRawAgeHours": 0.06,
+        "latestRawAgeHours": 1.0,
         "latestValidAt": "2026-06-21T01:46:31+00:00",
-        "latestValidAgeHours": 0.06,
+        "latestValidAgeHours": 1.0,
         "visibleMain": {
-          "count": 5,
+          "count": 4,
           "latestAt": "2026-06-20T21:57:36+00:00",
-          "latestAgeHours": 3.88,
+          "latestAgeHours": 4.82,
           "sample": [
             {
               "publishedAt": "2026-06-20T21:57:36+00:00",
@@ -5182,7 +4760,7 @@
             "reason": "needs editor bridge / quality rewrite",
             "source": "BBC World",
             "publishedAt": "2026-06-21T04:46:31+03:00",
-            "title": "US-Iran talks to begin in Switzerland as Tehran says it has closed Hormuz Strait",
+            "title": "US-Iran talks to begin in Switzerland as Tehran says it closed Strait of Hormuz",
             "url": "https://www.bbc.com/news/articles/cwyekkwm1mmo?at_medium=RSS&at_campaign=rss"
           },
           {
@@ -5351,14 +4929,14 @@
           "Fox News Politics"
         ],
         "rawCandidateCount": 24,
-        "validCandidateCount": 6,
+        "validCandidateCount": 5,
         "qaPassSimulationCount": 0,
-        "qaRejectedCount": 6,
-        "relevanceFilteredCount": 18,
-        "latestRawAt": "2026-06-21T01:04:13+00:00",
-        "latestRawAgeHours": 0.77,
+        "qaRejectedCount": 5,
+        "relevanceFilteredCount": 19,
+        "latestRawAt": "2026-06-21T02:10:02+00:00",
+        "latestRawAgeHours": 0.61,
         "latestValidAt": "2026-06-20T17:54:38+00:00",
-        "latestValidAgeHours": 7.93,
+        "latestValidAgeHours": 8.87,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5373,6 +4951,14 @@
         },
         "fetchErrors": [],
         "candidateSamples": [
+          {
+            "status": "relevance_filtered",
+            "reason": "not Israel/Middle-East enough",
+            "source": "Fox News World",
+            "publishedAt": "2026-06-21T05:10:02+03:00",
+            "title": "African and Caribbean leaders call for payments, debt cancellation, formal apologies over slavery",
+            "url": "https://www.foxnews.com/world/african-caribbean-leaders-call-payments-debt-cancellation-formal-apologies-over-slavery"
+          },
           {
             "status": "relevance_filtered",
             "reason": "not Israel/Middle-East enough",
@@ -5428,14 +5014,6 @@
             "publishedAt": "2026-06-20T13:00:13+03:00",
             "title": "Man charged with attempted murder, released after allegedly forcing toddler into crocodile enclosure at zoo",
             "url": "https://www.foxnews.com/world/man-charged-attempted-murder-released-allegedly-forcing-toddler-crocodile-enclosure-zoo"
-          },
-          {
-            "status": "relevance_filtered",
-            "reason": "not Israel/Middle-East enough",
-            "source": "Fox News World",
-            "publishedAt": "2026-06-20T00:34:07+03:00",
-            "title": "Two-train crash leaves at least 1 dead, 89 injured as emergency crews rush to chaotic scene",
-            "url": "https://www.foxnews.com/world/two-train-crash-leaves-victims-bloodied-emergency-crews-rush-chaotic-scene"
           }
         ]
       },
@@ -5455,13 +5033,13 @@
         "qaRejectedCount": 9,
         "relevanceFilteredCount": 3,
         "latestRawAt": "2026-06-20T19:49:11+00:00",
-        "latestRawAgeHours": 6.02,
+        "latestRawAgeHours": 6.96,
         "latestValidAt": "2026-06-20T19:49:11+00:00",
-        "latestValidAgeHours": 6.02,
+        "latestValidAgeHours": 6.96,
         "visibleMain": {
           "count": 2,
           "latestAt": "2026-06-20T19:49:11+00:00",
-          "latestAgeHours": 6.02,
+          "latestAgeHours": 6.96,
           "sample": [
             {
               "publishedAt": "2026-06-20T19:49:11+00:00",
@@ -5565,9 +5143,9 @@
         "qaRejectedCount": 1,
         "relevanceFilteredCount": 8,
         "latestRawAt": "2026-06-20T15:44:00+00:00",
-        "latestRawAgeHours": 10.11,
+        "latestRawAgeHours": 11.05,
         "latestValidAt": "2026-06-20T05:20:00+00:00",
-        "latestValidAgeHours": 20.51,
+        "latestValidAgeHours": 21.45,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -5664,13 +5242,13 @@
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T20:56:21+00:00",
-        "latestRawAgeHours": 4.9,
+        "latestRawAgeHours": 5.84,
         "latestValidAt": "2026-06-20T20:56:21+00:00",
-        "latestValidAgeHours": 4.9,
+        "latestValidAgeHours": 5.84,
         "visibleMain": {
           "count": 12,
           "latestAt": "2026-06-21T00:30:56+00:00",
-          "latestAgeHours": 1.32,
+          "latestAgeHours": 2.26,
           "sample": [
             {
               "publishedAt": "2026-06-21T00:30:56+00:00",
@@ -5690,9 +5268,9 @@
           ]
         },
         "visibleBreaking": {
-          "count": 5,
+          "count": 3,
           "latestAt": "2026-06-21T00:36:00+00:00",
-          "latestAgeHours": 1.24,
+          "latestAgeHours": 2.18,
           "sample": [
             {
               "publishedAt": "2026-06-21T00:36:00+00:00",
@@ -5795,13 +5373,13 @@
         "qaRejectedCount": 9,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-20T18:33:28+00:00",
-        "latestRawAgeHours": 7.28,
+        "latestRawAgeHours": 8.22,
         "latestValidAt": "2026-06-20T18:33:28+00:00",
-        "latestValidAgeHours": 7.28,
+        "latestValidAgeHours": 8.22,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-20T19:49:00+00:00",
-          "latestAgeHours": 6.02,
+          "latestAgeHours": 6.96,
           "sample": [
             {
               "publishedAt": "2026-06-20T19:49:00+00:00",
@@ -5813,7 +5391,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-20T18:25:15+00:00",
-          "latestAgeHours": 7.42,
+          "latestAgeHours": 8.36,
           "sample": [
             {
               "publishedAt": "2026-06-20T18:25:15+00:00",
