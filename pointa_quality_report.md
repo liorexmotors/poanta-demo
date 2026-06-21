@@ -1,13 +1,13 @@
 # Pointa Quality Gate Report
 
-Items checked: 204
+Items checked: 198
 Errors: 0
-Warnings: 55
+Warnings: 54
 
 ## Category distribution
 
-- ביטחון: 67
-- רכילות: 56
+- ביטחון: 65
+- רכילות: 53
 - ספורט: 27
 - פוליטיקה: 9
 - חדשות: 7
@@ -16,7 +16,7 @@ Warnings: 55
 - תרבות: 5
 - רכב: 5
 - כלכלה: 4
-- אקטואליה בעולם: 3
+- אקטואליה בעולם: 2
 - צרכנות: 2
 - מזג אוויר: 2
 - טכנולוגיה: 2
@@ -24,7 +24,7 @@ Warnings: 55
 
 ## Issue counts
 
-- takeaway_long: 45
+- takeaway_long: 44
 - summary_long: 9
 - category_sport_source: 1
 
@@ -407,10 +407,3 @@ Warnings: 55
 - Original: `המחלה הקטלנית מתפשטת במהירות: "אנשים לא מתו כך בעבר"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1335260
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 100 > 95
-- Headline: `קובה פותחת את סחר החוץ לרפורמת שוק`
-- Original: `סוף הקומוניזם בקובה: הממשלה העבירה רפורמה כלכלית חסרת תקדים`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/world-news/other/article/20802920
