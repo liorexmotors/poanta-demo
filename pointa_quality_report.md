@@ -1,8 +1,8 @@
 # Pointa Quality Gate Report
 
-Items checked: 199
+Items checked: 198
 Errors: 0
-Warnings: 54
+Warnings: 53
 
 ## Category distribution
 
@@ -20,11 +20,10 @@ Warnings: 54
 - צרכנות: 2
 - מזג אוויר: 2
 - טכנולוגיה: 1
-- בריאות: 1
 
 ## Issue counts
 
-- takeaway_long: 44
+- takeaway_long: 43
 - summary_long: 9
 - category_sport_source: 1
 
@@ -37,26 +36,26 @@ Warnings: 54
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916715/sydney-sweeney-onlyfans-euphoria-sam-levinson.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 16
+- Takeaway length 106 > 95
+- Headline: `אמה המינג חגגה 50 לצד דמי מור בצל מחלת ברוס ויליס`
+- Original: `Emma Heming celebrates 50th birthday alongside Bruce Willis’ ex-wife Demi Moore after sharing what he ‘would have done’ for her`
+- Source: Page Six רכילות חו״ל
+- URL: https://pagesix.com/2026/06/20/celebrity-news/emma-heming-celebrates-50th-birthday-with-bruce-willis-ex-wife-demi-moore/
+
+### WARNING · takeaway_long · item 21
 - Takeaway length 96 > 95
 - Headline: `ארין מקנוט מספרת על ההתאוששות של בנה אחרי ניתוח מוח`
 - Original: `Erin McNaught shares emotional update on toddler son one year after devastating brain tumour diagnosis`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916705/Erin-McNaught-shares-update-son-devastating-brain-tumour.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 23
 - Takeaway length 103 > 95
 - Headline: `כוכבת ״הצלצול״ דייבי צ׳ייס מתה אחרי התמכרות וחסרות בית`
 - Original: `Devastating truth about The Ring star Daveigh Chase's shock death at 35: Heartbroken mom reveals real reason for fatal spiral`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914703/Daveigh-Chase-death-ring-drug-mother.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 20
-- Takeaway length 106 > 95
-- Headline: `אמה המינג חגגה 50 לצד דמי מור בצל מחלת ברוס ויליס`
-- Original: `Emma Heming celebrates 50th birthday alongside Bruce Willis’ ex-wife Demi Moore after sharing what he ‘would have done’ for her`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/20/celebrity-news/emma-heming-celebrates-50th-birthday-with-bruce-willis-ex-wife-demi-moore/
 
 ### WARNING · summary_long · item 41
 - Summary length 232 > 220
@@ -400,10 +399,3 @@ Warnings: 54
 - Original: `BBC sees destroyed villages in Israeli-occupied southern Lebanon`
 - Source: BBC World
 - URL: https://www.bbc.com/news/videos/c8r2pyv3e2po?at_medium=RSS&at_campaign=rss
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 96 > 95
-- Headline: `חשש להתפשטות אבולה במחנה עקורים בקונגו`
-- Original: `המחלה הקטלנית מתפשטת במהירות: "אנשים לא מתו כך בעבר"`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/world/article-1335260
