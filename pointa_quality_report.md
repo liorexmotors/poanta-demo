@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 221
+Items checked: 200
 Errors: 0
-Warnings: 48
+Warnings: 43
 
 ## Category distribution
 
-- ביטחון: 37
-- רכילות: 30
+- ביטחון: 34
+- רכילות: 29
 - תרבות: 22
-- כלכלה: 21
 - בריאות: 19
+- כלכלה: 16
 - ספורט: 15
-- פוליטיקה: 13
-- חדשות: 10
-- משפט: 9
+- פוליטיקה: 11
+- חדשות: 9
 - רכב: 7
 - פלילים: 7
+- משפט: 7
 - אקטואליה בעולם: 6
 - צרכנות: 5
-- טכנולוגיה: 5
-- נדל״ן: 5
 - דעות: 5
 - מזג אוויר: 5
+- טכנולוגיה: 2
+- נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 46
+- takeaway_long: 41
 - summary_long: 2
 
 ## Issues
@@ -331,38 +331,3 @@ Warnings: 48
 - Original: `שוב ושוב ושוב: האנשים שאיבדו את העבודה כבר שלוש פעמים מתחילת המלחמה`
 - Source: N12 - כלכלה וצרכנות
 - URL: https://www.mako.co.il/news-money/2026_q2/Article-9326a614f66ee91026.htm
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 111 > 95
-- Headline: `המשקיעים הפרטיים דוחפים את ייעוץ ההשקעות למודל דיגיטלי`
-- Original: `טל ברוקמן: "המשקיעים מהציבור הם כוח. אין להם למי לפנות והם לא יודעים מה לעשות עם הכסף"`
-- Source: דה מרקר - שוק ההון
-- URL: https://www.themarker.com/markets/2026-06-21/ty-article-magazine/.highlight/0000019e-da69-db7a-a9bf-dffd6afa0000
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 97 > 95
-- Headline: `רוכשי דירות באור יהודה תובעים את גינדי על בית עלמין סמוך`
-- Original: `רוכשי דירות טוענים כי גינדי הסתירה הקמת בית עלמין סמוך; החברה: לא ידענו על כך`
-- Source: דה מרקר - נדל״ן
-- URL: https://www.themarker.com/realestate/2026-06-21/ty-article/.highlight/0000019e-e4b8-d2b1-a5bf-febf486d0000
-
-### WARNING · takeaway_long · item 214
-- Takeaway length 97 > 95
-- Headline: `פליטות ממושכת הפכה למציאות של עשרות מיליונים`
-- Original: `הפליטות אמורה להיות זמנית, אבל עבור מיליונים בעולם היא מציאות שרק מתארכת`
-- Source: הארץ - חדשות
-- URL: https://www.haaretz.co.il/news/numofweek/2026-06-21/ty-article/.premium/0000019e-d4ad-d6a3-a5be-f5fde4c60000
-
-### WARNING · takeaway_long · item 215
-- Takeaway length 100 > 95
-- Headline: `נתניהו מבקש להגדיל את שליטתו ברשימת הליכוד`
-- Original: `המהלך של נתניהו יוצא לדרך - ואלו האנשים שצריכים להתחיל לדאוג`
-- Source: מעריב - פוליטי מדיני
-- URL: https://www.maariv.co.il/news/politics/article-1335264
-
-### WARNING · takeaway_long · item 216
-- Takeaway length 97 > 95
-- Headline: `תוכנית פינוי־בינוי ראשונה מפלגת את קריית טבעון`
-- Original: `סערה בישוב הכפרי בצפון: נוף ירוק או מגדלים וממ"דים?`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/israel/article-1335290
