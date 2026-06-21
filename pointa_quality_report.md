@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 202
+Items checked: 198
 Errors: 0
 Warnings: 54
 
@@ -8,18 +8,18 @@ Warnings: 54
 
 - ביטחון: 66
 - רכילות: 57
-- ספורט: 27
+- ספורט: 25
 - פוליטיקה: 9
 - פלילים: 7
 - חדשות: 6
-- דעות: 6
 - תרבות: 5
 - רכב: 5
+- דעות: 5
 - כלכלה: 4
 - אקטואליה בעולם: 3
 - צרכנות: 2
 - מזג אוויר: 2
-- טכנולוגיה: 2
+- טכנולוגיה: 1
 - בריאות: 1
 
 ## Issue counts
@@ -37,26 +37,26 @@ Warnings: 54
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916715/sydney-sweeney-onlyfans-euphoria-sam-levinson.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 16
+- Takeaway length 106 > 95
+- Headline: `אמה המינג חגגה 50 לצד דמי מור בצל מחלת ברוס ויליס`
+- Original: `Emma Heming celebrates 50th birthday alongside Bruce Willis’ ex-wife Demi Moore after sharing what he ‘would have done’ for her`
+- Source: Page Six רכילות חו״ל
+- URL: https://pagesix.com/2026/06/20/celebrity-news/emma-heming-celebrates-50th-birthday-with-bruce-willis-ex-wife-demi-moore/
+
+### WARNING · takeaway_long · item 20
 - Takeaway length 96 > 95
 - Headline: `ארין מקנוט מספרת על ההתאוששות של בנה אחרי ניתוח מוח`
 - Original: `Erin McNaught shares emotional update on toddler son one year after devastating brain tumour diagnosis`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916705/Erin-McNaught-shares-update-son-devastating-brain-tumour.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 22
 - Takeaway length 103 > 95
 - Headline: `כוכבת ״הצלצול״ דייבי צ׳ייס מתה אחרי התמכרות וחסרות בית`
 - Original: `Devastating truth about The Ring star Daveigh Chase's shock death at 35: Heartbroken mom reveals real reason for fatal spiral`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15914703/Daveigh-Chase-death-ring-drug-mother.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 19
-- Takeaway length 106 > 95
-- Headline: `אמה המינג חגגה 50 לצד דמי מור בצל מחלת ברוס ויליס`
-- Original: `Emma Heming celebrates 50th birthday alongside Bruce Willis’ ex-wife Demi Moore after sharing what he ‘would have done’ for her`
-- Source: Page Six רכילות חו״ל
-- URL: https://pagesix.com/2026/06/20/celebrity-news/emma-heming-celebrates-50th-birthday-with-bruce-willis-ex-wife-demi-moore/
 
 ### WARNING · summary_long · item 40
 - Summary length 232 > 220
