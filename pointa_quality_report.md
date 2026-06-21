@@ -1,32 +1,32 @@
 # Pointa Quality Gate Report
 
-Items checked: 218
+Items checked: 196
 Errors: 0
-Warnings: 61
+Warnings: 44
 
 ## Category distribution
 
-- ביטחון: 73
-- ספורט: 39
-- רכילות: 39
-- פוליטיקה: 12
-- צרכנות: 12
-- כלכלה: 7
-- תרבות: 6
-- חדשות: 6
+- ביטחון: 67
+- רכילות: 37
+- ספורט: 34
+- פוליטיקה: 11
+- צרכנות: 11
+- כלכלה: 6
+- תרבות: 5
+- חדשות: 5
 - פלילים: 5
-- דעות: 4
-- אקטואליה בעולם: 4
-- נדל״ן: 3
+- דעות: 3
 - טכנולוגיה: 3
+- אקטואליה בעולם: 3
+- נדל״ן: 2
 - רכב: 2
-- בריאות: 2
 - משפט: 1
+- בריאות: 1
 
 ## Issue counts
 
-- takeaway_long: 47
-- summary_long: 12
+- takeaway_long: 34
+- summary_long: 8
 - headline_near_duplicate_summary: 1
 - category_sport_source: 1
 
@@ -339,122 +339,3 @@ Warnings: 61
 - Original: `Turkey, US, Egypt, Saudi Arabia hold Cairo talks on Iran, Libya, Gaza`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-900008
-
-### WARNING · takeaway_long · item 197
-- Takeaway length 108 > 95
-- Headline: `DNA קדום חשף מגפת דבר קטלנית בסיביר לפני 5,500 שנה`
-- Original: `מגפת הדבר הכתה באדם עוד כשחי בקבוצות קטנות של ציידים־לקטים`
-- Source: הארץ - מדע
-- URL: https://www.haaretz.co.il/science/archeology/2026-06-21/ty-article-magazine/0000019e-da05-db7a-a9bf-dfd513130000
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 97 > 95
-- Headline: `לאנס סטיבנסון הורחק אחרי קטטה בליגת BIG3`
-- Original: `שום דבר לא השתנה: ההסתבכות החדשה של לאנס סטיבנסון`
-- Source: וואלה ספורט - טראש טוק
-- URL: https://sports.walla.co.il/item/3847356
-
-### WARNING · takeaway_long · item 202
-- Takeaway length 103 > 95
-- Headline: `בוני בלו מסרבת לחשוף את אבי התינוק`
-- Original: `ההיריון הפרובוקטיבי מסתבך: כוכבת הרשת נשאלה מי האב - וזו התשובה שלה`
-- Source: וואלה חדשות - אסור לפספס
-- URL: https://news.walla.co.il/item/3846818
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 96 > 95
-- Headline: `פוליסה שבוטלה עדיין יכולה לזכות בפיצוי`
-- Original: `לא הכל אבוד: שלושת המצבים שבהם פוליסה מבוטלת עדיין שווה כסף`
-- Source: וואלה חדשות - חדשות המשפט
-- URL: https://news.walla.co.il/item/3847351
-
-### WARNING · takeaway_long · item 205
-- Takeaway length 105 > 95
-- Headline: `מודי ספורי בזוגיות חדשה עם נסטיה שבצ'נקו`
-- Original: `גל רובין עוד לא יודעת: זו בת הזוג החדשה של מודי ספורי`
-- Source: TMI - ראשי
-- URL: https://tmi.maariv.co.il/celebs-news/article-1335520
-
-### WARNING · takeaway_long · item 206
-- Takeaway length 110 > 95
-- Headline: `ג׳פרי סאקס: חזון ישראל הגדולה חוסם שלום אזורי`
-- Original: `Stop ‘Greater Israel’ to make peace`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/opinions/2026/6/21/stop-greater-israel-to-make-peace?traffic_source=rss
-
-### WARNING · summary_long · item 207
-- Summary length 230 > 220
-- Headline: `הקו הצהוב בלבנון עלול להפוך למלכודת מדינית`
-- Original: `בין תיבנית להורמוז: המחיר של עוד גבעה בלי מטרה`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/yokra14807514
-
-### WARNING · takeaway_long · item 207
-- Takeaway length 117 > 95
-- Headline: `הקו הצהוב בלבנון עלול להפוך למלכודת מדינית`
-- Original: `בין תיבנית להורמוז: המחיר של עוד גבעה בלי מטרה`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/yokra14807514
-
-### WARNING · takeaway_long · item 208
-- Takeaway length 110 > 95
-- Headline: `מורים מתארים אלימות בכיתות עם סיום שנת הלימודים`
-- Original: `"איימו לשבור לי את הרכב, נעלו אותי בכיתה": המורים חושפים מה באמת קורה בכיתות`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/news/education/article/20808291
-
-### WARNING · takeaway_long · item 209
-- Takeaway length 96 > 95
-- Headline: `פעילת טבע לבנונית מתה מפציעות שנגרמו בתקיפה ישראלית`
-- Original: `Famed Lebanese turtle conservationist Mona Khalil dies of injuries sustained from Israeli strike`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/article-900023
-
-### WARNING · takeaway_long · item 211
-- Takeaway length 106 > 95
-- Headline: `בנק ישראל יקבע 10 שקלים ל-100 פעולות עו״ש`
-- Original: `העמלות כבדות? המהפכה בבנקים בישראל שתחסוך לכם מאות שקלים`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/business/article/20808419
-
-### WARNING · summary_long · item 212
-- Summary length 223 > 220
-- Headline: `נבחרת ישראל מגיעה לחלון יולי בסגל חסר במיוחד`
-- Original: `גינת בספק לקמפיין הנבחרת, בית הלחמי: "הצטברו כמה פציעות"`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3847333
-
-### WARNING · takeaway_long · item 212
-- Takeaway length 118 > 95
-- Headline: `נבחרת ישראל מגיעה לחלון יולי בסגל חסר במיוחד`
-- Original: `גינת בספק לקמפיין הנבחרת, בית הלחמי: "הצטברו כמה פציעות"`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3847333
-
-### WARNING · summary_long · item 213
-- Summary length 238 > 220
-- Headline: `הפועל תל אביב על סף עונה ללא תואר בגלל ניהול הסגל`
-- Original: `דייסה של עונה שלמה: על מצבה של הפועל תל אביב במאני טיים`
-- Source: וואלה ספורט - כדורסל
-- URL: https://sports.walla.co.il/item/3847297
-
-### WARNING · summary_long · item 215
-- Summary length 228 > 220
-- Headline: `מסמכי עב״מים בארה״ב הופכים תעלומה לשאלת מודיעין`
-- Original: `מסמכי העב"מים חושפים: סין ורוסיה אספו כלים שהתרסקו וניסו לשכפל אותם`
-- Source: וואלה חדשות - אסור לפספס
-- URL: https://news.walla.co.il/item/3847298
-
-### WARNING · takeaway_long · item 215
-- Takeaway length 101 > 95
-- Headline: `מסמכי עב״מים בארה״ב הופכים תעלומה לשאלת מודיעין`
-- Original: `מסמכי העב"מים חושפים: סין ורוסיה אספו כלים שהתרסקו וניסו לשכפל אותם`
-- Source: וואלה חדשות - אסור לפספס
-- URL: https://news.walla.co.il/item/3847298
-
-### WARNING · takeaway_long · item 217
-- Takeaway length 124 > 95
-- Headline: `אתרי המורשת בצור נפגעים מאש ישראלית`
-- Original: `Lebanon’s ancient monuments remain at risk from Israeli attack`
-- Source: Al Jazeera RSS מסונן מזרח תיכון
-- URL: https://www.aljazeera.com/video/newsfeed/2026/6/21/lebanons-ancient-monuments-remain-at-risk-from-israeli-attack?traffic_source=rss
