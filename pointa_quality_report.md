@@ -1,19 +1,19 @@
 # Pointa Quality Gate Report
 
-Items checked: 204
+Items checked: 198
 Errors: 0
-Warnings: 51
+Warnings: 47
 
 ## Category distribution
 
-- ביטחון: 65
-- רכילות: 60
+- ביטחון: 63
+- רכילות: 58
 - ספורט: 28
 - פוליטיקה: 9
-- פלילים: 8
-- חדשות: 6
+- פלילים: 7
 - אקטואליה בעולם: 5
 - תרבות: 5
+- חדשות: 5
 - רכב: 5
 - דעות: 5
 - כלכלה: 3
@@ -23,8 +23,8 @@ Warnings: 51
 
 ## Issue counts
 
-- takeaway_long: 41
-- summary_long: 9
+- takeaway_long: 38
+- summary_long: 8
 - category_sport_source: 1
 
 ## Issues
@@ -43,7 +43,7 @@ Warnings: 51
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/usa/article/20805203
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 21
 - Takeaway length 98 > 95
 - Headline: `יוצר ״אופוריה״ הגן על עלילת האונליפאנס של קאסי`
 - Original: `Sydney Sweeney's Euphoria boss breaks silence on backlash over her X-rated OnlyFans plotline`
@@ -141,247 +141,219 @@ Warnings: 51
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916327/Tom-Hardy-MobLand-return-Paramount-bosses-backlash.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 76
-- Takeaway length 105 > 95
-- Headline: `חמישה לוחמים נהרגו בשתי תקריות בדרום לבנון`
-- Original: `ליאב ויואב נפלו באסון טנק המג"ד, ניר ממגלן נהרג ימים לפני חופשת השחרור`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/r1dzc7vgzx
-
-### WARNING · takeaway_long · item 81
+### WARNING · takeaway_long · item 80
 - Takeaway length 101 > 95
 - Headline: `עוד חייל נהרג בדרום לבנון; מניין ההרוגים בצפון עלה ל-36`
 - Original: `חדשות היום, 21 ביוני`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/news/dailynews/2026-06-21/ty-article-live/0000019e-e6d0-dc8a-afbe-f7f50d120000
 
-### WARNING · takeaway_long · item 82
+### WARNING · takeaway_long · item 81
 - Takeaway length 121 > 95
 - Headline: `מפקדות סיכלו הברחת כ-30 כלי נשק בבקעת הירדן`
 - Original: `המפקדות שסיכלו הברחה בבקעת הירדן: "עושות עבודה בלי להקשיב לרעשי הרקע"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14804765
 
-### WARNING · takeaway_long · item 83
+### WARNING · takeaway_long · item 82
 - Takeaway length 102 > 95
 - Headline: `ועדת משרד הבריאות בפרשת ילדי תימן נסגרה בלי מסקנות`
 - Original: `"הטיוח הושלם": נסגרה הוועדה שבדקה את מעורבות גורמי הרפואה בפרשת ילדי תימן`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/yokra14807056
 
-### WARNING · takeaway_long · item 87
+### WARNING · takeaway_long · item 86
 - Takeaway length 114 > 95
 - Headline: `ספר חדש: טראמפ התנגד למלחמה עם איראן ושינה כיוון`
 - Original: `כינה את נתניהו "נוכל", ו"הוקסם וזועזע" בו זמנית ממתקפת הביפרים`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/b13owdvmml
 
-### WARNING · takeaway_long · item 90
+### WARNING · takeaway_long · item 89
 - Takeaway length 99 > 95
 - Headline: `מאמר: שיקום עזה חושף את משחקו הכפול של סיסי מול חמאס`
 - Original: `Gaza reconstruction and the fragile facade of the Sisi Regime`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688148
 
-### WARNING · takeaway_long · item 94
+### WARNING · takeaway_long · item 93
 - Takeaway length 112 > 95
 - Headline: `הרב יצחק יוסף קשר בין מעצרי ישיבות ליחס טראמפ`
 - Original: `הרב יצחק יוסף: טראמפ "התהפך עלינו" בגלל היועמ"שית`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20804636
 
-### WARNING · takeaway_long · item 97
+### WARNING · takeaway_long · item 96
 - Takeaway length 96 > 95
 - Headline: `אחוזת טיילור סוויפט התמלאה פעילות לפני החתונה`
 - Original: `Black SUV seen leaving Taylor Swift’s Rhode Island home amid potential bachelorette bash`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/20/entertainment/black-suv-seen-leaving-taylor-swifts-rhode-island-home-amid-potential-bachelorette-bash/
 
-### WARNING · takeaway_long · item 98
+### WARNING · takeaway_long · item 97
 - Takeaway length 96 > 95
 - Headline: `ערוץ 5 ביטל את תוכנית היום של ונסה פלץ`
 - Original: `Vanessa Feltz breaks her silence after show is axed by Channel 5`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/vanessa-feltz-channel-5-show-37325787
 
-### WARNING · takeaway_long · item 102
+### WARNING · takeaway_long · item 101
 - Takeaway length 102 > 95
 - Headline: `הולי רמזי ואדם פיטי מצפים לבת ראשונה בדצמבר`
 - Original: `Holly Ramsay is pregnant! Influencer announces she's expecting a daughter with husband Adam Peaty - six months after tying the knot amid family feud`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916217/Holly-Ramsay-pregnant-daughter-husband-Adam-Peaty-family-feud.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 104
+### WARNING · takeaway_long · item 103
 - Takeaway length 103 > 95
 - Headline: `גארי ליניקר הצטרף לשידורי המונדיאל של ITV אחרי פיטוריו`
 - Original: `'This is Gary's two fingers to the BBC. He loves to make a point...' As Lineker joins ITV's World Cup team, insiders warn KATIE HIND this is just the beginning of his payback campaign after being sacked by the BBC`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916431/Gary-Lineker-ITV-World-Cup-KATIE-HIND-payback-BBC.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 105
+### WARNING · takeaway_long · item 104
 - Takeaway length 106 > 95
 - Headline: `מייסד יוביסופט קלוד גילמוט נהרג בהתרסקות בצרפת`
 - Original: `קלוד גילמוט, ממייסדי ענקית הגיימינג יוביסופט, נהרג בהתרסקות מטוס`
 - Source: mako - דיגיטל Nexter
 - URL: https://www.mako.co.il/nexter-news/Article-07244d09596ee91027.htm
 
-### WARNING · takeaway_long · item 106
+### WARNING · takeaway_long · item 105
 - Takeaway length 115 > 95
 - Headline: `הלוויית אלכסנדר פילין תיערך היום ב-12:00 בחיפה`
 - Original: `הלוויתו של רס"ר במיל' אלכסנדר פילין תתקיים מחר בחיפה`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1118767
 
-### WARNING · summary_long · item 107
+### WARNING · summary_long · item 106
 - Summary length 228 > 220
 - Headline: `מחוקק איראני חשף התנגדות של חמינאי להסכם עם ארה״ב`
 - Original: `דרמה בשידור חי באיראן: המחוקק הקיצוני חשף שחמינאי מתנגד להסכם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20804336
 
-### WARNING · takeaway_long · item 107
+### WARNING · takeaway_long · item 106
 - Takeaway length 112 > 95
 - Headline: `מחוקק איראני חשף התנגדות של חמינאי להסכם עם ארה״ב`
 - Original: `דרמה בשידור חי באיראן: המחוקק הקיצוני חשף שחמינאי מתנגד להסכם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20804336
 
-### WARNING · takeaway_long · item 126
+### WARNING · takeaway_long · item 125
 - Takeaway length 117 > 95
 - Headline: `ג׳יי די ואנס הופך למפתח בשיחות עם איראן`
 - Original: `JD Vance emerges as central figure in Iran nuclear talks amid regional recalibration - Analysis`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-899978
 
-### WARNING · takeaway_long · item 127
+### WARNING · takeaway_long · item 126
 - Takeaway length 104 > 95
 - Headline: `עומר אדם וסשה ישראלוביץ׳ יתחתנו באיטליה באוגוסט`
 - Original: `יש תאריך: כל הפרטים על החתונה של עומר אדם וסשה ישראלוביץ'`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3847198
 
-### WARNING · takeaway_long · item 128
+### WARNING · takeaway_long · item 127
 - Takeaway length 109 > 95
 - Headline: `הדרבים האירופיים במונדיאל סיפקו 17 שערים`
 - Original: `3 משחקים, 17 שערים: המשחקים האירופים הדליקו את המונדיאל`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847195
 
-### WARNING · takeaway_long · item 137
+### WARNING · takeaway_long · item 136
 - Takeaway length 109 > 95
 - Headline: `אליזבת אולסן מצפה לילד ראשון עם רובי ארנט`
 - Original: `Marvel star Elizabeth Olsen shows off baby bump after revealing first pregnancy with husband`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916433/Marvel-Elizabeth-Olsen-baby-bump.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 139
+### WARNING · takeaway_long · item 138
 - Takeaway length 97 > 95
 - Headline: `רשימה ערבית תוקפת מתחרה לקראת מאבק קולות`
 - Original: `Arab party list takes aim at competitor`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688142
 
-### WARNING · takeaway_long · item 140
+### WARNING · takeaway_long · item 139
 - Takeaway length 110 > 95
 - Headline: `קים קרדשיאן יצאה עם בוב בלונדיני חדש בבוורלי הילס`
 - Original: `Kim Kardashian unveils dramatic hair makeover after trip to Beverly Hills rejuvenation center`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916323/Kim-Kardashian-unveils-dramatic-hair-makeover-blonde.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 143
+### WARNING · summary_long · item 142
 - Summary length 252 > 220
 - Headline: `האברץ פותח מול חוף השנהב, אונדאב שוב מחכה`
 - Original: `, ספורט1: האברץ ממשיך בחוד מול חוף השנהב, גרמניה תבטיח את הפסגה?`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847089
 
-### WARNING · takeaway_long · item 145
+### WARNING · takeaway_long · item 144
 - Takeaway length 101 > 95
 - Headline: `נעצר חשוד בתקיפות הדחיפה הסדרתיות בדרום תל אביב`
 - Original: `לאחר פרסום וואלה: נעצר מי שחשוד כמרביצן הסדרתי מפלורנטין`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3847187
 
-### WARNING · summary_long · item 151
+### WARNING · summary_long · item 150
 - Summary length 224 > 220
 - Headline: `הסיפוח חוזר ככלי בחירות לימין`
 - Original: `הימין צריך הישג לפני הבחירות - והסיפוח חוזר לשולחן`
 - Source: מעריב - דעות
 - URL: https://www.maariv.co.il/news/opinions/article-1335099
 
-### WARNING · category_sport_source · item 165
+### WARNING · category_sport_source · item 164
 - Sport source should usually be ספורט
 - Headline: `פרמדיקית שהצילה אוהד ניקס הפכה לסיפור ויראלי`
 - Original: `הצילה את חייו במצעד האליפות, הוא ניסה לנשק אותה - והיא הפכה לכוכבת`
 - Source: וואלה ספורט - טראש טוק
 - URL: https://sports.walla.co.il/item/3847164
 
-### WARNING · takeaway_long · item 172
+### WARNING · takeaway_long · item 171
 - Takeaway length 98 > 95
 - Headline: `איראן הכריזה שוב על סגירת מצר הורמוז אחרי התאוששות בתנועה`
 - Original: `New Strait of Hormuz Closure Announcement Threatens the Slow Uptick in Traffic`
 - Source: New York Times Middle East
 - URL: https://www.nytimes.com/2026/06/20/world/middleeast/iran-strait-of-hormuz-traffic.html
 
-### WARNING · takeaway_long · item 181
+### WARNING · takeaway_long · item 180
 - Takeaway length 99 > 95
 - Headline: `צלם אל-ג'זירה נהרג בתקיפה ישראלית במרכז עזה`
 - Original: `Al Jazeera cameraman Ahmed Wishah killed in Israeli attack in Gaza`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/news/2026/6/20/al-jazeera-cameraman-ahmad-wishah-killed-in-israeli-attack-in-gaza?traffic_source=rss
 
-### WARNING · takeaway_long · item 182
+### WARNING · takeaway_long · item 181
 - Takeaway length 104 > 95
 - Headline: `קיירי אירווינג נעדר מאיחוד אלופי קליבלנד`
 - Original: `קיירי אירווינג הבריז מהאיחוד עם לברון ג'יימס - והעביר מסר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-basketball/article/20803953
 
-### WARNING · takeaway_long · item 185
+### WARNING · takeaway_long · item 184
 - Takeaway length 106 > 95
 - Headline: `פיקוד העורף שוב במבחן מול שגרת המשק וההורים`
 - Original: `"במסלול להיות רמטכ"ל": האלוף שלוחץ על הכפתור האדום של המשק`
 - Source: גלובס - בארץ
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546126#utm_source=RSS
 
-### WARNING · takeaway_long · item 187
+### WARNING · takeaway_long · item 186
 - Takeaway length 100 > 95
 - Headline: `צה״ל פרסם שני חללים מקרבות דרום לבנון`
 - Original: `הותרו לפרסום שמותיהם של שני חללי צה"ל: רס"ל ניר בן ארי לוחם ביחידת מגלן, וסמ"ר יואב קליין מגדוד 52 של חטיבה 401`
 - Source: N12 - ביטחוני ופוליטי
 - URL: https://www.mako.co.il/news-military/2026_q2/Article-b2c29ccb835ee91027.htm
 
-### WARNING · summary_long · item 198
+### WARNING · summary_long · item 197
 - Summary length 221 > 220
 - Headline: `איראן איימה לסגור את הורמוז בגלל התקיפות בלבנון`
 - Original: `Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire
 
-### WARNING · takeaway_long · item 198
+### WARNING · takeaway_long · item 197
 - Takeaway length 98 > 95
 - Headline: `איראן איימה לסגור את הורמוז בגלל התקיפות בלבנון`
 - Original: `Iran says it is closing strait of Hormuz over Israeli strikes in Lebanon`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/20/israeli-strikes-southern-lebanon-reports-renewed-ceasefire
-
-### WARNING · takeaway_long · item 199
-- Takeaway length 104 > 95
-- Headline: `אשלי סנט קלייר טוענת שמאסק הציע לה מיליונים תמורת שתיקה`
-- Original: `40 מיליון דולר תמורת שתיקה: אם בנו של אילון מאסק חושפת`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/forreal/global/article/20803547
-
-### WARNING · summary_long · item 203
-- Summary length 224 > 220
-- Headline: `רשות האוכלוסין מרחיבה את עמדות הדרכון העצמי`
-- Original: `דרכון בארבע דקות: המהפכה שתקצר את התורים בישראל`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/israel/article-1335275
-
-### WARNING · takeaway_long · item 203
-- Takeaway length 102 > 95
-- Headline: `רשות האוכלוסין מרחיבה את עמדות הדרכון העצמי`
-- Original: `דרכון בארבע דקות: המהפכה שתקצר את התורים בישראל`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/israel/article-1335275
