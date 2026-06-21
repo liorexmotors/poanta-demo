@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 200
+Items checked: 196
 Errors: 0
 Warnings: 55
 
@@ -17,7 +17,6 @@ Warnings: 55
 - טכנולוגיה: 4
 - אקטואליה בעולם: 4
 - תרבות: 4
-- מזג אוויר: 4
 - דעות: 2
 - נדל״ן: 2
 - רכב: 2
@@ -75,28 +74,28 @@ Warnings: 55
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20813402
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 11
 - Takeaway length 107 > 95
 - Headline: `המאמר קורא לישראל להיערך לעימות עצמאי עם איראן`
 - Original: `המלחמה תתחדש - עם או בלי אמריקה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20813317
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 13
 - Takeaway length 103 > 95
 - Headline: `נסיגה מלבנון מוצגת כקו אדום מול לחץ איראני`
 - Original: `הקו האדום של ישראל - נסיגה מלבנון`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/defense/article/20813151
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 15
 - Takeaway length 108 > 95
 - Headline: `הטור מציג את טראמפ כמשענת לא יציבה לנתניהו`
 - Original: `דה ז'ה וו מ-2015: ההיבריס של נתניהו חזר אליו כבומרנג`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/opinions/article/20813225
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 19
 - Takeaway length 109 > 95
 - Headline: `הספד משפחתי מסמן 50 שנה לנפילת יוני נתניהו`
 - Original: `אני וביבי הרגשנו שזו זכות להיות אחיך: 50 שנה לנפילת יוני נתניהו`
