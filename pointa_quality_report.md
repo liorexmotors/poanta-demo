@@ -1,63 +1,63 @@
 # Pointa Quality Gate Report
 
-Items checked: 199
+Items checked: 196
 Errors: 0
-Warnings: 38
+Warnings: 37
 
 ## Category distribution
 
 - ביטחון: 65
 - ספורט: 39
-- רכילות: 39
+- רכילות: 38
 - פוליטיקה: 14
-- צרכנות: 8
+- צרכנות: 7
 - חדשות: 7
 - אקטואליה בעולם: 4
 - פלילים: 4
 - טכנולוגיה: 4
-- תרבות: 3
 - דעות: 3
 - כלכלה: 3
 - משפט: 2
+- תרבות: 2
 - נדל״ן: 2
 - רכב: 2
 
 ## Issue counts
 
-- takeaway_long: 28
+- takeaway_long: 27
 - summary_long: 8
 - headline_near_duplicate_summary: 1
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · takeaway_long · item 22
-- Takeaway length 100 > 95
-- Headline: `בלגיה שוב נתקעה בלי שער מול איראן במונדיאל`
-- Original: `דה בראונה חוטף אש: "מתקרב לסוף". מדוע הבן שלו בכה ביציע?`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847516
-
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 18
 - Takeaway length 108 > 95
 - Headline: `רוברט אירווין וג׳וליה מוריס יתחרו על גולד לוגי`
 - Original: `2026 Logie Award nominations: I'm a Celebrity hosts Robert Irwin and Julia Morris to battle for coveted Gold Logie`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15918165/2026-Logie-Award-Im-Celebrity-hosts-set-battle-Gold-Logie.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 25
+### WARNING · summary_long · item 19
 - Summary length 228 > 220
 - Headline: `אמבאפה פורח בצרפת, אבל מטלטל את המועדונים`
 - Original: `למה צרפת פורחת עם אמבאפה, אבל הקבוצות מצליחות יותר בלעדיו?`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/sjkd36bgfe
 
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 19
 - Takeaway length 103 > 95
 - Headline: `אמבאפה פורח בצרפת, אבל מטלטל את המועדונים`
 - Original: `למה צרפת פורחת עם אמבאפה, אבל הקבוצות מצליחות יותר בלעדיו?`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/sjkd36bgfe
+
+### WARNING · takeaway_long · item 24
+- Takeaway length 100 > 95
+- Headline: `בלגיה שוב נתקעה בלי שער מול איראן במונדיאל`
+- Original: `דה בראונה חוטף אש: "מתקרב לסוף". מדוע הבן שלו בכה ביציע?`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3847516
 
 ### WARNING · summary_long · item 26
 - Summary length 223 > 220
@@ -289,10 +289,3 @@ Warnings: 38
 - Original: `Four months after the horrific Iran school bombing, fears grow that Trump and Hegseth will bury the truth`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/21/iran-school-bombing-minab-fears-trump-hegseth-bury-truth-investigation-findings
-
-### WARNING · takeaway_long · item 198
-- Takeaway length 100 > 95
-- Headline: `סנדרה קווואס הפכה לכוכבת רשת ביציעי המונדיאל`
-- Original: `בלבוש מינימלי: הפוליטיקאית המקסיקנית שמציתה סערה במונדיאל`
-- Source: ישראל היום - כל הכתבות
-- URL: https://www.israelhayom.co.il/sport/world-soccer/article/20808881
