@@ -1,31 +1,30 @@
 # Pointa Quality Gate Report
 
-Items checked: 209
+Items checked: 197
 Errors: 0
-Warnings: 33
+Warnings: 32
 
 ## Category distribution
 
-- רכילות: 59
-- ביטחון: 39
-- ספורט: 36
+- רכילות: 58
+- ביטחון: 40
+- ספורט: 35
 - פוליטיקה: 15
-- פלילים: 13
-- חדשות: 9
+- פלילים: 11
 - תרבות: 8
+- חדשות: 7
 - כלכלה: 7
-- רכב: 6
-- דעות: 6
+- רכב: 5
 - אקטואליה בעולם: 3
 - משפט: 3
 - טכנולוגיה: 2
 - צרכנות: 1
+- דעות: 1
 - נדל״ן: 1
-- בריאות: 1
 
 ## Issue counts
 
-- takeaway_long: 32
+- takeaway_long: 31
 - headline_near_duplicate_summary: 1
 
 ## Issues
@@ -37,14 +36,7 @@ Warnings: 33
 - Source: וואלה חדשות - אסור לפספס
 - URL: https://news.walla.co.il/item/3847688
 
-### WARNING · takeaway_long · item 10
-- Takeaway length 96 > 95
-- Headline: `כביש 40 גבה קורבן נער בהתהפכות ליד באר שבע`
-- Original: `תאונת דרכים קטלנית סמוך לבאר שבע: נקבע מותו של נער בן 15`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/israel/article-1336240
-
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 16
 - Takeaway length 97 > 95
 - Headline: `גבריאט בכטל חגגה מסיבת רווקות בלאס וגאס לפני החתונה עם מתי הילי`
 - Original: `Matty Healy's fiancée Gabbriette Bechtel puts on a leggy display in classy bridal suit as she is handcuffed and 'arrested' during wild bachelorette party`
