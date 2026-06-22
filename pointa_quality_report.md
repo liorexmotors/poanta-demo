@@ -1,499 +1,394 @@
 # Pointa Quality Gate Report
 
-Items checked: 201
+Items checked: 200
 Errors: 0
-Warnings: 67
+Warnings: 52
 
 ## Category distribution
 
-- רכילות: 41
-- ביטחון: 37
-- כלכלה: 20
+- רכילות: 46
+- ביטחון: 36
+- כלכלה: 19
 - ספורט: 17
 - תרבות: 13
+- חדשות: 13
 - פוליטיקה: 11
-- חדשות: 11
 - טכנולוגיה: 8
-- בריאות: 8
 - צרכנות: 7
-- פלילים: 6
+- בריאות: 7
 - נדל״ן: 4
 - רכב: 4
-- דעות: 4
+- פלילים: 4
 - מזג אוויר: 4
-- משפט: 3
 - אקטואליה בעולם: 3
+- משפט: 2
+- דעות: 2
 
 ## Issue counts
 
-- takeaway_long: 65
+- takeaway_long: 50
 - summary_long: 2
 
 ## Issues
 
-### WARNING · takeaway_long · item 0
-- Takeaway length 109 > 95
-- Headline: `איראן הופכת את הורמוז לקלף לחץ אסטרטגי`
-- Original: `Expert warns Iran is turning Hormuz into a tool of strategic leverage`
-- Source: The Jerusalem Post - Iran
-- URL: https://www.jpost.com/middle-east/iran-news/article-900150
-
-### WARNING · takeaway_long · item 1
-- Takeaway length 106 > 95
-- Headline: `ואנס מציג בסיס להסכם אמריקאי עם איראן`
-- Original: `'Good foundation for successful final deal' was made during US-Iran talks, says Vance`
-- Source: The Jerusalem Post - Iran
-- URL: https://www.jpost.com/middle-east/iran-news/article-900144
-
-### WARNING · takeaway_long · item 2
-- Takeaway length 96 > 95
-- Headline: `Ad 120 פתחה בית דיור מוגן חדש במודיעין`
-- Original: `Ad 120 opens NIS 600 million senior living complex in Modi’in`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-900148
-
-### WARNING · takeaway_long · item 4
-- Takeaway length 112 > 95
-- Headline: `פורר תוקף את הימין והחרדים על גיוס חרדים`
-- Original: `פיצוץ בדיון בכנסת: "הפכתם את הגיבורים למחללי שם שמיים"`
-- Source: כיפה - חדשות
-- URL: https://www.kipa.co.il/1226439-0
-
-### WARNING · takeaway_long · item 5
-- Takeaway length 111 > 95
-- Headline: `עסקי ביג גלילות ייקנסו אם ייפתחו בשבת`
-- Original: `730 שקל לחנות: עיריית רמת השרון התחייבה לקנוס עסקים במתחם ביג שיפתחו בשבת`
-- Source: וואלה כסף
-- URL: https://finance.walla.co.il/item/3847667
-
-### WARNING · takeaway_long · item 6
-- Takeaway length 104 > 95
-- Headline: `מגישה צרפתייה הודחה אחרי ביקורת על דוקו`
-- Original: `פרשת ז'רמי דוקו: המגישה הודחה אחרי ההערה הסקסיסטית`
-- Source: וואלה ספורט - טראש טוק
-- URL: https://sports.walla.co.il/item/3847703
-
-### WARNING · takeaway_long · item 7
-- Takeaway length 104 > 95
-- Headline: `פורטוגל מגיעה לאוזבקיסטן בלי מרווח לטעות`
-- Original: `רונאלדו שוב צפוי לפתוח בהרכב פורטוגל מול אזבקיסטן: "זקן מדי? שטויות"`
-- Source: וואלה ספורט
-- URL: https://sports.walla.co.il/item/3847690
-
-### WARNING · takeaway_long · item 8
-- Takeaway length 110 > 95
-- Headline: `לפיד דוחה את טענות המבקר על אי-שיתוף פעולה`
-- Original: `לפיד נגד המבקר: "ישבתי עם צוותו בכל פעם שביקש ממני"`
-- Source: בשבע - מגזין ודעות
-- URL: https://be7.co.il/24930
-
-### WARNING · takeaway_long · item 9
-- Takeaway length 99 > 95
-- Headline: `בן גביר לוחץ על וינטר להתחבר לסמוטריץ׳`
-- Original: `בן גביר לוינטר: "למה אתה עקשן ולא מתחבר עם סמוטריץ'?"`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1119063
-
-### WARNING · takeaway_long · item 10
-- Takeaway length 96 > 95
-- Headline: `פסטיבל הילדים בחיפה מצדיע לחינוכית`
-- Original: `פסטיבל הצגות לילדים ולכל המשפחה`
-- Source: בשבע - מגזין ודעות
-- URL: https://be7.co.il/24939
-
-### WARNING · takeaway_long · item 11
-- Takeaway length 109 > 95
-- Headline: `בריטניה נערכת להחלפת ראש ממשלה בלי בחירות`
-- Original: `הטלטלה שהתחילה בברקזיט: איך בריטניה מחליפה שוב ראש ממשלה בלי בחירות?`
-- Source: ynet - כל ערוץ החדשות
-- URL: https://www.ynet.co.il/news/article/sysjrcimzl
-
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 16
 - Takeaway length 97 > 95
 - Headline: `חוק הרווחים הכלואים מחייב חברות להיערך ב-2026`
 - Original: `סוף לחגיגת המס בחברות: בעלי עסקים שלא ייערכו בזמן עלולים לשלם ביוקר`
 - Source: וואלה חדשות - חדשות המשפט
 - URL: https://news.walla.co.il/item/3847680
 
-### WARNING · takeaway_long · item 13
-- Takeaway length 112 > 95
-- Headline: `ועדת הכלכלה החזירה נקודות לעבירות תנועה`
-- Original: `ועדת הכלכלה אישרה שיטת ניקוד חדשה בעבירות תנועה. אלה השינויים`
-- Source: גלובס - משפט
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546654#utm_source=RSS
-
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 21
 - Takeaway length 117 > 95
 - Headline: `אלן גרינספן מת בגיל 100 אחרי שני עשורים בפד`
 - Original: `בגיל 100: מת אלן גרינספן, יו"ר הפד שהיה האיש החזק בכלכלה העולמית`
 - Source: וואלה כסף - כסף עולמי
 - URL: https://finance.walla.co.il/item/3847694
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 22
 - Takeaway length 108 > 95
 - Headline: `ציטוט מזויף סביב רונאלדו הפך למשבר רשת בפורטוגל`
 - Original: `השקר החדש על כריסטיאנו רונאלדו הפך לסערה בפורטוגל`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3847673
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 23
 - Takeaway length 104 > 95
 - Headline: `בתו בת ה-16 של טייסון פיורי מסבירה את החתונה שעוררה ביקורת`
 - Original: `Venezuela Fury, 16, reveals she wore sunglasses at her wedding because she'd been 'crying my eyes out all morning' - as she and husband Noah Price, 19, make their live TV debut`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15919551/Venezuela-Fury-16-reveals-wore-sunglasses-wedding-shed-crying-eyes-morning-husband-Noah-Price-19-make-live-TV-debut.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 17
-- Takeaway length 119 > 95
-- Headline: `ואנס קושר בין עסקת איראן להסדרה בצפון`
-- Original: `ואנס חושף: "עסקת טראמפ קלאסית" עומדת מאחורי המגעים עם איראן`
-- Source: מעריב - חדשות
-- URL: https://www.maariv.co.il/news/world/article-1336032
-
-### WARNING · takeaway_long · item 19
-- Takeaway length 108 > 95
-- Headline: `כהנא מגן על מכינת עלי מול גולן`
-- Original: `מתן כהנא: "בממשלה של איזנקוט אף אחד לא סוגר את עלי"`
-- Source: ערוץ 7 / INN עברית
-- URL: https://www.inn.co.il/flashes/1119057
-
-### WARNING · takeaway_long · item 20
-- Takeaway length 101 > 95
-- Headline: `מות גרינספן מחזיר את ויכוח מורשת הפד`
-- Original: `"המאסטרו" נדם: יו"ר הפד לשעבר אלן גרינספן הלך לעולמו בגיל 100`
-- Source: גלובס - שוק ההון
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546653#utm_source=RSS
-
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 29
 - Takeaway length 114 > 95
 - Headline: `דמי ההבראה בפרטי יעלו ל-451.5 שקלים ליום`
 - Original: `בשורה למיליוני עובדים: דמי ההבראה יעלו באופן רשמי`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/business/article/20817507
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 31
 - Takeaway length 107 > 95
 - Headline: `הלמ״ס מצביע על חזרה רחבה לעבודה במאי`
 - Original: `הלמ"ס: מאות אלפי עובדים חזרו לעבודה, האבטלה נותרה נמוכה`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1119056
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 34
 - Takeaway length 111 > 95
 - Headline: `דור פרץ יורד מדינמו זאגרב ונשאר במכבי תל אביב`
 - Original: `בקרואטיה טוענים - דור פרץ סרב לדינמו זאגרב ויישאר במכבי ת"א: "התנצל 10 פעמים"`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelisoccer/article/r1h6gsugfl
 
-### WARNING · takeaway_long · item 31
+### WARNING · takeaway_long · item 39
 - Takeaway length 104 > 95
 - Headline: `הסגול נשאר נדיר בדגלים בגלל מחירו ההיסטורי`
 - Original: `למה כמעט אין סגול בדגלים - ובאיזה דגל הוא כן מופיע?`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/other/article/20817188
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 51
 - Takeaway length 119 > 95
 - Headline: `משפטנית קוראת ל-ICC לבדוק אלימות מינית נגד עצירים פלסטינים`
 - Original: `The ICC must investigate Israel’s genocidal use of sexual violence`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/opinions/2026/6/22/the-icc-must-investigate-israels-genocidal-use-of-sexual?traffic_source=rss
 
-### WARNING · takeaway_long · item 45
+### WARNING · takeaway_long · item 52
 - Takeaway length 108 > 95
 - Headline: `פעילת שימור לבנונית מתה מפציעה בתקיפה ליד צור`
 - Original: `Israel kills turtle conservationist Mona Khalil`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/video/newsfeed/2026/6/22/israel-kills-turtle-conservationist-mona-khalil?traffic_source=rss
 
-### WARNING · takeaway_long · item 48
+### WARNING · takeaway_long · item 55
 - Takeaway length 103 > 95
 - Headline: `סרינה חוזרת לווימבלדון והדיון על הגדולה מכולן נפתח מחדש`
 - Original: `הקאמבק של סרינה הצית את הוויכוח: מי ה-GOAT בטניס הנשים?`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3847664
 
-### WARNING · takeaway_long · item 49
+### WARNING · takeaway_long · item 56
 - Takeaway length 98 > 95
 - Headline: `בית"ר מכרה יותר מ-7,000 מנויים בתוך פחות מיממה`
 - Original: `בדרך לשיא חדש: בית"ר ירושלים מכרה יותר מ-7,000 מנויים ביממה`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3847679
 
-### WARNING · takeaway_long · item 51
+### WARNING · takeaway_long · item 58
 - Takeaway length 97 > 95
 - Headline: `מכבי חיפה עוקבת אחרי מתיאס כריסטנסן`
 - Original: `דיווח: מכבי חיפה בעקבות הקשר הדני מתיאס כריסטנסן`
 - Source: וואלה ספורט - כדורגל ישראלי
 - URL: https://sports.walla.co.il/item/3847653
 
-### WARNING · takeaway_long · item 54
+### WARNING · takeaway_long · item 61
 - Takeaway length 105 > 95
 - Headline: `אורה 5 נוחת בישראל עם היברידית משפחתית ב-140 אלף שקל`
 - Original: `גודל של טוסון, מחיר של יאריס: אורה 5 היברידי ב-140 אלף שקל`
 - Source: וואלה רכב
 - URL: https://cars.walla.co.il/item/3847671
 
-### WARNING · takeaway_long · item 55
+### WARNING · takeaway_long · item 62
 - Takeaway length 99 > 95
 - Headline: `דמי ההבראה במגזר הפרטי יעלו ל-451.5 שקל ליום`
 - Original: `מאות שקלים בשנה: ההעלאה שתשפיע על כיסו של כל עובד בישראל`
 - Source: וואלה כסף - חדשות
 - URL: https://finance.walla.co.il/item/3847674
 
-### WARNING · takeaway_long · item 59
+### WARNING · takeaway_long · item 66
 - Takeaway length 96 > 95
 - Headline: `לפיד מציב את האיחוד עם בנט כבסיס לשלטון הבא`
 - Original: `על רקע המו״מ: ישיבות הסיעה של המפלגות בכנסת`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20816547
 
-### WARNING · takeaway_long · item 60
+### WARNING · takeaway_long · item 67
 - Takeaway length 100 > 95
 - Headline: `חתן הנובל פרנסואה אנגלר מת בגיל 93`
 - Original: `נפטר פרופ' פרנסואה אנגלר, ממפתחי תיאוריה שהובילה לגילוי "החלקיק האלוהי"`
 - Source: ynet - כל ערוץ מדע וטבע
 - URL: https://www.ynet.co.il/environment-science/article/byoqicigfe
 
-### WARNING · takeaway_long · item 61
+### WARNING · takeaway_long · item 68
 - Takeaway length 115 > 95
 - Headline: `וול סטריט דרוכה לאינפלציה; הנפט יורד בגלל שיחות איראן`
 - Original: `צפי לירידות בוול סטריט; ספייס־אקס בדרך לשלושה ימי ירידות ברציפות`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-22/ty-article-live/0000019e-ed8a-d514-a9bf-fdfb1fc50000
 
-### WARNING · takeaway_long · item 64
+### WARNING · takeaway_long · item 71
 - Takeaway length 103 > 95
 - Headline: `טרוויס קלסי עלה לעמדת הדי-ג׳יי לפני חתונת סוויפט`
 - Original: `'Mr. Swift' Travis Kelce takes over DJ stage at concert as fans wish him a 'happy bachelor party'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15916257/Travis-Kelce-bachelor-party-Taylor-Swift.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 65
+### WARNING · takeaway_long · item 72
 - Takeaway length 129 > 95
 - Headline: `ת״א מאבדת כיוון אחרי זינוק מוקדם; ת״א 90 יורד`
 - Original: `תנודתיות בבורסת ת"א; מדד מניות הצריכה נופל ב-2%, ריטיילורס ב-8%`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546573#utm_source=RSS
 
-### WARNING · takeaway_long · item 66
+### WARNING · takeaway_long · item 73
 - Takeaway length 97 > 95
 - Headline: `נתניהו מקדם פריימריז בליכוד כדי לקבל עד 10 שריונים`
 - Original: `דיווח: נתניהו החליט לקיים פריימריז בליכוד ומבקש עד 10 שריונים`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1119046
 
-### WARNING · takeaway_long · item 67
+### WARNING · takeaway_long · item 74
 - Takeaway length 100 > 95
 - Headline: `בליכוד כבר מדברים על היום שאחרי נתניהו`
 - Original: `לפני שנה אף אחד לא העז לדבר על זה, היום בליכוד מבינים: נתניהו יכול לפרוש - צריכים יורש`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3847627
 
-### WARNING · takeaway_long · item 68
+### WARNING · takeaway_long · item 75
 - Takeaway length 96 > 95
 - Headline: `עדן בן זקן לוקחת את הסטיילינג לידיים`
 - Original: `פרסום ראשון: הדרמה של עדן בן זקן מאחורי הקלעים`
 - Source: וואלה סלבס - כל הכתבות
 - URL: https://celebs.walla.co.il/item/3847682
 
-### WARNING · takeaway_long · item 69
+### WARNING · takeaway_long · item 76
 - Takeaway length 113 > 95
 - Headline: `פסטיבל הילדים בחיפה מצדיע לחינוכית`
 - Original: `מחווה לכוכבי "החינוכית": מה צפוי בפסטיבל הצגות הילדים בחיפה?`
 - Source: וואלה תרבות - במה
 - URL: https://e.walla.co.il/item/3847656
 
-### WARNING · takeaway_long · item 80
+### WARNING · takeaway_long · item 87
 - Takeaway length 108 > 95
 - Headline: `הבטחת הפיקוח באיראן הופכת למבחן הראשון בשווייץ`
 - Original: `ואנס באתר שיחות המשא ומתן בשווייץ: איראן הסכימה להזמין את פקחי סבא"א בחזרה למדינה`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/world/europe/2026-06-22/ty-article/.premium/0000019e-ef05-d514-a9bf-ff7f628d0000
 
-### WARNING · takeaway_long · item 99
+### WARNING · takeaway_long · item 106
 - Takeaway length 97 > 95
 - Headline: `איראן וארה״ב יקימו צוותים טכניים ליישום הבנות שווייץ`
 - Original: `לאחר 18 שעות של שיחות: המשלחת האיראנית עזבה את שווייץ`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3847597
 
-### WARNING · takeaway_long · item 101
+### WARNING · takeaway_long · item 108
 - Takeaway length 116 > 95
 - Headline: `ואנס מאותת לישראל: אין וטו על מדיניות ארה"ב`
 - Original: `Vance’s warning to Israel signals a new phase in US-Israeli relations`
 - Source: Al Jazeera RSS מסונן מזרח תיכון
 - URL: https://www.aljazeera.com/opinions/2026/6/22/vances-warning-to-israel-signals-a-new-phase-in-us-israeli-relations?traffic_source=rss
 
-### WARNING · summary_long · item 102
+### WARNING · summary_long · item 109
 - Summary length 224 > 220
 - Headline: `איראן טוענת להסכמות עם ארה״ב על לבנון וסנקציות`
 - Original: `60 יום להסכם: האיראנים חושפים מה קיבלו מארה"ב`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1335982
 
-### WARNING · takeaway_long · item 102
+### WARNING · takeaway_long · item 109
 - Takeaway length 107 > 95
 - Headline: `איראן טוענת להסכמות עם ארה״ב על לבנון וסנקציות`
 - Original: `60 יום להסכם: האיראנים חושפים מה קיבלו מארה"ב`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/politics/article-1335982
 
-### WARNING · takeaway_long · item 103
+### WARNING · takeaway_long · item 110
 - Takeaway length 111 > 95
 - Headline: `ווג וויליאמס וספנסר מת׳יוז יצאו לחופשת טרום לידה`
 - Original: `Spencer Matthews kisses pregnant wife Vogue Williams' bikini-clad bump as they pack on the PDA during lavish £600-a-night Mykonos babymoon`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15918905/Spencer-Matthews-pregnant-wife-Vogue-Williams-Mykonos-babymoon.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 104
+### WARNING · takeaway_long · item 111
 - Takeaway length 106 > 95
 - Headline: `ראש השב״כ סימן את אילת כנקודת תורפה ביטחונית`
 - Original: `ראש שב"כ מתריע: 7 באוקטובר הבא יהיה באילת`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-22/ty-article/.premium/0000019e-edc3-d514-a9bf-fdfb105a0000
 
-### WARNING · takeaway_long · item 106
+### WARNING · takeaway_long · item 113
 - Takeaway length 106 > 95
 - Headline: `15 חיילים לקו במכת חום במהלך פעילות בנגב`
 - Original: `15 soldiers suffer heatstroke in the Negev`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688261
 
-### WARNING · takeaway_long · item 107
+### WARNING · takeaway_long · item 114
 - Takeaway length 101 > 95
 - Headline: `לינור פחימה הציתה ויכוח על לבוש נערות בחוף`
 - Original: `כוכבת "המירוץ למיליון" פותחת: "ילדות כמעט ערומות, בא לי ללכת לים ולא להרגיש במסיבת סקס"`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/fashion-tmf/article-1335972
 
-### WARNING · takeaway_long · item 108
+### WARNING · takeaway_long · item 115
 - Takeaway length 99 > 95
 - Headline: `ניקול קידמן בירכה את קית' אורבן אחרי הגירושים`
 - Original: `Nicole Kidman sends first public message to Keith Urban after split`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/nicole-kidman-sends-first-public-37329199
 
-### WARNING · takeaway_long · item 109
+### WARNING · takeaway_long · item 116
 - Takeaway length 97 > 95
 - Headline: `סמוטריץ׳ אמר שישראל תישאר בלבנון שנים`
 - Original: `Not budging | Minister Smotrich: 'We will remain in Lebanon for years`
 - Source: Israel National News English
 - URL: https://www.israelnationalnews.com/flashes/688260
 
-### WARNING · takeaway_long · item 114
+### WARNING · takeaway_long · item 121
 - Takeaway length 119 > 95
 - Headline: `עובדי השיקום מטפלים במאות מקרים כל אחד`
 - Original: `קורסים תחת העומס: "כל עובד סוציאלי במשרד השיקום מטפל ב-850 מקרים"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/b1munplgml
 
-### WARNING · takeaway_long · item 118
+### WARNING · takeaway_long · item 125
 - Takeaway length 115 > 95
 - Headline: `משפחות פוסט טראומה נותרות המטפלות העיקריות`
 - Original: `המסר של אבא של רועי שלו לצעירים: "אל תחשבו שאתם חזקים, גשו לטיפול"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/byb2wpumge
 
-### WARNING · takeaway_long · item 127
+### WARNING · takeaway_long · item 134
 - Takeaway length 104 > 95
 - Headline: `מחקר קושר חיסון לשלבקת חוגרת לירידה בדמנציה`
 - Original: `יש קשר: החיסון הזה עשוי להפחית את הסיכון לדמנציה ב-24%`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3847650
 
-### WARNING · takeaway_long · item 128
+### WARNING · takeaway_long · item 135
 - Takeaway length 100 > 95
 - Headline: `המשטרה מודה בטעות אחרי הסרת דגלי ישראל בדרך לבית רימון`
 - Original: `הרשת סוערת: שוטרים הסירו דגלי ישראל שנתלו בצפון, בן גביר זועם`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226420-0
 
-### WARNING · takeaway_long · item 129
+### WARNING · takeaway_long · item 136
 - Takeaway length 115 > 95
 - Headline: `אנבידיה מתכננת קמפוס בטבעון ומזהירה ממחסור במהנדסים`
 - Original: `עמית קריג, סגן נשיא בכיר באנבידיה: "הקמפוס בטבעון יכיל 8,000 מהנדסים, אבל אין מספיק אנשים. נרצה גם בוגרי תואר ב–AI"`
 - Source: דה מרקר - כל הכתבות
 - URL: https://www.themarker.com/career/2026-06-22/ty-article/0000019e-eec7-d58e-afbf-fedfc74b0000
 
-### WARNING · takeaway_long · item 131
+### WARNING · takeaway_long · item 138
 - Takeaway length 108 > 95
 - Headline: `נארה סמית חשפה חופשה עם הזמרת Raye במיקונוס`
 - Original: `Unlikely pals Raye and 'tradwife' influencer Nara Smith unveil secret friendship and spark wild reaction from fans during girls' trip to Greece`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15919243/Unlikely-pals-Raye-tradwife-influencer-Nara-Smith-spark-wild-reaction-fans-unveil-secret-friendship-going-girls-trip-Greece.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 134
+### WARNING · takeaway_long · item 141
 - Takeaway length 102 > 95
 - Headline: `נט״ל מטפלת בכ-3,000 נפגעי טראומה אחרי 7 באוקטובר`
 - Original: `"לקראת פיצוץ": הפניות לסיוע נפשי זינקו - והמטפלים מזהירים מקריסה`
 - Source: ynet - כל ערוץ הבריאות
 - URL: https://www.ynet.co.il/health/article/rkeaopigme
 
-### WARNING · summary_long · item 137
+### WARNING · summary_long · item 144
 - Summary length 226 > 220
 - Headline: `השירות הלאומי מציג 40 מיליון שעות התנדבות בשנה`
 - Original: `"כשהמדינה קוראת להם, הם מתייצבים ואומרים 'הנני'"`
 - Source: ynet - כל ערוץ מעורבות
 - URL: https://www.ynet.co.il/activism/article/rkqrk00uffe
 
-### WARNING · takeaway_long · item 140
+### WARNING · takeaway_long · item 147
 - Takeaway length 105 > 95
 - Headline: `רוב בסקר תומך באזורי חיץ קבועים אחרי 7 באוקטובר`
 - Original: `רוב מוחלט בציבור הישראלי דורש אזורי חיץ ונוכחות ביטחונית קבועה בכל הגזרות`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/world-news/middle-east/article/20816278
 
-### WARNING · takeaway_long · item 141
+### WARNING · takeaway_long · item 148
 - Takeaway length 101 > 95
 - Headline: `הסדרה על קייטי פרייס מחזירה למסך שלושה אקסים`
 - Original: `Katie Price's exes Alex Reid, Gareth Gates and Dane Bowers make surprise appearance in new trailer for star's Sky documentary`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15919167/She-throws-bombs-Katie-Prices-exes-Alex-Reid-Gareth-Gates-Dane-Bowers-make-surprise-appearance-new-trailer-stars-Sky-documentary.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 144
+### WARNING · takeaway_long · item 151
 - Takeaway length 102 > 95
 - Headline: `ספר חדש מציג את הקרח כסמל סטטוס שהפך למוצר יומיומי`
 - Original: `לשלוט בזמן ובחומר: כך שינה הקרח את תרבות האוכל ואת החברה האנושית`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/food/2026-06-22/ty-article-magazine/.premium/0000019e-d9a4-d2be-abbf-fbeefb420000
 
-### WARNING · takeaway_long · item 146
+### WARNING · takeaway_long · item 153
 - Takeaway length 115 > 95
 - Headline: `ישראכרט הכניסה את זארה לגיפט קארד הקאשבק שלה`
 - Original: `לראשונה: רשתות זארה בגיפט קארד קאשבק של ישראכרט`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/hyg13u8mfg
 
-### WARNING · takeaway_long · item 147
+### WARNING · takeaway_long · item 154
 - Takeaway length 111 > 95
 - Headline: `מאיה ג'אמה מבטיחה לחזור לווילת Love Island`
 - Original: `Love Island host Maya Jama laughs off claims she's on a 'zero hours contract' and vows to 'be back soon' after being absent from the show since launch night three weeks ago`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15919111/Love-Island-Maya-Jama-zero-hours-contract.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 150
+### WARNING · takeaway_long · item 157
 - Takeaway length 111 > 95
 - Headline: `מחלת הסרטן גרמה לג׳רמי קלארקסון להאט את החיים`
 - Original: `Jeremy Clarkson reveals the lifestyle changes he has made after battling 'aggressive' prostate cancer so he can 'watch his grandchildren grow up'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15919067/I-want-watch-grandchildren-grow-Jeremy-Clarkson-reveals-lifestyle-changes-battling-aggressive-prostate-cancer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 152
+### WARNING · takeaway_long · item 159
 - Takeaway length 96 > 95
 - Headline: `ציורי שורד השואה מיכאל קופמן יוצגו לראשונה בנוף הגליל`
 - Original: `צייר עד יומו האחרון בגיל 96, ועכשיו החלום מתגשם: ציוריו של ניצול השואה יוצגו לראשונה`
 - Source: ynet - כל ערוץ מעורבות
 - URL: https://www.ynet.co.il/activism/article/yokra14805905
 
-### WARNING · takeaway_long · item 153
+### WARNING · takeaway_long · item 160
 - Takeaway length 105 > 95
 - Headline: `תא חדש בלבנון מכניס את איראן לפיקוח הביטחוני`
 - Original: `נישלו את ישראל? באיראן מרוצים: "אנחנו חלק מהסיפור הביטחוני בלבנון"`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/hjy9ddizfx
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 162
 - Takeaway length 110 > 95
 - Headline: `ריזורט כשר חדש בלאצ'י מרחיב את מפת החופשות בקפריסין`
 - Original: `כשר, זול ובמרחק 45 דקות טיסה: מצאנו את החופשה הבאה שלכם`
