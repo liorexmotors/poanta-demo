@@ -1,48 +1,40 @@
 # Pointa Quality Gate Report
 
-Items checked: 216
-Errors: 1
-Warnings: 32
+Items checked: 200
+Errors: 0
+Warnings: 30
 
 ## Category distribution
 
-- ביטחון: 33
-- רכילות: 33
-- ספורט: 22
-- תרבות: 18
-- כלכלה: 18
+- ביטחון: 32
+- רכילות: 32
+- ספורט: 20
+- תרבות: 15
 - בריאות: 14
-- חדשות: 14
+- כלכלה: 14
+- חדשות: 12
 - פלילים: 12
 - פוליטיקה: 11
 - טכנולוגיה: 7
-- אקטואליה בעולם: 7
 - צרכנות: 6
-- רכב: 6
+- אקטואליה בעולם: 6
 - דעות: 5
 - משפט: 4
+- רכב: 4
 - מזג אוויר: 4
 - נדל״ן: 2
 
 ## Issue counts
 
-- takeaway_long: 29
+- takeaway_long: 27
 - summary_long: 2
-- headline_ungrammatical_study_framing: 1
 - headline_near_duplicate_summary: 1
 
 ## Issues
 
-### ERROR · headline_ungrammatical_study_framing · item 1
-- Health-study headline must use complete Hebrew such as 'מחקר קושר...' and avoid ungrammatical source-style fragments
-- Headline: `מחקר קשר חיסון לשלבקת חוגרת לירידה בדמנציה`
-- Original: `יש קשר: החיסון הזה עשוי להפחית את הסיכון לדמנציה ב-24%`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3847650
-
 ### WARNING · takeaway_long · item 1
 - Takeaway length 104 > 95
-- Headline: `מחקר קשר חיסון לשלבקת חוגרת לירידה בדמנציה`
+- Headline: `מחקר קושר חיסון לשלבקת חוגרת לירידה בדמנציה`
 - Original: `יש קשר: החיסון הזה עשוי להפחית את הסיכון לדמנציה ב-24%`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3847650
@@ -249,17 +241,3 @@ Warnings: 32
 - Original: `בחשד לשחיתות: ראש רשות מקומית באזור ירושלים עוכב לחקירה`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226399-0
-
-### WARNING · takeaway_long · item 201
-- Takeaway length 100 > 95
-- Headline: `הארץ חזר לשיר אהבה קצר של ג'וני מיטשל`
-- Original: `ג'וני מיטשל שרה על אהבה קצרה במיוחד`
-- Source: הארץ - כל הכתבות
-- URL: https://www.haaretz.co.il/blogs/itamarzohar/2026-06-22/ty-article/0000019e-e984-d58e-afbf-fddfbe240000
-
-### WARNING · takeaway_long · item 204
-- Takeaway length 109 > 95
-- Headline: `נשיא סוריה דוחה התערבות צבאית נגד חיזבאללה`
-- Original: `Al-Sharaa open to talks with Hezbollah, rules out sending Syrian troops`
-- Source: Israel National News English
-- URL: https://www.israelnationalnews.com/flashes/688238
