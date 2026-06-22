@@ -6,14 +6,15 @@ Warnings: 44
 
 ## Category distribution
 
-- רכילות: 50
 - ביטחון: 49
-- ספורט: 19
+- רכילות: 47
+- ספורט: 18
 - טכנולוגיה: 12
 - כלכלה: 11
-- פלילים: 9
 - חדשות: 9
+- פלילים: 9
 - פוליטיקה: 7
+- דעות: 6
 - תרבות: 6
 - מזג אוויר: 5
 - נדל״ן: 5
@@ -21,7 +22,6 @@ Warnings: 44
 - בריאות: 4
 - רכב: 4
 - משפט: 3
-- דעות: 2
 
 ## Issue counts
 
@@ -30,308 +30,308 @@ Warnings: 44
 
 ## Issues
 
-### WARNING · takeaway_long · item 29
+### WARNING · takeaway_long · item 35
 - Takeaway length 114 > 95
 - Headline: `תאונת טסלה בטקסס מחדשת את הדיון בסיוע נהיגה`
 - Original: `טרגדיה: הטסלה סטתה מהנתיב באופן לא ברור - אישה נהרגה`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3847755
 
-### WARNING · takeaway_long · item 30
+### WARNING · takeaway_long · item 36
 - Takeaway length 116 > 95
 - Headline: `אפספלייר גייסה יותר ממיליארד דולר מענקיות הפרסום`
 - Original: `עסקת השנה בהייטק: ארבע מעצמות שפכו מיליארד דולר על חברה ישראלית`
 - Source: וואלה כסף
 - URL: https://finance.walla.co.il/item/3847754
 
-### WARNING · takeaway_long · item 33
+### WARNING · takeaway_long · item 39
 - Takeaway length 113 > 95
 - Headline: `איראן מכחישה פשרה על הגרעין, ארה״ב מציגה הקלות נפט`
 - Original: `"עמימות גרעינית": איראן לא ממהרת לוותר לטראמפ על הנכס היקר`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1336127
 
-### WARNING · takeaway_long · item 37
+### WARNING · takeaway_long · item 43
 - Takeaway length 99 > 95
 - Headline: `תלמידי נעל״ה בנו בוט לבדיקת דיסאינפורמציה`
 - Original: `WIZO Rishon Lezion youth village teens create fact-checking bot`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-900173
 
-### WARNING · takeaway_long · item 38
+### WARNING · takeaway_long · item 44
 - Takeaway length 114 > 95
 - Headline: `מייסד Cred יחליף את ראש וואטסאפ`
 - Original: `אחרי שנים של יציבות: מטא מבצעת חילופי הנהגה בוואטסאפ`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3847748
 
-### WARNING · takeaway_long · item 39
+### WARNING · takeaway_long · item 45
 - Takeaway length 106 > 95
 - Headline: `אינסטגרם מגיעה לטלוויזיות סמסונג בארה״ב`
 - Original: `לא רק בסמארטפון: אינסטגרם משיקה אפליקציה למסכי סמסונג`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3847749
 
-### WARNING · takeaway_long · item 41
+### WARNING · takeaway_long · item 47
 - Takeaway length 98 > 95
 - Headline: `נציג חמינאי איים על טראמפ והזהיר את צוות המו״מ`
 - Original: `משמרות המהפכה מאיימות על טראמפ: "נטביע אותך בים הזעם"`
 - Source: מעריב - חדשות
 - URL: https://www.maariv.co.il/news/world/article-1336134
 
-### WARNING · takeaway_long · item 43
+### WARNING · takeaway_long · item 49
 - Takeaway length 106 > 95
 - Headline: `שלי סרבריאניקוב מכחישה שמועות על עומר ציפורי`
 - Original: `"התחזו אליו, הוא סטרייט": שלי מגיבה לשמועות`
 - Source: mako סלבס - ראשי
 - URL: https://www.mako.co.il/entertainment-celebs/local-2026/Article-37480936700fe91027.htm
 
-### WARNING · takeaway_long · item 44
+### WARNING · takeaway_long · item 50
 - Takeaway length 111 > 95
 - Headline: `AppsFlyer גייסה מעל מיליארד דולר בעסקת סקנדרי`
 - Original: `AppsFlyer הישראלית עם גיוס ענק של יותר ממיליארד דולר`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/byufuclzfl
 
-### WARNING · takeaway_long · item 45
+### WARNING · takeaway_long · item 51
 - Takeaway length 98 > 95
 - Headline: `מפיק המוזיקה קלייב דייוויס מת בגיל 94`
 - Original: `Legendary music mogul Clive Davis dead at 94`
 - Source: Page Six רכילות חו״ל
 - URL: https://pagesix.com/2026/06/22/celebrity-news/music-mogul-clive-davis-dead-at-94/
 
-### WARNING · summary_long · item 46
+### WARNING · summary_long · item 52
 - Summary length 222 > 220
 - Headline: `חברתה של קייט גאראוויי מטילה ספק ברומן החדש`
 - Original: `Kate Garraway 'may not have room in her life' for romance says GMB co-star Laura Tobin`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/kate-garraway-romance-laura-tobin-37330086
 
-### WARNING · takeaway_long · item 46
+### WARNING · takeaway_long · item 52
 - Takeaway length 106 > 95
 - Headline: `חברתה של קייט גאראוויי מטילה ספק ברומן החדש`
 - Original: `Kate Garraway 'may not have room in her life' for romance says GMB co-star Laura Tobin`
 - Source: Mirror Celebs רכילות חו״ל
 - URL: https://www.mirror.co.uk/3am/celebrity-news/kate-garraway-romance-laura-tobin-37330086
 
-### WARNING · summary_long · item 48
+### WARNING · summary_long · item 54
 - Summary length 221 > 220
 - Headline: `גוגל ומטא נכנסות להשקעה של מיליארד דולר באפספלייר`
 - Original: `גם גוגל ומטא בפנים: אפספלייר מודיעה על עסקת ענק — מיליארד דולר יושקעו בחברה`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/technation/2026-06-22/ty-article/.premium/0000019e-efeb-d4c5-a9fe-ffeb63130000
 
-### WARNING · takeaway_long · item 48
+### WARNING · takeaway_long · item 54
 - Takeaway length 102 > 95
 - Headline: `גוגל ומטא נכנסות להשקעה של מיליארד דולר באפספלייר`
 - Original: `גם גוגל ומטא בפנים: אפספלייר מודיעה על עסקת ענק — מיליארד דולר יושקעו בחברה`
 - Source: דה מרקר - TechNation
 - URL: https://www.themarker.com/technation/2026-06-22/ty-article/.premium/0000019e-efeb-d4c5-a9fe-ffeb63130000
 
-### WARNING · takeaway_long · item 53
+### WARNING · takeaway_long · item 59
 - Takeaway length 106 > 95
 - Headline: `אפספלייר מכניסה את גוגל ומטא כבעלי מניות מיעוט`
 - Original: `אפספלייר מהרצליה מוכרת כחצי מהמניות לפי שווי של 2.7 מיליארד דולר - לגוגל, למטא וגם למתחרה`
 - Source: גלובס - שוק ההון
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546718#utm_source=RSS
 
-### WARNING · takeaway_long · item 55
+### WARNING · takeaway_long · item 61
 - Takeaway length 111 > 95
 - Headline: `המדינה מפסיקה להגן בבג״ץ על מינוי יהודה אליהו לרמ״י`
 - Original: `הייעוץ המשפטי הודיע לשרים: נתמוך בפסילת יהודה אליהו למנהל רמ"י`
 - Source: דה מרקר - נדל״ן
 - URL: https://www.themarker.com/realestate/2026-06-22/ty-article/0000019e-efeb-d69e-a39f-ffef91170000
 
-### WARNING · takeaway_long · item 56
+### WARNING · takeaway_long · item 62
 - Takeaway length 109 > 95
 - Headline: `סקר: רוב הישראלים רואים בהבנות עם איראן הפסד ביטחוני`
 - Original: `Majority of Israelis see MoU as win for Iran, loss for Israel's security, Hebrew University finds`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-900161
 
-### WARNING · takeaway_long · item 57
+### WARNING · takeaway_long · item 63
 - Takeaway length 98 > 95
 - Headline: `שלי סרבריאניקוב הכחישה שמועות על עומר ציפורי`
 - Original: `בצל השמועות שעומר ציפורי הומו - שלי סרבריאניקוב: "עומר סטרייט, התחזו אליו"`
 - Source: TMI - ראשי
 - URL: https://tmi.maariv.co.il/celebs-news/article-1336121
 
-### WARNING · takeaway_long · item 58
+### WARNING · takeaway_long · item 64
 - Takeaway length 114 > 95
 - Headline: `הפרקליטות מבקשת 22 עד 26 שנה למחבל מירושלים`
 - Original: `חנק, דקר ושב לזירה: הפרקליטות מבקשת 26 שנות מאסר למחבל מירושלים`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3847738
 
-### WARNING · summary_long · item 59
+### WARNING · summary_long · item 65
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
 - Original: `ליברמן תוקף את נתניהו: אם יש חופש פעולה מלא - למה לא תוקפים בדאחייה?`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1119095
 
-### WARNING · takeaway_long · item 63
+### WARNING · takeaway_long · item 69
 - Takeaway length 108 > 95
 - Headline: `עומר דהן מודה שנעצר ומכחיש הטיית משחקים`
 - Original: `עומר דהן חשף: "אני הכדורגלן שנעצר בפרשת ההימורים"`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/israelisoccer/article/s1hsf0imgg
 
-### WARNING · takeaway_long · item 64
+### WARNING · takeaway_long · item 70
 - Takeaway length 103 > 95
 - Headline: `פיצוץ במתקן הגז הגדול בקטאר הרג 13 עובדים`
 - Original: `At least 13 killed and dozens injured after Qatar gas explosion`
 - Source: BBC World
 - URL: https://www.bbc.com/news/articles/cwy05llpjpno?at_medium=RSS&at_campaign=rss
 
-### WARNING · takeaway_long · item 68
+### WARNING · takeaway_long · item 74
 - Takeaway length 103 > 95
 - Headline: `איראן תחזיר פקחי גרעין תמורת הקלה ביצוא הנפט`
 - Original: `Iran agrees to UN nuclear inspectors’ return as part of agreement with US`
 - Source: The Guardian Middle East
 - URL: https://www.theguardian.com/world/2026/jun/22/iran-us-talks-progress-pakistan-qatar-lebanon-israel
 
-### WARNING · takeaway_long · item 73
+### WARNING · takeaway_long · item 79
 - Takeaway length 118 > 95
 - Headline: `אילת מרגיעה, בערבה דורשים חיזוק מול תרחיש חדירה`
 - Original: `בעקבות אזהרת ראש השב"כ: ראש עיריית אילת מרגיע - "אין מידע על איום מיידי"`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/defense/article/20819509
 
-### WARNING · takeaway_long · item 74
+### WARNING · takeaway_long · item 80
 - Takeaway length 123 > 95
 - Headline: `גוגל נכנסת לקולנוע עם השקעה של 75 מיליון דולר ב-A24`
 - Original: `נכנסת להוליווד: גוגל תשקיע 75 מיליון דולר באולפני A24`
 - Source: הארץ - תרבות
 - URL: https://www.haaretz.co.il/gallery/cinema/2026-06-22/ty-article/.premium/0000019e-efc5-d4c5-a9fe-ffc720c30000
 
-### WARNING · takeaway_long · item 76
+### WARNING · takeaway_long · item 82
 - Takeaway length 97 > 95
 - Headline: `המלחמה מוצגת כמצב קבע במקום שלב בדרך לשיקום`
 - Original: `הפכנו למכונת מלחמה על מלא. כולנו הקורבנות שלה, והמחיר רק מתחיל להתברר`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/digital/daily/2026-06-22/ty-article/.premium/0000019e-efca-d4c5-a9fe-ffca75ea0000
 
-### WARNING · summary_long · item 81
+### WARNING · summary_long · item 87
 - Summary length 223 > 220
 - Headline: `מודלים חדשים משאירים סיכוי שכדור הארץ לא ייבלע בשמש`
 - Original: `מבעית: התחזית המצמררת לסוף העולם`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/tech/space/article/20819579
 
-### WARNING · takeaway_long · item 83
+### WARNING · takeaway_long · item 89
 - Takeaway length 97 > 95
 - Headline: `קצינים טוענים: ההנחיה בקו הצהוב בעזה רוככה`
 - Original: `דיווח: קצינים טוענים לשינוי בהוראות הפתיחה באש ברצועת עזה`
 - Source: ערוץ 7 / INN עברית
 - URL: https://www.inn.co.il/flashes/1119090
 
-### WARNING · takeaway_long · item 90
+### WARNING · takeaway_long · item 96
 - Takeaway length 106 > 95
 - Headline: `שוטרים תועדו מקיימים יחסי מין בזמן פעילות משטרתית`
 - Original: `שני שוטרים תועדו מקיימים יחסי מין ליד ניידת; המשטרה: הנושא בבדיקה`
 - Source: ynet - כל ערוץ החדשות
 - URL: https://www.ynet.co.il/news/article/byzqthizgg
 
-### WARNING · takeaway_long · item 93
+### WARNING · takeaway_long · item 99
 - Takeaway length 101 > 95
 - Headline: `ראש ממשלת קטאר מאשים את ישראל בסיכון שיחות איראן`
 - Original: `'Unacceptable' that Israel killed nearly 100 Lebanese in few days, Qatari PM tells Al Jazeera`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-900152
 
-### WARNING · takeaway_long · item 96
+### WARNING · takeaway_long · item 102
 - Takeaway length 100 > 95
 - Headline: `דיסקונט טק מסמן את ארה״ב כיעד המרכזי לסטארט-אפים`
 - Original: `סוד ההייטק הישראלי הוא יכולת לנוע מהר ולפתור בעיות תוך כדי תנועה`
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/tech/article-1336101
 
-### WARNING · summary_long · item 99
+### WARNING · summary_long · item 105
 - Summary length 227 > 220
 - Headline: `אנדוריל מכוונת למפעל ביטחוני ולשלוחה רחבה בישראל`
 - Original: `התוכנית של ענקית הביטחון נחשפת: אנדוריל מתכננת להקים מפעל בישראל ומחזרת אחר מפקד חיל האוויר לשעבר`
 - Source: גלובס - גלובלי ושוקי עולם
 - URL: https://www.globes.co.il/news/article.aspx?did=1001546680#utm_source=RSS
 
-### WARNING · summary_long · item 103
+### WARNING · summary_long · item 109
 - Summary length 222 > 220
 - Headline: `בכירי ביטחון לשעבר מזהירים שהלחץ על איראן לא השיג הכרעה`
 - Original: `"היעדים מול איראן לא הושגו": האזהרה של בכירי מערכת הביטחון לשעבר`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/defense/article/20819143
 
-### WARNING · takeaway_long · item 115
+### WARNING · takeaway_long · item 121
 - Takeaway length 112 > 95
 - Headline: `ארה"ב נותנת לאיראן חלון זמני לייצוא נפט`
 - Original: `מקלה בסנקציות: ארה"ב אישרה לאיראן לייצא נפט למשך 60 ימים`
 - Source: וואלה חדשות - חדשות בעולם
 - URL: https://news.walla.co.il/item/3847727
 
-### WARNING · takeaway_long · item 120
+### WARNING · takeaway_long · item 126
 - Takeaway length 97 > 95
 - Headline: `השיחות בשווייץ מחברות בין הורמוז לגבול לבנון`
 - Original: `השיחות בשווייץ מעגנות רשמית את דריסת הרגל האיראנית בגבול הצפוני של ישראל`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-22/ty-article/.premium/0000019e-ee8e-db90-adff-eedefb9b0000
 
-### WARNING · takeaway_long · item 126
+### WARNING · takeaway_long · item 132
 - Takeaway length 103 > 95
 - Headline: `הארי קיין מגיע לגאנה עם שיא אנגלי בהישג יד`
 - Original: `אחרי רונאלדו, עכשיו הארי קיין? המכשף מגאנה מאיים בקללה`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3847726
 
-### WARNING · takeaway_long · item 137
+### WARNING · takeaway_long · item 143
 - Takeaway length 97 > 95
 - Headline: `ארבעה נאשמים בסחיטת גברים דרך פרופילים פיקטיביים`
 - Original: `פיתחו שיטה: התחזו לנשים נשואות וסחטו גברים במאות אלפי שקלים`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3847707
 
-### WARNING · takeaway_long · item 142
+### WARNING · takeaway_long · item 148
 - Takeaway length 114 > 95
 - Headline: `סלאח רחוק שער אחד משיא הכיבושים של מצרים`
 - Original: `בגדי המלך הישנים: סלאח השאיר את ליברפול מאחוריו וחזר לחייך במצרים`
 - Source: ynet - כל ערוץ הספורט
 - URL: https://www.ynet.co.il/sport/worldcup2026/article/syi4whizfl
 
-### WARNING · takeaway_long · item 146
+### WARNING · takeaway_long · item 152
 - Takeaway length 97 > 95
 - Headline: `בג״ץ דן בעתירות נגד שינוי הוועדה לבחירת שופטים`
 - Original: `סאגת הוועדה לבחירת שופטים: בג"ץ דן בעתירות על חוק יסוד`
 - Source: בשבע - מגזין ודעות
 - URL: https://be7.co.il/24912
 
-### WARNING · takeaway_long · item 154
+### WARNING · takeaway_long · item 160
 - Takeaway length 97 > 95
 - Headline: `אוהדי ארגנטינה מילאו את דאלאס לפני המשחק מול אוסטריה`
 - Original: `הארגנטינאים בטירוף: "רוצים לראות עוד ערב קסום של מסי"`
 - Source: וואלה ספורט - כדורגל עולמי
 - URL: https://sports.walla.co.il/item/3847720
 
-### WARNING · takeaway_long · item 155
+### WARNING · takeaway_long · item 161
 - Takeaway length 108 > 95
 - Headline: `זנדאיה וטום הולנד פתחו בברלין את סבב ספיידרמן`
 - Original: `Zendaya towers over husband Tom Holland as she wears killer heels at Spider-Man photocall in Berlin after confirming their secret wedding`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15919647/Zendaya-husband-Tom-Holland-Spider-Man-photocall-Berlin-secret-wedding.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 157
+### WARNING · takeaway_long · item 163
 - Takeaway length 106 > 95
 - Headline: `בצפון חזרו לשגרה, אבל התושבים לא מאמינים בשקט`
 - Original: `השגרה חזרה, האמון לא: תושבי הצפון מגיבים להסרת ההגבלות`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/local/article/20818256
 
-### WARNING · takeaway_long · item 170
+### WARNING · takeaway_long · item 176
 - Takeaway length 114 > 95
 - Headline: `הסיוע לעזה מעורר חשש משיקום שקט של חמאס`
 - Original: `עזה תהפוך ללבנון? הצצה למציאות המטרידה בזירה הנשכחת`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/geopolitics/article/20818113
 
-### WARNING · takeaway_long · item 182
+### WARNING · takeaway_long · item 188
 - Takeaway length 98 > 95
 - Headline: `המיקרופון בעברית משך למונדיאל אוהדים יהודים וישראלים`
 - Original: `"עם ישראל חי", הבאבא סאלי וגלוך: אוהדי ספרד שרדפו אחרי ביציעי המונדיאל`
