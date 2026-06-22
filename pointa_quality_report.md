@@ -1,23 +1,23 @@
 # Pointa Quality Gate Report
 
-Items checked: 213
+Items checked: 197
 Errors: 0
-Warnings: 33
+Warnings: 32
 
 ## Category distribution
 
-- רכילות: 58
-- ביטחון: 41
-- ספורט: 37
-- פוליטיקה: 15
+- רכילות: 56
+- ביטחון: 38
+- ספורט: 32
+- פוליטיקה: 14
 - פלילים: 12
-- תרבות: 9
 - חדשות: 9
-- כלכלה: 8
-- דעות: 7
-- אקטואליה בעולם: 4
+- תרבות: 8
+- כלכלה: 7
+- דעות: 6
 - רכב: 4
-- משפט: 4
+- אקטואליה בעולם: 3
+- משפט: 3
 - טכנולוגיה: 2
 - צרכנות: 1
 - נדל״ן: 1
@@ -25,7 +25,7 @@ Warnings: 33
 
 ## Issue counts
 
-- takeaway_long: 32
+- takeaway_long: 31
 - headline_near_duplicate_summary: 1
 
 ## Issues
@@ -44,14 +44,14 @@ Warnings: 33
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15921109/Matty-Healys-fianc-e-Gabbriette-Bechtel-classy-bridal-suit-hand-cuffed-arrested-wild-bachelorette-party.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 12
+### WARNING · takeaway_long · item 11
 - Takeaway length 109 > 95
 - Headline: `פורטלנד שוב בוחנת מהלך גדול סביב אנתוני דייויס`
 - Original: `השחקן המפתיע שעשוי להצטרף בטרייד לדני אבדיה`
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/sport/world-basketball/article/20822343
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 13
 - Takeaway length 97 > 95
 - Headline: `ג'ניפר גארנר ובנה סמואל נצפו בסידורים בלוס אנג'לס`
 - Original: `Jennifer Garner's son Samuel, 14, nearly towers over her on LA outing... after her gushing Father's Day tribute to ex Ben Affleck`
@@ -253,10 +253,3 @@ Warnings: 33
 - Original: `Kanye West's July 4 show at risk of CANCELLATION as furious San Antonio mayor blasts rapper's antisemitic past`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15918685/kanye-west-san-antonio-mayor-july-gina-ortiz.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 197
-- Takeaway length 101 > 95
-- Headline: `הדחת סטארמר מחדדת את משבר הניהול בבריטניה`
-- Original: `סטארמר נפל כי לא ידע להיות פוליטיקאי. הדחתו היא עוד פרק במשבר ניהול הממלכה`
-- Source: הארץ - חדשות
-- URL: https://www.haaretz.co.il/news/world/europe/2026-06-22/ty-article/.premium/0000019e-efee-d0cc-af9e-ffff6a6f0000
