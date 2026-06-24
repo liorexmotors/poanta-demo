@@ -1,32 +1,33 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-06-24T00:28:35+00:00",
+  "generatedAt": "2026-06-24T01:39:59+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-  "itemCount": 253,
+  "itemCount": 257,
   "simulationPoolWindow": {
     "originalWindowItems": 180,
-    "rawPoolItems": 181,
-    "rankedPoolItems": 181
+    "rawPoolItems": 182,
+    "rankedPoolItems": 182
   },
   "before": {
-    "newsinessTop10": 3,
-    "coreHardTop10": 3,
-    "softTop10": 7,
-    "otherTop10": 0,
-    "top5Under60": 5,
-    "top10Under60": 5,
-    "top12Under60": 5,
-    "topItemAgeMinutes": 12,
-    "uniqueSourcesTop20": 9,
+    "newsinessTop10": 4,
+    "coreHardTop10": 4,
+    "softTop10": 5,
+    "otherTop10": 1,
+    "top5Under60": 2,
+    "top10Under60": 2,
+    "top12Under60": 2,
+    "topItemAgeMinutes": 4,
+    "uniqueSourcesTop20": 7,
     "dominantSource": {
       "name": "וואלה",
-      "count": 5
+      "count": 6
     },
     "importantMissingTop20": [
       "N12",
       "ynet",
       "מעריב",
+      "הארץ",
       "BBC",
       "Guardian",
       "גלובס"
@@ -37,18 +38,18 @@
     "topSources": [
       {
         "name": "וואלה",
-        "count": 5
+        "count": 6
+      },
+      {
+        "name": "Jerusalem Post",
+        "count": 4
       },
       {
         "name": "Page Six",
         "count": 4
       },
       {
-        "name": "Jerusalem Post",
-        "count": 3
-      },
-      {
-        "name": "Daily Mail",
+        "name": "ישראל היום",
         "count": 3
       },
       {
@@ -56,15 +57,11 @@
         "count": 1
       },
       {
-        "name": "ישראל היום",
-        "count": 1
-      },
-      {
         "name": "NYT",
         "count": 1
       },
       {
-        "name": "הארץ",
+        "name": "Daily Mail",
         "count": 1
       }
     ],
@@ -74,104 +71,150 @@
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 42,
-      "readyCount": 2,
-      "hardReadyCount": 2,
-      "hardReadyStrictCount": 2,
+      "score": 53,
+      "readyCount": 5,
+      "hardReadyCount": 3,
+      "hardReadyStrictCount": 3,
       "trendReadyCount": 0,
-      "cleanReadyCount": 2,
-      "cleanHardReadyCount": 2,
+      "cleanReadyCount": 3,
+      "cleanHardReadyCount": 3,
       "cleanTrendReadyCount": 0,
-      "uniqueReadySources": 2,
+      "uniqueReadySources": 3,
       "uniqueCleanReadySources": 2,
-      "freshReadyUnder25Count": 1,
+      "freshReadyUnder25Count": 2,
       "cleanFreshReadyUnder25Count": 1,
       "blockers": [
         "ready_queue_below_6",
         "clean_ready_queue_below_6",
         "hard_ready_below_4",
         "clean_hard_ready_below_4",
-        "ready_queue_below_3",
-        "ready_sources_below_3",
         "clean_ready_sources_below_3"
       ],
       "readyQueue": [
         {
+          "rank": 2,
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+          "source": "וואלה חדשות - אסור לפספס",
+          "canonicalSource": "וואלה",
+          "category": "פלילים",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
           "rank": 1,
+          "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "פוליטיקה",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 4,
+          "url": "https://www.jpost.com/israel-news/article-900325",
+          "trendMatch": null,
+          "queueScore": 32.0
+        },
+        {
+          "rank": 3,
+          "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "חדשות",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 71,
+          "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 4,
           "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
+          "ageMinutes": 83,
           "url": "https://news.walla.co.il/item/3848108",
           "trendMatch": null,
-          "queueScore": 38.0
+          "queueScore": 23.0
         },
         {
-          "rank": 4,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+          "rank": 7,
+          "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
           "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 90,
+          "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374",
           "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 11.0
         }
       ],
       "cleanReadyQueue": [
         {
-          "rank": 1,
+          "rank": 2,
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+          "source": "וואלה חדשות - אסור לפספס",
+          "canonicalSource": "וואלה",
+          "category": "פלילים",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
+          "rank": 3,
+          "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "חדשות",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 71,
+          "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 4,
           "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
+          "ageMinutes": 83,
           "url": "https://news.walla.co.il/item/3848108",
           "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 4,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
-          "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 23.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 5,
-      "worthyFreshUnder60Count": 2,
-      "coreHardFreshUnder60Count": 2,
-      "softFreshUnder60Count": 3,
-      "otherFreshUnder60Count": 0,
-      "freshUniqueSources": 3,
-      "worthyUniqueSources": 2,
+      "freshUnder60Count": 2,
+      "worthyFreshUnder60Count": 1,
+      "coreHardFreshUnder60Count": 1,
+      "softFreshUnder60Count": 0,
+      "otherFreshUnder60Count": 1,
+      "freshUniqueSources": 2,
+      "worthyUniqueSources": 1,
       "freshSources": [
         {
-          "name": "וואלה",
-          "count": 3
-        },
-        {
-          "name": "Al Jazeera RSS מסונן מזרח תיכון",
+          "name": "Jerusalem Post",
           "count": 1
         },
         {
-          "name": "ישראל היום",
+          "name": "וואלה",
           "count": 1
         }
       ],
@@ -179,144 +222,66 @@
         {
           "name": "וואלה",
           "count": 1
-        },
-        {
-          "name": "Al Jazeera RSS מסונן מזרח תיכון",
-          "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 5,
-        "quality_class_soft": 3
+        "quality_class_other": 1,
+        "weak_or_missing_trend_match": 2
       },
-      "staleOrUndatedCount": 75,
+      "staleOrUndatedCount": 78,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
       "topFreshCandidates": [
         {
           "beforeRank": 1,
-          "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 12,
-          "url": "https://news.walla.co.il/item/3848108",
+          "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "פוליטיקה",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 4,
+          "url": "https://www.jpost.com/israel-news/article-900325",
           "trendMatch": null,
           "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
+          "coreHard": false,
+          "worthyFreshUnder60": false,
           "disqualifiers": [
+            "quality_class_other",
             "weak_or_missing_trend_match"
           ]
         },
         {
           "beforeRank": 2,
-          "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 16,
-          "url": "https://sports.walla.co.il/item/3848112",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 3,
-          "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף",
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
           "source": "וואלה חדשות - אסור לפספס",
           "canonicalSource": "וואלה",
-          "category": "תרבות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 16,
-          "url": "https://news.walla.co.il/item/3847966",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 4,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-          "category": "ביטחון",
+          "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 59,
-          "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
             "weak_or_missing_trend_match"
           ]
         }
       ],
       "topWorthyFreshCandidates": [
         {
-          "beforeRank": 1,
-          "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-          "source": "וואלה חדשות",
+          "beforeRank": 2,
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+          "source": "וואלה חדשות - אסור לפספס",
           "canonicalSource": "וואלה",
-          "category": "ביטחון",
+          "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
-          "url": "https://news.walla.co.il/item/3848108",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": true,
-          "worthyFreshUnder60": true,
-          "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 4,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -335,9 +300,9 @@
     "otherTop10": 0,
     "top5Under60": 3,
     "top10Under60": 3,
-    "top12Under60": 5,
+    "top12Under60": 4,
     "topItemAgeMinutes": 0,
-    "uniqueSourcesTop20": 11,
+    "uniqueSourcesTop20": 10,
     "dominantSource": {
       "name": "וואלה",
       "count": 4
@@ -361,15 +326,15 @@
         "count": 4
       },
       {
+        "name": "ישראל היום",
+        "count": 3
+      },
+      {
         "name": "Page Six",
         "count": 3
       },
       {
-        "name": "Daily Mail",
-        "count": 2
-      },
-      {
-        "name": "Al Jazeera RSS מסונן מזרח תיכון",
+        "name": "ערוץ 7 / INN עברית",
         "count": 1
       },
       {
@@ -391,25 +356,20 @@
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 20,
-      "score": 53,
-      "readyCount": 3,
-      "hardReadyCount": 3,
-      "hardReadyStrictCount": 3,
+      "score": 80,
+      "readyCount": 7,
+      "hardReadyCount": 5,
+      "hardReadyStrictCount": 5,
       "trendReadyCount": 0,
-      "cleanReadyCount": 3,
-      "cleanHardReadyCount": 3,
+      "cleanReadyCount": 5,
+      "cleanHardReadyCount": 5,
       "cleanTrendReadyCount": 0,
-      "uniqueReadySources": 2,
-      "uniqueCleanReadySources": 2,
-      "freshReadyUnder25Count": 2,
+      "uniqueReadySources": 4,
+      "uniqueCleanReadySources": 3,
+      "freshReadyUnder25Count": 3,
       "cleanFreshReadyUnder25Count": 2,
       "blockers": [
-        "ready_queue_below_6",
-        "clean_ready_queue_below_6",
-        "hard_ready_below_4",
-        "clean_hard_ready_below_4",
-        "ready_sources_below_3",
-        "clean_ready_sources_below_3"
+        "clean_ready_queue_below_6"
       ],
       "readyQueue": [
         {
@@ -427,29 +387,81 @@
         },
         {
           "rank": 2,
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+          "source": "וואלה חדשות - אסור לפספס",
+          "canonicalSource": "וואלה",
+          "category": "פלילים",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
+          "rank": 11,
+          "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "פוליטיקה",
+          "class": "other",
+          "strictHard": false,
+          "ageMinutes": 4,
+          "url": "https://www.jpost.com/israel-news/article-900325",
+          "trendMatch": null,
+          "queueScore": 32.0
+        },
+        {
+          "rank": 3,
+          "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+          "source": "ערוץ 7 / INN עברית",
+          "canonicalSource": "ערוץ 7 / INN עברית",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 59,
+          "url": "https://www.inn.co.il/flashes/1119315",
+          "trendMatch": null,
+          "queueScore": 26.0
+        },
+        {
+          "rank": 4,
+          "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "חדשות",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 71,
+          "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 5,
           "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
+          "ageMinutes": 83,
           "url": "https://news.walla.co.il/item/3848108",
           "trendMatch": null,
-          "queueScore": 38.0
+          "queueScore": 23.0
         },
         {
-          "rank": 3,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+          "rank": 12,
+          "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
           "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+          "class": "soft",
+          "strictHard": false,
+          "ageMinutes": 90,
+          "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374",
           "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 11.0
         }
       ],
       "cleanReadyQueue": [
@@ -468,52 +480,78 @@
         },
         {
           "rank": 2,
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+          "source": "וואלה חדשות - אסור לפספס",
+          "canonicalSource": "וואלה",
+          "category": "פלילים",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
+          "trendMatch": null,
+          "queueScore": 44.0
+        },
+        {
+          "rank": 3,
+          "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+          "source": "ערוץ 7 / INN עברית",
+          "canonicalSource": "ערוץ 7 / INN עברית",
+          "category": "ביטחון",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 59,
+          "url": "https://www.inn.co.il/flashes/1119315",
+          "trendMatch": null,
+          "queueScore": 26.0
+        },
+        {
+          "rank": 4,
+          "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+          "source": "ישראל היום - כל הכתבות",
+          "canonicalSource": "ישראל היום",
+          "category": "חדשות",
+          "class": "hard",
+          "strictHard": true,
+          "ageMinutes": 71,
+          "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+          "trendMatch": null,
+          "queueScore": 23.0
+        },
+        {
+          "rank": 5,
           "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
           "source": "וואלה חדשות",
           "canonicalSource": "וואלה",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
+          "ageMinutes": 83,
           "url": "https://news.walla.co.il/item/3848108",
           "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 3,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-          "category": "ביטחון",
-          "class": "hard",
-          "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
-          "trendMatch": null,
-          "queueScore": 26.0
+          "queueScore": 23.0
         }
       ]
     },
     "candidateSupply": {
       "scope": "pre_rerank_top_80",
-      "freshUnder60Count": 6,
+      "freshUnder60Count": 4,
       "worthyFreshUnder60Count": 3,
       "coreHardFreshUnder60Count": 3,
-      "softFreshUnder60Count": 3,
-      "otherFreshUnder60Count": 0,
+      "softFreshUnder60Count": 0,
+      "otherFreshUnder60Count": 1,
       "freshUniqueSources": 3,
       "worthyUniqueSources": 2,
       "freshSources": [
         {
           "name": "וואלה",
-          "count": 4
+          "count": 2
         },
         {
-          "name": "Al Jazeera RSS מסונן מזרח תיכון",
+          "name": "ערוץ 7 / INN עברית",
           "count": 1
         },
         {
-          "name": "ישראל היום",
+          "name": "Jerusalem Post",
           "count": 1
         }
       ],
@@ -523,15 +561,15 @@
           "count": 2
         },
         {
-          "name": "Al Jazeera RSS מסונן מזרח תיכון",
+          "name": "ערוץ 7 / INN עברית",
           "count": 1
         }
       ],
       "disqualifiedFreshCounts": {
-        "weak_or_missing_trend_match": 6,
-        "quality_class_soft": 3
+        "weak_or_missing_trend_match": 4,
+        "quality_class_other": 1
       },
-      "staleOrUndatedCount": 74,
+      "staleOrUndatedCount": 76,
       "blockers": [
         "fresh_candidate_supply_below_9"
       ],
@@ -556,14 +594,14 @@
         },
         {
           "beforeRank": 2,
-          "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
+          "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+          "source": "ערוץ 7 / INN עברית",
+          "canonicalSource": "ערוץ 7 / INN עברית",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
-          "url": "https://news.walla.co.il/item/3848108",
+          "ageMinutes": 59,
+          "url": "https://www.inn.co.il/flashes/1119315",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -574,76 +612,38 @@
         },
         {
           "beforeRank": 3,
-          "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
-          "source": "וואלה ספורט",
-          "canonicalSource": "וואלה",
-          "category": "ספורט",
-          "class": "soft",
+          "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+          "source": "The Jerusalem Post - Israel News",
+          "canonicalSource": "Jerusalem Post",
+          "category": "פוליטיקה",
+          "class": "other",
           "strictHard": false,
-          "ageMinutes": 16,
-          "url": "https://sports.walla.co.il/item/3848112",
+          "ageMinutes": 4,
+          "url": "https://www.jpost.com/israel-news/article-900325",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": false,
           "worthyFreshUnder60": false,
           "disqualifiers": [
-            "quality_class_soft",
+            "quality_class_other",
             "weak_or_missing_trend_match"
           ]
         },
         {
           "beforeRank": 4,
-          "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף",
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
           "source": "וואלה חדשות - אסור לפספס",
           "canonicalSource": "וואלה",
-          "category": "תרבות",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 16,
-          "url": "https://news.walla.co.il/item/3847966",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 5,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-          "category": "ביטחון",
+          "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
           "worthyFreshUnder60": true,
           "disqualifiers": [
-            "weak_or_missing_trend_match"
-          ]
-        },
-        {
-          "beforeRank": 6,
-          "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "ספורט",
-          "class": "soft",
-          "strictHard": false,
-          "ageMinutes": 59,
-          "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-          "trendMatch": null,
-          "freshUnder60": true,
-          "coreHard": false,
-          "worthyFreshUnder60": false,
-          "disqualifiers": [
-            "quality_class_soft",
             "weak_or_missing_trend_match"
           ]
         }
@@ -669,14 +669,14 @@
         },
         {
           "beforeRank": 2,
-          "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-          "source": "וואלה חדשות",
-          "canonicalSource": "וואלה",
+          "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+          "source": "ערוץ 7 / INN עברית",
+          "canonicalSource": "ערוץ 7 / INN עברית",
           "category": "ביטחון",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 12,
-          "url": "https://news.walla.co.il/item/3848108",
+          "ageMinutes": 59,
+          "url": "https://www.inn.co.il/flashes/1119315",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -686,15 +686,15 @@
           ]
         },
         {
-          "beforeRank": 5,
-          "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-          "category": "ביטחון",
+          "beforeRank": 4,
+          "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+          "source": "וואלה חדשות - אסור לפספס",
+          "canonicalSource": "וואלה",
+          "category": "פלילים",
           "class": "hard",
           "strictHard": true,
-          "ageMinutes": 39,
-          "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+          "ageMinutes": 5,
+          "url": "https://news.walla.co.il/item/3848032",
           "trendMatch": null,
           "freshUnder60": true,
           "coreHard": true,
@@ -706,13 +706,13 @@
       ]
     }
   },
-  "beforeHealthScore": 39,
-  "afterHealthScore": 82,
+  "beforeHealthScore": 35,
+  "afterHealthScore": 79,
   "replacementReadiness": {
     "score": 76,
     "threshold": 80,
     "components": {
-      "freshness": 14.1,
+      "freshness": 13.6,
       "newsinessTop10": 25.0,
       "top20Quality": 17.0,
       "sourceBalance": 10.0,
@@ -769,35 +769,35 @@
     "title": "TT RR Simulation Review — 2026-06-23 14:05"
   },
   "delta": {
-    "newsinessTop10": 7,
-    "coreHardTop10": 7,
-    "softTop10": -7,
-    "top12Under60": 0,
-    "uniqueSourcesTop20": 2,
+    "newsinessTop10": 6,
+    "coreHardTop10": 6,
+    "softTop10": -5,
+    "top12Under60": 2,
+    "uniqueSourcesTop20": 3,
     "trendMatchedTop10": 2,
     "trendMatchedTop20": 2,
-    "healthScore": 43
+    "healthScore": 44
   },
   "candidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 6,
+    "freshUnder60Count": 4,
     "worthyFreshUnder60Count": 3,
     "coreHardFreshUnder60Count": 3,
-    "softFreshUnder60Count": 3,
-    "otherFreshUnder60Count": 0,
+    "softFreshUnder60Count": 0,
+    "otherFreshUnder60Count": 1,
     "freshUniqueSources": 3,
     "worthyUniqueSources": 2,
     "freshSources": [
       {
         "name": "וואלה",
-        "count": 4
+        "count": 2
       },
       {
-        "name": "Al Jazeera RSS מסונן מזרח תיכון",
+        "name": "ערוץ 7 / INN עברית",
         "count": 1
       },
       {
-        "name": "ישראל היום",
+        "name": "Jerusalem Post",
         "count": 1
       }
     ],
@@ -807,15 +807,15 @@
         "count": 2
       },
       {
-        "name": "Al Jazeera RSS מסונן מזרח תיכון",
+        "name": "ערוץ 7 / INN עברית",
         "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 6,
-      "quality_class_soft": 3
+      "weak_or_missing_trend_match": 4,
+      "quality_class_other": 1
     },
-    "staleOrUndatedCount": 74,
+    "staleOrUndatedCount": 76,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
@@ -840,14 +840,14 @@
       },
       {
         "beforeRank": 2,
-        "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
+        "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 12,
-        "url": "https://news.walla.co.il/item/3848108",
+        "ageMinutes": 59,
+        "url": "https://www.inn.co.il/flashes/1119315",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
@@ -858,76 +858,38 @@
       },
       {
         "beforeRank": 3,
-        "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
+        "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "פוליטיקה",
+        "class": "other",
         "strictHard": false,
-        "ageMinutes": 16,
-        "url": "https://sports.walla.co.il/item/3848112",
+        "ageMinutes": 4,
+        "url": "https://www.jpost.com/israel-news/article-900325",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": false,
         "worthyFreshUnder60": false,
         "disqualifiers": [
-          "quality_class_soft",
+          "quality_class_other",
           "weak_or_missing_trend_match"
         ]
       },
       {
         "beforeRank": 4,
-        "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף",
+        "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
         "source": "וואלה חדשות - אסור לפספס",
         "canonicalSource": "וואלה",
-        "category": "תרבות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 16,
-        "url": "https://news.walla.co.il/item/3847966",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "ביטחון",
+        "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3848032",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
         "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 6,
-        "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 59,
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
           "weak_or_missing_trend_match"
         ]
       }
@@ -953,14 +915,14 @@
       },
       {
         "beforeRank": 2,
-        "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
+        "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
         "category": "ביטחון",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 12,
-        "url": "https://news.walla.co.il/item/3848108",
+        "ageMinutes": 59,
+        "url": "https://www.inn.co.il/flashes/1119315",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
@@ -970,15 +932,15 @@
         ]
       },
       {
-        "beforeRank": 5,
-        "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "ביטחון",
+        "beforeRank": 4,
+        "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+        "source": "וואלה חדשות - אסור לפספס",
+        "canonicalSource": "וואלה",
+        "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3848032",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
@@ -991,24 +953,20 @@
   },
   "beforeCandidateSupply": {
     "scope": "pre_rerank_top_80",
-    "freshUnder60Count": 5,
-    "worthyFreshUnder60Count": 2,
-    "coreHardFreshUnder60Count": 2,
-    "softFreshUnder60Count": 3,
-    "otherFreshUnder60Count": 0,
-    "freshUniqueSources": 3,
-    "worthyUniqueSources": 2,
+    "freshUnder60Count": 2,
+    "worthyFreshUnder60Count": 1,
+    "coreHardFreshUnder60Count": 1,
+    "softFreshUnder60Count": 0,
+    "otherFreshUnder60Count": 1,
+    "freshUniqueSources": 2,
+    "worthyUniqueSources": 1,
     "freshSources": [
       {
-        "name": "וואלה",
-        "count": 3
-      },
-      {
-        "name": "Al Jazeera RSS מסונן מזרח תיכון",
+        "name": "Jerusalem Post",
         "count": 1
       },
       {
-        "name": "ישראל היום",
+        "name": "וואלה",
         "count": 1
       }
     ],
@@ -1016,144 +974,66 @@
       {
         "name": "וואלה",
         "count": 1
-      },
-      {
-        "name": "Al Jazeera RSS מסונן מזרח תיכון",
-        "count": 1
       }
     ],
     "disqualifiedFreshCounts": {
-      "weak_or_missing_trend_match": 5,
-      "quality_class_soft": 3
+      "quality_class_other": 1,
+      "weak_or_missing_trend_match": 2
     },
-    "staleOrUndatedCount": 75,
+    "staleOrUndatedCount": 78,
     "blockers": [
       "fresh_candidate_supply_below_9"
     ],
     "topFreshCandidates": [
       {
         "beforeRank": 1,
-        "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 12,
-        "url": "https://news.walla.co.il/item/3848108",
+        "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "פוליטיקה",
+        "class": "other",
+        "strictHard": false,
+        "ageMinutes": 4,
+        "url": "https://www.jpost.com/israel-news/article-900325",
         "trendMatch": null,
         "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
+        "coreHard": false,
+        "worthyFreshUnder60": false,
         "disqualifiers": [
+          "quality_class_other",
           "weak_or_missing_trend_match"
         ]
       },
       {
         "beforeRank": 2,
-        "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 16,
-        "url": "https://sports.walla.co.il/item/3848112",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 3,
-        "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף",
+        "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
         "source": "וואלה חדשות - אסור לפספס",
         "canonicalSource": "וואלה",
-        "category": "תרבות",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 16,
-        "url": "https://news.walla.co.il/item/3847966",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 4,
-        "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "ביטחון",
+        "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3848032",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
         "worthyFreshUnder60": true,
         "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 5,
-        "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ספורט",
-        "class": "soft",
-        "strictHard": false,
-        "ageMinutes": 59,
-        "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": false,
-        "worthyFreshUnder60": false,
-        "disqualifiers": [
-          "quality_class_soft",
           "weak_or_missing_trend_match"
         ]
       }
     ],
     "topWorthyFreshCandidates": [
       {
-        "beforeRank": 1,
-        "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-        "source": "וואלה חדשות",
+        "beforeRank": 2,
+        "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+        "source": "וואלה חדשות - אסור לפספס",
         "canonicalSource": "וואלה",
-        "category": "ביטחון",
+        "category": "פלילים",
         "class": "hard",
         "strictHard": true,
-        "ageMinutes": 12,
-        "url": "https://news.walla.co.il/item/3848108",
-        "trendMatch": null,
-        "freshUnder60": true,
-        "coreHard": true,
-        "worthyFreshUnder60": true,
-        "disqualifiers": [
-          "weak_or_missing_trend_match"
-        ]
-      },
-      {
-        "beforeRank": 4,
-        "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "ביטחון",
-        "class": "hard",
-        "strictHard": true,
-        "ageMinutes": 39,
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
+        "ageMinutes": 5,
+        "url": "https://news.walla.co.il/item/3848032",
         "trendMatch": null,
         "freshUnder60": true,
         "coreHard": true,
@@ -1167,9 +1047,9 @@
   "rawSourceBridge": {
     "status": "ok",
     "mode": "simulation_only_raw_source_bridge_no_feed_mutation",
-    "acceptedCount": 1,
-    "acceptedBeforeDedupe": 1,
-    "relegatedDuplicateCount": 0,
+    "acceptedCount": 2,
+    "acceptedBeforeDedupe": 3,
+    "relegatedDuplicateCount": 1,
     "sourceGroups": [
       {
         "id": "n12",
@@ -1193,36 +1073,36 @@
         "id": "jpost",
         "label": "Jerusalem Post",
         "configuredSourceCount": 3,
-        "freshUnder60Scanned": 2,
-        "acceptedHardQaClean": 0,
-        "rejected": 2,
-        "status": "no_clean_bridge_supply"
-      },
-      {
-        "id": "inn",
-        "label": "ערוץ 7 / INN",
-        "configuredSourceCount": 2,
-        "freshUnder60Scanned": 2,
-        "acceptedHardQaClean": 0,
-        "rejected": 2,
-        "status": "no_clean_bridge_supply"
-      },
-      {
-        "id": "israel_hayom",
-        "label": "ישראל היום",
-        "configuredSourceCount": 1,
         "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
         "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
+        "id": "inn",
+        "label": "ערוץ 7 / INN",
+        "configuredSourceCount": 2,
+        "freshUnder60Scanned": 5,
+        "acceptedHardQaClean": 2,
+        "rejected": 3,
+        "status": "has_bridge_supply"
+      },
+      {
+        "id": "israel_hayom",
+        "label": "ישראל היום",
+        "configuredSourceCount": 1,
+        "freshUnder60Scanned": 0,
+        "acceptedHardQaClean": 0,
+        "rejected": 0,
+        "status": "no_clean_bridge_supply"
+      },
+      {
         "id": "bbc",
         "label": "BBC",
         "configuredSourceCount": 1,
-        "freshUnder60Scanned": 2,
+        "freshUnder60Scanned": 0,
         "acceptedHardQaClean": 0,
-        "rejected": 2,
+        "rejected": 0,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -1238,9 +1118,9 @@
         "id": "ynet",
         "label": "ynet חדשות",
         "configuredSourceCount": 24,
-        "freshUnder60Scanned": 0,
+        "freshUnder60Scanned": 1,
         "acceptedHardQaClean": 0,
-        "rejected": 0,
+        "rejected": 1,
         "status": "no_clean_bridge_supply"
       },
       {
@@ -1321,6 +1201,20 @@
         "afterRank": null,
         "delta": null,
         "trendMatch": null
+      },
+      {
+        "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "category": "ביטחון",
+        "class": "hard",
+        "strictHard": true,
+        "ageMinutes": 59,
+        "url": "https://www.inn.co.il/flashes/1119315",
+        "beforeRank": null,
+        "afterRank": null,
+        "delta": null,
+        "trendMatch": null
       }
     ],
     "rejectedSample": [
@@ -1329,7 +1223,7 @@
         "source": "The Jerusalem Post - Israel News",
         "canonicalSource": "Jerusalem Post",
         "headline": "Former hostage condemns UN Special Rapporteur's silence on Hamas' October 7 sexual violence",
-        "ageMinutes": 0,
+        "ageMinutes": 48,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
@@ -1339,94 +1233,88 @@
         "url": "https://www.jpost.com/israel-news/article-900317"
       },
       {
-        "sourceGroup": "Jerusalem Post",
-        "source": "The Jerusalem Post - Middle East",
-        "headline": "Republican-majority US Senate votes to curb Trump's powers in Iran war",
-        "ageMinutes": 47,
-        "status": "rejected",
-        "reason": "foreign_relevance_filtered",
-        "url": "https://www.jpost.com/middle-east/iran-news/article-900316"
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "חשד לאבולה בישראל אחרי חזרה מקונגו",
+        "ageMinutes": 3,
+        "status": "accepted",
+        "reason": "deterministic_bridge_pass",
+        "errorCodes": [],
+        "url": "https://www.inn.co.il/flashes/1119317"
       },
       {
         "sourceGroup": "ערוץ 7 / INN",
-        "source": "Israel National News English",
-        "headline": "Former NYC Comptroller sidesteps condemning Mamdani’s 'monster' AIPAC remarks",
-        "ageMinutes": 20,
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "מונדיאל 2026: קרואטיה ניצחה את פנמה 0:1",
+        "ageMinutes": 30,
         "status": "rejected",
-        "reason": "foreign_relevance_filtered",
-        "url": "https://www.israelnationalnews.com/flashes/688381"
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://www.inn.co.il/flashes/1119316"
+      },
+      {
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "ערוץ 7 / INN עברית",
+        "canonicalSource": "ערוץ 7 / INN עברית",
+        "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+        "ageMinutes": 59,
+        "status": "accepted",
+        "reason": "build_feed_pass",
+        "errorCodes": [],
+        "url": "https://www.inn.co.il/flashes/1119315"
       },
       {
         "sourceGroup": "ערוץ 7 / INN",
         "source": "Israel National News English",
         "canonicalSource": "Israel National News English",
-        "headline": "Report: Widespread outage hits Facebook and Instagram",
-        "ageMinutes": 34,
+        "headline": "Trump warns Iran: Act smart or the US will finish the job",
+        "ageMinutes": 22,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
           "headline_copies_source"
         ],
-        "url": "https://www.israelnationalnews.com/flashes/688380"
+        "url": "https://www.israelnationalnews.com/flashes/688383"
       },
       {
-        "sourceGroup": "ישראל היום",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "headline": "המפקדה האמריקנית בקריית גת: החזון הגדול שעומד במקום",
-        "ageMinutes": 18,
+        "sourceGroup": "ערוץ 7 / INN",
+        "source": "Israel National News English",
+        "headline": "2026 World Cup: England and Ghana play to 0-0 draw",
+        "ageMinutes": 54,
+        "status": "rejected",
+        "reason": "foreign_relevance_filtered",
+        "url": "https://www.israelnationalnews.com/flashes/688382"
+      },
+      {
+        "sourceGroup": "ynet חדשות",
+        "source": "ynet - מבזקי החדשות",
+        "canonicalSource": "ynet",
+        "headline": "קרואטיה ניצחה 0:1 את פנמה, מודריץ' רשם הופעה 200 בנבחרת",
+        "ageMinutes": 36,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_copies_source"
+          "headline_copies_source",
+          "summary_generic_or_mediated"
         ],
-        "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374"
-      },
-      {
-        "sourceGroup": "BBC",
-        "source": "BBC World",
-        "headline": "Eight sentenced to 450 years in prison over anti-ICE riot where officer was shot",
-        "ageMinutes": 28,
-        "status": "rejected",
-        "reason": "foreign_relevance_filtered",
-        "url": "https://www.bbc.co.uk/news/articles/clyedgnyn4mo?at_medium=RSS&at_campaign=rss"
-      },
-      {
-        "sourceGroup": "BBC",
-        "source": "BBC World",
-        "headline": "Germany rail network briefly halted nationwide due to IT malfunction",
-        "ageMinutes": 42,
-        "status": "rejected",
-        "reason": "foreign_relevance_filtered",
-        "url": "https://www.bbc.co.uk/news/articles/crm0ek4z7ggo?at_medium=RSS&at_campaign=rss"
+        "url": "https://www.ynet.co.il/news/article/ryw3jsofgl"
       },
       {
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
-        "headline": "\"אני אדם נורמלי\": נקבע עונשו של מבקש המקלט שהורשע באונס עיזים וטלה",
+        "headline": "מתלבשות או מתפשטות? סרטוני האופנה שחושפים יותר מדי ומביכים גולשים",
         "ageMinutes": 0,
         "status": "rejected",
         "reason": "quality_gate_rejected",
         "errorCodes": [
-          "headline_too_long",
-          "headline_looks_cut",
           "headline_copies_source"
         ],
-        "url": "https://news.walla.co.il/item/3848032"
-      },
-      {
-        "sourceGroup": "וואלה חדשות",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "headline": "הפרט המוזר בהופעה האחרונה של אלביס שהצית תיאוריית מסע בזמן",
-        "ageMinutes": 20,
-        "status": "rejected",
-        "reason": "quality_gate_rejected",
-        "errorCodes": [
-          "headline_copies_source"
-        ],
-        "url": "https://news.walla.co.il/item/3847904"
+        "url": "https://news.walla.co.il/item/3847966"
       },
       {
         "sourceGroup": "וואלה חדשות",
@@ -1447,6 +1335,19 @@
         "sourceGroup": "וואלה חדשות",
         "source": "וואלה חדשות - מבזקים",
         "canonicalSource": "וואלה",
+        "headline": "מונדיאל: קרואטיה ניצחה את נבחרת פנמה בתוצאה 1:0",
+        "ageMinutes": 0,
+        "status": "rejected",
+        "reason": "quality_gate_rejected",
+        "errorCodes": [
+          "headline_copies_source"
+        ],
+        "url": "https://news.walla.co.il/break/3848116"
+      },
+      {
+        "sourceGroup": "וואלה חדשות",
+        "source": "וואלה חדשות - מבזקים",
+        "canonicalSource": "וואלה",
         "headline": "חשד לאבולה בישראל אחרי חזרה מקונגו",
         "ageMinutes": 0,
         "status": "accepted",
@@ -1455,33 +1356,48 @@
         "url": "https://news.walla.co.il/break/3848113"
       }
     ],
-    "dedupe": [],
+    "dedupe": [
+      {
+        "clusterKey": "event:suspected_ebola_israel:",
+        "keeper": "חשד לאבולה בישראל אחרי חזרה מקונגו",
+        "relegated": "חשד לאבולה בישראל אחרי חזרה מקונגו",
+        "reason": "semantic_bridge_dedupe_newer_keeper"
+      }
+    ],
     "scanBudget": {
       "totalBudgetSeconds": 45,
       "perSourceTimeoutSeconds": 4,
-      "elapsedSeconds": 22.65,
+      "elapsedSeconds": 20.0,
       "skippedForBudget": 0
     }
   },
   "semanticPoolDedupe": {
     "mode": "simulation_only_pool_semantic_dedupe_no_feed_mutation",
-    "inputCount": 181,
+    "inputCount": 182,
     "uniqueCount": 174,
-    "relegatedDuplicateCount": 7,
+    "relegatedDuplicateCount": 8,
     "relegated": [
       {
         "clusterKey": "event:iran_hormuz_us_naval_blockade_removed",
-        "keeper": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
+        "keeper": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+        "relegated": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
+        "keeperSource": "ערוץ 7 / INN עברית",
+        "relegatedSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
+      },
+      {
+        "clusterKey": "event:iran_hormuz_us_naval_blockade_removed",
+        "keeper": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
         "relegated": "טראמפ בעצרת בפנסילבניה: מטוסים אמריקניים יכולים לטוס מעל טהרן בלי סיכון",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeperSource": "ערוץ 7 / INN עברית",
         "relegatedSource": "וואלה",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
       {
         "clusterKey": "event:iran_hormuz_us_naval_blockade_removed",
-        "keeper": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
+        "keeper": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
         "relegated": "172 אוניות חצו את מצר הורמוז מאז ההסכם ארה״ב-איראן; מחיר הנפט ירד לשפל",
-        "keeperSource": "Al Jazeera RSS מסונן מזרח תיכון",
+        "keeperSource": "ערוץ 7 / INN עברית",
         "relegatedSource": "BBC",
         "reason": "semantic_pool_dedupe_best_fresh_hard_keeper"
       },
@@ -1532,16 +1448,16 @@
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 36.08,
-    "avgAfterHealthScore": 83.83,
+    "avgHealthDelta": 36.5,
+    "avgAfterHealthScore": 83.33,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
       "latestScore": 76,
-      "rollingScore": 70.19,
-      "readyRuns": 2,
+      "rollingScore": 69.92,
+      "readyRuns": 1,
       "criticalBlockers": [
         "top12_under60_below_9",
         "fresh_candidate_supply_below_9"
@@ -1553,42 +1469,34 @@
       "latestSummaryLine": "בינוני עד בעייתי — שיפור מבני בסיווג, אבל התור עדיין מת",
       "latestReportName": "tt-rr-simulation-review-2026-06-23-1405.md",
       "window": 48,
-      "averageScore": 73.21,
-      "positiveReports": 27
+      "averageScore": 72.73,
+      "positiveReports": 26
     }
   },
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-06-24T03:28:35+03:00",
+    "generatedAt": "2026-06-24T04:39:59+03:00",
     "sourceTrendCount": 14,
-    "usedTrendCount": 14,
-    "rssItemsScanned": 146,
+    "usedTrendCount": 12,
+    "rssItemsScanned": 128,
     "webItemsScanned": 180,
-    "futureTrendAnomalyCount": 0,
-    "futureTrendAnomalies": [],
-    "topTrends": [
+    "futureTrendAnomalyCount": 2,
+    "futureTrendAnomalies": [
       {
-        "trend": "\"לכל היהודים כבר נמאס ממך\": השיחה החריגה בין טראמפ לנתניהו",
-        "clusterKey": "נמאס ממך",
-        "domain": "חדשות",
-        "externalMentions": 5,
-        "sourceCount": 4,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-23T19:22:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3848060",
-        "strength": 59.5
+        "trend": "מונדיאל: קרואטיה ניצחה את נבחרת פנמה בתוצאה 1:0",
+        "clusterKey": "קרואטיה ניצחה",
+        "latestAt": "2026-06-24T04:01:00+00:00",
+        "futureBySeconds": 8460.374
       },
+      {
+        "trend": "הסנאט בארה\"ב קרא לטראמפ להסיג את הכוחות האמריקניים מהעימות מול איראן",
+        "clusterKey": "קרא לטראמפ",
+        "latestAt": "2026-06-24T02:38:00+00:00",
+        "futureBySeconds": 3480.374
+      }
+    ],
+    "topTrends": [
       {
         "trend": "יו\"ר לשעבר ועדת המעקב העליונה של הציבור הערבי בישראל נעצר בחשד להסתה",
         "clusterKey": "נעצר בחשד",
@@ -1609,6 +1517,26 @@
         "latestAt": "2026-06-23T21:11:00+00:00",
         "sampleUrl": "https://news.walla.co.il/item/3848081",
         "strength": 51.5
+      },
+      {
+        "trend": "\"לכל היהודים כבר נמאס ממך\": השיחה החריגה בין טראמפ לנתניהו",
+        "clusterKey": "נמאס ממך",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-23T19:22:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/item/3848060",
+        "strength": 50.8
       },
       {
         "trend": "גבר בן 44 נעקץ ע\"י עקרב בערד - מצבו קשה",
@@ -1668,44 +1596,6 @@
         "strength": 42.1
       },
       {
-        "trend": "אחרי 3.5 שנים ללא איוש: חוטובלי מינתה מנהל למטה ההסברה הלאומי",
-        "clusterKey": "למטה ההסברה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-23T17:33:54+00:00",
-        "sampleUrl": "https://www.srugim.co.il/101004863-אחרי-3-5-שנים-ללא-איוש-חוטובלי-מינתה",
-        "strength": 42.1
-      },
-      {
-        "trend": "היעד החדש של המתנחלים: הקרסת הסכמי אוסלו ובנייה בשטחי A ו-B לפני הבחירות",
-        "clusterKey": "היעד החדש",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "גלובס",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-23T17:28:00+00:00",
-        "sampleUrl": "https://news.walla.co.il/item/3848047",
-        "strength": 42.1
-      },
-      {
         "trend": "\"אנחנו נמצאים בתאונת רכבת\": שגריר ישראל בארה\"ב פסימי בפתח סבב השיחות עם לבנון",
         "clusterKey": "השיחות לבנון",
         "domain": "חדשות",
@@ -1761,10 +1651,90 @@
         "latestAt": "2026-06-23T21:00:00+00:00",
         "sampleUrl": "https://www.ynet.co.il/economy/article/yokra14810928",
         "strength": 34.1
+      },
+      {
+        "trend": "ירידות בוול סטריט בהובלת מניות השבבים, מיקרון נופלת בכ-10%",
+        "clusterKey": "בוול סטריט",
+        "domain": "כלכלה",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "גלובס",
+          "דה מרקר"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-23T17:57:00+00:00",
+        "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001546729#utm_source=RSS",
+        "strength": 34.1
+      },
+      {
+        "trend": "שני פצועים בהם גבר בן 55 באורח קשה, בתאונת דרכים בסמוך לקלנסווה",
+        "clusterKey": "בתאונת דרכים",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-06-23T21:46:00+00:00",
+        "sampleUrl": "https://news.walla.co.il/break/3848088",
+        "strength": 34.1
       }
     ]
   },
   "top10Before": [
+    {
+      "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "פוליטיקה",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 4,
+      "url": "https://www.jpost.com/israel-news/article-900325",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+      "source": "וואלה חדשות - אסור לפספס",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3848032",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 71,
+      "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
     {
       "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
       "source": "וואלה חדשות",
@@ -1772,10 +1742,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 12,
+      "ageMinutes": 83,
       "url": "https://news.walla.co.il/item/3848108",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -1786,10 +1756,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 16,
+      "ageMinutes": 87,
       "url": "https://sports.walla.co.il/item/3848112",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -1800,10 +1770,24 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 16,
+      "ageMinutes": 87,
       "url": "https://news.walla.co.il/item/3847966",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 90,
+      "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374",
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -1814,10 +1798,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 110,
       "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -1828,10 +1812,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 59,
+      "ageMinutes": 131,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -1842,64 +1826,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 78,
+      "ageMinutes": 149,
       "url": "https://pagesix.com/2026/06/23/style/sydney-sweeney-flaunts-pinup-worthy-curves-in-skin-tight-burgundy-lingerie-set/",
-      "beforeRank": 6,
-      "afterRank": 6,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "כוכבת 'All My Children' מרסי ווקר חשפה מצב בריאותי קשה בעמוד תרומות חדש",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 84,
-      "url": "https://pagesix.com/2026/06/23/celebrity-news/all-my-children-star-resurfaces-with-heartbreaking-health-update-after-leaving-hollywood/",
-      "beforeRank": 7,
-      "afterRank": 7,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "פיט דיווידסון הופיע לבד בפתיחת מועדון פאצ'ה כמה חודשים אחרי פירוד מהאלמ",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 88,
-      "url": "https://pagesix.com/2026/06/23/celebrity-news/newly-single-dad-pete-davidson-at-the-opening-of-pacha/",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "בעלות ברית של ארה״ב תוהות אם תמיכתן במכונת המלחמה עוד משתלמת",
-      "source": "New York Times Middle East",
-      "canonicalSource": "NYT",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 97,
-      "url": "https://www.nytimes.com/2026/06/19/magazine/middle-east-bases-iran-war.html",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "רונאלדו חזר לכבוש: צמד ב-0:5 על אוזבקיסטן שבר את שיא מסי",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 124,
-      "url": "https://sports.walla.co.il/item/3848098",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -1922,31 +1850,59 @@
       "trendMatch": null
     },
     {
+      "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+      "source": "וואלה חדשות - אסור לפספס",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3848032",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+      "source": "ערוץ 7 / INN עברית",
+      "canonicalSource": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 59,
+      "url": "https://www.inn.co.il/flashes/1119315",
+      "beforeRank": null,
+      "afterRank": 3,
+      "delta": null,
+      "trendMatch": null
+    },
+    {
+      "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 71,
+      "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+      "beforeRank": 3,
+      "afterRank": 4,
+      "delta": -1,
+      "trendMatch": null
+    },
+    {
       "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
       "source": "וואלה חדשות",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 12,
+      "ageMinutes": 83,
       "url": "https://news.walla.co.il/item/3848108",
-      "beforeRank": 1,
-      "afterRank": 2,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
-      "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 39,
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
       "beforeRank": 4,
-      "afterRank": 3,
-      "delta": 1,
+      "afterRank": 5,
+      "delta": -1,
       "trendMatch": null
     },
     {
@@ -1956,11 +1912,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 97,
+      "ageMinutes": 168,
       "url": "https://www.nytimes.com/2026/06/19/magazine/middle-east-bases-iran-war.html",
-      "beforeRank": 9,
-      "afterRank": 4,
-      "delta": 5,
+      "beforeRank": 13,
+      "afterRank": 6,
+      "delta": 7,
       "trendMatch": null
     },
     {
@@ -1970,11 +1926,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/middle-east/iran-news/article-900316",
-      "beforeRank": 13,
-      "afterRank": 5,
-      "delta": 8,
+      "beforeRank": 17,
+      "afterRank": 7,
+      "delta": 10,
       "trendMatch": null
     },
     {
@@ -1984,68 +1940,12 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/israel-news/article-900317",
-      "beforeRank": 11,
-      "afterRank": 6,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "הוויכוח הסתיים: 150 אלף חברי ליכוד יצביעו בפריימריז על מקומות נתניהו",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 128,
-      "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900313",
-      "beforeRank": 12,
-      "afterRank": 7,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "ועדת חקירה של האו״ם: ישראל מכוונת במתכוון לרצח עם של ילדים בעזה",
-      "source": "The Guardian Middle East",
-      "canonicalSource": "Guardian",
-      "category": "חדשות",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 332,
-      "url": "https://www.theguardian.com/world/2026/jun/23/israel-deliberately-targeting-gaza-children-to-commit-genocide-un-inquiry-finds",
-      "beforeRank": 32,
+      "beforeRank": 15,
       "afterRank": 8,
-      "delta": 24,
-      "trendMatch": {
-        "trend": "ועדת האו\"ם מאשימה: רצח עם בעזה, ישראל פגעה במכוון בילדים פלסטינים",
-        "clusterKey": "האו מאשימה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "הארץ"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-23T20:27:59+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hj6zlndmfg",
-        "overlapTokens": [
-          "בילדים",
-          "בעזה",
-          "ועדת",
-          "פלסטינים",
-          "רצח"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 58.32,
-        "boost": 14.0
-      }
+      "delta": 7,
+      "trendMatch": null
     },
     {
       "headline": "משטרת ישראל עצרה את מוחמד ברכה בחשד להסתה בנאום מ-2022",
@@ -2054,11 +1954,11 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 316,
+      "ageMinutes": 387,
       "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900311",
-      "beforeRank": 21,
+      "beforeRank": 25,
       "afterRank": 9,
-      "delta": 12,
+      "delta": 16,
       "trendMatch": {
         "trend": "יו\"ר לשעבר ועדת המעקב העליונה של הציבור הערבי בישראל נעצר בחשד להסתה",
         "clusterKey": "נעצר בחשד",
@@ -2093,21 +1993,91 @@
       }
     },
     {
-      "headline": "צבא ארה״ב החל לפנות מתדלקים מנתב״ג כדי לאפשר טיסות אזרחיות בקיץ",
-      "source": "מעריב - חדשות",
-      "canonicalSource": "מעריב",
-      "category": "ביטחון",
+      "headline": "ועדת חקירה של האו״ם: ישראל מכוונת במתכוון לרצח עם של ילדים בעזה",
+      "source": "The Guardian Middle East",
+      "canonicalSource": "Guardian",
+      "category": "חדשות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 324,
-      "url": "https://www.maariv.co.il/news/israel/article-1336658",
-      "beforeRank": 28,
+      "ageMinutes": 403,
+      "url": "https://www.theguardian.com/world/2026/jun/23/israel-deliberately-targeting-gaza-children-to-commit-genocide-un-inquiry-finds",
+      "beforeRank": 36,
       "afterRank": 10,
-      "delta": 18,
-      "trendMatch": null
+      "delta": 26,
+      "trendMatch": {
+        "trend": "ועדת האו\"ם מאשימה: רצח עם בעזה, ישראל פגעה במכוון בילדים פלסטינים",
+        "clusterKey": "האו מאשימה",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-23T20:27:59+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/hj6zlndmfg",
+        "overlapTokens": [
+          "בילדים",
+          "בעזה",
+          "ועדת",
+          "פלסטינים",
+          "רצח"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 58.32,
+        "boost": 14.0
+      }
     }
   ],
   "top20Before": [
+    {
+      "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "פוליטיקה",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 4,
+      "url": "https://www.jpost.com/israel-news/article-900325",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+      "source": "וואלה חדשות - אסור לפספס",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3848032",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 71,
+      "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
     {
       "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
       "source": "וואלה חדשות",
@@ -2115,10 +2085,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 12,
+      "ageMinutes": 83,
       "url": "https://news.walla.co.il/item/3848108",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -2129,10 +2099,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 16,
+      "ageMinutes": 87,
       "url": "https://sports.walla.co.il/item/3848112",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -2143,10 +2113,24 @@
       "category": "תרבות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 16,
+      "ageMinutes": 87,
       "url": "https://news.walla.co.il/item/3847966",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 6,
+      "afterRank": 6,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 90,
+      "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374",
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": null
     },
@@ -2157,10 +2141,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 39,
+      "ageMinutes": 110,
       "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": null
     },
@@ -2171,10 +2155,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 59,
+      "ageMinutes": 131,
       "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
       "trendMatch": null
     },
@@ -2185,10 +2169,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 78,
+      "ageMinutes": 149,
       "url": "https://pagesix.com/2026/06/23/style/sydney-sweeney-flaunts-pinup-worthy-curves-in-skin-tight-burgundy-lingerie-set/",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -2199,10 +2183,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 84,
+      "ageMinutes": 155,
       "url": "https://pagesix.com/2026/06/23/celebrity-news/all-my-children-star-resurfaces-with-heartbreaking-health-update-after-leaving-hollywood/",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": null
     },
@@ -2213,10 +2197,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 88,
+      "ageMinutes": 159,
       "url": "https://pagesix.com/2026/06/23/celebrity-news/newly-single-dad-pete-davidson-at-the-opening-of-pacha/",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -2227,10 +2211,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 97,
+      "ageMinutes": 168,
       "url": "https://www.nytimes.com/2026/06/19/magazine/middle-east-bases-iran-war.html",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -2241,10 +2225,10 @@
       "category": "ספורט",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 124,
+      "ageMinutes": 195,
       "url": "https://sports.walla.co.il/item/3848098",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": null
     },
@@ -2255,10 +2239,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/israel-news/article-900317",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -2269,10 +2253,10 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900313",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -2283,10 +2267,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/middle-east/iran-news/article-900316",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -2297,10 +2281,10 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://news.walla.co.il/item/3848094",
-      "beforeRank": 14,
-      "afterRank": 14,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -2311,10 +2295,10 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 130,
+      "ageMinutes": 201,
       "url": "https://pagesix.com/2026/06/23/entertainment/heartbreak-behind-the-scenes-at-today-for-savannah-guthrie/",
-      "beforeRank": 15,
-      "afterRank": 15,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -2325,64 +2309,8 @@
       "category": "רכילות",
       "class": "soft",
       "strictHard": false,
-      "ageMinutes": 132,
+      "ageMinutes": 204,
       "url": "https://www.dailymail.com/tvshowbiz/article-15923773/Ellie-Watkins-wardrobe-malfunction-WAGs-World-Cup.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 16,
-      "afterRank": 16,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "דייויד בקהאם הביע תסכול ביציע ב-0:0 של אנגליה מול גאנה לצד בנו קרוז",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 135,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15924287/David-Beckham-cheers-Three-Lions-Cruz-Jackie-Apostel-England.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 17,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "קוסטין האצי, אקסית קירגיוס, נצפתה מתחבקת עם דין קונטוס שריצה מאסר על חטיפה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 136,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15918433/Nick-Kyrgios-ex-Costeen-Hatzi-Dean-Contos-Roxy-Jacenko.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 18,
-      "afterRank": 18,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "אנגליה נעצרה ב-0:0 מול גאנה אך שמרה על ראשות בית 12 במונדיאל",
-      "source": "הארץ - ספורט",
-      "canonicalSource": "הארץ",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 139,
-      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-24/ty-article-game/0000019e-f679-d4c5-a9fe-ff7b9f120000",
-      "beforeRank": 19,
-      "afterRank": 19,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "בקהאם נכח ביציע לצד קרוז במשחק אנגליה נגד גאנה ימים אחרי הסכסוך עם ברוקלין",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 141,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/david-beckham-cruz-england-ghana-37338533",
       "beforeRank": 20,
       "afterRank": 20,
       "delta": 0,
@@ -2405,31 +2333,59 @@
       "trendMatch": null
     },
     {
+      "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+      "source": "וואלה חדשות - אסור לפספס",
+      "canonicalSource": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 5,
+      "url": "https://news.walla.co.il/item/3848032",
+      "beforeRank": 2,
+      "afterRank": 2,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
+      "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+      "source": "ערוץ 7 / INN עברית",
+      "canonicalSource": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 59,
+      "url": "https://www.inn.co.il/flashes/1119315",
+      "beforeRank": null,
+      "afterRank": 3,
+      "delta": null,
+      "trendMatch": null
+    },
+    {
+      "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 71,
+      "url": "https://www.israelhayom.co.il/news/education/article/20831101",
+      "beforeRank": 3,
+      "afterRank": 4,
+      "delta": -1,
+      "trendMatch": null
+    },
+    {
       "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
       "source": "וואלה חדשות",
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 12,
+      "ageMinutes": 83,
       "url": "https://news.walla.co.il/item/3848108",
-      "beforeRank": 1,
-      "afterRank": 2,
-      "delta": -1,
-      "trendMatch": null
-    },
-    {
-      "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 39,
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/6/23/un-begins-evacuation-of-11000-sailors-stranded-in-strait-of-hormuz?traffic_source=rss",
       "beforeRank": 4,
-      "afterRank": 3,
-      "delta": 1,
+      "afterRank": 5,
+      "delta": -1,
       "trendMatch": null
     },
     {
@@ -2439,11 +2395,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 97,
+      "ageMinutes": 168,
       "url": "https://www.nytimes.com/2026/06/19/magazine/middle-east-bases-iran-war.html",
-      "beforeRank": 9,
-      "afterRank": 4,
-      "delta": 5,
+      "beforeRank": 13,
+      "afterRank": 6,
+      "delta": 7,
       "trendMatch": null
     },
     {
@@ -2453,11 +2409,11 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/middle-east/iran-news/article-900316",
-      "beforeRank": 13,
-      "afterRank": 5,
-      "delta": 8,
+      "beforeRank": 17,
+      "afterRank": 7,
+      "delta": 10,
       "trendMatch": null
     },
     {
@@ -2467,68 +2423,12 @@
       "category": "ביטחון",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 128,
+      "ageMinutes": 199,
       "url": "https://www.jpost.com/israel-news/article-900317",
-      "beforeRank": 11,
-      "afterRank": 6,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "הוויכוח הסתיים: 150 אלף חברי ליכוד יצביעו בפריימריז על מקומות נתניהו",
-      "source": "The Jerusalem Post - Israel News",
-      "canonicalSource": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 128,
-      "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900313",
-      "beforeRank": 12,
-      "afterRank": 7,
-      "delta": 5,
-      "trendMatch": null
-    },
-    {
-      "headline": "ועדת חקירה של האו״ם: ישראל מכוונת במתכוון לרצח עם של ילדים בעזה",
-      "source": "The Guardian Middle East",
-      "canonicalSource": "Guardian",
-      "category": "חדשות",
-      "class": "hard",
-      "strictHard": true,
-      "ageMinutes": 332,
-      "url": "https://www.theguardian.com/world/2026/jun/23/israel-deliberately-targeting-gaza-children-to-commit-genocide-un-inquiry-finds",
-      "beforeRank": 32,
+      "beforeRank": 15,
       "afterRank": 8,
-      "delta": 24,
-      "trendMatch": {
-        "trend": "ועדת האו\"ם מאשימה: רצח עם בעזה, ישראל פגעה במכוון בילדים פלסטינים",
-        "clusterKey": "האו מאשימה",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "הארץ"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-06-23T20:27:59+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hj6zlndmfg",
-        "overlapTokens": [
-          "בילדים",
-          "בעזה",
-          "ועדת",
-          "פלסטינים",
-          "רצח"
-        ],
-        "entityOverlapTokens": [],
-        "eventOverlapTokens": [],
-        "score": 58.32,
-        "boost": 14.0
-      }
+      "delta": 7,
+      "trendMatch": null
     },
     {
       "headline": "משטרת ישראל עצרה את מוחמד ברכה בחשד להסתה בנאום מ-2022",
@@ -2537,11 +2437,11 @@
       "category": "פוליטיקה",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 316,
+      "ageMinutes": 387,
       "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900311",
-      "beforeRank": 21,
+      "beforeRank": 25,
       "afterRank": 9,
-      "delta": 12,
+      "delta": 16,
       "trendMatch": {
         "trend": "יו\"ר לשעבר ועדת המעקב העליונה של הציבור הערבי בישראל נעצר בחשד להסתה",
         "clusterKey": "נעצר בחשד",
@@ -2576,229 +2476,17 @@
       }
     },
     {
-      "headline": "צבא ארה״ב החל לפנות מתדלקים מנתב״ג כדי לאפשר טיסות אזרחיות בקיץ",
-      "source": "מעריב - חדשות",
-      "canonicalSource": "מעריב",
-      "category": "ביטחון",
+      "headline": "ועדת חקירה של האו״ם: ישראל מכוונת במתכוון לרצח עם של ילדים בעזה",
+      "source": "The Guardian Middle East",
+      "canonicalSource": "Guardian",
+      "category": "חדשות",
       "class": "hard",
       "strictHard": true,
-      "ageMinutes": 324,
-      "url": "https://www.maariv.co.il/news/israel/article-1336658",
-      "beforeRank": 28,
+      "ageMinutes": 403,
+      "url": "https://www.theguardian.com/world/2026/jun/23/israel-deliberately-targeting-gaza-children-to-commit-genocide-un-inquiry-finds",
+      "beforeRank": 36,
       "afterRank": 10,
-      "delta": 18,
-      "trendMatch": null
-    },
-    {
-      "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
-      "source": "וואלה ספורט",
-      "canonicalSource": "וואלה",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 16,
-      "url": "https://sports.walla.co.il/item/3848112",
-      "beforeRank": 2,
-      "afterRank": 11,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 59,
-      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
-      "beforeRank": 5,
-      "afterRank": 12,
-      "delta": -7,
-      "trendMatch": null
-    },
-    {
-      "headline": "סידני סוויני מציגה קמפיין למותג ההלבשה החדש שלה בלבוש בורגון",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 78,
-      "url": "https://pagesix.com/2026/06/23/style/sydney-sweeney-flaunts-pinup-worthy-curves-in-skin-tight-burgundy-lingerie-set/",
-      "beforeRank": 6,
-      "afterRank": 13,
-      "delta": -7,
-      "trendMatch": null
-    },
-    {
-      "headline": "כוכבת 'All My Children' מרסי ווקר חשפה מצב בריאותי קשה בעמוד תרומות חדש",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 84,
-      "url": "https://pagesix.com/2026/06/23/celebrity-news/all-my-children-star-resurfaces-with-heartbreaking-health-update-after-leaving-hollywood/",
-      "beforeRank": 7,
-      "afterRank": 14,
-      "delta": -7,
-      "trendMatch": null
-    },
-    {
-      "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף",
-      "source": "וואלה חדשות - אסור לפספס",
-      "canonicalSource": "וואלה",
-      "category": "תרבות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 16,
-      "url": "https://news.walla.co.il/item/3847966",
-      "beforeRank": 3,
-      "afterRank": 15,
-      "delta": -12,
-      "trendMatch": null
-    },
-    {
-      "headline": "אנגליה נעצרה ב-0:0 מול גאנה אך שמרה על ראשות בית 12 במונדיאל",
-      "source": "הארץ - ספורט",
-      "canonicalSource": "הארץ",
-      "category": "ספורט",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 139,
-      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-24/ty-article-game/0000019e-f679-d4c5-a9fe-ff7b9f120000",
-      "beforeRank": 19,
-      "afterRank": 16,
-      "delta": 3,
-      "trendMatch": null
-    },
-    {
-      "headline": "פיט דיווידסון הופיע לבד בפתיחת מועדון פאצ'ה כמה חודשים אחרי פירוד מהאלמ",
-      "source": "Page Six רכילות חו״ל",
-      "canonicalSource": "Page Six",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 88,
-      "url": "https://pagesix.com/2026/06/23/celebrity-news/newly-single-dad-pete-davidson-at-the-opening-of-pacha/",
-      "beforeRank": 8,
-      "afterRank": 17,
-      "delta": -9,
-      "trendMatch": null
-    },
-    {
-      "headline": "מייגן פיקפורד ואלי ווטקינס הובילו את ה-WAGs של אנגליה ב-0:0 מול גאנה",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 132,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15923773/Ellie-Watkins-wardrobe-malfunction-WAGs-World-Cup.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 16,
-      "afterRank": 18,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
-      "headline": "דייויד בקהאם הביע תסכול ביציע ב-0:0 של אנגליה מול גאנה לצד בנו קרוז",
-      "source": "Daily Mail TVShowbiz רכילות חו״ל",
-      "canonicalSource": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 135,
-      "url": "https://www.dailymail.com/tvshowbiz/article-15924287/David-Beckham-cheers-Three-Lions-Cruz-Jackie-Apostel-England.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-      "beforeRank": 17,
-      "afterRank": 19,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
-      "headline": "בקהאם נכח ביציע לצד קרוז במשחק אנגליה נגד גאנה ימים אחרי הסכסוך עם ברוקלין",
-      "source": "Mirror Celebs רכילות חו״ל",
-      "canonicalSource": "Mirror",
-      "category": "רכילות",
-      "class": "soft",
-      "strictHard": false,
-      "ageMinutes": 141,
-      "url": "https://www.mirror.co.uk/3am/celebrity-news/david-beckham-cruz-england-ghana-37338533",
-      "beforeRank": 20,
-      "afterRank": 20,
-      "delta": 0,
-      "trendMatch": null
-    }
-  ],
-  "movement": [
-    {
-      "headline": "חשד לאבולה בישראל אחרי חזרה מקונגו",
-      "source": "וואלה",
-      "category": "חדשות",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": null,
-      "afterRank": 1
-    },
-    {
-      "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
-      "source": "וואלה",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 1,
-      "afterRank": 2
-    },
-    {
-      "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 4,
-      "afterRank": 3
-    },
-    {
-      "headline": "בעלות ברית של ארה״ב תוהות אם תמיכתן במכונת המלחמה עוד משתלמת",
-      "source": "NYT",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 9,
-      "afterRank": 4
-    },
-    {
-      "headline": "סנאט ארה\"ב ברוב 50-48 הגביל את הסמכויות לפעולה צבאית נגד איראן",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 13,
-      "afterRank": 5
-    },
-    {
-      "headline": "חטופה לשעבר תקפה את הדו\"ח של האו\"ם על אלימות ב-7 באוקטובר",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 11,
-      "afterRank": 6
-    },
-    {
-      "headline": "הוויכוח הסתיים: 150 אלף חברי ליכוד יצביעו בפריימריז על מקומות נתניהו",
-      "source": "Jerusalem Post",
-      "category": "פוליטיקה",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 12,
-      "afterRank": 7
-    },
-    {
-      "headline": "ועדת חקירה של האו״ם: ישראל מכוונת במתכוון לרצח עם של ילדים בעזה",
-      "source": "Guardian",
-      "category": "חדשות",
-      "class": "hard",
+      "delta": 26,
       "trendMatch": {
         "trend": "ועדת האו\"ם מאשימה: רצח עם בעזה, ישראל פגעה במכוון בילדים פלסטינים",
         "clusterKey": "האו מאשימה",
@@ -2827,8 +2515,220 @@
         "eventOverlapTokens": [],
         "score": 58.32,
         "boost": 14.0
-      },
+      }
+    },
+    {
+      "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+      "source": "The Jerusalem Post - Israel News",
+      "canonicalSource": "Jerusalem Post",
+      "category": "פוליטיקה",
+      "class": "other",
+      "strictHard": false,
+      "ageMinutes": 4,
+      "url": "https://www.jpost.com/israel-news/article-900325",
+      "beforeRank": 1,
+      "afterRank": 11,
+      "delta": -10,
+      "trendMatch": null
+    },
+    {
+      "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ביטחון",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 90,
+      "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374",
+      "beforeRank": 7,
+      "afterRank": 12,
+      "delta": -5,
+      "trendMatch": null
+    },
+    {
+      "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 131,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616",
+      "beforeRank": 9,
+      "afterRank": 13,
+      "delta": -4,
+      "trendMatch": null
+    },
+    {
+      "headline": "סידני סוויני מציגה קמפיין למותג ההלבשה החדש שלה בלבוש בורגון",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 149,
+      "url": "https://pagesix.com/2026/06/23/style/sydney-sweeney-flaunts-pinup-worthy-curves-in-skin-tight-burgundy-lingerie-set/",
+      "beforeRank": 10,
+      "afterRank": 14,
+      "delta": -4,
+      "trendMatch": null
+    },
+    {
+      "headline": "כוכבת 'All My Children' מרסי ווקר חשפה מצב בריאותי קשה בעמוד תרומות חדש",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 155,
+      "url": "https://pagesix.com/2026/06/23/celebrity-news/all-my-children-star-resurfaces-with-heartbreaking-health-update-after-leaving-hollywood/",
+      "beforeRank": 11,
+      "afterRank": 15,
+      "delta": -4,
+      "trendMatch": null
+    },
+    {
+      "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
+      "source": "וואלה ספורט",
+      "canonicalSource": "וואלה",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 87,
+      "url": "https://sports.walla.co.il/item/3848112",
+      "beforeRank": 5,
+      "afterRank": 16,
+      "delta": -11,
+      "trendMatch": null
+    },
+    {
+      "headline": "פיט דיווידסון הופיע לבד בפתיחת מועדון פאצ'ה כמה חודשים אחרי פירוד מהאלמ",
+      "source": "Page Six רכילות חו״ל",
+      "canonicalSource": "Page Six",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 159,
+      "url": "https://pagesix.com/2026/06/23/celebrity-news/newly-single-dad-pete-davidson-at-the-opening-of-pacha/",
+      "beforeRank": 12,
+      "afterRank": 17,
+      "delta": -5,
+      "trendMatch": null
+    },
+    {
+      "headline": "צבא ארה״ב החל לפנות מתדלקים מנתב״ג כדי לאפשר טיסות אזרחיות בקיץ",
+      "source": "מעריב - חדשות",
+      "canonicalSource": "מעריב",
+      "category": "ביטחון",
+      "class": "hard",
+      "strictHard": true,
+      "ageMinutes": 395,
+      "url": "https://www.maariv.co.il/news/israel/article-1336658",
       "beforeRank": 32,
+      "afterRank": 18,
+      "delta": 14,
+      "trendMatch": null
+    },
+    {
+      "headline": "אנגליה נעצרה ב-0:0 מול גאנה אך שמרה על ראשות בית 12 במונדיאל",
+      "source": "הארץ - ספורט",
+      "canonicalSource": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 210,
+      "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-24/ty-article-game/0000019e-f679-d4c5-a9fe-ff7b9f120000",
+      "beforeRank": 23,
+      "afterRank": 19,
+      "delta": 4,
+      "trendMatch": null
+    },
+    {
+      "headline": "מייגן פיקפורד ואלי ווטקינס הובילו את ה-WAGs של אנגליה ב-0:0 מול גאנה",
+      "source": "Daily Mail TVShowbiz רכילות חו״ל",
+      "canonicalSource": "Daily Mail",
+      "category": "רכילות",
+      "class": "soft",
+      "strictHard": false,
+      "ageMinutes": 204,
+      "url": "https://www.dailymail.com/tvshowbiz/article-15923773/Ellie-Watkins-wardrobe-malfunction-WAGs-World-Cup.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+      "beforeRank": 20,
+      "afterRank": 20,
+      "delta": 0,
+      "trendMatch": null
+    }
+  ],
+  "movement": [
+    {
+      "headline": "חשד לאבולה בישראל אחרי חזרה מקונגו",
+      "source": "וואלה",
+      "category": "חדשות",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": null,
+      "afterRank": 1
+    },
+    {
+      "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים",
+      "source": "וואלה",
+      "category": "פלילים",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 2,
+      "afterRank": 2
+    },
+    {
+      "headline": "נשיא ארצות הברית, דונלד טראמפ, התייחס במהלך עצרת בחירות פוליטית",
+      "source": "ערוץ 7 / INN עברית",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": null,
+      "afterRank": 3
+    },
+    {
+      "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי",
+      "source": "ישראל היום",
+      "category": "חדשות",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 3,
+      "afterRank": 4
+    },
+    {
+      "headline": "50 סנאטורים חצו קווים מפלגתיים: דרשו מטראמפ לסיים את המעורבות באיראן",
+      "source": "וואלה",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 4,
+      "afterRank": 5
+    },
+    {
+      "headline": "בעלות ברית של ארה״ב תוהות אם תמיכתן במכונת המלחמה עוד משתלמת",
+      "source": "NYT",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 13,
+      "afterRank": 6
+    },
+    {
+      "headline": "סנאט ארה\"ב ברוב 50-48 הגביל את הסמכויות לפעולה צבאית נגד איראן",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 17,
+      "afterRank": 7
+    },
+    {
+      "headline": "חטופה לשעבר תקפה את הדו\"ח של האו\"ם על אלימות ב-7 באוקטובר",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 15,
       "afterRank": 8
     },
     {
@@ -2868,26 +2768,63 @@
         "score": 85.61,
         "boost": 14.0
       },
-      "beforeRank": 21,
+      "beforeRank": 25,
       "afterRank": 9
     },
     {
-      "headline": "צבא ארה״ב החל לפנות מתדלקים מנתב״ג כדי לאפשר טיסות אזרחיות בקיץ",
-      "source": "מעריב",
-      "category": "ביטחון",
+      "headline": "ועדת חקירה של האו״ם: ישראל מכוונת במתכוון לרצח עם של ילדים בעזה",
+      "source": "Guardian",
+      "category": "חדשות",
       "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 28,
+      "trendMatch": {
+        "trend": "ועדת האו\"ם מאשימה: רצח עם בעזה, ישראל פגעה במכוון בילדים פלסטינים",
+        "clusterKey": "האו מאשימה",
+        "domain": "חדשות",
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "הארץ"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-06-23T20:27:59+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/hj6zlndmfg",
+        "overlapTokens": [
+          "בילדים",
+          "בעזה",
+          "ועדת",
+          "פלסטינים",
+          "רצח"
+        ],
+        "entityOverlapTokens": [],
+        "eventOverlapTokens": [],
+        "score": 58.32,
+        "boost": 14.0
+      },
+      "beforeRank": 36,
       "afterRank": 10
     },
     {
-      "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
-      "source": "וואלה",
-      "category": "ספורט",
+      "headline": "ראש השב״כ זיני ביטל את אירוע שבוע הגאווה - והעביר את התקציב לארגון הכללי",
+      "source": "Jerusalem Post",
+      "category": "פוליטיקה",
+      "class": "other",
+      "trendMatch": null,
+      "beforeRank": 1,
+      "afterRank": 11
+    },
+    {
+      "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד",
+      "source": "ישראל היום",
+      "category": "ביטחון",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 2,
-      "afterRank": 11
+      "beforeRank": 7,
+      "afterRank": 12
     },
     {
       "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה",
@@ -2895,8 +2832,8 @@
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 5,
-      "afterRank": 12
+      "beforeRank": 9,
+      "afterRank": 13
     },
     {
       "headline": "סידני סוויני מציגה קמפיין למותג ההלבשה החדש שלה בלבוש בורגון",
@@ -2904,8 +2841,8 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 6,
-      "afterRank": 13
+      "beforeRank": 10,
+      "afterRank": 14
     },
     {
       "headline": "כוכבת 'All My Children' מרסי ווקר חשפה מצב בריאותי קשה בעמוד תרומות חדש",
@@ -2913,25 +2850,16 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 7,
-      "afterRank": 14
-    },
-    {
-      "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף",
-      "source": "וואלה",
-      "category": "תרבות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 3,
+      "beforeRank": 11,
       "afterRank": 15
     },
     {
-      "headline": "אנגליה נעצרה ב-0:0 מול גאנה אך שמרה על ראשות בית 12 במונדיאל",
-      "source": "הארץ",
+      "headline": "התיקו מול גאנה הציף את הביקורת באנגליה: חסרי דמיון ופיניש",
+      "source": "וואלה",
       "category": "ספורט",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 19,
+      "beforeRank": 5,
       "afterRank": 16
     },
     {
@@ -2940,30 +2868,30 @@
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
-      "beforeRank": 8,
+      "beforeRank": 12,
       "afterRank": 17
+    },
+    {
+      "headline": "צבא ארה״ב החל לפנות מתדלקים מנתב״ג כדי לאפשר טיסות אזרחיות בקיץ",
+      "source": "מעריב",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 32,
+      "afterRank": 18
+    },
+    {
+      "headline": "אנגליה נעצרה ב-0:0 מול גאנה אך שמרה על ראשות בית 12 במונדיאל",
+      "source": "הארץ",
+      "category": "ספורט",
+      "class": "soft",
+      "trendMatch": null,
+      "beforeRank": 23,
+      "afterRank": 19
     },
     {
       "headline": "מייגן פיקפורד ואלי ווטקינס הובילו את ה-WAGs של אנגליה ב-0:0 מול גאנה",
       "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 16,
-      "afterRank": 18
-    },
-    {
-      "headline": "דייויד בקהאם הביע תסכול ביציע ב-0:0 של אנגליה מול גאנה לצד בנו קרוז",
-      "source": "Daily Mail",
-      "category": "רכילות",
-      "class": "soft",
-      "trendMatch": null,
-      "beforeRank": 17,
-      "afterRank": 19
-    },
-    {
-      "headline": "בקהאם נכח ביציע לצד קרוז במשחק אנגליה נגד גאנה ימים אחרי הסכסוך עם ברוקלין",
-      "source": "Mirror",
       "category": "רכילות",
       "class": "soft",
       "trendMatch": null,
@@ -2994,12 +2922,12 @@
   "operatorInstruction": "Use only this TT RR simulation feed for review. Do not inspect, judge, or act on the regular public feed for this experiment. This page and JSON are read-only and never publish to feed.json.",
   "hebrewInstruction": "עליזה: לעבוד רק על פיד הסימולציה של TT RR. לא לעבור יותר על הפיד הרגיל לצורך הניסוי הזה. לקרוא, להשוות ולדווח רק מהסימולציה — בלי פרסום ובלי שינוי feed.json.",
   "sourceVisibilitySimulation": {
-    "generatedAt": "2026-06-24T00:29:04.120698+00:00",
+    "generatedAt": "2026-06-24T01:40:25.726608+00:00",
     "mode": "tt_rr_source_visibility_simulation_only",
     "hebrewInstruction": "עליזה: להשתמש בדוח המקורות הזה רק עבור סימולציית TT RR. לא לתקן או לפרסם לפיד הראשי.",
     "summary": {
-      "source_live_qa_bridge_needed": 7,
-      "ok": 2,
+      "source_live_qa_bridge_needed": 6,
+      "ok": 3,
       "not_configured": 4,
       "source_live_visible_missing": 1,
       "official_source_stale": 2
@@ -3032,13 +2960,13 @@
         "qaRejectedCount": 137,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-23T22:09:04+00:00",
-        "latestRawAgeHours": 2.33,
+        "latestRawAgeHours": 3.52,
         "latestValidAt": "2026-06-23T22:09:04+00:00",
-        "latestValidAgeHours": 2.33,
+        "latestValidAgeHours": 3.52,
         "visibleMain": {
           "count": 9,
           "latestAt": "2026-06-23T22:09:04+00:00",
-          "latestAgeHours": 2.33,
+          "latestAgeHours": 3.52,
           "sample": [
             {
               "publishedAt": "2026-06-23T22:09:04+00:00",
@@ -3157,13 +3085,13 @@
         "qaRejectedCount": 128,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-23T22:27:00+00:00",
-        "latestRawAgeHours": 2.03,
+        "latestRawAgeHours": 3.22,
         "latestValidAt": "2026-06-23T22:27:00+00:00",
-        "latestValidAgeHours": 2.03,
+        "latestValidAgeHours": 3.22,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-22T20:38:00+00:00",
-          "latestAgeHours": 27.85,
+          "latestAgeHours": 29.04,
           "sample": [
             {
               "publishedAt": "2026-06-22T20:38:00+00:00",
@@ -3279,19 +3207,19 @@
           "ynet - כל ערוץ מדע וטבע",
           "ynet - כל ערוץ יחסים"
         ],
-        "rawCandidateCount": 270,
-        "validCandidateCount": 270,
+        "rawCandidateCount": 269,
+        "validCandidateCount": 269,
         "qaPassSimulationCount": 2,
-        "qaRejectedCount": 268,
+        "qaRejectedCount": 267,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-23T23:00:37+00:00",
-        "latestRawAgeHours": 1.47,
-        "latestValidAt": "2026-06-23T23:00:37+00:00",
-        "latestValidAgeHours": 1.47,
+        "latestRawAt": "2026-06-24T01:03:16+00:00",
+        "latestRawAgeHours": 0.62,
+        "latestValidAt": "2026-06-24T01:03:16+00:00",
+        "latestValidAgeHours": 0.62,
         "visibleMain": {
           "count": 22,
           "latestAt": "2026-06-23T17:51:46+00:00",
-          "latestAgeHours": 6.62,
+          "latestAgeHours": 7.81,
           "sample": [
             {
               "publishedAt": "2026-06-23T17:51:46+00:00",
@@ -3313,7 +3241,7 @@
         "visibleBreaking": {
           "count": 25,
           "latestAt": "2026-06-23T12:32:31+00:00",
-          "latestAgeHours": 11.94,
+          "latestAgeHours": 13.13,
           "sample": [
             {
               "publishedAt": "2026-06-23T12:32:31+00:00",
@@ -3458,15 +3386,20 @@
         "qaPassSimulationCount": 2,
         "qaRejectedCount": 136,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-24T00:29:13+00:00",
+        "latestRawAt": "2026-06-24T01:40:33+00:00",
         "latestRawAgeHours": 0.0,
-        "latestValidAt": "2026-06-24T00:29:13+00:00",
+        "latestValidAt": "2026-06-24T01:40:33+00:00",
         "latestValidAgeHours": 0.0,
         "visibleMain": {
-          "count": 14,
-          "latestAt": "2026-06-24T00:16:00+00:00",
-          "latestAgeHours": 0.22,
+          "count": 15,
+          "latestAt": "2026-06-24T01:34:30+00:00",
+          "latestAgeHours": 0.1,
           "sample": [
+            {
+              "publishedAt": "2026-06-24T01:34:30+00:00",
+              "source": "וואלה חדשות - אסור לפספס",
+              "headline": "בית משפט בצרפת גזר 30 חודשי מאסר על מבקש מקלט אפגני שהתעלל בעיזים"
+            },
             {
               "publishedAt": "2026-06-24T00:16:00+00:00",
               "source": "וואלה חדשות",
@@ -3476,11 +3409,6 @@
               "publishedAt": "2026-06-24T00:12:20+00:00",
               "source": "וואלה חדשות - אסור לפספס",
               "headline": "טרנד חדש ברשתות: יוצרות תוכן מצלמות סרטוני לבוש שמציגים גוף חשוף"
-            },
-            {
-              "publishedAt": "2026-06-23T22:20:00+00:00",
-              "source": "וואלה חדשות",
-              "headline": "טראמפ בעצרת בפנסילבניה: מטוסים אמריקניים יכולים לטוס מעל טהרן בלי סיכון"
             }
           ]
         },
@@ -3496,7 +3424,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-24T03:29:11+03:00",
+            "publishedAt": "2026-06-24T04:40:31+03:00",
             "title": "מתלבשות או מתפשטות? סרטוני האופנה שחושפים יותר מדי ומביכים גולשים",
             "url": "https://news.walla.co.il/item/3847966"
           },
@@ -3504,7 +3432,7 @@
             "status": "qa_rejected",
             "reason": "needs editor bridge / quality rewrite",
             "source": "וואלה חדשות",
-            "publishedAt": "2026-06-24T03:29:11+03:00",
+            "publishedAt": "2026-06-24T04:40:31+03:00",
             "title": "\"אני אדם נורמלי\": נקבע עונשו של מבקש המקלט שהורשע באונס עיזים וטלה",
             "url": "https://news.walla.co.il/item/3848032"
           },
@@ -3562,40 +3490,40 @@
         "id": "israel_hayom",
         "label": "ישראל היום",
         "expectedRoute": "main",
-        "status": "source_live_qa_bridge_needed",
-        "problem": "יש מועמדים טריים אבל כולם נדחים/מסוננים לפני כרטיס פוינטה",
+        "status": "ok",
+        "problem": "אין פער חריג בסימולציה",
         "treatment": "Simulation-only: detect fresh Israel Hayom RSS that is not represented in visible cards and require editor/QA bridge, not RSS cleanup.",
         "configuredSources": [
           "ישראל היום - כל הכתבות"
         ],
-        "rawCandidateCount": 12,
-        "validCandidateCount": 12,
+        "rawCandidateCount": 0,
+        "validCandidateCount": 0,
         "qaPassSimulationCount": 0,
-        "qaRejectedCount": 12,
+        "qaRejectedCount": 0,
         "relevanceFilteredCount": 0,
-        "latestRawAt": "2026-06-24T00:09:37+00:00",
-        "latestRawAgeHours": 0.32,
-        "latestValidAt": "2026-06-24T00:09:37+00:00",
-        "latestValidAgeHours": 0.32,
+        "latestRawAt": null,
+        "latestRawAgeHours": null,
+        "latestValidAt": null,
+        "latestValidAgeHours": null,
         "visibleMain": {
-          "count": 12,
-          "latestAt": "2026-06-23T23:28:58+00:00",
-          "latestAgeHours": 1.0,
+          "count": 14,
+          "latestAt": "2026-06-24T00:28:01+00:00",
+          "latestAgeHours": 1.21,
           "sample": [
+            {
+              "publishedAt": "2026-06-24T00:28:01+00:00",
+              "source": "ישראל היום - כל הכתבות",
+              "headline": "תלמיד בממלכתי-עברי מקבל 23 אלף שקלים לשנה - לעומת 28 אלף בממלכתי-חרדי"
+            },
+            {
+              "publishedAt": "2026-06-24T00:09:37+00:00",
+              "source": "ישראל היום - כל הכתבות",
+              "headline": "במפקדה האמריקנית בקריית גת מתכננים את יום שאחרי המלחמה בעזה - אבל חמאס שורד"
+            },
             {
               "publishedAt": "2026-06-23T23:28:58+00:00",
               "source": "ישראל היום - כל הכתבות",
               "headline": "עוזרו של פרגוסון חשף: בלינגהאם קילל אותי אחרי התיקול החריף ב-0:0 מול גאנה"
-            },
-            {
-              "publishedAt": "2026-06-23T00:33:20+00:00",
-              "source": "ישראל היום - כל הכתבות",
-              "headline": "החום יכביד היום וייחלש לקראת סוף השבוע"
-            },
-            {
-              "publishedAt": "2026-06-22T23:54:07+00:00",
-              "source": "ישראל היום - כל הכתבות",
-              "headline": "ההאקר מאשקלון הוסגר לארה״ב למשפט נוסף"
             }
           ]
         },
@@ -3606,72 +3534,7 @@
           "sample": []
         },
         "fetchErrors": [],
-        "candidateSamples": [
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T03:09:37+03:00",
-            "title": "המפקדה האמריקנית בקריית גת: החזון הגדול שעומד במקום",
-            "url": "https://www.israelhayom.co.il/news/geopolitics/article/20830374"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T02:28:58+03:00",
-            "title": "\"הוא קילל אותי\": העימות בין ג'וד בלינגהאם למאמן גאנה נחשף",
-            "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831616"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T01:49:28+03:00",
-            "title": "כאוס בגרמניה: כל הרכבות במדינה נעצרו",
-            "url": "https://www.israelhayom.co.il/travel/tourism-news/article/20831600"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T01:42:49+03:00",
-            "title": "בחירות 1999: ישראל עם ברק בעיניים",
-            "url": "https://www.israelhayom.co.il/opinions/article/20830984"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T01:42:13+03:00",
-            "title": "נופש ללא גבולות: \"המטבחון\" סוגר חופשה בצפון",
-            "url": "https://www.israelhayom.co.il/magazine/hashavua/article/20831534"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T01:42:07+03:00",
-            "title": "אחרי הצמד: כריסטיאנו רונאלדו נשאל על מסי - ופוצץ ראיון בזעם",
-            "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20831497"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T01:31:06+03:00",
-            "title": "הטמפרטורות יעלו מחר - ומה יהיה מזג האוויר בסופ\"ש?",
-            "url": "https://www.israelhayom.co.il/weather/article/20830951"
-          },
-          {
-            "status": "qa_rejected",
-            "reason": "needs editor bridge / quality rewrite",
-            "source": "ישראל היום - כל הכתבות",
-            "publishedAt": "2026-06-24T01:28:49+03:00",
-            "title": "\"הסיב האופטי הוא נקודת התורפה\": הנערים שמנסים לשים סוף לאיום הרחפנים",
-            "url": "https://www.israelhayom.co.il/news/education/article/20831526"
-          }
-        ]
+        "candidateSamples": []
       },
       {
         "id": "globes",
@@ -3697,13 +3560,13 @@
         "qaRejectedCount": 107,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-23T18:31:00+00:00",
-        "latestRawAgeHours": 5.97,
+        "latestRawAgeHours": 7.16,
         "latestValidAt": "2026-06-23T18:31:00+00:00",
-        "latestValidAgeHours": 5.97,
+        "latestValidAgeHours": 7.16,
         "visibleMain": {
           "count": 4,
           "latestAt": "2026-06-23T06:43:00+00:00",
-          "latestAgeHours": 17.77,
+          "latestAgeHours": 18.96,
           "sample": [
             {
               "publishedAt": "2026-06-23T06:43:00+00:00",
@@ -3812,13 +3675,13 @@
         "qaRejectedCount": 2,
         "relevanceFilteredCount": 10,
         "latestRawAt": "2026-06-24T00:00:06+00:00",
-        "latestRawAgeHours": 0.48,
+        "latestRawAgeHours": 1.67,
         "latestValidAt": "2026-06-23T21:04:11+00:00",
-        "latestValidAgeHours": 3.41,
+        "latestValidAgeHours": 4.6,
         "visibleMain": {
           "count": 4,
           "latestAt": "2026-06-23T14:55:31+00:00",
-          "latestAgeHours": 9.56,
+          "latestAgeHours": 10.75,
           "sample": [
             {
               "publishedAt": "2026-06-23T14:55:31+00:00",
@@ -4001,7 +3864,7 @@
         "visibleBreaking": {
           "count": 1,
           "latestAt": "2026-06-23T11:40:05+00:00",
-          "latestAgeHours": 12.82,
+          "latestAgeHours": 14.01,
           "sample": [
             {
               "publishedAt": "2026-06-23T11:40:05+00:00",
@@ -4029,10 +3892,10 @@
         "qaPassSimulationCount": 0,
         "qaRejectedCount": 5,
         "relevanceFilteredCount": 19,
-        "latestRawAt": "2026-06-24T00:17:12+00:00",
-        "latestRawAgeHours": 0.2,
-        "latestValidAt": "2026-06-23T21:54:55+00:00",
-        "latestValidAgeHours": 2.57,
+        "latestRawAt": "2026-06-24T01:34:03+00:00",
+        "latestRawAgeHours": 0.11,
+        "latestValidAt": "2026-06-24T01:22:54+00:00",
+        "latestValidAgeHours": 0.29,
         "visibleMain": {
           "count": 0,
           "latestAt": null,
@@ -4129,13 +3992,13 @@
         "qaRejectedCount": 12,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-23T18:56:11+00:00",
-        "latestRawAgeHours": 5.55,
+        "latestRawAgeHours": 6.74,
         "latestValidAt": "2026-06-23T18:56:11+00:00",
-        "latestValidAgeHours": 5.55,
+        "latestValidAgeHours": 6.74,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-23T18:56:11+00:00",
-          "latestAgeHours": 5.55,
+          "latestAgeHours": 6.74,
           "sample": [
             {
               "publishedAt": "2026-06-23T18:56:11+00:00",
@@ -4234,13 +4097,13 @@
         "qaRejectedCount": 1,
         "relevanceFilteredCount": 7,
         "latestRawAt": "2026-06-23T22:47:00+00:00",
-        "latestRawAgeHours": 1.7,
+        "latestRawAgeHours": 2.89,
         "latestValidAt": "2026-06-22T07:44:00+00:00",
-        "latestValidAgeHours": 40.75,
+        "latestValidAgeHours": 41.94,
         "visibleMain": {
           "count": 1,
           "latestAt": "2026-06-22T22:40:08+00:00",
-          "latestAgeHours": 25.82,
+          "latestAgeHours": 27.0,
           "sample": [
             {
               "publishedAt": "2026-06-22T22:40:08+00:00",
@@ -4262,7 +4125,7 @@
             "reason": "not Israel/Middle-East enough",
             "source": "Sky News World",
             "publishedAt": "2026-06-24T01:47:00+03:00",
-            "title": "Trains across Germany halted due to problem with communication system",
+            "title": "Trains across Germany briefly halted after communication system issue",
             "url": "https://news.sky.com/story/german-railway-network-comes-to-halt-due-to-problem-with-communication-system-13557238"
           },
           {
@@ -4339,13 +4202,13 @@
         "qaRejectedCount": 7,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-23T16:40:21+00:00",
-        "latestRawAgeHours": 7.81,
+        "latestRawAgeHours": 9.0,
         "latestValidAt": "2026-06-23T16:40:21+00:00",
-        "latestValidAgeHours": 7.81,
+        "latestValidAgeHours": 9.0,
         "visibleMain": {
           "count": 9,
           "latestAt": "2026-06-23T19:12:28+00:00",
-          "latestAgeHours": 5.28,
+          "latestAgeHours": 6.47,
           "sample": [
             {
               "publishedAt": "2026-06-23T19:12:28+00:00",
@@ -4367,7 +4230,7 @@
         "visibleBreaking": {
           "count": 5,
           "latestAt": "2026-06-23T10:46:59+00:00",
-          "latestAgeHours": 13.7,
+          "latestAgeHours": 14.89,
           "sample": [
             {
               "publishedAt": "2026-06-23T10:46:59+00:00",
@@ -4470,13 +4333,13 @@
         "qaRejectedCount": 10,
         "relevanceFilteredCount": 0,
         "latestRawAt": "2026-06-23T18:07:41+00:00",
-        "latestRawAgeHours": 6.36,
+        "latestRawAgeHours": 7.55,
         "latestValidAt": "2026-06-23T18:07:41+00:00",
-        "latestValidAgeHours": 6.36,
+        "latestValidAgeHours": 7.55,
         "visibleMain": {
           "count": 3,
           "latestAt": "2026-06-23T19:12:28+00:00",
-          "latestAgeHours": 5.28,
+          "latestAgeHours": 6.47,
           "sample": [
             {
               "publishedAt": "2026-06-23T19:12:28+00:00",
@@ -4498,7 +4361,7 @@
         "visibleBreaking": {
           "count": 3,
           "latestAt": "2026-06-23T12:32:31+00:00",
-          "latestAgeHours": 11.94,
+          "latestAgeHours": 13.13,
           "sample": [
             {
               "publishedAt": "2026-06-23T12:32:31+00:00",
