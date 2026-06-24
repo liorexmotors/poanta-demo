@@ -6,39 +6,152 @@
     "name": "רכז מודיעין",
     "role": "בישול פערי מרגל לפני העברה למשה"
   },
-  "generatedAt": "2026-06-24T14:44:47+03:00",
-  "sourceGapGeneratedAt": "2026-06-24T14:44:46+03:00",
+  "generatedAt": "2026-06-24T16:21:34+03:00",
+  "sourceGapGeneratedAt": "2026-06-24T16:21:33+03:00",
   "policy": "Spy gaps are triaged before משה; no raw publish; no feed mutation.",
   "scheduleRecommendation": "every 15m",
   "handoffToMoshe": false,
   "handedToMoshe": 0,
   "counts": {
-    "ready_for_moshe": 5,
-    "needs_more_signal": 66,
-    "sent_to_moshe": 5,
+    "ready_for_moshe": 1,
+    "sent_to_moshe": 8,
+    "needs_more_signal": 67,
     "dismissed_duplicate": 4
   },
   "items": [
     {
-      "id": "intel_21bff64b2b54784a",
-      "gapId": "gap_21bff64b2b54784a",
+      "id": "intel_ef13c01fcbbd73fa",
+      "gapId": "gap_ef13c01fcbbd73fa",
       "status": "ready_for_moshe",
       "statusLabel": "מוכן למשה",
       "coordinator": {
         "id": "intelligence-coordinator",
         "name": "רכז מודיעין"
       },
+      "createdAt": "2026-06-24T16:21:33+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+      "domain": "חדשות",
+      "clusterKey": "חשודים במעורבות",
+      "priority": 17,
+      "whyImportant": [
+        "מופיע אצל 2 מקורות חיצוניים",
+        "3 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB",
+        "עובר סף רכז מודיעין להעברה מבושלת"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+        "source": "הארץ",
+        "sourceUrl": "https://news.walla.co.il/break/3848189",
+        "supportingSources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.077,
+        "headline": "שיירות חרדים יחסמו היום ב-16:00 כבישים מרכזיים ב-19 יישובים",
+        "source": "The Jerusalem Post - Israel News",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
+      "rawGap": {
+        "id": "gap_ef13c01fcbbd73fa",
+        "status": "new",
+        "statusLabel": "חדש",
+        "mosheStage": "זוהה פער",
+        "mosheCurrentAction": "ממתין לשליחה לתור משה",
+        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+        "createdAt": "2026-06-24T16:21:33+03:00",
+        "updatedAt": "2026-06-24T16:21:33+03:00",
+        "trend": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+        "domain": "חדשות",
+        "clusterKey": "חשודים במעורבות",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 14,
+        "externalMentions": 3,
+        "sourceCount": 2,
+        "sources": [
+          "הארץ",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 1,
+        "webMentions": 2,
+        "latestAt": "2026-06-24T10:14:00+00:00",
+        "source": "הארץ",
+        "sourceGroup": "הארץ",
+        "sourceUrl": "https://news.walla.co.il/break/3848189",
+        "originalTitle": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+        "deterministicHeadline": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "חדשות",
+          "trend": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
+          "clusterKey": "חשודים במעורבות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 1,
+          "webMentions": 2,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-24T10:14:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3848189"
+        }
+      }
+    },
+    {
+      "id": "intel_21bff64b2b54784a",
+      "gapId": "gap_21bff64b2b54784a",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
       "createdAt": "2026-06-24T14:44:46+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "שר הביטחון כ\"ץ הבהיר: \"גם אם תהיה דרישה אמריקנית - לא ניסוג מלבנון\"",
       "domain": "חדשות",
       "clusterKey": "תהיה דרישה",
-      "priority": 44,
+      "priority": 41,
       "whyImportant": [
         "מופיע אצל 5 מקורות חיצוניים",
-        "8 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB",
-        "עובר סף רכז מודיעין להעברה מבושלת"
+        "7 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
       ],
       "mosheBriefing": {
         "headlineSeed": "שר הביטחון כ\"ץ הבהיר: \"גם אם תהיה דרישה אמריקנית - לא ניסוג מלבנון\"",
@@ -55,7 +168,7 @@
           "RSS",
           "WEB"
         ],
-        "externalMentions": 8,
+        "externalMentions": 7,
         "sourceCount": 5,
         "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
         "checksForMoshe": [
@@ -69,32 +182,32 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.083,
-        "headline": "הצמרת הביטחונית מקבעת את רצועת הביטחון בלבנון",
-        "source": "ערוץ 7 / INN עברית",
+        "headline": "בית הדרקון מגבירה קצב אבל לא פותרת את הבעיה",
+        "source": "וואלה תרבות - טלוויזיה",
         "reason": "token_overlap"
       },
       "sourceProbe": {
         "ok": null,
         "reason": "not_checked_in_static_mode"
       },
-      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
       "rawGap": {
         "id": "gap_21bff64b2b54784a",
-        "status": "new",
-        "statusLabel": "חדש",
-        "mosheStage": "זוהה פער",
-        "mosheCurrentAction": "ממתין לשליחה לתור משה",
-        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+        "status": "candidate_found",
+        "statusLabel": "נמצא מועמד פיד",
+        "mosheStage": "מועמד נמצא",
+        "mosheCurrentAction": "נמצא מקור מתאים ונבנה מועמד פיד",
+        "mosheNextAction": "העברה לעורך מלא ול־QA",
         "createdAt": "2026-06-24T14:44:46+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
+        "updatedAt": "2026-06-24T16:21:33+03:00",
         "trend": "שר הביטחון כ\"ץ הבהיר: \"גם אם תהיה דרישה אמריקנית - לא ניסוג מלבנון\"",
         "domain": "חדשות",
         "clusterKey": "תהיה דרישה",
         "reason": "missing_from_feed",
         "recommendedAction": "send_to_full_editor_rescue_queue",
         "owner": "משה",
-        "priority": 34,
-        "externalMentions": 8,
+        "priority": 32,
+        "externalMentions": 7,
         "sourceCount": 5,
         "sources": [
           "ynet",
@@ -107,7 +220,7 @@
           "RSS",
           "WEB"
         ],
-        "rssMentions": 5,
+        "rssMentions": 4,
         "webMentions": 3,
         "latestAt": "2026-06-24T13:55:00+00:00",
         "source": "ynet",
@@ -121,7 +234,7 @@
           "domain": "חדשות",
           "trend": "שר הביטחון כ\"ץ הבהיר: \"גם אם תהיה דרישה אמריקנית - לא ניסוג מלבנון\"",
           "clusterKey": "תהיה דרישה",
-          "externalMentions": 8,
+          "externalMentions": 7,
           "sourceCount": 5,
           "sources": [
             "ynet",
@@ -134,233 +247,22 @@
             "RSS",
             "WEB"
           ],
-          "rssMentions": 5,
+          "rssMentions": 4,
           "webMentions": 3,
           "mentionedInFeed": false,
           "latestAt": "2026-06-24T13:55:00+00:00",
           "sampleUrl": "https://news.walla.co.il/item/3848290"
-        }
-      }
-    },
-    {
-      "id": "intel_7046026995261f62",
-      "gapId": "gap_7046026995261f62",
-      "status": "ready_for_moshe",
-      "statusLabel": "מוכן למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-24T14:44:46+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
-      "trend": "ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-      "domain": "חדשות",
-      "clusterKey": "בדרך להקמת",
-      "priority": 21,
-      "whyImportant": [
-        "מופיע אצל 3 מקורות חיצוניים",
-        "3 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB",
-        "עובר סף רכז מודיעין להעברה מבושלת"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-        "source": "N12",
-        "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20834502",
-        "supportingSources": [
-          "N12",
-          "ישראל היום",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.143,
-        "headline": "רבנים ובכירים פנו לאדלשטיין ולשקד לבדוק הקמת מפלגת ימין מתונה חדשה",
-        "source": "The Jerusalem Post - Israel News",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
-      "rawGap": {
-        "id": "gap_7046026995261f62",
-        "status": "new",
-        "statusLabel": "חדש",
-        "mosheStage": "זוהה פער",
-        "mosheCurrentAction": "ממתין לשליחה לתור משה",
-        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
-        "createdAt": "2026-06-24T14:44:46+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
-        "trend": "ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-        "domain": "חדשות",
-        "clusterKey": "בדרך להקמת",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 16,
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "N12",
-          "ישראל היום",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 2,
-        "webMentions": 1,
-        "latestAt": "2026-06-24T10:36:28+00:00",
-        "source": "N12",
-        "sourceGroup": "N12",
-        "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20834502",
-        "originalTitle": "ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-        "deterministicHeadline": "ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "ארדן בדרך להקמת מפלגה חדשה - אלו האפשרויות שעומדות בפניו",
-          "clusterKey": "בדרך להקמת",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "N12",
-            "ישראל היום",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 2,
-          "webMentions": 1,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-24T10:36:28+00:00",
-          "sampleUrl": "https://www.israelhayom.co.il/news/politics/article/20834502"
-        }
-      }
-    },
-    {
-      "id": "intel_e196cf36d0ff0263",
-      "gapId": "gap_e196cf36d0ff0263",
-      "status": "ready_for_moshe",
-      "statusLabel": "מוכן למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-24T14:44:46+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
-      "trend": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-      "domain": "חדשות",
-      "clusterKey": "מחבלי חיזבאללה",
-      "priority": 21,
-      "whyImportant": [
-        "מופיע אצל 3 מקורות חיצוניים",
-        "3 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB",
-        "עובר סף רכז מודיעין להעברה מבושלת"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-        "source": "ynet",
-        "sourceUrl": "https://www.srugim.co.il/101004926-הפרה-נוספת-צהל-תקף-מחבלי-חיזבאללה-חמושים",
-        "supportingSources": [
-          "ynet",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.154,
-        "headline": "צה״ל חיסל פעילי חיזבאללה בשתי תקריות בגבול לבנון; הפסקת האש נמשכה",
-        "source": "The Jerusalem Post - Israel News",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
-      "rawGap": {
-        "id": "gap_e196cf36d0ff0263",
-        "status": "new",
-        "statusLabel": "חדש",
-        "mosheStage": "זוהה פער",
-        "mosheCurrentAction": "ממתין לשליחה לתור משה",
-        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
-        "createdAt": "2026-06-24T14:44:46+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
-        "trend": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-        "domain": "חדשות",
-        "clusterKey": "מחבלי חיזבאללה",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 16,
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "וואלה",
-          "סרוגים"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 2,
-        "webMentions": 1,
-        "latestAt": "2026-06-24T11:34:54+00:00",
-        "source": "ynet",
-        "sourceGroup": "ynet",
-        "sourceUrl": "https://www.srugim.co.il/101004926-הפרה-נוספת-צהל-תקף-מחבלי-חיזבאללה-חמושים",
-        "originalTitle": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-        "deterministicHeadline": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
-          "clusterKey": "מחבלי חיזבאללה",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_21bff64b2b54784a",
+        "intelligenceBriefing": {
+          "headlineSeed": "שר הביטחון כ\"ץ הבהיר: \"גם אם תהיה דרישה אמריקנית - לא ניסוג מלבנון\"",
+          "source": "ynet",
+          "sourceUrl": "https://news.walla.co.il/item/3848290",
+          "supportingSources": [
             "ynet",
+            "גלובס",
+            "הארץ",
             "וואלה",
             "סרוגים"
           ],
@@ -368,240 +270,44 @@
             "RSS",
             "WEB"
           ],
-          "rssMentions": 2,
-          "webMentions": 1,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-24T11:34:54+00:00",
-          "sampleUrl": "https://www.srugim.co.il/101004926-הפרה-נוספת-צהל-תקף-מחבלי-חיזבאללה-חמושים"
-        }
-      }
-    },
-    {
-      "id": "intel_d5d95c2ee75ea5cf",
-      "gapId": "gap_d5d95c2ee75ea5cf",
-      "status": "ready_for_moshe",
-      "statusLabel": "מוכן למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-24T14:44:46+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
-      "trend": "הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-      "domain": "חדשות",
-      "clusterKey": "שירה ברעם",
-      "priority": 21,
-      "whyImportant": [
-        "מופיע אצל 3 מקורות חיצוניים",
-        "3 אזכורים חיצוניים",
-        "שכבות גילוי: RSS",
-        "עובר סף רכז מודיעין להעברה מבושלת"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-        "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/item/3848212",
-        "supportingSources": [
-          "ynet",
-          "וואלה",
-          "ישראל היום"
-        ],
-        "discoveryTypes": [
-          "RSS"
-        ],
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.125,
-        "headline": "דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
-      "rawGap": {
-        "id": "gap_d5d95c2ee75ea5cf",
-        "status": "new",
-        "statusLabel": "חדש",
-        "mosheStage": "זוהה פער",
-        "mosheCurrentAction": "ממתין לשליחה לתור משה",
-        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
-        "createdAt": "2026-06-24T14:44:46+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
-        "trend": "הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-        "domain": "חדשות",
-        "clusterKey": "שירה ברעם",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 15,
-        "externalMentions": 3,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "וואלה",
-          "ישראל היום"
-        ],
-        "discoveryTypes": [
-          "RSS"
-        ],
-        "rssMentions": 3,
-        "webMentions": 0,
-        "latestAt": "2026-06-24T11:01:00+00:00",
-        "source": "ynet",
-        "sourceGroup": "ynet",
-        "sourceUrl": "https://news.walla.co.il/item/3848212",
-        "originalTitle": "הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-        "deterministicHeadline": "הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "הלם במערכת הבריאות: ד\"ר שירה ברעם, מומחית לפוריות ולרפואת נשים, הלכה לעולמה",
-          "clusterKey": "שירה ברעם",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "וואלה",
-            "ישראל היום"
+          "externalMentions": 8,
+          "sourceCount": 5,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
           ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "rssMentions": 3,
-          "webMentions": 0,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-24T11:01:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3848212"
-        }
-      }
-    },
-    {
-      "id": "intel_e8bff107cc4a809d",
-      "gapId": "gap_e8bff107cc4a809d",
-      "status": "ready_for_moshe",
-      "statusLabel": "מוכן למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
-      "trend": "הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-      "domain": "חדשות",
-      "clusterKey": "הדיל החרדים",
-      "priority": 20,
-      "whyImportant": [
-        "מופיע אצל 2 מקורות חיצוניים",
-        "4 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB",
-        "עובר סף רכז מודיעין להעברה מבושלת"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-        "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/item/3848237",
-        "supportingSources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.214,
-        "headline": "רונאלדו כבש צמד ב-0:5 של פורטוגל על אוזבקיסטן; שיא היסטורי במונדיאל",
-        "source": "הארץ - ספורט",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "להעביר למשה לבדיקה רגילה: מקור, עדכניות, כפילות סמנטית, מועמד עורך/QA",
-      "rawGap": {
-        "id": "gap_e8bff107cc4a809d",
-        "status": "new",
-        "statusLabel": "חדש",
-        "mosheStage": "זוהה פער",
-        "mosheCurrentAction": "ממתין לשליחה לתור משה",
-        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
-        "createdAt": "2026-06-24T13:35:03+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
-        "trend": "הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-        "domain": "חדשות",
-        "clusterKey": "הדיל החרדים",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 15,
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 3,
-        "webMentions": 1,
-        "latestAt": "2026-06-24T11:51:00+00:00",
-        "source": "ynet",
-        "sourceGroup": "ynet",
-        "sourceUrl": "https://news.walla.co.il/item/3848237",
-        "originalTitle": "הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-        "deterministicHeadline": "הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "הדיל עם החרדים מעניק לנתניהו את מה שהוא צריך יותר מכול: זמן",
-          "clusterKey": "הדיל החרדים",
-          "externalMentions": 4,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 3,
-          "webMentions": 1,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-24T11:51:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3848237"
-        }
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-24T14:55:20+03:00",
+        "mosheStartedAt": "2026-06-24T15:11:24+03:00",
+        "mosheLastActionAt": "2026-06-24T15:11:25+03:00",
+        "mosheSourceCheck": {
+          "ok": true,
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytesSampled": 4096
+        },
+        "mosheDuplicateCheck": {
+          "duplicate": false,
+          "score": 0.083,
+          "headline": "הצמרת הביטחונית מקבעת את רצועת הביטחון בלבנון",
+          "source": "ערוץ 7 / INN עברית",
+          "reason": "token_overlap"
+        },
+        "mosheCheckedAt": "2026-06-24T15:11:25+03:00",
+        "candidate": {
+          "headlineSeed": "שר הביטחון כ\"ץ הבהיר: \"גם אם תהיה דרישה אמריקנית - לא ניסוג מלבנון\"",
+          "source": "ynet",
+          "sourceUrl": "https://news.walla.co.il/item/3848290",
+          "category": "חדשות",
+          "reason": "spy_gap_verified_by_moshe",
+          "checkedAt": "2026-06-24T15:11:25+03:00",
+          "nextGate": "editor_quality_gate"
+        },
+        "mosheOutcome": "candidate_found"
       }
     },
     {
@@ -614,7 +320,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-21T15:35:14+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "אמיר אוחנה לבג״ץ: לא אקיים בחירות נוספות למבקר המדינה",
       "domain": "חדשות",
       "clusterKey": "למבקר המדינה",
@@ -738,7 +444,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T11:37:46+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "בגיל 71: הלך לעולמו גורו הכושר שגרם לנו לעשות כפיפות בטן מול הטלוויזיה",
       "domain": "חדשות",
       "clusterKey": "הלך לעולמו",
@@ -776,9 +482,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.176,
-        "headline": "קלייב דייוויס, האיש שמאחורי כוכבי הפופ הגדולים, מת בגיל 94",
-        "source": "וואלה תרבות - מוזיקה",
+        "score": 0.118,
+        "headline": "כוכבת ״החווה שלנו״ אמנדה אוון הגיעה עם בתה בת ה-17 לטקס TRIC בלונדון",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -859,7 +565,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-18T17:30:48+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "בג\"ץ הציע לקיים הצבעה חוזרת לבחירת מבקר המדינה",
       "domain": "חדשות",
       "clusterKey": "לקיים הצבעה",
@@ -980,7 +686,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-18T17:09:54+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "בג\"ץ הציע לקיים הצבעה חוזרת לבחירת מבקר המדינה",
       "domain": "חדשות",
       "clusterKey": "לקיים הצבעה חוזרת",
@@ -1101,7 +807,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-21T12:28:50+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "דיווח: ראש ממשלת בריטניה צפוי להודיע על התפטרותו",
       "domain": "חדשות",
       "clusterKey": "ראש ממשלת",
@@ -1222,7 +928,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T18:48:19+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "ועדת הכנסת אישרה חסינותה של גוטליב: הכרעה סופית תתקבל במליאה",
       "domain": "חדשות",
       "clusterKey": "ועדת הכנסת",
@@ -1340,7 +1046,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:13:21+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "דיווח ראשוני: התרעות הופעלו באילת בשל חשד לחדירת כלי טיס עוין",
       "domain": "חדשות",
       "clusterKey": "כלי טיס",
@@ -1377,8 +1083,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.062,
-        "headline": "ח״כ קריב קורא לחזק את הרשות הפלסטינית",
-        "source": "ערוץ 7 / INN עברית",
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -1446,19 +1152,19 @@
       }
     },
     {
-      "id": "intel_2b92149ddb87151d",
-      "gapId": "gap_2b92149ddb87151d",
+      "id": "intel_1d1422af34b17e63",
+      "gapId": "gap_1d1422af34b17e63",
       "status": "sent_to_moshe",
       "statusLabel": "הועבר למשה",
       "coordinator": {
         "id": "intelligence-coordinator",
         "name": "רכז מודיעין"
       },
-      "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
-      "trend": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
+      "createdAt": "2026-06-24T15:43:17+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
       "domain": "חדשות",
-      "clusterKey": "עמדות שיגור",
+      "clusterKey": "מחבלי חיזבאללה",
       "priority": 24,
       "whyImportant": [
         "מופיע אצל 3 מקורות חיצוניים",
@@ -1466,9 +1172,9 @@
         "שכבות גילוי: RSS+WEB"
       ],
       "mosheBriefing": {
-        "headlineSeed": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
+        "headlineSeed": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
         "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3848234",
+        "sourceUrl": "https://www.ynet.co.il/news/article/syzqxbffmg",
         "supportingSources": [
           "ynet",
           "וואלה",
@@ -1491,9 +1197,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.133,
-        "headline": "או״ם: הצמיחה המהירה של הבינה המלאכותית תייצר עומס סביבתי חסר תקדים",
-        "source": "ynet - כל ערוץ המחשבים",
+        "score": 0.154,
+        "headline": "א-שרע דחה את בקשת טראמפ: ״סוריה לא תיכנס ללבנון להילחם בחיזבאללה״",
+        "source": "וואלה חדשות",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -1502,21 +1208,21 @@
       },
       "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
       "rawGap": {
-        "id": "gap_2b92149ddb87151d",
+        "id": "gap_1d1422af34b17e63",
         "status": "queued_for_moshe",
         "statusLabel": "ממתין למשה",
         "mosheStage": "בתור משה",
         "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
         "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
-        "createdAt": "2026-06-24T13:35:03+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
-        "trend": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
+        "createdAt": "2026-06-24T15:43:17+03:00",
+        "updatedAt": "2026-06-24T16:21:33+03:00",
+        "trend": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
         "domain": "חדשות",
-        "clusterKey": "עמדות שיגור",
+        "clusterKey": "מחבלי חיזבאללה",
         "reason": "missing_from_feed",
         "recommendedAction": "send_to_full_editor_rescue_queue",
         "owner": "משה",
-        "priority": 18,
+        "priority": 19,
         "externalMentions": 4,
         "sourceCount": 3,
         "sources": [
@@ -1528,20 +1234,20 @@
           "RSS",
           "WEB"
         ],
-        "rssMentions": 3,
-        "webMentions": 1,
-        "latestAt": "2026-06-24T12:03:00+00:00",
+        "rssMentions": 2,
+        "webMentions": 2,
+        "latestAt": "2026-06-24T11:47:39+00:00",
         "source": "ynet",
         "sourceGroup": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3848234",
-        "originalTitle": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
-        "deterministicHeadline": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
+        "sourceUrl": "https://www.ynet.co.il/news/article/syzqxbffmg",
+        "originalTitle": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
+        "deterministicHeadline": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
         "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
         "rawSpyTrend": {
           "domain": "חדשות",
-          "trend": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
-          "clusterKey": "עמדות שיגור",
+          "trend": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
+          "clusterKey": "מחבלי חיזבאללה",
           "externalMentions": 4,
           "sourceCount": 3,
           "sources": [
@@ -1553,22 +1259,165 @@
             "RSS",
             "WEB"
           ],
-          "rssMentions": 3,
-          "webMentions": 1,
+          "rssMentions": 2,
+          "webMentions": 2,
           "mentionedInFeed": false,
-          "latestAt": "2026-06-24T12:03:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3848234"
+          "latestAt": "2026-06-24T11:47:39+00:00",
+          "sampleUrl": "https://www.ynet.co.il/news/article/syzqxbffmg"
         },
         "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_2b92149ddb87151d",
+        "intelligenceBriefingId": "intel_1d1422af34b17e63",
         "intelligenceBriefing": {
-          "headlineSeed": "צה\"ל השמיד ארבע עמדות שיגור רקטות ברצועת עזה שהוקמו בהפסקת האש",
+          "headlineSeed": "חיל האוויר תקף שני מחבלי חיזבאללה בדרום לבנון",
           "source": "ynet",
-          "sourceUrl": "https://news.walla.co.il/break/3848234",
+          "sourceUrl": "https://www.ynet.co.il/news/article/syzqxbffmg",
           "supportingSources": [
             "ynet",
             "וואלה",
             "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "externalMentions": 5,
+          "sourceCount": 3,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+          ],
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-24T15:43:50+03:00"
+      }
+    },
+    {
+      "id": "intel_b4bdd79f978d457b",
+      "gapId": "gap_b4bdd79f978d457b",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-24T15:43:17+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+      "domain": "כלכלה",
+      "clusterKey": "שקל בחודש",
+      "priority": 24,
+      "whyImportant": [
+        "מופיע אצל 3 מקורות חיצוניים",
+        "4 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+        "source": "ynet",
+        "sourceUrl": "https://finance.walla.co.il/item/3848162",
+        "supportingSources": [
+          "ynet",
+          "דה מרקר",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.167,
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
+      "rawGap": {
+        "id": "gap_b4bdd79f978d457b",
+        "status": "queued_for_moshe",
+        "statusLabel": "ממתין למשה",
+        "mosheStage": "בתור משה",
+        "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
+        "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
+        "createdAt": "2026-06-24T15:43:17+03:00",
+        "updatedAt": "2026-06-24T16:21:33+03:00",
+        "trend": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+        "domain": "כלכלה",
+        "clusterKey": "שקל בחודש",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 18,
+        "externalMentions": 4,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "דה מרקר",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 3,
+        "webMentions": 1,
+        "latestAt": "2026-06-24T11:00:00+00:00",
+        "source": "ynet",
+        "sourceGroup": "ynet",
+        "sourceUrl": "https://finance.walla.co.il/item/3848162",
+        "originalTitle": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+        "deterministicHeadline": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "כלכלה",
+          "trend": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+          "clusterKey": "שקל בחודש",
+          "externalMentions": 4,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 3,
+          "webMentions": 1,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-24T11:00:00+00:00",
+          "sampleUrl": "https://finance.walla.co.il/item/3848162"
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_b4bdd79f978d457b",
+        "intelligenceBriefing": {
+          "headlineSeed": "עוד 1,600 שקל בחודש: כך ניפחו לנו את המשכנתא",
+          "source": "ynet",
+          "sourceUrl": "https://finance.walla.co.il/item/3848162",
+          "supportingSources": [
+            "ynet",
+            "דה מרקר",
+            "וואלה"
           ],
           "discoveryTypes": [
             "RSS",
@@ -1585,23 +1434,23 @@
           ],
           "doNotRawPublish": true
         },
-        "mosheQueuedAt": "2026-06-24T13:35:42+03:00"
+        "mosheQueuedAt": "2026-06-24T15:43:50+03:00"
       }
     },
     {
-      "id": "intel_0e982c0781d38bae",
-      "gapId": "gap_0e982c0781d38bae",
+      "id": "intel_6e521e7ed5f362de",
+      "gapId": "gap_6e521e7ed5f362de",
       "status": "sent_to_moshe",
       "statusLabel": "הועבר למשה",
       "coordinator": {
         "id": "intelligence-coordinator",
         "name": "רכז מודיעין"
       },
-      "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
-      "trend": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
-      "domain": "חדשות",
-      "clusterKey": "מבקר המדינה",
+      "createdAt": "2026-06-24T15:43:17+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
+      "domain": "כלכלה",
+      "clusterKey": "דוח המבקר",
       "priority": 23,
       "whyImportant": [
         "מופיע אצל 2 מקורות חיצוניים",
@@ -1609,9 +1458,9 @@
         "שכבות גילוי: RSS"
       ],
       "mosheBriefing": {
-        "headlineSeed": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
+        "headlineSeed": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
         "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/item/3848244",
+        "sourceUrl": "https://cars.walla.co.il/item/3848312",
         "supportingSources": [
           "ynet",
           "וואלה"
@@ -1632,9 +1481,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.118,
-        "headline": "רוביו יצא למסע במפרץ לשכנע בעלות ברית לקבל את עסקת ה-300 מיליארד",
-        "source": "The Jerusalem Post - Middle East",
+        "score": 0.143,
+        "headline": "רשת חצי חינם מציעה 50% הנחה על 700 מוצרים עד 5 ביולי",
+        "source": "מעריב - כלכלה",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -1643,17 +1492,17 @@
       },
       "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
       "rawGap": {
-        "id": "gap_0e982c0781d38bae",
+        "id": "gap_6e521e7ed5f362de",
         "status": "queued_for_moshe",
         "statusLabel": "ממתין למשה",
         "mosheStage": "בתור משה",
         "mosheCurrentAction": "משה צריך לפתוח את המקור, לבדוק שזה סיפור אמיתי ועדכני, ולבדוק שאין אצלנו כפילות סמנטית",
         "mosheNextAction": "אם תקין: להפוך למועמד פיד ולהעביר לעורך; אם לא: לדחות עם סיבה",
-        "createdAt": "2026-06-24T13:35:03+03:00",
-        "updatedAt": "2026-06-24T14:44:46+03:00",
-        "trend": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
-        "domain": "חדשות",
-        "clusterKey": "מבקר המדינה",
+        "createdAt": "2026-06-24T15:43:17+03:00",
+        "updatedAt": "2026-06-24T16:21:33+03:00",
+        "trend": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
+        "domain": "כלכלה",
+        "clusterKey": "דוח המבקר",
         "reason": "missing_from_feed",
         "recommendedAction": "send_to_full_editor_rescue_queue",
         "owner": "משה",
@@ -1669,18 +1518,18 @@
         ],
         "rssMentions": 5,
         "webMentions": 0,
-        "latestAt": "2026-06-24T11:40:00+00:00",
+        "latestAt": "2026-06-24T14:56:00+00:00",
         "source": "ynet",
         "sourceGroup": "ynet",
-        "sourceUrl": "https://news.walla.co.il/item/3848244",
-        "originalTitle": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
-        "deterministicHeadline": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
+        "sourceUrl": "https://cars.walla.co.il/item/3848312",
+        "originalTitle": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
+        "deterministicHeadline": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
         "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
         "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
-          "clusterKey": "מבקר המדינה",
+          "domain": "כלכלה",
+          "trend": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
+          "clusterKey": "דוח המבקר",
           "externalMentions": 5,
           "sourceCount": 2,
           "sources": [
@@ -1693,25 +1542,24 @@
           "rssMentions": 5,
           "webMentions": 0,
           "mentionedInFeed": false,
-          "latestAt": "2026-06-24T11:40:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3848244"
+          "latestAt": "2026-06-24T14:56:00+00:00",
+          "sampleUrl": "https://cars.walla.co.il/item/3848312"
         },
         "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_0e982c0781d38bae",
+        "intelligenceBriefingId": "intel_6e521e7ed5f362de",
         "intelligenceBriefing": {
-          "headlineSeed": "מבקר המדינה על דוחות ה-7.10: \"הציעו לי להוריד את פרק האחריות וסרבתי, האמת צריכה לצאת לאור\"",
+          "headlineSeed": "דוח המבקר חושף עיריות לביטול מאות אלפי דוחות חנייה",
           "source": "ynet",
-          "sourceUrl": "https://news.walla.co.il/item/3848244",
+          "sourceUrl": "https://cars.walla.co.il/item/3848312",
           "supportingSources": [
             "ynet",
-            "וואלה",
-            "סרוגים"
+            "וואלה"
           ],
           "discoveryTypes": [
             "RSS"
           ],
-          "externalMentions": 6,
-          "sourceCount": 3,
+          "externalMentions": 5,
+          "sourceCount": 2,
           "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
           "checksForMoshe": [
             "לאמת שהמקור אמיתי, נגיש ועדכני",
@@ -1721,7 +1569,7 @@
           ],
           "doNotRawPublish": true
         },
-        "mosheQueuedAt": "2026-06-24T13:35:42+03:00"
+        "mosheQueuedAt": "2026-06-24T15:43:50+03:00"
       }
     },
     {
@@ -1734,7 +1582,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T20:45:59+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "בנט עולה למתקפה: \"הקדנציה של נתניהו נפתחה במלחמת אחים, והסתיימה בכישלון היסטורי מול איראן\"",
       "domain": "חדשות",
       "clusterKey": "במלחמת אחים",
@@ -1852,7 +1700,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T20:55:09+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "בנט עולה למתקפה: \"הקדנציה של נתניהו נפתחה במלחמת אחים, והסתיימה בכישלון היסטורי מול איראן\"",
       "domain": "חדשות",
       "clusterKey": "נפתחה במלחמת",
@@ -1970,7 +1818,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T20:49:24+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "בנט עולה למתקפה: \"הקדנציה של נתניהו נפתחה במלחמת אחים, והסתיימה בכישלון היסטורי מול איראן\"",
       "domain": "חדשות",
       "clusterKey": "נפתחה במלחמת אחים",
@@ -2088,7 +1936,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-14T12:06:39+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "אזעקות הופעלו בגליל המערבי מחשש לחדירת כלי טיס עוין",
       "domain": "חדשות",
       "clusterKey": "בגליל המערבי",
@@ -2124,9 +1972,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.143,
-        "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-        "source": "The Jerusalem Post - Israel News",
+        "score": 0.071,
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -2203,7 +2051,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T06:24:32+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מסוק אפאצ'י צבאי התרסק סמוך למצר הורמוז, הצוות חולץ",
       "domain": "חדשות",
       "clusterKey": "הורמוז הצוות חולץ",
@@ -2240,8 +2088,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.071,
-        "headline": "קטאר מציגה בלמים להסלמה בשיחות ארהב-איראן",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -2318,7 +2166,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-13T19:38:02+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:33+03:00",
       "trend": "גבר כבן 30 נפצע באורח בינוני ברחובות ופונה לבית החולים כשהוא סובל מפציעות חודרות",
       "domain": "חדשות",
       "clusterKey": "באורח בינוני",
@@ -2429,7 +2277,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-16T20:21:59+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "דיווח: ארה\"ב תיתן לאיראן פטור מיידי מסנקציות על מכירת נפט",
       "domain": "חדשות",
       "clusterKey": "מכירת נפט",
@@ -2467,9 +2315,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.143,
-        "headline": "172 אוניות חצו את מצר הורמוז מאז ההסכם ארה״ב-איראן; מחיר הנפט ירד לשפל",
-        "source": "BBC World",
+        "score": 0.071,
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -2550,7 +2398,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-17T10:04:55+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לראשונה בשעות הבוקר: הפלג הירושלמי חסמו את כביש 4 בגוש דן",
       "domain": "חדשות",
       "clusterKey": "חסמו כביש",
@@ -2671,7 +2519,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-17T15:49:40+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "בשורה לטלי גוטליב: הכנסת אישרה את בקשת החסינות שלה",
       "domain": "חדשות",
       "clusterKey": "הכנסת אישרה",
@@ -2792,7 +2640,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T18:37:56+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מדד המחירים לצרכן ירד ב-0.3%, מחירי הדירות בירידה",
       "domain": "כלכלה",
       "clusterKey": "מחירי הדירות",
@@ -2829,9 +2677,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.167,
-        "headline": "עודפי יבול ויבוא הורידו בחדות את מחירי הירקות",
-        "source": "ynet - כל ערוץ הכלכלה",
+        "score": 0.083,
+        "headline": "מזג האוויר בחיפה: 22°–28°; עננות גבוהה; UV קיצוני בצהריים",
+        "source": "השירות המטאורולוגי",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -2901,151 +2749,6 @@
       }
     },
     {
-      "id": "intel_38c45c834b5c07ef",
-      "gapId": "gap_38c45c834b5c07ef",
-      "status": "sent_to_moshe",
-      "statusLabel": "הועבר למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
-      "trend": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-      "domain": "כלכלה",
-      "clusterKey": "נוחי דנקנר",
-      "priority": 19,
-      "whyImportant": [
-        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
-        "מופיע אצל 3 מקורות חיצוניים",
-        "5 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-        "source": "גלובס",
-        "sourceUrl": "https://finance.walla.co.il/item/3848261",
-        "supportingSources": [
-          "גלובס",
-          "דה מרקר",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 5,
-        "sourceCount": 3,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.235,
-        "headline": "נוחי דנקנר יוכרז כפושט רגל אחרי שלא עמד בהסדר החוב מול ארבעה בנקים",
-        "source": "ynet - כל ערוץ הכלכלה",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
-      "rawGap": {
-        "id": "gap_38c45c834b5c07ef",
-        "status": "queued_for_moshe",
-        "statusLabel": "ממתין למשה",
-        "mosheStage": "בתור משה",
-        "mosheCurrentAction": "משה קיבל תדריך מבושל מרכז המודיעין וצריך לבדוק מקור, עדכניות וכפילות סמנטית",
-        "mosheNextAction": "אם תקין: מועמד פיד לעורך/QA; אם לא: דחייה עם סיבה",
-        "createdAt": "2026-06-24T13:35:03+03:00",
-        "updatedAt": "2026-06-24T13:35:42+03:00",
-        "trend": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-        "domain": "כלכלה",
-        "clusterKey": "נוחי דנקנר",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 21,
-        "externalMentions": 5,
-        "sourceCount": 3,
-        "sources": [
-          "גלובס",
-          "דה מרקר",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 3,
-        "webMentions": 2,
-        "latestAt": "2026-06-24T13:13:00+00:00",
-        "source": "גלובס",
-        "sourceGroup": "גלובס",
-        "sourceUrl": "https://finance.walla.co.il/item/3848261",
-        "originalTitle": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-        "deterministicHeadline": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: \"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "כלכלה",
-          "trend": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-          "clusterKey": "נוחי דנקנר",
-          "externalMentions": 5,
-          "sourceCount": 3,
-          "sources": [
-            "גלובס",
-            "דה מרקר",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 3,
-          "webMentions": 2,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-24T13:13:00+00:00",
-          "sampleUrl": "https://finance.walla.co.il/item/3848261"
-        },
-        "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_38c45c834b5c07ef",
-        "intelligenceBriefing": {
-          "headlineSeed": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
-          "source": "גלובס",
-          "sourceUrl": "https://finance.walla.co.il/item/3848261",
-          "supportingSources": [
-            "גלובס",
-            "דה מרקר",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "externalMentions": 5,
-          "sourceCount": 3,
-          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-          "checksForMoshe": [
-            "לאמת שהמקור אמיתי, נגיש ועדכני",
-            "לבדוק כפילות סמנטית מול הפיד",
-            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-          ],
-          "doNotRawPublish": true
-        },
-        "mosheQueuedAt": "2026-06-24T13:35:42+03:00",
-        "staleFromCurrentSpy": true
-      }
-    },
-    {
       "id": "intel_ea524f1aa317b72f",
       "gapId": "gap_ea524f1aa317b72f",
       "status": "needs_more_signal",
@@ -3055,7 +2758,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T18:41:53+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מדד המחירים לצרכן ירד ב-0.3%, מחירי הדירות בירידה",
       "domain": "כלכלה",
       "clusterKey": "ירד ב-0",
@@ -3092,9 +2795,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.167,
-        "headline": "עודפי יבול ויבוא הורידו בחדות את מחירי הירקות",
-        "source": "ynet - כל ערוץ הכלכלה",
+        "score": 0.083,
+        "headline": "מזג האוויר בחיפה: 22°–28°; עננות גבוהה; UV קיצוני בצהריים",
+        "source": "השירות המטאורולוגי",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -3173,7 +2876,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T18:39:20+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מדד המחירים לצרכן ירד ב-0.3%, מחירי הדירות בירידה",
       "domain": "כלכלה",
       "clusterKey": "מדד המחירים",
@@ -3210,9 +2913,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.167,
-        "headline": "עודפי יבול ויבוא הורידו בחדות את מחירי הירקות",
-        "source": "ynet - כל ערוץ הכלכלה",
+        "score": 0.083,
+        "headline": "מזג האוויר בחיפה: 22°–28°; עננות גבוהה; UV קיצוני בצהריים",
+        "source": "השירות המטאורולוגי",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -3282,6 +2985,177 @@
       }
     },
     {
+      "id": "intel_38c45c834b5c07ef",
+      "gapId": "gap_38c45c834b5c07ef",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-24T13:35:03+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+      "domain": "כלכלה",
+      "clusterKey": "נוחי דנקנר",
+      "priority": 19,
+      "whyImportant": [
+        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
+        "מופיע אצל 3 מקורות חיצוניים",
+        "5 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+        "source": "גלובס",
+        "sourceUrl": "https://finance.walla.co.il/item/3848261",
+        "supportingSources": [
+          "גלובס",
+          "דה מרקר",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 5,
+        "sourceCount": 3,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.235,
+        "headline": "נוחי דנקנר יוכרז כפושט רגל אחרי שלא עמד בהסדר החוב מול ארבעה בנקים",
+        "source": "ynet - כל ערוץ הכלכלה",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
+      "rawGap": {
+        "id": "gap_38c45c834b5c07ef",
+        "status": "candidate_found",
+        "statusLabel": "נמצא מועמד פיד",
+        "mosheStage": "מועמד נמצא",
+        "mosheCurrentAction": "משה אימת מקור ולא מצא כפילות חזקה; נוצר מועמד פיד בטוח לבדיקה עריכתית",
+        "mosheNextAction": "להעביר לעורך מלא ול־Quality Gate לפני פרסום",
+        "createdAt": "2026-06-24T13:35:03+03:00",
+        "updatedAt": "2026-06-24T13:35:42+03:00",
+        "trend": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+        "domain": "כלכלה",
+        "clusterKey": "נוחי דנקנר",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 21,
+        "externalMentions": 5,
+        "sourceCount": 3,
+        "sources": [
+          "גלובס",
+          "דה מרקר",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 3,
+        "webMentions": 2,
+        "latestAt": "2026-06-24T13:13:00+00:00",
+        "source": "גלובס",
+        "sourceGroup": "גלובס",
+        "sourceUrl": "https://finance.walla.co.il/item/3848261",
+        "originalTitle": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+        "deterministicHeadline": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: \"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "כלכלה",
+          "trend": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+          "clusterKey": "נוחי דנקנר",
+          "externalMentions": 5,
+          "sourceCount": 3,
+          "sources": [
+            "גלובס",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 3,
+          "webMentions": 2,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-24T13:13:00+00:00",
+          "sampleUrl": "https://finance.walla.co.il/item/3848261"
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_38c45c834b5c07ef",
+        "intelligenceBriefing": {
+          "headlineSeed": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+          "source": "גלובס",
+          "sourceUrl": "https://finance.walla.co.il/item/3848261",
+          "supportingSources": [
+            "גלובס",
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "externalMentions": 5,
+          "sourceCount": 3,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+          ],
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-24T13:35:42+03:00",
+        "staleFromCurrentSpy": true,
+        "mosheStartedAt": "2026-06-24T14:53:55+03:00",
+        "mosheLastActionAt": "2026-06-24T14:53:56+03:00",
+        "mosheSourceCheck": {
+          "ok": true,
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytesSampled": 4096
+        },
+        "mosheDuplicateCheck": {
+          "duplicate": false,
+          "score": 0.235,
+          "headline": "נוחי דנקנר יוכרז כפושט רגל אחרי שלא עמד בהסדר החוב מול ארבעה בנקים",
+          "source": "ynet - כל ערוץ הכלכלה",
+          "reason": "token_overlap"
+        },
+        "mosheCheckedAt": "2026-06-24T14:53:56+03:00",
+        "candidate": {
+          "headlineSeed": "\"עשיתי כמיטב יכולתי לפרוע החוב\": נוחי דנקנר הסיר התנגדותו, בדרך לחדלות פירעון",
+          "source": "גלובס",
+          "sourceUrl": "https://finance.walla.co.il/item/3848261",
+          "category": "כלכלה",
+          "reason": "spy_gap_verified_by_moshe",
+          "checkedAt": "2026-06-24T14:53:56+03:00",
+          "nextGate": "editor_quality_gate"
+        },
+        "mosheOutcome": "candidate_found"
+      }
+    },
+    {
       "id": "intel_cecddcf9a2f314e8",
       "gapId": "gap_cecddcf9a2f314e8",
       "status": "needs_more_signal",
@@ -3291,7 +3165,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T10:11:19+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "שינוי במדיניות ההתגוננות של פיקוד העורף: הסרת הגבלת התקהלות",
       "domain": "חדשות",
       "clusterKey": "פיקוד העורף",
@@ -3406,7 +3280,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T19:12:41+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ילד בן 4 נהרג מפגיעת אוטובוס בסמוך לכרמי צור",
       "domain": "חדשות",
       "clusterKey": "מפגיעת אוטובוס",
@@ -3443,8 +3317,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.083,
-        "headline": "עדכון ממונטריאול: מיכאל משה מזרחי נפצע קשה, לא נהרג",
-        "source": "Israel National News English",
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -3521,7 +3395,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T22:46:46+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מתקפה חריפה באו\"ם: נשיא קולומביה השווה את ישראל למשטר הנאצי",
       "domain": "חדשות",
       "clusterKey": "נשיא קולומביה",
@@ -3636,7 +3510,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T21:35:52+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "איטליה הודיעה: נפתח בחקירה נגד השר בן גביר בעקבות התנהלותו עם עצורי המשט לעזה",
       "domain": "חדשות",
       "clusterKey": "המשט לעזה",
@@ -3754,7 +3628,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-14T16:34:50+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "\"הברקזיט של שווייץ\": נדחתה במשאל עם הצעה דרמטית להגבלת האוכלוסייה ל-10 מיליון",
       "domain": "חדשות",
       "clusterKey": "האוכלוסייה ל-10 מיליון",
@@ -3792,8 +3666,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.071,
-        "headline": "וושינגטון משאירה את טריי יאנג בחוזה ענק",
-        "source": "וואלה ספורט - NBA",
+        "headline": "חוליאן אלברס מאותת לאתלטיקו שהוא רוצה לעבור",
+        "source": "ישראל היום - כל הכתבות",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -3872,7 +3746,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-14T16:33:13+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "\"הברקזיט של שווייץ\": נדחתה במשאל עם הצעה דרמטית להגבלת האוכלוסייה ל-10 מיליון",
       "domain": "חדשות",
       "clusterKey": "האוכלוסייה ל-10",
@@ -3910,8 +3784,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.071,
-        "headline": "וושינגטון משאירה את טריי יאנג בחוזה ענק",
-        "source": "וואלה ספורט - NBA",
+        "headline": "חוליאן אלברס מאותת לאתלטיקו שהוא רוצה לעבור",
+        "source": "ישראל היום - כל הכתבות",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -3990,7 +3864,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T06:45:32+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מסתערת על הבורסה: OpenAI הגישה בקשה חסויה להנפקה בארה\"ב",
       "domain": "כלכלה",
       "clusterKey": "openai הגישה",
@@ -4108,7 +3982,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-10T14:00:37+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ההתפרעות בבית סולברג: הוארך ב-4 ימים מעצרם של ארבעה חשודים נוספים",
       "domain": "חדשות",
       "clusterKey": "בבית סולברג",
@@ -4226,7 +4100,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T13:32:43+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "חוק המעונות לא יעלה לקריאה ראשונה - החרדים מאיימים",
       "domain": "חדשות",
       "clusterKey": "המעונות יעלה",
@@ -4344,7 +4218,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-19T05:37:32+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מוג'תבא חמינאי: \"הייתה לי דעה שונה בנוגע להסכם, אבל הסכמתי בגלל התחייבותו של פזשכיאן\"",
       "domain": "חדשות",
       "clusterKey": "דעה שונה",
@@ -4462,7 +4336,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-22T18:01:21+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "דוד זיני מזהיר: \"ה-7 באוקטובר הבא יהיה באילת\"",
       "domain": "חדשות",
       "clusterKey": "יהיה באילת",
@@ -4571,151 +4445,6 @@
       }
     },
     {
-      "id": "intel_ef13c01fcbbd73fa",
-      "gapId": "gap_ef13c01fcbbd73fa",
-      "status": "sent_to_moshe",
-      "statusLabel": "הועבר למשה",
-      "coordinator": {
-        "id": "intelligence-coordinator",
-        "name": "רכז מודיעין"
-      },
-      "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
-      "trend": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-      "domain": "חדשות",
-      "clusterKey": "חשודים במעורבות",
-      "priority": 16,
-      "whyImportant": [
-        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
-        "מופיע אצל 3 מקורות חיצוניים",
-        "4 אזכורים חיצוניים",
-        "שכבות גילוי: RSS+WEB"
-      ],
-      "mosheBriefing": {
-        "headlineSeed": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-        "source": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3848189",
-        "supportingSources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "externalMentions": 4,
-        "sourceCount": 3,
-        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-        "checksForMoshe": [
-          "לאמת שהמקור אמיתי, נגיש ועדכני",
-          "לבדוק כפילות סמנטית מול הפיד",
-          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-        ],
-        "doNotRawPublish": true
-      },
-      "duplicateCheck": {
-        "duplicate": false,
-        "score": 0.154,
-        "headline": "מרדף בנתיבות הסתיים במעצר נער שנסע על הג׳אנטים",
-        "source": "וואלה חדשות - חדשות בארץ",
-        "reason": "token_overlap"
-      },
-      "sourceProbe": {
-        "ok": null,
-        "reason": "not_checked_in_static_mode"
-      },
-      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
-      "rawGap": {
-        "id": "gap_ef13c01fcbbd73fa",
-        "status": "queued_for_moshe",
-        "statusLabel": "ממתין למשה",
-        "mosheStage": "בתור משה",
-        "mosheCurrentAction": "משה קיבל תדריך מבושל מרכז המודיעין וצריך לבדוק מקור, עדכניות וכפילות סמנטית",
-        "mosheNextAction": "אם תקין: מועמד פיד לעורך/QA; אם לא: דחייה עם סיבה",
-        "createdAt": "2026-06-24T13:35:03+03:00",
-        "updatedAt": "2026-06-24T13:35:42+03:00",
-        "trend": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-        "domain": "חדשות",
-        "clusterKey": "חשודים במעורבות",
-        "reason": "missing_from_feed",
-        "recommendedAction": "send_to_full_editor_rescue_queue",
-        "owner": "משה",
-        "priority": 19,
-        "externalMentions": 4,
-        "sourceCount": 3,
-        "sources": [
-          "ynet",
-          "הארץ",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "rssMentions": 2,
-        "webMentions": 2,
-        "latestAt": "2026-06-24T10:14:00+00:00",
-        "source": "ynet",
-        "sourceGroup": "ynet",
-        "sourceUrl": "https://news.walla.co.il/break/3848189",
-        "originalTitle": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-        "deterministicHeadline": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
-        "rawSpyTrend": {
-          "domain": "חדשות",
-          "trend": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-          "clusterKey": "חשודים במעורבות",
-          "externalMentions": 4,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "rssMentions": 2,
-          "webMentions": 2,
-          "mentionedInFeed": false,
-          "latestAt": "2026-06-24T10:14:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3848189"
-        },
-        "preparedBy": "רכז מודיעין",
-        "intelligenceBriefingId": "intel_ef13c01fcbbd73fa",
-        "intelligenceBriefing": {
-          "headlineSeed": "המשטרה עיכבה לחקירה חשודים במעורבות נישואי קטינים ביבניאל",
-          "source": "ynet",
-          "sourceUrl": "https://news.walla.co.il/break/3848189",
-          "supportingSources": [
-            "ynet",
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "externalMentions": 4,
-          "sourceCount": 3,
-          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
-          "checksForMoshe": [
-            "לאמת שהמקור אמיתי, נגיש ועדכני",
-            "לבדוק כפילות סמנטית מול הפיד",
-            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
-            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
-          ],
-          "doNotRawPublish": true
-        },
-        "mosheQueuedAt": "2026-06-24T13:35:42+03:00",
-        "staleFromCurrentSpy": true
-      }
-    },
-    {
       "id": "intel_38dce2de69b70126",
       "gapId": "gap_38dce2de69b70126",
       "status": "needs_more_signal",
@@ -4725,7 +4454,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T00:38:33+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "צה\"ל יירט ארבעה שיגורים מלבנון לעבר ישראל ונערך לירי נוסף",
       "domain": "חדשות",
       "clusterKey": "לירי נוסף",
@@ -4763,8 +4492,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.071,
-        "headline": "ח״כ קריב קורא לחזק את הרשות הפלסטינית",
-        "source": "ערוץ 7 / INN עברית",
+        "headline": "טביתה ווילט שיתפה תיעוד כן אחרי לידה",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -4843,7 +4572,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T00:38:33+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לאחר התקיפות האיראניות - טראמפ מבהיר: אני קובע את העניינים, לא נתניהו - הוא יהיה חייב לקבל עסקה",
       "domain": "חדשות",
       "clusterKey": "אני קובע",
@@ -4961,7 +4690,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T15:08:59+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לפני פיזור הכנסת: ועדת הכספים אישרה את חוק המעונות לקריאה ראשונה",
       "domain": "חדשות",
       "clusterKey": "ועדת הכספים אישרה",
@@ -4998,9 +4727,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.143,
-        "headline": "נתניהו שוקל פיזור כנסת כדי לעצור בליץ חקיקה חרדי",
-        "source": "ynet - כל ערוץ החדשות",
+        "score": 0.071,
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -5079,7 +4808,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T09:13:32+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לעיני מאות צופים ב\"לייב\": אושיית רשת מוכרת נורתה מטווח קצר",
       "domain": "חדשות",
       "clusterKey": "נורתה מטווח",
@@ -5197,7 +4926,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T08:11:30+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "יאיר גולן בתגובה להסכם: \"נעשה מעל ראשה של ישראל - נמחקו הישגים צבאיים אדירים\"",
       "domain": "חדשות",
       "clusterKey": "יאיר גולן",
@@ -5315,7 +5044,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T21:06:24+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "\"שפל חדש במשטרת בן גביר\": תלונה במח\"ש נגד נצ\"מ אריה דורון - לאחר התקפתו על יאיר גולן",
       "domain": "חדשות",
       "clusterKey": "יאיר גולן",
@@ -5353,8 +5082,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.111,
-        "headline": "מות מזרחי במונטריאול אושר לאחר ירי שכוון לשוטרים",
-        "source": "ערוץ 7 / INN עברית",
+        "headline": "או״ם: הצמיחה המהירה של הבינה המלאכותית תייצר עומס סביבתי חסר תקדים",
+        "source": "ynet - כל ערוץ המחשבים",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -5433,7 +5162,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T21:17:58+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "\"כולכם הייתם בסכנה איומה של מוות\" | שידור ישיר מהצהרתו החריגה של רה\"מ נתניהו",
       "domain": "חדשות",
       "clusterKey": "כולכם הייתם",
@@ -5551,7 +5280,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-16T08:02:43+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לוחמי צה\"ל השמידו 18 מחרטות לייצור אמצעי לחימה במחנה בלאטה ובראס אל עין שבחטיבת שומרון",
       "domain": "חדשות",
       "clusterKey": "מחרטות לייצור",
@@ -5669,7 +5398,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T14:29:14+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "רגע לפני החתונה באיטליה: הנתק המפתיע בין עומר אדם ויעל שלביה",
       "domain": "חדשות",
       "clusterKey": "עומר אדם",
@@ -5787,7 +5516,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T18:25:23+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "תינוקת בת חצי שנה טבעה באמבטיה במועצה האזורית מטה בנימין - מצבה קשה",
       "domain": "חדשות",
       "clusterKey": "מצבה קשה",
@@ -5905,7 +5634,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "אחרי 98 דיונים, הסתיימה עדות נתניהו במשפטו: \"10 שנים של גיהינום\"",
       "domain": "חדשות",
       "clusterKey": "הסתיימה עדות",
@@ -5954,11 +5683,11 @@
       "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
       "rawGap": {
         "id": "gap_0371cfd11153d3ef",
-        "status": "queued_for_moshe",
-        "statusLabel": "ממתין למשה",
-        "mosheStage": "בתור משה",
-        "mosheCurrentAction": "משה קיבל תדריך מבושל מרכז המודיעין וצריך לבדוק מקור, עדכניות וכפילות סמנטית",
-        "mosheNextAction": "אם תקין: מועמד פיד לעורך/QA; אם לא: דחייה עם סיבה",
+        "status": "candidate_found",
+        "statusLabel": "נמצא מועמד פיד",
+        "mosheStage": "מועמד נמצא",
+        "mosheCurrentAction": "משה אימת מקור ולא מצא כפילות חזקה; נוצר מועמד פיד בטוח לבדיקה עריכתית",
+        "mosheNextAction": "להעביר לעורך מלא ול־Quality Gate לפני פרסום",
         "createdAt": "2026-06-24T13:35:03+03:00",
         "updatedAt": "2026-06-24T13:35:42+03:00",
         "trend": "אחרי 98 דיונים, הסתיימה עדות נתניהו במשפטו: \"10 שנים של גיהינום\"",
@@ -6037,7 +5766,33 @@
           "doNotRawPublish": true
         },
         "mosheQueuedAt": "2026-06-24T13:35:42+03:00",
-        "staleFromCurrentSpy": true
+        "staleFromCurrentSpy": true,
+        "mosheStartedAt": "2026-06-24T14:53:56+03:00",
+        "mosheLastActionAt": "2026-06-24T14:53:57+03:00",
+        "mosheSourceCheck": {
+          "ok": true,
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytesSampled": 4096
+        },
+        "mosheDuplicateCheck": {
+          "duplicate": false,
+          "score": 0.308,
+          "headline": "נתניהו סיים 98 ימי עדות במשפט השוחד; הסנגוריה תציג עדים נוספים",
+          "source": "The Jerusalem Post - Israel News",
+          "reason": "token_overlap"
+        },
+        "mosheCheckedAt": "2026-06-24T14:53:57+03:00",
+        "candidate": {
+          "headlineSeed": "אחרי 98 דיונים, הסתיימה עדות נתניהו במשפטו: \"10 שנים של גיהינום\"",
+          "source": "ynet",
+          "sourceUrl": "https://www.ynet.co.il/news/article/rkdqkzyggg",
+          "category": "חדשות",
+          "reason": "spy_gap_verified_by_moshe",
+          "checkedAt": "2026-06-24T14:53:57+03:00",
+          "nextGate": "editor_quality_gate"
+        },
+        "mosheOutcome": "candidate_found"
       }
     },
     {
@@ -6050,7 +5805,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-11T18:36:22+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "גופמן החליט למנות את א' לתפקיד סגן ראש המוסד וראש מנהלת המבצעים",
       "domain": "חדשות",
       "clusterKey": "ראש המוסד",
@@ -6165,7 +5920,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T22:59:43+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "אזעקות הופעלו בגליל המערבי מחשש לחדירת כלי טיס עויין",
       "domain": "חדשות",
       "clusterKey": "אזעקות הופעלו",
@@ -6199,9 +5954,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.143,
-        "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-        "source": "The Jerusalem Post - Israel News",
+        "score": 0.071,
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -6276,7 +6031,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T08:11:11+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "התרעות על חשד לחדירת כלי טיס עוין הופעלו באזור זרעית ושומרה",
       "domain": "חדשות",
       "clusterKey": "לחדירת כלי",
@@ -6387,7 +6142,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-08T23:37:07+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "התרעות על חשד לחדירת כלי טיס עוין הופעלו באזור זרעית ושומרה",
       "domain": "חדשות",
       "clusterKey": "כלי טיס",
@@ -6498,7 +6253,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T07:19:21+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "התרעות על חשד לחדירת כלי טיס עוין הופעלו באזור זרעית ושומרה",
       "domain": "חדשות",
       "clusterKey": "לחדירת כלי טיס",
@@ -6609,7 +6364,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-14T03:29:28+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "‏דובר משרד החוץ הפקיסטני: איסלמבאד תארגן מחר טקס חתימה דיגיטלי על הסכם שלום אמריקני-איראני",
       "domain": "חדשות",
       "clusterKey": "דובר משרד החוץ",
@@ -6720,7 +6475,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-09T07:25:30+02:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "21:29 איטליה הודיעה: נפתח בחקירה נגד השר בן גביר בעקבות התנהלותו עם עצורי המשט לעזה",
       "domain": "חדשות",
       "clusterKey": "המשט לעזה",
@@ -6835,7 +6590,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-14T05:40:29+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "אירוע חריג: מטוסי קרב הונגריים הוזנקו לעבר מטוס ארקיע, שנותק עמו הקשר",
       "domain": "חדשות",
       "clusterKey": "הוזנקו לעבר מטוס",
@@ -6950,7 +6705,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-14T17:54:59+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "אזרחי שווייץ אמרו לא ליוזמת הימין להגביל את האוכלוסייה ל־10 מיליון איש",
       "domain": "כלכלה",
       "clusterKey": "אזרחי שווייץ",
@@ -7065,7 +6820,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T21:09:06+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "המפלגות החרדיות מכחישות: \"אין שום 'דיל' עם נתניהו\"",
       "domain": "חדשות",
       "clusterKey": "המפלגות החרדיות",
@@ -7103,8 +6858,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.083,
-        "headline": "הצמרת הביטחונית מקבעת את רצועת הביטחון בלבנון",
-        "source": "ערוץ 7 / INN עברית",
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -7183,7 +6938,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T10:36:10+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ראש סבא\"א מבהיר לאיראן: \"זה הולך לקרות\"",
       "domain": "חדשות",
       "clusterKey": "הולך לקרות",
@@ -7220,9 +6975,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.182,
-        "headline": "קטאר מציגה בלמים להסלמה בשיחות ארהב-איראן",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "score": 0.091,
+        "headline": "נתניהו במפגש עם מילואים: ״אני רוצה עצמאות בנשק, לא תלות בסיוע האמריקאי״",
+        "source": "The Jerusalem Post - Israel News",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -7301,7 +7056,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "\"וואלה השוו אותי לקים ג'ונג איל\": נתניהו העיד בפעם האחרונה בתיקי האלפים",
       "domain": "חדשות",
       "clusterKey": "בתיקי האלפים",
@@ -7410,6 +7165,124 @@
       }
     },
     {
+      "id": "intel_e196cf36d0ff0263",
+      "gapId": "gap_e196cf36d0ff0263",
+      "status": "needs_more_signal",
+      "statusLabel": "ממתין לאיתות חזק יותר",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+      "domain": "חדשות",
+      "clusterKey": "מחבלי חיזבאללה",
+      "priority": 13,
+      "whyImportant": [
+        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
+        "מופיע אצל 3 מקורות חיצוניים",
+        "3 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+        "source": "ynet",
+        "sourceUrl": "https://www.srugim.co.il/101004926-הפרה-נוספת-צהל-תקף-מחבלי-חיזבאללה-חמושים",
+        "supportingSources": [
+          "ynet",
+          "וואלה",
+          "סרוגים"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 3,
+        "sourceCount": 3,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.077,
+        "headline": "עתיד טאיוואן נשאר מבחן הלחץ המרכזי בין סין לארה״ב",
+        "source": "JNS - Jewish News Syndicate",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "להמתין לסריקת מרגל נוספת; לא להעביר למשה עד שהפער חוזר כאדום נוכחי",
+      "rawGap": {
+        "id": "gap_e196cf36d0ff0263",
+        "status": "new",
+        "statusLabel": "חדש",
+        "mosheStage": "זוהה פער",
+        "mosheCurrentAction": "ממתין לשליחה לתור משה",
+        "mosheNextAction": "ללחוץ שלח אדומים למשה או לחכות לריצה השעתית",
+        "createdAt": "2026-06-24T14:44:46+03:00",
+        "updatedAt": "2026-06-24T15:13:13+03:00",
+        "trend": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+        "domain": "חדשות",
+        "clusterKey": "מחבלי חיזבאללה",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 16,
+        "externalMentions": 3,
+        "sourceCount": 3,
+        "sources": [
+          "ynet",
+          "וואלה",
+          "סרוגים"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 2,
+        "webMentions": 1,
+        "latestAt": "2026-06-24T11:34:54+00:00",
+        "source": "ynet",
+        "sourceGroup": "ynet",
+        "sourceUrl": "https://www.srugim.co.il/101004926-הפרה-נוספת-צהל-תקף-מחבלי-חיזבאללה-חמושים",
+        "originalTitle": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+        "deterministicHeadline": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "חדשות",
+          "trend": "הפרה נוספת: צה\"ל תקף מחבלי חיזבאללה חמושים שאיימו על הכוחות",
+          "clusterKey": "מחבלי חיזבאללה",
+          "externalMentions": 3,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 2,
+          "webMentions": 1,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-24T11:34:54+00:00",
+          "sampleUrl": "https://www.srugim.co.il/101004926-הפרה-נוספת-צהל-תקף-מחבלי-חיזבאללה-חמושים"
+        },
+        "staleFromCurrentSpy": true
+      }
+    },
+    {
       "id": "intel_89129dc053cf2338",
       "gapId": "gap_89129dc053cf2338",
       "status": "needs_more_signal",
@@ -7419,7 +7292,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T08:11:30+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "Israeli strikes in southern Lebanon kill 17, reports say Nine of them were killed in a series of attacks in the town of Tayr Debba, according to",
       "domain": "חדשות",
       "clusterKey": "southern lebanon",
@@ -7454,9 +7327,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.095,
-        "headline": "ישראל מבהירה שתישאר ברצועת הביטחון בלבנון",
-        "source": "Israel National News English",
+        "score": 0.048,
+        "headline": "עתיד טאיוואן נשאר מבחן הלחץ המרכזי בין סין לארה״ב",
+        "source": "JNS - Jewish News Syndicate",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -7531,7 +7404,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-15T21:23:38+03:00",
-      "updatedAt": "2026-06-24T14:44:46+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "Israeli military says Hezbollah targets struck in Beirut Israel says it targeted the Iran-backed armed group Hezbollah, as Tehran warns this coul",
       "domain": "אקטואליה בעולם",
       "clusterKey": "deal end",
@@ -7634,6 +7507,143 @@
       }
     },
     {
+      "id": "intel_211a58a0d2493a8c",
+      "gapId": "gap_211a58a0d2493a8c",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-24T15:43:17+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+      "domain": "בריאות",
+      "clusterKey": "קדחת הבהרות",
+      "priority": 12,
+      "whyImportant": [
+        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
+        "מופיע אצל 2 מקורות חיצוניים",
+        "4 אזכורים חיצוניים",
+        "שכבות גילוי: RSS"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+        "source": "ynet",
+        "sourceUrl": "https://healthy.walla.co.il/item/3848321",
+        "supportingSources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS"
+        ],
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.077,
+        "headline": "תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50",
+        "source": "הארץ - כל הכתבות",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
+      "rawGap": {
+        "id": "gap_211a58a0d2493a8c",
+        "status": "queued_for_moshe",
+        "statusLabel": "ממתין למשה",
+        "mosheStage": "בתור משה",
+        "mosheCurrentAction": "משה קיבל תדריך מבושל מרכז המודיעין וצריך לבדוק מקור, עדכניות וכפילות סמנטית",
+        "mosheNextAction": "אם תקין: מועמד פיד לעורך/QA; אם לא: דחייה עם סיבה",
+        "createdAt": "2026-06-24T15:43:17+03:00",
+        "updatedAt": "2026-06-24T15:43:50+03:00",
+        "trend": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+        "domain": "בריאות",
+        "clusterKey": "קדחת הבהרות",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 14,
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS"
+        ],
+        "rssMentions": 4,
+        "webMentions": 0,
+        "latestAt": "2026-06-24T15:05:00+00:00",
+        "source": "ynet",
+        "sourceGroup": "ynet",
+        "sourceUrl": "https://healthy.walla.co.il/item/3848321",
+        "originalTitle": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+        "deterministicHeadline": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "בריאות",
+          "trend": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+          "clusterKey": "קדחת הבהרות",
+          "externalMentions": 4,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "rssMentions": 4,
+          "webMentions": 0,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-24T15:05:00+00:00",
+          "sampleUrl": "https://healthy.walla.co.il/item/3848321"
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_211a58a0d2493a8c",
+        "intelligenceBriefing": {
+          "headlineSeed": "התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו",
+          "source": "ynet",
+          "sourceUrl": "https://healthy.walla.co.il/item/3848321",
+          "supportingSources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "externalMentions": 4,
+          "sourceCount": 2,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+          ],
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-24T15:43:50+03:00",
+        "staleFromCurrentSpy": true
+      }
+    },
+    {
       "id": "intel_9b276844b6096ffc",
       "gapId": "gap_9b276844b6096ffc",
       "status": "needs_more_signal",
@@ -7643,7 +7653,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T11:20:47+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "מהפועלים לדיסקונט: מיכל קיסוס הרצוג מונתה למנכ\"לית זרוע ההשקעות של דיסקונט",
       "domain": "כלכלה",
       "clusterKey": "מונתה למנכ לית",
@@ -7680,8 +7690,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.062,
-        "headline": "ספקנות סביב ה-AI לחצה את נאסדק וספייס אקס",
-        "source": "דה מרקר - גלובל",
+        "headline": "כוכבת MAFS עצרה ברגע האחרון ניתוח מותניים בבאלי",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -7758,7 +7768,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T11:20:47+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ירידות באירופה; בורסות אסיה צנחו, החוזים על הנאסד\"ק נופלים בכ-2%",
       "domain": "כלכלה",
       "clusterKey": "ירידות באירופה",
@@ -7874,7 +7884,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T14:46:10+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ירידות בבורסה בתל אביב; הדולר מתקרב ל-3 שקלים",
       "domain": "כלכלה",
       "clusterKey": "ירידות בבורסה",
@@ -7990,7 +8000,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T18:36:19+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ירידות בוול סטריט בהובלת מניות השבבים, מיקרון נופלת בכ-10%",
       "domain": "כלכלה",
       "clusterKey": "מניות השבבים",
@@ -8106,7 +8116,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T13:35:03+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "העליות בת\"א מתגברות; יבואנית מוצרי הטבק שנופלת בכמעט 40%",
       "domain": "כלכלה",
       "clusterKey": "העליות מתגברות",
@@ -8222,7 +8232,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T15:12:08+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "דובר אח\"מ לשעבר שוקל לעתור נגד בן גביר: \"לא מקודם כי לא 'מיישר קו' עם עמדותיו\"",
       "domain": "חדשות",
       "clusterKey": "נגד גביר",
@@ -8337,7 +8347,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T15:12:08+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לקראת מחאת החרדים: שיירות רכבים צפויות לצאת מ-19 ערים ברחבי הארץ",
       "domain": "חדשות",
       "clusterKey": "צפויות לצאת",
@@ -8452,7 +8462,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T15:13:25+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "לקראת מחאת החרדים: שיירות רכבים צפויות לצאת מ-19 ערים ברחבי הארץ",
       "domain": "חדשות",
       "clusterKey": "מ-19 ערים",
@@ -8567,7 +8577,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T15:13:25+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "העדות של הטייס שהופל באיראן - והשאלות למודיעין האמריקני",
       "domain": "חדשות",
       "clusterKey": "שהופל באיראן",
@@ -8682,7 +8692,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T16:52:16+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "תקיפה נוספת: צה\"ל ירו לעבר מחבלי חיזבאללה בדרום לבנון",
       "domain": "חדשות",
       "clusterKey": "מחבלי חיזבאללה",
@@ -8718,9 +8728,9 @@
       },
       "duplicateCheck": {
         "duplicate": false,
-        "score": 0.231,
-        "headline": "ישראל-לבנון פתחו בוושינגטון את הסבב החמישי לפריקת חיזבאללה",
-        "source": "The Jerusalem Post - Middle East",
+        "score": 0.154,
+        "headline": "א-שרע דחה את בקשת טראמפ: ״סוריה לא תיכנס ללבנון להילחם בחיזבאללה״",
+        "source": "וואלה חדשות",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -8797,7 +8807,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T15:12:08+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "איראן: מספר הספינות במצר הורמוז מוגבל ומשתנה מדי יום",
       "domain": "חדשות",
       "clusterKey": "מדי יום",
@@ -8834,8 +8844,8 @@
       "duplicateCheck": {
         "duplicate": false,
         "score": 0.214,
-        "headline": "עומאן הדגישה שהורמוז יישאר פתוח ללא תשלום",
-        "source": "הארץ - כל הכתבות",
+        "headline": "האו״ם החל לפנות 11 אלף מלחים שנתקעו במצר הורמוז אחרי הסכם ארה״ב-איראן",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
         "reason": "token_overlap"
       },
       "sourceProbe": {
@@ -8912,7 +8922,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T18:25:23+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "ואנס: איראן לא תקבע את עתיד לבנון",
       "domain": "חדשות",
       "clusterKey": "תקבע עתיד לבנון",
@@ -9027,7 +9037,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-23T22:24:34+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "אחרי 3.5 שנים ללא איוש: חוטובלי מינתה מנהל למטה ההסברה הלאומי",
       "domain": "חדשות",
       "clusterKey": "למטה ההסברה",
@@ -9142,7 +9152,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T08:05:25+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "האב השכול נגד המחאה החרדית: \"בישראל לא רודפים לומדי תורה\"",
       "domain": "חדשות",
       "clusterKey": "המחאה החרדית",
@@ -9245,6 +9255,142 @@
       }
     },
     {
+      "id": "intel_cc678fe5fcf7edec",
+      "gapId": "gap_cc678fe5fcf7edec",
+      "status": "sent_to_moshe",
+      "statusLabel": "הועבר למשה",
+      "coordinator": {
+        "id": "intelligence-coordinator",
+        "name": "רכז מודיעין"
+      },
+      "createdAt": "2026-06-24T15:43:17+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
+      "trend": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+      "domain": "חדשות",
+      "clusterKey": "החוץ האיראני",
+      "priority": 8,
+      "whyImportant": [
+        "הפער לא מופיע ברשימת האדומים הנוכחית של המרגל",
+        "4 אזכורים חיצוניים",
+        "שכבות גילוי: RSS+WEB"
+      ],
+      "mosheBriefing": {
+        "headlineSeed": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+        "source": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3848323",
+        "supportingSources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "externalMentions": 4,
+        "sourceCount": 1,
+        "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+        "checksForMoshe": [
+          "לאמת שהמקור אמיתי, נגיש ועדכני",
+          "לבדוק כפילות סמנטית מול הפיד",
+          "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+          "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+        ],
+        "doNotRawPublish": true
+      },
+      "duplicateCheck": {
+        "duplicate": false,
+        "score": 0.143,
+        "headline": "יו״ר הפרלמנט האיראני: ביטחון המזרח התיכון - של מדינות האזור בלבד",
+        "source": "The Jerusalem Post - Middle East",
+        "reason": "token_overlap"
+      },
+      "sourceProbe": {
+        "ok": null,
+        "reason": "not_checked_in_static_mode"
+      },
+      "nextAction": "משה כבר קיבל את התדריך; להמשיך במסלול בדיקת מקור/כפילות/עורך/QA",
+      "rawGap": {
+        "id": "gap_cc678fe5fcf7edec",
+        "status": "queued_for_moshe",
+        "statusLabel": "ממתין למשה",
+        "mosheStage": "בתור משה",
+        "mosheCurrentAction": "משה קיבל תדריך מבושל מרכז המודיעין וצריך לבדוק מקור, עדכניות וכפילות סמנטית",
+        "mosheNextAction": "אם תקין: מועמד פיד לעורך/QA; אם לא: דחייה עם סיבה",
+        "createdAt": "2026-06-24T15:43:17+03:00",
+        "updatedAt": "2026-06-24T15:43:50+03:00",
+        "trend": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+        "domain": "חדשות",
+        "clusterKey": "החוץ האיראני",
+        "reason": "missing_from_feed",
+        "recommendedAction": "send_to_full_editor_rescue_queue",
+        "owner": "משה",
+        "priority": 13,
+        "externalMentions": 4,
+        "sourceCount": 1,
+        "sources": [
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "rssMentions": 2,
+        "webMentions": 2,
+        "latestAt": "2026-06-24T15:22:00+00:00",
+        "source": "וואלה",
+        "sourceGroup": "וואלה",
+        "sourceUrl": "https://news.walla.co.il/break/3848323",
+        "originalTitle": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+        "deterministicHeadline": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+        "deterministicContext": "טרנד חיצוני חסר בפיד פואנטה: עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+        "mosheInstruction": "לא לפרסם גולמית. לבדוק מקור, כפילות סמנטית ואיכות; להעביר לעורך מלא רק אם יש מקור מספיק טוב.",
+        "rawSpyTrend": {
+          "domain": "חדשות",
+          "trend": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+          "clusterKey": "החוץ האיראני",
+          "externalMentions": 4,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "rssMentions": 2,
+          "webMentions": 2,
+          "mentionedInFeed": false,
+          "latestAt": "2026-06-24T15:22:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3848323"
+        },
+        "preparedBy": "רכז מודיעין",
+        "intelligenceBriefingId": "intel_cc678fe5fcf7edec",
+        "intelligenceBriefing": {
+          "headlineSeed": "עוזר שר החוץ האיראני אמר כי לא תתאפשר גישת פקחים למתקנים שהותקפו",
+          "source": "וואלה",
+          "sourceUrl": "https://news.walla.co.il/break/3848323",
+          "supportingSources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "externalMentions": 4,
+          "sourceCount": 1,
+          "missingReason": "המרגל זיהה שזה טרנד חיצוני שלא מופיע בפיד הנוכחי",
+          "checksForMoshe": [
+            "לאמת שהמקור אמיתי, נגיש ועדכני",
+            "לבדוק כפילות סמנטית מול הפיד",
+            "לבנות מועמד פיד רק אם יש ערך חדשותי מספיק",
+            "להעביר לעורך מלא ול־Quality Gate לפני כל פרסום"
+          ],
+          "doNotRawPublish": true
+        },
+        "mosheQueuedAt": "2026-06-24T15:43:50+03:00",
+        "staleFromCurrentSpy": true
+      }
+    },
+    {
       "id": "intel_68861e9691a54241",
       "gapId": "gap_68861e9691a54241",
       "status": "needs_more_signal",
@@ -9254,7 +9400,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T04:48:24+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "נתניהו רוקם דיל עם המפלגות החרדיות: חוקיהן יקודמו בתמורה לחוקי הפיכה",
       "domain": "כלכלה",
       "clusterKey": "יקודמו בתמורה",
@@ -9365,7 +9511,7 @@
         "name": "רכז מודיעין"
       },
       "createdAt": "2026-06-24T06:05:08+03:00",
-      "updatedAt": "2026-06-24T14:44:47+03:00",
+      "updatedAt": "2026-06-24T16:21:34+03:00",
       "trend": "אושר החלטה הדורשת את סיום המלחמה באיראן",
       "domain": "חדשות",
       "clusterKey": "המלחמה באיראן",
