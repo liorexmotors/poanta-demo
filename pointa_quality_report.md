@@ -228,88 +228,88 @@ Warnings: 214
 - URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-900371
 
 ### WARNING · summary_long · item 15
-- Summary length 306 > 220
-- Headline: `נתניהו במפגש עם מילואים: ״אני רוצה עצמאות בנשק, לא תלות בסיוע האמריקאי״`
-- Original: `Israel must build independent armaments network to end US aid dependency, Netanyahu says`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-900352
-
-### WARNING · takeaway_long · item 15
-- Takeaway length 203 > 95
-- Headline: `נתניהו במפגש עם מילואים: ״אני רוצה עצמאות בנשק, לא תלות בסיוע האמריקאי״`
-- Original: `Israel must build independent armaments network to end US aid dependency, Netanyahu says`
-- Source: The Jerusalem Post - Israel News
-- URL: https://www.jpost.com/israel-news/article-900352
-
-### WARNING · summary_long · item 16
 - Summary length 361 > 220
 - Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
 - Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848231
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 15
 - Takeaway length 192 > 95
 - Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
 - Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848231
 
-### WARNING · summary_long · item 17
+### WARNING · summary_long · item 16
 - Summary length 346 > 220
 - Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
 - Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848283
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 16
 - Takeaway length 195 > 95
 - Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
 - Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848283
 
-### WARNING · summary_long · item 18
+### WARNING · summary_long · item 17
 - Summary length 325 > 220
 - Headline: `תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50`
 - Original: `אין כאן יצירות מופת, אבל יש הצצה נדירה לאחורי הקלעים של האמנות`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/gallery/art/artreview/2026-06-24/ty-article-magazine/.premium/0000019e-efa6-d5c5-a99e-ffb6f5070000
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 17
 - Takeaway length 176 > 95
 - Headline: `תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50`
 - Original: `אין כאן יצירות מופת, אבל יש הצצה נדירה לאחורי הקלעים של האמנות`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/gallery/art/artreview/2026-06-24/ty-article-magazine/.premium/0000019e-efa6-d5c5-a99e-ffb6f5070000
 
-### WARNING · summary_long · item 19
+### WARNING · summary_long · item 18
 - Summary length 328 > 220
 - Headline: `טייט פרדיננד בן ה-17 חשף שניסה לחבל בקשר של אביו עם הגיסה קייט`
 - Original: `Tate Ferdinand, 17, says he 'hated' stepmum Kate and reveals he told lies about her 'meeting random men' to dad Rio out of 'loyalty' towards his late mother`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925511/Tate-Ferdinand-stepmum-Kate-meeting-men-dad-Rio.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 19
+### WARNING · takeaway_long · item 18
 - Takeaway length 212 > 95
 - Headline: `טייט פרדיננד בן ה-17 חשף שניסה לחבל בקשר של אביו עם הגיסה קייט`
 - Original: `Tate Ferdinand, 17, says he 'hated' stepmum Kate and reveals he told lies about her 'meeting random men' to dad Rio out of 'loyalty' towards his late mother`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925511/Tate-Ferdinand-stepmum-Kate-meeting-men-dad-Rio.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 20
+### WARNING · summary_long · item 19
 - Summary length 366 > 220
 - Headline: `דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר`
 - Original: `Diana Vickers is branded 'summer's Mariah Carey' as she dances in the aisles of M&S to new rendition of her viral Picky Bits song - and even Professor Green wants in on the action`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925363/Diana-Vickers-branded-summers-Mariah-Carey-dances-aisles-M-S-new-rendition-viral-Picky-Bits-song-Professor-Green-wants-action.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 20
+### WARNING · takeaway_long · item 19
 - Takeaway length 204 > 95
 - Headline: `דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר`
 - Original: `Diana Vickers is branded 'summer's Mariah Carey' as she dances in the aisles of M&S to new rendition of her viral Picky Bits song - and even Professor Green wants in on the action`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925363/Diana-Vickers-branded-summers-Mariah-Carey-dances-aisles-M-S-new-rendition-viral-Picky-Bits-song-Professor-Green-wants-action.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · summary_long · item 20
+- Summary length 306 > 220
+- Headline: `נתניהו במפגש עם מילואים: ״אני רוצה עצמאות בנשק, לא תלות בסיוע האמריקאי״`
+- Original: `Israel must build independent armaments network to end US aid dependency, Netanyahu says`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/article-900352
+
+### WARNING · takeaway_long · item 20
+- Takeaway length 203 > 95
+- Headline: `נתניהו במפגש עם מילואים: ״אני רוצה עצמאות בנשק, לא תלות בסיוע האמריקאי״`
+- Original: `Israel must build independent armaments network to end US aid dependency, Netanyahu says`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/article-900352
 
 ### WARNING · summary_long · item 21
 - Summary length 329 > 220
