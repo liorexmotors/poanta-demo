@@ -88,137 +88,137 @@ Warnings: 183
 - URL: https://www.jpost.com/israel-news/article-900381
 
 ### WARNING · summary_long · item 14
-- Summary length 286 > 220
-- Headline: `4 ילדים מעמק חפר אושפזו עם חשד לקדחת הבהרות; אחד אובחן חיובי`
-- Original: `התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3848321
-
-### WARNING · takeaway_long · item 14
-- Takeaway length 163 > 95
-- Headline: `4 ילדים מעמק חפר אושפזו עם חשד לקדחת הבהרות; אחד אובחן חיובי`
-- Original: `התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3848321
-
-### WARNING · summary_long · item 15
 - Summary length 359 > 220
 - Headline: `הממשלה אישרה תוכנית לאומית להפיכת ישראל למעצמת AI: 100 אלף GPUs`
 - Original: `ישראל רוצה להפוך למעצמת AI. תג המחיר עשוי להגיע לעשרות מיליארדי דולרים`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technology/article/sjnpyhkmfl
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 14
 - Takeaway length 170 > 95
 - Headline: `הממשלה אישרה תוכנית לאומית להפיכת ישראל למעצמת AI: 100 אלף GPUs`
 - Original: `ישראל רוצה להפוך למעצמת AI. תג המחיר עשוי להגיע לעשרות מיליארדי דולרים`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technology/article/sjnpyhkmfl
 
-### WARNING · summary_long · item 16
+### WARNING · summary_long · item 15
 - Summary length 297 > 220
 - Headline: `כוכבי לאב איילנד לוסי דונלן ולוק מאבוט התחתנו בקורנוול`
 - Original: `Love Island's Lucie Donlan and Luke Mabbott are married: Reality stars tie the knot in Cornwall after a five-year engagement`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15926083/Love-Islands-Lucie-Donlan-Luke-Mabbott-married-Reality-stars-tie-knot-Cornwall-five-year-engagement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 15
 - Takeaway length 193 > 95
 - Headline: `כוכבי לאב איילנד לוסי דונלן ולוק מאבוט התחתנו בקורנוול`
 - Original: `Love Island's Lucie Donlan and Luke Mabbott are married: Reality stars tie the knot in Cornwall after a five-year engagement`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15926083/Love-Islands-Lucie-Donlan-Luke-Mabbott-married-Reality-stars-tie-knot-Cornwall-five-year-engagement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 17
+### WARNING · summary_long · item 16
 - Summary length 309 > 220
 - Headline: `קייטי פרייס עם שפתיים נפוחות אחרי ניתוח בבריסל; טסה לדובאי`
 - Original: `Katie Price shows off her swollen lips after corrective surgery as she jets off to Dubai to grill husband Lee Andrews following his prison stint`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925957/Katie-Price-shows-swollen-lips-corrective-surgery-jets-Dubai-grill-husband-Lee-Andrews-prison-stint.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 16
 - Takeaway length 169 > 95
 - Headline: `קייטי פרייס עם שפתיים נפוחות אחרי ניתוח בבריסל; טסה לדובאי`
 - Original: `Katie Price shows off her swollen lips after corrective surgery as she jets off to Dubai to grill husband Lee Andrews following his prison stint`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925957/Katie-Price-shows-swollen-lips-corrective-surgery-jets-Dubai-grill-husband-Lee-Andrews-prison-stint.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · headline_near_duplicate_summary · item 18
+### WARNING · headline_near_duplicate_summary · item 17
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `מיקי חיימוביץ' סירבה להגיש חדשות לצד יעקב אילון בערוץ 16 החדש`
 - Original: `מיקי חיימוביץ׳ סירבה להגיש עם יעקב אילון - זו הסיבה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/b11arstffx
 
-### WARNING · summary_long · item 18
+### WARNING · summary_long · item 17
 - Summary length 318 > 220
 - Headline: `מיקי חיימוביץ' סירבה להגיש חדשות לצד יעקב אילון בערוץ 16 החדש`
 - Original: `מיקי חיימוביץ׳ סירבה להגיש עם יעקב אילון - זו הסיבה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/b11arstffx
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 17
 - Takeaway length 151 > 95
 - Headline: `מיקי חיימוביץ' סירבה להגיש חדשות לצד יעקב אילון בערוץ 16 החדש`
 - Original: `מיקי חיימוביץ׳ סירבה להגיש עם יעקב אילון - זו הסיבה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/b11arstffx
 
-### WARNING · summary_long · item 19
-- Summary length 361 > 220
-- Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
-- Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3848231
-
-### WARNING · takeaway_long · item 19
-- Takeaway length 192 > 95
-- Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
-- Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3848231
-
-### WARNING · summary_long · item 20
-- Summary length 346 > 220
-- Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
-- Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3848283
-
-### WARNING · takeaway_long · item 20
-- Takeaway length 195 > 95
-- Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
-- Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
-- Source: וואלה בריאות - כל הכתבות
-- URL: https://healthy.walla.co.il/item/3848283
-
-### WARNING · summary_long · item 21
+### WARNING · summary_long · item 18
 - Summary length 325 > 220
 - Headline: `תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50`
 - Original: `אין כאן יצירות מופת, אבל יש הצצה נדירה לאחורי הקלעים של האמנות`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/gallery/art/artreview/2026-06-24/ty-article-magazine/.premium/0000019e-efa6-d5c5-a99e-ffb6f5070000
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 18
 - Takeaway length 176 > 95
 - Headline: `תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50`
 - Original: `אין כאן יצירות מופת, אבל יש הצצה נדירה לאחורי הקלעים של האמנות`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/gallery/art/artreview/2026-06-24/ty-article-magazine/.premium/0000019e-efa6-d5c5-a99e-ffb6f5070000
 
-### WARNING · summary_long · item 22
+### WARNING · summary_long · item 19
 - Summary length 328 > 220
 - Headline: `טייט פרדיננד בן ה-17 חשף שניסה לחבל בקשר של אביו עם הגיסה קייט`
 - Original: `Tate Ferdinand, 17, says he 'hated' stepmum Kate and reveals he told lies about her 'meeting random men' to dad Rio out of 'loyalty' towards his late mother`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925511/Tate-Ferdinand-stepmum-Kate-meeting-men-dad-Rio.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 19
 - Takeaway length 212 > 95
 - Headline: `טייט פרדיננד בן ה-17 חשף שניסה לחבל בקשר של אביו עם הגיסה קייט`
 - Original: `Tate Ferdinand, 17, says he 'hated' stepmum Kate and reveals he told lies about her 'meeting random men' to dad Rio out of 'loyalty' towards his late mother`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925511/Tate-Ferdinand-stepmum-Kate-meeting-men-dad-Rio.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · summary_long · item 20
+- Summary length 286 > 220
+- Headline: `4 ילדים מעמק חפר אושפזו עם חשד לקדחת הבהרות; אחד אובחן חיובי`
+- Original: `התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3848321
+
+### WARNING · takeaway_long · item 20
+- Takeaway length 163 > 95
+- Headline: `4 ילדים מעמק חפר אושפזו עם חשד לקדחת הבהרות; אחד אובחן חיובי`
+- Original: `התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3848321
+
+### WARNING · summary_long · item 21
+- Summary length 361 > 220
+- Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
+- Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3848231
+
+### WARNING · takeaway_long · item 21
+- Takeaway length 192 > 95
+- Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
+- Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3848231
+
+### WARNING · summary_long · item 22
+- Summary length 346 > 220
+- Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
+- Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3848283
+
+### WARNING · takeaway_long · item 22
+- Takeaway length 195 > 95
+- Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
+- Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3848283
 
 ### WARNING · summary_long · item 23
 - Summary length 366 > 220
