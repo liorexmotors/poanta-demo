@@ -2,7 +2,7 @@
 
 Items checked: 181
 Errors: 0
-Warnings: 200
+Warnings: 199
 
 ## Category distribution
 
@@ -11,291 +11,277 @@ Warnings: 200
 - כלכלה: 13
 - בריאות: 11
 - תרבות: 10
+- ביטחון: 7
 - מזג אוויר: 7
-- ביטחון: 6
 - רכב: 5
 - טכנולוגיה: 4
 - דעות: 4
 - אקטואליה בעולם: 4
-- משפט: 3
 - חדשות: 2
+- משפט: 2
 - פוליטיקה: 2
 - צרכנות: 2
 - נדל״ן: 1
 
 ## Issue counts
 
-- takeaway_long: 109
+- takeaway_long: 108
 - summary_long: 84
 - headline_near_duplicate_summary: 7
 
 ## Issues
 
-### WARNING · summary_long · item 0
+### WARNING · summary_long · item 1
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
 - Original: `סקר מנדטים: איזנקוט מתחזק; בנט ממשיך לרדת; סמוטריץ' יכול לחייך`
 - Source: סרוגים - כל הכתבות
 - URL: https://www.srugim.co.il/101004967-סקר-מנדטים-איזנקוט-מתחזק-בנט-ממשיך-לרדת
 
-### WARNING · summary_long · item 1
+### WARNING · summary_long · item 2
 - Summary length 280 > 220
 - Headline: `מייקה נורי מונה למאמן פורטלנד; אבדיה יעבוד עם עוזרו של יוקיץ'`
 - Original: `צחוק בצד: מה יביא המאמן החדש של דני אבדיה לפורטלנד?`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3848146
 
-### WARNING · takeaway_long · item 1
+### WARNING · takeaway_long · item 2
 - Takeaway length 137 > 95
 - Headline: `מייקה נורי מונה למאמן פורטלנד; אבדיה יעבוד עם עוזרו של יוקיץ'`
 - Original: `צחוק בצד: מה יביא המאמן החדש של דני אבדיה לפורטלנד?`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3848146
 
-### WARNING · summary_long · item 2
+### WARNING · summary_long · item 3
 - Summary length 270 > 220
 - Headline: `ברקוביץ': 80% משחקני מכבי חיפה צריכים לעזוב; דור פרץ לאירופה`
 - Original: `איל ברקוביץ' יורה: "שחקני מכבי חיפה ביזו את המועדון"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3848248
 
-### WARNING · takeaway_long · item 2
+### WARNING · takeaway_long · item 3
 - Takeaway length 130 > 95
 - Headline: `ברקוביץ': 80% משחקני מכבי חיפה צריכים לעזוב; דור פרץ לאירופה`
 - Original: `איל ברקוביץ' יורה: "שחקני מכבי חיפה ביזו את המועדון"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3848248
 
-### WARNING · summary_long · item 3
+### WARNING · summary_long · item 4
 - Summary length 272 > 220
 - Headline: `ליאור רז בהקרנת ״טיונר״ בתל אביב: ״ישראלים בהוליווד פשוט לא מפחדים״`
 - Original: `Lior Raz says Israelis in Hollywood are “simply not afraid” at Tel Aviv Tuner premiere`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/culture/article-900391
 
-### WARNING · takeaway_long · item 3
+### WARNING · takeaway_long · item 4
 - Takeaway length 156 > 95
 - Headline: `ליאור רז בהקרנת ״טיונר״ בתל אביב: ״ישראלים בהוליווד פשוט לא מפחדים״`
 - Original: `Lior Raz says Israelis in Hollywood are “simply not afraid” at Tel Aviv Tuner premiere`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/culture/article-900391
 
-### WARNING · summary_long · item 4
+### WARNING · summary_long · item 5
 - Summary length 296 > 220
 - Headline: `מבקר המדינה: אין תוכנית לגז עד 2048; חסר 75 BCM ומשכנתאות חורגות`
 - Original: `Israel lacks plan for gas, mortgages, public spending, government probe finds`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-900381
 
-### WARNING · takeaway_long · item 4
+### WARNING · takeaway_long · item 5
 - Takeaway length 150 > 95
 - Headline: `מבקר המדינה: אין תוכנית לגז עד 2048; חסר 75 BCM ומשכנתאות חורגות`
 - Original: `Israel lacks plan for gas, mortgages, public spending, government probe finds`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-900381
 
-### WARNING · summary_long · item 5
+### WARNING · summary_long · item 6
 - Summary length 248 > 220
 - Headline: `שר החוץ האיראני הבטיח לחמאס להעלות את המלחמה בעזה לדיונים עם ארה״ב`
 - Original: `Iran FM Abbas Araghchi says Gaza war to be raised in US talks, reaffirms Hamas support - report`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-900362
 
-### WARNING · takeaway_long · item 5
+### WARNING · takeaway_long · item 6
 - Takeaway length 143 > 95
 - Headline: `שר החוץ האיראני הבטיח לחמאס להעלות את המלחמה בעזה לדיונים עם ארה״ב`
 - Original: `Iran FM Abbas Araghchi says Gaza war to be raised in US talks, reaffirms Hamas support - report`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-900362
 
-### WARNING · summary_long · item 6
+### WARNING · summary_long · item 7
 - Summary length 286 > 220
 - Headline: `4 ילדים מעמק חפר אושפזו עם חשד לקדחת הבהרות; אחד אובחן חיובי`
 - Original: `התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848321
 
-### WARNING · takeaway_long · item 6
+### WARNING · takeaway_long · item 7
 - Takeaway length 163 > 95
 - Headline: `4 ילדים מעמק חפר אושפזו עם חשד לקדחת הבהרות; אחד אובחן חיובי`
 - Original: `התפרצות מקרי קדחת הבהרות בשרון: שני ילדים אושפזו`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848321
 
-### WARNING · summary_long · item 7
+### WARNING · summary_long · item 8
 - Summary length 269 > 220
 - Headline: `לשכת בית הדין הפלילי הבינלאומי המליצה לפטר את התובע קארים חאן בשל תלונות`
 - Original: `מסתבך: האיש שהגיש כתב אישום נגד נתניהו עומד בפני הדחה`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226574-0
 
-### WARNING · takeaway_long · item 7
+### WARNING · takeaway_long · item 8
 - Takeaway length 150 > 95
 - Headline: `לשכת בית הדין הפלילי הבינלאומי המליצה לפטר את התובע קארים חאן בשל תלונות`
 - Original: `מסתבך: האיש שהגיש כתב אישום נגד נתניהו עומד בפני הדחה`
 - Source: כיפה - חדשות
 - URL: https://www.kipa.co.il/1226574-0
 
-### WARNING · summary_long · item 8
+### WARNING · summary_long · item 9
 - Summary length 359 > 220
 - Headline: `הממשלה אישרה תוכנית לאומית להפיכת ישראל למעצמת AI: 100 אלף GPUs`
 - Original: `ישראל רוצה להפוך למעצמת AI. תג המחיר עשוי להגיע לעשרות מיליארדי דולרים`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technology/article/sjnpyhkmfl
 
-### WARNING · takeaway_long · item 8
+### WARNING · takeaway_long · item 9
 - Takeaway length 170 > 95
 - Headline: `הממשלה אישרה תוכנית לאומית להפיכת ישראל למעצמת AI: 100 אלף GPUs`
 - Original: `ישראל רוצה להפוך למעצמת AI. תג המחיר עשוי להגיע לעשרות מיליארדי דולרים`
 - Source: ynet - כל ערוץ המחשבים
 - URL: https://www.ynet.co.il/digital/technology/article/sjnpyhkmfl
 
-### WARNING · summary_long · item 9
+### WARNING · summary_long · item 10
 - Summary length 297 > 220
 - Headline: `כוכבי לאב איילנד לוסי דונלן ולוק מאבוט התחתנו בקורנוול`
 - Original: `Love Island's Lucie Donlan and Luke Mabbott are married: Reality stars tie the knot in Cornwall after a five-year engagement`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15926083/Love-Islands-Lucie-Donlan-Luke-Mabbott-married-Reality-stars-tie-knot-Cornwall-five-year-engagement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 9
+### WARNING · takeaway_long · item 10
 - Takeaway length 193 > 95
 - Headline: `כוכבי לאב איילנד לוסי דונלן ולוק מאבוט התחתנו בקורנוול`
 - Original: `Love Island's Lucie Donlan and Luke Mabbott are married: Reality stars tie the knot in Cornwall after a five-year engagement`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15926083/Love-Islands-Lucie-Donlan-Luke-Mabbott-married-Reality-stars-tie-knot-Cornwall-five-year-engagement.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 10
+### WARNING · summary_long · item 11
 - Summary length 309 > 220
 - Headline: `קייטי פרייס עם שפתיים נפוחות אחרי ניתוח בבריסל; טסה לדובאי`
 - Original: `Katie Price shows off her swollen lips after corrective surgery as she jets off to Dubai to grill husband Lee Andrews following his prison stint`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925957/Katie-Price-shows-swollen-lips-corrective-surgery-jets-Dubai-grill-husband-Lee-Andrews-prison-stint.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 10
+### WARNING · takeaway_long · item 11
 - Takeaway length 169 > 95
 - Headline: `קייטי פרייס עם שפתיים נפוחות אחרי ניתוח בבריסל; טסה לדובאי`
 - Original: `Katie Price shows off her swollen lips after corrective surgery as she jets off to Dubai to grill husband Lee Andrews following his prison stint`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925957/Katie-Price-shows-swollen-lips-corrective-surgery-jets-Dubai-grill-husband-Lee-Andrews-prison-stint.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · headline_near_duplicate_summary · item 11
+### WARNING · headline_near_duplicate_summary · item 12
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `מיקי חיימוביץ' סירבה להגיש חדשות לצד יעקב אילון בערוץ 16 החדש`
 - Original: `מיקי חיימוביץ׳ סירבה להגיש עם יעקב אילון - זו הסיבה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/b11arstffx
 
-### WARNING · summary_long · item 11
+### WARNING · summary_long · item 12
 - Summary length 318 > 220
 - Headline: `מיקי חיימוביץ' סירבה להגיש חדשות לצד יעקב אילון בערוץ 16 החדש`
 - Original: `מיקי חיימוביץ׳ סירבה להגיש עם יעקב אילון - זו הסיבה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/b11arstffx
 
-### WARNING · takeaway_long · item 11
+### WARNING · takeaway_long · item 12
 - Takeaway length 151 > 95
 - Headline: `מיקי חיימוביץ' סירבה להגיש חדשות לצד יעקב אילון בערוץ 16 החדש`
 - Original: `מיקי חיימוביץ׳ סירבה להגיש עם יעקב אילון - זו הסיבה`
 - Source: ynet - כל ערוץ התרבות
 - URL: https://www.ynet.co.il/entertainment/article/b11arstffx
 
-### WARNING · summary_long · item 13
+### WARNING · summary_long · item 14
 - Summary length 298 > 220
 - Headline: `נתניהו סיים 98 ימי עדות במשפט השוחד; הסנגוריה תציג עדים נוספים`
 - Original: `'Ten years of hell': Netanyahu finishes testifying after 98 hearings on bribery, fraud charges`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-900364
 
-### WARNING · takeaway_long · item 13
+### WARNING · takeaway_long · item 14
 - Takeaway length 164 > 95
 - Headline: `נתניהו סיים 98 ימי עדות במשפט השוחד; הסנגוריה תציג עדים נוספים`
 - Original: `'Ten years of hell': Netanyahu finishes testifying after 98 hearings on bribery, fraud charges`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/article-900364
 
-### WARNING · summary_long · item 14
+### WARNING · summary_long · item 15
 - Summary length 349 > 220
 - Headline: `רבנים ובכירים פנו לאדלשטיין ולשקד לבדוק הקמת מפלגת ימין מתונה חדשה`
 - Original: `Edelstein, Shaked approached about party targeting dissatisfied right-wing, modern Orthodox voters`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-900371
 
-### WARNING · takeaway_long · item 14
+### WARNING · takeaway_long · item 15
 - Takeaway length 173 > 95
 - Headline: `רבנים ובכירים פנו לאדלשטיין ולשקד לבדוק הקמת מפלגת ימין מתונה חדשה`
 - Original: `Edelstein, Shaked approached about party targeting dissatisfied right-wing, modern Orthodox voters`
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/politics-and-diplomacy/article-900371
 
-### WARNING · summary_long · item 15
+### WARNING · summary_long · item 16
 - Summary length 361 > 220
 - Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
 - Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848231
 
-### WARNING · takeaway_long · item 15
+### WARNING · takeaway_long · item 16
 - Takeaway length 192 > 95
 - Headline: `מחקר ענק מצא: אהבה לבצל קשורה לסיכון נמוך לסוכרת וליתר לחץ דם`
 - Original: `אוהבים בצל? ייתכן שזה אומר משהו מפתיע על הבריאות שלכם`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848231
 
-### WARNING · summary_long · item 16
+### WARNING · summary_long · item 17
 - Summary length 346 > 220
 - Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
 - Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848283
 
-### WARNING · takeaway_long · item 16
+### WARNING · takeaway_long · item 17
 - Takeaway length 195 > 95
 - Headline: `הולנד הודיעה לראשונה על המתת חסד לילד מתחת לגיל 12 לפי חוק חדש`
 - Original: `הולנד דיווחה על מקרה המתת החסד הראשון של ילד מתחת לגיל 12`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3848283
 
-### WARNING · summary_long · item 17
+### WARNING · summary_long · item 18
 - Summary length 325 > 220
 - Headline: `תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50`
 - Original: `אין כאן יצירות מופת, אבל יש הצצה נדירה לאחורי הקלעים של האמנות`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/gallery/art/artreview/2026-06-24/ty-article-magazine/.premium/0000019e-efa6-d5c5-a99e-ffb6f5070000
 
-### WARNING · takeaway_long · item 17
+### WARNING · takeaway_long · item 18
 - Takeaway length 176 > 95
 - Headline: `תערוכה חדשה חושפת זוגות יוצרים שעיצבו את התרבות בישראל של שנות ה-50`
 - Original: `אין כאן יצירות מופת, אבל יש הצצה נדירה לאחורי הקלעים של האמנות`
 - Source: הארץ - כל הכתבות
 - URL: https://www.haaretz.co.il/gallery/art/artreview/2026-06-24/ty-article-magazine/.premium/0000019e-efa6-d5c5-a99e-ffb6f5070000
 
-### WARNING · summary_long · item 18
+### WARNING · summary_long · item 19
 - Summary length 328 > 220
 - Headline: `טייט פרדיננד בן ה-17 חשף שניסה לחבל בקשר של אביו עם הגיסה קייט`
 - Original: `Tate Ferdinand, 17, says he 'hated' stepmum Kate and reveals he told lies about her 'meeting random men' to dad Rio out of 'loyalty' towards his late mother`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925511/Tate-Ferdinand-stepmum-Kate-meeting-men-dad-Rio.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 18
+### WARNING · takeaway_long · item 19
 - Takeaway length 212 > 95
 - Headline: `טייט פרדיננד בן ה-17 חשף שניסה לחבל בקשר של אביו עם הגיסה קייט`
 - Original: `Tate Ferdinand, 17, says he 'hated' stepmum Kate and reveals he told lies about her 'meeting random men' to dad Rio out of 'loyalty' towards his late mother`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925511/Tate-Ferdinand-stepmum-Kate-meeting-men-dad-Rio.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · summary_long · item 19
-- Summary length 366 > 220
-- Headline: `דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר`
-- Original: `Diana Vickers is branded 'summer's Mariah Carey' as she dances in the aisles of M&S to new rendition of her viral Picky Bits song - and even Professor Green wants in on the action`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15925363/Diana-Vickers-branded-summers-Mariah-Carey-dances-aisles-M-S-new-rendition-viral-Picky-Bits-song-Professor-Green-wants-action.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 19
-- Takeaway length 204 > 95
-- Headline: `דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר`
-- Original: `Diana Vickers is branded 'summer's Mariah Carey' as she dances in the aisles of M&S to new rendition of her viral Picky Bits song - and even Professor Green wants in on the action`
-- Source: Daily Mail TVShowbiz רכילות חו״ל
-- URL: https://www.dailymail.com/tvshowbiz/article-15925363/Diana-Vickers-branded-summers-Mariah-Carey-dances-aisles-M-S-new-rendition-viral-Picky-Bits-song-Professor-Green-wants-action.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
 ### WARNING · summary_long · item 20
 - Summary length 306 > 220
@@ -312,123 +298,130 @@ Warnings: 200
 - URL: https://www.jpost.com/israel-news/article-900352
 
 ### WARNING · summary_long · item 21
+- Summary length 366 > 220
+- Headline: `דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר`
+- Original: `Diana Vickers is branded 'summer's Mariah Carey' as she dances in the aisles of M&S to new rendition of her viral Picky Bits song - and even Professor Green wants in on the action`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15925363/Diana-Vickers-branded-summers-Mariah-Carey-dances-aisles-M-S-new-rendition-viral-Picky-Bits-song-Professor-Green-wants-action.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · takeaway_long · item 21
+- Takeaway length 204 > 95
+- Headline: `דיאנה ויקרס הוציאה רמיקס ל-Picky Bits עם שיתוף פעולה של מארקס אנד ספנסר`
+- Original: `Diana Vickers is branded 'summer's Mariah Carey' as she dances in the aisles of M&S to new rendition of her viral Picky Bits song - and even Professor Green wants in on the action`
+- Source: Daily Mail TVShowbiz רכילות חו״ל
+- URL: https://www.dailymail.com/tvshowbiz/article-15925363/Diana-Vickers-branded-summers-Mariah-Carey-dances-aisles-M-S-new-rendition-viral-Picky-Bits-song-Professor-Green-wants-action.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
+
+### WARNING · summary_long · item 22
 - Summary length 329 > 220
 - Headline: `15 משפחות בלוד כתבו יחד ספר ילדים לשבוע הספר במסגרת תוכנית חיבורים`
 - Original: `הסוד שנרקם ביער: 15 משפחות, 15 פרקים וספר ילדים אחד`
 - Source: ynet - כל ערוץ מעורבות
 - URL: https://www.ynet.co.il/activism/article/yokra14811065
 
-### WARNING · takeaway_long · item 21
+### WARNING · takeaway_long · item 22
 - Takeaway length 213 > 95
 - Headline: `15 משפחות בלוד כתבו יחד ספר ילדים לשבוע הספר במסגרת תוכנית חיבורים`
 - Original: `הסוד שנרקם ביער: 15 משפחות, 15 פרקים וספר ילדים אחד`
 - Source: ynet - כל ערוץ מעורבות
 - URL: https://www.ynet.co.il/activism/article/yokra14811065
 
-### WARNING · summary_long · item 22
+### WARNING · summary_long · item 23
 - Summary length 318 > 220
 - Headline: `נפט ברנט נסחר ב-75 דולר; הדולר מתחזק מול היורו והליש״ט`
 - Original: `החוזים על נאסד"ק עולים ב-0.5%; הנפט ברמתו הנמוכה ביותר מלפני המלחמה באיראן`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-24/ty-article-live/0000019e-ed8a-d514-a9bf-fdfb1fc50000
 
-### WARNING · takeaway_long · item 22
+### WARNING · takeaway_long · item 23
 - Takeaway length 192 > 95
 - Headline: `נפט ברנט נסחר ב-75 דולר; הדולר מתחזק מול היורו והליש״ט`
 - Original: `החוזים על נאסד"ק עולים ב-0.5%; הנפט ברמתו הנמוכה ביותר מלפני המלחמה באיראן`
 - Source: דה מרקר - גלובל
 - URL: https://www.themarker.com/wallstreet/2026-06-24/ty-article-live/0000019e-ed8a-d514-a9bf-fdfb1fc50000
 
-### WARNING · summary_long · item 23
+### WARNING · summary_long · item 24
 - Summary length 373 > 220
 - Headline: `נוחי דנקנר יוכרז כפושט רגל אחרי שלא עמד בהסדר החוב מול ארבעה בנקים`
 - Original: `"אני מרים ידיים, נתתי כל מה שיש לי": נוחי דנקנר יוכרז פושט רגל`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/s1hqonffml
 
-### WARNING · takeaway_long · item 23
+### WARNING · takeaway_long · item 24
 - Takeaway length 192 > 95
 - Headline: `נוחי דנקנר יוכרז כפושט רגל אחרי שלא עמד בהסדר החוב מול ארבעה בנקים`
 - Original: `"אני מרים ידיים, נתתי כל מה שיש לי": נוחי דנקנר יוכרז פושט רגל`
 - Source: ynet - כל ערוץ הכלכלה
 - URL: https://www.ynet.co.il/economy/article/s1hqonffml
 
-### WARNING · takeaway_long · item 24
+### WARNING · takeaway_long · item 25
 - Takeaway length 181 > 95
 - Headline: `א-שרע דחה את בקשת טראמפ: ״סוריה לא תיכנס ללבנון להילחם בחיזבאללה״`
 - Original: `מאחורי הקלעים של סירוב א-שרע לטיפול בחיזבאללה`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3847281
 
-### WARNING · summary_long · item 25
+### WARNING · summary_long · item 26
 - Summary length 225 > 220
 - Headline: `8,000 אוהדי סקוטלנד פלשו למיאמי לפני המשחק מול ברזיל - וייבשו את הפאבים`
 - Original: `הפלישה למיאמי: "אנחנו הולכים לייבש כאן את כל הפאבים"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3848151
 
-### WARNING · takeaway_long · item 25
+### WARNING · takeaway_long · item 26
 - Takeaway length 166 > 95
 - Headline: `8,000 אוהדי סקוטלנד פלשו למיאמי לפני המשחק מול ברזיל - וייבשו את הפאבים`
 - Original: `הפלישה למיאמי: "אנחנו הולכים לייבש כאן את כל הפאבים"`
 - Source: וואלה ספורט
 - URL: https://sports.walla.co.il/item/3848151
 
-### WARNING · takeaway_long · item 26
+### WARNING · takeaway_long · item 27
 - Takeaway length 106 > 95
 - Headline: `יו״ר הפרלמנט האיראני: ביטחון המזרח התיכון - של מדינות האזור בלבד`
 - Original: `MoU a 'declaration of defeat' by US, new era rises in the Middle East, says Iran parliament speaker`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-900353
 
-### WARNING · takeaway_long · item 27
+### WARNING · takeaway_long · item 28
 - Takeaway length 132 > 95
 - Headline: `נתניהו יכנס קבינט ביטחוני לדון בתוכנית טראמפ להעברת חיזבאללה לידי סוריה`
 - Original: `Netanyahu, cabinet to discuss Trump's plan for Syria to remove Hezbollah from Lebanon - report`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/article-900335
 
-### WARNING · takeaway_long · item 28
+### WARNING · takeaway_long · item 29
 - Takeaway length 137 > 95
 - Headline: `20 מיליון שקל: הושקה קרן ״גב לעסקים״ לעסקים שנפגעו במלחמה`
 - Original: `20 מיליון שקל לעסקים שנפגעו מהמלחמה: הושקה קרן סיוע חדשה לעסקים שספגו פגיעות טילים`
 - Source: וואלה מקומי - חדשות
 - URL: https://mekomi.walla.co.il/item/3848216
 
-### WARNING · takeaway_long · item 29
+### WARNING · takeaway_long · item 30
 - Takeaway length 176 > 95
 - Headline: `גוטליב תקפה את בהרב־מיארה: ״הורדתי אותה על הברכיים תוך שעות״`
 - Original: `טלי גוטליב עושה סוף לשמועות על עתידה בליכוד ומטילה פצצה: "זה מעורר בי גועל"`
 - Source: מעריב - פוליטי מדיני
 - URL: https://www.maariv.co.il/news/politics/article-1336851
 
-### WARNING · takeaway_long · item 30
+### WARNING · takeaway_long · item 31
 - Takeaway length 175 > 95
 - Headline: `מדונה בת ה־67 סוגרת את שבוע האופנה של פריז במכונית מלון במשי ורוד`
 - Original: `Madonna, 67, struts her stuff in lace silk nightwear and knee-high boots as she turns heads at Men's Paris Fashion Week`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925239/Madonna-silk-nightwear-Mens-Paris-Fashion-Week.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · summary_long · item 31
+### WARNING · summary_long · item 32
 - Summary length 235 > 220
 - Headline: `הולי ואלאנס לסטפנוביץ׳: ״בריטניה צריכה לשלוט בעולם - אני מאחורי הנסון״`
 - Original: `Holly Valance declares that 'Britain should still be ruling the world' and endorses Pauline Hanson as the right-wing Neighbours star sits down for controversial chat with Karl Stefanovic: 'I think she's amazing'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925349/Holly-Valance-Pauline-Hanson-right-wing.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
 
-### WARNING · takeaway_long · item 31
+### WARNING · takeaway_long · item 32
 - Takeaway length 182 > 95
 - Headline: `הולי ואלאנס לסטפנוביץ׳: ״בריטניה צריכה לשלוט בעולם - אני מאחורי הנסון״`
 - Original: `Holly Valance declares that 'Britain should still be ruling the world' and endorses Pauline Hanson as the right-wing Neighbours star sits down for controversial chat with Karl Stefanovic: 'I think she's amazing'`
 - Source: Daily Mail TVShowbiz רכילות חו״ל
 - URL: https://www.dailymail.com/tvshowbiz/article-15925349/Holly-Valance-Pauline-Hanson-right-wing.html?ns_mchannel=rss&ns_campaign=1490&ito=1490
-
-### WARNING · takeaway_long · item 32
-- Takeaway length 126 > 95
-- Headline: `משפט רביד: עורכת דינו של יוחננוף דורשת לפסול את התיק בגלל ״קשקשנות״`
-- Original: `עורכת דינו של יוחננוף: "התיק בנוי על קשקשנות של אייל רביד"`
-- Source: גלובס - משפט
-- URL: https://www.globes.co.il/news/article.aspx?did=1001546751#utm_source=RSS
 
 ### WARNING · summary_long · item 33
 - Summary length 242 > 220
