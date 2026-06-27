@@ -267,7 +267,7 @@ def parse_feed_datetime(raw: str) -> str:
     return dt.isoformat(timespec='seconds')
 
 def source_timing_key(source: str) -> str:
-    s = str(source or "")
+    s = re.sub(r"\s+דרך\s+(?:Google News|גוגל)\s*$", "", str(source or "").strip(), flags=re.I)
     low = s.lower()
     if "ערוץ 7" in s or "israel national news" in low or "inn" in low:
         return "ערוץ 7 / INN"
@@ -324,6 +324,12 @@ def source_timing_key(source: str) -> str:
     if "N12" in s or "mako" in low:
         return "N12"
     return s.split(" - ")[0].strip() or "מקור"
+
+
+def is_google_news_source_row(row: dict) -> bool:
+    text = " ".join(str(row.get(key) or "") for key in ("source", "subSource", "url"))
+    low = text.lower()
+    return "דרך google news" in low or "דרך גוגל" in text or "news.google.com/rss" in low or "news.google.com/" in low
 
 def source_logo(source: str) -> str:
     s = source.lower()
@@ -2751,10 +2757,24 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
             headline = "צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש"
             context = desc or title
             takeaway = "פגיעה במפקדי שטח משנה את חופש הפעולה של חיזבאללה בדרום לבנון."
+        elif "במהלך השבוע" in text and any(x in text for x in ["חיסולים", "דרום לבנון", "איו\"ש", "איו״ש"]):
+            headline = "צה״ל סיכם שבוע פעילות בעזה, בלבנון ובאיו״ש"
+            context = "בסיכום השבוע צה״ל דיווח על יותר מ-10 חיסולים בעזה, שש תקיפות בדרום לבנון ויותר מ-100 מעצרים באיו״ש."
+            takeaway = "סיכום שבועי כזה מראה שצה״ל פועל במקביל בשלוש זירות, לא רק באירוע נקודתי."
+        elif "הרמטכ" in text and "קורס" in text and "קצינים" in text:
+            headline = "הרמטכ״ל הציב לקצינים החדשים את אתגר הלכידות בצה״ל"
+            context = "בטקס סיום קורס הקצינים הדגיש הרמטכ״ל את הצורך לשמור על מסגרת צבאית משותפת מול מגוון אוכלוסיות ומשימות."
+            takeaway = "המסר לקצינים החדשים הוא שלכידות הפיקוד הפכה לאתגר מבצעי, לא רק ערכי."
+        elif "הארכת השירות" in text and "שיטת שיבוץ" in text:
+            headline = "צה״ל מסביר למה הוא דוחף להארכת שירות ולשיבוץ חדש"
+            context = "רח״ט תכנון ומנהל כוח האדם בצה״ל הציג את הצורך בהארכת שירות ל-36 חודשים, גיוס אוכלוסיות נוספות ושיטת שיבוץ היברידית."
+            takeaway = "מצוקת כוח האדם בצה״ל כבר משנה את תנאי השירות ואת הדרך שבה חיילים ישובצו."
         else:
             headline = complete_headline(dequote_headline(title), 72)
-            context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else fallback_context_from_title(title, "ביטחון")
-            takeaway = "עדכון צבאי נקודתי חשוב כשהוא משנה הנחיות, גבול או פעילות כוחות."
+            context = compact_context(desc or title, "ביטחון", title)
+            if normalized_key(context).startswith(normalized_key(headline)):
+                context = compact_context(text, "ביטחון", title)
+            takeaway = "הערך של עדכון צבאי כזה תלוי בשאלה אם הוא משנה פעילות כוחות, גבול או שגרת אזרחים."
         return headline, context, takeaway, category, cls
 
     if "משטרת ישראל" in source or "דוברות משטרת" in source:
@@ -2783,10 +2803,32 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
             headline = "מסתערבי מג״ב עצרו בשכם חשודים שתכננו פיגוע"
             context = "הכוחות נכנסו למרחב בצורה מסוערבת, סגרו על המבנה שבו הסתתרו החשודים וניהלו מולם מגעים עד שנעצרו."
             takeaway = "מעצר לפני ביצוע פיגוע חשוב יותר ממספר העצורים עצמו."
+        elif "אמצעי לחימה" in text and "בור מים" in text:
+            headline = "אמצעי לחימה הוסלקו בבור מים בכפר אל־ג׳יב"
+            context = "לוחמי מג״ב איתרו בבור מים באזור ירושלים מצבור אמצעי לחימה שלפי החשד יועד לפעילות טרור, לאחר פעולה מורכבת שכללה שאיבת מים וצלילה."
+            takeaway = "הסלקת נשק בבור מים מצביעה על תשתית טרור מתוכננת, לא על החזקת נשק מקרית."
+        elif "גנב סדרתי" in text and "עזריאלי" in text:
+            headline = "חשוד בגניבת טלפונים בקניון עזריאלי נעצר אחרי מרדף"
+            context = "בלשי תחנת חברון עקבו אחר חשוד מדאהרייה שנחשד בגניבת מכשירי טלפון בקניון עזריאלי בתל אביב, עד שנעצר לאחר שניסה להימלט בין החנויות."
+            takeaway = "גניבה סדרתית בקניון מרכזי דורשת מעקב מודיעיני, לא רק תפיסה רגעית בחנות."
+        elif "ג'סר א-זרקא" in text and "ירי" in text and "קשה" in text:
+            headline = "גבר נפצע קשה בירי בג׳סר א־זרקא"
+            context = "המשטרה פתחה בחקירה לאחר דיווח על ירי בג׳סר א־זרקא, שבו נפגע גבר באורח קשה; הכוחות אספו ראיות בזירה והרקע מסתמן כפלילי."
+            takeaway = "ירי עם פצוע קשה משאיר את היישוב תחת חקירה פלילית וסיכון פתוח."
+        elif ("רצח ביפו" in text or "אבן רושד" in text or "אבן רשד" in text) and any(x in text for x in ["שני פצועים", "קטינים", "מותו"]):
+            headline = "קטין נהרג וקטין נוסף נפצע בירי ביפו"
+            context = "באירוע ירי ברחוב אבן רשד ביפו נפגעו שני בני 17, ובהמשך נקבע מותו של אחד מהם. המשטרה פתחה בחקירת רצח ואוספת ראיות בזירה."
+            takeaway = "ירי שמסתיים במות קטין הופך סכסוך פלילי למשבר ביטחון אישי בשכונה."
+        elif "התעללות בפעוטות" in text or ("מטפלת" in text and "פעוטות" in text):
+            headline = "מטפלת מירושלים נעצרה בחשד להתעללות בפעוטות"
+            context = "משטרת ירושלים פתחה בחקירה בעקבות תלונות על מטפלת מהר חומה, שלפי החשד צעקה, קיללה והתעלמה מצרכי פעוטות שהיו תחת השגחתה."
+            takeaway = "בגני ילדים, תלונות קטנות על יחס יומיומי יכולות להפוך במהירות לחשד פלילי."
         else:
             headline = complete_headline(dequote_headline(title), 72)
-            context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else fallback_context_from_title(title, "פלילים")
-            takeaway = "אירוע משטרתי משמעותי נמדד בסיכון שנמנע ובפגיעה בשגרה המקומית."
+            context = compact_context(desc or title, "פלילים", title)
+            if normalized_key(context).startswith(normalized_key(headline)):
+                context = compact_context(text, "פלילים", title)
+            takeaway = "אירוע משטרתי משמעותי צריך להיבחן לפי הסיכון שנמנע וההשפעה על השגרה המקומית."
         return headline, context, takeaway, category, cls
     return None
 
@@ -2830,7 +2872,7 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "headline": headline,
             "originalTitle": c.original_title or c.title,
             "context": context,
-            "takeaway": takeaway,
+            "takeaway": "",
         }
         output_key = normalized_key(headline)
         if output_key in seen_output_headlines:
@@ -2955,10 +2997,16 @@ def refresh_item_pointa(item: dict) -> dict:
 
 
 WEATHER_DEFAULT_CITY = "ירושלים"
-WEATHER_DEFAULT_CITY_ID = "510"
+WEATHER_LOCATIONS = [
+    {"name": "ירושלים", "lid": "1", "display": "ירושלים"},
+    {"name": "תל אביב", "lid": "84", "display": "תל אביב"},
+    {"name": "באר שבע", "lid": "8", "display": "באר שבע"},
+    {"name": "חיפה", "lid": "3", "display": "חיפה"},
+]
 WEATHER_DAILY_HOUR = 6
 WEATHER_SOURCE = "השירות המטאורולוגי"
-WEATHER_CITY_RSS = f"https://ims.gov.il/sites/default/files/ims_data/rss/forecast_city/rssForecastCity_{WEATHER_DEFAULT_CITY_ID}_he.xml"
+WEATHER_CITY_PORTAL_URL = "https://ims.gov.il/he/city_portal/{lid}"
+WEATHER_CITY_RSS = "https://ims.gov.il/sites/default/files/ims_data/rss/forecast_city/rssForecastCity_510_he.xml"
 WEATHER_COUNTRY_RSS = "https://ims.gov.il/sites/default/files/ims_data/rss/forecast_country/rssForecastCountry_he.xml"
 WEATHER_RADIATION_RSS = "https://ims.gov.il/sites/default/files/ims_data/rss/forecast_radiation/rssForecastRadiation_he.xml"
 
@@ -3027,6 +3075,35 @@ def parse_ims_city_forecast(xml_text: str) -> dict:
     city = title.replace("תחזית ל", "").strip() or WEATHER_DEFAULT_CITY
     return {"city": city, "nightMin": night_min, **forecast}
 
+
+def parse_ims_city_portal_forecast(json_text: str, location: dict, now: datetime) -> dict:
+    payload = json.loads(json_text)
+    data = payload.get("data") or {}
+    fixed = data.get("fixed_forecast_data") or {}
+    date_key = now.date().isoformat()
+    day = fixed.get(date_key) or next(iter(fixed.values()), {})
+    daily = day.get("daily") or {}
+    codes = data.get("weather_codes") or {}
+    weather_code = str(daily.get("weather_code") or "")
+    condition = clean_text((codes.get(weather_code) or {}).get("desc") or "")
+    if not condition:
+        condition = clean_text(str(data.get("analysis", {}).get("weather_code") or "תחזית מתעדכנת"))
+    forecast_date = str(daily.get("forecast_date") or date_key)
+    date_label = ""
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", forecast_date)
+    if m:
+        date_label = f"{m.group(3)}/{m.group(2)}"
+    return {
+        "city": location["display"],
+        "lid": str(location["lid"]),
+        "date": date_label,
+        "condition": condition or "תחזית מתעדכנת",
+        "max": str(daily.get("maximum_temperature") or "").strip(),
+        "min": str(daily.get("minimum_temperature") or "").strip(),
+        "uvi": str(daily.get("maximum_uvi") or "").strip(),
+        "countryDescription": clean_text(str((day.get("country") or {}).get("description") or "")),
+        "sourceUrl": WEATHER_CITY_PORTAL_URL.format(lid=location["lid"]),
+    }
 
 
 def parse_ims_country_highlights(xml_text: str) -> dict:
@@ -3101,50 +3178,60 @@ def weather_cloud_phrase(condition: str) -> str:
     return condition
 
 
-def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: bool = False) -> dict | None:
-    tz = timezone(timedelta(hours=3))
-    now = (now or datetime.now(tz)).astimezone(tz)
-    if now.hour < WEATHER_DAILY_HOUR and not force:
-        return None
+def weather_uv_from_index(raw: str) -> dict:
     try:
-        forecast = parse_ims_city_forecast(fetcher(WEATHER_CITY_RSS, timeout=15))
+        index = int(float(raw))
+    except Exception:
+        return {}
+    if index >= 11:
+        level = "קיצוני"
+    elif index >= 8:
+        level = "גבוה מאוד"
+    elif index >= 6:
+        level = "גבוה"
+    elif index >= 3:
+        level = "בינוני"
+    else:
+        level = "נמוך"
+    return {"level": level, "index": index}
+
+
+def weather_image_key(condition: str, uv: dict | None = None, highlights: list[str] | None = None) -> str:
+    asset = weather_image_asset(condition, uv, highlights)
+    return Path(asset).stem
+
+
+def build_daily_weather_card_for_location(location: dict, now: datetime, country: dict, fetcher=fetch, force: bool = False) -> dict | None:
+    try:
+        forecast = parse_ims_city_portal_forecast(fetcher(WEATHER_CITY_PORTAL_URL.format(lid=location["lid"]), timeout=15), location, now)
     except Exception as exc:
-        print(f"Weather card skipped: {exc}", file=sys.stderr)
+        print(f"Weather card skipped for {location.get('display')}: {exc}", file=sys.stderr)
         return None
-    try:
-        country = parse_ims_country_highlights(fetcher(WEATHER_COUNTRY_RSS, timeout=15))
-    except Exception:
-        country = {}
-    try:
-        uv = parse_ims_uv_for_city(fetcher(WEATHER_RADIATION_RSS, timeout=15), WEATHER_DEFAULT_CITY)
-    except Exception:
-        uv = {}
     forecast_date = now.date()
     raw_date = forecast.get("date") or ""
     m = re.match(r"(\d{2})/(\d{2})", raw_date)
     if m:
-        forecast_date = datetime(now.year, int(m.group(2)), int(m.group(1)), tzinfo=tz).date()
-        # IMS may publish tomorrow's first day in the evening. The daily card is
-        # a 06:00 morning item, so do not surface tomorrow's card tonight.
+        forecast_date = datetime(now.year, int(m.group(2)), int(m.group(1)), tzinfo=now.tzinfo).date()
         if forecast_date > now.date() and not force:
             return None
-    min_temp = forecast.get("min") or forecast.get("nightMin") or ""
+    min_temp = forecast.get("min") or ""
     max_temp = forecast.get("max") or ""
     temp_range = f"{min_temp}°–{max_temp}°" if min_temp and max_temp else (f"עד {max_temp}°" if max_temp else "")
     condition = forecast.get("condition") or "תחזית מתעדכנת"
-    city = WEATHER_DEFAULT_CITY
-    day_start = datetime(forecast_date.year, forecast_date.month, forecast_date.day, WEATHER_DAILY_HOUR, tzinfo=tz)
+    city = forecast.get("city") or location["display"]
+    day_start = datetime(forecast_date.year, forecast_date.month, forecast_date.day, WEATHER_DAILY_HOUR, tzinfo=now.tzinfo)
     if force:
         day_start = now.replace(microsecond=0)
     cloud = weather_cloud_phrase(condition)
-    uv_text = f"UV {uv.get('level')} {uv.get('from')}–{uv.get('to')}" if uv.get("level") and uv.get("from") and uv.get("to") else ""
-    headline_bits = [f"מזג האוויר בירושלים: {temp_range}" if temp_range else "מזג האוויר בירושלים", cloud]
+    uv = weather_uv_from_index(forecast.get("uvi") or "")
+    uv_text = f"UV {uv.get('level')} ({uv.get('index')})" if uv.get("level") and uv.get("index") else ""
+    headline_bits = [f"מזג האוויר ב{city}: {temp_range}" if temp_range else f"מזג האוויר ב{city}", cloud]
     if uv.get("level") in {"גבוה", "גבוה מאוד", "קיצוני"}:
         headline_bits.append(f"UV {uv['level']} בצהריים")
     headline = "; ".join([b for b in headline_bits if b])
     highlight_text = "; ".join(country.get("highlights") or [])
     context_parts = []
-    context_parts.append(f"בירושלים צפויה {cloud} וטווח של {temp_range}." if temp_range else f"בירושלים צפויה {cloud}.")
+    context_parts.append(f"ב{city} צפויה {cloud} וטווח של {temp_range}." if temp_range else f"ב{city} צפויה {cloud}.")
     if uv_text:
         context_parts.append(f"מדד הקרינה: {uv_text}.")
     if highlight_text:
@@ -3156,27 +3243,28 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
         takeaway = "היום נראה מתון, אבל כדאי להשאיר מקום למטרייה קלה או שינוי תכנית בחוץ."
     else:
         takeaway = f"כדאי לתכנן את היום סביב {temp_range}: שכבה קלה בבוקר ונוחות יחסית בצהריים." if temp_range else "כדאי לבדוק את התחזית לפני יציאה ולתכנן לבוש ונסיעות בהתאם."
+    image_key = weather_image_key(condition, uv, country.get("highlights") or [])
     return {
         "category": "מזג אוויר",
         "categoryClass": "real",
         "source": WEATHER_SOURCE,
         "sourceLogo": "IMS",
-        "sourceUrl": WEATHER_CITY_RSS,
+        "sourceUrl": forecast.get("sourceUrl") or WEATHER_CITY_PORTAL_URL.format(lid=location["lid"]),
         "imageUrl": weather_image_asset(condition, uv, country.get("highlights") or []),
+        "weatherImageKey": image_key,
         "publishedAt": day_start.isoformat(timespec="seconds"),
-        # Daily service weather is a utility card, not a breaking/live news
-        # publication. Keep its timestamp for display, but do not let it sort
-        # above fresh news or trip the live-feed weather_on_top guard.
         "hasSourceDate": False,
         "time": "06:00",
         "headline": trim_words(headline, 75),
-        "originalTitle": f"תחזית לירושלים - {forecast.get('date', '')}".strip(),
+        "originalTitle": f"תחזית ל{city} - {forecast.get('date', '')}".strip(),
         "context": trim_words(context, 180),
         "takeaway": trim_words(takeaway, 95),
         "noSourceLink": True,
+        "semanticClusterKey": f"weather:{location['lid']}:{forecast_date.isoformat()}",
         "weather": {
             "city": city,
-            "defaultCity": True,
+            "lid": str(location["lid"]),
+            "defaultCity": city == WEATHER_DEFAULT_CITY,
             "dailyHour": WEATHER_DAILY_HOUR,
             "min": min_temp,
             "max": max_temp,
@@ -3185,8 +3273,22 @@ def build_daily_weather_card(now: datetime | None = None, fetcher=fetch, force: 
             "uv": uv,
             "countryHighlights": country.get("highlights") or [],
             "forecastDate": forecast.get("date", ""),
+            "imageKey": image_key,
         },
     }
+
+
+def build_daily_weather_cards(now: datetime | None = None, fetcher=fetch, force: bool = False) -> list[dict]:
+    tz = timezone(timedelta(hours=3))
+    now = (now or datetime.now(tz)).astimezone(tz)
+    if now.hour < WEATHER_DAILY_HOUR and not force:
+        return []
+    try:
+        country = parse_ims_country_highlights(fetcher(WEATHER_COUNTRY_RSS, timeout=15))
+    except Exception:
+        country = {}
+    cards = [build_daily_weather_card_for_location(location, now, country, fetcher, force) for location in WEATHER_LOCATIONS]
+    return [card for card in cards if card]
 
 
 def feed_item_key(item: dict) -> str:
@@ -3398,27 +3500,64 @@ def is_service_weather_item(item: dict) -> bool:
 
 
 def preserve_daily_weather_item(items: list[dict], now: datetime, limit: int = MAX_FEED_ITEMS) -> list[dict]:
-    """Keep the daily IMS utility card inside the capped feed without pinning it on top."""
+    """Keep daily IMS utility cards inside the capped feed without pinning them on top."""
     if len(items) <= limit:
         return items
     limited = list(items[:limit])
-    if any(is_service_weather_item(item) for item in limited):
-        return limited
-    weather_candidates = [item for item in items[limit:] if is_service_weather_item(item)]
+    existing_weather_keys = {feed_item_key(item) for item in limited if is_service_weather_item(item)}
+    weather_candidates = [item for item in items[limit:] if is_service_weather_item(item) and feed_item_key(item) not in existing_weather_keys]
     if not weather_candidates:
         return limited
-    weather_item = max(weather_candidates, key=lambda item: item_datetime(item, now))
-    replace_idx = next(
-        (
-            idx
-            for idx in range(len(limited) - 1, -1, -1)
-            if not is_official_telegram_item(limited[idx]) and not is_service_weather_item(limited[idx])
-        ),
-        None,
-    )
-    if replace_idx is None:
-        return limited
-    limited[replace_idx] = weather_item
+    for weather_item in sorted(weather_candidates, key=lambda item: item_datetime(item, now), reverse=True):
+        replace_idx = next(
+            (
+                idx
+                for idx in range(len(limited) - 1, -1, -1)
+                if not is_official_telegram_item(limited[idx]) and not is_service_weather_item(limited[idx])
+            ),
+            None,
+        )
+        if replace_idx is None:
+            break
+        limited[replace_idx] = weather_item
+        existing_weather_keys.add(feed_item_key(weather_item))
+    limited.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
+    return limited
+
+
+def ensure_daily_weather_items(items: list[dict], weather_cards: list[dict], now: datetime, limit: int = MAX_FEED_ITEMS) -> list[dict]:
+    """Guarantee generated IMS service cards survive final dedupe/cap passes.
+
+    Weather cards are utility feed rows, not scraped articles. They are created
+    once a day by the generator, so they must not silently disappear because a
+    later duplicate/balance/cap pass was tuned for news cards.
+    """
+    if not weather_cards:
+        return items[:limit]
+    limited = list(items[:limit])
+    existing_keys = {feed_item_key(item) for item in limited}
+    for weather_item in sorted(weather_cards, key=lambda item: item_datetime(item, now), reverse=True):
+        key = feed_item_key(weather_item)
+        if not key or key in existing_keys:
+            continue
+        if len(limited) < limit:
+            limited.append(weather_item)
+            existing_keys.add(key)
+            continue
+        replace_idx = next(
+            (
+                idx
+                for idx in range(len(limited) - 1, -1, -1)
+                if not is_official_telegram_item(limited[idx]) and not is_service_weather_item(limited[idx])
+            ),
+            None,
+        )
+        if replace_idx is None:
+            break
+        removed = limited[replace_idx]
+        existing_keys.discard(feed_item_key(removed))
+        limited[replace_idx] = weather_item
+        existing_keys.add(key)
     limited.sort(key=lambda item: (1 if item.get("hasSourceDate") else 0, item_datetime(item, now)), reverse=True)
     return limited
 
@@ -3496,6 +3635,8 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     merged_activity = {}
     for feed in [existing_feed, new_feed]:
         for row in feed.get("sourceActivity", []) or []:
+            if is_google_news_source_row(row):
+                continue
             key = (row.get("source") or "", row.get("subSource") or "")
             if not key[0]:
                 continue
@@ -3505,21 +3646,22 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     if merged_activity:
         new_feed["sourceActivity"] = sorted(merged_activity.values(), key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
 
-    weather_card = build_daily_weather_card(now, force=force_weather_card)
-    if weather_card:
-        weather_key = feed_item_key(weather_card)
-        merged = [item for item in merged if feed_item_key(item) != weather_key]
-        merged.append(weather_card)
+    weather_cards = build_daily_weather_cards(now, force=force_weather_card)
+    if weather_cards:
+        weather_keys = {feed_item_key(card) for card in weather_cards}
+        merged = [item for item in merged if feed_item_key(item) not in weather_keys]
+        merged.extend(weather_cards)
         activity = new_feed.setdefault("sourceActivity", [])
         activity = [row for row in activity if row.get("source") != "השירות המטאורולוגי"]
-        activity.append({
-            "source": "השירות המטאורולוגי",
-            "subSource": WEATHER_SOURCE,
-            "category": "מזג אוויר",
-            "publishedAt": weather_card.get("publishedAt"),
-            "title": weather_card.get("headline") or weather_card.get("originalTitle") or "תחזית השירות המטאורולוגי",
-            "url": weather_card.get("sourceUrl") or WEATHER_CITY_RSS,
-        })
+        for weather_card in weather_cards:
+            activity.append({
+                "source": "השירות המטאורולוגי",
+                "subSource": f"{WEATHER_SOURCE} - {weather_card.get('weather', {}).get('city', '')}".strip(),
+                "category": "מזג אוויר",
+                "publishedAt": weather_card.get("publishedAt"),
+                "title": weather_card.get("headline") or weather_card.get("originalTitle") or "תחזית השירות המטאורולוגי",
+                "url": weather_card.get("sourceUrl") or WEATHER_CITY_PORTAL_URL.format(lid=WEATHER_LOCATIONS[0]["lid"]),
+            })
         new_feed["sourceActivity"] = sorted(activity, key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
     # Final deterministic pass catches retained existing cards and new bridge
     # sources that should not go through generic Pointa rewrites.
@@ -3542,9 +3684,13 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
         deduped.append(item)
     deduped = balance_feed_category_mix(deduped)
     limited = preserve_recent_official_telegram_items(deduped, now, MAX_FEED_ITEMS)
-    limited = preserve_daily_weather_item(limited if len(limited) > MAX_FEED_ITEMS else deduped, now, MAX_FEED_ITEMS)
+    limited = preserve_daily_weather_item(limited, now, MAX_FEED_ITEMS)
     limited = filter_main_feed_breaking_leaks(limited, "main_feed_no_breaking_guard")
-    merged = assign_display_rank(diversify_visible_top(limited))
+    limited = ensure_daily_weather_items(limited, weather_cards, now, MAX_FEED_ITEMS)
+    visible = diversify_visible_top(limited)
+    visible = filter_main_feed_breaking_leaks(visible, "main_feed_no_breaking_guard_final")
+    visible = ensure_daily_weather_items(visible, weather_cards, now, MAX_FEED_ITEMS)
+    merged = assign_display_rank(visible)
     new_feed["items"] = merged
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
     return new_feed
@@ -3559,6 +3705,14 @@ def empty_draft_payload(status: str, message: str = "") -> dict:
     if message:
         payload["message"] = message
     return payload
+
+
+def strip_public_takeaways(feed: dict) -> dict:
+    """Remove the deprecated closing takeaway from public feed cards."""
+    for item in feed.get("items", []):
+        if isinstance(item, dict):
+            item.pop("takeaway", None)
+    return feed
 
 
 def write_empty_draft(status: str, message: str = "") -> None:
@@ -3683,6 +3837,7 @@ def main() -> int:
     feed["sourceActivity"] = sorted(source_activity, key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
     feed["syncProfile"] = args.sync_profile
     if args.draft:
+        feed = strip_public_takeaways(feed)
         feed["status"] = "draft"
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
@@ -3691,6 +3846,7 @@ def main() -> int:
     else:
         feed = merge_with_existing_feed(feed, force_weather_card=args.force_weather_card)
         feed["mode"] = f"rss_sync_{args.sync_profile}"
+        feed = strip_public_takeaways(feed)
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")

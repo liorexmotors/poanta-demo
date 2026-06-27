@@ -79,6 +79,9 @@ if before.exists() and feed_path.exists():
         rr = dict(new.get('rescueRetention') or {})
         rr.update({'preservedRecentRescueCards': len(keep), 'updatedAt': now.isoformat(timespec='seconds')})
         new['rescueRetention'] = rr
+        for item in new.get('items', []):
+            if isinstance(item, dict):
+                item.pop('takeaway', None)
         feed_path.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
