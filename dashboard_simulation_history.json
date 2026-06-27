@@ -1,23 +1,24 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-27T13:44:22+00:00",
+  "generatedAt": "2026-06-27T14:05:53+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 12.5,
-    "avgAfterHealthScore": 67.42,
+    "avgHealthDelta": 16.42,
+    "avgAfterHealthScore": 73.0,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 79,
-      "rollingScore": 57.71,
+      "latestScore": 66,
+      "rollingScore": 58.65,
       "readyRuns": 0,
       "criticalBlockers": [
+        "top_item_stale_over_25m",
         "top12_under60_below_9",
         "fresh_candidate_supply_below_9"
       ],
@@ -33,616 +34,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-06-24T22:51:34+00:00",
-      "feedFingerprint": "2615607388651261350",
-      "before": {
-        "newsinessTop10": 3,
-        "coreHardTop10": 1,
-        "softTop10": 5,
-        "otherTop10": 2,
-        "top5Under60": 0,
-        "top10Under60": 0,
-        "top12Under60": 0,
-        "topItemAgeMinutes": 320,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 5
-        },
-        "importantMissingTop20": [
-          "N12",
-          "מעריב",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "storyClusterTop20Max": 1,
-        "eventClusterTop20Max": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 5
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 5
-          },
-          {
-            "name": "Daily Mail",
-            "count": 4
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "סרוגים",
-            "count": 1
-          },
-          {
-            "name": "כיפה",
-            "count": 1
-          },
-          {
-            "name": "JNS",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 2,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 40,
-          "score": 0,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "hardReadyStrictCount": 0,
-          "trendReadyCount": 0,
-          "cleanReadyCount": 0,
-          "cleanHardReadyCount": 0,
-          "cleanTrendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "uniqueCleanReadySources": 0,
-          "freshReadyUnder25Count": 0,
-          "cleanFreshReadyUnder25Count": 0,
-          "blockers": [
-            "ready_queue_below_6",
-            "clean_ready_queue_below_6",
-            "hard_ready_below_4",
-            "clean_hard_ready_below_4",
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2_hard_block",
-            "ready_sources_below_3",
-            "clean_ready_sources_below_3",
-            "ready_fresh_under25_below_1",
-            "clean_ready_fresh_under25_below_1",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [],
-          "cleanReadyQueue": []
-        },
-        "candidateSupply": {
-          "scope": "pre_rerank_top_80",
-          "freshUnder60Count": 0,
-          "worthyFreshUnder60Count": 0,
-          "coreHardFreshUnder60Count": 0,
-          "softFreshUnder60Count": 0,
-          "otherFreshUnder60Count": 0,
-          "freshUniqueSources": 0,
-          "worthyUniqueSources": 0,
-          "freshSources": [],
-          "worthySources": [],
-          "disqualifiedFreshCounts": {},
-          "staleOrUndatedCount": 80,
-          "blockers": [
-            "fresh_candidate_supply_below_9"
-          ],
-          "topFreshCandidates": [],
-          "topWorthyFreshCandidates": []
-        }
-      },
-      "after": {
-        "newsinessTop10": 9,
-        "coreHardTop10": 6,
-        "softTop10": 0,
-        "otherTop10": 1,
-        "top5Under60": 0,
-        "top10Under60": 0,
-        "top12Under60": 0,
-        "topItemAgeMinutes": 594,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "N12",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "storyClusterTop20Max": 1,
-        "eventClusterTop20Max": 1,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "דה מרקר",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "JNS",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 1,
-        "trendGapMatchedTop20": 0,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 40,
-          "score": 0,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "hardReadyStrictCount": 0,
-          "trendReadyCount": 0,
-          "cleanReadyCount": 0,
-          "cleanHardReadyCount": 0,
-          "cleanTrendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "uniqueCleanReadySources": 0,
-          "freshReadyUnder25Count": 0,
-          "cleanFreshReadyUnder25Count": 0,
-          "blockers": [
-            "ready_queue_below_6",
-            "clean_ready_queue_below_6",
-            "hard_ready_below_4",
-            "clean_hard_ready_below_4",
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2_hard_block",
-            "ready_sources_below_3",
-            "clean_ready_sources_below_3",
-            "ready_fresh_under25_below_1",
-            "clean_ready_fresh_under25_below_1",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [],
-          "cleanReadyQueue": []
-        },
-        "candidateSupply": {
-          "scope": "pre_rerank_top_80",
-          "freshUnder60Count": 0,
-          "worthyFreshUnder60Count": 0,
-          "coreHardFreshUnder60Count": 0,
-          "softFreshUnder60Count": 0,
-          "otherFreshUnder60Count": 0,
-          "freshUniqueSources": 0,
-          "worthyUniqueSources": 0,
-          "freshSources": [],
-          "worthySources": [],
-          "disqualifiedFreshCounts": {},
-          "staleOrUndatedCount": 80,
-          "blockers": [
-            "fresh_candidate_supply_below_9"
-          ],
-          "topFreshCandidates": [],
-          "topWorthyFreshCandidates": []
-        }
-      },
-      "beforeHealthScore": 28,
-      "afterHealthScore": 76,
-      "replacementReadiness": {
-        "score": 51,
-        "threshold": 80,
-        "components": {
-          "freshness": 0.0,
-          "newsinessTop10": 25.0,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 0.67,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "top12_under60_below_9",
-          "fresh_candidate_supply_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 60,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": false,
-        "summaryLine": "בינוני עד בעייתי — שיפור מבני בסיווג, אבל התור עדיין מת",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-23-1405.md",
-        "reportName": "tt-rr-simulation-review-2026-06-23-1405.md",
-        "reportGeneratedAt": "2026-06-23T10:58:01+00:00 (≈13:58 IL; הזמן הזה לא השתנה מהריצה הקודמת — הסימולציה לא רצה מאז; כרגע 14:05 IL)",
-        "metrics": {
-          "ציון עליזה": 60,
-          "generatedAt": 2026,
-          "beforeHealthScore": 44,
-          "afterHealthScore": 69,
-          "healthDelta": 25,
-          "replacementReadiness.score": 62,
-          "rollingScore": 76.62,
-          "newsinessTop10": 9,
-          "softTop10": 0,
-          "otherTop10": 1,
-          "top5Under60": 0,
-          "top10Under60": 0,
-          "top12Under60": 0,
-          "trendMatchedTop10": 5,
-          "trendMatchedTop20": 6,
-          "trendGapMatchedTop20": 2,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 8,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "**לבדוק למה הסימולציה לא רצה מאז 12:04** — ה-generatedAt לא התקדם. ייתכן ש-cron הסימולציה נחסם, או ש-worker תפוס. אם הסימולציה לא רצה כל שעה, כל המדדים מייצגים תמונה ישנה של 3 שעות. תיקון: להריץ את הסימולציה ידנית עכשיו, ולבדוק את ה-cron trigger.",
-          "**להרחיב את readyQueue בכוח**: לכל פריט ב-Top 30 עם age<=90m ו-class=hard, להוסיף ל-readyQueue. זה פותר את 0/4 blockers בבת אחת ומחזיר את estimatedVisibleChangeMinutes ל-15-20.",
-          "**לאסור soft ב-Top 5 וספורט בכמות>1 ב-Top 10**: להחמיר את הסיווג כך שספורט לא יקבל hard אוטומטית, ולהוסיף cap של 1 פריט ספורט ב-Top 10. זה מוריד את הסיכון לספורט רך במקומות הראשונים."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-23 14:05"
-      },
-      "delta": {
-        "newsinessTop10": 6,
-        "coreHardTop10": 5,
-        "softTop10": -5,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 3,
-        "trendMatchedTop10": -1,
-        "trendMatchedTop20": -1,
-        "healthScore": 48
-      }
-    },
-    {
-      "generatedAt": "2026-06-24T23:01:43+00:00",
-      "feedFingerprint": "875873878483324466",
-      "before": {
-        "newsinessTop10": 3,
-        "coreHardTop10": 1,
-        "softTop10": 5,
-        "otherTop10": 2,
-        "top5Under60": 0,
-        "top10Under60": 0,
-        "top12Under60": 0,
-        "topItemAgeMinutes": 331,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 5
-        },
-        "importantMissingTop20": [
-          "N12",
-          "מעריב",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "storyClusterTop20Max": 1,
-        "eventClusterTop20Max": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 5
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 5
-          },
-          {
-            "name": "Daily Mail",
-            "count": 4
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "סרוגים",
-            "count": 1
-          },
-          {
-            "name": "כיפה",
-            "count": 1
-          },
-          {
-            "name": "JNS",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 2,
-        "trendGapMatchedTop20": 1,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 40,
-          "score": 0,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "hardReadyStrictCount": 0,
-          "trendReadyCount": 0,
-          "cleanReadyCount": 0,
-          "cleanHardReadyCount": 0,
-          "cleanTrendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "uniqueCleanReadySources": 0,
-          "freshReadyUnder25Count": 0,
-          "cleanFreshReadyUnder25Count": 0,
-          "blockers": [
-            "ready_queue_below_6",
-            "clean_ready_queue_below_6",
-            "hard_ready_below_4",
-            "clean_hard_ready_below_4",
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2_hard_block",
-            "ready_sources_below_3",
-            "clean_ready_sources_below_3",
-            "ready_fresh_under25_below_1",
-            "clean_ready_fresh_under25_below_1",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [],
-          "cleanReadyQueue": []
-        },
-        "candidateSupply": {
-          "scope": "pre_rerank_top_80",
-          "freshUnder60Count": 0,
-          "worthyFreshUnder60Count": 0,
-          "coreHardFreshUnder60Count": 0,
-          "softFreshUnder60Count": 0,
-          "otherFreshUnder60Count": 0,
-          "freshUniqueSources": 0,
-          "worthyUniqueSources": 0,
-          "freshSources": [],
-          "worthySources": [],
-          "disqualifiedFreshCounts": {},
-          "staleOrUndatedCount": 80,
-          "blockers": [
-            "fresh_candidate_supply_below_9"
-          ],
-          "topFreshCandidates": [],
-          "topWorthyFreshCandidates": []
-        }
-      },
-      "after": {
-        "newsinessTop10": 9,
-        "coreHardTop10": 6,
-        "softTop10": 0,
-        "otherTop10": 1,
-        "top5Under60": 0,
-        "top10Under60": 0,
-        "top12Under60": 0,
-        "topItemAgeMinutes": 604,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "N12",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "storyClusterTop20Max": 1,
-        "eventClusterTop20Max": 1,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "ynet",
-            "count": 2
-          },
-          {
-            "name": "דה מרקר",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "JNS",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 1,
-        "trendGapMatchedTop20": 0,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 40,
-          "score": 0,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "hardReadyStrictCount": 0,
-          "trendReadyCount": 0,
-          "cleanReadyCount": 0,
-          "cleanHardReadyCount": 0,
-          "cleanTrendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "uniqueCleanReadySources": 0,
-          "freshReadyUnder25Count": 0,
-          "cleanFreshReadyUnder25Count": 0,
-          "blockers": [
-            "ready_queue_below_6",
-            "clean_ready_queue_below_6",
-            "hard_ready_below_4",
-            "clean_hard_ready_below_4",
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2_hard_block",
-            "ready_sources_below_3",
-            "clean_ready_sources_below_3",
-            "ready_fresh_under25_below_1",
-            "clean_ready_fresh_under25_below_1",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [],
-          "cleanReadyQueue": []
-        },
-        "candidateSupply": {
-          "scope": "pre_rerank_top_80",
-          "freshUnder60Count": 0,
-          "worthyFreshUnder60Count": 0,
-          "coreHardFreshUnder60Count": 0,
-          "softFreshUnder60Count": 0,
-          "otherFreshUnder60Count": 0,
-          "freshUniqueSources": 0,
-          "worthyUniqueSources": 0,
-          "freshSources": [],
-          "worthySources": [],
-          "disqualifiedFreshCounts": {},
-          "staleOrUndatedCount": 80,
-          "blockers": [
-            "fresh_candidate_supply_below_9"
-          ],
-          "topFreshCandidates": [],
-          "topWorthyFreshCandidates": []
-        }
-      },
-      "beforeHealthScore": 28,
-      "afterHealthScore": 76,
-      "replacementReadiness": {
-        "score": 51,
-        "threshold": 80,
-        "components": {
-          "freshness": 0.0,
-          "newsinessTop10": 25.0,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 0.67,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "top12_under60_below_9",
-          "fresh_candidate_supply_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 60,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": false,
-        "summaryLine": "בינוני עד בעייתי — שיפור מבני בסיווג, אבל התור עדיין מת",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-23-1405.md",
-        "reportName": "tt-rr-simulation-review-2026-06-23-1405.md",
-        "reportGeneratedAt": "2026-06-23T10:58:01+00:00 (≈13:58 IL; הזמן הזה לא השתנה מהריצה הקודמת — הסימולציה לא רצה מאז; כרגע 14:05 IL)",
-        "metrics": {
-          "ציון עליזה": 60,
-          "generatedAt": 2026,
-          "beforeHealthScore": 44,
-          "afterHealthScore": 69,
-          "healthDelta": 25,
-          "replacementReadiness.score": 62,
-          "rollingScore": 76.62,
-          "newsinessTop10": 9,
-          "softTop10": 0,
-          "otherTop10": 1,
-          "top5Under60": 0,
-          "top10Under60": 0,
-          "top12Under60": 0,
-          "trendMatchedTop10": 5,
-          "trendMatchedTop20": 6,
-          "trendGapMatchedTop20": 2,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 8,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "**לבדוק למה הסימולציה לא רצה מאז 12:04** — ה-generatedAt לא התקדם. ייתכן ש-cron הסימולציה נחסם, או ש-worker תפוס. אם הסימולציה לא רצה כל שעה, כל המדדים מייצגים תמונה ישנה של 3 שעות. תיקון: להריץ את הסימולציה ידנית עכשיו, ולבדוק את ה-cron trigger.",
-          "**להרחיב את readyQueue בכוח**: לכל פריט ב-Top 30 עם age<=90m ו-class=hard, להוסיף ל-readyQueue. זה פותר את 0/4 blockers בבת אחת ומחזיר את estimatedVisibleChangeMinutes ל-15-20.",
-          "**לאסור soft ב-Top 5 וספורט בכמות>1 ב-Top 10**: להחמיר את הסיווג כך שספורט לא יקבל hard אוטומטית, ולהוסיף cap של 1 פריט ספורט ב-Top 10. זה מוריד את הסיכון לספורט רך במקומות הראשונים."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-23 14:05"
-      },
-      "delta": {
-        "newsinessTop10": 6,
-        "coreHardTop10": 5,
-        "softTop10": -5,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 3,
-        "trendMatchedTop10": -1,
-        "trendMatchedTop20": -1,
-        "healthScore": 48
-      }
-    },
     {
       "generatedAt": "2026-06-24T23:11:52+00:00",
       "feedFingerprint": "7014302288258566631",
@@ -103306,6 +102697,3610 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 0,
         "healthScore": 26
+      }
+    },
+    {
+      "generatedAt": "2026-06-27T13:51:23+00:00",
+      "feedFingerprint": "6446946275826907241",
+      "before": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 4,
+        "softTop10": 4,
+        "otherTop10": 2,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 20,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "storyClusterTop20Max": 1,
+        "eventClusterTop20Max": 1,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 4
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "TMI",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 9,
+          "hardReadyCount": 6,
+          "hardReadyStrictCount": 6,
+          "trendReadyCount": 3,
+          "cleanReadyCount": 6,
+          "cleanHardReadyCount": 6,
+          "cleanTrendReadyCount": 3,
+          "uniqueReadySources": 5,
+          "uniqueCleanReadySources": 4,
+          "freshReadyUnder25Count": 2,
+          "cleanFreshReadyUnder25Count": 2,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 16,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 71,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 43,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "queueScore": 14.0
+            },
+            {
+              "rank": 14,
+              "headline": "איזנקוט מסמן חזרה ללחץ צבאי בעזה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 63,
+              "url": "https://www.ynet.co.il/news/article/yokra14813265",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ],
+          "cleanReadyQueue": [
+            {
+              "rank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 16,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 71,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        },
+        "candidateSupply": {
+          "scope": "pre_rerank_top_80",
+          "freshUnder60Count": 13,
+          "worthyFreshUnder60Count": 5,
+          "coreHardFreshUnder60Count": 5,
+          "softFreshUnder60Count": 6,
+          "otherFreshUnder60Count": 2,
+          "freshUniqueSources": 7,
+          "worthyUniqueSources": 3,
+          "freshSources": [
+            {
+              "name": "וואלה",
+              "count": 3
+            },
+            {
+              "name": "מעריב",
+              "count": 3
+            },
+            {
+              "name": "Daily Mail",
+              "count": 2
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            },
+            {
+              "name": "TMI",
+              "count": 1
+            },
+            {
+              "name": "Mirror",
+              "count": 1
+            }
+          ],
+          "worthySources": [
+            {
+              "name": "וואלה",
+              "count": 2
+            },
+            {
+              "name": "מעריב",
+              "count": 2
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            }
+          ],
+          "disqualifiedFreshCounts": {
+            "quality_class_soft": 6,
+            "weak_or_missing_trend_match": 10,
+            "quality_class_other": 2
+          },
+          "staleOrUndatedCount": 19,
+          "blockers": [
+            "fresh_candidate_supply_below_9"
+          ],
+          "topFreshCandidates": [
+            {
+              "beforeRank": 1,
+              "headline": "אוהדי ארגנטינה בדאלאס מתכוננים לעוד ערב של מסי",
+              "source": "וואלה ספורט - כדורגל עולמי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 20,
+              "url": "https://sports.walla.co.il/item/3848961",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 5,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 43,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 6,
+              "headline": "דרייק בל מנסה לבנות מחדש את הקריירה דרך המוזיקה",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 48,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15920023/Drake-Bell-life-Nickelodeon-rebuilds-career-scandals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 7,
+              "headline": "שיפוץ הענק של דואה ליפה נדחה עד קיץ 2027",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 48,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15931725/Dua-Lipa-husband-Callum-Turner-renting-6-75m-London-home-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 8,
+              "headline": "בת זוגו של יעקב אגם מספרת על רבע מאה לצדו",
+              "source": "TMI - ראשי",
+              "canonicalSource": "TMI",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 50,
+              "url": "https://tmi.maariv.co.il/celebs-news/article-1337394",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 10,
+              "headline": "חמש פעולות שיכולות להוריד את חשבון החשמל בקיץ",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "צרכנות",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 50,
+              "url": "https://www.israelhayom.co.il/lifestyle/design/article/20854092",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 11,
+              "headline": "בעלה של קייטי פרייס מציע להיבדק בפוליגרף בשידור",
+              "source": "Mirror Celebs רכילות חו״ל",
+              "canonicalSource": "Mirror",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 52,
+              "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-prices-husband-lee-andrews-37356151",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 13,
+              "headline": "טום שלח פתח ספא יפני ברמת אביב",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 60,
+              "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20854094",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ],
+          "topWorthyFreshCandidates": [
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "coreHardTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 20,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "storyClusterTop20Max": 1,
+        "eventClusterTop20Max": 1,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Mirror",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 9,
+          "hardReadyCount": 6,
+          "hardReadyStrictCount": 6,
+          "trendReadyCount": 3,
+          "cleanReadyCount": 6,
+          "cleanHardReadyCount": 6,
+          "cleanTrendReadyCount": 3,
+          "uniqueReadySources": 5,
+          "uniqueCleanReadySources": 4,
+          "freshReadyUnder25Count": 2,
+          "cleanFreshReadyUnder25Count": 2,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 5,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 6,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 71,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 11,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 43,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "queueScore": 14.0
+            },
+            {
+              "rank": 13,
+              "headline": "איזנקוט מסמן חזרה ללחץ צבאי בעזה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 63,
+              "url": "https://www.ynet.co.il/news/article/yokra14813265",
+              "trendMatch": null,
+              "queueScore": 11.0
+            }
+          ],
+          "cleanReadyQueue": [
+            {
+              "rank": 1,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 5,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 6,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 71,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        },
+        "candidateSupply": {
+          "scope": "pre_rerank_top_80",
+          "freshUnder60Count": 13,
+          "worthyFreshUnder60Count": 5,
+          "coreHardFreshUnder60Count": 5,
+          "softFreshUnder60Count": 6,
+          "otherFreshUnder60Count": 2,
+          "freshUniqueSources": 7,
+          "worthyUniqueSources": 3,
+          "freshSources": [
+            {
+              "name": "וואלה",
+              "count": 3
+            },
+            {
+              "name": "מעריב",
+              "count": 3
+            },
+            {
+              "name": "Daily Mail",
+              "count": 2
+            },
+            {
+              "name": "ישראל היום",
+              "count": 2
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            },
+            {
+              "name": "TMI",
+              "count": 1
+            },
+            {
+              "name": "Mirror",
+              "count": 1
+            }
+          ],
+          "worthySources": [
+            {
+              "name": "וואלה",
+              "count": 2
+            },
+            {
+              "name": "מעריב",
+              "count": 2
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            }
+          ],
+          "disqualifiedFreshCounts": {
+            "quality_class_soft": 6,
+            "weak_or_missing_trend_match": 10,
+            "quality_class_other": 2
+          },
+          "staleOrUndatedCount": 19,
+          "blockers": [
+            "fresh_candidate_supply_below_9"
+          ],
+          "topFreshCandidates": [
+            {
+              "beforeRank": 1,
+              "headline": "אוהדי ארגנטינה בדאלאס מתכוננים לעוד ערב של מסי",
+              "source": "וואלה ספורט - כדורגל עולמי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 20,
+              "url": "https://sports.walla.co.il/item/3848961",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 5,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 43,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 6,
+              "headline": "דרייק בל מנסה לבנות מחדש את הקריירה דרך המוזיקה",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 48,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15920023/Drake-Bell-life-Nickelodeon-rebuilds-career-scandals.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 7,
+              "headline": "שיפוץ הענק של דואה ליפה נדחה עד קיץ 2027",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 48,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15931725/Dua-Lipa-husband-Callum-Turner-renting-6-75m-London-home-legal-battle.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 8,
+              "headline": "בת זוגו של יעקב אגם מספרת על רבע מאה לצדו",
+              "source": "TMI - ראשי",
+              "canonicalSource": "TMI",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 50,
+              "url": "https://tmi.maariv.co.il/celebs-news/article-1337394",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 10,
+              "headline": "חמש פעולות שיכולות להוריד את חשבון החשמל בקיץ",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "צרכנות",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 50,
+              "url": "https://www.israelhayom.co.il/lifestyle/design/article/20854092",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 11,
+              "headline": "בעלה של קייטי פרייס מציע להיבדק בפוליגרף בשידור",
+              "source": "Mirror Celebs רכילות חו״ל",
+              "canonicalSource": "Mirror",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 52,
+              "url": "https://www.mirror.co.uk/3am/celebrity-news/katie-prices-husband-lee-andrews-37356151",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 13,
+              "headline": "טום שלח פתח ספא יפני ברמת אביב",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 60,
+              "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20854094",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ],
+          "topWorthyFreshCandidates": [
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 29.23,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 20,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 41,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 50,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 58,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "מזכ\"ל חיזבאללה: \"הסכם המסגרת משפיל. נמשיך כהתנגדות בשטח\"",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:12:12+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bk3uisafzl",
+                "overlapTokens": [
+                  "בשטח",
+                  "המסגרת",
+                  "הסכם",
+                  "חיזבאללה"
+                ],
+                "entityOverlapTokens": [
+                  "חיזבאללה"
+                ],
+                "eventOverlapTokens": [],
+                "score": 38.97,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 62,
+      "afterHealthScore": 88,
+      "replacementReadiness": {
+        "score": 79,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 16.2,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 8.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top12_under60_below_9",
+          "fresh_candidate_supply_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 6,
+        "coreHardTop10": 6,
+        "softTop10": -4,
+        "top12Under60": -5,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 0,
+        "healthScore": 26
+      }
+    },
+    {
+      "generatedAt": "2026-06-27T14:05:53+00:00",
+      "feedFingerprint": "2786031179489010274",
+      "before": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 4,
+        "softTop10": 4,
+        "otherTop10": 2,
+        "top5Under60": 5,
+        "top10Under60": 5,
+        "top12Under60": 5,
+        "topItemAgeMinutes": 35,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "storyClusterTop20Max": 1,
+        "eventClusterTop20Max": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 4
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "TMI",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 90,
+          "readyCount": 9,
+          "hardReadyCount": 7,
+          "hardReadyStrictCount": 7,
+          "trendReadyCount": 3,
+          "cleanReadyCount": 7,
+          "cleanHardReadyCount": 7,
+          "cleanTrendReadyCount": 3,
+          "uniqueReadySources": 5,
+          "uniqueCleanReadySources": 5,
+          "freshReadyUnder25Count": 0,
+          "cleanFreshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1",
+            "clean_ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 73,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 65,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 14,
+              "headline": "איזנקוט מסמן חזרה ללחץ צבאי בעזה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 77,
+              "url": "https://www.ynet.co.il/news/article/yokra14813265",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 16,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 85,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 57,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "queueScore": 14.0
+            }
+          ],
+          "cleanReadyQueue": [
+            {
+              "rank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 12,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 73,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 9,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 65,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 14,
+              "headline": "איזנקוט מסמן חזרה ללחץ צבאי בעזה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 77,
+              "url": "https://www.ynet.co.il/news/article/yokra14813265",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 16,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 85,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        },
+        "candidateSupply": {
+          "scope": "pre_rerank_top_80",
+          "freshUnder60Count": 5,
+          "worthyFreshUnder60Count": 3,
+          "coreHardFreshUnder60Count": 3,
+          "softFreshUnder60Count": 1,
+          "otherFreshUnder60Count": 1,
+          "freshUniqueSources": 3,
+          "worthyUniqueSources": 2,
+          "freshSources": [
+            {
+              "name": "וואלה",
+              "count": 3
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            },
+            {
+              "name": "מעריב",
+              "count": 1
+            }
+          ],
+          "worthySources": [
+            {
+              "name": "וואלה",
+              "count": 2
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            }
+          ],
+          "disqualifiedFreshCounts": {
+            "quality_class_soft": 1,
+            "weak_or_missing_trend_match": 3,
+            "quality_class_other": 1
+          },
+          "staleOrUndatedCount": 27,
+          "blockers": [
+            "fresh_candidate_supply_below_9"
+          ],
+          "topFreshCandidates": [
+            {
+              "beforeRank": 1,
+              "headline": "אוהדי ארגנטינה בדאלאס מתכוננים לעוד ערב של מסי",
+              "source": "וואלה ספורט - כדורגל עולמי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 35,
+              "url": "https://sports.walla.co.il/item/3848961",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 5,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 57,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ],
+          "topWorthyFreshCandidates": [
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "coreHardTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 3,
+        "top10Under60": 3,
+        "top12Under60": 4,
+        "topItemAgeMinutes": 35,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "storyClusterTop20Max": 1,
+        "eventClusterTop20Max": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Daily Mail",
+            "count": 3
+          },
+          {
+            "name": "Mirror",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "TMI",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 3,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 90,
+          "readyCount": 9,
+          "hardReadyCount": 7,
+          "hardReadyStrictCount": 7,
+          "trendReadyCount": 3,
+          "cleanReadyCount": 7,
+          "cleanHardReadyCount": 7,
+          "cleanTrendReadyCount": 3,
+          "uniqueReadySources": 5,
+          "uniqueCleanReadySources": 5,
+          "freshReadyUnder25Count": 0,
+          "cleanFreshReadyUnder25Count": 0,
+          "blockers": [
+            "ready_fresh_under25_below_1",
+            "clean_ready_fresh_under25_below_1",
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 2,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 73,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 3,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 7,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 65,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "איזנקוט מסמן חזרה ללחץ צבאי בעזה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 77,
+              "url": "https://www.ynet.co.il/news/article/yokra14813265",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 6,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 85,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 11,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 57,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "queueScore": 14.0
+            }
+          ],
+          "cleanReadyQueue": [
+            {
+              "rank": 1,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 2,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "הסכם ישראל-לבנון משאיר את צה\"ל עד פירוק האיום",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 73,
+              "url": "https://www.maariv.co.il/news/opinions/article-1337997",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 3,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "queueScore": 26.0
+            },
+            {
+              "rank": 7,
+              "headline": "ארגוני סיוע ישראליים כבר פועלים בוונצואלה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "חדשות",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 65,
+              "url": "https://www.maariv.co.il/news/world/article-1338004",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 5,
+              "headline": "איזנקוט מסמן חזרה ללחץ צבאי בעזה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 77,
+              "url": "https://www.ynet.co.il/news/article/yokra14813265",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 6,
+              "headline": "בחירות באירופה עלולות להקשיח את הקו נגד ישראל",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 85,
+              "url": "https://www.israelhayom.co.il/news/world-news/europe/article/20854090",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        },
+        "candidateSupply": {
+          "scope": "pre_rerank_top_80",
+          "freshUnder60Count": 5,
+          "worthyFreshUnder60Count": 3,
+          "coreHardFreshUnder60Count": 3,
+          "softFreshUnder60Count": 1,
+          "otherFreshUnder60Count": 1,
+          "freshUniqueSources": 3,
+          "worthyUniqueSources": 2,
+          "freshSources": [
+            {
+              "name": "וואלה",
+              "count": 3
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            },
+            {
+              "name": "מעריב",
+              "count": 1
+            }
+          ],
+          "worthySources": [
+            {
+              "name": "וואלה",
+              "count": 2
+            },
+            {
+              "name": "גלובס",
+              "count": 1
+            }
+          ],
+          "disqualifiedFreshCounts": {
+            "quality_class_soft": 1,
+            "weak_or_missing_trend_match": 3,
+            "quality_class_other": 1
+          },
+          "staleOrUndatedCount": 27,
+          "blockers": [
+            "fresh_candidate_supply_below_9"
+          ],
+          "topFreshCandidates": [
+            {
+              "beforeRank": 1,
+              "headline": "אוהדי ארגנטינה בדאלאס מתכוננים לעוד ערב של מסי",
+              "source": "וואלה ספורט - כדורגל עולמי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 35,
+              "url": "https://sports.walla.co.il/item/3848961",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 5,
+              "headline": "רוברט מאלי: טראמפ חזר לאיראן בתנאים גרועים יותר",
+              "source": "מעריב - חדשות בעולם",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 57,
+              "url": "https://www.maariv.co.il/news/world/article-1337849",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ],
+          "topWorthyFreshCandidates": [
+            {
+              "beforeRank": 2,
+              "headline": "חיזבאללה מנסה לבלום את הסכם ישראל-לבנון ברחוב",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3848981",
+              "trendMatch": {
+                "trend": "הסכם המסגרת עם לבנון הוא הישג מדיני עם סימן שאלה ביטחוני גדול | פרשנות",
+                "clusterKey": "הסכם המסגרת",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T13:54:34+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hy5nj4pzgl",
+                "overlapTokens": [
+                  "המסגרת",
+                  "הסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 31.17,
+                "boost": 24.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 3,
+              "headline": "תיעודים מדרום לבנון מציגים חזרה זהירה לשגרה",
+              "source": "וואלה חדשות - חדשות בעולם",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 35,
+              "url": "https://news.walla.co.il/item/3847996",
+              "trendMatch": {
+                "trend": "ראש מועצה אזורית מטה אשר לאחר חתימת ההסכם עם לבנון: \"איום התקיפה עדיין כאן\"",
+                "clusterKey": "ההסכם לבנון",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-06-27T11:33:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848963",
+                "overlapTokens": [
+                  "ההסכם",
+                  "לבנון"
+                ],
+                "entityOverlapTokens": [
+                  "לבנון"
+                ],
+                "eventOverlapTokens": [],
+                "score": 18.33,
+                "boost": 18.33
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 4,
+              "headline": "גלובס מציג את קטאר כאיום אסטרטגי על ישראל",
+              "source": "גלובס - בארץ",
+              "canonicalSource": "גלובס",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 55,
+              "url": "https://www.globes.co.il/news/article.aspx?did=1001547160#utm_source=RSS",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 52,
+      "afterHealthScore": 81,
+      "replacementReadiness": {
+        "score": 66,
+        "threshold": 80,
+        "components": {
+          "freshness": 9.1,
+          "newsinessTop10": 25.0,
+          "top20Quality": 13.9,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 8.0,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9",
+          "fresh_candidate_supply_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 6,
+        "coreHardTop10": 6,
+        "softTop10": -4,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 0,
+        "healthScore": 29
       }
     }
   ]
