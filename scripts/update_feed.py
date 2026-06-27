@@ -42,6 +42,7 @@ STATE_PATH = ROOT / ".poanta-state.json"
 CANDIDATES_PATH = ROOT / "candidates.json"
 SEEN_PATH = ROOT / ".poanta-seen.json"
 QUARANTINE_PATH = ROOT / "pointa_quarantine.json"
+FAST_SYNC_REPORT_PATH = ROOT / "feed_a_fast_sync_report.json"
 MAX_FEED_ITEMS = 200
 FEED_RETENTION_DAYS = 7
 FAST_CATEGORY_RETENTION_HOURS = 18
@@ -3768,6 +3769,14 @@ def strip_public_takeaways(feed: dict) -> dict:
     return feed
 
 
+def write_fast_sync_report(report: dict) -> None:
+    FAST_SYNC_REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    FAST_SYNC_REPORT_PATH.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
 def write_empty_draft(status: str, message: str = "") -> None:
     CANDIDATES_PATH.write_text(
         json.dumps(empty_draft_payload(status, message), ensure_ascii=False, indent=2) + "\n",
@@ -3800,6 +3809,21 @@ def main() -> int:
     used_urls: set[str] = set()
     seen = load_seen()
     sources = load_sources(args.sync_profile)
+    run_report = {
+        "updatedAt": datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds"),
+        "syncProfile": args.sync_profile,
+        "draft": bool(args.draft),
+        "experimental": bool(args.experimental_prompt),
+        "sourcesScanned": 0,
+        "rawCandidates": 0,
+        "validCandidates": 0,
+        "qaRejectedCandidates": 0,
+        "selectedCandidates": 0,
+        "preMergeItems": 0,
+        "publishedItems": 0,
+        "takeawayFields": 0,
+        "sourceReports": [],
+    }
     if not sources:
         msg = f"No RSS sources matched sync profile: {args.sync_profile}"
         print(f"ERROR {msg}", file=sys.stderr)
@@ -3810,9 +3834,20 @@ def main() -> int:
         picked = []
         # Source-only phase: do not scrape homepages and do not use fallback readers.
         candidates = extract_source(source)
+        source_report = {
+            "source": source.get("name") or "",
+            "profile": source_sync_profile(source),
+            "raw": 0,
+            "valid": 0,
+            "qaRejected": 0,
+            "selected": 0,
+        }
         # preserve source-local ranking while dropping duplicate URLs
         local_seen = set()
         candidates = [x for x in candidates if not (x.url in local_seen or local_seen.add(x.url))]
+        source_report["raw"] = len(candidates)
+        run_report["sourcesScanned"] += 1
+        run_report["rawCandidates"] += len(candidates)
         # Feed/source timing must reflect fresh source activity. Previously the
         # non-fast profiles re-sorted each source by score here, undoing the RSS
         # recency sort from extract_rss() and leaving many dashboard source rows
@@ -3831,6 +3866,8 @@ def main() -> int:
             if len(title) < 18 or bad_description(raw_c.description):
                 continue
             valid_for_activity.append((raw_c, title))
+        source_report["valid"] = len(valid_for_activity)
+        run_report["validCandidates"] += len(valid_for_activity)
         if valid_for_activity:
             activity_c, activity_title = valid_for_activity[0]
             source_activity.append({
@@ -3853,6 +3890,8 @@ def main() -> int:
             # often lead with thin flashes that deterministic QA correctly
             # rejects; continue scanning the source until we find QA-clean cards.
             if not args.experimental_prompt and not build_feed([c]).get("items"):
+                source_report["qaRejected"] += 1
+                run_report["qaRejectedCandidates"] += 1
                 continue
             category_limit = sync_selection_limit_for_source(source)
             source_category = str(source.get("categoryHint") or "חדשות")
@@ -3864,6 +3903,9 @@ def main() -> int:
             time.sleep(0.2)
             if len(picked) >= 2:
                 break
+        source_report["selected"] = len(picked)
+        run_report["selectedCandidates"] += len(picked)
+        run_report["sourceReports"].append(source_report)
         selected.extend(picked)
 
     selected = sorted(selected, key=lambda x: (x.published_at, x.score), reverse=True)
@@ -3887,6 +3929,7 @@ def main() -> int:
         return 2
 
     feed = build_feed(selected, experimental=args.experimental_prompt)
+    run_report["preMergeItems"] = len(feed.get("items", []))
     feed["sourceActivity"] = sorted(source_activity, key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
     feed["syncProfile"] = args.sync_profile
     if args.draft:
@@ -3895,6 +3938,9 @@ def main() -> int:
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastDraftRun": feed["updatedAt"], "draftCount": len(feed["items"])}), encoding="utf-8")
+        run_report["publishedItems"] = len(feed.get("items", []))
+        run_report["takeawayFields"] = sum(1 for item in feed.get("items", []) if item.get("takeaway"))
+        write_fast_sync_report(run_report)
         print(f"Wrote {len(feed['items'])} approval candidates to {CANDIDATES_PATH}")
     else:
         feed = merge_with_existing_feed(feed, force_weather_card=args.force_weather_card)
@@ -3903,6 +3949,17 @@ def main() -> int:
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)
         STATE_PATH.write_text(json.dumps({"lastRun": feed["updatedAt"], "count": len(feed["items"])}), encoding="utf-8")
+        run_report["publishedItems"] = len(feed.get("items", []))
+        run_report["takeawayFields"] = sum(1 for item in feed.get("items", []) if item.get("takeaway"))
+        run_report["topItems"] = [
+            {
+                "publishedAt": item.get("publishedAt"),
+                "source": item.get("source"),
+                "headline": item.get("headline"),
+            }
+            for item in feed.get("items", [])[:10]
+        ]
+        write_fast_sync_report(run_report)
         print(f"Wrote {len(feed['items'])} items to {FEED_PATH}")
     return 0
 
