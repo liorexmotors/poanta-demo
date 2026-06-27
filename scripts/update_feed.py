@@ -1087,6 +1087,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     gulf_security_terms = ["houthi", "houthis", "hormuz", "strait of hormuz", "persian gulf", "red sea", "bahrain", "yemen"]
     if any(term in low_content for term in gulf_security_terms):
         return "ביטחון", "security"
+    if any(x in content_text for x in ["חוק הגיוס", "עריקים חרדים", "מעצרי העריקים", "גיוס חרדים"]):
+        return "פוליטיקה", "security"
     security_conflict_terms = [
         "חיזבאללה", "לבנון", "צה\"ל", "צה״ל", "פיקוד העורף", "רקטה", "רקטות",
         "כטב\"ם", "כטב״ם", "יירוט", "יורטו", "חצו", "אזעקות", "התרעות",
@@ -1709,6 +1711,141 @@ def is_weak_source_headline(title: str, headline: str) -> bool:
     return False
 
 
+def _cleanup_event_sentence(text: str) -> str:
+    text = clean_text(text)
+    text = re.sub(r'^(?:דובר(?:ות)?\s+[^:]{2,30}:|בהמשך ל[^,-]{0,70}[-–,]\s*|לפי [^,]{2,45},\s*|במסגרת\s+)', '', text).strip()
+    text = re.sub(r'\s*[•|]\s*.*$', '', text).strip()
+    text = text.replace('משטרת ישראל', 'המשטרה').replace('דובר צה"ל', 'צה״ל')
+    return text.strip(' ,;:-–')
+
+
+def _candidate_headline_ok(original: str, candidate: str) -> bool:
+    candidate = clean_text(candidate).strip(' ,;:-–')
+    if not candidate or len(candidate) < 18 or headline_looks_cut(candidate):
+        return False
+    if is_weak_source_headline(original, candidate):
+        return False
+    if len(candidate) > 78:
+        return False
+    return True
+
+
+def rewrite_copied_source_headline(title: str, desc: str, source: str = "") -> str:
+    """Rewrite source-copy fallbacks into compact event headlines.
+
+    FAST has no LLM budget, so this is deliberately deterministic: first handle
+    common official/live-news structures, then fall back to a cleaned factual
+    sentence instead of copying the source title.
+    """
+    title = sanitize_title(title)
+    desc = clean_text(desc)
+    source = clean_text(source)
+    text = f'{title} {desc}'
+
+    specific_rules: list[tuple[bool, str]] = [
+        (
+            'חיסלו את וליד הניה' in text or ('וליד הניה' in text and 'נוח' in text),
+            'צה״ל ושב״כ חיסלו את וליד הניה מחמאס',
+        ),
+        (
+            'בית אריה' in text and any(x in text for x in ['חדירת מחבלים', 'אין חשש', 'לא אותרו חשודים']),
+            'סריקות בבית אריה הסתיימו ללא חשודים',
+        ),
+        (
+            'הצנחן' in text and 'לוחם העוקץ' in text and ('קק' in text or 'בה"ד 1' in text or 'בה״ד 1' in text),
+            'צנחן ולוחם עוקץ שנפגשו בעזה סיימו יחד קורס קצינים',
+        ),
+        (
+            'נהר הירדן' in text and 'ללא רוח חיים' in text and 'נער' in text,
+            'אחת הנערות שנעדרו בירדן אותרה ללא רוח חיים',
+        ),
+        (
+            'נהר הירדן' in text and 'נעדר' in text and 'נער' in text,
+            'החיפושים בירדן נמשכים אחר נערות שנותק עמן קשר',
+        ),
+        (
+            'הערכת מצב' in text and 'חיפושים' in text and 'נהר הירדן' in text,
+            'החיפושים בירדן נמשכים אחרי הנערה הנעדרת',
+        ),
+        (
+            'מטייל' in text and '78' in text and 'הר יעלה' in text,
+            'מטייל בן 78 חולץ מהר יעלה במסוק צבאי',
+        ),
+        (
+            'סלפי' in text and any(x in text for x in ['נהגת', 'נהג']) and 'נסיעה' in text,
+            'נהגת תועדה מצלמת סלפי בזמן נסיעה',
+        ),
+        (
+            'איומים בנשק' in text and 'כביש 1' in text,
+            'שני חשודים נעצרו אחרי איומים בנשק במחאה בכביש 1',
+        ),
+        (
+            'רופאי' in text and 'שיניים' in text and any(x in text for x in ['זיהוי פלילי', 'בית הנשיא', 'נעדרים', 'חללים']),
+            'הנשיא הוקיר מתנדבי זיהוי פלילי שסייעו בזיהוי חללים',
+        ),
+        (
+            'בלונים' in text and 'אבנים' in text and any(x in text for x in ['אילת', 'שחמון']),
+            'באילת דווח על השלכת בלוני אבנים לעבר רכבים',
+        ),
+        (
+            'מולטי-טאסקינג' in text and 'פרודוקטיביות' in text,
+            'מחקרים מזהירים שהרגלי עבודה נפוצים פוגעים בפרודוקטיביות',
+        ),
+        (
+            'גיא זוארץ' in text and 'יעל בר זוהר' in text,
+            'יעל בר זוהר עקצה את גיא זוארץ בזמן גמר האח הגדול',
+        ),
+        (
+            'מסילות החלון' in text and any(x in text for x in ['ניקוי', 'אבק', 'טחב']),
+            'מדריך ניקיון מציע דרך פשוטה לנקות מסילות חלון',
+        ),
+        (
+            'דארין גרין' in text and 'הפועל חולון' in text,
+            'דארין גרין ג׳וניור יעזוב את הפועל חולון',
+        ),
+        (
+            'אלירן ביטון' in text and 'האח הגדול' in text,
+            'אלירן ביטון סיים שלישי בגמר האח הגדול',
+        ),
+        (
+            'מעצרי העריקים' in text and any(x in text for x in ['חרדים', 'חוק הגיוס', 'יוסי פוקס']),
+            'הממשלה מבקשת להקפיא מעצרי עריקים חרדים לשלושה חודשים',
+        ),
+        (
+            'הישוב' in text and 'נועה' in text and 'שומרון' in text,
+            'בשומרון נערכים להקמת היישוב נועה מחדש',
+        ),
+    ]
+    for matched, headline in specific_rules:
+        if matched and _candidate_headline_ok(title, headline):
+            return headline
+
+    # If the title is source-style, prefer a concrete factual sentence from the
+    # description, after removing reporting/source frames.
+    sentences = split_sentences(desc)
+    scored: list[str] = []
+    for raw in sentences[:3]:
+        s = _cleanup_event_sentence(raw)
+        if len(s) < 18:
+            continue
+        if re.search(r'^(?:במרכז|הכתבה|הכתב|פורסם|דווח|לפי הדיווח|המקור|לפני זמן קצר|במקום פועלים)', s):
+            continue
+        scored.append(complete_headline(s, 74))
+    for candidate in scored:
+        if _candidate_headline_ok(title, candidate):
+            return candidate
+
+    # Last resort: transform the source title itself, but remove source/clickbait
+    # framing so the result is less likely to be an exact copy.
+    h = title
+    h = re.sub(r'^(?:תיעוד מטריד|תיעוד|דרמה|סערה|המדריך המלא|מדענים קבעו|נחשף|צפו)\s*[:：-]\s*', '', h).strip()
+    h = re.sub(r'^["״“”]([^"״“”]{8,80})["״“”]\s*[-–:]\s*', '', h).strip()
+    h = complete_headline(h, 72)
+    if _candidate_headline_ok(title, h):
+        return h
+    return ''
+
+
 def culture_headline_from_context(title: str, desc: str) -> str:
     text = f'{title} {desc}'
     if is_avihu_pinchasov_genesis_story(title, desc):
@@ -1886,6 +2023,9 @@ def story_headline(title: str, desc: str, source: str) -> str:
     h = re.sub(r'^האם\s+', '', h).strip()
     h = h.replace('?', '').strip()
     if is_weak_source_headline(title, h):
+        rewritten = rewrite_copied_source_headline(title, desc, source)
+        if rewritten:
+            return complete_headline(rewritten, 72)
         cat, _ = categorize_item(title, desc, source)
         if cat == 'תרבות':
             alt = culture_headline_from_context(title, desc)
@@ -1927,6 +2067,8 @@ def compact_context(text: str, category: str = '', title: str = '', max_chars: i
                 continue
             next_text = f"{candidate} {piece}".strip()
             if len(next_text) > max_chars:
+                if not candidate:
+                    return short_sentence(piece, max_chars).rstrip('.') + '.'
                 break
             candidate = next_text
             if word_count(candidate) >= MIN_CONTEXT_WORDS_BEFORE_ENRICH:
@@ -2894,7 +3036,7 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
             context = "צה״ל קלט את המתדלק המתקדם בטייסת שהוקמה עבורו בבסיס נבטים, עם יכולת לתדלק שני מטוסים במקביל ועמדת נווט נוספת."
             takeaway = "יכולת תדלוק אווירי חדשה מרחיבה את טווח הפעולה של חיל האוויר."
         elif "חיזבאללה" in text and any(x in text for x in ["מפקדת ארטילריה", "פיצוצי משנה", "אמצעי לחימה"]):
-            headline = complete_headline(dequote_headline(title), 72)
+            headline = rewrite_copied_source_headline(title, desc, source) or complete_headline(dequote_headline(title), 72)
             context = desc if desc and not normalized_key(desc).startswith(normalized_key(headline)) else title
             takeaway = "פיצוצי המשנה מעידים שחיזבאללה עדיין מחזיק אמצעי לחימה במבנים צבאיים בדרום לבנון."
         elif "חיזבאללה" in text and any(x in text for x in ["מחבלים", "חוסלו", "מפקדי"]):
@@ -2914,7 +3056,7 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
             context = "רח״ט תכנון ומנהל כוח האדם בצה״ל הציג את הצורך בהארכת שירות ל-36 חודשים, גיוס אוכלוסיות נוספות ושיטת שיבוץ היברידית."
             takeaway = "מצוקת כוח האדם בצה״ל כבר משנה את תנאי השירות ואת הדרך שבה חיילים ישובצו."
         else:
-            headline = complete_headline(dequote_headline(title), 72)
+            headline = rewrite_copied_source_headline(title, desc, source) or complete_headline(dequote_headline(title), 72)
             context = compact_context(desc or title, "ביטחון", title)
             if normalized_key(context).startswith(normalized_key(headline)):
                 context = compact_context(text, "ביטחון", title)
@@ -2967,8 +3109,13 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
             headline = "מטפלת מירושלים נעצרה בחשד להתעללות בפעוטות"
             context = "משטרת ירושלים פתחה בחקירה בעקבות תלונות על מטפלת מהר חומה, שלפי החשד צעקה, קיללה והתעלמה מצרכי פעוטות שהיו תחת השגחתה."
             takeaway = "בגני ילדים, תלונות קטנות על יחס יומיומי יכולות להפוך במהירות לחשד פלילי."
+        elif "רופאי" in text and "שיניים" in text and any(x in text for x in ["זיהוי פלילי", "בית הנשיא", "נעדרים", "חללים"]):
+            headline = "הנשיא הוקיר מתנדבי זיהוי פלילי שסייעו בזיהוי חללים"
+            context = "בבית הנשיא נערך אירוע הוקרה ליחידת רופאי ורופאות השיניים המתנדבים של הזיהוי הפלילי, שלקחו חלק בזיהוי נעדרים וחללים לאורך המלחמה."
+            takeaway = "מאחורי עבודת הזיהוי הפלילי עומדת תשתית אזרחית־מקצועית שממשיכה לפעול גם אחרי רגעי האסון."
+            category, cls = "חדשות", "real"
         else:
-            headline = complete_headline(dequote_headline(title), 72)
+            headline = rewrite_copied_source_headline(title, desc, source) or complete_headline(dequote_headline(title), 72)
             context = compact_context(desc or title, "פלילים", title)
             if normalized_key(context).startswith(normalized_key(headline)):
                 context = compact_context(text, "פלילים", title)
@@ -3018,7 +3165,18 @@ def build_feed(candidates: Iterable[Candidate], experimental: bool = False) -> d
             "context": context,
             "takeaway": "",
         }
-        output_key = normalized_key(headline)
+        if (
+            is_weak_source_headline(str(item.get("originalTitle") or ""), str(item.get("headline") or ""))
+            or (
+                item.get("context")
+                and len(str(item.get("headline") or "")) >= 24
+                and normalized_key(str(item.get("context") or "")).startswith(normalized_key(str(item.get("headline") or "")))
+            )
+        ):
+            rewritten = rewrite_copied_source_headline(c.title, c.description, c.source)
+            if rewritten:
+                item["headline"] = rewritten
+        output_key = normalized_key(str(item.get("headline") or ""))
         if output_key in seen_output_headlines:
             continue
         if not item_quality_errors(item):
