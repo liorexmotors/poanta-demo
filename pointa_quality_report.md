@@ -35,17 +35,17 @@ Warnings: 7
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `התקיפות הן תגובה לפגיעה במכלית נפט באמצעות כטב"מ שהתרחשה מוקדם יותר היום`
 - Original: `ארה"ב תקפה באיראן לילה שני ברציפות. צבא ארה"ב: "תגובה לתוקפנותה נגד ספינות במצר הורמוז"`
-- Source: הארץ - כל הכתבות
+- Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-28/ty-article/.premium/0000019f-0b1b-db03-a7bf-ef7b64050000
 
 ### WARNING · summary_long · item 4
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
-- Original: `נשף המסכות: הקרב על קולות הימין מתחיל`
-- Source: וואלה חדשות
-- URL: https://news.walla.co.il/item/3848890
+- Original: `"אם היו מקשיבים לגלנט - ייתכן שהטבח היה נמנע": ממי פאר על מאחורי הקלעים של הפוליטיקה`
+- Source: ישראל היום - כל הכתבות
+- URL: https://www.israelhayom.co.il/news/politics/article/20857343
 
-### WARNING · headline_near_duplicate_summary · item 14
+### WARNING · headline_near_duplicate_summary · item 20
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `רפאלה במקום הרביעי`
 - Original: `"האח הגדול" 2026: כל אירועי הגמר (כתבה מתעדכנת)`
