@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 78
+Items checked: 80
 Errors: 0
 Warnings: 2
 
 ## Category distribution
 
-- ביטחון: 17
+- ביטחון: 19
 - רכילות: 13
 - פלילים: 10
 - פוליטיקה: 8
@@ -28,14 +28,14 @@ Warnings: 2
 
 ## Issues
 
-### WARNING · category_sport_source · item 55
+### WARNING · category_sport_source · item 57
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3848415
 
-### WARNING · category_sport_source · item 60
+### WARNING · category_sport_source · item 62
 - Sport source should usually be ספורט
 - Headline: `בהיעדרו של קרלוס אלקראס, יאניק סינר היה הפייבוריט לזכייה ברולאן גארוס`
 - Original: `יאניק סינר חזר לשחק: "מה שקרה ברולאן גארוס רק יחשל אותי"`
