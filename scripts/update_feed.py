@@ -154,8 +154,8 @@ CATEGORY_RULES = [
     # Order matters: prefer specific practical topics over broad local/world buckets.
     ("אקטואליה בעולם", "security", ["קובה", "סנקציות", "רוסיה", "אוקראינה", "פקיסטן", "הודו", "סין", "טייוואן", "אירופה", "אירופי", "נאטו", "ארה\"ב", "ארצות הברית", "ממשל טראמפ", "white house", "federal reserve", "fed rate", "us interest", "u.s.", "united states", "sanctions", "cuba", "ukraine", "russia", "china", "taiwan", "pakistan", "india"]),
     ("משפט", "security", ["בגץ", "בג\"ץ", "בית המשפט", "עליון", "שופט", "שופטים", "יועמ\"ש", "פרקליטות", "כתב אישום", "עתירה", "חוק", "חקיקה", "משפטי", "legal", "court", "supreme court", "trial"]),
+    ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "חות׳ים", "חות'ים", "פוטין", "קרמלין", "התנקשות", "ביון", "צבא", "טרור", "war", "iran", "houthi", "houthis", "hormuz", "strait of hormuz", "persian gulf", "red sea", "bahrain", "yemen", "russia", "ukraine", "gaza", "israel", "military", "terror"]),
     ("פלילים", "security", ["רצח", "ירי", "דקירה", "חשד", "נעצר", "מעצר", "משטרה", "חקירה", "עבריין", "פשע", "פלילי", "סמים", "אלימות", "אונס", "crime", "police", "shooting", "murder", "arrest"]),
-    ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "פוטין", "קרמלין", "התנקשות", "ביון", "צבא", "טרור", "war", "iran", "russia", "ukraine", "gaza", "israel", "military", "terror"]),
     ("פוליטיקה", "security", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שרים", "ח״כ", "חכים", "נתניהו", "טראמפ", "ביידן", "נשיא", "ראש ממשלה", "politics", "election", "government", "minister", "president", "trump", "white house"]),
     ("נדל״ן", "real", ["נדל", "דירה", "דירות", "בנייה", "פינוי-בינוי", "תל אביב", "דיור", "קרקע", "real estate", "housing"]),
     ("כלכלה", "money", ["ריבית", "מיסים", "מע״מ", "שכר", "מניות", "בורסה", "מחירים", "פיצויים", "עסקים", "אקזיט", "מיליון", "מיליארד", "דולר", "אינפלציה", "markets", "stocks", "economy", "bank", "inflation", "dollar"]),
@@ -1083,10 +1083,14 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     # Otherwise words such as "רוחות" in unrelated context or bare "ירי" can
     # misroute Lebanon/rocket/IDF items to weather or local crime during Stage-4
     # domain rescue validation.
+    low_content = content_text.lower()
+    gulf_security_terms = ["houthi", "houthis", "hormuz", "strait of hormuz", "persian gulf", "red sea", "bahrain", "yemen"]
+    if any(term in low_content for term in gulf_security_terms):
+        return "ביטחון", "security"
     security_conflict_terms = [
         "חיזבאללה", "לבנון", "צה\"ל", "צה״ל", "פיקוד העורף", "רקטה", "רקטות",
         "כטב\"ם", "כטב״ם", "יירוט", "יורטו", "חצו", "אזעקות", "התרעות",
-        "טילים", "טיל", "חמאס", "עזה", "איראן", "זפוריז'יה", "זפוריז׳יה",
+        "טילים", "טיל", "חמאס", "עזה", "איראן", "הורמוז", "חות׳ים", "חות'ים", "זפוריז'יה", "זפוריז׳יה",
     ]
     if any(x in content_text for x in security_conflict_terms):
         return "ביטחון", "security"
@@ -2659,13 +2663,17 @@ def load_seen() -> dict:
         data = json.loads(SEEN_PATH.read_text(encoding="utf-8"))
         urls = set(data.get("urls", []))
         url_keys = set(data.get("urlKeys", [])) | {canonical_url_key(u) for u in urls}
+        first_published_by_url = dict(data.get("firstPublishedByUrlKey", {}))
+        first_published_by_title = dict(data.get("firstPublishedByTitleKey", {}))
         return {
             "urls": urls,
             "urlKeys": url_keys,
             "titleKeys": set(data.get("titleKeys", [])),
+            "firstPublishedByUrlKey": first_published_by_url,
+            "firstPublishedByTitleKey": first_published_by_title,
         }
     except Exception:
-        return {"urls": set(), "urlKeys": set(), "titleKeys": set()}
+        return {"urls": set(), "urlKeys": set(), "titleKeys": set(), "firstPublishedByUrlKey": {}, "firstPublishedByTitleKey": {}}
 
 
 def candidate_seen(c: Candidate, seen: dict) -> bool:
@@ -2680,25 +2688,51 @@ def candidate_seen(c: Candidate, seen: dict) -> bool:
 
 def remember_feed(feed: dict) -> None:
     seen = load_seen()
+    first_by_url = seen.setdefault("firstPublishedByUrlKey", {})
+    first_by_title = seen.setdefault("firstPublishedByTitleKey", {})
     for item in feed.get("items", []):
         url = item.get("sourceUrl")
         title = item.get("headline") or ""
+        published_at = str(item.get("publishedAt") or "")
         if url:
+            url_key = canonical_url_key(url)
             seen["urls"].add(url)
-            seen.setdefault("urlKeys", set()).add(canonical_url_key(url))
+            seen.setdefault("urlKeys", set()).add(url_key)
+            if published_at:
+                first_by_url[url_key] = min(first_by_url.get(url_key, published_at), published_at)
         key = normalized_key(title)
         if key:
             seen["titleKeys"].add(key)
+            if published_at:
+                first_by_title[key] = min(first_by_title.get(key, published_at), published_at)
         original_key = normalized_key(item.get("originalTitle") or "")
         if original_key:
             seen["titleKeys"].add(original_key)
+            if published_at:
+                first_by_title[original_key] = min(first_by_title.get(original_key, published_at), published_at)
     payload = {
         "urls": sorted(seen["urls"]),
         "urlKeys": sorted(seen.get("urlKeys", set())),
         "titleKeys": sorted(seen["titleKeys"]),
+        "firstPublishedByUrlKey": first_by_url,
+        "firstPublishedByTitleKey": first_by_title,
         "updatedAt": datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds"),
     }
     SEEN_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def stabilize_candidate_published_at(c: Candidate, seen: dict) -> Candidate:
+    """Keep repeated RSS rows from looking newly published every sync."""
+    url_key = canonical_url_key(c.url)
+    title_keys = [normalized_key(c.title), normalized_key(c.original_title)]
+    first_by_url = seen.get("firstPublishedByUrlKey", {})
+    first_by_title = seen.get("firstPublishedByTitleKey", {})
+    stable = first_by_url.get(url_key) if url_key else ""
+    if not stable:
+        stable = next((first_by_title.get(k) for k in title_keys if k and first_by_title.get(k)), "")
+    if stable and c.published_at and stable < c.published_at:
+        c.published_at = stable
+    return c
 
 
 def item_quality_errors(item: dict) -> list[dict]:
@@ -3505,6 +3539,14 @@ def sync_selection_limit_for_source(source: dict) -> int | None:
     return None
 
 
+def max_selected_per_source(source: dict) -> int:
+    category = str(source.get("categoryHint") or "")
+    profile = source_sync_profile(source)
+    if profile == "fast" and category in CURRENT_AFFAIRS_CATEGORIES:
+        return 3
+    return 2
+
+
 def is_official_telegram_item(item: dict) -> bool:
     source = str(item.get("source") or item.get("sourceLogo") or "")
     return any(x in source for x in ["דובר צה", "צה״ל", "צה\"ל", "משטרת ישראל", "דוברות משטרת"])
@@ -3989,11 +4031,12 @@ def main() -> int:
             source_category = str(source.get("categoryHint") or "חדשות")
             if category_limit is not None and selected_by_category.get(source_category, 0) >= category_limit:
                 continue
+            c = stabilize_candidate_published_at(c, seen)
             picked.append(c)
             selected_by_category[source_category] = selected_by_category.get(source_category, 0) + 1
             used_urls.add(c.url)
             time.sleep(0.2)
-            if len(picked) >= 2:
+            if len(picked) >= max_selected_per_source(source):
                 break
         source_report["selected"] = len(picked)
         run_report["selectedCandidates"] += len(picked)
