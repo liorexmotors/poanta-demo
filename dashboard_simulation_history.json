@@ -1,23 +1,24 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-27T06:37:47+00:00",
+  "generatedAt": "2026-06-27T07:07:27+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 27.17,
-    "avgAfterHealthScore": 76.5,
+    "avgHealthDelta": 27.08,
+    "avgAfterHealthScore": 75.67,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 70,
-      "rollingScore": 60.69,
+      "latestScore": 52,
+      "rollingScore": 60.62,
       "readyRuns": 0,
       "criticalBlockers": [
+        "newsiness_top10_below_7",
         "top12_under60_below_9",
         "fresh_candidate_supply_below_9"
       ],
@@ -33,1355 +34,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-06-23T11:35:10+00:00",
-      "feedFingerprint": "3093953699545174265",
-      "before": {
-        "newsinessTop10": 3,
-        "coreHardTop10": 3,
-        "softTop10": 6,
-        "otherTop10": 1,
-        "top5Under60": 5,
-        "top10Under60": 10,
-        "top12Under60": 12,
-        "topItemAgeMinutes": 8,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 6
-        },
-        "importantMissingTop20": [
-          "N12",
-          "מעריב",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "storyClusterTop20Max": 1,
-        "eventClusterTop20Max": 1,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 6
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 5
-          },
-          {
-            "name": "Daily Mail",
-            "count": 4
-          },
-          {
-            "name": "Page Six",
-            "count": 1
-          },
-          {
-            "name": "ynet",
-            "count": 1
-          },
-          {
-            "name": "כיפה",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "BBC",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 0,
-        "trendGapMatchedTop20": 0,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 74,
-          "readyCount": 6,
-          "hardReadyCount": 4,
-          "hardReadyStrictCount": 4,
-          "trendReadyCount": 0,
-          "cleanReadyCount": 4,
-          "cleanHardReadyCount": 4,
-          "cleanTrendReadyCount": 0,
-          "uniqueReadySources": 5,
-          "uniqueCleanReadySources": 4,
-          "freshReadyUnder25Count": 6,
-          "cleanFreshReadyUnder25Count": 4,
-          "blockers": [
-            "clean_ready_queue_below_6"
-          ],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 9,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 10,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 12,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 4,
-              "headline": "פיצ׳ון לב קיבל את פרס יו״ר הכנסת לחוסן נפשי במהלך מלחמת חרבות ברזל",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/culture/article-900261",
-              "trendMatch": null,
-              "queueScore": 26.0
-            },
-            {
-              "rank": 11,
-              "headline": "אירופה סגרה יותר מ־1,350 בתי ספר בצרפת בגל החום הנוכחי",
-              "source": "הארץ - סביבה ואקלים",
-              "canonicalSource": "הארץ",
-              "category": "מזג אוויר",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 23,
-              "url": "https://www.haaretz.co.il/nature/2026-06-23/ty-article-magazine/.premium/0000019e-f390-d58e-afbf-f7dbe40b0000",
-              "trendMatch": null,
-              "queueScore": 11.0
-            }
-          ],
-          "cleanReadyQueue": [
-            {
-              "rank": 2,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 9,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 10,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 12,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        },
-        "candidateSupply": {
-          "scope": "pre_rerank_top_80",
-          "freshUnder60Count": 13,
-          "worthyFreshUnder60Count": 4,
-          "coreHardFreshUnder60Count": 4,
-          "softFreshUnder60Count": 7,
-          "otherFreshUnder60Count": 2,
-          "freshUniqueSources": 8,
-          "worthyUniqueSources": 4,
-          "freshSources": [
-            {
-              "name": "וואלה",
-              "count": 3
-            },
-            {
-              "name": "Jerusalem Post",
-              "count": 3
-            },
-            {
-              "name": "Daily Mail",
-              "count": 2
-            },
-            {
-              "name": "Page Six",
-              "count": 1
-            },
-            {
-              "name": "ynet",
-              "count": 1
-            },
-            {
-              "name": "כיפה",
-              "count": 1
-            },
-            {
-              "name": "הארץ",
-              "count": 1
-            },
-            {
-              "name": "BBC",
-              "count": 1
-            }
-          ],
-          "worthySources": [
-            {
-              "name": "Jerusalem Post",
-              "count": 1
-            },
-            {
-              "name": "ynet",
-              "count": 1
-            },
-            {
-              "name": "כיפה",
-              "count": 1
-            },
-            {
-              "name": "BBC",
-              "count": 1
-            }
-          ],
-          "disqualifiedFreshCounts": {
-            "quality_class_soft": 7,
-            "weak_or_missing_trend_match": 13,
-            "quality_class_other": 2
-          },
-          "staleOrUndatedCount": 67,
-          "blockers": [
-            "fresh_candidate_supply_below_9"
-          ],
-          "topFreshCandidates": [
-            {
-              "beforeRank": 1,
-              "headline": "אחיו של יונתן רזאל: ״התפקוד שלו לא נפגע אחרי האירוע המוחי, הוא מדבר ומצחיק״",
-              "source": "וואלה תרבות",
-              "canonicalSource": "וואלה",
-              "category": "תרבות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 8,
-              "url": "https://e.walla.co.il/item/3847923",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 2,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 3,
-              "headline": "הרודיון נפתח מחדש אחרי 2,000 שנה לכנס מורשת ישראל ביהודה ושומרון",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "תרבות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900236",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 4,
-              "headline": "פיצ׳ון לב קיבל את פרס יו״ר הכנסת לחוסן נפשי במהלך מלחמת חרבות ברזל",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/culture/article-900261",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_other",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 5,
-              "headline": "מטא הציגה חבילת כלי AI חדשים למפרסמים בפסטיבל Cannes Lions",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 12,
-              "url": "https://tech.walla.co.il/item/3847917",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 6,
-              "headline": "חטיבת ״הסקוטית״ משיקה בישראל רוזה חדש מקוט דו רון של יקב אלן ג׳ום",
-              "source": "וואלה בריאות - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "צרכנות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 12,
-              "url": "https://healthy.walla.co.il/item/3847983",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 7,
-              "headline": "מישל קיגן רבה עם סטודנט במהלך צילומי הסדרה החדשה של הרלן קובן במנצ׳סטר",
-              "source": "Daily Mail TVShowbiz רכילות חו״ל",
-              "canonicalSource": "Daily Mail",
-              "category": "רכילות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 16,
-              "url": "https://www.dailymail.com/tvshowbiz/article-15922393/Michelle-Keegan-rows-student-gets-character-shoot-tense-scenes-new-Harlan-Coben-thriller-Woods-location-Manchester.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 8,
-              "headline": "פדי Prime Day: רפידות הניקוי של Medicube ירדו למחיר השנתי הנמוך ביותר",
-              "source": "Page Six רכילות חו״ל",
-              "canonicalSource": "Page Six",
-              "category": "רכילות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 20,
-              "url": "https://pagesix.com/2026/06/23/style/medicube-zero-pore-pads-are-on-sale-for-under-15-for-prime-day/",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 9,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 10,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 11,
-              "headline": "אירופה סגרה יותר מ־1,350 בתי ספר בצרפת בגל החום הנוכחי",
-              "source": "הארץ - סביבה ואקלים",
-              "canonicalSource": "הארץ",
-              "category": "מזג אוויר",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 23,
-              "url": "https://www.haaretz.co.il/nature/2026-06-23/ty-article-magazine/.premium/0000019e-f390-d58e-afbf-f7dbe40b0000",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_other",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 12,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 13,
-              "headline": "אדם פיטי שלח לאמו המנוכרת ״טקסט פורמלי״ להודיע על ההיריון של אשתו החדשה",
-              "source": "Daily Mail TVShowbiz רכילות חו״ל",
-              "canonicalSource": "Daily Mail",
-              "category": "רכילות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 25,
-              "url": "https://www.dailymail.com/tvshowbiz/article-15919791/How-Adam-Peaty-sent-formal-text-estranged-mother-tell-wife-Holly-Ramsay-pregnant-means-feud-divided-families.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            }
-          ],
-          "topWorthyFreshCandidates": [
-            {
-              "beforeRank": 2,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 9,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 10,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 12,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 10,
-        "coreHardTop10": 9,
-        "softTop10": 0,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 5,
-        "top12Under60": 7,
-        "topItemAgeMinutes": 25,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "Jerusalem Post",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "N12",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "storyClusterTop20Max": 1,
-        "eventClusterTop20Max": 1,
-        "topSources": [
-          {
-            "name": "Jerusalem Post",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "ynet",
-            "count": 3
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "BBC",
-            "count": 1
-          },
-          {
-            "name": "כיפה",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 0,
-        "trendGapMatchedTop20": 0,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 81,
-          "readyCount": 7,
-          "hardReadyCount": 5,
-          "hardReadyStrictCount": 5,
-          "trendReadyCount": 0,
-          "cleanReadyCount": 5,
-          "cleanHardReadyCount": 5,
-          "cleanTrendReadyCount": 0,
-          "uniqueReadySources": 5,
-          "uniqueCleanReadySources": 4,
-          "freshReadyUnder25Count": 6,
-          "cleanFreshReadyUnder25Count": 4,
-          "blockers": [
-            "clean_ready_queue_below_6"
-          ],
-          "readyQueue": [
-            {
-              "rank": 2,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 3,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 4,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 1,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 5,
-              "headline": "בתי החולים קיבלו נוהל טיפול בחשד לאבולה",
-              "source": "ynet - כל ערוץ הבריאות",
-              "canonicalSource": "ynet",
-              "category": "חדשות",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 30,
-              "url": "https://www.ynet.co.il/health/article/hyncwkoggx",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 21,
-              "headline": "פיצ׳ון לב קיבל את פרס יו״ר הכנסת לחוסן נפשי במהלך מלחמת חרבות ברזל",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/culture/article-900261",
-              "trendMatch": null,
-              "queueScore": 26.0
-            },
-            {
-              "rank": 12,
-              "headline": "אירופה סגרה יותר מ־1,350 בתי ספר בצרפת בגל החום הנוכחי",
-              "source": "הארץ - סביבה ואקלים",
-              "canonicalSource": "הארץ",
-              "category": "מזג אוויר",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 23,
-              "url": "https://www.haaretz.co.il/nature/2026-06-23/ty-article-magazine/.premium/0000019e-f390-d58e-afbf-f7dbe40b0000",
-              "trendMatch": null,
-              "queueScore": 11.0
-            }
-          ],
-          "cleanReadyQueue": [
-            {
-              "rank": 2,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 3,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "queueScore": 38.0
-            },
-            {
-              "rank": 4,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 1,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "queueScore": 31.0
-            },
-            {
-              "rank": 5,
-              "headline": "בתי החולים קיבלו נוהל טיפול בחשד לאבולה",
-              "source": "ynet - כל ערוץ הבריאות",
-              "canonicalSource": "ynet",
-              "category": "חדשות",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 30,
-              "url": "https://www.ynet.co.il/health/article/hyncwkoggx",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        },
-        "candidateSupply": {
-          "scope": "pre_rerank_top_80",
-          "freshUnder60Count": 14,
-          "worthyFreshUnder60Count": 5,
-          "coreHardFreshUnder60Count": 5,
-          "softFreshUnder60Count": 7,
-          "otherFreshUnder60Count": 2,
-          "freshUniqueSources": 8,
-          "worthyUniqueSources": 4,
-          "freshSources": [
-            {
-              "name": "וואלה",
-              "count": 3
-            },
-            {
-              "name": "Jerusalem Post",
-              "count": 3
-            },
-            {
-              "name": "ynet",
-              "count": 2
-            },
-            {
-              "name": "Daily Mail",
-              "count": 2
-            },
-            {
-              "name": "Page Six",
-              "count": 1
-            },
-            {
-              "name": "כיפה",
-              "count": 1
-            },
-            {
-              "name": "הארץ",
-              "count": 1
-            },
-            {
-              "name": "BBC",
-              "count": 1
-            }
-          ],
-          "worthySources": [
-            {
-              "name": "ynet",
-              "count": 2
-            },
-            {
-              "name": "Jerusalem Post",
-              "count": 1
-            },
-            {
-              "name": "כיפה",
-              "count": 1
-            },
-            {
-              "name": "BBC",
-              "count": 1
-            }
-          ],
-          "disqualifiedFreshCounts": {
-            "weak_or_missing_trend_match": 14,
-            "quality_class_soft": 7,
-            "quality_class_other": 2
-          },
-          "staleOrUndatedCount": 66,
-          "blockers": [
-            "fresh_candidate_supply_below_9"
-          ],
-          "topFreshCandidates": [
-            {
-              "beforeRank": 1,
-              "headline": "בתי החולים קיבלו נוהל טיפול בחשד לאבולה",
-              "source": "ynet - כל ערוץ הבריאות",
-              "canonicalSource": "ynet",
-              "category": "חדשות",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 30,
-              "url": "https://www.ynet.co.il/health/article/hyncwkoggx",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 2,
-              "headline": "אחיו של יונתן רזאל: ״התפקוד שלו לא נפגע אחרי האירוע המוחי, הוא מדבר ומצחיק״",
-              "source": "וואלה תרבות",
-              "canonicalSource": "וואלה",
-              "category": "תרבות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 8,
-              "url": "https://e.walla.co.il/item/3847923",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 3,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 4,
-              "headline": "הרודיון נפתח מחדש אחרי 2,000 שנה לכנס מורשת ישראל ביהודה ושומרון",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "תרבות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-900236",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 5,
-              "headline": "פיצ׳ון לב קיבל את פרס יו״ר הכנסת לחוסן נפשי במהלך מלחמת חרבות ברזל",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/culture/article-900261",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_other",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 6,
-              "headline": "מטא הציגה חבילת כלי AI חדשים למפרסמים בפסטיבל Cannes Lions",
-              "source": "וואלה TECH - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "טכנולוגיה",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 12,
-              "url": "https://tech.walla.co.il/item/3847917",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 7,
-              "headline": "חטיבת ״הסקוטית״ משיקה בישראל רוזה חדש מקוט דו רון של יקב אלן ג׳ום",
-              "source": "וואלה בריאות - כל הכתבות",
-              "canonicalSource": "וואלה",
-              "category": "צרכנות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 12,
-              "url": "https://healthy.walla.co.il/item/3847983",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 8,
-              "headline": "מישל קיגן רבה עם סטודנט במהלך צילומי הסדרה החדשה של הרלן קובן במנצ׳סטר",
-              "source": "Daily Mail TVShowbiz רכילות חו״ל",
-              "canonicalSource": "Daily Mail",
-              "category": "רכילות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 16,
-              "url": "https://www.dailymail.com/tvshowbiz/article-15922393/Michelle-Keegan-rows-student-gets-character-shoot-tense-scenes-new-Harlan-Coben-thriller-Woods-location-Manchester.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 9,
-              "headline": "פדי Prime Day: רפידות הניקוי של Medicube ירדו למחיר השנתי הנמוך ביותר",
-              "source": "Page Six רכילות חו״ל",
-              "canonicalSource": "Page Six",
-              "category": "רכילות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 20,
-              "url": "https://pagesix.com/2026/06/23/style/medicube-zero-pore-pads-are-on-sale-for-under-15-for-prime-day/",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 10,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 11,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 12,
-              "headline": "אירופה סגרה יותר מ־1,350 בתי ספר בצרפת בגל החום הנוכחי",
-              "source": "הארץ - סביבה ואקלים",
-              "canonicalSource": "הארץ",
-              "category": "מזג אוויר",
-              "class": "other",
-              "strictHard": false,
-              "ageMinutes": 23,
-              "url": "https://www.haaretz.co.il/nature/2026-06-23/ty-article-magazine/.premium/0000019e-f390-d58e-afbf-f7dbe40b0000",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_other",
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 13,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 14,
-              "headline": "אדם פיטי שלח לאמו המנוכרת ״טקסט פורמלי״ להודיע על ההיריון של אשתו החדשה",
-              "source": "Daily Mail TVShowbiz רכילות חו״ל",
-              "canonicalSource": "Daily Mail",
-              "category": "רכילות",
-              "class": "soft",
-              "strictHard": false,
-              "ageMinutes": 25,
-              "url": "https://www.dailymail.com/tvshowbiz/article-15919791/How-Adam-Peaty-sent-formal-text-estranged-mother-tell-wife-Holly-Ramsay-pregnant-means-feud-divided-families.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": false,
-              "worthyFreshUnder60": false,
-              "disqualifiers": [
-                "quality_class_soft",
-                "weak_or_missing_trend_match"
-              ]
-            }
-          ],
-          "topWorthyFreshCandidates": [
-            {
-              "beforeRank": 1,
-              "headline": "בתי החולים קיבלו נוהל טיפול בחשד לאבולה",
-              "source": "ynet - כל ערוץ הבריאות",
-              "canonicalSource": "ynet",
-              "category": "חדשות",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 30,
-              "url": "https://www.ynet.co.il/health/article/hyncwkoggx",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 3,
-              "headline": "גבר בן 67 נרצח בכביש 70 ליד עכו; המשטרה: אבי עד מדינה בפרשת פשע מאורגן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פלילים",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 11,
-              "url": "https://www.jpost.com/israel-news/crime-in-israel/article-900256",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 10,
-              "headline": "ynet מציע לבדוק את הידע שלכם על משק הגז הישראלי",
-              "source": "ynet - כל ערוץ הכלכלה",
-              "canonicalSource": "ynet",
-              "category": "כלכלה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 20,
-              "url": "https://www.ynet.co.il/economy/article/sji9q3gzmg",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 11,
-              "headline": "מרב מיכאלי תקפה את הרב לוינשטיין: ״אתה מחריב את צה״ל״",
-              "source": "כיפה - חדשות",
-              "canonicalSource": "כיפה",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 22,
-              "url": "https://www.kipa.co.il/1226500-0",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            },
-            {
-              "beforeRank": 13,
-              "headline": "ועדת חקירה של האו״ם: ישראל מבצעת רצח עם בעזה בכוונה, בכלל זה פגיעה בילדים",
-              "source": "BBC World",
-              "canonicalSource": "BBC",
-              "category": "ביטחון",
-              "class": "hard",
-              "strictHard": true,
-              "ageMinutes": 25,
-              "url": "https://www.bbc.co.uk/news/articles/c0jy96w6pw2o?at_medium=RSS&at_campaign=rss",
-              "trendMatch": null,
-              "freshUnder60": true,
-              "coreHard": true,
-              "worthyFreshUnder60": true,
-              "disqualifiers": [
-                "weak_or_missing_trend_match"
-              ]
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 46,
-      "afterHealthScore": 85,
-      "replacementReadiness": {
-        "score": 73,
-        "threshold": 80,
-        "components": {
-          "freshness": 17.5,
-          "newsinessTop10": 25.0,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 0.0,
-          "criticalBlockersClear": 5.0
-        },
-        "criticalBlockers": [
-          "top12_under60_below_9",
-          "fresh_candidate_supply_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 60,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": false,
-        "summaryLine": "בינוני עד בעייתי — שיפור מבני בסיווג, אבל התור עדיין מת",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-23-1405.md",
-        "reportName": "tt-rr-simulation-review-2026-06-23-1405.md",
-        "reportGeneratedAt": "2026-06-23T10:58:01+00:00 (≈13:58 IL; הזמן הזה לא השתנה מהריצה הקודמת — הסימולציה לא רצה מאז; כרגע 14:05 IL)",
-        "metrics": {
-          "ציון עליזה": 60,
-          "generatedAt": 2026,
-          "beforeHealthScore": 44,
-          "afterHealthScore": 69,
-          "healthDelta": 25,
-          "replacementReadiness.score": 62,
-          "rollingScore": 76.62,
-          "newsinessTop10": 9,
-          "softTop10": 0,
-          "otherTop10": 1,
-          "top5Under60": 0,
-          "top10Under60": 0,
-          "top12Under60": 0,
-          "trendMatchedTop10": 5,
-          "trendMatchedTop20": 6,
-          "trendGapMatchedTop20": 2,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 8,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "**לבדוק למה הסימולציה לא רצה מאז 12:04** — ה-generatedAt לא התקדם. ייתכן ש-cron הסימולציה נחסם, או ש-worker תפוס. אם הסימולציה לא רצה כל שעה, כל המדדים מייצגים תמונה ישנה של 3 שעות. תיקון: להריץ את הסימולציה ידנית עכשיו, ולבדוק את ה-cron trigger.",
-          "**להרחיב את readyQueue בכוח**: לכל פריט ב-Top 30 עם age<=90m ו-class=hard, להוסיף ל-readyQueue. זה פותר את 0/4 blockers בבת אחת ומחזיר את estimatedVisibleChangeMinutes ל-15-20.",
-          "**לאסור soft ב-Top 5 וספורט בכמות>1 ב-Top 10**: להחמיר את הסיווג כך שספורט לא יקבל hard אוטומטית, ולהוסיף cap של 1 פריט ספורט ב-Top 10. זה מוריד את הסיכון לספורט רך במקומות הראשונים."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-23 14:05"
-      },
-      "delta": {
-        "newsinessTop10": 7,
-        "coreHardTop10": 6,
-        "softTop10": -6,
-        "top12Under60": -5,
-        "uniqueSourcesTop20": 2,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 0,
-        "healthScore": 39
-      }
-    },
     {
       "generatedAt": "2026-06-23T11:36:44+00:00",
       "feedFingerprint": "4309309331994455593",
@@ -78725,6 +77377,1282 @@
         "trendMatchedTop10": 0,
         "trendMatchedTop20": 0,
         "healthScore": 46
+      }
+    },
+    {
+      "generatedAt": "2026-06-27T07:07:27+00:00",
+      "feedFingerprint": "7118430901232661392",
+      "before": {
+        "newsinessTop10": 2,
+        "coreHardTop10": 2,
+        "softTop10": 6,
+        "otherTop10": 2,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 7,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "storyClusterTop20Max": 1,
+        "eventClusterTop20Max": 1,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 4
+          },
+          {
+            "name": "השירות המטאורולוגי",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 1
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 58,
+          "readyCount": 7,
+          "hardReadyCount": 3,
+          "hardReadyStrictCount": 3,
+          "trendReadyCount": 1,
+          "cleanReadyCount": 3,
+          "cleanHardReadyCount": 3,
+          "cleanTrendReadyCount": 0,
+          "uniqueReadySources": 5,
+          "uniqueCleanReadySources": 3,
+          "freshReadyUnder25Count": 3,
+          "cleanFreshReadyUnder25Count": 1,
+          "blockers": [
+            "clean_ready_queue_below_6",
+            "hard_ready_below_4",
+            "clean_hard_ready_below_4"
+          ],
+          "readyQueue": [
+            {
+              "rank": 9,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 8,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 3,
+              "headline": "שלושה כרטיסי מקום שלישי עדיין פתוחים במונדיאל",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848943",
+              "trendMatch": null,
+              "queueScore": 24.0
+            },
+            {
+              "rank": 4,
+              "headline": "בלגיה התעוררה עם חמישייה ועלתה מהמקום הראשון",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848900",
+              "trendMatch": null,
+              "queueScore": 24.0
+            },
+            {
+              "rank": 16,
+              "headline": "צה\"ל מסכם שבוע של תקיפות ומעצרים בכמה זירות",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 83,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-900633",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 13,
+              "headline": "הרקולס מאנטבה עדיין טס במלחמות ישראל",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 65,
+              "url": "https://www.ynet.co.il/news/article/by9yuocmgg",
+              "trendMatch": null,
+              "queueScore": 11.0
+            },
+            {
+              "rank": 15,
+              "headline": "איראן מחכה למקום בשלבי הנוקאאוט אחרי שער שנפסל",
+              "source": "Al Jazeera RSS מסונן מזרח תיכון",
+              "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 80,
+              "url": "https://www.aljazeera.com/sports/2026/6/27/iran-wait-on-world-cup-progress-after-late-goal-disallowed-in-egypt-draw?traffic_source=rss",
+              "trendMatch": null,
+              "queueScore": 3.0
+            }
+          ],
+          "cleanReadyQueue": [
+            {
+              "rank": 9,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 8,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 16,
+              "headline": "צה\"ל מסכם שבוע של תקיפות ומעצרים בכמה זירות",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 83,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-900633",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        },
+        "candidateSupply": {
+          "scope": "pre_rerank_top_80",
+          "freshUnder60Count": 10,
+          "worthyFreshUnder60Count": 2,
+          "coreHardFreshUnder60Count": 2,
+          "softFreshUnder60Count": 6,
+          "otherFreshUnder60Count": 2,
+          "freshUniqueSources": 5,
+          "worthyUniqueSources": 2,
+          "freshSources": [
+            {
+              "name": "וואלה",
+              "count": 4
+            },
+            {
+              "name": "Daily Mail",
+              "count": 3
+            },
+            {
+              "name": "ynet",
+              "count": 1
+            },
+            {
+              "name": "מעריב",
+              "count": 1
+            },
+            {
+              "name": "Mirror",
+              "count": 1
+            }
+          ],
+          "worthySources": [
+            {
+              "name": "ynet",
+              "count": 1
+            },
+            {
+              "name": "מעריב",
+              "count": 1
+            }
+          ],
+          "disqualifiedFreshCounts": {
+            "quality_class_soft": 6,
+            "weak_or_missing_trend_match": 9,
+            "quality_class_other": 2
+          },
+          "staleOrUndatedCount": 12,
+          "blockers": [
+            "fresh_candidate_supply_below_9"
+          ],
+          "topFreshCandidates": [
+            {
+              "beforeRank": 1,
+              "headline": "כריסטיאן מרטינס מושך תשומת לב במונדיאל",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848906",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 2,
+              "headline": "ארגנטינה קיבלה נתיב נוח עד חצי הגמר",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848945",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 3,
+              "headline": "שלושה כרטיסי מקום שלישי עדיין פתוחים במונדיאל",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848943",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 4,
+              "headline": "בלגיה התעוררה עם חמישייה ועלתה מהמקום הראשון",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848900",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 5,
+              "headline": "סרטון הפרידה של קרל סטפנוביק הכעיס את אנשי Nine",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 11,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15933849/Nine-colleagues-furious-Karl-Stefanovic-free-video.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 6,
+              "headline": "בראד פיט לא מתכנן להינשא לאינס דה רמון",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 13,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15934233/brad-pitt-ines-ramon-los-angeles-outing-marriage-plans.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 7,
+              "headline": "לורן פרייר הופיעה במונדיאל אחרי שנים של לעג ברשת",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 19,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15933249/Declan-Rice-girlfriend-baby-England-Lauren-Fryer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 8,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 10,
+              "headline": "פאט טוני משנה כיוון בסכסוך משפחת בקהאם",
+              "source": "Mirror Celebs רכילות חו״ל",
+              "canonicalSource": "Mirror",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 60,
+              "url": "https://www.mirror.co.uk/3am/celebrity-news/fat-tony-comments-beckham-feud-37348004",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ],
+          "topWorthyFreshCandidates": [
+            {
+              "beforeRank": 8,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "coreHardTop10": 3,
+        "softTop10": 2,
+        "otherTop10": 4,
+        "top5Under60": 2,
+        "top10Under60": 6,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 24,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "storyClusterTop20Max": 1,
+        "eventClusterTop20Max": 1,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Daily Mail",
+            "count": 4
+          },
+          {
+            "name": "Mirror",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "השירות המטאורולוגי",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 1
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "The Media Line",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 1,
+        "trendGapMatchedTop20": 1,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 20,
+          "score": 54,
+          "readyCount": 7,
+          "hardReadyCount": 3,
+          "hardReadyStrictCount": 3,
+          "trendReadyCount": 1,
+          "cleanReadyCount": 3,
+          "cleanHardReadyCount": 3,
+          "cleanTrendReadyCount": 0,
+          "uniqueReadySources": 5,
+          "uniqueCleanReadySources": 3,
+          "freshReadyUnder25Count": 3,
+          "cleanFreshReadyUnder25Count": 1,
+          "blockers": [
+            "clean_ready_queue_below_6",
+            "hard_ready_below_4",
+            "clean_hard_ready_below_4"
+          ],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 1,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 7,
+              "headline": "שלושה כרטיסי מקום שלישי עדיין פתוחים במונדיאל",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848943",
+              "trendMatch": null,
+              "queueScore": 24.0
+            },
+            {
+              "rank": 8,
+              "headline": "בלגיה התעוררה עם חמישייה ועלתה מהמקום הראשון",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848900",
+              "trendMatch": null,
+              "queueScore": 24.0
+            },
+            {
+              "rank": 3,
+              "headline": "צה\"ל מסכם שבוע של תקיפות ומעצרים בכמה זירות",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 83,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-900633",
+              "trendMatch": null,
+              "queueScore": 23.0
+            },
+            {
+              "rank": 13,
+              "headline": "הרקולס מאנטבה עדיין טס במלחמות ישראל",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "ביטחון",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 65,
+              "url": "https://www.ynet.co.il/news/article/by9yuocmgg",
+              "trendMatch": null,
+              "queueScore": 11.0
+            },
+            {
+              "rank": 12,
+              "headline": "איראן מחכה למקום בשלבי הנוקאאוט אחרי שער שנפסל",
+              "source": "Al Jazeera RSS מסונן מזרח תיכון",
+              "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 80,
+              "url": "https://www.aljazeera.com/sports/2026/6/27/iran-wait-on-world-cup-progress-after-late-goal-disallowed-in-egypt-draw?traffic_source=rss",
+              "trendMatch": null,
+              "queueScore": 3.0
+            }
+          ],
+          "cleanReadyQueue": [
+            {
+              "rank": 2,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "queueScore": 36.0
+            },
+            {
+              "rank": 1,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 3,
+              "headline": "צה\"ל מסכם שבוע של תקיפות ומעצרים בכמה זירות",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 83,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-900633",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        },
+        "candidateSupply": {
+          "scope": "pre_rerank_top_80",
+          "freshUnder60Count": 10,
+          "worthyFreshUnder60Count": 2,
+          "coreHardFreshUnder60Count": 2,
+          "softFreshUnder60Count": 6,
+          "otherFreshUnder60Count": 2,
+          "freshUniqueSources": 5,
+          "worthyUniqueSources": 2,
+          "freshSources": [
+            {
+              "name": "וואלה",
+              "count": 4
+            },
+            {
+              "name": "Daily Mail",
+              "count": 3
+            },
+            {
+              "name": "ynet",
+              "count": 1
+            },
+            {
+              "name": "מעריב",
+              "count": 1
+            },
+            {
+              "name": "Mirror",
+              "count": 1
+            }
+          ],
+          "worthySources": [
+            {
+              "name": "ynet",
+              "count": 1
+            },
+            {
+              "name": "מעריב",
+              "count": 1
+            }
+          ],
+          "disqualifiedFreshCounts": {
+            "quality_class_soft": 6,
+            "weak_or_missing_trend_match": 9,
+            "quality_class_other": 2
+          },
+          "staleOrUndatedCount": 12,
+          "blockers": [
+            "fresh_candidate_supply_below_9"
+          ],
+          "topFreshCandidates": [
+            {
+              "beforeRank": 1,
+              "headline": "כריסטיאן מרטינס מושך תשומת לב במונדיאל",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848906",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 2,
+              "headline": "ארגנטינה קיבלה נתיב נוח עד חצי הגמר",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848945",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 3,
+              "headline": "שלושה כרטיסי מקום שלישי עדיין פתוחים במונדיאל",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848943",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 4,
+              "headline": "בלגיה התעוררה עם חמישייה ועלתה מהמקום הראשון",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "other",
+              "strictHard": false,
+              "ageMinutes": 7,
+              "url": "https://sports.walla.co.il/item/3848900",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_other",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 5,
+              "headline": "סרטון הפרידה של קרל סטפנוביק הכעיס את אנשי Nine",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 11,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15933849/Nine-colleagues-furious-Karl-Stefanovic-free-video.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 6,
+              "headline": "בראד פיט לא מתכנן להינשא לאינס דה רמון",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 13,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15934233/brad-pitt-ines-ramon-los-angeles-outing-marriage-plans.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 7,
+              "headline": "לורן פרייר הופיעה במונדיאל אחרי שנים של לעג ברשת",
+              "source": "Daily Mail TVShowbiz רכילות חו״ל",
+              "canonicalSource": "Daily Mail",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 19,
+              "url": "https://www.dailymail.com/tvshowbiz/article-15933249/Declan-Rice-girlfriend-baby-England-Lauren-Fryer.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 8,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            },
+            {
+              "beforeRank": 10,
+              "headline": "פאט טוני משנה כיוון בסכסוך משפחת בקהאם",
+              "source": "Mirror Celebs רכילות חו״ל",
+              "canonicalSource": "Mirror",
+              "category": "רכילות",
+              "class": "soft",
+              "strictHard": false,
+              "ageMinutes": 60,
+              "url": "https://www.mirror.co.uk/3am/celebrity-news/fat-tony-comments-beckham-feud-37348004",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": false,
+              "worthyFreshUnder60": false,
+              "disqualifiers": [
+                "quality_class_soft",
+                "weak_or_missing_trend_match"
+              ]
+            }
+          ],
+          "topWorthyFreshCandidates": [
+            {
+              "beforeRank": 8,
+              "headline": "חשוד ברצח בת 17 נעצר בנמל התעופה בבנגקוק",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "פלילים",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 24,
+              "url": "https://www.ynet.co.il/news/article/sktlkk6fgx",
+              "trendMatch": null,
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": [
+                "weak_or_missing_trend_match"
+              ]
+            },
+            {
+              "beforeRank": 9,
+              "headline": "בית אריה נותרת בסגר אחרי זיהוי שני חשודים",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "strictHard": true,
+              "ageMinutes": 53,
+              "url": "https://www.maariv.co.il/news/military/article-1337903",
+              "trendMatch": {
+                "trend": "ההתרעה בבית אריה שבשומרון: בשל זיהוי של שני חשודים - צה\"ל סורק במרחב",
+                "clusterKey": "אריה שבשומרון",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-27T04:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3848934",
+                "overlapTokens": [
+                  "אריה",
+                  "ההתרעה",
+                  "זיהוי",
+                  "חשודים"
+                ],
+                "entityOverlapTokens": [],
+                "eventOverlapTokens": [],
+                "score": 50.42,
+                "boost": 14.0
+              },
+              "freshUnder60": true,
+              "coreHard": true,
+              "worthyFreshUnder60": true,
+              "disqualifiers": []
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 46,
+      "afterHealthScore": 65,
+      "replacementReadiness": {
+        "score": 52,
+        "threshold": 80,
+        "components": {
+          "freshness": 13.9,
+          "newsinessTop10": 12.5,
+          "top20Quality": 13.2,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 2.67,
+          "criticalBlockersClear": 0.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "top12_under60_below_9",
+          "fresh_candidate_supply_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "coreHardTop10": 1,
+        "softTop10": -4,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 0,
+        "healthScore": 19
       }
     }
   ]
