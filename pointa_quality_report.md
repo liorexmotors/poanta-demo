@@ -45,7 +45,7 @@ Warnings: 7
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/news/politics/article/20857343
 
-### WARNING · headline_near_duplicate_summary · item 20
+### WARNING · headline_near_duplicate_summary · item 14
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `רפאלה במקום הרביעי`
 - Original: `"האח הגדול" 2026: כל אירועי הגמר (כתבה מתעדכנת)`
