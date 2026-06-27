@@ -46,6 +46,9 @@ FAST_SYNC_REPORT_PATH = ROOT / "feed_a_fast_sync_report.json"
 MAX_FEED_ITEMS = 200
 FEED_RETENTION_DAYS = 7
 FAST_CATEGORY_RETENTION_HOURS = 18
+MIN_CONTEXT_WORDS_BEFORE_ENRICH = 28
+FAST_ENRICH_MAX_PER_SOURCE = 1
+FAST_ENRICH_MAX_PER_RUN = 20
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
 SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
@@ -914,9 +917,29 @@ def should_replace_source_description(existing: str, enriched: str) -> bool:
     return True
 
 
-def enrich(candidate: Candidate) -> Candidate:
+def word_count(text: str) -> int:
+    return len(re.findall(r"[0-9A-Za-z\u0590-\u05ff]+", clean_text(text)))
+
+
+def should_enrich_for_context(candidate: Candidate) -> bool:
+    """Fetch the article page only when the source text is too thin.
+
+    Short RSS summaries should trigger a deeper read, but lack of depth must not
+    reject the story.  The RSS text remains the fallback if the article page is
+    blocked or does not expose useful text.
+    """
+    if not candidate.url or "news.google.com/" in candidate.url:
+        return False
+    if word_count(candidate.description) < MIN_CONTEXT_WORDS_BEFORE_ENRICH:
+        return True
+    if has_latin_text(candidate.description) and not is_foreign_source_label(candidate.source):
+        return True
+    return False
+
+
+def enrich(candidate: Candidate, timeout: int = 12, allow_jina: bool = True) -> Candidate:
     try:
-        raw = fetch(candidate.url, timeout=12)
+        raw = fetch(candidate.url, timeout=timeout)
         parser = parse_html(raw)
     except Exception:
         raw = ""
@@ -928,7 +951,7 @@ def enrich(candidate: Candidate) -> Candidate:
     # Some N12/Mako URLs return a Radware block page to direct fetches.
     # In that case, use Jina Reader as a metadata fallback so the footer link
     # still gets the exact source headline instead of the rewritten Poanta title.
-    if not exact_title or "Radware Block Page" in raw:
+    if allow_jina and (not exact_title or "Radware Block Page" in raw):
         jina_title, jina_image = fetch_jina_metadata(candidate.url)
         exact_title = jina_title or exact_title
         image = image or jina_image
@@ -940,10 +963,10 @@ def enrich(candidate: Candidate) -> Candidate:
         candidate.title = sanitize_title(exact_title) or exact_title
     if image:
         candidate.image_url = urljoin(candidate.url, image)
-    desc = clean_text(parser.meta.get("og:description") or parser.meta.get("description") or parser.meta.get("twitter:description") or "")
-    if not desc:
-        ps = [clean_text(p) for p in parser.paragraphs]
-        desc = clean_text(" ".join(p for p in ps if len(p) > 40)[:450])
+    meta_desc = clean_text(parser.meta.get("og:description") or parser.meta.get("description") or parser.meta.get("twitter:description") or "")
+    ps = [clean_text(p) for p in parser.paragraphs]
+    body_desc = clean_text(" ".join(p for p in ps if len(p) > 40)[:650])
+    desc = body_desc if word_count(body_desc) > word_count(meta_desc) else meta_desc
     # Preserve the source/RSS/telegram description unless enrichment produced a
     # clearly useful replacement.  This is source-agnostic by design: Ynet was
     # the first visible failure, but the same WAF/empty-page pattern can hit any
@@ -1729,17 +1752,17 @@ def live_event_pointa_tuple(title: str, desc: str, source: str = "") -> tuple[st
     if 'צפת' in text and any(x in text for x in ['שאבעס', 'יריקות לעבר נשים', 'הפגנות חרדים', 'כביש הראשי']):
         return (
             'הפגנות חרדים בצפת חסמו ציר מרכזי סביב תחבורה בשבת',
-            'בצפת נמשכות הפגנות חרדים נגד הפעלת קווי אוטובוס לפני צאת שבת, כולל חסימות תנועה וקריאות לעבר נהגים ונשים שעברו במקום.',
+            'בצפת נמשכות הפגנות חרדים נגד הפעלת קווי אוטובוס לפני צאת שבת, כולל חסימות תנועה וקריאות לעבר נהגים ונשים שעברו במקום. העימות המקומי הופך את שאלת התחבורה הציבורית בשבת לאירוע שמשפיע ישירות על תושבים ונהגים.',
         )
     if any(x in text for x in ['המסילה המזרחית', 'הקווים החדשים של רכבת ישראל']) and any(x in text for x in ['רכבת ישראל', 'קווים חדשים', 'יחלו לפעול']):
         return (
             'המסילה המזרחית חוזרת לפעול בהדרגה אחרי שנים של עיכוב',
-            'רכבת ישראל תתחיל להפעיל את הקווים החדשים של המסילה המזרחית בימי חול, ובהמשך צפויה להרחיב את השירות.',
+            'רכבת ישראל תתחיל להפעיל את הקווים החדשים של המסילה המזרחית בימי חול, ובהמשך צפויה להרחיב את השירות. החזרה המדורגת אמורה להוסיף חלופת נסיעה בין אזורי תעסוקה ומגורים, אבל היא עדיין תלויה בהשלמת התפעול המלא.',
         )
     if 'נהר הירדן' in text and 'נסחפ' in text and any(x in text for x in ['נערות', 'שתי', '2 ']):
         return (
             'חיפושים בנהר הירדן אחרי שתי נערות שנותק עמן קשר',
-            'כוחות משטרה וחילוץ סורקים באזור להבות הבשן לאחר ששתי נערות נסחפו בנהר הירדן, ונותק עמן הקשר.',
+            'כוחות משטרה וחילוץ סורקים באזור להבות הבשן לאחר ששתי נערות נסחפו בנהר הירדן, ונותק עמן הקשר. האירוע מתנהל כפעולת חילוץ פתוחה, ולכן העדכון המרכזי הוא עצם ניתוק הקשר והסריקות בשטח.',
         )
     if 'עמק חפר' in text and 'טבע' in text and any(x in text for x in ['בן 13', 'נער']):
         return (
@@ -1749,7 +1772,7 @@ def live_event_pointa_tuple(title: str, desc: str, source: str = "") -> tuple[st
     if 'צבא לבנון' in text and any(x in text for x in ['חיזבאללה', 'הסכם', 'לבנון']):
         return (
             'ההסכם עם לבנון מעביר את המבחן לצבא הלבנוני',
-            'ברקע ההסכם עם ישראל, צבא לבנון נדרש להתמודד עם חיזבאללה למרות קשיי גיוס, משכורות נמוכות והרכב פנימי מורכב.',
+            'ברקע ההסכם עם ישראל, צבא לבנון נדרש להתמודד עם חיזבאללה למרות קשיי גיוס, משכורות נמוכות והרכב פנימי מורכב. האתגר הוא אם כוח מדינתי חלש יוכל לאכוף הסכם מול ארגון חמוש וחזק ממנו בשטח.',
         )
     if 'חיזבאללה' in text and 'הסכם' in text and any(x in text for x in ['חרפה', 'השפלה', 'מלחמת אזרחים', 'ריבונות']):
         return (
@@ -1759,7 +1782,7 @@ def live_event_pointa_tuple(title: str, desc: str, source: str = "") -> tuple[st
     if 'גל החום' in text and 'אירופה' in text:
         return (
             'גל החום באירופה שובר שיאים ומכביד על תשתיות',
-            'גרמניה, שווייץ, איטליה וספרד מתמודדות עם חום קיצוני, כבישים שנפגעו, קרחונים שנמסים וחשש מבצורת ומקרי מוות.',
+            'גרמניה, שווייץ, איטליה וספרד מתמודדות עם חום קיצוני, כבישים שנפגעו, קרחונים שנמסים וחשש מבצורת ומקרי מוות. המשבר אינו רק תחזית מזג אוויר, אלא עומס מתמשך על תחבורה, בריאות ותשתיות עירוניות.',
         )
     if 'הפגנות נגד הממשלה' in text and any(x in text for x in ['תל אביב', 'ירושלים', 'חיפה', 'רחבי הארץ']):
         return (
@@ -1769,7 +1792,12 @@ def live_event_pointa_tuple(title: str, desc: str, source: str = "") -> tuple[st
     if 'מצעד הגאווה' in text and 'הונגריה' in text:
         return (
             'עשרות אלפים צעדו בבודפשט למרות הלחץ של אורבן',
-            'בהונגריה השתתפו עשרות אלפים במצעד הגאווה, באירוע שהפך גם להפגנת כוח פוליטית מול ממשלת אורבן.',
+            'בהונגריה השתתפו עשרות אלפים במצעד הגאווה, באירוע שהפך גם להפגנת כוח פוליטית מול ממשלת אורבן. ההשתתפות הרחבה מסמנת שהמאבק סביב זכויות להט״ב במדינה כבר חורג מאירוע קהילתי והופך לעימות אזרחי רחב.',
+        )
+    if any(x in text.lower() for x in ['bahrain', 'hormuz', 'drones']) and any(x in text.lower() for x in ['ship', 'strait']):
+        return (
+            'כטב״מים ותקיפה ימית החזירו את המפרץ לכוננות',
+            'כטב״מים פגעו בבחריין ללא נזק מיידי, ובמקביל ספינה במצר הורמוז הותקפה. צירוף האירועים משאיר את המפרץ תחת סיכון ביטחוני ישיר לתנועה ימית ואווירית.',
         )
     return None
 
@@ -1875,15 +1903,25 @@ def fallback_context_from_title(title: str, category: str = '') -> str:
     return fallbacks.get(category, 'הפרטים הזמינים אינם מספיקים עדיין לתובנה נקודתית אמינה.')
 
 
-def compact_context(text: str, category: str = '', title: str = '') -> str:
+def compact_context(text: str, category: str = '', title: str = '', max_chars: int = 220) -> str:
     text = clean_text(text).replace('…', '').replace('...', '').strip(' ,;:-–')
-    if len(text) <= 145:
+    if len(text) <= max_chars:
         return text
     sentences = split_sentences(text)
-    for sentence in sentences:
-        sentence = sentence.replace('…', '').replace('...', '').strip(' ,;:-–')
-        if 35 <= len(sentence) <= 145:
-            return sentence
+    if sentences:
+        candidate = ''
+        for sentence in sentences[:3]:
+            piece = sentence.replace('…', '').replace('...', '').strip(' ,;:-–')
+            if not piece:
+                continue
+            next_text = f"{candidate} {piece}".strip()
+            if len(next_text) > max_chars:
+                break
+            candidate = next_text
+            if word_count(candidate) >= MIN_CONTEXT_WORDS_BEFORE_ENRICH:
+                break
+        if candidate:
+            return candidate
     return fallback_context_from_title(title, category)
 
 
@@ -2998,6 +3036,13 @@ def refresh_item_pointa(item: dict) -> dict:
         item["takeaway"] = fp[2]
         item["category"] = fp[3]
         item["categoryClass"] = fp[4]
+    live_tuple = live_event_pointa_tuple(title, desc, source)
+    if live_tuple:
+        item["headline"] = live_tuple[0]
+        item["context"] = live_tuple[1]
+        new_category, new_cls = categorize_item(title, desc, source)
+        item["category"] = new_category
+        item["categoryClass"] = new_cls
     category = str(item.get("category") or "חדשות")
     is_gossip_source = any(x in source for x in ["סלבס", "TMI", "Pplus", "פנאי פלוס", "פפראצי", "פפארצי", "רכילות"])
     if is_gossip_source:
@@ -3818,6 +3863,10 @@ def main() -> int:
         "rawCandidates": 0,
         "validCandidates": 0,
         "qaRejectedCandidates": 0,
+        "articleEnrichAttempts": 0,
+        "articleEnrichImproved": 0,
+        "articleEnrichSkippedBudget": 0,
+        "shortAfterEnrich": 0,
         "selectedCandidates": 0,
         "preMergeItems": 0,
         "publishedItems": 0,
@@ -3840,6 +3889,10 @@ def main() -> int:
             "raw": 0,
             "valid": 0,
             "qaRejected": 0,
+            "articleEnrichAttempts": 0,
+            "articleEnrichImproved": 0,
+            "articleEnrichSkippedBudget": 0,
+            "shortAfterEnrich": 0,
             "selected": 0,
         }
         # preserve source-local ranking while dropping duplicate URLs
@@ -3885,6 +3938,25 @@ def main() -> int:
             c.title = sanitized_title
             if args.draft and candidate_seen(c, seen):
                 continue
+            if should_enrich_for_context(c):
+                before_words = word_count(c.description)
+                if (
+                    source_report["articleEnrichAttempts"] < FAST_ENRICH_MAX_PER_SOURCE
+                    and run_report["articleEnrichAttempts"] < FAST_ENRICH_MAX_PER_RUN
+                ):
+                    source_report["articleEnrichAttempts"] += 1
+                    run_report["articleEnrichAttempts"] += 1
+                    c = enrich(c, timeout=6, allow_jina=False)
+                    after_words = word_count(c.description)
+                    if after_words > before_words + 8:
+                        source_report["articleEnrichImproved"] += 1
+                        run_report["articleEnrichImproved"] += 1
+                    if after_words < MIN_CONTEXT_WORDS_BEFORE_ENRICH:
+                        source_report["shortAfterEnrich"] += 1
+                        run_report["shortAfterEnrich"] += 1
+                else:
+                    source_report["articleEnrichSkippedBudget"] += 1
+                    run_report["articleEnrichSkippedBudget"] += 1
             # Do not let the first two raw RSS rows from a source block fresher
             # usable rows underneath them.  Core sources such as YNET/Maariv
             # often lead with thin flashes that deterministic QA correctly
