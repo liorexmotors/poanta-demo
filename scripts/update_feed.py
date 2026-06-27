@@ -1030,7 +1030,10 @@ def regional_category(text: str) -> tuple[str, str]:
     low = text.lower()
     if any(term.lower() in low for term in REGIONAL_SECURITY_TERMS):
         return "ביטחון", "security"
-    if any(term.lower() in low for term in REGIONAL_POLITICS_TERMS):
+    if any(
+        (re.search(rf"(?<![א-ת]){re.escape(term.lower())}(?![א-ת])", low) if re.fullmatch(r"[א-ת]{1,3}", term) else term.lower() in low)
+        for term in REGIONAL_POLITICS_TERMS
+    ):
         return "פוליטיקה", "security"
     return "חדשות", ""
 
@@ -1794,7 +1797,11 @@ def live_event_pointa_tuple(title: str, desc: str, source: str = "") -> tuple[st
             'עשרות אלפים צעדו בבודפשט למרות הלחץ של אורבן',
             'בהונגריה השתתפו עשרות אלפים במצעד הגאווה, באירוע שהפך גם להפגנת כוח פוליטית מול ממשלת אורבן. ההשתתפות הרחבה מסמנת שהמאבק סביב זכויות להט״ב במדינה כבר חורג מאירוע קהילתי והופך לעימות אזרחי רחב.',
         )
-    if any(x in text.lower() for x in ['bahrain', 'hormuz', 'drones']) and any(x in text.lower() for x in ['ship', 'strait']):
+    if (
+        any(x in text.lower() for x in ['bahrain', 'hormuz', 'drones']) and any(x in text.lower() for x in ['ship', 'strait'])
+    ) or (
+        'המפרץ' in text and 'הורמוז' in text and any(x in text for x in ['כטב', 'ספינה', 'תקיפה ימית'])
+    ):
         return (
             'כטב״מים ותקיפה ימית החזירו את המפרץ לכוננות',
             'כטב״מים פגעו בבחריין ללא נזק מיידי, ובמקביל ספינה במצר הורמוז הותקפה. צירוף האירועים משאיר את המפרץ תחת סיכון ביטחוני ישיר לתנועה ימית ואווירית.',
@@ -2637,7 +2644,14 @@ def preferred_duplicate_item(a: dict, b: dict) -> dict:
         detail = len(" ".join(str(item.get(k) or "") for k in ["context", "takeaway", "headline", "originalTitle"]))
         image = 1 if item.get("imageUrl") else 0
         return (official, published, detail, image)
-    return a if score(a) >= score(b) else b
+    winner = dict(a if score(a) >= score(b) else b)
+    # A duplicate replacement is still the same story.  Keep the earliest visible
+    # story time so repeated RSS/live updates do not make old cards look like
+    # they just happened five minutes ago.
+    timestamps = [str(item.get("publishedAt") or "") for item in (a, b) if item.get("publishedAt")]
+    if len(timestamps) >= 2:
+        winner["publishedAt"] = min(timestamps)
+    return winner
 
 
 def load_seen() -> dict:
@@ -3670,6 +3684,11 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     cutoff = now - timedelta(days=FEED_RETENTION_DAYS)
     existing_feed = json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"items": []}
     existing_by_key = {feed_item_key(item): item for item in existing_feed.get("items", []) if feed_item_key(item)}
+    existing_by_headline = {
+        normalized_key(str(item.get("headline") or "")): item
+        for item in existing_feed.get("items", [])
+        if len(normalized_key(str(item.get("headline") or ""))) >= 28
+    }
     merged = []
     seen_keys = set()
     for feed in [new_feed, existing_feed]:
@@ -3694,7 +3713,8 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
                 continue
             if is_foreign_source_label(str(item.get("source") or item.get("sourceLogo") or "")) and not is_retained_foreign_item_relevant(item):
                 continue
-            previous_item = existing_by_key.get(key)
+            headline_key = normalized_key(str(item.get("headline") or ""))
+            previous_item = existing_by_key.get(key) or existing_by_headline.get(headline_key)
             previous_published_at = str(previous_item.get("publishedAt") or "") if previous_item else ""
             previous_titles = {
                 normalized_key(str(previous_item.get("originalTitle") or "")),
