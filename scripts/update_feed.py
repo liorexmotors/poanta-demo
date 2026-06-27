@@ -2633,6 +2633,19 @@ def likely_duplicate_story(a: dict, b: dict) -> bool:
 
 
 def preferred_duplicate_item(a: dict, b: dict) -> dict:
+    def normalize_duplicate_metadata(item: dict) -> dict:
+        text = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle", "context", "source"]).lower()
+        if (
+            ("המפרץ" in text or "hormuz" in text or "הורמוז" in text)
+            and ("כטב" in text or "drone" in text or "ship" in text or "ספינה" in text)
+        ):
+            item["category"] = "ביטחון"
+            item["categoryClass"] = "security"
+        if "נהר הירדן" in text and ("נסחפ" in text or "חילוץ" in text):
+            item["category"] = "חדשות"
+            item["categoryClass"] = ""
+        return item
+
     def score(item: dict) -> tuple[int, str, int, int]:
         # Lior's personal-feed rule: when similar stories arrive from different
         # sources, keep the freshest card and use editorial depth as the tie-breaker.
@@ -2651,7 +2664,22 @@ def preferred_duplicate_item(a: dict, b: dict) -> dict:
     timestamps = [str(item.get("publishedAt") or "") for item in (a, b) if item.get("publishedAt")]
     if len(timestamps) >= 2:
         winner["publishedAt"] = min(timestamps)
-    return winner
+    return normalize_duplicate_metadata(winner)
+
+
+def normalize_final_item_metadata(item: dict) -> dict:
+    """Last-mile category repair after dedupe/balance may keep old metadata."""
+    text = " ".join(str(item.get(k) or "") for k in ["headline", "originalTitle", "context", "source"]).lower()
+    if (
+        ("המפרץ" in text or "hormuz" in text or "הורמוז" in text)
+        and ("כטב" in text or "drone" in text or "ship" in text or "ספינה" in text)
+    ):
+        item["category"] = "ביטחון"
+        item["categoryClass"] = "security"
+    if "נהר הירדן" in text and ("נסחפ" in text or "חילוץ" in text):
+        item["category"] = "חדשות"
+        item["categoryClass"] = ""
+    return item
 
 
 def load_seen() -> dict:
@@ -3809,6 +3837,7 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     visible = diversify_visible_top(limited)
     visible = filter_main_feed_breaking_leaks(visible, "main_feed_no_breaking_guard_final")
     visible = ensure_daily_weather_items(visible, weather_cards, now, MAX_FEED_ITEMS)
+    visible = [normalize_final_item_metadata(item) for item in visible]
     merged = assign_display_rank(visible)
     new_feed["items"] = merged
     new_feed["mode"] = new_feed.get("mode", "full_snapshot_2h")
