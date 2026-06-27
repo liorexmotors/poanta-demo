@@ -3565,8 +3565,6 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
     tz = timezone(timedelta(hours=3))
     now = datetime.now(tz)
     cutoff = now - timedelta(days=FEED_RETENTION_DAYS)
-    fast_cutoff = now - timedelta(hours=FAST_CATEGORY_RETENTION_HOURS)
-    sync_profiles = load_sync_profiles()
     existing_feed = json.loads(FEED_PATH.read_text(encoding="utf-8")) if FEED_PATH.exists() else {"items": []}
     existing_by_key = {feed_item_key(item): item for item in existing_feed.get("items", []) if feed_item_key(item)}
     merged = []
@@ -3590,8 +3588,6 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
                 item["hasSourceDate"] = bool(item.get("publishedAt") and item.get("sourceUrl"))
             d = item_datetime(item, fallback)
             if d < cutoff:
-                continue
-            if category_sync_profile(str(item.get("category") or "חדשות"), sync_profiles) == "fast" and d < fast_cutoff:
                 continue
             if is_foreign_source_label(str(item.get("source") or item.get("sourceLogo") or "")) and not is_retained_foreign_item_relevant(item):
                 continue

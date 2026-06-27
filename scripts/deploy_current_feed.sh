@@ -40,7 +40,7 @@ python3 scripts/pointa_publish_rollback_guard.py --candidate feed.json --out tmp
 # P0 guard: the quality auditor catches cross-card/source-policy failures that
 # the per-card quality gate may miss. Its CLI can print "fail" while exiting 0,
 # so gate on the JSON status explicitly before recording or publishing.
-python3 scripts/pointa_quality_auditor.py --json > tmp/deploy_quality_auditor.json
+python3 scripts/pointa_quality_auditor.py --feed feed.json --json > tmp/deploy_quality_auditor.json
 python3 - <<'PY'
 import json, sys
 report = json.load(open('tmp/deploy_quality_auditor.json', encoding='utf-8'))

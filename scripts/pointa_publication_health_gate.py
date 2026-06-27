@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Hard publication health gate for Poanta feed automation.
+"""Publication health gate for Poanta feed automation.
 
 This is the shared P0 guard for האספן / השוער / המבקר / המתקן.
 A job is not allowed to claim success merely because it ran or committed files.
-It must prove the candidate/public feed has user-visible freshness.
+It must prove the candidate/public feed is safe to publish. Freshness is an
+operational signal, not a candidate-content blocker: a good 7-day feed should
+still publish when the news cycle is quiet.
 """
 from __future__ import annotations
 
@@ -20,17 +22,21 @@ ROOT = Path(__file__).resolve().parents[1]
 CRITICAL_LIVE_CODES = {
     "empty_feed",
     "missing_updated_at",
-    "stale_updated_at",
     "top_missing_published_at",
-    "no_new_top_item_sla",
-    "stale_top_item",
-    "too_few_fresh_top_items",
-    "too_few_recent_items_sla",
-    "too_few_recent_sources_sla",
     "weather_on_top",
     "summary_fragment_headline",
     "headline_too_close_to_source",
     "generic_takeaway_regression",
+}
+
+FRESHNESS_SIGNAL_CODES = {
+    "stale_updated_at",
+    "no_new_top_item_sla",
+    "no_new_top_item_warning",
+    "stale_top_item",
+    "too_few_fresh_top_items",
+    "too_few_recent_items_sla",
+    "too_few_recent_sources_sla",
 }
 
 CRITICAL_TIMING_GROUPS = {"all", "important", "foreign"}
@@ -51,15 +57,27 @@ def write_report(path: Path, report: dict[str, Any]) -> None:
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def live_blockers(live: dict[str, Any], *, mode: str) -> list[dict[str, Any]]:
+def split_live_findings(live: dict[str, Any], *, mode: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     blockers = []
+    freshness_signals = []
     for err in live.get("errors") or []:
         code = err.get("code")
+        if code in FRESHNESS_SIGNAL_CODES:
+            signal = dict(err)
+            signal["severity"] = "warning"
+            signal["publicationPolicy"] = "freshness_monitoring_only"
+            freshness_signals.append(signal)
+            continue
         # Public mode treats cache mismatch as a blocker; local candidate mode
         # cannot compare GitHub Pages to raw and ignores source-view warnings.
         if code in CRITICAL_LIVE_CODES or (mode == "public" and code == "live_raw_mismatch"):
             blockers.append(err)
-    return blockers
+    for warn in live.get("warnings") or []:
+        if warn.get("code") in FRESHNESS_SIGNAL_CODES:
+            signal = dict(warn)
+            signal["publicationPolicy"] = "freshness_monitoring_only"
+            freshness_signals.append(signal)
+    return blockers, freshness_signals
 
 
 def timing_blockers(timing: dict[str, Any]) -> list[dict[str, Any]]:
@@ -89,7 +107,7 @@ def main() -> int:
         live = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--json"])
         no_breaking = run_json([sys.executable, "scripts/pointa_main_feed_no_breaking_guard.py", "--feed", "feed.json", "--json"])
 
-    blockers = live_blockers(live, mode=args.mode)
+    blockers, freshness_signals = split_live_findings(live, mode=args.mode)
     for leak in no_breaking.get("leaks") or []:
         blockers.append({
             "code": "main_feed_breaking_leak",
@@ -110,18 +128,22 @@ def main() -> int:
         "noBreakingLeaks": no_breaking.get("leaks") or [],
         "timingStatus": timing.get("status") if timing else None,
         "blockers": blockers,
+        "freshnessSignals": freshness_signals,
         "liveErrors": live.get("errors") or [],
+        "liveWarnings": live.get("warnings") or [],
         "timingErrors": timing.get("errors") if timing else [],
         "top": (live.get("top") or [])[:5],
-        "rule": "No script/agent may report OK if the candidate/public feed still violates visible freshness/quantity SLA.",
+        "rule": "Block unsafe feed content/shape only; publishable freshness gaps are warnings for monitoring and source improvement.",
     }
     write_report(ROOT / args.out, report)
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
-        print(f"Pointa publication health gate: {report['status']} · blockers={len(blockers)}")
+        print(f"Pointa publication health gate: {report['status']} · blockers={len(blockers)} · freshnessWarnings={len(freshness_signals)}")
         for b in blockers[:8]:
             print(f"- {b.get('code')} {b.get('group','')}: {b.get('message','')}")
+        for b in freshness_signals[:8]:
+            print(f"- WARNING {b.get('code')} {b.get('group','')}: {b.get('message','')}")
     return 1 if blockers else 0
 
 

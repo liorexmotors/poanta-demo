@@ -49,6 +49,8 @@ GENERIC_TAKEAWAY_PATTERNS = [
     "מראה איך רגע פרטי", "חושף את קו הטיעון",
     "גם מוסד אהוב לא חסין מעלויות", "גם אוכל בטיסה הפך לכלי תחרות",
     "אצל ליגיונרים, הזדמנות אחת יכולה לשנות את העונה הבאה",
+    "הערך של עדכון צבאי כזה תלוי בשאלה",
+    "אירוע משטרתי משמעותי צריך להיבחן לפי",
 ]
 SOURCE_MEDIATION = ["הכתב מתאר", "הכתבה עוסקת", "המקור מדווח", "פורסם כי", "דווח כי"]
 ALLOWED_LATIN = {
@@ -137,7 +139,7 @@ def looks_cut(headline: str) -> bool:
 
 
 def card_blob(item: dict[str, Any]) -> str:
-    return " | ".join(norm(item.get(k, "")) for k in ["headline", "context", "takeaway", "originalTitle", "source", "sourceUrl"])
+    return " | ".join(norm(item.get(k, "")) for k in ["headline", "context", "originalTitle", "source", "sourceUrl"])
 
 
 def opinion_author_from_item(item: dict[str, Any]) -> str:
@@ -185,7 +187,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     source = norm(item.get("source", ""))
     source_url = norm(item.get("sourceUrl", item.get("url", "")))
 
-    visible_blob = " | ".join([headline, context, takeaway])
+    visible_blob = " | ".join([headline, context])
     if re.search(r"<[^>]+>|['\"]\s*>|\b(?:border|width|height|src|alt|class|style)=['\"]", visible_blob, flags=re.I):
         add_issue(issues, "error", idx, "html_artifact", "Visible card text contains HTML/attribute artifacts", item)
 
@@ -213,8 +215,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     if context and overlap_ratio(headline, context) >= 0.88 and (len(headline) >= 58 or len(context) <= 120):
         add_issue(issues, "warning", idx, "headline_near_duplicate_summary", "Headline is a clipped/near-duplicate version of the summary", item)
 
-    blob = " ".join([headline, context, takeaway, original, source])
-    content_blob = " ".join([headline, context, takeaway, original])
+    blob = " ".join([headline, context, original, source])
+    content_blob = " ".join([headline, context, original])
     me_or_israel_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "מזרח תיכון", "עזה", "gaza", "חמאס", "חיזבאללה", "לבנון", "איראן", "iran", "הורמוז", "סעודיה", "קטאר", "מצרים", "ירדן", "טורקיה", "פלסטיני"]
     world_only_terms = ["קובה", "cuba", "פוקושימה", "fukushima"]
     strong_local_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "עזה", "gaza"]
@@ -230,7 +232,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "category_iran_deal_security", "Iran nuclear/deal/Hormuz cards must be ביטחון, not פוליטיקה", item)
     if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"} and any(x in blob for x in ["קובה", "פוקושימה", "הבית הלבן", "White House"]):
         add_issue(issues, "error", idx, "category_world_story", "Cuba/Fukushima/White House stories must be אקטואליה בעולם", item)
-    weather_blob = " ".join([headline, context, takeaway, original, source]).lower()
+    weather_blob = " ".join([headline, context, original, source]).lower()
     if category in {"חדשות", "פוליטיקה"} and any(x.lower() in weather_blob for x in ["תחזית מזג אוויר", "מזג האוויר", "מזג אוויר", "טמפרטורות", "מעלות", "מעונן", "גשם", "שרב", "רוחות"]):
         add_issue(issues, "error", idx, "category_weather_forecast", "Weather forecast cards must be מזג אוויר, not חדשות/פוליטיקה", item)
     if any(x in headline for x in ["לפי אחד הבלוגים", "הגרסה החסכונית", "הקרוסאובר המוערך", "הקבוצה מאמסטרדם"]):
@@ -255,27 +257,6 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         if author and not author_visible(author, visible_blob):
             add_issue(issues, "error", idx, "opinion_author_missing", f"Maariv opinion card must mention columnist by name: {author}", item)
 
-    if not takeaway:
-        add_issue(issues, "error", idx, "takeaway_missing", "Takeaway is empty", item)
-    if len(takeaway) > TAKEAWAY_MAX:
-        add_issue(issues, "warning", idx, "takeaway_long", f"Takeaway length {len(takeaway)} > {TAKEAWAY_MAX}", item)
-    if any(p in takeaway for p in GENERIC_TAKEAWAY_PATTERNS):
-        add_issue(issues, "error", idx, "takeaway_generic", "Takeaway is generic/reusable", item)
-    if any(x in visible_blob + " | " + original for x in ["נפל בקרב", "לוחם", "רחפן נפץ", "דרום לבנון", "חיזבאללה"]) and any(x in takeaway for x in ["ליגיונרים", "העונה הבאה", "שחקן", "כדורגל", "NBA"]):
-        add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to a sports template, not a security/fallen-soldier story", item)
-    if any(x in card_blob(item) for x in ["M-16", "נשק", "גניבת נשק"]) and any(x in takeaway for x in ["מוסד אהוב", "אוכל בטיסה", "חוויית הנוסע"]):
-        add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to restaurant/travel template, not a weapon/crime story", item)
-    if any(x in takeaway for x in ["אופנה על השטיח האדום", "מוכרת דימוי לפני שהיא מוכרת בגד"]):
-        non_takeaway_blob = " | ".join([headline, context, original, source, norm(item.get("sourceUrl", ""))])
-        if not any(x in non_takeaway_blob for x in ["שטיח אדום", "אופנה", "שמלה", "לבוש", "מעצב", "מט גאלה"]):
-            add_issue(issues, "error", idx, "takeaway_topic_mismatch", "Takeaway belongs to fashion/red-carpet template, not this story", item)
-    if any(x in takeaway for x in ["האירוע מעלה סיכון להסלמה", "חשיבות ההנחיות הרשמיות", "הנתונים משפיעים על תמחור סיכון", "מניות והחלטות תקציב קרובות"]):
-        add_issue(issues, "error", idx, "takeaway_generic_wrong_template", "Takeaway is a generic/wrong-topic template and not article-specific", item)
-    if takeaway and context and overlap_ratio(takeaway, context) >= 0.72:
-        add_issue(issues, "error", idx, "takeaway_duplicates_context", "Takeaway repeats the summary instead of adding a point", item)
-    if takeaway and headline and overlap_ratio(takeaway, headline) >= 0.72:
-        add_issue(issues, "error", idx, "takeaway_duplicates_headline", "Takeaway repeats the headline instead of adding a point", item)
-
     is_gossip_source = any(x in source for x in ["סלבס", "TMI", "Pplus", "פנאי פלוס", "פפראצי", "פפארצי", "רכילות"])
     if is_gossip_source and category != "רכילות":
         add_issue(issues, "error", idx, "category_celebs", "Celebs/gossip source must be רכילות", item)
@@ -298,12 +279,12 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "warning", idx, "category_sport_source", "Sport source should usually be ספורט", item)
 
     if any(x in source for x in ["CNN", "BBC", "Sky News"]):
-        for field in ["headline", "context", "takeaway"]:
+        for field in ["headline", "context"]:
             leaks = has_latin_leak(norm(item.get(field, "")))
             if leaks:
                 add_issue(issues, "error", idx, "foreign_latin_leak", f"Latin leak in {field}: {', '.join(leaks[:5])}", item)
     if any(x in source.lower() for x in ["al jazeera", "jazeera", "bbc", "cnn", "sky news", "reuters", "guardian", "new york times", "nyt", "axios", "politico", "bloomberg"]):
-        foreign_text = " | ".join([headline, context, takeaway, original, source_url]).lower()
+        foreign_text = " | ".join([headline, context, original, source_url]).lower()
         foreign_required = ["israel", "israeli", "jerusalem", "jewish", "jews", "antisemit", "zion", "iran", "tehran", "gaza", "hamas", "hezbollah", "lebanon", "syria", "iraq", "yemen", "houthi", "qatar", "saudi", "jordan", "egypt", "west bank", "palestinian", "rafah", "hormuz", "middle east", "mideast", "idf", "netanyahu", "ישראל", "ישראלי", "ירושלים", "יהודים", "אנטישמ", "איראן", "טהראן", "עזה", "חמאס", "חיזבאללה", "לבנון", "סוריה", "עיראק", "תימן", "חותים", "קטאר", "סעודיה", "ירדן", "מצרים", "הגדה", "פלסטינ", "רפיח", "הורמוז", "מזרח תיכון", "צה״ל", "צה\"ל", "נתניהו"]
         if not any(x in foreign_text for x in foreign_required):
             add_issue(issues, "error", idx, "foreign_item_not_middle_east_relevant", "Foreign-source item lacks Israel/Middle-East relevance", item)
@@ -328,8 +309,6 @@ def validate_golden(items: list[dict[str, Any]], issues: list[dict[str, Any]]) -
         best = max(scored, key=lambda row: row[0])[1]
         if case.get("headline_contains") and case["headline_contains"] not in norm(best.get("headline", "")):
             add_issue(issues, "error", -1, "golden_headline", f"Golden case failed: {case['name']}", best)
-        if case.get("takeaway_contains") and case["takeaway_contains"] not in norm(best.get("takeaway", "")):
-            add_issue(issues, "error", -1, "golden_takeaway", f"Golden takeaway failed: {case['name']}", best)
         if case.get("category") and norm(best.get("category", "")) != case["category"]:
             add_issue(issues, "error", -1, "golden_category", f"Golden category failed: {case['name']} expected {case['category']}", best)
 

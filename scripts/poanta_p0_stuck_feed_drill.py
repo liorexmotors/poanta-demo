@@ -3,8 +3,9 @@
 """P0 stuck-feed disaster drill.
 
 Regression test for the incident class where FAST/finalizer/cron reports OK
-while the visible feed has no new top cards for >30 minutes or gossip cards ship
-without images/bad category.
+while unsafe content ships. Freshness gaps are now monitoring warnings, not
+candidate-publication blockers: the feed should keep a good 7-day archive live
+even during a quiet news cycle.
 """
 from __future__ import annotations
 
@@ -69,12 +70,17 @@ def main() -> int:
         fresh_gate = run([sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(fresh), "--json"])
         bad_qg = run([sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(bad_gossip), "--report", str(Path(td) / "qg.md")])
 
-        stale_ok = stale_gate.returncode != 0 and ("no_new_top_item_sla" in stale_gate.stdout or "stale_updated_at" in stale_gate.stdout)
+        stale_report = json.loads(stale_gate.stdout)
+        stale_ok = (
+            stale_gate.returncode == 0
+            and stale_report.get("status") == "ok"
+            and any(signal.get("code") in {"no_new_top_item_sla", "stale_updated_at"} for signal in stale_report.get("freshnessSignals") or [])
+        )
         fresh_ok = fresh_gate.returncode == 0
         gossip_blocked = bad_qg.returncode != 0 and "gossip_missing_image" in (Path(td) / "qg.md").read_text(encoding="utf-8") and "category_celebs" in (Path(td) / "qg.md").read_text(encoding="utf-8")
 
         report = {
-            "staleFeedBlocked": stale_ok,
+            "staleFeedPublishesWithFreshnessWarning": stale_ok,
             "freshFeedPasses": fresh_ok,
             "badGossipBlocked": gossip_blocked,
         }
