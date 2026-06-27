@@ -1725,6 +1725,16 @@ def is_idf_lebanon_evacuation_warning_story(title: str, desc: str) -> bool:
 def live_event_pointa_tuple(title: str, desc: str, source: str = "") -> tuple[str, str] | None:
     """Deterministic bridge for short live-news RSS rows."""
     text = f'{title} {desc}'
+    if 'צפת' in text and any(x in text for x in ['שאבעס', 'יריקות לעבר נשים', 'הפגנות חרדים', 'כביש הראשי']):
+        return (
+            'הפגנות חרדים בצפת חסמו ציר מרכזי סביב תחבורה בשבת',
+            'בצפת נמשכות הפגנות חרדים נגד הפעלת קווי אוטובוס לפני צאת שבת, כולל חסימות תנועה וקריאות לעבר נהגים ונשים שעברו במקום.',
+        )
+    if any(x in text for x in ['המסילה המזרחית', 'הקווים החדשים של רכבת ישראל']) and any(x in text for x in ['רכבת ישראל', 'קווים חדשים', 'יחלו לפעול']):
+        return (
+            'המסילה המזרחית חוזרת לפעול בהדרגה אחרי שנים של עיכוב',
+            'רכבת ישראל תתחיל להפעיל את הקווים החדשים של המסילה המזרחית בימי חול, ובהמשך צפויה להרחיב את השירות.',
+        )
     if 'נהר הירדן' in text and 'נסחפ' in text and any(x in text for x in ['נערות', 'שתי', '2 ']):
         return (
             'חיפושים בנהר הירדן אחרי שתי נערות שנותק עמן קשר',

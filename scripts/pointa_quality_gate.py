@@ -237,6 +237,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "category_weather_forecast", "Weather forecast cards must be מזג אוויר, not חדשות/פוליטיקה", item)
     if any(x in headline for x in ["לפי אחד הבלוגים", "הגרסה החסכונית", "הקרוסאובר המוערך", "הקבוצה מאמסטרדם"]):
         add_issue(issues, "error", idx, "headline_missing_core_entity", "Headline is a summary fragment and misses the core entity/model/team", item)
+    if re.search(r"^(זו כבר|זה כבר|אחרי שנים של|הרקע ל|ברקע ל)", headline):
+        add_issue(issues, "error", idx, "headline_opener_fragment", "Headline starts like an article opener instead of a concrete Pointa headline", item)
     if any(x in headline for x in ["מחקר קשר", "מחקר מצא קשר בין", "מחקר מצא קשר ל"]):
         add_issue(issues, "error", idx, "headline_ungrammatical_study_framing", "Health-study headline must use complete Hebrew such as 'מחקר קושר...' and avoid ungrammatical source-style fragments", item)
 
