@@ -114,7 +114,7 @@ then
   BRIDGE_ARGS=(--force)
 fi
 BRIDGE_STATUS=0
-python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-18}" --batch-size "${POINTA_FAST_RESCUE_BATCH_SIZE:-6}" --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-4}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json || BRIDGE_STATUS=$?
+python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-18}" --batch-size "${POINTA_FAST_RESCUE_BATCH_SIZE:-6}" --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-4}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --require-freshness --json || BRIDGE_STATUS=$?
 export POINTA_FAST_BRIDGE_STATUS="$BRIDGE_STATUS"
 if [[ "$BRIDGE_STATUS" -ne 0 ]]; then
   echo "FAST editor bridge failed with status $BRIDGE_STATUS; candidate health gate will decide whether publication is allowed." >&2
@@ -304,6 +304,20 @@ if ! git diff --quiet -- feed.json breaking_feed.json; then
   git add feed.json breaking_feed.json
   git commit -m "Deploy refreshed Poanta FAST feed"
   git push origin HEAD:gh-pages
+fi
+
+cd "$ROOT"
+# Publish the same verified dist artifact directly to Cloudflare when credentials
+# are available. GitHub main/gh-pages remain the durable source snapshots, but
+# direct deploy prevents the public feed from staying stale while the
+# Git-connected Cloudflare build catches up.
+if [[ -z "${CLOUDFLARE_API_TOKEN:-}" && -f /root/.hermes/secrets/cloudflare/poenta_api_token.txt ]]; then
+  export CLOUDFLARE_API_TOKEN="$(cat /root/.hermes/secrets/cloudflare/poenta_api_token.txt)"
+fi
+if [[ -n "${CLOUDFLARE_API_TOKEN:-}" ]]; then
+  npx wrangler pages deploy dist --project-name poanta-demo --branch main
+else
+  echo "CLOUDFLARE_API_TOKEN not available; skipped Cloudflare direct deploy after Git sync" >&2
 fi
 
 echo "Poanta FAST sync complete."

@@ -32,12 +32,13 @@ CRITICAL_LIVE_CODES = {
 FRESHNESS_SIGNAL_CODES = {
     "stale_updated_at",
     "no_new_top_item_sla",
-    "no_new_top_item_warning",
     "stale_top_item",
     "too_few_fresh_top_items",
     "too_few_recent_items_sla",
     "too_few_recent_sources_sla",
 }
+
+FRESHNESS_BLOCKER_CODES = FRESHNESS_SIGNAL_CODES - {"no_new_top_item_warning"}
 
 CRITICAL_TIMING_GROUPS = {"all", "important", "foreign"}
 
@@ -57,16 +58,18 @@ def write_report(path: Path, report: dict[str, Any]) -> None:
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def split_live_findings(live: dict[str, Any], *, mode: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+def split_live_findings(live: dict[str, Any], *, mode: str, strict_freshness: bool = False) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     blockers = []
     freshness_signals = []
     for err in live.get("errors") or []:
         code = err.get("code")
         if code in FRESHNESS_SIGNAL_CODES:
             signal = dict(err)
-            signal["severity"] = "warning"
-            signal["publicationPolicy"] = "freshness_monitoring_only"
+            signal["severity"] = "error" if strict_freshness and code in FRESHNESS_BLOCKER_CODES else "warning"
+            signal["publicationPolicy"] = "freshness_blocks_publication" if signal["severity"] == "error" else "freshness_monitoring_only"
             freshness_signals.append(signal)
+            if signal["severity"] == "error":
+                blockers.append(signal)
             continue
         # Public mode treats cache mismatch as a blocker; local candidate mode
         # cannot compare GitHub Pages to raw and ignores source-view warnings.
@@ -98,6 +101,7 @@ def main() -> int:
     ap.add_argument("--timing", action="store_true", help="Also check critical timing groups")
     ap.add_argument("--out", default="tmp/pointa_publication_health_gate.json")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--strict-freshness", action="store_true", help="Treat active-hours freshness SLA failures as publication blockers")
     args = ap.parse_args()
 
     if args.mode == "candidate":
@@ -107,7 +111,7 @@ def main() -> int:
         live = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--json"])
         no_breaking = run_json([sys.executable, "scripts/pointa_main_feed_no_breaking_guard.py", "--feed", "feed.json", "--json"])
 
-    blockers, freshness_signals = split_live_findings(live, mode=args.mode)
+    blockers, freshness_signals = split_live_findings(live, mode=args.mode, strict_freshness=args.strict_freshness)
     for leak in no_breaking.get("leaks") or []:
         blockers.append({
             "code": "main_feed_breaking_leak",
@@ -133,7 +137,7 @@ def main() -> int:
         "liveWarnings": live.get("warnings") or [],
         "timingErrors": timing.get("errors") if timing else [],
         "top": (live.get("top") or [])[:5],
-        "rule": "Block unsafe feed content/shape only; publishable freshness gaps are warnings for monitoring and source improvement.",
+        "rule": "Block unsafe feed content/shape. With --strict-freshness, active-hours freshness SLA failures also block publication success.",
     }
     write_report(ROOT / args.out, report)
     if args.json:

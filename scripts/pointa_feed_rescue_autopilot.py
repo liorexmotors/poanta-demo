@@ -112,6 +112,24 @@ def needs_rescue(feed: Path, health_out: Path) -> tuple[bool, dict[str, Any]]:
     return bool((signal_codes | error_codes) & rescue_codes), gate
 
 
+HARD_FRESHNESS_CODES = {
+    "no_new_top_item_sla",
+    "stale_top_item",
+    "too_few_fresh_top_items",
+    "too_few_recent_items_sla",
+    "too_few_recent_sources_sla",
+}
+
+
+def hard_freshness_findings(report: dict[str, Any]) -> list[dict[str, Any]]:
+    findings: list[dict[str, Any]] = []
+    for key in ("blockers", "liveErrors", "freshnessSignals"):
+        for item in report.get(key) or []:
+            if item.get("code") in HARD_FRESHNESS_CODES:
+                findings.append(dict(item))
+    return findings
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--feed", default="feed.json")
@@ -123,6 +141,7 @@ def main() -> int:
     ap.add_argument("--max-age-min", type=int, default=180)
     ap.add_argument("--per-source", type=int, default=6)
     ap.add_argument("--force", action="store_true", help="Run even if candidate health does not currently ask for rescue")
+    ap.add_argument("--require-freshness", action="store_true", help="Fail and roll back when the edited feed still misses active-hours freshness SLA")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
@@ -297,16 +316,21 @@ def main() -> int:
             "--out",
             str(health_after_path.relative_to(ROOT)),
             "--json",
+            *(["--strict-freshness"] if args.require_freshness else []),
         ], check=False)
-        if health_after.get("status") == "fail":
+        freshness_blockers = hard_freshness_findings(health_after) if args.require_freshness else []
+        if health_after.get("status") == "fail" or freshness_blockers:
             if feed_before_apply:
                 feed.write_text(feed_before_apply, encoding="utf-8")
             summary = {
                 "status": "fail",
-                "reason": "post_apply_publication_health_blocker_rolled_back",
+                "reason": "post_apply_freshness_sla_failed_rolled_back" if freshness_blockers else "post_apply_publication_health_blocker_rolled_back",
                 "runId": run_id,
                 "runDir": str(run_dir),
                 "healthAfter": health_after,
+                "freshnessBlockers": freshness_blockers,
+                "recentTop12Before": recent_top12_before,
+                "recentTop12After": count_recent_top(feed, 60, 12),
             }
             write_json(summary_path, summary)
             print(json.dumps(summary, ensure_ascii=False, indent=2))

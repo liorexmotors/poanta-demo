@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -29,6 +30,32 @@ import update_feed  # type: ignore
 
 DEFAULT_QUEUE = ROOT / "tmp" / "pointa_source_rescue_queue.json"
 RUNS_DIR = ROOT / "tmp" / "editor-runs"
+MAX_EDITOR_ARTICLE_TEXT_CHARS = int(os.environ.get("POINTA_EDITOR_MAX_ARTICLE_TEXT_CHARS", "2600"))
+
+
+def trim_editor_text(text: str, max_chars: int = MAX_EDITOR_ARTICLE_TEXT_CHARS) -> tuple[str, bool]:
+    text = text or ""
+    if len(text) <= max_chars:
+        return text, False
+    cut = text[:max_chars].rsplit(" ", 1)[0].strip()
+    return cut or text[:max_chars], True
+
+
+def compact_source_queue_row(row: dict[str, Any]) -> dict[str, Any]:
+    keep = {
+        "source",
+        "sourceGroup",
+        "sourceUrl",
+        "publishedAt",
+        "originalTitle",
+        "deterministicHeadline",
+        "deterministicContext",
+        "deterministicTakeaway",
+        "deterministicCategory",
+        "deterministicCategoryClass",
+        "recommendedAction",
+    }
+    return {k: row.get(k) for k in keep if row.get(k) not in (None, "", [])}
 FEED_FILE = ROOT / "feed.json"
 
 
@@ -220,6 +247,7 @@ def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int, 
         row.get("deterministicContext") or description,
         row.get("source", ""),
     )
+    article_text, article_text_truncated = trim_editor_text(extraction.text)
     item = {
         "index": index,
         "source": row.get("source", ""),
@@ -227,8 +255,10 @@ def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int, 
         "sourceUrl": url,
         "originalTitle": original_title,
         "description": description,
-        "articleText": extraction.text,
+        "articleText": article_text,
         "articleTextChars": len(extraction.text),
+        "articleTextSentChars": len(article_text),
+        "articleTextTruncated": article_text_truncated,
         "articleTextMethod": extraction.method,
         "articleTextUsable": len(extraction.text) >= min_article_chars,
         "publishedAt": row.get("publishedAt", ""),
@@ -237,7 +267,7 @@ def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int, 
             "source": "rescue",
             "recommendedAction": row.get("recommendedAction", ""),
             "qaErrors": row.get("qaErrors", []),
-            "sourceQueueRow": row,
+            "sourceQueueRow": compact_source_queue_row(row),
         },
         "suggestedCard": {
             "category": category,
