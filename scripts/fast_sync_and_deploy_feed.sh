@@ -28,7 +28,7 @@ fi
 
 cd "$ROOT"
 
-export POINTA_ALLOW_LOCAL_FALLBACK="${POINTA_ALLOW_LOCAL_FALLBACK:-1}"
+export POINTA_ALLOW_LOCAL_FALLBACK="${POINTA_ALLOW_LOCAL_FALLBACK:-0}"
 
 ASKPASS=$(mktemp)
 cat > "$ASKPASS" <<'SH'
@@ -113,9 +113,12 @@ PY
 then
   BRIDGE_ARGS=(--force)
 fi
-python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-10}" --batch-size 5 --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-2}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json || {
-  echo "FAST editor bridge did not add safe cards; continuing with the QA-clean feed candidate." >&2
-}
+BRIDGE_STATUS=0
+python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-10}" --batch-size 5 --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-2}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json || BRIDGE_STATUS=$?
+export POINTA_FAST_BRIDGE_STATUS="$BRIDGE_STATUS"
+if [[ "$BRIDGE_STATUS" -ne 0 ]]; then
+  echo "FAST editor bridge failed with status $BRIDGE_STATUS; candidate health gate will decide whether publication is allowed." >&2
+fi
 python3 - <<'PY'
 import json
 from pathlib import Path
@@ -157,15 +160,114 @@ python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/fast_candidate_health_gate.json
 python3 - <<'PY'
 import json
+import os
+import sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-report = json.loads(Path("tmp/fast_candidate_health_gate.json").read_text(encoding="utf-8"))
-hard_freshness_codes = {"no_new_top_item_sla", "stale_top_item", "too_few_recent_items_sla", "too_few_recent_sources_sla"}
+TZ = timezone(timedelta(hours=3))
+report_path = Path("tmp/fast_candidate_health_gate.json")
+sync_path = Path("feed_a_fast_sync_report.json")
+bridge_path = Path("tmp/pointa_feed_rescue_autopilot_last.json")
+incident_path = Path("tmp/fast_sync_root_cause_blocker.json")
+warning_path = Path("tmp/fast_sync_root_cause_warning.json")
+
+report = json.loads(report_path.read_text(encoding="utf-8"))
+try:
+    sync = json.loads(sync_path.read_text(encoding="utf-8"))
+except Exception:
+    sync = {}
+try:
+    bridge = json.loads(bridge_path.read_text(encoding="utf-8"))
+except Exception:
+    bridge = {}
+
+hard_freshness_codes = {
+    "no_new_top_item_sla",
+    "stale_top_item",
+    "too_few_fresh_top_items",
+    "too_few_recent_items_sla",
+    "too_few_recent_sources_sla",
+}
 errors = report.get("liveErrors") or []
 blocked = [err for err in errors if err.get("code") in hard_freshness_codes]
 if blocked:
+    bridge_qa = bridge.get("qa") if isinstance(bridge.get("qa"), dict) else {}
+    improved_recent_top = int(bridge.get("recentTop12After") or 0) > int(bridge.get("recentTop12Before") or 0)
+    added_safe_cards = int(bridge_qa.get("pass") or 0) > 0
+    bridge_ok = int(os.environ.get("POINTA_FAST_BRIDGE_STATUS") or 0) == 0 and bridge.get("status") == "ok"
+    allow_improved_publish = bridge_ok and added_safe_cards and improved_recent_top
+    if allow_improved_publish:
+        warning = {
+            "status": "warning",
+            "writtenAt": datetime.now(TZ).isoformat(timespec="seconds"),
+            "reason": "fast_sync_improved_feed_but_post_editor_clock_crossed_freshness_sla",
+            "rule": "Allow publication when the full-editor bridge added QA-clean cards and improved visible top-12 freshness; keep the freshness breach as an RCA warning for source/latency work.",
+            "bridgeStatus": int(os.environ.get("POINTA_FAST_BRIDGE_STATUS") or 0),
+            "syncReport": {
+                "updatedAt": sync.get("updatedAt"),
+                "rawCandidates": sync.get("rawCandidates"),
+                "validCandidates": sync.get("validCandidates"),
+                "selectedCandidates": sync.get("selectedCandidates"),
+                "publishedItems": sync.get("publishedItems"),
+                "editorRoutedCandidates": sync.get("editorRoutedCandidates"),
+                "qaRejectedCandidates": sync.get("qaRejectedCandidates"),
+                "shortAfterEnrich": sync.get("shortAfterEnrich"),
+                "articleEnrichAttempts": sync.get("articleEnrichAttempts"),
+                "articleEnrichSkippedBudget": sync.get("articleEnrichSkippedBudget"),
+            },
+            "editorBridge": {
+                "status": bridge.get("status"),
+                "reason": bridge.get("reason"),
+                "runId": bridge.get("runId"),
+                "runDir": bridge.get("runDir"),
+                "editor": bridge.get("editor"),
+                "qa": bridge.get("qa"),
+                "recentTop12Before": bridge.get("recentTop12Before"),
+                "recentTop12After": bridge.get("recentTop12After"),
+            },
+            "freshnessWarnings": blocked,
+            "healthReport": str(report_path),
+        }
+        warning_path.write_text(json.dumps(warning, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"FAST freshness warning after improvement; continuing deploy. RCA warning written to {warning_path}")
+        sys.exit(0)
     for err in blocked:
-        print(f"FAST freshness warning: {err.get('code')}: {err.get('message')}")
+        print(f"FAST freshness blocker: {err.get('code')}: {err.get('message')}")
+    incident = {
+        "status": "blocked",
+        "blockedAt": datetime.now(TZ).isoformat(timespec="seconds"),
+        "reason": "fast_sync_candidate_still_stale_after_editor_bridge",
+        "rule": "FAST may not publish or report success when the visible feed is stale/thin after collection and the full-editor bridge.",
+        "bridgeStatus": int(os.environ.get("POINTA_FAST_BRIDGE_STATUS") or 0),
+        "syncReport": {
+            "updatedAt": sync.get("updatedAt"),
+            "rawCandidates": sync.get("rawCandidates"),
+            "validCandidates": sync.get("validCandidates"),
+            "selectedCandidates": sync.get("selectedCandidates"),
+            "publishedItems": sync.get("publishedItems"),
+            "editorRoutedCandidates": sync.get("editorRoutedCandidates"),
+            "qaRejectedCandidates": sync.get("qaRejectedCandidates"),
+            "shortAfterEnrich": sync.get("shortAfterEnrich"),
+            "articleEnrichAttempts": sync.get("articleEnrichAttempts"),
+            "articleEnrichSkippedBudget": sync.get("articleEnrichSkippedBudget"),
+        },
+        "editorBridge": {
+            "status": bridge.get("status"),
+            "reason": bridge.get("reason"),
+            "runId": bridge.get("runId"),
+            "runDir": bridge.get("runDir"),
+            "editor": bridge.get("editor"),
+            "qa": bridge.get("qa"),
+            "recentTop12Before": bridge.get("recentTop12Before"),
+            "recentTop12After": bridge.get("recentTop12After"),
+        },
+        "freshnessBlockers": blocked,
+        "healthReport": str(report_path),
+    }
+    incident_path.write_text(json.dumps(incident, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"FAST sync blocked; root-cause report written to {incident_path}")
+    sys.exit(42)
 PY
 python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run-id "${POANTA_RUN_ID:-fast-sync}" || true
 python3 scripts/pointa_quality_auditor.py || true

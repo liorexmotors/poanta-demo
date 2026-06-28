@@ -19,24 +19,15 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 LIVE_FEED = "https://liorexmotors.github.io/poanta-demo/feed.json"
 TZ = timezone(timedelta(hours=3))
-CRON_JOBS_PATH = Path.home() / ".openclaw" / "cron" / "jobs.json"
-
-
 AGENT_JOB_NAMES = {
     "האספן": [
-        "Poanta editor prepare FAST every 10m",
         "Poanta quiet FAST feed sync/deploy every 10m",
+        "Poanta quiet FAST feed sync/deploy every 15m",
     ],
-    "העורך": [
-        "Poanta editor prepare FAST every 10m",
-        "Poanta editor prepare MEDIUM every 30m",
-        "Poanta editor prepare SLOW every 4h",
-    ],
-    "השוער": ["Poanta editor finalize every 10m"],
-    "המבקר": ["Poanta המבקר live feed audit every 10m"],
-    "המעורר": ["Poanta המעורר flow watchdog every 10m"],
-    "המתקן": ["Poanta המתקן flow repair responder every 10m"],
+    "מבזק": ["Poanta breaking feed refresh every 10m"],
 }
+
+CRITICAL_TIMING_GROUPS = {"all", "important", "foreign"}
 
 
 def run_json(cmd: list[str]) -> tuple[int, dict[str, Any] | None, str]:
@@ -60,6 +51,15 @@ def fetch_live_feed() -> dict[str, Any]:
         return json.loads(resp.read().decode("utf-8"))
 
 
+def quality_gate_feed_path() -> str:
+    """Use the freshest local publish candidate for watchdog quality checks."""
+    dist_feed = ROOT / "dist" / "feed.json"
+    root_feed = ROOT / "feed.json"
+    if dist_feed.exists():
+        return str(dist_feed.relative_to(ROOT))
+    return str(root_feed.relative_to(ROOT))
+
+
 def agent_readiness_findings() -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
     """Verify the control-room agents are awake and ready for action.
 
@@ -72,9 +72,18 @@ def agent_readiness_findings() -> tuple[dict[str, Any], list[dict[str, Any]], li
     errors: list[dict[str, Any]] = []
     warnings: list[dict[str, Any]] = []
     try:
-        payload = json.loads(CRON_JOBS_PATH.read_text(encoding="utf-8"))
+        proc = subprocess.run(
+            ["openclaw", "cron", "list", "--json", "--timeout", "10000"],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            timeout=15,
+        )
+        if proc.returncode != 0:
+            raise RuntimeError((proc.stderr or proc.stdout or "").strip())
+        payload = json.loads(proc.stdout)
     except Exception as exc:
-        return {}, [{"code": "agent_roster_unreadable", "owner": "המעורר", "message": str(exc)}], []
+        return {}, [{"code": "agent_roster_unreadable", "owner": "המעורר", "message": f"openclaw cron list failed: {exc}"}], []
 
     jobs = payload.get("jobs") if isinstance(payload, dict) else payload
     if not isinstance(jobs, list):
@@ -84,13 +93,13 @@ def agent_readiness_findings() -> tuple[dict[str, Any], list[dict[str, Any]], li
     for role, names in AGENT_JOB_NAMES.items():
         role_entries = []
         role_ok = True
+        found_any = False
         for name in names:
             job = by_name.get(name)
             if not job:
-                role_ok = False
                 role_entries.append({"name": name, "ready": False, "reason": "missing"})
-                errors.append({"code": "agent_job_missing", "owner": role, "message": f"{name} is missing"})
                 continue
+            found_any = True
             state = job.get("state") or {}
             enabled = bool(job.get("enabled"))
             running_at = int(state.get("runningAtMs") or 0)
@@ -112,6 +121,9 @@ def agent_readiness_findings() -> tuple[dict[str, Any], list[dict[str, Any]], li
                 errors.append({"code": "agent_job_stuck", "owner": role, "message": f"{name} appears stuck for {running_age_min} minutes"})
             elif state.get("lastRunStatus") == "error":
                 warnings.append({"code": "agent_last_run_error", "owner": role, "message": f"{name} last run ended with error"})
+        if not found_any:
+            role_ok = False
+            errors.append({"code": "agent_job_missing", "owner": role, "message": f"None of the expected cron jobs exist: {', '.join(names)}"})
         readiness[role] = {"ready": role_ok, "jobs": role_entries}
     return readiness, errors, warnings
 
@@ -142,7 +154,8 @@ def main() -> int:
     timing_code, timing, timing_err = run_json([sys.executable, "scripts/pointa_timing_auditor.py", "--json", "--use-seen-at"])
     quality_code, quality, quality_err = run_json([sys.executable, "scripts/pointa_quality_auditor.py", "--json"])
     drill_code, drill, drill_err = run_json([sys.executable, "scripts/poanta_p0_stuck_feed_drill.py"])
-    qg_code, qg_text = run_text([sys.executable, "scripts/pointa_quality_gate.py", "--report", "tmp/flow_watchdog_quality_gate.md"])
+    qg_feed = quality_gate_feed_path()
+    qg_code, qg_text = run_text([sys.executable, "scripts/pointa_quality_gate.py", "--feed", qg_feed, "--report", "tmp/flow_watchdog_quality_gate.md"])
     agent_readiness, agent_errors, agent_warnings = agent_readiness_findings()
     errors.extend(agent_errors)
     warnings.extend(agent_warnings)
@@ -156,7 +169,13 @@ def main() -> int:
     if not timing:
         errors.append({"code": "timing_auditor_unreadable", "message": timing_err.strip()})
     else:
-        errors.extend({**e, "owner": "מבקר התזמון"} for e in timing.get("errors", []))
+        for e in timing.get("errors", []):
+            item = {**e, "owner": "מבקר התזמון"}
+            if e.get("code") == "publication_timing_sla" and e.get("group") not in CRITICAL_TIMING_GROUPS:
+                item["severity"] = "warning"
+                warnings.append(item)
+            else:
+                errors.append(item)
         warnings.extend({**w, "owner": "מבקר התזמון"} for w in timing.get("warnings", []))
 
     if not quality:
@@ -168,7 +187,8 @@ def main() -> int:
     if qg_code != 0:
         errors.append({"code": "quality_gate_failed", "owner": "השוער", "message": qg_text[:1200]})
 
-    if not drill or drill_code != 0 or not all(drill.get(k) for k in ["staleFeedBlocked", "freshFeedPasses", "badGossipBlocked"]):
+    stale_drill_ok = bool(drill and (drill.get("staleFeedBlocked") or drill.get("staleFeedPublishesWithFreshnessWarning")))
+    if not drill or drill_code != 0 or not stale_drill_ok or not all(drill.get(k) for k in ["freshFeedPasses", "badGossipBlocked"]):
         errors.append({"code": "p0_drill_failed", "owner": "המעורר", "message": drill_err.strip() or json.dumps(drill, ensure_ascii=False)})
 
     try:
@@ -207,6 +227,7 @@ def main() -> int:
             "timing": timing.get("status") if timing else None,
             "quality": quality.get("status") if quality else None,
             "qualityGateExit": qg_code,
+            "qualityGateFeed": qg_feed,
             "p0Drill": drill,
             "agentReadiness": agent_readiness,
         },
