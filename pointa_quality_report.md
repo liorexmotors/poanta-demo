@@ -1,22 +1,22 @@
 # Pointa Quality Gate Report
 
-Items checked: 123
+Items checked: 127
 Errors: 0
-Warnings: 2
+Warnings: 3
 
 ## Category distribution
 
-- ביטחון: 38
+- ביטחון: 39
 - פלילים: 23
 - פוליטיקה: 12
+- חדשות: 12
 - רכילות: 12
-- חדשות: 11
+- אקטואליה בעולם: 4
 - משפט: 4
 - מזג אוויר: 4
 - טכנולוגיה: 4
-- אקטואליה בעולם: 3
+- כלכלה: 3
 - ספורט: 3
-- כלכלה: 2
 - בריאות: 2
 - תרבות: 2
 - צרכנות: 1
@@ -25,19 +25,26 @@ Warnings: 2
 
 ## Issue counts
 
-- summary_long: 1
+- summary_long: 2
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · summary_long · item 47
+### WARNING · summary_long · item 12
+- Summary length 230 > 220
+- Headline: `חוקרים ישראלים מערערים על מחקר התמותה בעזה`
+- Original: `הדמוגרפים הבכירים נגד תוצאות מחקר התמותה בעזה: "אפשרות של ספירה כפולה"`
+- Source: ynet - כל ערוץ החדשות
+- URL: https://www.ynet.co.il/news/article/rygdg90mzx
+
+### WARNING · summary_long · item 51
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 108
+### WARNING · category_sport_source · item 112
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
