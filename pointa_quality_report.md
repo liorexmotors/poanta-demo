@@ -1,16 +1,16 @@
 # Pointa Quality Gate Report
 
-Items checked: 87
+Items checked: 89
 Errors: 0
 Warnings: 3
 
 ## Category distribution
 
-- ביטחון: 23
+- ביטחון: 24
 - פלילים: 14
 - רכילות: 12
+- חדשות: 8
 - פוליטיקה: 7
-- חדשות: 7
 - טכנולוגיה: 5
 - מזג אוויר: 4
 - ספורט: 3
@@ -30,21 +30,21 @@ Warnings: 3
 
 ## Issues
 
-### WARNING · summary_long · item 7
+### WARNING · summary_long · item 9
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 66
+### WARNING · category_sport_source · item 72
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3848415
 
-### WARNING · category_sport_source · item 71
+### WARNING · category_sport_source · item 77
 - Sport source should usually be ספורט
 - Headline: `בהיעדרו של קרלוס אלקראס, יאניק סינר היה הפייבוריט לזכייה ברולאן גארוס`
 - Original: `יאניק סינר חזר לשחק: "מה שקרה ברולאן גארוס רק יחשל אותי"`
