@@ -171,7 +171,7 @@ def main() -> int:
             sys.executable,
             "scripts/pointa_source_rescue_queue.py",
             "--sync-profile",
-            "fast",
+            "all",
             "--max-age-min",
             str(args.max_age_min),
             "--per-source",

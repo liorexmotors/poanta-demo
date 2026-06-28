@@ -303,6 +303,7 @@ def main() -> int:
     domain_groups = load_domain_source_groups(args.domain, Path(args.domain_sources))
     freshness_sla_failing = freshness_sla_failing_from_auditor(Path(args.auditor))
     rows: list[dict[str, Any]] = []
+    source_diagnostics: list[dict[str, Any]] = []
 
     for source in update_feed.load_sources(args.sync_profile):
         group = source_group(source.get("name", ""))
@@ -315,24 +316,67 @@ def main() -> int:
             candidates = update_feed.extract_source(source)
         except Exception as exc:
             rows.append({"sourceGroup": group, "source": source.get("name"), "status": "fetch_error", "error": str(exc)})
+            source_diagnostics.append({
+                "sourceGroup": group,
+                "source": source.get("name"),
+                "profile": update_feed.source_sync_profile(source),
+                "status": "fetch_error",
+                "error": str(exc),
+                "raw": 0,
+                "valid": 0,
+                "recent": 0,
+                "editorFirst": 0,
+                "repairable": 0,
+                "latestCandidateAt": "",
+                "latestValidAt": "",
+            })
             continue
         candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
         scan_limit = args.per_source if group in stale_groups else max(4, args.per_source // 2)
+        valid_count = 0
+        recent_count = 0
+        editor_first_count = 0
+        repairable_count = 0
+        latest_valid_at = ""
         for c in candidates[:scan_limit]:
             dt = parse_dt(c.published_at)
             if not dt or dt < cutoff:
                 continue
             if group in FOREIGN_SOURCES and not update_feed.is_foreign_relevant(c.original_title or c.title, c.description):
                 continue
+            valid_count += 1
+            recent_count += 1
+            latest_valid_at = latest_valid_at or c.published_at
             item = candidate_to_item(c)
             if not domain_candidate_matches(args.domain, item, c):
                 continue
             errors = update_feed.item_quality_errors(item)
+            if errors and update_feed.source_editor_first_candidate(c, source):
+                editor_first_count += 1
+                rows.append({
+                    "sourceGroup": group,
+                    "source": c.source,
+                    "publishedAt": c.published_at,
+                    "sourceUrl": c.url,
+                    "originalTitle": c.original_title or c.title,
+                    "deterministicHeadline": item["headline"],
+                    "deterministicContext": item["context"],
+                    "deterministicTakeaway": item["takeaway"],
+                    "deterministicCategory": item.get("category", ""),
+                    "qaErrors": errors,
+                    "qaErrorCodes": sorted(qa_error_codes(errors)),
+                    "rescueDisposition": "editor_first_source",
+                    "priority": "freshness" if freshness_sla_failing else ("high" if group in stale_groups else "normal"),
+                    "staleSourceView": group in stale_groups,
+                    "recommendedAction": "send_to_full_editor_rescue_queue",
+                })
+                continue
             if errors:
                 disposition = rescue_disposition(errors)
                 if disposition == "hard_reject_report_only":
                     recommended = "hard_reject_report_only"
                 else:
+                    repairable_count += 1
                     recommended = "send_to_full_editor_rescue_queue"
                 rows.append({
                     "sourceGroup": group,
@@ -351,6 +395,20 @@ def main() -> int:
                     "staleSourceView": group in stale_groups,
                     "recommendedAction": recommended,
                 })
+        source_diagnostics.append({
+            "sourceGroup": group,
+            "source": source.get("name"),
+            "profile": update_feed.source_sync_profile(source),
+            "status": "ok",
+            "raw": len(candidates),
+            "valid": valid_count,
+            "recent": recent_count,
+            "editorFirst": editor_first_count,
+            "repairable": repairable_count,
+            "latestCandidateAt": candidates[0].published_at if candidates else "",
+            "latestValidAt": latest_valid_at,
+            "staleSourceView": group in stale_groups,
+        })
 
     if freshness_sla_failing:
         # Top-feed freshness incidents need the newest valid candidates first.
@@ -386,9 +444,11 @@ def main() -> int:
         "items": rows,
         "staleSourceGroups": sorted(stale_groups),
         "itemsNeedingRescueForStaleViews": sum(1 for r in rows if r.get("staleSourceView")),
+        "sourceDiagnostics": source_diagnostics,
         "counts": {
             "total": len(rows),
             "repairableEditorial": sum(1 for r in rows if r.get("rescueDisposition") == "repair_editorial_soft_fail"),
+            "editorFirst": sum(1 for r in rows if r.get("rescueDisposition") == "editor_first_source"),
             "hardRejectReportOnly": sum(1 for r in rows if r.get("rescueDisposition") == "hard_reject_report_only"),
             "bySource": {s: sum(1 for r in rows if r.get("sourceGroup") == s) for s in active_groups},
         },

@@ -995,6 +995,36 @@ def candidate_needs_editor_before_direct_publish(candidate: Candidate, source: d
     return False
 
 
+EDITOR_FIRST_SOURCE_GROUPS = {"ynet"}
+
+
+def source_editor_first_candidate(candidate: Candidate, source: dict | None = None) -> bool:
+    """Route fragile high-value source rows to the full editor before local QA.
+
+    The local deterministic writer is intentionally strict. For core live-news
+    sources such as ynet, repeated 12/12 local QA rejection means the source view
+    can look stale even though fresh RSS rows exist. Routing these rows to the
+    full editor preserves quality gates while preventing early disappearance.
+    """
+    source = source or {}
+    group = source_timing_key(source.get("logo") or source.get("name") or candidate.source)
+    if group not in EDITOR_FIRST_SOURCE_GROUPS:
+        return False
+    try:
+        dt = datetime.fromisoformat(str(candidate.published_at or "").replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone(timedelta(hours=3)))
+        if datetime.now(timezone(timedelta(hours=3))) - dt.astimezone(timezone(timedelta(hours=3))) > timedelta(hours=4):
+            return False
+    except Exception:
+        return False
+    category_hint = str(source.get("categoryHint") or "")
+    category, _cls = categorize_item(candidate.title or candidate.original_title or "", candidate.description or "", source.get("name") or candidate.source)
+    if category not in CURRENT_AFFAIRS_CATEGORIES and category_hint not in CURRENT_AFFAIRS_CATEGORIES:
+        return False
+    return True
+
+
 def enrich(candidate: Candidate, timeout: int = 12, allow_jina: bool = True) -> Candidate:
     try:
         raw = fetch(candidate.url, timeout=timeout)
@@ -4220,16 +4250,22 @@ def main() -> int:
         candidates = extract_source(source)
         source_report = {
             "source": source.get("name") or "",
+            "sourceGroup": source_timing_key(source.get("logo") or source.get("name") or ""),
             "profile": source_sync_profile(source),
             "raw": 0,
             "valid": 0,
             "qaRejected": 0,
             "editorRouted": 0,
+            "editorFirstRouted": 0,
             "articleEnrichAttempts": 0,
             "articleEnrichImproved": 0,
             "articleEnrichSkippedBudget": 0,
             "shortAfterEnrich": 0,
             "selected": 0,
+            "latestCandidateAt": "",
+            "latestValidAt": "",
+            "latestValidTitle": "",
+            "latestValidUrl": "",
         }
         # preserve source-local ranking while dropping duplicate URLs
         local_seen = set()
@@ -4243,6 +4279,8 @@ def main() -> int:
         # red even when the source had newer RSS items. Keep recency primary for
         # every profile; score is only the tie-breaker.
         candidates = sorted(candidates, key=lambda x: (x.published_at, x.score), reverse=True)
+        if candidates:
+            source_report["latestCandidateAt"] = candidates[0].published_at
         valid_for_activity = []
         for raw_c in candidates:
             title = sanitize_title(raw_c.title)
@@ -4259,6 +4297,9 @@ def main() -> int:
         run_report["validCandidates"] += len(valid_for_activity)
         if valid_for_activity:
             activity_c, activity_title = valid_for_activity[0]
+            source_report["latestValidAt"] = activity_c.published_at
+            source_report["latestValidTitle"] = activity_title
+            source_report["latestValidUrl"] = activity_c.url
             source_activity.append({
                 "source": source_timing_key(source.get("logo") or source.get("name") or activity_c.source),
                 "subSource": source.get("name") or activity_c.source,
@@ -4302,6 +4343,11 @@ def main() -> int:
             # often lead with thin flashes that deterministic QA correctly
             # rejects; continue scanning the source until we find QA-clean cards.
             if not args.experimental_prompt and not build_feed([c]).get("items"):
+                if source_editor_first_candidate(c, source):
+                    source_report["editorFirstRouted"] += 1
+                    source_report["editorRouted"] += 1
+                    run_report["editorRoutedCandidates"] += 1
+                    continue
                 source_report["qaRejected"] += 1
                 run_report["qaRejectedCandidates"] += 1
                 continue
@@ -4320,6 +4366,54 @@ def main() -> int:
         run_report["selectedCandidates"] += len(picked)
         run_report["sourceReports"].append(source_report)
         selected.extend(picked)
+
+    now_for_source_report = datetime.now(timezone(timedelta(hours=3)))
+    source_freshness: dict[str, dict] = {}
+    for report in run_report["sourceReports"]:
+        group = report.get("sourceGroup") or source_timing_key(report.get("source") or "")
+        if not group:
+            continue
+        latest_raw = report.get("latestValidAt") or report.get("latestCandidateAt") or ""
+        latest_dt = None
+        if latest_raw:
+            try:
+                latest_dt = datetime.fromisoformat(str(latest_raw).replace("Z", "+00:00"))
+                if latest_dt.tzinfo is None:
+                    latest_dt = latest_dt.replace(tzinfo=timezone(timedelta(hours=3)))
+                latest_dt = latest_dt.astimezone(timezone(timedelta(hours=3)))
+            except Exception:
+                latest_dt = None
+        existing = source_freshness.get(group)
+        if latest_dt and (not existing or latest_raw > str(existing.get("latestValidAt") or "")):
+            age_min = int((now_for_source_report - latest_dt).total_seconds() // 60)
+            source_freshness[group] = {
+                "sourceGroup": group,
+                "latestValidAt": latest_raw,
+                "latestValidAgeMin": age_min,
+                "latestValidTitle": report.get("latestValidTitle") or "",
+                "latestValidUrl": report.get("latestValidUrl") or "",
+                "raw": 0,
+                "valid": 0,
+                "qaRejected": 0,
+                "editorRouted": 0,
+                "selected": 0,
+            }
+        source_freshness.setdefault(group, {
+            "sourceGroup": group,
+            "latestValidAt": "",
+            "latestValidAgeMin": None,
+            "latestValidTitle": "",
+            "latestValidUrl": "",
+            "raw": 0,
+            "valid": 0,
+            "qaRejected": 0,
+            "editorRouted": 0,
+            "selected": 0,
+        })
+        row = source_freshness[group]
+        for key in ("raw", "valid", "qaRejected", "editorRouted", "selected"):
+            row[key] = int(row.get(key) or 0) + int(report.get(key) or 0)
+    run_report["sourceFreshness"] = sorted(source_freshness.values(), key=lambda x: (x.get("latestValidAt") or "", x.get("sourceGroup") or ""), reverse=True)
 
     selected = sorted(selected, key=lambda x: (x.published_at, x.score), reverse=True)
 
