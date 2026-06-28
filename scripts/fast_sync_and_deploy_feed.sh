@@ -124,13 +124,32 @@ feed_path = Path("feed.json")
 if feed_path.exists():
     feed = json.loads(feed_path.read_text(encoding="utf-8"))
     changed = 0
+    category_class = {
+        "ביטחון": "security",
+        "כלכלה": "money",
+        "צרכנות": "money",
+        "טכנולוגיה": "tech",
+        "רכב": "real",
+        "בריאות": "real",
+        "תרבות": "real",
+        "רכילות": "real",
+        "ספורט": "real",
+        "נדל״ן": "real",
+        "מזג אוויר": "real",
+    }
     for item in feed.get("items", []):
-        if isinstance(item, dict) and "takeaway" in item:
+        if not isinstance(item, dict):
+            continue
+        expected_class = category_class.get(str(item.get("category") or ""), "")
+        if item.get("categoryClass", "") != expected_class:
+            item["categoryClass"] = expected_class
+            changed += 1
+        if "takeaway" in item:
             item.pop("takeaway", None)
             changed += 1
     if changed:
         feed_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print(f"Removed {changed} deprecated takeaway fields after rescue bridge.")
+        print(f"Normalized {changed} public feed metadata fields after rescue bridge.")
 PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: FAST is only successful if the candidate feed is visibly fresh.

@@ -153,11 +153,11 @@ IMPORTANT_WORDS = [
 ]
 CATEGORY_RULES = [
     # Order matters: prefer specific practical topics over broad local/world buckets.
-    ("אקטואליה בעולם", "security", ["קובה", "סנקציות", "רוסיה", "אוקראינה", "פקיסטן", "הודו", "סין", "טייוואן", "אירופה", "אירופי", "נאטו", "ארה\"ב", "ארצות הברית", "ממשל טראמפ", "white house", "federal reserve", "fed rate", "us interest", "u.s.", "united states", "sanctions", "cuba", "ukraine", "russia", "china", "taiwan", "pakistan", "india"]),
-    ("משפט", "security", ["בגץ", "בג\"ץ", "בית המשפט", "עליון", "שופט", "שופטים", "יועמ\"ש", "פרקליטות", "כתב אישום", "עתירה", "חוק", "חקיקה", "משפטי", "legal", "court", "supreme court", "trial"]),
+    ("אקטואליה בעולם", "", ["קובה", "סנקציות", "רוסיה", "אוקראינה", "פקיסטן", "הודו", "סין", "טייוואן", "אירופה", "אירופי", "נאטו", "ארה\"ב", "ארצות הברית", "ממשל טראמפ", "white house", "federal reserve", "fed rate", "us interest", "u.s.", "united states", "sanctions", "cuba", "ukraine", "russia", "china", "taiwan", "pakistan", "india"]),
+    ("משפט", "", ["בגץ", "בג\"ץ", "בית המשפט", "עליון", "שופט", "שופטים", "יועמ\"ש", "פרקליטות", "כתב אישום", "עתירה", "חוק", "חקיקה", "משפטי", "legal", "court", "supreme court", "trial"]),
     ("ביטחון", "security", ["איראן", "מלחמה", "צה״ל", "צהל", "פיקוד העורף", "טילים", "ביטחון", "הורמוז", "אמירויות", "לבנון", "חמאס", "חיזבאללה", "חות׳ים", "חות'ים", "פוטין", "קרמלין", "התנקשות", "ביון", "צבא", "טרור", "war", "iran", "houthi", "houthis", "hormuz", "strait of hormuz", "persian gulf", "red sea", "bahrain", "yemen", "russia", "ukraine", "gaza", "israel", "military", "terror"]),
-    ("פלילים", "security", ["רצח", "ירי", "דקירה", "חשד", "נעצר", "מעצר", "משטרה", "חקירה", "עבריין", "פשע", "פלילי", "סמים", "אלימות", "אונס", "crime", "police", "shooting", "murder", "arrest"]),
-    ("פוליטיקה", "security", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שרים", "ח״כ", "חכים", "נתניהו", "טראמפ", "ביידן", "נשיא", "ראש ממשלה", "politics", "election", "government", "minister", "president", "trump", "white house"]),
+    ("פלילים", "", ["רצח", "ירי", "דקירה", "חשד", "נעצר", "מעצר", "משטרה", "חקירה", "עבריין", "פשע", "פלילי", "סמים", "אלימות", "אונס", "crime", "police", "shooting", "murder", "arrest"]),
+    ("פוליטיקה", "", ["כנסת", "ממשלה", "בחירות", "קואליציה", "אופוזיציה", "תקציב", "שרים", "ח״כ", "חכים", "נתניהו", "טראמפ", "ביידן", "נשיא", "ראש ממשלה", "politics", "election", "government", "minister", "president", "trump", "white house"]),
     ("נדל״ן", "real", ["נדל", "דירה", "דירות", "בנייה", "פינוי-בינוי", "תל אביב", "דיור", "קרקע", "real estate", "housing"]),
     ("כלכלה", "money", ["ריבית", "מיסים", "מע״מ", "שכר", "מניות", "בורסה", "מחירים", "פיצויים", "עסקים", "אקזיט", "מיליון", "מיליארד", "דולר", "אינפלציה", "markets", "stocks", "economy", "bank", "inflation", "dollar"]),
     ("צרכנות", "money", ["צרכן", "רשתות", "שופרסל", "מחירי", "קניות", "ביטוח", "סופר", "חלב", "consumer", "shopping"]),
@@ -168,6 +168,24 @@ CATEGORY_RULES = [
     ("תרבות", "real", ["תרבות", "טלוויזיה", "סרט", "סדרה", "מוזיקה", "קולנוע", "ספר", "אוכל", "אופנה", "culture", "movie", "music", "tv"]),
     ("ספורט", "real", ["ספורט", "כדורגל", "כדורסל", "נבחרת", "ליגה", "ליגת", "מכבי", "הפועל", "ביתר", "אליפות", "מסי", "סוארס", "ניימאר", "יורוליג", "football", "soccer", "basketball", "league"]),
 ]
+
+CATEGORY_CLASS = {
+    "ביטחון": "security",
+    "כלכלה": "money",
+    "צרכנות": "money",
+    "טכנולוגיה": "tech",
+    "רכב": "real",
+    "בריאות": "real",
+    "תרבות": "real",
+    "רכילות": "real",
+    "ספורט": "real",
+    "נדל״ן": "real",
+    "מזג אוויר": "real",
+}
+
+
+def category_class_for(category: str) -> str:
+    return CATEGORY_CLASS.get(category or "", "")
 
 
 class LinkMetaParser(HTMLParser):
@@ -1091,7 +1109,7 @@ def regional_category(text: str) -> tuple[str, str]:
         (re.search(rf"(?<![א-ת]){re.escape(term.lower())}(?![א-ת])", low) if re.fullmatch(r"[א-ת]{1,3}", term) else term.lower() in low)
         for term in REGIONAL_POLITICS_TERMS
     ):
-        return "פוליטיקה", "security"
+        return "פוליטיקה", category_class_for("פוליטיקה")
     return "חדשות", ""
 
 
@@ -1145,7 +1163,7 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     if any(term in low_content for term in gulf_security_terms):
         return "ביטחון", "security"
     if any(x in content_text for x in ["חוק הגיוס", "עריקים חרדים", "מעצרי העריקים", "גיוס חרדים"]):
-        return "פוליטיקה", "security"
+        return "פוליטיקה", category_class_for("פוליטיקה")
     security_conflict_terms = [
         "חיזבאללה", "לבנון", "צה\"ל", "צה״ל", "פיקוד העורף", "רקטה", "רקטות",
         "כטב\"ם", "כטב״ם", "יירוט", "יורטו", "חצו", "אזעקות", "התרעות",
@@ -1167,7 +1185,7 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         and not any(x in content_text for x in ["כנסת", "ממשלה", "נתניהו", "בחירות", "קואליציה"])
         and not is_foreign_only_story(content_text, source)
     ):
-        return "פלילים", "security"
+        return "פלילים", category_class_for("פלילים")
     if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
         return "צרכנות", "money"
     if any(x in text for x in ['אלפין', 'פורשה', 'פרארי', 'אסטון מרטין']) and any(x in text for x in ['בטיחות', 'בלימה אוטונומית', 'כריות אוויר']):
@@ -1206,15 +1224,15 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         and any(x.lower() in content_text.lower() for x in iraq_local_terms)
         and not any(x.lower() in content_text.lower() for x in israel_or_regional_security_terms)
     ):
-        return "אקטואליה בעולם", "security"
+        return "אקטואליה בעולם", category_class_for("אקטואליה בעולם")
     if is_foreign_only_story(content_text, source):
-        return "אקטואליה בעולם", "security"
+        return "אקטואליה בעולם", category_class_for("אקטואליה בעולם")
     if is_middle_east_or_israel_story(content_text, source):
         return regional_category(text)
     if any(x in text for x in ['איראן', 'הורמוז', 'גרעין', 'אורניום']) and any(x in text for x in ['טראמפ', 'ארצות הברית', 'ארה"ב', 'מו"מ', 'משא ומתן', 'מזכר הבנות', 'עסקה', 'הסכם']):
         return "ביטחון", "security"
     if any(x in text for x in ['קובה', 'פוקושימה', 'הבית הלבן', 'White House', 'חמוש ירה ליד הבית הלבן', 'ממשל טראמפ נגד']) and not any(x in source for x in ['ספורט', 'רכב', 'סלבס', 'רכילות']):
-        return "אקטואליה בעולם", "security"
+        return "אקטואליה בעולם", category_class_for("אקטואליה בעולם")
     if any(x in text for x in ['רוכב אופניים', 'אופניים חשמליים', 'תאונת דרכים', 'נפצע בתאונה']) and any(x in text for x in ['רכב', 'כביש', 'רחוב', 'תאונה']):
         return "רכב", "real"
     if 'איראן' in text and any(x in text for x in ['כבלים', 'סוויפט', 'הורמוז', 'תת ימיים']):
@@ -1251,10 +1269,10 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
     if any(x in source for x in ["חדשות בעולם", "World", "Middle East", "Al Jazeera", "Guardian", "Reuters", "AP", "Axios", "Politico", "Bloomberg", "New York Times", "NYT", "JNS", "Jewish News Syndicate", "France24", "France 24", "The Media Line"]):
         cat, cls = categorize(text)
         if cat in {"חדשות", "פוליטיקה", "ביטחון"}:
-            return "אקטואליה בעולם", "security"
+            return "אקטואליה בעולם", category_class_for("אקטואליה בעולם")
         return cat, cls
     if any(x in source for x in ["דעות", "פרשנויות"]):
-        return "דעות", "security"
+        return "דעות", category_class_for("דעות")
     cat, cls = categorize(title)
     if cat != "חדשות":
         return cat, cls
@@ -3002,7 +3020,7 @@ def normalize_police_item(item: dict) -> dict:
     item["context"] = trim_words(context, 180)
     item["takeaway"] = trim_words(takeaway, 95)
     item["category"] = "פלילים"
-    item["categoryClass"] = "security"
+    item["categoryClass"] = category_class_for(str(item.get("category") or ""))
     item["sourceLogo"] = "משטרה"
     return item
 
@@ -3021,7 +3039,7 @@ def rewrite_cut_or_invalid_item(item: dict) -> dict:
         item["context"] = 'יאיר גולן אמר שאינו בטוח שנתניהו כשיר פיזית וקוגניטיבית, וטען שהממשלה מרסקת את מערכות האכיפה במכוון.'
         item["takeaway"] = 'המתקפה מציבה את כשירות נתניהו ואת מערכת האכיפה במרכז העימות הפוליטי.'
         item["category"] = 'פוליטיקה'
-        item["categoryClass"] = 'security'
+        item["categoryClass"] = category_class_for(str(item.get("category") or ""))
         return item
     if 'רופאים לא מוצאים עבודה' in title or ('חגי לוין' in desc and 'מערכת הבריאות' in desc):
         item["headline"] = 'רופאים מתקשים למצוא תקנים בזמן שבתי החולים מזהירים מקריסה'
@@ -3139,7 +3157,7 @@ def official_telegram_pointa_fields(c: Candidate) -> tuple[str, str, str, str, s
         return headline, context, takeaway, category, cls
 
     if "משטרת ישראל" in source or "דוברות משטרת" in source:
-        category, cls = "פלילים", "security"
+        category, cls = "פלילים", category_class_for("פלילים")
         if "בר אילן" in text:
             headline = "המשטרה פיזרה הפרות סדר בצומת בר אילן בירושלים"
             context = "כוחות משטרה ומג״ב פעלו מול חוסמי צירים באזור צומת בר אילן; לפי הפרטים, מפרי סדר השליכו חפצים, גרמו נזק לתשתיות ותקפו שוטרים."
@@ -3307,7 +3325,7 @@ def refresh_item_pointa(item: dict) -> dict:
             if repaired_title:
                 item["headline"] = repaired_title
         item["category"] = "ביטחון"
-        item["categoryClass"] = "security"
+        item["categoryClass"] = category_class_for(str(item.get("category") or ""))
         item["takeaway"] = "זו התרעה רשמית — ההנחיות חשובות יותר מהכותרת."
         return item
     fp = foreign_pointa_tuple(title, desc)
@@ -3350,7 +3368,7 @@ def refresh_item_pointa(item: dict) -> dict:
         item["context"] = 'יאיר גולן אמר שאינו בטוח שנתניהו כשיר פיזית וקוגניטיבית, וטען שהממשלה מרסקת את מערכות האכיפה במכוון.'
         item["takeaway"] = 'המתקפה מציבה את כשירות נתניהו ואת מערכת האכיפה במרכז העימות הפוליטי.'
         item["category"] = 'פוליטיקה'
-        item["categoryClass"] = 'security'
+        item["categoryClass"] = category_class_for(str(item.get("category") or ""))
     elif 'רופאים לא מוצאים עבודה' in title or ('חגי לוין' in desc and 'מערכת הבריאות' in desc):
         item["headline"] = 'רופאים מתקשים למצוא תקנים בזמן שבתי החולים מזהירים מקריסה'
         item["context"] = 'בדיון בכנסת הזהיר פרופ׳ חגי לוין שמערכת הבריאות על סף קריסה, בזמן שרופאים מתקשים למצוא תקנים וחלקם עובדים מחוץ למקצוע.'
@@ -4122,6 +4140,14 @@ def strip_public_takeaways(feed: dict) -> dict:
     return feed
 
 
+def normalize_public_category_classes(feed: dict) -> dict:
+    """Keep categoryClass as UI metadata, not a broad news-domain label."""
+    for item in feed.get("items", []):
+        if isinstance(item, dict):
+            item["categoryClass"] = category_class_for(str(item.get("category") or ""))
+    return feed
+
+
 def write_fast_sync_report(report: dict) -> None:
     FAST_SYNC_REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     FAST_SYNC_REPORT_PATH.write_text(
@@ -4320,6 +4346,7 @@ def main() -> int:
     feed["sourceActivity"] = sorted(source_activity, key=lambda x: (x.get("publishedAt") or "", x.get("source") or ""), reverse=True)
     feed["syncProfile"] = args.sync_profile
     if args.draft:
+        feed = normalize_public_category_classes(feed)
         feed = strip_public_takeaways(feed)
         feed["status"] = "draft"
         CANDIDATES_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -4332,6 +4359,7 @@ def main() -> int:
     else:
         feed = merge_with_existing_feed(feed, force_weather_card=args.force_weather_card)
         feed["mode"] = f"rss_sync_{args.sync_profile}"
+        feed = normalize_public_category_classes(feed)
         feed = strip_public_takeaways(feed)
         FEED_PATH.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         remember_feed(feed)

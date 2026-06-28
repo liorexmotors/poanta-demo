@@ -12,6 +12,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import signal
 import subprocess
 import sys
 import urllib.request
@@ -143,6 +145,154 @@ def build_rescue_queue() -> dict[str, Any]:
     return {"queueItems": len(queue.get("items") or []), "runDir": run_dir, "prepareExit": code, "prepareTail": text[-2000:]}
 
 
+def run_codex_rescue_editor(run_dir: Path) -> dict[str, Any]:
+    """Run the full Pointa editor through Codex for a prepared rescue run.
+
+    The rescue autopilot already prepares `EDITOR_PROMPT.md` and `batch_*.json`.
+    This function is the missing bridge: it asks Codex to write the matching
+    `batch_*_results.json` files, then returns a small machine-readable summary.
+    It does not apply results or publish anything; the existing QA/apply gates
+    remain responsible for that.
+    """
+    run_dir = Path(run_dir)
+    prompt_path = run_dir / "EDITOR_PROMPT.md"
+    if not prompt_path.exists():
+        return {"ok": False, "reason": "missing_editor_prompt", "runDir": str(run_dir)}
+
+    batch_files = sorted(p for p in run_dir.glob("batch_*.json") if not p.name.endswith("_results.json"))
+    if not batch_files:
+        return {"ok": False, "reason": "missing_editor_batches", "runDir": str(run_dir)}
+
+    for result_path in run_dir.glob("batch_*_results.json"):
+        result_path.unlink(missing_ok=True)
+
+    model = os.environ.get("POINTA_RESCUE_CODEX_MODEL") or os.environ.get("POINTA_CODEX_MODEL") or "gpt-5.5"
+    timeout = max(30, int(os.environ.get("POINTA_RESCUE_CODEX_TIMEOUT", "300")))
+    log_path = run_dir / "codex_rescue_editor.log"
+    batch_names = ", ".join(p.name for p in batch_files)
+    prompt = f"""You are the Pointa editor for a local rescue run.
+
+Work inside this existing run directory:
+{run_dir}
+
+Read `EDITOR_PROMPT.md` fully, then process these batch files:
+{batch_names}
+
+For every `batch_N.json`, write exactly one sibling JSON array file named
+`batch_N_results.json`.
+
+Follow the Pointa editor contract already embedded in `EDITOR_PROMPT.md`.
+Return only after the result files have been written. Do not edit feed.json,
+do not deploy, do not run git commands, and do not change files outside the
+run directory.
+"""
+
+    cmd = [
+        "codex",
+        "exec",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--ephemeral",
+        "-C",
+        str(ROOT),
+        "-m",
+        model,
+        prompt,
+    ]
+    proc = subprocess.Popen(
+        cmd,
+        cwd=ROOT,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        start_new_session=True,
+    )
+    try:
+        stdout, stderr = proc.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(proc.pid, signal.SIGTERM)
+            stdout, stderr = proc.communicate(timeout=10)
+        except Exception:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except Exception:
+                pass
+            stdout, stderr = proc.communicate()
+        log_text = (stdout or "") + (stderr or "")
+        log_path.write_text(log_text, encoding="utf-8")
+        return {
+            "ok": False,
+            "reason": "codex_rescue_editor_timed_out",
+            "model": model,
+            "timeout": timeout,
+            "runDir": str(run_dir),
+            "log": str(log_path),
+        }
+
+    log_text = (stdout or "") + (stderr or "")
+    log_path.write_text(log_text, encoding="utf-8")
+    if proc.returncode != 0:
+        return {
+            "ok": False,
+            "reason": "codex_rescue_editor_failed",
+            "exit": proc.returncode,
+            "model": model,
+            "runDir": str(run_dir),
+            "log": str(log_path),
+            "tail": log_text[-1500:],
+        }
+
+    result_files = sorted(run_dir.glob("batch_*_results.json"))
+    if len(result_files) < len(batch_files):
+        return {
+            "ok": False,
+            "reason": "codex_rescue_editor_missing_result_files",
+            "expected": [p.name.replace(".json", "_results.json") for p in batch_files],
+            "found": [p.name for p in result_files],
+            "model": model,
+            "runDir": str(run_dir),
+            "log": str(log_path),
+        }
+
+    pass_count = 0
+    reject_count = 0
+    result_count = 0
+    parse_errors: list[str] = []
+    for path in result_files:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, list):
+                parse_errors.append(f"{path.name}: not a JSON array")
+                continue
+            result_count += len(data)
+            pass_count += sum(1 for row in data if isinstance(row, dict) and row.get("status") == "pass")
+            reject_count += sum(1 for row in data if isinstance(row, dict) and row.get("status") == "reject")
+        except Exception as exc:
+            parse_errors.append(f"{path.name}: {exc}")
+    if parse_errors:
+        return {
+            "ok": False,
+            "reason": "codex_rescue_editor_invalid_result_json",
+            "errors": parse_errors[:8],
+            "model": model,
+            "runDir": str(run_dir),
+            "log": str(log_path),
+        }
+
+    return {
+        "ok": True,
+        "editorSource": "codex",
+        "model": model,
+        "runDir": str(run_dir),
+        "log": str(log_path),
+        "batchFiles": len(batch_files),
+        "resultFiles": len(result_files),
+        "results": result_count,
+        "pass": pass_count,
+        "reject": reject_count,
+    }
+
+
 def write_result(result: dict[str, Any]) -> None:
     TMP.mkdir(exist_ok=True)
     LAST.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -179,7 +329,7 @@ def main() -> int:
         ahead, detail = local_is_ahead_and_healthy(live_feed)
         result["localVsLive"] = detail
         if ahead and args.repair and not args.no_deploy:
-            code, text = run(["bash", "scripts/deploy_current_feed.sh"], timeout=900)
+            code, text = run(["bash", "scripts/deploy_current_feed.sh"], timeout=300)
             result["actions"].append({"action": "deploy_healthy_local_candidate", "exit": code, "tail": text[-3000:]})
             audit2, _ = audit_live()
             result["postDeployLiveAuditor"] = {"status": audit2.get("status") if audit2 else None, "errors": (audit2 or {}).get("errors", [])[:5]}
@@ -192,7 +342,7 @@ def main() -> int:
         return 1
 
     # First try the normal deterministic FAST sync/deploy path.
-    code, text = run(["bash", "scripts/fast_sync_and_deploy_feed.sh"], timeout=900)
+    code, text = run(["bash", "scripts/fast_sync_and_deploy_feed.sh"], timeout=420)
     result["actions"].append({"action": "fast_sync_and_deploy", "exit": code, "tail": text[-3000:]})
 
     # If FAST produced a healthy local candidate but did not get it live, publish it.
@@ -203,7 +353,7 @@ def main() -> int:
     ahead, detail = local_is_ahead_and_healthy(live_after_fast)
     result["localVsLiveAfterFast"] = detail
     if ahead and not args.no_deploy:
-        code2, text2 = run(["bash", "scripts/deploy_current_feed.sh"], timeout=900)
+        code2, text2 = run(["bash", "scripts/deploy_current_feed.sh"], timeout=300)
         result["actions"].append({"action": "deploy_healthy_local_candidate_after_fast", "exit": code2, "tail": text2[-3000:]})
 
     audit_after, _ = audit_live()

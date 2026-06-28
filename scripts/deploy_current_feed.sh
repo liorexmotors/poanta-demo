@@ -44,13 +44,32 @@ from pathlib import Path
 feed_path = Path("feed.json")
 feed = json.loads(feed_path.read_text(encoding="utf-8"))
 changed = 0
+category_class = {
+    "ביטחון": "security",
+    "כלכלה": "money",
+    "צרכנות": "money",
+    "טכנולוגיה": "tech",
+    "רכב": "real",
+    "בריאות": "real",
+    "תרבות": "real",
+    "רכילות": "real",
+    "ספורט": "real",
+    "נדל״ן": "real",
+    "מזג אוויר": "real",
+}
 for item in feed.get("items", []):
-    if isinstance(item, dict) and "takeaway" in item:
+    if not isinstance(item, dict):
+        continue
+    expected_class = category_class.get(str(item.get("category") or ""), "")
+    if item.get("categoryClass", "") != expected_class:
+        item["categoryClass"] = expected_class
+        changed += 1
+    if "takeaway" in item:
         item.pop("takeaway", None)
         changed += 1
 if changed:
     feed_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Removed {changed} deprecated takeaway fields before deploy.")
+    print(f"Normalized {changed} public feed metadata fields before deploy.")
 PY
 # P0 guard: the quality auditor catches cross-card/source-policy failures that
 # the per-card quality gate may miss. Its CLI can print "fail" while exiting 0,
