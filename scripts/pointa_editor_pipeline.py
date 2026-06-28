@@ -671,6 +671,10 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
         if url:
             seen_urls.add(url)
     preview_items.sort(key=lambda item: parse_dt_for_sort(item.get("publishedAt")), reverse=True)
+    for item in preview_items:
+        if isinstance(item, dict):
+            item["categoryClass"] = CATEGORY_CLASS.get(str(item.get("category") or ""), "")
+            item.pop("takeaway", None)
     preview["items"] = preview_items
 
     # Source-filter dashboards and personal source views are driven by
@@ -857,6 +861,10 @@ def command_apply(args: argparse.Namespace) -> int:
             list(feed.get("items") or []),
             "editor_apply_main_feed_no_breaking_guard",
         )
+    for item in feed.get("items", []) or []:
+        if isinstance(item, dict):
+            item["categoryClass"] = CATEGORY_CLASS.get(str(item.get("category") or ""), "")
+            item.pop("takeaway", None)
     # Keep a small audit marker but avoid preview-only wording in the live file.
     feed["editorRun"] = {
         "runDir": str(run_dir),
