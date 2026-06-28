@@ -112,6 +112,22 @@ then
   BRIDGE_ARGS=(--force)
 fi
 python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-10}" --batch-size 5 --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-2}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+feed_path = Path("feed.json")
+if feed_path.exists():
+    feed = json.loads(feed_path.read_text(encoding="utf-8"))
+    changed = 0
+    for item in feed.get("items", []):
+        if isinstance(item, dict) and "takeaway" in item:
+            item.pop("takeaway", None)
+            changed += 1
+    if changed:
+        feed_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"Removed {changed} deprecated takeaway fields after rescue bridge.")
+PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: FAST is only successful if the candidate feed is visibly fresh.
 # Never record a publication event or return OK for a stale/thin feed.
