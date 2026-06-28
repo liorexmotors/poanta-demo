@@ -31,7 +31,7 @@ python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: do not publish or report success if the candidate feed still looks
 # stale/thin to a user. This is deliberately before recording publication
 # events so a failed candidate cannot fake timing freshness.
-python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json
+python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json --strict-freshness
 # P0 rollback guard: a stale local/main artifact must never overwrite a fresher
 # Cloudflare/GitHub/public feed. The state file preserves the freshest known
 # successful deploy so a future production alias rollback is detected even if the

@@ -288,7 +288,7 @@ def collect_snapshot() -> HealthSnapshot:
     _raw_code, raw_live, _ = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--url", RAW_GHPAGES_URL, "--raw-url", RAW_GHPAGES_URL, "--json"], timeout=120)
     raw_health = {"status": "ok" if raw_live.get("status") == "ok" else "fail", "liveStatus": raw_live.get("status"), "blockers": raw_live.get("errors") or []}
     qg_code, qg_text = run([sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"], timeout=120)
-    _local_code, local_health, _ = run_json([sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", "feed.json", "--json"], timeout=120)
+    _local_code, local_health, _ = run_json([sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", "feed.json", "--json", "--strict-freshness"], timeout=120)
     return HealthSnapshot(
         public_health=public_health,
         live=live,
@@ -342,9 +342,49 @@ def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
     local_ok = _status(snapshot.local_health) == "ok" and int(snapshot.local_quality.get("exit") or 0) == 0
     domain_err = domain_rescue_timing_error(snapshot)
 
-    # Visible top-feed freshness is higher priority than per-domain SLA debt.
-    # If both fail, Stage 3 must repair the public/top feed first; otherwise the
-    # domain lane can loop on a candidate that still fails no_new_top_item_sla.
+    if public_ok:
+        incident_type = "healthy" if _status(snapshot.timing) == "ok" else "healthy_with_domain_timing_debt"
+        return {
+            "status": "ok",
+            "incidentType": incident_type,
+            "recommendedStage": "none" if incident_type == "healthy" else "stage_4_domain_backlog",
+            "automaticAction": "none",
+            "incidentKey": f"{incident_type}|{snapshot.feed_signature.get('updatedAt')}|{snapshot.feed_signature.get('topUrl')}",
+            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
+        }
+
+    if int(snapshot.local_quality.get("exit") or 0) != 0 or (local_codes & QUALITY_BLOCK_CODES):
+        return {
+            "status": "blocked",
+            "incidentType": "local_candidate_quality_blocked",
+            "recommendedStage": "editor_or_agent_review",
+            "automaticAction": "do_not_publish",
+            "incidentKey": f"quality_blocked|{','.join(sorted(local_codes))}|{snapshot.feed_signature.get('updatedAt')}",
+            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
+        }
+
+    if raw_ok and not public_ok:
+        return {
+            "status": "degraded",
+            "incidentType": "github_pages_propagation_lag",
+            "recommendedStage": "wait_and_reverify",
+            "automaticAction": "verify_public_again",
+            "incidentKey": f"pages_lag|{snapshot.raw_health.get('liveStatus')}|{snapshot.feed_signature.get('updatedAt')}",
+            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
+        }
+
+    if not public_ok and local_ok:
+        return {
+            "status": "repair_needed",
+            "incidentType": "deploy_public_stale_local_candidate_healthy",
+            "recommendedStage": "stage_2_safe_deploy",
+            "automaticAction": "deploy_current_feed_then_verify_public",
+            "incidentKey": f"deploy_needed|{snapshot.local_signature or {}}|{snapshot.feed_signature.get('updatedAt')}",
+            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
+        }
+
+    # Visible top-feed freshness is higher priority than per-domain SLA debt
+    # once we know there is no already-safe local feed to publish.
     if public_codes & TOP_STALE_CODES or any(e.get("group") == "all" for e in timing_errors):
         return {
             "status": "repair_needed",
@@ -364,47 +404,6 @@ def classify_incident(snapshot: HealthSnapshot) -> dict[str, Any]:
             "automaticAction": "prepare_domain_rescue_worker",
             "incidentKey": f"domain_sla|{group}|{domain_err.get('latestAt')}|{domain_err.get('headline')}",
             "domain": group,
-            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
-        }
-
-    if public_ok:
-        incident_type = "healthy" if _status(snapshot.timing) == "ok" else "healthy_with_domain_timing_debt"
-        return {
-            "status": "ok",
-            "incidentType": incident_type,
-            "recommendedStage": "none" if incident_type == "healthy" else "stage_4_domain_backlog",
-            "automaticAction": "none",
-            "incidentKey": f"{incident_type}|{snapshot.feed_signature.get('updatedAt')}|{snapshot.feed_signature.get('topUrl')}",
-            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
-        }
-
-    if raw_ok and not public_ok:
-        return {
-            "status": "degraded",
-            "incidentType": "github_pages_propagation_lag",
-            "recommendedStage": "wait_and_reverify",
-            "automaticAction": "verify_public_again",
-            "incidentKey": f"pages_lag|{snapshot.raw_health.get('liveStatus')}|{snapshot.feed_signature.get('updatedAt')}",
-            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
-        }
-
-    if int(snapshot.local_quality.get("exit") or 0) != 0 or (local_codes & QUALITY_BLOCK_CODES):
-        return {
-            "status": "blocked",
-            "incidentType": "local_candidate_quality_blocked",
-            "recommendedStage": "editor_or_agent_review",
-            "automaticAction": "do_not_publish",
-            "incidentKey": f"quality_blocked|{','.join(sorted(local_codes))}|{snapshot.feed_signature.get('updatedAt')}",
-            "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
-        }
-
-    if not public_ok and local_ok:
-        return {
-            "status": "repair_needed",
-            "incidentType": "deploy_public_stale_local_candidate_healthy",
-            "recommendedStage": "stage_2_safe_deploy",
-            "automaticAction": "deploy_current_feed_then_verify_public",
-            "incidentKey": f"deploy_needed|{snapshot.local_signature or {}}|{snapshot.feed_signature.get('updatedAt')}",
             "signals": {"publicCodes": sorted(public_codes), "localCodes": sorted(local_codes), "timingGroups": timing_groups},
         }
 
@@ -572,7 +571,7 @@ def execute_stage3_repair(
         preview_feed = run_dir / "feed_editor_preview.json"
         for name, cmd in [
             ("stage3_candidate_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(preview_feed)]),
-            ("stage3_candidate_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(preview_feed)]),
+            ("stage3_candidate_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(preview_feed), "--strict-freshness"]),
         ]:
             code, text = run_func(cmd, timeout=180)
             actions.append({"action": name, "exit": code, "tail": text[-3000:]})
@@ -587,7 +586,7 @@ def execute_stage3_repair(
 
         for name, cmd in [
             ("stage3_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"]),
-            ("stage3_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py"]),
+            ("stage3_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--strict-freshness"]),
             ("stage3_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--feed-file", "feed.json", "--json"]),
         ]:
             code, text = run_func(cmd, timeout=180)
@@ -706,10 +705,10 @@ def execute_stage4_domain_rescue(
         preview_feed = run_dir / "feed_editor_preview.json"
         for name, cmd in [
             ("stage4_candidate_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(preview_feed)]),
-            ("stage4_candidate_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(preview_feed)]),
+            ("stage4_candidate_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--mode", "candidate", "--feed", str(preview_feed), "--strict-freshness"]),
             ("stage4_apply_editor_preview", [sys.executable, "scripts/pointa_editor_pipeline.py", "apply", "--run-dir", str(run_dir)]),
             ("stage4_quality_gate", [sys.executable, "scripts/pointa_quality_gate.py", "--feed", "feed.json"]),
-            ("stage4_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py"]),
+            ("stage4_publication_health_gate", [sys.executable, "scripts/pointa_publication_health_gate.py", "--strict-freshness"]),
             ("stage4_live_auditor_local", [sys.executable, "scripts/pointa_live_auditor.py", "--feed-file", "feed.json", "--json"]),
             ("stage4_record_publication_event", [sys.executable, "scripts/pointa_publication_events.py", "record", "--gatekeeper", "pointa-autopilot-stage4-domain", "--run-id", run_id, "--json"]),
             ("stage4_deploy_current_feed", ["bash", "scripts/deploy_current_feed.sh"]),

@@ -44,8 +44,14 @@ def parse_dt(raw: Any) -> datetime | None:
 
 
 def run(cmd: list[str], *, timeout: int = 180) -> tuple[int, str]:
-    proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, timeout=timeout)
-    return proc.returncode, (proc.stdout or "") + (proc.stderr or "")
+    try:
+        proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, timeout=timeout)
+        return proc.returncode, (proc.stdout or "") + (proc.stderr or "")
+    except subprocess.TimeoutExpired as exc:
+        text = (exc.stdout or "") + (exc.stderr or "")
+        if isinstance(text, bytes):
+            text = text.decode("utf-8", errors="replace")
+        return 124, f"TIMEOUT after {timeout}s: {' '.join(cmd)}\n{text}"
 
 
 def run_json(cmd: list[str], *, timeout: int = 120) -> tuple[int, dict[str, Any] | None, str]:
@@ -99,6 +105,7 @@ def local_candidate_health() -> tuple[bool, dict[str, Any], dict[str, Any]]:
         "--out",
         "tmp/sentinel_candidate_health.json",
         "--json",
+        "--strict-freshness",
     ], timeout=90)
     ok = qg_code == 0 and health_code == 0 and bool(health and health.get("status") == "ok")
     return ok, {"exit": qg_code, "textTail": qg_text[-1500:]}, health or {"exit": health_code, "rawTail": health_text[-1500:]}
@@ -198,39 +205,50 @@ run directory.
         model,
         prompt,
     ]
-    proc = subprocess.Popen(
-        cmd,
-        cwd=ROOT,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        start_new_session=True,
-    )
-    try:
-        stdout, stderr = proc.communicate(timeout=timeout)
-    except subprocess.TimeoutExpired:
+    with log_path.open("w", encoding="utf-8") as log_file:
+        proc = subprocess.Popen(
+            cmd,
+            cwd=ROOT,
+            text=True,
+            stdout=log_file,
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+        )
+        waited = 0
         try:
-            os.killpg(proc.pid, signal.SIGTERM)
-            stdout, stderr = proc.communicate(timeout=10)
-        except Exception:
+            while True:
+                try:
+                    proc.wait(timeout=30)
+                    break
+                except subprocess.TimeoutExpired:
+                    waited += 30
+                    print(
+                        f"Pointa Codex rescue editor still running after {waited}s · runDir={run_dir}",
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                    if waited >= timeout:
+                        raise subprocess.TimeoutExpired(cmd, timeout)
+        except subprocess.TimeoutExpired:
             try:
-                os.killpg(proc.pid, signal.SIGKILL)
+                os.killpg(proc.pid, signal.SIGTERM)
+                proc.wait(timeout=10)
             except Exception:
-                pass
-            stdout, stderr = proc.communicate()
-        log_text = (stdout or "") + (stderr or "")
-        log_path.write_text(log_text, encoding="utf-8")
-        return {
-            "ok": False,
-            "reason": "codex_rescue_editor_timed_out",
-            "model": model,
-            "timeout": timeout,
-            "runDir": str(run_dir),
-            "log": str(log_path),
-        }
+                try:
+                    os.killpg(proc.pid, signal.SIGKILL)
+                except Exception:
+                    pass
+                proc.wait()
+            return {
+                "ok": False,
+                "reason": "codex_rescue_editor_timed_out",
+                "model": model,
+                "timeout": timeout,
+                "runDir": str(run_dir),
+                "log": str(log_path),
+            }
 
-    log_text = (stdout or "") + (stderr or "")
-    log_path.write_text(log_text, encoding="utf-8")
+    log_text = log_path.read_text(encoding="utf-8") if log_path.exists() else ""
     if proc.returncode != 0:
         return {
             "ok": False,

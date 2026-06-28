@@ -111,7 +111,12 @@ def main() -> int:
         live = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--json"])
         no_breaking = run_json([sys.executable, "scripts/pointa_main_feed_no_breaking_guard.py", "--feed", "feed.json", "--json"])
 
-    blockers, freshness_signals = split_live_findings(live, mode=args.mode, strict_freshness=args.strict_freshness)
+    # Public health is an outcome gate: if the live feed is stale/thin during
+    # active news hours, automation must not report a green health result.
+    # Candidate checks stay warning-only unless a publish path opts into strict
+    # freshness, so quiet-cycle archives can still be validated without deploy.
+    strict_freshness = args.strict_freshness or args.mode == "public"
+    blockers, freshness_signals = split_live_findings(live, mode=args.mode, strict_freshness=strict_freshness)
     for leak in no_breaking.get("leaks") or []:
         blockers.append({
             "code": "main_feed_breaking_leak",

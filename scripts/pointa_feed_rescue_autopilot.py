@@ -58,6 +58,10 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def progress(message: str) -> None:
+    print(f"[pointa-feed-rescue] {message}", file=sys.stderr, flush=True)
+
+
 def latest_editor_run_from_prepare(stdout: str) -> Path:
     for line in stdout.splitlines():
         line = line.strip()
@@ -167,6 +171,7 @@ def main() -> int:
             print(json.dumps(summary, ensure_ascii=False, indent=2))
             return 0
 
+        progress(f"{run_id}: building source rescue queue")
         queue_proc = run([
             sys.executable,
             "scripts/pointa_source_rescue_queue.py",
@@ -186,6 +191,7 @@ def main() -> int:
             "POINTA_EDITOR_JINA_FETCH_TIMEOUT": "6",
             "POINTA_EDITOR_JINA_MAX_ATTEMPTS": "1",
         }
+        progress(f"{run_id}: preparing editor run")
         prepare_proc = run([
             sys.executable,
             "scripts/pointa_rescue_editor_pipeline.py",
@@ -206,6 +212,7 @@ def main() -> int:
         editor_source = os.environ.get("POINTA_RESCUE_EDITOR_SOURCE", "codex").strip().lower()
         editor_result: dict[str, Any]
         if editor_source == "codex":
+            progress(f"{run_id}: running full Codex editor bridge")
             editor_result = run_codex_rescue_editor(run_dir)
             if not editor_result.get("ok"):
                 if os.environ.get("POINTA_ALLOW_LOCAL_FALLBACK") == "1":
@@ -233,6 +240,7 @@ def main() -> int:
                     print(json.dumps(summary, ensure_ascii=False, indent=2))
                     return 3
         elif editor_source == "deterministic":
+            progress(f"{run_id}: running deterministic editor fallback")
             editor_result = run_json([
                 sys.executable,
                 "scripts/pointa_deterministic_rescue_editor.py",
@@ -247,6 +255,7 @@ def main() -> int:
             print(json.dumps(summary, ensure_ascii=False, indent=2))
             return 3
 
+        progress(f"{run_id}: QA editor results")
         qa = run_json([
             sys.executable,
             "scripts/pointa_editor_pipeline.py",
@@ -277,6 +286,7 @@ def main() -> int:
             return 4
 
         feed_before_apply = feed.read_text(encoding="utf-8") if feed.exists() else ""
+        progress(f"{run_id}: applying QA-clean editor cards")
         apply_proc = run([
             sys.executable,
             "scripts/pointa_editor_pipeline.py",
@@ -286,6 +296,7 @@ def main() -> int:
             "--feed",
             str(feed),
         ])
+        progress(f"{run_id}: running post-apply quality gate")
         quality = run([
             sys.executable,
             "scripts/pointa_quality_gate.py",
@@ -306,6 +317,7 @@ def main() -> int:
             write_json(summary_path, summary)
             print(json.dumps(summary, ensure_ascii=False, indent=2))
             return 5
+        progress(f"{run_id}: running post-apply publication health gate")
         health_after = run_json([
             sys.executable,
             "scripts/pointa_publication_health_gate.py",
