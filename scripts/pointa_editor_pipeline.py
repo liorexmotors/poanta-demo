@@ -42,6 +42,11 @@ except Exception:  # pragma: no cover
     fetch_article_image = None
     filter_main_feed_breaking_leaks = None
 
+try:
+    from pointa_quality_gate import looks_cut as quality_gate_looks_cut  # type: ignore
+except Exception:  # pragma: no cover
+    quality_gate_looks_cut = None
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PointaEditorPipeline/0.1)",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -543,6 +548,8 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
         errors.append("headline over 75 chars")
     if "..." in headline or "…" in headline:
         errors.append("headline has ellipsis")
+    if callable(quality_gate_looks_cut) and quality_gate_looks_cut(headline):
+        errors.append("headline appears mechanically cut")
     if too_close(headline, source.get("originalTitle", "")):
         errors.append("headline too close to source title")
     if not summary:
