@@ -114,7 +114,7 @@ then
   BRIDGE_ARGS=(--force)
 fi
 BRIDGE_STATUS=0
-python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-10}" --batch-size 5 --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-2}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json || BRIDGE_STATUS=$?
+python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-18}" --batch-size "${POINTA_FAST_RESCUE_BATCH_SIZE:-6}" --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-4}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json || BRIDGE_STATUS=$?
 export POINTA_FAST_BRIDGE_STATUS="$BRIDGE_STATUS"
 if [[ "$BRIDGE_STATUS" -ne 0 ]]; then
   echo "FAST editor bridge failed with status $BRIDGE_STATUS; candidate health gate will decide whether publication is allowed." >&2

@@ -140,14 +140,19 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
         row = rescue.get("sourceQueueRow") or {}
         return (item.get("sourceGroup") or row.get("sourceGroup") or item.get("source") or "").strip()
 
-    # Stuck-feed rescue is judged by visible freshness *and* source diversity.
-    # A recurring failure mode was queue order: one very chatty publisher
-    # (usually Walla) filled the first editor batch, so the final feed still
-    # failed the recent-source SLA even after good editing.  Keep quality strict,
-    # but select usable article-text rows with a soft per-source cap first, then
-    # fill remaining slots.  This makes the rescue batch capable of satisfying
-    # the publication health gate without lowering editorial standards.
+    def published_key(item: dict[str, Any]) -> str:
+        return str(item.get("publishedAt") or "")
+
+    usable_by_freshness = sorted(usable, key=published_key, reverse=True)
+    thin_by_freshness = sorted(thin, key=published_key, reverse=True)
+
+    # Stuck-feed rescue is judged first by visible freshness, then by source
+    # diversity.  A recurring failure mode was over-balancing the batch: the
+    # newest usable rows reached the queue, but the editor run spent too many
+    # slots on older/diverse rows and the final feed still failed the top-item
+    # SLA.  Anchor a few newest usable rows first, then apply the soft source cap.
     per_group_cap = max(2, limit // 6)
+    freshness_anchor_count = min(4, max(2, limit // 4), limit)
     selected: list[dict[str, Any]] = []
     selected_ids: set[int] = set()
     group_counts: dict[str, int] = {}
@@ -166,10 +171,11 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
             selected_ids.add(ident)
             group_counts[key] = group_counts.get(key, 0) + 1
 
-    consider(usable, enforce_cap=True)
-    consider(usable, enforce_cap=False)
-    consider(thin, enforce_cap=True)
-    consider(thin, enforce_cap=False)
+    consider(usable_by_freshness[:freshness_anchor_count], enforce_cap=False)
+    consider(usable_by_freshness, enforce_cap=True)
+    consider(usable_by_freshness, enforce_cap=False)
+    consider(thin_by_freshness, enforce_cap=True)
+    consider(thin_by_freshness, enforce_cap=False)
     selected = selected[:limit]
     for new_index, item in enumerate(selected):
         item["index"] = new_index
@@ -180,9 +186,19 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
         "selectedUsable": sum(1 for x in selected if x.get("articleTextChars", 0) >= min_article_chars),
         "selectedThin": sum(1 for x in selected if x.get("articleTextChars", 0) < min_article_chars),
         "selectedSourceGroups": sorted({group_key(x) for x in selected}),
+        "newestUsableCandidates": [
+            {
+                "publishedAt": x.get("publishedAt"),
+                "source": x.get("source"),
+                "sourceUrl": x.get("sourceUrl"),
+                "articleTextChars": x.get("articleTextChars"),
+            }
+            for x in usable_by_freshness[:8]
+        ],
+        "selectedNewestAnchors": freshness_anchor_count,
         "perSourceGroupSoftCap": per_group_cap,
         "oversampleFactor": oversample_factor,
-        "selectionMode": "adaptive_extract_then_select_diverse_sources_first",
+        "selectionMode": "adaptive_extract_then_select_freshness_anchors_then_diverse_sources",
         "domain": domain or None,
         "domainFilteredOutAfterExtraction": domain_filtered_out,
     }
