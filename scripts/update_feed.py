@@ -1036,6 +1036,13 @@ def categorize(text: str) -> tuple[str, str]:
 
 
 WORLD_ONLY_STORY_TERMS = ["קובה", "פוקושימה", "fukushima", "cuba"]
+FOREIGN_ONLY_STORY_TERMS = [
+    "בריטניה", "לונדון", "אנגליה", "סקוטלנד", "אירלנד", "ויילס",
+    "ארה\"ב", "ארצות הברית", "ניו יורק", "וושינגטון", "לוס אנג'לס",
+    "קנדה", "צרפת", "פריז", "גרמניה", "ברלין", "איטליה", "רומא",
+    "ספרד", "מדריד", "רוסיה", "מוסקבה", "אוקראינה", "סין", "טייוואן",
+    "פקיסטן", "ברזיל", "ארגנטינה", "מקסיקו", "אוסטרליה",
+]
 MIDDLE_EAST_OR_ISRAEL_TERMS = [
     "ישראל", "israel", "ישראלי", "הסכמי אברהם", "abraham accords", "recognising israel",
     "middle east", "mideast", "מזרח תיכון", "המזרח התיכון", "עזה", "gaza", "חמאס", "hamas",
@@ -1064,6 +1071,16 @@ def is_middle_east_or_israel_story(text: str, source: str = "") -> bool:
     # Source labels can be a hint only for explicit Middle-East feeds; do not treat Hebrew outlet names
     # like "ישראל היום" as an Israel-angle signal for unrelated world items.
     return any(term in source_low for term in ["middle east", "mideast", "מזרח תיכון"])
+
+
+def is_foreign_only_story(text: str, source: str = "") -> bool:
+    """True for global stories with no concrete Israel/Middle-East angle."""
+    source_low = (source or "").lower()
+    content = text or ""
+    low = content.lower()
+    world_source = any(term in source_low for term in ["חדשות בעולם", "world", "europe", "global", "international"])
+    world_content = any(term.lower() in low for term in FOREIGN_ONLY_STORY_TERMS)
+    return (world_source or world_content) and not is_middle_east_or_israel_story(content, source)
 
 
 def regional_category(text: str) -> tuple[str, str]:
@@ -1145,7 +1162,11 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         "נורה", "ירי", "נרצח", "רצח", "דקירה", "נדקר", "פצוע קשה",
         "שריפה", "חולצו", "לכודים", "כיבוי", "כבאות",
     ]
-    if any(x in content_text for x in local_emergency_terms) and not any(x in content_text for x in ["כנסת", "ממשלה", "נתניהו", "בחירות", "קואליציה"]):
+    if (
+        any(has_hebrew_phrase(content_text, x) for x in local_emergency_terms)
+        and not any(x in content_text for x in ["כנסת", "ממשלה", "נתניהו", "בחירות", "קואליציה"])
+        and not is_foreign_only_story(content_text, source)
+    ):
         return "פלילים", "security"
     if any(x in text for x in ['תכולת בית', 'תכולת הבית', 'נזקי מלחמה', 'מס רכוש']):
         return "צרכנות", "money"
@@ -1174,6 +1195,8 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "תרבות", "real"
     # Lior's boundary: אקטואליה בעולם is only for global stories with no Israel/Middle-East angle.
     # Israel/Middle-East items from foreign sources still belong to the normal news/security/politics domains.
+    if is_foreign_only_story(content_text, source):
+        return "אקטואליה בעולם", "security"
     if is_middle_east_or_israel_story(content_text, source):
         return regional_category(text)
     if any(x in text for x in ['איראן', 'הורמוז', 'גרעין', 'אורניום']) and any(x in text for x in ['טראמפ', 'ארצות הברית', 'ארה"ב', 'מו"מ', 'משא ומתן', 'מזכר הבנות', 'עסקה', 'הסכם']):

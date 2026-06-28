@@ -279,6 +279,18 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         local_or_legal_terms = ["ישראל", "הכנסת", "ממשלה", "בגץ", "בג\"ץ", "בית משפט", "כתב אישום", "עתירה", "תביעה", "פסק דין"]
         if not any(x in visible_blob + " | " + original for x in local_or_legal_terms):
             add_issue(issues, "error", idx, "category_world_current_affairs", "Global sanctions/diplomacy/current-affairs stories should be אקטואליה בעולם, not משפט/פוליטיקה, unless the Israeli/local/legal angle is concrete", item)
+    foreign_only_terms = [
+        "בריטניה", "לונדון", "אנגליה", "סקוטלנד", "אירלנד", "ויילס",
+        "ניו יורק", "וושינגטון", "לוס אנג'לס", "קנדה", "צרפת", "פריז",
+        "גרמניה", "ברלין", "איטליה", "רומא", "ספרד", "מדריד",
+        "רוסיה", "מוסקבה", "אוקראינה", "סין", "טייוואן",
+        "פקיסטן", "ברזיל", "ארגנטינה", "מקסיקו", "אוסטרליה",
+    ]
+    regional_terms = ["ישראל", "ישראלי", "צה״ל", "צה\"ל", "עזה", "חמאס", "חיזבאללה", "לבנון", "סוריה", "איראן", "הורמוז", "מזרח תיכון", "פלסטיני"]
+    if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"}:
+        foreign_blob = visible_blob + " | " + original + " | " + source
+        if any(x in foreign_blob for x in foreign_only_terms) and not any(x in foreign_blob for x in regional_terms):
+            add_issue(issues, "error", idx, "category_foreign_only_local_bucket", "Foreign-only stories must be אקטואליה בעולם, not local news/crime/law/politics", item)
     if "וואלה סלבס" in source and any(x in visible_blob for x in ["פרעון פוליטי", "מגייס פרעון", "מגייס פרשן פוליטי"]):
         add_issue(issues, "error", idx, "known_bad_gossip_headline", "Walla Celebs regression: bad/typo headline framing", item)
     if any(x in source for x in ["ספורט", "NBA", "כדורגל", "כדורסל"]) and category != "ספורט":
