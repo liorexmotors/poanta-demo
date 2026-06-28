@@ -13,8 +13,8 @@ Warnings: 2
 - חדשות: 9
 - משפט: 4
 - ספורט: 4
-- מזג אוויר: 4
 - טכנולוגיה: 4
+- מזג אוויר: 4
 - אקטואליה בעולם: 2
 - כלכלה: 2
 - בריאות: 2
@@ -37,7 +37,7 @@ Warnings: 2
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 99
+### WARNING · category_sport_source · item 95
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
