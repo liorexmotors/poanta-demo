@@ -224,7 +224,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     blob = " ".join([headline, context, original, source])
     content_blob = " ".join([headline, context, original])
     me_or_israel_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "מזרח תיכון", "עזה", "gaza", "חמאס", "חיזבאללה", "לבנון", "איראן", "iran", "הורמוז", "סעודיה", "קטאר", "מצרים", "ירדן", "טורקיה", "פלסטיני"]
-    world_only_terms = ["קובה", "cuba", "פוקושימה", "fukushima"]
+    world_only_terms = ["קובה", "cuba", "פוקושימה", "fukushima", "בגדד", "עיראק", "baghdad", "iraq", "iraqi"]
     strong_local_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "עזה", "gaza"]
     content_low = content_blob.lower()
     source_low = source.lower()
@@ -273,7 +273,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         sanctions_policy_terms = ["סנקציות", "קובה", "ממשל טראמפ", "ממשל", "מדינה", "מדיני", "פוליטי", "משלחת"]
         if any(x in visible_blob + " | " + original + " | " + source_url for x in sanctions_policy_terms) and not any(x in visible_blob + " | " + original for x in legal_terms):
             add_issue(issues, "error", idx, "category_law_without_legal_proceeding", "Do not classify sanctions/diplomatic-policy stories as משפט unless there is a concrete court/indictment/legal-proceeding angle", item)
-    world_current_terms = ["סנקציות", "קובה", "ממשל טראמפ", "הבית הלבן", "ארה\"ב", "ארצות הברית", "רוסיה", "אוקראינה", "סין", "טייוואן", "נאטו"]
+    world_current_terms = ["סנקציות", "קובה", "ממשל טראמפ", "הבית הלבן", "ארה\"ב", "ארצות הברית", "רוסיה", "אוקראינה", "סין", "טייוואן", "נאטו", "בגדד", "עיראק"]
     is_world_current_story = any(x in visible_blob + " | " + original + " | " + source_url for x in world_current_terms) or "/news/world/" in source_url
     if is_world_current_story and category in {"משפט", "פוליטיקה"}:
         local_or_legal_terms = ["ישראל", "הכנסת", "ממשלה", "בגץ", "בג\"ץ", "בית משפט", "כתב אישום", "עתירה", "תביעה", "פסק דין"]
@@ -284,7 +284,7 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         "ניו יורק", "וושינגטון", "לוס אנג'לס", "קנדה", "צרפת", "פריז",
         "גרמניה", "ברלין", "איטליה", "רומא", "ספרד", "מדריד",
         "רוסיה", "מוסקבה", "אוקראינה", "סין", "טייוואן",
-        "פקיסטן", "ברזיל", "ארגנטינה", "מקסיקו", "אוסטרליה",
+        "פקיסטן", "ברזיל", "ארגנטינה", "מקסיקו", "אוסטרליה", "בגדד", "עיראק",
     ]
     regional_terms = ["ישראל", "ישראלי", "צה״ל", "צה\"ל", "עזה", "חמאס", "חיזבאללה", "לבנון", "סוריה", "איראן", "הורמוז", "מזרח תיכון", "פלסטיני"]
     if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"}:

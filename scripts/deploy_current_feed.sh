@@ -37,6 +37,21 @@ python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.j
 # successful deploy so a future production alias rollback is detected even if the
 # current custom domain has already fallen back.
 python3 scripts/pointa_publish_rollback_guard.py --candidate feed.json --out tmp/deploy_rollback_guard.json
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+feed_path = Path("feed.json")
+feed = json.loads(feed_path.read_text(encoding="utf-8"))
+changed = 0
+for item in feed.get("items", []):
+    if isinstance(item, dict) and "takeaway" in item:
+        item.pop("takeaway", None)
+        changed += 1
+if changed:
+    feed_path.write_text(json.dumps(feed, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Removed {changed} deprecated takeaway fields before deploy.")
+PY
 # P0 guard: the quality auditor catches cross-card/source-policy failures that
 # the per-card quality gate may miss. Its CLI can print "fail" while exiting 0,
 # so gate on the JSON status explicitly before recording or publishing.

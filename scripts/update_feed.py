@@ -1195,6 +1195,18 @@ def categorize_item(title: str, desc: str, source: str) -> tuple[str, str]:
         return "תרבות", "real"
     # Lior's boundary: אקטואליה בעולם is only for global stories with no Israel/Middle-East angle.
     # Israel/Middle-East items from foreign sources still belong to the normal news/security/politics domains.
+    iraq_local_terms = ["בגדד", "עיראק", "baghdad", "iraq", "iraqi"]
+    israel_or_regional_security_terms = [
+        "ישראל", "israel", "צה\"ל", "צה״ל", "עזה", "gaza", "חמאס", "hamas",
+        "חיזבאללה", "hezbollah", "לבנון", "lebanon", "סוריה", "syria",
+        "איראן", "iran", "טהרן", "tehran", "הורמוז", "hormuz", "פלסטיני", "palestinian",
+    ]
+    if (
+        is_foreign_source_label(source)
+        and any(x.lower() in content_text.lower() for x in iraq_local_terms)
+        and not any(x.lower() in content_text.lower() for x in israel_or_regional_security_terms)
+    ):
+        return "אקטואליה בעולם", "security"
     if is_foreign_only_story(content_text, source):
         return "אקטואליה בעולם", "security"
     if is_middle_east_or_israel_story(content_text, source):
@@ -1653,7 +1665,7 @@ def is_foreign_relevant(title: str, desc: str) -> bool:
 FOREIGN_SOURCE_LABELS = [
     "bbc", "cnn", "sky news", "skynews", "reuters", "associated press", "ap middle east", "guardian",
     "new york times", "nyt", "axios", "politico", "bloomberg", "al jazeera", "jazeera",
-    "jns", "jewish news syndicate", "france24", "france 24", "the media line",
+    "jns", "jewish news syndicate", "france24", "france 24", "the media line", "jerusalem post",
 ]
 
 

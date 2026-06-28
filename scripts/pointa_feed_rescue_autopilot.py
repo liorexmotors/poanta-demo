@@ -23,7 +23,15 @@ TMP = ROOT / "tmp"
 TZ = timezone(timedelta(hours=3))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from pointa_silent_freshness_sentinel import run_codex_rescue_editor  # type: ignore  # noqa: E402
+try:
+    from pointa_silent_freshness_sentinel import run_codex_rescue_editor  # type: ignore  # noqa: E402
+except ImportError:
+    def run_codex_rescue_editor(run_dir: Path) -> dict[str, Any]:
+        return {
+            "ok": False,
+            "reason": "codex_rescue_editor_function_unavailable",
+            "runDir": str(run_dir),
+        }
 
 
 def run(cmd: list[str], *, env: dict[str, str] | None = None, check: bool = True) -> subprocess.CompletedProcess[str]:
