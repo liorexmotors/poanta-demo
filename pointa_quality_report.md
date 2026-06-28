@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 104
+Items checked: 106
 Errors: 0
-Warnings: 11
+Warnings: 12
 
 ## Category distribution
 
-- ביטחון: 24
+- ביטחון: 26
 - פלילים: 16
 - חדשות: 15
 - רכילות: 14
@@ -25,7 +25,7 @@ Warnings: 11
 
 ## Issue counts
 
-- headline_near_duplicate_summary: 7
+- headline_near_duplicate_summary: 8
 - summary_long: 2
 - category_sport_source: 2
 
@@ -80,28 +80,35 @@ Warnings: 11
 - Source: ישראל היום - כל הכתבות
 - URL: https://www.israelhayom.co.il/forreal/15_minutes/article/20855580
 
-### WARNING · headline_near_duplicate_summary · item 54
+### WARNING · headline_near_duplicate_summary · item 47
+- Headline is a clipped/near-duplicate version of the summary
+- Headline: `אתמול (ש'), כוחות חטיבת עציוני (6) בפיקוד אוגדה 210 חיסלו מספר מחבלים`
+- Original: `צה״ל - הערוץ הרשמי`
+- Source: דובר צה״ל - טלגרם רשמי
+- URL: https://t.me/idf_telegram/24459
+
+### WARNING · headline_near_duplicate_summary · item 56
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `החשוד בן ה-40 תועד במצלמות האבטחה כשהוא פורץ למלון ברחוב הרצל וגונב רכוש`
 - Original: `בזמן שמאסר על תנאי מרחף מעליו: תושב תל אביב חשוד שפרץ למלון וגנב רכוש`
 - Source: וואלה חדשות - חדשות בארץ
 - URL: https://news.walla.co.il/item/3848870
 
-### WARNING · category_sport_source · item 81
+### WARNING · category_sport_source · item 83
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3848415
 
-### WARNING · category_sport_source · item 86
+### WARNING · category_sport_source · item 88
 - Sport source should usually be ספורט
 - Headline: `בהיעדרו של קרלוס אלקראס, יאניק סינר היה הפייבוריט לזכייה ברולאן גארוס`
 - Original: `יאניק סינר חזר לשחק: "מה שקרה ברולאן גארוס רק יחשל אותי"`
 - Source: וואלה ספורט - טניס
 - URL: https://sports.walla.co.il/item/3848385
 
-### WARNING · headline_near_duplicate_summary · item 91
+### WARNING · headline_near_duplicate_summary · item 93
 - Headline is a clipped/near-duplicate version of the summary
 - Headline: `המטרה אחת: למצוא משהו, כל דבר`
 - Original: `לאחר שנה וחצי: הסתיימה עדות נתניהו בבית המשפט`
