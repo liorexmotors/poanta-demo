@@ -189,7 +189,7 @@ def select_editor_input_adaptive(queue: dict[str, Any], limit: int, min_article_
     return selected, stats
 
 
-def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int) -> dict[str, Any]:
+def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int, corpus: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     url = row.get("sourceUrl") or ""
     extraction = editor_pipeline.extract_article(url)
     original_title = row.get("originalTitle") or extraction.title or ""
@@ -204,7 +204,7 @@ def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int) 
         row.get("deterministicContext") or description,
         row.get("source", ""),
     )
-    return {
+    item = {
         "index": index,
         "source": row.get("source", ""),
         "sourceGroup": row.get("sourceGroup", ""),
@@ -235,10 +235,23 @@ def row_to_editor_item(index: int, row: dict[str, Any], min_article_chars: int) 
             "takeaway": row.get("deterministicTakeaway", ""),
         },
     }
+    item["contextPack"] = editor_pipeline.build_context_pack(item, corpus or [], extraction)
+    return item
 
 
 def make_editor_input(rows: list[dict[str, Any]], min_article_chars: int) -> list[dict[str, Any]]:
-    return [row_to_editor_item(i, row, min_article_chars) for i, row in enumerate(rows)]
+    rough_corpus = []
+    for row in rows:
+        rough_corpus.append({
+            "source": row.get("source", ""),
+            "sourceUrl": row.get("sourceUrl", ""),
+            "publishedAt": row.get("publishedAt", ""),
+            "originalTitle": row.get("originalTitle", ""),
+            "headline": row.get("deterministicHeadline", ""),
+            "context": row.get("deterministicContext", ""),
+            "category": row.get("deterministicCategory", ""),
+        })
+    return [row_to_editor_item(i, row, min_article_chars, rough_corpus) for i, row in enumerate(rows)]
 
 
 def write_prompt(run_dir: Path, batch_files: list[Path]) -> None:
@@ -251,11 +264,12 @@ Process each `batch_*.json` file in this directory: {batches}
 
 For every item:
 1. Treat `articleText` as the primary source when `articleTextChars` is sufficient.
-2. Use `rescue.qaErrors` and `currentCard` only to understand why the deterministic card failed; do not preserve bad generic wording.
-3. Return `reject` when the available text is too thin for a specific Pointa headline, summary, and takeaway.
-4. Keep Hebrew output concise and follow the Pointa editor contract.
-5. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, Lebanon, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
-6. Do not publish, deploy, or apply results from this directory directly.
+2. For one-line bulletins, use `contextPack.relatedItems` and `contextPack.stableBackground` only as corroborating context. Do not invent names, casualties, motives, targets, or consequences that are not supported there.
+3. Use `rescue.qaErrors` and `currentCard` only to understand why the deterministic card failed; do not preserve bad generic wording.
+4. Return `reject` when the available text is too thin and `contextPack` does not contain enough related evidence for a specific Pointa headline, summary, and takeaway.
+5. Keep Hebrew output concise and follow the Pointa editor contract.
+6. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, Lebanon, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
+7. Do not publish, deploy, or apply results from this directory directly.
 
 Write one result file per batch, named `batch_N_results.json`.
 Each result object must include:

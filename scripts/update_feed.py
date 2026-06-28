@@ -47,6 +47,7 @@ MAX_FEED_ITEMS = 200
 FEED_RETENTION_DAYS = 7
 FAST_CATEGORY_RETENTION_HOURS = 18
 MIN_CONTEXT_WORDS_BEFORE_ENRICH = 28
+MIN_DIRECT_PUBLISH_CONTEXT_WORDS = 28
 FAST_ENRICH_MAX_PER_SOURCE = 1
 FAST_ENRICH_MAX_PER_RUN = 20
 RSS_SOURCES_PATH = ROOT / "rss_sources.json"
@@ -933,6 +934,45 @@ def should_enrich_for_context(candidate: Candidate) -> bool:
     if word_count(candidate.description) < MIN_CONTEXT_WORDS_BEFORE_ENRICH:
         return True
     if has_latin_text(candidate.description) and not is_foreign_source_label(candidate.source):
+        return True
+    return False
+
+
+def candidate_needs_editor_before_direct_publish(candidate: Candidate, source: dict | None = None) -> bool:
+    """Return whether a candidate has too little material for FAST publishing.
+
+    This is not a quality-auditor layer. It is a routing rule in the ingestion
+    path: thin current-affairs rows need the full editor/context pack first
+    instead of becoming deterministic feed cards and being rescued later.
+    """
+    source = source or {}
+    title = sanitize_title(candidate.title or candidate.original_title or "")
+    desc = clean_text(candidate.description or "")
+    source_name = str(source.get("name") or candidate.source or "")
+    source_url = str(candidate.url or "").lower()
+    category_hint = str(source.get("categoryHint") or "")
+    category, _cls = categorize_item(title, desc, source_name)
+    direct_sensitive_categories = CURRENT_AFFAIRS_CATEGORIES | {"דעות"}
+    if category not in direct_sensitive_categories and category_hint not in direct_sensitive_categories:
+        return False
+    if "פיקוד העורף" in source_name:
+        return False
+    if official_telegram_pointa_fields(candidate):
+        return False
+    # Official/live bulletin sources can be useful, but a one-line update needs
+    # corroborating context before it becomes a main-feed Pointa article card.
+    official_or_live = (
+        "t.me/" in source_url
+        or "telegram.me/" in source_url
+        or any(marker in source_name for marker in ["דובר צה", "צה״ל", "צה\"ל", "משטרת ישראל", "דוברות משטרת"])
+    )
+    desc_words = word_count(desc)
+    title_words = word_count(title)
+    if desc_words < MIN_DIRECT_PUBLISH_CONTEXT_WORDS:
+        return True
+    if official_or_live and desc_words < 36:
+        return True
+    if desc_words <= title_words + 4:
         return True
     return False
 
@@ -4096,6 +4136,7 @@ def main() -> int:
         "rawCandidates": 0,
         "validCandidates": 0,
         "qaRejectedCandidates": 0,
+        "editorRoutedCandidates": 0,
         "articleEnrichAttempts": 0,
         "articleEnrichImproved": 0,
         "articleEnrichSkippedBudget": 0,
@@ -4122,6 +4163,7 @@ def main() -> int:
             "raw": 0,
             "valid": 0,
             "qaRejected": 0,
+            "editorRouted": 0,
             "articleEnrichAttempts": 0,
             "articleEnrichImproved": 0,
             "articleEnrichSkippedBudget": 0,
@@ -4190,6 +4232,10 @@ def main() -> int:
                 else:
                     source_report["articleEnrichSkippedBudget"] += 1
                     run_report["articleEnrichSkippedBudget"] += 1
+            if candidate_needs_editor_before_direct_publish(c, source):
+                source_report["editorRouted"] += 1
+                run_report["editorRoutedCandidates"] += 1
+                continue
             # Do not let the first two raw RSS rows from a source block fresher
             # usable rows underneath them.  Core sources such as YNET/Maariv
             # often lead with thin flashes that deterministic QA correctly

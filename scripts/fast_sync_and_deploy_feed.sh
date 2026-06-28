@@ -84,6 +84,34 @@ if before.exists() and feed_path.exists():
                 item.pop('takeaway', None)
         feed_path.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 PY
+# Bridge RSS collection to publishable Pointa cards before deployment.  This is
+# part of ingestion, not a late expensive audit: if RSS produced candidates that
+# are too thin for deterministic publication, run a bounded editor cycle now.
+BRIDGE_ARGS=()
+if python3 - <<'PY'
+import json
+import sys
+from pathlib import Path
+
+report_path = Path("feed_a_fast_sync_report.json")
+try:
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+except Exception:
+    sys.exit(1)
+
+needs_editor = (
+    int(report.get("editorRoutedCandidates") or 0)
+    + int(report.get("qaRejectedCandidates") or 0)
+    + int(report.get("shortAfterEnrich") or 0)
+)
+if needs_editor <= 0:
+    sys.exit(1)
+print(f"FAST editor bridge: {needs_editor} candidates need full-card creation before deploy.")
+PY
+then
+  BRIDGE_ARGS=(--force)
+fi
+python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-10}" --batch-size 5 --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-2}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --json
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: FAST is only successful if the candidate feed is visibly fresh.
 # Never record a publication event or return OK for a stale/thin feed.
@@ -94,7 +122,7 @@ import sys
 from pathlib import Path
 
 report = json.loads(Path("tmp/fast_candidate_health_gate.json").read_text(encoding="utf-8"))
-hard_freshness_codes = {"no_new_top_item_sla", "stale_top_item"}
+hard_freshness_codes = {"no_new_top_item_sla", "stale_top_item", "too_few_recent_items_sla", "too_few_recent_sources_sla"}
 errors = report.get("liveErrors") or []
 blocked = [err for err in errors if err.get("code") in hard_freshness_codes]
 if blocked:

@@ -19,6 +19,7 @@ import argparse
 import glob
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -36,15 +37,20 @@ RUNS_DIR = ROOT / "tmp" / "editor-runs"
 SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 
 try:
-    from update_feed import fetch_article_image  # type: ignore
+    from update_feed import fetch_article_image, filter_main_feed_breaking_leaks  # type: ignore
 except Exception:  # pragma: no cover
     fetch_article_image = None
+    filter_main_feed_breaking_leaks = None
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PointaEditorPipeline/0.1)",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "he-IL,he;q=0.9,en-US;q=0.7,en;q=0.5",
 }
+
+ARTICLE_FETCH_TIMEOUT = max(1, int(os.environ.get("POINTA_EDITOR_ARTICLE_FETCH_TIMEOUT", "15")))
+JINA_FETCH_TIMEOUT = max(1, int(os.environ.get("POINTA_EDITOR_JINA_FETCH_TIMEOUT", "25")))
+JINA_MAX_ATTEMPTS = max(0, int(os.environ.get("POINTA_EDITOR_JINA_MAX_ATTEMPTS", "2")))
 
 CATEGORY_CLASS = {
     "ביטחון": "security",
@@ -61,6 +67,7 @@ CATEGORY_CLASS = {
     "רכילות": "real",
     "ספורט": "real",
     "נדל״ן": "real",
+    "מזג אוויר": "real",
     "חדשות": "",
     "דעות": "",
 }
@@ -87,12 +94,175 @@ GENERIC_TAKEAWAYS = [
     "הפרט שקובע מה באמת השתנה", "הוא הפרט שקובע מה באמת השתנה", "עשוי לשנות היערכות",
 ]
 
+STOPWORDS = {
+    "של", "על", "את", "עם", "לא", "כי", "זה", "זו", "הוא", "היא", "הם", "הן",
+    "גם", "או", "אם", "כל", "יש", "אין", "אל", "עד", "בו", "בה", "בין", "כדי",
+    "לאחר", "בעקבות", "יותר", "פחות", "היום", "מחר", "אתמול", "חדש", "חדשה",
+    "דיווח", "דיווחו", "פורסם", "לפי", "אחרי", "לפני",
+    "סיפור", "הסיפור", "אירוע", "האירוע", "נמסר", "שבת", "חשוב", "לבדוק",
+    "דרמה", "בלתי", "מוכר", "מעבר", "לצופים", "מסך", "הטלוויזיוני",
+    "הביטחון", "הנחיות", "השגרה", "ולכן", "עשוי", "עשויה", "להשפיע",
+    "רשמי", "רשמיות", "רשמית",
+}
+
 
 def clean_text(text: str) -> str:
     text = html.unescape(text or "")
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+def compact_source_text(text: str, limit: int = 220) -> str:
+    text = clean_text(text)
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].strip()
+    return cut or text[:limit].strip()
+
+
+def story_text(item: dict[str, Any]) -> str:
+    current = item.get("currentCard") if isinstance(item.get("currentCard"), dict) else {}
+    rescue = item.get("rescue") if isinstance(item.get("rescue"), dict) else {}
+    source_row = rescue.get("sourceQueueRow") if isinstance(rescue.get("sourceQueueRow"), dict) else {}
+    parts = [
+        item.get("originalTitle"),
+        item.get("headline"),
+        item.get("description"),
+        item.get("context"),
+        item.get("summary"),
+        item.get("articleText", "")[:900],
+        current.get("headline"),
+        current.get("summary"),
+        source_row.get("originalTitle"),
+        source_row.get("deterministicHeadline"),
+        source_row.get("deterministicContext"),
+    ]
+    return clean_text(" ".join(str(p or "") for p in parts))
+
+
+def story_match_text(item: dict[str, Any]) -> str:
+    current = item.get("currentCard") if isinstance(item.get("currentCard"), dict) else {}
+    rescue = item.get("rescue") if isinstance(item.get("rescue"), dict) else {}
+    source_row = rescue.get("sourceQueueRow") if isinstance(rescue.get("sourceQueueRow"), dict) else {}
+    parts = [
+        item.get("originalTitle"),
+        item.get("headline"),
+        item.get("description"),
+        item.get("context"),
+        item.get("summary"),
+        current.get("headline"),
+        current.get("summary"),
+        source_row.get("originalTitle"),
+        source_row.get("deterministicHeadline"),
+        source_row.get("deterministicContext"),
+    ]
+    return clean_text(" ".join(str(p or "") for p in parts))
+
+
+def story_keywords(text: str) -> set[str]:
+    words = re.findall(r"[A-Za-z][A-Za-z0-9'-]{2,}|[\u0590-\u05ff][\u0590-\u05ff\"׳״'-]{2,}", text or "")
+    out: set[str] = set()
+    for word in words:
+        normalized = word.strip("\"'׳״-").lower()
+        if len(normalized) < 3 or normalized in STOPWORDS:
+            continue
+        out.add(normalized)
+    return out
+
+
+def parse_dt(raw: Any) -> datetime | None:
+    try:
+        dt = datetime.fromisoformat(str(raw or "").replace("Z", "+00:00"))
+        return dt
+    except Exception:
+        return None
+
+
+def minutes_apart(a: datetime | None, b: datetime | None) -> float:
+    if not a or not b:
+        return 10_000.0
+    try:
+        if a.tzinfo and b.tzinfo:
+            return abs((a - b).total_seconds()) / 60
+        return abs((a.replace(tzinfo=None) - b.replace(tzinfo=None)).total_seconds()) / 60
+    except Exception:
+        return 10_000.0
+
+
+def stable_background_notes(text: str, category: str, source: str) -> list[str]:
+    low = text.lower()
+    notes: list[str] = []
+    if any(k in text for k in ["חיזבאללה", "לבנון", "דרום לבנון"]):
+        notes.append("רקע יציב: בזירה הצפונית ישראל ממשיכה לדווח על אכיפה ותקיפות נקודתיות מול פעילות חיזבאללה סמוך לגבול; אין להפוך זאת לטענה על הסלמה רחבה בלי מקור נוסף.")
+    if any(k in text for k in ["עזה", "חמאס", "רצועת עזה"]):
+        notes.append("רקע יציב: אירועים בעזה צריכים להיות ממוסגרים סביב העובדה המדווחת בלבד; נתוני נפגעים, יעדים או אחריות אינם נכתבים בלי מקור מפורש.")
+    if any(k in text for k in ["משטרה", "נעצר", "מעצר", "חשוד", "חשודים"]) or "משטרת ישראל" in source:
+        notes.append("רקע יציב: בהודעות משטרה משתמשים בניסוח זהיר של חשד, חקירה ומעצרים; אין לקבוע אשמה או מניע בלי מקור מפורש.")
+    if category == "אקטואליה בעולם" or any(k in low for k in ["trump", "iran", "russia", "ukraine", "china"]):
+        notes.append("רקע יציב: בסיפור בינלאומי אפשר להסביר את ההקשר הגיאופוליטי רק כשהוא נובע מהפרטים שבמקורות הסמוכים.")
+    return notes[:3]
+
+
+def build_context_pack(item: dict[str, Any], corpus: list[dict[str, Any]], extraction: ArticleExtraction | None = None) -> dict[str, Any]:
+    """Build a cautious context bundle for thin/breaking items.
+
+    The pack is evidence for the editor, not a generated story. Related rows
+    are selected by shared entities/keywords and publication proximity so a
+    one-line bulletin can be enriched only when nearby material supports it.
+    """
+    primary_text = story_text(item)
+    if extraction:
+        primary_text = clean_text(" ".join([primary_text, extraction.title, extraction.description, extraction.text[:900]]))
+    match_text = story_match_text(item)
+    if extraction:
+        match_text = clean_text(" ".join([match_text, extraction.title, extraction.description]))
+    primary_keys = story_keywords(match_text)
+    current_dt = parse_dt(item.get("publishedAt"))
+    current_url = item.get("sourceUrl") or item.get("url") or ""
+    scored: list[tuple[float, dict[str, Any], set[str]]] = []
+    for other in corpus:
+        other_url = other.get("sourceUrl") or other.get("url") or ""
+        if other is item or (current_url and other_url == current_url):
+            continue
+        other_text = story_match_text(other)
+        other_keys = story_keywords(other_text)
+        overlap = primary_keys & other_keys
+        if len(overlap) < 2:
+            continue
+        delta = minutes_apart(current_dt, parse_dt(other.get("publishedAt")))
+        if delta > 360:
+            continue
+        score = len(overlap) * 3
+        if delta <= 90:
+            score += 4
+        if (item.get("category") or "") and item.get("category") == other.get("category"):
+            score += 2
+        if item.get("source") != other.get("source"):
+            score += 1
+        scored.append((score, other, overlap))
+    scored.sort(key=lambda row: (row[0], row[1].get("publishedAt") or ""), reverse=True)
+    related = []
+    for _score, other, overlap in scored[:5]:
+        current = other.get("currentCard") if isinstance(other.get("currentCard"), dict) else {}
+        related.append({
+            "source": other.get("source", ""),
+            "sourceUrl": other.get("sourceUrl") or other.get("url") or "",
+            "publishedAt": other.get("publishedAt", ""),
+            "title": compact_source_text(other.get("originalTitle") or other.get("headline") or current.get("headline") or ""),
+            "summary": compact_source_text(other.get("context") or other.get("description") or current.get("summary") or ""),
+            "sharedSignals": sorted(overlap)[:8],
+        })
+    current_card = item.get("currentCard") if isinstance(item.get("currentCard"), dict) else {}
+    category = item.get("category") or current_card.get("category", "")
+    background = stable_background_notes(primary_text, str(category or ""), str(item.get("source") or ""))
+    return {
+        "purpose": "Use only as corroborating context for thin/breaking items. Do not invent facts not present in articleText, description, relatedItems, or stableBackground.",
+        "primaryFact": compact_source_text(primary_text, 360),
+        "relatedItems": related,
+        "stableBackground": background,
+        "enrichmentLevel": "related" if related else ("background_only" if background else "none"),
+    }
 
 
 class ArticleParser(HTMLParser):
@@ -156,9 +326,9 @@ def fetch_jina_text(url: str) -> str:
         "https://r.jina.ai/http://r.jina.ai/http://" + url,
         "https://r.jina.ai/http://" + url.replace("https://", "").replace("http://", ""),
     ]
-    for reader_url in candidates:
+    for reader_url in candidates[:JINA_MAX_ATTEMPTS]:
         try:
-            raw = fetch(reader_url, timeout=25)
+            raw = fetch(reader_url, timeout=JINA_FETCH_TIMEOUT)
         except Exception:
             continue
         lines = []
@@ -189,7 +359,7 @@ def extract_article(url: str) -> ArticleExtraction:
     if not url:
         return ArticleExtraction(text="")
     try:
-        raw = fetch(url, timeout=15)
+        raw = fetch(url, timeout=ARTICLE_FETCH_TIMEOUT)
     except Exception:
         raw = ""
     parser = ArticleParser()
@@ -264,6 +434,7 @@ def make_editor_input(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "articleText": extraction.text,
             "articleTextChars": len(extraction.text),
             "articleTextMethod": extraction.method,
+            "contextPack": build_context_pack(item, items, extraction),
             "publishedAt": item.get("publishedAt", ""),
             "language": "he",
             "currentCard": {
@@ -286,10 +457,11 @@ Process each `batch_*.json` file in this directory: {batches}
 
 For every item:
 1. Use `articleText` as the primary source when `articleTextChars` is sufficient.
-2. Do not summarize the RSS. Identify the real story, important facts, and bottom line.
-3. Return `reject` when the available text is too thin for a specific Pointa takeaway.
-4. Keep Hebrew output concise and follow the Pointa editor contract.
-5. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
+2. For one-line bulletins, use `contextPack.relatedItems` and `contextPack.stableBackground` only as corroborating context. Do not invent names, casualties, motives, targets, or consequences that are not supported there.
+3. Do not summarize the RSS. Identify the real story, important facts, and bottom line.
+4. Return `reject` when `articleText` is thin and `contextPack` does not contain enough related evidence for a specific Pointa takeaway.
+5. Keep Hebrew output concise and follow the Pointa editor contract.
+6. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
 
 Write one result file per batch, named `batch_N_results.json`.
 Each result object must include:
@@ -377,6 +549,8 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
         errors.append("missing summary")
     if any(x in summary for x in FORBIDDEN_MEDIATION):
         errors.append("summary contains mediation wording")
+    if headline and summary and summary.startswith(headline):
+        errors.append("headline is just the opening fragment of the summary")
     sentence_text = re.sub(r"(?<=\d)[.](?=\d)", "", summary)
     sentence_count = len([s for s in re.split(r"[.!?؟]+", sentence_text) if s.strip()])
     if sentence_count > 2:
@@ -421,6 +595,10 @@ def read_results(run_dir: Path) -> list[dict[str, Any]]:
     return results
 
 
+def is_gossip_source(source: str) -> bool:
+    return any(x in source for x in ["סלבס", "TMI", "Pplus", "פנאי פלוס", "פפראצי", "פפארצי", "רכילות", "Celebs"])
+
+
 def editor_source_item(row: dict[str, Any]) -> dict[str, Any]:
     if isinstance(row.get("feedItem"), dict):
         return dict(row["feedItem"])
@@ -453,6 +631,9 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
         item = editor_source_item(input_by_index[i])
         item["category"] = r.get("category", item.get("category", ""))
         item["categoryClass"] = r.get("categoryClass", item.get("categoryClass", ""))
+        if is_gossip_source(str(item.get("source") or "")):
+            item["category"] = "רכילות"
+            item["categoryClass"] = "real"
         item["headline"] = r.get("headline", item.get("headline", ""))
         item["context"] = r.get("summary", item.get("context", ""))
         item["takeaway"] = r.get("takeaway", item.get("takeaway", ""))
@@ -631,6 +812,11 @@ def command_qa(args: argparse.Namespace) -> int:
             results = read_results(run_dir)
     errors, rejects = write_report(run_dir, editor_input, results)
     preview = build_preview_feed(feed, editor_input, results)
+    if callable(filter_main_feed_breaking_leaks):
+        preview["items"] = filter_main_feed_breaking_leaks(
+            list(preview.get("items") or []),
+            "editor_preview_main_feed_no_breaking_guard",
+        )
     (run_dir / "feed_editor_preview.json").write_text(json.dumps(preview, ensure_ascii=False, indent=2), encoding="utf-8")
     summary = {
         "runDir": str(run_dir),
@@ -659,6 +845,11 @@ def command_apply(args: argparse.Namespace) -> int:
         print(f"Refusing to apply editor preview: qaFailures={summary.get('qaFailures')}", file=sys.stderr)
         return 3
     feed = json.loads(preview_path.read_text(encoding="utf-8"))
+    if callable(filter_main_feed_breaking_leaks):
+        feed["items"] = filter_main_feed_breaking_leaks(
+            list(feed.get("items") or []),
+            "editor_apply_main_feed_no_breaking_guard",
+        )
     # Keep a small audit marker but avoid preview-only wording in the live file.
     feed["editorRun"] = {
         "runDir": str(run_dir),
