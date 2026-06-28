@@ -23,6 +23,7 @@ SUMMARY_MAX = 220
 TAKEAWAY_MAX = 95
 
 ORPHAN_PREFIX_RE = re.compile(r"^\s*[-–—]+\s*|^\s*(ואז|אבל|אולם|כי|לכן|בנוסף|לדבריו|לדבריה|לדברי)\b")
+MID_SENTENCE_FRAGMENT_RE = re.compile(r"^\s*(?:ב|במהלך|בעת|לאחר)\S{2,},\s+(?:בה|בו|שבה|שבו|כש|אשר)\b")
 DANGLING_ENDINGS = {
     "של", "את", "על", "עם", "אל", "כל", "כי", "אבל", "אולם", "כאשר", "בגלל",
     "בין", "תוך", "לפני", "אחרי", "עד", "מול", "נגד", "כדי", "אם", "בעקבות",
@@ -199,6 +200,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_too_long", f"Headline length {len(headline)} > {HEADLINE_MAX}", item)
     if ORPHAN_PREFIX_RE.search(headline):
         add_issue(issues, "error", idx, "headline_orphan_prefix", "Headline starts with an orphan suffix/connective", item)
+    if MID_SENTENCE_FRAGMENT_RE.search(headline):
+        add_issue(issues, "error", idx, "headline_mid_sentence_fragment", "Headline starts from the middle of a source sentence", item)
     if looks_cut(headline):
         add_issue(issues, "error", idx, "headline_looks_cut", "Headline appears mechanically cut", item)
     if "|" in headline:
