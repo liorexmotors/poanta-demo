@@ -47,7 +47,7 @@ Warnings: 9
 
 ### WARNING · headline_near_duplicate_summary · item 2
 - Headline is a clipped/near-duplicate version of the summary
-- Headline: `התקיפות הן תגובה לפגיעה במכלית נפט באמצעות כטב"מ שהתרחשה אתמול`
+- Headline: `התקיפות הן תגובה לפגיעה במכלית נפט באמצעות כטב"ם שהתרחשה אתמול`
 - Original: `ארה"ב תקפה באיראן לילה שני ברציפות. צבא ארה"ב: "תגובה לתוקפנותה נגד ספינות במצר הורמוז"`
 - Source: הארץ - חדשות
 - URL: https://www.haaretz.co.il/news/politics/2026-06-28/ty-article/.premium/0000019f-0b1b-db03-a7bf-ef7b64050000
