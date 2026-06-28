@@ -34,6 +34,14 @@ LIVE_TEXT_PATTERNS = (
 )
 
 
+OFFICIAL_TELEGRAM_SOURCES = (
+    "דובר צה״ל",
+    "דובר צה\"ל",
+    "דוברות משטרת ישראל",
+    "משטרה",
+)
+
+
 def item_text(item: dict[str, Any]) -> str:
     fields = [
         item.get("sourceUrl"),
@@ -51,6 +59,20 @@ def item_text(item: dict[str, Any]) -> str:
     return " ".join(str(x or "") for x in fields)
 
 
+def word_count(value: Any) -> int:
+    return len(re.findall(r"[\w\u0590-\u05FF]+", str(value or "")))
+
+
+def is_edited_official_telegram_card(item: dict[str, Any]) -> bool:
+    source_text = " ".join(str(item.get(k) or "") for k in ("source", "sourceLogo"))
+    url = str(item.get("sourceUrl") or "").lower()
+    if "t.me/" not in url and "telegram.me/" not in url:
+        return False
+    if not any(marker in source_text for marker in OFFICIAL_TELEGRAM_SOURCES):
+        return False
+    return word_count(item.get("context")) >= 18 and word_count(item.get("headline")) >= 4
+
+
 def leak_reasons(item: dict[str, Any]) -> list[str]:
     text = item_text(item)
     low = text.lower()
@@ -62,9 +84,13 @@ def leak_reasons(item: dict[str, Any]) -> list[str]:
     if item.get("emergencyFreshnessFallback") is True:
         reasons.append("emergencyFreshnessFallback:true")
     for pat in LIVE_URL_PATTERNS:
+        if pat in {"t.me/", "telegram.me/"} and is_edited_official_telegram_card(item):
+            continue
         if pat in low:
             reasons.append(f"live_url:{pat}")
     for pat in LIVE_TEXT_PATTERNS:
+        if pat in {"טלגרם", "telegram"} and is_edited_official_telegram_card(item):
+            continue
         haystack = low if re.fullmatch(r"[A-Za-z]+", pat) else text
         needle = pat.lower() if haystack is low else pat
         if needle in haystack:

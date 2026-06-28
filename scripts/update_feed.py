@@ -3733,6 +3733,15 @@ def main_feed_breaking_leak_reasons(item: dict) -> list[str]:
     text = " ".join(parts)
     low = text.lower()
     reasons: list[str] = []
+    official_telegram_sources = ("דובר צה״ל", "דובר צה\"ל", "דוברות משטרת ישראל", "משטרה")
+    source_text = " ".join(str(item.get(key) or "") for key in ("source", "sourceLogo"))
+    source_url = str(item.get("sourceUrl") or "").lower()
+    official_telegram_card = (
+        ("t.me/" in source_url or "telegram.me/" in source_url)
+        and any(marker in source_text for marker in official_telegram_sources)
+        and word_count(str(item.get("context") or "")) >= 18
+        and word_count(str(item.get("headline") or "")) >= 4
+    )
     if item.get("breaking") is True:
         reasons.append("breaking:true")
     if item.get("promotedFromBreaking") is True:
@@ -3740,9 +3749,13 @@ def main_feed_breaking_leak_reasons(item: dict) -> list[str]:
     if item.get("emergencyFreshnessFallback") is True:
         reasons.append("emergencyFreshnessFallback:true")
     for marker in ["/break/", "rotter.net/forum/scoops", "rotter.net/forum/scoops1", "t.me/", "telegram.me/"]:
+        if marker in {"t.me/", "telegram.me/"} and official_telegram_card:
+            continue
         if marker in low:
             reasons.append(f"live_url:{marker}")
     for marker in ["מבזק", "מבזקים", "טלגרם", "רוטר", "telegram", "rotter"]:
+        if marker in {"טלגרם", "telegram"} and official_telegram_card:
+            continue
         haystack = low if marker.isascii() else text
         needle = marker.lower() if marker.isascii() else marker
         if needle in haystack:

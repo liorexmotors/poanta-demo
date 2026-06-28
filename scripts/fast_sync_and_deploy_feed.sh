@@ -88,6 +88,20 @@ python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: FAST is only successful if the candidate feed is visibly fresh.
 # Never record a publication event or return OK for a stale/thin feed.
 python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/fast_candidate_health_gate.json
+python3 - <<'PY'
+import json
+import sys
+from pathlib import Path
+
+report = json.loads(Path("tmp/fast_candidate_health_gate.json").read_text(encoding="utf-8"))
+hard_freshness_codes = {"no_new_top_item_sla", "stale_top_item"}
+errors = report.get("liveErrors") or []
+blocked = [err for err in errors if err.get("code") in hard_freshness_codes]
+if blocked:
+    for err in blocked:
+        print(f"FAST freshness hard stop: {err.get('code')}: {err.get('message')}", file=sys.stderr)
+    sys.exit(2)
+PY
 python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run-id "${POANTA_RUN_ID:-fast-sync}" || true
 python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true
