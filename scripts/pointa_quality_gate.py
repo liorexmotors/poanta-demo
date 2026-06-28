@@ -22,7 +22,7 @@ HEADLINE_MAX = 75
 SUMMARY_MAX = 220
 TAKEAWAY_MAX = 95
 
-ORPHAN_PREFIX_RE = re.compile(r"^\s*[-–—]+\s*|^\s*(ואז|אבל|אולם|כי|לכן)\b")
+ORPHAN_PREFIX_RE = re.compile(r"^\s*[-–—]+\s*|^\s*(ואז|אבל|אולם|כי|לכן|בנוסף|לדבריו|לדבריה|לדברי)\b")
 DANGLING_ENDINGS = {
     "של", "את", "על", "עם", "אל", "כל", "כי", "אבל", "אולם", "כאשר", "בגלל",
     "בין", "תוך", "לפני", "אחרי", "עד", "מול", "נגד", "כדי", "אם", "בעקבות",
@@ -133,6 +133,8 @@ def looks_cut(headline: str) -> bool:
     quote_test = re.sub(r'(?<=[A-Za-zא-ת])"(?=[A-Za-zא-ת])', '', h)
     if quote_test.count('"') % 2 or h.count('(') > h.count(')'):
         return True
+    if h.count("'") % 2:
+        return True
     if re.search(r"(?<![א-ת])(כי|כאשר|בזמן ש|לאחר ש|בעוד ש)(?![א-ת])\s+[^.?!]{0,90}$", h) and not re.search(r"[.?!]$", h):
         return True
     return False
@@ -208,12 +210,16 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
     official_alert_source = "פיקוד העורף" in source
     if original and not official_alert_source and (headline in original or original in headline or overlap_ratio(original, headline) >= 0.72):
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
-    if context and norm_sentence(headline) == norm_sentence(context):
+    headline_norm = norm_sentence(headline)
+    context_norm = norm_sentence(context)
+    if context and headline_norm == context_norm:
         add_issue(issues, "error", idx, "headline_duplicates_summary", "Headline duplicates the summary", item)
     if context and len(headline) >= 24 and norm(context).startswith(norm(headline)):
         add_issue(issues, "error", idx, "headline_is_summary_prefix", "Headline is just the opening fragment of the summary", item)
+    if context and len(headline) >= 24 and headline_norm and headline_norm in context_norm:
+        add_issue(issues, "error", idx, "headline_is_summary_fragment", "Headline is a sentence fragment copied from the summary", item)
     if context and overlap_ratio(headline, context) >= 0.88 and (len(headline) >= 58 or len(context) <= 120):
-        add_issue(issues, "warning", idx, "headline_near_duplicate_summary", "Headline is a clipped/near-duplicate version of the summary", item)
+        add_issue(issues, "error", idx, "headline_near_duplicate_summary", "Headline is a clipped/near-duplicate version of the summary", item)
 
     blob = " ".join([headline, context, original, source])
     content_blob = " ".join([headline, context, original])
