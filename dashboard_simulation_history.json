@@ -1,24 +1,25 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-06-28T16:25:40+00:00",
+  "generatedAt": "2026-06-28T18:19:57+00:00",
   "summary": {
-    "sampleCount": 58,
+    "sampleCount": 59,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 8.33,
-    "avgAfterHealthScore": 82.25,
+    "avgHealthDelta": 6.83,
+    "avgAfterHealthScore": 79.58,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 87,
-      "rollingScore": 78.0,
+      "latestScore": 68,
+      "rollingScore": 78.4,
       "readyRuns": 15,
       "criticalBlockers": [
-        "top12_under60_below_9"
+        "newsiness_top10_below_7",
+        "soft_top10_above_2"
       ],
       "matureForProduction": false
     },
@@ -26,9 +27,9 @@
       "latestScore": 88,
       "latestSummaryLine": "טוב",
       "latestReportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-      "window": 14,
+      "window": 15,
       "averageScore": 88.0,
-      "positiveReports": 14
+      "positiveReports": 15
     }
   },
   "runs": [
@@ -15115,6 +15116,388 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 0,
         "healthScore": 4
+      }
+    },
+    {
+      "generatedAt": "2026-06-28T18:19:57+00:00",
+      "feedFingerprint": "2043310841523116081",
+      "before": {
+        "newsinessTop10": 3,
+        "softTop10": 7,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 12,
+        "uniqueSourcesTop20": 8,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 7
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 7
+          },
+          {
+            "name": "הארץ",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "דה מרקר",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "בשבע",
+            "count": 1
+          },
+          {
+            "name": "מעריב",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 6,
+        "trendGapMatchedTop20": 5,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 84,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "תל אביב מקדמת בית חדש לעולים ולחיילים בודדים",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 12,
+              "url": "https://www.jpost.com/israel-news/article-900739",
+              "trendMatch": {
+                "trend": "כחודש לאחר מעצרו: בן זוגה לשעבר של ליה מלכה ישוחרר למעצר בית",
+                "clusterKey": "ליה מלכה",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-28T20:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3849332",
+                "overlapTokens": [
+                  "בית",
+                  "חדשות"
+                ],
+                "score": 27.45,
+                "boost": 27.45
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "צה\"ל מרחיב את דפוס התקיפות גם בזמן הפסקות האש",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 12,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-900745",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 3,
+              "headline": "משתתף באיירונמן ניס נהרג אחרי שהתחרות בוטלה",
+              "source": "וואלה ספורט - ענפים נוספים",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://sports.walla.co.il/item/3849310",
+              "trendMatch": null,
+              "queueScore": 30.0
+            },
+            {
+              "rank": 12,
+              "headline": "הדחת דרום קוריאה מהמונדיאל מגיעה לבדיקת ממשלה",
+              "source": "הארץ - ספורט",
+              "canonicalSource": "הארץ",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 45,
+              "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-28/ty-article/.premium/0000019f-0f3b-d342-a9ff-5f3fac1e0000",
+              "trendMatch": null,
+              "queueScore": 17.0
+            },
+            {
+              "rank": 13,
+              "headline": "הטור נגד ביזור החינוך מזהיר מהעמקת הפערים",
+              "source": "דה מרקר - דעות",
+              "canonicalSource": "דה מרקר",
+              "category": "דעות",
+              "class": "other",
+              "ageMinutes": 45,
+              "url": "https://www.themarker.com/blogs/2026-06-28/ty-article/0000019f-0f29-d113-a1ff-afad2c830000",
+              "trendMatch": null,
+              "queueScore": 5.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 4,
+        "softTop10": 5,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 12,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "ynet",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "Daily Mail",
+            "count": 2
+          },
+          {
+            "name": "דה מרקר",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "בשבע",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 9,
+        "trendGapMatchedTop20": 7,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 84,
+          "readyCount": 5,
+          "hardReadyCount": 4,
+          "trendReadyCount": 1,
+          "uniqueReadySources": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "תל אביב מקדמת בית חדש לעולים ולחיילים בודדים",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 12,
+              "url": "https://www.jpost.com/israel-news/article-900739",
+              "trendMatch": {
+                "trend": "כחודש לאחר מעצרו: בן זוגה לשעבר של ליה מלכה ישוחרר למעצר בית",
+                "clusterKey": "ליה מלכה",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-06-28T20:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3849332",
+                "overlapTokens": [
+                  "בית",
+                  "חדשות"
+                ],
+                "score": 27.45,
+                "boost": 27.45
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "צה\"ל מרחיב את דפוס התקיפות גם בזמן הפסקות האש",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 12,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-900745",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 3,
+              "headline": "משתתף באיירונמן ניס נהרג אחרי שהתחרות בוטלה",
+              "source": "וואלה ספורט - ענפים נוספים",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://sports.walla.co.il/item/3849310",
+              "trendMatch": null,
+              "queueScore": 30.0
+            },
+            {
+              "rank": 4,
+              "headline": "הדחת דרום קוריאה מהמונדיאל מגיעה לבדיקת ממשלה",
+              "source": "הארץ - ספורט",
+              "canonicalSource": "הארץ",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 45,
+              "url": "https://www.haaretz.co.il/sport/world-cup/2026-06-28/ty-article/.premium/0000019f-0f3b-d342-a9ff-5f3fac1e0000",
+              "trendMatch": null,
+              "queueScore": 17.0
+            },
+            {
+              "rank": 8,
+              "headline": "הטור נגד ביזור החינוך מזהיר מהעמקת הפערים",
+              "source": "דה מרקר - דעות",
+              "canonicalSource": "דה מרקר",
+              "category": "דעות",
+              "class": "other",
+              "ageMinutes": 45,
+              "url": "https://www.themarker.com/blogs/2026-06-28/ty-article/0000019f-0f29-d113-a1ff-afad2c830000",
+              "trendMatch": null,
+              "queueScore": 5.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 46,
+      "afterHealthScore": 60,
+      "replacementReadiness": {
+        "score": 68,
+        "threshold": 80,
+        "components": {
+          "freshness": 20.0,
+          "newsinessTop10": 10.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 8.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "newsiness_top10_below_7",
+          "soft_top10_above_2"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 2,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 3,
+        "healthScore": 14
       }
     }
   ]
