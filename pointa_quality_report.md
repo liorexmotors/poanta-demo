@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 114
+Items checked: 113
 Errors: 0
 Warnings: 3
 
 ## Category distribution
 
-- ביטחון: 35
+- ביטחון: 34
 - פלילים: 21
 - רכילות: 14
 - פוליטיקה: 11
@@ -44,7 +44,7 @@ Warnings: 3
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 97
+### WARNING · category_sport_source · item 96
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
