@@ -1,18 +1,18 @@
 # Pointa Quality Gate Report
 
-Items checked: 138
+Items checked: 142
 Errors: 0
-Warnings: 7
+Warnings: 8
 
 ## Category distribution
 
-- ביטחון: 38
+- ביטחון: 39
 - פלילים: 21
-- רכילות: 17
-- חדשות: 12
+- רכילות: 18
+- חדשות: 13
 - פוליטיקה: 11
+- בריאות: 6
 - משפט: 6
-- בריאות: 5
 - טכנולוגיה: 5
 - ספורט: 5
 - תרבות: 4
@@ -25,54 +25,61 @@ Warnings: 7
 
 ## Issue counts
 
-- summary_long: 6
+- summary_long: 7
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · summary_long · item 8
+### WARNING · summary_long · item 2
+- Summary length 231 > 220
+- Headline: `לפני שחותכים מלון: לשטוף ולקרצף את הקליפה`
+- Original: `הפעולה המפתיעה שמומלץ לעשות תמיד לפני שחותכים מלון`
+- Source: וואלה בריאות - כל הכתבות
+- URL: https://healthy.walla.co.il/item/3849252
+
+### WARNING · summary_long · item 12
 - Summary length 232 > 220
 - Headline: `נביה ברי נגד ההסכם עם ישראל: "לא יעבור כפי שהוא"`
 - Original: `יו"ר הפרלמנט הלבנוני: "ההסכם עם ישראל גרוע, הוא לא יעבור וייושם כפי שהוא"`
 - Source: וואלה חדשות
 - URL: https://news.walla.co.il/item/3849411
 
-### WARNING · summary_long · item 10
+### WARNING · summary_long · item 14
 - Summary length 247 > 220
 - Headline: `רזה פהלווי קורא לשבוע מחאה עולמי נגד המשטר באיראן`
 - Original: `Crown Prince calls for 'week of action' against Iranian regime during burial of Ali Khamenei`
 - Source: The Jerusalem Post - Middle East
 - URL: https://www.jpost.com/middle-east/iran-news/article-900763
 
-### WARNING · summary_long · item 11
+### WARNING · summary_long · item 15
 - Summary length 239 > 220
 - Headline: `הפריצה לספקית של אפל חשפה לכאורה יותר מ-200 אלף קבצים`
 - Original: `מתקפת סייבר על ספקית של אפל: יותר מ-200 אלף מסמכים פנימיים דלפו`
 - Source: וואלה TECH - כל הכתבות
 - URL: https://tech.walla.co.il/item/3849458
 
-### WARNING · summary_long · item 12
+### WARNING · summary_long · item 16
 - Summary length 236 > 220
 - Headline: `שטיפה בסבון לא מספיקה: כך מחטאים קרש חיתוך`
 - Original: `שטפתם את קרש החיתוך אחרי שימוש? זו הטעות שרובכם עושים`
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3849466
 
-### WARNING · summary_long · item 27
+### WARNING · summary_long · item 31
 - Summary length 230 > 220
 - Headline: `בצל המחלוקת על התקציב: צה"ל הקפיא רכש ודורש עוד 40 מיליארד שקל`
 - Original: `מחיר המלחמה: בגלל בור של מיליארדים – צה"ל נאלץ "להקפיא רכש"`
 - Source: N12 - ביטחוני ופוליטי
 - URL: https://www.mako.co.il/news-military/2026_q2/Article-81aacf449101f91027.htm
 
-### WARNING · summary_long · item 65
+### WARNING · summary_long · item 69
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 123
+### WARNING · category_sport_source · item 127
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
