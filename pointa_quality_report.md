@@ -72,14 +72,14 @@ Warnings: 8
 - Source: N12 - ביטחוני ופוליטי
 - URL: https://www.mako.co.il/news-military/2026_q2/Article-81aacf449101f91027.htm
 
-### WARNING · summary_long · item 76
+### WARNING · summary_long · item 72
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 134
+### WARNING · category_sport_source · item 130
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
