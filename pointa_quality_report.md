@@ -12,8 +12,8 @@ Warnings: 3
 - פוליטיקה: 11
 - חדשות: 9
 - ספורט: 4
-- מזג אוויר: 4
 - טכנולוגיה: 4
+- מזג אוויר: 4
 - משפט: 3
 - כלכלה: 2
 - אקטואליה בעולם: 2
@@ -37,14 +37,14 @@ Warnings: 3
 - Source: וואלה חדשות - פוליטי-מדיני
 - URL: https://news.walla.co.il/item/3849528
 
-### WARNING · summary_long · item 38
+### WARNING · summary_long · item 34
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 95
+### WARNING · category_sport_source · item 91
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
