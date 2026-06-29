@@ -55,6 +55,20 @@ SYNC_PROFILES_PATH = ROOT / "pointa_sync_profiles.json"
 EXPERIMENTAL_VERSION = "20260517-pointa-fast-answer-v2"
 
 CURRENT_AFFAIRS_CATEGORIES = {"חדשות", "ביטחון", "פוליטיקה", "פלילים", "משפט", "אקטואליה בעולם"}
+EDITOR_ROUTE_QUALITY_CODES = {
+    "headline_raw_source_fragment",
+    "headline_generic",
+    "headline_mid_sentence_fragment",
+    "headline_looks_cut",
+    "headline_source_style",
+    "headline_is_summary_prefix",
+    "headline_is_summary_fragment",
+    "headline_near_duplicate_summary",
+    "headline_duplicates_summary",
+    "headline_copies_source",
+    "summary_generic_or_mediated",
+    "generic_takeaway_regression",
+}
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; PoantaRSS/0.1)",
@@ -956,6 +970,51 @@ def should_enrich_for_context(candidate: Candidate) -> bool:
     return False
 
 
+def deterministic_item_for_editor_routing(candidate: Candidate) -> dict:
+    title = sanitize_title(candidate.title or candidate.original_title or "")
+    desc = clean_text(candidate.description or "")
+    category, cls = categorize_item(title, desc, candidate.source)
+    official_fields = official_telegram_pointa_fields(candidate)
+    if official_fields:
+        headline, context, takeaway, category, cls = official_fields
+    elif "פיקוד העורף" in candidate.source:
+        headline = title
+        context = desc or "יש לפעול לפי הנחיות פיקוד העורף."
+        takeaway = "זו התרעה רשמית — ההנחיות חשובות יותר מהכותרת."
+        category, cls = "ביטחון", "security"
+    else:
+        headline = poanta_headline(title, desc, candidate.source)
+        context = context_text(title, desc, candidate.source)
+        takeaway = takeaway_text(category, title, desc)
+    return {
+        "category": category,
+        "categoryClass": cls,
+        "source": candidate.source,
+        "sourceLogo": source_logo(candidate.source),
+        "sourceUrl": candidate.url,
+        "imageUrl": candidate.image_url,
+        "publishedAt": candidate.published_at,
+        "hasSourceDate": bool(candidate.published_at),
+        "time": "routing-check",
+        "headline": headline,
+        "originalTitle": candidate.original_title or title,
+        "context": context,
+        "takeaway": takeaway,
+    }
+
+
+def deterministic_candidate_needs_editor(candidate: Candidate) -> bool:
+    """Route repairable deterministic-card failures to the editor before publish.
+
+    Quality Gate remains the last safety net, but current-affairs cards should
+    normally arrive there already edited. If the local deterministic writer
+    produces a source fragment or other repairable editorial failure, the row
+    belongs in the full-editor rescue queue instead of the direct publish path.
+    """
+    errors = item_quality_errors(deterministic_item_for_editor_routing(candidate))
+    return any(err.get("code") in EDITOR_ROUTE_QUALITY_CODES for err in errors)
+
+
 def candidate_needs_editor_before_direct_publish(candidate: Candidate, source: dict | None = None) -> bool:
     """Return whether a candidate has too little material for FAST publishing.
 
@@ -975,8 +1034,8 @@ def candidate_needs_editor_before_direct_publish(candidate: Candidate, source: d
         return False
     if "פיקוד העורף" in source_name:
         return False
-    if official_telegram_pointa_fields(candidate):
-        return False
+    if deterministic_candidate_needs_editor(candidate):
+        return True
     # Official/live bulletin sources can be useful, but a one-line update needs
     # corroborating context before it becomes a main-feed Pointa article card.
     official_or_live = (
