@@ -34,6 +34,32 @@ GENERIC_HEADLINE_PATTERNS = [
     "במרכז הסיפור", "הידיעה חשובה", "הסיפור חשוב", "השאלה היא", "החשיבות היא",
     "מה מסתתר", "זה מה", "כל מה", "לא תאמינו", "סערה", "דרמה", "טירוף",
     "מגייס פרעון", "מגייס פרשן פוליטי", "באותו אירוע בו",
+    "חדשות, ידיעות מהארץ והעולם",
+    "חדשות ועדכונים",
+    "כל החדשות",
+]
+RAW_SOURCE_HEADLINE_PREFIXES = [
+    "שוטרי ",
+    "בלשי ",
+    "לוחמי ",
+    "כוחות ",
+    "מפקדי ",
+    "חוקרי ",
+    "דובר צה״ל",
+    "דובר צה\"ל",
+    "צה״ל הודיע",
+    "צה\"ל הודיע",
+    "תחילה נחקר",
+]
+RAW_SOURCE_HEADLINE_FRAGMENTS = [
+    "יחד עם לוחמי",
+    "בפיקוד אוגדה",
+    "במחוז מרכז",
+    "במרחב שפלה",
+    "במהלך השבועות האחרונים",
+    "עם התקדמות החקירה",
+    "לאחר איסוף ממצאים",
+    "נמצא תושב העיר",
 ]
 GENERIC_SUMMARY_PATTERNS = [
     "פורסם", "דיווח", "המקור", "הכתב", "כתבה בנושא", "הידיעה חשובה בגלל",
@@ -116,6 +142,22 @@ def overlap_ratio(a: str, b: str) -> float:
 def has_latin_leak(text: str) -> list[str]:
     words = re.findall(r"[A-Za-z][A-Za-z0-9-]{2,}", text or "")
     return [w for w in words if w not in ALLOWED_LATIN]
+
+
+def looks_like_raw_source_fragment(headline: str, source: str) -> bool:
+    h = norm(headline)
+    if not h:
+        return False
+    official_source = any(x in source for x in ["דוברות", "דובר צה״ל", "דובר צה\"ל", "טלגרם רשמי", "משטרת ישראל"])
+    if official_source and any(h.startswith(prefix) for prefix in RAW_SOURCE_HEADLINE_PREFIXES):
+        return True
+    if official_source and any(fragment in h for fragment in RAW_SOURCE_HEADLINE_FRAGMENTS):
+        return True
+    if re.match(r"^\s*(?:[^.!?]{18,},\s*){1,}[^.!?]{18,}$", h) and any(fragment in h for fragment in RAW_SOURCE_HEADLINE_FRAGMENTS):
+        return True
+    if any(x in h for x in ["חדשות, ידיעות", "הידיעות והחדשות בעיתון", "חדשות ועדכונים שוטפים"]):
+        return True
+    return False
 
 
 def looks_cut(headline: str) -> bool:
@@ -210,6 +252,8 @@ def validate_item(item: dict[str, Any], idx: int, issues: list[dict[str, Any]]) 
         add_issue(issues, "error", idx, "headline_source_style", "Headline is question/quote/source style", item)
     if any(p in headline for p in GENERIC_HEADLINE_PATTERNS):
         add_issue(issues, "error", idx, "headline_generic", "Headline contains generic/clickbait framing", item)
+    if looks_like_raw_source_fragment(headline, source):
+        add_issue(issues, "error", idx, "headline_raw_source_fragment", "Headline looks like a raw source/official-message fragment, not a Pointa event headline", item)
     official_alert_source = "פיקוד העורף" in source
     if original and not official_alert_source and (headline in original or original in headline or overlap_ratio(original, headline) >= 0.72):
         add_issue(issues, "error", idx, "headline_copies_source", "Pointa headline is too close to original title", item)
