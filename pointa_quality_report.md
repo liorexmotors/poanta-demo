@@ -1,50 +1,43 @@
 # Pointa Quality Gate Report
 
-Items checked: 159
+Items checked: 112
 Errors: 0
-Warnings: 3
+Warnings: 2
 
 ## Category distribution
 
-- ביטחון: 43
-- פלילים: 23
-- רכילות: 20
-- פוליטיקה: 15
-- חדשות: 13
-- כלכלה: 11
-- ספורט: 7
-- בריאות: 4
-- אקטואליה בעולם: 4
-- משפט: 4
+- ביטחון: 32
+- פלילים: 21
+- רכילות: 13
+- חדשות: 9
+- פוליטיקה: 9
+- משפט: 5
 - מזג אוויר: 4
 - טכנולוגיה: 4
-- תרבות: 3
-- רכב: 2
+- בריאות: 3
+- ספורט: 3
+- אקטואליה בעולם: 2
+- כלכלה: 2
+- תרבות: 2
 - צרכנות: 1
+- רכב: 1
 - דעות: 1
 
 ## Issue counts
 
-- summary_long: 2
+- summary_long: 1
 - category_sport_source: 1
 
 ## Issues
 
-### WARNING · summary_long · item 43
-- Summary length 229 > 220
-- Headline: `זוכי מחיר למשתכן בלוד מימשו רווח ממוצע של 1.2 מיליון שקל`
-- Original: `המספרים חשפו: פרויקט אחד, 150 משקיעי נדל"ן, רווח של 1.2 מיליון שקל לדירה`
-- Source: גלובס - נדל״ן ותשתיות
-- URL: https://www.globes.co.il/news/article.aspx?did=1001547226#utm_source=RSS
-
-### WARNING · summary_long · item 86
+### WARNING · summary_long · item 39
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 144
+### WARNING · category_sport_source · item 97
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
