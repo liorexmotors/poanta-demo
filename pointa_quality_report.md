@@ -1,22 +1,22 @@
 # Pointa Quality Gate Report
 
-Items checked: 102
+Items checked: 110
 Errors: 0
 Warnings: 2
 
 ## Category distribution
 
-- ביטחון: 31
+- ביטחון: 35
 - פלילים: 20
-- פוליטיקה: 10
-- רכילות: 10
-- חדשות: 8
+- רכילות: 12
+- חדשות: 9
+- פוליטיקה: 9
+- ספורט: 4
 - מזג אוויר: 4
+- בריאות: 3
 - משפט: 3
-- ספורט: 3
 - טכנולוגיה: 3
 - אקטואליה בעולם: 2
-- בריאות: 2
 - תרבות: 2
 - צרכנות: 1
 - רכב: 1
@@ -30,14 +30,14 @@ Warnings: 2
 
 ## Issues
 
-### WARNING · summary_long · item 29
+### WARNING · summary_long · item 41
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 87
+### WARNING · category_sport_source · item 99
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
