@@ -37,21 +37,21 @@ Warnings: 4
 - Source: וואלה בריאות - כל הכתבות
 - URL: https://healthy.walla.co.il/item/3849531
 
-### WARNING · summary_long · item 22
+### WARNING · summary_long · item 18
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
 - Original: `לפיד תוקף את נתניהו: "על אסונות משלמים - יהיו בחירות ואתה תפסיד"`
 - Source: וואלה חדשות - פוליטי-מדיני
 - URL: https://news.walla.co.il/item/3849528
 
-### WARNING · summary_long · item 50
+### WARNING · summary_long · item 46
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 108
+### WARNING · category_sport_source · item 104
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
