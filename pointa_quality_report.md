@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 109
+Items checked: 110
 Errors: 0
 Warnings: 3
 
@@ -9,12 +9,12 @@ Warnings: 3
 - ביטחון: 32
 - פלילים: 19
 - פוליטיקה: 11
+- חדשות: 10
 - רכילות: 10
-- חדשות: 9
 - אקטואליה בעולם: 4
 - ספורט: 4
-- מזג אוויר: 4
 - טכנולוגיה: 4
+- מזג אוויר: 4
 - משפט: 3
 - רכב: 2
 - בריאות: 2
@@ -30,21 +30,21 @@ Warnings: 3
 
 ## Issues
 
-### WARNING · summary_long · item 11
+### WARNING · summary_long · item 8
 - Summary length 226 > 220
 - Headline: `ליברמן ממקם את עצמו כיורש אפשרי של הנהגת הימין אחרי נתניהו`
 - Original: `לפיד תוקף את נתניהו: "על אסונות משלמים - יהיו בחירות ואתה תפסיד"`
 - Source: וואלה חדשות - פוליטי-מדיני
 - URL: https://news.walla.co.il/item/3849528
 
-### WARNING · summary_long · item 39
+### WARNING · summary_long · item 36
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
 - Source: דובר צה״ל - טלגרם רשמי
 - URL: https://t.me/idf_telegram/24457
 
-### WARNING · category_sport_source · item 97
+### WARNING · category_sport_source · item 94
 - Sport source should usually be ספורט
 - Headline: `הטניסאים הבכירים בעולם החליטו להגביל את מסיבות העיתונאים שלהם`
 - Original: `"המלחמה נמשכת": המחאה של בכירי הטניס העולמי לפני ווימבלדון`
