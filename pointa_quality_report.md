@@ -1,16 +1,16 @@
 # Pointa Quality Gate Report
 
-Items checked: 90
+Items checked: 94
 Errors: 0
-Warnings: 1
+Warnings: 2
 
 ## Category distribution
 
-- ביטחון: 29
+- ביטחון: 30
 - פלילים: 18
-- פוליטיקה: 10
+- פוליטיקה: 11
+- חדשות: 9
 - רכילות: 9
-- חדשות: 7
 - מזג אוויר: 4
 - משפט: 3
 - צרכנות: 2
@@ -23,11 +23,18 @@ Warnings: 1
 
 ## Issue counts
 
-- summary_long: 1
+- summary_long: 2
 
 ## Issues
 
-### WARNING · summary_long · item 35
+### WARNING · summary_long · item 8
+- Summary length 238 > 220
+- Headline: `אייל אשל מתכוון לרוץ לכנסת ומחכה להצעה פוליטית מסוימת`
+- Original: `אייל אשל בדרך לפוליטיקה: "כולם פנו אליי, מחכה להצעה מאדם מסוים"`
+- Source: וואלה חדשות - סרי ושלזינגר
+- URL: https://news.walla.co.il/item/3850408
+
+### WARNING · summary_long · item 43
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
