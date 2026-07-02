@@ -1,12 +1,12 @@
 # Pointa Quality Gate Report
 
-Items checked: 94
+Items checked: 92
 Errors: 0
 Warnings: 2
 
 ## Category distribution
 
-- ביטחון: 30
+- ביטחון: 29
 - פלילים: 18
 - פוליטיקה: 11
 - חדשות: 9
@@ -19,7 +19,6 @@ Warnings: 2
 - אקטואליה בעולם: 1
 - ספורט: 1
 - כלכלה: 1
-- תרבות: 1
 
 ## Issue counts
 
