@@ -1,6 +1,6 @@
 # Pointa Quality Gate Report
 
-Items checked: 91
+Items checked: 90
 Errors: 0
 Warnings: 1
 
@@ -20,7 +20,6 @@ Warnings: 1
 - ספורט: 1
 - כלכלה: 1
 - תרבות: 1
-- דעות: 1
 
 ## Issue counts
 
