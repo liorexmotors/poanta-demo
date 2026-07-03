@@ -41,7 +41,7 @@ Warnings: 3
 - Source: מעריב - כלכלה
 - URL: https://www.maariv.co.il/economy/international/article-1339970
 
-### WARNING · summary_long · item 38
+### WARNING · summary_long · item 34
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
