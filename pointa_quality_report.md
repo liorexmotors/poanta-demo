@@ -33,14 +33,14 @@ Warnings: 3
 - Source: The Jerusalem Post - Israel News
 - URL: https://www.jpost.com/israel-news/defense-news/article-901299
 
-### WARNING · summary_long · item 6
+### WARNING · summary_long · item 2
 - Summary length 233 > 220
 - Headline: `פורטוגל עולה אחרי מהפך ושער שוויון קרואטי שנפסל`
 - Original: `פורטוגל כבשה שער ניצחון בתוספת הזמן, שוויון של קרואטיה נפסל בדקה ה-103`
 - Source: הארץ - ספורט
 - URL: https://www.haaretz.co.il/sport/world-cup/2026-07-03/ty-article-game/0000019f-250d-da12-afbf-a52df1ad0000
 
-### WARNING · summary_long · item 35
+### WARNING · summary_long · item 31
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
