@@ -1,47 +1,53 @@
 # Pointa Quality Gate Report
 
-Items checked: 80
+Items checked: 78
 Errors: 0
-Warnings: 3
+Warnings: 4
 
 ## Category distribution
 
 - ביטחון: 26
 - פלילים: 14
-- רכילות: 9
 - פוליטיקה: 8
 - חדשות: 8
+- רכילות: 8
 - מזג אוויר: 4
 - משפט: 3
-- כלכלה: 2
-- תרבות: 1
+- ספורט: 2
 - אקטואליה בעולם: 1
-- ספורט: 1
 - צרכנות: 1
 - רכב: 1
+- כלכלה: 1
 - בריאות: 1
 
 ## Issue counts
 
-- summary_long: 3
+- summary_long: 4
 
 ## Issues
 
+### WARNING · summary_long · item 0
+- Summary length 233 > 220
+- Headline: `ים מדר בדרך למכבי, בלאט להפועל: התל אביביות מטלטלות את השוק`
+- Original: `"מדר בחר במכבי. זה הנוקאאוט הכי גדול שעופר ינאי קיבל"`
+- Source: וואלה ספורט
+- URL: https://sports.walla.co.il/item/3850582
+
 ### WARNING · summary_long · item 2
-- Summary length 224 > 220
-- Headline: `איראן מאיימת בתגובה קשה אם תותקף בזמן הלוויית חמינאי`
-- Original: `Iranian general warns of 'harsh response' if Israel, US attack during Khamenei's funeral`
-- Source: The Jerusalem Post - Middle East
-- URL: https://www.jpost.com/middle-east/iran-news/article-901306
+- Summary length 227 > 220
+- Headline: `הרצוג נכנס לשנתיים האחרונות: כך שינה תיקון החוק את כהונת הנשיא`
+- Original: `Grapevine, July 3, 2026: Presidential terms`
+- Source: The Jerusalem Post - Israel News
+- URL: https://www.jpost.com/israel-news/article-901330
 
-### WARNING · summary_long · item 6
-- Summary length 228 > 220
-- Headline: `פיטורי ההייטק חושפים את האינטרס מאחורי הרגעת בכירי ה-AI`
-- Original: `אלטמן מרגיע, ההייטק מפטר: למי באמת כדאי להאמין?`
-- Source: מעריב - כלכלה
-- URL: https://www.maariv.co.il/economy/international/article-1339970
+### WARNING · summary_long · item 5
+- Summary length 293 > 220
+- Headline: `הכוח הרב-לאומי בעזה קולט ציוד, ובצה"ל חוששים שחמאס ינצל את הפער`
+- Original: `בצה"ל נערכים ללחימה בעזה - והכוח הרב לאומי מתחיל להתעצם`
+- Source: וואלה חדשות - צבא וביטחון
+- URL: https://news.walla.co.il/item/3850191
 
-### WARNING · summary_long · item 34
+### WARNING · summary_long · item 37
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
