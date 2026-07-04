@@ -6,14 +6,14 @@ Warnings: 1
 
 ## Category distribution
 
-- ביטחון: 20
+- ביטחון: 23
 - פלילים: 13
-- רכילות: 8
+- רכילות: 9
 - חדשות: 7
-- ספורט: 6
 - פוליטיקה: 6
 - מזג אוויר: 4
 - משפט: 3
+- ספורט: 2
 - אקטואליה בעולם: 1
 - צרכנות: 1
 - רכב: 1
@@ -25,7 +25,7 @@ Warnings: 1
 
 ## Issues
 
-### WARNING · summary_long · item 36
+### WARNING · summary_long · item 40
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
