@@ -1,21 +1,20 @@
 # Pointa Quality Gate Report
 
-Items checked: 66
+Items checked: 55
 Errors: 0
 Warnings: 1
 
 ## Category distribution
 
-- ביטחון: 21
+- ביטחון: 19
 - פלילים: 13
-- ספורט: 6
-- פוליטיקה: 5
-- חדשות: 5
-- תרבות: 4
+- חדשות: 6
 - מזג אוויר: 4
-- רכילות: 3
+- פוליטיקה: 4
 - משפט: 3
-- טכנולוגיה: 1
+- תרבות: 2
+- ספורט: 2
+- רכילות: 1
 - אקטואליה בעולם: 1
 
 ## Issue counts
@@ -24,7 +23,7 @@ Warnings: 1
 
 ## Issues
 
-### WARNING · summary_long · item 47
+### WARNING · summary_long · item 40
 - Summary length 387 > 220
 - Headline: `צה״ל מציג פגיעה במפקדי חיזבאללה מאז הפסקת האש`
 - Original: `דובר צה"ל:`
