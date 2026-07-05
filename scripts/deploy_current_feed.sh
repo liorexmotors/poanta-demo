@@ -104,14 +104,19 @@ MAIN_WORKTREE="/tmp/poanta-main-auto"
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
 mkdir -p "$MAIN_WORKTREE/tmp"
-for p in feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
+for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/promote_feed_b_live.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
   if [[ -e "$ROOT/$p" ]]; then cp -a "$ROOT/$p" "$MAIN_WORKTREE/$p"; fi
 done
+if [[ -d "$ROOT/feed-a" ]]; then
+  rm -rf "$MAIN_WORKTREE/feed-a"
+  cp -a "$ROOT/feed-a" "$MAIN_WORKTREE/feed-a"
+fi
 cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/promote_feed_b_live.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed-a || true
   git commit -m "Auto-update Poanta feed snapshot"
   git pull --rebase origin main
   git push origin HEAD:main
