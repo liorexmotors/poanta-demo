@@ -1,25 +1,23 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-05T18:11:59+00:00",
+  "generatedAt": "2026-07-05T18:18:31+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
-    "positiveRuns": 5,
+    "positiveRuns": 6,
     "negativeRuns": 2,
-    "avgHealthDelta": 2.08,
-    "avgAfterHealthScore": 79.33,
+    "avgHealthDelta": 3.17,
+    "avgAfterHealthScore": 81.33,
     "stablePositive": false,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 88,
-      "rollingScore": 67.29,
-      "readyRuns": 0,
-      "criticalBlockers": [
-        "top12_under60_below_9"
-      ],
+      "latestScore": 93,
+      "rollingScore": 67.98,
+      "readyRuns": 1,
+      "criticalBlockers": [],
       "matureForProduction": false
     },
     "alizaReview": {
@@ -32,528 +30,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T03:34:33+00:00",
-      "feedFingerprint": "2264919301643261724",
-      "before": {
-        "newsinessTop10": 3,
-        "softTop10": 3,
-        "otherTop10": 4,
-        "top5Under60": 5,
-        "top10Under60": 7,
-        "top12Under60": 7,
-        "topItemAgeMinutes": 4,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 5
-        },
-        "importantMissingTop20": [
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 5
-          },
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "ynet",
-            "count": 1
-          },
-          {
-            "name": "Israel National News English",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 6,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 75,
-          "readyCount": 7,
-          "hardReadyCount": 1,
-          "trendReadyCount": 3,
-          "uniqueReadySources": 3,
-          "blockers": [
-            "hard_ready_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "לייטר: הסכם לבנון תלוי בפירוק חיזבאללה, לא בלוח זמנים לנסיגה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 4,
-              "url": "https://www.jpost.com/israel-news/article-901372",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 6,
-              "headline": "מזג האוויר בבאר שבע: 22°–33°; שמיים בהירים; UV קיצוני בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/8",
-              "trendMatch": {
-                "trend": "גבר כבן 40 נפצע בתאונת דרכים בבאר שבע, מצבו בינוני",
-                "clusterKey": "נפצע בתאונת",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 1,
-                "sources": [
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-03T20:17:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850676",
-                "overlapTokens": [
-                  "בבאר",
-                  "שבע"
-                ],
-                "score": 18.05,
-                "boost": 18.05
-              },
-              "queueScore": 15.0
-            },
-            {
-              "rank": 4,
-              "headline": "מזג האוויר בירושלים: 18°–28°; עננות גבוהה; UV גבוה מאוד בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/1",
-              "trendMatch": null,
-              "queueScore": 5.0
-            },
-            {
-              "rank": 5,
-              "headline": "מזג האוויר בתל אביב: 25°–30°; עננות גבוהה; UV גבוה מאוד בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/84",
-              "trendMatch": null,
-              "queueScore": 5.0
-            },
-            {
-              "rank": 7,
-              "headline": "מזג האוויר בחיפה: 24°–30°; עננות גבוהה; UV גבוה מאוד בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/3",
-              "trendMatch": null,
-              "queueScore": 5.0
-            },
-            {
-              "rank": 2,
-              "headline": "שמינית גמר המונדיאל מסתדרת: ספרד תפגוש את פורטוגל, אנגליה את מקסיקו",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "soft",
-              "ageMinutes": 5,
-              "url": "https://sports.walla.co.il/item/3849636",
-              "trendMatch": {
-                "trend": "מסי וארגנטינה עלו לשמינית הגמר",
-                "clusterKey": "לשמינית הגמר",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T04:04:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850719",
-                "overlapTokens": [
-                  "הגמר",
-                  "וארגנטינה",
-                  "עלו"
-                ],
-                "score": 36.09,
-                "boost": 36.09
-              },
-              "queueScore": 2.0
-            },
-            {
-              "rank": 3,
-              "headline": "ארגנטינה שרדה את כף ורדה, מסי הודה: איבדנו שליטה",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "soft",
-              "ageMinutes": 5,
-              "url": "https://sports.walla.co.il/item/3850721",
-              "trendMatch": {
-                "trend": "מסי וארגנטינה עלו לשמינית הגמר",
-                "clusterKey": "לשמינית הגמר",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T04:04:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850719",
-                "overlapTokens": [
-                  "לשמינית",
-                  "מסי"
-                ],
-                "score": 24.06,
-                "boost": 24.06
-              },
-              "queueScore": 2.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 3,
-        "softTop10": 3,
-        "otherTop10": 4,
-        "top5Under60": 5,
-        "top10Under60": 7,
-        "top12Under60": 7,
-        "topItemAgeMinutes": 4,
-        "uniqueSourcesTop20": 12,
-        "dominantSource": {
-          "name": "השירות המטאורולוגי",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "N12",
-          "BBC",
-          "Guardian",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "ynet",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 12,
-        "trendGapMatchedTop20": 10,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 75,
-          "readyCount": 7,
-          "hardReadyCount": 1,
-          "trendReadyCount": 3,
-          "uniqueReadySources": 3,
-          "blockers": [
-            "hard_ready_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "לייטר: הסכם לבנון תלוי בפירוק חיזבאללה, לא בלוח זמנים לנסיגה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 4,
-              "url": "https://www.jpost.com/israel-news/article-901372",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 2,
-              "headline": "מזג האוויר בבאר שבע: 22°–33°; שמיים בהירים; UV קיצוני בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/8",
-              "trendMatch": {
-                "trend": "גבר כבן 40 נפצע בתאונת דרכים בבאר שבע, מצבו בינוני",
-                "clusterKey": "נפצע בתאונת",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 1,
-                "sources": [
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-03T20:17:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850676",
-                "overlapTokens": [
-                  "בבאר",
-                  "שבע"
-                ],
-                "score": 18.05,
-                "boost": 18.05
-              },
-              "queueScore": 15.0
-            },
-            {
-              "rank": 5,
-              "headline": "מזג האוויר בירושלים: 18°–28°; עננות גבוהה; UV גבוה מאוד בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/1",
-              "trendMatch": null,
-              "queueScore": 5.0
-            },
-            {
-              "rank": 6,
-              "headline": "מזג האוויר בתל אביב: 25°–30°; עננות גבוהה; UV גבוה מאוד בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/84",
-              "trendMatch": null,
-              "queueScore": 5.0
-            },
-            {
-              "rank": 7,
-              "headline": "מזג האוויר בחיפה: 24°–30°; עננות גבוהה; UV גבוה מאוד בצהריים",
-              "source": "השירות המטאורולוגי",
-              "canonicalSource": "השירות המטאורולוגי",
-              "category": "מזג אוויר",
-              "class": "other",
-              "ageMinutes": 34,
-              "url": "https://ims.gov.il/he/city_portal/3",
-              "trendMatch": null,
-              "queueScore": 5.0
-            },
-            {
-              "rank": 3,
-              "headline": "שמינית גמר המונדיאל מסתדרת: ספרד תפגוש את פורטוגל, אנגליה את מקסיקו",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "soft",
-              "ageMinutes": 5,
-              "url": "https://sports.walla.co.il/item/3849636",
-              "trendMatch": {
-                "trend": "מסי וארגנטינה עלו לשמינית הגמר",
-                "clusterKey": "לשמינית הגמר",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T04:04:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850719",
-                "overlapTokens": [
-                  "הגמר",
-                  "וארגנטינה",
-                  "עלו"
-                ],
-                "score": 36.09,
-                "boost": 36.09
-              },
-              "queueScore": 2.0
-            },
-            {
-              "rank": 4,
-              "headline": "ארגנטינה שרדה את כף ורדה, מסי הודה: איבדנו שליטה",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "soft",
-              "ageMinutes": 5,
-              "url": "https://sports.walla.co.il/item/3850721",
-              "trendMatch": {
-                "trend": "מסי וארגנטינה עלו לשמינית הגמר",
-                "clusterKey": "לשמינית הגמר",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T04:04:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850719",
-                "overlapTokens": [
-                  "לשמינית",
-                  "מסי"
-                ],
-                "score": 24.06,
-                "boost": 24.06
-              },
-              "queueScore": 2.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 53,
-      "afterHealthScore": 58,
-      "replacementReadiness": {
-        "score": 62,
-        "threshold": 80,
-        "components": {
-          "freshness": 17.5,
-          "newsinessTop10": 7.5,
-          "top20Quality": 17.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "newsiness_top10_below_7",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 0,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 6,
-        "healthScore": 5
-      }
-    },
     {
       "generatedAt": "2026-07-04T03:44:24+00:00",
       "feedFingerprint": "1024772746652666906",
@@ -46732,6 +46208,564 @@
         "trendMatchedTop10": 2,
         "trendMatchedTop20": 3,
         "healthScore": -1
+      }
+    },
+    {
+      "generatedAt": "2026-07-05T18:18:31+00:00",
+      "feedFingerprint": "4715307111552685036",
+      "before": {
+        "newsinessTop10": 9,
+        "softTop10": 1,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 3,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "ישראל היום",
+          "count": 5
+        },
+        "importantMissingTop20": [
+          "N12",
+          "ynet",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ישראל היום",
+            "count": 5
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "Israel National News English",
+            "count": 2
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 2
+          },
+          {
+            "name": "סרוגים",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 8,
+          "hardReadyCount": 8,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 6,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "הממשלה מחריפה עימות עם בג״ץ סביב מועצת הרשות השנייה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "משפט",
+              "class": "hard",
+              "ageMinutes": 18,
+              "url": "https://www.maariv.co.il/news/politics/article-1341004",
+              "trendMatch": {
+                "trend": "מזכיר הממשלה יוסי פוקס: אין מילה בהצהרה שקוראת לאי ציות לפסיקת בג\"צ",
+                "clusterKey": "מזכיר הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-05T20:24:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3851099",
+                "overlapTokens": [
+                  "הממשלה",
+                  "חדשות",
+                  "יוסי",
+                  "לאי",
+                  "מזכיר",
+                  "פוקס",
+                  "ציות"
+                ],
+                "score": 69.12,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 1,
+              "headline": "אדלשטיין ולפיד מתכנסים סביב גיוס החרדים והמשילות",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 3,
+              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901511",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 5,
+              "headline": "המועמד המוביל ברומניה הביע תמיכה ביהודה ושומרון",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.kipa.co.il/1227262-0",
+              "trendMatch": {
+                "trend": "מזכיר הממשלה יוסי פוקס: אין מילה בהצהרה שקוראת לאי ציות לפסיקת בג\"צ",
+                "clusterKey": "מזכיר הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-05T20:24:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3851099",
+                "overlapTokens": [
+                  "חדשות",
+                  "יוסי"
+                ],
+                "score": 19.75,
+                "boost": 19.75
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "סגל: הגוש השלישי מפוצל ונדרש לאיחוד מהיר",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.kipa.co.il/1227263-0",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 3,
+              "headline": "מטוס דלתא נפגע ככל הנראה מזיקוקים בשיקגו",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 18,
+              "url": "https://news.walla.co.il/item/3851106",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 6,
+              "headline": "קרעי תקף את הרצוג אחרי ביקורת על אי-כיבוד בג״ץ",
+              "source": "סרוגים - כל הכתבות",
+              "canonicalSource": "סרוגים",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://www.srugim.co.il/101005667-מתקפה-חריפה-נגד-הנשיא-איפה-היית-לפני",
+              "trendMatch": {
+                "trend": "הממשלה: לא נכבד את פסיקת בג\"ץ בנושא הרשות השנייה",
+                "clusterKey": "הרשות השנייה",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-05T14:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3851045",
+                "overlapTokens": [
+                  "הממשלה",
+                  "השנייה",
+                  "פסיקת"
+                ],
+                "score": 46.78,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "בחריין תפתח משפט ל-19 נאשמים בתא טרור הקשור לאיראן",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916208",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 8,
+              "headline": "כ-100 פעילי התיישבות נעצרו אחרי שחצו לסוריה",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://www.jpost.com/israel-news/article-901506",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 9,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 18,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "מעריב",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Israel National News English",
+            "count": 2
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 11,
+        "trendGapMatchedTop20": 3,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 8,
+          "hardReadyCount": 8,
+          "trendReadyCount": 3,
+          "uniqueReadySources": 6,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "הממשלה מחריפה עימות עם בג״ץ סביב מועצת הרשות השנייה",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "משפט",
+              "class": "hard",
+              "ageMinutes": 18,
+              "url": "https://www.maariv.co.il/news/politics/article-1341004",
+              "trendMatch": {
+                "trend": "מזכיר הממשלה יוסי פוקס: אין מילה בהצהרה שקוראת לאי ציות לפסיקת בג\"צ",
+                "clusterKey": "מזכיר הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-05T20:24:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3851099",
+                "overlapTokens": [
+                  "הממשלה",
+                  "חדשות",
+                  "יוסי",
+                  "לאי",
+                  "מזכיר",
+                  "פוקס",
+                  "ציות"
+                ],
+                "score": 69.12,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "אדלשטיין ולפיד מתכנסים סביב גיוס החרדים והמשילות",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 3,
+              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901511",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 5,
+              "headline": "המועמד המוביל ברומניה הביע תמיכה ביהודה ושומרון",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.kipa.co.il/1227262-0",
+              "trendMatch": {
+                "trend": "מזכיר הממשלה יוסי פוקס: אין מילה בהצהרה שקוראת לאי ציות לפסיקת בג\"צ",
+                "clusterKey": "מזכיר הממשלה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-05T20:24:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3851099",
+                "overlapTokens": [
+                  "חדשות",
+                  "יוסי"
+                ],
+                "score": 19.75,
+                "boost": 19.75
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 6,
+              "headline": "סגל: הגוש השלישי מפוצל ונדרש לאיחוד מהיר",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.kipa.co.il/1227263-0",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 4,
+              "headline": "מטוס דלתא נפגע ככל הנראה מזיקוקים בשיקגו",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 18,
+              "url": "https://news.walla.co.il/item/3851106",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 3,
+              "headline": "קרעי תקף את הרצוג אחרי ביקורת על אי-כיבוד בג״ץ",
+              "source": "סרוגים - כל הכתבות",
+              "canonicalSource": "סרוגים",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://www.srugim.co.il/101005667-מתקפה-חריפה-נגד-הנשיא-איפה-היית-לפני",
+              "trendMatch": {
+                "trend": "הממשלה: לא נכבד את פסיקת בג\"ץ בנושא הרשות השנייה",
+                "clusterKey": "הרשות השנייה",
+                "domain": "חדשות",
+                "externalMentions": 8,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-05T14:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3851045",
+                "overlapTokens": [
+                  "הממשלה",
+                  "השנייה",
+                  "פסיקת"
+                ],
+                "score": 46.78,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "בחריין תפתח משפט ל-19 נאשמים בתא טרור הקשור לאיראן",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916208",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 8,
+              "headline": "כ-100 פעילי התיישבות נעצרו אחרי שחצו לסוריה",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://www.jpost.com/israel-news/article-901506",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 83,
+      "afterHealthScore": 96,
+      "replacementReadiness": {
+        "score": 93,
+        "threshold": 80,
+        "components": {
+          "freshness": 19.0,
+          "newsinessTop10": 25.0,
+          "top20Quality": 14.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": -1,
+        "top12Under60": -2,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 3,
+        "healthScore": 13
       }
     }
   ]
