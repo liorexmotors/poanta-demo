@@ -111,12 +111,18 @@ if [[ -d "$ROOT/feed-a" ]]; then
   rm -rf "$MAIN_WORKTREE/feed-a"
   cp -a "$ROOT/feed-a" "$MAIN_WORKTREE/feed-a"
 fi
+if [[ -d "$ROOT/assets/feed-defaults" ]]; then
+  mkdir -p "$MAIN_WORKTREE/assets"
+  rm -rf "$MAIN_WORKTREE/assets/feed-defaults"
+  cp -a "$ROOT/assets/feed-defaults" "$MAIN_WORKTREE/assets/feed-defaults"
+fi
 cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
   git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/promote_feed_b_live.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git add feed-a || true
+  git add assets/feed-defaults || true
   git commit -m "Auto-update Poanta feed snapshot"
   git pull --rebase origin main
   git push origin HEAD:main

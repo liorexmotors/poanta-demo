@@ -126,7 +126,7 @@ def default_image_kind(item: dict[str, Any]) -> str:
 
 
 def default_image_url(item: dict[str, Any]) -> str:
-    return f"https://poanta-demo.pages.dev/assets/feed-defaults/{default_image_kind(item)}.svg"
+    return f"https://poanta-demo.pages.dev/assets/feed-defaults/{default_image_kind(item)}.png"
 
 
 def run_json(cmd: list[str]) -> tuple[int, dict[str, Any]]:
