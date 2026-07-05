@@ -1,18 +1,18 @@
 {
   "status": "ok",
   "mode": "simulation_only_no_feed_mutation",
-  "generatedAt": "2026-07-05T20:04:34+00:00",
+  "generatedAt": "2026-07-05T20:17:16+00:00",
   "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
   "itemCount": 80,
   "before": {
-    "newsinessTop10": 9,
-    "softTop10": 1,
+    "newsinessTop10": 8,
+    "softTop10": 2,
     "otherTop10": 0,
     "top5Under60": 5,
     "top10Under60": 10,
     "top12Under60": 10,
-    "topItemAgeMinutes": 9,
-    "uniqueSourcesTop20": 10,
+    "topItemAgeMinutes": 11,
+    "uniqueSourcesTop20": 9,
     "dominantSource": {
       "name": "ישראל היום",
       "count": 5
@@ -40,6 +40,10 @@
         "count": 3
       },
       {
+        "name": "ynet",
+        "count": 2
+      },
+      {
         "name": "Al Jazeera RSS מסונן מזרח תיכון",
         "count": 2
       },
@@ -54,37 +58,69 @@
       {
         "name": "וואלה",
         "count": 1
-      },
-      {
-        "name": "Bloomberg Israel/Iran דרך Google News",
-        "count": 1
       }
     ],
-    "trendMatchedTop10": 5,
-    "trendMatchedTop20": 8,
-    "trendGapMatchedTop20": 2,
+    "trendMatchedTop10": 4,
+    "trendMatchedTop20": 7,
+    "trendGapMatchedTop20": 1,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 10,
-      "score": 100,
-      "readyCount": 6,
-      "hardReadyCount": 6,
-      "trendReadyCount": 4,
-      "uniqueReadySources": 4,
+      "score": 66,
+      "readyCount": 3,
+      "hardReadyCount": 3,
+      "trendReadyCount": 2,
+      "uniqueReadySources": 3,
       "blockers": [],
       "readyQueue": [
         {
           "rank": 1,
+          "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 11,
+          "url": "https://www.ynet.co.il/news/article/byaevn007mx",
+          "trendMatch": {
+            "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+            "clusterKey": "חמאס יודיע",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "ישראל היום"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-07-05T20:12:36+00:00",
+            "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
+            "overlapTokens": [
+              "הוועדה",
+              "חמאס",
+              "יודיע"
+            ],
+            "score": 27.62,
+            "boost": 27.62
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 2,
           "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 9,
+          "ageMinutes": 21,
           "url": "https://www.israelnationalnews.com/flashes/689102",
           "trendMatch": {
             "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-            "clusterKey": "השבי ספיר כהן",
+            "clusterKey": "ספיר כהן",
             "domain": "חדשות",
             "externalMentions": 4,
             "sourceCount": 2,
@@ -107,151 +143,17 @@
             "score": 28.13,
             "boost": 28.13
           },
-          "queueScore": 54.0
+          "queueScore": 41.0
         },
         {
-          "rank": 2,
+          "rank": 4,
           "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 19,
+          "ageMinutes": 31,
           "url": "https://www.jpost.com/middle-east/article-901508",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 5,
-          "headline": "צה״ל עצר עשרות ישראלים שניסו לחצות לסוריה",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "canonicalSource": "דובר צה״ל",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://t.me/idf_telegram/24529",
-          "trendMatch": {
-            "trend": "עשרות אזרחים ישראלים ניסו לחצות לשטח סוריה",
-            "clusterKey": "ניסו לחצות",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "ynet",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-07-05T22:39:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3851119",
-            "overlapTokens": [
-              "אזרחים",
-              "ישראלים",
-              "לחצות",
-              "לשטח",
-              "ניסו",
-              "סוריה",
-              "עשרות"
-            ],
-            "score": 63.94,
-            "boost": 38.0
-          },
-          "queueScore": 35.0
-        },
-        {
-          "rank": 6,
-          "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "חדשות",
-          "class": "hard",
-          "ageMinutes": 38,
-          "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20916639",
-          "trendMatch": {
-            "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
-            "clusterKey": "היועמ שית",
-            "domain": "חדשות",
-            "externalMentions": 8,
-            "sourceCount": 5,
-            "sources": [
-              "ynet",
-              "דה מרקר",
-              "הארץ",
-              "וואלה",
-              "ישראל היום"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-07-05T21:12:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3851108",
-            "overlapTokens": [
-              "החוק",
-              "החלטת",
-              "הממשלה",
-              "חדשות",
-              "נגד"
-            ],
-            "score": 69.8,
-            "boost": 38.0
-          },
-          "queueScore": 35.0
-        },
-        {
-          "rank": 7,
-          "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
-          "source": "Israel National News English",
-          "canonicalSource": "Israel National News English",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 39,
-          "url": "https://www.israelnationalnews.com/flashes/689100",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-            "clusterKey": "ביער בית קשת",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "ynet",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-07-05T19:07:58+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-            "overlapTokens": [
-              "אחרי",
-              "ביער",
-              "בית",
-              "הושגה",
-              "השריפה",
-              "יותר",
-              "קשת",
-              "שליטה"
-            ],
-            "score": 78.92,
-            "boost": 38.0
-          },
-          "queueScore": 35.0
-        },
-        {
-          "rank": 4,
-          "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 33,
-          "url": "https://www.jpost.com/middle-east/article-901517",
           "trendMatch": null,
           "queueScore": 25.0
         }
@@ -263,17 +165,16 @@
     "softTop10": 0,
     "otherTop10": 0,
     "top5Under60": 5,
-    "top10Under60": 8,
+    "top10Under60": 7,
     "top12Under60": 8,
-    "topItemAgeMinutes": 9,
-    "uniqueSourcesTop20": 11,
+    "topItemAgeMinutes": 11,
+    "uniqueSourcesTop20": 12,
     "dominantSource": {
       "name": "Israel National News English",
       "count": 3
     },
     "importantMissingTop20": [
       "N12",
-      "ynet",
       "BBC",
       "Guardian",
       "NYT",
@@ -286,15 +187,15 @@
         "count": 3
       },
       {
+        "name": "Jerusalem Post",
+        "count": 2
+      },
+      {
         "name": "ישראל היום",
         "count": 2
       },
       {
         "name": "דובר צה״ל",
-        "count": 2
-      },
-      {
-        "name": "Jerusalem Post",
         "count": 2
       },
       {
@@ -306,39 +207,75 @@
         "count": 2
       },
       {
-        "name": "וואלה",
+        "name": "מעריב",
         "count": 2
       },
       {
-        "name": "מעריב",
-        "count": 2
+        "name": "ynet",
+        "count": 1
       }
     ],
-    "trendMatchedTop10": 6,
-    "trendMatchedTop20": 13,
+    "trendMatchedTop10": 5,
+    "trendMatchedTop20": 11,
     "trendGapMatchedTop20": 3,
     "continuousPublishing": {
       "targetMinutes": 10,
       "estimatedVisibleChangeMinutes": 10,
-      "score": 100,
-      "readyCount": 6,
-      "hardReadyCount": 6,
-      "trendReadyCount": 4,
-      "uniqueReadySources": 4,
+      "score": 66,
+      "readyCount": 3,
+      "hardReadyCount": 3,
+      "trendReadyCount": 2,
+      "uniqueReadySources": 3,
       "blockers": [],
       "readyQueue": [
         {
           "rank": 1,
+          "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+          "source": "ynet - כל ערוץ החדשות",
+          "canonicalSource": "ynet",
+          "category": "ביטחון",
+          "class": "hard",
+          "ageMinutes": 11,
+          "url": "https://www.ynet.co.il/news/article/byaevn007mx",
+          "trendMatch": {
+            "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+            "clusterKey": "חמאס יודיע",
+            "domain": "חדשות",
+            "externalMentions": 4,
+            "sourceCount": 2,
+            "sources": [
+              "ynet",
+              "ישראל היום"
+            ],
+            "discoveryTypes": [
+              "RSS",
+              "WEB"
+            ],
+            "mentionedInFeed": true,
+            "latestAt": "2026-07-05T20:12:36+00:00",
+            "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
+            "overlapTokens": [
+              "הוועדה",
+              "חמאס",
+              "יודיע"
+            ],
+            "score": 27.62,
+            "boost": 27.62
+          },
+          "queueScore": 48.0
+        },
+        {
+          "rank": 2,
           "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
           "source": "Israel National News English",
           "canonicalSource": "Israel National News English",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 9,
+          "ageMinutes": 21,
           "url": "https://www.israelnationalnews.com/flashes/689102",
           "trendMatch": {
             "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-            "clusterKey": "השבי ספיר כהן",
+            "clusterKey": "ספיר כהן",
             "domain": "חדשות",
             "externalMentions": 4,
             "sourceCount": 2,
@@ -361,166 +298,32 @@
             "score": 28.13,
             "boost": 28.13
           },
-          "queueScore": 54.0
+          "queueScore": 41.0
         },
         {
-          "rank": 5,
+          "rank": 3,
           "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
           "source": "The Jerusalem Post - Middle East",
           "canonicalSource": "Jerusalem Post",
           "category": "ביטחון",
           "class": "hard",
-          "ageMinutes": 19,
+          "ageMinutes": 31,
           "url": "https://www.jpost.com/middle-east/article-901508",
-          "trendMatch": null,
-          "queueScore": 38.0
-        },
-        {
-          "rank": 4,
-          "headline": "צה״ל עצר עשרות ישראלים שניסו לחצות לסוריה",
-          "source": "דובר צה״ל - טלגרם רשמי",
-          "canonicalSource": "דובר צה״ל",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 36,
-          "url": "https://t.me/idf_telegram/24529",
-          "trendMatch": {
-            "trend": "עשרות אזרחים ישראלים ניסו לחצות לשטח סוריה",
-            "clusterKey": "ניסו לחצות",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "ynet",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-07-05T22:39:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/break/3851119",
-            "overlapTokens": [
-              "אזרחים",
-              "ישראלים",
-              "לחצות",
-              "לשטח",
-              "ניסו",
-              "סוריה",
-              "עשרות"
-            ],
-            "score": 63.94,
-            "boost": 38.0
-          },
-          "queueScore": 35.0
-        },
-        {
-          "rank": 2,
-          "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
-          "source": "ישראל היום - כל הכתבות",
-          "canonicalSource": "ישראל היום",
-          "category": "חדשות",
-          "class": "hard",
-          "ageMinutes": 38,
-          "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20916639",
-          "trendMatch": {
-            "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
-            "clusterKey": "היועמ שית",
-            "domain": "חדשות",
-            "externalMentions": 8,
-            "sourceCount": 5,
-            "sources": [
-              "ynet",
-              "דה מרקר",
-              "הארץ",
-              "וואלה",
-              "ישראל היום"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-07-05T21:12:00+00:00",
-            "sampleUrl": "https://news.walla.co.il/item/3851108",
-            "overlapTokens": [
-              "החוק",
-              "החלטת",
-              "הממשלה",
-              "חדשות",
-              "נגד"
-            ],
-            "score": 69.8,
-            "boost": 38.0
-          },
-          "queueScore": 35.0
-        },
-        {
-          "rank": 3,
-          "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
-          "source": "Israel National News English",
-          "canonicalSource": "Israel National News English",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 39,
-          "url": "https://www.israelnationalnews.com/flashes/689100",
-          "trendMatch": {
-            "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-            "clusterKey": "ביער בית קשת",
-            "domain": "חדשות",
-            "externalMentions": 3,
-            "sourceCount": 2,
-            "sources": [
-              "ynet",
-              "וואלה"
-            ],
-            "discoveryTypes": [
-              "RSS",
-              "WEB"
-            ],
-            "mentionedInFeed": true,
-            "latestAt": "2026-07-05T19:07:58+00:00",
-            "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-            "overlapTokens": [
-              "אחרי",
-              "ביער",
-              "בית",
-              "הושגה",
-              "השריפה",
-              "יותר",
-              "קשת",
-              "שליטה"
-            ],
-            "score": 78.92,
-            "boost": 38.0
-          },
-          "queueScore": 35.0
-        },
-        {
-          "rank": 6,
-          "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
-          "source": "The Jerusalem Post - Middle East",
-          "canonicalSource": "Jerusalem Post",
-          "category": "ביטחון",
-          "class": "hard",
-          "ageMinutes": 33,
-          "url": "https://www.jpost.com/middle-east/article-901517",
           "trendMatch": null,
           "queueScore": 25.0
         }
       ]
     }
   },
-  "beforeHealthScore": 83,
-  "afterHealthScore": 92,
+  "beforeHealthScore": 78,
+  "afterHealthScore": 93,
   "replacementReadiness": {
-    "score": 87,
+    "score": 88,
     "threshold": 80,
     "components": {
       "freshness": 18.0,
       "newsinessTop10": 25.0,
-      "top20Quality": 14.0,
+      "top20Quality": 15.5,
       "sourceBalance": 10.0,
       "trendSignalUse": 10.0,
       "criticalBlockersClear": 10.0
@@ -569,28 +372,28 @@
     "title": "TT RR Simulation Review — 2026-06-25 13:00"
   },
   "delta": {
-    "newsinessTop10": 1,
-    "softTop10": -1,
+    "newsinessTop10": 2,
+    "softTop10": -2,
     "top12Under60": -2,
-    "uniqueSourcesTop20": 1,
+    "uniqueSourcesTop20": 3,
     "trendMatchedTop10": 1,
-    "trendMatchedTop20": 5,
-    "healthScore": 9
+    "trendMatchedTop20": 4,
+    "healthScore": 15
   },
   "historySummary": {
     "sampleCount": 144,
     "window": 12,
-    "positiveRuns": 10,
-    "negativeRuns": 2,
-    "avgHealthDelta": 9.67,
+    "positiveRuns": 11,
+    "negativeRuns": 1,
+    "avgHealthDelta": 11.0,
     "avgAfterHealthScore": 92.92,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 87,
-      "rollingScore": 73.35,
+      "latestScore": 88,
+      "rollingScore": 73.98,
       "readyRuns": 3,
       "criticalBlockers": [
         "top12_under60_below_9"
@@ -609,10 +412,10 @@
   "trendSignal": {
     "status": "ok",
     "path": "spy_trends.json",
-    "generatedAt": "2026-07-05T23:04:34+03:00",
+    "generatedAt": "2026-07-05T23:17:16+03:00",
     "sourceTrendCount": 14,
     "usedTrendCount": 14,
-    "rssItemsScanned": 175,
+    "rssItemsScanned": 171,
     "webItemsScanned": 181,
     "topTrends": [
       {
@@ -639,7 +442,7 @@
       },
       {
         "trend": "\"להכיר במי שיצא לקרב והיה מוכן למות\": איציק סעידיאן זעם בדיון על חוק יסוד לימוד תורה",
-        "clusterKey": "יסוד לימוד",
+        "clusterKey": "יסוד לימוד תורה",
         "domain": "חדשות",
         "externalMentions": 5,
         "sourceCount": 3,
@@ -795,7 +598,7 @@
       },
       {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -816,19 +619,56 @@
   },
   "top10Before": [
     {
+      "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 11,
+      "url": "https://www.ynet.co.il/news/article/byaevn007mx",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+        "clusterKey": "חמאס יודיע",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "ישראל היום"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-07-05T20:12:36+00:00",
+        "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
+        "overlapTokens": [
+          "הוועדה",
+          "חמאס",
+          "יודיע"
+        ],
+        "score": 27.62,
+        "boost": 27.62
+      }
+    },
+    {
       "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
       "source": "Israel National News English",
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 9,
+      "ageMinutes": 21,
       "url": "https://www.israelnationalnews.com/flashes/689102",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -853,15 +693,28 @@
       }
     },
     {
+      "headline": "ברזיל ונורבגיה נפרדו ב-0:0 בשמינית גמר המונדיאל",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 25,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20916595",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
       "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
       "source": "The Jerusalem Post - Middle East",
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 19,
+      "ageMinutes": 31,
       "url": "https://www.jpost.com/middle-east/article-901508",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -871,10 +724,10 @@
       "canonicalSource": "Jerusalem Post",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 33,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/israel-news/sports/article-901523",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -884,10 +737,10 @@
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 33,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/middle-east/article-901517",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -897,10 +750,10 @@
       "canonicalSource": "דובר צה״ל",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 36,
+      "ageMinutes": 48,
       "url": "https://t.me/idf_telegram/24529",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": {
         "trend": "עשרות אזרחים ישראלים ניסו לחצות לשטח סוריה",
@@ -938,10 +791,10 @@
       "canonicalSource": "ישראל היום",
       "category": "חדשות",
       "class": "hard",
-      "ageMinutes": 38,
+      "ageMinutes": 50,
       "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20916639",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": {
         "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
@@ -980,41 +833,12 @@
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 39,
+      "ageMinutes": 51,
       "url": "https://www.israelnationalnews.com/flashes/689100",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "ביער",
-          "בית",
-          "הושגה",
-          "השריפה",
-          "יותר",
-          "קשת",
-          "שליטה"
-        ],
-        "score": 78.92,
-        "boost": 38.0
-      }
+      "trendMatch": null
     },
     {
       "headline": "פעילים ישראלים טוענים שפונו בכוח מסוריה",
@@ -1022,57 +846,8 @@
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 48,
+      "ageMinutes": 60,
       "url": "https://www.israelnationalnews.com/flashes/689099",
-      "beforeRank": 8,
-      "afterRank": 8,
-      "delta": 0,
-      "trendMatch": null
-    },
-    {
-      "headline": "בג״ץ דרש מהמדינה מידע על מצב רופא מעזה בבידוד",
-      "source": "הארץ - חדשות",
-      "canonicalSource": "הארץ",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 49,
-      "url": "https://www.haaretz.co.il/news/politics/2026-07-05/ty-article/.premium/0000019f-3389-d337-a39f-f7c9d6f50000",
-      "beforeRank": 9,
-      "afterRank": 9,
-      "delta": 0,
-      "trendMatch": {
-        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
-        "clusterKey": "לצבא לבנון",
-        "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-07-05T18:13:05+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
-        "overlapTokens": [
-          "חדשות",
-          "למסור"
-        ],
-        "score": 21.9,
-        "boost": 21.9
-      }
-    },
-    {
-      "headline": "סוכנות החלל האוסטרלית בודקת עצמים כדוריים שנמצאו בחוף",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 53,
-      "url": "https://www.israelhayom.co.il/news/world-news/other/article/20916480",
       "beforeRank": 10,
       "afterRank": 10,
       "delta": 0,
@@ -1081,19 +856,56 @@
   ],
   "top10After": [
     {
+      "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 11,
+      "url": "https://www.ynet.co.il/news/article/byaevn007mx",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+        "clusterKey": "חמאס יודיע",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "ישראל היום"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-07-05T20:12:36+00:00",
+        "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
+        "overlapTokens": [
+          "הוועדה",
+          "חמאס",
+          "יודיע"
+        ],
+        "score": 27.62,
+        "boost": 27.62
+      }
+    },
+    {
       "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
       "source": "Israel National News English",
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 9,
+      "ageMinutes": 21,
       "url": "https://www.israelnationalnews.com/flashes/689102",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -1118,15 +930,28 @@
       }
     },
     {
+      "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 31,
+      "url": "https://www.jpost.com/middle-east/article-901508",
+      "beforeRank": 4,
+      "afterRank": 3,
+      "delta": 1,
+      "trendMatch": null
+    },
+    {
       "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "חדשות",
       "class": "hard",
-      "ageMinutes": 38,
+      "ageMinutes": 50,
       "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20916639",
-      "beforeRank": 6,
-      "afterRank": 2,
+      "beforeRank": 8,
+      "afterRank": 4,
       "delta": 4,
       "trendMatch": {
         "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
@@ -1160,58 +985,16 @@
       }
     },
     {
-      "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 39,
-      "url": "https://www.israelnationalnews.com/flashes/689100",
-      "beforeRank": 7,
-      "afterRank": 3,
-      "delta": 4,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "ביער",
-          "בית",
-          "הושגה",
-          "השריפה",
-          "יותר",
-          "קשת",
-          "שליטה"
-        ],
-        "score": 78.92,
-        "boost": 38.0
-      }
-    },
-    {
       "headline": "צה״ל עצר עשרות ישראלים שניסו לחצות לסוריה",
       "source": "דובר צה״ל - טלגרם רשמי",
       "canonicalSource": "דובר צה״ל",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 36,
+      "ageMinutes": 48,
       "url": "https://t.me/idf_telegram/24529",
-      "beforeRank": 5,
-      "afterRank": 4,
-      "delta": 1,
+      "beforeRank": 7,
+      "afterRank": 5,
+      "delta": 2,
       "trendMatch": {
         "trend": "עשרות אזרחים ישראלים ניסו לחצות לשטח סוריה",
         "clusterKey": "ניסו לחצות",
@@ -1243,42 +1026,16 @@
       }
     },
     {
-      "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 19,
-      "url": "https://www.jpost.com/middle-east/article-901508",
-      "beforeRank": 2,
-      "afterRank": 5,
-      "delta": -3,
-      "trendMatch": null
-    },
-    {
-      "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 33,
-      "url": "https://www.jpost.com/middle-east/article-901517",
-      "beforeRank": 4,
-      "afterRank": 6,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
       "headline": "בג״ץ דרש מהמדינה מידע על מצב רופא מעזה בבידוד",
       "source": "הארץ - חדשות",
       "canonicalSource": "הארץ",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 49,
+      "ageMinutes": 61,
       "url": "https://www.haaretz.co.il/news/politics/2026-07-05/ty-article/.premium/0000019f-3389-d337-a39f-f7c9d6f50000",
-      "beforeRank": 9,
-      "afterRank": 7,
-      "delta": 2,
+      "beforeRank": 11,
+      "afterRank": 6,
+      "delta": 5,
       "trendMatch": {
         "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
         "clusterKey": "לצבא לבנון",
@@ -1305,40 +1062,30 @@
       }
     },
     {
-      "headline": "נתניהו טען שכפרים נוצריים בלבנון ביקשו סיפוח לישראל",
-      "source": "France24 Middle East",
-      "canonicalSource": "France24 Middle East",
+      "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 89,
-      "url": "https://www.france24.com/en/middle-east/20260705-netanyahu-says-lebanese-christian-villages-sought-annexation-by-israel",
-      "beforeRank": 19,
+      "ageMinutes": 46,
+      "url": "https://www.jpost.com/middle-east/article-901517",
+      "beforeRank": 6,
+      "afterRank": 7,
+      "delta": -1,
+      "trendMatch": null
+    },
+    {
+      "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 51,
+      "url": "https://www.israelnationalnews.com/flashes/689100",
+      "beforeRank": 9,
       "afterRank": 8,
-      "delta": 11,
-      "trendMatch": {
-        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
-        "clusterKey": "לצבא לבנון",
-        "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-07-05T18:13:05+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
-        "overlapTokens": [
-          "לבנון",
-          "נתניהו"
-        ],
-        "score": 21.9,
-        "boost": 21.9
-      }
+      "delta": 1,
+      "trendMatch": null
     },
     {
       "headline": "טייקון המכליות מרוויח מהעברת נפט דרך הורמוז",
@@ -1346,11 +1093,11 @@
       "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
       "category": "כלכלה",
       "class": "hard",
-      "ageMinutes": 64,
+      "ageMinutes": 77,
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOVgwR25fY2VCYVEzNmNKdkZOQ1ZMX0ZYdDNCRVd1aUxDYk51ZlVVNmhoSFRsMmJYUzQ2cXRmTTNUNW1zSmtrQVNROVBzQnhYNDM1MHhaYk9hN1NaOGpzX0xmbmNXYXZKc0JaRkl3U19EeEk4TXVweExOQVFyT3FDQU8wQ0hjT3Z1MWV3RUpLUkdDMzR2bnFGMDBNaE0yaVNjYWNoeDZhQWMwOG5qa19FbDVB?oc=5",
-      "beforeRank": 13,
+      "beforeRank": 15,
       "afterRank": 9,
-      "delta": 4,
+      "delta": 6,
       "trendMatch": null
     },
     {
@@ -1359,29 +1106,66 @@
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 53,
+      "ageMinutes": 66,
       "url": "https://www.israelhayom.co.il/news/world-news/other/article/20916480",
-      "beforeRank": 10,
+      "beforeRank": 12,
       "afterRank": 10,
-      "delta": 0,
+      "delta": 2,
       "trendMatch": null
     }
   ],
   "top20Before": [
+    {
+      "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 11,
+      "url": "https://www.ynet.co.il/news/article/byaevn007mx",
+      "beforeRank": 1,
+      "afterRank": 1,
+      "delta": 0,
+      "trendMatch": {
+        "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+        "clusterKey": "חמאס יודיע",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "ישראל היום"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-07-05T20:12:36+00:00",
+        "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
+        "overlapTokens": [
+          "הוועדה",
+          "חמאס",
+          "יודיע"
+        ],
+        "score": 27.62,
+        "boost": 27.62
+      }
+    },
     {
       "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
       "source": "Israel National News English",
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 9,
+      "ageMinutes": 21,
       "url": "https://www.israelnationalnews.com/flashes/689102",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -1406,15 +1190,28 @@
       }
     },
     {
+      "headline": "ברזיל ונורבגיה נפרדו ב-0:0 בשמינית גמר המונדיאל",
+      "source": "ישראל היום - כל הכתבות",
+      "canonicalSource": "ישראל היום",
+      "category": "ספורט",
+      "class": "soft",
+      "ageMinutes": 25,
+      "url": "https://www.israelhayom.co.il/sport/world-soccer/article/20916595",
+      "beforeRank": 3,
+      "afterRank": 3,
+      "delta": 0,
+      "trendMatch": null
+    },
+    {
       "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
       "source": "The Jerusalem Post - Middle East",
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 19,
+      "ageMinutes": 31,
       "url": "https://www.jpost.com/middle-east/article-901508",
-      "beforeRank": 2,
-      "afterRank": 2,
+      "beforeRank": 4,
+      "afterRank": 4,
       "delta": 0,
       "trendMatch": null
     },
@@ -1424,10 +1221,10 @@
       "canonicalSource": "Jerusalem Post",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 33,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/israel-news/sports/article-901523",
-      "beforeRank": 3,
-      "afterRank": 3,
+      "beforeRank": 5,
+      "afterRank": 5,
       "delta": 0,
       "trendMatch": null
     },
@@ -1437,10 +1234,10 @@
       "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 33,
+      "ageMinutes": 46,
       "url": "https://www.jpost.com/middle-east/article-901517",
-      "beforeRank": 4,
-      "afterRank": 4,
+      "beforeRank": 6,
+      "afterRank": 6,
       "delta": 0,
       "trendMatch": null
     },
@@ -1450,10 +1247,10 @@
       "canonicalSource": "דובר צה״ל",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 36,
+      "ageMinutes": 48,
       "url": "https://t.me/idf_telegram/24529",
-      "beforeRank": 5,
-      "afterRank": 5,
+      "beforeRank": 7,
+      "afterRank": 7,
       "delta": 0,
       "trendMatch": {
         "trend": "עשרות אזרחים ישראלים ניסו לחצות לשטח סוריה",
@@ -1491,10 +1288,10 @@
       "canonicalSource": "ישראל היום",
       "category": "חדשות",
       "class": "hard",
-      "ageMinutes": 38,
+      "ageMinutes": 50,
       "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20916639",
-      "beforeRank": 6,
-      "afterRank": 6,
+      "beforeRank": 8,
+      "afterRank": 8,
       "delta": 0,
       "trendMatch": {
         "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
@@ -1533,41 +1330,12 @@
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 39,
+      "ageMinutes": 51,
       "url": "https://www.israelnationalnews.com/flashes/689100",
-      "beforeRank": 7,
-      "afterRank": 7,
+      "beforeRank": 9,
+      "afterRank": 9,
       "delta": 0,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "ביער",
-          "בית",
-          "הושגה",
-          "השריפה",
-          "יותר",
-          "קשת",
-          "שליטה"
-        ],
-        "score": 78.92,
-        "boost": 38.0
-      }
+      "trendMatch": null
     },
     {
       "headline": "פעילים ישראלים טוענים שפונו בכוח מסוריה",
@@ -1575,10 +1343,10 @@
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 48,
+      "ageMinutes": 60,
       "url": "https://www.israelnationalnews.com/flashes/689099",
-      "beforeRank": 8,
-      "afterRank": 8,
+      "beforeRank": 10,
+      "afterRank": 10,
       "delta": 0,
       "trendMatch": null
     },
@@ -1588,10 +1356,10 @@
       "canonicalSource": "הארץ",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 49,
+      "ageMinutes": 61,
       "url": "https://www.haaretz.co.il/news/politics/2026-07-05/ty-article/.premium/0000019f-3389-d337-a39f-f7c9d6f50000",
-      "beforeRank": 9,
-      "afterRank": 9,
+      "beforeRank": 11,
+      "afterRank": 11,
       "delta": 0,
       "trendMatch": {
         "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
@@ -1624,10 +1392,10 @@
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 53,
+      "ageMinutes": 66,
       "url": "https://www.israelhayom.co.il/news/world-news/other/article/20916480",
-      "beforeRank": 10,
-      "afterRank": 10,
+      "beforeRank": 12,
+      "afterRank": 12,
       "delta": 0,
       "trendMatch": null
     },
@@ -1637,10 +1405,10 @@
       "canonicalSource": "ישראל היום",
       "category": "רכילות",
       "class": "soft",
-      "ageMinutes": 62,
+      "ageMinutes": 75,
       "url": "https://www.israelhayom.co.il/lifestyle/relationship/article/20916587",
-      "beforeRank": 11,
-      "afterRank": 11,
+      "beforeRank": 13,
+      "afterRank": 13,
       "delta": 0,
       "trendMatch": null
     },
@@ -1650,14 +1418,14 @@
       "canonicalSource": "וואלה",
       "category": "ביטחון",
       "class": "soft",
-      "ageMinutes": 64,
+      "ageMinutes": 77,
       "url": "https://news.walla.co.il/item/3851112",
-      "beforeRank": 12,
-      "afterRank": 12,
+      "beforeRank": 14,
+      "afterRank": 14,
       "delta": 0,
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -1692,10 +1460,10 @@
       "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
       "category": "כלכלה",
       "class": "hard",
-      "ageMinutes": 64,
+      "ageMinutes": 77,
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOVgwR25fY2VCYVEzNmNKdkZOQ1ZMX0ZYdDNCRVd1aUxDYk51ZlVVNmhoSFRsMmJYUzQ2cXRmTTNUNW1zSmtrQVNROVBzQnhYNDM1MHhaYk9hN1NaOGpzX0xmbmNXYXZKc0JaRkl3U19EeEk4TXVweExOQVFyT3FDQU8wQ0hjT3Z1MWV3RUpLUkdDMzR2bnFGMDBNaE0yaVNjYWNoeDZhQWMwOG5qa19FbDVB?oc=5",
-      "beforeRank": 13,
-      "afterRank": 13,
+      "beforeRank": 15,
+      "afterRank": 15,
       "delta": 0,
       "trendMatch": null
     },
@@ -1705,10 +1473,10 @@
       "canonicalSource": "ישראל היום",
       "category": "צרכנות",
       "class": "other",
-      "ageMinutes": 68,
+      "ageMinutes": 81,
       "url": "https://www.israelhayom.co.il/news/education/article/20916572",
-      "beforeRank": 14,
-      "afterRank": 14,
+      "beforeRank": 16,
+      "afterRank": 16,
       "delta": 0,
       "trendMatch": null
     },
@@ -1718,10 +1486,10 @@
       "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 68,
+      "ageMinutes": 81,
       "url": "https://www.aljazeera.com/news/2026/7/5/sons-of-irans-leader-ali-khamenei-attend-funeral-but-mojtaba-is-absent?traffic_source=rss",
-      "beforeRank": 15,
-      "afterRank": 15,
+      "beforeRank": 17,
+      "afterRank": 17,
       "delta": 0,
       "trendMatch": null
     },
@@ -1731,10 +1499,10 @@
       "canonicalSource": "Israel National News English",
       "category": "ספורט",
       "class": "soft",
-      "ageMinutes": 69,
+      "ageMinutes": 82,
       "url": "https://www.israelnationalnews.com/flashes/689097",
-      "beforeRank": 16,
-      "afterRank": 16,
+      "beforeRank": 18,
+      "afterRank": 18,
       "delta": 0,
       "trendMatch": null
     },
@@ -1744,10 +1512,10 @@
       "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 83,
+      "ageMinutes": 96,
       "url": "https://www.aljazeera.com/video/newsfeed/2026/7/5/palestinians-rally-outside-al-shifa-hospital-demanding-medical-evacuation?traffic_source=rss",
-      "beforeRank": 17,
-      "afterRank": 17,
+      "beforeRank": 19,
+      "afterRank": 19,
       "delta": 0,
       "trendMatch": null
     },
@@ -1757,14 +1525,14 @@
       "canonicalSource": "ynet",
       "category": "חדשות",
       "class": "soft",
-      "ageMinutes": 89,
+      "ageMinutes": 101,
       "url": "https://www.ynet.co.il/news/article/h1yfg700mzx",
-      "beforeRank": 18,
-      "afterRank": 18,
+      "beforeRank": 20,
+      "afterRank": 20,
       "delta": 0,
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -1791,72 +1559,60 @@
         "score": 65.63,
         "boost": 38.0
       }
-    },
+    }
+  ],
+  "top20After": [
     {
-      "headline": "נתניהו טען שכפרים נוצריים בלבנון ביקשו סיפוח לישראל",
-      "source": "France24 Middle East",
-      "canonicalSource": "France24 Middle East",
+      "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+      "source": "ynet - כל ערוץ החדשות",
+      "canonicalSource": "ynet",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 89,
-      "url": "https://www.france24.com/en/middle-east/20260705-netanyahu-says-lebanese-christian-villages-sought-annexation-by-israel",
-      "beforeRank": 19,
-      "afterRank": 19,
+      "ageMinutes": 11,
+      "url": "https://www.ynet.co.il/news/article/byaevn007mx",
+      "beforeRank": 1,
+      "afterRank": 1,
       "delta": 0,
       "trendMatch": {
-        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
-        "clusterKey": "לצבא לבנון",
+        "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+        "clusterKey": "חמאס יודיע",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
         "sources": [
           "ynet",
-          "וואלה"
+          "ישראל היום"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-07-05T18:13:05+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
+        "mentionedInFeed": true,
+        "latestAt": "2026-07-05T20:12:36+00:00",
+        "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
         "overlapTokens": [
-          "לבנון",
-          "נתניהו"
+          "הוועדה",
+          "חמאס",
+          "יודיע"
         ],
-        "score": 21.9,
-        "boost": 21.9
+        "score": 27.62,
+        "boost": 27.62
       }
     },
-    {
-      "headline": "מושיק רוט עוזב את \"משחקי השף\" אחרי 12 שנה",
-      "source": "ישראל היום - כל הכתבות",
-      "canonicalSource": "ישראל היום",
-      "category": "תרבות",
-      "class": "soft",
-      "ageMinutes": 89,
-      "url": "https://www.israelhayom.co.il/culture/tv/article/20916475",
-      "beforeRank": 20,
-      "afterRank": 20,
-      "delta": 0,
-      "trendMatch": null
-    }
-  ],
-  "top20After": [
     {
       "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
       "source": "Israel National News English",
       "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 9,
+      "ageMinutes": 21,
       "url": "https://www.israelnationalnews.com/flashes/689102",
-      "beforeRank": 1,
-      "afterRank": 1,
+      "beforeRank": 2,
+      "afterRank": 2,
       "delta": 0,
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -1881,15 +1637,28 @@
       }
     },
     {
+      "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 31,
+      "url": "https://www.jpost.com/middle-east/article-901508",
+      "beforeRank": 4,
+      "afterRank": 3,
+      "delta": 1,
+      "trendMatch": null
+    },
+    {
       "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
       "source": "ישראל היום - כל הכתבות",
       "canonicalSource": "ישראל היום",
       "category": "חדשות",
       "class": "hard",
-      "ageMinutes": 38,
+      "ageMinutes": 50,
       "url": "https://www.israelhayom.co.il/culture/internet-culture/article/20916639",
-      "beforeRank": 6,
-      "afterRank": 2,
+      "beforeRank": 8,
+      "afterRank": 4,
       "delta": 4,
       "trendMatch": {
         "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
@@ -1923,58 +1692,16 @@
       }
     },
     {
-      "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 39,
-      "url": "https://www.israelnationalnews.com/flashes/689100",
-      "beforeRank": 7,
-      "afterRank": 3,
-      "delta": 4,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "ביער",
-          "בית",
-          "הושגה",
-          "השריפה",
-          "יותר",
-          "קשת",
-          "שליטה"
-        ],
-        "score": 78.92,
-        "boost": 38.0
-      }
-    },
-    {
       "headline": "צה״ל עצר עשרות ישראלים שניסו לחצות לסוריה",
       "source": "דובר צה״ל - טלגרם רשמי",
       "canonicalSource": "דובר צה״ל",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 36,
+      "ageMinutes": 48,
       "url": "https://t.me/idf_telegram/24529",
-      "beforeRank": 5,
-      "afterRank": 4,
-      "delta": 1,
+      "beforeRank": 7,
+      "afterRank": 5,
+      "delta": 2,
       "trendMatch": {
         "trend": "עשרות אזרחים ישראלים ניסו לחצות לשטח סוריה",
         "clusterKey": "ניסו לחצות",
@@ -2006,42 +1733,16 @@
       }
     },
     {
-      "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 19,
-      "url": "https://www.jpost.com/middle-east/article-901508",
-      "beforeRank": 2,
-      "afterRank": 5,
-      "delta": -3,
-      "trendMatch": null
-    },
-    {
-      "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
-      "source": "The Jerusalem Post - Middle East",
-      "canonicalSource": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 33,
-      "url": "https://www.jpost.com/middle-east/article-901517",
-      "beforeRank": 4,
-      "afterRank": 6,
-      "delta": -2,
-      "trendMatch": null
-    },
-    {
       "headline": "בג״ץ דרש מהמדינה מידע על מצב רופא מעזה בבידוד",
       "source": "הארץ - חדשות",
       "canonicalSource": "הארץ",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 49,
+      "ageMinutes": 61,
       "url": "https://www.haaretz.co.il/news/politics/2026-07-05/ty-article/.premium/0000019f-3389-d337-a39f-f7c9d6f50000",
-      "beforeRank": 9,
-      "afterRank": 7,
-      "delta": 2,
+      "beforeRank": 11,
+      "afterRank": 6,
+      "delta": 5,
       "trendMatch": {
         "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
         "clusterKey": "לצבא לבנון",
@@ -2068,40 +1769,30 @@
       }
     },
     {
-      "headline": "נתניהו טען שכפרים נוצריים בלבנון ביקשו סיפוח לישראל",
-      "source": "France24 Middle East",
-      "canonicalSource": "France24 Middle East",
+      "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
+      "source": "The Jerusalem Post - Middle East",
+      "canonicalSource": "Jerusalem Post",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 89,
-      "url": "https://www.france24.com/en/middle-east/20260705-netanyahu-says-lebanese-christian-villages-sought-annexation-by-israel",
-      "beforeRank": 19,
+      "ageMinutes": 46,
+      "url": "https://www.jpost.com/middle-east/article-901517",
+      "beforeRank": 6,
+      "afterRank": 7,
+      "delta": -1,
+      "trendMatch": null
+    },
+    {
+      "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 51,
+      "url": "https://www.israelnationalnews.com/flashes/689100",
+      "beforeRank": 9,
       "afterRank": 8,
-      "delta": 11,
-      "trendMatch": {
-        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
-        "clusterKey": "לצבא לבנון",
-        "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-07-05T18:13:05+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
-        "overlapTokens": [
-          "לבנון",
-          "נתניהו"
-        ],
-        "score": 21.9,
-        "boost": 21.9
-      }
+      "delta": 1,
+      "trendMatch": null
     },
     {
       "headline": "טייקון המכליות מרוויח מהעברת נפט דרך הורמוז",
@@ -2109,11 +1800,11 @@
       "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
       "category": "כלכלה",
       "class": "hard",
-      "ageMinutes": 64,
+      "ageMinutes": 77,
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOVgwR25fY2VCYVEzNmNKdkZOQ1ZMX0ZYdDNCRVd1aUxDYk51ZlVVNmhoSFRsMmJYUzQ2cXRmTTNUNW1zSmtrQVNROVBzQnhYNDM1MHhaYk9hN1NaOGpzX0xmbmNXYXZKc0JaRkl3U19EeEk4TXVweExOQVFyT3FDQU8wQ0hjT3Z1MWV3RUpLUkdDMzR2bnFGMDBNaE0yaVNjYWNoeDZhQWMwOG5qa19FbDVB?oc=5",
-      "beforeRank": 13,
+      "beforeRank": 15,
       "afterRank": 9,
-      "delta": 4,
+      "delta": 6,
       "trendMatch": null
     },
     {
@@ -2122,11 +1813,11 @@
       "canonicalSource": "ישראל היום",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 53,
+      "ageMinutes": 66,
       "url": "https://www.israelhayom.co.il/news/world-news/other/article/20916480",
-      "beforeRank": 10,
+      "beforeRank": 12,
       "afterRank": 10,
-      "delta": 0,
+      "delta": 2,
       "trendMatch": null
     },
     {
@@ -2135,24 +1826,24 @@
       "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 68,
+      "ageMinutes": 81,
       "url": "https://www.aljazeera.com/news/2026/7/5/sons-of-irans-leader-ali-khamenei-attend-funeral-but-mojtaba-is-absent?traffic_source=rss",
-      "beforeRank": 15,
+      "beforeRank": 17,
       "afterRank": 11,
-      "delta": 4,
+      "delta": 6,
       "trendMatch": null
     },
     {
-      "headline": "תושבים עזתים הפגינו ליד אל-שיפא בדרישה לפינוי רפואי",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
-      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "פעילים ישראלים טוענים שפונו בכוח מסוריה",
+      "source": "Israel National News English",
+      "canonicalSource": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 83,
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/7/5/palestinians-rally-outside-al-shifa-hospital-demanding-medical-evacuation?traffic_source=rss",
-      "beforeRank": 17,
+      "ageMinutes": 60,
+      "url": "https://www.israelnationalnews.com/flashes/689099",
+      "beforeRank": 10,
       "afterRank": 12,
-      "delta": 5,
+      "delta": -2,
       "trendMatch": null
     },
     {
@@ -2161,11 +1852,11 @@
       "canonicalSource": "וואלה",
       "category": "משפט",
       "class": "hard",
-      "ageMinutes": 94,
+      "ageMinutes": 107,
       "url": "https://news.walla.co.il/item/3851108",
-      "beforeRank": 23,
+      "beforeRank": 25,
       "afterRank": 13,
-      "delta": 10,
+      "delta": 12,
       "trendMatch": {
         "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
         "clusterKey": "היועמ שית",
@@ -2201,16 +1892,52 @@
       }
     },
     {
+      "headline": "נתניהו טען שכפרים נוצריים בלבנון ביקשו סיפוח לישראל",
+      "source": "France24 Middle East",
+      "canonicalSource": "France24 Middle East",
+      "category": "ביטחון",
+      "class": "hard",
+      "ageMinutes": 101,
+      "url": "https://www.france24.com/en/middle-east/20260705-netanyahu-says-lebanese-christian-villages-sought-annexation-by-israel",
+      "beforeRank": 21,
+      "afterRank": 14,
+      "delta": 7,
+      "trendMatch": {
+        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
+        "clusterKey": "לצבא לבנון",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-07-05T18:13:05+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
+        "overlapTokens": [
+          "לבנון",
+          "נתניהו"
+        ],
+        "score": 21.9,
+        "boost": 21.9
+      }
+    },
+    {
       "headline": "טראמפ יפתח את פסגת נאט״ו בפגישות עם ארדואן, זלנסקי וא-שרע",
       "source": "מעריב - חדשות",
       "canonicalSource": "מעריב",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 102,
+      "ageMinutes": 114,
       "url": "https://www.maariv.co.il/news/world/article-1341011",
-      "beforeRank": 25,
-      "afterRank": 14,
-      "delta": 11,
+      "beforeRank": 27,
+      "afterRank": 15,
+      "delta": 12,
       "trendMatch": {
         "trend": "מה עומד מאחורי הבהילות של נתניהו לפגישה עם טראמפ - והסיכון לפני הבחירות",
         "clusterKey": "עומד מאחורי",
@@ -2237,52 +1964,16 @@
       }
     },
     {
-      "headline": "שני אחים מסיימים קורס מכונאים מוסקים אחרי הכשרה במלחמה",
-      "source": "דובר צה״ל - טלגרם רשמי",
-      "canonicalSource": "דובר צה״ל",
-      "category": "ביטחון",
-      "class": "hard",
-      "ageMinutes": 103,
-      "url": "https://t.me/idf_telegram/24528",
-      "beforeRank": 26,
-      "afterRank": 15,
-      "delta": 11,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "שעות"
-        ],
-        "score": 17.54,
-        "boost": 17.54
-      }
-    },
-    {
       "headline": "הממשלה מחריפה עימות עם בג״ץ סביב מועצת הרשות השנייה",
       "source": "מעריב - חדשות",
       "canonicalSource": "מעריב",
       "category": "משפט",
       "class": "hard",
-      "ageMinutes": 124,
+      "ageMinutes": 137,
       "url": "https://www.maariv.co.il/news/politics/article-1341004",
-      "beforeRank": 35,
+      "beforeRank": 37,
       "afterRank": 16,
-      "delta": 19,
+      "delta": 21,
       "trendMatch": {
         "trend": "מזכיר הממשלה יוסי פוקס: אין מילה בהצהרה שקוראת לאי ציות לפסיקת בג\"צ",
         "clusterKey": "מזכיר הממשלה",
@@ -2315,40 +2006,17 @@
       }
     },
     {
-      "headline": "מטוס דלתא נפגע ככל הנראה מזיקוקים בשיקגו",
-      "source": "וואלה חדשות",
-      "canonicalSource": "וואלה",
+      "headline": "תושבים עזתים הפגינו ליד אל-שיפא בדרישה לפינוי רפואי",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 124,
-      "url": "https://news.walla.co.il/item/3851106",
-      "beforeRank": 34,
+      "ageMinutes": 96,
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/7/5/palestinians-rally-outside-al-shifa-hospital-demanding-medical-evacuation?traffic_source=rss",
+      "beforeRank": 19,
       "afterRank": 17,
-      "delta": 17,
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "חדשות"
-        ],
-        "score": 17.54,
-        "boost": 17.54
-      }
+      "delta": 2,
+      "trendMatch": null
     },
     {
       "headline": "קרעי תקף את הרצוג אחרי ביקורת על אי-כיבוד בג״ץ",
@@ -2356,11 +2024,11 @@
       "canonicalSource": "סרוגים",
       "category": "פוליטיקה",
       "class": "hard",
-      "ageMinutes": 137,
+      "ageMinutes": 150,
       "url": "https://www.srugim.co.il/101005667-מתקפה-חריפה-נגד-הנשיא-איפה-היית-לפני",
-      "beforeRank": 38,
+      "beforeRank": 40,
       "afterRank": 18,
-      "delta": 20,
+      "delta": 22,
       "trendMatch": {
         "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
         "clusterKey": "היועמ שית",
@@ -2396,51 +2064,84 @@
       "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
       "category": "כלכלה",
       "class": "hard",
-      "ageMinutes": 123,
+      "ageMinutes": 136,
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQX3drZFFvQjZSaEpzVU85akpTa0NTdUo5RHYwRG1wQlkydmdNNkRQUHFwMHNIZXJxa3FudVp4YkZ2eWc2cFRIWmFDd1EyNmVCQVhwZEZNVTEyQTZKRkRWbWd4Y3lDYzZMN1J0cUpGZGxzcGd2ZnhxdUlOWV9ILTZxLWViSlRNOVBuTlFQdnNDcUs2V2syUTdrOVZvVzFucjBhbFc3VnRlRmpiRUZQ?oc=5",
-      "beforeRank": 33,
+      "beforeRank": 35,
       "afterRank": 19,
-      "delta": 14,
+      "delta": 16,
       "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
+        "trend": "ניסיון ההשתלטות שעלה לברק רוזן ואסי טוכמאייר רבע מיליארד שקל",
+        "clusterKey": "מיליארד שקל",
+        "domain": "כלכלה",
         "externalMentions": 3,
         "sourceCount": 2,
         "sources": [
-          "ynet",
-          "וואלה"
+          "גלובס",
+          "דה מרקר"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
+        "latestAt": "2026-07-05T13:42:00+00:00",
+        "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001547866#utm_source=RSS",
         "overlapTokens": [
-          "אחרי",
-          "יותר"
+          "כלכלה",
+          "מיליארד"
         ],
-        "score": 17.54,
-        "boost": 17.54
+        "score": 17.27,
+        "boost": 17.27
       }
     },
     {
-      "headline": "פעילים ישראלים טוענים שפונו בכוח מסוריה",
-      "source": "Israel National News English",
-      "canonicalSource": "Israel National News English",
+      "headline": "שני אחים מסיימים קורס מכונאים מוסקים אחרי הכשרה במלחמה",
+      "source": "דובר צה״ל - טלגרם רשמי",
+      "canonicalSource": "דובר צה״ל",
       "category": "ביטחון",
       "class": "hard",
-      "ageMinutes": 48,
-      "url": "https://www.israelnationalnews.com/flashes/689099",
-      "beforeRank": 8,
+      "ageMinutes": 116,
+      "url": "https://t.me/idf_telegram/24528",
+      "beforeRank": 28,
       "afterRank": 20,
-      "delta": -12,
+      "delta": 8,
       "trendMatch": null
     }
   ],
   "movement": [
+    {
+      "headline": "חמאס צפוי להודיע על פירוק הממשלה בפועל ברצועת עזה",
+      "source": "ynet",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "דיווח: חמאס יודיע על פיזור \"הוועדה הממשלתית\" לקראת העברת השלטון",
+        "clusterKey": "חמאס יודיע",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "ישראל היום"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": true,
+        "latestAt": "2026-07-05T20:12:36+00:00",
+        "sampleUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20916824",
+        "overlapTokens": [
+          "הוועדה",
+          "חמאס",
+          "יודיע"
+        ],
+        "score": 27.62,
+        "boost": 27.62
+      },
+      "beforeRank": 1,
+      "afterRank": 1
+    },
     {
       "headline": "סשה טרופנוב וספיר כהן נישאו אחרי השבי",
       "source": "Israel National News English",
@@ -2448,7 +2149,7 @@
       "class": "hard",
       "trendMatch": {
         "trend": "אהבה שניצחה את השבי: ספיר כהן וסשה טרופנוב התחתנו",
-        "clusterKey": "השבי ספיר כהן",
+        "clusterKey": "ספיר כהן",
         "domain": "חדשות",
         "externalMentions": 4,
         "sourceCount": 2,
@@ -2471,8 +2172,17 @@
         "score": 28.13,
         "boost": 28.13
       },
-      "beforeRank": 1,
-      "afterRank": 1
+      "beforeRank": 2,
+      "afterRank": 2
+    },
+    {
+      "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 4,
+      "afterRank": 3
     },
     {
       "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
@@ -2509,46 +2219,8 @@
         "score": 69.8,
         "boost": 38.0
       },
-      "beforeRank": 6,
-      "afterRank": 2
-    },
-    {
-      "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
-      "source": "Israel National News English",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "ביער",
-          "בית",
-          "הושגה",
-          "השריפה",
-          "יותר",
-          "קשת",
-          "שליטה"
-        ],
-        "score": 78.92,
-        "boost": 38.0
-      },
-      "beforeRank": 7,
-      "afterRank": 3
+      "beforeRank": 8,
+      "afterRank": 4
     },
     {
       "headline": "צה״ל עצר עשרות ישראלים שניסו לחצות לסוריה",
@@ -2584,26 +2256,8 @@
         "score": 63.94,
         "boost": 38.0
       },
-      "beforeRank": 5,
-      "afterRank": 4
-    },
-    {
-      "headline": "הוויכוח על איום חמאס חוזר ללב המערכת הפוליטית",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 2,
+      "beforeRank": 7,
       "afterRank": 5
-    },
-    {
-      "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
-      "source": "Jerusalem Post",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": null,
-      "beforeRank": 4,
-      "afterRank": 6
     },
     {
       "headline": "בג״ץ דרש מהמדינה מידע על מצב רופא מעזה בבידוד",
@@ -2634,39 +2288,25 @@
         "score": 21.9,
         "boost": 21.9
       },
-      "beforeRank": 9,
+      "beforeRank": 11,
+      "afterRank": 6
+    },
+    {
+      "headline": "טענות לשוחד ברשימות הפינוי הרפואי מעזה",
+      "source": "Jerusalem Post",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": null,
+      "beforeRank": 6,
       "afterRank": 7
     },
     {
-      "headline": "נתניהו טען שכפרים נוצריים בלבנון ביקשו סיפוח לישראל",
-      "source": "France24 Middle East",
+      "headline": "הושגה שליטה בשריפה ביער בית קשת אחרי יותר מארבע שעות",
+      "source": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
-      "trendMatch": {
-        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
-        "clusterKey": "לצבא לבנון",
-        "domain": "חדשות",
-        "externalMentions": 4,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": false,
-        "latestAt": "2026-07-05T18:13:05+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
-        "overlapTokens": [
-          "לבנון",
-          "נתניהו"
-        ],
-        "score": 21.9,
-        "boost": 21.9
-      },
-      "beforeRank": 19,
+      "trendMatch": null,
+      "beforeRank": 9,
       "afterRank": 8
     },
     {
@@ -2675,7 +2315,7 @@
       "category": "כלכלה",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 13,
+      "beforeRank": 15,
       "afterRank": 9
     },
     {
@@ -2684,7 +2324,7 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 10,
+      "beforeRank": 12,
       "afterRank": 10
     },
     {
@@ -2693,16 +2333,16 @@
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 15,
+      "beforeRank": 17,
       "afterRank": 11
     },
     {
-      "headline": "תושבים עזתים הפגינו ליד אל-שיפא בדרישה לפינוי רפואי",
-      "source": "Al Jazeera RSS מסונן מזרח תיכון",
+      "headline": "פעילים ישראלים טוענים שפונו בכוח מסוריה",
+      "source": "Israel National News English",
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 17,
+      "beforeRank": 10,
       "afterRank": 12
     },
     {
@@ -2743,8 +2383,40 @@
         "score": 195.43,
         "boost": 38.0
       },
-      "beforeRank": 23,
+      "beforeRank": 25,
       "afterRank": 13
+    },
+    {
+      "headline": "נתניהו טען שכפרים נוצריים בלבנון ביקשו סיפוח לישראל",
+      "source": "France24 Middle East",
+      "category": "ביטחון",
+      "class": "hard",
+      "trendMatch": {
+        "trend": "צה\"ל נערך למסור שני אזורי פיילוט לצבא לבנון; נתניהו מכנס התייעצות ביטחונית",
+        "clusterKey": "לצבא לבנון",
+        "domain": "חדשות",
+        "externalMentions": 4,
+        "sourceCount": 2,
+        "sources": [
+          "ynet",
+          "וואלה"
+        ],
+        "discoveryTypes": [
+          "RSS",
+          "WEB"
+        ],
+        "mentionedInFeed": false,
+        "latestAt": "2026-07-05T18:13:05+00:00",
+        "sampleUrl": "https://www.ynet.co.il/news/article/sjh3cmdqme",
+        "overlapTokens": [
+          "לבנון",
+          "נתניהו"
+        ],
+        "score": 21.9,
+        "boost": 21.9
+      },
+      "beforeRank": 21,
+      "afterRank": 14
     },
     {
       "headline": "טראמפ יפתח את פסגת נאט״ו בפגישות עם ארדואן, זלנסקי וא-שרע",
@@ -2775,39 +2447,7 @@
         "score": 22.53,
         "boost": 22.53
       },
-      "beforeRank": 25,
-      "afterRank": 14
-    },
-    {
-      "headline": "שני אחים מסיימים קורס מכונאים מוסקים אחרי הכשרה במלחמה",
-      "source": "דובר צה״ל",
-      "category": "ביטחון",
-      "class": "hard",
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "שעות"
-        ],
-        "score": 17.54,
-        "boost": 17.54
-      },
-      "beforeRank": 26,
+      "beforeRank": 27,
       "afterRank": 15
     },
     {
@@ -2845,39 +2485,16 @@
         "score": 83.83,
         "boost": 38.0
       },
-      "beforeRank": 35,
+      "beforeRank": 37,
       "afterRank": 16
     },
     {
-      "headline": "מטוס דלתא נפגע ככל הנראה מזיקוקים בשיקגו",
-      "source": "וואלה",
+      "headline": "תושבים עזתים הפגינו ליד אל-שיפא בדרישה לפינוי רפואי",
+      "source": "Al Jazeera RSS מסונן מזרח תיכון",
       "category": "ביטחון",
       "class": "hard",
-      "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
-        "externalMentions": 3,
-        "sourceCount": 2,
-        "sources": [
-          "ynet",
-          "וואלה"
-        ],
-        "discoveryTypes": [
-          "RSS",
-          "WEB"
-        ],
-        "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
-        "overlapTokens": [
-          "אחרי",
-          "חדשות"
-        ],
-        "score": 17.54,
-        "boost": 17.54
-      },
-      "beforeRank": 34,
+      "trendMatch": null,
+      "beforeRank": 19,
       "afterRank": 17
     },
     {
@@ -2913,7 +2530,7 @@
         "score": 41.88,
         "boost": 38.0
       },
-      "beforeRank": 38,
+      "beforeRank": 40,
       "afterRank": 18
     },
     {
@@ -2922,39 +2539,39 @@
       "category": "כלכלה",
       "class": "hard",
       "trendMatch": {
-        "trend": "אחרי יותר מ-4 שעות, הושגה שליטה על השריפה ביער בית קשת",
-        "clusterKey": "ביער בית קשת",
-        "domain": "חדשות",
+        "trend": "ניסיון ההשתלטות שעלה לברק רוזן ואסי טוכמאייר רבע מיליארד שקל",
+        "clusterKey": "מיליארד שקל",
+        "domain": "כלכלה",
         "externalMentions": 3,
         "sourceCount": 2,
         "sources": [
-          "ynet",
-          "וואלה"
+          "גלובס",
+          "דה מרקר"
         ],
         "discoveryTypes": [
           "RSS",
           "WEB"
         ],
         "mentionedInFeed": true,
-        "latestAt": "2026-07-05T19:07:58+00:00",
-        "sampleUrl": "https://www.ynet.co.il/news/article/hyaysm00qfe",
+        "latestAt": "2026-07-05T13:42:00+00:00",
+        "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001547866#utm_source=RSS",
         "overlapTokens": [
-          "אחרי",
-          "יותר"
+          "כלכלה",
+          "מיליארד"
         ],
-        "score": 17.54,
-        "boost": 17.54
+        "score": 17.27,
+        "boost": 17.27
       },
-      "beforeRank": 33,
+      "beforeRank": 35,
       "afterRank": 19
     },
     {
-      "headline": "פעילים ישראלים טוענים שפונו בכוח מסוריה",
-      "source": "Israel National News English",
+      "headline": "שני אחים מסיימים קורס מכונאים מוסקים אחרי הכשרה במלחמה",
+      "source": "דובר צה״ל",
       "category": "ביטחון",
       "class": "hard",
       "trendMatch": null,
-      "beforeRank": 8,
+      "beforeRank": 28,
       "afterRank": 20
     }
   ],
