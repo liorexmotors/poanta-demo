@@ -1,20 +1,21 @@
 # Pointa Quality Gate Report
 
-Items checked: 23
+Items checked: 19
 Errors: 0
 Warnings: 0
 
 ## Category distribution
 
-- ביטחון: 5
-- רכילות: 4
 - מזג אוויר: 4
-- חדשות: 3
+- ביטחון: 3
 - פלילים: 3
-- כלכלה: 1
+- רכילות: 2
+- משפט: 2
+- חדשות: 1
 - בריאות: 1
-- רכב: 1
-- משפט: 1
+- אקטואליה בעולם: 1
+- פוליטיקה: 1
+- כלכלה: 1
 
 ## Issue counts
 
