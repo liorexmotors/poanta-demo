@@ -73,6 +73,9 @@ def candidate_payload(source: dict[str, Any], items: list[dict[str, Any]], limit
             r"איראן|חיזבאללה|חמאס|עזה|סוריה|לבנון|תימן|חות|הורמוז|דמשק", text
         ):
             fixed["category"] = "ביטחון"
+        if not str(fixed.get("imageUrl") or "").strip():
+            fixed["imageUrl"] = default_image_url(fixed)
+            fixed["imageFallbackKind"] = default_image_kind(fixed)
         selected.append(fixed)
         seen.add(url)
         if len(selected) >= limit:
@@ -94,6 +97,36 @@ def candidate_payload(source: dict[str, Any], items: list[dict[str, Any]], limit
             "note": "breaking_feed.json is managed separately and is not replaced by Feed B.",
         },
     }
+
+
+def default_image_kind(item: dict[str, Any]) -> str:
+    blob = " ".join(
+        str(item.get(key) or "")
+        for key in ("category", "categoryClass", "source", "sourceLogo", "title", "headline")
+    ).lower()
+    if "מזג" in blob:
+        return "weather"
+    if any(term in blob for term in ("ביטחון", "צבא", "חמאס", "איראן", "חיזבאללה", "עזה")):
+        return "security"
+    if any(term in blob for term in ("פוליט", "ממשלה", "כנסת", "בג״ץ", "בג\"ץ")):
+        return "politics"
+    if any(term in blob for term in ("כלכלה", "בורסה", "עסקים", "נדל")):
+        return "economy"
+    if any(term in blob for term in ("טכנולוג", "הייטק", "ai")):
+        return "tech"
+    if "ספורט" in blob:
+        return "sports"
+    if any(term in blob for term in ("תרבות", "בידור", "רכילות")):
+        return "culture"
+    if any(term in blob for term in ("עולם", "global", "jazeera", "bbc", "reuters", "france24")):
+        return "world"
+    if any(term in blob for term in ("מקומי", "עירוני", "רכב", "תחבורה")):
+        return "local"
+    return "news"
+
+
+def default_image_url(item: dict[str, Any]) -> str:
+    return f"https://poanta-demo.pages.dev/assets/feed-defaults/{default_image_kind(item)}.svg"
 
 
 def run_json(cmd: list[str]) -> tuple[int, dict[str, Any]]:
