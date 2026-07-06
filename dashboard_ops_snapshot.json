@@ -1,15 +1,15 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-07-06T07:07:42+03:00",
+  "generatedAt": "2026-07-06T07:09:52+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "fail",
-      "checkedAt": "2026-07-06T07:07:36+03:00",
+      "checkedAt": "2026-07-06T07:09:47+03:00",
       "url": "feed.json",
       "updatedAt": "2026-07-06T06:30:35+03:00",
-      "items": 79,
+      "items": 78,
       "top": [
         {
           "publishedAt": "2026-07-06T06:15:02+03:00",
@@ -31,13 +31,6 @@
           "headline": "אנגליה ניצחה את מקסיקו 2:3 ועלתה לרבע גמר המונדיאל",
           "takeaway": null,
           "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-game/0000019f-3554-dd62-abbf-bfdc897b0000"
-        },
-        {
-          "publishedAt": "2026-07-06T06:04:06+03:00",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-          "takeaway": null,
-          "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss"
         },
         {
           "publishedAt": "2026-07-06T06:01:44+03:00",
@@ -94,13 +87,20 @@
           "headline": "27% מהאונקולוגים שוקלים לעזוב, והמחסור מטלטל את המערכת",
           "takeaway": null,
           "url": "https://news.walla.co.il/item/3851142"
+        },
+        {
+          "publishedAt": "2026-07-06T06:00:27+03:00",
+          "source": "וואלה חדשות",
+          "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
+          "takeaway": null,
+          "url": "https://news.walla.co.il/item/3851144"
         }
       ],
       "errors": [
         {
           "severity": "error",
           "code": "stale_updated_at",
-          "message": "Live updatedAt is stale: 2026-07-06T06:30:35+03:00 (0:37:00.283822 old)",
+          "message": "Live updatedAt is stale: 2026-07-06T06:30:35+03:00 (0:39:11.469093 old)",
           "item": null,
           "headline": "",
           "source": "",
@@ -109,7 +109,7 @@
         {
           "severity": "error",
           "code": "no_new_top_item_sla",
-          "message": "No new top feed item for more than 25m: latest is 2026-07-06T06:15:02+03:00 (0:52:33.283822 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "message": "No new top feed item for more than 25m: latest is 2026-07-06T06:15:02+03:00 (0:54:44.469093 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
           "item": 0,
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
@@ -118,7 +118,7 @@
         {
           "severity": "error",
           "code": "too_few_recent_items_sla",
-          "message": "Quantity SLA failed: only 3 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "message": "Quantity SLA failed: only 2 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
           "item": null,
           "headline": "",
           "source": "",
@@ -127,7 +127,7 @@
         {
           "severity": "error",
           "code": "too_few_recent_sources_sla",
-          "message": "Quantity SLA failed: only 2 distinct recent source groups in top 12 within 60m; minimum is 3. Feed may look narrow even if items are fresh.",
+          "message": "Quantity SLA failed: only 1 distinct recent source groups in top 12 within 60m; minimum is 3. Feed may look narrow even if items are fresh.",
           "item": null,
           "headline": "",
           "source": "",
@@ -138,8 +138,8 @@
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest ynet item is older than 90m: 2026-07-06T05:00:00+03:00 (2:07:35.283822 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
-          "item": 25,
+          "message": "Latest ynet item is older than 90m: 2026-07-06T05:00:00+03:00 (2:09:46.469093 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "item": 24,
           "headline": "השופטים בתיק 4000 סימנו שסעיף השוחד נחלש",
           "source": "ynet - כל ערוץ החדשות",
           "url": "https://www.ynet.co.il/news/theheadline/article/jt359vrn6"
@@ -156,27 +156,18 @@
         {
           "severity": "warning",
           "code": "stale_foreign_source_view",
-          "message": "Latest foreign-source item is older than 60m: 2026-07-06T06:04:06+03:00 (1:03:29.283822 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
-          "item": 3,
-          "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss"
-        },
-        {
-          "severity": "warning",
-          "code": "headline_duplicates_summary",
-          "message": "Headline is too close to the summary",
-          "item": 3,
-          "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss"
+          "message": "Latest foreign-source item is older than 60m: 2026-07-06T05:35:00+03:00 (1:34:46.469093 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "item": 18,
+          "headline": "פקיסטן מגדילה קניית LNG על רקע השיבושים במצר הורמוז",
+          "source": "Bloomberg Israel/Iran דרך Google News",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDg4VDIySFJQa2tYY0t2YTZpSWNMX3pGQ256OTNSdW9zUUpyWGFRc3JPb1VTNVlsY2hXRTNyclNfa3ZPVmVYU1dVNnpkVWRvNFUyN0gtY2FENHlEY1dfOUdMM3hOc2tVd0JjRzM5VUlRdUVsOGpqOTJGVVhmM0JCcjQzYXI0TVEzLUh3MzdSZEJLcVpDN3lVaTgwZjNMSGhmUXdmR09VcXJmcDBaVTlHRjVpUQ?oc=5"
         }
       ]
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-07-06T07:07:38+03:00",
+      "checkedAt": "2026-07-06T07:09:49+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -208,9 +199,8 @@
       "warningMinutes": {
         "all": 15
       },
-      "recentItems60m": 3,
+      "recentItems60m": 2,
       "recentSourceGroups60m": [
-        "הארץ",
         "וואלה"
       ],
       "latestByGroup": {
@@ -486,11 +476,11 @@
           "code": "publication_timing_sla",
           "group": "all",
           "thresholdMinutes": 25,
-          "ageMinutes": 52,
+          "ageMinutes": 54,
           "latestAt": "2026-07-06T06:15:02+03:00",
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
-          "message": "No fresh all publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh all publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -499,11 +489,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh foreign publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 65 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -512,11 +502,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 52,
+          "ageMinutes": 54,
           "latestAt": "2026-07-06T06:15:02+03:00",
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
-          "message": "No fresh ביטחון publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -525,11 +515,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 112,
+          "ageMinutes": 114,
           "latestAt": "2026-07-06T05:15:13+03:00",
           "headline": "ישראל ממנה שגרירה תושבת ראשונה לסלובניה",
           "source": "Israel National News English",
-          "message": "No fresh פוליטיקה publication event for 112 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 114 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -538,11 +528,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 521,
+          "ageMinutes": 523,
           "latestAt": "2026-07-05T22:26:23+03:00",
           "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh חדשות publication event for 521 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 523 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -551,11 +541,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 67,
+          "ageMinutes": 69,
           "latestAt": "2026-07-06T06:00:27+03:00",
           "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
           "source": "וואלה חדשות",
-          "message": "No fresh פלילים publication event for 67 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 69 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -564,11 +554,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 80,
+          "ageMinutes": 82,
           "latestAt": "2026-07-06T05:47:00+03:00",
           "headline": "תושב חוזר עתר אחרי שרשות המסים שינתה את עמדתה חמש פעמים",
           "source": "גלובס - משפט",
-          "message": "No fresh משפט publication event for 80 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 82 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -577,11 +567,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh כלכלה publication event for 63 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 65 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -590,11 +580,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 551,
+          "ageMinutes": 553,
           "latestAt": "2026-07-05T21:56:00+03:00",
           "headline": "תשלומי ההורים לשנת הלימודים הבאה נשארו ללא שינוי",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh צרכנות publication event for 551 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 553 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -603,11 +593,24 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 623,
+          "ageMinutes": 625,
           "latestAt": "2026-07-05T20:44:02+03:00",
           "headline": "מאזדה וקיה מורידות מחירים גם בדגמים שרק הושקו",
           "source": "וואלה רכב",
-          "message": "No fresh רכב publication event for 623 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 625 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ספורט",
+          "thresholdMinutes": 60,
+          "ageMinutes": 61,
+          "latestAt": "2026-07-06T06:08:21+03:00",
+          "headline": "אנגליה ניצחה את מקסיקו 2:3 ועלתה לרבע גמר המונדיאל",
+          "source": "הארץ - כל הכתבות",
+          "message": "No fresh ספורט publication event for 61 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -616,11 +619,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 67,
+          "ageMinutes": 69,
           "latestAt": "2026-07-06T06:00:00+03:00",
           "headline": "קובה נשענת על רשת מודיעים כדי לדכא מחאה ולשמור על שלטון הברזל",
           "source": "N12 - בעולם",
-          "message": "No fresh אקטואליה בעולם publication event for 67 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 69 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -629,11 +632,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 3420,
+          "ageMinutes": 3422,
           "latestAt": "2026-07-03T22:07:29+03:00",
           "headline": "המאמר טוען שנתניהו כבר בונה לעצמו יציאת חירום",
           "source": "מעריב - דעות",
-          "message": "No fresh דעות publication event for 3420 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 3422 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -642,11 +645,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 809,
+          "ageMinutes": 811,
           "latestAt": "2026-07-05T17:38:37+03:00",
           "headline": "TV Time נסגרת אחרי 15 שנה; המשתמשים יוכלו לייצא את המידע עד 15 ביולי",
           "source": "כיפה - חדשות",
-          "message": "No fresh טכנולוגיה publication event for 809 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 811 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -655,11 +658,11 @@
           "code": "publication_timing_sla",
           "group": "תרבות",
           "thresholdMinutes": 120,
-          "ageMinutes": 242,
+          "ageMinutes": 244,
           "latestAt": "2026-07-06T03:05:00+03:00",
           "headline": "מחקר חדש מערער על מה שידענו על ההוביטים הקדומים",
           "source": "וואלה חדשות - אסור לפספס",
-          "message": "No fresh תרבות publication event for 242 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh תרבות publication event for 244 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -668,11 +671,11 @@
           "code": "publication_timing_sla",
           "group": "רכילות",
           "thresholdMinutes": 120,
-          "ageMinutes": 545,
+          "ageMinutes": 547,
           "latestAt": "2026-07-05T22:02:16+03:00",
           "headline": "אלה איילון: אני לא בזוגיות עם ארז איסקוב",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh רכילות publication event for 545 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכילות publication event for 547 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -681,11 +684,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 3847,
+          "ageMinutes": 3850,
           "latestAt": "2026-07-03T14:59:47+03:00",
           "headline": "הפועל תל אביב מפעילה לחצים על ים מדר ומשפחתו במטרה להשאירו במדים האדומים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh נדל״ן publication event for 3847 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 3850 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -694,11 +697,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 1045,
+          "ageMinutes": 1047,
           "latestAt": "2026-07-05T13:42:25+03:00",
           "headline": "MeetingTV תובעת את קוי סקיוריטי ופאלו אלטו נטוורקס",
           "source": "דה מרקר - TechNation",
-          "message": "No fresh דה מרקר publication event for 1045 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 1047 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -707,11 +710,11 @@
           "code": "publication_timing_sla",
           "group": "מקורות זרים",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh מקורות זרים publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מקורות זרים publication event for 65 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -720,17 +723,16 @@
         {
           "severity": "warning",
           "code": "low_recent_event_volume",
-          "recent60m": 3,
-          "message": "Only 3 publication events in the last 60 minutes."
+          "recent60m": 2,
+          "message": "Only 2 publication events in the last 60 minutes."
         },
         {
           "severity": "warning",
           "code": "low_recent_source_diversity",
           "recentSources60m": [
-            "הארץ",
             "וואלה"
           ],
-          "message": "Only 2 source groups published in the last 60 minutes."
+          "message": "Only 1 source groups published in the last 60 minutes."
         }
       ],
       "findings": [
@@ -739,11 +741,11 @@
           "code": "publication_timing_sla",
           "group": "all",
           "thresholdMinutes": 25,
-          "ageMinutes": 52,
+          "ageMinutes": 54,
           "latestAt": "2026-07-06T06:15:02+03:00",
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
-          "message": "No fresh all publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh all publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -752,11 +754,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh foreign publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 65 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -765,11 +767,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 52,
+          "ageMinutes": 54,
           "latestAt": "2026-07-06T06:15:02+03:00",
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
-          "message": "No fresh ביטחון publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -778,11 +780,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 112,
+          "ageMinutes": 114,
           "latestAt": "2026-07-06T05:15:13+03:00",
           "headline": "ישראל ממנה שגרירה תושבת ראשונה לסלובניה",
           "source": "Israel National News English",
-          "message": "No fresh פוליטיקה publication event for 112 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 114 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -791,11 +793,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 521,
+          "ageMinutes": 523,
           "latestAt": "2026-07-05T22:26:23+03:00",
           "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh חדשות publication event for 521 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 523 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -804,11 +806,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 67,
+          "ageMinutes": 69,
           "latestAt": "2026-07-06T06:00:27+03:00",
           "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
           "source": "וואלה חדשות",
-          "message": "No fresh פלילים publication event for 67 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 69 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -817,11 +819,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 80,
+          "ageMinutes": 82,
           "latestAt": "2026-07-06T05:47:00+03:00",
           "headline": "תושב חוזר עתר אחרי שרשות המסים שינתה את עמדתה חמש פעמים",
           "source": "גלובס - משפט",
-          "message": "No fresh משפט publication event for 80 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 82 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -830,11 +832,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh כלכלה publication event for 63 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 65 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -843,11 +845,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 551,
+          "ageMinutes": 553,
           "latestAt": "2026-07-05T21:56:00+03:00",
           "headline": "תשלומי ההורים לשנת הלימודים הבאה נשארו ללא שינוי",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh צרכנות publication event for 551 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 553 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -856,11 +858,24 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 623,
+          "ageMinutes": 625,
           "latestAt": "2026-07-05T20:44:02+03:00",
           "headline": "מאזדה וקיה מורידות מחירים גם בדגמים שרק הושקו",
           "source": "וואלה רכב",
-          "message": "No fresh רכב publication event for 623 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 625 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ספורט",
+          "thresholdMinutes": 60,
+          "ageMinutes": 61,
+          "latestAt": "2026-07-06T06:08:21+03:00",
+          "headline": "אנגליה ניצחה את מקסיקו 2:3 ועלתה לרבע גמר המונדיאל",
+          "source": "הארץ - כל הכתבות",
+          "message": "No fresh ספורט publication event for 61 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -869,11 +884,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 67,
+          "ageMinutes": 69,
           "latestAt": "2026-07-06T06:00:00+03:00",
           "headline": "קובה נשענת על רשת מודיעים כדי לדכא מחאה ולשמור על שלטון הברזל",
           "source": "N12 - בעולם",
-          "message": "No fresh אקטואליה בעולם publication event for 67 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 69 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -882,11 +897,11 @@
           "code": "publication_timing_sla",
           "group": "דעות",
           "thresholdMinutes": 90,
-          "ageMinutes": 3420,
+          "ageMinutes": 3422,
           "latestAt": "2026-07-03T22:07:29+03:00",
           "headline": "המאמר טוען שנתניהו כבר בונה לעצמו יציאת חירום",
           "source": "מעריב - דעות",
-          "message": "No fresh דעות publication event for 3420 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דעות publication event for 3422 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -895,11 +910,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 809,
+          "ageMinutes": 811,
           "latestAt": "2026-07-05T17:38:37+03:00",
           "headline": "TV Time נסגרת אחרי 15 שנה; המשתמשים יוכלו לייצא את המידע עד 15 ביולי",
           "source": "כיפה - חדשות",
-          "message": "No fresh טכנולוגיה publication event for 809 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 811 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -908,11 +923,11 @@
           "code": "publication_timing_sla",
           "group": "תרבות",
           "thresholdMinutes": 120,
-          "ageMinutes": 242,
+          "ageMinutes": 244,
           "latestAt": "2026-07-06T03:05:00+03:00",
           "headline": "מחקר חדש מערער על מה שידענו על ההוביטים הקדומים",
           "source": "וואלה חדשות - אסור לפספס",
-          "message": "No fresh תרבות publication event for 242 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh תרבות publication event for 244 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -921,11 +936,11 @@
           "code": "publication_timing_sla",
           "group": "רכילות",
           "thresholdMinutes": 120,
-          "ageMinutes": 545,
+          "ageMinutes": 547,
           "latestAt": "2026-07-05T22:02:16+03:00",
           "headline": "אלה איילון: אני לא בזוגיות עם ארז איסקוב",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh רכילות publication event for 545 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכילות publication event for 547 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -934,11 +949,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 3847,
+          "ageMinutes": 3850,
           "latestAt": "2026-07-03T14:59:47+03:00",
           "headline": "הפועל תל אביב מפעילה לחצים על ים מדר ומשפחתו במטרה להשאירו במדים האדומים",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh נדל״ן publication event for 3847 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 3850 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -947,11 +962,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 1045,
+          "ageMinutes": 1047,
           "latestAt": "2026-07-05T13:42:25+03:00",
           "headline": "MeetingTV תובעת את קוי סקיוריטי ופאלו אלטו נטוורקס",
           "source": "דה מרקר - TechNation",
-          "message": "No fresh דה מרקר publication event for 1045 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 1047 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -960,28 +975,27 @@
           "code": "publication_timing_sla",
           "group": "מקורות זרים",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh מקורות זרים publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מקורות זרים publication event for 65 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
         {
           "severity": "warning",
           "code": "low_recent_event_volume",
-          "recent60m": 3,
-          "message": "Only 3 publication events in the last 60 minutes."
+          "recent60m": 2,
+          "message": "Only 2 publication events in the last 60 minutes."
         },
         {
           "severity": "warning",
           "code": "low_recent_source_diversity",
           "recentSources60m": [
-            "הארץ",
             "וואלה"
           ],
-          "message": "Only 2 source groups published in the last 60 minutes."
+          "message": "Only 1 source groups published in the last 60 minutes."
         }
       ]
     },
@@ -1177,13 +1191,13 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "fail",
-      "summary": "Live updatedAt is stale: 2026-07-06T06:30:35+03:00 (0:37:00.283822 old)",
-      "checkedAt": "2026-07-06T07:07:36+03:00",
+      "summary": "Live updatedAt is stale: 2026-07-06T06:30:35+03:00 (0:39:11.469093 old)",
+      "checkedAt": "2026-07-06T07:09:47+03:00",
       "findings": [
         {
           "severity": "error",
           "code": "stale_updated_at",
-          "message": "Live updatedAt is stale: 2026-07-06T06:30:35+03:00 (0:37:00.283822 old)",
+          "message": "Live updatedAt is stale: 2026-07-06T06:30:35+03:00 (0:39:11.469093 old)",
           "item": null,
           "headline": "",
           "source": "",
@@ -1192,7 +1206,7 @@
         {
           "severity": "error",
           "code": "no_new_top_item_sla",
-          "message": "No new top feed item for more than 25m: latest is 2026-07-06T06:15:02+03:00 (0:52:33.283822 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "message": "No new top feed item for more than 25m: latest is 2026-07-06T06:15:02+03:00 (0:54:44.469093 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
           "item": 0,
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
@@ -1201,7 +1215,7 @@
         {
           "severity": "error",
           "code": "too_few_recent_items_sla",
-          "message": "Quantity SLA failed: only 3 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
+          "message": "Quantity SLA failed: only 2 of top 12 items are newer than 60m; minimum is 5. Quality must stay strict, but low volume must trigger rescue/source expansion.",
           "item": null,
           "headline": "",
           "source": "",
@@ -1210,7 +1224,7 @@
         {
           "severity": "error",
           "code": "too_few_recent_sources_sla",
-          "message": "Quantity SLA failed: only 2 distinct recent source groups in top 12 within 60m; minimum is 3. Feed may look narrow even if items are fresh.",
+          "message": "Quantity SLA failed: only 1 distinct recent source groups in top 12 within 60m; minimum is 3. Feed may look narrow even if items are fresh.",
           "item": null,
           "headline": "",
           "source": "",
@@ -1219,8 +1233,8 @@
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest ynet item is older than 90m: 2026-07-06T05:00:00+03:00 (2:07:35.283822 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
-          "item": 25,
+          "message": "Latest ynet item is older than 90m: 2026-07-06T05:00:00+03:00 (2:09:46.469093 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "item": 24,
           "headline": "השופטים בתיק 4000 סימנו שסעיף השוחד נחלש",
           "source": "ynet - כל ערוץ החדשות",
           "url": "https://www.ynet.co.il/news/theheadline/article/jt359vrn6"
@@ -1237,20 +1251,11 @@
         {
           "severity": "warning",
           "code": "stale_foreign_source_view",
-          "message": "Latest foreign-source item is older than 60m: 2026-07-06T06:04:06+03:00 (1:03:29.283822 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
-          "item": 3,
-          "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss"
-        },
-        {
-          "severity": "warning",
-          "code": "headline_duplicates_summary",
-          "message": "Headline is too close to the summary",
-          "item": 3,
-          "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-          "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss"
+          "message": "Latest foreign-source item is older than 60m: 2026-07-06T05:35:00+03:00 (1:34:46.469093 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "item": 18,
+          "headline": "פקיסטן מגדילה קניית LNG על רקע השיבושים במצר הורמוז",
+          "source": "Bloomberg Israel/Iran דרך Google News",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDg4VDIySFJQa2tYY0t2YTZpSWNMX3pGQ256OTNSdW9zUUpyWGFRc3JPb1VTNVlsY2hXRTNyclNfa3ZPVmVYU1dVNnpkVWRvNFUyN0gtY2FENHlEY1dfOUdMM3hOc2tVd0JjRzM5VUlRdUVsOGpqOTJGVVhmM0JCcjQzYXI0TVEzLUh3MzdSZEJLcVpDN3lVaTgwZjNMSGhmUXdmR09VcXJmcDBaVTlHRjVpUQ?oc=5"
         }
       ]
     },
@@ -1258,19 +1263,19 @@
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh all publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-07-06T07:07:38+03:00",
+      "summary": "No fresh all publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-07-06T07:09:49+03:00",
       "findings": [
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "all",
           "thresholdMinutes": 25,
-          "ageMinutes": 52,
+          "ageMinutes": 54,
           "latestAt": "2026-07-06T06:15:02+03:00",
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
-          "message": "No fresh all publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh all publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1279,11 +1284,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh foreign publication event for 63 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 65 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1292,11 +1297,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 52,
+          "ageMinutes": 54,
           "latestAt": "2026-07-06T06:15:02+03:00",
           "headline": "מיגוניות כביש 232 לא יוזזו בלי שיתוף משפחות שכולות",
           "source": "וואלה חדשות",
-          "message": "No fresh ביטחון publication event for 52 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 54 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1305,11 +1310,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 112,
+          "ageMinutes": 114,
           "latestAt": "2026-07-06T05:15:13+03:00",
           "headline": "ישראל ממנה שגרירה תושבת ראשונה לסלובניה",
           "source": "Israel National News English",
-          "message": "No fresh פוליטיקה publication event for 112 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 114 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1318,11 +1323,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 521,
+          "ageMinutes": 523,
           "latestAt": "2026-07-05T22:26:23+03:00",
           "headline": "מיכל פעילן תקפה את החלטת הממשלה לא לציית לבג״ץ",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh חדשות publication event for 521 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 523 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1331,11 +1336,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 67,
+          "ageMinutes": 69,
           "latestAt": "2026-07-06T06:00:27+03:00",
           "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
           "source": "וואלה חדשות",
-          "message": "No fresh פלילים publication event for 67 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 69 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1344,11 +1349,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 80,
+          "ageMinutes": 82,
           "latestAt": "2026-07-06T05:47:00+03:00",
           "headline": "תושב חוזר עתר אחרי שרשות המסים שינתה את עמדתה חמש פעמים",
           "source": "גלובס - משפט",
-          "message": "No fresh משפט publication event for 80 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 82 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1357,11 +1362,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 63,
+          "ageMinutes": 65,
           "latestAt": "2026-07-06T06:04:06+03:00",
           "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
-          "message": "No fresh כלכלה publication event for 63 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 65 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -1385,16 +1390,16 @@
     }
   ],
   "feedQuality": {
-    "generatedAt": "2026-07-06T07:07:42+03:00",
+    "generatedAt": "2026-07-06T07:09:52+03:00",
     "score": "fail",
     "newsinessTop10": 6,
     "softTop10": 4,
     "otherTop10": 0,
-    "topItemAgeMinutes": 52,
-    "top5Under60": 3,
-    "top10Under60": 3,
-    "top12Under60": 3,
-    "uniqueSourcesTop20": 10,
+    "topItemAgeMinutes": 54,
+    "top5Under60": 2,
+    "top10Under60": 2,
+    "top12Under60": 2,
+    "uniqueSourcesTop20": 9,
     "dominantSource": {
       "name": "הארץ",
       "count": 4
@@ -1413,7 +1418,7 @@
     },
     "breaking": {
       "visible": true,
-      "topAgeMinutes": 26,
+      "topAgeMinutes": 28,
       "top12Under60": 2,
       "count": 80
     },
@@ -1425,18 +1430,18 @@
   "feedQualitySimulation": {
     "status": "ok",
     "mode": "simulation_only_no_feed_mutation",
-    "generatedAt": "2026-07-06T04:07:41+00:00",
+    "generatedAt": "2026-07-06T04:09:51+00:00",
     "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
-    "itemCount": 79,
+    "itemCount": 78,
     "before": {
       "newsinessTop10": 6,
       "softTop10": 4,
       "otherTop10": 0,
-      "top5Under60": 3,
-      "top10Under60": 3,
-      "top12Under60": 3,
-      "topItemAgeMinutes": 52,
-      "uniqueSourcesTop20": 10,
+      "top5Under60": 2,
+      "top10Under60": 2,
+      "top12Under60": 2,
+      "topItemAgeMinutes": 54,
+      "uniqueSourcesTop20": 9,
       "dominantSource": {
         "name": "וואלה",
         "count": 4
@@ -1466,12 +1471,8 @@
           "count": 3
         },
         {
-          "name": "Al Jazeera RSS מסונן מזרח תיכון",
-          "count": 1
-        },
-        {
           "name": "Jerusalem Post",
-          "count": 1
+          "count": 2
         },
         {
           "name": "ערוץ 7 / INN עברית",
@@ -1480,11 +1481,15 @@
         {
           "name": "N12",
           "count": 1
+        },
+        {
+          "name": "ישראל היום",
+          "count": 1
         }
       ],
-      "trendMatchedTop10": 3,
-      "trendMatchedTop20": 8,
-      "trendGapMatchedTop20": 3,
+      "trendMatchedTop10": 5,
+      "trendMatchedTop20": 10,
+      "trendGapMatchedTop20": 4,
       "continuousPublishing": {
         "targetMinutes": 10,
         "estimatedVisibleChangeMinutes": 40,
@@ -1509,7 +1514,7 @@
       "top5Under60": 2,
       "top10Under60": 2,
       "top12Under60": 2,
-      "topItemAgeMinutes": 52,
+      "topItemAgeMinutes": 54,
       "uniqueSourcesTop20": 11,
       "dominantSource": {
         "name": "וואלה",
@@ -1527,11 +1532,11 @@
           "count": 3
         },
         {
-          "name": "Jerusalem Post",
+          "name": "גלובס",
           "count": 3
         },
         {
-          "name": "גלובס",
+          "name": "Jerusalem Post",
           "count": 3
         },
         {
@@ -1555,9 +1560,9 @@
           "count": 1
         }
       ],
-      "trendMatchedTop10": 4,
+      "trendMatchedTop10": 6,
       "trendMatchedTop20": 8,
-      "trendGapMatchedTop20": 2,
+      "trendGapMatchedTop20": 3,
       "continuousPublishing": {
         "targetMinutes": 10,
         "estimatedVisibleChangeMinutes": 40,
@@ -1575,7 +1580,7 @@
         "readyQueue": []
       }
     },
-    "beforeHealthScore": 61,
+    "beforeHealthScore": 58,
     "afterHealthScore": 76,
     "replacementReadiness": {
       "score": 72,
@@ -1635,26 +1640,26 @@
     "delta": {
       "newsinessTop10": 3,
       "softTop10": -3,
-      "top12Under60": -1,
-      "uniqueSourcesTop20": 1,
+      "top12Under60": 0,
+      "uniqueSourcesTop20": 2,
       "trendMatchedTop10": 1,
-      "trendMatchedTop20": 0,
-      "healthScore": 15
+      "trendMatchedTop20": -2,
+      "healthScore": 18
     },
     "historySummary": {
       "sampleCount": 144,
       "window": 12,
       "positiveRuns": 12,
       "negativeRuns": 0,
-      "avgHealthDelta": 12.58,
-      "avgAfterHealthScore": 90.83,
+      "avgHealthDelta": 13.67,
+      "avgAfterHealthScore": 89.25,
       "stablePositive": true,
       "replacement": {
         "threshold": 80,
         "minSamplesForPromotion": 24,
         "window": 48,
         "latestScore": 72,
-        "rollingScore": 74.94,
+        "rollingScore": 75.33,
         "readyRuns": 3,
         "criticalBlockers": [
           "top_item_stale_over_25m",
@@ -1674,12 +1679,51 @@
     "trendSignal": {
       "status": "ok",
       "path": "spy_trends.json",
-      "generatedAt": "2026-07-06T07:07:41+03:00",
+      "generatedAt": "2026-07-06T07:09:51+03:00",
       "sourceTrendCount": 14,
       "usedTrendCount": 14,
       "rssItemsScanned": 103,
-      "webItemsScanned": 181,
+      "webItemsScanned": 203,
       "topTrends": [
+        {
+          "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
+          "clusterKey": "היועמ שית",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 3,
+          "sources": [
+            "N12",
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-05T21:12:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3851108",
+          "strength": 46.2
+        },
+        {
+          "trend": "הרצוג: אי ציות לפסק דין של בית משפט הוא קו אדום שאסור לחצות",
+          "clusterKey": "אדום שאסור",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 3,
+          "sources": [
+            "N12",
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-07-06T04:09:51.732135+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/law/2026-07-05/ty-article/.premium/0000019f-3264-d337-a39f-f76d03750000",
+          "strength": 46.1
+        },
         {
           "trend": "מזג האוויר צפוי להיות רגיל לעונה עם אפשרות לטפטוף קל בצפון ובחוף",
           "clusterKey": "מזג האוויר",
@@ -1720,7 +1764,7 @@
         },
         {
           "trend": "ונצואלה: מניין ההרוגים ברעידות האדמה עלה ל-3342",
-          "clusterKey": "מניין ההרוגים",
+          "clusterKey": "ההרוגים ברעידות האדמה",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -1736,25 +1780,6 @@
           "latestAt": "2026-07-06T00:51:00+00:00",
           "sampleUrl": "https://news.walla.co.il/break/3851138",
           "strength": 42.1
-        },
-        {
-          "trend": "המחלוקת שהובילה להצהרה חסרת תקדים של הממשלה - ואיך יתבטא משבר חוקתי",
-          "clusterKey": "משבר חוקתי",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-07-05T21:16:43+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/hklbdfdxgx",
-          "strength": 40.4
         },
         {
           "trend": "גבר כבן 30 נפצע קשה בירושלים",
@@ -1776,27 +1801,26 @@
           "strength": 37.5
         },
         {
-          "trend": "היועמ\"שית נגד החלטת הממשלה: \"נסיון להלך איימים, שחותר תחת עקרונות שלטון החוק\"",
-          "clusterKey": "היועמ שית",
-          "domain": "חדשות",
-          "externalMentions": 5,
+          "trend": "חמאס שוקל להעביר את השלטון בעזה לוועדת טכנוקרטים",
+          "clusterKey": "חמאס שוקל",
+          "domain": "כלכלה",
+          "externalMentions": 2,
           "sourceCount": 2,
           "sources": [
-            "הארץ",
-            "וואלה"
+            "N12",
+            "גלובס"
           ],
           "discoveryTypes": [
-            "RSS",
             "WEB"
           ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:12:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3851108",
-          "strength": 37.5
+          "mentionedInFeed": false,
+          "latestAt": "2026-07-06T04:09:51.734578+00:00",
+          "sampleUrl": "https://www.mako.co.il/news-military/2026_q3/Article-6e0000ebec33f91026.htm",
+          "strength": 37.4
         },
         {
           "trend": "הערכות: אלפים רבים, רובם בני 65 ומעלה, מתו בגל החום ברחבי אירופה",
-          "clusterKey": "החום ברחבי אירופה",
+          "clusterKey": "בגל החום ברחבי",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
@@ -1808,26 +1832,8 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.480408+00:00",
+          "latestAt": "2026-07-06T04:09:51.733752+00:00",
           "sampleUrl": "https://www.haaretz.co.il/nature/2026-07-05/ty-article-magazine/.premium/0000019f-3171-d9e7-afdf-3d77b1370000",
-          "strength": 37.4
-        },
-        {
-          "trend": "הרצוג: אי ציות לפסק דין של בית משפט הוא קו אדום שאסור לחצות",
-          "clusterKey": "אדום שאסור לחצות",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.478594+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/law/2026-07-05/ty-article/.premium/0000019f-3264-d337-a39f-f76d03750000",
           "strength": 37.4
         },
         {
@@ -1850,22 +1856,22 @@
           "strength": 35.8
         },
         {
-          "trend": "מתווה דרך לכניסת ועדת הטכנוקרטים: \"חמאס יודיע על פירוק ממשלתו ברצועה\"",
-          "clusterKey": "יודיע פירוק",
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
           "sources": [
-            "ynet",
-            "הארץ"
+            "N12",
+            "וואלה"
           ],
           "discoveryTypes": [
             "RSS",
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:21:15+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/byaevn007mx",
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
           "strength": 34.1
         }
       ]
@@ -1877,7 +1883,7 @@
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 52,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3851148",
         "beforeRank": 1,
         "afterRank": 1,
@@ -1918,34 +1924,12 @@
         "canonicalSource": "וואלה",
         "category": "בריאות",
         "class": "soft",
-        "ageMinutes": 52,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3851000",
         "beforeRank": 2,
         "afterRank": 2,
         "delta": 0,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
+        "trendMatch": null
       },
       {
         "headline": "אנגליה ניצחה את מקסיקו 2:3 ועלתה לרבע גמר המונדיאל",
@@ -1953,25 +1937,35 @@
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 59,
+        "ageMinutes": 61,
         "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-game/0000019f-3554-dd62-abbf-bfdc897b0000",
         "beforeRank": 3,
         "afterRank": 3,
         "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 63,
-        "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss",
-        "beforeRank": 4,
-        "afterRank": 4,
-        "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "הגמר",
+            "מקסיקו"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "המחסור בשוטרי סיור עמוק בערים, ובגדה מספר התקנים הוכפל",
@@ -1979,14 +1973,14 @@
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 65,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/news/law/2026-07-06/ty-article/.premium/0000019f-314a-d4c0-a5bf-f5ce5d820000",
-        "beforeRank": 5,
-        "afterRank": 5,
+        "beforeRank": 4,
+        "afterRank": 4,
         "delta": 0,
         "trendMatch": {
           "trend": "הערכות: אלפים רבים, רובם בני 65 ומעלה, מתו בגל החום ברחבי אירופה",
-          "clusterKey": "החום ברחבי אירופה",
+          "clusterKey": "בגל החום ברחבי",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
@@ -1998,7 +1992,7 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.480408+00:00",
+          "latestAt": "2026-07-06T04:09:51.733752+00:00",
           "sampleUrl": "https://www.haaretz.co.il/nature/2026-07-05/ty-article-magazine/.premium/0000019f-3171-d9e7-afdf-3d77b1370000",
           "overlapTokens": [
             "ברחבי",
@@ -2014,12 +2008,36 @@
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-magazine/0000019f-3425-dd48-a3df-75b53b230000",
-        "beforeRank": 7,
-        "afterRank": 6,
+        "beforeRank": 6,
+        "afterRank": 5,
         "delta": 1,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "הגמר",
+            "שמינית"
+          ],
+          "score": 25.29,
+          "boost": 25.29
+        }
       },
       {
         "headline": "פוליסיק עומד במבחן חייו מול בלגיה, כשארה\"ב נושאת אותו על הגב",
@@ -2027,10 +2045,10 @@
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-magazine/0000019f-32f9-d337-a39f-f7f9d8cf0000",
-        "beforeRank": 7,
-        "afterRank": 7,
+        "beforeRank": 6,
+        "afterRank": 6,
         "delta": 0,
         "trendMatch": null
       },
@@ -2040,10 +2058,10 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/world/article-1340997",
-        "beforeRank": 8,
-        "afterRank": 8,
+        "beforeRank": 7,
+        "afterRank": 7,
         "delta": 0,
         "trendMatch": null
       },
@@ -2053,12 +2071,35 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/military/article-1341020",
-        "beforeRank": 9,
-        "afterRank": 9,
+        "beforeRank": 8,
+        "afterRank": 8,
         "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "חדשות"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "פאנלים סולאריים מעל בריכות דגים בחצבה חוסכים מים וחשמל",
@@ -2066,8 +2107,21 @@
         "canonicalSource": "מעריב",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/israel/article-1340932",
+        "beforeRank": 9,
+        "afterRank": 9,
+        "delta": 0,
+        "trendMatch": null
+      },
+      {
+        "headline": "נתניהו תקף את גנץ ואייזנקוט על ניהול המלחמה וההסכם עם לבנון",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 69,
+        "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901530",
         "beforeRank": 10,
         "afterRank": 10,
         "delta": 0,
@@ -2081,7 +2135,7 @@
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 52,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3851148",
         "beforeRank": 1,
         "afterRank": 1,
@@ -2117,54 +2171,19 @@
         }
       },
       {
-        "headline": "יוצרת תוכן גילתה סרטן שד אחרי מגע מקרי בצילומים",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "בריאות",
-        "class": "soft",
-        "ageMinutes": 52,
-        "url": "https://news.walla.co.il/item/3851000",
-        "beforeRank": 2,
-        "afterRank": 2,
-        "delta": 0,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
-      },
-      {
         "headline": "המחסור בשוטרי סיור עמוק בערים, ובגדה מספר התקנים הוכפל",
         "source": "הארץ - חדשות",
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 65,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/news/law/2026-07-06/ty-article/.premium/0000019f-314a-d4c0-a5bf-f5ce5d820000",
-        "beforeRank": 5,
-        "afterRank": 3,
+        "beforeRank": 4,
+        "afterRank": 2,
         "delta": 2,
         "trendMatch": {
           "trend": "הערכות: אלפים רבים, רובם בני 65 ומעלה, מתו בגל החום ברחבי אירופה",
-          "clusterKey": "החום ברחבי אירופה",
+          "clusterKey": "בגל החום ברחבי",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
@@ -2176,7 +2195,7 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.480408+00:00",
+          "latestAt": "2026-07-06T04:09:51.733752+00:00",
           "sampleUrl": "https://www.haaretz.co.il/nature/2026-07-05/ty-article-magazine/.premium/0000019f-3171-d9e7-afdf-3d77b1370000",
           "overlapTokens": [
             "ברחבי",
@@ -2187,16 +2206,100 @@
         }
       },
       {
+        "headline": "לוחמי לבנון השנייה חוזרים לקרב ומספרים מה נשאר",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 68,
+        "url": "https://www.maariv.co.il/news/military/article-1341020",
+        "beforeRank": 8,
+        "afterRank": 3,
+        "delta": 5,
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "חדשות"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
+      },
+      {
+        "headline": "יוצרת תוכן גילתה סרטן שד אחרי מגע מקרי בצילומים",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
+        "category": "בריאות",
+        "class": "soft",
+        "ageMinutes": 54,
+        "url": "https://news.walla.co.il/item/3851000",
+        "beforeRank": 2,
+        "afterRank": 4,
+        "delta": -2,
+        "trendMatch": null
+      },
+      {
+        "headline": "רשת טקסטיל טורקית חשודה בהברחת סחורה דרך ישראל למצרים",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 78,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001547918#utm_source=RSS",
+        "beforeRank": 15,
+        "afterRank": 5,
+        "delta": 10,
+        "trendMatch": {
+          "trend": "חמאס שוקל להעביר את השלטון בעזה לוועדת טכנוקרטים",
+          "clusterKey": "חמאס שוקל",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "גלובס"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-07-06T04:09:51.734578+00:00",
+          "sampleUrl": "https://www.mako.co.il/news-military/2026_q3/Article-6e0000ebec33f91026.htm",
+          "overlapTokens": [
+            "כלכלה",
+            "להעביר"
+          ],
+          "score": 20.04,
+          "boost": 20.04
+        }
+      },
+      {
         "headline": "מג'די ח'ליל מזהיר: מצרים תפתח מלחמה מול ישראל",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/world/article-1340997",
-        "beforeRank": 8,
-        "afterRank": 4,
-        "delta": 4,
+        "beforeRank": 7,
+        "afterRank": 6,
+        "delta": 1,
         "trendMatch": null
       },
       {
@@ -2205,11 +2308,11 @@
         "canonicalSource": "N12",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://www.mako.co.il/news-world/2026_q3/Article-c0161a9f6213f91027.htm",
-        "beforeRank": 15,
-        "afterRank": 5,
-        "delta": 10,
+        "beforeRank": 14,
+        "afterRank": 7,
+        "delta": 7,
         "trendMatch": {
           "trend": "FIFA lifts US star striker Balogun’s red card suspension at World Cup after Trump calls Infantino",
           "clusterKey": "world cup",
@@ -2223,7 +2326,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-06T04:07:41.483516+00:00",
+          "latestAt": "2026-07-06T04:09:51.734985+00:00",
           "sampleUrl": "https://apnews.com/article/falorin-balogun-suspension-world-cup-e5a5cab5731a916808601be93cb36832",
           "overlapTokens": [
             "אקטואליה",
@@ -2239,38 +2342,48 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901530",
-        "beforeRank": 11,
-        "afterRank": 6,
-        "delta": 5,
-        "trendMatch": null
-      },
-      {
-        "headline": "לוחמי לבנון השנייה חוזרים לקרב ומספרים מה נשאר",
-        "source": "מעריב - חדשות",
-        "canonicalSource": "מעריב",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 66,
-        "url": "https://www.maariv.co.il/news/military/article-1341020",
-        "beforeRank": 9,
-        "afterRank": 7,
+        "beforeRank": 10,
+        "afterRank": 8,
         "delta": 2,
         "trendMatch": null
       },
       {
-        "headline": "רשת טקסטיל טורקית חשודה בהברחת סחורה דרך ישראל למצרים",
+        "headline": "תקציב הביטחון נסגר על 159 מיליארד שקל, והמאבק רק נדחה",
         "source": "גלובס - בארץ",
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 76,
-        "url": "https://www.globes.co.il/news/article.aspx?did=1001547918#utm_source=RSS",
-        "beforeRank": 16,
-        "afterRank": 8,
+        "ageMinutes": 83,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001547914#utm_source=RSS",
+        "beforeRank": 17,
+        "afterRank": 9,
         "delta": 8,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "נדחה"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "מסע הלוויה בטהרן הפך להפגנת כוח של המשטר",
@@ -2278,24 +2391,11 @@
         "canonicalSource": "ערוץ 7 / INN עברית",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://www.inn.co.il/flashes/1120979",
-        "beforeRank": 14,
-        "afterRank": 9,
-        "delta": 5,
-        "trendMatch": null
-      },
-      {
-        "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 63,
-        "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss",
-        "beforeRank": 4,
+        "beforeRank": 13,
         "afterRank": 10,
-        "delta": -6,
+        "delta": 3,
         "trendMatch": null
       }
     ],
@@ -2306,7 +2406,7 @@
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 52,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3851148",
         "beforeRank": 1,
         "afterRank": 1,
@@ -2347,34 +2447,12 @@
         "canonicalSource": "וואלה",
         "category": "בריאות",
         "class": "soft",
-        "ageMinutes": 52,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3851000",
         "beforeRank": 2,
         "afterRank": 2,
         "delta": 0,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
+        "trendMatch": null
       },
       {
         "headline": "אנגליה ניצחה את מקסיקו 2:3 ועלתה לרבע גמר המונדיאל",
@@ -2382,25 +2460,35 @@
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 59,
+        "ageMinutes": 61,
         "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-game/0000019f-3554-dd62-abbf-bfdc897b0000",
         "beforeRank": 3,
         "afterRank": 3,
         "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 63,
-        "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss",
-        "beforeRank": 4,
-        "afterRank": 4,
-        "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "הגמר",
+            "מקסיקו"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "המחסור בשוטרי סיור עמוק בערים, ובגדה מספר התקנים הוכפל",
@@ -2408,14 +2496,14 @@
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 65,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/news/law/2026-07-06/ty-article/.premium/0000019f-314a-d4c0-a5bf-f5ce5d820000",
-        "beforeRank": 5,
-        "afterRank": 5,
+        "beforeRank": 4,
+        "afterRank": 4,
         "delta": 0,
         "trendMatch": {
           "trend": "הערכות: אלפים רבים, רובם בני 65 ומעלה, מתו בגל החום ברחבי אירופה",
-          "clusterKey": "החום ברחבי אירופה",
+          "clusterKey": "בגל החום ברחבי",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
@@ -2427,7 +2515,7 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.480408+00:00",
+          "latestAt": "2026-07-06T04:09:51.733752+00:00",
           "sampleUrl": "https://www.haaretz.co.il/nature/2026-07-05/ty-article-magazine/.premium/0000019f-3171-d9e7-afdf-3d77b1370000",
           "overlapTokens": [
             "ברחבי",
@@ -2443,12 +2531,36 @@
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-magazine/0000019f-3425-dd48-a3df-75b53b230000",
-        "beforeRank": 7,
-        "afterRank": 6,
+        "beforeRank": 6,
+        "afterRank": 5,
         "delta": 1,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "הגמר",
+            "שמינית"
+          ],
+          "score": 25.29,
+          "boost": 25.29
+        }
       },
       {
         "headline": "פוליסיק עומד במבחן חייו מול בלגיה, כשארה\"ב נושאת אותו על הגב",
@@ -2456,10 +2568,10 @@
         "canonicalSource": "הארץ",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/sport/world-cup/2026-07-06/ty-article-magazine/0000019f-32f9-d337-a39f-f7f9d8cf0000",
-        "beforeRank": 7,
-        "afterRank": 7,
+        "beforeRank": 6,
+        "afterRank": 6,
         "delta": 0,
         "trendMatch": null
       },
@@ -2469,10 +2581,10 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/world/article-1340997",
-        "beforeRank": 8,
-        "afterRank": 8,
+        "beforeRank": 7,
+        "afterRank": 7,
         "delta": 0,
         "trendMatch": null
       },
@@ -2482,12 +2594,35 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/military/article-1341020",
-        "beforeRank": 9,
-        "afterRank": 9,
+        "beforeRank": 8,
+        "afterRank": 8,
         "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "חדשות"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "פאנלים סולאריים מעל בריכות דגים בחצבה חוסכים מים וחשמל",
@@ -2495,10 +2630,10 @@
         "canonicalSource": "מעריב",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/israel/article-1340932",
-        "beforeRank": 10,
-        "afterRank": 10,
+        "beforeRank": 9,
+        "afterRank": 9,
         "delta": 0,
         "trendMatch": null
       },
@@ -2508,10 +2643,10 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901530",
-        "beforeRank": 11,
-        "afterRank": 11,
+        "beforeRank": 10,
+        "afterRank": 10,
         "delta": 0,
         "trendMatch": null
       },
@@ -2521,14 +2656,14 @@
         "canonicalSource": "וואלה",
         "category": "בריאות",
         "class": "soft",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://news.walla.co.il/item/3851142",
-        "beforeRank": 12,
-        "afterRank": 12,
+        "beforeRank": 11,
+        "afterRank": 11,
         "delta": 0,
         "trendMatch": {
           "trend": "ונצואלה: מניין ההרוגים ברעידות האדמה עלה ל-3342",
-          "clusterKey": "מניין ההרוגים",
+          "clusterKey": "ההרוגים ברעידות האדמה",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -2557,34 +2692,12 @@
         "canonicalSource": "וואלה",
         "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://news.walla.co.il/item/3851144",
-        "beforeRank": 13,
-        "afterRank": 13,
+        "beforeRank": 12,
+        "afterRank": 12,
         "delta": 0,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
+        "trendMatch": null
       },
       {
         "headline": "מסע הלוויה בטהרן הפך להפגנת כוח של המשטר",
@@ -2592,10 +2705,10 @@
         "canonicalSource": "ערוץ 7 / INN עברית",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://www.inn.co.il/flashes/1120979",
-        "beforeRank": 14,
-        "afterRank": 14,
+        "beforeRank": 13,
+        "afterRank": 13,
         "delta": 0,
         "trendMatch": null
       },
@@ -2605,10 +2718,10 @@
         "canonicalSource": "N12",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://www.mako.co.il/news-world/2026_q3/Article-c0161a9f6213f91027.htm",
-        "beforeRank": 15,
-        "afterRank": 15,
+        "beforeRank": 14,
+        "afterRank": 14,
         "delta": 0,
         "trendMatch": {
           "trend": "FIFA lifts US star striker Balogun’s red card suspension at World Cup after Trump calls Infantino",
@@ -2623,7 +2736,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-06T04:07:41.483516+00:00",
+          "latestAt": "2026-07-06T04:09:51.734985+00:00",
           "sampleUrl": "https://apnews.com/article/falorin-balogun-suspension-world-cup-e5a5cab5731a916808601be93cb36832",
           "overlapTokens": [
             "אקטואליה",
@@ -2639,12 +2752,34 @@
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 76,
+        "ageMinutes": 78,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001547918#utm_source=RSS",
-        "beforeRank": 16,
-        "afterRank": 16,
+        "beforeRank": 15,
+        "afterRank": 15,
         "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "חמאס שוקל להעביר את השלטון בעזה לוועדת טכנוקרטים",
+          "clusterKey": "חמאס שוקל",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "גלובס"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-07-06T04:09:51.734578+00:00",
+          "sampleUrl": "https://www.mako.co.il/news-military/2026_q3/Article-6e0000ebec33f91026.htm",
+          "overlapTokens": [
+            "כלכלה",
+            "להעביר"
+          ],
+          "score": 20.04,
+          "boost": 20.04
+        }
       },
       {
         "headline": "תושב חוזר עתר אחרי שרשות המסים שינתה את עמדתה חמש פעמים",
@@ -2652,34 +2787,12 @@
         "canonicalSource": "גלובס",
         "category": "משפט",
         "class": "hard",
-        "ageMinutes": 80,
+        "ageMinutes": 82,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001547945#utm_source=RSS",
-        "beforeRank": 17,
-        "afterRank": 17,
+        "beforeRank": 16,
+        "afterRank": 16,
         "delta": 0,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "שנים"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
+        "trendMatch": null
       },
       {
         "headline": "תקציב הביטחון נסגר על 159 מיליארד שקל, והמאבק רק נדחה",
@@ -2687,12 +2800,35 @@
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 81,
+        "ageMinutes": 83,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001547914#utm_source=RSS",
-        "beforeRank": 18,
-        "afterRank": 18,
+        "beforeRank": 17,
+        "afterRank": 17,
         "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "נדחה"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "הטמפרטורות ירדו קלות באמצע השבוע, ואז יתחמם שוב",
@@ -2700,10 +2836,10 @@
         "canonicalSource": "ישראל היום",
         "category": "מזג אוויר",
         "class": "other",
-        "ageMinutes": 91,
+        "ageMinutes": 93,
         "url": "https://www.israelhayom.co.il/weather/article/20916806",
-        "beforeRank": 19,
-        "afterRank": 19,
+        "beforeRank": 18,
+        "afterRank": 18,
         "delta": 0,
         "trendMatch": {
           "trend": "מזג האוויר צפוי להיות רגיל לעונה עם אפשרות לטפטוף קל בצפון ובחוף",
@@ -2737,8 +2873,21 @@
         "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 92,
+        "ageMinutes": 94,
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDg4VDIySFJQa2tYY0t2YTZpSWNMX3pGQ256OTNSdW9zUUpyWGFRc3JPb1VTNVlsY2hXRTNyclNfa3ZPVmVYU1dVNnpkVWRvNFUyN0gtY2FENHlEY1dfOUdMM3hOc2tVd0JjRzM5VUlRdUVsOGpqOTJGVVhmM0JCcjQzYXI0TVEzLUh3MzdSZEJLcVpDN3lVaTgwZjNMSGhmUXdmR09VcXJmcDBaVTlHRjVpUQ?oc=5",
+        "beforeRank": 19,
+        "afterRank": 19,
+        "delta": 0,
+        "trendMatch": null
+      },
+      {
+        "headline": "הממשלה אישרה תוכנית של 60 מיליון שקל לשיקום שורדי נובה",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 96,
+        "url": "https://www.jpost.com/israel-news/article-901529",
         "beforeRank": 20,
         "afterRank": 20,
         "delta": 0,
@@ -2752,7 +2901,7 @@
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 52,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3851148",
         "beforeRank": 1,
         "afterRank": 1,
@@ -2788,54 +2937,19 @@
         }
       },
       {
-        "headline": "יוצרת תוכן גילתה סרטן שד אחרי מגע מקרי בצילומים",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "בריאות",
-        "class": "soft",
-        "ageMinutes": 52,
-        "url": "https://news.walla.co.il/item/3851000",
-        "beforeRank": 2,
-        "afterRank": 2,
-        "delta": 0,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
-      },
-      {
         "headline": "המחסור בשוטרי סיור עמוק בערים, ובגדה מספר התקנים הוכפל",
         "source": "הארץ - חדשות",
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 65,
+        "ageMinutes": 68,
         "url": "https://www.haaretz.co.il/news/law/2026-07-06/ty-article/.premium/0000019f-314a-d4c0-a5bf-f5ce5d820000",
-        "beforeRank": 5,
-        "afterRank": 3,
+        "beforeRank": 4,
+        "afterRank": 2,
         "delta": 2,
         "trendMatch": {
           "trend": "הערכות: אלפים רבים, רובם בני 65 ומעלה, מתו בגל החום ברחבי אירופה",
-          "clusterKey": "החום ברחבי אירופה",
+          "clusterKey": "בגל החום ברחבי",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
@@ -2847,7 +2961,7 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.480408+00:00",
+          "latestAt": "2026-07-06T04:09:51.733752+00:00",
           "sampleUrl": "https://www.haaretz.co.il/nature/2026-07-05/ty-article-magazine/.premium/0000019f-3171-d9e7-afdf-3d77b1370000",
           "overlapTokens": [
             "ברחבי",
@@ -2858,16 +2972,100 @@
         }
       },
       {
+        "headline": "לוחמי לבנון השנייה חוזרים לקרב ומספרים מה נשאר",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 68,
+        "url": "https://www.maariv.co.il/news/military/article-1341020",
+        "beforeRank": 8,
+        "afterRank": 3,
+        "delta": 5,
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "חדשות"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
+      },
+      {
+        "headline": "יוצרת תוכן גילתה סרטן שד אחרי מגע מקרי בצילומים",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
+        "category": "בריאות",
+        "class": "soft",
+        "ageMinutes": 54,
+        "url": "https://news.walla.co.il/item/3851000",
+        "beforeRank": 2,
+        "afterRank": 4,
+        "delta": -2,
+        "trendMatch": null
+      },
+      {
+        "headline": "רשת טקסטיל טורקית חשודה בהברחת סחורה דרך ישראל למצרים",
+        "source": "גלובס - בארץ",
+        "canonicalSource": "גלובס",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 78,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001547918#utm_source=RSS",
+        "beforeRank": 15,
+        "afterRank": 5,
+        "delta": 10,
+        "trendMatch": {
+          "trend": "חמאס שוקל להעביר את השלטון בעזה לוועדת טכנוקרטים",
+          "clusterKey": "חמאס שוקל",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "גלובס"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-07-06T04:09:51.734578+00:00",
+          "sampleUrl": "https://www.mako.co.il/news-military/2026_q3/Article-6e0000ebec33f91026.htm",
+          "overlapTokens": [
+            "כלכלה",
+            "להעביר"
+          ],
+          "score": 20.04,
+          "boost": 20.04
+        }
+      },
+      {
         "headline": "מג'די ח'ליל מזהיר: מצרים תפתח מלחמה מול ישראל",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 68,
         "url": "https://www.maariv.co.il/news/world/article-1340997",
-        "beforeRank": 8,
-        "afterRank": 4,
-        "delta": 4,
+        "beforeRank": 7,
+        "afterRank": 6,
+        "delta": 1,
         "trendMatch": null
       },
       {
@@ -2876,11 +3074,11 @@
         "canonicalSource": "N12",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://www.mako.co.il/news-world/2026_q3/Article-c0161a9f6213f91027.htm",
-        "beforeRank": 15,
-        "afterRank": 5,
-        "delta": 10,
+        "beforeRank": 14,
+        "afterRank": 7,
+        "delta": 7,
         "trendMatch": {
           "trend": "FIFA lifts US star striker Balogun’s red card suspension at World Cup after Trump calls Infantino",
           "clusterKey": "world cup",
@@ -2894,7 +3092,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-06T04:07:41.483516+00:00",
+          "latestAt": "2026-07-06T04:09:51.734985+00:00",
           "sampleUrl": "https://apnews.com/article/falorin-balogun-suspension-world-cup-e5a5cab5731a916808601be93cb36832",
           "overlapTokens": [
             "אקטואליה",
@@ -2910,38 +3108,48 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 66,
+        "ageMinutes": 69,
         "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901530",
-        "beforeRank": 11,
-        "afterRank": 6,
-        "delta": 5,
-        "trendMatch": null
-      },
-      {
-        "headline": "לוחמי לבנון השנייה חוזרים לקרב ומספרים מה נשאר",
-        "source": "מעריב - חדשות",
-        "canonicalSource": "מעריב",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 66,
-        "url": "https://www.maariv.co.il/news/military/article-1341020",
-        "beforeRank": 9,
-        "afterRank": 7,
+        "beforeRank": 10,
+        "afterRank": 8,
         "delta": 2,
         "trendMatch": null
       },
       {
-        "headline": "רשת טקסטיל טורקית חשודה בהברחת סחורה דרך ישראל למצרים",
+        "headline": "תקציב הביטחון נסגר על 159 מיליארד שקל, והמאבק רק נדחה",
         "source": "גלובס - בארץ",
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 76,
-        "url": "https://www.globes.co.il/news/article.aspx?did=1001547918#utm_source=RSS",
-        "beforeRank": 16,
-        "afterRank": 8,
+        "ageMinutes": 83,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001547914#utm_source=RSS",
+        "beforeRank": 17,
+        "afterRank": 9,
         "delta": 8,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "נדחה"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        }
       },
       {
         "headline": "מסע הלוויה בטהרן הפך להפגנת כוח של המשטר",
@@ -2949,24 +3157,24 @@
         "canonicalSource": "ערוץ 7 / INN עברית",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 69,
         "url": "https://www.inn.co.il/flashes/1120979",
-        "beforeRank": 14,
-        "afterRank": 9,
-        "delta": 5,
+        "beforeRank": 13,
+        "afterRank": 10,
+        "delta": 3,
         "trendMatch": null
       },
       {
-        "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "canonicalSource": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "כלכלה",
+        "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
+        "source": "וואלה חדשות",
+        "canonicalSource": "וואלה",
+        "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 63,
-        "url": "https://www.aljazeera.com/economy/2026/7/6/opec-countries-say-they-will-expand-monthly-oil-production?traffic_source=rss",
-        "beforeRank": 4,
-        "afterRank": 10,
-        "delta": -6,
+        "ageMinutes": 69,
+        "url": "https://news.walla.co.il/item/3851144",
+        "beforeRank": 12,
+        "afterRank": 11,
+        "delta": 1,
         "trendMatch": null
       },
       {
@@ -2975,69 +3183,12 @@
         "canonicalSource": "גלובס",
         "category": "משפט",
         "class": "hard",
-        "ageMinutes": 80,
+        "ageMinutes": 82,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001547945#utm_source=RSS",
-        "beforeRank": 17,
-        "afterRank": 11,
-        "delta": 6,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "שנים"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
-      },
-      {
-        "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "פלילים",
-        "class": "hard",
-        "ageMinutes": 67,
-        "url": "https://news.walla.co.il/item/3851144",
-        "beforeRank": 13,
+        "beforeRank": 16,
         "afterRank": 12,
-        "delta": 1,
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        }
+        "delta": 4,
+        "trendMatch": null
       },
       {
         "headline": "הצבא מזהיר: פרצות בקו התפר עלולות להפוך לחזית נוספת",
@@ -3045,11 +3196,11 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 96,
+        "ageMinutes": 98,
         "url": "https://www.jpost.com/israel-news/article-901528",
-        "beforeRank": 23,
+        "beforeRank": 22,
         "afterRank": 13,
-        "delta": 10,
+        "delta": 9,
         "trendMatch": null
       },
       {
@@ -3058,11 +3209,11 @@
         "canonicalSource": "ערוץ 7 / INN עברית",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 96,
+        "ageMinutes": 98,
         "url": "https://www.inn.co.il/flashes/1120978",
-        "beforeRank": 22,
+        "beforeRank": 21,
         "afterRank": 14,
-        "delta": 8,
+        "delta": 7,
         "trendMatch": null
       },
       {
@@ -3071,11 +3222,11 @@
         "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 92,
+        "ageMinutes": 94,
         "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUDg4VDIySFJQa2tYY0t2YTZpSWNMX3pGQ256OTNSdW9zUUpyWGFRc3JPb1VTNVlsY2hXRTNyclNfa3ZPVmVYU1dVNnpkVWRvNFUyN0gtY2FENHlEY1dfOUdMM3hOc2tVd0JjRzM5VUlRdUVsOGpqOTJGVVhmM0JCcjQzYXI0TVEzLUh3MzdSZEJLcVpDN3lVaTgwZjNMSGhmUXdmR09VcXJmcDBaVTlHRjVpUQ?oc=5",
-        "beforeRank": 20,
+        "beforeRank": 19,
         "afterRank": 15,
-        "delta": 5,
+        "delta": 4,
         "trendMatch": null
       },
       {
@@ -3084,11 +3235,11 @@
         "canonicalSource": "ישראל היום",
         "category": "מזג אוויר",
         "class": "other",
-        "ageMinutes": 91,
+        "ageMinutes": 93,
         "url": "https://www.israelhayom.co.il/weather/article/20916806",
-        "beforeRank": 19,
+        "beforeRank": 18,
         "afterRank": 16,
-        "delta": 3,
+        "delta": 2,
         "trendMatch": {
           "trend": "מזג האוויר צפוי להיות רגיל לעונה עם אפשרות לטפטוף קל בצפון ובחוף",
           "clusterKey": "מזג האוויר",
@@ -3116,28 +3267,15 @@
         }
       },
       {
-        "headline": "תקציב הביטחון נסגר על 159 מיליארד שקל, והמאבק רק נדחה",
-        "source": "גלובס - בארץ",
-        "canonicalSource": "גלובס",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 81,
-        "url": "https://www.globes.co.il/news/article.aspx?did=1001547914#utm_source=RSS",
-        "beforeRank": 18,
-        "afterRank": 17,
-        "delta": 1,
-        "trendMatch": null
-      },
-      {
         "headline": "הושגו הסכמות על העתקת המיגוניות בכביש 232",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 135,
+        "ageMinutes": 138,
         "url": "https://www.ynet.co.il/news/article/sjma11yu7ml",
-        "beforeRank": 27,
-        "afterRank": 18,
+        "beforeRank": 26,
+        "afterRank": 17,
         "delta": 9,
         "trendMatch": {
           "trend": "\"אל תיגעו במיגונית\": מיגוניות המוות בכביש 232 לא יזוזו ממקומן",
@@ -3170,10 +3308,10 @@
         "canonicalSource": "Bloomberg Israel/Iran דרך Google News",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 99,
+        "ageMinutes": 101,
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNT0xIOXdWQ1hUamdjTHFqWGVKSmxvbXJlQjJLa2xtZ3lUNGR0NDdrWTNQR0dBOE1QNFNUSzJzOHhXYVlGanNHQi1rS0JDUVkybExnamhfRmlkNmN1TWZWb0ZnQ0xxWjhrdGp2Tk1NQy1UbG5UTS02OExLalh5U1RSNW1KOVoyWWVxcG1KRlRSeHNpUHR5VG1jMnRCVmNJQQ?oc=5",
-        "beforeRank": 24,
-        "afterRank": 19,
+        "beforeRank": 23,
+        "afterRank": 18,
         "delta": 5,
         "trendMatch": null
       },
@@ -3183,11 +3321,24 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 94,
+        "ageMinutes": 96,
         "url": "https://www.jpost.com/israel-news/article-901529",
-        "beforeRank": 21,
-        "afterRank": 20,
+        "beforeRank": 20,
+        "afterRank": 19,
         "delta": 1,
+        "trendMatch": null
+      },
+      {
+        "headline": "ישראל ממנה שגרירה תושבת ראשונה לסלובניה",
+        "source": "Israel National News English",
+        "canonicalSource": "Israel National News English",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "ageMinutes": 114,
+        "url": "https://www.israelnationalnews.com/flashes/689115",
+        "beforeRank": 24,
+        "afterRank": 20,
+        "delta": 4,
         "trendMatch": null
       }
     ],
@@ -3230,44 +3381,13 @@
         "afterRank": 1
       },
       {
-        "headline": "יוצרת תוכן גילתה סרטן שד אחרי מגע מקרי בצילומים",
-        "source": "וואלה",
-        "category": "בריאות",
-        "class": "soft",
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        },
-        "beforeRank": 2,
-        "afterRank": 2
-      },
-      {
         "headline": "המחסור בשוטרי סיור עמוק בערים, ובגדה מספר התקנים הוכפל",
         "source": "הארץ",
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": {
           "trend": "הערכות: אלפים רבים, רובם בני 65 ומעלה, מתו בגל החום ברחבי אירופה",
-          "clusterKey": "החום ברחבי אירופה",
+          "clusterKey": "בגל החום ברחבי",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
@@ -3279,7 +3399,7 @@
             "WEB"
           ],
           "mentionedInFeed": false,
-          "latestAt": "2026-07-06T04:07:41.480408+00:00",
+          "latestAt": "2026-07-06T04:09:51.733752+00:00",
           "sampleUrl": "https://www.haaretz.co.il/nature/2026-07-05/ty-article-magazine/.premium/0000019f-3171-d9e7-afdf-3d77b1370000",
           "overlapTokens": [
             "ברחבי",
@@ -3288,8 +3408,80 @@
           "score": 18.7,
           "boost": 18.7
         },
-        "beforeRank": 5,
+        "beforeRank": 4,
+        "afterRank": 2
+      },
+      {
+        "headline": "לוחמי לבנון השנייה חוזרים לקרב ומספרים מה נשאר",
+        "source": "מעריב",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "חדשות"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        },
+        "beforeRank": 8,
         "afterRank": 3
+      },
+      {
+        "headline": "יוצרת תוכן גילתה סרטן שד אחרי מגע מקרי בצילומים",
+        "source": "וואלה",
+        "category": "בריאות",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 2,
+        "afterRank": 4
+      },
+      {
+        "headline": "רשת טקסטיל טורקית חשודה בהברחת סחורה דרך ישראל למצרים",
+        "source": "גלובס",
+        "category": "כלכלה",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "חמאס שוקל להעביר את השלטון בעזה לוועדת טכנוקרטים",
+          "clusterKey": "חמאס שוקל",
+          "domain": "כלכלה",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "גלובס"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": false,
+          "latestAt": "2026-07-06T04:09:51.734578+00:00",
+          "sampleUrl": "https://www.mako.co.il/news-military/2026_q3/Article-6e0000ebec33f91026.htm",
+          "overlapTokens": [
+            "כלכלה",
+            "להעביר"
+          ],
+          "score": 20.04,
+          "boost": 20.04
+        },
+        "beforeRank": 15,
+        "afterRank": 5
       },
       {
         "headline": "מג'די ח'ליל מזהיר: מצרים תפתח מלחמה מול ישראל",
@@ -3297,8 +3489,8 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 8,
-        "afterRank": 4
+        "beforeRank": 7,
+        "afterRank": 6
       },
       {
         "headline": "קובה נשענת על רשת מודיעים כדי לדכא מחאה ולשמור על שלטון הברזל",
@@ -3318,7 +3510,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-06T04:07:41.483516+00:00",
+          "latestAt": "2026-07-06T04:09:51.734985+00:00",
           "sampleUrl": "https://apnews.com/article/falorin-balogun-suspension-world-cup-e5a5cab5731a916808601be93cb36832",
           "overlapTokens": [
             "אקטואליה",
@@ -3327,8 +3519,8 @@
           "score": 11.71,
           "boost": 11.71
         },
-        "beforeRank": 15,
-        "afterRank": 5
+        "beforeRank": 14,
+        "afterRank": 7
       },
       {
         "headline": "נתניהו תקף את גנץ ואייזנקוט על ניהול המלחמה וההסכם עם לבנון",
@@ -3336,26 +3528,40 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 11,
-        "afterRank": 6
+        "beforeRank": 10,
+        "afterRank": 8
       },
       {
-        "headline": "לוחמי לבנון השנייה חוזרים לקרב ומספרים מה נשאר",
-        "source": "מעריב",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 9,
-        "afterRank": 7
-      },
-      {
-        "headline": "רשת טקסטיל טורקית חשודה בהברחת סחורה דרך ישראל למצרים",
+        "headline": "תקציב הביטחון נסגר על 159 מיליארד שקל, והמאבק רק נדחה",
         "source": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 16,
-        "afterRank": 8
+        "trendMatch": {
+          "trend": "משחק שמינית הגמר בין מקסיקו לאנגליה נדחה בשעה בשל מזג אוויר סוער",
+          "clusterKey": "הגמר מקסיקו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-06T03:35:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3851149",
+          "overlapTokens": [
+            "בין",
+            "נדחה"
+          ],
+          "score": 16.86,
+          "boost": 16.86
+        },
+        "beforeRank": 17,
+        "afterRank": 9
       },
       {
         "headline": "מסע הלוויה בטהרן הפך להפגנת כוח של המשטר",
@@ -3363,78 +3569,25 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 14,
-        "afterRank": 9
-      },
-      {
-        "headline": "OPEC+ תגדיל את התפוקה ב-188 אלף חביות ביום מאוגוסט",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "כלכלה",
-        "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 4,
+        "beforeRank": 13,
         "afterRank": 10
-      },
-      {
-        "headline": "תושב חוזר עתר אחרי שרשות המסים שינתה את עמדתה חמש פעמים",
-        "source": "גלובס",
-        "category": "משפט",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "שנים"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        },
-        "beforeRank": 17,
-        "afterRank": 11
       },
       {
         "headline": "מרדף בבאר שבע הסתיים בירי, מעצר ואיתור אקדח",
         "source": "וואלה",
         "category": "פלילים",
         "class": "hard",
-        "trendMatch": {
-          "trend": "אלפים נקלטים מחדש למילואים - שנים אחרי הסדיר: \"כל אחד צריך לתת מעצמו\"",
-          "clusterKey": "צריך לתת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-05T21:00:00+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/yokra14822846",
-          "overlapTokens": [
-            "אחרי",
-            "חדשות"
-          ],
-          "score": 13.55,
-          "boost": 13.55
-        },
-        "beforeRank": 13,
+        "trendMatch": null,
+        "beforeRank": 12,
+        "afterRank": 11
+      },
+      {
+        "headline": "תושב חוזר עתר אחרי שרשות המסים שינתה את עמדתה חמש פעמים",
+        "source": "גלובס",
+        "category": "משפט",
+        "class": "hard",
+        "trendMatch": null,
+        "beforeRank": 16,
         "afterRank": 12
       },
       {
@@ -3443,7 +3596,7 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 23,
+        "beforeRank": 22,
         "afterRank": 13
       },
       {
@@ -3452,7 +3605,7 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 22,
+        "beforeRank": 21,
         "afterRank": 14
       },
       {
@@ -3461,7 +3614,7 @@
         "category": "כלכלה",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 20,
+        "beforeRank": 19,
         "afterRank": 15
       },
       {
@@ -3494,17 +3647,8 @@
           "score": 31.99,
           "boost": 31.99
         },
-        "beforeRank": 19,
-        "afterRank": 16
-      },
-      {
-        "headline": "תקציב הביטחון נסגר על 159 מיליארד שקל, והמאבק רק נדחה",
-        "source": "גלובס",
-        "category": "כלכלה",
-        "class": "hard",
-        "trendMatch": null,
         "beforeRank": 18,
-        "afterRank": 17
+        "afterRank": 16
       },
       {
         "headline": "הושגו הסכמות על העתקת המיגוניות בכביש 232",
@@ -3535,8 +3679,8 @@
           "score": 23.38,
           "boost": 23.38
         },
-        "beforeRank": 27,
-        "afterRank": 18
+        "beforeRank": 26,
+        "afterRank": 17
       },
       {
         "headline": "מחיר הנפט יורד על רקע זרימת הנפט במצר הורמוז והיצע נוסף",
@@ -3544,8 +3688,8 @@
         "category": "כלכלה",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 24,
-        "afterRank": 19
+        "beforeRank": 23,
+        "afterRank": 18
       },
       {
         "headline": "הממשלה אישרה תוכנית של 60 מיליון שקל לשיקום שורדי נובה",
@@ -3553,7 +3697,16 @@
         "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 21,
+        "beforeRank": 20,
+        "afterRank": 19
+      },
+      {
+        "headline": "ישראל ממנה שגרירה תושבת ראשונה לסלובניה",
+        "source": "Israel National News English",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "trendMatch": null,
+        "beforeRank": 24,
         "afterRank": 20
       }
     ],
