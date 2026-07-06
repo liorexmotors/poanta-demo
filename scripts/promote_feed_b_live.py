@@ -181,6 +181,13 @@ def validate(path: Path) -> tuple[bool, set[str], str]:
     if code != 0:
         remove |= quality_error_urls(QUALITY_REPORT)
 
+    code, auditor = run_json([sys.executable, "scripts/pointa_quality_auditor.py", "--feed", str(path), "--json"])
+    auditor_errors = auditor.get("errors") or []
+    if code != 0 or auditor.get("status") != "ok" or auditor_errors:
+        for issue in auditor_errors:
+            if issue.get("url"):
+                remove.add(str(issue["url"]))
+
     code, health = run_json(
         [
             sys.executable,
