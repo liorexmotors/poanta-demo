@@ -1,23 +1,24 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-05T20:38:20+00:00",
+  "generatedAt": "2026-07-06T04:07:41+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 12.42,
-    "avgAfterHealthScore": 92.5,
+    "avgHealthDelta": 12.58,
+    "avgAfterHealthScore": 90.83,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 87,
-      "rollingScore": 74.69,
+      "latestScore": 72,
+      "rollingScore": 74.94,
       "readyRuns": 3,
       "criticalBlockers": [
+        "top_item_stale_over_25m",
         "top12_under60_below_9"
       ],
       "matureForProduction": false
@@ -32,321 +33,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T06:33:58+00:00",
-      "feedFingerprint": "8466906432749527757",
-      "before": {
-        "newsinessTop10": 1,
-        "softTop10": 5,
-        "otherTop10": 4,
-        "top5Under60": 5,
-        "top10Under60": 5,
-        "top12Under60": 5,
-        "topItemAgeMinutes": 1,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 8
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 8
-          },
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "כיפה",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 5,
-        "trendGapMatchedTop20": 2,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 41,
-          "readyCount": 2,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 2,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 3,
-              "headline": "עבודות הרכבת הקלה משבשות קווי אוטובוס במושבה הגרמנית",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/article-901360",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 2,
-              "headline": "קולומביה ניצחה את גאנה ועלתה אחרונה לשמינית המונדיאל",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "soft",
-              "ageMinutes": 2,
-              "url": "https://sports.walla.co.il/item/3850722",
-              "trendMatch": {
-                "trend": "מסי וארגנטינה עלו לשמינית הגמר",
-                "clusterKey": "לשמינית הגמר",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-07-04T04:04:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850719",
-                "overlapTokens": [
-                  "הגמר",
-                  "לשמינית"
-                ],
-                "score": 19.49,
-                "boost": 19.49
-              },
-              "queueScore": 2.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 1,
-        "softTop10": 5,
-        "otherTop10": 4,
-        "top5Under60": 5,
-        "top10Under60": 5,
-        "top12Under60": 5,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 9,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "הארץ",
-            "count": 3
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "NYT",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 10,
-        "trendGapMatchedTop20": 5,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 41,
-          "readyCount": 2,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 2,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "עבודות הרכבת הקלה משבשות קווי אוטובוס במושבה הגרמנית",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/article-901360",
-              "trendMatch": null,
-              "queueScore": 44.0
-            },
-            {
-              "rank": 2,
-              "headline": "קולומביה ניצחה את גאנה ועלתה אחרונה לשמינית המונדיאל",
-              "source": "וואלה ספורט",
-              "canonicalSource": "וואלה",
-              "category": "ספורט",
-              "class": "soft",
-              "ageMinutes": 2,
-              "url": "https://sports.walla.co.il/item/3850722",
-              "trendMatch": {
-                "trend": "מסי וארגנטינה עלו לשמינית הגמר",
-                "clusterKey": "לשמינית הגמר",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-07-04T04:04:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850719",
-                "overlapTokens": [
-                  "הגמר",
-                  "לשמינית"
-                ],
-                "score": 19.49,
-                "boost": 19.49
-              },
-              "queueScore": 2.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 24,
-      "afterHealthScore": 31,
-      "replacementReadiness": {
-        "score": 50,
-        "threshold": 80,
-        "components": {
-          "freshness": 16.5,
-          "newsinessTop10": 2.5,
-          "top20Quality": 14.7,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 6.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "newsiness_top10_below_7",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 0,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 5,
-        "healthScore": 7
-      }
-    },
     {
       "generatedAt": "2026-07-04T06:44:27+00:00",
       "feedFingerprint": "5545438289285581881",
@@ -49732,6 +49418,223 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 4,
         "healthScore": 16
+      }
+    },
+    {
+      "generatedAt": "2026-07-06T04:07:41+00:00",
+      "feedFingerprint": "136464190614155264",
+      "before": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 3,
+        "top10Under60": 3,
+        "top12Under60": 3,
+        "topItemAgeMinutes": 52,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "ynet",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 1,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "הארץ",
+            "count": 4
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 3
+          },
+          {
+            "name": "Al Jazeera RSS מסונן מזרח תיכון",
+            "count": 1
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 3,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 1,
+        "otherTop10": 0,
+        "top5Under60": 2,
+        "top10Under60": 2,
+        "top12Under60": 2,
+        "topItemAgeMinutes": 52,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "גלובס",
+            "count": 3
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 2
+          },
+          {
+            "name": "Bloomberg Israel/Iran דרך Google News",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 40,
+          "score": 0,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": [
+            "ready_queue_below_3",
+            "hard_ready_below_2",
+            "ready_sources_below_2",
+            "top_item_over_25m"
+          ],
+          "readyQueue": []
+        }
+      },
+      "beforeHealthScore": 61,
+      "afterHealthScore": 76,
+      "replacementReadiness": {
+        "score": 72,
+        "threshold": 80,
+        "components": {
+          "freshness": 3.4,
+          "newsinessTop10": 25.0,
+          "top20Quality": 18.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 5.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m",
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 0,
+        "healthScore": 15
       }
     }
   ]
