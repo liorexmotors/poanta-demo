@@ -1,45 +1,47 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T22:36:35+03:00
+נוצר: 2026-07-08T22:45:26+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-08T22:30:34+03:00
-- Feed A items: 1977
-- Feed A recent window: 24h / 545 items
-- Feed B run: feed-b-20260708T223635+0300
-- Feed B createdAt: 2026-07-08T22:36:35+03:00
-- Feed B raw candidates: 16
+- Feed A updatedAt: 2026-07-08T22:36:35+03:00
+- Feed A items: 1975
+- Feed A recent window: 24h / 546 items
+- Feed B run: feed-b-20260708T224525+0300
+- Feed B createdAt: 2026-07-08T22:45:25+03:00
+- Feed B raw candidates: 21
 - Feed B passed to editor: 11
-- Feed B rejected before AI: 5
+- Feed B rejected before AI: 10
 - Estimated smart LLM calls: 11
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 5
+- duplicate_with_feed_b: 1
+- main_feed_b_breaking_source: 7
+- non_hebrew_or_untranslated: 1
+- text_too_short: 3
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 11
+- Feed B passed but not currently in Feed A: 10
 - Recent Feed A not in Feed B passed list: 545
 - Recent Feed A not seen by Feed B raw input: 545
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T22:35:58+03:00 | וואלה סלבס | בגיל 40: זוכת "המירוץ למיליון" שני אלון בהיריון שלישי
-- 2026-07-08T22:36:08+03:00 | וואלה TECH | בדרך לאילת? iStore מציעה הנחות של אלפי שקלים על מחשבי Mac
-- 2026-07-08T22:36:08+03:00 | וואלה TECH | פלאפון בראש דירוג המעסיקים בענף התקשורת: דורגה ראשונה בקטגוריית הטלקום
-- 2026-07-08T22:17:40+03:00 | Page Six רכילות חו״ל | ‘In the City’ star Georgina Ferzli defends bestie Lindsay Hubbard in dishy chat with VRT
-- 2026-07-08T22:17:18+03:00 | Page Six רכילות חו״ל | Kate Middleton’s waterproof boots combined comfort and support on 23-mile hiking challenge
-- 2026-07-08T22:17:00+03:00 | Page Six רכילות חו״ל | Emily Ratajkowski sells spicy book, ‘Mother F–ker’ in 12-way bidding war for seven figures after essay on her single sex life goes viral
-- 2026-07-08T22:31:40+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Rob Reiner earns posthumous Emmy nomination seven months after he was brutally murdered alongside wife Michele
-- 2026-07-08T22:19:10+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Jack Antonoff STILL wearing his wedding ring as separation from Margaret Qualley becomes public
-- 2026-07-08T22:15:07+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Zendaya looks every inch the Greek goddess in a racy white lace dress alongside Charlize Theron and pregnant Anne Hathaway as they lead star-studded The Odyssey premiere in Paris
-- 2026-07-08T22:12:58+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Nicola Peltz flaunts her abs in white bra and tiny denim shorts as she cosies up to Brooklyn Beckham during 4th of July bash - on same day his parents mark wedding anniversary
-- 2026-07-08T21:32:28+03:00 | Mirror Celebs רכילות חו״ל | Adam Thomas reveals mum Gail rushed to hospital after he found her on the floor screaming
+- 2026-07-08T22:26:49+03:00 | ישראל היום - כל הכתבות | "מה שמפחיד אותנו": הסודות מאחורי סרטי האימה הגדולים נחשפים
+- 2026-07-08T22:25:02+03:00 | ישראל היום - כל הכתבות | מהומות בפריז? משטרת צרפת חוששת מ"חוליגנים מהימין הקיצוני"
+- 2026-07-08T22:18:36+03:00 | ישראל היום - כל הכתבות | טראמפ: "לא החלטתי עדיין אם לתת F-35 לטורקיה"
+- 2026-07-08T22:25:50+03:00 | ynet - כל ערוץ החדשות | קטטה בין חרדים לחיילים מחוץ לכלא 10
+- 2026-07-08T22:31:18+03:00 | New York Times Middle East | As U.S.-Iran Cease-Fire Frays, Trump Faces a Muddled War and Unpalatable Options
+- 2026-07-08T22:23:35+03:00 | New York Times Middle East | In Israel, Rahm Emanuel Calls for End of Unconditional U.S. Support
+- 2026-07-08T22:14:46+03:00 | Politico Israel/Iran דרך Google News | Europe prepares to go it alone as Trump returns to war in Iran - Politico
+- 2026-07-08T22:45:21+03:00 | The Jerusalem Post - Israel News | After 78 years, IDF locates burial site of Pvt. Yaakov Zrihan, who went missing in Independence War
+- 2026-07-08T22:45:21+03:00 | The Jerusalem Post - Middle East | Only clans can govern Gaza after Hamas disarmed, NCAG will fail, MidEast expert says - interview
+- 2026-07-08T22:34:50+03:00 | JNS - Jewish News Syndicate | Trump claims Israel will withdraw Lebanon
 
 ## Recent Feed A Not In Feed B Passed
 
