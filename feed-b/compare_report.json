@@ -1,27 +1,29 @@
 {
-  "createdAt": "2026-07-08T22:51:19+03:00",
+  "createdAt": "2026-07-08T23:00:27+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T22:45:25+03:00",
+    "updatedAt": "2026-07-08T22:51:18+03:00",
     "items": 1976,
     "recentWindowHours": 24,
-    "recentItems": 551
+    "recentItems": 552
   },
   "feedB": {
-    "runId": "feed-b-20260708T225118+0300",
-    "createdAt": "2026-07-08T22:51:18+03:00",
-    "rawCandidates": 4,
-    "passedToEditor": 2,
-    "rejectedBeforeAi": 2,
-    "estimatedSmartLlmCalls": 2,
+    "runId": "feed-b-20260708T230026+0300",
+    "createdAt": "2026-07-08T23:00:26+03:00",
+    "rawCandidates": 40,
+    "passedToEditor": 22,
+    "rejectedBeforeAi": 18,
+    "estimatedSmartLlmCalls": 22,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
+      "text_too_short": 10,
+      "main_feed_b_breaking_source": 8,
       "duplicate_with_feed_b": 2
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 2,
+    "feedBPassedNotInFeedA": 21,
     "feedARecentNotInFeedBPassed": 551,
     "feedARecentNotSeenByFeedBRaw": 551,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,21 +31,98 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T22:50:54+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "שורדי השבי ואגדות הכדורסל נפגשו על הפרקט במכביה",
-        "sourceUrl": "https://sports.walla.co.il/item/3852055"
+        "publishedAt": "2026-07-08T22:49:26+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "משפט",
+        "title": "אחרי פסיקת בג\"ץ: נתניהו נוטה להתקפל בעניין ראבילו",
+        "sourceUrl": "https://www.srugim.co.il/101005930-אחרי-פסיקת-בגץ-נתניהו-נוטה-להתקפל-בעניין"
       },
+      {
+        "publishedAt": "2026-07-08T23:00:04+03:00",
+        "source": "וואלה חדשות",
+        "category": "חדשות",
+        "title": "ילדים בשלשלאות ועימותים עם חיילים: חרדים הגיעו להפגין מול כלא 10",
+        "sourceUrl": "https://news.walla.co.il/item/3852057"
+      },
+      {
+        "publishedAt": "2026-07-08T22:49:08+03:00",
+        "source": "מעריב - חדשות",
+        "category": "חדשות",
+        "title": "\"אנחנו המשפחה שלהם\": המסע של אלינה סקלר וקרן Uniting בלטביה",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342385"
+      },
+      {
+        "publishedAt": "2026-07-08T22:52:04+03:00",
+        "source": "New York Times Middle East",
+        "category": "ביטחון",
+        "title": "Iran Truce ‘Over,’ Trump Says, as He Threatens More Strikes",
+        "sourceUrl": "https://www.nytimes.com/2026/07/08/world/middleeast/iran-truce-trump.html"
+      },
+      {
+        "publishedAt": "2026-07-08T22:41:39+03:00",
+        "source": "New York Times Middle East",
+        "category": "חדשות",
+        "title": "The Symbols We Saw at Khamenei’s Funeral",
+        "sourceUrl": "https://www.nytimes.com/video/world/middleeast/100000011012446/the-symbols-we-saw-at-khameneis-funeral.html"
+      },
+      {
+        "publishedAt": "2026-07-08T22:43:21+03:00",
+        "source": "Reuters Middle East דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPamx0X0tpdE9oTTYtdTNBWm44Wms5WURGTXlYX1lTcHBXUzQ5SkVGYVJzdkVlZkh4SVVjVkRjVlp1bEh2MVFWUEV5SzRkT01YYWotdDN4UklneEFUVlV4X1VvQ2pzMzI2N2R4b0Z2dTlEektkdmx2VzZXaGJNZy14TXJwd3NnX29RM1UxV25nSUdDVG1YanBHYUVfdjBjNU5vM1dsbGVSWGpsdi1KMzdvY3laMkt5ejQ?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T22:40:31+03:00",
+        "source": "Reuters Middle East דרך Google News",
+        "category": "חדשות",
+        "title": "Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPRUFNSFZCMUlyZmxEVTVyWGdaRzZfUEk4V0ppVmNhLWpQWlp2TEFGQTlmX2haM2dRMFk0TVAyM2VCMUZQdmE5N05HWTE1NzBQenBZOWZvS3VnZUZNX195QWtGa01MTUtOVnNmYkR4ZU5lSWF0Z2hrazRXWTV1d0dUM3NSMVE4NUxPYzRlZk5xbFdlS3RaaVRNTkJZM0h2clNtMXZ6eE43WFlvNTU1enBMOU9LeDdMNkZ6RTVzdVZBSlRQczhCNHZwZmNrYw?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T22:05:00+03:00",
+        "source": "Bloomberg Israel/Iran דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "US Consumer Borrowing Unexpectedly Drops by Most Since 2024 - Bloomberg",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObDNERjdoYmtpSTg4X2JtamlvZUNmVnBCLVJpTmpLTHdjblNVTlJBU2dwZmNvMzZWeldCci1Qc0xENVI4MDJkbUpZbWhubjJvWnp6YWJ5VUE3TE9fZkNCZ0tGdGJKOWFXcUZPWmx3N2psSnpkZW5sYTNCVDBRTXVsRkpkWlNhek9HRkllWUdQQ0dwNGlxZE9pZHc1UG5hbFd2Qm0yMVZBOUxiYjlVU3Vz?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T22:51:38+03:00",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "חדשות",
+        "title": "Search under way for crew of Pakistani cargo plane that crashed into sea",
+        "sourceUrl": "https://www.aljazeera.com/news/2026/7/8/search-under-way-for-crew-of-pakistani-cargo-plane-that-crashed-into-sea?traffic_source=rss"
+      },
+      {
+        "publishedAt": "2026-07-08T23:00:22+03:00",
+        "source": "The Jerusalem Post - Israel News",
+        "category": "ביטחון",
+        "title": "After 78 years, IDF locates burial site of Pvt. Yaakov Zrihan, who went missing in Independence War",
+        "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-901913"
+      },
+      {
+        "publishedAt": "2026-07-08T23:00:22+03:00",
+        "source": "The Jerusalem Post - Israel News",
+        "category": "חדשות",
+        "title": "Tzavta Theater to celebrate 70 years with Freedom to Create festival",
+        "sourceUrl": "https://www.jpost.com/israel-news/culture/article-901933"
+      },
+      {
+        "publishedAt": "2026-07-08T23:00:23+03:00",
+        "source": "The Jerusalem Post - Middle East",
+        "category": "חדשות",
+        "title": "Only clans can govern Gaza after Hamas disarmed, NCAG will fail, MidEast expert says - interview",
+        "sourceUrl": "https://www.jpost.com/middle-east/article-901903"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T22:50:54+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "מדליה ירושלמית במכביה: אביגיל דולב זכתה בריצת 800 מטר",
-        "sourceUrl": "https://sports.walla.co.il/item/3852056"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
+        "title": "שורדי שבי ושחקני עבר נפגשו למשחק ראווה במכביה",
+        "sourceUrl": "https://sports.walla.co.il/item/3852055"
+      },
       {
         "publishedAt": "2026-07-08T22:34:50+03:00",
         "source": "JNS - Jewish News Syndicate",
@@ -120,13 +199,6 @@
         "category": "אקטואליה בעולם",
         "title": "ארה״ב החלה להסיר את סוריה מרשימת תומכות הטרור",
         "sourceUrl": "https://www.ynet.co.il/news/article/bj93lf37me"
-      },
-      {
-        "publishedAt": "2026-07-08T22:04:00+03:00",
-        "source": "גלובס - משפט",
-        "category": "נדל״ן",
-        "title": "החלטות חדשות מקדמות פינוי קרקע ובנייה ברחובות",
-        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548801#utm_source=RSS"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
