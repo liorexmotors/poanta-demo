@@ -1,24 +1,26 @@
 {
-  "createdAt": "2026-07-08T13:51:18+03:00",
+  "createdAt": "2026-07-08T14:00:25+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T13:45:37+03:00",
+    "updatedAt": "2026-07-08T13:51:18+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T135118+0300",
-    "createdAt": "2026-07-08T13:51:18+03:00",
-    "rawCandidates": 14,
+    "runId": "feed-b-20260708T140025+0300",
+    "createdAt": "2026-07-08T14:00:25+03:00",
+    "rawCandidates": 22,
     "passedToEditor": 9,
-    "rejectedBeforeAi": 5,
+    "rejectedBeforeAi": 13,
     "estimatedSmartLlmCalls": 9,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 4,
-      "text_too_short": 1
+      "main_feed_b_breaking_source": 8,
+      "duplicate_with_feed_b": 3,
+      "text_too_short": 4,
+      "non_hebrew_or_untranslated": 2
     }
   },
   "comparison": {
@@ -30,70 +32,91 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T13:05:00+03:00",
-        "source": "גלובס - שוק ההון",
-        "category": "כלכלה",
-        "title": "בנק הפועלים קורץ לצעירים: משיק פלטפורמה לילדים מגיל 8",
-        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548711#utm_source=RSS"
+        "publishedAt": "2026-07-08T14:00:02+03:00",
+        "source": "וואלה חדשות",
+        "category": "ביטחון",
+        "title": "אלפי סיגריות בתוך מאות אננסים: הברחת ענק לרצועת עזה סוכלה",
+        "sourceUrl": "https://news.walla.co.il/item/3851916"
       },
       {
-        "publishedAt": "2026-07-08T13:32:35+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
-        "category": "כלכלה",
-        "title": "אחת מתוכניות ההתחדשות הגדולות בגבול הצפון יוצאת לדרך",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/hytcfjjqml"
+        "publishedAt": "2026-07-08T14:00:02+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
       },
+      {
+        "publishedAt": "2026-07-08T13:58:00+03:00",
+        "source": "גלובס - בארץ",
+        "category": "ביטחון",
+        "title": "טראמפ על הסכם הפסקת האש עם איראן: \"אני חושב שזה נגמר\"",
+        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548681#utm_source=RSS"
+      },
+      {
+        "publishedAt": "2026-07-08T13:36:58+03:00",
+        "source": "BBC World",
+        "category": "ביטחון",
+        "title": "Trump says ceasefire is 'over' after US and Iran trade strikes",
+        "sourceUrl": "https://www.bbc.co.uk/news/articles/clyw8w1g409o?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "publishedAt": "2026-07-08T13:48:36+03:00",
+        "source": "New York Times Middle East",
+        "category": "חדשות",
+        "title": "The Symbols We Saw at Khamenei’s Funeral",
+        "sourceUrl": "https://www.nytimes.com/video/world/middleeast/100000011012446/the-symbols-we-saw-at-khameneis-funeral.html"
+      },
+      {
+        "publishedAt": "2026-07-08T14:00:22+03:00",
+        "source": "The Jerusalem Post - Middle East",
+        "category": "חדשות",
+        "title": "Syrian President Ahmad al-Sharaa arrives in Ankara for high-stakes NATO Summit meetings",
+        "sourceUrl": "https://www.jpost.com/middle-east/article-901848"
+      },
+      {
+        "publishedAt": "2026-07-08T13:45:41+03:00",
+        "source": "JNS - Jewish News Syndicate",
+        "category": "ביטחון",
+        "title": "Border Police shoot, arrest knife-wielding terrorist at Rachel Crossing",
+        "sourceUrl": "https://www.jns.org/news/israel-news/border-police-shoot-arrest-knife-wielding-terrorist-at-rachel-crossing"
+      },
+      {
+        "publishedAt": "2026-07-08T13:30:00+03:00",
+        "source": "JNS - Jewish News Syndicate",
+        "category": "אקטואליה בעולם",
+        "title": "1,000 days and 250 years",
+        "sourceUrl": "https://www.jns.org/opinion/sarah-n-stern/1-000-days-and-250-years"
+      },
+      {
+        "publishedAt": "2026-07-08T13:55:49+03:00",
+        "source": "The Media Line",
+        "category": "חדשות",
+        "title": "‘They Never Imagined Brothers from Israel Would Come’: Quake Aid Opens Rare Door in Venezuela",
+        "sourceUrl": "https://themedialine.org/top-stories/they-never-imagined-brothers-from-israel-would-come-quake-aid-opens-rare-door-in-venezuela/"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T13:50:51+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "ילדים עד גיל 10 יקבלו מנויים בחינם: בהפועל ירושלים פתחו את מכירת המנויים",
+        "title": "הפועל ירושלים פתחה מנויים עם מסלול משפחתי חדש",
         "sourceUrl": "https://sports.walla.co.il/item/3851892"
       },
       {
         "publishedAt": "2026-07-08T13:50:51+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "ההסבר המשעשע של אוסקה: \"זה לא הקרסול, אני פשוט מזדקנת\"",
+        "title": "מוחובה הדיחה את אוסקה ועלתה לחצי גמר ווימבלדון",
         "sourceUrl": "https://sports.walla.co.il/item/3851745"
-      },
-      {
-        "publishedAt": "2026-07-08T13:50:51+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "חי בספורט4: הפועל תל אביב - זלין 1:2 (מחצית 2)",
-        "sourceUrl": "https://sports.walla.co.il/item/3851847"
       },
       {
         "publishedAt": "2026-07-08T13:50:51+03:00",
         "source": "וואלה ספורט - כדורגל עולמי",
         "category": "ספורט",
-        "title": "כולל בלינגהאם ואוליסה: 17 השחקנים שבסכנת הרחקה מחצי הגמר",
+        "title": "17 שחקנים בסכנת הרחקה מחצי גמר המונדיאל",
         "sourceUrl": "https://sports.walla.co.il/item/3851906"
       },
-      {
-        "publishedAt": "2026-07-08T13:50:54+03:00",
-        "source": "וואלה ספורט - טראש טוק",
-        "category": "ספורט",
-        "title": "בת 32 בזוגיות עם נשיא ההתאחדות בן ה-85: \"הוא מרמה אותי\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3851764"
-      },
-      {
-        "publishedAt": "2026-07-08T13:21:01+03:00",
-        "source": "הארץ - ספורט",
-        "category": "ספורט",
-        "title": "בעבודה הזו, כל קשר בין הביצועים לשכר מקרי בהחלט",
-        "sourceUrl": "https://www.haaretz.co.il/sport/world-cup/2026-07-08/ty-article-magazine/0000019f-3d8e-d07c-af9f-fddfa4580000"
-      },
-      {
-        "publishedAt": "2026-07-08T13:25:14+03:00",
-        "source": "מעריב - כלכלה",
-        "category": "כלכלה",
-        "title": "למרות קרעי, עסקת ענק: אסף רפפורט רכש את \"ישראל בידור\" בשווי של 80 מיליון שקל",
-        "sourceUrl": "https://www.maariv.co.il/economy/israel/article-1342139"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T13:45:16+03:00",
         "source": "וואלה חדשות",
@@ -123,6 +146,13 @@
         "sourceUrl": "https://e.walla.co.il/item/3851896"
       },
       {
+        "publishedAt": "2026-07-08T13:32:35+03:00",
+        "source": "ynet - כל ערוץ הכלכלה",
+        "category": "נדל״ן",
+        "title": "אושרה תוכנית פינוי-בינוי גדולה בשלומי",
+        "sourceUrl": "https://www.ynet.co.il/economy/article/hytcfjjqml"
+      },
+      {
         "publishedAt": "2026-07-08T13:30:19+03:00",
         "source": "The Jerusalem Post - Israel News",
         "category": "משפט",
@@ -149,34 +179,6 @@
         "category": "טכנולוגיה",
         "title": "אנתרופיק מרחיבה את סוכן Claude לנייד ולדפדפן",
         "sourceUrl": "https://www.israelhayom.co.il/tech/how-to/article/20936975"
-      },
-      {
-        "publishedAt": "2026-07-08T13:25:00+03:00",
-        "source": "גלובס - משפט",
-        "category": "משפט",
-        "title": "עו״ד אחיקם גריידי חשוד בעבירות מס בהיקף מיליונים",
-        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548709#utm_source=RSS"
-      },
-      {
-        "publishedAt": "2026-07-08T13:24:46+03:00",
-        "source": "Israel National News English",
-        "category": "ביטחון",
-        "title": "פלסטינית נעצרה עם סכין בבידוק במחסום",
-        "sourceUrl": "https://www.israelnationalnews.com/flashes/689286"
-      },
-      {
-        "publishedAt": "2026-07-08T13:21:59+03:00",
-        "source": "הארץ - כל הכתבות",
-        "category": "תרבות",
-        "title": "השף הצרפתי ברטראן גראבו מת בגיל 44",
-        "sourceUrl": "https://www.haaretz.co.il/food/2026-07-08/ty-article/.premium/0000019f-4075-d090-a1ff-eff582c10000"
-      },
-      {
-        "publishedAt": "2026-07-08T13:21:37+03:00",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "ספורט",
-        "title": "מסי מוביל במרוץ לנעל הזהב במונדיאל",
-        "sourceUrl": "https://www.aljazeera.com/sports/2026/7/8/fifa-world-cup-golden-boot-race-messi-leads-mbappe-haaland-before-quarterfinals?traffic_source=rss"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
