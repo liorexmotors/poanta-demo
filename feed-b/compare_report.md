@@ -1,52 +1,49 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T18:00:47+03:00
+נוצר: 2026-07-08T18:27:33+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-08T17:50:27+03:00
-- Feed A items: 1964
-- Feed A recent window: 24h / 407 items
-- Feed B run: feed-b-20260708T180047+0300
-- Feed B createdAt: 2026-07-08T18:00:47+03:00
-- Feed B raw candidates: 30
-- Feed B passed to editor: 13
-- Feed B rejected before AI: 17
-- Estimated smart LLM calls: 13
+- Feed A updatedAt: 2026-07-08T18:00:47+03:00
+- Feed A items: 1959
+- Feed A recent window: 24h / 409 items
+- Feed B run: feed-b-20260708T182733+0300
+- Feed B createdAt: 2026-07-08T18:27:33+03:00
+- Feed B raw candidates: 16
+- Feed B passed to editor: 10
+- Feed B rejected before AI: 6
+- Estimated smart LLM calls: 10
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 4
-- main_feed_b_breaking_source: 7
-- non_hebrew_or_untranslated: 3
-- text_too_short: 5
+- duplicate_with_feed_b: 6
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 12
-- Recent Feed A not in Feed B passed list: 406
-- Recent Feed A not seen by Feed B raw input: 406
+- Feed B passed but not currently in Feed A: 10
+- Recent Feed A not in Feed B passed list: 409
+- Recent Feed A not seen by Feed B raw input: 409
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T17:58:11+03:00 | סרוגים - כל הכתבות | "קמצא" זה חרק: 5 דברים שלא ידעתם על "קמצא ובר קמצא"
-- 2026-07-08T17:48:49+03:00 | סרוגים - כל הכתבות | בישראל נערכים: המלחמה עם איראן תתחדש במהירות
-- 2026-07-08T18:01:00+03:00 | וואלה חדשות | "פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור"
-- 2026-07-08T17:41:47+03:00 | הארץ - חדשות | יאיר נתניהו החליף את שמו ליונתן הון
-- 2026-07-08T17:51:07+03:00 | Reuters Middle East דרך Google News | Trump says he will use old Air Force One to travel to UK with new plane going there too - Reuters
-- 2026-07-08T17:44:08+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Why have 100,000 people been signed off work with ADHD in the UK?
-- 2026-07-08T18:00:42+03:00 | The Jerusalem Post - Israel News | At least 17 hospitalized following suspected carbon monoxide poisoning at Jerusalem beauty salon
-- 2026-07-08T18:00:42+03:00 | The Jerusalem Post - Israel News | Shin Bet chief Zini walks into yet another political trap - analysis
-- 2026-07-08T18:00:44+03:00 | The Jerusalem Post - Middle East | Iran threatens to close Strait of Hormuz, hit 'twice the number of targets' as US - report
-- 2026-07-08T18:00:44+03:00 | The Jerusalem Post - Middle East | Trump says he expects to remove Syria from US terrorism sponsor list
-- 2026-07-08T18:00:44+03:00 | The Jerusalem Post - Iran | Make no mistake: Why Iran's nuclear future is at the heart of the Hormuz wars - analysis
-- 2026-07-08T17:52:50+03:00 | JNS - Jewish News Syndicate | IDF arrests 20 wanted Palestinians in overnight Judea, Samaria raids
+- 2026-07-08T18:00:00+03:00 | גלובס - שוק ההון | "אני לא אפסיד": מנכ"ל נייס מדבר לראשונה על צניחת המניה, מהפכת ה־AI והעתיד של ענקית התוכנה
+- 2026-07-08T18:13:39+03:00 | ynet - כל ערוץ הכלכלה | אחרי חודש וחצי בלבד בכלא: הנשיא הרצוג העניק חנינה לאיש העסקים שרגא ברוש
+- 2026-07-08T18:27:06+03:00 | וואלה ספורט - כדורסל | חוזר לליגת העל: ברייס וושינגטון חתם במכבי רמת גן
+- 2026-07-08T18:27:08+03:00 | וואלה ספורט - טניס | ייפגשו בחצי: קוסטיוק ונוסקובה חגגו ברבע הגמר בווימבלדון
+- 2026-07-08T18:27:09+03:00 | וואלה כסף | בעקבות המתיחות מול איראן: ירידות שערים חדות בוול סטריט, הנפט מזנק
+- 2026-07-08T18:27:09+03:00 | וואלה כסף | האוצר נגד יועמ"שית הכנסת: "הטענות לא נכונות, קרובות להסתה נגד עובדי ציבור"
+- 2026-07-08T17:58:11+03:00 | מעריב - כלכלה | הפקרה של עוטף עזה בוועדת הכספים: "מיליביצקי עצר 1.1 מיליארד ש"ח"
+- 2026-07-08T18:24:51+03:00 | דה מרקר - שוק ההון | השוק מגיב לטראמפ: "השווקים רוצים לראות ירידת מחירי אנרגיה, אינפלציה מתקררת וירידת ריבית"
+- 2026-07-08T18:01:56+03:00 | דה מרקר - שוק ההון | אירוע סייבר הפיל את מניית נאייקס ב-7%; החברה: "הפעילות החריגה נבלמה באופן מיידי"
+- 2026-07-08T17:51:58+03:00 | דה מרקר - דעות | לא לקצץ בתקווה: כשפוגעים בתעסוקה, משלמים באלימות
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-08T18:00:44+03:00 | The Jerusalem Post - Middle East | איראן מאיימת לסגור את הורמוז ולהרחיב תקיפות
+- 2026-07-08T17:52:50+03:00 | JNS - Jewish News Syndicate | צה״ל עצר 20 מבוקשים בפעילות לילית ביו״ש
 - 2026-07-08T17:50:04+03:00 | וואלה ספורט - כדורסל | עתודת הנשים עלתה לרבע גמר אליפות אירופה
 - 2026-07-08T17:49:30+03:00 | דה מרקר - גלובל | חולשת המטבעות באסיה מחדשת דיון בהסכם מט"ח
 - 2026-07-08T17:45:17+03:00 | וואלה חדשות - חדשות בארץ | רחבת מוזיאון תל אביב בדרך להפוך לכיכר החטופים
@@ -57,8 +54,6 @@
 - 2026-07-08T17:35:00+03:00 | גלובס - גלובלי ושוקי עולם | טראמפ מקדם ייצור אוקראיני של מיירטי פטריוט
 - 2026-07-08T17:30:31+03:00 | Daily Mail TVShowbiz רכילות חו״ל | אביה של לורן בנט מאשים את שירותי הבריאות בכשל
 - 2026-07-08T17:30:17+03:00 | וואלה חדשות | ועדת הכספים אישרה 31 העברות תקציביות
-- 2026-07-08T17:28:02+03:00 | ynet - כל ערוץ החדשות | נתניהו וכ״ץ ביטלו טקס ויקיימו דיון על איראן
-- 2026-07-08T17:24:41+03:00 | Page Six רכילות חו״ל | גלן פאוול ומישל רנדולף הפכו את הקשר לפומבי
 
 ## Recent Feed A Seen But Filtered By Feed B
 
