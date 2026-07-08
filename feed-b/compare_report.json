@@ -1,27 +1,30 @@
 {
-  "createdAt": "2026-07-08T11:22:08+03:00",
+  "createdAt": "2026-07-08T11:30:24+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T11:15:51+03:00",
+    "updatedAt": "2026-07-08T11:22:07+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T112207+0300",
-    "createdAt": "2026-07-08T11:22:07+03:00",
-    "rawCandidates": 30,
-    "passedToEditor": 22,
-    "rejectedBeforeAi": 8,
-    "estimatedSmartLlmCalls": 22,
+    "runId": "feed-b-20260708T113023+0300",
+    "createdAt": "2026-07-08T11:30:23+03:00",
+    "rawCandidates": 40,
+    "passedToEditor": 21,
+    "rejectedBeforeAi": 19,
+    "estimatedSmartLlmCalls": 21,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 8
+      "text_too_short": 6,
+      "duplicate_with_feed_b": 7,
+      "main_feed_b_breaking_source": 8,
+      "non_hebrew_or_untranslated": 1
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 22,
+    "feedBPassedNotInFeedA": 21,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,91 +32,126 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T10:42:00+03:00",
-        "source": "גלובס - שוק ההון",
-        "category": "כלכלה",
-        "title": "מגמה מעורבת בת\"א; הבנקים עולים ב-1.2%, מדדי הנדל\"ן יורדים. זו כנראה הסיבה",
-        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548573#utm_source=RSS"
+        "publishedAt": "2026-07-08T11:14:44+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "בלי נשיקה צרפתית: הרגע המביך של מקרון ואשתו של ארדואן",
+        "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20935722"
       },
       {
-        "publishedAt": "2026-07-08T10:25:00+03:00",
-        "source": "גלובס - שוק ההון",
-        "category": "כלכלה",
-        "title": "ירידות באירופה; איזי ג'ט נמכרת לקרן פרטית, תימחק מהמסחר",
-        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548682#utm_source=RSS"
-      },
-      {
-        "publishedAt": "2026-07-08T11:15:17+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
+        "publishedAt": "2026-07-08T11:24:03+03:00",
+        "source": "סרוגים - כל הכתבות",
         "category": "ביטחון",
-        "title": "על רקע ההסלמה במזרח התיכון: הדולר מתחזק, הנפט מתייקר - ואיך מגיבה הבורסה?",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/sympido7fe"
+        "title": "האש לא דועכת: גל תקיפות נוסף נגד בסיסים צבאיים באיראן",
+        "sourceUrl": "https://www.srugim.co.il/101005857-האש-לא-דועכת-גל-תקיפות-נוסף-נגד-בסיסים"
       },
       {
-        "publishedAt": "2026-07-08T11:21:44+03:00",
-        "source": "וואלה חדשות - דעות ופרשנויות",
-        "category": "דעות",
+        "publishedAt": "2026-07-08T11:10:40+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "חדשות",
+        "title": "אם יש לכם בצלים בבית - אתם חייבים להכין את הפשטידה הזאת",
+        "sourceUrl": "https://www.srugim.co.il/101005854-אם-יש-לכם-בצלים-בבית-אתם-חייבים-להכין-את"
+      },
+      {
+        "publishedAt": "2026-07-08T11:15:48+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "ביטחון",
+        "title": "טראמפ: בעיניי הפסקת האש נגמרה",
+        "sourceUrl": "https://www.ynet.co.il/news/article/bjwzukimgl"
+      },
+      {
+        "publishedAt": "2026-07-08T11:30:02+03:00",
+        "source": "וואלה חדשות",
+        "category": "פוליטיקה",
         "title": "ראש השב\"כ הסגיר אפשרות מבהילה: נתניהו יכבד את תוצאות הבחירות?",
         "sourceUrl": "https://news.walla.co.il/item/3851838"
       },
       {
-        "publishedAt": "2026-07-08T11:21:44+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "הדמעות של מסי גרמו לכל ארגנטינה לבכות: הנאום המרגש והתגובות",
-        "sourceUrl": "https://sports.walla.co.il/item/3851843"
+        "publishedAt": "2026-07-08T11:30:02+03:00",
+        "source": "וואלה חדשות",
+        "category": "ביטחון",
+        "title": "טראמפ בפסגת נאט\"ו: \"איראן הם מקור הבעיות, הם ניסו לפגוע בי\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851857"
+      },
+      {
+        "publishedAt": "2026-07-08T11:30:02+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
+      },
+      {
+        "publishedAt": "2026-07-08T11:30:03+03:00",
+        "source": "וואלה חדשות - פוליטי-מדיני",
+        "category": "תרבות",
+        "title": "תלמידות יניחו תפילין בבתי הספר? חברת המועצה בדרישה למשרד החינוך",
+        "sourceUrl": "https://news.walla.co.il/item/3851860"
+      },
+      {
+        "publishedAt": "2026-07-08T11:18:36+03:00",
+        "source": "הארץ - חדשות",
+        "category": "פוליטיקה",
+        "title": "טראמפ על מזכר ההבנות: אני חושב שזה נגמר. אני לא רוצה להתעסק עם האיראנים, הם אנשים חולים",
+        "sourceUrl": "https://www.haaretz.co.il/news/politics/2026-07-08/ty-article/0000019f-40c9-d2da-adbf-4fcb16df0000"
+      },
+      {
+        "publishedAt": "2026-07-08T11:26:23+03:00",
+        "source": "מעריב - חדשות",
+        "category": "ביטחון",
+        "title": "דרמת ענק נוספת: דונלד טראמפ הורה לבטל את הסחר עם ספרד",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342093"
+      },
+      {
+        "publishedAt": "2026-07-08T11:26:04+03:00",
+        "source": "מעריב - חדשות",
+        "category": "חדשות",
+        "title": "נווט הקרב החדש מבטיח: \"כשחברים שלי ינוחו בתאילנד אני אשמור על הבית\"",
+        "sourceUrl": "https://www.maariv.co.il/news/military/article-1342092"
+      },
+      {
+        "publishedAt": "2026-07-08T11:26:03+03:00",
+        "source": "מעריב - חדשות",
+        "category": "ביטחון",
+        "title": "טראמפ מחריף את הטון: \"מזכר ההבנות נגמר - הם אנשים חולים\"",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342091"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
+        "publishedAt": "2026-07-08T11:21:53+03:00",
+        "source": "וואלה כסף",
+        "category": "ביטחון",
+        "title": "הנפט מזנק אחרי תקיפות אמריקניות באיראן",
+        "sourceUrl": "https://finance.walla.co.il/item/3851802"
+      },
+      {
+        "publishedAt": "2026-07-08T11:21:53+03:00",
+        "source": "וואלה כסף",
+        "category": "צרכנות",
+        "title": "בדיקת פארם מצאה פער של 1,027 שקל בסל",
+        "sourceUrl": "https://finance.walla.co.il/item/3851829"
       },
       {
         "publishedAt": "2026-07-08T11:21:44+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "אתה בועט, או מרחיק? קללת הבלמים של מונדיאל 2026",
+        "title": "שוויץ עלתה לרבע הגמר אחרי פנדלים מול קולומביה",
         "sourceUrl": "https://sports.walla.co.il/item/3851836"
       },
       {
         "publishedAt": "2026-07-08T11:21:44+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "זה לא נס - זה מסי: הטור של דני דבורין",
-        "sourceUrl": "https://sports.walla.co.il/item/3851856"
-      },
-      {
-        "publishedAt": "2026-07-08T11:21:44+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "מכבי תל אביב הגישה הצעה לבלם ברזילאי, שמסרב עד כה",
+        "title": "מכבי תל אביב פנתה ללאו סנטוס",
         "sourceUrl": "https://sports.walla.co.il/item/3851817"
       },
       {
-        "publishedAt": "2026-07-08T11:00:00+03:00",
-        "source": "וואלה ספורט - כדורגל עולמי",
-        "category": "ספורט",
-        "title": "ארגנטינה לא הכי טובה במונדיאל. אבל יש לה את ליאונל מסי",
-        "sourceUrl": "https://sports.walla.co.il/item/3851749"
+        "publishedAt": "2026-07-08T11:15:17+03:00",
+        "source": "ynet - כל ערוץ הכלכלה",
+        "category": "כלכלה",
+        "title": "הדולר מעל 3 שקלים והנפט מתייקר",
+        "sourceUrl": "https://www.ynet.co.il/economy/article/sympido7fe"
       },
-      {
-        "publishedAt": "2026-07-08T11:21:52+03:00",
-        "source": "וואלה ספורט - טראש טוק",
-        "category": "ספורט",
-        "title": "השדר צרח, הכוכבים מאחוריו השתוללו: הסרטון שמשגע את ארגנטינה",
-        "sourceUrl": "https://sports.walla.co.il/item/3851805"
-      },
-      {
-        "publishedAt": "2026-07-08T11:21:53+03:00",
-        "source": "וואלה ספורט - ענפים נוספים",
-        "category": "ספורט",
-        "title": "שתי מדליות לישראל באליפות אירופה בשחייה לספורטאים על הרצף האוטיסטי",
-        "sourceUrl": "https://sports.walla.co.il/item/3851806"
-      },
-      {
-        "publishedAt": "2026-07-08T11:21:53+03:00",
-        "source": "וואלה כסף",
-        "category": "ביטחון",
-        "title": "אחרי התקיפות באיראן: מחיר הנפט מזנק, הבורסות נצבעו באדום",
-        "sourceUrl": "https://finance.walla.co.il/item/3851802"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T11:12:17+03:00",
         "source": "מעריב - חדשות",
@@ -162,41 +200,6 @@
         "category": "ספורט",
         "title": "ארגנטינה ושווייץ עלו לרבע גמר המונדיאל",
         "sourceUrl": "https://www.haaretz.co.il/sport/world-cup/2026-07-08/ty-article/0000019f-400c-d6c0-a9df-dd9f47d50000"
-      },
-      {
-        "publishedAt": "2026-07-08T10:59:48+03:00",
-        "source": "ערוץ 7 / INN עברית",
-        "category": "ביטחון",
-        "title": "לוחמי 679: גדוד המילואים חיסל את המחבל",
-        "sourceUrl": "https://www.inn.co.il/flashes/1121395"
-      },
-      {
-        "publishedAt": "2026-07-08T10:54:09+03:00",
-        "source": "מעריב - חדשות",
-        "category": "פוליטיקה",
-        "title": "חוק הזיכרון ל-7 באוקטובר אושר בוועדה",
-        "sourceUrl": "https://www.maariv.co.il/news/politics/article-1342067"
-      },
-      {
-        "publishedAt": "2026-07-08T10:53:37+03:00",
-        "source": "BBC World",
-        "category": "טכנולוגיה",
-        "title": "תקלה בטלסטרה שיבשה רכבות ושיחות חירום באוסטרליה",
-        "sourceUrl": "https://www.bbc.co.uk/news/articles/cgevw0d95pdo?at_medium=RSS&at_campaign=rss"
-      },
-      {
-        "publishedAt": "2026-07-08T10:51:17+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "צרכנות",
-        "title": "ריקול לתנור ספירלה של LUXTEN מחשש לכוויות",
-        "sourceUrl": "https://www.israelhayom.co.il/business/consumers/article/20935724"
-      },
-      {
-        "publishedAt": "2026-07-08T10:51:01+03:00",
-        "source": "ערוץ 7 / INN עברית",
-        "category": "אקטואליה בעולם",
-        "title": "מחאה באוסטריה נגד סופרמרקט בשטח מחנה ריכוז",
-        "sourceUrl": "https://www.inn.co.il/flashes/1121394"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
