@@ -1,64 +1,61 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T18:38:07+03:00
+נוצר: 2026-07-08T18:45:21+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-08T18:27:33+03:00
-- Feed A items: 1949
-- Feed A recent window: 24h / 414 items
-- Feed B run: feed-b-20260708T183807+0300
-- Feed B createdAt: 2026-07-08T18:38:07+03:00
-- Feed B raw candidates: 81
-- Feed B passed to editor: 55
-- Feed B rejected before AI: 26
-- Estimated smart LLM calls: 55
+- Feed A updatedAt: 2026-07-08T18:38:07+03:00
+- Feed A items: 1955
+- Feed A recent window: 24h / 425 items
+- Feed B run: feed-b-20260708T184521+0300
+- Feed B createdAt: 2026-07-08T18:45:21+03:00
+- Feed B raw candidates: 19
+- Feed B passed to editor: 10
+- Feed B rejected before AI: 9
+- Estimated smart LLM calls: 10
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 8
-- main_feed_b_breaking_source: 7
-- non_hebrew_or_untranslated: 8
-- text_too_short: 5
+- duplicate_with_feed_b: 1
+- main_feed_b_breaking_source: 6
+- non_hebrew_or_untranslated: 1
+- text_too_short: 1
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 54
-- Recent Feed A not in Feed B passed list: 413
-- Recent Feed A not seen by Feed B raw input: 413
+- Feed B passed but not currently in Feed A: 9
+- Recent Feed A not in Feed B passed list: 424
+- Recent Feed A not seen by Feed B raw input: 424
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T18:24:50+03:00 | ישראל היום - כל הכתבות | איימן עודה מפר את החרם הישראלי על מזכ"ל האו"ם וייפגש עימו בניו יורק
-- 2026-07-08T18:00:33+03:00 | ישראל היום - כל הכתבות | האולימפיאדה השכונתית: בג'ימבורי היהודי אין חוקים ואין מצוות
-- 2026-07-08T17:59:47+03:00 | ישראל היום - כל הכתבות | המודל הממשלתי ל"מימון פילנתרופי" - שיוריד את נטל השיקום מחקלאי העוטף
-- 2026-07-08T17:57:43+03:00 | ישראל היום - כל הכתבות | זוג אלמנות ה-7 באוקטובר ישתתפו ב"המירוץ למיליון"
-- 2026-07-08T17:50:56+03:00 | ישראל היום - כל הכתבות | האורח הסודי במחנה: הזמר שהגיע להופעה חשאית לפני המונדיאל
-- 2026-07-08T17:42:36+03:00 | ישראל היום - כל הכתבות | ארומה רק במקום השני: הרשתות עם הכי הרבה סניפים בישראל
-- 2026-07-08T18:30:27+03:00 | סרוגים - כל הכתבות | "הגב דוקטור!": כוכב "חתונמי" עבר תאונת דרכים והגיע למיון
-- 2026-07-08T18:22:28+03:00 | סרוגים - כל הכתבות | הנקודה האדומה: ראש השב"כ זיני נכשל במבחן הנאמנות?
-- 2026-07-08T18:21:47+03:00 | סרוגים - כל הכתבות | מגישת חדשות 13 חושפת: "קיבלתי חופשה כפויה מהעבודה"
-- 2026-07-08T18:20:55+03:00 | סרוגים - כל הכתבות | חיסול ממוקד בעזה: צה"ל תקף רכב במערב העיר
-- 2026-07-08T18:04:49+03:00 | סרוגים - כל הכתבות | צעד חריג: יאיר נתניהו החליף את שמו
-- 2026-07-08T17:58:13+03:00 | סרוגים - כל הכתבות | תקיפה אווירית דרמטית בלב מעוז חיזבאללה
+- 2026-07-08T18:38:40+03:00 | ynet - כל ערוץ החדשות | פארסה ב"בחירות הפייק" בבריטניה: "רוזן פרצוף-פח" רץ מול מנהיג הימין פראג'
+- 2026-07-08T18:30:00+03:00 | BBC World | Bowen: For all his bluster, Trump has no better option than talks with Iran
+- 2026-07-08T18:38:28+03:00 | Reuters Middle East דרך Google News | Trump says he thinks Israel will withdraw troops from southern Lebanon - Reuters
+- 2026-07-08T18:45:17+03:00 | The Jerusalem Post - Israel News | At least 17 hospitalized following suspected carbon monoxide poisoning at Jerusalem beauty salon
+- 2026-07-08T18:45:17+03:00 | The Jerusalem Post - Israel News | Israel 'will return to the whole of Gaza,' should 'erase' Oslo Accords, Smotrich says
+- 2026-07-08T18:45:18+03:00 | The Jerusalem Post - Middle East | Trump says he thinks Israel will withdraw troops from southern Lebanon
+- 2026-07-08T18:45:18+03:00 | The Jerusalem Post - Iran | Make no mistake: Why Iran's nuclear future is at the heart of the Hormuz wars - analysis
+- 2026-07-08T18:45:18+03:00 | The Jerusalem Post - Iran | Rasoul Ziaei: The bodybuilder whose family searched for a week after Jan. massacre - interview
+- 2026-07-08T18:37:25+03:00 | JNS - Jewish News Syndicate | Modern antisemitism has become a battle over belonging, scholars say
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-08T18:38:02+03:00 | The Jerusalem Post - Israel News | סקר INSS: רוב הישראלים לא רואים ניצחון ברור מול איראן
+- 2026-07-08T18:37:48+03:00 | וואלה חדשות | חן קוגל העיד בתביעת הדיבה סביב 'צל של אמת'
+- 2026-07-08T18:37:48+03:00 | וואלה חדשות | משרד המשפטים ביטל רישיון לחברת שמירה בשל חשד לדמי חסות
+- 2026-07-08T18:37:48+03:00 | וואלה חדשות - פוליטי-מדיני | הדמוקרטים בודקים אם מוסי רז היה חבר בשתי מפלגות
+- 2026-07-08T18:32:17+03:00 | France24 Middle East | תמונות AI מזויפות מהלוויית חמינאי הופצו בידי שני המחנות
 - 2026-07-08T18:27:09+03:00 | וואלה כסף | אגף התקציבים תקף את יועמ״שית הכנסת במכתב חריף
 - 2026-07-08T18:27:08+03:00 | וואלה ספורט - טניס | קוסטיוק ונוסקובה עלו לחצי גמר ווימבלדון
 - 2026-07-08T18:27:06+03:00 | וואלה ספורט - כדורסל | מכבי רמת גן צירפה את ברייס וושינגטון
-- 2026-07-08T18:01:56+03:00 | דה מרקר - שוק ההון | חשבון ענן חריג בנאייקס לחץ את המניה
-- 2026-07-08T18:00:44+03:00 | The Jerusalem Post - Middle East | איראן מאיימת לסגור את הורמוז ולהרחיב תקיפות
-- 2026-07-08T18:00:00+03:00 | גלובס - שוק ההון | מנכ״ל נייס מנסה להרגיע אחרי צניחת המניה
-- 2026-07-08T17:52:50+03:00 | JNS - Jewish News Syndicate | צה״ל עצר 20 מבוקשים בפעילות לילית ביו״ש
-- 2026-07-08T17:50:04+03:00 | וואלה ספורט - כדורסל | עתודת הנשים עלתה לרבע גמר אליפות אירופה
-- 2026-07-08T17:49:30+03:00 | דה מרקר - גלובל | חולשת המטבעות באסיה מחדשת דיון בהסכם מט"ח
-- 2026-07-08T17:45:17+03:00 | וואלה חדשות - חדשות בארץ | רחבת מוזיאון תל אביב בדרך להפוך לכיכר החטופים
-- 2026-07-08T17:42:11+03:00 | ynet - כל ערוץ הספורט | הפועל ירושלים תמכור את אוטומאו לריימס ב-1.6 מיליון אירו
-- 2026-07-08T17:41:00+03:00 | כיפה - חדשות | המשטרה תשלח דוחות ממצלמות בניידות
+- 2026-07-08T18:24:50+03:00 | ישראל היום - כל הכתבות | איימן עודה ייפגש עם גוטרש בניו יורק למרות החרם הישראלי
+- 2026-07-08T18:23:03+03:00 | ynet - כל ערוץ החדשות | השיחות עם לבנון יעברו לרומא; מסירת אזורי הפיילוט תתעכב
+- 2026-07-08T18:15:11+03:00 | כיפה - חדשות | נתניהו כינס דיון ביטחוני דחוף על רקע המתיחות מול איראן
+- 2026-07-08T18:07:43+03:00 | ynet - כל ערוץ החדשות | רם עמנואל קרא בתל אביב לשינוי מדיניות אמריקנית מול ישראל
 
 ## Recent Feed A Seen But Filtered By Feed B
 
