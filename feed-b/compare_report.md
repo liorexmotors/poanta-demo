@@ -1,61 +1,53 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T11:51:42+03:00
+נוצר: 2026-07-08T12:00:36+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-08T11:45:21+03:00
-- Feed A items: 80
-- Feed A recent window: 24h / 80 items
-- Feed B run: feed-b-20260708T115142+0300
-- Feed B createdAt: 2026-07-08T11:51:42+03:00
-- Feed B raw candidates: 19
-- Feed B passed to editor: 12
-- Feed B rejected before AI: 7
-- Estimated smart LLM calls: 12
+- Feed A updatedAt: 2026-06-28T11:22:16+03:00
+- Feed A items: 106
+- Feed A recent window: 24h / 0 items
+- Feed B run: feed-b-20260708T120035+0300
+- Feed B createdAt: 2026-07-08T12:00:35+03:00
+- Feed B raw candidates: 35
+- Feed B passed to editor: 17
+- Feed B rejected before AI: 18
+- Estimated smart LLM calls: 17
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 7
+- duplicate_with_feed_b: 2
+- main_feed_b_breaking_source: 10
+- non_hebrew_or_untranslated: 1
+- text_too_short: 9
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 12
-- Recent Feed A not in Feed B passed list: 80
-- Recent Feed A not seen by Feed B raw input: 80
+- Feed B passed but not currently in Feed A: 17
+- Recent Feed A not in Feed B passed list: 0
+- Recent Feed A not seen by Feed B raw input: 0
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T11:34:54+03:00 | ynet - כל ערוץ הספורט | לא מעט ותיקים עשו נזק לנבחרות שלהם במונדיאל - רק מסי ידע ליפול ולקום
-- 2026-07-08T11:51:00+03:00 | וואלה חדשות - דעות ופרשנויות | ראש השב"כ הסגיר אפשרות מבהילה: נתניהו יכבד את תוצאות הבחירות?
-- 2026-07-08T11:54:00+03:00 | וואלה ספורט | שתי מדליות לישראל באליפות אירופה בשחייה לספורטאים על הרצף האוטיסטי
-- 2026-07-08T11:53:00+03:00 | וואלה ספורט | השדר צרח, הכוכבים מאחוריו השתוללו: הסרטון שמשגע את ארגנטינה
-- 2026-07-08T11:51:01+03:00 | וואלה ספורט | מהחלום במונדיאל למאבק להחרמת ישראל: שחקן כף ורדה שוב מתעקש
-- 2026-07-08T11:51:01+03:00 | וואלה ספורט | הדמעות של מסי גרמו לכל ארגנטינה לבכות: הנאום המרגש והתגובות
-- 2026-07-08T11:51:02+03:00 | וואלה ספורט - כדורגל עולמי | זה לא נס - זה מסי: הטור של דני דבורין
-- 2026-07-08T11:51:02+03:00 | וואלה ספורט - כדורגל עולמי | אינטר קבעה דד ליין לעסקת חלאילי, סן ז'ילואז תתגמש?
-- 2026-07-08T11:51:02+03:00 | וואלה ספורט - כדורסל | עירוני נס ציונה החתימה את ונסן אמסלם לשלוש שנים
-- 2026-07-08T11:51:12+03:00 | וואלה כסף | כסף אינסופי? מארק צוקרברג מבהיר: "לא אפסיק לעבוד"
-- 2026-07-08T11:51:12+03:00 | וואלה כסף | חשבון בנק ראשון מגיל 8: בנק הפועלים משיק פלטפורמה דיגיטלית לילדים
-- 2026-07-08T11:37:00+03:00 | גלובס - שיווק וצרכנות | עמוד אינסטגרם בשווי 80 מיליון שקל: אסף רפפורט השלים את רכישת ישראל בידור
+- 2026-07-08T11:24:07+03:00 | סרוגים - כל הכתבות | יום הולדת שמח: עשרה דברים שלא ידעתם על ירדן ג'רבי
+- 2026-07-08T12:00:16+03:00 | וואלה חדשות | ראש השב"כ הסגיר אפשרות מבהילה: נתניהו יכבד את תוצאות הבחירות?
+- 2026-07-08T12:00:16+03:00 | וואלה חדשות | "פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור"
+- 2026-07-08T12:00:16+03:00 | וואלה חדשות | אחרי מצוד נרחב: נעצר חשוד נוסף בפרשת האונס הקבוצתי ברמלה
+- 2026-07-08T11:51:32+03:00 | Reuters Middle East דרך Google News | Trump says interim accord to end war is 'over' after Iranian strikes - Reuters
+- 2026-07-08T11:45:45+03:00 | Reuters Middle East דרך Google News | Hegseth to meet Netanyahu over possible sale of F-35s to Turkey, source tells Reuters - Reuters
+- 2026-07-08T11:48:06+03:00 | Axios Israel/Iran דרך Google News | Trump says Iran ceasefire "over" and talks a "waste of time" - Axios
+- 2026-07-08T11:50:00+03:00 | Politico Israel/Iran דרך Google News | Dems want Schumer silent on Maine - Politico
+- 2026-07-08T11:54:58+03:00 | Al Jazeera RSS מסונן מזרח תיכון | The Iranian Striker: The journey of Mehdi Taremi
+- 2026-07-08T11:45:47+03:00 | Al Jazeera RSS מסונן מזרח תיכון | World Cup: Which teams made the quarterfinals, and what’s the schedule?
+- 2026-07-08T11:41:00+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Why have half a million Russians gone bankrupt amid Ukraine war?
+- 2026-07-08T11:33:40+03:00 | Al Jazeera RSS מסונן מזרח תיכון | World Cup 2026 quarterfinals: Full schedule and Egypt FIFA dispute
 
 ## Recent Feed A Not In Feed B Passed
 
-- 2026-07-08T11:42:15+03:00 | הארץ - חדשות | חבר בוועדה מצרית נהרג בתקיפה בעזה
-- 2026-07-08T11:39:53+03:00 | דוברות משטרת ישראל - טלגרם רשמי | מבוקש בחשד לטרור נעצר בכפר ליד ג'נין
-- 2026-07-08T11:38:28+03:00 | מעריב - חדשות | ישראל מאריכה את משלחת הסיוע בוונצואלה
-- 2026-07-08T11:37:39+03:00 | ynet - כל ערוץ החדשות | בנות יוסף באו מנסות לעצור מכירת ציור שנגנב
-- 2026-07-08T11:30:19+03:00 | The Jerusalem Post - Israel News | לוין קרא להתעלם מפסיקת בג"ץ על מבקר המדינה
-- 2026-07-08T11:30:03+03:00 | וואלה חדשות - פוליטי-מדיני | דרישה להחיל הנחת תפילין גם על תלמידות
-- 2026-07-08T11:30:02+03:00 | וואלה חדשות | טראמפ: מזכר ההבנות עם איראן נגמר
-- 2026-07-08T11:29:02+03:00 | ynet - כל ערוץ החדשות | גפני מתנגד לשינוי בחוק יסוד לימוד תורה
-- 2026-07-08T11:27:27+03:00 | Daily Mail TVShowbiz רכילות חו״ל | ילדיה של קייטי פרייס חשפו הזנחה בסרט חדש
-- 2026-07-08T11:27:00+03:00 | Reuters Middle East דרך Google News | סוכנות התעופה האירופית מזהירה מטיסות באזור
-- 2026-07-08T11:26:25+03:00 | הארץ - כל הכתבות | קלופ במגעים לאימון נבחרת גרמניה
-- 2026-07-08T11:26:04+03:00 | מעריב - חדשות | נווט קרב חדש מסיים קורס אחרי המלחמה
+- אין
 
 ## Recent Feed A Seen But Filtered By Feed B
 
