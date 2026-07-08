@@ -1,27 +1,30 @@
 {
-  "createdAt": "2026-07-08T15:20:42+03:00",
+  "createdAt": "2026-07-08T15:30:22+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T15:15:22+03:00",
+    "updatedAt": "2026-07-08T15:20:41+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T152041+0300",
-    "createdAt": "2026-07-08T15:20:41+03:00",
-    "rawCandidates": 13,
-    "passedToEditor": 8,
-    "rejectedBeforeAi": 5,
-    "estimatedSmartLlmCalls": 8,
+    "runId": "feed-b-20260708T153022+0300",
+    "createdAt": "2026-07-08T15:30:22+03:00",
+    "rawCandidates": 38,
+    "passedToEditor": 21,
+    "rejectedBeforeAi": 17,
+    "estimatedSmartLlmCalls": 21,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 5
+      "text_too_short": 3,
+      "main_feed_b_breaking_source": 6,
+      "duplicate_with_feed_b": 7,
+      "non_hebrew_or_untranslated": 3
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 8,
+    "feedBPassedNotInFeedA": 21,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,63 +32,112 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T14:52:16+03:00",
-        "source": "ynet - כל ערוץ הספורט",
-        "category": "ספורט",
-        "title": "המכבים באים: \"קיבלתי הזדמנות לשאת מגן דוד על החזה\"",
-        "sourceUrl": "https://www.ynet.co.il/sport/article/h1w7fjoxme"
+        "publishedAt": "2026-07-08T15:12:49+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "תחגרו חגורות: הצעד הבא של אסף גרניט",
+        "sourceUrl": "https://www.israelhayom.co.il/forreal/localy/article/20937927"
+      },
+      {
+        "publishedAt": "2026-07-08T15:09:07+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "משפט",
+        "title": "עידן רייכל: \"יש שופטים שיורדים לחיי מתמודדים, מתסכול אישי\"",
+        "sourceUrl": "https://www.israelhayom.co.il/magazine/shishabat/article/20936703"
+      },
+      {
+        "publishedAt": "2026-07-08T15:07:57+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "12 טריקים פשוטים שיעזרו לכם לבשל עם הרבה פחות שמן",
+        "sourceUrl": "https://www.israelhayom.co.il/food/nutrition-food/article/20936167"
+      },
+      {
+        "publishedAt": "2026-07-08T15:00:57+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "נדל״ן",
+        "title": "השחקן מסבך את העסקה: התקרבות בין הפועל תל אביב לטימוקו דיארה",
+        "sourceUrl": "https://www.israelhayom.co.il/sport/israeli-soccer/article/20937968"
+      },
+      {
+        "publishedAt": "2026-07-08T15:25:27+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "תרבות",
+        "title": "אבל בעולם המוזיקה: הזמר המצליח הלך לעולמו בגיל 46",
+        "sourceUrl": "https://www.srugim.co.il/101005883-אבל-בעולם-המוזיקה-הזמר-המצליח-הלך-לעולמו"
+      },
+      {
+        "publishedAt": "2026-07-08T15:17:03+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "ביטחון",
+        "title": "טהרן משוויצה: משמרות המהפכה פרסמו תיעודים מהירי לעבר כווית ובחריין",
+        "sourceUrl": "https://www.srugim.co.il/101005881-טהרן-משוויצה-משמרות-המהפכה-פרסמו-תיעודים"
+      },
+      {
+        "publishedAt": "2026-07-08T15:30:01+03:00",
+        "source": "וואלה חדשות",
+        "category": "משפט",
+        "title": "המפכ\"ל מבהיר: \"ניישם כל החלטה של בג\"ץ מבלי להניד עפעף\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851951"
+      },
+      {
+        "publishedAt": "2026-07-08T15:30:01+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
+      },
+      {
+        "publishedAt": "2026-07-08T15:30:01+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "העימות מחריף: טראמפ מאיים לנתק את קשרי הסחר עם ספרד",
+        "sourceUrl": "https://news.walla.co.il/item/3851955"
+      },
+      {
+        "publishedAt": "2026-07-08T15:17:33+03:00",
+        "source": "הארץ - כל הכתבות",
+        "category": "חדשות",
+        "title": "\"זו לא פיצה ישראלית, היא לא מייצגת אותנו\": האם תם עידן הנאפוליטנית?",
+        "sourceUrl": "https://www.haaretz.co.il/food/2026-07-08/ty-article-magazine/.premium/0000019e-f374-d58e-afbf-f77f217d0000"
+      },
+      {
+        "publishedAt": "2026-07-08T15:13:38+03:00",
+        "source": "הארץ - כל הכתבות",
+        "category": "חדשות",
+        "title": "ישראל מסוממת: מאז 7 באוקטובר הפכנו למדינה שההתמכרות בה היא נורמה",
+        "sourceUrl": "https://www.haaretz.co.il/gallery/galleryfriday/2026-07-08/ty-article-magazine/.highlight/0000019f-4103-d07c-af9f-c95f52100000"
+      },
+      {
+        "publishedAt": "2026-07-08T15:20:41+03:00",
+        "source": "מעריב - חדשות",
+        "category": "פלילים",
+        "title": "חשד להעלמת מס במיליונים: אחרי חצי שנה - עורך הדין מהמרכז נחשף",
+        "sourceUrl": "https://www.maariv.co.il/news/law/article-1342191"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
+        "publishedAt": "2026-07-08T15:20:25+03:00",
+        "source": "וואלה כסף",
+        "category": "כלכלה",
+        "title": "מילביצקי בלם מיליארד שקל לתקומה ותנופה",
+        "sourceUrl": "https://finance.walla.co.il/item/3851952"
       },
       {
         "publishedAt": "2026-07-08T15:20:20+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "זלטקו דאליץ' עוזב את נבחרת קרואטיה: \"מסע בלתי נשכח\"",
+        "title": "דאליץ' עזב את נבחרת קרואטיה אחרי ההדחה",
         "sourceUrl": "https://sports.walla.co.il/item/3851936"
       },
       {
         "publishedAt": "2026-07-08T15:20:20+03:00",
         "source": "וואלה ספורט - כדורגל ישראלי",
         "category": "ספורט",
-        "title": "הבונוס, האחוזים והתקווה: פרטי עסקת עיסאת נחשפים",
+        "title": "מכבי חיפה תקבל 2.2 מיליון יורו על עיסאת",
         "sourceUrl": "https://sports.walla.co.il/item/3851945"
       },
-      {
-        "publishedAt": "2026-07-08T15:00:00+03:00",
-        "source": "וואלה ספורט - כדורגל ישראלי",
-        "category": "ספורט",
-        "title": "טוריאל ובואטנג כבשו, הפועל ת\"א הפכה וניצחה 1:2 את זלין",
-        "sourceUrl": "https://sports.walla.co.il/item/3851847"
-      },
-      {
-        "publishedAt": "2026-07-08T15:20:24+03:00",
-        "source": "וואלה ספורט - טראש טוק",
-        "category": "ספורט",
-        "title": "בת 32 בזוגיות עם נשיא ההתאחדות בן ה-85: \"הוא מרמה אותי\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3851764"
-      },
-      {
-        "publishedAt": "2026-07-08T15:20:25+03:00",
-        "source": "וואלה כסף",
-        "category": "כלכלה",
-        "title": "מילביצקי פותח פה על הבכיר: \"לא מצאתי ראש רשות אחד שיגיד עליו מילה טובה\"",
-        "sourceUrl": "https://finance.walla.co.il/item/3851952"
-      },
-      {
-        "publishedAt": "2026-07-08T14:57:47+03:00",
-        "source": "דה מרקר - שוק ההון",
-        "category": "כלכלה",
-        "title": "אאורה מדווחת על ירידה במכירות במחצית הראשונה של 2026",
-        "sourceUrl": "https://www.themarker.com/markets/2026-07-08/ty-article/.premium/0000019f-417f-d269-af9f-47ff2e2a0000"
-      },
-      {
-        "publishedAt": "2026-07-08T14:56:18+03:00",
-        "source": "דה מרקר - גלובל",
-        "category": "אקטואליה בעולם",
-        "title": "קדחת השבבים העולמית עוד עלולה להפוך למחלה טייוואנית",
-        "sourceUrl": "https://www.themarker.com/magazine/2026-07-08/ty-article/.premium/0000019f-312a-d10e-a7df-ffbf7b0b0000"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T15:15:18+03:00",
         "source": "The Jerusalem Post - Middle East",
@@ -115,11 +167,25 @@
         "sourceUrl": "https://www.srugim.co.il/101005879-יועמשית-הכנסת-לקיים-בחירות-חוזרות-למבקר"
       },
       {
+        "publishedAt": "2026-07-08T14:57:47+03:00",
+        "source": "דה מרקר - שוק ההון",
+        "category": "כלכלה",
+        "title": "אאורה מכרה פחות דירות במחצית הראשונה",
+        "sourceUrl": "https://www.themarker.com/markets/2026-07-08/ty-article/.premium/0000019f-417f-d269-af9f-47ff2e2a0000"
+      },
+      {
         "publishedAt": "2026-07-08T14:56:21+03:00",
         "source": "ישראל היום - כל הכתבות",
         "category": "חדשות",
         "title": "אירופה הסירה את אזהרת הטיסה מעל ישראל",
         "sourceUrl": "https://www.israelhayom.co.il/travel/aviation/article/20937966"
+      },
+      {
+        "publishedAt": "2026-07-08T14:56:18+03:00",
+        "source": "דה מרקר - גלובל",
+        "category": "אקטואליה בעולם",
+        "title": "בום ה-AI מזניק את טייוואן ומגדיל את הסיכון",
+        "sourceUrl": "https://www.themarker.com/magazine/2026-07-08/ty-article/.premium/0000019f-312a-d10e-a7df-ffbf7b0b0000"
       },
       {
         "publishedAt": "2026-07-08T14:53:56+03:00",
@@ -134,41 +200,6 @@
         "category": "ספורט",
         "title": "ג׳ון אוטומאו יעבור מהפועל ירושלים לריימס",
         "sourceUrl": "https://sports.walla.co.il/item/3851941"
-      },
-      {
-        "publishedAt": "2026-07-08T14:53:50+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "פריס לי קרוב לחתימה בעירוני נס ציונה",
-        "sourceUrl": "https://sports.walla.co.il/item/3851935"
-      },
-      {
-        "publishedAt": "2026-07-08T14:53:50+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "ז׳אן מונטרו חתם לשלוש שנים באולימפיאקוס",
-        "sourceUrl": "https://sports.walla.co.il/item/3851928"
-      },
-      {
-        "publishedAt": "2026-07-08T14:52:46+03:00",
-        "source": "Axios Israel/Iran דרך Google News",
-        "category": "ביטחון",
-        "title": "טראמפ: הפסקת האש עם איראן הסתיימה",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9xRVgwVGpMaU5NOURQa0tjRkZ2MVduZXZ1NEVPdVlydXQ1YURaSUlPMWw3QlpCdndYc1hUSmZoQVBtUHdhek12aDE1MDdGN0JXTXRTMlFuVEhHdlhtYWkzci00dm5RQVhZcUE?oc=5"
-      },
-      {
-        "publishedAt": "2026-07-08T14:50:36+03:00",
-        "source": "The Guardian Middle East",
-        "category": "ביטחון",
-        "title": "טראמפ הכריז כי הפסקת האש עם איראן הסתיימה",
-        "sourceUrl": "https://www.theguardian.com/world/2026/jul/08/trump-declares-ceasefire-iran-over-broadside-nato-summit"
-      },
-      {
-        "publishedAt": "2026-07-08T14:49:54+03:00",
-        "source": "JNS - Jewish News Syndicate",
-        "category": "אקטואליה בעולם",
-        "title": "מנהיגים אוונגליסטים מנסים לבלום ירידה בתמיכה בישראל",
-        "sourceUrl": "https://www.jns.org/news/u-s-news/american-evangelical-leaders-seek-to-counter-wartime-drop-in-support-for-israel"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
