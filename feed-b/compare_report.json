@@ -1,27 +1,30 @@
 {
-  "createdAt": "2026-07-08T22:23:23+03:00",
+  "createdAt": "2026-07-08T22:30:35+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T22:16:13+03:00",
-    "items": 1976,
+    "updatedAt": "2026-07-08T22:23:22+03:00",
+    "items": 1977,
     "recentWindowHours": 24,
-    "recentItems": 541
+    "recentItems": 542
   },
   "feedB": {
-    "runId": "feed-b-20260708T222322+0300",
-    "createdAt": "2026-07-08T22:23:22+03:00",
-    "rawCandidates": 4,
-    "passedToEditor": 2,
-    "rejectedBeforeAi": 2,
-    "estimatedSmartLlmCalls": 2,
+    "runId": "feed-b-20260708T223034+0300",
+    "createdAt": "2026-07-08T22:30:34+03:00",
+    "rawCandidates": 24,
+    "passedToEditor": 11,
+    "rejectedBeforeAi": 13,
+    "estimatedSmartLlmCalls": 11,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 2
+      "text_too_short": 5,
+      "main_feed_b_breaking_source": 8,
+      "duplicate_with_feed_b": 4,
+      "non_hebrew_or_untranslated": 1
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 2,
+    "feedBPassedNotInFeedA": 10,
     "feedARecentNotInFeedBPassed": 541,
     "feedARecentNotSeenByFeedBRaw": 541,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,18 +32,74 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T22:22:52+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "אינטר העלתה את ההצעה על חלאילי, סן ז'ילואז שוב סירבה",
-        "sourceUrl": "https://sports.walla.co.il/item/3852033"
+        "publishedAt": "2026-07-08T22:17:52+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "חדשות",
+        "title": "טרגדיה: גבר כבן 30 טבע למוות בבריכה בקיסריה",
+        "sourceUrl": "https://www.srugim.co.il/101005929-טרגדיה-גבר-כבן-30-טבע-למוות-בבריכה"
       },
       {
-        "publishedAt": "2026-07-08T21:50:17+03:00",
-        "source": "דה מרקר - גלובל",
+        "publishedAt": "2026-07-08T22:26:18+03:00",
+        "source": "מעריב - חדשות",
+        "category": "חדשות",
+        "title": "הרצוג יצא נגד דבריו של זיני - בן גביר ולוין השיבו במתקפה חריפה",
+        "sourceUrl": "https://www.maariv.co.il/news/politics/article-1342372"
+      },
+      {
+        "publishedAt": "2026-07-08T22:23:32+03:00",
+        "source": "מעריב - חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "ארדואן חילק אקדחים למנהיגי נאט\"ו - סטארמר נשאר רק עם הסיפור",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342378"
+      },
+      {
+        "publishedAt": "2026-07-08T22:04:00+03:00",
+        "source": "גלובס - משפט",
+        "category": "כלכלה",
+        "title": "פינוי מחזיקים ושחרור תוכנית שנתקעה 15 שנה: 2 החלטות משמעותיות בענף הנדל\"ן",
+        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548801#utm_source=RSS"
+      },
+      {
+        "publishedAt": "2026-07-08T22:23:34+03:00",
+        "source": "New York Times Middle East",
+        "category": "חדשות",
+        "title": "In Israel, Rahm Emanuel Calls for End of Unconditional U.S. Support",
+        "sourceUrl": "https://www.nytimes.com/2026/07/07/us/politics/rahm-emanuel-speech-israel.html"
+      },
+      {
+        "publishedAt": "2026-07-08T22:00:08+03:00",
+        "source": "Reuters Middle East דרך Google News",
+        "category": "חדשות",
+        "title": "Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPRUFNSFZCMUlyZmxEVTVyWGdaRzZfUEk4V0ppVmNhLWpQWlp2TEFGQTlmX2haM2dRMFk0TVAyM2VCMUZQdmE5N05HWTE1NzBQenBZOWZvS3VnZUZNX195QWtGa01MTUtOVnNmYkR4ZU5lSWF0Z2hrazRXWTV1d0dUM3NSMVE4NUxPYzRlZk5xbFdlS3RaaVRNTkJZM0h2clNtMXZ6eE43WFlvNTU1enBMOU9LeDdMNkZ6RTVzdVZBSlRQczhCNHZwZmNrYw?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T22:30:31+03:00",
+        "source": "The Jerusalem Post - Israel News",
         "category": "ביטחון",
-        "title": "סין תתיר לחברות AI לקנות שבבים מתקדמים של אנבידיה",
-        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article/.premium/0000019f-42ee-d913-abff-dffe04e20000"
+        "title": "After 78 years, IDF locates burial site of Pvt. Yaakov Zrihan, who went missing in Independence War",
+        "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-901913"
+      },
+      {
+        "publishedAt": "2026-07-08T22:30:31+03:00",
+        "source": "The Jerusalem Post - Israel News",
+        "category": "ביטחון",
+        "title": "EU Aviation Safety Agency loosens restrictions on flights to Israel",
+        "sourceUrl": "https://www.jpost.com/israel-news/article-901929"
+      },
+      {
+        "publishedAt": "2026-07-08T22:30:31+03:00",
+        "source": "The Jerusalem Post - Middle East",
+        "category": "חדשות",
+        "title": "Only clans can govern Gaza after Hamas disarmed, NCAG will fail, MidEast expert says - interview",
+        "sourceUrl": "https://www.jpost.com/middle-east/article-901903"
+      },
+      {
+        "publishedAt": "2026-07-08T21:03:41+03:00",
+        "source": "כאן דרך Google News",
+        "category": "פוליטיקה",
+        "title": "משפיענים - גם על הבחירות? יוצרי התוכן שלא מפחדים להביע דעה פוליטית - כאן 11",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1YRFNDOHRMT2g4bEdMS2pIbUs2dEtDajlQbUtfTzBDYjM3aHl3Z0J5c0c5MzBLajZiaXl5WWpuOTlMcEwyUjRwUF9qUTNiNnpEOU5xZGF4Sjg1TDZwb3Ata2RLNkxHdzhMdjFNRVJzWUhFY2ozREE?oc=5"
       }
     ],
     "feedARecentNotInFeedBPassed": [
@@ -115,18 +174,18 @@
         "sourceUrl": "https://www.aljazeera.com/news/2026/7/8/trump-says-us-may-take-over-kharg-island-heres-what-you-need-to-know?traffic_source=rss"
       },
       {
+        "publishedAt": "2026-07-08T21:50:17+03:00",
+        "source": "דה מרקר - גלובל",
+        "category": "טכנולוגיה",
+        "title": "סין מרככת את מגבלות רכישת שבבי אנבידיה",
+        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article/.premium/0000019f-42ee-d913-abff-dffe04e20000"
+      },
+      {
         "publishedAt": "2026-07-08T21:48:39+03:00",
         "source": "ישראל היום - כל הכתבות",
         "category": "ספורט",
         "title": "נבחרת נורבגיה עברה מלון לפני רבע גמר המונדיאל",
         "sourceUrl": "https://www.israelhayom.co.il/sport/world-soccer/article/20941584"
-      },
-      {
-        "publishedAt": "2026-07-08T21:42:07+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "ביטחון",
-        "title": "ארגון נכי צה״ל מאשים את האוצר בנסיגה מהתחייבויות",
-        "sourceUrl": "https://www.israelhayom.co.il/news/defense/article/20941686"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
