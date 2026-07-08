@@ -1,27 +1,30 @@
 {
-  "createdAt": "2026-07-08T14:54:24+03:00",
+  "createdAt": "2026-07-08T15:01:11+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T14:45:26+03:00",
+    "updatedAt": "2026-07-08T14:54:24+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T145424+0300",
-    "createdAt": "2026-07-08T14:54:24+03:00",
-    "rawCandidates": 18,
-    "passedToEditor": 12,
-    "rejectedBeforeAi": 6,
-    "estimatedSmartLlmCalls": 12,
+    "runId": "feed-b-20260708T150110+0300",
+    "createdAt": "2026-07-08T15:01:10+03:00",
+    "rawCandidates": 36,
+    "passedToEditor": 21,
+    "rejectedBeforeAi": 15,
+    "estimatedSmartLlmCalls": 21,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 6
+      "text_too_short": 5,
+      "duplicate_with_feed_b": 5,
+      "main_feed_b_breaking_source": 7,
+      "non_hebrew_or_untranslated": 1
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 12,
+    "feedBPassedNotInFeedA": 21,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,91 +32,119 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T14:33:33+03:00",
-        "source": "ynet - כל ערוץ הרכב",
-        "category": "רכב",
-        "title": "המצטיינות במבחני ריסוק חדשים: גרמניה ותיקה וסינית צעירה",
-        "sourceUrl": "https://icar.co.il/news/hyqjlnsqml"
+        "publishedAt": "2026-07-08T14:56:21+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ביטחון",
+        "title": "בעיתוי מעניין: אחרי הצהרת טראמפ - אירופה הסירה את אזהרת הטיסה לישראל",
+        "sourceUrl": "https://www.israelhayom.co.il/travel/aviation/article/20937966"
       },
       {
-        "publishedAt": "2026-07-08T14:23:49+03:00",
-        "source": "ynet - כל ערוץ הרכב",
-        "category": "רכב",
-        "title": "הכי גדול שיש, וגם הכי יקר: אקספנג תשווק את המיניוואן X9",
-        "sourceUrl": "https://icar.co.il/news/ryblzismme"
+        "publishedAt": "2026-07-08T14:48:35+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "אקטואליה בעולם",
+        "title": "יש חור בנייקי: למה הנעליים של פדרו נטו גזורות?",
+        "sourceUrl": "https://www.israelhayom.co.il/sport/world-soccer/article/20937827"
       },
       {
-        "publishedAt": "2026-07-08T14:16:54+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
-        "category": "כלכלה",
-        "title": "70 אלף דירות במקום מפעלים: עוד צעד בדרך לשיקום מפרץ חיפה",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/hyyrynimge"
+        "publishedAt": "2026-07-08T14:46:53+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "ההכרעה בליכוד אחרי המריבה הפנימית בין הח\"כים: \"חופש הדעה גובר\"",
+        "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20937725"
+      },
+      {
+        "publishedAt": "2026-07-08T14:46:20+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ספורט",
+        "title": "בנק הפועלים רוצה את הילדים: משיק פלטפורמה ייחודית לבני 8 ומעלה",
+        "sourceUrl": "https://www.israelhayom.co.il/business/article/20937905"
+      },
+      {
+        "publishedAt": "2026-07-08T14:36:09+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ספורט",
+        "title": "החופשה המשותפת של מאי ערב - עם אקס מכבי חיפה",
+        "sourceUrl": "https://www.israelhayom.co.il/culture/internet-culture/article/20937768"
+      },
+      {
+        "publishedAt": "2026-07-08T14:34:36+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "רוכבים על אופניים? מהפכת שבילים בדרך לגוש דן",
+        "sourceUrl": "https://www.israelhayom.co.il/travel/tourism-news/article/20937738"
+      },
+      {
+        "publishedAt": "2026-07-08T14:54:16+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "חדשות",
+        "title": "אחרי הסערה המפכ\"ל מתקפל: נציית לבג\"ץ בלי להניד עפעף",
+        "sourceUrl": "https://www.srugim.co.il/101005878-אחרי-הסערה-המפכל-מתקפל-נציית-לבגץ-בלי"
+      },
+      {
+        "publishedAt": "2026-07-08T14:40:11+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "משפט",
+        "title": "יועמ\"שית הכנסת: יש לציית לבג\"ץ ולקיים בחירות חוזרות למבקר תוך שבועיים",
+        "sourceUrl": "https://www.ynet.co.il/news/article/skyqpojqge"
+      },
+      {
+        "publishedAt": "2026-07-08T15:00:51+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
+      },
+      {
+        "publishedAt": "2026-07-08T14:51:31+03:00",
+        "source": "הארץ - כל הכתבות",
+        "category": "חדשות",
+        "title": "אחרי תשע שנים ובעקבות ההדחה מהמונדיאל, זלטקו דאליץ' עזב את נבחרת קרואטיה",
+        "sourceUrl": "https://www.haaretz.co.il/sport/world-cup/2026-07-08/ty-article/0000019f-417b-d2da-adbf-4f7b865a0000"
+      },
+      {
+        "publishedAt": "2026-07-08T14:49:51+03:00",
+        "source": "מעריב - חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "מרין לה פן מסתערת על נשיאות צרפת - ובאיחוד האירופי כבר נכנסו לחרדה",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342177"
+      },
+      {
+        "publishedAt": "2026-07-08T14:46:38+03:00",
+        "source": "מעריב - חדשות",
+        "category": "ביטחון",
+        "title": "הפתרון לעזה שעלול לתקוע את ישראל: \"עומסי תנועה של אלפי משאיות\"",
+        "sourceUrl": "https://www.maariv.co.il/news/military/article-1342179"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
+        "publishedAt": "2026-07-08T14:53:56+03:00",
+        "source": "וואלה רכב",
+        "category": "רכב",
+        "title": "כלמוביל משדרגת את ג׳אקו 7 בלי לשנות מחירון",
+        "sourceUrl": "https://cars.walla.co.il/item/3851934"
       },
       {
         "publishedAt": "2026-07-08T14:53:50+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "תפנית: סוכמה עסקת העברתו של ג'ון אוטומאו לריימס",
+        "title": "ג׳ון אוטומאו יעבור מהפועל ירושלים לריימס",
         "sourceUrl": "https://sports.walla.co.il/item/3851941"
       },
       {
         "publishedAt": "2026-07-08T14:53:50+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "זלטקו דאליץ' עוזב את נבחרת קרואטיה: \"מסע בלתי נשכח\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3851936"
-      },
-      {
-        "publishedAt": "2026-07-08T14:53:50+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "בדרך למעבר ענק: פריס לי על סף חתימה בעירוני נס ציונה",
+        "title": "פריס לי קרוב לחתימה בעירוני נס ציונה",
         "sourceUrl": "https://sports.walla.co.il/item/3851935"
       },
       {
         "publishedAt": "2026-07-08T14:53:50+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "מעבר הענק הושלם: ז'אן מונטרו חתם באולימפיאקוס",
+        "title": "ז׳אן מונטרו חתם לשלוש שנים באולימפיאקוס",
         "sourceUrl": "https://sports.walla.co.il/item/3851928"
       },
-      {
-        "publishedAt": "2026-07-08T14:53:50+03:00",
-        "source": "וואלה ספורט - כדורגל ישראלי",
-        "category": "ספורט",
-        "title": "טוריאל ובואטנג כבשו, הפועל ת\"א הפכה וניצחה 1:2 את זלין",
-        "sourceUrl": "https://sports.walla.co.il/item/3851847"
-      },
-      {
-        "publishedAt": "2026-07-08T14:53:54+03:00",
-        "source": "וואלה ספורט - טראש טוק",
-        "category": "ספורט",
-        "title": "בת 32 בזוגיות עם נשיא ההתאחדות בן ה-85: \"הוא מרמה אותי\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3851764"
-      },
-      {
-        "publishedAt": "2026-07-08T14:53:56+03:00",
-        "source": "וואלה רכב",
-        "category": "רכב",
-        "title": "הרכב הכי נמכר בארץ מוזל ב-10-13 אלף שקל באמצעות תוספת אבזור",
-        "sourceUrl": "https://cars.walla.co.il/item/3851934"
-      },
-      {
-        "publishedAt": "2026-07-08T14:51:31+03:00",
-        "source": "הארץ - ספורט",
-        "category": "ספורט",
-        "title": "אחרי תשע שנים ובעקבות ההדחה מהמונדיאל, זלטקו דאליץ' עזב את נבחרת קרואטיה",
-        "sourceUrl": "https://www.haaretz.co.il/sport/world-cup/2026-07-08/ty-article/0000019f-417b-d2da-adbf-4f7b865a0000"
-      },
-      {
-        "publishedAt": "2026-07-08T14:24:37+03:00",
-        "source": "מעריב - כלכלה",
-        "category": "כלכלה",
-        "title": "המגרשים מפוצצים ברכבים, אז למה המחיר לא יורד? הטריק של היבואנים נחשף",
-        "sourceUrl": "https://www.maariv.co.il/economy/israel/article-1342164"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T14:45:01+03:00",
         "source": "וואלה חדשות",
@@ -169,34 +200,6 @@
         "category": "אקטואליה בעולם",
         "title": "טראמפ חידש את הדרישה לשליטה אמריקאית בגרינלנד",
         "sourceUrl": "https://www.haaretz.co.il/news/world/europe/2026-07-08/ty-article/.premium/0000019f-4135-d913-abff-dd7db96f0000"
-      },
-      {
-        "publishedAt": "2026-07-08T14:32:53+03:00",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "category": "תרבות",
-        "title": "אוליביה ויילד חשפה אלתור מפתיע של פנלופה קרוז",
-        "sourceUrl": "https://www.dailymail.com/tvshowbiz/article-15961543/Olivia-Wilde-shocked-Penelope-Cruz-improvised-kiss-filming-Invite.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-      },
-      {
-        "publishedAt": "2026-07-08T14:31:29+03:00",
-        "source": "סרוגים - כל הכתבות",
-        "category": "פוליטיקה",
-        "title": "לפיד מזהיר מהתערבות איראנית ורוסית בבחירות",
-        "sourceUrl": "https://www.srugim.co.il/101005876-לפיד-מזהיר-איראן-ורוסיה-ינסו-להשפיע-על"
-      },
-      {
-        "publishedAt": "2026-07-08T14:30:18+03:00",
-        "source": "The Jerusalem Post - Middle East",
-        "category": "אקטואליה בעולם",
-        "title": "אחמדינג׳אד הופיע בהלוויה אחרי חודשים של אי ודאות",
-        "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-901849"
-      },
-      {
-        "publishedAt": "2026-07-08T14:28:02+03:00",
-        "source": "New York Times Middle East",
-        "category": "אקטואליה בעולם",
-        "title": "המונים בעיראק השתתפו באירועי אבל לחמינאי",
-        "sourceUrl": "https://www.nytimes.com/2026/07/08/world/middleeast/iraq-funeral-ayatollah-khamenei.html"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
