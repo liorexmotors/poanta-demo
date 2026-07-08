@@ -1,63 +1,64 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T23:00:27+03:00
+נוצר: 2026-07-08T23:15:35+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-08T22:51:18+03:00
-- Feed A items: 1976
-- Feed A recent window: 24h / 552 items
-- Feed B run: feed-b-20260708T230026+0300
-- Feed B createdAt: 2026-07-08T23:00:26+03:00
-- Feed B raw candidates: 40
-- Feed B passed to editor: 22
-- Feed B rejected before AI: 18
-- Estimated smart LLM calls: 22
+- Feed A updatedAt: 2026-07-08T23:00:26+03:00
+- Feed A items: 1975
+- Feed A recent window: 24h / 560 items
+- Feed B run: feed-b-20260708T231535+0300
+- Feed B createdAt: 2026-07-08T23:15:35+03:00
+- Feed B raw candidates: 30
+- Feed B passed to editor: 16
+- Feed B rejected before AI: 14
+- Estimated smart LLM calls: 16
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 2
+- duplicate_with_feed_b: 3
 - main_feed_b_breaking_source: 8
-- text_too_short: 10
+- non_hebrew_or_untranslated: 3
+- text_too_short: 2
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 21
-- Recent Feed A not in Feed B passed list: 551
-- Recent Feed A not seen by Feed B raw input: 551
+- Feed B passed but not currently in Feed A: 16
+- Recent Feed A not in Feed B passed list: 560
+- Recent Feed A not seen by Feed B raw input: 560
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T22:49:26+03:00 | סרוגים - כל הכתבות | אחרי פסיקת בג"ץ: נתניהו נוטה להתקפל בעניין ראבילו
-- 2026-07-08T23:00:04+03:00 | וואלה חדשות | ילדים בשלשלאות ועימותים עם חיילים: חרדים הגיעו להפגין מול כלא 10
-- 2026-07-08T22:49:08+03:00 | מעריב - חדשות | "אנחנו המשפחה שלהם": המסע של אלינה סקלר וקרן Uniting בלטביה
-- 2026-07-08T22:52:04+03:00 | New York Times Middle East | Iran Truce ‘Over,’ Trump Says, as He Threatens More Strikes
-- 2026-07-08T22:41:39+03:00 | New York Times Middle East | The Symbols We Saw at Khamenei’s Funeral
-- 2026-07-08T22:43:21+03:00 | Reuters Middle East דרך Google News | Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters
-- 2026-07-08T22:40:31+03:00 | Reuters Middle East דרך Google News | Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters
-- 2026-07-08T22:05:00+03:00 | Bloomberg Israel/Iran דרך Google News | US Consumer Borrowing Unexpectedly Drops by Most Since 2024 - Bloomberg
-- 2026-07-08T22:51:38+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Search under way for crew of Pakistani cargo plane that crashed into sea
-- 2026-07-08T23:00:22+03:00 | The Jerusalem Post - Israel News | After 78 years, IDF locates burial site of Pvt. Yaakov Zrihan, who went missing in Independence War
-- 2026-07-08T23:00:22+03:00 | The Jerusalem Post - Israel News | Tzavta Theater to celebrate 70 years with Freedom to Create festival
-- 2026-07-08T23:00:23+03:00 | The Jerusalem Post - Middle East | Only clans can govern Gaza after Hamas disarmed, NCAG will fail, MidEast expert says - interview
+- 2026-07-08T22:50:11+03:00 | ישראל היום - כל הכתבות | מזכרת קטנה מאירוע גדול: השי הביזארי שארדואן חילק למנהיגי נאט"ו
+- 2026-07-08T22:39:30+03:00 | ישראל היום - כל הכתבות | בהפקה היסטורית: ג'סטין ביבר יופיע בגמר מונדיאל 2026
+- 2026-07-08T22:34:24+03:00 | ישראל היום - כל הכתבות | הבן של אייל ברקוביץ' מעורר סערה: "כדורגל הנשים חייב להיסגר"
+- 2026-07-08T23:10:44+03:00 | ynet - כל ערוץ החדשות | נתניהו נשאל למה לא עוצרים מתנחלים אלימים - והאשים: "בתי המשפט מקלים איתם"
+- 2026-07-08T22:55:19+03:00 | ynet - כל ערוץ החדשות | דיווח: פיצוצים באזור הורמוז | מלגלוגים - לתקיפות: "לרחם על האמריקנים עם הנשיא הטיפש שלהם"
+- 2026-07-08T23:15:14+03:00 | וואלה חדשות | לאחר איומי טראמפ: דיווחים באיראן על חידוש התקיפות
+- 2026-07-08T22:49:26+03:00 | הארץ - כל הכתבות | דיווח באיראן: פיצוצים נשמעו באזור עיר הנמל בנדר עבאס
+- 2026-07-08T23:10:28+03:00 | מעריב - חדשות | שיני אדם התגלו בכפר עזה - התקווה שהן שייכות לניראל זיני ז"ל
+- 2026-07-08T22:36:00+03:00 | N12 - ביטחוני ופוליטי | דריכות השיא בישראל - והחשש: איראן תחדש את האש
+- 2026-07-08T22:22:00+03:00 | N12 - בארץ | מפגינים חרדים הגיעו למחות על מעצר עריק - ופרצו לתוך כלא 10
+- 2026-07-08T22:55:33+03:00 | New York Times Middle East | In Israel, Rahm Emanuel Calls for End of Unconditional U.S. Support
+- 2026-07-08T23:00:21+03:00 | The Guardian Middle East | Gaza’s World Cup screenings – in pictures
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-08T23:00:22+03:00 | The Jerusalem Post - Israel News | צוותא יציין 70 שנה בפסטיבל חופש היצירה
+- 2026-07-08T23:00:04+03:00 | וואלה חדשות | מפגינים חרדים התעמתו עם חיילים ליד כלא 10
+- 2026-07-08T22:52:04+03:00 | New York Times Middle East | טראמפ הכריז שההפוגה עם איראן הסתיימה
+- 2026-07-08T22:50:57+03:00 | JNS - Jewish News Syndicate | טראמפ הודיע לקונגרס: סוריה תוסר מרשימת הטרור
 - 2026-07-08T22:50:54+03:00 | וואלה ספורט | שורדי שבי ושחקני עבר נפגשו למשחק ראווה במכביה
+- 2026-07-08T22:49:26+03:00 | סרוגים - כל הכתבות | נתניהו שוקל בחירות חוזרות לתפקיד מבקר המדינה
 - 2026-07-08T22:34:50+03:00 | JNS - Jewish News Syndicate | טראמפ: ישראל צפויה לסגת מאזור הביטחון בדרום לבנון
+- 2026-07-08T22:33:41+03:00 | ערוץ 7 / INN עברית | נתניהו מדגיש פערי אינטרסים מול טראמפ
 - 2026-07-08T22:30:31+03:00 | The Jerusalem Post - Israel News | אירופה הורידה את רמת סיכון הטיסות לישראל
 - 2026-07-08T22:26:49+03:00 | ישראל היום - כל הכתבות | מוזיאון האקדמיה בלוס אנג׳לס יפתח תערוכת אימה רחבה
 - 2026-07-08T22:26:18+03:00 | מעריב - חדשות | הרצוג על זיני: גופי הביטחון נאמנים לעם
 - 2026-07-08T22:25:50+03:00 | ynet - כל ערוץ החדשות | עימותים אלימים מחוץ לכלא 10 במחאת חרדים על מעצר תלמיד
-- 2026-07-08T22:25:02+03:00 | ישראל היום - כל הכתבות | משטרת פריז נערכת להתפרעויות סביב צרפת-מרוקו
-- 2026-07-08T22:18:36+03:00 | ישראל היום - כל הכתבות | ישראל מנסה לבלום מכירת F-35 אמריקניים לטורקיה
-- 2026-07-08T22:15:52+03:00 | וואלה חדשות | ש״ס מזהירה את הליכוד ממשבר סביב חוק לימוד תורה
-- 2026-07-08T22:07:15+03:00 | מעריב - חדשות | ארדואן: טראמפ מגלה גישה חיובית לעסקת ה-F-35
-- 2026-07-08T22:05:46+03:00 | The Guardian Middle East | באיראן גובר המתח אחרי הלוויית חמינאי
-- 2026-07-08T22:05:32+03:00 | ynet - כל ערוץ החדשות | ארה״ב החלה להסיר את סוריה מרשימת תומכות הטרור
 
 ## Recent Feed A Seen But Filtered By Feed B
 
