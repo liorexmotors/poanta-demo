@@ -1,50 +1,50 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T21:30:23+03:00
+נוצר: 2026-07-08T21:36:22+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-08T21:20:44+03:00
-- Feed A items: 1970
-- Feed A recent window: 24h / 521 items
-- Feed B run: feed-b-20260708T213023+0300
-- Feed B createdAt: 2026-07-08T21:30:23+03:00
-- Feed B raw candidates: 25
-- Feed B passed to editor: 11
-- Feed B rejected before AI: 14
-- Estimated smart LLM calls: 11
+- Feed A updatedAt: 2026-07-08T21:30:23+03:00
+- Feed A items: 1967
+- Feed A recent window: 24h / 522 items
+- Feed B run: feed-b-20260708T213621+0300
+- Feed B createdAt: 2026-07-08T21:36:21+03:00
+- Feed B raw candidates: 34
+- Feed B passed to editor: 22
+- Feed B rejected before AI: 12
+- Estimated smart LLM calls: 22
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 3
-- main_feed_b_breaking_source: 5
-- non_hebrew_or_untranslated: 6
-- text_too_short: 2
+- duplicate_with_feed_b: 12
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 10
-- Recent Feed A not in Feed B passed list: 520
-- Recent Feed A not seen by Feed B raw input: 520
+- Feed B passed but not currently in Feed A: 22
+- Recent Feed A not in Feed B passed list: 522
+- Recent Feed A not seen by Feed B raw input: 522
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T21:14:24+03:00 | סרוגים - כל הכתבות | רביב דרוקר בתגובה לדרמה הפוליטית: "זה דבר מדהים"
-- 2026-07-08T21:12:03+03:00 | הארץ - חדשות | אותר מקום קבורתו של טוראי יעקב זריהן, שנהרג ב־1948 כשליווה שיירה לירושלים הנצורה
-- 2026-07-08T21:25:29+03:00 | מעריב - חדשות | לאחר שארדואן חשף את ההבטחה מטראמפ - מאיפה צץ עוד מטוס F-35?
-- 2026-07-08T20:53:35+03:00 | Reuters Middle East דרך Google News | Israeli fire kills nine people, including two children, in Gaza, medics say - Reuters
-- 2026-07-08T20:58:38+03:00 | Axios Israel/Iran דרך Google News | From "unconditional surrender" to "over": Trump's shifting Iran rhetoric - Axios
-- 2026-07-08T21:12:53+03:00 | Bloomberg Israel/Iran דרך Google News | China Extends US Soybean Buying Spree as Trade Thaw Continues - Bloomberg.com
-- 2026-07-08T20:02:42+03:00 | Bloomberg Israel/Iran דרך Google News | Shipowners Assess Hormuz-Transit Risk as US-Iran Deal Crumbles - Bloomberg.com
-- 2026-07-08T19:36:42+03:00 | Bloomberg Israel/Iran דרך Google News | Dollar Gets Safe-Haven Flows as US-Iran Ceasefire Under Threat - Bloomberg.com
-- 2026-07-08T21:30:19+03:00 | The Jerusalem Post - Israel News | After 78 years, IDF locates burial site of Pvt. Yaakov Zrihan, who went missing in Independence War
-- 2026-07-08T21:30:19+03:00 | The Jerusalem Post - Middle East | Only clans can govern Gaza after Hamas disarmed, NCAG will fail, MidEast expert says - interview
+- 2026-07-08T21:35:51+03:00 | וואלה סלבס | טל טיטו מתנצלת בפומבי בפני אייל גולן: "מבינה היום את הכוח של המילה הכתובה"
+- 2026-07-08T21:19:00+03:00 | וואלה סלבס | אלה אילון עושה סדר בשמועות: "אני פנויה"
+- 2026-07-08T21:17:00+03:00 | וואלה סלבס | כבר לא יאיר נתניהו? בנו של ראש הממשלה שינה את שמו - זה השם החדש
+- 2026-07-08T20:47:00+03:00 | וואלה סלבס | לא היינו מוכנים לזה: טל טיטו חושפת תמונות מפתיעות מהעבר
+- 2026-07-08T21:35:56+03:00 | וואלה TECH | "לעבור ממדידת עלות לטוקן למדידת ערך לטוקן": כלכלת ה-AI משנה כיוון
+- 2026-07-08T21:35:56+03:00 | וואלה TECH | פלאפון בראש דירוג המעסיקים בענף התקשורת: דורגה ראשונה בקטגוריית הטלקום
+- 2026-07-08T20:33:00+03:00 | mako סלבס - ראשי | "לא בדקתי את העובדות": טל טיטו חוזרת בה מהאמירות על אייל גולן
+- 2026-07-08T20:40:14+03:00 | Pplus / פנאי פלוס דרך Google News | אחרי סערת הציוצים והתביעה: טל טיטו מתנצלת בפומבי בפני אייל גולן - פנאי פלוס
+- 2026-07-08T21:36:05+03:00 | Page Six רכילות חו״ל | Aritzia’s summer sale has Taylor Swift’s jeans and more star-worthy styles up to 60% off
+- 2026-07-08T21:27:21+03:00 | Page Six רכילות חו״ל | King Charles’ meeting with Prince Harry and grandchildren now up in the air — but Meghan Markle could help it happen: sources
+- 2026-07-08T21:16:37+03:00 | Page Six רכילות חו״ל | Prince Harry’s failed legal battle leaves behind staggering $67M in costs
+- 2026-07-08T21:09:08+03:00 | Page Six רכילות חו״ל | ‘RHORI’ star Rosie DiMare uses this ‘magical’ face mist multiple times per day
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-08T21:25:29+03:00 | מעריב - חדשות | טראמפ שוקל להחזיר את טורקיה לתוכנית ה-F-35
 - 2026-07-08T21:20:27+03:00 | וואלה רכב | שיבושי רכבת צפויים בקווים לבאר שבע וללוד
 - 2026-07-08T21:20:19+03:00 | וואלה ספורט | ממדאני הצטרף לביקורת על השיפוט בהדחת מצרים
 - 2026-07-08T21:12:57+03:00 | JNS - Jewish News Syndicate | מחקר ADL: צ׳אטבוטים מתקשים לזהות אנטישמיות בפרסית
@@ -56,7 +56,6 @@
 - 2026-07-08T20:48:20+03:00 | ynet - כל ערוץ החדשות | טראמפ מרכך את הטון מול איראן אחרי איומי התקיפה
 - 2026-07-08T20:45:18+03:00 | The Jerusalem Post - Israel News | איגוד בינלאומי לחקר אנטישמיות הושק בחיפה
 - 2026-07-08T20:44:37+03:00 | מעריב - חדשות | טליה לנקרי מצטרפת לישראל ביתנו של ליברמן
-- 2026-07-08T20:35:26+03:00 | וואלה תרבות | המועמדויות לאמי נחשפו: הפיט ו-Hacks מובילות
 
 ## Recent Feed A Seen But Filtered By Feed B
 
