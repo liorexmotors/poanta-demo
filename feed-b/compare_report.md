@@ -1,53 +1,64 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-08T12:00:36+03:00
+נוצר: 2026-07-08T12:15:21+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-06-28T11:22:16+03:00
-- Feed A items: 106
-- Feed A recent window: 24h / 0 items
-- Feed B run: feed-b-20260708T120035+0300
-- Feed B createdAt: 2026-07-08T12:00:35+03:00
-- Feed B raw candidates: 35
-- Feed B passed to editor: 17
-- Feed B rejected before AI: 18
-- Estimated smart LLM calls: 17
+- Feed A updatedAt: 2026-07-08T12:00:35+03:00
+- Feed A items: 80
+- Feed A recent window: 24h / 80 items
+- Feed B run: feed-b-20260708T121521+0300
+- Feed B createdAt: 2026-07-08T12:15:21+03:00
+- Feed B raw candidates: 43
+- Feed B passed to editor: 24
+- Feed B rejected before AI: 19
+- Estimated smart LLM calls: 24
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 2
-- main_feed_b_breaking_source: 10
-- non_hebrew_or_untranslated: 1
-- text_too_short: 9
+- duplicate_with_feed_b: 6
+- main_feed_b_breaking_source: 6
+- non_hebrew_or_untranslated: 2
+- text_too_short: 5
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 17
-- Recent Feed A not in Feed B passed list: 0
-- Recent Feed A not seen by Feed B raw input: 0
+- Feed B passed but not currently in Feed A: 24
+- Recent Feed A not in Feed B passed list: 80
+- Recent Feed A not seen by Feed B raw input: 80
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-08T11:24:07+03:00 | סרוגים - כל הכתבות | יום הולדת שמח: עשרה דברים שלא ידעתם על ירדן ג'רבי
-- 2026-07-08T12:00:16+03:00 | וואלה חדשות | ראש השב"כ הסגיר אפשרות מבהילה: נתניהו יכבד את תוצאות הבחירות?
-- 2026-07-08T12:00:16+03:00 | וואלה חדשות | "פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור"
-- 2026-07-08T12:00:16+03:00 | וואלה חדשות | אחרי מצוד נרחב: נעצר חשוד נוסף בפרשת האונס הקבוצתי ברמלה
-- 2026-07-08T11:51:32+03:00 | Reuters Middle East דרך Google News | Trump says interim accord to end war is 'over' after Iranian strikes - Reuters
-- 2026-07-08T11:45:45+03:00 | Reuters Middle East דרך Google News | Hegseth to meet Netanyahu over possible sale of F-35s to Turkey, source tells Reuters - Reuters
-- 2026-07-08T11:48:06+03:00 | Axios Israel/Iran דרך Google News | Trump says Iran ceasefire "over" and talks a "waste of time" - Axios
-- 2026-07-08T11:50:00+03:00 | Politico Israel/Iran דרך Google News | Dems want Schumer silent on Maine - Politico
-- 2026-07-08T11:54:58+03:00 | Al Jazeera RSS מסונן מזרח תיכון | The Iranian Striker: The journey of Mehdi Taremi
-- 2026-07-08T11:45:47+03:00 | Al Jazeera RSS מסונן מזרח תיכון | World Cup: Which teams made the quarterfinals, and what’s the schedule?
-- 2026-07-08T11:41:00+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Why have half a million Russians gone bankrupt amid Ukraine war?
-- 2026-07-08T11:33:40+03:00 | Al Jazeera RSS מסונן מזרח תיכון | World Cup 2026 quarterfinals: Full schedule and Egypt FIFA dispute
+- 2026-07-08T12:00:48+03:00 | דוברות משטרת ישראל - טלגרם רשמי | האונס הקבוצתי ברמלה – חשוד נוסף נעצר במהלך פעילות ממוקדת של יחידת הגדעונים בהובלת מחוז מרכז ובשיתוף כוח צה"ל באזור דרום הר חברון
+- 2026-07-08T11:54:14+03:00 | ישראל היום - כל הכתבות | בעקבות התבטאות טראמפ: הבורסות עברו לירידות; הדולר מזנק ב-1%
+- 2026-07-08T11:47:55+03:00 | ישראל היום - כל הכתבות | קבוצות ליגת העל בכוננות? הדרך החדשה להגיע ליורוליג
+- 2026-07-08T11:38:15+03:00 | ישראל היום - כל הכתבות | התגובה הראשונה של דדי שמחי לאיחוד הנדל-טרופר
+- 2026-07-08T11:32:43+03:00 | ישראל היום - כל הכתבות | בלי חוק יסוד לימוד תורה, אין הקפאת מעצרים: המלכוד שמאיים על הקואליציה
+- 2026-07-08T11:55:06+03:00 | סרוגים - כל הכתבות | נשיא סוריה אחמד א-שרע נחת באנקרה לקראת פגישה עם טראמפ
+- 2026-07-08T11:51:13+03:00 | סרוגים - כל הכתבות | שינוי בלוח הזמנים: שר ההגנה האמריקאי ביטל את ביקורו בישראל
+- 2026-07-08T12:03:42+03:00 | ynet - כל ערוץ החדשות | רוטמן שואף לאישור בהסכמה, קריב: לא נצביע בעד חוק הבחירות בלי קלפיות בבתי האבות
+- 2026-07-08T12:03:04+03:00 | ynet - כל ערוץ החדשות | האמא שטענה "ילדיי מתו מחיסונים" מואשמת ברציחתם
+- 2026-07-08T12:15:01+03:00 | וואלה חדשות | הקו האדום החרדי: גפני לנתניהו - בלי שינויים בחוק יסוד לימוד תורה
+- 2026-07-08T12:15:01+03:00 | וואלה חדשות | ראש השב"כ הסגיר אפשרות מבהילה: נתניהו יכבד את תוצאות הבחירות?
+- 2026-07-08T12:15:01+03:00 | וואלה חדשות | "פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור"
 
 ## Recent Feed A Not In Feed B Passed
 
-- אין
+- 2026-07-08T12:00:32+03:00 | The Jerusalem Post - Israel News | אלמוני רעול פנים ניפץ את דלת הכניסה למשרדי הארץ
+- 2026-07-08T11:51:12+03:00 | וואלה כסף | צוקרברג: אין לי כוונה להפסיק לעבוד
+- 2026-07-08T11:51:02+03:00 | וואלה ספורט - כדורגל עולמי | אינטר מנסה לסגור את עסקת ענאן חלאילי בתוך שבוע
+- 2026-07-08T11:51:01+03:00 | וואלה ספורט | באירלנד יצביעו על הקריאה להחרים משחק מול ישראל
+- 2026-07-08T11:46:00+03:00 | כיפה - חדשות | אזהרת ים מסוכן ועומסי חום פורסמה ברחבי הארץ
+- 2026-07-08T11:42:15+03:00 | הארץ - חדשות | חבר בוועדה מצרית נהרג בתקיפה בעזה
+- 2026-07-08T11:41:00+03:00 | Al Jazeera RSS מסונן מזרח תיכון | חצי מיליון רוסים פשטו רגל ברקע המלחמה באוקראינה
+- 2026-07-08T11:39:53+03:00 | דוברות משטרת ישראל - טלגרם רשמי | מבוקש בחשד לטרור נעצר בכפר ליד ג'נין
+- 2026-07-08T11:38:28+03:00 | מעריב - חדשות | ישראל מאריכה את משלחת הסיוע בוונצואלה
+- 2026-07-08T11:37:39+03:00 | ynet - כל ערוץ החדשות | בנות יוסף באו מנסות לעצור מכירת ציור שנגנב
+- 2026-07-08T11:37:00+03:00 | גלובס - שיווק וצרכנות | קרן מריט רוכשת 60% מקבוצת ישראל בידור
+- 2026-07-08T11:33:40+03:00 | Al Jazeera RSS מסונן מזרח תיכון | רבע גמר המונדיאל נקבע; מצרים מאשימה את פיפ״א בהטיה
 
 ## Recent Feed A Seen But Filtered By Feed B
 
