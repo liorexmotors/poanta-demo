@@ -1,27 +1,30 @@
 {
-  "createdAt": "2026-07-08T13:20:59+03:00",
+  "createdAt": "2026-07-08T13:30:23+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T13:15:23+03:00",
+    "updatedAt": "2026-07-08T13:20:59+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T132059+0300",
-    "createdAt": "2026-07-08T13:20:59+03:00",
-    "rawCandidates": 26,
-    "passedToEditor": 22,
-    "rejectedBeforeAi": 4,
-    "estimatedSmartLlmCalls": 22,
+    "runId": "feed-b-20260708T133023+0300",
+    "createdAt": "2026-07-08T13:30:23+03:00",
+    "rawCandidates": 30,
+    "passedToEditor": 16,
+    "rejectedBeforeAi": 14,
+    "estimatedSmartLlmCalls": 16,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 4
+      "duplicate_with_feed_b": 4,
+      "main_feed_b_breaking_source": 7,
+      "text_too_short": 3,
+      "non_hebrew_or_untranslated": 3
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 22,
+    "feedBPassedNotInFeedA": 16,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,91 +32,119 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T13:15:36+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
+        "publishedAt": "2026-07-08T13:16:45+03:00",
+        "source": "דובר צה״ל - טלגרם רשמי",
+        "category": "ביטחון",
+        "title": "צה\"ל חיסל ראש חוליית נוח'בה שפשט לקיבוץ נירים בטבח ה-7 באוקטובר",
+        "sourceUrl": "https://t.me/idf_telegram/24558"
+      },
+      {
+        "publishedAt": "2026-07-08T13:07:29+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "פוליטיקה",
+        "title": "איום החרדים עשוי לקלקל לנתניהו את התוכניות - ובקואליציה זועמים",
+        "sourceUrl": "https://www.israelhayom.co.il/news/politics/article/20936982"
+      },
+      {
+        "publishedAt": "2026-07-08T13:01:33+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "סשה אוברדוביץ' קיבל החלטה: כך תיראה הפועל ירושלים החדשה",
+        "sourceUrl": "https://www.israelhayom.co.il/sport/israeli-basketball/article/20935736"
+      },
+      {
+        "publishedAt": "2026-07-08T13:30:01+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
+      },
+      {
+        "publishedAt": "2026-07-08T13:21:59+03:00",
+        "source": "הארץ - כל הכתבות",
+        "category": "אקטואליה בעולם",
+        "title": "ברטראן גראבו, שף מסעדת ספטים ומהשפים המשפיעים ביותר בצרפת, מת בגיל 44",
+        "sourceUrl": "https://www.haaretz.co.il/food/2026-07-08/ty-article/.premium/0000019f-4075-d090-a1ff-eff582c10000"
+      },
+      {
+        "publishedAt": "2026-07-08T13:21:01+03:00",
+        "source": "הארץ - כל הכתבות",
+        "category": "חדשות",
+        "title": "בעבודה הזו, כל קשר בין הביצועים לשכר מקרי בהחלט",
+        "sourceUrl": "https://www.haaretz.co.il/sport/world-cup/2026-07-08/ty-article-magazine/0000019f-3d8e-d07c-af9f-fddfa4580000"
+      },
+      {
+        "publishedAt": "2026-07-08T13:25:00+03:00",
+        "source": "גלובס - משפט",
         "category": "כלכלה",
-        "title": "הגירעון בחודש יוני ירד ל-3.3% בלבד",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/h1camjsxfx"
+        "title": "מיהו עורך הדין מהמרכז החשוד בהעלמת הכנסות של 10 מיליון שקל והתחמקות ממס רכישה?",
+        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548709#utm_source=RSS"
       },
       {
-        "publishedAt": "2026-07-08T12:50:39+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
-        "category": "כלכלה",
-        "title": "היזם מסביר: זו הסיבה לסכנת הקריסה במגדל שפונה במנהטן",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/hyuo59i7fl"
+        "publishedAt": "2026-07-08T13:06:29+03:00",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "ביטחון",
+        "title": "Trump says ceasefire ‘over’ after US, Iran trade attacks",
+        "sourceUrl": "https://www.aljazeera.com/news/2026/7/8/trump-says-ceasefire-over-after-us-iran-trade-attacks?traffic_source=rss"
       },
       {
-        "publishedAt": "2026-07-08T12:48:22+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
-        "category": "כלכלה",
-        "title": "תקרית ששון שאולוב: מתי ניתן לשלול רישיון במקום?",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/r1uknqiqzl"
+        "publishedAt": "2026-07-08T13:30:19+03:00",
+        "source": "The Jerusalem Post - Israel News",
+        "category": "חדשות",
+        "title": "Rights org. files complaint after Sephardic head rabbi shames women for private mikveh use",
+        "sourceUrl": "https://www.jpost.com/israel-news/article-901843"
       },
       {
-        "publishedAt": "2026-07-08T13:14:00+03:00",
-        "source": "וואלה חדשות - דעות ופרשנויות",
-        "category": "דעות",
-        "title": "ראש השב\"כ הסגיר אפשרות מבהילה: נתניהו יכבד את תוצאות הבחירות?",
-        "sourceUrl": "https://news.walla.co.il/item/3851838"
+        "publishedAt": "2026-07-08T13:24:09+03:00",
+        "source": "ערוץ 7 / INN עברית",
+        "category": "חדשות",
+        "title": "בן 63 אותר ללא רוח חיים בביתו בנוף הגליל",
+        "sourceUrl": "https://www.inn.co.il/flashes/1121423"
       },
       {
-        "publishedAt": "2026-07-08T13:20:37+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "ילדים עד גיל 10 יקבלו מנויים בחינם: בהפועל ירושלים פתחו את מכירת המנויים",
-        "sourceUrl": "https://sports.walla.co.il/item/3851892"
+        "publishedAt": "2026-07-08T13:23:28+03:00",
+        "source": "ערוץ 7 / INN עברית",
+        "category": "חדשות",
+        "title": "עומר נודלמן תשתתף לראשונה בפסטיגל",
+        "sourceUrl": "https://www.inn.co.il/flashes/1121422"
       },
       {
-        "publishedAt": "2026-07-08T13:20:37+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "חי בספורט4: הפועל תל אביב - זלין 1:1 (מחצית 2)",
-        "sourceUrl": "https://sports.walla.co.il/item/3851847"
-      },
+        "publishedAt": "2026-07-08T13:07:38+03:00",
+        "source": "ערוץ 7 / INN עברית",
+        "category": "ביטחון",
+        "title": "סוכל ניסיון להבריח אלפי סיגריות לעזה בתוך ארגזי אננס",
+        "sourceUrl": "https://www.inn.co.il/flashes/1121420"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
       {
-        "publishedAt": "2026-07-08T13:20:37+03:00",
-        "source": "וואלה ספורט - כדורגל ישראלי",
-        "category": "ספורט",
-        "title": "כולל אופציה לרכישה: רוי נאווי הושאל רשמית לקריוובאס",
-        "sourceUrl": "https://sports.walla.co.il/item/3851897"
+        "publishedAt": "2026-07-08T13:20:43+03:00",
+        "source": "וואלה רכב",
+        "category": "רכב",
+        "title": "שלושה רוכבי כלים חשמליים נפצעו בתוך שעות",
+        "sourceUrl": "https://cars.walla.co.il/item/3851899"
       },
       {
         "publishedAt": "2026-07-08T13:20:38+03:00",
         "source": "וואלה ספורט - כדורגל עולמי",
         "category": "ספורט",
-        "title": "\"פיורנטינה מנסה ליצור תנאים נוחים לרכישת מנור סולומון\"",
+        "title": "פיורנטינה עדיין בוחנת רכישת מנור סולומון",
         "sourceUrl": "https://sports.walla.co.il/item/3851888"
       },
       {
-        "publishedAt": "2026-07-08T13:20:43+03:00",
-        "source": "וואלה רכב",
-        "category": "רכב",
-        "title": "החופש הגדול התחיל: גל תאונות אופניים וקורקינטים חשמליים",
-        "sourceUrl": "https://cars.walla.co.il/item/3851899"
-      },
-      {
-        "publishedAt": "2026-07-08T12:49:08+03:00",
-        "source": "מעריב - כלכלה",
-        "category": "כלכלה",
-        "title": "מגיל 8: בנק הפועלים רוצה ללמד ילדים לנהל כסף",
-        "sourceUrl": "https://www.maariv.co.il/economy/israel/article-1342128"
-      },
-      {
-        "publishedAt": "2026-07-08T13:10:06+03:00",
-        "source": "דה מרקר - גלובל",
-        "category": "חדשות",
-        "title": "זה פרויקט ההסבה למגורים הגדול במנהטן, אבל בלוקים נופלים מהקומה ה-20 לרחוב",
-        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article/.premium/0000019f-40c5-d6c0-a9df-dddf6bd60000"
-      },
-      {
-        "publishedAt": "2026-07-08T13:09:05+03:00",
-        "source": "דה מרקר - כל הכתבות",
+        "publishedAt": "2026-07-08T13:20:37+03:00",
+        "source": "וואלה ספורט - כדורגל ישראלי",
         "category": "ספורט",
-        "title": "גביית המסים זינקה, והגירעון ביוני הצטמק ל-3.3%",
-        "sourceUrl": "https://www.themarker.com/news/macroeconomics/2026-07-08/ty-article/0000019f-4120-d07c-af9f-c97d19900000"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
+        "title": "רוי נאווי הושאל ממכבי תל אביב לקריוובאס",
+        "sourceUrl": "https://sports.walla.co.il/item/3851897"
+      },
+      {
+        "publishedAt": "2026-07-08T13:15:36+03:00",
+        "source": "ynet - כל ערוץ הכלכלה",
+        "category": "כלכלה",
+        "title": "הגירעון ירד ביוני ל-3.3% מהתוצר",
+        "sourceUrl": "https://www.ynet.co.il/economy/article/h1camjsxfx"
+      },
       {
         "publishedAt": "2026-07-08T13:15:03+03:00",
         "source": "וואלה חדשות - חדשות בארץ",
@@ -169,34 +200,6 @@
         "category": "חדשות",
         "title": "רן ארז מאיים בשביתה בפתיחת שנת הלימודים",
         "sourceUrl": "https://news.walla.co.il/item/3851885"
-      },
-      {
-        "publishedAt": "2026-07-08T12:55:23+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "ספורט",
-        "title": "ה-FBI בודק חשדות להונאה בהתאחדות הארגנטינאית",
-        "sourceUrl": "https://www.israelhayom.co.il/sport/world-soccer/article/20936827"
-      },
-      {
-        "publishedAt": "2026-07-08T12:54:30+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "רכילות",
-        "title": "סנדרה שדה סיפרה שהיא מחפשת בת זוג עתידית למוני מושונוב",
-        "sourceUrl": "https://www.israelhayom.co.il/lifestyle/relationship/article/20936859"
-      },
-      {
-        "publishedAt": "2026-07-08T12:52:26+03:00",
-        "source": "כיפה - חדשות",
-        "category": "מזג אוויר",
-        "title": "ארגון הבריאות העולמי מזהיר מגל חום קטלני באירופה",
-        "sourceUrl": "https://www.kipa.co.il/1227448-0"
-      },
-      {
-        "publishedAt": "2026-07-08T12:51:11+03:00",
-        "source": "וואלה כסף",
-        "category": "כלכלה",
-        "title": "בנק הפועלים השיק שירות כסף דיגיטלי לילדים",
-        "sourceUrl": "https://finance.walla.co.il/item/3851850"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
