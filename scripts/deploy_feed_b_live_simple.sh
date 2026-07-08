@@ -15,7 +15,7 @@ trap cleanup EXIT
 
 cd "$ROOT"
 
-python3 scripts/promote_feed_b_live_simple.py --limit "${FEED_B_LIVE_LIMIT:-80}" --min-items "${FEED_B_LIVE_MIN_ITEMS:-20}"
+python3 scripts/promote_feed_b_live.py --limit "${FEED_B_LIVE_LIMIT:-0}" --min-items "${FEED_B_LIVE_MIN_ITEMS:-20}"
 
 mkdir -p dist
 cp feed.json dist/feed.json
@@ -42,7 +42,7 @@ git fetch origin main gh-pages
 
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
-for p in feed.json feed_b.json .feed-b-state.json .feed-b-seen.json scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh; do
+for p in feed.json feed_b.json .feed-b-state.json .feed-b-seen.json scripts/promote_feed_b_live.py scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh; do
   if [[ -e "$ROOT/$p" ]]; then
     mkdir -p "$MAIN_WORKTREE/$(dirname "$p")"
     cp -a "$ROOT/$p" "$MAIN_WORKTREE/$p"
@@ -52,7 +52,7 @@ cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json feed_b.json .feed-b-state.json .feed-b-seen.json scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh
+  git add feed.json feed_b.json .feed-b-state.json .feed-b-seen.json scripts/promote_feed_b_live.py scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh
   git commit -m "Deploy Feed B live snapshot"
   git pull --rebase origin main
   git push origin HEAD:main

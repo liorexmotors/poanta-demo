@@ -94,7 +94,7 @@ def promote(source: dict[str, Any], *, limit: int, min_items: int) -> dict[str, 
             continue
         selected.append(item)
         seen.add(url)
-        if len(selected) >= limit:
+        if limit > 0 and len(selected) >= limit:
             break
     if len(selected) < min_items:
         raise SystemExit(f"Feed B live promotion too small: {len(selected)} items")
@@ -113,7 +113,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", default=str(FEED_B))
     ap.add_argument("--out", default=str(LIVE_FEED))
-    ap.add_argument("--limit", type=int, default=80)
+    ap.add_argument("--limit", type=int, default=0, help="Maximum items to promote; 0 means all eligible 7-day Feed B items")
     ap.add_argument("--min-items", type=int, default=20)
     args = ap.parse_args()
 

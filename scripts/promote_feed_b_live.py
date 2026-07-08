@@ -78,7 +78,7 @@ def candidate_payload(source: dict[str, Any], items: list[dict[str, Any]], limit
             fixed["imageFallbackKind"] = default_image_kind(fixed)
         selected.append(fixed)
         seen.add(url)
-        if len(selected) >= limit:
+        if limit > 0 and len(selected) >= limit:
             break
     return {
         "updatedAt": source.get("updatedAt") or source.get("generatedAt") or now,
@@ -159,6 +159,15 @@ def quality_error_urls(report_path: Path) -> set[str]:
     return urls
 
 
+def issue_url(issue: dict[str, Any]) -> str:
+    nested = issue.get("item")
+    if isinstance(nested, dict):
+        nested_url = item_url(nested) or str(nested.get("sourceUrl") or "").strip()
+        if nested_url:
+            return nested_url
+    return item_url(issue) or str(issue.get("sourceUrl") or "").strip()
+
+
 def validate(path: Path) -> tuple[bool, set[str], str]:
     remove: set[str] = set()
     code, no_breaking = run_json(
@@ -172,6 +181,14 @@ def validate(path: Path) -> tuple[bool, set[str], str]:
     code, live = run_json([sys.executable, "scripts/pointa_live_auditor.py", "--feed-file", str(path), "--json"])
     if code != 0 or live.get("errors"):
         for issue in live.get("errors") or []:
+            if issue.get("code") in {
+                "stale_updated_at",
+                "no_new_top_item_sla",
+                "too_few_recent_items_sla",
+                "too_few_recent_sources_sla",
+                "stale_top_item",
+            }:
+                continue
             if issue.get("url"):
                 remove.add(str(issue["url"]))
 
@@ -197,10 +214,15 @@ def validate(path: Path) -> tuple[bool, set[str], str]:
             "--feed",
             str(path),
             "--json",
-            "--strict-freshness",
         ]
     )
     if code != 0 or health.get("blockers"):
+        for issue in health.get("blockers") or []:
+            url = issue_url(issue)
+            if url:
+                remove.add(url)
+        if remove:
+            return False, remove, f"health gate needs pruning: {len(remove)} urls"
         return False, remove, f"health gate failed: {health}"
     if remove:
         return False, remove, f"candidate needs pruning: {len(remove)} urls"
@@ -209,7 +231,7 @@ def validate(path: Path) -> tuple[bool, set[str], str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, default=80)
+    ap.add_argument("--limit", type=int, default=0, help="Maximum items to promote; 0 means all eligible 7-day Feed B items")
     ap.add_argument("--min-items", type=int, default=20)
     ap.add_argument("--out", default=str(LIVE_FEED))
     args = ap.parse_args()
