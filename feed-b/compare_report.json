@@ -1,27 +1,29 @@
 {
-  "createdAt": "2026-07-08T10:26:24+03:00",
+  "createdAt": "2026-07-08T10:30:34+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T10:17:29+03:00",
+    "updatedAt": "2026-07-08T10:26:24+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T102624+0300",
-    "createdAt": "2026-07-08T10:26:24+03:00",
-    "rawCandidates": 27,
-    "passedToEditor": 15,
-    "rejectedBeforeAi": 12,
-    "estimatedSmartLlmCalls": 15,
+    "runId": "feed-b-20260708T103034+0300",
+    "createdAt": "2026-07-08T10:30:34+03:00",
+    "rawCandidates": 34,
+    "passedToEditor": 14,
+    "rejectedBeforeAi": 20,
+    "estimatedSmartLlmCalls": 14,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 12
+      "text_too_short": 11,
+      "main_feed_b_breaking_source": 12,
+      "duplicate_with_feed_b": 3
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 15,
+    "feedBPassedNotInFeedA": 14,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,91 +31,119 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T10:11:28+03:00",
-        "source": "ynet - כל ערוץ יחסים",
-        "category": "פוליטיקה",
-        "title": "כשאתה מתחיל להתגונן, הזוגיות נכנסת למשבר",
-        "sourceUrl": "https://www.ynet.co.il/dating/couples/article/mzfrg2xg1"
+        "publishedAt": "2026-07-08T10:12:46+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "ביטחון",
+        "title": "בכיר מצרי חוסל בעזה האם המאבק על השליטה ברצועה יצא לדרך?",
+        "sourceUrl": "https://www.srugim.co.il/101005845-בכיר-מצרי-חוסל-בעזה-האם-המאבק-על-השליטה"
       },
       {
-        "publishedAt": "2026-07-08T10:25:50+03:00",
-        "source": "וואלה תרבות",
-        "category": "תרבות",
-        "title": "רותם סלע, משפיעניות ואינסוף פרסומות: גיא פינס מורח את הלילה",
-        "sourceUrl": "https://e.walla.co.il/item/3851803"
+        "publishedAt": "2026-07-08T10:30:15+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
       },
       {
-        "publishedAt": "2026-07-08T10:25:50+03:00",
-        "source": "וואלה תרבות",
-        "category": "תרבות",
-        "title": "הזמר הבריטי אנגלברט המפרדינק ישוב להופיע בישראל",
-        "sourceUrl": "https://e.walla.co.il/item/3851748"
+        "publishedAt": "2026-07-08T10:30:15+03:00",
+        "source": "וואלה חדשות",
+        "category": "חדשות",
+        "title": "מפקד חיל האוויר לשעבר מזהיר: \"עסקת המטוסים פחות מדאיגה מהבריתות שנרקמות\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851830"
       },
       {
-        "publishedAt": "2026-07-08T10:25:50+03:00",
-        "source": "וואלה תרבות",
-        "category": "תרבות",
-        "title": "כולם עזבו אותה. היא עדיין לא מוכנה להודות בזה: קראו פרק ראשון מתוך \"האפליקציה של הירח\"",
-        "sourceUrl": "https://e.walla.co.il/item/3851824"
+        "publishedAt": "2026-07-08T10:15:43+03:00",
+        "source": "הארץ - חדשות",
+        "category": "חדשות",
+        "title": "מכרמיאל לכורדיסטאן – וחזרה דרך ירדן: הנשק המסתורי שמציף את ישראל",
+        "sourceUrl": "https://www.haaretz.co.il/news/security/2026-07-08/ty-article-magazine/0000019f-1833-d563-a1ff-1d336ffe0000"
       },
+      {
+        "publishedAt": "2026-07-08T10:16:21+03:00",
+        "source": "הארץ - כל הכתבות",
+        "category": "חדשות",
+        "title": "השחקנית לואיז לאסר (\"מרי הרטמן, מרי הרטמן\") מתה בגיל 87",
+        "sourceUrl": "https://www.haaretz.co.il/gallery/television/2026-07-08/ty-article/.premium/0000019f-402f-d2da-adbf-4f2fa2930000"
+      },
+      {
+        "publishedAt": "2026-07-08T10:26:49+03:00",
+        "source": "BBC World",
+        "category": "חדשות",
+        "title": "Watch: Gaza football fans watch World Cup from rubble",
+        "sourceUrl": "https://www.bbc.co.uk/news/videos/c8r2nmm7xeeo?at_medium=RSS&at_campaign=rss"
+      },
+      {
+        "publishedAt": "2026-07-08T10:24:09+03:00",
+        "source": "Reuters Middle East דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPamx0X0tpdE9oTTYtdTNBWm44Wms5WURGTXlYX1lTcHBXUzQ5SkVGYVJzdkVlZkh4SVVjVkRjVlp1bEh2MVFWUEV5SzRkT01YYWotdDN4UklneEFUVlV4X1VvQ2pzMzI2N2R4b0Z2dTlEektkdmx2VzZXaGJNZy14TXJwd3NnX29RM1UxV25nSUdDVG1YanBHYUVfdjBjNU5vM1dsbGVSWGpsdi1KMzdvY3laMkt5ejQ?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T08:20:04+03:00",
+        "source": "Axios Israel/Iran דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "Inside the McConnell health rumor mill - Axios",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5fZFlkdlFyRUNNQTdmVUFYNG9KUkRESUJVdnF5U3VKemt0eWM0VmVhTy0xMkMxLVZSNUI5d3lUYWQybDZFdldKMDNFRXBTc0g1QmhXb3BHRUdDdjRXbm1MMG95V2dPVnF2NnRhakVQVGlXX1dLNFVPRnZyUnJYaVE?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T08:53:00+03:00",
+        "source": "Bloomberg Israel/Iran דרך Google News",
+        "category": "ביטחון",
+        "title": "Oil Jumps on Iran Attack, Asian Stocks Set to Drop: Markets Wrap - Bloomberg.com",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWVQtaEVKRHlPRXhIemJ0WElRcjIydmxfX1MzTm1MXzhBeGh5MXRYUFlmUlRxTWJ2eURZc3hDSmFId0VaVTIyZEJxRkp6MHZWUGpzcHpQN0xEbEFLWUlWUC1rbVM4LXUtNWtRUjN6cmtfVkNSdjYxLVpjVkgxbVRYcGktZVhRbjE2MWdmbmFzaUQ4TUVpMHItTHR3cFU3elRSTUp0a0VDV3BjRUtXN00yZGh3aw?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T08:24:00+03:00",
+        "source": "Bloomberg Israel/Iran דרך Google News",
+        "category": "ביטחון",
+        "title": "US Strikes Iran and Blocks Oil Sales in New Test of Truce - Bloomberg.com",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObnRWbzVnY3doMDFsRnZDOVJrLU4ycFFHNEw5SjBCT09WTnM5YTVCVkdmT0hZNzctbzFQbGtUdDVnRjJrbXlQdldFQnN0UFFwU2Q5ZzVoUjJNb3NQRFY3ZzBqX3UxMFZaSERLX1JLMmNycW1vUUh3STVERVA1MTJfUFoxN3dRejNaS3JTVTlfV1owOW9ySFpkX25VRWhVNkZDSnlTR1V3dG5iQ09RSW5zZHVORQ?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T10:27:08+03:00",
+        "source": "JNS - Jewish News Syndicate",
+        "category": "חדשות",
+        "title": "Israeli woman cancels Naples hotel stay after receiving anti-Israel message",
+        "sourceUrl": "https://www.jns.org/news/world/israeli-woman-cancels-naples-hotel-stay-after-receiving-anti-israel-message"
+      },
+      {
+        "publishedAt": "2026-07-08T10:13:37+03:00",
+        "source": "Israel National News English",
+        "category": "חדשות",
+        "title": "Hundreds of Gazans turn themselves in to return to Gaza",
+        "sourceUrl": "https://www.israelnationalnews.com/flashes/689278"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T10:25:54+03:00",
         "source": "וואלה בריאות",
         "category": "בריאות",
-        "title": "רוצים ידיים שריריות? אלה 5 הטעויות שעוצרות אתכם מלהגיע לשם",
-        "sourceUrl": "https://healthy.walla.co.il/item/3851571"
-      },
-      {
-        "publishedAt": "2026-07-08T10:25:54+03:00",
-        "source": "וואלה בריאות",
-        "category": "בריאות",
-        "title": "טרנד: כולם מוסיפים את זה למים כדי לקבל יותר אנרגיה. האם זה בריא?",
+        "title": "מומחים: רוב האנשים לא צריכים תוספי אלקטרוליטים",
         "sourceUrl": "https://healthy.walla.co.il/item/3851556"
       },
       {
         "publishedAt": "2026-07-08T10:25:54+03:00",
         "source": "וואלה בריאות",
         "category": "בריאות",
-        "title": "4 כללי זהב: טעויות הקיץ שרופאי המשפחה מבקשים שתפסיקו לעשות",
+        "title": "רופאי משפחה מזהירים מעלייה בפגיעות קיץ בישראל",
         "sourceUrl": "https://healthy.walla.co.il/item/3851628"
       },
       {
-        "publishedAt": "2026-07-08T10:25:54+03:00",
-        "source": "וואלה בריאות",
-        "category": "בריאות",
-        "title": "היילי ביבר וקנדל ג'נר כבר בפנים: האם הטיפול הזה מונע הזדקנות?",
-        "sourceUrl": "https://healthy.walla.co.il/item/3851205"
-      },
-      {
-        "publishedAt": "2026-07-08T10:16:21+03:00",
-        "source": "הארץ - תרבות",
+        "publishedAt": "2026-07-08T10:25:50+03:00",
+        "source": "וואלה תרבות",
         "category": "תרבות",
-        "title": "השחקנית לואיז לאסר (\"מרי הרטמן, מרי הרטמן\") מתה בגיל 87",
-        "sourceUrl": "https://www.haaretz.co.il/gallery/television/2026-07-08/ty-article/.premium/0000019f-402f-d2da-adbf-4f2fa2930000"
+        "title": "אנגלברט המפרדינק יגיע לשתי הופעות בתל אביב",
+        "sourceUrl": "https://e.walla.co.il/item/3851748"
       },
       {
         "publishedAt": "2026-07-08T10:16:58+03:00",
         "source": "TMI - ראשי",
         "category": "רכילות",
-        "title": "עדי עצמי באיום ברור למחזרות של בעלה: \"אפרסם הודעות\"",
+        "title": "עדי עצמי מאיימת לחשוף הודעות שנשלחו לבעלה",
         "sourceUrl": "https://tmi.maariv.co.il/celebs-news/article-1342048"
       },
-      {
-        "publishedAt": "2026-07-08T10:09:47+03:00",
-        "source": "Pplus / פנאי פלוס דרך Google News",
-        "category": "חדשות",
-        "title": "מתקרבים לחתונת הזהב: ירדנה ארזי ונתן תומר יוצאים לבלות - פנאי פלוס",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4tLWlBR2RqQ0Q5SUF4N2tfaXJYTU91QUVhR3hibzhNc1dDMVk5ZTN2Y0lNeXFuN25uTHF0Wi1RQVhDVDdiWTR0RXd4RVJ1eUU0RWlNUjJxMHM3cjdKZVBrOFl3?oc=5"
-      },
-      {
-        "publishedAt": "2026-07-08T10:16:06+03:00",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "category": "רכילות",
-        "title": "Jennifer Lopez dazzles in a low-cut feather-trim dress and glittering jewels as she attends Chopard party in Paris",
-        "sourceUrl": "https://www.dailymail.com/tvshowbiz/article-15961369/Jennifer-Lopez-dazzles-low-cut-feather-trim-dress-dazzling-jewels-attends-Chopard-party-Paris.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T10:14:10+03:00",
         "source": "כיפה - חדשות",
@@ -127,6 +157,13 @@
         "category": "תרבות",
         "title": "משחק המונדיאל הוריד את רייטינג המהדורות",
         "sourceUrl": "https://www.kipa.co.il/1227429-0"
+      },
+      {
+        "publishedAt": "2026-07-08T10:13:08+03:00",
+        "source": "Daily Mail TVShowbiz רכילות חו״ל",
+        "category": "תרבות",
+        "title": "דוויין ג'ונסון הגיע עם בנותיו לבכורת \"מואנה\"",
+        "sourceUrl": "https://www.dailymail.com/tvshowbiz/article-15961415/Dwayne-Rock-Johnson-three-daughters-red-carpet-Moana-premiere.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
       },
       {
         "publishedAt": "2026-07-08T10:11:11+03:00",
@@ -162,41 +199,6 @@
         "category": "אקטואליה בעולם",
         "title": "מיליונים השתתפו בהלוויית חמינאי בעיראק",
         "sourceUrl": "https://www.maariv.co.il/news/world/article-1342044"
-      },
-      {
-        "publishedAt": "2026-07-08T10:06:39+03:00",
-        "source": "הארץ - חדשות",
-        "category": "ביטחון",
-        "title": "שר ההגנה האמריקאי מגיע לישראל על רקע סוגיית ה-F-35",
-        "sourceUrl": "https://www.haaretz.co.il/news/politics/2026-07-08/ty-article/0000019f-4059-d2da-adbf-4f5b0bf40000"
-      },
-      {
-        "publishedAt": "2026-07-08T10:03:51+03:00",
-        "source": "Daily Mail TVShowbiz רכילות חו״ל",
-        "category": "פלילים",
-        "title": "משפיענית בת 21 נורתה למוות בפלורידה",
-        "sourceUrl": "https://www.dailymail.com/tvshowbiz/article-15961053/dreamdoll-brii-shooting-death-911.html?ns_mchannel=rss&ns_campaign=1490&ito=1490"
-      },
-      {
-        "publishedAt": "2026-07-08T10:03:19+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "תרבות",
-        "title": "ירושלים נכנסה לעשירייה הראשונה בדירוג תיירות עולמי",
-        "sourceUrl": "https://www.israelhayom.co.il/travel/tourism-news/article/20935368"
-      },
-      {
-        "publishedAt": "2026-07-08T10:02:16+03:00",
-        "source": "ynet - כל ערוץ החדשות",
-        "category": "פוליטיקה",
-        "title": "הכנסת דנה בחוק ההנצחה לטבח 7 באוקטובר",
-        "sourceUrl": "https://www.ynet.co.il/news/article/sk00tgpqxfe"
-      },
-      {
-        "publishedAt": "2026-07-08T10:01:30+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "אקטואליה בעולם",
-        "title": "אוקראינה תקפה מתקני דלק רוסיים בעומק המדינה",
-        "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20935060"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
