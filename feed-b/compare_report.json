@@ -1,27 +1,30 @@
 {
-  "createdAt": "2026-07-08T15:56:07+03:00",
+  "createdAt": "2026-07-08T16:00:38+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T15:45:39+03:00",
+    "updatedAt": "2026-07-08T15:56:07+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T155607+0300",
-    "createdAt": "2026-07-08T15:56:07+03:00",
-    "rawCandidates": 16,
-    "passedToEditor": 13,
-    "rejectedBeforeAi": 3,
-    "estimatedSmartLlmCalls": 13,
+    "runId": "feed-b-20260708T160038+0300",
+    "createdAt": "2026-07-08T16:00:38+03:00",
+    "rawCandidates": 24,
+    "passedToEditor": 12,
+    "rejectedBeforeAi": 12,
+    "estimatedSmartLlmCalls": 12,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 3
+      "main_feed_b_breaking_source": 7,
+      "duplicate_with_feed_b": 4,
+      "text_too_short": 1,
+      "non_hebrew_or_untranslated": 1
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 13,
+    "feedBPassedNotInFeedA": 12,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,91 +32,112 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T15:34:25+03:00",
-        "source": "ynet - כל ערוץ הספורט",
-        "category": "ספורט",
-        "title": "כל היריבות והשיטה החדשה: הגרלת הפועל ירושלים ביורוקאפ",
-        "sourceUrl": "https://www.ynet.co.il/sport/israelibasketball/article/s1006kaomfg"
+        "publishedAt": "2026-07-08T15:54:01+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "חדשות",
+        "title": "לא יאמן: כך הגיב יצחק עמית לעו\"ד שהגיע עטור בתפילין",
+        "sourceUrl": "https://www.srugim.co.il/101005884-לא-יאמן-כך-הגיב-יצחק-עמית-לעוד-שהגיע"
       },
       {
-        "publishedAt": "2026-07-08T15:24:39+03:00",
-        "source": "ynet - כל ערוץ הספורט",
-        "category": "ספורט",
-        "title": "רשמי: ג'ון דיברתולמיאו חתם לשנתיים נוספות במכבי ת\"א",
-        "sourceUrl": "https://www.ynet.co.il/sport/israelibasketball/article/s1cg00bsqmg"
+        "publishedAt": "2026-07-08T15:46:07+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "חדשות",
+        "title": "עיתונאי ערוץ 14 חושף את פיטוריו: \"עצוב לי\"",
+        "sourceUrl": "https://www.srugim.co.il/101005885-עיתונאי-ערוץ-14-חושף-את-פיטוריו-עצוב-לי"
       },
       {
-        "publishedAt": "2026-07-08T15:29:01+03:00",
-        "source": "ynet - כל ערוץ הכלכלה",
+        "publishedAt": "2026-07-08T16:00:17+03:00",
+        "source": "וואלה חדשות",
+        "category": "חדשות",
+        "title": "חברת טיולים יוונית: \"אין לנו מקום לישראלים בגלל הזוועות בפלסטין\"",
+        "sourceUrl": "https://travel.walla.co.il/item/3851931"
+      },
+      {
+        "publishedAt": "2026-07-08T16:00:16+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
+      },
+      {
+        "publishedAt": "2026-07-08T15:54:29+03:00",
+        "source": "מעריב - חדשות",
+        "category": "ספורט",
+        "title": "\"הפעם זה הסתיים בביצים\": פקחים של רשות המסים הותקפו בבני ברק",
+        "sourceUrl": "https://www.maariv.co.il/news/law/article-1342206"
+      },
+      {
+        "publishedAt": "2026-07-08T15:54:16+03:00",
+        "source": "מעריב - חדשות",
+        "category": "חדשות",
+        "title": "סערת ראש השב\"כ זיני לא נרגעת: \"אחרי 24 אלף עתירות לבית משפט\"",
+        "sourceUrl": "https://www.maariv.co.il/news/politics/article-1342208"
+      },
+      {
+        "publishedAt": "2026-07-08T15:50:05+03:00",
+        "source": "מעריב - חדשות",
+        "category": "ביטחון",
+        "title": "איום חדש: המהלך האיראני שעשוי לטלטל את נתיב הנפט העולמי",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342192"
+      },
+      {
+        "publishedAt": "2026-07-08T15:49:46+03:00",
+        "source": "The Guardian Middle East",
+        "category": "ביטחון",
+        "title": "First Thing: Trump calls Iran’s leaders ‘scum’ and declares fragile ceasefire over",
+        "sourceUrl": "https://www.theguardian.com/us-news/2026/jul/08/first-thing-trump-iran-leaders-scum-ceasefire-over"
+      },
+      {
+        "publishedAt": "2026-07-08T13:50:04+03:00",
+        "source": "Bloomberg Israel/Iran דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "Wave of Earnings Surprises Will Be Hard to Repeat, Says Goldman - Bloomberg.com",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRk1vNG0wLXRZbUhYcTJLQ3EyT3MxXzllTWljOU9wUXBYbEZJN0ZNeDFwZ240RmpEV0FtS3RwTkt1LXlPNFRRc29KdExVS1BrNVdlZS0tdEwyR0dWRG5hM09HMjc5VWZDclZSNnhSamY3TEM4UTNRbi1zdlE2TUFORmJCT2YyQXhUUmI0Z1hQakhfTFV0TnBmRndyTEt5ZHRMWGRMTVMxMmZqbWNFV3ZqQ195dw?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T13:43:52+03:00",
+        "source": "Bloomberg Israel/Iran דרך Google News",
+        "category": "ביטחון",
+        "title": "India Seeks Safe Hormuz Passage for Nine Ships as Truce Falters - Bloomberg.com",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSEZvak5kcnhMZDlyOFJjX25sUmlicWF2aXRiX3pLa3pwSFI3blBvQ2JtZm50UzJTeF95T1NEeEVZNGlQWktQajVsVlBiNHo3U1RaS0tielV3NzhIMGh0aS1sSEVmZGtXRWpfMHNGd1k3dHdhby14MV9WYW5kMTFqRTNJTTRJRXZlZ0VBQW5lZkNMX2hzaGVQS2NWSE0ybnU4MW1oRGtDQlJYVHFPbkxsLTZGMEM?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T15:36:43+03:00",
+        "source": "Al Jazeera RSS מסונן מזרח תיכון",
+        "category": "חדשות",
+        "title": "Gaza aid worker killed minutes before World Cup screening he organised",
+        "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/7/8/gaza-aid-worker-killed-minutes-before-world-cup-screening-he-organised?traffic_source=rss"
+      },
+      {
+        "publishedAt": "2026-07-08T15:57:04+03:00",
+        "source": "כיפה - חדשות",
+        "category": "חדשות",
+        "title": "לא גוגל ולא מיקרוסופט: זו החברה שהכי טוב לעבוד בה בישראל",
+        "sourceUrl": "https://www.kipa.co.il/1227461-0"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
+        "publishedAt": "2026-07-08T15:55:49+03:00",
+        "source": "וואלה כסף - קריירה",
         "category": "כלכלה",
-        "title": "במיליארדי דולרים: המלחמה על זכויות השידור למונדיאלים הבאים יוצאת לדרך",
-        "sourceUrl": "https://www.ynet.co.il/economy/article/hkdidkommg"
+        "title": "זינוק במספר דורשי העבודה המנוסים בהייטק",
+        "sourceUrl": "https://career.walla.co.il/item/3851956"
       },
       {
-        "publishedAt": "2026-07-08T16:00:00+03:00",
-        "source": "וואלה ספורט",
+        "publishedAt": "2026-07-08T15:55:44+03:00",
+        "source": "וואלה ספורט - כדורסל",
         "category": "ספורט",
-        "title": "בת 32 בזוגיות עם נשיא ההתאחדות בן ה-85: \"הוא מרמה אותי\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3851764"
+        "title": "בורקו ראדוביץ' הצטרף לצוות של הפועל חיפה",
+        "sourceUrl": "https://sports.walla.co.il/item/3851962"
       },
       {
         "publishedAt": "2026-07-08T15:55:43+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "דיברתולומיאו חתם במכבי ת\"א לשנתיים נוספות: \"הבית שלי\"",
+        "title": "דיברתולומיאו האריך חוזה במכבי תל אביב",
         "sourceUrl": "https://sports.walla.co.il/item/3851958"
       },
-      {
-        "publishedAt": "2026-07-08T15:55:44+03:00",
-        "source": "וואלה ספורט - כדורסל",
-        "category": "ספורט",
-        "title": "קאמבק מפתיע: בורקו ראדוביץ' מונה לעוזר המאמן של הפועל חיפה",
-        "sourceUrl": "https://sports.walla.co.il/item/3851962"
-      },
-      {
-        "publishedAt": "2026-07-08T15:55:44+03:00",
-        "source": "וואלה ספורט - כדורסל",
-        "category": "ספורט",
-        "title": "הזר השני בסגול: ריבאלדו סוארס חתם בהפועל חולון",
-        "sourceUrl": "https://sports.walla.co.il/item/3851961"
-      },
-      {
-        "publishedAt": "2026-07-08T15:55:49+03:00",
-        "source": "וואלה כסף - קריירה",
-        "category": "כלכלה",
-        "title": "סניורים בסכנה? זינוק של 181% בדורשי עבודה עם יותר מ-8 שנות ניסיון בהייטק",
-        "sourceUrl": "https://career.walla.co.il/item/3851956"
-      },
-      {
-        "publishedAt": "2026-07-08T15:30:16+03:00",
-        "source": "דה מרקר - גלובל",
-        "category": "אקטואליה בעולם",
-        "title": "באיחוד האירופי מודים: יש בעיות בבידוק הביומטרי, אבל לא נוכל להפסיקו",
-        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article/.premium/0000019f-416f-d07c-af9f-c97feb440000"
-      },
-      {
-        "publishedAt": "2026-07-08T15:16:29+03:00",
-        "source": "דה מרקר - כל הכתבות",
-        "category": "חדשות",
-        "title": "שטיין נגד המחוזי: מתקן ההתפלה באשדוד לא יושבת כרגע; העותרים ישלמו 120 אלף שקל",
-        "sourceUrl": "https://www.themarker.com/news/energy/2026-07-08/ty-article/.premium/0000019f-4162-d2da-adbf-4f6b27a30000"
-      },
-      {
-        "publishedAt": "2026-07-08T15:27:11+03:00",
-        "source": "מקור ראשון דרך Google News",
-        "category": "ביטחון",
-        "title": "ראש האופוזיציה לפיד: \"איראן ורוסיה מנסות להתערב בבחירות\"",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1pb21uSW9SMEhDQ1VpNVhFUUlCSWIxZ0o1T1VzeVRqT05xcXRYb0MwQTBQakMtT0g0OHNzOE9DOWR4My05T3RNX2NqUEFrUlQzTWZXTjJ0SzNkVi1YbGw2TG0xU3QwQnRvSFE?oc=5"
-      },
-      {
-        "publishedAt": "2026-07-08T15:26:54+03:00",
-        "source": "מקור ראשון דרך Google News",
-        "category": "ביטחון",
-        "title": "נאט\"ו מציגה זינוק בהוצאות הביטחון – אך טראמפ שוב תוקף",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBnMkFMSk5YM0l6Z1lUWTRLYXBrOHVlOXpnR1d1MEVmYjhwdHZiTjNzX1pFaFhTamc1NUpFdnFLLWpsTVJTdFMyYWZqQlBRNWtRY1FSU0ljRDRfanBxb29raVhoS20wbmNyb3VPRA?oc=5"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T15:45:35+03:00",
         "source": "The Jerusalem Post - Middle East",
@@ -171,32 +195,11 @@
         "sourceUrl": "https://www.haaretz.co.il/magazine/the-edge/2026-07-08/ty-article/.highlight/0000019f-415f-d269-af9f-47dffdb90000"
       },
       {
-        "publishedAt": "2026-07-08T15:30:18+03:00",
-        "source": "The Jerusalem Post - Middle East",
-        "category": "ביטחון",
-        "title": "משפחת מפגין איראני שנהרג דורשת דין וחשבון",
-        "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-901855"
-      },
-      {
-        "publishedAt": "2026-07-08T15:30:01+03:00",
-        "source": "וואלה חדשות",
-        "category": "משפט",
-        "title": "המפכ\"ל: המשטרה תיישם כל החלטת בג\"ץ",
-        "sourceUrl": "https://news.walla.co.il/item/3851951"
-      },
-      {
-        "publishedAt": "2026-07-08T15:23:55+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "פלילים",
-        "title": "אישום: תושב קלנסאווה אנס מכרה ביער ותקף אותה",
-        "sourceUrl": "https://www.israelhayom.co.il/news/crime/article/20938280"
-      },
-      {
-        "publishedAt": "2026-07-08T15:20:41+03:00",
-        "source": "מעריב - חדשות",
-        "category": "פלילים",
-        "title": "הותר לפרסום שם עורך הדין החשוד בהעלמת מס",
-        "sourceUrl": "https://www.maariv.co.il/news/law/article-1342191"
+        "publishedAt": "2026-07-08T15:34:25+03:00",
+        "source": "ynet - כל ערוץ הספורט",
+        "category": "ספורט",
+        "title": "הפועל ירושלים שובצה לבית 1 ביורוקאפ",
+        "sourceUrl": "https://www.ynet.co.il/sport/israelibasketball/article/s1006kaomfg"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
