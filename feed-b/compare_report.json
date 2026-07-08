@@ -1,27 +1,29 @@
 {
-  "createdAt": "2026-07-08T14:20:48+03:00",
+  "createdAt": "2026-07-08T14:30:22+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T14:15:23+03:00",
+    "updatedAt": "2026-07-08T14:20:48+03:00",
     "items": 80,
     "recentWindowHours": 24,
     "recentItems": 80
   },
   "feedB": {
-    "runId": "feed-b-20260708T142048+0300",
-    "createdAt": "2026-07-08T14:20:48+03:00",
-    "rawCandidates": 16,
-    "passedToEditor": 11,
-    "rejectedBeforeAi": 5,
-    "estimatedSmartLlmCalls": 11,
+    "runId": "feed-b-20260708T143022+0300",
+    "createdAt": "2026-07-08T14:30:22+03:00",
+    "rawCandidates": 37,
+    "passedToEditor": 24,
+    "rejectedBeforeAi": 13,
+    "estimatedSmartLlmCalls": 24,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 5
+      "text_too_short": 4,
+      "main_feed_b_breaking_source": 7,
+      "duplicate_with_feed_b": 3
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 11,
+    "feedBPassedNotInFeedA": 24,
     "feedARecentNotInFeedBPassed": 80,
     "feedARecentNotSeenByFeedBRaw": 80,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,90 +31,146 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-08T14:15:10+03:00",
-        "source": "ynet - כל ערוץ הספורט",
+        "publishedAt": "2026-07-08T14:06:49+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ספורט",
+        "title": "דרמה בליגת האלופות: האוהדים גרמו לשריפה באצטדיון בזמן משחק",
+        "sourceUrl": "https://www.israelhayom.co.il/sport/world-soccer/article/20937463"
+      },
+      {
+        "publishedAt": "2026-07-08T14:05:47+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "אקטואליה בעולם",
+        "title": "כשר הוא הטעים החדש: המסעדה שמגדירה מחדש את הז'אנר",
+        "sourceUrl": "https://www.israelhayom.co.il/food/restaurant-reviews/article/20936354"
+      },
+      {
+        "publishedAt": "2026-07-08T14:02:53+03:00",
+        "source": "ישראל היום - כל הכתבות",
         "category": "ביטחון",
-        "title": "הדרמה במכבי ת\"א: \"כבר סגרו עם הולמס ופרננדו, לא בטוח שרקנאטי יביא את הסכומים האלה\"",
-        "sourceUrl": "https://www.ynet.co.il/sport/israelibasketball/article/sybo3iixml"
+        "title": "זעם בביירות: \"חיזבאללה סייע לחמינאי וסינוואר, סיבכתכם אותנו!\"",
+        "sourceUrl": "https://www.israelhayom.co.il/news/world-news/middle-east/article/20937437"
       },
       {
-        "publishedAt": "2026-07-08T14:20:19+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "הגרלה סבירה לחולון ב-BCL, הרצליה שוב קיבלה בית קשה",
-        "sourceUrl": "https://sports.walla.co.il/item/3851925"
+        "publishedAt": "2026-07-08T14:00:35+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "חופשיים על הבר: טל טיטו ותמיר גולן בדייט",
+        "sourceUrl": "https://www.israelhayom.co.il/forreal/paparazzi/article/20937461"
       },
       {
-        "publishedAt": "2026-07-08T14:20:19+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "מכבי פ\"ת ו-ויצו חתמו על שיתוף פעולה לקידום בני נוער באמצעות ספורט תחרותי",
-        "sourceUrl": "https://sports.walla.co.il/item/3851915"
+        "publishedAt": "2026-07-08T14:19:01+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "ביטחון",
+        "title": "זכרו את ח'ייבר\": האיום שמהדהד מהמנהרות ועד להפגנות בעולם",
+        "sourceUrl": "https://www.srugim.co.il/101005872-זכרו-את-חייבר-האיום-המצמרר-שמהדהד"
       },
       {
-        "publishedAt": "2026-07-08T14:20:19+03:00",
-        "source": "וואלה ספורט - כדורגל ישראלי",
-        "category": "ספורט",
-        "title": "טוריאל ובואטנג כבשו, הפועל ת\"א הפכה וניצחה 1:2 את זלין",
-        "sourceUrl": "https://sports.walla.co.il/item/3851847"
+        "publishedAt": "2026-07-08T14:09:34+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "ביטחון",
+        "title": "שוב במצרי הורמוז: דיווחים באיראן על תקיפת ספינה אמריקאית",
+        "sourceUrl": "https://www.srugim.co.il/101005870-שוב-במצרי-הורמוז-דיווחים-באיראן-על-תקיפת"
       },
       {
-        "publishedAt": "2026-07-08T14:20:20+03:00",
-        "source": "וואלה ספורט - כדורסל",
-        "category": "ספורט",
-        "title": "אור קורנליוס חתם במכבי ראשון לציון",
-        "sourceUrl": "https://sports.walla.co.il/item/3851921"
+        "publishedAt": "2026-07-08T14:17:11+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "ביטחון",
+        "title": "האיום של רן ארז בשביתה - והמתקפה של משרד החינוך נגדו",
+        "sourceUrl": "https://www.ynet.co.il/news/article/b14d1sjqzl"
       },
       {
-        "publishedAt": "2026-07-08T14:20:27+03:00",
-        "source": "וואלה ספורט - טראש טוק",
-        "category": "ספורט",
-        "title": "בת 32 בזוגיות עם נשיא ההתאחדות בן ה-85: \"הוא מרמה אותי\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3851764"
+        "publishedAt": "2026-07-08T14:15:52+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "פוליטיקה",
+        "title": "חילוץ ברעידות האדמה, חיבור בין הנשיאה לרב: מתקרבים לחידוש היחסים עם ונצואלה",
+        "sourceUrl": "https://www.ynet.co.il/news/article/hygbiyoxme"
       },
+      {
+        "publishedAt": "2026-07-08T14:14:09+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "ביטחון",
+        "title": "האש עצרה, איראן מתרברבת מול טראמפ: \"הדרך היחידה - הכרה במשטר שלנו בהורמוז\"",
+        "sourceUrl": "https://www.ynet.co.il/news/article/s1os9ijqfx"
+      },
+      {
+        "publishedAt": "2026-07-08T14:30:02+03:00",
+        "source": "וואלה חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "\"פגשתי את אבא שלי לראשונה - ואז התחיל ביננו רומן אסור\"",
+        "sourceUrl": "https://news.walla.co.il/item/3851629"
+      },
+      {
+        "publishedAt": "2026-07-08T14:16:06+03:00",
+        "source": "הארץ - חדשות",
+        "category": "חדשות",
+        "title": "המל\"ג נימקה את הגבלת חופש הביטוי בקמפוסים במכתב של ראשי המוסדות – אך הפכה את משמעותו",
+        "sourceUrl": "https://www.haaretz.co.il/news/education/2026-07-08/ty-article/.premium/0000019f-4115-d269-af9f-47d5ec3b0000"
+      },
+      {
+        "publishedAt": "2026-07-08T13:56:55+03:00",
+        "source": "BBC World",
+        "category": "אקטואליה בעולם",
+        "title": "Cubans protest after third nationwide power cut this year",
+        "sourceUrl": "https://www.bbc.co.uk/news/articles/cm20g0d3ry4o?at_medium=RSS&at_campaign=rss"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T14:20:28+03:00",
         "source": "וואלה כסף",
         "category": "כלכלה",
-        "title": "הגירעון צנח ל-3.3% - הנמוך ביותר מאז סוף 2023",
+        "title": "הגירעון ירד ל-3.3% אחרי זינוק בגביית המסים",
         "sourceUrl": "https://finance.walla.co.il/item/3851918"
       },
       {
         "publishedAt": "2026-07-08T14:20:28+03:00",
         "source": "וואלה כסף",
         "category": "כלכלה",
-        "title": "מופתעים? זו החברה שהכי טוב לעבוד בה בישראל",
+        "title": "אנבידיה שוב בראש דירוג מקומות העבודה בישראל",
         "sourceUrl": "https://finance.walla.co.il/item/3851922"
       },
       {
-        "publishedAt": "2026-07-08T14:16:26+03:00",
-        "source": "מעריב - כלכלה",
-        "category": "כלכלה",
-        "title": "עין טל הדסה - ניתוחי לייזר להסרת משקפיים בתל אביב: כל הפרטים",
-        "sourceUrl": "https://www.maariv.co.il/economy/consumerism/article-1342158"
+        "publishedAt": "2026-07-08T14:20:20+03:00",
+        "source": "וואלה ספורט - כדורסל",
+        "category": "ספורט",
+        "title": "אור קורנליוס חזר למכבי ראשון לציון",
+        "sourceUrl": "https://sports.walla.co.il/item/3851921"
       },
       {
-        "publishedAt": "2026-07-08T14:05:40+03:00",
-        "source": "דה מרקר - גלובל",
-        "category": "חדשות",
-        "title": "אמריקה כבר איננה שוק חופשי, וגם לא המגנט שהייתה להשקעות זרות",
-        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article-magazine/.premium/0000019f-40e9-d269-af9f-46fdef6d0000"
+        "publishedAt": "2026-07-08T14:20:19+03:00",
+        "source": "וואלה ספורט",
+        "category": "ספורט",
+        "title": "חולון והרצליה קיבלו את יריבותיהן ב-BCL",
+        "sourceUrl": "https://sports.walla.co.il/item/3851925"
       },
       {
-        "publishedAt": "2026-07-08T13:53:44+03:00",
-        "source": "דה מרקר - כל הכתבות",
-        "category": "חדשות",
-        "title": "המשקיע המסתורי החליט לא להיות בעל עניין. מניית אונדס קרסה",
-        "sourceUrl": "https://www.themarker.com/news/security/2026-07-08/ty-article/.premium/0000019f-40e7-d2da-adbf-4fefa5810000"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
+        "publishedAt": "2026-07-08T14:20:19+03:00",
+        "source": "וואלה ספורט",
+        "category": "ספורט",
+        "title": "מכבי פתח תקוה ו-ויצו יקימו מסלול כדורגל לנוער",
+        "sourceUrl": "https://sports.walla.co.il/item/3851915"
+      },
+      {
+        "publishedAt": "2026-07-08T14:15:10+03:00",
+        "source": "ynet - כל ערוץ הספורט",
+        "category": "ספורט",
+        "title": "מכבי ת״א בכדורסל מחכה להבהרות מהרקנאטים",
+        "sourceUrl": "https://www.ynet.co.il/sport/israelibasketball/article/sybo3iixml"
+      },
       {
         "publishedAt": "2026-07-08T14:07:37+03:00",
         "source": "מעריב - חדשות",
         "category": "ביטחון",
         "title": "סיגריות הוסלקו במשלוח אננסים לרצועת עזה",
         "sourceUrl": "https://www.maariv.co.il/news/military/article-1342159"
+      },
+      {
+        "publishedAt": "2026-07-08T14:05:40+03:00",
+        "source": "דה מרקר - גלובל",
+        "category": "אקטואליה בעולם",
+        "title": "פסיקה בארה״ב מחזקת את שליטת הנשיא ברגולטורים",
+        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article-magazine/.premium/0000019f-40e9-d269-af9f-46fdef6d0000"
       },
       {
         "publishedAt": "2026-07-08T14:04:12+03:00",
@@ -141,55 +199,6 @@
         "category": "ביטחון",
         "title": "סיגריות הוסלקו באננסים בדרך לרצועה; אישור הסיוע הוקפא",
         "sourceUrl": "https://news.walla.co.il/item/3851916"
-      },
-      {
-        "publishedAt": "2026-07-08T13:58:21+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "חדשות",
-        "title": "קיני צבים רכים אותרו מחדש לאורך הירקון",
-        "sourceUrl": "https://www.israelhayom.co.il/tech/animals/article/20937465"
-      },
-      {
-        "publishedAt": "2026-07-08T13:55:49+03:00",
-        "source": "The Media Line",
-        "category": "חדשות",
-        "title": "משלחת ישראלית מסייעת בוונצואלה אחרי רעידת האדמה",
-        "sourceUrl": "https://themedialine.org/top-stories/they-never-imagined-brothers-from-israel-would-come-quake-aid-opens-rare-door-in-venezuela/"
-      },
-      {
-        "publishedAt": "2026-07-08T13:50:51+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "הפועל ירושלים פתחה מנויים עם מסלול משפחתי חדש",
-        "sourceUrl": "https://sports.walla.co.il/item/3851892"
-      },
-      {
-        "publishedAt": "2026-07-08T13:50:51+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "מוחובה הדיחה את אוסקה ועלתה לחצי גמר ווימבלדון",
-        "sourceUrl": "https://sports.walla.co.il/item/3851745"
-      },
-      {
-        "publishedAt": "2026-07-08T13:50:51+03:00",
-        "source": "וואלה ספורט - כדורגל עולמי",
-        "category": "ספורט",
-        "title": "17 שחקנים בסכנת הרחקה מחצי גמר המונדיאל",
-        "sourceUrl": "https://sports.walla.co.il/item/3851906"
-      },
-      {
-        "publishedAt": "2026-07-08T13:47:56+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "משפט",
-        "title": "זוכה נאשם שאמר בדיון: הקם להורגך השכם להורגו",
-        "sourceUrl": "https://www.israelhayom.co.il/news/law/article/20937318"
-      },
-      {
-        "publishedAt": "2026-07-08T13:45:41+03:00",
-        "source": "JNS - Jewish News Syndicate",
-        "category": "ביטחון",
-        "title": "לוחמי מג״ב ירו בחשוד חמוש בסכין במעבר רחל",
-        "sourceUrl": "https://www.jns.org/news/israel-news/border-police-shoot-arrest-knife-wielding-terrorist-at-rachel-crossing"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
