@@ -1,63 +1,136 @@
 {
-  "createdAt": "2026-07-08T19:52:16+03:00",
+  "createdAt": "2026-07-08T20:00:30+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-08T19:45:30+03:00",
-    "items": 1960,
+    "updatedAt": "2026-07-08T19:52:16+03:00",
+    "items": 1961,
     "recentWindowHours": 24,
-    "recentItems": 470
+    "recentItems": 473
   },
   "feedB": {
-    "runId": "feed-b-20260708T195216+0300",
-    "createdAt": "2026-07-08T19:52:16+03:00",
-    "rawCandidates": 6,
-    "passedToEditor": 4,
-    "rejectedBeforeAi": 2,
-    "estimatedSmartLlmCalls": 4,
+    "runId": "feed-b-20260708T200030+0300",
+    "createdAt": "2026-07-08T20:00:30+03:00",
+    "rawCandidates": 29,
+    "passedToEditor": 17,
+    "rejectedBeforeAi": 12,
+    "estimatedSmartLlmCalls": 17,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 2
+      "text_too_short": 4,
+      "main_feed_b_breaking_source": 5,
+      "duplicate_with_feed_b": 3,
+      "non_hebrew_or_untranslated": 3
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 4,
-    "feedARecentNotInFeedBPassed": 470,
-    "feedARecentNotSeenByFeedBRaw": 470,
+    "feedBPassedNotInFeedA": 17,
+    "feedARecentNotInFeedBPassed": 473,
+    "feedARecentNotSeenByFeedBRaw": 473,
     "feedARecentSeenButFilteredByFeedB": 0
   },
   "samples": {
     "feedBPassedNotInFeedA": [
       {
+        "publishedAt": "2026-07-08T19:59:42+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "ביטחון",
+        "title": "אותר חלל צה\"ל משיירות מבצע \"הראל\"",
+        "sourceUrl": "https://www.srugim.co.il/101005921-אותר-חלל-צהל-משיירות-מבצע-הראל"
+      },
+      {
+        "publishedAt": "2026-07-08T19:52:18+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "משפט",
+        "title": "הדרמה בליכוד: עתירה נוספת נגד ראש הממשלה נתניהו",
+        "sourceUrl": "https://www.srugim.co.il/101005918-הדרמה-בליכוד-עתירה-נוספת-נגד-ראש-הממשלה"
+      },
+      {
+        "publishedAt": "2026-07-08T19:54:42+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "ביטחון",
+        "title": "בכפר עזה אותרו שיניים, שוב נבדק אם שייכות לקצין ניראל זיני",
+        "sourceUrl": "https://www.ynet.co.il/news/article/rycq00xnxme"
+      },
+      {
+        "publishedAt": "2026-07-08T19:49:46+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "ביטחון",
+        "title": "מסר ישראלי לארה\"ב: F-35 לטורקיה? תנו להם גרסאות משונמכות של המטוס",
+        "sourceUrl": "https://www.ynet.co.il/news/article/bjqfjnsmgl"
+      },
+      {
+        "publishedAt": "2026-07-08T20:00:11+03:00",
+        "source": "וואלה חדשות",
+        "category": "ביטחון",
+        "title": "סמוטריץ' האשים את מערכת הביטחון ב\"הזנחת פצועים\" - ונכי צה\"ל הזכירו לו את חלקו",
+        "sourceUrl": "https://news.walla.co.il/item/3852021"
+      },
+      {
+        "publishedAt": "2026-07-08T19:47:24+03:00",
+        "source": "הארץ - חדשות",
+        "category": "פלילים",
+        "title": "אם מאיידהו טענה שהתאומים שלה מתו בגלל חיסונים. עכשיו היא נאשמת ברצח שלהם",
+        "sourceUrl": "https://www.haaretz.co.il/news/world/america/2026-07-08/ty-article-magazine/.premium/0000019f-4279-d6c0-a9df-dfff600e0004"
+      },
+      {
+        "publishedAt": "2026-07-08T19:58:20+03:00",
+        "source": "מעריב - חדשות",
+        "category": "חדשות",
+        "title": "השילוב המושלם ללב: מה קורה לגוף כשצורכים שוקולד מריר ותה ביחד?",
+        "sourceUrl": "https://www.maariv.co.il/news/health/article-1342311"
+      },
+      {
+        "publishedAt": "2026-07-08T19:28:00+03:00",
+        "source": "גלובס - בארץ",
+        "category": "כלכלה",
+        "title": "עימות חריף בין יועמ\"שית הכנסת לאגף התקציבים סביב אישור העברות תקציביות בדיעבד",
+        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548798#utm_source=RSS"
+      },
+      {
+        "publishedAt": "2026-07-08T19:56:59+03:00",
+        "source": "Reuters Middle East דרך Google News",
+        "category": "ביטחון",
+        "title": "Trump says he doesn't think Iran conflict will start again - Reuters",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNjNfYy16UERGMkFmTE01eDZtUXllSmtob0sxSHNnSzE2S1g2NFBSbm9kc1hkWEQ2alp2NV9WVG9YSjlfLWxwVDRnYjhNZTAtanB3LW42eFNTUTNaVHp4TkJjdHNoTURyTXduMnpRQzlBcndEZndjQm5DcWowVHk0OG1yUWltQWlyMmpOdTlRQURydUJla2w2UHJQRENvbnhZQjRKTW1pV3hzUWNKWWsydg?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T19:52:30+03:00",
+        "source": "Axios Israel/Iran דרך Google News",
+        "category": "ביטחון",
+        "title": "Trump's takes NATO trouble tour to Turkey - Axios",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE5sNk1jZ2pPeUpCNkp3TmFWTjRWSEtISVRIRGxaOUQxUUs3Q1hBOGVFTEs2elJXek92aHdKek80RklBbVRxa2FfZ0NwTFJwaFBFU0NPMmdYNEJManEtV3FZc0NPeDh5UWw3LXkyWndnVGFmUQ?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T19:56:00+03:00",
+        "source": "Politico Israel/Iran דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "US officials compiling 'menu' of Spanish goods, as Trump weighs embargo - Politico",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPc0pFQ3cyX1BHS0t2U0dEbmpZOVNaelIzaE0tUU1FcEo3VDNWLXh0dEdLQmVzaGJsb25LUWg1QW5HZnhsV2E3SHdHWC1DX3ZuNjNrZDdlWHRwX1pXUUY3aG1pX3U4SXpRMGpCTFJpeDJGMy1qQ3MxSXpNTmxpb2JkeGpka1NKRzhFQ1liODNR?oc=5"
+      },
+      {
+        "publishedAt": "2026-07-08T19:34:03+03:00",
+        "source": "Bloomberg Israel/Iran דרך Google News",
+        "category": "אקטואליה בעולם",
+        "title": "China Extends US Soybean Buying Spree as Trade Thaw Continues - Bloomberg.com",
+        "sourceUrl": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNU3c5dEhyenViOEFiQS1vNVZkZlp4R29TRDlfS2J1ZjJOT3h5b1FjcWRrMEJhUVlHT0NMM3p1RnNiV0l2VWxmalFFcmd2T1RsZ29uWmdQSHlaamNiejFJb0JVRm9xZ1dmdkJCcl9OSVNBZVM3SklGWS1hQXYxOEJBMndKZ2NMYm00WGdHc2VwTVJwZzY1S1Nyd2MwQUpIak5zdkpmUWZDSW82MV9QYmI1d3dn?oc=5"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
         "publishedAt": "2026-07-08T19:51:51+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "זה מה שישכנע את לברון? הפנייה הפומבית שהדהימה את ה-NBA",
+        "title": "נשיא פילדלפיה פנה ללברון בפומבי: כאן תוכל לזכות",
         "sourceUrl": "https://sports.walla.co.il/item/3852020"
-      },
-      {
-        "publishedAt": "2026-07-08T19:24:44+03:00",
-        "source": "דה מרקר - גלובל",
-        "category": "כלכלה",
-        "title": "לפי שווי של 130 מיליארד דולר: בלו־אוריג'ין של ג'ף בזוס בגיוס הון חיצוני ראשון",
-        "sourceUrl": "https://www.themarker.com/wallstreet/2026-07-08/ty-article/.premium/0000019f-426b-d269-af9f-46ffe1e60000"
       },
       {
         "publishedAt": "2026-07-08T19:47:29+03:00",
         "source": "דה מרקר - כל הכתבות",
-        "category": "חדשות",
-        "title": "לא רק חיל האוויר: גם התעשייה הטורקית נדרכת למוצא פיו של טראמפ",
+        "category": "ביטחון",
+        "title": "טורקיה ממתינה להכרעת טראמפ על חזרתה לפרויקט F-35",
         "sourceUrl": "https://www.themarker.com/news/security/2026-07-08/ty-article/.premium/0000019f-4251-d6c0-a9df-dfdf6e320000"
       },
-      {
-        "publishedAt": "2026-07-08T19:30:00+03:00",
-        "source": "גלובס - רכב ותחבורה",
-        "category": "רכב",
-        "title": "מתווה הפיצוי לחברות התעופה נחשף: אל על עשויה למצוא את עצמה בחוץ",
-        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548736#utm_source=RSS"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-08T19:41:39+03:00",
         "source": "דובר צה״ל - טלגרם רשמי",
@@ -101,6 +174,13 @@
         "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-901885"
       },
       {
+        "publishedAt": "2026-07-08T19:30:00+03:00",
+        "source": "גלובס - רכב ותחבורה",
+        "category": "כלכלה",
+        "title": "סיוע התעופה יותנה בהקפאת דיבידנדים ובהזרמת הון",
+        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548736#utm_source=RSS"
+      },
+      {
         "publishedAt": "2026-07-08T19:22:35+03:00",
         "source": "ישראל היום - כל הכתבות",
         "category": "משפט",
@@ -120,27 +200,6 @@
         "category": "ספורט",
         "title": "דן גלזר חזר למכבי תל אביב וחתם לשנתיים",
         "sourceUrl": "https://sports.walla.co.il/item/3852013"
-      },
-      {
-        "publishedAt": "2026-07-08T19:21:56+03:00",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "category": "רכילות",
-        "title": "לי־אן פינוק הודיעה על הריון נוסף",
-        "sourceUrl": "https://www.mirror.co.uk/3am/celebrity-news/leigh-anne-pinnock-pregnant-video-37405712"
-      },
-      {
-        "publishedAt": "2026-07-08T19:21:47+03:00",
-        "source": "מעריב - חדשות",
-        "category": "בריאות",
-        "title": "משרד התחבורה יגבש חיבור נגיש לאיכילוב המתרחב",
-        "sourceUrl": "https://www.maariv.co.il/news/israel/article-1342306"
-      },
-      {
-        "publishedAt": "2026-07-08T19:19:43+03:00",
-        "source": "הארץ - כל הכתבות",
-        "category": "ביטחון",
-        "title": "הכנסת קידמה הקפאת כספים נוספת לרשות הפלסטינית",
-        "sourceUrl": "https://www.haaretz.co.il/news/politi/2026-07-08/ty-article/0000019f-4262-df3a-afbf-6e7b54230000"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
