@@ -1,51 +1,56 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-09T15:35:51+03:00
+נוצר: 2026-07-09T15:45:15+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-09T15:30:18+03:00
-- Feed A items: 2076
+- Feed A updatedAt: 2026-07-09T15:35:51+03:00
+- Feed A items: 2077
 - Feed A recent window: 24h / 631 items
-- Feed B run: feed-b-20260709T153551+0300
-- Feed B createdAt: 2026-07-09T15:35:51+03:00
-- Feed B raw candidates: 32
-- Feed B passed to editor: 25
-- Feed B rejected before AI: 7
-- Estimated smart LLM calls: 25
+- Feed B run: feed-b-20260709T154515+0300
+- Feed B createdAt: 2026-07-09T15:45:15+03:00
+- Feed B raw candidates: 25
+- Feed B passed to editor: 15
+- Feed B rejected before AI: 10
+- Estimated smart LLM calls: 15
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 6
+- duplicate_with_feed_b: 2
+- main_feed_b_breaking_source: 7
+- non_hebrew_or_untranslated: 1
 - text_too_short: 1
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 25
+- Feed B passed but not currently in Feed A: 15
 - Recent Feed A not in Feed B passed list: 631
 - Recent Feed A not seen by Feed B raw input: 631
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-09T15:19:58+03:00 | ynet - כל ערוץ המחשבים | במקום לריב עם סירי: OpenAI השיקה שיחה קולית חיה ב-ChatGPT
-- 2026-07-09T14:54:26+03:00 | ynet - כל ערוץ המחשבים | הלם חשבוניות ה-AI: הפיטורים לא חסכו כסף למנהלים אלא להיפך
-- 2026-07-09T14:44:00+03:00 | וואלה סלבס | אברי גלעד: "החוטיני הפך להיות נחלתן של כולן, זה עצוב"
-- 2026-07-09T14:51:00+03:00 | וואלה בריאות | סדרת מסכות שיער חדשה עם התאמה אישית לכל סוג שיער
-- 2026-07-09T15:18:00+03:00 | וואלה TECH | אלקטרולוקס משיקה בישראל מכונות כביסה עם תא ייעודי לקפסולות
-- 2026-07-09T14:30:00+03:00 | mako - דיגיטל Nexter | עם כפילות ויראליות ו-12.9 מיליון עוקבים בשבועיים: הכוכב האמיתי של המונדיאל
-- 2026-07-09T13:50:00+03:00 | mako - דיגיטל Nexter | וואטסאפ עובדת על התראות ימי הולדת, ועכשיו באמת נישאר בלי סיבה להיכנס לפייסבוק
-- 2026-07-09T15:26:00+03:00 | mako סלבס - ראשי | "לא פשוט": עודד פז ואושר סלים התגרשו ברבנות
-- 2026-07-09T14:28:00+03:00 | mako סלבס - ראשי | אחרי נתק של שנים: לינדזי לוהן חוגגת 40 לצד האב הבעייתי
-- 2026-07-09T12:44:00+03:00 | mako סלבס - ראשי | עומר מ"חתונמי" על הצפייה בעצמו על המסך: "נופלים לי המון אסימונים"
-- 2026-07-09T12:42:00+03:00 | mako סלבס - ראשי | בגיל 54: לוק וילסון הפך לראשונה לאבא
-- 2026-07-09T14:59:42+03:00 | Pplus / פנאי פלוס דרך Google News | כ-67 מיליון דולר: אחרי ההפסד במשפט, הנסיך הארי ייאלץ לשלם - והרבה - פנאי פלוס
+- 2026-07-09T15:24:34+03:00 | ישראל היום - כל הכתבות | בעקבות מי ביוב: החופים בגוש דן שנסגרים
+- 2026-07-09T15:22:32+03:00 | ישראל היום - כל הכתבות | לא רק תירס: לא תאמינו אילו גרעינים אפשר להפוך לפופקורן
+- 2026-07-09T15:40:10+03:00 | ynet - כל ערוץ החדשות | השרים דרשו - וזיני התקפל: ראש השב"כ ביקש לחקור את טענות ההדלפה לאנשי תקשורת
+- 2026-07-09T15:43:30+03:00 | הארץ - סביבה ואקלים | עשרות בני אדם נהרגו בסופה טרופית בסין. בעוד יומיים יגיע אליה טייפון חזק יותר
+- 2026-07-09T15:33:18+03:00 | הארץ - כל הכתבות | וילנה החדשה: לטעום, לגלות, להתאהב לפני שכולם מגיעים
+- 2026-07-09T15:41:46+03:00 | מעריב - חדשות | מסעדת דגים מפורסמת הוצתה באמצע הלילה - והתעלומה נפתרה
+- 2026-07-09T15:28:56+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Mosque model placed on top of Northern Ireland bonfire
+- 2026-07-09T15:24:20+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Ukraine targets Russian oil depots and tankers in drone attacks
+- 2026-07-09T15:45:11+03:00 | The Jerusalem Post - Israel News | Israel doesn't need unconditional US support to be confident in its own strength - analysis
+- 2026-07-09T15:45:11+03:00 | The Jerusalem Post - Middle East | Iran retaliates with strikes on US Gulf assets as regional sirens sound
+- 2026-07-09T15:45:11+03:00 | The Jerusalem Post - Middle East | A new Middle East begins on the Israel-Lebanon border
+- 2026-07-09T15:45:00+03:00 | JNS - Jewish News Syndicate | Rahm Emanuel and the persistent delusion of failed policies
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-09T15:30:07+03:00 | Mirror Celebs רכילות חו״ל | הנסיך הארי חזר לאירועים פומביים בביקור בבית חולים
+- 2026-07-09T15:25:07+03:00 | Daily Mail TVShowbiz רכילות חו״ל | לואיסה זיסמן ספגה ביקורת אחרי אמירה על בתה
 - 2026-07-09T15:21:32+03:00 | וואלה ספורט | רקנאטי הפכה לבעלת הרוב במכבי תל אביב
+- 2026-07-09T15:19:58+03:00 | ynet - כל ערוץ המחשבים | OpenAI פתחה שיחה קולית רציפה ב-ChatGPT
 - 2026-07-09T15:19:44+03:00 | ערוץ 7 / INN עברית | יונתן פלד ימונה לשגריר ישראל באו״ם בז׳נבה
 - 2026-07-09T15:15:17+03:00 | וואלה חדשות - חדשות בארץ | שני מתנדבי מד״א נעצרו בחשד לאונס בבית שמש
 - 2026-07-09T15:14:09+03:00 | כיפה - חדשות | משרד הבריאות הודיע על ריקול לביצים אורגניות
@@ -54,9 +59,6 @@
 - 2026-07-09T15:12:09+03:00 | Al Jazeera RSS מסונן מזרח תיכון | ירדן יירטה לפחות שמונה טילים איראניים
 - 2026-07-09T15:10:02+03:00 | JNS - Jewish News Syndicate | במצרים קשרו את ההדחה מהמונדיאל לתמיכה בעזה
 - 2026-07-09T15:08:13+03:00 | ישראל היום - כל הכתבות | פיתוח ישראלי מנתח שיחות עם פעוטות בבית
-- 2026-07-09T15:03:57+03:00 | Israel National News English | משפחות חיילי גולני מחו על שירת נשים בטקס
-- 2026-07-09T15:00:39+03:00 | The Jerusalem Post - Israel News | חשוד עם גרזן עוכב ליד לשכת גיוס בחיפה
-- 2026-07-09T14:59:16+03:00 | ישראל היום - כל הכתבות | בן 19 נאשם בעבירות מין בשני אחים קטינים בלוד
 
 ## Recent Feed A Seen But Filtered By Feed B
 
