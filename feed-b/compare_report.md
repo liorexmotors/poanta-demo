@@ -1,46 +1,53 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-09T06:30:31+03:00
+נוצר: 2026-07-09T06:35:42+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-09T06:23:26+03:00
-- Feed A items: 1985
-- Feed A recent window: 24h / 620 items
-- Feed B run: feed-b-20260709T063031+0300
-- Feed B createdAt: 2026-07-09T06:30:31+03:00
-- Feed B raw candidates: 13
-- Feed B passed to editor: 6
-- Feed B rejected before AI: 7
-- Estimated smart LLM calls: 6
+- Feed A updatedAt: 2026-07-09T06:30:31+03:00
+- Feed A items: 1988
+- Feed A recent window: 24h / 624 items
+- Feed B run: feed-b-20260709T063541+0300
+- Feed B createdAt: 2026-07-09T06:35:41+03:00
+- Feed B raw candidates: 31
+- Feed B passed to editor: 27
+- Feed B rejected before AI: 4
+- Estimated smart LLM calls: 27
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 1
-- main_feed_b_breaking_source: 3
-- text_too_short: 4
+- duplicate_with_feed_b: 2
+- text_too_short: 2
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 6
-- Recent Feed A not in Feed B passed list: 620
-- Recent Feed A not seen by Feed B raw input: 620
+- Feed B passed but not currently in Feed A: 27
+- Recent Feed A not in Feed B passed list: 624
+- Recent Feed A not seen by Feed B raw input: 624
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-09T06:00:43+03:00 | ישראל היום - כל הכתבות | אתם מסודרים למשך כל חודש ספטמבר עם המופעים הכי שווים
-- 2026-07-09T06:00:19+03:00 | ישראל היום - כל הכתבות | "קוראת לכל נערה להגיע לקורס טיס, אין ממה לפחד"
-- 2026-07-09T06:30:13+03:00 | וואלה חדשות | ​מי הריבון פה? כשעובדי הציבור מפחדים ממערכת המשפט יותר מאשר מהבוחר
-- 2026-07-09T06:22:27+03:00 | Al Jazeera RSS מסונן מזרח תיכון | What’s with Trump’s sudden fixation on communism?
-- 2026-07-09T06:30:29+03:00 | The Jerusalem Post - Middle East | Ghalibaf: 'If you strike, you'll get hit,' IRGC claims responsibility for Kuwait, Bahrain strikes
-- 2026-07-09T06:15:39+03:00 | JNS - Jewish News Syndicate | Thousands of cigarettes found hidden inside Gaza pineapple shipment
+- 2026-07-09T06:00:00+03:00 | ynet - כל ערוץ מעורבות | "עלינו על המשאית האחרונה מעזה - וירדנו ישר לשדות הבקעה": החלוצים החדשים של בקעת הירדן
+- 2026-07-09T06:21:01+03:00 | ynet - כל ערוץ הבריאות | מוות, אסתמה ונזק לפוריות: כך פוגע זיהום האוויר מכלי רכב בבריאות
+- 2026-07-09T06:08:34+03:00 | ynet - כל ערוץ הבריאות | פחית קנאביס במקום בירה: הטרנד החדש שכובש את ארה"ב
+- 2026-07-09T03:00:00+03:00 | וואלה תרבות | משפט אחד שנפלט למאי גולן בערוץ 14 חשף את האמת המכוערת על הליכוד
+- 2026-07-09T01:05:00+03:00 | וואלה TECH | בדרך לאילת? iStore מציעה הנחות של אלפי שקלים על מחשבי Mac
+- 2026-07-09T06:00:45+03:00 | הארץ - תרבות | אנחנו חיים כעת בעולם שהוא בית משוגעים בהנהלת המשוגע הראשי
+- 2026-07-09T06:00:13+03:00 | הארץ - תרבות | הבעיה של הפרינג' כבר לא בשוליים
+- 2026-07-09T06:01:12+03:00 | מעריב - טכנולוגיה | דו"ח שוק העבודה: תמונה עגומה מבחינת אחוזי תעסוקה של גברים חרדים
+- 2026-07-09T06:04:42+03:00 | דה מרקר - TechNation | ליירט מאות כטב"מים במקביל: סקפיון נחשפת עם גיוס של 36 מיליון דולר
+- 2026-07-09T06:02:17+03:00 | דה מרקר - TechNation | המסיבה נגמרה, אבל לא לכולם: תפקידי המעטפת בהייטק על הגריל
+- 2026-07-09T06:05:31+03:00 | Page Six רכילות חו״ל | ‘The Five Star Weekend’ premiere red carpet: Jennifer Garner, D’Arcy Carden, Chloe Sevigny and more
+- 2026-07-09T04:30:35+03:00 | Page Six רכילות חו״ל | Justin Baldoni breaks silence on shocking Blake Lively settlement
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-09T06:30:29+03:00 | The Jerusalem Post - Middle East | משמרות המהפכה קיבלו אחריות לתקיפות בבחריין ובכוויית
 - 2026-07-09T06:23:04+03:00 | וואלה ספורט | ימאל מצהיר שהוא מוכן לרבע גמר המונדיאל
+- 2026-07-09T06:15:39+03:00 | JNS - Jewish News Syndicate | אלפי סיגריות הוסתרו בתוך משלוח אננס לעזה
 - 2026-07-09T06:15:17+03:00 | The Jerusalem Post - Israel News | הרצוג: גופי הביטחון נאמנים למדינה, לא למחנה פוליטי
 - 2026-07-09T06:15:02+03:00 | וואלה חדשות | השופט דחה בקשת אב לקנוס אם בסכסוך משמורת
 - 2026-07-09T06:15:02+03:00 | וואלה חדשות | ג׳נה ג׳יימסון חוזרת לבמה במופע בידור למבוגרים
@@ -50,8 +57,6 @@
 - 2026-07-09T06:13:58+03:00 | ערוץ 7 / INN עברית | צבא ארה״ב: כ-90 מטרות הותקפו באיראן
 - 2026-07-09T06:13:10+03:00 | דה מרקר - שוק ההון | רק שמונה קרנות גידור עקפו את מדד ת״א 125
 - 2026-07-09T06:11:12+03:00 | דה מרקר - כל הכתבות | מחסור של 300 נוירולוגים דוחף תוכנית לאומית
-- 2026-07-09T06:05:44+03:00 | דה מרקר - כל הכתבות | דרישת אחריות חדשה מאיימת על יבוא הרכב המקביל
-- 2026-07-09T06:01:13+03:00 | מעריב - חדשות | נתניהו בוחן שריונים לליכוד לקראת הבחירות
 
 ## Recent Feed A Seen But Filtered By Feed B
 
