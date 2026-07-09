@@ -1,52 +1,56 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-09T14:45:17+03:00
+נוצר: 2026-07-09T14:50:42+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-06-28T11:22:16+03:00
-- Feed A items: 106
-- Feed A recent window: 24h / 0 items
-- Feed B run: feed-b-20260709T144517+0300
-- Feed B createdAt: 2026-07-09T14:45:17+03:00
-- Feed B raw candidates: 29
-- Feed B passed to editor: 16
-- Feed B rejected before AI: 13
-- Estimated smart LLM calls: 16
+- Feed A updatedAt: 2026-07-09T14:45:17+03:00
+- Feed A items: 2076
+- Feed A recent window: 24h / 639 items
+- Feed B run: feed-b-20260709T145041+0300
+- Feed B createdAt: 2026-07-09T14:50:41+03:00
+- Feed B raw candidates: 12
+- Feed B passed to editor: 6
+- Feed B rejected before AI: 6
+- Estimated smart LLM calls: 6
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 1
-- main_feed_b_breaking_source: 8
-- text_too_short: 6
+- duplicate_with_feed_b: 4
+- text_too_short: 2
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 16
-- Recent Feed A not in Feed B passed list: 0
-- Recent Feed A not seen by Feed B raw input: 0
+- Feed B passed but not currently in Feed A: 6
+- Recent Feed A not in Feed B passed list: 639
+- Recent Feed A not seen by Feed B raw input: 639
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-09T14:28:35+03:00 | ישראל היום - כל הכתבות | ישראל משקיעה במרכז - ומשאירה את הפריפריה מאחור
-- 2026-07-09T14:27:47+03:00 | ישראל היום - כל הכתבות | החשוד באונס הקבוצתי ברמלה: "היא הציעה לי לקיים יחסי מין תמורת 500 שקל"
-- 2026-07-09T14:23:11+03:00 | ישראל היום - כל הכתבות | מנהיג הימין הבריטי יתחרה על מקומו בפרלמנט מול "פח אשפה"
-- 2026-07-09T14:22:59+03:00 | ישראל היום - כל הכתבות | הסיכון עולה, רף הפאניקה לא: למה השווקים לא נבהלים מהמתיחות במפרץ?
-- 2026-07-09T14:22:59+03:00 | ישראל היום - כל הכתבות | האירוויזיון של הברמנים: שלושה ישראלים ומטרה אחת - לנצח
-- 2026-07-09T14:33:17+03:00 | סרוגים - כל הכתבות | אחרי 3 עונות: הזמר המצליח עוזב את 'הכוכב הבא'
-- 2026-07-09T14:42:31+03:00 | מעריב - חדשות | חיים רמון באמירה שומטת לסתות: "מגיעים לסמוטריץ' לפחות 15 מנדטים"
-- 2026-07-09T14:39:38+03:00 | The Guardian Middle East | US and Iran trade most intense strikes since ceasefire was extended
-- 2026-07-09T13:37:40+03:00 | Bloomberg Israel/Iran דרך Google News | Copper Rises as Risk Assets Shrug Off More US Strikes on Iran - Bloomberg.com
-- 2026-07-09T13:10:32+03:00 | Bloomberg Israel/Iran דרך Google News | Jupiter Fund Ditches US Treasuries in Favor of European Bonds - Bloomberg.com
-- 2026-07-09T14:23:34+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Deadly US strikes trigger Iranian attacks on Gulf states
-- 2026-07-09T14:45:13+03:00 | The Jerusalem Post - Israel News | Israel Police detain suspect caught carrying axe near Haifa's IDF recruitment center
+- 2026-07-09T14:50:24+03:00 | וואלה ספורט | "בבוקר הלכתי לצלול ולדוג, בערב נכנסתי לשער ונתתי הצגה עם ציון 9"
+- 2026-07-09T14:50:24+03:00 | וואלה ספורט | מכבי נתניה ניצחה במאבק: נדב נידם חתם לשלוש שנים
+- 2026-07-09T14:50:25+03:00 | וואלה ספורט - כדורגל ישראלי | העונשים פחתו לרוב המעורבים: הושגו הסדרי טיעון בתיק גמר הגביע
+- 2026-07-09T14:50:25+03:00 | וואלה ספורט - כדורגל עולמי | בינתיים מסי, קיין, אמבפה והאלנד עושים את ההבדל: הטור של דבורין
+- 2026-07-09T14:50:32+03:00 | וואלה רכב | עקב הביקוש: המבצע של 3 שנים דלק מתנה חוזר בניסאן
+- 2026-07-09T13:27:28+03:00 | מקור ראשון דרך Google News | ביטוח נהג צעיר בלי לעבור על החוק ולקרוע את הכיס
 
 ## Recent Feed A Not In Feed B Passed
 
-- אין
+- 2026-07-09T14:39:38+03:00 | The Guardian Middle East | ארה״ב ואיראן בחילופי אש חריפים במפרץ
+- 2026-07-09T14:37:13+03:00 | וואלה בריאות | משרד הבריאות מרחיב היערכות לאקלים, כלבת ופנדמיות
+- 2026-07-09T14:37:09+03:00 | וואלה סלבס | ג׳סטין בלדוני ואשתו מגיבים לראשונה לסכסוך עם בלייק לייבלי
+- 2026-07-09T14:33:16+03:00 | JNS - Jewish News Syndicate | באיראן תקפו בכירים שתומכים במגעים עם ארה״ב
+- 2026-07-09T14:30:03+03:00 | וואלה חדשות - חדשות בארץ | נער נאשם שהצית מסעדה באשדוד ונכווה בזמן הבריחה
+- 2026-07-09T14:30:02+03:00 | וואלה חדשות | האודיסאה של נולאן תעלה בישראל ב-16 ביולי
+- 2026-07-09T14:28:24+03:00 | JNS - Jewish News Syndicate | ישראל פותחת מסלול ניסוי לבינה מלאכותית בבתי חולים
+- 2026-07-09T14:27:47+03:00 | ישראל היום - כל הכתבות | מעצר חשוד באונס קבוצתי ברמלה הוארך
+- 2026-07-09T14:25:54+03:00 | The Media Line | מכון ספורט חדש באוניברסיטת תל אביב יסייע לאולימפיים
+- 2026-07-09T14:24:56+03:00 | ynet - כל ערוץ החדשות | ישראל מציגה דוח סיוע לעזה נגד טענות חמאס
+- 2026-07-09T14:23:11+03:00 | ישראל היום - כל הכתבות | פראג׳ כופה בחירות חוזרות בצל חקירת שחיתות
+- 2026-07-09T14:22:59+03:00 | ישראל היום - כל הכתבות | עומר אוברגוט ייצג את ישראל בגמר הברמנים העולמי
 
 ## Recent Feed A Seen But Filtered By Feed B
 
