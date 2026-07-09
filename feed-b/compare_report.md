@@ -1,49 +1,45 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-09T21:53:35+03:00
+נוצר: 2026-07-09T22:00:16+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-09T21:45:17+03:00
-- Feed A items: 2149
-- Feed A recent window: 24h / 677 items
-- Feed B run: feed-b-20260709T215335+0300
-- Feed B createdAt: 2026-07-09T21:53:35+03:00
-- Feed B raw candidates: 17
-- Feed B passed to editor: 12
-- Feed B rejected before AI: 5
-- Estimated smart LLM calls: 12
+- Feed A updatedAt: 2026-07-09T21:53:35+03:00
+- Feed A items: 2147
+- Feed A recent window: 24h / 673 items
+- Feed B run: feed-b-20260709T220016+0300
+- Feed B createdAt: 2026-07-09T22:00:16+03:00
+- Feed B raw candidates: 13
+- Feed B passed to editor: 5
+- Feed B rejected before AI: 8
+- Estimated smart LLM calls: 5
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 5
+- duplicate_with_feed_b: 1
+- main_feed_b_breaking_source: 6
+- text_too_short: 2
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 12
-- Recent Feed A not in Feed B passed list: 677
-- Recent Feed A not seen by Feed B raw input: 677
+- Feed B passed but not currently in Feed A: 5
+- Recent Feed A not in Feed B passed list: 673
+- Recent Feed A not seen by Feed B raw input: 673
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-09T21:32:18+03:00 | ynet - כל ערוץ הספורט | קרולינה מוחובה הדיחה את קוקו גוף ועלתה לגמר ווימבלדון
-- 2026-07-09T21:53:17+03:00 | וואלה חדשות - דעות ופרשנויות | לוין ורוטמן אולי נכשלו בחקיקה, אך את המשבר החוקתי הם הצליחו להביא
-- 2026-07-09T21:53:18+03:00 | וואלה ספורט | רבע הגמר הראשון ב-23:00: פורסמו ההרכבים של צרפת ומרוקו
-- 2026-07-09T21:53:18+03:00 | וואלה ספורט | המעבר הגדול הושלם: ים מדר חתם רשמית במכבי תל אביב
-- 2026-07-09T21:53:18+03:00 | וואלה ספורט | הארכת חוזהו של אבדיה היא מטרת העל - מי ישלם את המחיר?
-- 2026-07-09T21:53:18+03:00 | וואלה ספורט - NBA | "אם מייקל ג'ורדן שב לשיקגו - גם לברון יכול לחזור ללייקרס"
-- 2026-07-09T21:53:19+03:00 | וואלה ספורט - טניס | "נלחצתי": קוקו גוף נתלית בפדרר וסינר אחרי הרגע שניפץ לה חלום
-- 2026-07-09T21:53:20+03:00 | וואלה ספורט - ענפים נוספים | סמדג'ה תובע את איגוד הג'ודו ופונטי בכ-2.5 מיליון שקל
-- 2026-07-09T21:53:20+03:00 | וואלה כסף | רשתות האופנה עונות וג'אמפ הגישו בקשת הקפאת הליכים דחופה בשל חובות של 38 מיליון שקלים
-- 2026-07-09T21:24:17+03:00 | מעריב - דעות | לא מספיק להציל אישה מאלימות, צריך לאפשר לה לחיות
-- 2026-07-09T21:44:22+03:00 | דה מרקר - צרכנות | לאחר מותו של המייסד: עונות ג'אמפ מבקשת פתיחת הליכים
-- 2026-07-09T20:41:00+03:00 | גלובס - שיווק וצרכנות | חובות של 38 מיליון שקל: עונות וג’אמפ מבקשות הקפאת הליכים
+- 2026-07-09T21:55:47+03:00 | ynet - כל ערוץ החדשות | "נשיא לבנון קושר בין נסיגה לעוד שיחות", בארה"ב מבטיחים: הפיילוט יחל בקרוב
+- 2026-07-09T22:00:02+03:00 | וואלה חדשות | לוין ורוטמן אולי נכשלו בחקיקה, אך את המשבר החוקתי הם הצליחו להביא
+- 2026-07-09T21:37:47+03:00 | Reuters Middle East דרך Google News | Cell behind Damascus bombings in custody, Syria says - Reuters
+- 2026-07-09T22:00:12+03:00 | The Jerusalem Post - Israel News | Netanyahu a ‘burden to Trump,' dismantled US-Israel ties, Liberman tells ‘Post’ - interview
+- 2026-07-09T22:00:12+03:00 | The Jerusalem Post - Middle East | Escalating conflict 'won't work well' for Iran, US envoy to Israel Mike Huckabee says
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-09T21:53:18+03:00 | וואלה ספורט | צרפת ומרוקו פרסמו הרכבים לרבע גמר המונדיאל
 - 2026-07-09T21:45:02+03:00 | וואלה חדשות - חדשות בארץ | שני בכירים בארגון חרירי נעצרו אחרי הפרת צווים
 - 2026-07-09T21:43:05+03:00 | The Jerusalem Post - Israel News | סקר: יותר מרבע מהנשים בישראל חוו אלימות מקרוב
 - 2026-07-09T21:36:18+03:00 | וואלה TECH | מטא פתחה תמונות אינסטגרם ציבוריות ליצירת AI
@@ -55,7 +51,6 @@
 - 2026-07-09T21:26:49+03:00 | ynet - כל ערוץ החדשות | ירושלים נסוגה מהקמת בית ספר בביקור חולים
 - 2026-07-09T21:24:43+03:00 | ישראל היום - כל הכתבות | הממשלה תקצץ 568 מיליון שקל למאבק בפשיעה
 - 2026-07-09T21:24:16+03:00 | דוברות משטרת ישראל - טלגרם רשמי | הוסגר לישראל נאשם בפרשת הימורים והלבנת הון
-- 2026-07-09T21:22:00+03:00 | ישראל היום - כל הכתבות | רשתות עונות וג׳אמפ ביקשו הקפאת הליכים
 
 ## Recent Feed A Seen But Filtered By Feed B
 
