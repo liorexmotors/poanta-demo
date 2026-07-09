@@ -1,44 +1,52 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-09T08:01:04+03:00
+נוצר: 2026-07-09T08:15:30+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-09T07:50:27+03:00
-- Feed A items: 2000
-- Feed A recent window: 24h / 656 items
-- Feed B run: feed-b-20260709T080104+0300
-- Feed B createdAt: 2026-07-09T08:01:04+03:00
-- Feed B raw candidates: 17
-- Feed B passed to editor: 4
-- Feed B rejected before AI: 13
-- Estimated smart LLM calls: 4
+- Feed A updatedAt: 2026-07-09T08:01:04+03:00
+- Feed A items: 1999
+- Feed A recent window: 24h / 654 items
+- Feed B run: feed-b-20260709T081530+0300
+- Feed B createdAt: 2026-07-09T08:15:30+03:00
+- Feed B raw candidates: 30
+- Feed B passed to editor: 22
+- Feed B rejected before AI: 8
+- Estimated smart LLM calls: 22
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 1
-- main_feed_b_breaking_source: 10
+- main_feed_b_breaking_source: 6
 - non_hebrew_or_untranslated: 1
-- text_too_short: 7
+- text_too_short: 4
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 4
-- Recent Feed A not in Feed B passed list: 656
-- Recent Feed A not seen by Feed B raw input: 656
+- Feed B passed but not currently in Feed A: 22
+- Recent Feed A not in Feed B passed list: 654
+- Recent Feed A not seen by Feed B raw input: 654
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-09T07:38:36+03:00 | סרוגים - כל הכתבות | בגלל איראן? טראמפ ויתר ברגע האחרון על המטוס החדש
-- 2026-07-09T08:00:46+03:00 | וואלה חדשות | ההסלמה בטהרן והדריכות בישראל: כל התיעודים מהתקיפות האמריקניות
-- 2026-07-09T07:34:22+03:00 | Al Jazeera RSS מסונן מזרח תיכון | UK police arrest activists at Israeli-owned drone engine plant
-- 2026-07-09T07:30:51+03:00 | Al Jazeera RSS מסונן מזרח תיכון | ‘Double cross, first class’: Why India’s Modi wins so many foreign awards
+- 2026-07-09T07:51:33+03:00 | ישראל היום - כל הכתבות | אחרי הפרובוקציות במונדיאל: ה"פרס" של נבחרת מצרים למאמן
+- 2026-07-09T07:37:57+03:00 | ישראל היום - כל הכתבות | המלחמה על הרכבת: "מדובר במפגינים מקצועיים - הם לא גרים כאן בכלל"
+- 2026-07-09T07:57:47+03:00 | ynet - כל ערוץ החדשות | תריסים מוגפים, והחלפת "אייר פורס 1": טיסת טראמפ מטורקיה, והחשש מאיראן
+- 2026-07-09T08:10:03+03:00 | הארץ - כל הכתבות | שתי מנות מעולות לא מסתירות את האמת המרה: "משייה" הלכה לעולמה
+- 2026-07-09T08:14:29+03:00 | מעריב - חדשות | חייל מילואים מואשם שהוציא נשק מהבסיס - והעביר לרעולי פנים
+- 2026-07-09T07:42:00+03:00 | N12 - ביטחוני ופוליטי | "הוא רוצה להפוך לפוטין": אזהרת מערכת הביטחון בנוגע לארדואן - והחשש ממכירת המטוסים
+- 2026-07-09T07:15:00+03:00 | N12 - בעולם | דיווח: הטיסה החריגה של טראמפ בצל ההסלמה עם איראן
+- 2026-07-09T08:00:53+03:00 | The Guardian Middle East | ‘Here I can live a good life’: inside the Syrian commune where men are banned
+- 2026-07-09T08:04:00+03:00 | Reuters Middle East דרך Google News | How a Palestinian town is defending itself from Israeli settler attacks - Reuters
+- 2026-07-09T08:00:00+03:00 | JNS - Jewish News Syndicate | The Israeli legal system chooses the law over the people
+- 2026-07-09T08:13:56+03:00 | כאן דרך Google News | 8.7.2026-#התחלנו עם מאיה בצלאל וקותי סבג - כאן 11
+- 2026-07-09T07:35:45+03:00 | כאן דרך Google News | ארה"ב מחזירה מטוסי תדלוק אל המזרח התיכון וישראל - כאן 11
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-09T08:00:46+03:00 | וואלה חדשות | ארה״ב תקפה באיראן; צה״ל העלה דריכות להגנה
 - 2026-07-09T07:50:11+03:00 | וואלה כסף | רמי לוי בדרך למוצרי חשמל ובוחנת כניסה למלונאות
 - 2026-07-09T07:50:07+03:00 | וואלה ספורט | מאמן מצרים ימשיך עד אחרי מונדיאל 2030
 - 2026-07-09T07:50:07+03:00 | וואלה ספורט | אירלנד תמשיך לקיים את המשחקים מול ישראל
@@ -50,7 +58,6 @@
 - 2026-07-09T07:22:01+03:00 | כיפה - חדשות | ארה"ב תקפה כ-90 מטרות באיראן; טהרן מאיימת להגיב
 - 2026-07-09T07:20:32+03:00 | וואלה כסף | דוח העבודה: תעסוקת הגברים החרדים תקועה כבר עשור
 - 2026-07-09T07:20:28+03:00 | וואלה ספורט | שטילמן: מכבי תל אביב צריכה שינוי דחוף
-- 2026-07-09T07:20:10+03:00 | ynet - כל ערוץ הבריאות | התפרצות לגיונרים באפר איסט סייד: 28 נדבקו
 
 ## Recent Feed A Seen But Filtered By Feed B
 
