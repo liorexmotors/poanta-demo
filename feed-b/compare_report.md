@@ -1,46 +1,48 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-09T19:36:11+03:00
+נוצר: 2026-07-09T19:45:57+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-09T19:30:19+03:00
-- Feed A items: 2118
-- Feed A recent window: 24h / 666 items
-- Feed B run: feed-b-20260709T193611+0300
-- Feed B createdAt: 2026-07-09T19:36:11+03:00
-- Feed B raw candidates: 18
-- Feed B passed to editor: 16
-- Feed B rejected before AI: 2
-- Estimated smart LLM calls: 16
+- Feed A updatedAt: 2026-07-09T19:36:11+03:00
+- Feed A items: 2121
+- Feed A recent window: 24h / 665 items
+- Feed B run: feed-b-20260709T194557+0300
+- Feed B createdAt: 2026-07-09T19:45:57+03:00
+- Feed B raw candidates: 30
+- Feed B passed to editor: 18
+- Feed B rejected before AI: 12
+- Estimated smart LLM calls: 18
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 2
+- main_feed_b_breaking_source: 7
+- non_hebrew_or_untranslated: 2
+- text_too_short: 4
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 16
-- Recent Feed A not in Feed B passed list: 666
-- Recent Feed A not seen by Feed B raw input: 666
+- Feed B passed but not currently in Feed A: 18
+- Recent Feed A not in Feed B passed list: 665
+- Recent Feed A not seen by Feed B raw input: 665
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-09T18:55:29+03:00 | ynet - כל ערוץ התרבות | ראש העיר לונדון, שהאשים את ישראל ברצח עם, ביקר בתערוכת הנובה
-- 2026-07-09T18:41:07+03:00 | ynet - כל ערוץ התרבות | מסי כיכב - והרייטינג בישראל הסתבך: הטעות החריגה שנחשפה אחרי המשחק
-- 2026-07-09T18:51:00+03:00 | וואלה סלבס | ליאיר נתניהו הייתה סיבה טובה לשנות את השם
-- 2026-07-09T19:01:36+03:00 | מעריב - בריאות | אחרי גיל 60: איך מזהים נכון ומהר סימנים לדמנציה?
-- 2026-07-09T19:30:37+03:00 | Page Six רכילות חו״ל | Emmy Rossum dispels ‘common misconception’ about her shocking ‘Shameless’ exit years later
-- 2026-07-09T19:15:28+03:00 | Page Six רכילות חו״ל | Taylor Swift’s wedding dress designer has a surprisingly affordable Uniqlo collab
-- 2026-07-09T18:50:06+03:00 | Page Six רכילות חו״ל | Taylor Frankie Paul’s ex Dakota Mortensen scolded by judge for letting son, 2, ride on motorcycle amid custody battle
-- 2026-07-09T19:29:43+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Donna Air shows off her figure as she strips to a striped bikini while 'trying to stay cool' in the heatwave
-- 2026-07-09T19:26:43+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Hannah Waddingham, Lily James and Priyanka Chopra wow in Wimbledon white as the women take centre stage on and off the court with the first semi-finals underway
-- 2026-07-09T19:19:49+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Lisa Armstrong's best friend details makeup artist's 'rough time' following split from Ant McPartlin - but insists she's 'not bitter and is moving on'
-- 2026-07-09T19:19:09+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Devastated Kevin Bacon breaks silence on Footloose icon Bonnie Tyler's shock death at 75 on his birthday
-- 2026-07-09T19:18:12+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Travis Kelce reveals proposal details as he breaks silence five days after tying the knot with Taylor Swift in lavish MSG wedding
+- 2026-07-09T19:33:19+03:00 | דוברות משטרת ישראל - טלגרם רשמי | ​שוטרי מחוז ירושלים הותקפו באזור בר אילן על ידי כ-200 מתפרעים, בעקבות מעצר חשוד בפריצה לרכב
+- 2026-07-09T19:26:59+03:00 | ישראל היום - כל הכתבות | שנה שלישית ברציפות: מוחמד הוא השם הפופולרי ביותר בבריטניה
+- 2026-07-09T19:19:14+03:00 | ישראל היום - כל הכתבות | "ענאן חלאילי רצה רק אינטר, המאמן התקשר ואמר שיעשה הכל עבורו"
+- 2026-07-09T19:30:55+03:00 | ynet - כל ערוץ החדשות | הנוסח החרדי רוכך, המהות תישאר: "אין דבר כזה חוק יסוד 'הצהרתי', זה כמו שוחד בחירות"
+- 2026-07-09T19:26:21+03:00 | ynet - כל ערוץ החדשות | הושמדו 200 מטרים מתחת לקרקע של חיזבאללה, האתגר החדש: מחבלים כלואים
+- 2026-07-09T19:45:43+03:00 | וואלה חדשות | הישראלי שמוציא אתכם למסע בהפתעה בארץ מבלי שתדעו לאן
+- 2026-07-09T19:45:44+03:00 | וואלה חדשות - חדשות בארץ | אנרכיה בירושלים: שוטרים הותקפו - והתפרעויות החלו במקום
+- 2026-07-09T19:06:18+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Former US Olympian pleads not guilty in DC reflecting pool vandalism case
+- 2026-07-09T18:57:12+03:00 | Al Jazeera RSS מסונן מזרח תיכון | A quest for closure: In search of the missing after Venezuela’s earthquakes
+- 2026-07-09T19:45:52+03:00 | The Jerusalem Post - Israel News | At least one in four women experienced violent behavior from partner or relative, study finds
+- 2026-07-09T19:30:04+03:00 | ערוץ 7 / INN עברית | הרבנים דורשים: הפרדה - גם על המדרכה
+- 2026-07-09T19:26:36+03:00 | ערוץ 7 / INN עברית | תושב אריאל נעצר בחשד להלבנת הון בהיקף של כ-60 מיליון שקל
 
 ## Recent Feed A Not In Feed B Passed
 
@@ -51,11 +53,11 @@
 - 2026-07-09T19:25:50+03:00 | JNS - Jewish News Syndicate | מחקר: עורכי ויקיפדיה יהודים חוששים לעסוק בישראל
 - 2026-07-09T19:23:04+03:00 | JNS - Jewish News Syndicate | אישום בפנסילבניה: איום אנטישמי על המושל היהודי
 - 2026-07-09T19:21:03+03:00 | וואלה ספורט | ניב גבאי עבר בהשאלה לקרית שמונה
+- 2026-07-09T19:18:12+03:00 | Daily Mail TVShowbiz רכילות חו״ל | טרוויס קלסי סיפר כיצד תכנן להציע לטיילור סוויפט
+- 2026-07-09T19:17:06+03:00 | Daily Mail TVShowbiz רכילות חו״ל | כוכבת The Apprentice אושפזה בחשד לשבץ
 - 2026-07-09T19:15:17+03:00 | The Jerusalem Post - Israel News | נתניהו: איראן לא תשיג נשק גרעיני, עם הסכם או בלעדיו
 - 2026-07-09T19:15:09+03:00 | וואלה חדשות - צבא וביטחון | דובר חמאס חאזם קאסם נפצע בתקיפה בעזה
 - 2026-07-09T19:13:54+03:00 | ישראל היום - כל הכתבות | ניר כנען מוציא אלבום שני לקראת מופע בהיכל התרבות
-- 2026-07-09T19:13:35+03:00 | ישראל היום - כל הכתבות | גבריאל ארטמנקו מכוון למדליה עם נבחרת העתודה
-- 2026-07-09T19:12:41+03:00 | דוברות משטרת ישראל - טלגרם רשמי | 12 כלי רכב נתפסו במבצע אכיפה בחיפה והקריות
 
 ## Recent Feed A Seen But Filtered By Feed B
 
