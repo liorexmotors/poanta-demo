@@ -1,28 +1,30 @@
 {
-  "createdAt": "2026-07-09T19:00:29+03:00",
+  "createdAt": "2026-07-09T19:15:22+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-09T18:52:23+03:00",
-    "items": 2115,
+    "updatedAt": "2026-07-09T19:00:28+03:00",
+    "items": 2113,
     "recentWindowHours": 24,
-    "recentItems": 665
+    "recentItems": 664
   },
   "feedB": {
-    "runId": "feed-b-20260709T190028+0300",
-    "createdAt": "2026-07-09T19:00:28+03:00",
-    "rawCandidates": 32,
-    "passedToEditor": 22,
+    "runId": "feed-b-20260709T191521+0300",
+    "createdAt": "2026-07-09T19:15:21+03:00",
+    "rawCandidates": 27,
+    "passedToEditor": 17,
     "rejectedBeforeAi": 10,
-    "estimatedSmartLlmCalls": 22,
+    "estimatedSmartLlmCalls": 17,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
       "main_feed_b_breaking_source": 6,
-      "duplicate_with_feed_b": 4
+      "duplicate_with_feed_b": 1,
+      "text_too_short": 2,
+      "non_hebrew_or_untranslated": 1
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 21,
+    "feedBPassedNotInFeedA": 17,
     "feedARecentNotInFeedBPassed": 664,
     "feedARecentNotSeenByFeedBRaw": 664,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -30,91 +32,105 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
-        "publishedAt": "2026-07-09T18:50:04+03:00",
-        "source": "ynet - כל ערוץ החדשות",
-        "category": "פוליטיקה",
-        "title": "השרים והח\"כים בליכוד הופתעו: ההשתתפות בפריימריז תעלה פי 2",
-        "sourceUrl": "https://www.ynet.co.il/news/article/b1tdwbt7ml"
+        "publishedAt": "2026-07-09T19:12:41+03:00",
+        "source": "דוברות משטרת ישראל - טלגרם רשמי",
+        "category": "ספורט",
+        "title": "אמש ביצעו שוטרי אג\"מ מחוז חוף מתחנות נהריה וחיפה יחד עם רשות המסים מבצע אכיפה משולב באזור חיפה והקריות, במסגרת המאבק בעבירות כלכליות לצד חיזוק המשילות באכיפה נגד חייבים.",
+        "sourceUrl": "https://t.me/Israel_Police_100/4187"
       },
       {
-        "publishedAt": "2026-07-09T19:05:00+03:00",
-        "source": "וואלה חדשות",
+        "publishedAt": "2026-07-09T18:57:35+03:00",
+        "source": "ישראל היום - כל הכתבות",
         "category": "חדשות",
-        "title": "דווקא עכשיו: האי הכי יקר ביוון הפך פתאום להרבה יותר משתלם",
-        "sourceUrl": "https://travel.walla.co.il/item/3852283"
+        "title": "יואב צפיר על הקושי להיפרד מאמו בעודה בחיים: \"זה מעציב מאוד\"",
+        "sourceUrl": "https://www.israelhayom.co.il/lifestyle/family-and-parenting/article/20949052"
       },
       {
-        "publishedAt": "2026-07-09T19:00:15+03:00",
+        "publishedAt": "2026-07-09T18:49:39+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "פלילים",
+        "title": "כמעט בלי תיירים: המדינה שמסתירה כמה מהנופים היפים באסיה",
+        "sourceUrl": "https://www.israelhayom.co.il/travel/tourism-news/article/20948894"
+      },
+      {
+        "publishedAt": "2026-07-09T18:48:15+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "חדשות",
+        "title": "פרשנות: טל טיטו נראתה מסויגת בהתנצלות לאייל גולן",
+        "sourceUrl": "https://www.israelhayom.co.il/forreal/localy/article/20949072"
+      },
+      {
+        "publishedAt": "2026-07-09T18:35:58+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "פלילים",
+        "title": "קרא ל-7 באוקטובר ״הדבר היפה ביותר״ - בנורבגיה החליטו: ״לא עבירה פלילית״",
+        "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20949086"
+      },
+      {
+        "publishedAt": "2026-07-09T18:32:50+03:00",
+        "source": "ישראל היום - כל הכתבות",
+        "category": "ביטחון",
+        "title": "כוננות חירום בישראל: הפגישה בין טראמפ לנתניהו תסתיים בהשפלה?",
+        "sourceUrl": "https://www.israelhayom.co.il/magazine/hashavua/article/20948599"
+      },
+      {
+        "publishedAt": "2026-07-09T19:05:50+03:00",
+        "source": "סרוגים - כל הכתבות",
+        "category": "תרבות",
+        "title": "חזון חצי היובל התגשם: ספר התורה המיוחד הוכנס לישיבה בהר עיבל",
+        "sourceUrl": "https://www.srugim.co.il/101006003-חזון-חצי-היובל-התגשם-ספר-התורה-המיוחד"
+      },
+      {
+        "publishedAt": "2026-07-09T19:15:09+03:00",
         "source": "וואלה חדשות",
         "category": "פוליטיקה",
         "title": "הישראלי שמוציא אתכם למסע בהפתעה בארץ מבלי שתדעו לאן",
         "sourceUrl": "https://travel.walla.co.il/item/3847919"
       },
       {
-        "publishedAt": "2026-07-09T19:00:16+03:00",
+        "publishedAt": "2026-07-09T19:15:09+03:00",
         "source": "וואלה חדשות - צבא וביטחון",
         "category": "ביטחון",
         "title": "דיווח: דובר חמאס חאזם קאסם נפצע בניסיון חיסול ברצועת עזה",
         "sourceUrl": "https://news.walla.co.il/item/3852336"
       },
       {
+        "publishedAt": "2026-07-09T19:14:42+03:00",
+        "source": "מעריב - חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "שריפה פרצה במפעל נעליים בסין, הנשיא: \"ישנם נפגעים רבים\"",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342724"
+      },
+      {
+        "publishedAt": "2026-07-09T19:07:57+03:00",
+        "source": "מעריב - חדשות",
+        "category": "משפט",
+        "title": "מעקבים המוניים ומניעת עו\"ד: הפנייה החריגה ליועמ\"שית ולמפכ\"ל",
+        "sourceUrl": "https://www.maariv.co.il/news/law/article-1342722"
+      },
+      {
+        "publishedAt": "2026-07-09T18:48:00+03:00",
+        "source": "גלובס - בארץ",
+        "category": "כלכלה",
+        "title": "חיסכון רפורמה בחסכונות? אולי עדיף לקרוא לזה מס חדש",
+        "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1001548892#utm_source=RSS"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
         "publishedAt": "2026-07-09T18:57:28+03:00",
         "source": "מעריב - חדשות",
-        "category": "פלילים",
-        "title": "\"סממנים של רצח עם\": בית הדין בהאג פרסם מסקנות על המלחמה בסודן",
+        "category": "אקטואליה בעולם",
+        "title": "בית הדין בהאג: ראיות לפשעי מלחמה בדרפור",
         "sourceUrl": "https://www.maariv.co.il/news/world/article-1342717"
       },
       {
         "publishedAt": "2026-07-09T18:56:58+03:00",
         "source": "מעריב - חדשות",
         "category": "אקטואליה בעולם",
-        "title": "1.4 מיליון הרוגים ופצועים לרוסיה, אבל פוטין מתכנן הסלמה",
+        "title": "באוקראינה מזהירים: פוטין נערך להסלמה נוספת",
         "sourceUrl": "https://www.maariv.co.il/news/world/article-1342718"
       },
-      {
-        "publishedAt": "2026-07-09T18:49:10+03:00",
-        "source": "מעריב - חדשות",
-        "category": "חדשות",
-        "title": "טלטלה נוספת בפולקסווגן: 100,000 משרות בסכנה",
-        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342691"
-      },
-      {
-        "publishedAt": "2026-07-09T18:48:29+03:00",
-        "source": "מעריב - חדשות",
-        "category": "ביטחון",
-        "title": "מתקפת ה\"חיוכים\" של סעודיה כלפי איראן מסתיר את הנקמה המתוקה",
-        "sourceUrl": "https://www.maariv.co.il/news/opinions/article-1342714"
-      },
-      {
-        "publishedAt": "2026-07-09T18:24:45+03:00",
-        "source": "New York Times Middle East",
-        "category": "ביטחון",
-        "title": "Gaza Aid Worker on His Way to Watch World Cup Killed by Israeli Strike",
-        "sourceUrl": "https://www.nytimes.com/2026/07/09/world/middleeast/aid-worker-killed-israeli-strike.html"
-      },
-      {
-        "publishedAt": "2026-07-09T18:50:55+03:00",
-        "source": "The Guardian Middle East",
-        "category": "ביטחון",
-        "title": "US and Iran exchange strikes: is Trump’s peace deal over? - The Latest",
-        "sourceUrl": "https://www.theguardian.com/news/audio/2026/jul/09/us-iran-strikes-trump-peace-deal-over-the-latest"
-      },
-      {
-        "publishedAt": "2026-07-09T18:31:54+03:00",
-        "source": "Reuters Middle East דרך Google News",
-        "category": "חדשות",
-        "title": "Carney pitches tighter Canada-Saudi mining and energy ties - Reuters",
-        "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcUVidVlYZTlkZTZjSG5oenMyTm0yV3ZhVzlwM0NIdmZLMVdiY0pGUVpUSmFYbU9WaERxRkZnY0NBUjdaVmszZGlueEV1ZElvbXp0c3N5X2I0RXlFWld6QXRzTVlodGhyVHlJcnpvU3lZWk1CNzBTUHJlZEdOZHdRMWJIblYwTE5HTTloU1RSVjZkR2RNUHBTQ1poUVhxQWtCcktjTFhOejFGb1hi?oc=5"
-      },
-      {
-        "publishedAt": "2026-07-09T18:38:49+03:00",
-        "source": "Al Jazeera RSS מסונן מזרח תיכון",
-        "category": "חדשות",
-        "title": "Chemical weapons watchdog restores Syria’s voting rights, citing progress",
-        "sourceUrl": "https://www.aljazeera.com/news/2026/7/9/chemical-weapons-watchdog-restores-syrias-voting-rights-citing-progress?traffic_source=rss"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
       {
         "publishedAt": "2026-07-09T18:52:03+03:00",
         "source": "וואלה ספורט",
@@ -128,6 +144,34 @@
         "category": "ספורט",
         "title": "שחקן טבריה סירב לעירוי; הכרעה בפרשה מתקרבת",
         "sourceUrl": "https://sports.walla.co.il/item/3852338"
+      },
+      {
+        "publishedAt": "2026-07-09T18:50:04+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "פוליטיקה",
+        "title": "בליכוד הכפילו את דמי ההשתתפות בפריימריז",
+        "sourceUrl": "https://www.ynet.co.il/news/article/b1tdwbt7ml"
+      },
+      {
+        "publishedAt": "2026-07-09T18:49:10+03:00",
+        "source": "מעריב - חדשות",
+        "category": "כלכלה",
+        "title": "פולקסווגן שוקלת קיצוץ ענק וסגירת מפעלים בגרמניה",
+        "sourceUrl": "https://www.maariv.co.il/news/world/article-1342691"
+      },
+      {
+        "publishedAt": "2026-07-09T18:48:49+03:00",
+        "source": "France24 Middle East",
+        "category": "ביטחון",
+        "title": "ארה\"ב ואיראן ממשיכות להחליף תקיפות זה היום השני",
+        "sourceUrl": "https://www.france24.com/en/iran-claims-us-strike-hit-near-nuclear-powerplant"
+      },
+      {
+        "publishedAt": "2026-07-09T18:46:38+03:00",
+        "source": "כיפה - חדשות",
+        "category": "פוליטיקה",
+        "title": "סקר: מפלגת הנדל וטרופר עוברת את אחוז החסימה",
+        "sourceUrl": "https://www.kipa.co.il/1227539-0"
       },
       {
         "publishedAt": "2026-07-09T18:45:30+03:00",
@@ -156,48 +200,6 @@
         "category": "ביטחון",
         "title": "הרמטכ״ל: עוקבים אחר איראן ולבנון ודרוכים לפעולה",
         "sourceUrl": "https://t.me/idf_telegram/24587"
-      },
-      {
-        "publishedAt": "2026-07-09T18:39:04+03:00",
-        "source": "ynet - כל ערוץ החדשות",
-        "category": "פוליטיקה",
-        "title": "אבו מאזן קבע בחירות לפרלמנט הפלסטיני בנובמבר",
-        "sourceUrl": "https://www.ynet.co.il/news/article/sj8cjmt7me"
-      },
-      {
-        "publishedAt": "2026-07-09T18:37:20+03:00",
-        "source": "מעריב - חדשות",
-        "category": "פלילים",
-        "title": "שלושה בני משפחה חשודים ברצח בן דודם בירושלים",
-        "sourceUrl": "https://www.maariv.co.il/news/law/article-1342700"
-      },
-      {
-        "publishedAt": "2026-07-09T18:31:01+03:00",
-        "source": "Mirror Celebs רכילות חו״ל",
-        "category": "רכילות",
-        "title": "פרן בריטון: לא הייתי חוזרת ל'רוקדים עם כוכבים'",
-        "sourceUrl": "https://www.mirror.co.uk/3am/celebrity-news/fern-britton-admits-i-should-37410187"
-      },
-      {
-        "publishedAt": "2026-07-09T18:30:53+03:00",
-        "source": "ערוץ 7 / INN עברית",
-        "category": "חדשות",
-        "title": "בן 6 נפגע מאופנוע ופונה במצב בינוני",
-        "sourceUrl": "https://www.inn.co.il/flashes/1121637"
-      },
-      {
-        "publishedAt": "2026-07-09T18:30:15+03:00",
-        "source": "The Jerusalem Post - Israel News",
-        "category": "ביטחון",
-        "title": "בצה\"ל מעריכים: ישראל לא תיגרר כעת לעימות איראן-ארה\"ב",
-        "sourceUrl": "https://www.jpost.com/israel-news/defense-news/article-902049"
-      },
-      {
-        "publishedAt": "2026-07-09T18:30:05+03:00",
-        "source": "וואלה חדשות - צבא וביטחון",
-        "category": "ביטחון",
-        "title": "כ\"ץ: צה\"ל מוכן לחידוש המערכה מול איראן",
-        "sourceUrl": "https://news.walla.co.il/item/3852330"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
