@@ -1,48 +1,53 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-10T08:15:24+03:00
+נוצר: 2026-07-10T08:25:28+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-10T08:00:35+03:00
-- Feed A items: 2189
-- Feed A recent window: 24h / 645 items
-- Feed B run: feed-b-20260710T081523+0300
-- Feed B createdAt: 2026-07-10T08:15:23+03:00
-- Feed B raw candidates: 19
-- Feed B passed to editor: 9
-- Feed B rejected before AI: 10
-- Estimated smart LLM calls: 9
+- Feed A updatedAt: 2026-07-10T08:15:23+03:00
+- Feed A items: 2192
+- Feed A recent window: 24h / 639 items
+- Feed B run: feed-b-20260710T082527+0300
+- Feed B createdAt: 2026-07-10T08:25:27+03:00
+- Feed B raw candidates: 24
+- Feed B passed to editor: 17
+- Feed B rejected before AI: 7
+- Estimated smart LLM calls: 17
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- main_feed_b_breaking_source: 8
-- text_too_short: 4
+- duplicate_with_feed_b: 7
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 9
-- Recent Feed A not in Feed B passed list: 645
-- Recent Feed A not seen by Feed B raw input: 645
+- Feed B passed but not currently in Feed A: 17
+- Recent Feed A not in Feed B passed list: 639
+- Recent Feed A not seen by Feed B raw input: 639
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-10T07:51:39+03:00 | ישראל היום - כל הכתבות | הקרן החדשה: הנשק האולטימטיבי של המונדיאל
-- 2026-07-10T07:31:24+03:00 | ישראל היום - כל הכתבות | לילה ללא תקיפות: בארה"ב מדווחים על שיחות - אבל מוכנים לפעול
-- 2026-07-10T08:01:14+03:00 | מעריב - חדשות | נתניהו חולם על אדם אחד שיציל אותו - גם אם שרה תתנגד
-- 2026-07-10T06:57:36+03:00 | Axios Israel/Iran דרך Google News | Regional mediators scramble to prevent U.S.-Iran deal from collapsing - Axios
-- 2026-07-10T07:51:45+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Tense standoff at an anti-migrant protest in a South African town
-- 2026-07-10T07:36:35+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Venezuela’s turn to Israel is about survival, not conviction
-- 2026-07-10T07:32:25+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Norway change World Cup team hotel in Miami days before England showdown
-- 2026-07-10T08:07:17+03:00 | JNS - Jewish News Syndicate | Israel U19 baseball team finds silver lining after Maccabiah loss to Team USA
-- 2026-07-10T08:06:15+03:00 | כיפה - חדשות | את ההשפלה הזאת נתניהו לא ציפה
+- 2026-07-10T08:00:00+03:00 | ynet - כל ערוץ הספורט | אם ככה נראה הישג - אולי למרוקו היה מוטב להיכשל
+- 2026-07-10T08:25:08+03:00 | וואלה ספורט | בפריז היה שקט, אבל אוהדי מרוקו התפרעו בלונדון, שוטר נפצע
+- 2026-07-10T08:25:08+03:00 | וואלה ספורט | "בחורה עירומה בחדר שלי - כך קיבלו אותי בפיורנטינה"
+- 2026-07-10T08:25:08+03:00 | וואלה ספורט | קשר נבחרת בנין הגיע להתרשמות בעירוני טבריה
+- 2026-07-10T08:25:08+03:00 | וואלה ספורט - כדורסל | "מודי מאור מונה לעוזר מאמן דאלאס מאבריקס"
+- 2026-07-10T08:25:12+03:00 | וואלה כסף | החגיגה נגמרה? כרישי וול סטריט מהמרים במיליארדים על פיצוץ בועת ה-AI
+- 2026-07-10T08:20:18+03:00 | הארץ - ספורט | מאמן נבחרת צרפת: האמנו שנעלה לחצי הגמר, גם אחרי החמצת הפנדל של אמבפה
+- 2026-07-10T08:09:10+03:00 | הארץ - ספורט | מרוקו נבחרת מצוינת, אבל אף אחת לא משתווה לצרפת
+- 2026-07-10T06:01:14+03:00 | מעריב - כלכלה בארץ | בדרך החוצה מהליכוד? השרה שמכינה את הקרקע לערוק למפלגה של בן גביר
+- 2026-07-10T08:01:14+03:00 | מעריב - דעות | נתניהו חולם על אדם אחד שיציל אותו - גם אם שרה תתנגד
+- 2026-07-10T07:54:48+03:00 | דה מרקר - גלובל | יותר מראש העיר וכל העובדים: שיאן השכר בעיריית ניו יורק הוא אינסטלטור
+- 2026-07-10T07:57:40+03:00 | דה מרקר - נדל״ן | מלך מרכזי הקניות בפריפריה ובחברה הערבית: רני צים לא מצטער על ההנפקה וחושב ששוק ההון לא מבין אותו
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-10T08:07:17+03:00 | JNS - Jewish News Syndicate | נבחרת ישראל עד גיל 19 בבייסבול סיימה שנייה במכביה
+- 2026-07-10T08:06:15+03:00 | כיפה - חדשות | סקר מעריב: ישר עוקפת את הליכוד במנדט
 - 2026-07-10T08:00:32+03:00 | The Jerusalem Post - Israel News | סקר: מפלגת ישר של איזנקוט עוקפת את הליכוד
+- 2026-07-10T07:51:39+03:00 | ישראל היום - כל הכתבות | במונדיאל משנים את שיטת הקרנות בגלל ה-VAR
 - 2026-07-10T07:50:07+03:00 | וואלה ספורט | דשאן טען שעיכוב ה-VAR פגע בפנדל של אמבפה
 - 2026-07-10T07:50:07+03:00 | וואלה ספורט | איגוד הג׳ודו השיב לתביעת סמדג׳ה
 - 2026-07-10T07:47:55+03:00 | ynet - כל ערוץ הכלכלה | SK Hynix השלימה הנפקת ענק בניו יורק
@@ -51,9 +56,6 @@
 - 2026-07-10T07:30:56+03:00 | ynet - כל ערוץ הכלכלה | הותמ״ל הוארכה בשנה, עם מגבלות על קרקע חקלאית
 - 2026-07-10T07:23:00+03:00 | גלובס - שוק ההון | אקמן מרחיב את פרשינג ומסמן עוד השקעות בישראל
 - 2026-07-10T07:21:00+03:00 | גלובס - בארץ | בארה״ב מבהירים: המידע על איום איראני נגד טראמפ לא אומת
-- 2026-07-10T07:20:21+03:00 | וואלה ספורט | מוזס רייט ביטל את המעבר לברצלונה ומתקרב למילאנו
-- 2026-07-10T07:18:13+03:00 | ערוץ 7 / INN עברית | רוכב קורקינט נפצע קשה בתאונה ברחוב דיזינגוף
-- 2026-07-10T07:15:26+03:00 | ynet - כל ערוץ הספורט | צרפת בחצי הגמר: ויירה מציב אותה כפייבוריטית לזכייה
 
 ## Recent Feed A Seen But Filtered By Feed B
 
