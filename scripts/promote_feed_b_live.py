@@ -9,12 +9,18 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
+
+try:
+    from poenta_image_bank import apply_image_bank_to_item
+except Exception:  # pragma: no cover - live promotion must stay usable without the optional bank
+    apply_image_bank_to_item = None
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -76,6 +82,8 @@ def candidate_payload(source: dict[str, Any], items: list[dict[str, Any]], limit
         if not str(fixed.get("imageUrl") or "").strip():
             fixed["imageUrl"] = default_image_url(fixed)
             fixed["imageFallbackKind"] = default_image_kind(fixed)
+        if os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_image_bank_to_item:
+            fixed, _image_bank_info = apply_image_bank_to_item(fixed)
         selected.append(fixed)
         seen.add(url)
         if limit > 0 and len(selected) >= limit:
