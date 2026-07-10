@@ -5,9 +5,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+
+try:
+    from poenta_image_bank import apply_image_bank_to_item
+except Exception:  # pragma: no cover - live promotion must stay usable without the optional bank
+    apply_image_bank_to_item = None
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -76,6 +82,8 @@ def normalize_item(item: dict[str, Any]) -> dict[str, Any]:
         kind = default_image_kind(fixed)
         fixed["imageUrl"] = f"https://poanta-demo.pages.dev/assets/feed-defaults/{kind}.png"
         fixed["imageFallbackKind"] = kind
+    if os.environ.get("POENTA_IMAGE_BANK_ENABLED") == "1" and apply_image_bank_to_item:
+        fixed, _info = apply_image_bank_to_item(fixed)
     return fixed
 
 
