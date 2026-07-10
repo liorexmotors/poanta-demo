@@ -1,36 +1,42 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-10T09:51:31+03:00
+נוצר: 2026-07-10T10:00:19+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-10T09:45:14+03:00
-- Feed A items: 2213
-- Feed A recent window: 24h / 623 items
-- Feed B run: feed-b-20260710T095130+0300
-- Feed B createdAt: 2026-07-10T09:51:30+03:00
-- Feed B raw candidates: 2
-- Feed B passed to editor: 2
-- Feed B rejected before AI: 0
-- Estimated smart LLM calls: 2
+- Feed A updatedAt: 2026-07-10T09:51:30+03:00
+- Feed A items: 2212
+- Feed A recent window: 24h / 619 items
+- Feed B run: feed-b-20260710T100018+0300
+- Feed B createdAt: 2026-07-10T10:00:18+03:00
+- Feed B raw candidates: 13
+- Feed B passed to editor: 6
+- Feed B rejected before AI: 7
+- Estimated smart LLM calls: 6
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- אין
+- duplicate_with_feed_b: 2
+- main_feed_b_breaking_source: 5
+- text_too_short: 3
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 2
-- Recent Feed A not in Feed B passed list: 623
-- Recent Feed A not seen by Feed B raw input: 623
+- Feed B passed but not currently in Feed A: 6
+- Recent Feed A not in Feed B passed list: 619
+- Recent Feed A not seen by Feed B raw input: 619
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-10T09:45:02+03:00 | דה מרקר - גלובל | ענקית ההשקעות אפולו הגישה הצעה מתחרה לרכישת איזיג'ט
-- 2026-07-10T09:25:15+03:00 | דה מרקר - כל הכתבות | הדו"ח שהוגש למל"ג ונגנז: אין הצדקה להרחבת ההפרדה המגדרית באקדמיה
+- 2026-07-10T09:44:56+03:00 | סרוגים - כל הכתבות | דיווח דרמטי: סמוטריץ' בדרך לליכוד
+- 2026-07-10T10:00:05+03:00 | וואלה חדשות | גבירותי ורבותיי, מהפך: איזנקוט עוקף את נתניהו במספר המנדטים
+- 2026-07-10T09:48:03+03:00 | מעריב - חדשות | גיהנום עלי אדמות בספרד: 12 הרוגים בשריפת ענק - וזו רק ההתחלה
+- 2026-07-10T09:43:00+03:00 | גלובס - משפט | יחסינו לאן? שוכר ומשכיר בעידן שבו ממ"ד כבר אינו מותרות
+- 2026-07-10T10:00:15+03:00 | The Jerusalem Post - Israel News | Four injured in Tayibe apartment fire, including mother and children
+- 2026-07-10T09:44:50+03:00 | JNS - Jewish News Syndicate | 'Israel warned Washington of Iranian plot to assassinate Trump'
 
 ## Recent Feed A Not In Feed B Passed
 
