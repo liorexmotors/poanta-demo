@@ -1,40 +1,40 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-10T07:00:30+03:00
+נוצר: 2026-07-10T07:16:05+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-10T06:50:32+03:00
-- Feed A items: 2187
-- Feed A recent window: 24h / 657 items
-- Feed B run: feed-b-20260710T070029+0300
-- Feed B createdAt: 2026-07-10T07:00:29+03:00
-- Feed B raw candidates: 14
-- Feed B passed to editor: 4
-- Feed B rejected before AI: 10
-- Estimated smart LLM calls: 4
+- Feed A updatedAt: 2026-07-10T07:00:29+03:00
+- Feed A items: 2188
+- Feed A recent window: 24h / 652 items
+- Feed B run: feed-b-20260710T071605+0300
+- Feed B createdAt: 2026-07-10T07:16:05+03:00
+- Feed B raw candidates: 13
+- Feed B passed to editor: 5
+- Feed B rejected before AI: 8
+- Estimated smart LLM calls: 5
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- main_feed_b_breaking_source: 8
-- non_hebrew_or_untranslated: 2
+- main_feed_b_breaking_source: 6
 - text_too_short: 2
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 4
-- Recent Feed A not in Feed B passed list: 657
-- Recent Feed A not seen by Feed B raw input: 657
+- Feed B passed but not currently in Feed A: 5
+- Recent Feed A not in Feed B passed list: 652
+- Recent Feed A not seen by Feed B raw input: 652
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-10T01:49:04+03:00 | כאן דרך Google News | דיווח בארה"ב: ישראל העבירה מידע מודיעיני לפיו איראן שוקלת תוכנית התנקשות בטראמפ - כאן 11
-- 2026-07-10T06:56:05+03:00 | Israel National News English | Egyptian soccer official links World Cup exit to coach’s pro-Gaza activism
-- 2026-07-10T06:15:11+03:00 | Israel National News English | Pennsylvania man arrested after directing antisemitic threats at Gov. Shapiro
-- 2026-07-10T06:02:25+03:00 | Israel National News English | Report: EU mulling restrictions on imports from Judea and Samaria and Golan Heights
+- 2026-07-10T06:51:59+03:00 | ישראל היום - כל הכתבות | רחפני נפץ ותיאוריות קיצונית: כתב אישום חדש כנגד מתכנני הפיגוע בבית הלבן
+- 2026-07-10T06:30:42+03:00 | ישראל היום - כל הכתבות | רבי המכר של ישראל היום: ספרות הנשים חוזרת לככב
+- 2026-07-10T07:03:25+03:00 | ynet - כל ערוץ החדשות | בנושאת המטוסים הזהירו ש"זה מתחמם" - וגורם אמריקני הודיע: "עכשיו הדיפלומטיה מובילה"
+- 2026-07-10T06:58:47+03:00 | ynet - כל ערוץ החדשות | צעיר נהרג בהתנגשות עם משאית בערבה
+- 2026-07-10T07:13:43+03:00 | מעריב - חדשות | האופציה הכי פחות גרועה: מצור מוחלט על איראן אחרי בחירות האמצע
 
 ## Recent Feed A Not In Feed B Passed
 
