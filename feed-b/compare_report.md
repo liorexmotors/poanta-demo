@@ -1,49 +1,50 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-10T13:00:29+03:00
+נוצר: 2026-07-10T13:15:16+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-10T12:50:23+03:00
-- Feed A items: 2236
-- Feed A recent window: 24h / 574 items
-- Feed B run: feed-b-20260710T130028+0300
-- Feed B createdAt: 2026-07-10T13:00:28+03:00
-- Feed B raw candidates: 19
-- Feed B passed to editor: 10
-- Feed B rejected before AI: 9
-- Estimated smart LLM calls: 10
+- Feed A updatedAt: 2026-07-10T13:00:28+03:00
+- Feed A items: 2237
+- Feed A recent window: 24h / 571 items
+- Feed B run: feed-b-20260710T131515+0300
+- Feed B createdAt: 2026-07-10T13:15:15+03:00
+- Feed B raw candidates: 26
+- Feed B passed to editor: 9
+- Feed B rejected before AI: 17
+- Estimated smart LLM calls: 9
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
-- duplicate_with_feed_b: 1
 - main_feed_b_breaking_source: 6
-- text_too_short: 4
+- non_hebrew_or_untranslated: 8
+- text_too_short: 5
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 10
-- Recent Feed A not in Feed B passed list: 574
-- Recent Feed A not seen by Feed B raw input: 574
+- Feed B passed but not currently in Feed A: 9
+- Recent Feed A not in Feed B passed list: 571
+- Recent Feed A not seen by Feed B raw input: 571
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-10T13:00:16+03:00 | וואלה חדשות | "מקווה שאנשים יהנו, ושיהיה מספיק חלב": תמיכה חילונית מול הפגנה חרדית מול בית הקפה בירושלים
-- 2026-07-10T13:00:00+03:00 | וואלה חדשות - צבא וביטחון | הזיגזג של טראמפ, הברקס של ביידן: מי באמת שומר על השמיים של ישראל?
-- 2026-07-10T12:00:06+03:00 | New York Times Middle East | Iran’s Supreme Leader Remains Absent, a Void at the Top of the Regime
-- 2026-07-10T04:05:12+03:00 | New York Times Middle East | Bombing Iran, Then a Tentative Accord Didn’t Work. Does Trump Have a Plan C?
-- 2026-07-10T04:00:57+03:00 | New York Times Middle East | Iranian Attacks on Jordan Highlight Kingdom’s Difficult Position
-- 2026-07-10T12:47:19+03:00 | Al Jazeera RSS מסונן מזרח תיכון | UK police confront Morocco fans over unrest after World Cup loss
-- 2026-07-10T12:28:32+03:00 | Al Jazeera RSS מסונן מזרח תיכון | EU states do not need ‘consensus’ to hold Israel accountable
-- 2026-07-10T12:25:38+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Trump grants Kyiv Patriots licences: What’s next in the Russia-Ukraine war?
-- 2026-07-10T12:21:22+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Bomb attacks rattle Damascus but for most Syrians, life goes on
-- 2026-07-10T12:00:41+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Watch World Cup: France ends Morocco’s run, cruises into semifinals
+- 2026-07-10T12:56:28+03:00 | ישראל היום - כל הכתבות | בגיל 86: השחקן האגדי מתייחס לדיווחים על פרישתו
+- 2026-07-10T12:54:04+03:00 | ישראל היום - כל הכתבות | 13 בני אדם נפצעו בתאונה בכביש 6 - בהם בת חמש במצב קשה
+- 2026-07-10T12:47:48+03:00 | ישראל היום - כל הכתבות | לא רק 'הלוואות קבלן': כך מנסים היזמים לשכנע אותכם לקנות דירה בשוק שמתקרר
+- 2026-07-10T12:43:41+03:00 | ישראל היום - כל הכתבות | אינטר תשלם למכבי חיפה: ענאן חלאילי במילאנו לקראת החתימה
+- 2026-07-10T12:36:21+03:00 | ישראל היום - כל הכתבות | סערת ערוץ 12: דרישה לחשוף את "השיחה הארוכה" בין ראש השב"כ וברדוגו
+- 2026-07-10T12:35:37+03:00 | Axios Israel/Iran דרך Google News | MAGA figures flock to Charlie Kirk murder hearing - Axios
+- 2026-07-10T13:15:12+03:00 | The Jerusalem Post - Israel News | Police foil terror plot targeting Beersheba police, central bus stations, four arrested
+- 2026-07-10T13:07:45+03:00 | The Media Line | US Begins Process To Remove Syria From Terrorism List, Signaling Major Shift in Relations
+- 2026-07-10T13:05:46+03:00 | כיפה - חדשות | כדי שאף עולה לא יישאר לבד: התוכנית החדשה של תנועת עזרא
 
 ## Recent Feed A Not In Feed B Passed
 
+- 2026-07-10T13:00:16+03:00 | וואלה חדשות | ירושלים נערכת לעימות נוסף סביב בית קפה שפתוח בשבת
+- 2026-07-10T13:00:00+03:00 | וואלה חדשות - צבא וביטחון | טראמפ שוקל F-35 לטורקיה וישראל חוששת לפער האווירי
 - 2026-07-10T12:50:02+03:00 | וואלה ספורט | בני יהודה והפועל ירושלים סיימו ב-2:2 בהדר יוסף
 - 2026-07-10T12:50:02+03:00 | וואלה ספורט | שייק קייטה חתם בהפועל חיפה לעונה עם אופציה
 - 2026-07-10T12:47:26+03:00 | מעריב - כלכלה | הנחות הארנונה צפויות לגדול בכמיליארד שקל
@@ -54,8 +55,6 @@
 - 2026-07-10T12:39:33+03:00 | מעריב - חדשות | סקר מעריב: אייזנקוט מתחזק, הגושים עדיין בקיפאון
 - 2026-07-10T12:30:01+03:00 | וואלה חדשות | אישום: ארבעה משגב שלום תכננו פיגוע בבאר שבע
 - 2026-07-10T12:24:26+03:00 | France24 Middle East | חמאס הודיע על פירוק ממשלתו בפועל בעזה
-- 2026-07-10T12:24:02+03:00 | הארץ - כל הכתבות | מרוקו בונה כוח חדש סביב כישרונות שגדלו בצרפת
-- 2026-07-10T12:20:58+03:00 | Mirror Celebs רכילות חו״ל | הארי הגיע לאירוע האינוויקטוס בלי מייגן והילדים
 
 ## Recent Feed A Seen But Filtered By Feed B
 
