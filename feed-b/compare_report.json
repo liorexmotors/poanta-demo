@@ -1,27 +1,29 @@
 {
-  "createdAt": "2026-07-10T08:51:14+03:00",
+  "createdAt": "2026-07-10T09:00:32+03:00",
   "feedA": {
     "path": "feed.json",
-    "updatedAt": "2026-07-10T08:45:27+03:00",
-    "items": 2197,
+    "updatedAt": "2026-07-10T08:51:13+03:00",
+    "items": 2196,
     "recentWindowHours": 24,
     "recentItems": 633
   },
   "feedB": {
-    "runId": "feed-b-20260710T085113+0300",
-    "createdAt": "2026-07-10T08:51:13+03:00",
-    "rawCandidates": 8,
-    "passedToEditor": 5,
-    "rejectedBeforeAi": 3,
-    "estimatedSmartLlmCalls": 5,
+    "runId": "feed-b-20260710T090031+0300",
+    "createdAt": "2026-07-10T09:00:31+03:00",
+    "rawCandidates": 13,
+    "passedToEditor": 4,
+    "rejectedBeforeAi": 9,
+    "estimatedSmartLlmCalls": 4,
     "estimatedSmartTokens": 0,
     "alreadySeenInFeedA": 0,
     "rejectReasons": {
-      "duplicate_with_feed_b": 3
+      "text_too_short": 1,
+      "main_feed_b_breaking_source": 6,
+      "duplicate_with_feed_b": 2
     }
   },
   "comparison": {
-    "feedBPassedNotInFeedA": 5,
+    "feedBPassedNotInFeedA": 4,
     "feedARecentNotInFeedBPassed": 633,
     "feedARecentNotSeenByFeedBRaw": 633,
     "feedARecentSeenButFilteredByFeedB": 0
@@ -29,42 +31,63 @@
   "samples": {
     "feedBPassedNotInFeedA": [
       {
+        "publishedAt": "2026-07-10T08:48:11+03:00",
+        "source": "ynet - כל ערוץ החדשות",
+        "category": "אקטואליה בעולם",
+        "title": "תיעוד: פלישת נחשים ארסיים בעיר מוכת השיטפון",
+        "sourceUrl": "https://www.ynet.co.il/news/article/hk2800e0xzx"
+      },
+      {
+        "publishedAt": "2026-07-10T09:00:17+03:00",
+        "source": "וואלה חדשות",
+        "category": "פוליטיקה",
+        "title": "גבירותי ורבותיי, מהפך: איזנקוט עוקף את נתניהו במספר המנדטים",
+        "sourceUrl": "https://news.walla.co.il/item/3852348"
+      },
+      {
+        "publishedAt": "2026-07-10T08:50:53+03:00",
+        "source": "מעריב - חדשות",
+        "category": "אקטואליה בעולם",
+        "title": "הניתוק מארה\"ב החל? רפאל במהלך דרמטי בנוגע לייצור כיפת ברזל",
+        "sourceUrl": "https://www.maariv.co.il/news/military/article-1342869"
+      },
+      {
+        "publishedAt": "2026-07-10T08:50:21+03:00",
+        "source": "כיפה - חדשות",
+        "category": "חדשות",
+        "title": "המהלך החשאי של בן גביר: להשתלט מבפנים על הליכוד",
+        "sourceUrl": "https://www.kipa.co.il/1227562-0"
+      }
+    ],
+    "feedARecentNotInFeedBPassed": [
+      {
+        "publishedAt": "2026-07-10T08:50:39+03:00",
+        "source": "מעריב - כלכלה",
+        "category": "כלכלה",
+        "title": "ההייטק הישראלי גייס 7.6 מיליארד דולר בחצי שנה",
+        "sourceUrl": "https://www.maariv.co.il/economy/international/article-1342697"
+      },
+      {
         "publishedAt": "2026-07-10T08:50:16+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "אחרי חתימת מדר: לונדברג, פרננדו והמועמד המפתיע במכבי תל אביב",
+        "title": "מכבי תל אביב מנסה לסגור את הסגל אחרי החתמת מדר",
         "sourceUrl": "https://sports.walla.co.il/item/3852433"
       },
       {
         "publishedAt": "2026-07-10T08:50:16+03:00",
         "source": "וואלה ספורט",
         "category": "ספורט",
-        "title": "\"בחורה עירומה בחדר שלי - כך קיבלו אותי בפיורנטינה\"",
-        "sourceUrl": "https://sports.walla.co.il/item/3852387"
-      },
-      {
-        "publishedAt": "2026-07-10T08:50:16+03:00",
-        "source": "וואלה ספורט",
-        "category": "ספורט",
-        "title": "קשר נבחרת בנין הגיע להתרשמות בעירוני טבריה",
+        "title": "קשר נבחרת בנין נבחן בעירוני טבריה במחנה בפולין",
         "sourceUrl": "https://sports.walla.co.il/item/3852405"
-      },
-      {
-        "publishedAt": "2026-07-10T08:50:39+03:00",
-        "source": "מעריב - כלכלה",
-        "category": "כלכלה",
-        "title": "7.6 מיליארד דולר: ההייטק הישראלי שוב ניצח את התחזיות השחורות",
-        "sourceUrl": "https://www.maariv.co.il/economy/international/article-1342697"
       },
       {
         "publishedAt": "2026-07-10T08:48:04+03:00",
         "source": "דה מרקר - שוק ההון",
         "category": "כלכלה",
-        "title": "מניות השבבים מטלטלות את הבורסות בעולם. מה יקרה הבוקר בת\"א?",
+        "title": "מניות השבבים חוזרות למרכז המסחר בתל אביב",
         "sourceUrl": "https://www.themarker.com/markets/2026-07-10/ty-article/0000019f-4a88-dc56-adff-6eeaadc00000"
-      }
-    ],
-    "feedARecentNotInFeedBPassed": [
+      },
       {
         "publishedAt": "2026-07-10T08:43:42+03:00",
         "source": "דוברות משטרת ישראל - טלגרם רשמי",
@@ -120,34 +143,6 @@
         "category": "ספורט",
         "title": "דשאן: צרפת לא איבדה אמונה אחרי הפנדל של אמבפה",
         "sourceUrl": "https://www.haaretz.co.il/sport/world-cup/2026-07-10/ty-article/0000019f-4a69-da1f-a9df-eefb89e50000"
-      },
-      {
-        "publishedAt": "2026-07-10T08:18:08+03:00",
-        "source": "כיפה - חדשות",
-        "category": "פוליטיקה",
-        "title": "קרעי: גלי צה״ל משדרת בניגוד להחלטת הממשלה",
-        "sourceUrl": "https://www.kipa.co.il/1227560-0"
-      },
-      {
-        "publishedAt": "2026-07-10T08:16:29+03:00",
-        "source": "ישראל היום - כל הכתבות",
-        "category": "אקטואליה בעולם",
-        "title": "12 נהרגו בשריפת יער בדרום ספרד",
-        "sourceUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/20951306"
-      },
-      {
-        "publishedAt": "2026-07-10T08:07:17+03:00",
-        "source": "JNS - Jewish News Syndicate",
-        "category": "ספורט",
-        "title": "נבחרת ישראל עד גיל 19 בבייסבול סיימה שנייה במכביה",
-        "sourceUrl": "https://www.jns.org/feature/israel-u19-baseball-team-finds-silver-lining-after-maccabiah-loss-to-team-usa"
-      },
-      {
-        "publishedAt": "2026-07-10T08:06:15+03:00",
-        "source": "כיפה - חדשות",
-        "category": "פוליטיקה",
-        "title": "סקר מעריב: ישר עוקפת את הליכוד במנדט",
-        "sourceUrl": "https://www.kipa.co.il/1227559-0"
       }
     ],
     "feedARecentSeenButFilteredByFeedB": []
