@@ -19,6 +19,7 @@ import sys
 import argparse
 import time
 import html
+import os
 from email.utils import parsedate_to_datetime
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
@@ -35,6 +36,11 @@ try:
     from pointa_quality_gate import validate_item as quality_validate_item
 except Exception:  # pragma: no cover - feed updater should still be importable standalone
     quality_validate_item = None
+
+try:
+    from poenta_image_bank import apply_image_bank_to_item as apply_poenta_image_bank_to_item
+except Exception:  # pragma: no cover - optional image-bank integration
+    apply_poenta_image_bank_to_item = None
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED_PATH = ROOT / "feed.json"
@@ -4140,6 +4146,8 @@ def merge_with_existing_feed(new_feed: dict, force_weather_card: bool = False) -
                 image = fetch_article_image(source_url)
                 if image:
                     item["imageUrl"] = image
+            if os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_poenta_image_bank_to_item:
+                item, _image_bank_info = apply_poenta_image_bank_to_item(item)
             merged.append(item)
             seen_keys.add(key)
     # Source timing diagnostics must outlive a single sync profile. Fast runs

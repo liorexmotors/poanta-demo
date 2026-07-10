@@ -82,7 +82,7 @@ def normalize_item(item: dict[str, Any]) -> dict[str, Any]:
         kind = default_image_kind(fixed)
         fixed["imageUrl"] = f"https://poanta-demo.pages.dev/assets/feed-defaults/{kind}.png"
         fixed["imageFallbackKind"] = kind
-    if os.environ.get("POENTA_IMAGE_BANK_ENABLED") == "1" and apply_image_bank_to_item:
+    if os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_image_bank_to_item:
         fixed, _info = apply_image_bank_to_item(fixed)
     return fixed
 

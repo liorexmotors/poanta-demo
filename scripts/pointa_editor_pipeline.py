@@ -648,6 +648,8 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
             image = fetch_article_image(str(item.get("sourceUrl") or ""))
             if image:
                 item["imageUrl"] = image
+        if os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_poenta_image_bank_to_item:
+            item, _image_bank_info = apply_poenta_image_bank_to_item(item)
         item["editorStatus"] = "pass"
         item["editorAddedAt"] = datetime.now().isoformat(timespec="seconds")
         url = item.get("sourceUrl")
