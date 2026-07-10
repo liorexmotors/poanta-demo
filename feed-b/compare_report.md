@@ -1,42 +1,43 @@
 # Feed B Compare Report
 
-נוצר: 2026-07-10T07:35:47+03:00
+נוצר: 2026-07-10T07:45:41+03:00
 
 ## Summary
 
-- Feed A updatedAt: 2026-07-10T07:30:29+03:00
-- Feed A items: 2188
-- Feed A recent window: 24h / 650 items
-- Feed B run: feed-b-20260710T073546+0300
-- Feed B createdAt: 2026-07-10T07:35:46+03:00
-- Feed B raw candidates: 9
-- Feed B passed to editor: 8
-- Feed B rejected before AI: 1
-- Estimated smart LLM calls: 8
+- Feed A updatedAt: 2026-07-10T07:35:46+03:00
+- Feed A items: 2185
+- Feed A recent window: 24h / 646 items
+- Feed B run: feed-b-20260710T074541+0300
+- Feed B createdAt: 2026-07-10T07:45:41+03:00
+- Feed B raw candidates: 18
+- Feed B passed to editor: 7
+- Feed B rejected before AI: 11
+- Estimated smart LLM calls: 7
 - Estimated smart tokens: 0
 - Already seen in Feed A: 0
 
 ## Reject Reasons
 
 - duplicate_with_feed_b: 1
+- main_feed_b_breaking_source: 10
+- text_too_short: 4
 
 ## A/B Comparison
 
-- Feed B passed but not currently in Feed A: 8
-- Recent Feed A not in Feed B passed list: 650
-- Recent Feed A not seen by Feed B raw input: 650
+- Feed B passed but not currently in Feed A: 7
+- Recent Feed A not in Feed B passed list: 646
+- Recent Feed A not seen by Feed B raw input: 646
 - Recent Feed A seen by Feed B but filtered out: 0
 
 ## Feed B Passed Not In Feed A
 
-- 2026-07-10T07:00:00+03:00 | ynet - כל ערוץ המחשבים | סוללה שלא נגמרת ועיצוב שקורץ לאייפון: לקחנו את ה-OnePlus 15 למבחן
-- 2026-07-10T07:00:00+03:00 | ynet - כל ערוץ היהדות | הקו שבין הפרדה מגדרית באקדמיה ל"משחקי השף"
-- 2026-07-10T07:00:00+03:00 | ynet - כל ערוץ היהדות | יש דבר חמקמק אחד שאי אפשר לכפות בחוקים ובסנקציות: אחווה
-- 2026-07-10T07:00:00+03:00 | ynet - כל ערוץ היהדות | למי אמר משה: "הַאַחֵיכֶם יָבֹאוּ לַמִּלְחָמָה וְאַתֶּם תֵּשְׁבוּ פֹה"?
-- 2026-07-10T07:01:14+03:00 | TMI - ראשי | הסודות מארץ הפלאות: הליהוק המסקרן שיחבור לטיילור מלכוב
-- 2026-07-10T07:23:25+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Jennifer Lopez is upstaged by her own SISTER in rivaling racy gown as the duo kick off singer's 57th birthday celebrations in Paris
-- 2026-07-10T06:44:14+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Multi-millionaire Selling Sunset star slams 'rude' fan who says she doesn't have to worry about money... as she dishes on her 'poor' upbringing
-- 2026-07-10T06:37:07+03:00 | Daily Mail TVShowbiz רכילות חו״ל | Aussie-American rocker Rick Springfield goes viral as he shows off his insane ripped body at 76 while performing shirtless on stage
+- 2026-07-10T07:25:39+03:00 | ישראל היום - כל הכתבות | אם תיזהר מדבר אחד - נבחרת צרפת תזכה במונדיאל
+- 2026-07-10T07:25:21+03:00 | ישראל היום - כל הכתבות | שמלה סופר קלילה וכפכפים נוחים: 5 פריטים לסופ"ש
+- 2026-07-10T07:45:29+03:00 | וואלה חדשות | כך בן גביר פועל להקים "סיעת עוצמה יהודית" בתוך הליכוד
+- 2026-07-10T07:21:00+03:00 | גלובס - בארץ | בכירים בארה"ב: ישראל העבירה מידע על שיח איראני להתנקש בטראמפ
+- 2026-07-10T07:27:01+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Which records has France’s Kylian Mbappe broken at FIFA World Cup 2026?
+- 2026-07-10T07:25:58+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Paris celebrates as France secures World Cup semi-final spot
+- 2026-07-10T07:03:36+03:00 | Al Jazeera RSS מסונן מזרח תיכון | Zelenskyy urges urgent efforts in Ukraine to start Patriot production
 
 ## Recent Feed A Not In Feed B Passed
 
