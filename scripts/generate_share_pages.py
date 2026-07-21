@@ -11,6 +11,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 APP_NAME = "Poenta"
 DEFAULT_IMAGE = "https://poenta.app/icon-512.png"
+LEGACY_ASSET_HOSTS = {"poanta-demo.pages.dev"}
 TRACKING_PREFIXES = ("utm_",)
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid", "ref", "ref_src"}
 
@@ -59,6 +60,19 @@ def description(item: dict) -> str:
     return compact(item.get("context") or item.get("summary") or item.get("takeaway") or item.get("originalTitle") or "פתחו את הידיעה ב־Poenta.", 220)
 
 
+def preview_image(item: dict, app_base: str) -> str:
+    """Return a stable HTTPS image URL for social preview crawlers."""
+    value = str(item.get("imageUrl") or DEFAULT_IMAGE).strip()
+    try:
+        parts = urlsplit(value)
+        if parts.netloc.lower() in LEGACY_ASSET_HOSTS and parts.path.startswith("/assets/"):
+            base = urlsplit(app_base)
+            return urlunsplit((base.scheme or "https", base.netloc, parts.path, "", ""))
+    except Exception:
+        pass
+    return value
+
+
 def safe_item(item: dict, sid: str, share_url: str) -> dict:
     keep = {
         "shareId": sid,
@@ -83,7 +97,7 @@ def safe_item(item: dict, sid: str, share_url: str) -> dict:
 def page_html(item: dict, sid: str, app_base: str, share_url: str) -> str:
     title = display_headline(item)
     desc = description(item)
-    image = str(item.get("imageUrl") or DEFAULT_IMAGE).strip()
+    image = preview_image(item, app_base)
     redirect = f"./../../app/?share={sid}&view=saved"
     canonical = share_url
     return f"""<!doctype html>
@@ -99,6 +113,7 @@ def page_html(item: dict, sid: str, app_base: str, share_url: str) -> str:
 <meta property=\"og:title\" content=\"{html.escape(title)}\">
 <meta property=\"og:description\" content=\"{html.escape(desc)}\">
 <meta property=\"og:image\" content=\"{html.escape(image)}\">
+<meta property=\"og:image:secure_url\" content=\"{html.escape(image)}\">
 <meta property=\"og:url\" content=\"{html.escape(canonical)}\">
 <meta name=\"twitter:card\" content=\"summary_large_image\">
 <meta name=\"twitter:title\" content=\"{html.escape(title)}\">

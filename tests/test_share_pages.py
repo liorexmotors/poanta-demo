@@ -55,7 +55,7 @@ def test_generates_whatsapp_preview_page_and_article_manifest(tmp_path):
     assert '<meta property="og:title" content="כותרת פואנטה לשיתוף">' in page
     assert '<meta property="og:description" content="זהו תקציר הידיעה שיופיע בתצוגה המקדימה של וואטסאפ.">' in page
     assert '<meta property="og:image" content="https://cdn.example/image.jpg">' in page
-    assert f"./../../?share={article['shareId']}&view=saved" in page
+    assert f"./../../app/?share={article['shareId']}&view=saved" in page
 
 
 def test_share_ids_are_stable_for_same_source_url_without_tracking_params(tmp_path):
@@ -72,3 +72,23 @@ def test_share_ids_are_stable_for_same_source_url_without_tracking_params(tmp_pa
     id_b = json.loads((run_generator(tmp_path / "b", feed_b) / "share" / "articles.json").read_text(encoding="utf-8"))["items"][0]["shareId"]
 
     assert id_a == id_b
+
+
+def test_rewrites_legacy_poenta_asset_host_for_whatsapp_preview(tmp_path):
+    feed = {
+        "items": [
+            {
+                "sourceUrl": "https://news.example/item/7",
+                "headline": "כותרת",
+                "context": "תקציר",
+                "imageUrl": "https://poanta-demo.pages.dev/assets/poenta-image-bank/card.jpg",
+            }
+        ]
+    }
+
+    out_dir = run_generator(tmp_path, feed)
+    article = json.loads((out_dir / "share" / "articles.json").read_text(encoding="utf-8"))["items"][0]
+    page = (out_dir / "share" / article["shareId"] / "index.html").read_text(encoding="utf-8")
+    expected = "https://example.com/assets/poenta-image-bank/card.jpg"
+    assert f'<meta property="og:image" content="{expected}">' in page
+    assert f'<meta property="og:image:secure_url" content="{expected}">' in page
