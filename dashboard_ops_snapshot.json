@@ -1,12 +1,12 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-07-25T18:52:28+03:00",
+  "generatedAt": "2026-07-25T19:04:13+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
       "status": "ok",
-      "checkedAt": "2026-07-25T18:52:18+03:00",
+      "checkedAt": "2026-07-25T19:04:01+03:00",
       "url": "feed.json",
       "updatedAt": "2026-07-25T18:52:14+03:00",
       "items": 3862,
@@ -15,14 +15,14 @@
           "publishedAt": "2026-07-25T18:50:35+03:00",
           "source": "וואלה ספורט - ענפים נוספים",
           "headline": "נוריס יזנק ראשון בגרנד פרי הונגריה",
-          "takeaway": "",
+          "takeaway": null,
           "url": "https://sports.walla.co.il/item/3856056"
         },
         {
           "publishedAt": "2026-07-25T18:50:31+03:00",
           "source": "וואלה ספורט",
           "headline": "נבחרת הנוער פתחה את אליפות אירופה בניצחון בהארכה",
-          "takeaway": "",
+          "takeaway": null,
           "url": "https://sports.walla.co.il/item/3856058"
         },
         {
@@ -101,7 +101,7 @@
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest הארץ item is older than 120m: 2026-07-25T16:46:41+03:00 (2:05:36.614964 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "message": "Latest הארץ item is older than 120m: 2026-07-25T16:46:41+03:00 (2:17:19.215417 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
           "item": 36,
           "headline": "שרידי בית כנסת ובתי לוויות נחשפו בוורשה",
           "source": "הארץ - חדשות",
@@ -110,7 +110,7 @@
         {
           "severity": "warning",
           "code": "stale_foreign_source_view",
-          "message": "Latest foreign-source item is older than 60m: 2026-07-25T15:41:14+03:00 (3:11:03.614964 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "message": "Latest foreign-source item is older than 60m: 2026-07-25T15:41:14+03:00 (3:22:46.215417 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
           "item": 53,
           "headline": "תינוקת חולצה מבית שהוצת במהלך פשיטות באזור שכם",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
@@ -130,7 +130,7 @@
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-07-25T18:52:23+03:00",
+      "checkedAt": "2026-07-25T19:04:07+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -434,11 +434,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 5689,
+          "ageMinutes": 5701,
           "latestAt": "2026-07-21T20:02:27+03:00",
           "headline": "צבא לבנון נכנס לעיירה בדרום אחרי נסיגת ישראל",
           "source": "Reuters Middle East דרך Google News",
-          "message": "No fresh foreign publication event for 5689 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 5701 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -447,11 +447,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 5567,
+          "ageMinutes": 5579,
           "latestAt": "2026-07-21T22:05:07+03:00",
           "headline": "בסוריה בוחנים פעולה נגד חיזבאללה בלבנון",
           "source": "כיפה - חדשות",
-          "message": "No fresh ביטחון publication event for 5567 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 5579 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -460,11 +460,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 5579,
+          "ageMinutes": 5591,
           "latestAt": "2026-07-21T21:53:00+03:00",
           "headline": "סמוטריץ׳ בוחן שילוב של אבישי בן חיים ברשימת הציונות הדתית",
           "source": "כיפה - חדשות",
-          "message": "No fresh פוליטיקה publication event for 5579 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 5591 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -473,11 +473,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 5582,
+          "ageMinutes": 5594,
           "latestAt": "2026-07-21T21:50:00+03:00",
           "headline": "שני פצועים בתאונה בכביש 6 ליד נווה ימין",
           "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh חדשות publication event for 5582 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 5594 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -486,11 +486,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 5618,
+          "ageMinutes": 5630,
           "latestAt": "2026-07-21T21:13:43+03:00",
           "headline": "קטטה בין נהגים ליד טרמינל 1 הסתיימה בפצוע ובמעצר",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh פלילים publication event for 5618 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 5630 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -499,11 +499,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 5788,
+          "ageMinutes": 5800,
           "latestAt": "2026-07-21T18:23:45+03:00",
           "headline": "קנסות של 120 אלף שקל למפעילי וילות נופש באילת",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh משפט publication event for 5788 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 5800 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -512,11 +512,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 5597,
+          "ageMinutes": 5609,
           "latestAt": "2026-07-21T21:34:41+03:00",
           "headline": "בטורקיה צפויה עדיפות ללירה חלשה על פני דיסאינפלציה",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh כלכלה publication event for 5597 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 5609 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -525,11 +525,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 6039,
+          "ageMinutes": 6051,
           "latestAt": "2026-07-21T14:13:00+03:00",
           "headline": "קניות מוצרי החשמל באונליין זינקו ב-28%",
           "source": "גלובס - שיווק וצרכנות",
-          "message": "No fresh צרכנות publication event for 6039 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 6051 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -538,11 +538,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 5922,
+          "ageMinutes": 5934,
           "latestAt": "2026-07-21T16:09:35+03:00",
           "headline": "ועדת המינויים פסלה את ממלא מקום מנכ\"ל רכבת ישראל",
           "source": "דה מרקר - כל הכתבות",
-          "message": "No fresh רכב publication event for 5922 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 5934 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -551,11 +551,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 5587,
+          "ageMinutes": 5599,
           "latestAt": "2026-07-21T21:44:31+03:00",
           "headline": "אתר הסקי של לסוטו מושך אלפי מבקרים לדרום אפריקה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh אקטואליה בעולם publication event for 5587 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 5599 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -570,11 +570,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 5910,
+          "ageMinutes": 5922,
           "latestAt": "2026-07-21T16:21:57+03:00",
           "headline": "נתוני השימוש והפיטורים מעמיקים את המשבר במיקרוסופט",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh טכנולוגיה publication event for 5910 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 5922 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -583,11 +583,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 5590,
+          "ageMinutes": 5602,
           "latestAt": "2026-07-21T21:42:00+03:00",
           "headline": "פרופ׳ שלמה משיח, מאבות הפריית המבחנה בישראל, הלך לעולמו",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh בריאות publication event for 5590 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 5602 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -596,11 +596,11 @@
           "code": "publication_timing_sla",
           "group": "תרבות",
           "thresholdMinutes": 120,
-          "ageMinutes": 5803,
+          "ageMinutes": 5814,
           "latestAt": "2026-07-21T18:09:22+03:00",
           "headline": "שחקנית סרטי גודזילה נהרגה בתאונה בארה\"ב",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh תרבות publication event for 5803 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh תרבות publication event for 5814 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -609,11 +609,11 @@
           "code": "publication_timing_sla",
           "group": "רכילות",
           "thresholdMinutes": 120,
-          "ageMinutes": 5603,
+          "ageMinutes": 5614,
           "latestAt": "2026-07-21T21:29:14+03:00",
           "headline": "מארק אנתוני הפך לאב בפעם השמינית",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "message": "No fresh רכילות publication event for 5603 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכילות publication event for 5614 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -622,11 +622,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 5687,
+          "ageMinutes": 5699,
           "latestAt": "2026-07-21T20:04:24+03:00",
           "headline": "בית המשפט: שוק מחנה יהודה לא ייחשב אזור מגורים",
           "source": "דה מרקר - נדל״ן",
-          "message": "No fresh נדל״ן publication event for 5687 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 5699 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -635,11 +635,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 5744,
+          "ageMinutes": 5756,
           "latestAt": "2026-07-21T19:07:41+03:00",
           "headline": "גל החום יימשך; הקלה קלה צפויה בסוף השבוע",
           "source": "סרוגים - כל הכתבות",
-          "message": "No fresh מזג אוויר publication event for 5744 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 5756 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -648,11 +648,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 5597,
+          "ageMinutes": 5609,
           "latestAt": "2026-07-21T21:34:41+03:00",
           "headline": "בטורקיה צפויה עדיפות ללירה חלשה על פני דיסאינפלציה",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh דה מרקר publication event for 5597 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 5609 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -661,11 +661,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 5621,
+          "ageMinutes": 5633,
           "latestAt": "2026-07-21T21:10:32+03:00",
           "headline": "צ'לסי רכשה את מורגן רוג'רס בסכום שיא לשחקן אנגלי",
           "source": "הארץ - ספורט",
-          "message": "No fresh הארץ publication event for 5621 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 5633 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -674,11 +674,11 @@
           "code": "publication_timing_sla",
           "group": "מעריב",
           "thresholdMinutes": 90,
-          "ageMinutes": 5614,
+          "ageMinutes": 5626,
           "latestAt": "2026-07-21T21:17:40+03:00",
           "headline": "ארה\"ב העלתה כוננות מחשש לפגיעה ביעדים ברחבי העולם",
           "source": "מעריב - חדשות",
-          "message": "No fresh מעריב publication event for 5614 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מעריב publication event for 5626 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -687,11 +687,11 @@
           "code": "publication_timing_sla",
           "group": "מקורות זרים",
           "thresholdMinutes": 60,
-          "ageMinutes": 5689,
+          "ageMinutes": 5701,
           "latestAt": "2026-07-21T20:02:27+03:00",
           "headline": "צבא לבנון נכנס לעיירה בדרום אחרי נסיגת ישראל",
           "source": "Reuters Middle East דרך Google News",
-          "message": "No fresh מקורות זרים publication event for 5689 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מקורות זרים publication event for 5701 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -718,11 +718,11 @@
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 5689,
+          "ageMinutes": 5701,
           "latestAt": "2026-07-21T20:02:27+03:00",
           "headline": "צבא לבנון נכנס לעיירה בדרום אחרי נסיגת ישראל",
           "source": "Reuters Middle East דרך Google News",
-          "message": "No fresh foreign publication event for 5689 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 5701 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -731,11 +731,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 5567,
+          "ageMinutes": 5579,
           "latestAt": "2026-07-21T22:05:07+03:00",
           "headline": "בסוריה בוחנים פעולה נגד חיזבאללה בלבנון",
           "source": "כיפה - חדשות",
-          "message": "No fresh ביטחון publication event for 5567 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 5579 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -744,11 +744,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 5579,
+          "ageMinutes": 5591,
           "latestAt": "2026-07-21T21:53:00+03:00",
           "headline": "סמוטריץ׳ בוחן שילוב של אבישי בן חיים ברשימת הציונות הדתית",
           "source": "כיפה - חדשות",
-          "message": "No fresh פוליטיקה publication event for 5579 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 5591 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -757,11 +757,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 5582,
+          "ageMinutes": 5594,
           "latestAt": "2026-07-21T21:50:00+03:00",
           "headline": "שני פצועים בתאונה בכביש 6 ליד נווה ימין",
           "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh חדשות publication event for 5582 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 5594 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -770,11 +770,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 5618,
+          "ageMinutes": 5630,
           "latestAt": "2026-07-21T21:13:43+03:00",
           "headline": "קטטה בין נהגים ליד טרמינל 1 הסתיימה בפצוע ובמעצר",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh פלילים publication event for 5618 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 5630 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -783,11 +783,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 5788,
+          "ageMinutes": 5800,
           "latestAt": "2026-07-21T18:23:45+03:00",
           "headline": "קנסות של 120 אלף שקל למפעילי וילות נופש באילת",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh משפט publication event for 5788 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 5800 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -796,11 +796,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 5597,
+          "ageMinutes": 5609,
           "latestAt": "2026-07-21T21:34:41+03:00",
           "headline": "בטורקיה צפויה עדיפות ללירה חלשה על פני דיסאינפלציה",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh כלכלה publication event for 5597 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 5609 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -809,11 +809,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 6039,
+          "ageMinutes": 6051,
           "latestAt": "2026-07-21T14:13:00+03:00",
           "headline": "קניות מוצרי החשמל באונליין זינקו ב-28%",
           "source": "גלובס - שיווק וצרכנות",
-          "message": "No fresh צרכנות publication event for 6039 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 6051 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -822,11 +822,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 5922,
+          "ageMinutes": 5934,
           "latestAt": "2026-07-21T16:09:35+03:00",
           "headline": "ועדת המינויים פסלה את ממלא מקום מנכ\"ל רכבת ישראל",
           "source": "דה מרקר - כל הכתבות",
-          "message": "No fresh רכב publication event for 5922 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 5934 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -835,11 +835,11 @@
           "code": "publication_timing_sla",
           "group": "אקטואליה בעולם",
           "thresholdMinutes": 60,
-          "ageMinutes": 5587,
+          "ageMinutes": 5599,
           "latestAt": "2026-07-21T21:44:31+03:00",
           "headline": "אתר הסקי של לסוטו מושך אלפי מבקרים לדרום אפריקה",
           "source": "ynet - כל ערוץ החדשות",
-          "message": "No fresh אקטואליה בעולם publication event for 5587 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh אקטואליה בעולם publication event for 5599 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -854,11 +854,11 @@
           "code": "publication_timing_sla",
           "group": "טכנולוגיה",
           "thresholdMinutes": 90,
-          "ageMinutes": 5910,
+          "ageMinutes": 5922,
           "latestAt": "2026-07-21T16:21:57+03:00",
           "headline": "נתוני השימוש והפיטורים מעמיקים את המשבר במיקרוסופט",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh טכנולוגיה publication event for 5910 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh טכנולוגיה publication event for 5922 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -867,11 +867,11 @@
           "code": "publication_timing_sla",
           "group": "בריאות",
           "thresholdMinutes": 90,
-          "ageMinutes": 5590,
+          "ageMinutes": 5602,
           "latestAt": "2026-07-21T21:42:00+03:00",
           "headline": "פרופ׳ שלמה משיח, מאבות הפריית המבחנה בישראל, הלך לעולמו",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh בריאות publication event for 5590 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh בריאות publication event for 5602 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -880,11 +880,11 @@
           "code": "publication_timing_sla",
           "group": "תרבות",
           "thresholdMinutes": 120,
-          "ageMinutes": 5803,
+          "ageMinutes": 5814,
           "latestAt": "2026-07-21T18:09:22+03:00",
           "headline": "שחקנית סרטי גודזילה נהרגה בתאונה בארה\"ב",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh תרבות publication event for 5803 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh תרבות publication event for 5814 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -893,11 +893,11 @@
           "code": "publication_timing_sla",
           "group": "רכילות",
           "thresholdMinutes": 120,
-          "ageMinutes": 5603,
+          "ageMinutes": 5614,
           "latestAt": "2026-07-21T21:29:14+03:00",
           "headline": "מארק אנתוני הפך לאב בפעם השמינית",
           "source": "Daily Mail TVShowbiz רכילות חו״ל",
-          "message": "No fresh רכילות publication event for 5603 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכילות publication event for 5614 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -906,11 +906,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 5687,
+          "ageMinutes": 5699,
           "latestAt": "2026-07-21T20:04:24+03:00",
           "headline": "בית המשפט: שוק מחנה יהודה לא ייחשב אזור מגורים",
           "source": "דה מרקר - נדל״ן",
-          "message": "No fresh נדל״ן publication event for 5687 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 5699 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -919,11 +919,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 5744,
+          "ageMinutes": 5756,
           "latestAt": "2026-07-21T19:07:41+03:00",
           "headline": "גל החום יימשך; הקלה קלה צפויה בסוף השבוע",
           "source": "סרוגים - כל הכתבות",
-          "message": "No fresh מזג אוויר publication event for 5744 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 5756 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -932,11 +932,11 @@
           "code": "publication_timing_sla",
           "group": "דה מרקר",
           "thresholdMinutes": 120,
-          "ageMinutes": 5597,
+          "ageMinutes": 5609,
           "latestAt": "2026-07-21T21:34:41+03:00",
           "headline": "בטורקיה צפויה עדיפות ללירה חלשה על פני דיסאינפלציה",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh דה מרקר publication event for 5597 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh דה מרקר publication event for 5609 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -945,11 +945,11 @@
           "code": "publication_timing_sla",
           "group": "הארץ",
           "thresholdMinutes": 90,
-          "ageMinutes": 5621,
+          "ageMinutes": 5633,
           "latestAt": "2026-07-21T21:10:32+03:00",
           "headline": "צ'לסי רכשה את מורגן רוג'רס בסכום שיא לשחקן אנגלי",
           "source": "הארץ - ספורט",
-          "message": "No fresh הארץ publication event for 5621 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh הארץ publication event for 5633 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -958,11 +958,11 @@
           "code": "publication_timing_sla",
           "group": "מעריב",
           "thresholdMinutes": 90,
-          "ageMinutes": 5614,
+          "ageMinutes": 5626,
           "latestAt": "2026-07-21T21:17:40+03:00",
           "headline": "ארה\"ב העלתה כוננות מחשש לפגיעה ביעדים ברחבי העולם",
           "source": "מעריב - חדשות",
-          "message": "No fresh מעריב publication event for 5614 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מעריב publication event for 5626 minutes; threshold is 90 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -971,11 +971,11 @@
           "code": "publication_timing_sla",
           "group": "מקורות זרים",
           "thresholdMinutes": 60,
-          "ageMinutes": 5689,
+          "ageMinutes": 5701,
           "latestAt": "2026-07-21T20:02:27+03:00",
           "headline": "צבא לבנון נכנס לעיירה בדרום אחרי נסיגת ישראל",
           "source": "Reuters Middle East דרך Google News",
-          "message": "No fresh מקורות זרים publication event for 5689 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מקורות זרים publication event for 5701 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1112,13 +1112,13 @@
       "id": "live",
       "name": "מבקר חי",
       "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-07-25T18:52:18+03:00",
-      "checkedAt": "2026-07-25T18:52:18+03:00",
+      "summary": "תקין בבדיקה האחרונה 2026-07-25T19:04:01+03:00",
+      "checkedAt": "2026-07-25T19:04:01+03:00",
       "findings": [
         {
           "severity": "warning",
           "code": "stale_important_source_view",
-          "message": "Latest הארץ item is older than 120m: 2026-07-25T16:46:41+03:00 (2:05:36.614964 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
+          "message": "Latest הארץ item is older than 120m: 2026-07-25T16:46:41+03:00 (2:17:19.215417 old). The overall feed may look fresh while this source view is stale. Alert only; no automatic feed change.",
           "item": 36,
           "headline": "שרידי בית כנסת ובתי לוויות נחשפו בוורשה",
           "source": "הארץ - חדשות",
@@ -1127,7 +1127,7 @@
         {
           "severity": "warning",
           "code": "stale_foreign_source_view",
-          "message": "Latest foreign-source item is older than 60m: 2026-07-25T15:41:14+03:00 (3:11:03.614964 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
+          "message": "Latest foreign-source item is older than 60m: 2026-07-25T15:41:14+03:00 (3:22:46.215417 old). Overall feed may still look fresh, but the world/source view can look stuck. Alert only; this does not block or modify the feed by itself.",
           "item": 53,
           "headline": "תינוקת חולצה מבית שהוצת במהלך פשיטות באזור שכם",
           "source": "Al Jazeera RSS מסונן מזרח תיכון",
@@ -1148,19 +1148,19 @@
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh foreign publication event for 5689 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-07-25T18:52:23+03:00",
+      "summary": "No fresh foreign publication event for 5701 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-07-25T19:04:07+03:00",
       "findings": [
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "foreign",
           "thresholdMinutes": 60,
-          "ageMinutes": 5689,
+          "ageMinutes": 5701,
           "latestAt": "2026-07-21T20:02:27+03:00",
           "headline": "צבא לבנון נכנס לעיירה בדרום אחרי נסיגת ישראל",
           "source": "Reuters Middle East דרך Google News",
-          "message": "No fresh foreign publication event for 5689 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh foreign publication event for 5701 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1169,11 +1169,11 @@
           "code": "publication_timing_sla",
           "group": "ביטחון",
           "thresholdMinutes": 25,
-          "ageMinutes": 5567,
+          "ageMinutes": 5579,
           "latestAt": "2026-07-21T22:05:07+03:00",
           "headline": "בסוריה בוחנים פעולה נגד חיזבאללה בלבנון",
           "source": "כיפה - חדשות",
-          "message": "No fresh ביטחון publication event for 5567 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh ביטחון publication event for 5579 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1182,11 +1182,11 @@
           "code": "publication_timing_sla",
           "group": "פוליטיקה",
           "thresholdMinutes": 30,
-          "ageMinutes": 5579,
+          "ageMinutes": 5591,
           "latestAt": "2026-07-21T21:53:00+03:00",
           "headline": "סמוטריץ׳ בוחן שילוב של אבישי בן חיים ברשימת הציונות הדתית",
           "source": "כיפה - חדשות",
-          "message": "No fresh פוליטיקה publication event for 5579 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פוליטיקה publication event for 5591 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1195,11 +1195,11 @@
           "code": "publication_timing_sla",
           "group": "חדשות",
           "thresholdMinutes": 35,
-          "ageMinutes": 5582,
+          "ageMinutes": 5594,
           "latestAt": "2026-07-21T21:50:00+03:00",
           "headline": "שני פצועים בתאונה בכביש 6 ליד נווה ימין",
           "source": "ערוץ 7 / INN עברית",
-          "message": "No fresh חדשות publication event for 5582 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh חדשות publication event for 5594 minutes; threshold is 35 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1208,11 +1208,11 @@
           "code": "publication_timing_sla",
           "group": "פלילים",
           "thresholdMinutes": 40,
-          "ageMinutes": 5618,
+          "ageMinutes": 5630,
           "latestAt": "2026-07-21T21:13:43+03:00",
           "headline": "קטטה בין נהגים ליד טרמינל 1 הסתיימה בפצוע ובמעצר",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh פלילים publication event for 5618 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh פלילים publication event for 5630 minutes; threshold is 40 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1221,11 +1221,11 @@
           "code": "publication_timing_sla",
           "group": "משפט",
           "thresholdMinutes": 45,
-          "ageMinutes": 5788,
+          "ageMinutes": 5800,
           "latestAt": "2026-07-21T18:23:45+03:00",
           "headline": "קנסות של 120 אלף שקל למפעילי וילות נופש באילת",
           "source": "ישראל היום - כל הכתבות",
-          "message": "No fresh משפט publication event for 5788 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh משפט publication event for 5800 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1234,11 +1234,11 @@
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 5597,
+          "ageMinutes": 5609,
           "latestAt": "2026-07-21T21:34:41+03:00",
           "headline": "בטורקיה צפויה עדיפות ללירה חלשה על פני דיסאינפלציה",
           "source": "דה מרקר - גלובל",
-          "message": "No fresh כלכלה publication event for 5597 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 5609 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -1247,11 +1247,11 @@
           "code": "publication_timing_sla",
           "group": "צרכנות",
           "thresholdMinutes": 60,
-          "ageMinutes": 6039,
+          "ageMinutes": 6051,
           "latestAt": "2026-07-21T14:13:00+03:00",
           "headline": "קניות מוצרי החשמל באונליין זינקו ב-28%",
           "source": "גלובס - שיווק וצרכנות",
-          "message": "No fresh צרכנות publication event for 6039 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh צרכנות publication event for 6051 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -1275,12 +1275,12 @@
     }
   ],
   "feedQuality": {
-    "generatedAt": "2026-07-25T18:52:28+03:00",
+    "generatedAt": "2026-07-25T19:04:13+03:00",
     "score": "warn",
     "newsinessTop10": 5,
     "softTop10": 5,
     "otherTop10": 0,
-    "topItemAgeMinutes": 1,
+    "topItemAgeMinutes": 13,
     "top5Under60": 5,
     "top10Under60": 10,
     "top12Under60": 12,
@@ -1303,7 +1303,7 @@
     },
     "breaking": {
       "visible": true,
-      "topAgeMinutes": 18,
+      "topAgeMinutes": 30,
       "top12Under60": 3,
       "count": 80
     },
@@ -1315,7 +1315,7 @@
   "feedQualitySimulation": {
     "status": "ok",
     "mode": "simulation_only_no_feed_mutation",
-    "generatedAt": "2026-07-25T15:52:27+00:00",
+    "generatedAt": "2026-07-25T16:04:12+00:00",
     "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
     "itemCount": 3862,
     "before": {
@@ -1325,7 +1325,7 @@
       "top5Under60": 5,
       "top10Under60": 10,
       "top12Under60": 12,
-      "topItemAgeMinutes": 1,
+      "topItemAgeMinutes": 13,
       "uniqueSourcesTop20": 9,
       "dominantSource": {
         "name": "וואלה",
@@ -1374,17 +1374,19 @@
         }
       ],
       "trendMatchedTop10": 6,
-      "trendMatchedTop20": 11,
+      "trendMatchedTop20": 12,
       "trendGapMatchedTop20": 1,
       "continuousPublishing": {
         "targetMinutes": 10,
-        "estimatedVisibleChangeMinutes": 10,
-        "score": 100,
-        "readyCount": 6,
-        "hardReadyCount": 6,
-        "trendReadyCount": 5,
-        "uniqueReadySources": 5,
-        "blockers": [],
+        "estimatedVisibleChangeMinutes": 20,
+        "score": 50,
+        "readyCount": 2,
+        "hardReadyCount": 2,
+        "trendReadyCount": 2,
+        "uniqueReadySources": 2,
+        "blockers": [
+          "ready_queue_below_3"
+        ],
         "readyQueue": [
           {
             "rank": 5,
@@ -1393,7 +1395,7 @@
             "canonicalSource": "ישראל היום",
             "category": "חדשות",
             "class": "hard",
-            "ageMinutes": 31,
+            "ageMinutes": 43,
             "url": "https://www.israelhayom.co.il/news/local/article/21055273",
             "trendMatch": {
               "trend": "יום אחרי הירי הקטלני, ושוב בלי לעדכן: מתנחלים נכנסו לכפר הפלסטיני | תיעוד",
@@ -1428,7 +1430,7 @@
             "canonicalSource": "מעריב",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 34,
+            "ageMinutes": 45,
             "url": "https://www.maariv.co.il/news/military/article-1348534",
             "trendMatch": {
               "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
@@ -1455,124 +1457,6 @@
               "boost": 17.86
             },
             "queueScore": 35.0
-          },
-          {
-            "rank": 8,
-            "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
-            "source": "גלובס - שוק ההון",
-            "canonicalSource": "גלובס",
-            "category": "כלכלה",
-            "class": "hard",
-            "ageMinutes": 35,
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
-            "trendMatch": {
-              "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
-              "clusterKey": "מיליון דולר",
-              "domain": "כלכלה",
-              "externalMentions": 3,
-              "sourceCount": 3,
-              "sources": [
-                "גלובס",
-                "דה מרקר",
-                "הארץ"
-              ],
-              "discoveryTypes": [
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-25T15:52:27.205424+00:00",
-              "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
-              "overlapTokens": [
-                "דולר",
-                "כלכלה",
-                "שני"
-              ],
-              "score": 29.39,
-              "boost": 29.39
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 9,
-            "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
-            "source": "JNS - Jewish News Syndicate",
-            "canonicalSource": "JNS",
-            "category": "ביטחון",
-            "class": "hard",
-            "ageMinutes": 36,
-            "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
-            "trendMatch": {
-              "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-              "clusterKey": "מבוקשים נעצרו",
-              "domain": "חדשות",
-              "externalMentions": 3,
-              "sourceCount": 2,
-              "sources": [
-                "ynet",
-                "וואלה"
-              ],
-              "discoveryTypes": [
-                "RSS"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-25T16:57:00+00:00",
-              "sampleUrl": "https://news.walla.co.il/item/3856045",
-              "overlapTokens": [
-                "ושומרון",
-                "יותר",
-                "מבוקשים",
-                "מעצרים"
-              ],
-              "score": 32.07,
-              "boost": 32.07
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 10,
-            "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
-            "source": "The Jerusalem Post - Middle East",
-            "canonicalSource": "Jerusalem Post",
-            "category": "ביטחון",
-            "class": "hard",
-            "ageMinutes": 37,
-            "url": "https://www.jpost.com/middle-east/article-903606",
-            "trendMatch": {
-              "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-              "clusterKey": "טראמפ איראן",
-              "domain": "חדשות",
-              "externalMentions": 2,
-              "sourceCount": 2,
-              "sources": [
-                "הארץ",
-                "וואלה"
-              ],
-              "discoveryTypes": [
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-25T15:52:27.205270+00:00",
-              "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-              "overlapTokens": [
-                "דווח",
-                "תקיפות"
-              ],
-              "score": 14.89,
-              "boost": 14.89
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 12,
-            "headline": "מכבי תל אביב נערכת לעזיבת אסאנטה ורביבו",
-            "source": "ישראל היום - כל הכתבות",
-            "canonicalSource": "ישראל היום",
-            "category": "ספורט",
-            "class": "hard",
-            "ageMinutes": 40,
-            "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/21055137",
-            "trendMatch": null,
-            "queueScore": 17.0
           }
         ]
       }
@@ -1582,13 +1466,13 @@
       "softTop10": 0,
       "otherTop10": 0,
       "top5Under60": 5,
-      "top10Under60": 7,
-      "top12Under60": 8,
-      "topItemAgeMinutes": 36,
+      "top10Under60": 5,
+      "top12Under60": 6,
+      "topItemAgeMinutes": 45,
       "uniqueSourcesTop20": 10,
       "dominantSource": {
-        "name": "וואלה",
-        "count": 4
+        "name": "מעריב",
+        "count": 3
       },
       "importantMissingTop20": [
         "N12",
@@ -1599,11 +1483,7 @@
       "duplicateTop20": 0,
       "topSources": [
         {
-          "name": "וואלה",
-          "count": 4
-        },
-        {
-          "name": "Jerusalem Post",
+          "name": "מעריב",
           "count": 3
         },
         {
@@ -1611,11 +1491,15 @@
           "count": 3
         },
         {
-          "name": "JNS",
-          "count": 2
+          "name": "Jerusalem Post",
+          "count": 3
         },
         {
-          "name": "מעריב",
+          "name": "וואלה",
+          "count": 3
+        },
+        {
+          "name": "JNS",
           "count": 2
         },
         {
@@ -1631,29 +1515,30 @@
           "count": 1
         }
       ],
-      "trendMatchedTop10": 10,
-      "trendMatchedTop20": 13,
+      "trendMatchedTop10": 9,
+      "trendMatchedTop20": 15,
       "trendGapMatchedTop20": 0,
       "continuousPublishing": {
         "targetMinutes": 10,
-        "estimatedVisibleChangeMinutes": 10,
-        "score": 90,
-        "readyCount": 6,
-        "hardReadyCount": 6,
-        "trendReadyCount": 5,
-        "uniqueReadySources": 5,
+        "estimatedVisibleChangeMinutes": 20,
+        "score": 40,
+        "readyCount": 2,
+        "hardReadyCount": 2,
+        "trendReadyCount": 2,
+        "uniqueReadySources": 2,
         "blockers": [
+          "ready_queue_below_3",
           "top_item_over_25m"
         ],
         "readyQueue": [
           {
-            "rank": 5,
+            "rank": 2,
             "headline": "יובל בן ה-4 שרד לילה בשטח; המשטרה שוללת פלילים",
             "source": "ישראל היום - כל הכתבות",
             "canonicalSource": "ישראל היום",
             "category": "חדשות",
             "class": "hard",
-            "ageMinutes": 31,
+            "ageMinutes": 43,
             "url": "https://www.israelhayom.co.il/news/local/article/21055273",
             "trendMatch": {
               "trend": "יום אחרי הירי הקטלני, ושוב בלי לעדכן: מתנחלים נכנסו לכפר הפלסטיני | תיעוד",
@@ -1682,13 +1567,13 @@
             "queueScore": 35.0
           },
           {
-            "rank": 2,
+            "rank": 1,
             "headline": "איראן מאיימת בבנק מטרות חדש בתוך ישראל",
             "source": "מעריב - חדשות",
             "canonicalSource": "מעריב",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 34,
+            "ageMinutes": 45,
             "url": "https://www.maariv.co.il/news/military/article-1348534",
             "trendMatch": {
               "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
@@ -1715,124 +1600,6 @@
               "boost": 17.86
             },
             "queueScore": 35.0
-          },
-          {
-            "rank": 3,
-            "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
-            "source": "גלובס - שוק ההון",
-            "canonicalSource": "גלובס",
-            "category": "כלכלה",
-            "class": "hard",
-            "ageMinutes": 35,
-            "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
-            "trendMatch": {
-              "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
-              "clusterKey": "מיליון דולר",
-              "domain": "כלכלה",
-              "externalMentions": 3,
-              "sourceCount": 3,
-              "sources": [
-                "גלובס",
-                "דה מרקר",
-                "הארץ"
-              ],
-              "discoveryTypes": [
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-25T15:52:27.205424+00:00",
-              "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
-              "overlapTokens": [
-                "דולר",
-                "כלכלה",
-                "שני"
-              ],
-              "score": 29.39,
-              "boost": 29.39
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 1,
-            "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
-            "source": "JNS - Jewish News Syndicate",
-            "canonicalSource": "JNS",
-            "category": "ביטחון",
-            "class": "hard",
-            "ageMinutes": 36,
-            "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
-            "trendMatch": {
-              "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-              "clusterKey": "מבוקשים נעצרו",
-              "domain": "חדשות",
-              "externalMentions": 3,
-              "sourceCount": 2,
-              "sources": [
-                "ynet",
-                "וואלה"
-              ],
-              "discoveryTypes": [
-                "RSS"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-25T16:57:00+00:00",
-              "sampleUrl": "https://news.walla.co.il/item/3856045",
-              "overlapTokens": [
-                "ושומרון",
-                "יותר",
-                "מבוקשים",
-                "מעצרים"
-              ],
-              "score": 32.07,
-              "boost": 32.07
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 4,
-            "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
-            "source": "The Jerusalem Post - Middle East",
-            "canonicalSource": "Jerusalem Post",
-            "category": "ביטחון",
-            "class": "hard",
-            "ageMinutes": 37,
-            "url": "https://www.jpost.com/middle-east/article-903606",
-            "trendMatch": {
-              "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-              "clusterKey": "טראמפ איראן",
-              "domain": "חדשות",
-              "externalMentions": 2,
-              "sourceCount": 2,
-              "sources": [
-                "הארץ",
-                "וואלה"
-              ],
-              "discoveryTypes": [
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-25T15:52:27.205270+00:00",
-              "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-              "overlapTokens": [
-                "דווח",
-                "תקיפות"
-              ],
-              "score": 14.89,
-              "boost": 14.89
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 22,
-            "headline": "מכבי תל אביב נערכת לעזיבת אסאנטה ורביבו",
-            "source": "ישראל היום - כל הכתבות",
-            "canonicalSource": "ישראל היום",
-            "category": "ספורט",
-            "class": "hard",
-            "ageMinutes": 40,
-            "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/21055137",
-            "trendMatch": null,
-            "queueScore": 17.0
           }
         ]
       }
@@ -1840,10 +1607,10 @@
     "beforeHealthScore": 59,
     "afterHealthScore": 87,
     "replacementReadiness": {
-      "score": 80,
+      "score": 76,
       "threshold": 80,
       "components": {
-        "freshness": 13.05,
+        "freshness": 9.0,
         "newsinessTop10": 25.0,
         "top20Quality": 17.0,
         "sourceBalance": 10.0,
@@ -1897,10 +1664,10 @@
     "delta": {
       "newsinessTop10": 5,
       "softTop10": -5,
-      "top12Under60": -4,
+      "top12Under60": -6,
       "uniqueSourcesTop20": 1,
-      "trendMatchedTop10": 4,
-      "trendMatchedTop20": 2,
+      "trendMatchedTop10": 3,
+      "trendMatchedTop20": 3,
       "healthScore": 28
     },
     "historySummary": {
@@ -1908,15 +1675,15 @@
       "window": 12,
       "positiveRuns": 12,
       "negativeRuns": 0,
-      "avgHealthDelta": 16.83,
-      "avgAfterHealthScore": 88.25,
+      "avgHealthDelta": 17.92,
+      "avgAfterHealthScore": 89.17,
       "stablePositive": true,
       "replacement": {
         "threshold": 80,
         "minSamplesForPromotion": 24,
         "window": 48,
-        "latestScore": 80,
-        "rollingScore": 77.52,
+        "latestScore": 76,
+        "rollingScore": 77.81,
         "readyRuns": 6,
         "criticalBlockers": [
           "top_item_stale_over_25m",
@@ -1936,15 +1703,15 @@
     "trendSignal": {
       "status": "ok",
       "path": "spy_trends.json",
-      "generatedAt": "2026-07-25T18:52:27+03:00",
+      "generatedAt": "2026-07-25T19:04:12+03:00",
       "sourceTrendCount": 14,
       "usedTrendCount": 14,
-      "rssItemsScanned": 97,
+      "rssItemsScanned": 101,
       "webItemsScanned": 202,
       "topTrends": [
         {
           "trend": "הרפובליקה הדמוקרטית של קונגו: מספר מקרי האבולה המאומתים עלה ל-2,973",
-          "clusterKey": "הדמוקרטית קונגו מספר",
+          "clusterKey": "המאומתים עלה",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -1976,27 +1743,9 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
           "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
           "strength": 38.1
-        },
-        {
-          "trend": "אחרי שהשווי נחתך: היילו נמכרת בסכום נמוך למיקרוצ'יפ האמריקאית",
-          "clusterKey": "היילו נמכרת",
-          "domain": "כלכלה",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "גלובס",
-            "דה מרקר"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": false,
-          "latestAt": "2026-07-25T15:52:27.232980+00:00",
-          "sampleUrl": "https://www.themarker.com/technation/2026-07-25/ty-article/.highlight/0000019f-9816-df42-a1df-fd777d460000",
-          "strength": 37.4
         },
         {
           "trend": "נהגת איבדה שליטה על רכבה, נפלה מגשר - וכמעט דרסה 2 הולכי רגל | תיעוד",
@@ -2075,25 +1824,7 @@
           "strength": 34.1
         },
         {
-          "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
-          "clusterKey": "מחאת הג'וקים",
-          "domain": "חדשות",
-          "externalMentions": 5,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T17:16:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856049",
-          "strength": 32.5
-        },
-        {
-          "trend": "ממשל טראמפ דורש ממהגרים לשלם קנסות שמגיעים עד 1.8 מיליון דולר או לעזוב",
+          "trend": "זו הריבית החשובה בעולם — והמדד הטוב ביותר להצלחה הכלכלית של ממשל טראמפ",
           "clusterKey": "ממשל טראמפ",
           "domain": "חדשות",
           "externalMentions": 3,
@@ -2106,26 +1837,62 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.202915+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/world/america/2026-07-24/ty-article/.premium/0000019f-9067-de9f-afdf-b06704e40000",
+          "latestAt": "2026-07-25T16:04:12.211788+00:00",
+          "sampleUrl": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
           "strength": 31.1
         },
         {
-          "trend": "טראמפ נפגש עם יועצים בכירים כדי לבחון אפשרות להסלמה משמעותית באיראן",
-          "clusterKey": "להסלמה משמעותית באיראן",
+          "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
+          "clusterKey": "מחאת הג'וקים",
+          "domain": "חדשות",
+          "externalMentions": 4,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T17:16:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856049",
+          "strength": 30.8
+        },
+        {
+          "trend": "יותר מרבע מיליון בני אדם פונו מבתיהם בצרפת ובספרד בשל שריפות ענק",
+          "clusterKey": "פונו מבתיהם",
           "domain": "חדשות",
           "externalMentions": 2,
           "sourceCount": 2,
           "sources": [
-            "דה מרקר",
+            "N12",
             "הארץ"
           ],
           "discoveryTypes": [
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.229319+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/world/middle-east/2026-07-24/ty-article/.premium/0000019f-9564-d1a3-adff-f7f754aa0000",
+          "latestAt": "2026-07-25T16:04:12.235222+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/world/europe/2026-07-25/ty-article/.premium/0000019f-9875-d114-a59f-dcfd4c700000",
+          "strength": 29.4
+        },
+        {
+          "trend": "01:54 דיווח בניו יורק טיימס: טראמפ החליף מטוס בשל איום איראני לפגוע ב\"אייר פורס 1\"",
+          "clusterKey": "יורק טיימס",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.234981+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3855979",
           "strength": 29.4
         }
       ]
@@ -2137,7 +1904,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 1,
+        "ageMinutes": 13,
         "url": "https://sports.walla.co.il/item/3856056",
         "beforeRank": 1,
         "afterRank": 1,
@@ -2150,7 +1917,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 1,
+        "ageMinutes": 13,
         "url": "https://sports.walla.co.il/item/3856058",
         "beforeRank": 2,
         "afterRank": 2,
@@ -2163,7 +1930,7 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 19,
+        "ageMinutes": 31,
         "url": "https://www.dailymail.com/tvshowbiz/article-16004819/England-star-Steph-Houghton-pregnant-child-husband-Stephen-Darby-battle-Motor-Neurone-Disease.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 3,
         "afterRank": 3,
@@ -2176,7 +1943,7 @@
         "canonicalSource": "ישראל היום",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 26,
+        "ageMinutes": 38,
         "url": "https://www.israelhayom.co.il/sport/world-basketball/article/21055063",
         "beforeRank": 4,
         "afterRank": 4,
@@ -2196,7 +1963,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
           "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
           "overlapTokens": [
             "דולר",
@@ -2212,7 +1979,7 @@
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 31,
+        "ageMinutes": 43,
         "url": "https://www.israelhayom.co.il/news/local/article/21055273",
         "beforeRank": 5,
         "afterRank": 5,
@@ -2248,7 +2015,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 32,
+        "ageMinutes": 43,
         "url": "https://sports.walla.co.il/item/3856052",
         "beforeRank": 6,
         "afterRank": 6,
@@ -2261,7 +2028,7 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 34,
+        "ageMinutes": 45,
         "url": "https://www.maariv.co.il/news/military/article-1348534",
         "beforeRank": 7,
         "afterRank": 7,
@@ -2297,7 +2064,7 @@
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 35,
+        "ageMinutes": 47,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
         "beforeRank": 8,
         "afterRank": 8,
@@ -2317,7 +2084,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
           "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
           "overlapTokens": [
             "דולר",
@@ -2334,14 +2101,14 @@
         "canonicalSource": "JNS",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 36,
+        "ageMinutes": 48,
         "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
         "beforeRank": 9,
         "afterRank": 9,
         "delta": 0,
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -2371,7 +2138,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 37,
+        "ageMinutes": 48,
         "url": "https://www.jpost.com/middle-east/article-903606",
         "beforeRank": 10,
         "afterRank": 10,
@@ -2390,7 +2157,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
           "overlapTokens": [
             "דווח",
@@ -2403,53 +2170,16 @@
     ],
     "top10After": [
       {
-        "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
-        "source": "JNS - Jewish News Syndicate",
-        "canonicalSource": "JNS",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
-        "beforeRank": 9,
-        "afterRank": 1,
-        "delta": 8,
-        "trendMatch": {
-          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T16:57:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856045",
-          "overlapTokens": [
-            "ושומרון",
-            "יותר",
-            "מבוקשים",
-            "מעצרים"
-          ],
-          "score": 32.07,
-          "boost": 32.07
-        }
-      },
-      {
         "headline": "איראן מאיימת בבנק מטרות חדש בתוך ישראל",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 34,
+        "ageMinutes": 45,
         "url": "https://www.maariv.co.il/news/military/article-1348534",
         "beforeRank": 7,
-        "afterRank": 2,
-        "delta": 5,
+        "afterRank": 1,
+        "delta": 6,
         "trendMatch": {
           "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
           "clusterKey": "שיציל אותנו",
@@ -2476,88 +2206,16 @@
         }
       },
       {
-        "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
-        "source": "גלובס - שוק ההון",
-        "canonicalSource": "גלובס",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 35,
-        "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
-        "beforeRank": 8,
-        "afterRank": 3,
-        "delta": 5,
-        "trendMatch": {
-          "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
-          "clusterKey": "מיליון דולר",
-          "domain": "כלכלה",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "גלובס",
-            "דה מרקר",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
-          "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
-          "overlapTokens": [
-            "דולר",
-            "כלכלה",
-            "שני"
-          ],
-          "score": 29.39,
-          "boost": 29.39
-        }
-      },
-      {
-        "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 37,
-        "url": "https://www.jpost.com/middle-east/article-903606",
-        "beforeRank": 10,
-        "afterRank": 4,
-        "delta": 6,
-        "trendMatch": {
-          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-          "clusterKey": "טראמפ איראן",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-          "overlapTokens": [
-            "דווח",
-            "תקיפות"
-          ],
-          "score": 14.89,
-          "boost": 14.89
-        }
-      },
-      {
         "headline": "יובל בן ה-4 שרד לילה בשטח; המשטרה שוללת פלילים",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 31,
+        "ageMinutes": 43,
         "url": "https://www.israelhayom.co.il/news/local/article/21055273",
         "beforeRank": 5,
-        "afterRank": 5,
-        "delta": 0,
+        "afterRank": 2,
+        "delta": 3,
         "trendMatch": {
           "trend": "יום אחרי הירי הקטלני, ושוב בלי לעדכן: מתנחלים נכנסו לכפר הפלסטיני | תיעוד",
           "clusterKey": "נכנסו לכפר",
@@ -2584,21 +2242,171 @@
         }
       },
       {
+        "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
+        "source": "JNS - Jewish News Syndicate",
+        "canonicalSource": "JNS",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 48,
+        "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
+        "beforeRank": 9,
+        "afterRank": 3,
+        "delta": 6,
+        "trendMatch": {
+          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:57:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856045",
+          "overlapTokens": [
+            "ושומרון",
+            "יותר",
+            "מבוקשים",
+            "מעצרים"
+          ],
+          "score": 32.07,
+          "boost": 32.07
+        }
+      },
+      {
+        "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 47,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
+        "beforeRank": 8,
+        "afterRank": 4,
+        "delta": 4,
+        "trendMatch": {
+          "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
+          "clusterKey": "מיליון דולר",
+          "domain": "כלכלה",
+          "externalMentions": 3,
+          "sourceCount": 3,
+          "sources": [
+            "גלובס",
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
+          "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
+          "overlapTokens": [
+            "דולר",
+            "כלכלה",
+            "שני"
+          ],
+          "score": 29.39,
+          "boost": 29.39
+        }
+      },
+      {
+        "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
+        "source": "The Jerusalem Post - Middle East",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 48,
+        "url": "https://www.jpost.com/middle-east/article-903606",
+        "beforeRank": 10,
+        "afterRank": 5,
+        "delta": 5,
+        "trendMatch": {
+          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
+          "clusterKey": "טראמפ איראן",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
+          "overlapTokens": [
+            "דווח",
+            "תקיפות"
+          ],
+          "score": 14.89,
+          "boost": 14.89
+        }
+      },
+      {
+        "headline": "תשואת האג״ח בארה״ב טיפסה לשיא בכהונת טראמפ השנייה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 71,
+        "url": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
+        "beforeRank": 17,
+        "afterRank": 6,
+        "delta": 11,
+        "trendMatch": {
+          "trend": "זו הריבית החשובה בעולם — והמדד הטוב ביותר להצלחה הכלכלית של ממשל טראמפ",
+          "clusterKey": "ממשל טראמפ",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.211788+00:00",
+          "sampleUrl": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
+          "overlapTokens": [
+            "ביותר",
+            "בעולם",
+            "החשובה",
+            "הטוב",
+            "הכלכלית",
+            "הריבית",
+            "והמדד",
+            "טראמפ"
+          ],
+          "score": 78.76,
+          "boost": 38.0
+        }
+      },
+      {
         "headline": "מחאת צעירים בהודו מתרחבת לאתגר שלטוני למודי",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 79,
         "url": "https://news.walla.co.il/item/3856049",
         "beforeRank": 20,
-        "afterRank": 6,
-        "delta": 14,
+        "afterRank": 7,
+        "delta": 13,
         "trendMatch": {
           "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
           "clusterKey": "מחאת הג'וקים",
           "domain": "חדשות",
-          "externalMentions": 5,
+          "externalMentions": 4,
           "sourceCount": 2,
           "sources": [
             "ynet",
@@ -2619,86 +2427,7 @@
             "מחאת",
             "נגד"
           ],
-          "score": 56.88,
-          "boost": 38.0
-        }
-      },
-      {
-        "headline": "ישראלים נכנסו שוב ללא אישור לאזור הכפר תל אחרי הפיגוע",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 80,
-        "url": "https://www.israelhayom.co.il/news/defense/article/21054859",
-        "beforeRank": 23,
-        "afterRank": 7,
-        "delta": 16,
-        "trendMatch": {
-          "trend": "יום אחרי הירי הקטלני, ושוב בלי לעדכן: מתנחלים נכנסו לכפר הפלסטיני | תיעוד",
-          "clusterKey": "נכנסו לכפר",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "N12",
-            "ynet"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T13:50:56+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/byai2vfrfx",
-          "overlapTokens": [
-            "אחרי",
-            "הירי",
-            "הפלסטיני",
-            "לכפר",
-            "נכנסו"
-          ],
-          "score": 42.16,
-          "boost": 38.0
-        }
-      },
-      {
-        "headline": "המעצרים באיו״ש הורחבו אחרי הפיגוע בחוות גלעד",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 82,
-        "url": "https://news.walla.co.il/item/3856045",
-        "beforeRank": 24,
-        "afterRank": 8,
-        "delta": 16,
-        "trendMatch": {
-          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T16:57:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856045",
-          "overlapTokens": [
-            "ביהודה",
-            "ושומרון",
-            "חדשות",
-            "יותר",
-            "מבוקשים",
-            "מעצרים",
-            "נעצרו"
-          ],
-          "score": 56.12,
+          "score": 53.9,
           "boost": 38.0
         }
       },
@@ -2708,14 +2437,14 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://www.jpost.com/israel-news/defense-news/article-903604",
         "beforeRank": 15,
-        "afterRank": 9,
-        "delta": 6,
+        "afterRank": 8,
+        "delta": 7,
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -2738,39 +2467,53 @@
         }
       },
       {
-        "headline": "תשואת האג״ח בארה״ב טיפסה לשיא בכהונת טראמפ השנייה",
-        "source": "דה מרקר - גלובל",
-        "canonicalSource": "דה מרקר",
-        "category": "כלכלה",
+        "headline": "בכיר איראני דוחה מגעים עם ארה״ב ומאיים בעימות קרקעי",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 59,
-        "url": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
-        "beforeRank": 17,
-        "afterRank": 10,
+        "ageMinutes": 69,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21055125",
+        "beforeRank": 16,
+        "afterRank": 9,
         "delta": 7,
         "trendMatch": {
-          "trend": "ממשל טראמפ דורש ממהגרים לשלם קנסות שמגיעים עד 1.8 מיליון דולר או לעזוב",
-          "clusterKey": "ממשל טראמפ",
+          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
+          "clusterKey": "טראמפ איראן",
           "domain": "חדשות",
-          "externalMentions": 3,
+          "externalMentions": 2,
           "sourceCount": 2,
           "sources": [
-            "דה מרקר",
-            "הארץ"
+            "הארץ",
+            "וואלה"
           ],
           "discoveryTypes": [
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.202915+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/world/america/2026-07-24/ty-article/.premium/0000019f-9067-de9f-afdf-b06704e40000",
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
           "overlapTokens": [
+            "איראן",
             "טראמפ",
-            "ממשל"
+            "תקיפות"
           ],
-          "score": 15.75,
-          "boost": 15.75
+          "score": 22.34,
+          "boost": 22.34
         }
+      },
+      {
+        "headline": "גששי צה״ל: מחבלים שחוסלו בגבול נשאו דרכונים איראניים",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 84,
+        "url": "https://www.ynet.co.il/news/article/sklgphc4fg",
+        "beforeRank": 21,
+        "afterRank": 10,
+        "delta": 11,
+        "trendMatch": null
       }
     ],
     "top20Before": [
@@ -2780,7 +2523,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 1,
+        "ageMinutes": 13,
         "url": "https://sports.walla.co.il/item/3856056",
         "beforeRank": 1,
         "afterRank": 1,
@@ -2793,7 +2536,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 1,
+        "ageMinutes": 13,
         "url": "https://sports.walla.co.il/item/3856058",
         "beforeRank": 2,
         "afterRank": 2,
@@ -2806,7 +2549,7 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 19,
+        "ageMinutes": 31,
         "url": "https://www.dailymail.com/tvshowbiz/article-16004819/England-star-Steph-Houghton-pregnant-child-husband-Stephen-Darby-battle-Motor-Neurone-Disease.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 3,
         "afterRank": 3,
@@ -2819,7 +2562,7 @@
         "canonicalSource": "ישראל היום",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 26,
+        "ageMinutes": 38,
         "url": "https://www.israelhayom.co.il/sport/world-basketball/article/21055063",
         "beforeRank": 4,
         "afterRank": 4,
@@ -2839,7 +2582,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
           "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
           "overlapTokens": [
             "דולר",
@@ -2855,7 +2598,7 @@
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 31,
+        "ageMinutes": 43,
         "url": "https://www.israelhayom.co.il/news/local/article/21055273",
         "beforeRank": 5,
         "afterRank": 5,
@@ -2891,7 +2634,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 32,
+        "ageMinutes": 43,
         "url": "https://sports.walla.co.il/item/3856052",
         "beforeRank": 6,
         "afterRank": 6,
@@ -2904,7 +2647,7 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 34,
+        "ageMinutes": 45,
         "url": "https://www.maariv.co.il/news/military/article-1348534",
         "beforeRank": 7,
         "afterRank": 7,
@@ -2940,7 +2683,7 @@
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 35,
+        "ageMinutes": 47,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
         "beforeRank": 8,
         "afterRank": 8,
@@ -2960,7 +2703,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
           "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
           "overlapTokens": [
             "דולר",
@@ -2977,14 +2720,14 @@
         "canonicalSource": "JNS",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 36,
+        "ageMinutes": 48,
         "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
         "beforeRank": 9,
         "afterRank": 9,
         "delta": 0,
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -3014,7 +2757,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 37,
+        "ageMinutes": 48,
         "url": "https://www.jpost.com/middle-east/article-903606",
         "beforeRank": 10,
         "afterRank": 10,
@@ -3033,7 +2776,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
           "overlapTokens": [
             "דווח",
@@ -3049,14 +2792,14 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 37,
+        "ageMinutes": 49,
         "url": "https://sports.walla.co.il/item/3856054",
         "beforeRank": 11,
         "afterRank": 11,
         "delta": 0,
         "trendMatch": {
           "trend": "הרפובליקה הדמוקרטית של קונגו: מספר מקרי האבולה המאומתים עלה ל-2,973",
-          "clusterKey": "הדמוקרטית קונגו מספר",
+          "clusterKey": "המאומתים עלה",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -3085,7 +2828,7 @@
         "canonicalSource": "ישראל היום",
         "category": "ספורט",
         "class": "hard",
-        "ageMinutes": 40,
+        "ageMinutes": 52,
         "url": "https://www.israelhayom.co.il/sport/israeli-soccer/article/21055137",
         "beforeRank": 12,
         "afterRank": 12,
@@ -3098,7 +2841,7 @@
         "canonicalSource": "ynet",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 40,
+        "ageMinutes": 52,
         "url": "https://www.ynet.co.il/sport/article/bjyaw8gbge",
         "beforeRank": 13,
         "afterRank": 13,
@@ -3111,7 +2854,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://www.jpost.com/israel-news/article-903507",
         "beforeRank": 14,
         "afterRank": 14,
@@ -3124,14 +2867,14 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://www.jpost.com/israel-news/defense-news/article-903604",
         "beforeRank": 15,
         "afterRank": 15,
         "delta": 0,
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -3159,7 +2902,7 @@
         "canonicalSource": "ישראל היום",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 57,
+        "ageMinutes": 69,
         "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21055125",
         "beforeRank": 16,
         "afterRank": 16,
@@ -3178,7 +2921,7 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
           "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
           "overlapTokens": [
             "איראן",
@@ -3195,13 +2938,13 @@
         "canonicalSource": "דה מרקר",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 59,
+        "ageMinutes": 71,
         "url": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
         "beforeRank": 17,
         "afterRank": 17,
         "delta": 0,
         "trendMatch": {
-          "trend": "ממשל טראמפ דורש ממהגרים לשלם קנסות שמגיעים עד 1.8 מיליון דולר או לעזוב",
+          "trend": "זו הריבית החשובה בעולם — והמדד הטוב ביותר להצלחה הכלכלית של ממשל טראמפ",
           "clusterKey": "ממשל טראמפ",
           "domain": "חדשות",
           "externalMentions": 3,
@@ -3214,14 +2957,20 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.202915+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/world/america/2026-07-24/ty-article/.premium/0000019f-9067-de9f-afdf-b06704e40000",
+          "latestAt": "2026-07-25T16:04:12.211788+00:00",
+          "sampleUrl": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
           "overlapTokens": [
-            "טראמפ",
-            "ממשל"
+            "ביותר",
+            "בעולם",
+            "החשובה",
+            "הטוב",
+            "הכלכלית",
+            "הריבית",
+            "והמדד",
+            "טראמפ"
           ],
-          "score": 15.75,
-          "boost": 15.75
+          "score": 78.76,
+          "boost": 38.0
         }
       },
       {
@@ -3230,12 +2979,34 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 61,
+        "ageMinutes": 73,
         "url": "https://sports.walla.co.il/item/3856053",
         "beforeRank": 18,
         "afterRank": 18,
         "delta": 0,
-        "trendMatch": null
+        "trendMatch": {
+          "trend": "יותר מרבע מיליון בני אדם פונו מבתיהם בצרפת ובספרד בשל שריפות ענק",
+          "clusterKey": "פונו מבתיהם",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.235222+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/world/europe/2026-07-25/ty-article/.premium/0000019f-9875-d114-a59f-dcfd4c700000",
+          "overlapTokens": [
+            "מיליון",
+            "ענק"
+          ],
+          "score": 14.54,
+          "boost": 14.54
+        }
       },
       {
         "headline": "נכדת חסידת אומות העולם נאבקת על מעמד בישראל",
@@ -3243,7 +3014,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "משפט",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 78,
         "url": "https://www.jpost.com/israel-news/article-903603",
         "beforeRank": 19,
         "afterRank": 19,
@@ -3256,7 +3027,7 @@
         "canonicalSource": "וואלה",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 79,
         "url": "https://news.walla.co.il/item/3856049",
         "beforeRank": 20,
         "afterRank": 20,
@@ -3265,7 +3036,7 @@
           "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
           "clusterKey": "מחאת הג'וקים",
           "domain": "חדשות",
-          "externalMentions": 5,
+          "externalMentions": 4,
           "sourceCount": 2,
           "sources": [
             "ynet",
@@ -3286,60 +3057,23 @@
             "מחאת",
             "נגד"
           ],
-          "score": 56.88,
+          "score": 53.9,
           "boost": 38.0
         }
       }
     ],
     "top20After": [
       {
-        "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
-        "source": "JNS - Jewish News Syndicate",
-        "canonicalSource": "JNS",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 36,
-        "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
-        "beforeRank": 9,
-        "afterRank": 1,
-        "delta": 8,
-        "trendMatch": {
-          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T16:57:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856045",
-          "overlapTokens": [
-            "ושומרון",
-            "יותר",
-            "מבוקשים",
-            "מעצרים"
-          ],
-          "score": 32.07,
-          "boost": 32.07
-        }
-      },
-      {
         "headline": "איראן מאיימת בבנק מטרות חדש בתוך ישראל",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 34,
+        "ageMinutes": 45,
         "url": "https://www.maariv.co.il/news/military/article-1348534",
         "beforeRank": 7,
-        "afterRank": 2,
-        "delta": 5,
+        "afterRank": 1,
+        "delta": 6,
         "trendMatch": {
           "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
           "clusterKey": "שיציל אותנו",
@@ -3366,88 +3100,16 @@
         }
       },
       {
-        "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
-        "source": "גלובס - שוק ההון",
-        "canonicalSource": "גלובס",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 35,
-        "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
-        "beforeRank": 8,
-        "afterRank": 3,
-        "delta": 5,
-        "trendMatch": {
-          "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
-          "clusterKey": "מיליון דולר",
-          "domain": "כלכלה",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "גלובס",
-            "דה מרקר",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
-          "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
-          "overlapTokens": [
-            "דולר",
-            "כלכלה",
-            "שני"
-          ],
-          "score": 29.39,
-          "boost": 29.39
-        }
-      },
-      {
-        "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 37,
-        "url": "https://www.jpost.com/middle-east/article-903606",
-        "beforeRank": 10,
-        "afterRank": 4,
-        "delta": 6,
-        "trendMatch": {
-          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-          "clusterKey": "טראמפ איראן",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-          "overlapTokens": [
-            "דווח",
-            "תקיפות"
-          ],
-          "score": 14.89,
-          "boost": 14.89
-        }
-      },
-      {
         "headline": "יובל בן ה-4 שרד לילה בשטח; המשטרה שוללת פלילים",
         "source": "ישראל היום - כל הכתבות",
         "canonicalSource": "ישראל היום",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 31,
+        "ageMinutes": 43,
         "url": "https://www.israelhayom.co.il/news/local/article/21055273",
         "beforeRank": 5,
-        "afterRank": 5,
-        "delta": 0,
+        "afterRank": 2,
+        "delta": 3,
         "trendMatch": {
           "trend": "יום אחרי הירי הקטלני, ושוב בלי לעדכן: מתנחלים נכנסו לכפר הפלסטיני | תיעוד",
           "clusterKey": "נכנסו לכפר",
@@ -3474,21 +3136,171 @@
         }
       },
       {
+        "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
+        "source": "JNS - Jewish News Syndicate",
+        "canonicalSource": "JNS",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 48,
+        "url": "https://www.jns.org/news/israel-news/following-terror-attack-israeli-forces-arrest-70-suspects-across-judea-and-samaria",
+        "beforeRank": 9,
+        "afterRank": 3,
+        "delta": 6,
+        "trendMatch": {
+          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:57:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856045",
+          "overlapTokens": [
+            "ושומרון",
+            "יותר",
+            "מבוקשים",
+            "מעצרים"
+          ],
+          "score": 32.07,
+          "boost": 32.07
+        }
+      },
+      {
+        "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
+        "source": "גלובס - שוק ההון",
+        "canonicalSource": "גלובס",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 47,
+        "url": "https://www.globes.co.il/news/article.aspx?did=1001550263#utm_source=RSS",
+        "beforeRank": 8,
+        "afterRank": 4,
+        "delta": 4,
+        "trendMatch": {
+          "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
+          "clusterKey": "מיליון דולר",
+          "domain": "כלכלה",
+          "externalMentions": 3,
+          "sourceCount": 3,
+          "sources": [
+            "גלובס",
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
+          "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
+          "overlapTokens": [
+            "דולר",
+            "כלכלה",
+            "שני"
+          ],
+          "score": 29.39,
+          "boost": 29.39
+        }
+      },
+      {
+        "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
+        "source": "The Jerusalem Post - Middle East",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 48,
+        "url": "https://www.jpost.com/middle-east/article-903606",
+        "beforeRank": 10,
+        "afterRank": 5,
+        "delta": 5,
+        "trendMatch": {
+          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
+          "clusterKey": "טראמפ איראן",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
+          "overlapTokens": [
+            "דווח",
+            "תקיפות"
+          ],
+          "score": 14.89,
+          "boost": 14.89
+        }
+      },
+      {
+        "headline": "תשואת האג״ח בארה״ב טיפסה לשיא בכהונת טראמפ השנייה",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 71,
+        "url": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
+        "beforeRank": 17,
+        "afterRank": 6,
+        "delta": 11,
+        "trendMatch": {
+          "trend": "זו הריבית החשובה בעולם — והמדד הטוב ביותר להצלחה הכלכלית של ממשל טראמפ",
+          "clusterKey": "ממשל טראמפ",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.211788+00:00",
+          "sampleUrl": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
+          "overlapTokens": [
+            "ביותר",
+            "בעולם",
+            "החשובה",
+            "הטוב",
+            "הכלכלית",
+            "הריבית",
+            "והמדד",
+            "טראמפ"
+          ],
+          "score": 78.76,
+          "boost": 38.0
+        }
+      },
+      {
         "headline": "מחאת צעירים בהודו מתרחבת לאתגר שלטוני למודי",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 67,
+        "ageMinutes": 79,
         "url": "https://news.walla.co.il/item/3856049",
         "beforeRank": 20,
-        "afterRank": 6,
-        "delta": 14,
+        "afterRank": 7,
+        "delta": 13,
         "trendMatch": {
           "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
           "clusterKey": "מחאת הג'וקים",
           "domain": "חדשות",
-          "externalMentions": 5,
+          "externalMentions": 4,
           "sourceCount": 2,
           "sources": [
             "ynet",
@@ -3509,9 +3321,119 @@
             "מחאת",
             "נגד"
           ],
-          "score": 56.88,
+          "score": 53.9,
           "boost": 38.0
         }
+      },
+      {
+        "headline": "צה״ל עצר יותר מ-70 חשודים אחרי הפיגוע ליד חוות גלעד",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.jpost.com/israel-news/defense-news/article-903604",
+        "beforeRank": 15,
+        "afterRank": 8,
+        "delta": 7,
+        "trendMatch": {
+          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:57:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856045",
+          "overlapTokens": [
+            "ושומרון",
+            "יותר"
+          ],
+          "score": 16.03,
+          "boost": 16.03
+        }
+      },
+      {
+        "headline": "בכיר איראני דוחה מגעים עם ארה״ב ומאיים בעימות קרקעי",
+        "source": "ישראל היום - כל הכתבות",
+        "canonicalSource": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 69,
+        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21055125",
+        "beforeRank": 16,
+        "afterRank": 9,
+        "delta": 7,
+        "trendMatch": {
+          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
+          "clusterKey": "טראמפ איראן",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
+          "overlapTokens": [
+            "איראן",
+            "טראמפ",
+            "תקיפות"
+          ],
+          "score": 22.34,
+          "boost": 22.34
+        }
+      },
+      {
+        "headline": "גששי צה״ל: מחבלים שחוסלו בגבול נשאו דרכונים איראניים",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 84,
+        "url": "https://www.ynet.co.il/news/article/sklgphc4fg",
+        "beforeRank": 21,
+        "afterRank": 10,
+        "delta": 11,
+        "trendMatch": null
+      },
+      {
+        "headline": "אם ישראלית מתארת שנות מילואים, לידות וחרדה מאז 7 באוקטובר",
+        "source": "The Jerusalem Post - Israel News",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.jpost.com/israel-news/article-903507",
+        "beforeRank": 14,
+        "afterRank": 11,
+        "delta": 3,
+        "trendMatch": null
+      },
+      {
+        "headline": "נוריס יזנק ראשון בגרנד פרי הונגריה",
+        "source": "וואלה ספורט - ענפים נוספים",
+        "canonicalSource": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "ageMinutes": 13,
+        "url": "https://sports.walla.co.il/item/3856056",
+        "beforeRank": 1,
+        "afterRank": 12,
+        "delta": -11,
+        "trendMatch": null
       },
       {
         "headline": "ישראלים נכנסו שוב ללא אישור לאזור הכפר תל אחרי הפיגוע",
@@ -3519,11 +3441,11 @@
         "canonicalSource": "ישראל היום",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 80,
+        "ageMinutes": 92,
         "url": "https://www.israelhayom.co.il/news/defense/article/21054859",
         "beforeRank": 23,
-        "afterRank": 7,
-        "delta": 16,
+        "afterRank": 13,
+        "delta": 10,
         "trendMatch": {
           "trend": "יום אחרי הירי הקטלני, ושוב בלי לעדכן: מתנחלים נכנסו לכפר הפלסטיני | תיעוד",
           "clusterKey": "נכנסו לכפר",
@@ -3558,14 +3480,14 @@
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 82,
+        "ageMinutes": 93,
         "url": "https://news.walla.co.il/item/3856045",
         "beforeRank": 24,
-        "afterRank": 8,
-        "delta": 16,
+        "afterRank": 14,
+        "delta": 10,
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -3593,151 +3515,19 @@
         }
       },
       {
-        "headline": "צה״ל עצר יותר מ-70 חשודים אחרי הפיגוע ליד חוות גלעד",
-        "source": "The Jerusalem Post - Israel News",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 51,
-        "url": "https://www.jpost.com/israel-news/defense-news/article-903604",
-        "beforeRank": 15,
-        "afterRank": 9,
-        "delta": 6,
-        "trendMatch": {
-          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T16:57:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856045",
-          "overlapTokens": [
-            "ושומרון",
-            "יותר"
-          ],
-          "score": 16.03,
-          "boost": 16.03
-        }
-      },
-      {
-        "headline": "תשואת האג״ח בארה״ב טיפסה לשיא בכהונת טראמפ השנייה",
-        "source": "דה מרקר - גלובל",
-        "canonicalSource": "דה מרקר",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 59,
-        "url": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
-        "beforeRank": 17,
-        "afterRank": 10,
-        "delta": 7,
-        "trendMatch": {
-          "trend": "ממשל טראמפ דורש ממהגרים לשלם קנסות שמגיעים עד 1.8 מיליון דולר או לעזוב",
-          "clusterKey": "ממשל טראמפ",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "דה מרקר",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.202915+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/world/america/2026-07-24/ty-article/.premium/0000019f-9067-de9f-afdf-b06704e40000",
-          "overlapTokens": [
-            "טראמפ",
-            "ממשל"
-          ],
-          "score": 15.75,
-          "boost": 15.75
-        }
-      },
-      {
-        "headline": "בכיר איראני דוחה מגעים עם ארה״ב ומאיים בעימות קרקעי",
-        "source": "ישראל היום - כל הכתבות",
-        "canonicalSource": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 57,
-        "url": "https://www.israelhayom.co.il/news/world-news/middle-east/article/21055125",
-        "beforeRank": 16,
-        "afterRank": 11,
-        "delta": 5,
-        "trendMatch": {
-          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-          "clusterKey": "טראמפ איראן",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-          "overlapTokens": [
-            "איראן",
-            "טראמפ",
-            "תקיפות"
-          ],
-          "score": 22.34,
-          "boost": 22.34
-        }
-      },
-      {
-        "headline": "גששי צה״ל: מחבלים שחוסלו בגבול נשאו דרכונים איראניים",
-        "source": "ynet - כל ערוץ החדשות",
-        "canonicalSource": "ynet",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 73,
-        "url": "https://www.ynet.co.il/news/article/sklgphc4fg",
-        "beforeRank": 21,
-        "afterRank": 12,
-        "delta": 9,
-        "trendMatch": null
-      },
-      {
-        "headline": "אם ישראלית מתארת שנות מילואים, לידות וחרדה מאז 7 באוקטובר",
-        "source": "The Jerusalem Post - Israel News",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 51,
-        "url": "https://www.jpost.com/israel-news/article-903507",
-        "beforeRank": 14,
-        "afterRank": 13,
-        "delta": 1,
-        "trendMatch": null
-      },
-      {
         "headline": "יותר מ-70 מבוקשים נעצרו בפעילות נרחבת באיו״ש",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 114,
+        "ageMinutes": 126,
         "url": "https://www.maariv.co.il/news/military/article-1348519",
         "beforeRank": 32,
-        "afterRank": 14,
-        "delta": 18,
+        "afterRank": 15,
+        "delta": 17,
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -3763,17 +3553,40 @@
         }
       },
       {
-        "headline": "נוריס יזנק ראשון בגרנד פרי הונגריה",
-        "source": "וואלה ספורט - ענפים נוספים",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 1,
-        "url": "https://sports.walla.co.il/item/3856056",
-        "beforeRank": 1,
-        "afterRank": 15,
-        "delta": -14,
-        "trendMatch": null
+        "headline": "שישה חשודים יואשמו בצרפת בתכנון פיגוע בבית כנסת",
+        "source": "JNS - Jewish News Syndicate",
+        "canonicalSource": "JNS",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "ageMinutes": 116,
+        "url": "https://www.jns.org/news/antisemitism/france-to-charge-six-in-foiled-synagogue-attack",
+        "beforeRank": 30,
+        "afterRank": 16,
+        "delta": 14,
+        "trendMatch": {
+          "trend": "יותר מרבע מיליון בני אדם פונו מבתיהם בצרפת ובספרד בשל שריפות ענק",
+          "clusterKey": "פונו מבתיהם",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.235222+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/world/europe/2026-07-25/ty-article/.premium/0000019f-9875-d114-a59f-dcfd4c700000",
+          "overlapTokens": [
+            "אדם",
+            "בני",
+            "בצרפת"
+          ],
+          "score": 21.81,
+          "boost": 21.81
+        }
       },
       {
         "headline": "תמלילים חושפים את המחלוקת סביב חוק גירוש משפחות מחבלים",
@@ -3781,11 +3594,11 @@
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 99,
+        "ageMinutes": 111,
         "url": "https://www.ynet.co.il/news/article/yokra14833907",
         "beforeRank": 28,
-        "afterRank": 16,
-        "delta": 12,
+        "afterRank": 17,
+        "delta": 11,
         "trendMatch": null
       },
       {
@@ -3794,11 +3607,11 @@
         "canonicalSource": "הארץ",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 125,
+        "ageMinutes": 137,
         "url": "https://www.haaretz.co.il/news/education/2026-07-25/ty-article/.premium/0000019f-8f65-df92-a7ff-afe7771a0000",
         "beforeRank": 37,
-        "afterRank": 17,
-        "delta": 20,
+        "afterRank": 18,
+        "delta": 19,
         "trendMatch": {
           "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
           "clusterKey": "שיציל אותנו",
@@ -3825,30 +3638,41 @@
         }
       },
       {
-        "headline": "נבחרת הנוער פתחה את אליפות אירופה בניצחון בהארכה",
-        "source": "וואלה ספורט",
-        "canonicalSource": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "ageMinutes": 1,
-        "url": "https://sports.walla.co.il/item/3856058",
-        "beforeRank": 2,
-        "afterRank": 18,
-        "delta": -16,
-        "trendMatch": null
-      },
-      {
-        "headline": "שישה חשודים יואשמו בצרפת בתכנון פיגוע בבית כנסת",
-        "source": "JNS - Jewish News Syndicate",
-        "canonicalSource": "JNS",
+        "headline": "פיגוע הדקירה במנהטן מעמיק את העימות סביב ממדאני",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 104,
-        "url": "https://www.jns.org/news/antisemitism/france-to-charge-six-in-foiled-synagogue-attack",
-        "beforeRank": 30,
+        "ageMinutes": 146,
+        "url": "https://www.maariv.co.il/news/world/article-1348513",
+        "beforeRank": 41,
         "afterRank": 19,
-        "delta": 11,
-        "trendMatch": null
+        "delta": 22,
+        "trendMatch": {
+          "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
+          "clusterKey": "שיציל אותנו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T14:52:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3855919",
+          "overlapTokens": [
+            "בין",
+            "חדשות",
+            "מלחמה"
+          ],
+          "score": 26.79,
+          "boost": 26.79
+        }
       },
       {
         "headline": "סטף הוטון בהריון ראשון מסטיבן דארבי",
@@ -3856,7 +3680,7 @@
         "canonicalSource": "Daily Mail",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 19,
+        "ageMinutes": 31,
         "url": "https://www.dailymail.com/tvshowbiz/article-16004819/England-star-Steph-Houghton-pregnant-child-husband-Stephen-Darby-battle-Motor-Neurone-Disease.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
         "beforeRank": 3,
         "afterRank": 20,
@@ -3865,39 +3689,6 @@
       }
     ],
     "movement": [
-      {
-        "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
-        "source": "JNS",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T16:57:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856045",
-          "overlapTokens": [
-            "ושומרון",
-            "יותר",
-            "מבוקשים",
-            "מעצרים"
-          ],
-          "score": 32.07,
-          "boost": 32.07
-        },
-        "beforeRank": 9,
-        "afterRank": 1
-      },
       {
         "headline": "איראן מאיימת בבנק מטרות חדש בתוך ישראל",
         "source": "מעריב",
@@ -3928,71 +3719,7 @@
           "boost": 17.86
         },
         "beforeRank": 7,
-        "afterRank": 2
-      },
-      {
-        "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
-        "source": "גלובס",
-        "category": "כלכלה",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
-          "clusterKey": "מיליון דולר",
-          "domain": "כלכלה",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "גלובס",
-            "דה מרקר",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205424+00:00",
-          "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
-          "overlapTokens": [
-            "דולר",
-            "כלכלה",
-            "שני"
-          ],
-          "score": 29.39,
-          "boost": 29.39
-        },
-        "beforeRank": 8,
-        "afterRank": 3
-      },
-      {
-        "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
-        "source": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-          "clusterKey": "טראמפ איראן",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-          "overlapTokens": [
-            "דווח",
-            "תקיפות"
-          ],
-          "score": 14.89,
-          "boost": 14.89
-        },
-        "beforeRank": 10,
-        "afterRank": 4
+        "afterRank": 1
       },
       {
         "headline": "יובל בן ה-4 שרד לילה בשטח; המשטרה שוללת פלילים",
@@ -4024,7 +3751,141 @@
           "boost": 16.86
         },
         "beforeRank": 5,
+        "afterRank": 2
+      },
+      {
+        "headline": "כוחות הביטחון עצרו יותר מ-70 חשודים באיו״ש",
+        "source": "JNS",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:57:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856045",
+          "overlapTokens": [
+            "ושומרון",
+            "יותר",
+            "מבוקשים",
+            "מעצרים"
+          ],
+          "score": 32.07,
+          "boost": 32.07
+        },
+        "beforeRank": 9,
+        "afterRank": 3
+      },
+      {
+        "headline": "החוב האמריקאי מתקרב ל-40 טריליון דולר ומדאיג משקיעים",
+        "source": "גלובס",
+        "category": "כלכלה",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "\"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון ד' \"שאלו אותנו מי יקנה את זה?\": שני הפיזיקאים שעשו אקזיט של 400 מיליון דולר",
+          "clusterKey": "מיליון דולר",
+          "domain": "כלכלה",
+          "externalMentions": 3,
+          "sourceCount": 3,
+          "sources": [
+            "גלובס",
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.232775+00:00",
+          "sampleUrl": "https://www.themarker.com/weekend/2026-07-24/ty-article-magazine/.highlight/0000019f-8ea0-d458-a9ff-beeae8bf0000",
+          "overlapTokens": [
+            "דולר",
+            "כלכלה",
+            "שני"
+          ],
+          "score": 29.39,
+          "boost": 29.39
+        },
+        "beforeRank": 8,
+        "afterRank": 4
+      },
+      {
+        "headline": "החות׳ים מאיימים על ספינות סעודיות בצל הסלמה בתימן",
+        "source": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
+          "clusterKey": "טראמפ איראן",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
+          "overlapTokens": [
+            "דווח",
+            "תקיפות"
+          ],
+          "score": 14.89,
+          "boost": 14.89
+        },
+        "beforeRank": 10,
         "afterRank": 5
+      },
+      {
+        "headline": "תשואת האג״ח בארה״ב טיפסה לשיא בכהונת טראמפ השנייה",
+        "source": "דה מרקר",
+        "category": "כלכלה",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "זו הריבית החשובה בעולם — והמדד הטוב ביותר להצלחה הכלכלית של ממשל טראמפ",
+          "clusterKey": "ממשל טראמפ",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.211788+00:00",
+          "sampleUrl": "https://www.themarker.com/wallstreet/2026-07-25/ty-article/.premium/0000019f-98bc-d1a3-adff-faff15ed0000",
+          "overlapTokens": [
+            "ביותר",
+            "בעולם",
+            "החשובה",
+            "הטוב",
+            "הכלכלית",
+            "הריבית",
+            "והמדד",
+            "טראמפ"
+          ],
+          "score": 78.76,
+          "boost": 38.0
+        },
+        "beforeRank": 17,
+        "afterRank": 6
       },
       {
         "headline": "מחאת צעירים בהודו מתרחבת לאתגר שלטוני למודי",
@@ -4035,7 +3896,7 @@
           "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
           "clusterKey": "מחאת הג'וקים",
           "domain": "חדשות",
-          "externalMentions": 5,
+          "externalMentions": 4,
           "sourceCount": 2,
           "sources": [
             "ynet",
@@ -4056,11 +3917,101 @@
             "מחאת",
             "נגד"
           ],
-          "score": 56.88,
+          "score": 53.9,
           "boost": 38.0
         },
         "beforeRank": 20,
-        "afterRank": 6
+        "afterRank": 7
+      },
+      {
+        "headline": "צה״ל עצר יותר מ-70 חשודים אחרי הפיגוע ליד חוות גלעד",
+        "source": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:57:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856045",
+          "overlapTokens": [
+            "ושומרון",
+            "יותר"
+          ],
+          "score": 16.03,
+          "boost": 16.03
+        },
+        "beforeRank": 15,
+        "afterRank": 8
+      },
+      {
+        "headline": "בכיר איראני דוחה מגעים עם ארה״ב ומאיים בעימות קרקעי",
+        "source": "ישראל היום",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
+          "clusterKey": "טראמפ איראן",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.233909+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
+          "overlapTokens": [
+            "איראן",
+            "טראמפ",
+            "תקיפות"
+          ],
+          "score": 22.34,
+          "boost": 22.34
+        },
+        "beforeRank": 16,
+        "afterRank": 9
+      },
+      {
+        "headline": "גששי צה״ל: מחבלים שחוסלו בגבול נשאו דרכונים איראניים",
+        "source": "ynet",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": null,
+        "beforeRank": 21,
+        "afterRank": 10
+      },
+      {
+        "headline": "אם ישראלית מתארת שנות מילואים, לידות וחרדה מאז 7 באוקטובר",
+        "source": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": null,
+        "beforeRank": 14,
+        "afterRank": 11
+      },
+      {
+        "headline": "נוריס יזנק ראשון בגרנד פרי הונגריה",
+        "source": "וואלה",
+        "category": "ספורט",
+        "class": "soft",
+        "trendMatch": null,
+        "beforeRank": 1,
+        "afterRank": 12
       },
       {
         "headline": "ישראלים נכנסו שוב ללא אישור לאזור הכפר תל אחרי הפיגוע",
@@ -4095,7 +4046,7 @@
           "boost": 38.0
         },
         "beforeRank": 23,
-        "afterRank": 7
+        "afterRank": 13
       },
       {
         "headline": "המעצרים באיו״ש הורחבו אחרי הפיגוע בחוות גלעד",
@@ -4104,7 +4055,7 @@
         "class": "hard",
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -4131,119 +4082,7 @@
           "boost": 38.0
         },
         "beforeRank": 24,
-        "afterRank": 8
-      },
-      {
-        "headline": "צה״ל עצר יותר מ-70 חשודים אחרי הפיגוע ליד חוות גלעד",
-        "source": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "ynet",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T16:57:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856045",
-          "overlapTokens": [
-            "ושומרון",
-            "יותר"
-          ],
-          "score": 16.03,
-          "boost": 16.03
-        },
-        "beforeRank": 15,
-        "afterRank": 9
-      },
-      {
-        "headline": "תשואת האג״ח בארה״ב טיפסה לשיא בכהונת טראמפ השנייה",
-        "source": "דה מרקר",
-        "category": "כלכלה",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "ממשל טראמפ דורש ממהגרים לשלם קנסות שמגיעים עד 1.8 מיליון דולר או לעזוב",
-          "clusterKey": "ממשל טראמפ",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "דה מרקר",
-            "הארץ"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.202915+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/world/america/2026-07-24/ty-article/.premium/0000019f-9067-de9f-afdf-b06704e40000",
-          "overlapTokens": [
-            "טראמפ",
-            "ממשל"
-          ],
-          "score": 15.75,
-          "boost": 15.75
-        },
-        "beforeRank": 17,
-        "afterRank": 10
-      },
-      {
-        "headline": "בכיר איראני דוחה מגעים עם ארה״ב ומאיים בעימות קרקעי",
-        "source": "ישראל היום",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "טראמפ: איראן רוצה עסקה, מוכן להקשיב; לא דווח הלילה על תקיפות של ארה\"ב",
-          "clusterKey": "טראמפ איראן",
-          "domain": "חדשות",
-          "externalMentions": 2,
-          "sourceCount": 2,
-          "sources": [
-            "הארץ",
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-25T15:52:27.205270+00:00",
-          "sampleUrl": "https://www.haaretz.co.il/news/politics/2026-07-25/ty-article/.premium/0000019f-9713-df42-a1df-f77369760000",
-          "overlapTokens": [
-            "איראן",
-            "טראמפ",
-            "תקיפות"
-          ],
-          "score": 22.34,
-          "boost": 22.34
-        },
-        "beforeRank": 16,
-        "afterRank": 11
-      },
-      {
-        "headline": "גששי צה״ל: מחבלים שחוסלו בגבול נשאו דרכונים איראניים",
-        "source": "ynet",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 21,
-        "afterRank": 12
-      },
-      {
-        "headline": "אם ישראלית מתארת שנות מילואים, לידות וחרדה מאז 7 באוקטובר",
-        "source": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 14,
-        "afterRank": 13
+        "afterRank": 14
       },
       {
         "headline": "יותר מ-70 מבוקשים נעצרו בפעילות נרחבת באיו״ש",
@@ -4252,7 +4091,7 @@
         "class": "hard",
         "trendMatch": {
           "trend": "גל מעצרים ביהודה ושומרון: יותר מ-70 מבוקשים נעצרו",
-          "clusterKey": "מבוקשים נעצרו",
+          "clusterKey": "מ-70 מבוקשים נעצרו",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -4277,16 +4116,39 @@
           "boost": 38.0
         },
         "beforeRank": 32,
-        "afterRank": 14
+        "afterRank": 15
       },
       {
-        "headline": "נוריס יזנק ראשון בגרנד פרי הונגריה",
-        "source": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 1,
-        "afterRank": 15
+        "headline": "שישה חשודים יואשמו בצרפת בתכנון פיגוע בבית כנסת",
+        "source": "JNS",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "יותר מרבע מיליון בני אדם פונו מבתיהם בצרפת ובספרד בשל שריפות ענק",
+          "clusterKey": "פונו מבתיהם",
+          "domain": "חדשות",
+          "externalMentions": 2,
+          "sourceCount": 2,
+          "sources": [
+            "N12",
+            "הארץ"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T16:04:12.235222+00:00",
+          "sampleUrl": "https://www.haaretz.co.il/news/world/europe/2026-07-25/ty-article/.premium/0000019f-9875-d114-a59f-dcfd4c700000",
+          "overlapTokens": [
+            "אדם",
+            "בני",
+            "בצרפת"
+          ],
+          "score": 21.81,
+          "boost": 21.81
+        },
+        "beforeRank": 30,
+        "afterRank": 16
       },
       {
         "headline": "תמלילים חושפים את המחלוקת סביב חוק גירוש משפחות מחבלים",
@@ -4295,7 +4157,7 @@
         "class": "hard",
         "trendMatch": null,
         "beforeRank": 28,
-        "afterRank": 16
+        "afterRank": 17
       },
       {
         "headline": "שרידי בית כנסת ובתי לוויות נחשפו בוורשה",
@@ -4327,24 +4189,39 @@
           "boost": 17.86
         },
         "beforeRank": 37,
-        "afterRank": 17
-      },
-      {
-        "headline": "נבחרת הנוער פתחה את אליפות אירופה בניצחון בהארכה",
-        "source": "וואלה",
-        "category": "ספורט",
-        "class": "soft",
-        "trendMatch": null,
-        "beforeRank": 2,
         "afterRank": 18
       },
       {
-        "headline": "שישה חשודים יואשמו בצרפת בתכנון פיגוע בבית כנסת",
-        "source": "JNS",
+        "headline": "פיגוע הדקירה במנהטן מעמיק את העימות סביב ממדאני",
+        "source": "מעריב",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 30,
+        "trendMatch": {
+          "trend": "איראן בין מלחמה להישרדות: \"זה גיהינום, ואין מי שיציל אותנו\"",
+          "clusterKey": "שיציל אותנו",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "דה מרקר",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-25T14:52:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3855919",
+          "overlapTokens": [
+            "בין",
+            "חדשות",
+            "מלחמה"
+          ],
+          "score": 26.79,
+          "boost": 26.79
+        },
+        "beforeRank": 41,
         "afterRank": 19
       },
       {
