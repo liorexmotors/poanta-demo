@@ -18,6 +18,11 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CATALOG = ROOT / "assets" / "poenta-image-bank" / "catalog.json"
 DEFAULT_PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank/"
+BLOCKED_FILES = {
+    # Rejected by visual review on 2026-07-25: embedded generation text.
+    "poenta_022_1_1_4_2_calm.jpg",
+    "poenta_improve_006_security_border_rescue.jpg",
+}
 
 STOPWORDS = {
     "של",
@@ -141,6 +146,8 @@ def load_catalog(path: str | None = None) -> tuple[dict[str, Any], ...]:
             continue
         if not row.get("file_name"):
             continue
+        if str(row.get("file_name") or "") in BLOCKED_FILES:
+            continue
         row = dict(row)
         row["_tokens"] = tokens(record_text(row))
         out.append(row)
@@ -188,17 +195,20 @@ def match_image_bank_item(
     category = str(item.get("category") or "")
     source_tokens = tokens(item_text(item))
     category_tokens = _category_terms(category)
-    query_tokens = source_tokens | category_tokens
-    if not query_tokens:
+    if not (source_tokens or category_tokens):
         return None
 
     best: tuple[float, dict[str, Any], list[str]] | None = None
     for record in catalog:
         record_tokens = set(record.get("_tokens") or tokens(record_text(record)))
-        overlap = query_tokens & record_tokens
-        if not overlap:
+        source_overlap = source_tokens & record_tokens
+        category_overlap = category_tokens & record_tokens
+        if not (source_overlap or category_overlap):
             continue
-        score = float(len(overlap))
+        # The article's own words are stronger than broad category hints.  This
+        # keeps generic security/sports images from winning only because they
+        # contain words such as "גבול", "מלחמה", or "מגרש".
+        score = float(len(source_overlap) * 1.6)
         domain = str(record.get("domain_he") or "")
         topic = str(record.get("topic_he") or "")
         title = str(record.get("title_he") or "")
@@ -206,10 +216,14 @@ def match_image_bank_item(
             score += 5
         if category and category in topic:
             score += 3
-        if category_tokens & record_tokens:
-            score += min(5, len(category_tokens & record_tokens))
-        if source_tokens & tokens(title):
-            score += 4
+        if category_overlap:
+            score += min(2, len(category_overlap))
+        title_overlap = source_tokens & tokens(title)
+        if title_overlap:
+            score += 8 + min(4, len(title_overlap))
+        topic_overlap = source_tokens & tokens(topic)
+        if topic_overlap:
+            score += 3 + min(3, len(topic_overlap))
         if "ביטחון" in category and "ביטחון" not in domain:
             score -= 3
         if "ספורט" in category and "ספורט" not in record_text(record):
@@ -217,7 +231,7 @@ def match_image_bank_item(
         if "רכילות" in category and not any(x in record_text(record) for x in ("תרבות", "בידור", "מדיה", "אולפן")):
             score -= 2
         if best is None or score > best[0]:
-            best = (score, record, sorted(overlap)[:12])
+            best = (score, record, sorted(source_overlap or category_overlap)[:12])
 
     if best is None or best[0] < min_score:
         return None

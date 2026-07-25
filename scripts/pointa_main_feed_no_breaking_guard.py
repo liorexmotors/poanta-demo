@@ -51,9 +51,26 @@ def item_text(item: dict[str, Any]) -> str:
     return " ".join(str(x or "") for x in fields)
 
 
+def provenance_text(item: dict[str, Any]) -> str:
+    """Return source-identifying text, excluding legitimate article subjects."""
+    fields = [
+        item.get("sourceUrl"),
+        item.get("source"),
+        item.get("sourceLogo"),
+    ]
+    if isinstance(item.get("sourceLinks"), list):
+        for link in item.get("sourceLinks") or []:
+            if isinstance(link, dict):
+                fields.append(link.get("url"))
+                fields.append(link.get("name"))
+    return " ".join(str(x or "") for x in fields)
+
+
 def leak_reasons(item: dict[str, Any]) -> list[str]:
     text = item_text(item)
     low = text.lower()
+    provenance = provenance_text(item)
+    provenance_low = provenance.lower()
     reasons: list[str] = []
     if item.get("breaking") is True:
         reasons.append("breaking:true")
@@ -65,8 +82,9 @@ def leak_reasons(item: dict[str, Any]) -> list[str]:
         if pat in low:
             reasons.append(f"live_url:{pat}")
     for pat in LIVE_TEXT_PATTERNS:
-        haystack = low if re.fullmatch(r"[A-Za-z]+", pat) else text
-        needle = pat.lower() if haystack is low else pat
+        is_latin = bool(re.fullmatch(r"[A-Za-z]+", pat))
+        haystack = provenance_low if is_latin else provenance
+        needle = pat.lower() if is_latin else pat
         if needle in haystack:
             reasons.append(f"live_text:{pat}")
     if reasons and is_edited_official_telegram_card(item, reasons):

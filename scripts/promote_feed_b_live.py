@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Promote a QA-clean Feed B package into the live feed.json.
+"""Incrementally promote QA-clean items into the live feed.json.
 
-This is intentionally fail-closed: if Feed B cannot produce a clean candidate,
-the current live feed is left untouched.
+Every approved source item that is still inside the retention window and is
+missing from the live feed is eligible for validation. Bad items are discarded
+individually; the already-live, known-good feed is retained.
 """
 
 from __future__ import annotations
@@ -21,6 +22,12 @@ try:
     from poenta_image_bank import apply_image_bank_to_item
 except Exception:  # pragma: no cover - live promotion must stay usable without the optional bank
     apply_image_bank_to_item = None
+try:
+    from poenta_v5_feed_images import apply_to_new_item as apply_v5_image_to_new_item
+    from poenta_v5_feed_images import build_catalog as build_v5_image_catalog
+except Exception:  # pragma: no cover - image enrichment must never block publishing
+    apply_v5_image_to_new_item = None
+    build_v5_image_catalog = None
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +35,9 @@ FEED_B = ROOT / "feed_b.json"
 LIVE_FEED = ROOT / "feed.json"
 TMP_CANDIDATE = ROOT / "tmp" / "feed-b-live-auto-candidate.json"
 QUALITY_REPORT = ROOT / "tmp" / "feed-b-live-auto-quality.md"
+V5_DISABLE_MARKER = ROOT / ".poenta-v5-image-disabled"
+V5_TRIAL_ID = "pilot-20260725-v1"
+V5_TRIAL_LIMIT = 50
 
 
 def load_json(path: Path, fallback: Any) -> Any:
@@ -42,6 +52,18 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def parse_dt(value: Any) -> datetime | None:
+    text = str(value or "").strip()
+    if not text:
+        return None
+    try:
+        if text.endswith("Z"):
+            text = text[:-1] + "+00:00"
+        return datetime.fromisoformat(text)
+    except ValueError:
+        return None
+
+
 def item_url(item: dict[str, Any]) -> str:
     return str(item.get("url") or item.get("sourceUrl") or item.get("link") or "").strip()
 
@@ -54,10 +76,28 @@ def item_summary(item: dict[str, Any]) -> str:
     return str(item.get("summary") or item.get("subtitle") or item.get("context") or "").strip()
 
 
-def candidate_payload(source: dict[str, Any], items: list[dict[str, Any]], limit: int) -> dict[str, Any]:
+def candidate_payload(
+    source: dict[str, Any],
+    items: list[dict[str, Any]],
+    limit: int,
+    live: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     now = datetime.now(timezone(timedelta(hours=3))).isoformat(timespec="seconds")
     selected: list[dict[str, Any]] = []
     seen: set[str] = set()
+    live_items = [item for item in (live or {}).get("items", []) if isinstance(item, dict)]
+    live_by_url = {item_url(item): item for item in live_items if item_url(item)}
+    v5_enabled = (
+        os.environ.get("POENTA_V5_IMAGE_TRIAL_ENABLED", "0") == "1"
+        and not V5_DISABLE_MARKER.exists()
+        and apply_v5_image_to_new_item is not None
+        and build_v5_image_catalog is not None
+    )
+    trial_applied = sum(1 for item in live_items if item.get("poentaImageTrialId") == V5_TRIAL_ID)
+    try:
+        v5_catalog = build_v5_image_catalog() if v5_enabled else []
+    except Exception:
+        v5_catalog = []
     for item in items:
         if not isinstance(item, dict):
             continue
@@ -82,7 +122,28 @@ def candidate_payload(source: dict[str, Any], items: list[dict[str, Any]], limit
         if not str(fixed.get("imageUrl") or "").strip():
             fixed["imageUrl"] = default_image_url(fixed)
             fixed["imageFallbackKind"] = default_image_kind(fixed)
-        if os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_image_bank_to_item:
+        existing = live_by_url.get(url)
+        if existing is not None:
+            # Editorial updates may replace text, but historical image fields
+            # are immutable under the V5 trial.
+            for key, value in existing.items():
+                if key == "imageUrl" or key.startswith("image") or key.startswith("poentaImage"):
+                    fixed[key] = value
+        elif v5_enabled and trial_applied < V5_TRIAL_LIMIT:
+            try:
+                fixed, image_info = apply_v5_image_to_new_item(fixed, live_items, v5_catalog)
+                fixed["poentaImageAssignmentStatus"] = image_info.get("status")
+                fixed["poentaImageTrialId"] = V5_TRIAL_ID
+                trial_applied += 1
+            except Exception:
+                # A last-resort local Poenta image keeps publication independent
+                # of every optional V5 subsystem.
+                fixed["imageUrl"] = default_image_url(fixed)
+                fixed["imageFallbackKind"] = default_image_kind(fixed)
+                fixed["poentaImageAssignmentStatus"] = "trial_error_legacy_fallback"
+                fixed["poentaImageTrialId"] = V5_TRIAL_ID
+                trial_applied += 1
+        elif os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_image_bank_to_item:
             fixed, _image_bank_info = apply_image_bank_to_item(fixed)
         selected.append(fixed)
         seen.add(url)
@@ -237,6 +298,109 @@ def validate(path: Path) -> tuple[bool, set[str], str]:
     return True, set(), quality.strip()
 
 
+def validate_new_package(path: Path) -> tuple[bool, set[str], str]:
+    """Run item-level editorial guards without applying whole-feed SLA gates."""
+    remove: set[str] = set()
+    code, no_breaking = run_json(
+        [sys.executable, "scripts/pointa_main_feed_no_breaking_guard.py", "--feed", str(path), "--json"]
+    )
+    if code != 0 or no_breaking.get("status") != "ok":
+        for leak in no_breaking.get("leaks") or []:
+            if leak.get("url"):
+                remove.add(str(leak["url"]))
+
+    code, quality = run_text(
+        [sys.executable, "scripts/pointa_quality_gate.py", "--feed", str(path), "--report", str(QUALITY_REPORT)]
+    )
+    if code != 0:
+        remove |= quality_error_urls(QUALITY_REPORT)
+
+    code, auditor = run_json([sys.executable, "scripts/pointa_quality_auditor.py", "--feed", str(path), "--json"])
+    if code != 0 or auditor.get("status") != "ok" or auditor.get("errors"):
+        for issue in auditor.get("errors") or []:
+            url = issue_url(issue)
+            if url:
+                remove.add(url)
+
+    if remove:
+        return False, remove, f"new package needs pruning: {len(remove)} urls"
+    return True, set(), quality.strip()
+
+
+def newest_live_time(live: dict[str, Any]) -> datetime | None:
+    # Feed-level timestamps describe when the file was written, not when every
+    # approved article became available. Using them as an article cutoff caused
+    # delayed AI approvals with older publishedAt values to be skipped forever.
+    times = []
+    for item in live.get("items") or []:
+        if isinstance(item, dict):
+            times.extend((parse_dt(item.get("updatedAt")), parse_dt(item.get("publishedAt"))))
+    valid = [value for value in times if value is not None]
+    return max(valid) if valid else None
+
+
+def incremental_items(live: dict[str, Any], source: dict[str, Any], *, now_dt: datetime | None = None) -> list[dict[str, Any]]:
+    now_dt = now_dt or datetime.now(timezone(timedelta(hours=3)))
+    cutoff = now_dt - timedelta(days=7)
+    live_by_url = {
+        item_url(item): item
+        for item in live.get("items") or []
+        if isinstance(item, dict) and item_url(item)
+    }
+    selected: list[dict[str, Any]] = []
+    for item in source.get("items") or []:
+        if not isinstance(item, dict):
+            continue
+        url = item_url(item)
+        item_time = parse_dt(item.get("updatedAt") or item.get("publishedAt"))
+        if not url or item_time is None or item_time < cutoff:
+            continue
+        existing = live_by_url.get(url)
+        if existing is None:
+            selected.append(item)
+            continue
+        if str(item.get("feedBStatus") or "").lower() == "update":
+            existing_time = parse_dt(existing.get("updatedAt") or existing.get("publishedAt"))
+            if existing_time is None or item_time > existing_time:
+                selected.append(item)
+    return selected
+
+
+def merge_incremental(live: dict[str, Any], source: dict[str, Any], new_items: list[dict[str, Any]]) -> dict[str, Any]:
+    now_dt = datetime.now(timezone(timedelta(hours=3)))
+    now = now_dt.isoformat(timespec="seconds")
+    by_url = {item_url(item): dict(item) for item in live.get("items") or [] if isinstance(item, dict) and item_url(item)}
+    for item in new_items:
+        url = item_url(item)
+        fixed = dict(item)
+        existing = by_url.get(url)
+        if existing is not None:
+            for key, value in existing.items():
+                if key == "imageUrl" or key.startswith("image") or key.startswith("poentaImage"):
+                    fixed[key] = value
+        by_url[url] = fixed
+    cutoff = now_dt - timedelta(days=7)
+    merged = []
+    for item in by_url.values():
+        published = parse_dt(item.get("publishedAt") or item.get("updatedAt"))
+        if published is None or published >= cutoff:
+            merged.append(item)
+    merged.sort(key=lambda item: str(item.get("publishedAt") or item.get("updatedAt") or ""), reverse=True)
+    for index, item in enumerate(merged):
+        item["displayRank"] = index
+        item["feedBPackage"] = index // 10 + 1
+    payload = dict(live)
+    payload.update({
+        "updatedAt": now,
+        "promotedAt": now,
+        "mode": "feed-b-live-incremental",
+        "source": "Poenta main feed incremental publish",
+        "items": merged,
+        "errors": [],
+    })
+    return payload
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="Maximum items to promote; 0 means all eligible 7-day Feed B items")
@@ -245,23 +409,36 @@ def main() -> int:
     args = ap.parse_args()
 
     source = load_json(FEED_B, {})
+    live = load_json(LIVE_FEED, {})
     items = source.get("items") or []
     if not isinstance(items, list):
         raise SystemExit("feed_b.json has no items array")
 
+    if not isinstance(live.get("items"), list) or not live.get("items"):
+        raise SystemExit("live feed.json is missing or empty; refusing incremental promotion")
+
+    incremental = incremental_items(live, source)
+
+    if not incremental:
+        print(json.dumps({"ok": True, "reason": "no-new-live-items", "items": len(live.get("items") or [])}, ensure_ascii=False, indent=2))
+        return 0
+
     blocked: set[str] = set()
     report: dict[str, Any] = {}
-    for attempt in range(1, 8):
-        usable = [item for item in items if item_url(item) not in blocked]
-        payload = candidate_payload(source, usable, args.limit)
+    for attempt in range(1, len(incremental) + 2):
+        usable = [item for item in incremental if item_url(item) not in blocked]
+        payload = candidate_payload(source, usable, args.limit, live)
         count = len(payload.get("items") or [])
-        if count < args.min_items:
-            raise SystemExit(f"Feed B live candidate too small after pruning: {count}")
+        if count == 0:
+            raise SystemExit("all new items failed editorial validation; live feed left unchanged")
         write_json(TMP_CANDIDATE, payload)
-        ok, remove, message = validate(TMP_CANDIDATE)
-        report = {"attempt": attempt, "items": count, "ok": ok, "message": message, "pruned": len(blocked)}
+        ok, remove, message = validate_new_package(TMP_CANDIDATE)
+        report = {"attempt": attempt, "newCandidates": len(incremental), "accepted": count, "ok": ok, "message": message, "pruned": len(blocked)}
         if ok:
-            write_json(Path(args.out), payload)
+            merged = merge_incremental(live, source, payload.get("items") or [])
+            if len(merged.get("items") or []) < args.min_items:
+                raise SystemExit("merged live candidate is unexpectedly small")
+            write_json(Path(args.out), merged)
             write_json(ROOT / "tmp" / "feed-b-live-auto-promotion.json", report)
             print(json.dumps(report, ensure_ascii=False, indent=2))
             return 0
@@ -271,7 +448,7 @@ def main() -> int:
         blocked |= remove
 
     write_json(ROOT / "tmp" / "feed-b-live-auto-promotion.json", report)
-    raise SystemExit("Feed B live promotion failed after pruning attempts")
+    raise SystemExit("incremental live promotion failed to converge")
 
 
 if __name__ == "__main__":

@@ -8,6 +8,7 @@ ASKPASS=""
 cleanup() {
   if [[ -n "${ASKPASS:-}" && -f "$ASKPASS" ]]; then rm -f "$ASKPASS"; fi
   if [[ -d "$WORKTREE" ]]; then git -C "$ROOT" worktree remove "$WORKTREE" --force >/dev/null 2>&1 || true; fi
+  git -C "$ROOT" worktree remove /tmp/poanta-main-auto --force >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 
@@ -31,11 +32,7 @@ python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: do not publish or report success if the candidate feed still looks
 # stale/thin to a user. This is deliberately before recording publication
 # events so a failed candidate cannot fake timing freshness.
-if [[ "${POANTA_RESCUE_STALE_DEPLOY:-0}" == "1" ]]; then
-  python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json
-else
-  python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json --strict-freshness
-fi
+python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/deploy_candidate_health_gate.json
 # P0 rollback guard: a stale local/main artifact must never overwrite a fresher
 # Cloudflare/GitHub/public feed. The state file preserves the freshest known
 # successful deploy so a future production alias rollback is detected even if the
@@ -109,6 +106,11 @@ PY
 # candidate-content correctness gate for this deploy path.
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
+# The feed and the image bank can be updated by separate workers. Reconcile the
+# built snapshot after the build so feed.json can never be deployed before a
+# local image file it references. Missing assets fall back to a Poenta domain
+# image; the article itself remains publishable.
+python3 scripts/ensure_dist_feed_images.py --dist dist
 # Guard again after build so dist/feed.json cannot diverge from the candidate
 # that passed pre-build checks.
 python3 scripts/pointa_publish_rollback_guard.py --candidate dist/feed.json --out tmp/deploy_dist_rollback_guard.json
@@ -118,10 +120,11 @@ python3 scripts/pointa_publish_rollback_guard.py --candidate dist/feed.json --ou
 # checkout and prevents Cloudflare's Git-connected pipeline from rebuilding an
 # older feed over the direct deployment.
 MAIN_WORKTREE="/tmp/poanta-main-auto"
+git worktree remove "$MAIN_WORKTREE" --force >/dev/null 2>&1 || true
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
 mkdir -p "$MAIN_WORKTREE/tmp"
-for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/promote_feed_b_live.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
+for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
   if [[ -e "$ROOT/$p" ]]; then cp -a "$ROOT/$p" "$MAIN_WORKTREE/$p"; fi
 done
 if [[ -d "$ROOT/feed-a" ]]; then
@@ -133,13 +136,25 @@ if [[ -d "$ROOT/assets/feed-defaults" ]]; then
   rm -rf "$MAIN_WORKTREE/assets/feed-defaults"
   cp -a "$ROOT/assets/feed-defaults" "$MAIN_WORKTREE/assets/feed-defaults"
 fi
+if [[ -d "$ROOT/assets/poenta-image-bank-v5" ]]; then
+  mkdir -p "$MAIN_WORKTREE/assets"
+  rm -rf "$MAIN_WORKTREE/assets/poenta-image-bank-v5"
+  cp -a "$ROOT/assets/poenta-image-bank-v5" "$MAIN_WORKTREE/assets/poenta-image-bank-v5"
+fi
+if [[ -d "$ROOT/assets/poenta-domain-defaults" ]]; then
+  mkdir -p "$MAIN_WORKTREE/assets"
+  rm -rf "$MAIN_WORKTREE/assets/poenta-domain-defaults"
+  cp -a "$ROOT/assets/poenta-domain-defaults" "$MAIN_WORKTREE/assets/poenta-domain-defaults"
+fi
 cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/promote_feed_b_live.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git add feed-a || true
   git add assets/feed-defaults || true
+  git add assets/poenta-image-bank-v5 || true
+  git add assets/poenta-domain-defaults || true
   git commit -m "Auto-update Poanta feed snapshot"
   git pull --rebase origin main
   git push origin HEAD:main

@@ -36,7 +36,16 @@ if [[ -z "$ready" ]]; then
   exit 0
 fi
 
-python3 scripts/pointa_editor_pipeline.py qa --run-dir "$ready" --auto-reject-failed
+image_feature_enabled=1
+if [[ -f "$ROOT/.poenta-v5-image-disabled" ]]; then
+  image_feature_enabled=0
+fi
+
+POENTA_REQUIRE_V5_IMAGE_TAGS=1 python3 scripts/pointa_editor_pipeline.py qa --run-dir "$ready" --auto-reject-failed
+POENTA_REQUIRE_V5_IMAGE_TAGS=1 \
+POENTA_V5_IMAGE_BANK_ENABLED="$image_feature_enabled" \
+POENTA_V5_IMAGE_TRIAL_ID="${POENTA_V5_IMAGE_TRIAL_ID:-pilot-20260725-v1}" \
+POENTA_V5_IMAGE_TRIAL_LIMIT="${POENTA_V5_IMAGE_TRIAL_LIMIT:-50}" \
 python3 scripts/pointa_editor_pipeline.py apply --run-dir "$ready"
 ./scripts/deploy_current_feed.sh
 

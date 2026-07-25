@@ -43,6 +43,11 @@ except Exception:  # pragma: no cover
     filter_main_feed_breaking_leaks = None
 
 try:
+    from poenta_image_bank import apply_image_bank_to_item as apply_poenta_image_bank_to_item  # type: ignore
+except Exception:  # pragma: no cover
+    apply_poenta_image_bank_to_item = None
+
+try:
     from pointa_quality_gate import looks_cut as quality_gate_looks_cut  # type: ignore
 except Exception:  # pragma: no cover
     quality_gate_looks_cut = None
@@ -456,6 +461,17 @@ def make_editor_input(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def write_prompt(run_dir: Path, batch_files: list[Path]) -> None:
     batches = ", ".join(p.name for p in batch_files)
+    visual_sets_path = ROOT / "generated/poenta-image-bank-v2/freeform-article-tags-v1/visual-set-reduction-v4/canonical-visual-sets.json"
+    image_tags: list[str] = []
+    if visual_sets_path.exists():
+        visual_sets = json.loads(visual_sets_path.read_text(encoding="utf-8"))
+        image_tags = sorted({
+            str(tag).strip()
+            for row in visual_sets
+            for tag in row.get("tags", [])
+            if str(tag).strip()
+        })
+    image_tag_contract = ", ".join(image_tags)
     prompt = f"""# Pointa editor pilot run
 
 Process each `batch_*.json` file in this directory: {batches}
@@ -467,6 +483,10 @@ For every item:
 4. Return `reject` when `articleText` is thin and `contextPack` does not contain enough related evidence for a specific Pointa takeaway.
 5. Keep Hebrew output concise and follow the Pointa editor contract.
 6. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
+7. Assign exactly four distinct `imageTags` for image matching. Use only the approved one-word visual tags listed below. The `imageDomain` must equal `category`. Choose tags that can be represented visually and describe the story, not writing style or sentiment.
+
+Approved image tags:
+{image_tag_contract}
 
 Write one result file per batch, named `batch_N_results.json`.
 Each result object must include:
@@ -476,6 +496,8 @@ Each result object must include:
   "index": 0,
   "status": "pass|reject",
   "category": "...",
+  "imageDomain": "...",
+  "imageTags": ["...", "...", "...", "..."],
   "categoryClass": "security|money|tech|real|",
   "headline": "...",
   "summary": "...",
@@ -548,6 +570,8 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
         errors.append("headline over 75 chars")
     if "..." in headline or "…" in headline:
         errors.append("headline has ellipsis")
+    if headline.endswith("?") or headline.startswith(('"', "׳", "״", "“", "”")):
+        errors.append("headline is question/quote/source style")
     if callable(quality_gate_looks_cut) and quality_gate_looks_cut(headline):
         errors.append("headline appears mechanically cut")
     if too_close(headline, source.get("originalTitle", "")):
@@ -568,6 +592,27 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
         errors.append("takeaway has generic banned pattern")
     if category not in CATEGORY_CLASS:
         errors.append("unknown category")
+    if os.environ.get("POENTA_REQUIRE_V5_IMAGE_TAGS", "0") == "1":
+        visual_sets_path = ROOT / "generated/poenta-image-bank-v2/freeform-article-tags-v1/visual-set-reduction-v4/canonical-visual-sets.json"
+        approved_image_tags: set[str] = set()
+        if visual_sets_path.exists():
+            approved_image_tags = {
+                str(tag).strip()
+                for row in json.loads(visual_sets_path.read_text(encoding="utf-8"))
+                for tag in row.get("tags", [])
+                if str(tag).strip()
+            }
+        image_tags = result.get("imageTags")
+        if (
+            not isinstance(image_tags, list)
+            or len(image_tags) != 4
+            or len({str(tag).strip() for tag in image_tags}) != 4
+        ):
+            errors.append("imageTags must contain exactly four distinct tags")
+        elif approved_image_tags and any(str(tag).strip() not in approved_image_tags for tag in image_tags):
+            errors.append("imageTags contain a tag outside the approved dictionary")
+        if str(result.get("imageDomain") or "").strip() != category:
+            errors.append("imageDomain must equal category")
     me_or_israel_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "מזרח תיכון", "עזה", "gaza", "חמאס", "חיזבאללה", "לבנון", "איראן", "iran", "הורמוז", "סעודיה", "קטאר", "מצרים", "ירדן", "טורקיה", "פלסטיני"]
     world_only_terms = ["קובה", "cuba", "פוקושימה", "fukushima"]
     strong_local_terms = ["ישראל", "israel", "הסכמי אברהם", "abraham accords", "middle east", "mideast", "עזה", "gaza"]
@@ -579,6 +624,21 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
     ) or any(x in source_low for x in ["middle east", "mideast", "מזרח תיכון"])
     if category == "אקטואליה בעולם" and is_me_or_israel:
         errors.append("category_world_boundary")
+    foreign_only_terms = [
+        "בריטניה", "לונדון", "אנגליה", "סקוטלנד", "אירלנד", "ויילס",
+        "ניו יורק", "וושינגטון", "לוס אנג'לס", "קנדה", "צרפת", "פריז",
+        "גרמניה", "ברלין", "איטליה", "רומא", "ספרד", "מדריד",
+        "רוסיה", "מוסקבה", "אוקראינה", "סין", "טייוואן",
+        "פקיסטן", "ברזיל", "ארגנטינה", "מקסיקו", "אוסטרליה", "בגדד", "עיראק",
+    ]
+    regional_terms = [
+        "ישראל", "ישראלי", "צה״ל", "צה\"ל", "עזה", "חמאס", "חיזבאללה",
+        "לבנון", "סוריה", "איראן", "הורמוז", "מזרח תיכון", "פלסטיני",
+    ]
+    if category in {"משפט", "פלילים", "חדשות", "פוליטיקה"}:
+        foreign_blob = " | ".join([headline, summary, takeaway, source.get("originalTitle", ""), source.get("source", "")])
+        if any(term in foreign_blob for term in foreign_only_terms) and not any(term in foreign_blob for term in regional_terms):
+            errors.append("category_foreign_only_local_bucket")
     expected_class = CATEGORY_CLASS.get(category, "")
     if result.get("categoryClass", "") != expected_class:
         errors.append(f"categoryClass should be {expected_class!r}")
@@ -626,35 +686,65 @@ def editor_source_item(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]], results: list[dict[str, Any]]) -> dict[str, Any]:
+    from poenta_v5_feed_images import apply_to_new_item, build_catalog as build_v5_image_catalog
+
     by_index = {int(r["index"]): r for r in results if "index" in r}
     input_by_index = {int(x["index"]): x for x in editor_input}
     rejects = {editor_source_item(input_by_index[i]).get("sourceUrl") for i, r in by_index.items() if r.get("status") == "reject" and i in input_by_index}
     rewritten: dict[str, dict[str, Any]] = {}
     ordered_new: list[dict[str, Any]] = []
     feed_urls = {item.get("sourceUrl") for item in feed.get("items", [])}
+    image_feature_enabled = os.environ.get("POENTA_V5_IMAGE_BANK_ENABLED", "0") == "1"
+    trial_limit = max(0, int(os.environ.get("POENTA_V5_IMAGE_TRIAL_LIMIT", "0") or 0))
+    trial_id = os.environ.get("POENTA_V5_IMAGE_TRIAL_ID", "").strip()
+    trial_applied = sum(
+        1
+        for existing_item in feed.get("items", [])
+        if isinstance(existing_item, dict)
+        and trial_id
+        and existing_item.get("poentaImageTrialId") == trial_id
+    )
+    v5_image_catalog = (
+        build_v5_image_catalog()
+        if image_feature_enabled
+        else []
+    )
     for i, r in sorted(by_index.items()):
         if r.get("status") != "pass" or i not in input_by_index:
             continue
         item = editor_source_item(input_by_index[i])
         item["category"] = r.get("category", item.get("category", ""))
         item["categoryClass"] = r.get("categoryClass", item.get("categoryClass", ""))
+        proposed_image_tags = r.get("imageTags")
+        if (
+            isinstance(proposed_image_tags, list)
+            and len(proposed_image_tags) == 4
+            and len({str(tag).strip() for tag in proposed_image_tags}) == 4
+        ):
+            item["imageDomain"] = r.get("imageDomain") or item["category"]
+            item["imageTags"] = [str(tag).strip() for tag in proposed_image_tags]
         if is_gossip_source(str(item.get("source") or "")):
             item["category"] = "רכילות"
             item["categoryClass"] = "real"
         item["headline"] = r.get("headline", item.get("headline", ""))
         item["context"] = r.get("summary", item.get("context", ""))
         item["takeaway"] = r.get("takeaway", item.get("takeaway", ""))
-        if not str(item.get("imageUrl") or "").strip() and fetch_article_image:
-            image = fetch_article_image(str(item.get("sourceUrl") or ""))
-            if image:
-                item["imageUrl"] = image
-        if os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_poenta_image_bank_to_item:
-            item, _image_bank_info = apply_poenta_image_bank_to_item(item)
-        item["editorStatus"] = "pass"
+        item["editorStatus"] = "rescue-editor-pass"
         item["editorAddedAt"] = datetime.now().isoformat(timespec="seconds")
         url = item.get("sourceUrl")
         rewritten[url] = item
         if url and url not in feed_urls:
+            trial_has_capacity = not trial_limit or trial_applied < trial_limit
+            if image_feature_enabled and trial_has_capacity:
+                item, image_info = apply_to_new_item(
+                    item,
+                    feed.get("items", []),
+                    v5_image_catalog,
+                )
+                item["poentaImageAssignmentStatus"] = image_info["status"]
+                if trial_id:
+                    item["poentaImageTrialId"] = trial_id
+                trial_applied += 1
             ordered_new.append(item)
     preview = dict(feed)
     preview_items = []
@@ -793,6 +883,8 @@ def auto_reject_failed_results(run_dir: Path, editor_input: list[dict[str, Any]]
             idx = int(result.get("index", -1))
             if result.get("status") != "pass":
                 continue
+            if result.get("category") in CATEGORY_CLASS:
+                result["categoryClass"] = CATEGORY_CLASS[result["category"]]
             errors = validate_result(result, by_input.get(idx, {}))
             if not errors:
                 continue
