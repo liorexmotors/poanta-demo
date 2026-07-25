@@ -88,6 +88,17 @@ CATEGORY_HINTS = {
     "חדשות": ["מהיר", "עיר", "זירה ציבורית", "חדשות"],
 }
 
+SPORT_SUBTYPE_TERMS = {
+    "football": ("כדורגל", "מונדיאל", "ליגת האלופות", "פיפא", "פיפ״א", "פיפ\"א"),
+    "basketball": ("כדורסל", "nba", "יורוליג", "נקודות", "ריבאונדים", "לברון"),
+    "tennis": ("טניס", "ווימבלדון", "רולאן גארוס", "ג׳וקוביץ", "סינר", "אלקראס"),
+    "motorsport": ("פורמולה", "גרנד פרי", "פול פוזישן", "מרצדס", "מקלארן"),
+    "cycling": ("אופניים", "טור דה פראנס", "פוגצ׳אר"),
+    "swimming": ("שחייה", "שחיין", "שחיינית", "מטר חופשי"),
+    "water_polo": ("כדורמים",),
+    "hockey": ("הוקי",),
+}
+
 
 def _normalize(text: Any) -> str:
     text = str(text or "").lower()
@@ -130,6 +141,14 @@ def record_text(record: dict[str, Any]) -> str:
             "keywords_he",
         )
     )
+
+
+def sport_subtype(value: Any) -> str:
+    text = _normalize(value)
+    for subtype, terms in SPORT_SUBTYPE_TERMS.items():
+        if any(_normalize(term) in text for term in terms):
+            return subtype
+    return ""
 
 
 @lru_cache(maxsize=4)
@@ -195,11 +214,20 @@ def match_image_bank_item(
     category = str(item.get("category") or "")
     source_tokens = tokens(item_text(item))
     category_tokens = _category_terms(category)
+    is_sport = category == "ספורט"
+    required_sport_subtype = sport_subtype(item_text(item)) if is_sport else ""
     if not (source_tokens or category_tokens):
         return None
 
     best: tuple[float, dict[str, Any], list[str]] | None = None
     for record in catalog:
+        if is_sport:
+            candidate_sport_subtype = sport_subtype(record_text(record))
+            if required_sport_subtype:
+                if candidate_sport_subtype != required_sport_subtype:
+                    continue
+            elif candidate_sport_subtype:
+                continue
         record_tokens = set(record.get("_tokens") or tokens(record_text(record)))
         source_overlap = source_tokens & record_tokens
         category_overlap = category_tokens & record_tokens

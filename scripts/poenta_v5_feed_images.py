@@ -53,6 +53,17 @@ DOMAIN_DEFAULT_FILES = {
     "תרבות": "culture.png",
 }
 
+SPORT_SUBTYPE_TERMS = {
+    "football": ("כדורגל", "מונדיאל", "ליגת האלופות", "פיפא", "פיפ״א", "פיפ\"א"),
+    "basketball": ("כדורסל", "nba", "יורוליג", "נקודות", "ריבאונדים", "לברון"),
+    "tennis": ("טניס", "ווימבלדון", "רולאן גארוס", "ג׳וקוביץ", "סינר", "אלקראס"),
+    "motorsport": ("פורמולה", "גרנד פרי", "פול פוזישן", "מרצדס", "מקלארן"),
+    "cycling": ("אופניים", "טור דה פראנס", "פוגצ׳אר"),
+    "swimming": ("שחייה", "שחיין", "שחיינית", "מטר חופשי"),
+    "water_polo": ("כדורמים",),
+    "hockey": ("הוקי",),
+}
+
 
 def canonical(value: Any) -> str:
     return " ".join(str(value or "").strip().replace("״", '"').split()).lower()
@@ -65,6 +76,35 @@ def unique_tags(values: Iterable[Any]) -> list[str]:
         if tag and tag not in out:
             out.append(tag)
     return out
+
+
+def sport_subtype_from_text(value: Any) -> str:
+    text = canonical(value)
+    for subtype, terms in SPORT_SUBTYPE_TERMS.items():
+        if any(canonical(term) in text for term in terms):
+            return subtype
+    return ""
+
+
+def article_sport_subtype(item: dict[str, Any]) -> str:
+    return sport_subtype_from_text(
+        " ".join(
+            str(item.get(key) or "")
+            for key in ("headline", "title", "originalTitle", "context", "summary", "imageTags")
+        )
+    )
+
+
+def image_sport_subtype(image: dict[str, Any]) -> str:
+    return sport_subtype_from_text(
+        " ".join(
+            [
+                str(image.get("tags") or ""),
+                str(image.get("file") or ""),
+                str(image.get("setCode") or ""),
+            ]
+        )
+    )
 
 
 def _read(path: Path, default: Any) -> Any:
@@ -171,11 +211,20 @@ def find_match(
     if not domain or len(tags) != 4:
         return None
     tag_set = set(tags)
+    is_sport = domain == canonical("ספורט")
+    required_sport_subtype = article_sport_subtype(item) if is_sport else ""
     counts = usage_counts(feed_items)
     candidates: list[tuple[int, bool, int, str, dict[str, Any], list[str]]] = []
     for image in catalog:
         if image["domain"] != domain:
             continue
+        if is_sport:
+            candidate_sport_subtype = image_sport_subtype(image)
+            if required_sport_subtype:
+                if candidate_sport_subtype != required_sport_subtype:
+                    continue
+            elif candidate_sport_subtype:
+                continue
         matched = sorted(tag_set & set(image["tags"]))
         score = len(matched)
         if score < 1:
