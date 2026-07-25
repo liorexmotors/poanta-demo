@@ -1,24 +1,23 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-25T16:04:12+00:00",
+  "generatedAt": "2026-07-25T17:13:58+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 17.92,
-    "avgAfterHealthScore": 89.17,
+    "avgHealthDelta": 17.33,
+    "avgAfterHealthScore": 89.33,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 76,
-      "rollingScore": 77.81,
+      "latestScore": 90,
+      "rollingScore": 79.19,
       "readyRuns": 6,
       "criticalBlockers": [
-        "top_item_stale_over_25m",
         "top12_under60_below_9"
       ],
       "matureForProduction": false
@@ -33,516 +32,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T10:59:45+00:00",
-      "feedFingerprint": "670755794801852852",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 29,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 10
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 10
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "N12",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "ישראל היום",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 6,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 20,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 3,
-              "headline": "מעריב: ישראל הופכת לנכס ביטחוני מרכזי לארה\"ב",
-              "source": "מעריב - חדשות",
-              "canonicalSource": "מעריב",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 39,
-              "url": "https://www.maariv.co.il/news/opinions/article-1340344",
-              "trendMatch": {
-                "trend": "\"השתתף בפשעי מלחמה\": הארגון שרודף לוחמי צה\"ל הגיש תלונה באיטליה על תייר ישראלי",
-                "clusterKey": "באיטליה תייר",
-                "domain": "חדשות",
-                "externalMentions": 4,
-                "sourceCount": 1,
-                "sources": [
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T09:00:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3850731",
-                "overlapTokens": [
-                  "חדשות",
-                  "ישראלי"
-                ],
-                "score": 18.4,
-                "boost": 18.4
-              },
-              "queueScore": 35.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 39,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "מעריב",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "מעריב",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "הארץ",
-            "count": 3
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 2
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 9,
-        "trendGapMatchedTop20": 9,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 20,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "מעריב: ישראל הופכת לנכס ביטחוני מרכזי לארה\"ב",
-              "source": "מעריב - חדשות",
-              "canonicalSource": "מעריב",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 39,
-              "url": "https://www.maariv.co.il/news/opinions/article-1340344",
-              "trendMatch": {
-                "trend": "\"השתתף בפשעי מלחמה\": הארגון שרודף לוחמי צה\"ל הגיש תלונה באיטליה על תייר ישראלי",
-                "clusterKey": "באיטליה תייר",
-                "domain": "חדשות",
-                "externalMentions": 4,
-                "sourceCount": 1,
-                "sources": [
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T09:00:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/item/3850731",
-                "overlapTokens": [
-                  "חדשות",
-                  "ישראלי"
-                ],
-                "score": 18.4,
-                "boost": 18.4
-              },
-              "queueScore": 35.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 57,
-      "afterHealthScore": 69,
-      "replacementReadiness": {
-        "score": 61,
-        "threshold": 80,
-        "components": {
-          "freshness": 6.8,
-          "newsinessTop10": 17.5,
-          "top20Quality": 17.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 0,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 2,
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 3,
-        "healthScore": 12
-      }
-    },
-    {
-      "generatedAt": "2026-07-04T11:14:28+00:00",
-      "feedFingerprint": "7446833045421617837",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 44,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 10
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 10
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "N12",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "ישראל היום",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 6,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 40,
-          "score": 0,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": []
-        }
-      },
-      "after": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 53,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "מעריב",
-          "count": 3
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "מעריב",
-            "count": 3
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "הארץ",
-            "count": 3
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 2
-          },
-          {
-            "name": "N12",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 5,
-        "trendMatchedTop20": 9,
-        "trendGapMatchedTop20": 9,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 40,
-          "score": 0,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": []
-        }
-      },
-      "beforeHealthScore": 57,
-      "afterHealthScore": 69,
-      "replacementReadiness": {
-        "score": 60,
-        "threshold": 80,
-        "components": {
-          "freshness": 5.1,
-          "newsinessTop10": 17.5,
-          "top20Quality": 17.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 10.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 0,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 2,
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 3,
-        "healthScore": 12
-      }
-    },
     {
       "generatedAt": "2026-07-04T11:34:24+00:00",
       "feedFingerprint": "5435497227222708728",
@@ -51196,6 +50685,888 @@
         "trendMatchedTop10": 3,
         "trendMatchedTop20": 3,
         "healthScore": 28
+      }
+    },
+    {
+      "generatedAt": "2026-07-25T16:56:15+00:00",
+      "feedFingerprint": "8116471600615095691",
+      "before": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 11,
+        "topItemAgeMinutes": 5,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 9
+        },
+        "importantMissingTop20": [
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 9
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "JNS",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "Axios Israel/Iran דרך Google News",
+            "count": 1
+          },
+          {
+            "name": "מעריב",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          },
+          {
+            "name": "Page Six",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 98,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "מצוד בדרום הר חברון אחר פלסטיני שחטף נשק מחייל",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 11,
+              "url": "https://news.walla.co.il/item/3856065",
+              "trendMatch": {
+                "trend": "אירוע חריג בדרום הר חברון: כוחות צה\"ל במצוד אחר חשוד שגנב נשק",
+                "clusterKey": "בדרום חברון",
+                "domain": "חדשות",
+                "externalMentions": 7,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "הארץ",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T19:14:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856065",
+                "overlapTokens": [
+                  "אחר",
+                  "אירוע",
+                  "בדרום",
+                  "במצוד",
+                  "חברון",
+                  "חדשות",
+                  "חריג",
+                  "חשוד"
+                ],
+                "score": 152.94,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "אודינזה הצטרפה למאבק על טייריס אסנטה",
+              "source": "וואלה ספורט - כדורגל ישראלי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 5,
+              "url": "https://sports.walla.co.il/item/3856067",
+              "trendMatch": null,
+              "queueScore": 36.0
+            },
+            {
+              "rank": 9,
+              "headline": "מאסר עולם בבריטניה למתכנן פיגוע נגד חיילי צה״ל",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 41,
+              "url": "https://news.walla.co.il/item/3856064",
+              "trendMatch": {
+                "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
+                "clusterKey": "מחאת הג'וקים",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T17:16:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856049",
+                "overlapTokens": [
+                  "חדשות",
+                  "נגד"
+                ],
+                "score": 15.4,
+                "boost": 15.4
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 5,
+              "headline": "יוון אישרה רכש מערכות הגנה מישראל ב-4 מיליארד דולר",
+              "source": "JNS - Jewish News Syndicate",
+              "canonicalSource": "JNS",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.jns.org/news/israel-news/greece-to-purchase-air-defense-system-from-israel-worth-4-billion",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 8,
+              "headline": "נייקי סוגרת סניפים בארה\"ב ומתכננת קיצוץ של 1,400 משרות",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.israelhayom.co.il/lifestyle/fashion/article/21055507",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 10,
+              "headline": "אוריין גורן ערך בכורה בקבוצה הבוגרת של ברצלונה",
+              "source": "ynet - כל ערוץ הספורט",
+              "canonicalSource": "ynet",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 43,
+              "url": "https://www.ynet.co.il/sport/worldsoccer/article/ry56aumbgg",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 7,
+        "top12Under60": 8,
+        "topItemAgeMinutes": 11,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "JNS",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "Axios Israel/Iran דרך Google News",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 12,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 98,
+          "readyCount": 6,
+          "hardReadyCount": 6,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 4,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "מצוד בדרום הר חברון אחר פלסטיני שחטף נשק מחייל",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 11,
+              "url": "https://news.walla.co.il/item/3856065",
+              "trendMatch": {
+                "trend": "אירוע חריג בדרום הר חברון: כוחות צה\"ל במצוד אחר חשוד שגנב נשק",
+                "clusterKey": "בדרום חברון",
+                "domain": "חדשות",
+                "externalMentions": 7,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "הארץ",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T19:14:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856065",
+                "overlapTokens": [
+                  "אחר",
+                  "אירוע",
+                  "בדרום",
+                  "במצוד",
+                  "חברון",
+                  "חדשות",
+                  "חריג",
+                  "חשוד"
+                ],
+                "score": 152.94,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "אודינזה הצטרפה למאבק על טייריס אסנטה",
+              "source": "וואלה ספורט - כדורגל ישראלי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 5,
+              "url": "https://sports.walla.co.il/item/3856067",
+              "trendMatch": null,
+              "queueScore": 36.0
+            },
+            {
+              "rank": 4,
+              "headline": "מאסר עולם בבריטניה למתכנן פיגוע נגד חיילי צה״ל",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 41,
+              "url": "https://news.walla.co.il/item/3856064",
+              "trendMatch": {
+                "trend": "\"מחאת הג'וקים\" נגד מודי: כך מם אינטרנטי הצית את רחובות הודו וגרם להתפטרות השר",
+                "clusterKey": "מחאת הג'וקים",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T17:16:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856049",
+                "overlapTokens": [
+                  "חדשות",
+                  "נגד"
+                ],
+                "score": 15.4,
+                "boost": 15.4
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "יוון אישרה רכש מערכות הגנה מישראל ב-4 מיליארד דולר",
+              "source": "JNS - Jewish News Syndicate",
+              "canonicalSource": "JNS",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.jns.org/news/israel-news/greece-to-purchase-air-defense-system-from-israel-worth-4-billion",
+              "trendMatch": null,
+              "queueScore": 31.0
+            },
+            {
+              "rank": 5,
+              "headline": "נייקי סוגרת סניפים בארה\"ב ומתכננת קיצוץ של 1,400 משרות",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.israelhayom.co.il/lifestyle/fashion/article/21055507",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 6,
+              "headline": "אוריין גורן ערך בכורה בקבוצה הבוגרת של ברצלונה",
+              "source": "ynet - כל ערוץ הספורט",
+              "canonicalSource": "ynet",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 43,
+              "url": "https://www.ynet.co.il/sport/worldsoccer/article/ry56aumbgg",
+              "trendMatch": null,
+              "queueScore": 17.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 69,
+      "afterHealthScore": 87,
+      "replacementReadiness": {
+        "score": 90,
+        "threshold": 80,
+        "components": {
+          "freshness": 18.0,
+          "newsinessTop10": 25.0,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "softTop10": -4,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 5,
+        "healthScore": 18
+      }
+    },
+    {
+      "generatedAt": "2026-07-25T17:13:58+00:00",
+      "feedFingerprint": "8936402988968788715",
+      "before": {
+        "newsinessTop10": 6,
+        "softTop10": 4,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 10,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 11,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 9
+        },
+        "importantMissingTop20": [
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 9
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "JNS",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "Axios Israel/Iran דרך Google News",
+            "count": 1
+          },
+          {
+            "name": "מעריב",
+            "count": 1
+          },
+          {
+            "name": "Mirror",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 4,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 77,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "חייל נפצע בסוסיא; חשוד חטף את נשקו ונמלט",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-903609",
+              "trendMatch": {
+                "trend": "אירוע חריג בדרום הר חברון: כוחות צה\"ל במצוד אחר חשוד שגנב נשק",
+                "clusterKey": "בדרום חברון",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "הארץ",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T19:14:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856065",
+                "overlapTokens": [
+                  "בדרום",
+                  "חברון",
+                  "חשוד",
+                  "כוחות"
+                ],
+                "score": 53.89,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 5,
+              "headline": "מצוד בדרום הר חברון אחר פלסטיני שחטף נשק מחייל",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://news.walla.co.il/item/3856065",
+              "trendMatch": {
+                "trend": "אירוע חריג בדרום הר חברון: כוחות צה\"ל במצוד אחר חשוד שגנב נשק",
+                "clusterKey": "בדרום חברון",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "הארץ",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T19:14:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856065",
+                "overlapTokens": [
+                  "אחר",
+                  "אירוע",
+                  "בדרום",
+                  "במצוד",
+                  "חברון",
+                  "חדשות",
+                  "חריג",
+                  "חשוד"
+                ],
+                "score": 148.2,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 6,
+              "headline": "יוון אישרה רכש מערכות הגנה מישראל ב-4 מיליארד דולר",
+              "source": "JNS - Jewish News Syndicate",
+              "canonicalSource": "JNS",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.jns.org/news/israel-news/greece-to-purchase-air-defense-system-from-israel-worth-4-billion",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 3,
+              "headline": "אודינזה הצטרפה למאבק על טייריס אסנטה",
+              "source": "וואלה ספורט - כדורגל ישראלי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 23,
+              "url": "https://sports.walla.co.il/item/3856067",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 6,
+        "top12Under60": 7,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 3
+          },
+          {
+            "name": "JNS",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Axios Israel/Iran דרך Google News",
+            "count": 1
+          },
+          {
+            "name": "N12",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 11,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 77,
+          "readyCount": 4,
+          "hardReadyCount": 4,
+          "trendReadyCount": 2,
+          "uniqueReadySources": 3,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "חייל נפצע בסוסיא; חשוד חטף את נשקו ונמלט",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-903609",
+              "trendMatch": {
+                "trend": "אירוע חריג בדרום הר חברון: כוחות צה\"ל במצוד אחר חשוד שגנב נשק",
+                "clusterKey": "בדרום חברון",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "הארץ",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T19:14:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856065",
+                "overlapTokens": [
+                  "בדרום",
+                  "חברון",
+                  "חשוד",
+                  "כוחות"
+                ],
+                "score": 53.89,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "מצוד בדרום הר חברון אחר פלסטיני שחטף נשק מחייל",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://news.walla.co.il/item/3856065",
+              "trendMatch": {
+                "trend": "אירוע חריג בדרום הר חברון: כוחות צה\"ל במצוד אחר חשוד שגנב נשק",
+                "clusterKey": "בדרום חברון",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "הארץ",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-25T19:14:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856065",
+                "overlapTokens": [
+                  "אחר",
+                  "אירוע",
+                  "בדרום",
+                  "במצוד",
+                  "חברון",
+                  "חדשות",
+                  "חריג",
+                  "חשוד"
+                ],
+                "score": 148.2,
+                "boost": 38.0
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "יוון אישרה רכש מערכות הגנה מישראל ב-4 מיליארד דולר",
+              "source": "JNS - Jewish News Syndicate",
+              "canonicalSource": "JNS",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.jns.org/news/israel-news/greece-to-purchase-air-defense-system-from-israel-worth-4-billion",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 4,
+              "headline": "אודינזה הצטרפה למאבק על טייריס אסנטה",
+              "source": "וואלה ספורט - כדורגל ישראלי",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 23,
+              "url": "https://sports.walla.co.il/item/3856067",
+              "trendMatch": null,
+              "queueScore": 23.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 70,
+      "afterHealthScore": 85,
+      "replacementReadiness": {
+        "score": 90,
+        "threshold": 80,
+        "components": {
+          "freshness": 17.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top12_under60_below_9"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "softTop10": -4,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": -1,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 4,
+        "healthScore": 15
       }
     }
   ]
