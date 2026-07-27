@@ -1,25 +1,23 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-27T11:48:14+00:00",
+  "generatedAt": "2026-07-27T12:04:23+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 24.33,
-    "avgAfterHealthScore": 94.58,
+    "avgHealthDelta": 24.92,
+    "avgAfterHealthScore": 95.5,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 88,
-      "rollingScore": 86.21,
-      "readyRuns": 15,
-      "criticalBlockers": [
-        "top_item_stale_over_25m"
-      ],
+      "latestScore": 97,
+      "rollingScore": 87.1,
+      "readyRuns": 17,
+      "criticalBlockers": [],
       "matureForProduction": false
     },
     "alizaReview": {
@@ -32,589 +30,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T14:34:15+00:00",
-      "feedFingerprint": "2485471769574704032",
-      "before": {
-        "newsinessTop10": 3,
-        "softTop10": 3,
-        "otherTop10": 4,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 6
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 6
-          },
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "Page Six",
-            "count": 1
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 6,
-        "trendGapMatchedTop20": 6,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 30,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "דני אילון מזהיר: ישראל בשפל מול ארה\"ב וההסכם עם איראן הוא כניעה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": {
-                "trend": "נתניהו שוחח עם טראמפ, סיכם להיפגש עמו בארה\"ב - והכחיש: לא תכננו לחסל את בכירי המו\"מ של איראן",
-                "clusterKey": "המו איראן",
-                "domain": "חדשות",
-                "externalMentions": 2,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "הארץ"
-                ],
-                "discoveryTypes": [
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T14:34:15.283873+00:00",
-                "sampleUrl": "https://www.ynet.co.il/news/article/s1p6xpb7mg",
-                "overlapTokens": [
-                  "איראן",
-                  "בארה",
-                  "טראמפ"
-                ],
-                "score": 27.48,
-                "boost": 27.48
-              },
-              "queueScore": 54.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 3,
-        "softTop10": 3,
-        "otherTop10": 4,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "השירות המטאורולוגי",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 10,
-        "trendGapMatchedTop20": 9,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 30,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "דני אילון מזהיר: ישראל בשפל מול ארה\"ב וההסכם עם איראן הוא כניעה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": {
-                "trend": "נתניהו שוחח עם טראמפ, סיכם להיפגש עמו בארה\"ב - והכחיש: לא תכננו לחסל את בכירי המו\"מ של איראן",
-                "clusterKey": "המו איראן",
-                "domain": "חדשות",
-                "externalMentions": 2,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "הארץ"
-                ],
-                "discoveryTypes": [
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T14:34:15.283873+00:00",
-                "sampleUrl": "https://www.ynet.co.il/news/article/s1p6xpb7mg",
-                "overlapTokens": [
-                  "איראן",
-                  "בארה",
-                  "טראמפ"
-                ],
-                "score": 27.48,
-                "boost": 27.48
-              },
-              "queueScore": 54.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 42,
-      "afterHealthScore": 49,
-      "replacementReadiness": {
-        "score": 54,
-        "threshold": 80,
-        "components": {
-          "freshness": 13.1,
-          "newsinessTop10": 7.5,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 8.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "newsiness_top10_below_7",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 0,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 4,
-        "healthScore": 7
-      }
-    },
-    {
-      "generatedAt": "2026-07-04T14:44:26+00:00",
-      "feedFingerprint": "4195642983063641878",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 13,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 9
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 9
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "Page Six",
-            "count": 1
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 7,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 30,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "דני אילון מזהיר: ישראל בשפל מול ארה\"ב וההסכם עם איראן הוא כניעה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 13,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": {
-                "trend": "נתניהו שוחח עם טראמפ, סיכם להיפגש עמו בארה\"ב - והכחיש: לא תכננו לחסל את בכירי המו\"מ של איראן",
-                "clusterKey": "המו איראן",
-                "domain": "חדשות",
-                "externalMentions": 2,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "הארץ"
-                ],
-                "discoveryTypes": [
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T14:44:26.637465+00:00",
-                "sampleUrl": "https://www.ynet.co.il/news/article/s1p6xpb7mg",
-                "overlapTokens": [
-                  "איראן",
-                  "בארה",
-                  "טראמפ"
-                ],
-                "score": 27.48,
-                "boost": 27.48
-              },
-              "queueScore": 48.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 3,
-        "softTop10": 3,
-        "otherTop10": 4,
-        "top5Under60": 3,
-        "top10Under60": 3,
-        "top12Under60": 3,
-        "topItemAgeMinutes": 13,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "השירות המטאורולוגי",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "גלובס",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "Page Six",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 10,
-        "trendGapMatchedTop20": 10,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 30,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 1,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "דני אילון מזהיר: ישראל בשפל מול ארה\"ב וההסכם עם איראן הוא כניעה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 13,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": {
-                "trend": "נתניהו שוחח עם טראמפ, סיכם להיפגש עמו בארה\"ב - והכחיש: לא תכננו לחסל את בכירי המו\"מ של איראן",
-                "clusterKey": "המו איראן",
-                "domain": "חדשות",
-                "externalMentions": 2,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "הארץ"
-                ],
-                "discoveryTypes": [
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T14:44:26.637465+00:00",
-                "sampleUrl": "https://www.ynet.co.il/news/article/s1p6xpb7mg",
-                "overlapTokens": [
-                  "איראן",
-                  "בארה",
-                  "טראמפ"
-                ],
-                "score": 27.48,
-                "boost": 27.48
-              },
-              "queueScore": 48.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 59,
-      "afterHealthScore": 49,
-      "replacementReadiness": {
-        "score": 54,
-        "threshold": 80,
-        "components": {
-          "freshness": 13.1,
-          "newsinessTop10": 7.5,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 8.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "newsiness_top10_below_7",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": -4,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 1,
-        "trendMatchedTop10": -1,
-        "trendMatchedTop20": 3,
-        "healthScore": -10
-      }
-    },
     {
       "generatedAt": "2026-07-04T15:03:21+00:00",
       "feedFingerprint": "5749801728843780100",
@@ -56189,6 +55604,1364 @@
         "trendMatchedTop10": 6,
         "trendMatchedTop20": 7,
         "healthScore": 48
+      }
+    },
+    {
+      "generatedAt": "2026-07-27T12:02:11+00:00",
+      "feedFingerprint": "6087128779990666569",
+      "before": {
+        "newsinessTop10": 7,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 7,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "דה מרקר",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "The Media Line",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "דוברות משטרת ישראל",
+            "count": 1
+          },
+          {
+            "name": "דובר צה״ל",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 16,
+          "hardReadyCount": 12,
+          "trendReadyCount": 8,
+          "uniqueReadySources": 7,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 3,
+              "headline": "הצעה מתחרה מאיימת לייקר לרציו את רכישת Pharos",
+              "source": "דה מרקר - כל הכתבות",
+              "canonicalSource": "דה מרקר",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.themarker.com/news/energy/2026-07-27/ty-article/.premium/0000019f-a341-db22-a5df-e753a7750000",
+              "trendMatch": {
+                "trend": "טיב טעם פותחת סניף שני בראשון לציון בהשקעה של 6 מיליון שקל",
+                "clusterKey": "מיליון שקל",
+                "domain": "כלכלה",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:32:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856487",
+                "overlapTokens": [
+                  "כלכלה",
+                  "מיליון",
+                  "שקל"
+                ],
+                "score": 32.52,
+                "boost": 32.52
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 4,
+              "headline": "נתניהו המריא לוושינגטון: איראן בראש השיחות",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://news.walla.co.il/item/3856547",
+              "trendMatch": {
+                "trend": "בחשאיות: מטוסו של נתניהו המריא לוושינגטון מבסיס נבטים",
+                "clusterKey": "נתניהו המריא",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:12:07+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/ryu5n3esmg",
+                "overlapTokens": [
+                  "המריא",
+                  "חדשות",
+                  "לוושינגטון",
+                  "נתניהו"
+                ],
+                "score": 47.68,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 1,
+              "headline": "מאסק מקדם גיוס ענק לחברת המנהרות שלו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://finance.walla.co.il/item/3856549",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 9,
+              "headline": "תושב עזה הואשם בהתחזות לישראלי בצפון",
+              "source": "דוברות משטרת ישראל - טלגרם רשמי",
+              "canonicalSource": "דוברות משטרת ישראל",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://t.me/Israel_Police_100/4383",
+              "trendMatch": {
+                "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
+                "clusterKey": "חומרים מסוכנים",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T10:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856471",
+                "overlapTokens": [
+                  "אישום",
+                  "כתב"
+                ],
+                "score": 16.86,
+                "boost": 16.86
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "צה\"ל: נמצאו ציורי היטלר בבית בדרום לבנון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-903792",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 18,
+              "headline": "ASML מציעה לעובדים מענק שימור של 20 אלף אירו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://finance.walla.co.il/item/3856535",
+              "trendMatch": {
+                "trend": "ההנפקה הגדולה של השנה: המניה שזינקה ב-500% ביום המסחר הראשון שלה",
+                "clusterKey": "המסחר הראשון",
+                "domain": "כלכלה",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T09:43:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856484",
+                "overlapTokens": [
+                  "כלכלה",
+                  "שלה"
+                ],
+                "score": 17.54,
+                "boost": 17.54
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 8,
+              "headline": "משאית התהפכה בשער הגיא; בת 17 נפצעה בינוני",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "רכב",
+              "class": "hard",
+              "ageMinutes": 25,
+              "url": "https://www.maariv.co.il/news/israel/article-1349254",
+              "trendMatch": {
+                "trend": "משאית התהפכה במחלף שער הגיא וגרמה לעומסי תנועה כבדים, בת 17 נפצעה בינוני",
+                "clusterKey": "משאית התהפכה",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T14:04:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856537",
+                "overlapTokens": [
+                  "בינוני",
+                  "הגיא",
+                  "התהפכה",
+                  "חדשות",
+                  "משאית",
+                  "נפצעה",
+                  "שער"
+                ],
+                "score": 99.75,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 12,
+              "headline": "שלוש נשים נדקרו בפריז; החשוד נעצר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://www.ynet.co.il/news/article/sjpcyt4bfx",
+              "trendMatch": {
+                "trend": "Oil price dives as US and Iran pause attacks The US says attacks on Iran have been halted to give \"talks some space\", raising hopes of a resoluti",
+                "clusterKey": "iran pause",
+                "domain": "אקטואליה בעולם",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "AP",
+                  "BBC"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T12:02:10.735719+00:00",
+                "sampleUrl": "https://www.bbc.com/news/articles/clyj834jn5lo",
+                "overlapTokens": [
+                  "אקטואליה",
+                  "בעולם"
+                ],
+                "score": 14.81,
+                "boost": 14.81
+              },
+              "queueScore": 33.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 0,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 13,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "Guardian",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "דה מרקר",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "דוברות משטרת ישראל",
+            "count": 1
+          },
+          {
+            "name": "דובר צה״ל",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 6,
+        "trendMatchedTop20": 15,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 16,
+          "hardReadyCount": 12,
+          "trendReadyCount": 8,
+          "uniqueReadySources": 7,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "נתניהו המריא לוושינגטון: איראן בראש השיחות",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://news.walla.co.il/item/3856547",
+              "trendMatch": {
+                "trend": "בחשאיות: מטוסו של נתניהו המריא לוושינגטון מבסיס נבטים",
+                "clusterKey": "נתניהו המריא",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:12:07+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/ryu5n3esmg",
+                "overlapTokens": [
+                  "המריא",
+                  "חדשות",
+                  "לוושינגטון",
+                  "נתניהו"
+                ],
+                "score": 47.68,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "הצעה מתחרה מאיימת לייקר לרציו את רכישת Pharos",
+              "source": "דה מרקר - כל הכתבות",
+              "canonicalSource": "דה מרקר",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.themarker.com/news/energy/2026-07-27/ty-article/.premium/0000019f-a341-db22-a5df-e753a7750000",
+              "trendMatch": {
+                "trend": "טיב טעם פותחת סניף שני בראשון לציון בהשקעה של 6 מיליון שקל",
+                "clusterKey": "מיליון שקל",
+                "domain": "כלכלה",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:32:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856487",
+                "overlapTokens": [
+                  "כלכלה",
+                  "מיליון",
+                  "שקל"
+                ],
+                "score": 32.52,
+                "boost": 32.52
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "מאסק מקדם גיוס ענק לחברת המנהרות שלו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 7,
+              "url": "https://finance.walla.co.il/item/3856549",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 6,
+              "headline": "תושב עזה הואשם בהתחזות לישראלי בצפון",
+              "source": "דוברות משטרת ישראל - טלגרם רשמי",
+              "canonicalSource": "דוברות משטרת ישראל",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://t.me/Israel_Police_100/4383",
+              "trendMatch": {
+                "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
+                "clusterKey": "חומרים מסוכנים",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T10:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856471",
+                "overlapTokens": [
+                  "אישום",
+                  "כתב"
+                ],
+                "score": 16.86,
+                "boost": 16.86
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 5,
+              "headline": "צה\"ל: נמצאו ציורי היטלר בבית בדרום לבנון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 13,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-903792",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 34,
+              "headline": "ASML מציעה לעובדים מענק שימור של 20 אלף אירו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 40,
+              "url": "https://finance.walla.co.il/item/3856535",
+              "trendMatch": {
+                "trend": "ההנפקה הגדולה של השנה: המניה שזינקה ב-500% ביום המסחר הראשון שלה",
+                "clusterKey": "המסחר הראשון",
+                "domain": "כלכלה",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T09:43:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856484",
+                "overlapTokens": [
+                  "כלכלה",
+                  "שלה"
+                ],
+                "score": 17.54,
+                "boost": 17.54
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 4,
+              "headline": "משאית התהפכה בשער הגיא; בת 17 נפצעה בינוני",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "רכב",
+              "class": "hard",
+              "ageMinutes": 25,
+              "url": "https://www.maariv.co.il/news/israel/article-1349254",
+              "trendMatch": {
+                "trend": "משאית התהפכה במחלף שער הגיא וגרמה לעומסי תנועה כבדים, בת 17 נפצעה בינוני",
+                "clusterKey": "משאית התהפכה",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T14:04:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856537",
+                "overlapTokens": [
+                  "בינוני",
+                  "הגיא",
+                  "התהפכה",
+                  "חדשות",
+                  "משאית",
+                  "נפצעה",
+                  "שער"
+                ],
+                "score": 99.75,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 7,
+              "headline": "שלוש נשים נדקרו בפריז; החשוד נעצר",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://www.ynet.co.il/news/article/sjpcyt4bfx",
+              "trendMatch": {
+                "trend": "Oil price dives as US and Iran pause attacks The US says attacks on Iran have been halted to give \"talks some space\", raising hopes of a resoluti",
+                "clusterKey": "iran pause",
+                "domain": "אקטואליה בעולם",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "AP",
+                  "BBC"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T12:02:10.735719+00:00",
+                "sampleUrl": "https://www.bbc.com/news/articles/clyj834jn5lo",
+                "overlapTokens": [
+                  "אקטואליה",
+                  "בעולם"
+                ],
+                "score": 14.81,
+                "boost": 14.81
+              },
+              "queueScore": 33.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 77,
+      "afterHealthScore": 97,
+      "replacementReadiness": {
+        "score": 97,
+        "threshold": 80,
+        "components": {
+          "freshness": 20.0,
+          "newsinessTop10": 25.0,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 2,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 7,
+        "healthScore": 20
+      }
+    },
+    {
+      "generatedAt": "2026-07-27T12:04:23+00:00",
+      "feedFingerprint": "7849031521132062316",
+      "before": {
+        "newsinessTop10": 7,
+        "softTop10": 2,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 10,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "הארץ",
+          "BBC",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "דה מרקר",
+            "count": 2
+          },
+          {
+            "name": "מעריב",
+            "count": 2
+          },
+          {
+            "name": "The Media Line",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "דוברות משטרת ישראל",
+            "count": 1
+          },
+          {
+            "name": "דובר צה״ל",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 8,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 15,
+          "hardReadyCount": 12,
+          "trendReadyCount": 8,
+          "uniqueReadySources": 7,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 3,
+              "headline": "הצעה מתחרה מאיימת לייקר לרציו את רכישת Pharos",
+              "source": "דה מרקר - כל הכתבות",
+              "canonicalSource": "דה מרקר",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.themarker.com/news/energy/2026-07-27/ty-article/.premium/0000019f-a341-db22-a5df-e753a7750000",
+              "trendMatch": {
+                "trend": "טיב טעם פותחת סניף שני בראשון לציון בהשקעה של 6 מיליון שקל",
+                "clusterKey": "מיליון שקל",
+                "domain": "כלכלה",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:32:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856487",
+                "overlapTokens": [
+                  "כלכלה",
+                  "מיליון",
+                  "שקל"
+                ],
+                "score": 32.52,
+                "boost": 32.52
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 4,
+              "headline": "נתניהו המריא לוושינגטון: איראן בראש השיחות",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://news.walla.co.il/item/3856547",
+              "trendMatch": {
+                "trend": "בחשאיות: מטוסו של נתניהו המריא לוושינגטון מבסיס נבטים",
+                "clusterKey": "נתניהו המריא",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:12:07+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/ryu5n3esmg",
+                "overlapTokens": [
+                  "המריא",
+                  "חדשות",
+                  "לוושינגטון",
+                  "נתניהו"
+                ],
+                "score": 47.68,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 1,
+              "headline": "מאסק מקדם גיוס ענק לחברת המנהרות שלו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://finance.walla.co.il/item/3856549",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 9,
+              "headline": "תושב עזה הואשם בהתחזות לישראלי בצפון",
+              "source": "דוברות משטרת ישראל - טלגרם רשמי",
+              "canonicalSource": "דוברות משטרת ישראל",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://t.me/Israel_Police_100/4383",
+              "trendMatch": {
+                "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
+                "clusterKey": "חומרים מסוכנים",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T10:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856471",
+                "overlapTokens": [
+                  "אישום",
+                  "כתב"
+                ],
+                "score": 16.86,
+                "boost": 16.86
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "צה\"ל: נמצאו ציורי היטלר בבית בדרום לבנון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-903792",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 18,
+              "headline": "ASML מציעה לעובדים מענק שימור של 20 אלף אירו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://finance.walla.co.il/item/3856535",
+              "trendMatch": {
+                "trend": "ההנפקה הגדולה של השנה: המניה שזינקה ב-500% ביום המסחר הראשון שלה",
+                "clusterKey": "המסחר הראשון",
+                "domain": "כלכלה",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T09:43:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856484",
+                "overlapTokens": [
+                  "כלכלה",
+                  "שלה"
+                ],
+                "score": 17.54,
+                "boost": 17.54
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 8,
+              "headline": "משאית התהפכה בשער הגיא; בת 17 נפצעה בינוני",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "רכב",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.maariv.co.il/news/israel/article-1349254",
+              "trendMatch": {
+                "trend": "משאית התהפכה במחלף שער הגיא וגרמה לעומסי תנועה כבדים, בת 17 נפצעה בינוני",
+                "clusterKey": "משאית התהפכה",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T14:04:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856537",
+                "overlapTokens": [
+                  "בינוני",
+                  "הגיא",
+                  "התהפכה",
+                  "חדשות",
+                  "משאית",
+                  "נפצעה",
+                  "שער"
+                ],
+                "score": 99.75,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 10,
+              "headline": "קיש דורש לאייש מחדש את המל״ג לפני הבחירות",
+              "source": "דה מרקר - כל הכתבות",
+              "canonicalSource": "דה מרקר",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://www.themarker.com/news/education/2026-07-27/ty-article/.premium/0000019f-a319-d114-a59f-ef9d7d6a0000",
+              "trendMatch": null,
+              "queueScore": 31.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 0,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 15,
+        "uniqueSourcesTop20": 12,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "Guardian",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "דה מרקר",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 2
+          },
+          {
+            "name": "דוברות משטרת ישראל",
+            "count": 1
+          },
+          {
+            "name": "דובר צה״ל",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 6,
+        "trendMatchedTop20": 15,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 15,
+          "hardReadyCount": 12,
+          "trendReadyCount": 8,
+          "uniqueReadySources": 7,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "נתניהו המריא לוושינגטון: איראן בראש השיחות",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://news.walla.co.il/item/3856547",
+              "trendMatch": {
+                "trend": "בחשאיות: מטוסו של נתניהו המריא לוושינגטון מבסיס נבטים",
+                "clusterKey": "נתניהו המריא",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "הארץ"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:12:07+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/ryu5n3esmg",
+                "overlapTokens": [
+                  "המריא",
+                  "חדשות",
+                  "לוושינגטון",
+                  "נתניהו"
+                ],
+                "score": 47.68,
+                "boost": 38.0
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "הצעה מתחרה מאיימת לייקר לרציו את רכישת Pharos",
+              "source": "דה מרקר - כל הכתבות",
+              "canonicalSource": "דה מרקר",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.themarker.com/news/energy/2026-07-27/ty-article/.premium/0000019f-a341-db22-a5df-e753a7750000",
+              "trendMatch": {
+                "trend": "טיב טעם פותחת סניף שני בראשון לציון בהשקעה של 6 מיליון שקל",
+                "clusterKey": "מיליון שקל",
+                "domain": "כלכלה",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:32:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856487",
+                "overlapTokens": [
+                  "כלכלה",
+                  "מיליון",
+                  "שקל"
+                ],
+                "score": 32.52,
+                "boost": 32.52
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "מאסק מקדם גיוס ענק לחברת המנהרות שלו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://finance.walla.co.il/item/3856549",
+              "trendMatch": null,
+              "queueScore": 44.0
+            },
+            {
+              "rank": 6,
+              "headline": "תושב עזה הואשם בהתחזות לישראלי בצפון",
+              "source": "דוברות משטרת ישראל - טלגרם רשמי",
+              "canonicalSource": "דוברות משטרת ישראל",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 28,
+              "url": "https://t.me/Israel_Police_100/4383",
+              "trendMatch": {
+                "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
+                "clusterKey": "חומרים מסוכנים",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "דה מרקר",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T10:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856471",
+                "overlapTokens": [
+                  "אישום",
+                  "כתב"
+                ],
+                "score": 16.86,
+                "boost": 16.86
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 5,
+              "headline": "צה\"ל: נמצאו ציורי היטלר בבית בדרום לבנון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 15,
+              "url": "https://www.jpost.com/israel-news/defense-news/article-903792",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 35,
+              "headline": "ASML מציעה לעובדים מענק שימור של 20 אלף אירו",
+              "source": "וואלה כסף",
+              "canonicalSource": "וואלה",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 42,
+              "url": "https://finance.walla.co.il/item/3856535",
+              "trendMatch": {
+                "trend": "ההנפקה הגדולה של השנה: המניה שזינקה ב-500% ביום המסחר הראשון שלה",
+                "clusterKey": "המסחר הראשון",
+                "domain": "כלכלה",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T09:43:00+00:00",
+                "sampleUrl": "https://finance.walla.co.il/item/3856484",
+                "overlapTokens": [
+                  "כלכלה",
+                  "שלה"
+                ],
+                "score": 17.54,
+                "boost": 17.54
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 4,
+              "headline": "משאית התהפכה בשער הגיא; בת 17 נפצעה בינוני",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "רכב",
+              "class": "hard",
+              "ageMinutes": 27,
+              "url": "https://www.maariv.co.il/news/israel/article-1349254",
+              "trendMatch": {
+                "trend": "משאית התהפכה במחלף שער הגיא וגרמה לעומסי תנועה כבדים, בת 17 נפצעה בינוני",
+                "clusterKey": "משאית התהפכה",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 5,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T14:04:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856537",
+                "overlapTokens": [
+                  "בינוני",
+                  "הגיא",
+                  "התהפכה",
+                  "חדשות",
+                  "משאית",
+                  "נפצעה",
+                  "שער"
+                ],
+                "score": 99.75,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 8,
+              "headline": "קיש דורש לאייש מחדש את המל״ג לפני הבחירות",
+              "source": "דה מרקר - כל הכתבות",
+              "canonicalSource": "דה מרקר",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 29,
+              "url": "https://www.themarker.com/news/education/2026-07-27/ty-article/.premium/0000019f-a319-d114-a59f-ef9d7d6a0000",
+              "trendMatch": null,
+              "queueScore": 31.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 77,
+      "afterHealthScore": 97,
+      "replacementReadiness": {
+        "score": 97,
+        "threshold": 80,
+        "components": {
+          "freshness": 20.0,
+          "newsinessTop10": 25.0,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 2,
+        "softTop10": -2,
+        "top12Under60": 0,
+        "uniqueSourcesTop20": 2,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 7,
+        "healthScore": 20
       }
     }
   ]
