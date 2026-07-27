@@ -33,11 +33,7 @@ LIVE_DEMAND_LOCK = V5_ROOT / "live-image-demand.lock"
 PUBLIC_DIR = ROOT / "assets/poenta-image-bank-v5"
 PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5"
 POENTA_WATERMARK = ROOT / "assets/poenta-logo-watermark-transparent.png"
-POENTA_WATERMARK_SUFFIX = "-poenta-v2"
-VISUALLY_REJECTED_IMAGE_IDS = {
-    # Basketball arena incorrectly catalogued as a security/politics image.
-    "V5-3A6B826150172B",
-}
+POENTA_WATERMARK_SUFFIX = "-poenta-v3"
 DOMAIN_DEFAULT_DIR = ROOT / "assets/poenta-domain-defaults"
 EMERGENCY_FALLBACK_FILE = ROOT / "assets/feed-defaults/news.png"
 DOMAIN_DEFAULT_FILES = {
@@ -224,8 +220,6 @@ def find_match(
     counts = usage_counts(feed_items)
     candidates: list[tuple[int, bool, int, str, dict[str, Any], list[str]]] = []
     for image in catalog:
-        if image["imageId"] in VISUALLY_REJECTED_IMAGE_IDS:
-            continue
         if image["domain"] != domain:
             continue
         if is_sport:
@@ -364,8 +358,10 @@ def publish_asset(match: dict[str, Any]) -> str:
             target_height = max(1, round(logo.height * target_width / logo.width))
             logo = logo.resize((target_width, target_height), Image.Resampling.LANCZOS)
             # Keep the mark inside the app card's rounded-corner safe area.
-            margin_x = max(24, round(base.width * 0.055))
-            margin_y = max(20, round(base.height * 0.055))
+            # The app crops cards with rounded corners. Keep the logo clearly
+            # inside the visible area rather than merely clear of the raw edge.
+            margin_x = max(48, round(base.width * 0.10))
+            margin_y = max(24, round(base.height * 0.065))
             base.alpha_composite(logo, (margin_x, margin_y))
             tmp = target.with_suffix(".tmp.png")
             base.convert("RGB").save(tmp, format="PNG", optimize=True)

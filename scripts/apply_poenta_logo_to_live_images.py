@@ -8,13 +8,20 @@ import hashlib
 from pathlib import Path
 
 from PIL import Image
+from poenta_v5_feed_images import (
+    DOMAIN_DEFAULT_DIR,
+    DOMAIN_DEFAULT_FILES,
+    EMERGENCY_FALLBACK_FILE,
+    build_catalog,
+    canonical,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED_PATHS = (ROOT / "feed.json", ROOT / "dist/feed.json")
 ASSET_DIRS = (ROOT / "assets/poenta-image-bank-v5", ROOT / "dist/assets/poenta-image-bank-v5")
 LOGO_PATH = ROOT / "assets/poenta-logo-watermark-transparent.png"
 PUBLIC_PREFIX = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5/"
-SUFFIX = "-poenta-v2"
+SUFFIX = "-poenta-v3"
 
 
 def branded_name(filename: str, public_path: str) -> str:
@@ -29,8 +36,8 @@ def brand_image(source: Path, target: Path) -> None:
         width = max(64, round(base.width * 0.10))
         height = max(1, round(logo.height * width / logo.width))
         logo = logo.resize((width, height), Image.Resampling.LANCZOS)
-        margin_x = max(24, round(base.width * 0.055))
-        margin_y = max(20, round(base.height * 0.055))
+        margin_x = max(48, round(base.width * 0.10))
+        margin_y = max(24, round(base.height * 0.065))
         base.alpha_composite(logo, (margin_x, margin_y))
         target.parent.mkdir(parents=True, exist_ok=True)
         tmp = target.with_suffix(".tmp.png")
@@ -40,22 +47,36 @@ def brand_image(source: Path, target: Path) -> None:
 
 def main() -> None:
     payload = json.loads(FEED_PATHS[0].read_text(encoding="utf-8"))
+    catalog_by_id = {row["imageId"]: Path(row["file"]) for row in build_catalog()}
     generated: set[str] = set()
     changed = 0
     missing: list[str] = []
     for item in payload.get("items", []):
         url = str(item.get("imageUrl") or "")
         filename = url.rsplit("/", 1)[-1]
-        # V1 files are already branded. Never overlay a second logo on them;
-        # they will age out while all newly assigned images use the V2 safe area.
         if (
             not filename
             or filename.endswith(f"{SUFFIX}.png")
-            or filename.endswith("-poenta-v1.png")
         ):
             continue
         public_path = url.split("poanta-demo.pages.dev/", 1)[-1].split("?", 1)[0].lstrip("/")
-        source = ROOT / public_path
+        image_id = str(item.get("poentaImageId") or "")
+        source = catalog_by_id.get(image_id)
+        if image_id.startswith("DOMAIN-"):
+            domain_file = DOMAIN_DEFAULT_FILES.get(canonical(item.get("imageDomain") or item.get("category")))
+            source = DOMAIN_DEFAULT_DIR / domain_file if domain_file else None
+        elif image_id == "EMERGENCY-POENTA-NEWS":
+            source = EMERGENCY_FALLBACK_FILE
+        if source is None:
+            # Legacy, unbranded local files can still be used directly. Never
+            # stack a second logo on an already-branded asset.
+            candidate = ROOT / public_path
+            source = candidate if "-poenta-v" not in filename else None
+        if source is None:
+            # Historical feed cards outside the V5 trial have no catalog id.
+            # Leave them unchanged; the active V5 cards are re-rendered from
+            # their clean catalog source so the old logo is never duplicated.
+            continue
         if not source.is_file():
             missing.append(filename)
             continue
