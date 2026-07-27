@@ -28,6 +28,7 @@ export GIT_ASKPASS="$ASKPASS"
 export GIT_TERMINAL_PROMPT=0
 
 git fetch origin main gh-pages
+python3 scripts/apply_poenta_logo_to_live_images.py
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: do not publish or report success if the candidate feed still looks
 # stale/thin to a user. This is deliberately before recording publication
