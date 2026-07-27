@@ -14,7 +14,7 @@ FEED_PATHS = (ROOT / "feed.json", ROOT / "dist/feed.json")
 ASSET_DIRS = (ROOT / "assets/poenta-image-bank-v5", ROOT / "dist/assets/poenta-image-bank-v5")
 LOGO_PATH = ROOT / "assets/poenta-logo-watermark-transparent.png"
 PUBLIC_PREFIX = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5/"
-SUFFIX = "-poenta-v1"
+SUFFIX = "-poenta-v2"
 
 
 def branded_name(filename: str, public_path: str) -> str:
@@ -29,8 +29,9 @@ def brand_image(source: Path, target: Path) -> None:
         width = max(64, round(base.width * 0.10))
         height = max(1, round(logo.height * width / logo.width))
         logo = logo.resize((width, height), Image.Resampling.LANCZOS)
-        margin = max(12, round(min(base.width, base.height) * 0.025))
-        base.alpha_composite(logo, (margin, margin))
+        margin_x = max(24, round(base.width * 0.055))
+        margin_y = max(20, round(base.height * 0.055))
+        base.alpha_composite(logo, (margin_x, margin_y))
         target.parent.mkdir(parents=True, exist_ok=True)
         tmp = target.with_suffix(".tmp.png")
         base.convert("RGB").save(tmp, format="PNG", optimize=True)
@@ -45,7 +46,13 @@ def main() -> None:
     for item in payload.get("items", []):
         url = str(item.get("imageUrl") or "")
         filename = url.rsplit("/", 1)[-1]
-        if not filename or filename.endswith(f"{SUFFIX}.png"):
+        # V1 files are already branded. Never overlay a second logo on them;
+        # they will age out while all newly assigned images use the V2 safe area.
+        if (
+            not filename
+            or filename.endswith(f"{SUFFIX}.png")
+            or filename.endswith("-poenta-v1.png")
+        ):
             continue
         public_path = url.split("poanta-demo.pages.dev/", 1)[-1].split("?", 1)[0].lstrip("/")
         source = ROOT / public_path
