@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feed B Compare</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101216;--panel:#171b22;--line:#2a313d;--text:#f4f6fa;--muted:#a8b0bd;--accent:#f4c542;--good:#4fd18b;--bad:#ff7676}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Hebrew",sans-serif;line-height:1.5}
+    main{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:22px 0 36px}
+    header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:16px}
+    h1{margin:0;font-size:26px;letter-spacing:0}p{margin:4px 0;color:var(--muted)}a{color:var(--accent)}
+    .status{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(244,197,66,.28);background:rgba(244,197,66,.08);padding:8px 10px;border-radius:8px;color:var(--accent);font-weight:800;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;min-height:104px}
+    .metric b{display:block;font-size:30px;line-height:1.1}.metric span{display:block;margin-top:8px;font-weight:800}.metric small{display:block;color:var(--muted);margin-top:5px}
+    section{margin-top:18px}h2{font-size:18px;margin:0 0 9px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+    table{width:100%;border-collapse:collapse}td{padding:9px;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}td:last-child{text-align:left;font-weight:800}
+    .samples{list-style:none;margin:0;padding:0;display:grid;gap:9px}.samples li{border-bottom:1px solid var(--line);padding:0 0 9px}.samples li:last-child{border-bottom:0;padding-bottom:0}
+    .samples strong{display:block}.samples span{display:block;color:var(--muted);font-size:13px;margin-top:3px}.empty{margin:0;color:var(--muted)}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.links a{border:1px solid var(--line);border-radius:8px;padding:7px 9px;text-decoration:none;color:var(--text);background:#12161c}
+    @media(max-width:760px){header{display:block}.status{margin-top:12px}.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:22px}.metric b{font-size:24px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Feed B Compare</h1>
+      <p>דוח חי לפיילוט Feed B מול Feed A. עריכת Codex מופעלת כש-auth זמין, בלי פרסום לראשי ובלי החלפה של Feed A.</p>
+      <p>נוצר: 2026-07-27T12:45:21+03:00 · Feed B run: feed-b-20260727T124520+0300</p>
+    </div>
+    <div class="status">Codex editor sidecar</div>
+  </header>
+
+  <div class="grid">
+    <article class="metric"><b>37</b><span>Feed B בדק</span><small>מועמדים גולמיים</small></article>
+    <article class="metric"><b>19</b><span>עברו ל-editor</span><small>Codex כש-auth זמין</small></article>
+    <article class="metric"><b>18</b><span>נדחו לפני AI</span><small>חיסכון ראשוני</small></article>
+    <article class="metric"><b>0</b><span>טוקנים חכמים</span><small>בשלב זה 0</small></article>
+    <article class="metric"><b>3,864</b><span>Feed A פריטים</span><small>updatedAt: 2026-07-27T12:35:52+03:00</small></article>
+    <article class="metric"><b>631</b><span>Feed A חלון אחרון</span><small>24 שעות</small></article>
+    <article class="metric"><b>18</b><span>B עבר ולא ב-A</span><small>מועמדים לבדיקה ידנית</small></article>
+    <article class="metric"><b>630</b><span>A לא עבר ב-B</span><small>פערי איכות/קלט</small></article>
+  </div>
+
+  <section class="panel">
+    <h2>סיבות דחייה לפני AI</h2>
+    <table><tr><td>duplicate_with_feed_b</td><td>6</td></tr><tr><td>main_feed_b_breaking_source</td><td>7</td></tr><tr><td>non_hebrew_or_untranslated</td><td>2</td></tr><tr><td>text_too_short</td><td>6</td></tr></table>
+  </section>
+
+  <section class="panel">
+    <h2>Feed B העביר אבל לא נמצא כרגע ב-Feed A</h2>
+    <ul class="samples"><li><strong>דווקא בקיץ הזה: 5 דברים שכדאי ללמוד מהילדות של שנות ה־70</strong><span>ישראל היום - כל הכתבות · 2026-07-27T12:26:19+03:00 <a href="https://www.israelhayom.co.il/lifestyle/family-and-parenting/article/21068520" target="_blank" rel="noopener">מקור</a></span></li><li><strong>אחרי איפה לונדברג: המטרות הבאות של מכבי תל אביב</strong><span>ישראל היום - כל הכתבות · 2026-07-27T12:21:27+03:00 <a href="https://www.israelhayom.co.il/sport/israeli-basketball/article/21068401" target="_blank" rel="noopener">מקור</a></span></li><li><strong>דניאל פרץ בעימות חריג בגלל נועה קירל: "אסור לך ללכת איתה"</strong><span>ישראל היום - כל הכתבות · 2026-07-27T12:20:55+03:00 <a href="https://www.israelhayom.co.il/sport/israeli-soccer/article/21066722" target="_blank" rel="noopener">מקור</a></span></li><li><strong>הכדורסלנית חשפה: חברה שלי בגדה בי עם מלא שחקניות WNBA</strong><span>וואלה חדשות · 2026-07-27T12:45:01+03:00 <a href="https://sports.walla.co.il/item/3856507" target="_blank" rel="noopener">מקור</a></span></li><li><strong>צה"ל יירט 2 כטב"מים בגבול ירדן</strong><span>וואלה חדשות · 2026-07-27T12:45:01+03:00 <a href="https://news.walla.co.il/item/3856474" target="_blank" rel="noopener">מקור</a></span></li><li><strong>הפנטגון פיצל את נתוני ההרוגים באיראן והציג מספר נמוך של נפגעים במלחמה</strong><span>הארץ - חדשות · 2026-07-27T12:30:36+03:00 <a href="https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000" target="_blank" rel="noopener">מקור</a></span></li><li><strong>בליכוד מעריכים: ליברמן חותר לממשלת רוטציה עם נתניהו</strong><span>מעריב - חדשות · 2026-07-27T12:40:17+03:00 <a href="https://www.maariv.co.il/news/politics/article-1349195" target="_blank" rel="noopener">מקור</a></span></li><li><strong>דרמה פוליטית בטורקיה: היריבים המרים של ארדואן הקימו מפלגה</strong><span>מעריב - חדשות · 2026-07-27T12:30:23+03:00 <a href="https://www.maariv.co.il/news/world/article-1349185" target="_blank" rel="noopener">מקור</a></span></li><li><strong>Millions see leaked copy of The Odyssey movie on X</strong><span>BBC World · 2026-07-27T12:21:10+03:00 <a href="https://www.bbc.co.uk/news/articles/c1m1ev5j3m2o?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">מקור</a></span></li><li><strong>How the Iran-Backed Houthis Cornered Saudi Arabia Into a New Conflict</strong><span>New York Times Middle East · 2026-07-27T12:33:35+03:00 <a href="https://www.nytimes.com/2026/07/27/world/middleeast/houthis-saudi-arabia-iran-war.html" target="_blank" rel="noopener">מקור</a></span></li><li><strong>Some Democrats tout their version of "America First" - Axios</strong><span>Axios Israel/Iran דרך Google News · 2026-07-27T10:31:01+03:00 <a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9LT01YWXlsNFBWSUNxRkUtTGNOdk41MHZ0WVpZN2tIc2pvMnlnbjB0VWZkaFJfUFNtSGR1ZDRzbnZqcEJ4SXItUkxEQ0w3em9oWEZpMkY2bWQzMnFteHQyajhFWl9kaVU3Sy1waGkxWC0zNmI1QWc?oc=5" target="_blank" rel="noopener">מקור</a></span></li><li><strong>Politics: Latest and breaking political news today - Politico</strong><span>Politico Israel/Iran דרך Google News · 2026-07-27T12:38:31+03:00 <a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE9BS2lMcWVoRUFmbUg3clFmemhrdDFidF84ZVJ3dnVQWko3LVpwR0p5N2ZnSXJtN2trMk1ILXlkUXJBbjlqcTF2eA?oc=5" target="_blank" rel="noopener">מקור</a></span></li></ul>
+  </section>
+
+  <section class="panel">
+    <h2>Feed A אחרון שלא נמצא ברשימת Feed B שעברה</h2>
+    <ul class="samples"><li><strong>בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה</strong><span>וואלה חדשות · 2026-07-27T12:30:02+03:00 <a href="https://news.walla.co.il/item/3856498" target="_blank" rel="noopener">מקור</a></span></li><li><strong>העליון הגביל את הרש״פ בתביעות נפגעי טרור</strong><span>וואלה חדשות · 2026-07-27T12:30:02+03:00 <a href="https://news.walla.co.il/item/3856506" target="_blank" rel="noopener">מקור</a></span></li><li><strong>חייל צה״ל נמצא מת בבסיס במרכז הארץ</strong><span>JNS - Jewish News Syndicate · 2026-07-27T12:23:28+03:00 <a href="https://www.jns.org/news/israel-news/idf-soldier-found-dead-at-central-israel-base" target="_blank" rel="noopener">מקור</a></span></li><li><strong>קידום בצי האמריקאי מציף טענות לפוליטיזציה</strong><span>הארץ - חדשות · 2026-07-27T12:22:21+03:00 <a href="https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article-magazine/.premium/0000019f-a254-dcf3-a9df-a7560d820000" target="_blank" rel="noopener">מקור</a></span></li><li><strong>איראן: מצר הורמוז עדיין סגור</strong><span>הארץ - חדשות · 2026-07-27T12:21:44+03:00 <a href="https://www.haaretz.co.il/news/world/middle-east/2026-07-27/ty-article/.premium/0000019f-a2b0-db22-a5df-e7b2e2800000" target="_blank" rel="noopener">מקור</a></span></li><li><strong>תן ביס מרחיבה את כרטיס העובדים להטבות צריכה ופנאי</strong><span>וואלה כסף · 2026-07-27T12:21:43+03:00 <a href="https://finance.walla.co.il/item/3856488" target="_blank" rel="noopener">מקור</a></span></li><li><strong>וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן</strong><span>וואלה כסף · 2026-07-27T12:21:43+03:00 <a href="https://finance.walla.co.il/item/3856501" target="_blank" rel="noopener">מקור</a></span></li><li><strong>איפה לונדברג האריך חוזה במכבי תל אביב לשלוש שנים</strong><span>וואלה ספורט · 2026-07-27T12:21:36+03:00 <a href="https://sports.walla.co.il/item/3856495" target="_blank" rel="noopener">מקור</a></span></li><li><strong>בן גביר תקף את טראמפ על הגישה לאיראן</strong><span>ynet - כל ערוץ החדשות · 2026-07-27T12:16:16+03:00 <a href="https://www.ynet.co.il/news/article/hy6b3qergx" target="_blank" rel="noopener">מקור</a></span></li><li><strong>המשטרה מבקשת סיוע באיתור צעיר מדימונה</strong><span>וואלה חדשות - חדשות בארץ · 2026-07-27T12:15:02+03:00 <a href="https://news.walla.co.il/item/3856503" target="_blank" rel="noopener">מקור</a></span></li><li><strong>אקרשטיין רוכשת 85% מ-EcoWall בכ-47 מיליון שקל</strong><span>גלובס - שוק ההון · 2026-07-27T12:14:00+03:00 <a href="https://www.globes.co.il/news/article.aspx?did=1001550521#utm_source=RSS" target="_blank" rel="noopener">מקור</a></span></li><li><strong>שריפה במפעל בשער הנגב: כבישים נחסמו באזור שדרות</strong><span>דוברות משטרת ישראל - טלגרם רשמי · 2026-07-27T12:07:55+03:00 <a href="https://t.me/Israel_Police_100/4378" target="_blank" rel="noopener">מקור</a></span></li></ul>
+  </section>
+
+  <section class="panel">
+    <h2>Feed A נראה ל-Feed B אבל סונן החוצה</h2>
+    <p class="empty">אין פריטים להצגה.</p>
+  </section>
+
+  <div class="links">
+    <a href="./">Feed B</a>
+    <a href="./compare_report.json">JSON</a>
+    <a href="./compare_report.md">Markdown</a>
+    <a href="../feed_b.json">feed_b.json</a>
+  </div>
+  <p>Feed B נוצר: 2026-07-27T12:45:20+03:00</p>
+</main>
+</body>
+</html>
