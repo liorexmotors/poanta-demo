@@ -10,14 +10,22 @@ from __future__ import annotations
 
 import json
 import re
+import hashlib
+import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
+
+from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CATALOG = ROOT / "assets" / "poenta-image-bank" / "catalog.json"
 DEFAULT_PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank/"
+BRANDED_PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5/"
+BRANDED_DIR = ROOT / "assets" / "poenta-image-bank-v5"
+POENTA_LOGO = ROOT / "assets" / "poenta-logo-watermark-transparent.png"
+BRANDED_SUFFIX = "-poenta-v3"
 BLOCKED_FILES = {
     # Rejected by visual review on 2026-07-25: embedded generation text.
     "poenta_022_1_1_4_2_calm.jpg",
@@ -277,6 +285,41 @@ def image_url_for_record(record: dict[str, Any], public_base: str = DEFAULT_PUBL
     return public_base.rstrip("/") + "/" + str(record.get("file_name") or "").strip()
 
 
+def branded_image_url_for_record(record: dict[str, Any], public_base: str = DEFAULT_PUBLIC_BASE) -> str:
+    """Publish the matched legacy-bank image with Poenta branding atomically.
+
+    Branding happens before the feed item is written, so no publishing route can
+    expose an unbranded URL and rely on a later reconciliation worker.
+    """
+    original_url = image_url_for_record(record, public_base)
+    filename = original_url.rsplit("/", 1)[-1].split("?", 1)[0]
+    source = ROOT / "assets" / "poenta-image-bank" / filename
+    if not source.is_file() or not POENTA_LOGO.is_file():
+        return original_url
+    public_path = original_url.split("poanta-demo.pages.dev/", 1)[-1].split("?", 1)[0].lstrip("/")
+    digest = hashlib.sha256(public_path.encode("utf-8")).hexdigest()[:10]
+    output_name = f"{Path(filename).stem}-{digest}{BRANDED_SUFFIX}.png"
+    target = BRANDED_DIR / output_name
+    if not target.is_file() or target.stat().st_mtime < max(source.stat().st_mtime, POENTA_LOGO.stat().st_mtime):
+        with Image.open(source) as base_source, Image.open(POENTA_LOGO) as logo_source:
+            base = base_source.convert("RGBA")
+            logo = logo_source.convert("RGBA")
+            width = max(64, round(base.width * 0.10))
+            height = max(1, round(logo.height * width / logo.width))
+            logo = logo.resize((width, height), Image.Resampling.LANCZOS)
+            base.alpha_composite(
+                logo,
+                (max(48, round(base.width * 0.10)), max(24, round(base.height * 0.065))),
+            )
+            BRANDED_DIR.mkdir(parents=True, exist_ok=True)
+            tmp_dir = ROOT / "tmp" / "poenta-image-branding"
+            tmp_dir.mkdir(parents=True, exist_ok=True)
+            tmp = tmp_dir / f"{output_name}.{os.getpid()}.tmp"
+            base.convert("RGB").save(tmp, format="PNG", optimize=True)
+            tmp.replace(target)
+    return BRANDED_PUBLIC_BASE + output_name
+
+
 def apply_image_bank_to_item(
     item: dict[str, Any],
     catalog: tuple[dict[str, Any], ...] | list[dict[str, Any]] | None = None,
@@ -287,7 +330,12 @@ def apply_image_bank_to_item(
     fixed = dict(item)
     match = match_image_bank_item(fixed, catalog, min_score=min_score)
     if match:
-        fixed["imageUrl"] = image_url_for_record(match, public_base)
+        fixed["imageUrl"] = branded_image_url_for_record(match, public_base)
+        fixed["poentaLogoOverlay"] = {
+            "position": "top-left",
+            "size": "small",
+            "version": 1,
+        }
         fixed["imageBankKey"] = match.get("key")
         fixed["imageBankTitle"] = match.get("title_he")
         fixed["imageBankMatchScore"] = match.get("matchScore")
