@@ -37,7 +37,7 @@ TMP_CANDIDATE = ROOT / "tmp" / "feed-b-live-auto-candidate.json"
 QUALITY_REPORT = ROOT / "tmp" / "feed-b-live-auto-quality.md"
 V5_DISABLE_MARKER = ROOT / ".poenta-v5-image-disabled"
 V5_TRIAL_ID = "pilot-20260725-v1"
-V5_TRIAL_LIMIT = 50
+V5_TRIAL_LIMIT = 100
 
 
 def load_json(path: Path, fallback: Any) -> Any:

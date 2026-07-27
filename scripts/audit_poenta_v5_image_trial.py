@@ -12,7 +12,7 @@ BASELINE = ROOT / "backups/poenta-v5-image-trial-baseline-20260725/feed.json"
 LIVE = ROOT / "feed.json"
 DISABLE_MARKER = ROOT / ".poenta-v5-image-disabled"
 TRIAL_ID = "pilot-20260725-v1"
-TRIAL_LIMIT = 50
+TRIAL_LIMIT = 100
 
 
 def read(path: Path) -> dict:

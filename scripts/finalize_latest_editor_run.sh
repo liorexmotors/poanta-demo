@@ -45,7 +45,7 @@ POENTA_REQUIRE_V5_IMAGE_TAGS=1 python3 scripts/pointa_editor_pipeline.py qa --ru
 POENTA_REQUIRE_V5_IMAGE_TAGS=1 \
 POENTA_V5_IMAGE_BANK_ENABLED="$image_feature_enabled" \
 POENTA_V5_IMAGE_TRIAL_ID="${POENTA_V5_IMAGE_TRIAL_ID:-pilot-20260725-v1}" \
-POENTA_V5_IMAGE_TRIAL_LIMIT="${POENTA_V5_IMAGE_TRIAL_LIMIT:-50}" \
+POENTA_V5_IMAGE_TRIAL_LIMIT="${POENTA_V5_IMAGE_TRIAL_LIMIT:-100}" \
 python3 scripts/pointa_editor_pipeline.py apply --run-dir "$ready"
 ./scripts/deploy_current_feed.sh
 
