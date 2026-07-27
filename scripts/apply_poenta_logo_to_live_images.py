@@ -22,7 +22,7 @@ FEED_PATHS = (ROOT / "feed.json", ROOT / "dist/feed.json")
 ASSET_DIRS = (ROOT / "assets/poenta-image-bank-v5", ROOT / "dist/assets/poenta-image-bank-v5")
 LOGO_PATH = ROOT / "assets/poenta-logo-watermark-transparent.png"
 PUBLIC_PREFIX = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5/"
-SUFFIX = "-poenta-v3"
+SUFFIX = "-poenta-v4"
 
 
 def branded_name(filename: str, public_path: str) -> str:

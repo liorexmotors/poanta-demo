@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +33,30 @@ def image_fields(item: dict) -> dict:
     }
 
 
+def image_identity(value: object) -> str:
+    """Return the underlying asset identity, ignoring Poenta overlay versions."""
+    filename = Path(urlparse(str(value or "")).path).name
+    stem = Path(filename).stem
+    stem = re.sub(r"-[0-9a-f]{10}-poenta-v\d+$", "", stem)
+    stem = re.sub(r"-poenta-v\d+$", "", stem)
+    return stem
+
+
+def historical_image_unchanged(current: dict, previous: dict) -> bool:
+    current_fields = image_fields(current)
+    previous_fields = image_fields(previous)
+    current_url = current_fields.pop("imageUrl", "")
+    previous_url = previous_fields.pop("imageUrl", "")
+    # Overlay metadata is presentation-only. Adding/upgrading the Poenta logo
+    # must not be mistaken for changing the image assigned to an old article.
+    current_fields.pop("poentaLogoOverlay", None)
+    previous_fields.pop("poentaLogoOverlay", None)
+    return (
+        current_fields == previous_fields
+        and image_identity(current_url) == image_identity(previous_url)
+    )
+
+
 def main() -> int:
     baseline = read(BASELINE)
     live = read(LIVE)
@@ -46,7 +72,7 @@ def main() -> int:
     for item in live_items:
         key = url(item)
         previous = baseline_by_url.get(key)
-        if previous is not None and image_fields(item) != image_fields(previous):
+        if previous is not None and not historical_image_unchanged(item, previous):
             violations.append({"code": "historical_image_changed", "url": key})
 
     if len(trial_items) > TRIAL_LIMIT:
