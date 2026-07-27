@@ -36,7 +36,7 @@ LIVE_FEED = ROOT / "feed.json"
 TMP_CANDIDATE = ROOT / "tmp" / "feed-b-live-auto-candidate.json"
 QUALITY_REPORT = ROOT / "tmp" / "feed-b-live-auto-quality.md"
 V5_DISABLE_MARKER = ROOT / ".poenta-v5-image-disabled"
-V5_TRIAL_ID = "pilot-20260725-v1"
+V5_TRIAL_ID = "pilot-20260727-v2"
 V5_TRIAL_LIMIT = 100
 
 

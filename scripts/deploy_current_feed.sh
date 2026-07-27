@@ -132,6 +132,11 @@ PY
 # candidate-content correctness gate for this deploy path.
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
+# Reconcile branding again after the build. A concurrent editor/pilot worker can
+# append newly assigned images while the build is running; branding the final
+# feed/dist snapshot here prevents those cards from reaching production without
+# the Poenta mark.
+python3 scripts/apply_poenta_logo_to_live_images.py
 # The feed and the image bank can be updated by separate workers. Reconcile the
 # built snapshot after the build so feed.json can never be deployed before a
 # local image file it references. Missing assets fall back to a Poenta domain

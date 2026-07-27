@@ -8,10 +8,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASELINE = ROOT / "backups/poenta-v5-image-trial-baseline-20260725/feed.json"
+BASELINE = ROOT / "backups/poenta-v5-image-trial-baseline-20260727-v2/feed.json"
 LIVE = ROOT / "feed.json"
 DISABLE_MARKER = ROOT / ".poenta-v5-image-disabled"
-TRIAL_ID = "pilot-20260725-v1"
+TRIAL_ID = "pilot-20260727-v2"
 TRIAL_LIMIT = 100
 
 

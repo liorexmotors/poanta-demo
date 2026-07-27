@@ -304,6 +304,9 @@ python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run
 python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
+# Brand the final snapshot too. This closes the race where a pilot/editor worker
+# adds cards after the pre-build branding pass but before publication.
+python3 scripts/apply_poenta_logo_to_live_images.py
 
 git fetch origin main
 rm -rf "$MAIN_WORKTREE"
