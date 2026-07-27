@@ -37,6 +37,11 @@ POENTA_WATERMARK = ROOT / "assets/poenta-logo-watermark-transparent.png"
 POENTA_WATERMARK_SUFFIX = "-poenta-v3"
 DOMAIN_DEFAULT_DIR = ROOT / "assets/poenta-domain-defaults"
 EMERGENCY_FALLBACK_FILE = ROOT / "assets/feed-defaults/news.png"
+# Assets rejected by human QA must never re-enter matching, even when they
+# remain on disk for audit/history. Keep paths as basenames for portability.
+HUMAN_QA_BLOCKED_FILES = {
+    "poenta_improve_031_world_jewish_community.jpg",
+}
 DOMAIN_DEFAULT_FILES = {
     "אקטואליה בעולם": "world.png",
     "ביטחון": "security.png",
@@ -129,6 +134,8 @@ def _approved_image(
     origin: str,
 ) -> dict[str, Any] | None:
     file_path = Path(str(source or ""))
+    if file_path.name in HUMAN_QA_BLOCKED_FILES:
+        return None
     clean_tags = unique_tags(tags or [])
     clean_domain = canonical(domain)
     if not image_id or not clean_domain or not 1 <= len(clean_tags) <= 4 or not file_path.is_file():
