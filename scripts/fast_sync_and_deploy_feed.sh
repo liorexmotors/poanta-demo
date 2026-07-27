@@ -86,9 +86,9 @@ if before.exists() and feed_path.exists():
                 item.pop('takeaway', None)
         feed_path.write_text(json.dumps(new, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 PY
-# Bridge RSS collection to publishable Pointa cards before deployment.  This is
-# part of ingestion, not a late expensive audit: if RSS produced candidates that
-# are too thin for deterministic publication, run a bounded editor cycle now.
+# Bridge RSS collection to publishable Pointa cards before deployment. Keep the
+# editor bridge available for real freshness/quality rescue, but do not force a
+# full editor run on every FAST cycle just because thin candidates exist.
 BRIDGE_ARGS=()
 if python3 - <<'PY'
 import json
@@ -111,10 +111,45 @@ if needs_editor <= 0:
 print(f"FAST editor bridge: {needs_editor} candidates need full-card creation before deploy.")
 PY
 then
-  BRIDGE_ARGS=(--force)
+  if [[ "${POINTA_FAST_FORCE_EDITOR_ON_ROUTED:-0}" == "1" ]]; then
+    BRIDGE_ARGS=(--force)
+  else
+    echo "FAST editor bridge: routed candidates exist; rescue autopilot will run only if candidate health asks for it."
+  fi
 fi
 BRIDGE_STATUS=0
-python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-18}" --batch-size "${POINTA_FAST_RESCUE_BATCH_SIZE:-6}" --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-4}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --require-freshness --json || BRIDGE_STATUS=$?
+RUN_RESCUE_BRIDGE=1
+if [[ "${#BRIDGE_ARGS[@]}" -eq 0 ]]; then
+  if python3 - <<'PY'
+import json
+import os
+import sys
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+
+threshold = int(os.environ.get("POINTA_FAST_RESCUE_TOP_AGE_MIN", "45"))
+feed_path = Path("feed.json")
+try:
+    feed = json.loads(feed_path.read_text(encoding="utf-8"))
+    top = (feed.get("items") or [])[0]
+    published = datetime.fromisoformat(str(top.get("publishedAt") or "").replace("Z", "+00:00"))
+    if published.tzinfo is None:
+        published = published.replace(tzinfo=timezone(timedelta(hours=3)))
+    age_min = (datetime.now(timezone(timedelta(hours=3))) - published.astimezone(timezone(timedelta(hours=3)))).total_seconds() / 60
+except Exception:
+    sys.exit(1)
+if age_min < threshold:
+    print(f"FAST editor bridge: top item age {age_min:.1f}m is below rescue threshold {threshold}m; skipping full editor bridge.")
+    sys.exit(0)
+sys.exit(1)
+PY
+  then
+    RUN_RESCUE_BRIDGE=0
+  fi
+fi
+if [[ "$RUN_RESCUE_BRIDGE" -eq 1 ]]; then
+  python3 scripts/pointa_feed_rescue_autopilot.py "${BRIDGE_ARGS[@]}" --limit "${POINTA_FAST_RESCUE_LIMIT:-9}" --batch-size "${POINTA_FAST_RESCUE_BATCH_SIZE:-3}" --oversample-factor "${POINTA_FAST_RESCUE_OVERSAMPLE:-4}" --min-pass "${POINTA_FAST_RESCUE_MIN_PASS:-1}" --require-freshness --json || BRIDGE_STATUS=$?
+fi
 export POINTA_FAST_BRIDGE_STATUS="$BRIDGE_STATUS"
 if [[ "$BRIDGE_STATUS" -ne 0 ]]; then
   echo "FAST editor bridge failed with status $BRIDGE_STATUS; candidate health gate will decide whether publication is allowed." >&2
@@ -155,10 +190,11 @@ if feed_path.exists():
         print(f"Normalized {changed} public feed metadata fields after rescue bridge.")
 PY
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
-# P0 guard: FAST is only successful if the candidate feed is visibly fresh.
-# Never record a publication event or return OK for a stale/thin feed.
+# P0 guard: FAST is only successful if the candidate feed is safe and current.
+# Thin fresh volume stays a warning so the feed does not get stuck.
 python3 scripts/pointa_publication_health_gate.py --mode candidate --feed feed.json --out tmp/fast_candidate_health_gate.json
-python3 - <<'PY'
+FAST_HEALTH_STATUS=0
+python3 - <<'PY' || FAST_HEALTH_STATUS=$?
 import json
 import os
 import sys
@@ -173,6 +209,7 @@ incident_path = Path("tmp/fast_sync_root_cause_blocker.json")
 incident_history_dir = Path("tmp/fast_sync_root_causes")
 
 report = json.loads(report_path.read_text(encoding="utf-8"))
+hard_stale_min = int(os.environ.get("POINTA_FAST_HARD_STALE_MIN", "45"))
 try:
     sync = json.loads(sync_path.read_text(encoding="utf-8"))
 except Exception:
@@ -185,12 +222,25 @@ except Exception:
 hard_freshness_codes = {
     "no_new_top_item_sla",
     "stale_top_item",
-    "too_few_fresh_top_items",
-    "too_few_recent_items_sla",
-    "too_few_recent_sources_sla",
 }
 errors = report.get("liveErrors") or []
-blocked = [err for err in errors if err.get("code") in hard_freshness_codes]
+blocked = []
+top_age_min = None
+try:
+    top_published = (report.get("top") or [{}])[0].get("publishedAt")
+    top_dt = datetime.fromisoformat(str(top_published or "").replace("Z", "+00:00"))
+    if top_dt.tzinfo is None:
+        top_dt = top_dt.replace(tzinfo=TZ)
+    top_age_min = (datetime.now(TZ) - top_dt.astimezone(TZ)).total_seconds() / 60
+except Exception:
+    top_age_min = None
+for err in errors:
+    if err.get("code") not in hard_freshness_codes:
+        continue
+    if top_age_min is not None and top_age_min < hard_stale_min:
+        print(f"FAST freshness warning below hard stale threshold: top age {top_age_min:.1f}m < {hard_stale_min}m")
+        continue
+    blocked.append(err)
 if blocked:
     bridge_qa = bridge.get("qa") if isinstance(bridge.get("qa"), dict) else {}
     for err in blocked:
@@ -243,6 +293,12 @@ if blocked:
     print(f"FAST sync blocked; root-cause report written to {incident_path} and {history_path}")
     sys.exit(42)
 PY
+if [[ "$FAST_HEALTH_STATUS" -eq 42 ]]; then
+  echo "Poanta FAST sync skipped publication: freshness SLA not met; will retry next run."
+  exit 0
+elif [[ "$FAST_HEALTH_STATUS" -ne 0 ]]; then
+  exit "$FAST_HEALTH_STATUS"
+fi
 python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run-id "${POANTA_RUN_ID:-fast-sync}" || true
 python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true
@@ -256,11 +312,14 @@ cp breaking_feed.json "$MAIN_WORKTREE/breaking_feed.json"
 cp .poanta-state.json "$MAIN_WORKTREE/.poanta-state.json"
 cp .poanta-seen.json "$MAIN_WORKTREE/.poanta-seen.json"
 cp pointa_quality_report.md "$MAIN_WORKTREE/pointa_quality_report.md"
+mkdir -p "$MAIN_WORKTREE/assets"
+rm -rf "$MAIN_WORKTREE/assets/poenta-image-bank-v5"
+cp -a assets/poenta-image-bank-v5 "$MAIN_WORKTREE/assets/poenta-image-bank-v5"
 cd "$MAIN_WORKTREE"
-if ! git diff --quiet -- feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md; then
+if [[ -n "$(git status --porcelain -- feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md assets/poenta-image-bank-v5)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json breaking_feed.json .poanta-state.json .poanta-seen.json pointa_quality_report.md assets/poenta-image-bank-v5
   git commit -m "Auto-refresh Poanta FAST feed"
   git push origin HEAD:main
 fi
@@ -271,11 +330,14 @@ rm -rf "$WORKTREE"
 git worktree add "$WORKTREE" origin/gh-pages
 cp feed.json "$WORKTREE/feed.json"
 cp breaking_feed.json "$WORKTREE/breaking_feed.json"
+mkdir -p "$WORKTREE/assets"
+rm -rf "$WORKTREE/assets/poenta-image-bank-v5"
+cp -a assets/poenta-image-bank-v5 "$WORKTREE/assets/poenta-image-bank-v5"
 cd "$WORKTREE"
-if ! git diff --quiet -- feed.json breaking_feed.json; then
+if [[ -n "$(git status --porcelain -- feed.json breaking_feed.json assets/poenta-image-bank-v5)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json breaking_feed.json
+  git add feed.json breaking_feed.json assets/poenta-image-bank-v5
   git commit -m "Deploy refreshed Poanta FAST feed"
   git push origin HEAD:gh-pages
 fi
