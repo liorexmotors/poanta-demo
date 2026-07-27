@@ -1,25 +1,23 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-27T13:43:59+00:00",
+  "generatedAt": "2026-07-27T16:56:10+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 24.0,
-    "avgAfterHealthScore": 95.75,
+    "avgHealthDelta": 22.25,
+    "avgAfterHealthScore": 95.83,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 90,
-      "rollingScore": 88.25,
-      "readyRuns": 18,
-      "criticalBlockers": [
-        "top12_under60_below_9"
-      ],
+      "latestScore": 100,
+      "rollingScore": 88.79,
+      "readyRuns": 19,
+      "criticalBlockers": [],
       "matureForProduction": false
     },
     "alizaReview": {
@@ -32,276 +30,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T15:31:48+00:00",
-      "feedFingerprint": "4015499864574971966",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 4,
-        "top10Under60": 4,
-        "top12Under60": 4,
-        "topItemAgeMinutes": 31,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 10
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 10
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 7,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 27,
-          "readyCount": 2,
-          "hardReadyCount": 2,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "דני אילון תוקף את ההבנות בין ארה\"ב לאיראן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 2,
-              "headline": "משפחה פלסטינית טוענת שמתנחלים השתלטו על ביתה בגדה",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.jpost.com/middle-east/article-901381",
-              "trendMatch": null,
-              "queueScore": 25.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 4,
-        "softTop10": 2,
-        "otherTop10": 4,
-        "top5Under60": 4,
-        "top10Under60": 4,
-        "top12Under60": 4,
-        "topItemAgeMinutes": 31,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "השירות המטאורולוגי",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "גלובס",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 9,
-        "trendGapMatchedTop20": 9,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 20,
-          "score": 27,
-          "readyCount": 2,
-          "hardReadyCount": 2,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "דני אילון תוקף את ההבנות בין ארה\"ב לאיראן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 2,
-              "headline": "משפחה פלסטינית טוענת שמתנחלים השתלטו על ביתה בגדה",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "חדשות",
-              "class": "hard",
-              "ageMinutes": 31,
-              "url": "https://www.jpost.com/middle-east/article-901381",
-              "trendMatch": null,
-              "queueScore": 25.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 59,
-      "afterHealthScore": 60,
-      "replacementReadiness": {
-        "score": 54,
-        "threshold": 80,
-        "components": {
-          "freshness": 12.1,
-          "newsinessTop10": 12.5,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 4.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "newsiness_top10_below_7",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": -3,
-        "softTop10": -1,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 2,
-        "trendMatchedTop10": -2,
-        "trendMatchedTop20": 2,
-        "healthScore": 1
-      }
-    },
     {
       "generatedAt": "2026-07-04T15:51:28+00:00",
       "feedFingerprint": "1226400328307196054",
@@ -57810,6 +57538,647 @@
         "trendMatchedTop10": 3,
         "trendMatchedTop20": 9,
         "healthScore": 14
+      }
+    },
+    {
+      "generatedAt": "2026-07-27T16:56:10+00:00",
+      "feedFingerprint": "3680773985857322746",
+      "before": {
+        "newsinessTop10": 8,
+        "softTop10": 0,
+        "otherTop10": 2,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 6,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "Guardian",
+          "NYT",
+          "גלובס"
+        ],
+        "duplicateTop20": 1,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "JNS",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 9,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 15,
+          "hardReadyCount": 12,
+          "trendReadyCount": 6,
+          "uniqueReadySources": 8,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 3,
+              "headline": "ירי מחוץ לנציגות ארה״ב בטורונטו, אין נפגעים",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://news.walla.co.il/item/3856610",
+              "trendMatch": {
+                "trend": "טראמפ מבהיר: אין הרבה זמן לדיפלומטיה - מוכנים לפעולה צבאית עוצמתית",
+                "clusterKey": "לפעולה צבאית",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T18:15:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856595",
+                "overlapTokens": [
+                  "אין",
+                  "חדשות"
+                ],
+                "score": 18.99,
+                "boost": 18.99
+              },
+              "queueScore": 46.0
+            },
+            {
+              "rank": 5,
+              "headline": "הממשלה הכירה במועצת השלום בלי אשרור הכנסת",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 21,
+              "url": "https://www.haaretz.co.il/news/politics/2026-07-27/ty-article/.premium/0000019f-a3f5-db22-a5df-e7f79b170000",
+              "trendMatch": {
+                "trend": "טראמפ מבהיר: אין הרבה זמן לדיפלומטיה - מוכנים לפעולה צבאית עוצמתית",
+                "clusterKey": "לפעולה צבאית",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T18:15:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856595",
+                "overlapTokens": [
+                  "חדשות",
+                  "טראמפ"
+                ],
+                "score": 18.99,
+                "boost": 18.99
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 7,
+              "headline": "טראמפ מאיים לחדש תקיפות אם המגעים עם איראן ייכשלו",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-903821",
+              "trendMatch": {
+                "trend": "טראמפ מבהיר: אין הרבה זמן לדיפלומטיה - מוכנים לפעולה צבאית עוצמתית",
+                "clusterKey": "לפעולה צבאית",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T18:15:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856595",
+                "overlapTokens": [
+                  "טראמפ",
+                  "לפעולה",
+                  "צבאית"
+                ],
+                "score": 28.49,
+                "boost": 28.49
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 4,
+              "headline": "האשראי העסקי מזנק, והנדל״ן סופג את רוב החוב",
+              "source": "מעריב - כלכלה",
+              "canonicalSource": "מעריב",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 20,
+              "url": "https://www.maariv.co.il/economy/israel/article-1349367",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 1,
+              "headline": "זידאן מבקש חוזה עד 2034 בנבחרת צרפת",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 6,
+              "url": "https://sports.walla.co.il/item/3856609",
+              "trendMatch": null,
+              "queueScore": 36.0
+            },
+            {
+              "rank": 17,
+              "headline": "עיריית תל אביב: לא יוקם חוף נפרד נוסף בחוף הצוק",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 45,
+              "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228638-0/",
+              "trendMatch": {
+                "trend": "תאונת דרכים קטלנית בשרון: בן 18 נהרג וצעיר נוסף נפצע קשה",
+                "clusterKey": "נפצע קשה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T19:16:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856608",
+                "overlapTokens": [
+                  "חדשות",
+                  "נוסף"
+                ],
+                "score": 20.31,
+                "boost": 20.31
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 2,
+              "headline": "הרוג ופצוע קשה בהתנגשות רכב ואוטובוס בשרון",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "רכב",
+              "class": "other",
+              "ageMinutes": 10,
+              "url": "https://news.walla.co.il/item/3856608",
+              "trendMatch": {
+                "trend": "תאונת דרכים קטלנית בשרון: בן 18 נהרג וצעיר נוסף נפצע קשה",
+                "clusterKey": "נפצע קשה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T19:16:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856608",
+                "overlapTokens": [
+                  "בשרון",
+                  "דרכים",
+                  "וצעיר",
+                  "חדשות",
+                  "נהרג",
+                  "נוסף",
+                  "נפצע",
+                  "קטלנית"
+                ],
+                "score": 101.57,
+                "boost": 38.0
+              },
+              "queueScore": 34.0
+            },
+            {
+              "rank": 6,
+              "headline": "יאיר גולן מציב יעד: תיק הביטחון לדמוקרטים",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228641-0/",
+              "trendMatch": null,
+              "queueScore": 31.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 9,
+        "softTop10": 0,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 11,
+        "topItemAgeMinutes": 10,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 3
+          },
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "גלובס",
+            "count": 2
+          },
+          {
+            "name": "N12",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 13,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 15,
+          "hardReadyCount": 12,
+          "trendReadyCount": 6,
+          "uniqueReadySources": 8,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "ירי מחוץ לנציגות ארה״ב בטורונטו, אין נפגעים",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 10,
+              "url": "https://news.walla.co.il/item/3856610",
+              "trendMatch": {
+                "trend": "טראמפ מבהיר: אין הרבה זמן לדיפלומטיה - מוכנים לפעולה צבאית עוצמתית",
+                "clusterKey": "לפעולה צבאית",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T18:15:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856595",
+                "overlapTokens": [
+                  "אין",
+                  "חדשות"
+                ],
+                "score": 18.99,
+                "boost": 18.99
+              },
+              "queueScore": 46.0
+            },
+            {
+              "rank": 3,
+              "headline": "הממשלה הכירה במועצת השלום בלי אשרור הכנסת",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 21,
+              "url": "https://www.haaretz.co.il/news/politics/2026-07-27/ty-article/.premium/0000019f-a3f5-db22-a5df-e7f79b170000",
+              "trendMatch": {
+                "trend": "טראמפ מבהיר: אין הרבה זמן לדיפלומטיה - מוכנים לפעולה צבאית עוצמתית",
+                "clusterKey": "לפעולה צבאית",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T18:15:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856595",
+                "overlapTokens": [
+                  "חדשות",
+                  "טראמפ"
+                ],
+                "score": 18.99,
+                "boost": 18.99
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 2,
+              "headline": "טראמפ מאיים לחדש תקיפות אם המגעים עם איראן ייכשלו",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-903821",
+              "trendMatch": {
+                "trend": "טראמפ מבהיר: אין הרבה זמן לדיפלומטיה - מוכנים לפעולה צבאית עוצמתית",
+                "clusterKey": "לפעולה צבאית",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T18:15:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856595",
+                "overlapTokens": [
+                  "טראמפ",
+                  "לפעולה",
+                  "צבאית"
+                ],
+                "score": 28.49,
+                "boost": 28.49
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 5,
+              "headline": "האשראי העסקי מזנק, והנדל״ן סופג את רוב החוב",
+              "source": "מעריב - כלכלה",
+              "canonicalSource": "מעריב",
+              "category": "כלכלה",
+              "class": "hard",
+              "ageMinutes": 20,
+              "url": "https://www.maariv.co.il/economy/israel/article-1349367",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 7,
+              "headline": "זידאן מבקש חוזה עד 2034 בנבחרת צרפת",
+              "source": "וואלה ספורט",
+              "canonicalSource": "וואלה",
+              "category": "ספורט",
+              "class": "hard",
+              "ageMinutes": 6,
+              "url": "https://sports.walla.co.il/item/3856609",
+              "trendMatch": null,
+              "queueScore": 36.0
+            },
+            {
+              "rank": 9,
+              "headline": "עיריית תל אביב: לא יוקם חוף נפרד נוסף בחוף הצוק",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 45,
+              "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228638-0/",
+              "trendMatch": {
+                "trend": "תאונת דרכים קטלנית בשרון: בן 18 נהרג וצעיר נוסף נפצע קשה",
+                "clusterKey": "נפצע קשה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T19:16:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856608",
+                "overlapTokens": [
+                  "חדשות",
+                  "נוסף"
+                ],
+                "score": 20.31,
+                "boost": 20.31
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 4,
+              "headline": "הרוג ופצוע קשה בהתנגשות רכב ואוטובוס בשרון",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "רכב",
+              "class": "other",
+              "ageMinutes": 10,
+              "url": "https://news.walla.co.il/item/3856608",
+              "trendMatch": {
+                "trend": "תאונת דרכים קטלנית בשרון: בן 18 נהרג וצעיר נוסף נפצע קשה",
+                "clusterKey": "נפצע קשה",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T19:16:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856608",
+                "overlapTokens": [
+                  "בשרון",
+                  "דרכים",
+                  "וצעיר",
+                  "חדשות",
+                  "נהרג",
+                  "נוסף",
+                  "נפצע",
+                  "קטלנית"
+                ],
+                "score": 101.57,
+                "boost": 38.0
+              },
+              "queueScore": 34.0
+            },
+            {
+              "rank": 42,
+              "headline": "יאיר גולן מציב יעד: תיק הביטחון לדמוקרטים",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 22,
+              "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228641-0/",
+              "trendMatch": null,
+              "queueScore": 31.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 94,
+      "afterHealthScore": 98,
+      "replacementReadiness": {
+        "score": 100,
+        "threshold": 80,
+        "components": {
+          "freshness": 19.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 20.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 1,
+        "softTop10": 0,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 0,
+        "trendMatchedTop20": 4,
+        "healthScore": 4
       }
     }
   ]
