@@ -17,6 +17,7 @@ import hashlib
 import json
 import shutil
 import fcntl
+import os
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -363,7 +364,9 @@ def publish_asset(match: dict[str, Any]) -> str:
             margin_x = max(48, round(base.width * 0.10))
             margin_y = max(24, round(base.height * 0.065))
             base.alpha_composite(logo, (margin_x, margin_y))
-            tmp = target.with_suffix(".tmp.png")
+            tmp_dir = ROOT / "tmp" / "poenta-image-branding"
+            tmp_dir.mkdir(parents=True, exist_ok=True)
+            tmp = tmp_dir / f"{target.name}.{os.getpid()}.tmp"
             base.convert("RGB").save(tmp, format="PNG", optimize=True)
             tmp.replace(target)
     return f"{PUBLIC_BASE}/{filename}"
