@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feed B Compare</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101216;--panel:#171b22;--line:#2a313d;--text:#f4f6fa;--muted:#a8b0bd;--accent:#f4c542;--good:#4fd18b;--bad:#ff7676}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Hebrew",sans-serif;line-height:1.5}
+    main{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:22px 0 36px}
+    header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:16px}
+    h1{margin:0;font-size:26px;letter-spacing:0}p{margin:4px 0;color:var(--muted)}a{color:var(--accent)}
+    .status{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(244,197,66,.28);background:rgba(244,197,66,.08);padding:8px 10px;border-radius:8px;color:var(--accent);font-weight:800;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;min-height:104px}
+    .metric b{display:block;font-size:30px;line-height:1.1}.metric span{display:block;margin-top:8px;font-weight:800}.metric small{display:block;color:var(--muted);margin-top:5px}
+    section{margin-top:18px}h2{font-size:18px;margin:0 0 9px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+    table{width:100%;border-collapse:collapse}td{padding:9px;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}td:last-child{text-align:left;font-weight:800}
+    .samples{list-style:none;margin:0;padding:0;display:grid;gap:9px}.samples li{border-bottom:1px solid var(--line);padding:0 0 9px}.samples li:last-child{border-bottom:0;padding-bottom:0}
+    .samples strong{display:block}.samples span{display:block;color:var(--muted);font-size:13px;margin-top:3px}.empty{margin:0;color:var(--muted)}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.links a{border:1px solid var(--line);border-radius:8px;padding:7px 9px;text-decoration:none;color:var(--text);background:#12161c}
+    @media(max-width:760px){header{display:block}.status{margin-top:12px}.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:22px}.metric b{font-size:24px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Feed B Compare</h1>
+      <p>דוח חי לפיילוט Feed B מול Feed A. עריכת Codex מופעלת כש-auth זמין, בלי פרסום לראשי ובלי החלפה של Feed A.</p>
+      <p>נוצר: 2026-07-27T13:22:32+03:00 · Feed B run: feed-b-20260727T132231+0300</p>
+    </div>
+    <div class="status">Codex editor sidecar</div>
+  </header>
+
+  <div class="grid">
+    <article class="metric"><b>11</b><span>Feed B בדק</span><small>מועמדים גולמיים</small></article>
+    <article class="metric"><b>9</b><span>עברו ל-editor</span><small>Codex כש-auth זמין</small></article>
+    <article class="metric"><b>2</b><span>נדחו לפני AI</span><small>חיסכון ראשוני</small></article>
+    <article class="metric"><b>0</b><span>טוקנים חכמים</span><small>בשלב זה 0</small></article>
+    <article class="metric"><b>3,861</b><span>Feed A פריטים</span><small>updatedAt: 2026-07-27T13:05:34+03:00</small></article>
+    <article class="metric"><b>609</b><span>Feed A חלון אחרון</span><small>24 שעות</small></article>
+    <article class="metric"><b>9</b><span>B עבר ולא ב-A</span><small>מועמדים לבדיקה ידנית</small></article>
+    <article class="metric"><b>609</b><span>A לא עבר ב-B</span><small>פערי איכות/קלט</small></article>
+  </div>
+
+  <section class="panel">
+    <h2>סיבות דחייה לפני AI</h2>
+    <table><tr><td>duplicate_with_feed_b</td><td>2</td></tr></table>
+  </section>
+
+  <section class="panel">
+    <h2>Feed B העביר אבל לא נמצא כרגע ב-Feed A</h2>
+    <ul class="samples"><li><strong>ספינת הדגל מתחדשת: החל שיווק ב.מ.וו סדרה 7 העדכנית</strong><span>ynet - כל ערוץ הרכב · 2026-07-27T13:11:19+03:00 <a href="https://icar.co.il/news/bym769vszg" target="_blank" rel="noopener">מקור</a></span></li><li><strong>הכדורסלנית חשפה: חברה שלי בגדה בי עם מלא שחקניות WNBA</strong><span>וואלה ספורט · 2026-07-27T13:22:04+03:00 <a href="https://sports.walla.co.il/item/3856507" target="_blank" rel="noopener">מקור</a></span></li><li><strong>יותר מ-30 מעצרים: מי שכונה "מייקל ג'ורדן הבא" ממשיך להסתבך</strong><span>וואלה ספורט · 2026-07-27T13:22:04+03:00 <a href="https://sports.walla.co.il/item/3856520" target="_blank" rel="noopener">מקור</a></span></li><li><strong>סוף לסאגה: מכבי חיפה תשלם 700 אלף שקל על יאיר מרדכי</strong><span>וואלה ספורט - כדורגל ישראלי · 2026-07-27T13:22:04+03:00 <a href="https://sports.walla.co.il/item/3856490" target="_blank" rel="noopener">מקור</a></span></li><li><strong>טיב טעם פותחת סניף שני בראשון לציון בהשקעה של 6 מיליון שקל</strong><span>וואלה כסף · 2026-07-27T13:22:09+03:00 <a href="https://finance.walla.co.il/item/3856487" target="_blank" rel="noopener">מקור</a></span></li><li><strong>פרשת שחיתות מטלטלת את איראן: לאן נעלמו 1.6 מיליארד דולר?</strong><span>גלובס - גלובלי ושוקי עולם · 2026-07-27T12:48:00+03:00 <a href="https://www.globes.co.il/news/article.aspx?did=1001550524#utm_source=RSS" target="_blank" rel="noopener">מקור</a></span></li><li><strong>חייבים להטעין מהר: האם להעביר את הטלפון למצב טיסה באמת מזרז את ההטענה?</strong><span>N12 - כלכלה וצרכנות · 2026-07-27T12:12:00+03:00 <a href="https://www.mako.co.il/news-money/tech12/Article-d1fc56674d2af91027.htm" target="_blank" rel="noopener">מקור</a></span></li><li><strong>חוב מזונות של 133 אלף שקל: הפתרון היצירתי של השופטת</strong><span>N12 - כלכלה וצרכנות · 2026-07-27T11:56:00+03:00 <a href="https://www.mako.co.il/news-money/2026_q3/Article-f7ea9a988c2af91026.htm" target="_blank" rel="noopener">מקור</a></span></li><li><strong>זינוק של 470% ביום אחד: יצרנית הזיכרון הסינית שהפכה לחברה הגדולה בבורסות סין</strong><span>N12 - כלכלה וצרכנות · 2026-07-27T10:53:00+03:00 <a href="https://www.mako.co.il/news-money/2026_q3/Article-9f0d9836382af91026.htm" target="_blank" rel="noopener">מקור</a></span></li></ul>
+  </section>
+
+  <section class="panel">
+    <h2>Feed A אחרון שלא נמצא ברשימת Feed B שעברה</h2>
+    <ul class="samples"><li><strong>נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק</strong><span>BBC World · 2026-07-27T12:59:15+03:00 <a href="https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss" target="_blank" rel="noopener">מקור</a></span></li><li><strong>יענקי גולדהבר הבהיר: מדובר בסחיטה ברשת</strong><span>כיפה - חדשות · 2026-07-27T12:58:08+03:00 <a href="https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/" target="_blank" rel="noopener">מקור</a></span></li><li><strong>תבנית נדירה מימי הבית הראשון נמצאה בירושלים</strong><span>מעריב - חדשות · 2026-07-27T12:52:35+03:00 <a href="https://www.maariv.co.il/news/israel/article-1349204" target="_blank" rel="noopener">מקור</a></span></li><li><strong>ליברמן תקף את נתניהו סביב סעודיה, איראן והגיוס</strong><span>מעריב - חדשות · 2026-07-27T12:52:27+03:00 <a href="https://www.maariv.co.il/news/politics/article-1349203" target="_blank" rel="noopener">מקור</a></span></li><li><strong>הפועל רמת גן חוזרת לליגת העל ופותחת בגביע הטוטו</strong><span>וואלה ספורט - כדורגל ישראלי · 2026-07-27T12:51:43+03:00 <a href="https://sports.walla.co.il/item/3856513" target="_blank" rel="noopener">מקור</a></span></li><li><strong>חשדות לדפוסי הימורים חריגים בשלושה משחקי מונדיאל</strong><span>וואלה ספורט - כדורגל עולמי · 2026-07-27T12:51:43+03:00 <a href="https://sports.walla.co.il/item/3856470" target="_blank" rel="noopener">מקור</a></span></li><li><strong>וילדרס ניחם את משפחת הנרצח מחוות גלעד</strong><span>ynet - כל ערוץ החדשות · 2026-07-27T12:50:21+03:00 <a href="https://www.ynet.co.il/news/article/bykbm54rzl" target="_blank" rel="noopener">מקור</a></span></li><li><strong>יו״ר איגוד הטייסים מצטרף לישראל ביתנו</strong><span>מעריב - חדשות · 2026-07-27T12:47:18+03:00 <a href="https://www.maariv.co.il/news/politics/article-1349200" target="_blank" rel="noopener">מקור</a></span></li><li><strong>אב באיראן נידון לשמונה שנים על רצח בתו</strong><span>The Jerusalem Post - Middle East · 2026-07-27T12:45:17+03:00 <a href="https://www.jpost.com/middle-east/iran-news/article-903780" target="_blank" rel="noopener">מקור</a></span></li><li><strong>ח"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו</strong><span>מעריב - חדשות · 2026-07-27T12:40:17+03:00 <a href="https://www.maariv.co.il/news/politics/article-1349195" target="_blank" rel="noopener">מקור</a></span></li><li><strong>גל רובין חוזרת לקריירת האיפור אחרי הזכייה באח הגדול</strong><span>TMI - ראשי · 2026-07-27T12:30:45+03:00 <a href="https://tmi.maariv.co.il/celebs-news/article-1349186" target="_blank" rel="noopener">מקור</a></span></li><li><strong>הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן</strong><span>הארץ - חדשות · 2026-07-27T12:30:36+03:00 <a href="https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000" target="_blank" rel="noopener">מקור</a></span></li></ul>
+  </section>
+
+  <section class="panel">
+    <h2>Feed A נראה ל-Feed B אבל סונן החוצה</h2>
+    <p class="empty">אין פריטים להצגה.</p>
+  </section>
+
+  <div class="links">
+    <a href="./">Feed B</a>
+    <a href="./compare_report.json">JSON</a>
+    <a href="./compare_report.md">Markdown</a>
+    <a href="../feed_b.json">feed_b.json</a>
+  </div>
+  <p>Feed B נוצר: 2026-07-27T13:22:31+03:00</p>
+</main>
+</body>
+</html>

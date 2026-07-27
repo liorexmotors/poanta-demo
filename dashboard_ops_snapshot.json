@@ -1,12 +1,12 @@
 {
   "status": "snapshot",
   "snapshotOnly": true,
-  "generatedAt": "2026-07-27T13:13:26+03:00",
+  "generatedAt": "2026-07-27T13:24:47+03:00",
   "note": "Static fallback for feedback-dashboard.html when poanta-api /v1/ops/status is unavailable.",
   "reports": {
     "liveAuditor": {
-      "status": "ok",
-      "checkedAt": "2026-07-27T13:13:12+03:00",
+      "status": "fail",
+      "checkedAt": "2026-07-27T13:24:30+03:00",
       "url": "feed.json",
       "updatedAt": "2026-07-27T13:05:34+03:00",
       "items": 3861,
@@ -96,13 +96,23 @@
           "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000"
         }
       ],
-      "errors": [],
+      "errors": [
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-07-27T12:59:15+03:00 (0:25:14.105716 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "item": 0,
+          "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+          "source": "BBC World",
+          "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss"
+        }
+      ],
       "warnings": []
     },
     "timingAuditor": {
       "auditor": "timing",
       "status": "fail",
-      "checkedAt": "2026-07-27T13:13:20+03:00",
+      "checkedAt": "2026-07-27T13:24:40+03:00",
       "eventsChecked": 2000,
       "clock": "publishedAt_fallback_seenAt",
       "thresholdsMinutes": {
@@ -134,17 +144,14 @@
       "warningMinutes": {
         "all": 15
       },
-      "recentItems60m": 26,
+      "recentItems60m": 15,
       "recentSourceGroups60m": [
         "BBC",
-        "JNS",
         "TMI",
         "The Jerusalem Post",
         "ynet",
-        "גלובס",
         "הארץ",
         "וואלה",
-        "ישראל היום",
         "כיפה",
         "מעריב"
       ],
@@ -409,13 +416,78 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "ageMinutes": 25,
+          "latestAt": "2026-07-27T12:59:15+03:00",
+          "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+          "source": "BBC World",
+          "message": "No fresh all publication event for 25 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ביטחון",
+          "thresholdMinutes": 25,
+          "ageMinutes": 32,
+          "latestAt": "2026-07-27T12:52:27+03:00",
+          "headline": "ליברמן תקף את נתניהו סביב סעודיה, איראן והגיוס",
+          "source": "מעריב - חדשות",
+          "message": "No fresh ביטחון publication event for 32 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "פוליטיקה",
+          "thresholdMinutes": 30,
+          "ageMinutes": 37,
+          "latestAt": "2026-07-27T12:47:18+03:00",
+          "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+          "source": "מעריב - חדשות",
+          "message": "No fresh פוליטיקה publication event for 37 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "משפט",
+          "thresholdMinutes": 45,
+          "ageMinutes": 54,
+          "latestAt": "2026-07-27T12:30:02+03:00",
+          "headline": "העליון הגביל את הרש״פ בתביעות נפגעי טרור",
+          "source": "וואלה חדשות",
+          "message": "No fresh משפט publication event for 54 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 51,
+          "ageMinutes": 62,
           "latestAt": "2026-07-27T12:21:43+03:00",
           "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
           "source": "וואלה כסף",
-          "message": "No fresh כלכלה publication event for 51 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 62 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "צרכנות",
+          "thresholdMinutes": 60,
+          "ageMinutes": 62,
+          "latestAt": "2026-07-27T12:21:43+03:00",
+          "headline": "תן ביס מרחיבה את כרטיס העובדים להטבות צריכה ופנאי",
+          "source": "וואלה כסף",
+          "message": "No fresh צרכנות publication event for 62 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -424,11 +496,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 81,
+          "ageMinutes": 92,
           "latestAt": "2026-07-27T11:51:53+03:00",
           "headline": "שביתת נהגי תנופה שיבשה קווים בשומרון ובבית שמש",
           "source": "וואלה רכב",
-          "message": "No fresh רכב publication event for 81 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 92 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -443,11 +515,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 367,
+          "ageMinutes": 379,
           "latestAt": "2026-07-27T07:05:26+03:00",
           "headline": "בתי משפט הכירו בהתנגדות דיירים לפינוי בינוי",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh נדל״ן publication event for 367 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 379 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -456,11 +528,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 388,
+          "ageMinutes": 399,
           "latestAt": "2026-07-27T06:45:02+03:00",
           "headline": "התחממות קלה בהרים ובפנים הארץ",
           "source": "וואלה חדשות",
-          "message": "No fresh מזג אוויר publication event for 388 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 399 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -470,13 +542,78 @@
         {
           "severity": "error",
           "code": "publication_timing_sla",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "ageMinutes": 25,
+          "latestAt": "2026-07-27T12:59:15+03:00",
+          "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+          "source": "BBC World",
+          "message": "No fresh all publication event for 25 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ביטחון",
+          "thresholdMinutes": 25,
+          "ageMinutes": 32,
+          "latestAt": "2026-07-27T12:52:27+03:00",
+          "headline": "ליברמן תקף את נתניהו סביב סעודיה, איראן והגיוס",
+          "source": "מעריב - חדשות",
+          "message": "No fresh ביטחון publication event for 32 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "פוליטיקה",
+          "thresholdMinutes": 30,
+          "ageMinutes": 37,
+          "latestAt": "2026-07-27T12:47:18+03:00",
+          "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+          "source": "מעריב - חדשות",
+          "message": "No fresh פוליטיקה publication event for 37 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "משפט",
+          "thresholdMinutes": 45,
+          "ageMinutes": 54,
+          "latestAt": "2026-07-27T12:30:02+03:00",
+          "headline": "העליון הגביל את הרש״פ בתביעות נפגעי טרור",
+          "source": "וואלה חדשות",
+          "message": "No fresh משפט publication event for 54 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 51,
+          "ageMinutes": 62,
           "latestAt": "2026-07-27T12:21:43+03:00",
           "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
           "source": "וואלה כסף",
-          "message": "No fresh כלכלה publication event for 51 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 62 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "צרכנות",
+          "thresholdMinutes": 60,
+          "ageMinutes": 62,
+          "latestAt": "2026-07-27T12:21:43+03:00",
+          "headline": "תן ביס מרחיבה את כרטיס העובדים להטבות צריכה ופנאי",
+          "source": "וואלה כסף",
+          "message": "No fresh צרכנות publication event for 62 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -485,11 +622,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 81,
+          "ageMinutes": 92,
           "latestAt": "2026-07-27T11:51:53+03:00",
           "headline": "שביתת נהגי תנופה שיבשה קווים בשומרון ובבית שמש",
           "source": "וואלה רכב",
-          "message": "No fresh רכב publication event for 81 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 92 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -504,11 +641,11 @@
           "code": "publication_timing_sla",
           "group": "נדל״ן",
           "thresholdMinutes": 120,
-          "ageMinutes": 367,
+          "ageMinutes": 379,
           "latestAt": "2026-07-27T07:05:26+03:00",
           "headline": "בתי משפט הכירו בהתנגדות דיירים לפינוי בינוי",
           "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh נדל״ן publication event for 367 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh נדל״ן publication event for 379 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -517,11 +654,11 @@
           "code": "publication_timing_sla",
           "group": "מזג אוויר",
           "thresholdMinutes": 180,
-          "ageMinutes": 388,
+          "ageMinutes": 399,
           "latestAt": "2026-07-27T06:45:02+03:00",
           "headline": "התחממות קלה בהרים ובפנים הארץ",
           "source": "וואלה חדשות",
-          "message": "No fresh מזג אוויר publication event for 388 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh מזג אוויר publication event for 399 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         }
@@ -631,28 +768,103 @@
     {
       "id": "live",
       "name": "מבקר חי",
-      "status": "ok",
-      "summary": "תקין בבדיקה האחרונה 2026-07-27T13:13:12+03:00",
-      "checkedAt": "2026-07-27T13:13:12+03:00",
-      "findings": []
+      "status": "fail",
+      "summary": "No new top feed item for more than 25m: latest is 2026-07-27T12:59:15+03:00 (0:25:14.105716 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+      "checkedAt": "2026-07-27T13:24:30+03:00",
+      "findings": [
+        {
+          "severity": "error",
+          "code": "no_new_top_item_sla",
+          "message": "No new top feed item for more than 25m: latest is 2026-07-27T12:59:15+03:00 (0:25:14.105716 old). Treat as operational problem; do not lower editorial standards, trigger collection/editor/QA/deploy rescue.",
+          "item": 0,
+          "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+          "source": "BBC World",
+          "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss"
+        }
+      ]
     },
     {
       "id": "timing",
       "name": "מבקר תזמון",
       "status": "fail",
-      "summary": "No fresh כלכלה publication event for 51 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-      "checkedAt": "2026-07-27T13:13:20+03:00",
+      "summary": "No fresh all publication event for 25 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+      "checkedAt": "2026-07-27T13:24:40+03:00",
       "findings": [
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "all",
+          "thresholdMinutes": 25,
+          "ageMinutes": 25,
+          "latestAt": "2026-07-27T12:59:15+03:00",
+          "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+          "source": "BBC World",
+          "message": "No fresh all publication event for 25 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_fast_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "ביטחון",
+          "thresholdMinutes": 25,
+          "ageMinutes": 32,
+          "latestAt": "2026-07-27T12:52:27+03:00",
+          "headline": "ליברמן תקף את נתניהו סביב סעודיה, איראן והגיוס",
+          "source": "מעריב - חדשות",
+          "message": "No fresh ביטחון publication event for 32 minutes; threshold is 25 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "פוליטיקה",
+          "thresholdMinutes": 30,
+          "ageMinutes": 37,
+          "latestAt": "2026-07-27T12:47:18+03:00",
+          "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+          "source": "מעריב - חדשות",
+          "message": "No fresh פוליטיקה publication event for 37 minutes; threshold is 30 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "משפט",
+          "thresholdMinutes": 45,
+          "ageMinutes": 54,
+          "latestAt": "2026-07-27T12:30:02+03:00",
+          "headline": "העליון הגביל את הרש״פ בתביעות נפגעי טרור",
+          "source": "וואלה חדשות",
+          "message": "No fresh משפט publication event for 54 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
         {
           "severity": "error",
           "code": "publication_timing_sla",
           "group": "כלכלה",
           "thresholdMinutes": 45,
-          "ageMinutes": 51,
+          "ageMinutes": 62,
           "latestAt": "2026-07-27T12:21:43+03:00",
           "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
           "source": "וואלה כסף",
-          "message": "No fresh כלכלה publication event for 51 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh כלכלה publication event for 62 minutes; threshold is 45 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
+          "escalateTo": "aliza"
+        },
+        {
+          "severity": "error",
+          "code": "publication_timing_sla",
+          "group": "צרכנות",
+          "thresholdMinutes": 60,
+          "ageMinutes": 62,
+          "latestAt": "2026-07-27T12:21:43+03:00",
+          "headline": "תן ביס מרחיבה את כרטיס העובדים להטבות צריכה ופנאי",
+          "source": "וואלה כסף",
+          "message": "No fresh צרכנות publication event for 62 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -661,11 +873,11 @@
           "code": "publication_timing_sla",
           "group": "רכב",
           "thresholdMinutes": 60,
-          "ageMinutes": 81,
+          "ageMinutes": 92,
           "latestAt": "2026-07-27T11:51:53+03:00",
           "headline": "שביתת נהגי תנופה שיבשה קווים בשומרון ובבית שמש",
           "source": "וואלה רכב",
-          "message": "No fresh רכב publication event for 81 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
+          "message": "No fresh רכב publication event for 92 minutes; threshold is 60 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
           "recommendedAction": "trigger_source_rescue_and_alert_aliza",
           "escalateTo": "aliza"
         },
@@ -674,32 +886,6 @@
           "code": "no_publication_events",
           "group": "דעות",
           "message": "No publication event found for דעות"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "נדל״ן",
-          "thresholdMinutes": 120,
-          "ageMinutes": 367,
-          "latestAt": "2026-07-27T07:05:26+03:00",
-          "headline": "בתי משפט הכירו בהתנגדות דיירים לפינוי בינוי",
-          "source": "ynet - כל ערוץ הכלכלה",
-          "message": "No fresh נדל״ן publication event for 367 minutes; threshold is 120 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
-        },
-        {
-          "severity": "error",
-          "code": "publication_timing_sla",
-          "group": "מזג אוויר",
-          "thresholdMinutes": 180,
-          "ageMinutes": 388,
-          "latestAt": "2026-07-27T06:45:02+03:00",
-          "headline": "התחממות קלה בהרים ובפנים הארץ",
-          "source": "וואלה חדשות",
-          "message": "No fresh מזג אוויר publication event for 388 minutes; threshold is 180 minutes. Alert Aliza and trigger deterministic rescue without lowering editorial standards.",
-          "recommendedAction": "trigger_source_rescue_and_alert_aliza",
-          "escalateTo": "aliza"
         }
       ]
     },
@@ -721,12 +907,12 @@
     }
   ],
   "feedQuality": {
-    "generatedAt": "2026-07-27T13:13:26+03:00",
+    "generatedAt": "2026-07-27T13:24:47+03:00",
     "score": "ok",
     "newsinessTop10": 7,
     "softTop10": 3,
     "otherTop10": 0,
-    "topItemAgeMinutes": 14,
+    "topItemAgeMinutes": 25,
     "top5Under60": 5,
     "top10Under60": 10,
     "top12Under60": 12,
@@ -749,8 +935,8 @@
     },
     "breaking": {
       "visible": true,
-      "topAgeMinutes": 13,
-      "top12Under60": 10,
+      "topAgeMinutes": 24,
+      "top12Under60": 7,
       "count": 80
     },
     "notes": [
@@ -761,7 +947,7 @@
   "feedQualitySimulation": {
     "status": "ok",
     "mode": "simulation_only_no_feed_mutation",
-    "generatedAt": "2026-07-27T10:13:25+00:00",
+    "generatedAt": "2026-07-27T10:24:46+00:00",
     "inputFeed": "/root/.openclaw/workspace/projects/poanta-demo/feed.json",
     "itemCount": 3861,
     "before": {
@@ -771,7 +957,7 @@
       "top5Under60": 5,
       "top10Under60": 10,
       "top12Under60": 12,
-      "topItemAgeMinutes": 14,
+      "topItemAgeMinutes": 25,
       "uniqueSourcesTop20": 9,
       "dominantSource": {
         "name": "וואלה",
@@ -825,11 +1011,11 @@
       "continuousPublishing": {
         "targetMinutes": 10,
         "estimatedVisibleChangeMinutes": 10,
-        "score": 100,
-        "readyCount": 10,
-        "hardReadyCount": 10,
-        "trendReadyCount": 7,
-        "uniqueReadySources": 7,
+        "score": 96,
+        "readyCount": 7,
+        "hardReadyCount": 7,
+        "trendReadyCount": 5,
+        "uniqueReadySources": 5,
         "blockers": [],
         "readyQueue": [
           {
@@ -839,7 +1025,7 @@
             "canonicalSource": "כיפה",
             "category": "פלילים",
             "class": "hard",
-            "ageMinutes": 15,
+            "ageMinutes": 26,
             "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
             "trendMatch": {
               "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
@@ -865,7 +1051,7 @@
               "score": 17.27,
               "boost": 17.27
             },
-            "queueScore": 48.0
+            "queueScore": 41.0
           },
           {
             "rank": 4,
@@ -874,7 +1060,7 @@
             "canonicalSource": "מעריב",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 20,
+            "ageMinutes": 32,
             "url": "https://www.maariv.co.il/news/politics/article-1349203",
             "trendMatch": {
               "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
@@ -902,7 +1088,7 @@
               "score": 25.47,
               "boost": 25.47
             },
-            "queueScore": 48.0
+            "queueScore": 35.0
           },
           {
             "rank": 8,
@@ -911,11 +1097,11 @@
             "canonicalSource": "מעריב",
             "category": "פוליטיקה",
             "class": "hard",
-            "ageMinutes": 26,
+            "ageMinutes": 37,
             "url": "https://www.maariv.co.il/news/politics/article-1349200",
             "trendMatch": {
               "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-              "clusterKey": "קטאר כמדינת אויב",
+              "clusterKey": "אכריז קטאר כמדינת",
               "domain": "חדשות",
               "externalMentions": 6,
               "sourceCount": 3,
@@ -938,40 +1124,7 @@
               "score": 24.2,
               "boost": 24.2
             },
-            "queueScore": 41.0
-          },
-          {
-            "rank": 1,
-            "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
-            "source": "BBC World",
-            "canonicalSource": "BBC",
-            "category": "אקטואליה בעולם",
-            "class": "hard",
-            "ageMinutes": 14,
-            "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
-            "trendMatch": {
-              "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-              "clusterKey": "strait hormuz",
-              "domain": "אקטואליה בעולם",
-              "externalMentions": 3,
-              "sourceCount": 1,
-              "sources": [
-                "BBC"
-              ],
-              "discoveryTypes": [
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-27T10:13:25.034283+00:00",
-              "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
-              "overlapTokens": [
-                "אקטואליה",
-                "בעולם"
-              ],
-              "score": 11.36,
-              "boost": 11.36
-            },
-            "queueScore": 40.0
+            "queueScore": 35.0
           },
           {
             "rank": 10,
@@ -980,11 +1133,11 @@
             "canonicalSource": "מעריב",
             "category": "פוליטיקה",
             "class": "hard",
-            "ageMinutes": 33,
+            "ageMinutes": 44,
             "url": "https://www.maariv.co.il/news/politics/article-1349195",
             "trendMatch": {
               "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-              "clusterKey": "קטאר כמדינת אויב",
+              "clusterKey": "אכריז קטאר כמדינת",
               "domain": "חדשות",
               "externalMentions": 6,
               "sourceCount": 3,
@@ -1011,81 +1164,39 @@
             "queueScore": 35.0
           },
           {
-            "rank": 12,
-            "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
-            "source": "הארץ - חדשות",
-            "canonicalSource": "הארץ",
-            "category": "ביטחון",
+            "rank": 1,
+            "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+            "source": "BBC World",
+            "canonicalSource": "BBC",
+            "category": "אקטואליה בעולם",
             "class": "hard",
-            "ageMinutes": 42,
-            "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000",
+            "ageMinutes": 25,
+            "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
             "trendMatch": {
-              "trend": "ביסמוט: \"איראן תנסה להפוך את מערכת הבחירות לחזית נוספת\"",
-              "clusterKey": "הבחירות לחזית נוספת",
-              "domain": "חדשות",
+              "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+              "clusterKey": "מזנקים הנפט",
+              "domain": "כלכלה",
               "externalMentions": 3,
               "sourceCount": 2,
               "sources": [
-                "וואלה",
-                "ישראל היום"
+                "גלובס",
+                "וואלה"
               ],
               "discoveryTypes": [
-                "RSS",
-                "WEB"
+                "RSS"
               ],
               "mentionedInFeed": true,
-              "latestAt": "2026-07-27T12:16:00+00:00",
-              "sampleUrl": "https://news.walla.co.il/break/3856509",
+              "latestAt": "2026-07-27T09:54:00+00:00",
+              "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
               "overlapTokens": [
-                "איראן",
-                "חדשות"
+                "בניו",
+                "בעולם",
+                "יורק"
               ],
-              "score": 17.86,
-              "boost": 17.86
+              "score": 21.82,
+              "boost": 21.82
             },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 13,
-            "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
-            "source": "וואלה חדשות",
-            "canonicalSource": "וואלה",
-            "category": "ביטחון",
-            "class": "hard",
-            "ageMinutes": 43,
-            "url": "https://news.walla.co.il/item/3856498",
-            "trendMatch": {
-              "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-              "clusterKey": "קטאר כמדינת אויב",
-              "domain": "חדשות",
-              "externalMentions": 6,
-              "sourceCount": 3,
-              "sources": [
-                "ynet",
-                "וואלה",
-                "סרוגים"
-              ],
-              "discoveryTypes": [
-                "RSS",
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-27T11:50:00+00:00",
-              "sampleUrl": "https://news.walla.co.il/item/3856498",
-              "overlapTokens": [
-                "אויב",
-                "אכריז",
-                "בממשלה",
-                "בנט",
-                "הבאה",
-                "חדשות",
-                "כמדינת",
-                "מודיע"
-              ],
-              "score": 108.9,
-              "boost": 38.0
-            },
-            "queueScore": 35.0
+            "queueScore": 33.0
           },
           {
             "rank": 7,
@@ -1094,10 +1205,22 @@
             "canonicalSource": "ynet",
             "category": "חדשות",
             "class": "hard",
-            "ageMinutes": 23,
+            "ageMinutes": 34,
             "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
             "trendMatch": null,
-            "queueScore": 31.0
+            "queueScore": 25.0
+          },
+          {
+            "rank": 9,
+            "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+            "source": "The Jerusalem Post - Middle East",
+            "canonicalSource": "Jerusalem Post",
+            "category": "ביטחון",
+            "class": "hard",
+            "ageMinutes": 39,
+            "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
+            "trendMatch": null,
+            "queueScore": 25.0
           }
         ]
       }
@@ -1107,10 +1230,10 @@
       "softTop10": 0,
       "otherTop10": 0,
       "top5Under60": 5,
-      "top10Under60": 10,
-      "top12Under60": 11,
-      "topItemAgeMinutes": 20,
-      "uniqueSourcesTop20": 12,
+      "top10Under60": 9,
+      "top12Under60": 9,
+      "topItemAgeMinutes": 32,
+      "uniqueSourcesTop20": 13,
       "dominantSource": {
         "name": "מעריב",
         "count": 3
@@ -1128,10 +1251,6 @@
           "count": 3
         },
         {
-          "name": "וואלה",
-          "count": 3
-        },
-        {
           "name": "הארץ",
           "count": 3
         },
@@ -1144,39 +1263,45 @@
           "count": 2
         },
         {
-          "name": "כיפה",
-          "count": 1
+          "name": "וואלה",
+          "count": 2
         },
         {
           "name": "BBC",
           "count": 1
         },
         {
-          "name": "דוברות משטרת ישראל",
+          "name": "כיפה",
+          "count": 1
+        },
+        {
+          "name": "גלובס",
           "count": 1
         }
       ],
       "trendMatchedTop10": 8,
-      "trendMatchedTop20": 16,
+      "trendMatchedTop20": 17,
       "trendGapMatchedTop20": 0,
       "continuousPublishing": {
         "targetMinutes": 10,
         "estimatedVisibleChangeMinutes": 10,
-        "score": 96,
-        "readyCount": 10,
-        "hardReadyCount": 10,
-        "trendReadyCount": 7,
-        "uniqueReadySources": 7,
-        "blockers": [],
+        "score": 90,
+        "readyCount": 7,
+        "hardReadyCount": 7,
+        "trendReadyCount": 5,
+        "uniqueReadySources": 5,
+        "blockers": [
+          "top_item_over_25m"
+        ],
         "readyQueue": [
           {
-            "rank": 3,
+            "rank": 4,
             "headline": "יענקי גולדהבר הבהיר: מדובר בסחיטה ברשת",
             "source": "כיפה - חדשות",
             "canonicalSource": "כיפה",
             "category": "פלילים",
             "class": "hard",
-            "ageMinutes": 15,
+            "ageMinutes": 26,
             "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
             "trendMatch": {
               "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
@@ -1202,7 +1327,7 @@
               "score": 17.27,
               "boost": 17.27
             },
-            "queueScore": 48.0
+            "queueScore": 41.0
           },
           {
             "rank": 1,
@@ -1211,7 +1336,7 @@
             "canonicalSource": "מעריב",
             "category": "ביטחון",
             "class": "hard",
-            "ageMinutes": 20,
+            "ageMinutes": 32,
             "url": "https://www.maariv.co.il/news/politics/article-1349203",
             "trendMatch": {
               "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
@@ -1239,20 +1364,20 @@
               "score": 25.47,
               "boost": 25.47
             },
-            "queueScore": 48.0
+            "queueScore": 35.0
           },
           {
-            "rank": 2,
+            "rank": 5,
             "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
             "source": "מעריב - חדשות",
             "canonicalSource": "מעריב",
             "category": "פוליטיקה",
             "class": "hard",
-            "ageMinutes": 26,
+            "ageMinutes": 37,
             "url": "https://www.maariv.co.il/news/politics/article-1349200",
             "trendMatch": {
               "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-              "clusterKey": "קטאר כמדינת אויב",
+              "clusterKey": "אכריז קטאר כמדינת",
               "domain": "חדשות",
               "externalMentions": 6,
               "sourceCount": 3,
@@ -1275,53 +1400,20 @@
               "score": 24.2,
               "boost": 24.2
             },
-            "queueScore": 41.0
+            "queueScore": 35.0
           },
           {
-            "rank": 5,
-            "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
-            "source": "BBC World",
-            "canonicalSource": "BBC",
-            "category": "אקטואליה בעולם",
-            "class": "hard",
-            "ageMinutes": 14,
-            "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
-            "trendMatch": {
-              "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-              "clusterKey": "strait hormuz",
-              "domain": "אקטואליה בעולם",
-              "externalMentions": 3,
-              "sourceCount": 1,
-              "sources": [
-                "BBC"
-              ],
-              "discoveryTypes": [
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-27T10:13:25.034283+00:00",
-              "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
-              "overlapTokens": [
-                "אקטואליה",
-                "בעולם"
-              ],
-              "score": 11.36,
-              "boost": 11.36
-            },
-            "queueScore": 40.0
-          },
-          {
-            "rank": 6,
+            "rank": 2,
             "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
             "source": "מעריב - חדשות",
             "canonicalSource": "מעריב",
             "category": "פוליטיקה",
             "class": "hard",
-            "ageMinutes": 33,
+            "ageMinutes": 44,
             "url": "https://www.maariv.co.il/news/politics/article-1349195",
             "trendMatch": {
               "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-              "clusterKey": "קטאר כמדינת אויב",
+              "clusterKey": "אכריז קטאר כמדינת",
               "domain": "חדשות",
               "externalMentions": 6,
               "sourceCount": 3,
@@ -1348,112 +1440,84 @@
             "queueScore": 35.0
           },
           {
-            "rank": 7,
-            "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
-            "source": "הארץ - חדשות",
-            "canonicalSource": "הארץ",
-            "category": "ביטחון",
+            "rank": 3,
+            "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+            "source": "BBC World",
+            "canonicalSource": "BBC",
+            "category": "אקטואליה בעולם",
             "class": "hard",
-            "ageMinutes": 42,
-            "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000",
+            "ageMinutes": 25,
+            "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
             "trendMatch": {
-              "trend": "ביסמוט: \"איראן תנסה להפוך את מערכת הבחירות לחזית נוספת\"",
-              "clusterKey": "הבחירות לחזית נוספת",
-              "domain": "חדשות",
+              "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+              "clusterKey": "מזנקים הנפט",
+              "domain": "כלכלה",
               "externalMentions": 3,
               "sourceCount": 2,
               "sources": [
-                "וואלה",
-                "ישראל היום"
+                "גלובס",
+                "וואלה"
               ],
               "discoveryTypes": [
-                "RSS",
-                "WEB"
+                "RSS"
               ],
               "mentionedInFeed": true,
-              "latestAt": "2026-07-27T12:16:00+00:00",
-              "sampleUrl": "https://news.walla.co.il/break/3856509",
+              "latestAt": "2026-07-27T09:54:00+00:00",
+              "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
               "overlapTokens": [
-                "איראן",
-                "חדשות"
+                "בניו",
+                "בעולם",
+                "יורק"
               ],
-              "score": 17.86,
-              "boost": 17.86
+              "score": 21.82,
+              "boost": 21.82
             },
-            "queueScore": 35.0
+            "queueScore": 33.0
           },
           {
-            "rank": 4,
-            "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
-            "source": "וואלה חדשות",
-            "canonicalSource": "וואלה",
-            "category": "ביטחון",
-            "class": "hard",
-            "ageMinutes": 43,
-            "url": "https://news.walla.co.il/item/3856498",
-            "trendMatch": {
-              "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-              "clusterKey": "קטאר כמדינת אויב",
-              "domain": "חדשות",
-              "externalMentions": 6,
-              "sourceCount": 3,
-              "sources": [
-                "ynet",
-                "וואלה",
-                "סרוגים"
-              ],
-              "discoveryTypes": [
-                "RSS",
-                "WEB"
-              ],
-              "mentionedInFeed": true,
-              "latestAt": "2026-07-27T11:50:00+00:00",
-              "sampleUrl": "https://news.walla.co.il/item/3856498",
-              "overlapTokens": [
-                "אויב",
-                "אכריז",
-                "בממשלה",
-                "בנט",
-                "הבאה",
-                "חדשות",
-                "כמדינת",
-                "מודיע"
-              ],
-              "score": 108.9,
-              "boost": 38.0
-            },
-            "queueScore": 35.0
-          },
-          {
-            "rank": 8,
+            "rank": 6,
             "headline": "וילדרס ניחם את משפחת הנרצח מחוות גלעד",
             "source": "ynet - כל ערוץ החדשות",
             "canonicalSource": "ynet",
             "category": "חדשות",
             "class": "hard",
-            "ageMinutes": 23,
+            "ageMinutes": 34,
             "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
             "trendMatch": null,
-            "queueScore": 31.0
+            "queueScore": 25.0
+          },
+          {
+            "rank": 8,
+            "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+            "source": "The Jerusalem Post - Middle East",
+            "canonicalSource": "Jerusalem Post",
+            "category": "ביטחון",
+            "class": "hard",
+            "ageMinutes": 39,
+            "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
+            "trendMatch": null,
+            "queueScore": 25.0
           }
         ]
       }
     },
     "beforeHealthScore": 72,
-    "afterHealthScore": 97,
+    "afterHealthScore": 96,
     "replacementReadiness": {
-      "score": 96,
+      "score": 87,
       "threshold": 80,
       "components": {
-        "freshness": 19.5,
+        "freshness": 15.35,
         "newsinessTop10": 25.0,
         "top20Quality": 17.0,
         "sourceBalance": 10.0,
         "trendSignalUse": 10.0,
-        "criticalBlockersClear": 15.0
+        "criticalBlockersClear": 10.0
       },
-      "criticalBlockers": [],
-      "readyNow": true
+      "criticalBlockers": [
+        "top_item_stale_over_25m"
+      ],
+      "readyNow": false
     },
     "alizaReview": {
       "status": "ok",
@@ -1496,28 +1560,30 @@
     "delta": {
       "newsinessTop10": 3,
       "softTop10": -3,
-      "top12Under60": -1,
-      "uniqueSourcesTop20": 3,
+      "top12Under60": -3,
+      "uniqueSourcesTop20": 4,
       "trendMatchedTop10": 2,
-      "trendMatchedTop20": 5,
-      "healthScore": 25
+      "trendMatchedTop20": 6,
+      "healthScore": 24
     },
     "historySummary": {
       "sampleCount": 144,
       "window": 12,
       "positiveRuns": 12,
       "negativeRuns": 0,
-      "avgHealthDelta": 19.92,
-      "avgAfterHealthScore": 90.33,
+      "avgHealthDelta": 20.5,
+      "avgAfterHealthScore": 91.08,
       "stablePositive": true,
       "replacement": {
         "threshold": 80,
         "minSamplesForPromotion": 24,
         "window": 48,
-        "latestScore": 96,
-        "rollingScore": 83.6,
+        "latestScore": 87,
+        "rollingScore": 84.19,
         "readyRuns": 12,
-        "criticalBlockers": [],
+        "criticalBlockers": [
+          "top_item_stale_over_25m"
+        ],
         "matureForProduction": false
       },
       "alizaReview": {
@@ -1532,10 +1598,10 @@
     "trendSignal": {
       "status": "ok",
       "path": "spy_trends.json",
-      "generatedAt": "2026-07-27T13:13:25+03:00",
+      "generatedAt": "2026-07-27T13:24:46+03:00",
       "sourceTrendCount": 14,
       "usedTrendCount": 14,
-      "rssItemsScanned": 187,
+      "rssItemsScanned": 188,
       "webItemsScanned": 202,
       "topTrends": [
         {
@@ -1584,7 +1650,7 @@
         },
         {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -1663,26 +1729,6 @@
           "strength": 41.1
         },
         {
-          "trend": "השריפה בשדרות: אמוניה דלפה ממפעל - כל אזור התעשייה מפונה",
-          "clusterKey": "אזור התעשייה",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "N12",
-            "ynet",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T07:35:11+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/hjcoytnrme",
-          "strength": 41.1
-        },
-        {
           "trend": "שריפה פרצה באיזור התעשייה בשדרות",
           "clusterKey": "שריפה פרצה",
           "domain": "חדשות",
@@ -1738,6 +1784,25 @@
           "latestAt": "2026-07-27T09:14:00+00:00",
           "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550521#utm_source=RSS",
           "strength": 34.1
+        },
+        {
+          "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+          "clusterKey": "בני אדם",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T05:44:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856413",
+          "strength": 34.1
         }
       ]
     },
@@ -1748,32 +1813,34 @@
         "canonicalSource": "BBC",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 14,
+        "ageMinutes": 25,
         "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
         "beforeRank": 1,
         "afterRank": 1,
         "delta": 0,
         "trendMatch": {
-          "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-          "clusterKey": "strait hormuz",
-          "domain": "אקטואליה בעולם",
+          "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+          "clusterKey": "מזנקים הנפט",
+          "domain": "כלכלה",
           "externalMentions": 3,
-          "sourceCount": 1,
+          "sourceCount": 2,
           "sources": [
-            "BBC"
+            "גלובס",
+            "וואלה"
           ],
           "discoveryTypes": [
-            "WEB"
+            "RSS"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-27T10:13:25.034283+00:00",
-          "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
+          "latestAt": "2026-07-27T09:54:00+00:00",
+          "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
           "overlapTokens": [
-            "אקטואליה",
-            "בעולם"
+            "בניו",
+            "בעולם",
+            "יורק"
           ],
-          "score": 11.36,
-          "boost": 11.36
+          "score": 21.82,
+          "boost": 21.82
         }
       },
       {
@@ -1782,7 +1849,7 @@
         "canonicalSource": "כיפה",
         "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 15,
+        "ageMinutes": 26,
         "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
         "beforeRank": 2,
         "afterRank": 2,
@@ -1818,7 +1885,7 @@
         "canonicalSource": "מעריב",
         "category": "תרבות",
         "class": "soft",
-        "ageMinutes": 20,
+        "ageMinutes": 32,
         "url": "https://www.maariv.co.il/news/israel/article-1349204",
         "beforeRank": 3,
         "afterRank": 3,
@@ -1855,7 +1922,7 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 20,
+        "ageMinutes": 32,
         "url": "https://www.maariv.co.il/news/politics/article-1349203",
         "beforeRank": 4,
         "afterRank": 4,
@@ -1893,7 +1960,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 21,
+        "ageMinutes": 33,
         "url": "https://sports.walla.co.il/item/3856513",
         "beforeRank": 5,
         "afterRank": 5,
@@ -1906,7 +1973,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 21,
+        "ageMinutes": 33,
         "url": "https://sports.walla.co.il/item/3856470",
         "beforeRank": 6,
         "afterRank": 6,
@@ -1919,7 +1986,7 @@
         "canonicalSource": "ynet",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 23,
+        "ageMinutes": 34,
         "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
         "beforeRank": 7,
         "afterRank": 7,
@@ -1932,14 +1999,14 @@
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 26,
+        "ageMinutes": 37,
         "url": "https://www.maariv.co.il/news/politics/article-1349200",
         "beforeRank": 8,
         "afterRank": 8,
         "delta": 0,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -1969,7 +2036,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 28,
+        "ageMinutes": 39,
         "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
         "beforeRank": 9,
         "afterRank": 9,
@@ -1982,14 +2049,14 @@
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 33,
+        "ageMinutes": 44,
         "url": "https://www.maariv.co.il/news/politics/article-1349195",
         "beforeRank": 10,
         "afterRank": 10,
         "delta": 0,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2022,7 +2089,7 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 20,
+        "ageMinutes": 32,
         "url": "https://www.maariv.co.il/news/politics/article-1349203",
         "beforeRank": 4,
         "afterRank": 1,
@@ -2055,19 +2122,19 @@
         }
       },
       {
-        "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+        "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 26,
-        "url": "https://www.maariv.co.il/news/politics/article-1349200",
-        "beforeRank": 8,
+        "ageMinutes": 44,
+        "url": "https://www.maariv.co.il/news/politics/article-1349195",
+        "beforeRank": 10,
         "afterRank": 2,
-        "delta": 6,
+        "delta": 8,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2084,11 +2151,48 @@
           "latestAt": "2026-07-27T11:50:00+00:00",
           "sampleUrl": "https://news.walla.co.il/item/3856498",
           "overlapTokens": [
+            "בממשלה",
             "הבאה",
             "חדשות"
           ],
-          "score": 24.2,
-          "boost": 24.2
+          "score": 36.3,
+          "boost": 36.3
+        }
+      },
+      {
+        "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+        "source": "BBC World",
+        "canonicalSource": "BBC",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "ageMinutes": 25,
+        "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
+        "beforeRank": 1,
+        "afterRank": 3,
+        "delta": -2,
+        "trendMatch": {
+          "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+          "clusterKey": "מזנקים הנפט",
+          "domain": "כלכלה",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "גלובס",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T09:54:00+00:00",
+          "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
+          "overlapTokens": [
+            "בניו",
+            "בעולם",
+            "יורק"
+          ],
+          "score": 21.82,
+          "boost": 21.82
         }
       },
       {
@@ -2097,11 +2201,11 @@
         "canonicalSource": "כיפה",
         "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 15,
+        "ageMinutes": 26,
         "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
         "beforeRank": 2,
-        "afterRank": 3,
-        "delta": -1,
+        "afterRank": 4,
+        "delta": -2,
         "trendMatch": {
           "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
           "clusterKey": "בני אדם",
@@ -2128,19 +2232,123 @@
         }
       },
       {
+        "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+        "source": "מעריב - חדשות",
+        "canonicalSource": "מעריב",
+        "category": "פוליטיקה",
+        "class": "hard",
+        "ageMinutes": 37,
+        "url": "https://www.maariv.co.il/news/politics/article-1349200",
+        "beforeRank": 8,
+        "afterRank": 5,
+        "delta": 3,
+        "trendMatch": {
+          "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+          "clusterKey": "אכריז קטאר כמדינת",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T11:50:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856498",
+          "overlapTokens": [
+            "הבאה",
+            "חדשות"
+          ],
+          "score": 24.2,
+          "boost": 24.2
+        }
+      },
+      {
+        "headline": "וילדרס ניחם את משפחת הנרצח מחוות גלעד",
+        "source": "ynet - כל ערוץ החדשות",
+        "canonicalSource": "ynet",
+        "category": "חדשות",
+        "class": "hard",
+        "ageMinutes": 34,
+        "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
+        "beforeRank": 7,
+        "afterRank": 6,
+        "delta": 1,
+        "trendMatch": null
+      },
+      {
+        "headline": "איראן: מצר הורמוז עדיין סגור",
+        "source": "הארץ - חדשות",
+        "canonicalSource": "הארץ",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://www.haaretz.co.il/news/world/middle-east/2026-07-27/ty-article/.premium/0000019f-a2b0-db22-a5df-e7b2e2800000",
+        "beforeRank": 18,
+        "afterRank": 7,
+        "delta": 11,
+        "trendMatch": {
+          "trend": "דובר משרד החוץ של איראן: לא ביקשנו לחדש את השיחות עם ארה\"ב כדי לסיים את המלחמה",
+          "clusterKey": "משרד החוץ",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T11:24:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856483",
+          "overlapTokens": [
+            "איראן",
+            "ארה",
+            "דובר",
+            "החוץ",
+            "המלחמה",
+            "חדשות",
+            "משרד"
+          ],
+          "score": 59.67,
+          "boost": 38.0
+        }
+      },
+      {
+        "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+        "source": "The Jerusalem Post - Middle East",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 39,
+        "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
+        "beforeRank": 9,
+        "afterRank": 8,
+        "delta": 1,
+        "trendMatch": null
+      },
+      {
         "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 43,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3856498",
         "beforeRank": 13,
-        "afterRank": 4,
-        "delta": 9,
+        "afterRank": 9,
+        "delta": 4,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2171,153 +2379,19 @@
         }
       },
       {
-        "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "ageMinutes": 14,
-        "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
-        "beforeRank": 1,
-        "afterRank": 5,
-        "delta": -4,
-        "trendMatch": {
-          "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-          "clusterKey": "strait hormuz",
-          "domain": "אקטואליה בעולם",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "BBC"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T10:13:25.034283+00:00",
-          "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
-          "overlapTokens": [
-            "אקטואליה",
-            "בעולם"
-          ],
-          "score": 11.36,
-          "boost": 11.36
-        }
-      },
-      {
-        "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
-        "source": "מעריב - חדשות",
-        "canonicalSource": "מעריב",
-        "category": "פוליטיקה",
-        "class": "hard",
-        "ageMinutes": 33,
-        "url": "https://www.maariv.co.il/news/politics/article-1349195",
-        "beforeRank": 10,
-        "afterRank": 6,
-        "delta": 4,
-        "trendMatch": {
-          "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
-          "domain": "חדשות",
-          "externalMentions": 6,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "וואלה",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T11:50:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856498",
-          "overlapTokens": [
-            "בממשלה",
-            "הבאה",
-            "חדשות"
-          ],
-          "score": 36.3,
-          "boost": 36.3
-        }
-      },
-      {
         "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
         "source": "הארץ - חדשות",
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 42,
+        "ageMinutes": 54,
         "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000",
         "beforeRank": 12,
-        "afterRank": 7,
-        "delta": 5,
-        "trendMatch": {
-          "trend": "ביסמוט: \"איראן תנסה להפוך את מערכת הבחירות לחזית נוספת\"",
-          "clusterKey": "הבחירות לחזית נוספת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "וואלה",
-            "ישראל היום"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T12:16:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856509",
-          "overlapTokens": [
-            "איראן",
-            "חדשות"
-          ],
-          "score": 17.86,
-          "boost": 17.86
-        }
-      },
-      {
-        "headline": "וילדרס ניחם את משפחת הנרצח מחוות גלעד",
-        "source": "ynet - כל ערוץ החדשות",
-        "canonicalSource": "ynet",
-        "category": "חדשות",
-        "class": "hard",
-        "ageMinutes": 23,
-        "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
-        "beforeRank": 7,
-        "afterRank": 8,
-        "delta": -1,
-        "trendMatch": null
-      },
-      {
-        "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 28,
-        "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
-        "beforeRank": 9,
-        "afterRank": 9,
-        "delta": 0,
-        "trendMatch": null
-      },
-      {
-        "headline": "איראן: מצר הורמוז עדיין סגור",
-        "source": "הארץ - חדשות",
-        "canonicalSource": "הארץ",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 51,
-        "url": "https://www.haaretz.co.il/news/world/middle-east/2026-07-27/ty-article/.premium/0000019f-a2b0-db22-a5df-e7b2e2800000",
-        "beforeRank": 18,
         "afterRank": 10,
-        "delta": 8,
+        "delta": 2,
         "trendMatch": {
-          "trend": "דובר משרד החוץ של איראן: לא ביקשנו לחדש את השיחות עם ארה\"ב כדי לסיים את המלחמה",
-          "clusterKey": "משרד החוץ",
+          "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+          "clusterKey": "בני אדם",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
@@ -2330,19 +2404,14 @@
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-27T11:24:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856483",
+          "latestAt": "2026-07-27T05:44:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856413",
           "overlapTokens": [
-            "איראן",
-            "ארה",
-            "דובר",
-            "החוץ",
-            "המלחמה",
             "חדשות",
-            "משרד"
+            "מספר"
           ],
-          "score": 59.67,
-          "boost": 38.0
+          "score": 17.27,
+          "boost": 17.27
         }
       }
     ],
@@ -2353,32 +2422,34 @@
         "canonicalSource": "BBC",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 14,
+        "ageMinutes": 25,
         "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
         "beforeRank": 1,
         "afterRank": 1,
         "delta": 0,
         "trendMatch": {
-          "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-          "clusterKey": "strait hormuz",
-          "domain": "אקטואליה בעולם",
+          "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+          "clusterKey": "מזנקים הנפט",
+          "domain": "כלכלה",
           "externalMentions": 3,
-          "sourceCount": 1,
+          "sourceCount": 2,
           "sources": [
-            "BBC"
+            "גלובס",
+            "וואלה"
           ],
           "discoveryTypes": [
-            "WEB"
+            "RSS"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-27T10:13:25.034283+00:00",
-          "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
+          "latestAt": "2026-07-27T09:54:00+00:00",
+          "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
           "overlapTokens": [
-            "אקטואליה",
-            "בעולם"
+            "בניו",
+            "בעולם",
+            "יורק"
           ],
-          "score": 11.36,
-          "boost": 11.36
+          "score": 21.82,
+          "boost": 21.82
         }
       },
       {
@@ -2387,7 +2458,7 @@
         "canonicalSource": "כיפה",
         "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 15,
+        "ageMinutes": 26,
         "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
         "beforeRank": 2,
         "afterRank": 2,
@@ -2423,7 +2494,7 @@
         "canonicalSource": "מעריב",
         "category": "תרבות",
         "class": "soft",
-        "ageMinutes": 20,
+        "ageMinutes": 32,
         "url": "https://www.maariv.co.il/news/israel/article-1349204",
         "beforeRank": 3,
         "afterRank": 3,
@@ -2460,7 +2531,7 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 20,
+        "ageMinutes": 32,
         "url": "https://www.maariv.co.il/news/politics/article-1349203",
         "beforeRank": 4,
         "afterRank": 4,
@@ -2498,7 +2569,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 21,
+        "ageMinutes": 33,
         "url": "https://sports.walla.co.il/item/3856513",
         "beforeRank": 5,
         "afterRank": 5,
@@ -2511,7 +2582,7 @@
         "canonicalSource": "וואלה",
         "category": "ספורט",
         "class": "soft",
-        "ageMinutes": 21,
+        "ageMinutes": 33,
         "url": "https://sports.walla.co.il/item/3856470",
         "beforeRank": 6,
         "afterRank": 6,
@@ -2524,7 +2595,7 @@
         "canonicalSource": "ynet",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 23,
+        "ageMinutes": 34,
         "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
         "beforeRank": 7,
         "afterRank": 7,
@@ -2537,14 +2608,14 @@
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 26,
+        "ageMinutes": 37,
         "url": "https://www.maariv.co.il/news/politics/article-1349200",
         "beforeRank": 8,
         "afterRank": 8,
         "delta": 0,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2574,7 +2645,7 @@
         "canonicalSource": "Jerusalem Post",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 28,
+        "ageMinutes": 39,
         "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
         "beforeRank": 9,
         "afterRank": 9,
@@ -2587,14 +2658,14 @@
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 33,
+        "ageMinutes": 44,
         "url": "https://www.maariv.co.il/news/politics/article-1349195",
         "beforeRank": 10,
         "afterRank": 10,
         "delta": 0,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2625,7 +2696,7 @@
         "canonicalSource": "TMI",
         "category": "רכילות",
         "class": "soft",
-        "ageMinutes": 42,
+        "ageMinutes": 54,
         "url": "https://tmi.maariv.co.il/celebs-news/article-1349186",
         "beforeRank": 11,
         "afterRank": 11,
@@ -2638,34 +2709,34 @@
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 42,
+        "ageMinutes": 54,
         "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000",
         "beforeRank": 12,
         "afterRank": 12,
         "delta": 0,
         "trendMatch": {
-          "trend": "ביסמוט: \"איראן תנסה להפוך את מערכת הבחירות לחזית נוספת\"",
-          "clusterKey": "הבחירות לחזית נוספת",
+          "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+          "clusterKey": "בני אדם",
           "domain": "חדשות",
           "externalMentions": 3,
           "sourceCount": 2,
           "sources": [
-            "וואלה",
-            "ישראל היום"
+            "הארץ",
+            "וואלה"
           ],
           "discoveryTypes": [
             "RSS",
             "WEB"
           ],
           "mentionedInFeed": true,
-          "latestAt": "2026-07-27T12:16:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856509",
+          "latestAt": "2026-07-27T05:44:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856413",
           "overlapTokens": [
-            "איראן",
-            "חדשות"
+            "חדשות",
+            "מספר"
           ],
-          "score": 17.86,
-          "boost": 17.86
+          "score": 17.27,
+          "boost": 17.27
         }
       },
       {
@@ -2674,14 +2745,14 @@
         "canonicalSource": "וואלה",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 43,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3856498",
         "beforeRank": 13,
         "afterRank": 13,
         "delta": 0,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2717,7 +2788,7 @@
         "canonicalSource": "וואלה",
         "category": "משפט",
         "class": "hard",
-        "ageMinutes": 43,
+        "ageMinutes": 54,
         "url": "https://news.walla.co.il/item/3856506",
         "beforeRank": 14,
         "afterRank": 14,
@@ -2730,7 +2801,7 @@
         "canonicalSource": "מעריב",
         "category": "טכנולוגיה",
         "class": "other",
-        "ageMinutes": 49,
+        "ageMinutes": 60,
         "url": "https://www.maariv.co.il/economy/tech/article-1349169",
         "beforeRank": 15,
         "afterRank": 15,
@@ -2743,7 +2814,7 @@
         "canonicalSource": "JNS",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 49,
+        "ageMinutes": 61,
         "url": "https://www.jns.org/news/israel-news/idf-soldier-found-dead-at-central-israel-base",
         "beforeRank": 16,
         "afterRank": 16,
@@ -2756,7 +2827,7 @@
         "canonicalSource": "הארץ",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 62,
         "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article-magazine/.premium/0000019f-a254-dcf3-a9df-a7560d820000",
         "beforeRank": 17,
         "afterRank": 17,
@@ -2791,7 +2862,7 @@
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://www.haaretz.co.il/news/world/middle-east/2026-07-27/ty-article/.premium/0000019f-a2b0-db22-a5df-e7b2e2800000",
         "beforeRank": 18,
         "afterRank": 18,
@@ -2832,7 +2903,7 @@
         "canonicalSource": "וואלה",
         "category": "צרכנות",
         "class": "other",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://finance.walla.co.il/item/3856488",
         "beforeRank": 19,
         "afterRank": 19,
@@ -2845,7 +2916,7 @@
         "canonicalSource": "וואלה",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://finance.walla.co.il/item/3856501",
         "beforeRank": 20,
         "afterRank": 20,
@@ -2882,7 +2953,7 @@
         "canonicalSource": "מעריב",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 20,
+        "ageMinutes": 32,
         "url": "https://www.maariv.co.il/news/politics/article-1349203",
         "beforeRank": 4,
         "afterRank": 1,
@@ -2915,19 +2986,19 @@
         }
       },
       {
-        "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+        "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 26,
-        "url": "https://www.maariv.co.il/news/politics/article-1349200",
-        "beforeRank": 8,
+        "ageMinutes": 44,
+        "url": "https://www.maariv.co.il/news/politics/article-1349195",
+        "beforeRank": 10,
         "afterRank": 2,
-        "delta": 6,
+        "delta": 8,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -2944,11 +3015,48 @@
           "latestAt": "2026-07-27T11:50:00+00:00",
           "sampleUrl": "https://news.walla.co.il/item/3856498",
           "overlapTokens": [
+            "בממשלה",
             "הבאה",
             "חדשות"
           ],
-          "score": 24.2,
-          "boost": 24.2
+          "score": 36.3,
+          "boost": 36.3
+        }
+      },
+      {
+        "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+        "source": "BBC World",
+        "canonicalSource": "BBC",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "ageMinutes": 25,
+        "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
+        "beforeRank": 1,
+        "afterRank": 3,
+        "delta": -2,
+        "trendMatch": {
+          "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+          "clusterKey": "מזנקים הנפט",
+          "domain": "כלכלה",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "גלובס",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T09:54:00+00:00",
+          "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
+          "overlapTokens": [
+            "בניו",
+            "בעולם",
+            "יורק"
+          ],
+          "score": 21.82,
+          "boost": 21.82
         }
       },
       {
@@ -2957,11 +3065,11 @@
         "canonicalSource": "כיפה",
         "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 15,
+        "ageMinutes": 26,
         "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
         "beforeRank": 2,
-        "afterRank": 3,
-        "delta": -1,
+        "afterRank": 4,
+        "delta": -2,
         "trendMatch": {
           "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
           "clusterKey": "בני אדם",
@@ -2988,96 +3096,19 @@
         }
       },
       {
-        "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
-        "source": "וואלה חדשות",
-        "canonicalSource": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 43,
-        "url": "https://news.walla.co.il/item/3856498",
-        "beforeRank": 13,
-        "afterRank": 4,
-        "delta": 9,
-        "trendMatch": {
-          "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
-          "domain": "חדשות",
-          "externalMentions": 6,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "וואלה",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T11:50:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856498",
-          "overlapTokens": [
-            "אויב",
-            "אכריז",
-            "בממשלה",
-            "בנט",
-            "הבאה",
-            "חדשות",
-            "כמדינת",
-            "מודיע"
-          ],
-          "score": 108.9,
-          "boost": 38.0
-        }
-      },
-      {
-        "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
-        "source": "BBC World",
-        "canonicalSource": "BBC",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "ageMinutes": 14,
-        "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
-        "beforeRank": 1,
-        "afterRank": 5,
-        "delta": -4,
-        "trendMatch": {
-          "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-          "clusterKey": "strait hormuz",
-          "domain": "אקטואליה בעולם",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "BBC"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T10:13:25.034283+00:00",
-          "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
-          "overlapTokens": [
-            "אקטואליה",
-            "בעולם"
-          ],
-          "score": 11.36,
-          "boost": 11.36
-        }
-      },
-      {
-        "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
+        "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
         "source": "מעריב - חדשות",
         "canonicalSource": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
-        "ageMinutes": 33,
-        "url": "https://www.maariv.co.il/news/politics/article-1349195",
-        "beforeRank": 10,
-        "afterRank": 6,
-        "delta": 4,
+        "ageMinutes": 37,
+        "url": "https://www.maariv.co.il/news/politics/article-1349200",
+        "beforeRank": 8,
+        "afterRank": 5,
+        "delta": 3,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -3094,48 +3125,11 @@
           "latestAt": "2026-07-27T11:50:00+00:00",
           "sampleUrl": "https://news.walla.co.il/item/3856498",
           "overlapTokens": [
-            "בממשלה",
             "הבאה",
             "חדשות"
           ],
-          "score": 36.3,
-          "boost": 36.3
-        }
-      },
-      {
-        "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
-        "source": "הארץ - חדשות",
-        "canonicalSource": "הארץ",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 42,
-        "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000",
-        "beforeRank": 12,
-        "afterRank": 7,
-        "delta": 5,
-        "trendMatch": {
-          "trend": "ביסמוט: \"איראן תנסה להפוך את מערכת הבחירות לחזית נוספת\"",
-          "clusterKey": "הבחירות לחזית נוספת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "וואלה",
-            "ישראל היום"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T12:16:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856509",
-          "overlapTokens": [
-            "איראן",
-            "חדשות"
-          ],
-          "score": 17.86,
-          "boost": 17.86
+          "score": 24.2,
+          "boost": 24.2
         }
       },
       {
@@ -3144,24 +3138,11 @@
         "canonicalSource": "ynet",
         "category": "חדשות",
         "class": "hard",
-        "ageMinutes": 23,
+        "ageMinutes": 34,
         "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
         "beforeRank": 7,
-        "afterRank": 8,
-        "delta": -1,
-        "trendMatch": null
-      },
-      {
-        "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
-        "source": "The Jerusalem Post - Middle East",
-        "canonicalSource": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 28,
-        "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
-        "beforeRank": 9,
-        "afterRank": 9,
-        "delta": 0,
+        "afterRank": 6,
+        "delta": 1,
         "trendMatch": null
       },
       {
@@ -3170,11 +3151,11 @@
         "canonicalSource": "הארץ",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 63,
         "url": "https://www.haaretz.co.il/news/world/middle-east/2026-07-27/ty-article/.premium/0000019f-a2b0-db22-a5df-e7b2e2800000",
         "beforeRank": 18,
-        "afterRank": 10,
-        "delta": 8,
+        "afterRank": 7,
+        "delta": 11,
         "trendMatch": {
           "trend": "דובר משרד החוץ של איראן: לא ביקשנו לחדש את השיחות עם ארה\"ב כדי לסיים את המלחמה",
           "clusterKey": "משרד החוץ",
@@ -3206,17 +3187,96 @@
         }
       },
       {
-        "headline": "העליון הגביל את הרש״פ בתביעות נפגעי טרור",
+        "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+        "source": "The Jerusalem Post - Middle East",
+        "canonicalSource": "Jerusalem Post",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 39,
+        "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
+        "beforeRank": 9,
+        "afterRank": 8,
+        "delta": 1,
+        "trendMatch": null
+      },
+      {
+        "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
         "source": "וואלה חדשות",
         "canonicalSource": "וואלה",
-        "category": "משפט",
+        "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 43,
-        "url": "https://news.walla.co.il/item/3856506",
-        "beforeRank": 14,
-        "afterRank": 11,
-        "delta": 3,
-        "trendMatch": null
+        "ageMinutes": 54,
+        "url": "https://news.walla.co.il/item/3856498",
+        "beforeRank": 13,
+        "afterRank": 9,
+        "delta": 4,
+        "trendMatch": {
+          "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+          "clusterKey": "אכריז קטאר כמדינת",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T11:50:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856498",
+          "overlapTokens": [
+            "אויב",
+            "אכריז",
+            "בממשלה",
+            "בנט",
+            "הבאה",
+            "חדשות",
+            "כמדינת",
+            "מודיע"
+          ],
+          "score": 108.9,
+          "boost": 38.0
+        }
+      },
+      {
+        "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
+        "source": "הארץ - חדשות",
+        "canonicalSource": "הארץ",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 54,
+        "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article/.premium/0000019f-a24b-df92-a7ff-a6cb5b230000",
+        "beforeRank": 12,
+        "afterRank": 10,
+        "delta": 2,
+        "trendMatch": {
+          "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+          "clusterKey": "בני אדם",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T05:44:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856413",
+          "overlapTokens": [
+            "חדשות",
+            "מספר"
+          ],
+          "score": 17.27,
+          "boost": 17.27
+        }
       },
       {
         "headline": "אם מירושלים הואשמה בהזרקת חומרים מסוכנים לבנה",
@@ -3224,11 +3284,11 @@
         "canonicalSource": "Jerusalem Post",
         "category": "פלילים",
         "class": "hard",
-        "ageMinutes": 72,
+        "ageMinutes": 83,
         "url": "https://www.jpost.com/israel-news/crime-in-israel/article-903772",
         "beforeRank": 29,
-        "afterRank": 12,
-        "delta": 17,
+        "afterRank": 11,
+        "delta": 18,
         "trendMatch": {
           "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
           "clusterKey": "חומרים מסוכנים",
@@ -3259,19 +3319,54 @@
         }
       },
       {
+        "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
+        "source": "וואלה כסף",
+        "canonicalSource": "וואלה",
+        "category": "כלכלה",
+        "class": "hard",
+        "ageMinutes": 63,
+        "url": "https://finance.walla.co.il/item/3856501",
+        "beforeRank": 20,
+        "afterRank": 12,
+        "delta": 8,
+        "trendMatch": {
+          "trend": "גבר בן 24 במצב בינוני לאחר שנפגע בתאונת דרכים בין משאית לרכב בקריית גת",
+          "clusterKey": "בתאונת דרכים",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T12:50:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856516",
+          "overlapTokens": [
+            "בין",
+            "לאחר"
+          ],
+          "score": 15.25,
+          "boost": 15.25
+        }
+      },
+      {
         "headline": "בנט הוסיף: קטאר מימנה גם את משמרות המהפכה",
         "source": "ynet - כל ערוץ החדשות",
         "canonicalSource": "ynet",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 86,
+        "ageMinutes": 97,
         "url": "https://www.ynet.co.il/news/article/bjldpkvhfx",
         "beforeRank": 41,
         "afterRank": 13,
         "delta": 28,
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -3299,53 +3394,16 @@
         }
       },
       {
-        "headline": "שריפה במפעל בשער הנגב: כבישים נחסמו באזור שדרות",
-        "source": "דוברות משטרת ישראל - טלגרם רשמי",
-        "canonicalSource": "דוברות משטרת ישראל",
-        "category": "ביטחון",
-        "class": "hard",
-        "ageMinutes": 65,
-        "url": "https://t.me/Israel_Police_100/4378",
-        "beforeRank": 26,
-        "afterRank": 14,
-        "delta": 12,
-        "trendMatch": {
-          "trend": "השריפה בשדרות: אמוניה דלפה ממפעל - כל אזור התעשייה מפונה",
-          "clusterKey": "אזור התעשייה",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "N12",
-            "ynet",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T07:35:11+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/hjcoytnrme",
-          "overlapTokens": [
-            "השריפה",
-            "התעשייה"
-          ],
-          "score": 21.53,
-          "boost": 21.53
-        }
-      },
-      {
         "headline": "אקרשטיין רוכשת 85% מ-EcoWall בכ-47 מיליון שקל",
         "source": "גלובס - שוק ההון",
         "canonicalSource": "גלובס",
         "category": "כלכלה",
         "class": "hard",
-        "ageMinutes": 59,
+        "ageMinutes": 70,
         "url": "https://www.globes.co.il/news/article.aspx?did=1001550521#utm_source=RSS",
         "beforeRank": 25,
-        "afterRank": 15,
-        "delta": 10,
+        "afterRank": 14,
+        "delta": 11,
         "trendMatch": {
           "trend": "אקרשטיין מתרחבת בתחום חיפויי המבנים: רוכשת את השליטה ב-EcoWall",
           "clusterKey": "רוכשת השליטה",
@@ -3378,12 +3436,48 @@
         }
       },
       {
+        "headline": "שריפה במפעל בשער הנגב: כבישים נחסמו באזור שדרות",
+        "source": "דוברות משטרת ישראל - טלגרם רשמי",
+        "canonicalSource": "דוברות משטרת ישראל",
+        "category": "ביטחון",
+        "class": "hard",
+        "ageMinutes": 76,
+        "url": "https://t.me/Israel_Police_100/4378",
+        "beforeRank": 26,
+        "afterRank": 15,
+        "delta": 11,
+        "trendMatch": {
+          "trend": "שריפה פרצה באיזור התעשייה בשדרות",
+          "clusterKey": "שריפה פרצה",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T10:02:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856461",
+          "overlapTokens": [
+            "התעשייה",
+            "שריפה"
+          ],
+          "score": 21.43,
+          "boost": 21.43
+        }
+      },
+      {
         "headline": "איראן מאשרת מסרים מארה״ב אך שוללת שיחות ישירות",
         "source": "סרוגים - כל הכתבות",
         "canonicalSource": "סרוגים",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 97,
+        "ageMinutes": 109,
         "url": "https://www.srugim.co.il/101007141-איראן-טוענת-הועברו-מסרים-מארהב-אבל-אנחנו",
         "beforeRank": 52,
         "afterRank": 16,
@@ -3421,7 +3515,7 @@
         "canonicalSource": "JNS",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 49,
+        "ageMinutes": 61,
         "url": "https://www.jns.org/news/israel-news/idf-soldier-found-dead-at-central-israel-base",
         "beforeRank": 16,
         "afterRank": 17,
@@ -3429,51 +3523,16 @@
         "trendMatch": null
       },
       {
-        "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
-        "source": "וואלה כסף",
-        "canonicalSource": "וואלה",
-        "category": "כלכלה",
-        "class": "hard",
-        "ageMinutes": 51,
-        "url": "https://finance.walla.co.il/item/3856501",
-        "beforeRank": 20,
-        "afterRank": 18,
-        "delta": 2,
-        "trendMatch": {
-          "trend": "גבר בן 24 במצב בינוני לאחר שנפגע בתאונת דרכים בין משאית לרכב בקריית גת",
-          "clusterKey": "בתאונת דרכים",
-          "domain": "חדשות",
-          "externalMentions": 5,
-          "sourceCount": 1,
-          "sources": [
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T12:50:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856516",
-          "overlapTokens": [
-            "בין",
-            "לאחר"
-          ],
-          "score": 15.25,
-          "boost": 15.25
-        }
-      },
-      {
         "headline": "קידום בצי האמריקאי מציף טענות לפוליטיזציה",
         "source": "הארץ - חדשות",
         "canonicalSource": "הארץ",
         "category": "אקטואליה בעולם",
         "class": "hard",
-        "ageMinutes": 51,
+        "ageMinutes": 62,
         "url": "https://www.haaretz.co.il/news/world/america/2026-07-27/ty-article-magazine/.premium/0000019f-a254-dcf3-a9df-a7560d820000",
         "beforeRank": 17,
-        "afterRank": 19,
-        "delta": -2,
+        "afterRank": 18,
+        "delta": -1,
         "trendMatch": {
           "trend": "גבר בן 24 במצב בינוני לאחר שנפגע בתאונת דרכים בין משאית לרכב בקריית גת",
           "clusterKey": "בתאונת דרכים",
@@ -3499,12 +3558,46 @@
         }
       },
       {
+        "headline": "בנו של בולסונרו נבחר למועמד הימין לנשיאות ברזיל",
+        "source": "דה מרקר - גלובל",
+        "canonicalSource": "דה מרקר",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "ageMinutes": 90,
+        "url": "https://www.themarker.com/wallstreet/2026-07-27/ty-article/.premium/0000019f-a247-df42-a1df-e777a1390000",
+        "beforeRank": 33,
+        "afterRank": 19,
+        "delta": 14,
+        "trendMatch": {
+          "trend": "Saudis must recognise Israel for nuclear deal, says Trump The US president says the landmark agreement to help Saudis develop nuclear energy is d",
+          "clusterKey": "nuclear deal",
+          "domain": "אקטואליה בעולם",
+          "externalMentions": 3,
+          "sourceCount": 1,
+          "sources": [
+            "BBC"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T10:24:46.370154+00:00",
+          "sampleUrl": "https://www.bbc.com/news/articles/cwye71yq8wwo",
+          "overlapTokens": [
+            "אקטואליה",
+            "בעולם"
+          ],
+          "score": 11.71,
+          "boost": 11.71
+        }
+      },
+      {
         "headline": "איראן מאשימה את ישראל במעורבות בתקיפה בים הכספי",
         "source": "The Media Line",
         "canonicalSource": "The Media Line",
         "category": "ביטחון",
         "class": "hard",
-        "ageMinutes": 100,
+        "ageMinutes": 111,
         "url": "https://themedialine.org/headlines/iran-accuses-israel-of-orchestrating-ukrainian-strike-on-ship-in-caspian-sea/",
         "beforeRank": 56,
         "afterRank": 20,
@@ -3571,13 +3664,13 @@
         "afterRank": 1
       },
       {
-        "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+        "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
         "source": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -3594,14 +3687,47 @@
           "latestAt": "2026-07-27T11:50:00+00:00",
           "sampleUrl": "https://news.walla.co.il/item/3856498",
           "overlapTokens": [
+            "בממשלה",
             "הבאה",
             "חדשות"
           ],
-          "score": 24.2,
-          "boost": 24.2
+          "score": 36.3,
+          "boost": 36.3
         },
-        "beforeRank": 8,
+        "beforeRank": 10,
         "afterRank": 2
+      },
+      {
+        "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+        "source": "BBC",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+          "clusterKey": "מזנקים הנפט",
+          "domain": "כלכלה",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "גלובס",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T09:54:00+00:00",
+          "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
+          "overlapTokens": [
+            "בניו",
+            "בעולם",
+            "יורק"
+          ],
+          "score": 21.82,
+          "boost": 21.82
+        },
+        "beforeRank": 1,
+        "afterRank": 3
       },
       {
         "headline": "יענקי גולדהבר הבהיר: מדובר בסחיטה ברשת",
@@ -3633,85 +3759,16 @@
           "boost": 17.27
         },
         "beforeRank": 2,
-        "afterRank": 3
-      },
-      {
-        "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
-        "source": "וואלה",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
-          "domain": "חדשות",
-          "externalMentions": 6,
-          "sourceCount": 3,
-          "sources": [
-            "ynet",
-            "וואלה",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T11:50:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/item/3856498",
-          "overlapTokens": [
-            "אויב",
-            "אכריז",
-            "בממשלה",
-            "בנט",
-            "הבאה",
-            "חדשות",
-            "כמדינת",
-            "מודיע"
-          ],
-          "score": 108.9,
-          "boost": 38.0
-        },
-        "beforeRank": 13,
         "afterRank": 4
       },
       {
-        "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
-        "source": "BBC",
-        "category": "אקטואליה בעולם",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "Trump threatens to target Iran's bridges and power plants if Hormuz attacks persist Donald Trump says the US will respond any time Iranian forces",
-          "clusterKey": "strait hormuz",
-          "domain": "אקטואליה בעולם",
-          "externalMentions": 3,
-          "sourceCount": 1,
-          "sources": [
-            "BBC"
-          ],
-          "discoveryTypes": [
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T10:13:25.034283+00:00",
-          "sampleUrl": "https://www.bbc.com/news/articles/cdrv0p37k8jo",
-          "overlapTokens": [
-            "אקטואליה",
-            "בעולם"
-          ],
-          "score": 11.36,
-          "boost": 11.36
-        },
-        "beforeRank": 1,
-        "afterRank": 5
-      },
-      {
-        "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
+        "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
         "source": "מעריב",
         "category": "פוליטיקה",
         "class": "hard",
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -3728,47 +3785,14 @@
           "latestAt": "2026-07-27T11:50:00+00:00",
           "sampleUrl": "https://news.walla.co.il/item/3856498",
           "overlapTokens": [
-            "בממשלה",
             "הבאה",
             "חדשות"
           ],
-          "score": 36.3,
-          "boost": 36.3
+          "score": 24.2,
+          "boost": 24.2
         },
-        "beforeRank": 10,
-        "afterRank": 6
-      },
-      {
-        "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
-        "source": "הארץ",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "ביסמוט: \"איראן תנסה להפוך את מערכת הבחירות לחזית נוספת\"",
-          "clusterKey": "הבחירות לחזית נוספת",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 2,
-          "sources": [
-            "וואלה",
-            "ישראל היום"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T12:16:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856509",
-          "overlapTokens": [
-            "איראן",
-            "חדשות"
-          ],
-          "score": 17.86,
-          "boost": 17.86
-        },
-        "beforeRank": 12,
-        "afterRank": 7
+        "beforeRank": 8,
+        "afterRank": 5
       },
       {
         "headline": "וילדרס ניחם את משפחת הנרצח מחוות גלעד",
@@ -3777,16 +3801,7 @@
         "class": "hard",
         "trendMatch": null,
         "beforeRank": 7,
-        "afterRank": 8
-      },
-      {
-        "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
-        "source": "Jerusalem Post",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": null,
-        "beforeRank": 9,
-        "afterRank": 9
+        "afterRank": 6
       },
       {
         "headline": "איראן: מצר הורמוז עדיין סגור",
@@ -3823,16 +3838,87 @@
           "boost": 38.0
         },
         "beforeRank": 18,
-        "afterRank": 10
+        "afterRank": 7
       },
       {
-        "headline": "העליון הגביל את הרש״פ בתביעות נפגעי טרור",
-        "source": "וואלה",
-        "category": "משפט",
+        "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+        "source": "Jerusalem Post",
+        "category": "ביטחון",
         "class": "hard",
         "trendMatch": null,
-        "beforeRank": 14,
-        "afterRank": 11
+        "beforeRank": 9,
+        "afterRank": 8
+      },
+      {
+        "headline": "בנט: אגדיר את קטאר מדינת אויב בממשלה הבאה",
+        "source": "וואלה",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+          "clusterKey": "אכריז קטאר כמדינת",
+          "domain": "חדשות",
+          "externalMentions": 6,
+          "sourceCount": 3,
+          "sources": [
+            "ynet",
+            "וואלה",
+            "סרוגים"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T11:50:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/item/3856498",
+          "overlapTokens": [
+            "אויב",
+            "אכריז",
+            "בממשלה",
+            "בנט",
+            "הבאה",
+            "חדשות",
+            "כמדינת",
+            "מודיע"
+          ],
+          "score": 108.9,
+          "boost": 38.0
+        },
+        "beforeRank": 13,
+        "afterRank": 9
+      },
+      {
+        "headline": "הפנטגון הפריד נתוני הרוגים מהמלחמה באיראן",
+        "source": "הארץ",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+          "clusterKey": "בני אדם",
+          "domain": "חדשות",
+          "externalMentions": 3,
+          "sourceCount": 2,
+          "sources": [
+            "הארץ",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T05:44:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856413",
+          "overlapTokens": [
+            "חדשות",
+            "מספר"
+          ],
+          "score": 17.27,
+          "boost": 17.27
+        },
+        "beforeRank": 12,
+        "afterRank": 10
       },
       {
         "headline": "אם מירושלים הואשמה בהזרקת חומרים מסוכנים לבנה",
@@ -3868,6 +3954,37 @@
           "boost": 38.0
         },
         "beforeRank": 29,
+        "afterRank": 11
+      },
+      {
+        "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
+        "source": "וואלה",
+        "category": "כלכלה",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "גבר בן 24 במצב בינוני לאחר שנפגע בתאונת דרכים בין משאית לרכב בקריית גת",
+          "clusterKey": "בתאונת דרכים",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 1,
+          "sources": [
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T12:50:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856516",
+          "overlapTokens": [
+            "בין",
+            "לאחר"
+          ],
+          "score": 15.25,
+          "boost": 15.25
+        },
+        "beforeRank": 20,
         "afterRank": 12
       },
       {
@@ -3877,7 +3994,7 @@
         "class": "hard",
         "trendMatch": {
           "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
-          "clusterKey": "קטאר כמדינת אויב",
+          "clusterKey": "אכריז קטאר כמדינת",
           "domain": "חדשות",
           "externalMentions": 6,
           "sourceCount": 3,
@@ -3905,39 +4022,6 @@
         },
         "beforeRank": 41,
         "afterRank": 13
-      },
-      {
-        "headline": "שריפה במפעל בשער הנגב: כבישים נחסמו באזור שדרות",
-        "source": "דוברות משטרת ישראל",
-        "category": "ביטחון",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "השריפה בשדרות: אמוניה דלפה ממפעל - כל אזור התעשייה מפונה",
-          "clusterKey": "אזור התעשייה",
-          "domain": "חדשות",
-          "externalMentions": 3,
-          "sourceCount": 3,
-          "sources": [
-            "N12",
-            "ynet",
-            "סרוגים"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T07:35:11+00:00",
-          "sampleUrl": "https://www.ynet.co.il/news/article/hjcoytnrme",
-          "overlapTokens": [
-            "השריפה",
-            "התעשייה"
-          ],
-          "score": 21.53,
-          "boost": 21.53
-        },
-        "beforeRank": 26,
-        "afterRank": 14
       },
       {
         "headline": "אקרשטיין רוכשת 85% מ-EcoWall בכ-47 מיליון שקל",
@@ -3975,6 +4059,38 @@
           "boost": 38.0
         },
         "beforeRank": 25,
+        "afterRank": 14
+      },
+      {
+        "headline": "שריפה במפעל בשער הנגב: כבישים נחסמו באזור שדרות",
+        "source": "דוברות משטרת ישראל",
+        "category": "ביטחון",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "שריפה פרצה באיזור התעשייה בשדרות",
+          "clusterKey": "שריפה פרצה",
+          "domain": "חדשות",
+          "externalMentions": 5,
+          "sourceCount": 2,
+          "sources": [
+            "ynet",
+            "וואלה"
+          ],
+          "discoveryTypes": [
+            "RSS",
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T10:02:00+00:00",
+          "sampleUrl": "https://news.walla.co.il/break/3856461",
+          "overlapTokens": [
+            "התעשייה",
+            "שריפה"
+          ],
+          "score": 21.43,
+          "boost": 21.43
+        },
+        "beforeRank": 26,
         "afterRank": 15
       },
       {
@@ -4021,37 +4137,6 @@
         "afterRank": 17
       },
       {
-        "headline": "וול סטריט עולה כשהנפט יורד אחרי הרגיעה מול איראן",
-        "source": "וואלה",
-        "category": "כלכלה",
-        "class": "hard",
-        "trendMatch": {
-          "trend": "גבר בן 24 במצב בינוני לאחר שנפגע בתאונת דרכים בין משאית לרכב בקריית גת",
-          "clusterKey": "בתאונת דרכים",
-          "domain": "חדשות",
-          "externalMentions": 5,
-          "sourceCount": 1,
-          "sources": [
-            "וואלה"
-          ],
-          "discoveryTypes": [
-            "RSS",
-            "WEB"
-          ],
-          "mentionedInFeed": true,
-          "latestAt": "2026-07-27T12:50:00+00:00",
-          "sampleUrl": "https://news.walla.co.il/break/3856516",
-          "overlapTokens": [
-            "בין",
-            "לאחר"
-          ],
-          "score": 15.25,
-          "boost": 15.25
-        },
-        "beforeRank": 20,
-        "afterRank": 18
-      },
-      {
         "headline": "קידום בצי האמריקאי מציף טענות לפוליטיזציה",
         "source": "הארץ",
         "category": "אקטואליה בעולם",
@@ -4080,6 +4165,36 @@
           "boost": 15.25
         },
         "beforeRank": 17,
+        "afterRank": 18
+      },
+      {
+        "headline": "בנו של בולסונרו נבחר למועמד הימין לנשיאות ברזיל",
+        "source": "דה מרקר",
+        "category": "אקטואליה בעולם",
+        "class": "hard",
+        "trendMatch": {
+          "trend": "Saudis must recognise Israel for nuclear deal, says Trump The US president says the landmark agreement to help Saudis develop nuclear energy is d",
+          "clusterKey": "nuclear deal",
+          "domain": "אקטואליה בעולם",
+          "externalMentions": 3,
+          "sourceCount": 1,
+          "sources": [
+            "BBC"
+          ],
+          "discoveryTypes": [
+            "WEB"
+          ],
+          "mentionedInFeed": true,
+          "latestAt": "2026-07-27T10:24:46.370154+00:00",
+          "sampleUrl": "https://www.bbc.com/news/articles/cwye71yq8wwo",
+          "overlapTokens": [
+            "אקטואליה",
+            "בעולם"
+          ],
+          "score": 11.71,
+          "boost": 11.71
+        },
+        "beforeRank": 33,
         "afterRank": 19
       },
       {

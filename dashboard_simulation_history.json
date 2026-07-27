@@ -1,23 +1,25 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-27T10:13:25+00:00",
+  "generatedAt": "2026-07-27T10:24:46+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 19.92,
-    "avgAfterHealthScore": 90.33,
+    "avgHealthDelta": 20.5,
+    "avgAfterHealthScore": 91.08,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 96,
-      "rollingScore": 83.6,
+      "latestScore": 87,
+      "rollingScore": 84.19,
       "readyRuns": 12,
-      "criticalBlockers": [],
+      "criticalBlockers": [
+        "top_item_stale_over_25m"
+      ],
       "matureForProduction": false
     },
     "alizaReview": {
@@ -30,252 +32,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T12:59:22+00:00",
-      "feedFingerprint": "362702612580904254",
-      "before": {
-        "newsinessTop10": 2,
-        "softTop10": 8,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 6,
-        "top12Under60": 6,
-        "topItemAgeMinutes": 28,
-        "uniqueSourcesTop20": 11,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 6
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 6
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "Page Six",
-            "count": 1
-          },
-          {
-            "name": "ישראל היום",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 3,
-        "trendGapMatchedTop20": 3,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 16,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "הציר טורקיה-קטאר-פקיסטן מציב אתגר חדש לישראל",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 28,
-              "url": "https://www.jpost.com/middle-east/article-901287",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 4,
-        "softTop10": 6,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 6,
-        "top12Under60": 6,
-        "topItemAgeMinutes": 28,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 4
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "Daily Mail",
-            "count": 2
-          },
-          {
-            "name": "מעריב",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "N12",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "ישראל היום",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 7,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 16,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2",
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "הציר טורקיה-קטאר-פקיסטן מציב אתגר חדש לישראל",
-              "source": "The Jerusalem Post - Middle East",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 28,
-              "url": "https://www.jpost.com/middle-east/article-901287",
-              "trendMatch": null,
-              "queueScore": 31.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 35,
-      "afterHealthScore": 52,
-      "replacementReadiness": {
-        "score": 59,
-        "threshold": 80,
-        "components": {
-          "freshness": 15.65,
-          "newsinessTop10": 10.0,
-          "top20Quality": 17.0,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 6.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "newsiness_top10_below_7",
-          "soft_top10_above_2",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 2,
-        "softTop10": -2,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": -1,
-        "trendMatchedTop10": 0,
-        "trendMatchedTop20": 4,
-        "healthScore": 17
-      }
-    },
     {
       "generatedAt": "2026-07-04T13:14:42+00:00",
       "feedFingerprint": "1728002250715214392",
@@ -53919,6 +53675,626 @@
         "trendMatchedTop10": 2,
         "trendMatchedTop20": 5,
         "healthScore": 25
+      }
+    },
+    {
+      "generatedAt": "2026-07-27T10:24:46+00:00",
+      "feedFingerprint": "845452947972709720",
+      "before": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 25,
+        "uniqueSourcesTop20": 9,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "Guardian",
+          "NYT",
+          "גלובס",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "מעריב",
+            "count": 5
+          },
+          {
+            "name": "הארץ",
+            "count": 3
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 1
+          },
+          {
+            "name": "TMI",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 6,
+        "trendMatchedTop20": 11,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 7,
+          "hardReadyCount": 7,
+          "trendReadyCount": 5,
+          "uniqueReadySources": 5,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 2,
+              "headline": "יענקי גולדהבר הבהיר: מדובר בסחיטה ברשת",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
+              "trendMatch": {
+                "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+                "clusterKey": "בני אדם",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T05:44:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3856413",
+                "overlapTokens": [
+                  "אדם",
+                  "חדשות"
+                ],
+                "score": 17.27,
+                "boost": 17.27
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 4,
+              "headline": "ליברמן תקף את נתניהו סביב סעודיה, איראן והגיוס",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.maariv.co.il/news/politics/article-1349203",
+              "trendMatch": {
+                "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
+                "clusterKey": "חומרים מסוכנים",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T10:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856471",
+                "overlapTokens": [
+                  "חדשות",
+                  "נגד"
+                ],
+                "score": 25.47,
+                "boost": 25.47
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 8,
+              "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 37,
+              "url": "https://www.maariv.co.il/news/politics/article-1349200",
+              "trendMatch": {
+                "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+                "clusterKey": "אכריז קטאר כמדינת",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856498",
+                "overlapTokens": [
+                  "הבאה",
+                  "חדשות"
+                ],
+                "score": 24.2,
+                "boost": 24.2
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 10,
+              "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 44,
+              "url": "https://www.maariv.co.il/news/politics/article-1349195",
+              "trendMatch": {
+                "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+                "clusterKey": "אכריז קטאר כמדינת",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856498",
+                "overlapTokens": [
+                  "בממשלה",
+                  "הבאה",
+                  "חדשות"
+                ],
+                "score": 36.3,
+                "boost": 36.3
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 1,
+              "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 25,
+              "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+                "clusterKey": "מזנקים הנפט",
+                "domain": "כלכלה",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T09:54:00+00:00",
+                "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
+                "overlapTokens": [
+                  "בניו",
+                  "בעולם",
+                  "יורק"
+                ],
+                "score": 21.82,
+                "boost": 21.82
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 7,
+              "headline": "וילדרס ניחם את משפחת הנרצח מחוות גלעד",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 9,
+              "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 9,
+        "top12Under60": 9,
+        "topItemAgeMinutes": 32,
+        "uniqueSourcesTop20": 13,
+        "dominantSource": {
+          "name": "מעריב",
+          "count": 3
+        },
+        "importantMissingTop20": [
+          "N12",
+          "Guardian",
+          "NYT",
+          "ישראל היום"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "מעריב",
+            "count": 3
+          },
+          {
+            "name": "הארץ",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "וואלה",
+            "count": 2
+          },
+          {
+            "name": "BBC",
+            "count": 1
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 8,
+        "trendMatchedTop20": 17,
+        "trendGapMatchedTop20": 0,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 90,
+          "readyCount": 7,
+          "hardReadyCount": 7,
+          "trendReadyCount": 5,
+          "uniqueReadySources": 5,
+          "blockers": [
+            "top_item_over_25m"
+          ],
+          "readyQueue": [
+            {
+              "rank": 4,
+              "headline": "יענקי גולדהבר הבהיר: מדובר בסחיטה ברשת",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.kipa.co.il/%D7%91%D7%A8%D7%A0%D7%96%D7%94/1228604-0/",
+              "trendMatch": {
+                "trend": "ארה\"ב: דיווח ראשוני על מספר בני אדם שנורו במתחם סיאטל סנטר",
+                "clusterKey": "בני אדם",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T05:44:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3856413",
+                "overlapTokens": [
+                  "אדם",
+                  "חדשות"
+                ],
+                "score": 17.27,
+                "boost": 17.27
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 1,
+              "headline": "ליברמן תקף את נתניהו סביב סעודיה, איראן והגיוס",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 32,
+              "url": "https://www.maariv.co.il/news/politics/article-1349203",
+              "trendMatch": {
+                "trend": "\"הזריקה לבנה חומרים מסוכנים\": כתב אישום נגד אם החשודה בהתעללות קשה בבנה בן ה־5",
+                "clusterKey": "חומרים מסוכנים",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 4,
+                "sources": [
+                  "ynet",
+                  "דה מרקר",
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T10:51:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856471",
+                "overlapTokens": [
+                  "חדשות",
+                  "נגד"
+                ],
+                "score": 25.47,
+                "boost": 25.47
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 5,
+              "headline": "יו״ר איגוד הטייסים מצטרף לישראל ביתנו",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 37,
+              "url": "https://www.maariv.co.il/news/politics/article-1349200",
+              "trendMatch": {
+                "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+                "clusterKey": "אכריז קטאר כמדינת",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856498",
+                "overlapTokens": [
+                  "הבאה",
+                  "חדשות"
+                ],
+                "score": 24.2,
+                "boost": 24.2
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 2,
+              "headline": "ח\"כ בליכוד: ליברמן מכוון לרוטציה עם נתניהו",
+              "source": "מעריב - חדשות",
+              "canonicalSource": "מעריב",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 44,
+              "url": "https://www.maariv.co.il/news/politics/article-1349195",
+              "trendMatch": {
+                "trend": "בנט מודיע: \"בממשלה הבאה אכריז על קטאר כמדינת אויב\"",
+                "clusterKey": "אכריז קטאר כמדינת",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T11:50:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3856498",
+                "overlapTokens": [
+                  "בממשלה",
+                  "הבאה",
+                  "חדשות"
+                ],
+                "score": 36.3,
+                "boost": 36.3
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "נתניהו יגיע לעצרת האו״ם חרף איום המעצר בניו יורק",
+              "source": "BBC World",
+              "canonicalSource": "BBC",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 25,
+              "url": "https://www.bbc.co.uk/news/articles/c5yegvd9ddeo?at_medium=RSS&at_campaign=rss",
+              "trendMatch": {
+                "trend": "מגמה ירוקה בעולם: החוזים בניו יורק והמדדים באירופה מזנקים; הנפט צולל בכ-9%",
+                "clusterKey": "מזנקים הנפט",
+                "domain": "כלכלה",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "גלובס",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-27T09:54:00+00:00",
+                "sampleUrl": "https://www.globes.co.il/news/article.aspx?did=1001550508#utm_source=RSS",
+                "overlapTokens": [
+                  "בניו",
+                  "בעולם",
+                  "יורק"
+                ],
+                "score": 21.82,
+                "boost": 21.82
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 6,
+              "headline": "וילדרס ניחם את משפחת הנרצח מחוות גלעד",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "חדשות",
+              "class": "hard",
+              "ageMinutes": 34,
+              "url": "https://www.ynet.co.il/news/article/bykbm54rzl",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 8,
+              "headline": "אב באיראן נידון לשמונה שנים על רצח בתו",
+              "source": "The Jerusalem Post - Middle East",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 39,
+              "url": "https://www.jpost.com/middle-east/iran-news/article-903780",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 72,
+      "afterHealthScore": 96,
+      "replacementReadiness": {
+        "score": 87,
+        "threshold": 80,
+        "components": {
+          "freshness": 15.35,
+          "newsinessTop10": 25.0,
+          "top20Quality": 17.0,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 10.0
+        },
+        "criticalBlockers": [
+          "top_item_stale_over_25m"
+        ],
+        "readyNow": false
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -3,
+        "uniqueSourcesTop20": 4,
+        "trendMatchedTop10": 2,
+        "trendMatchedTop20": 6,
+        "healthScore": 24
       }
     }
   ]
