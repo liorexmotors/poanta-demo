@@ -206,6 +206,20 @@ def usage_counts(feed_items: Iterable[dict[str, Any]], now: datetime | None = No
     return counts
 
 
+def recent_image_ids(feed_items: Iterable[dict[str, Any]], limit: int = 6) -> set[str]:
+    """Return image IDs used by the newest cards."""
+    rows = [row for row in feed_items if isinstance(row, dict)]
+    rows.sort(
+        key=lambda row: str(row.get("publishedAt") or row.get("updatedAt") or ""),
+        reverse=True,
+    )
+    return {
+        str(row.get("poentaImageId") or "")
+        for row in rows[:limit]
+        if row.get("poentaImageId")
+    }
+
+
 def find_match(
     item: dict[str, Any],
     catalog: list[dict[str, Any]],
@@ -219,7 +233,8 @@ def find_match(
     is_sport = domain == canonical("ספורט")
     required_sport_subtype = article_sport_subtype(item) if is_sport else ""
     counts = usage_counts(feed_items)
-    candidates: list[tuple[int, bool, int, str, dict[str, Any], list[str]]] = []
+    recent = recent_image_ids(feed_items)
+    candidates: list[tuple[int, bool, bool, int, str, dict[str, Any], list[str]]] = []
     for image in catalog:
         if image["domain"] != domain:
             continue
@@ -235,10 +250,20 @@ def find_match(
         if score < 1:
             continue
         uses = counts[image["imageId"]]
-        candidates.append((-score, uses >= 4, uses, image["imageId"], image, matched))
+        candidates.append(
+            (
+                -score,
+                image["imageId"] in recent,
+                uses >= 4,
+                uses,
+                image["imageId"],
+                image,
+                matched,
+            )
+        )
     if not candidates:
         return None
-    neg_score, rotation_due, uses, _, image, matched = min(candidates)
+    neg_score, recently_used, rotation_due, uses, _, image, matched = min(candidates)
     return {
         **image,
         "matchScore": -neg_score,
@@ -246,6 +271,7 @@ def find_match(
         "articleTags": tags,
         "uses24h": uses,
         "rotationDue": rotation_due,
+        "recentlyUsed": recently_used,
     }
 
 

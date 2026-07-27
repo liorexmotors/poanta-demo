@@ -87,12 +87,15 @@ def candidate_payload(
     seen: set[str] = set()
     live_items = [item for item in (live or {}).get("items", []) if isinstance(item, dict)]
     live_by_url = {item_url(item): item for item in live_items if item_url(item)}
+    # V5 is the permanent image mechanism. Trial tracking only labels the
+    # remaining sample cards; reaching the sample limit must not disable V5.
     v5_enabled = (
-        os.environ.get("POENTA_V5_IMAGE_TRIAL_ENABLED", "0") == "1"
+        os.environ.get("POENTA_V5_IMAGE_BANK_ENABLED", "1") != "0"
         and not V5_DISABLE_MARKER.exists()
         and apply_v5_image_to_new_item is not None
         and build_v5_image_catalog is not None
     )
+    trial_tracking_enabled = os.environ.get("POENTA_V5_IMAGE_TRIAL_ENABLED", "1") == "1"
     trial_applied = sum(1 for item in live_items if item.get("poentaImageTrialId") == V5_TRIAL_ID)
     try:
         v5_catalog = build_v5_image_catalog() if v5_enabled else []
@@ -129,20 +132,22 @@ def candidate_payload(
             for key, value in existing.items():
                 if key == "imageUrl" or key.startswith("image") or key.startswith("poentaImage"):
                     fixed[key] = value
-        elif v5_enabled and trial_applied < V5_TRIAL_LIMIT:
+        elif v5_enabled:
             try:
                 fixed, image_info = apply_v5_image_to_new_item(fixed, live_items, v5_catalog)
                 fixed["poentaImageAssignmentStatus"] = image_info.get("status")
-                fixed["poentaImageTrialId"] = V5_TRIAL_ID
-                trial_applied += 1
+                if trial_tracking_enabled and trial_applied < V5_TRIAL_LIMIT:
+                    fixed["poentaImageTrialId"] = V5_TRIAL_ID
+                    trial_applied += 1
             except Exception:
                 # A last-resort local Poenta image keeps publication independent
                 # of every optional V5 subsystem.
                 fixed["imageUrl"] = default_image_url(fixed)
                 fixed["imageFallbackKind"] = default_image_kind(fixed)
-                fixed["poentaImageAssignmentStatus"] = "trial_error_legacy_fallback"
-                fixed["poentaImageTrialId"] = V5_TRIAL_ID
-                trial_applied += 1
+                fixed["poentaImageAssignmentStatus"] = "v5_error_local_fallback"
+                if trial_tracking_enabled and trial_applied < V5_TRIAL_LIMIT:
+                    fixed["poentaImageTrialId"] = V5_TRIAL_ID
+                    trial_applied += 1
         elif os.environ.get("POENTA_IMAGE_BANK_ENABLED", "1") != "0" and apply_image_bank_to_item:
             fixed, _image_bank_info = apply_image_bank_to_item(fixed)
         selected.append(fixed)

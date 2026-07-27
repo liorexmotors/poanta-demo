@@ -718,7 +718,7 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
     rewritten: dict[str, dict[str, Any]] = {}
     ordered_new: list[dict[str, Any]] = []
     feed_urls = {item.get("sourceUrl") for item in feed.get("items", [])}
-    image_feature_enabled = os.environ.get("POENTA_V5_IMAGE_BANK_ENABLED", "0") == "1"
+    image_feature_enabled = os.environ.get("POENTA_V5_IMAGE_BANK_ENABLED", "1") != "0"
     trial_limit = max(0, int(os.environ.get("POENTA_V5_IMAGE_TRIAL_LIMIT", "0") or 0))
     trial_id = os.environ.get("POENTA_V5_IMAGE_TRIAL_ID", "").strip()
     trial_applied = sum(
@@ -764,16 +764,16 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
         rewritten[url] = item
         if url and url not in feed_urls:
             trial_has_capacity = not trial_limit or trial_applied < trial_limit
-            if image_feature_enabled and trial_has_capacity:
+            if image_feature_enabled:
                 item, image_info = apply_to_new_item(
                     item,
                     feed.get("items", []),
                     v5_image_catalog,
                 )
                 item["poentaImageAssignmentStatus"] = image_info["status"]
-                if trial_id:
+                if trial_id and trial_has_capacity:
                     item["poentaImageTrialId"] = trial_id
-                trial_applied += 1
+                    trial_applied += 1
             ordered_new.append(item)
     preview = dict(feed)
     preview_items = []
