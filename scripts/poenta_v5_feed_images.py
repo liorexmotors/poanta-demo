@@ -22,6 +22,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parents[1]
 V5_ROOT = ROOT / "generated/poenta-image-bank-v2/unified-image-sets-v5"
 SETS_PATH = V5_ROOT / "sets-and-images.json"
@@ -30,6 +32,8 @@ LIVE_DEMAND_PATH = V5_ROOT / "live-image-demand.json"
 LIVE_DEMAND_LOCK = V5_ROOT / "live-image-demand.lock"
 PUBLIC_DIR = ROOT / "assets/poenta-image-bank-v5"
 PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5"
+POENTA_WATERMARK = ROOT / "assets/poenta-logo-watermark-transparent.png"
+POENTA_WATERMARK_SUFFIX = "-poenta-v1"
 DOMAIN_DEFAULT_DIR = ROOT / "assets/poenta-domain-defaults"
 EMERGENCY_FALLBACK_FILE = ROOT / "assets/feed-defaults/news.png"
 DOMAIN_DEFAULT_FILES = {
@@ -341,12 +345,23 @@ def enqueue_live_demand(
 
 def publish_asset(match: dict[str, Any]) -> str:
     source = Path(match["file"])
-    suffix = source.suffix.lower() if source.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"} else ".png"
-    filename = f"{match['imageId'].lower()}{suffix}"
+    filename = f"{match['imageId'].lower()}{POENTA_WATERMARK_SUFFIX}.png"
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     target = PUBLIC_DIR / filename
-    if not target.exists() or target.stat().st_size != source.stat().st_size:
-        shutil.copy2(source, target)
+    source_mtime = source.stat().st_mtime
+    watermark_mtime = POENTA_WATERMARK.stat().st_mtime
+    if not target.exists() or target.stat().st_mtime < max(source_mtime, watermark_mtime):
+        with Image.open(source) as base_source, Image.open(POENTA_WATERMARK) as logo_source:
+            base = base_source.convert("RGBA")
+            logo = logo_source.convert("RGBA")
+            target_width = max(64, round(base.width * 0.10))
+            target_height = max(1, round(logo.height * target_width / logo.width))
+            logo = logo.resize((target_width, target_height), Image.Resampling.LANCZOS)
+            margin = max(12, round(min(base.width, base.height) * 0.025))
+            base.alpha_composite(logo, (margin, margin))
+            tmp = target.with_suffix(".tmp.png")
+            base.convert("RGB").save(tmp, format="PNG", optimize=True)
+            tmp.replace(target)
     return f"{PUBLIC_BASE}/{filename}"
 
 

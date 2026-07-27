@@ -484,6 +484,7 @@ For every item:
 5. Keep Hebrew output concise and follow the Pointa editor contract.
 6. Category boundary: `אקטואליה בעולם` is only for global stories with no Israel/Middle-East angle. If the item is about Israel, Gaza, Iran, the Abraham Accords, normalization with Israel, or Middle-East diplomacy/security, use the normal domains (`ביטחון`, `פוליטיקה`, or `חדשות`) even when the source is foreign.
 7. Assign exactly four distinct `imageTags` for image matching. Use only the approved one-word visual tags listed below. The `imageDomain` must equal `category`. Choose tags that can be represented visually and describe the story, not writing style or sentiment.
+8. Assess push importance conservatively. `important=true` is only for urgent, high-impact public-interest news, not popularity. Provide a 0-100 score, a concrete reason, urgency, and expiry. Routine sport, gossip, culture, and viral stories must normally be false.
 
 Approved image tags:
 {image_tag_contract}
@@ -502,6 +503,11 @@ Each result object must include:
   "headline": "...",
   "summary": "...",
   "takeaway": "...",
+  "important": false,
+  "importanceScore": 0,
+  "importanceReason": "concrete reason or why it is not important",
+  "importanceUrgency": "normal|high|immediate",
+  "importanceExpiresMinutes": 0,
   "rejectReason": "",
   "qualityNotes": ["..."],
   "currentProblems": ["..."],
@@ -592,6 +598,24 @@ def validate_result(result: dict[str, Any], source: dict[str, Any]) -> list[str]
         errors.append("takeaway has generic banned pattern")
     if category not in CATEGORY_CLASS:
         errors.append("unknown category")
+    if any(key in result for key in ("important", "importanceScore", "importanceReason", "importanceUrgency", "importanceExpiresMinutes")):
+        important = result.get("important")
+        importance_score = result.get("importanceScore")
+        importance_reason = clean_text(result.get("importanceReason", ""))
+        urgency = result.get("importanceUrgency")
+        expiry = result.get("importanceExpiresMinutes")
+        if not isinstance(important, bool):
+            errors.append("important must be boolean")
+        if not isinstance(importance_score, int) or not 0 <= importance_score <= 100:
+            errors.append("importanceScore must be integer 0-100")
+        if not importance_reason:
+            errors.append("importanceReason is required")
+        if urgency not in {"normal", "high", "immediate"}:
+            errors.append("importanceUrgency must be normal/high/immediate")
+        if not isinstance(expiry, int) or expiry < 0:
+            errors.append("importanceExpiresMinutes must be a non-negative integer")
+        if important and (not isinstance(importance_score, int) or importance_score < 85):
+            errors.append("important=true requires importanceScore >= 85")
     if os.environ.get("POENTA_REQUIRE_V5_IMAGE_TAGS", "0") == "1":
         visual_sets_path = ROOT / "generated/poenta-image-bank-v2/freeform-article-tags-v1/visual-set-reduction-v4/canonical-visual-sets.json"
         approved_image_tags: set[str] = set()
@@ -729,6 +753,11 @@ def build_preview_feed(feed: dict[str, Any], editor_input: list[dict[str, Any]],
         item["headline"] = r.get("headline", item.get("headline", ""))
         item["context"] = r.get("summary", item.get("context", ""))
         item["takeaway"] = r.get("takeaway", item.get("takeaway", ""))
+        item["important"] = r.get("important") is True
+        item["importanceScore"] = int(r.get("importanceScore") or 0)
+        item["importanceReason"] = clean_text(r.get("importanceReason", ""))
+        item["importanceUrgency"] = r.get("importanceUrgency") or "normal"
+        item["importanceExpiresMinutes"] = int(r.get("importanceExpiresMinutes") or 0)
         item["editorStatus"] = "rescue-editor-pass"
         item["editorAddedAt"] = datetime.now().isoformat(timespec="seconds")
         url = item.get("sourceUrl")

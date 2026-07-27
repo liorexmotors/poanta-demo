@@ -77,29 +77,54 @@ PY
 # so gate on the JSON status explicitly before recording or publishing.
 python3 scripts/pointa_quality_auditor.py --feed feed.json --json > tmp/deploy_quality_auditor.json
 python3 - <<'PY'
-import json, sys
+import json
 report = json.load(open('tmp/deploy_quality_auditor.json', encoding='utf-8'))
 status = report.get('status')
 errors = report.get('errors') or []
 warnings = report.get('warnings') or []
 print(f"Pointa quality auditor: {status} · errors={len(errors)} · warnings={len(warnings)}")
-if status != 'ok' or errors:
+PY
+# An individual bad article must never stop publication of the valid feed.
+# Quarantine every auditor error that maps to a concrete feed URL, then audit
+# the remaining candidate again. Only an unresolved/system-level error blocks.
+python3 scripts/pointa_quarantine_failed_items.py \
+  --feed feed.json \
+  --report tmp/deploy_quality_auditor.json \
+  --quarantine pointa_quarantine.json
+python3 scripts/pointa_quality_auditor.py --feed feed.json --json > tmp/deploy_quality_auditor_after_quarantine.json
+python3 - <<'PY'
+import json, sys
+report = json.load(open('tmp/deploy_quality_auditor_after_quarantine.json', encoding='utf-8'))
+errors = report.get('errors') or []
+print(f"Pointa quality auditor after quarantine: {report.get('status')} · errors={len(errors)}")
+if report.get('status') != 'ok' or errors:
     for issue in errors[:5]:
-        print(f"BLOCKER {issue.get('code')}: {issue.get('headline') or issue.get('message')}", file=sys.stderr)
+        print(f"SYSTEM BLOCKER {issue.get('code')}: {issue.get('headline') or issue.get('message')}", file=sys.stderr)
     sys.exit(1)
 PY
 python3 scripts/pointa_publication_events.py record --gatekeeper deploy-current --run-id "${POANTA_RUN_ID:-deploy-current}" || true
 python3 scripts/pointa_quality_auditor.py --feed feed.json --json > tmp/deploy_quality_auditor_after_record.json
 python3 - <<'PY'
-import json, sys
+import json
 report = json.load(open('tmp/deploy_quality_auditor_after_record.json', encoding='utf-8'))
 status = report.get('status')
 errors = report.get('errors') or []
 warnings = report.get('warnings') or []
 print(f"Pointa quality auditor after event record: {status} · errors={len(errors)} · warnings={len(warnings)}")
-if status != 'ok' or errors:
+PY
+python3 scripts/pointa_quarantine_failed_items.py \
+  --feed feed.json \
+  --report tmp/deploy_quality_auditor_after_record.json \
+  --quarantine pointa_quarantine.json
+python3 scripts/pointa_quality_auditor.py --feed feed.json --json > tmp/deploy_quality_auditor_final.json
+python3 - <<'PY'
+import json, sys
+report = json.load(open('tmp/deploy_quality_auditor_final.json', encoding='utf-8'))
+errors = report.get('errors') or []
+print(f"Pointa final quality auditor: {report.get('status')} · errors={len(errors)}")
+if report.get('status') != 'ok' or errors:
     for issue in errors[:5]:
-        print(f"BLOCKER {issue.get('code')}: {issue.get('headline') or issue.get('message')}", file=sys.stderr)
+        print(f"SYSTEM BLOCKER {issue.get('code')}: {issue.get('headline') or issue.get('message')}", file=sys.stderr)
     sys.exit(1)
 PY
 # Timing warnings/errors are operational signals for follow-up rescue, not a
@@ -124,7 +149,7 @@ git worktree remove "$MAIN_WORKTREE" --force >/dev/null 2>&1 || true
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
 mkdir -p "$MAIN_WORKTREE/tmp"
-for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
+for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/pointa_quarantine_failed_items.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py tests/test_nonblocking_feed_quarantine.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
   if [[ -e "$ROOT/$p" ]]; then cp -a "$ROOT/$p" "$MAIN_WORKTREE/$p"; fi
 done
 if [[ -d "$ROOT/feed-a" ]]; then
@@ -150,7 +175,7 @@ cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/deploy_current_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/pointa_quarantine_failed_items.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py tests/test_nonblocking_feed_quarantine.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git add feed-a || true
   git add assets/feed-defaults || true
   git add assets/poenta-image-bank-v5 || true
