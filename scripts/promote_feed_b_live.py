@@ -35,6 +35,9 @@ FEED_B = ROOT / "feed_b.json"
 LIVE_FEED = ROOT / "feed.json"
 TMP_CANDIDATE = ROOT / "tmp" / "feed-b-live-auto-candidate.json"
 QUALITY_REPORT = ROOT / "tmp" / "feed-b-live-auto-quality.md"
+# Kept only so old operational tooling can detect and archive the former pilot
+# marker. V5 is now the permanent production mechanism and must not be disabled
+# by the retired pilot audit.
 V5_DISABLE_MARKER = ROOT / ".poenta-v5-image-disabled"
 V5_TRIAL_ID = "pilot-20260727-v2"
 V5_TRIAL_LIMIT = 100
@@ -91,7 +94,6 @@ def candidate_payload(
     # remaining sample cards; reaching the sample limit must not disable V5.
     v5_enabled = (
         os.environ.get("POENTA_V5_IMAGE_BANK_ENABLED", "1") != "0"
-        and not V5_DISABLE_MARKER.exists()
         and apply_v5_image_to_new_item is not None
         and build_v5_image_catalog is not None
     )

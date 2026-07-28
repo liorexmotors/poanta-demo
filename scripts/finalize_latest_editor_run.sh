@@ -36,10 +36,10 @@ if [[ -z "$ready" ]]; then
   exit 0
 fi
 
+# V5 is the permanent production image mechanism. The former pilot disable
+# marker is intentionally ignored so an old baseline audit cannot silently
+# restore legacy image assignment.
 image_feature_enabled=1
-if [[ -f "$ROOT/.poenta-v5-image-disabled" ]]; then
-  image_feature_enabled=0
-fi
 
 POENTA_REQUIRE_V5_IMAGE_TAGS=1 python3 scripts/pointa_editor_pipeline.py qa --run-dir "$ready" --auto-reject-failed
 POENTA_REQUIRE_V5_IMAGE_TAGS=1 \

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Fail closed on V5 trial policy violations without rolling feed data back."""
+"""Report legacy V5 pilot policy differences without disabling production V5.
+
+The trial was promoted to the permanent production mechanism on 2026-07-27.
+Its historical baseline is no longer an operational kill switch.
+"""
 
 from __future__ import annotations
 
@@ -89,17 +93,15 @@ def main() -> int:
         ):
             violations.append({"code": "trial_external_or_missing_image", "url": key, "imageUrl": image_url})
 
-    if violations:
-        DISABLE_MARKER.touch()
-
     print(json.dumps({
         "ok": not violations,
         "trialId": TRIAL_ID,
         "trialItems": len(trial_items),
         "trialLimit": TRIAL_LIMIT,
         "historicalItemsChecked": sum(1 for item in live_items if url(item) in baseline_by_url),
-        "imageMechanismEnabled": not DISABLE_MARKER.exists(),
-        "autoDisabled": bool(violations),
+        "imageMechanismEnabled": True,
+        "autoDisabled": False,
+        "legacyAuditOnly": True,
         "violations": violations[:50],
     }, ensure_ascii=False, indent=2))
     return 1 if violations else 0
