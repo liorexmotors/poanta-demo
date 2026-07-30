@@ -481,10 +481,23 @@ const EVENT_ACTION_TERMS=[
   ['התפטר','פוטר','מינוי','מונה','resigned','fired','appointed']
   ,['מעבר','עבר','עובר','הצטרף','מצטרף','צירוף','צורף','חתם','החתמה','יחתום','בחר','בחירה','הציג','הציגה','הודיע','הודיעה','transfer','transferred','joins','joined','signs','signed','signing','introduced','announced']
 ];
-const EVENT_IDENTITY_STOP=new Set(['ישראל','ארהב','איראן','ספורט','כדורגל','כדורסל','חדשות','היום','הארץ','עולם']);
+const EVENT_IDENTITY_STOP=new Set([
+  'ישראל','ארהב','איראן','ספורט','כדורגל','כדורסל','חדשות','היום','הארץ','עולם',
+  // Generic crime/emergency wording describes a beat, not a unique event.
+  // Treating these words as identities caused unrelated police reports to
+  // grow into one carousel.
+  'משטרה','שוטרים','פלילים','חשד','חשודים','נעצר','נעצרו','מעצר','מעורבות',
+  'חקירה','נחקר','נתפס','נתפסו','פשיטה','אירוע','מקרה','רכב','נשק'
+]);
+const EVENT_ACTION_TOKENS=new Set(EVENT_ACTION_TERMS.flat());
 function sharedDistinctiveAnchors(left,right){
   const rightSet=new Set(right);
-  return left.filter(token=>rightSet.has(token)&&token.length>=4&&!EVENT_IDENTITY_STOP.has(token));
+  return left.filter(token=>
+    rightSet.has(token)&&
+    token.length>=4&&
+    !EVENT_IDENTITY_STOP.has(token)&&
+    !EVENT_ACTION_TOKENS.has(token)
+  );
 }
 function sharedEventAction(a,b){
   const left=semanticText(a);
@@ -507,7 +520,11 @@ function likelySameEvent(a,b){
   const union=new Set([...left,...right]).size;
   const containment=overlap.length/Math.min(left.length,right.length);
   const similarity=overlap.length/union;
-  const distinctive=overlap.some(token=>token.length>=5 || /\d/.test(token));
+  const distinctive=overlap.some(token=>
+    (token.length>=5 || /\d/.test(token))&&
+    !EVENT_IDENTITY_STOP.has(token)&&
+    !EVENT_ACTION_TOKENS.has(token)
+  );
   const veryStrongTitleMatch=overlap.length>=5 && (similarity>=.48 || containment>=.72);
   const actionAnchoredMatch=sharedEventAction(a,b) && overlap.length>=3 && (similarity>=.32 || containment>=.50);
   // Event families such as a player transfer are reported through different
