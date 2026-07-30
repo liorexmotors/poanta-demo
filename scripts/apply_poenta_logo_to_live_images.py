@@ -23,16 +23,19 @@ ASSET_DIRS = (ROOT / "assets/poenta-image-bank-v5", ROOT / "dist/assets/poenta-i
 LOGO_PATH = ROOT / "assets/poenta-logo-watermark-transparent.png"
 PUBLIC_PREFIX = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5/"
 SUFFIX = "-poenta-v4"
+PUBLIC_IMAGE_SIZE = (960, 540)
+PUBLIC_IMAGE_QUALITY = 78
 
 
 def branded_name(filename: str, public_path: str) -> str:
     digest = hashlib.sha256(public_path.encode("utf-8")).hexdigest()[:10]
-    return f"{Path(filename).stem}-{digest}{SUFFIX}.png"
+    return f"{Path(filename).stem}-{digest}{SUFFIX}.webp"
 
 
 def brand_image(source: Path, target: Path) -> None:
     with Image.open(source) as base_source, Image.open(LOGO_PATH) as logo_source:
         base = base_source.convert("RGBA")
+        base.thumbnail(PUBLIC_IMAGE_SIZE, Image.Resampling.LANCZOS)
         logo = logo_source.convert("RGBA")
         width = max(64, round(base.width * 0.10))
         height = max(1, round(logo.height * width / logo.width))
@@ -44,7 +47,7 @@ def brand_image(source: Path, target: Path) -> None:
         tmp_dir = ROOT / "tmp" / "poenta-image-branding"
         tmp_dir.mkdir(parents=True, exist_ok=True)
         tmp = tmp_dir / f"{target.name}.{os.getpid()}.tmp"
-        base.convert("RGB").save(tmp, format="PNG", optimize=True)
+        base.convert("RGB").save(tmp, format="WEBP", quality=PUBLIC_IMAGE_QUALITY, method=6)
         tmp.replace(target)
 
 
@@ -59,7 +62,7 @@ def main() -> None:
         filename = url.rsplit("/", 1)[-1]
         if (
             not filename
-            or filename.endswith(f"{SUFFIX}.png")
+            or filename.endswith(f"{SUFFIX}.webp")
         ):
             continue
         public_path = url.split("poanta-demo.pages.dev/", 1)[-1].split("?", 1)[0].lstrip("/")

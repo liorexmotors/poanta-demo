@@ -29,6 +29,7 @@ export GIT_TERMINAL_PROMPT=0
 
 git fetch origin main gh-pages
 python3 scripts/apply_poenta_logo_to_live_images.py
+python3 scripts/optimize_poenta_public_images.py --apply
 python3 scripts/pointa_quality_gate.py --report pointa_quality_report.md
 # P0 guard: do not publish or report success if the candidate feed still looks
 # stale/thin to a user. This is deliberately before recording publication
@@ -137,6 +138,7 @@ npm run build
 # feed/dist snapshot here prevents those cards from reaching production without
 # the Poenta mark.
 python3 scripts/apply_poenta_logo_to_live_images.py
+python3 scripts/optimize_poenta_public_images.py --apply
 # The feed and the image bank can be updated by separate workers. Reconcile the
 # built snapshot after the build so feed.json can never be deployed before a
 # local image file it references. Missing assets fall back to a Poenta domain
@@ -155,7 +157,7 @@ git worktree remove "$MAIN_WORKTREE" --force >/dev/null 2>&1 || true
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
 mkdir -p "$MAIN_WORKTREE/tmp"
-for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/apply_poenta_logo_to_live_images.py scripts/deploy_current_feed.sh scripts/fast_sync_and_deploy_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/pointa_quarantine_failed_items.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py tests/test_nonblocking_feed_quarantine.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
+for p in feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/apply_poenta_logo_to_live_images.py scripts/optimize_poenta_public_images.py scripts/deploy_current_feed.sh scripts/fast_sync_and_deploy_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/pointa_quarantine_failed_items.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py tests/test_nonblocking_feed_quarantine.py .poanta-state.json .poanta-seen.json pointa_quality_report.md; do
   if [[ -e "$ROOT/$p" ]]; then cp -a "$ROOT/$p" "$MAIN_WORKTREE/$p"; fi
 done
 if [[ -d "$ROOT/feed-a" ]]; then
@@ -181,7 +183,7 @@ cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/apply_poenta_logo_to_live_images.py scripts/deploy_current_feed.sh scripts/fast_sync_and_deploy_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/pointa_quarantine_failed_items.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py tests/test_nonblocking_feed_quarantine.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
+  git add feed.json feed_a_side.json feed_a_breaking.json breaking_feed.json package.json scripts/apply_poenta_logo_to_live_images.py scripts/optimize_poenta_public_images.py scripts/deploy_current_feed.sh scripts/fast_sync_and_deploy_feed.sh scripts/finalize_latest_editor_run.sh scripts/pointa_editor_pipeline.py scripts/pointa_main_feed_no_breaking_guard.py scripts/pointa_quarantine_failed_items.py scripts/poenta_image_bank.py scripts/poenta_v5_feed_images.py scripts/promote_feed_b_live.py scripts/audit_poenta_v5_image_trial.py tests/test_nonblocking_feed_quarantine.py .poanta-state.json .poanta-seen.json pointa_quality_report.md
   git add feed-a || true
   git add assets/feed-defaults || true
   git add assets/poenta-image-bank-v5 || true

@@ -35,6 +35,8 @@ PUBLIC_DIR = ROOT / "assets/poenta-image-bank-v5"
 PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5"
 POENTA_WATERMARK = ROOT / "assets/poenta-logo-watermark-transparent.png"
 POENTA_WATERMARK_SUFFIX = "-poenta-v3"
+PUBLIC_IMAGE_SIZE = (960, 540)
+PUBLIC_IMAGE_QUALITY = 78
 DOMAIN_DEFAULT_DIR = ROOT / "assets/poenta-domain-defaults"
 EMERGENCY_FALLBACK_FILE = ROOT / "assets/feed-defaults/news.png"
 # Assets rejected by human QA must never re-enter matching, even when they
@@ -379,7 +381,7 @@ def enqueue_live_demand(
 
 def publish_asset(match: dict[str, Any]) -> str:
     source = Path(match["file"])
-    filename = f"{match['imageId'].lower()}{POENTA_WATERMARK_SUFFIX}.png"
+    filename = f"{match['imageId'].lower()}{POENTA_WATERMARK_SUFFIX}.webp"
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     target = PUBLIC_DIR / filename
     source_mtime = source.stat().st_mtime
@@ -387,6 +389,7 @@ def publish_asset(match: dict[str, Any]) -> str:
     if not target.exists() or target.stat().st_mtime < max(source_mtime, watermark_mtime):
         with Image.open(source) as base_source, Image.open(POENTA_WATERMARK) as logo_source:
             base = base_source.convert("RGBA")
+            base.thumbnail(PUBLIC_IMAGE_SIZE, Image.Resampling.LANCZOS)
             logo = logo_source.convert("RGBA")
             target_width = max(64, round(base.width * 0.10))
             target_height = max(1, round(logo.height * target_width / logo.width))
@@ -400,7 +403,7 @@ def publish_asset(match: dict[str, Any]) -> str:
             tmp_dir = ROOT / "tmp" / "poenta-image-branding"
             tmp_dir.mkdir(parents=True, exist_ok=True)
             tmp = tmp_dir / f"{target.name}.{os.getpid()}.tmp"
-            base.convert("RGB").save(tmp, format="PNG", optimize=True)
+            base.convert("RGB").save(tmp, format="WEBP", quality=PUBLIC_IMAGE_QUALITY, method=6)
             tmp.replace(target)
     return f"{PUBLIC_BASE}/{filename}"
 

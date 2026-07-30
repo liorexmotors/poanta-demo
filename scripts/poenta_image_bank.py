@@ -26,6 +26,8 @@ BRANDED_PUBLIC_BASE = "https://poanta-demo.pages.dev/assets/poenta-image-bank-v5
 BRANDED_DIR = ROOT / "assets" / "poenta-image-bank-v5"
 POENTA_LOGO = ROOT / "assets" / "poenta-logo-watermark-transparent.png"
 BRANDED_SUFFIX = "-poenta-v3"
+PUBLIC_IMAGE_SIZE = (960, 540)
+PUBLIC_IMAGE_QUALITY = 78
 BLOCKED_FILES = {
     # Rejected by visual review on 2026-07-25: embedded generation text.
     "poenta_022_1_1_4_2_calm.jpg",
@@ -298,11 +300,12 @@ def branded_image_url_for_record(record: dict[str, Any], public_base: str = DEFA
         return original_url
     public_path = original_url.split("poanta-demo.pages.dev/", 1)[-1].split("?", 1)[0].lstrip("/")
     digest = hashlib.sha256(public_path.encode("utf-8")).hexdigest()[:10]
-    output_name = f"{Path(filename).stem}-{digest}{BRANDED_SUFFIX}.png"
+    output_name = f"{Path(filename).stem}-{digest}{BRANDED_SUFFIX}.webp"
     target = BRANDED_DIR / output_name
     if not target.is_file() or target.stat().st_mtime < max(source.stat().st_mtime, POENTA_LOGO.stat().st_mtime):
         with Image.open(source) as base_source, Image.open(POENTA_LOGO) as logo_source:
             base = base_source.convert("RGBA")
+            base.thumbnail(PUBLIC_IMAGE_SIZE, Image.Resampling.LANCZOS)
             logo = logo_source.convert("RGBA")
             width = max(64, round(base.width * 0.10))
             height = max(1, round(logo.height * width / logo.width))
@@ -315,7 +318,7 @@ def branded_image_url_for_record(record: dict[str, Any], public_base: str = DEFA
             tmp_dir = ROOT / "tmp" / "poenta-image-branding"
             tmp_dir.mkdir(parents=True, exist_ok=True)
             tmp = tmp_dir / f"{output_name}.{os.getpid()}.tmp"
-            base.convert("RGB").save(tmp, format="PNG", optimize=True)
+            base.convert("RGB").save(tmp, format="WEBP", quality=PUBLIC_IMAGE_QUALITY, method=6)
             tmp.replace(target)
     return BRANDED_PUBLIC_BASE + output_name
 
