@@ -299,16 +299,10 @@ if [[ "$FAST_HEALTH_STATUS" -eq 42 ]]; then
 elif [[ "$FAST_HEALTH_STATUS" -ne 0 ]]; then
   exit "$FAST_HEALTH_STATUS"
 fi
-python3 scripts/apply_poenta_logo_to_live_images.py
-python3 scripts/optimize_poenta_public_images.py --apply
 python3 scripts/pointa_publication_events.py record --gatekeeper fast-sync --run-id "${POANTA_RUN_ID:-fast-sync}" || true
 python3 scripts/pointa_quality_auditor.py || true
 python3 scripts/pointa_timing_auditor.py || true
 npm run build
-# Brand the final snapshot too. This closes the race where a pilot/editor worker
-# adds cards after the pre-build branding pass but before publication.
-python3 scripts/apply_poenta_logo_to_live_images.py
-python3 scripts/optimize_poenta_public_images.py --apply
 
 git fetch origin main
 rm -rf "$MAIN_WORKTREE"
