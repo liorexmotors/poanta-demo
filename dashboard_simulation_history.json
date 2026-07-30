@@ -1,26 +1,23 @@
 {
   "status": "ok",
   "mode": "simulation_history_no_feed_mutation",
-  "generatedAt": "2026-07-30T12:44:00+00:00",
+  "generatedAt": "2026-07-30T15:25:48+00:00",
   "summary": {
     "sampleCount": 144,
     "window": 12,
     "positiveRuns": 12,
     "negativeRuns": 0,
-    "avgHealthDelta": 16.92,
-    "avgAfterHealthScore": 92.83,
+    "avgHealthDelta": 13.83,
+    "avgAfterHealthScore": 92.0,
     "stablePositive": true,
     "replacement": {
       "threshold": 80,
       "minSamplesForPromotion": 24,
       "window": 48,
-      "latestScore": 66,
-      "rollingScore": 88.48,
+      "latestScore": 95,
+      "rollingScore": 88.52,
       "readyRuns": 20,
-      "criticalBlockers": [
-        "top_item_stale_over_25m",
-        "top12_under60_below_9"
-      ],
+      "criticalBlockers": [],
       "matureForProduction": false
     },
     "alizaReview": {
@@ -33,665 +30,6 @@
     }
   },
   "runs": [
-    {
-      "generatedAt": "2026-07-04T17:01:00+00:00",
-      "feedFingerprint": "3825525258566463000",
-      "before": {
-        "newsinessTop10": 7,
-        "softTop10": 3,
-        "otherTop10": 0,
-        "top5Under60": 5,
-        "top10Under60": 6,
-        "top12Under60": 6,
-        "topItemAgeMinutes": 41,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 9
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 9
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 3,
-        "trendMatchedTop20": 9,
-        "trendGapMatchedTop20": 8,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 62,
-          "readyCount": 4,
-          "hardReadyCount": 4,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 2,
-          "blockers": [
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "לוחמי גולני רותקו אחרי שתלו דגלי חטיבה ללא אישור",
-              "source": "וואלה חדשות",
-              "canonicalSource": "וואלה",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 41,
-              "url": "https://news.walla.co.il/item/3850551",
-              "trendMatch": {
-                "trend": "ילד בן 3 במצב קשה לאחר שטבע בבריכה בבית במועצה אזורית שדות הנגב",
-                "clusterKey": "שטבע בבריכה",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T14:30:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850779",
-                "overlapTokens": [
-                  "בבית",
-                  "חדשות",
-                  "לאחר"
-                ],
-                "score": 31.57,
-                "boost": 31.57
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 4,
-              "headline": "יולי אדלשטיין עוזב את הליכוד אחרי שני עשורים",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 43,
-              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901380",
-              "trendMatch": {
-                "trend": "יולי אדלשטיין: לא אתמודד בפריימריז בליכוד, יוצא לדרך פוליטית חדשה",
-                "clusterKey": "יולי אדלשטיין",
-                "domain": "חדשות",
-                "externalMentions": 2,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "הארץ"
-                ],
-                "discoveryTypes": [
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-07-04T17:00:59.884155+00:00",
-                "sampleUrl": "https://www.haaretz.co.il/news/elections/2026-07-03/ty-article/.premium/0000019f-2849-d48a-a19f-28e99bad0000",
-                "overlapTokens": [
-                  "אדלשטיין",
-                  "חדשה",
-                  "יולי",
-                  "לדרך",
-                  "פוליטית"
-                ],
-                "score": 37.8,
-                "boost": 37.8
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 2,
-              "headline": "אלביט תגייס עוד 2,000 עובדים עד סוף השנה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 43,
-              "url": "https://www.jpost.com/israel-news/defense-news/article-901384",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 3,
-              "headline": "דני איילון תוקף את ההבנות בין ארה\"ב לאיראן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 43,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": null,
-              "queueScore": 25.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 4,
-        "softTop10": 2,
-        "otherTop10": 4,
-        "top5Under60": 5,
-        "top10Under60": 6,
-        "top12Under60": 6,
-        "topItemAgeMinutes": 41,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "השירות המטאורולוגי",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 3
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Daily Mail",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 10,
-        "trendGapMatchedTop20": 9,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 10,
-          "score": 62,
-          "readyCount": 4,
-          "hardReadyCount": 4,
-          "trendReadyCount": 2,
-          "uniqueReadySources": 2,
-          "blockers": [
-            "top_item_over_25m"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "לוחמי גולני רותקו אחרי שתלו דגלי חטיבה ללא אישור",
-              "source": "וואלה חדשות",
-              "canonicalSource": "וואלה",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 41,
-              "url": "https://news.walla.co.il/item/3850551",
-              "trendMatch": {
-                "trend": "ילד בן 3 במצב קשה לאחר שטבע בבריכה בבית במועצה אזורית שדות הנגב",
-                "clusterKey": "שטבע בבריכה",
-                "domain": "חדשות",
-                "externalMentions": 3,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "וואלה"
-                ],
-                "discoveryTypes": [
-                  "RSS",
-                  "WEB"
-                ],
-                "mentionedInFeed": false,
-                "latestAt": "2026-07-04T14:30:00+00:00",
-                "sampleUrl": "https://news.walla.co.il/break/3850779",
-                "overlapTokens": [
-                  "בבית",
-                  "חדשות",
-                  "לאחר"
-                ],
-                "score": 31.57,
-                "boost": 31.57
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 2,
-              "headline": "יולי אדלשטיין עוזב את הליכוד אחרי שני עשורים",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "פוליטיקה",
-              "class": "hard",
-              "ageMinutes": 43,
-              "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-901380",
-              "trendMatch": {
-                "trend": "יולי אדלשטיין: לא אתמודד בפריימריז בליכוד, יוצא לדרך פוליטית חדשה",
-                "clusterKey": "יולי אדלשטיין",
-                "domain": "חדשות",
-                "externalMentions": 2,
-                "sourceCount": 2,
-                "sources": [
-                  "ynet",
-                  "הארץ"
-                ],
-                "discoveryTypes": [
-                  "WEB"
-                ],
-                "mentionedInFeed": true,
-                "latestAt": "2026-07-04T17:00:59.884155+00:00",
-                "sampleUrl": "https://www.haaretz.co.il/news/elections/2026-07-03/ty-article/.premium/0000019f-2849-d48a-a19f-28e99bad0000",
-                "overlapTokens": [
-                  "אדלשטיין",
-                  "חדשה",
-                  "יולי",
-                  "לדרך",
-                  "פוליטית"
-                ],
-                "score": 37.8,
-                "boost": 37.8
-              },
-              "queueScore": 35.0
-            },
-            {
-              "rank": 3,
-              "headline": "דני איילון תוקף את ההבנות בין ארה\"ב לאיראן",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 43,
-              "url": "https://www.jpost.com/israel-news/article-901382",
-              "trendMatch": null,
-              "queueScore": 25.0
-            },
-            {
-              "rank": 4,
-              "headline": "אלביט תגייס עוד 2,000 עובדים עד סוף השנה",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 43,
-              "url": "https://www.jpost.com/israel-news/defense-news/article-901384",
-              "trendMatch": null,
-              "queueScore": 25.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 63,
-      "afterHealthScore": 64,
-      "replacementReadiness": {
-        "score": 56,
-        "threshold": 80,
-        "components": {
-          "freshness": 9.8,
-          "newsinessTop10": 12.5,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 8.0,
-          "criticalBlockersClear": 0.0
-        },
-        "criticalBlockers": [
-          "top_item_stale_over_25m",
-          "newsiness_top10_below_7",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": -3,
-        "softTop10": -1,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 2,
-        "trendMatchedTop10": -1,
-        "trendMatchedTop20": 1,
-        "healthScore": 1
-      }
-    },
-    {
-      "generatedAt": "2026-07-04T17:20:56+00:00",
-      "feedFingerprint": "3824804052747701157",
-      "before": {
-        "newsinessTop10": 4,
-        "softTop10": 2,
-        "otherTop10": 4,
-        "top5Under60": 2,
-        "top10Under60": 2,
-        "top12Under60": 2,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 8,
-        "dominantSource": {
-          "name": "וואלה",
-          "count": 8
-        },
-        "importantMissingTop20": [
-          "N12",
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "גלובס",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "וואלה",
-            "count": 8
-          },
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 1
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 1
-          },
-          {
-            "name": "הארץ",
-            "count": 1
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 7,
-        "trendGapMatchedTop20": 7,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 26,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "אלביט מגייסת עוד 2,000 עובדים בצל הביקוש הביטחוני",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/defense-news/article-901384",
-              "trendMatch": null,
-              "queueScore": 44.0
-            }
-          ]
-        }
-      },
-      "after": {
-        "newsinessTop10": 4,
-        "softTop10": 2,
-        "otherTop10": 4,
-        "top5Under60": 2,
-        "top10Under60": 2,
-        "top12Under60": 2,
-        "topItemAgeMinutes": 3,
-        "uniqueSourcesTop20": 10,
-        "dominantSource": {
-          "name": "השירות המטאורולוגי",
-          "count": 4
-        },
-        "importantMissingTop20": [
-          "ynet",
-          "BBC",
-          "Guardian",
-          "NYT",
-          "ישראל היום"
-        ],
-        "duplicateTop20": 0,
-        "topSources": [
-          {
-            "name": "השירות המטאורולוגי",
-            "count": 4
-          },
-          {
-            "name": "וואלה",
-            "count": 3
-          },
-          {
-            "name": "Jerusalem Post",
-            "count": 2
-          },
-          {
-            "name": "דוברות משטרת ישראל",
-            "count": 2
-          },
-          {
-            "name": "דובר צה״ל",
-            "count": 2
-          },
-          {
-            "name": "כיפה",
-            "count": 2
-          },
-          {
-            "name": "הארץ",
-            "count": 2
-          },
-          {
-            "name": "מעריב",
-            "count": 1
-          }
-        ],
-        "trendMatchedTop10": 2,
-        "trendMatchedTop20": 9,
-        "trendGapMatchedTop20": 9,
-        "continuousPublishing": {
-          "targetMinutes": 10,
-          "estimatedVisibleChangeMinutes": 30,
-          "score": 26,
-          "readyCount": 1,
-          "hardReadyCount": 1,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 1,
-          "blockers": [
-            "ready_queue_below_3",
-            "hard_ready_below_2",
-            "ready_sources_below_2"
-          ],
-          "readyQueue": [
-            {
-              "rank": 1,
-              "headline": "אלביט מגייסת עוד 2,000 עובדים בצל הביקוש הביטחוני",
-              "source": "The Jerusalem Post - Israel News",
-              "canonicalSource": "Jerusalem Post",
-              "category": "ביטחון",
-              "class": "hard",
-              "ageMinutes": 3,
-              "url": "https://www.jpost.com/israel-news/defense-news/article-901384",
-              "trendMatch": null,
-              "queueScore": 44.0
-            }
-          ]
-        }
-      },
-      "beforeHealthScore": 48,
-      "afterHealthScore": 56,
-      "replacementReadiness": {
-        "score": 62,
-        "threshold": 80,
-        "components": {
-          "freshness": 11.4,
-          "newsinessTop10": 12.5,
-          "top20Quality": 15.5,
-          "sourceBalance": 10.0,
-          "trendSignalUse": 8.0,
-          "criticalBlockersClear": 5.0
-        },
-        "criticalBlockers": [
-          "newsiness_top10_below_7",
-          "top12_under60_below_9"
-        ],
-        "readyNow": false
-      },
-      "alizaReview": {
-        "status": "ok",
-        "score": 88,
-        "scoreSource": "explicit_report_score",
-        "readyForMain": false,
-        "improvingVsBaseline": true,
-        "summaryLine": "טוב",
-        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
-        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
-        "metrics": {
-          "ציון עליזה": 88,
-          "generatedAt": 2026,
-          "afterHealthScore": 60,
-          "healthDelta": 25,
-          "replacementReadiness score": 52,
-          "rollingScore": 64.59,
-          "newsinessTop10": 7,
-          "softTop10": 3,
-          "top12Under60": 0,
-          "trendMatchedTop10": 6,
-          "trendMatchedTop20": 10,
-          "dominantSource": 4,
-          "uniqueSourcesTop20": 11,
-          "estimatedVisibleChangeMinutes": 40,
-          "readyCount": 0,
-          "hardReadyCount": 0,
-          "trendReadyCount": 0,
-          "uniqueReadySources": 0,
-          "blockers": 3
-        },
-        "recommendedActions": [
-          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
-          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
-          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
-        ],
-        "title": "TT RR Simulation Review — 2026-06-25 13:00"
-      },
-      "delta": {
-        "newsinessTop10": 0,
-        "softTop10": 0,
-        "top12Under60": 0,
-        "uniqueSourcesTop20": 2,
-        "trendMatchedTop10": 1,
-        "trendMatchedTop20": 2,
-        "healthScore": 8
-      }
-    },
     {
       "generatedAt": "2026-07-04T17:31:57+00:00",
       "feedFingerprint": "7357271627165838649",
@@ -58583,6 +57921,1312 @@
         "trendMatchedTop10": 1,
         "trendMatchedTop20": 3,
         "healthScore": 7
+      }
+    },
+    {
+      "generatedAt": "2026-07-30T15:03:45+00:00",
+      "feedFingerprint": "6804499782620358947",
+      "before": {
+        "newsinessTop10": 6,
+        "softTop10": 3,
+        "otherTop10": 1,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 9,
+        "uniqueSourcesTop20": 7,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 10
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 10
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "ישראל היום",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 7,
+        "trendGapMatchedTop20": 2,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 100,
+          "readyCount": 13,
+          "hardReadyCount": 12,
+          "trendReadyCount": 6,
+          "uniqueReadySources": 5,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 9,
+              "headline": "112 מיליון שקל אושרו לאתרים ארכיאולוגיים בגדה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.haaretz.co.il/news/politics/2026-07-30/ty-article/.premium/0000019f-b1a3-dfac-a5df-b9f30ad00000",
+              "trendMatch": {
+                "trend": "שחקן חיזוק ב-6.5 מיליון דולר: הסטארט-אפ הישראלי שכובש את הספורט העולמי",
+                "clusterKey": "מיליון דולר",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:06:33+00:00",
+                "sampleUrl": "https://www.israelhayom.co.il/tech/tech-news/article/21092746",
+                "overlapTokens": [
+                  "חדשות",
+                  "מיליון"
+                ],
+                "score": 15.84,
+                "boost": 15.84
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 3,
+              "headline": "שני ישראלים נעצרו אחרי שחצו לשטח סוריה מהר החרמון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 16,
+              "url": "https://www.jpost.com/israel-news/article-904153",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 4,
+              "headline": "אזרח יליד איראן נדרש לעזוב את ישראל למרות משפחתו בארץ",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 16,
+              "url": "https://www.jpost.com/israel-news/article-904152",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 5,
+              "headline": "כתב האישום נגד עו\"ד עידן דביר הורחב למתלוננת נוספת",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "משפט",
+              "class": "hard",
+              "ageMinutes": 16,
+              "url": "https://news.walla.co.il/item/3857405",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 12,
+              "headline": "מרכז הליכוד אישר את דרישות נתניהו לפריימריז",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3857402",
+              "trendMatch": {
+                "trend": "שרון השכל זומנה לעדות בלהב 433 על הבחירות למבקר המדינה",
+                "clusterKey": "השכל זומנה",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T11:44:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3857302",
+                "overlapTokens": [
+                  "הבחירות",
+                  "חדשות"
+                ],
+                "score": 18.75,
+                "boost": 18.75
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 13,
+              "headline": "איזנקוט נמנע מתמיכה בהכרזה על קטאר כמדינת אויב",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3857389",
+              "trendMatch": {
+                "trend": "ישראל וחמאס בדרך להסכם: \"יש נוסחה לסוגיית הנשק\"",
+                "clusterKey": "וחמאס בדרך",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "גלובס"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-07-30T10:30:21+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hj2hmoubmx",
+                "overlapTokens": [
+                  "חדשות",
+                  "ישראל"
+                ],
+                "score": 22.55,
+                "boost": 22.55
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 14,
+              "headline": "כתב אישום: פרידריך תכנן ורצח את הרב עמוס גואטה",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3857401",
+              "trendMatch": {
+                "trend": "הותר לפרסום: הנאשם ברצח הרב גואטה הוא יוסף חיים פרידריך",
+                "clusterKey": "ברצח הרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T17:18:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3857401",
+                "overlapTokens": [
+                  "ברצח",
+                  "גואטה",
+                  "הותר",
+                  "הנאשם",
+                  "הרב",
+                  "חדשות",
+                  "חיים",
+                  "יוסף"
+                ],
+                "score": 83.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "אלפי מהגרים חצו ממרוקו למובלעת הספרדית סאוטה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 23,
+              "url": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+              "trendMatch": {
+                "trend": "תמונות דרמטיות מספרד: אלפי מהגרים פרצו את הגבול ממרוקו",
+                "clusterKey": "אלפי מהגרים",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:40:44+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+                "overlapTokens": [
+                  "אלפי",
+                  "דרמטיות",
+                  "הגבול",
+                  "מהגרים",
+                  "ממרוקו",
+                  "מספרד",
+                  "פרצו",
+                  "תמונות"
+                ],
+                "score": 89.68,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 11,
+        "topItemAgeMinutes": 23,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "ynet",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ynet",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 3
+          },
+          {
+            "name": "ישראל היום",
+            "count": 2
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "הארץ",
+            "count": 1
+          },
+          {
+            "name": "גלובס",
+            "count": 1
+          },
+          {
+            "name": "JNS",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 6,
+        "trendMatchedTop20": 13,
+        "trendGapMatchedTop20": 4,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 13,
+          "hardReadyCount": 12,
+          "trendReadyCount": 6,
+          "uniqueReadySources": 5,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 6,
+              "headline": "112 מיליון שקל אושרו לאתרים ארכיאולוגיים בגדה",
+              "source": "הארץ - חדשות",
+              "canonicalSource": "הארץ",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 26,
+              "url": "https://www.haaretz.co.il/news/politics/2026-07-30/ty-article/.premium/0000019f-b1a3-dfac-a5df-b9f30ad00000",
+              "trendMatch": {
+                "trend": "שחקן חיזוק ב-6.5 מיליון דולר: הסטארט-אפ הישראלי שכובש את הספורט העולמי",
+                "clusterKey": "מיליון דולר",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:06:33+00:00",
+                "sampleUrl": "https://www.israelhayom.co.il/tech/tech-news/article/21092746",
+                "overlapTokens": [
+                  "חדשות",
+                  "מיליון"
+                ],
+                "score": 15.84,
+                "boost": 15.84
+              },
+              "queueScore": 41.0
+            },
+            {
+              "rank": 4,
+              "headline": "שני ישראלים נעצרו אחרי שחצו לשטח סוריה מהר החרמון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 16,
+              "url": "https://www.jpost.com/israel-news/article-904153",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 5,
+              "headline": "אזרח יליד איראן נדרש לעזוב את ישראל למרות משפחתו בארץ",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 16,
+              "url": "https://www.jpost.com/israel-news/article-904152",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 11,
+              "headline": "כתב האישום נגד עו\"ד עידן דביר הורחב למתלוננת נוספת",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "משפט",
+              "class": "hard",
+              "ageMinutes": 16,
+              "url": "https://news.walla.co.il/item/3857405",
+              "trendMatch": null,
+              "queueScore": 38.0
+            },
+            {
+              "rank": 2,
+              "headline": "מרכז הליכוד אישר את דרישות נתניהו לפריימריז",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3857402",
+              "trendMatch": {
+                "trend": "שרון השכל זומנה לעדות בלהב 433 על הבחירות למבקר המדינה",
+                "clusterKey": "השכל זומנה",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T11:44:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/break/3857302",
+                "overlapTokens": [
+                  "הבחירות",
+                  "חדשות"
+                ],
+                "score": 18.75,
+                "boost": 18.75
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "כתב אישום: פרידריך תכנן ורצח את הרב עמוס גואטה",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "פלילים",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3857401",
+              "trendMatch": {
+                "trend": "הותר לפרסום: הנאשם ברצח הרב גואטה הוא יוסף חיים פרידריך",
+                "clusterKey": "ברצח הרב",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T17:18:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3857401",
+                "overlapTokens": [
+                  "ברצח",
+                  "גואטה",
+                  "הותר",
+                  "הנאשם",
+                  "הרב",
+                  "חדשות",
+                  "חיים",
+                  "יוסף"
+                ],
+                "score": 83.57,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 7,
+              "headline": "איזנקוט נמנע מתמיכה בהכרזה על קטאר כמדינת אויב",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 31,
+              "url": "https://news.walla.co.il/item/3857389",
+              "trendMatch": {
+                "trend": "ישראל וחמאס בדרך להסכם: \"יש נוסחה לסוגיית הנשק\"",
+                "clusterKey": "וחמאס בדרך",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "גלובס"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-07-30T10:30:21+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hj2hmoubmx",
+                "overlapTokens": [
+                  "חדשות",
+                  "ישראל"
+                ],
+                "score": 22.55,
+                "boost": 22.55
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 1,
+              "headline": "אלפי מהגרים חצו ממרוקו למובלעת הספרדית סאוטה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 23,
+              "url": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+              "trendMatch": {
+                "trend": "תמונות דרמטיות מספרד: אלפי מהגרים פרצו את הגבול ממרוקו",
+                "clusterKey": "אלפי מהגרים",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:40:44+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+                "overlapTokens": [
+                  "אלפי",
+                  "דרמטיות",
+                  "הגבול",
+                  "מהגרים",
+                  "ממרוקו",
+                  "מספרד",
+                  "פרצו",
+                  "תמונות"
+                ],
+                "score": 89.68,
+                "boost": 38.0
+              },
+              "queueScore": 33.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 70,
+      "afterHealthScore": 91,
+      "replacementReadiness": {
+        "score": 95,
+        "threshold": 80,
+        "components": {
+          "freshness": 19.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 4,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 3,
+        "trendMatchedTop10": 3,
+        "trendMatchedTop20": 6,
+        "healthScore": 21
+      }
+    },
+    {
+      "generatedAt": "2026-07-30T15:25:48+00:00",
+      "feedFingerprint": "5818575751222882033",
+      "before": {
+        "newsinessTop10": 7,
+        "softTop10": 3,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 12,
+        "topItemAgeMinutes": 17,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "וואלה",
+          "count": 6
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "וואלה",
+            "count": 6
+          },
+          {
+            "name": "ישראל היום",
+            "count": 4
+          },
+          {
+            "name": "כיפה",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "JNS",
+            "count": 1
+          },
+          {
+            "name": "סרוגים",
+            "count": 1
+          },
+          {
+            "name": "ynet",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 5,
+        "trendMatchedTop20": 10,
+        "trendGapMatchedTop20": 6,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 11,
+          "hardReadyCount": 10,
+          "trendReadyCount": 5,
+          "uniqueReadySources": 8,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "מור דקל מצטרפת למפלגת ישראל ביתנו",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 17,
+              "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228831-0/",
+              "trendMatch": {
+                "trend": "ישראל וחמאס בדרך להסכם: \"יש נוסחה לסוגיית הנשק\"",
+                "clusterKey": "בדרך להסכם",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "גלובס"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-07-30T10:30:21+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hj2hmoubmx",
+                "overlapTokens": [
+                  "חדשות",
+                  "ישראל"
+                ],
+                "score": 22.55,
+                "boost": 22.55
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "ישראל מציבה פירוז מלא כתנאי לנסיגה בעזה",
+              "source": "ערוץ 7 / INN עברית",
+              "canonicalSource": "ערוץ 7 / INN עברית",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 17,
+              "url": "https://www.inn.co.il/flashes/1125029",
+              "trendMatch": {
+                "trend": "למרות המחלוקות על פירוק חמאס - התקדמות בשיחות בין חמאס למתווכות | דיווח",
+                "clusterKey": "חמאס למתווכות",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-07-30T14:28:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3857363",
+                "overlapTokens": [
+                  "חמאס",
+                  "פירוק"
+                ],
+                "score": 23.4,
+                "boost": 23.4
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 7,
+              "headline": "מח\"ט גבעתי גינה את נטישת הלוחמים בשדה תימן",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.israelhayom.co.il/news/defense/article/21095680",
+              "trendMatch": {
+                "trend": "\"אין לכך מקום בצה\"ל\": מח\"ט גבעתי מגיב לנפקדות ההמונית בשדה תימן",
+                "clusterKey": "בשדה תימן",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:48:51+00:00",
+                "sampleUrl": "https://www.israelhayom.co.il/news/defense/article/21095680",
+                "overlapTokens": [
+                  "אין",
+                  "בצה",
+                  "בשדה",
+                  "גבעתי",
+                  "ההמונית",
+                  "לכך",
+                  "לנפקדות",
+                  "מגיב"
+                ],
+                "score": 117.0,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 3,
+              "headline": "לשכת ממדאני מכחישה את גרסת רם עמנואל לפגישה",
+              "source": "JNS - Jewish News Syndicate",
+              "canonicalSource": "JNS",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 21,
+              "url": "https://www.jns.org/news/u-s-news/mamdanis-office-disputes-rahm-emanuels-account-of-private-meeting",
+              "trendMatch": {
+                "trend": "More than 600 US military service members injured since Iran War began in February The latest figure includes casualties from Operation Fury and ",
+                "clusterKey": "iran war",
+                "domain": "אקטואליה בעולם",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "BBC",
+                  "Jerusalem Post"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T15:25:47.979218+00:00",
+                "sampleUrl": "https://www.bbc.com/news/articles/c998pzd1e8xo",
+                "overlapTokens": [
+                  "אקטואליה",
+                  "בעולם"
+                ],
+                "score": 14.73,
+                "boost": 14.73
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 14,
+              "headline": "אלפי מהגרים חצו ממרוקו למובלעת הספרדית סאוטה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 45,
+              "url": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+              "trendMatch": {
+                "trend": "תמונות דרמטיות מספרד: אלפי מהגרים פרצו את הגבול ממרוקו",
+                "clusterKey": "אלפי מהגרים",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:40:44+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+                "overlapTokens": [
+                  "אלפי",
+                  "דרמטיות",
+                  "הגבול",
+                  "מהגרים",
+                  "ממרוקו",
+                  "מספרד",
+                  "פרצו",
+                  "תמונות"
+                ],
+                "score": 89.68,
+                "boost": 38.0
+              },
+              "queueScore": 27.0
+            },
+            {
+              "rank": 8,
+              "headline": "שני ישראלים נעצרו אחרי שחצו לשטח סוריה מהר החרמון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.jpost.com/israel-news/article-904153",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 9,
+              "headline": "אזרח יליד איראן נדרש לעזוב את ישראל למרות משפחתו בארץ",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.jpost.com/israel-news/article-904152",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 10,
+              "headline": "כתב האישום נגד עו\"ד עידן דביר הורחב למתלוננת נוספת",
+              "source": "וואלה חדשות",
+              "canonicalSource": "וואלה",
+              "category": "משפט",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://news.walla.co.il/item/3857405",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "after": {
+        "newsinessTop10": 10,
+        "softTop10": 0,
+        "otherTop10": 0,
+        "top5Under60": 5,
+        "top10Under60": 10,
+        "top12Under60": 11,
+        "topItemAgeMinutes": 17,
+        "uniqueSourcesTop20": 10,
+        "dominantSource": {
+          "name": "ישראל היום",
+          "count": 4
+        },
+        "importantMissingTop20": [
+          "N12",
+          "מעריב",
+          "BBC",
+          "Guardian",
+          "NYT"
+        ],
+        "duplicateTop20": 0,
+        "topSources": [
+          {
+            "name": "ישראל היום",
+            "count": 4
+          },
+          {
+            "name": "וואלה",
+            "count": 4
+          },
+          {
+            "name": "ynet",
+            "count": 3
+          },
+          {
+            "name": "JNS",
+            "count": 2
+          },
+          {
+            "name": "Jerusalem Post",
+            "count": 2
+          },
+          {
+            "name": "ערוץ 7 / INN עברית",
+            "count": 1
+          },
+          {
+            "name": "כיפה",
+            "count": 1
+          },
+          {
+            "name": "סרוגים",
+            "count": 1
+          }
+        ],
+        "trendMatchedTop10": 6,
+        "trendMatchedTop20": 13,
+        "trendGapMatchedTop20": 5,
+        "continuousPublishing": {
+          "targetMinutes": 10,
+          "estimatedVisibleChangeMinutes": 10,
+          "score": 96,
+          "readyCount": 11,
+          "hardReadyCount": 10,
+          "trendReadyCount": 5,
+          "uniqueReadySources": 8,
+          "blockers": [],
+          "readyQueue": [
+            {
+              "rank": 1,
+              "headline": "ישראל מציבה פירוז מלא כתנאי לנסיגה בעזה",
+              "source": "ערוץ 7 / INN עברית",
+              "canonicalSource": "ערוץ 7 / INN עברית",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 17,
+              "url": "https://www.inn.co.il/flashes/1125029",
+              "trendMatch": {
+                "trend": "למרות המחלוקות על פירוק חמאס - התקדמות בשיחות בין חמאס למתווכות | דיווח",
+                "clusterKey": "חמאס למתווכות",
+                "domain": "חדשות",
+                "externalMentions": 5,
+                "sourceCount": 2,
+                "sources": [
+                  "הארץ",
+                  "וואלה"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-07-30T14:28:00+00:00",
+                "sampleUrl": "https://news.walla.co.il/item/3857363",
+                "overlapTokens": [
+                  "חמאס",
+                  "פירוק"
+                ],
+                "score": 23.4,
+                "boost": 23.4
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 2,
+              "headline": "מור דקל מצטרפת למפלגת ישראל ביתנו",
+              "source": "כיפה - חדשות",
+              "canonicalSource": "כיפה",
+              "category": "פוליטיקה",
+              "class": "hard",
+              "ageMinutes": 17,
+              "url": "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228831-0/",
+              "trendMatch": {
+                "trend": "ישראל וחמאס בדרך להסכם: \"יש נוסחה לסוגיית הנשק\"",
+                "clusterKey": "בדרך להסכם",
+                "domain": "חדשות",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "ynet",
+                  "גלובס"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": false,
+                "latestAt": "2026-07-30T10:30:21+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/hj2hmoubmx",
+                "overlapTokens": [
+                  "חדשות",
+                  "ישראל"
+                ],
+                "score": 22.55,
+                "boost": 22.55
+              },
+              "queueScore": 48.0
+            },
+            {
+              "rank": 3,
+              "headline": "מח\"ט גבעתי גינה את נטישת הלוחמים בשדה תימן",
+              "source": "ישראל היום - כל הכתבות",
+              "canonicalSource": "ישראל היום",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 36,
+              "url": "https://www.israelhayom.co.il/news/defense/article/21095680",
+              "trendMatch": {
+                "trend": "\"אין לכך מקום בצה\"ל\": מח\"ט גבעתי מגיב לנפקדות ההמונית בשדה תימן",
+                "clusterKey": "בשדה תימן",
+                "domain": "חדשות",
+                "externalMentions": 6,
+                "sourceCount": 3,
+                "sources": [
+                  "ynet",
+                  "וואלה",
+                  "ישראל היום"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:48:51+00:00",
+                "sampleUrl": "https://www.israelhayom.co.il/news/defense/article/21095680",
+                "overlapTokens": [
+                  "אין",
+                  "בצה",
+                  "בשדה",
+                  "גבעתי",
+                  "ההמונית",
+                  "לכך",
+                  "לנפקדות",
+                  "מגיב"
+                ],
+                "score": 117.0,
+                "boost": 38.0
+              },
+              "queueScore": 35.0
+            },
+            {
+              "rank": 5,
+              "headline": "לשכת ממדאני מכחישה את גרסת רם עמנואל לפגישה",
+              "source": "JNS - Jewish News Syndicate",
+              "canonicalSource": "JNS",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 21,
+              "url": "https://www.jns.org/news/u-s-news/mamdanis-office-disputes-rahm-emanuels-account-of-private-meeting",
+              "trendMatch": {
+                "trend": "More than 600 US military service members injured since Iran War began in February The latest figure includes casualties from Operation Fury and ",
+                "clusterKey": "iran war",
+                "domain": "אקטואליה בעולם",
+                "externalMentions": 3,
+                "sourceCount": 2,
+                "sources": [
+                  "BBC",
+                  "Jerusalem Post"
+                ],
+                "discoveryTypes": [
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T15:25:47.979218+00:00",
+                "sampleUrl": "https://www.bbc.com/news/articles/c998pzd1e8xo",
+                "overlapTokens": [
+                  "אקטואליה",
+                  "בעולם"
+                ],
+                "score": 14.73,
+                "boost": 14.73
+              },
+              "queueScore": 33.0
+            },
+            {
+              "rank": 4,
+              "headline": "אלפי מהגרים חצו ממרוקו למובלעת הספרדית סאוטה",
+              "source": "ynet - כל ערוץ החדשות",
+              "canonicalSource": "ynet",
+              "category": "אקטואליה בעולם",
+              "class": "hard",
+              "ageMinutes": 45,
+              "url": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+              "trendMatch": {
+                "trend": "תמונות דרמטיות מספרד: אלפי מהגרים פרצו את הגבול ממרוקו",
+                "clusterKey": "אלפי מהגרים",
+                "domain": "חדשות",
+                "externalMentions": 4,
+                "sourceCount": 3,
+                "sources": [
+                  "N12",
+                  "ynet",
+                  "סרוגים"
+                ],
+                "discoveryTypes": [
+                  "RSS",
+                  "WEB"
+                ],
+                "mentionedInFeed": true,
+                "latestAt": "2026-07-30T14:40:44+00:00",
+                "sampleUrl": "https://www.ynet.co.il/news/article/bjaxlrdrfe",
+                "overlapTokens": [
+                  "אלפי",
+                  "דרמטיות",
+                  "הגבול",
+                  "מהגרים",
+                  "ממרוקו",
+                  "מספרד",
+                  "פרצו",
+                  "תמונות"
+                ],
+                "score": 89.68,
+                "boost": 38.0
+              },
+              "queueScore": 27.0
+            },
+            {
+              "rank": 6,
+              "headline": "חטיבה 188 סיכמה שמונה חודשי לחימה בדרום הרצועה",
+              "source": "סרוגים - כל הכתבות",
+              "canonicalSource": "סרוגים",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.srugim.co.il/101007439-10-מנהרות-הושמדו-עשרות-מחבלים-חוסלו",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 7,
+              "headline": "שני ישראלים נעצרו אחרי שחצו לשטח סוריה מהר החרמון",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.jpost.com/israel-news/article-904153",
+              "trendMatch": null,
+              "queueScore": 25.0
+            },
+            {
+              "rank": 8,
+              "headline": "אזרח יליד איראן נדרש לעזוב את ישראל למרות משפחתו בארץ",
+              "source": "The Jerusalem Post - Israel News",
+              "canonicalSource": "Jerusalem Post",
+              "category": "ביטחון",
+              "class": "hard",
+              "ageMinutes": 38,
+              "url": "https://www.jpost.com/israel-news/article-904152",
+              "trendMatch": null,
+              "queueScore": 25.0
+            }
+          ]
+        }
+      },
+      "beforeHealthScore": 73,
+      "afterHealthScore": 91,
+      "replacementReadiness": {
+        "score": 95,
+        "threshold": 80,
+        "components": {
+          "freshness": 19.5,
+          "newsinessTop10": 25.0,
+          "top20Quality": 15.5,
+          "sourceBalance": 10.0,
+          "trendSignalUse": 10.0,
+          "criticalBlockersClear": 15.0
+        },
+        "criticalBlockers": [],
+        "readyNow": true
+      },
+      "alizaReview": {
+        "status": "ok",
+        "score": 88,
+        "scoreSource": "explicit_report_score",
+        "readyForMain": false,
+        "improvingVsBaseline": true,
+        "summaryLine": "טוב",
+        "reportPath": "/root/.openclaw/workspace/poanta-reports/tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportName": "tt-rr-simulation-review-2026-06-25-1300.md",
+        "reportGeneratedAt": "2026-06-25T09:53:39+00:00",
+        "metrics": {
+          "ציון עליזה": 88,
+          "generatedAt": 2026,
+          "afterHealthScore": 60,
+          "healthDelta": 25,
+          "replacementReadiness score": 52,
+          "rollingScore": 64.59,
+          "newsinessTop10": 7,
+          "softTop10": 3,
+          "top12Under60": 0,
+          "trendMatchedTop10": 6,
+          "trendMatchedTop20": 10,
+          "dominantSource": 4,
+          "uniqueSourcesTop20": 11,
+          "estimatedVisibleChangeMinutes": 40,
+          "readyCount": 0,
+          "hardReadyCount": 0,
+          "trendReadyCount": 0,
+          "uniqueReadySources": 0,
+          "blockers": 3
+        },
+        "recommendedActions": [
+          "להרחיב את תור המועמדים המוכן (ready queue) ולהוסיף משקל גבוה לטריות עד 10 דקות.",
+          "להקשיח הגבלות על מקור דומיננטי, במיוחד וואלה.",
+          "להוסיף עונש כדי למנוע תוכן רך מעל למקומות גבוהים לעלייה ב-hard-news."
+        ],
+        "title": "TT RR Simulation Review — 2026-06-25 13:00"
+      },
+      "delta": {
+        "newsinessTop10": 3,
+        "softTop10": -3,
+        "top12Under60": -1,
+        "uniqueSourcesTop20": 0,
+        "trendMatchedTop10": 1,
+        "trendMatchedTop20": 3,
+        "healthScore": 18
       }
     }
   ]

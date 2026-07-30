@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feed B Compare</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101216;--panel:#171b22;--line:#2a313d;--text:#f4f6fa;--muted:#a8b0bd;--accent:#f4c542;--good:#4fd18b;--bad:#ff7676}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Hebrew",sans-serif;line-height:1.5}
+    main{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:22px 0 36px}
+    header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:16px}
+    h1{margin:0;font-size:26px;letter-spacing:0}p{margin:4px 0;color:var(--muted)}a{color:var(--accent)}
+    .status{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(244,197,66,.28);background:rgba(244,197,66,.08);padding:8px 10px;border-radius:8px;color:var(--accent);font-weight:800;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;min-height:104px}
+    .metric b{display:block;font-size:30px;line-height:1.1}.metric span{display:block;margin-top:8px;font-weight:800}.metric small{display:block;color:var(--muted);margin-top:5px}
+    section{margin-top:18px}h2{font-size:18px;margin:0 0 9px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+    table{width:100%;border-collapse:collapse}td{padding:9px;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}td:last-child{text-align:left;font-weight:800}
+    .samples{list-style:none;margin:0;padding:0;display:grid;gap:9px}.samples li{border-bottom:1px solid var(--line);padding:0 0 9px}.samples li:last-child{border-bottom:0;padding-bottom:0}
+    .samples strong{display:block}.samples span{display:block;color:var(--muted);font-size:13px;margin-top:3px}.empty{margin:0;color:var(--muted)}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.links a{border:1px solid var(--line);border-radius:8px;padding:7px 9px;text-decoration:none;color:var(--text);background:#12161c}
+    @media(max-width:760px){header{display:block}.status{margin-top:12px}.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:22px}.metric b{font-size:24px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Feed B Compare</h1>
+      <p>דוח חי לפיילוט Feed B מול Feed A. עריכת Codex מופעלת כש-auth זמין, בלי פרסום לראשי ובלי החלפה של Feed A.</p>
+      <p>נוצר: 2026-07-30T18:23:05+03:00 · Feed B run: feed-b-20260730T182305+0300</p>
+    </div>
+    <div class="status">Codex editor sidecar</div>
+  </header>
+
+  <div class="grid">
+    <article class="metric"><b>11</b><span>Feed B בדק</span><small>מועמדים גולמיים</small></article>
+    <article class="metric"><b>7</b><span>עברו ל-editor</span><small>Codex כש-auth זמין</small></article>
+    <article class="metric"><b>4</b><span>נדחו לפני AI</span><small>חיסכון ראשוני</small></article>
+    <article class="metric"><b>0</b><span>טוקנים חכמים</span><small>בשלב זה 0</small></article>
+    <article class="metric"><b>3,733</b><span>Feed A פריטים</span><small>updatedAt: 2026-07-30T18:21:41+03:00</small></article>
+    <article class="metric"><b>500</b><span>Feed A חלון אחרון</span><small>24 שעות</small></article>
+    <article class="metric"><b>7</b><span>B עבר ולא ב-A</span><small>מועמדים לבדיקה ידנית</small></article>
+    <article class="metric"><b>500</b><span>A לא עבר ב-B</span><small>פערי איכות/קלט</small></article>
+  </div>
+
+  <section class="panel">
+    <h2>סיבות דחייה לפני AI</h2>
+    <table><tr><td>duplicate_with_feed_b</td><td>4</td></tr></table>
+  </section>
+
+  <section class="panel">
+    <h2>Feed B העביר אבל לא נמצא כרגע ב-Feed A</h2>
+    <ul class="samples"><li><strong>הברית בין קשת 12 ליוריסטוקרטיה</strong><span>וואלה חדשות - דעות ופרשנויות · 2026-07-30T18:22:29+03:00 <a href="https://news.walla.co.il/item/3857385" target="_blank" rel="noopener">מקור</a></span></li><li><strong>רני בלגה חתם בגליל עליון: "מביא מנהיגות, אינטנסיביות ואופי"</strong><span>וואלה ספורט · 2026-07-30T18:22:29+03:00 <a href="https://sports.walla.co.il/item/3857410" target="_blank" rel="noopener">מקור</a></span></li><li><strong>בספורט1: וארלה בהרכב מכבי תל אביב נגד שריף</strong><span>וואלה ספורט · 2026-07-30T18:22:29+03:00 <a href="https://sports.walla.co.il/item/3857251" target="_blank" rel="noopener">מקור</a></span></li><li><strong>דניאל תייס וארמוני ברוקס יעזבו? טוני פארקר בהתייחסות ראשונה לבלגן בווילרבאן</strong><span>וואלה ספורט · 2026-07-30T18:22:29+03:00 <a href="https://sports.walla.co.il/item/3857408" target="_blank" rel="noopener">מקור</a></span></li><li><strong>דיווח: הסכמה פה אחד באופ"א להחרים את המונדיאל</strong><span>וואלה ספורט · 2026-07-30T18:22:29+03:00 <a href="https://sports.walla.co.il/item/3857411" target="_blank" rel="noopener">מקור</a></span></li><li><strong>"הגעגוע לכדור האמיתי סיחרר אותי, החלמתי במהירות מפליטת הכדור"</strong><span>וואלה ספורט - כדורגל ישראלי · 2026-07-30T18:00:00+03:00 <a href="https://sports.walla.co.il/item/3857258" target="_blank" rel="noopener">מקור</a></span></li><li><strong>המחוזי: רכישת עבר של NSO בוצעה באמצעות "עסקה מלאכותית" — כדי להתחמק ממס</strong><span>דה מרקר - כל הכתבות · 2026-07-30T18:03:29+03:00 <a href="https://www.themarker.com/technation/2026-07-30/ty-article/.premium/0000019f-b35e-da04-a7ff-bb5e60170000" target="_blank" rel="noopener">מקור</a></span></li></ul>
+  </section>
+
+  <section class="panel">
+    <h2>Feed A אחרון שלא נמצא ברשימת Feed B שעברה</h2>
+    <ul class="samples"><li><strong>מור דקל מצטרפת למפלגת ישראל ביתנו</strong><span>כיפה - חדשות · 2026-07-30T18:08:48+03:00 <a href="https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228831-0/" target="_blank" rel="noopener">מקור</a></span></li><li><strong>ישראל מציבה פירוז מלא כתנאי לנסיגה בעזה</strong><span>ערוץ 7 / INN עברית · 2026-07-30T18:07:52+03:00 <a href="https://www.inn.co.il/flashes/1125029" target="_blank" rel="noopener">מקור</a></span></li><li><strong>לשכת ממדאני מכחישה את גרסת רם עמנואל לפגישה</strong><span>JNS - Jewish News Syndicate · 2026-07-30T18:04:17+03:00 <a href="https://www.jns.org/news/u-s-news/mamdanis-office-disputes-rahm-emanuels-account-of-private-meeting" target="_blank" rel="noopener">מקור</a></span></li><li><strong>ברצלונה נכנסה למעקב אחר דניאל תייס</strong><span>וואלה ספורט - כדורסל · 2026-07-30T17:53:49+03:00 <a href="https://sports.walla.co.il/item/3857404" target="_blank" rel="noopener">מקור</a></span></li><li><strong>פנאתינייקוס בנתה סגל שיא ביותר מ-60 מיליון יורו</strong><span>וואלה ספורט · 2026-07-30T17:53:48+03:00 <a href="https://sports.walla.co.il/item/3857403" target="_blank" rel="noopener">מקור</a></span></li><li><strong>עידן רייכל יוביל פורמט דוקו חדש ברשת 13</strong><span>ישראל היום - כל הכתבות · 2026-07-30T17:51:39+03:00 <a href="https://www.israelhayom.co.il/culture/tv/article/21095697" target="_blank" rel="noopener">מקור</a></span></li><li><strong>מח"ט גבעתי גינה את נטישת הלוחמים בשדה תימן</strong><span>ישראל היום - כל הכתבות · 2026-07-30T17:48:51+03:00 <a href="https://www.israelhayom.co.il/news/defense/article/21095680" target="_blank" rel="noopener">מקור</a></span></li><li><strong>שני ישראלים נעצרו אחרי שחצו לשטח סוריה מהר החרמון</strong><span>The Jerusalem Post - Israel News · 2026-07-30T17:47:31+03:00 <a href="https://www.jpost.com/israel-news/article-904153" target="_blank" rel="noopener">מקור</a></span></li><li><strong>אזרח יליד איראן נדרש לעזוב את ישראל למרות משפחתו בארץ</strong><span>The Jerusalem Post - Israel News · 2026-07-30T17:47:31+03:00 <a href="https://www.jpost.com/israel-news/article-904152" target="_blank" rel="noopener">מקור</a></span></li><li><strong>כתב האישום נגד עו"ד עידן דביר הורחב למתלוננת נוספת</strong><span>וואלה חדשות · 2026-07-30T17:47:00+03:00 <a href="https://news.walla.co.il/item/3857405" target="_blank" rel="noopener">מקור</a></span></li><li><strong>חטיבה 188 סיכמה שמונה חודשי לחימה בדרום הרצועה</strong><span>סרוגים - כל הכתבות · 2026-07-30T17:46:50+03:00 <a href="https://www.srugim.co.il/101007439-10-מנהרות-הושמדו-עשרות-מחבלים-חוסלו" target="_blank" rel="noopener">מקור</a></span></li><li><strong>עידן רייכל ינחה פורמט טלוויזיה חדש ברשת 13</strong><span>כיפה - חדשות · 2026-07-30T17:44:51+03:00 <a href="https://www.kipa.co.il/%D7%AA%D7%A8%D7%91%D7%95%D7%AA/%D7%98%D7%9C%D7%95%D7%95%D7%99%D7%96%D7%99%D7%94/1228829-0/" target="_blank" rel="noopener">מקור</a></span></li></ul>
+  </section>
+
+  <section class="panel">
+    <h2>Feed A נראה ל-Feed B אבל סונן החוצה</h2>
+    <p class="empty">אין פריטים להצגה.</p>
+  </section>
+
+  <div class="links">
+    <a href="./">Feed B</a>
+    <a href="./compare_report.json">JSON</a>
+    <a href="./compare_report.md">Markdown</a>
+    <a href="../feed_b.json">feed_b.json</a>
+  </div>
+  <p>Feed B נוצר: 2026-07-30T18:23:05+03:00</p>
+</main>
+</body>
+</html>
