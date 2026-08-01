@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCES = ROOT / "breaking_sources.json"
 DEFAULT_OUTPUT = ROOT / "breaking_feed.json"
+DEFAULT_DIST_OUTPUT = ROOT / "dist" / "breaking_feed.json"
 USER_AGENT = "PoantaBreakingFeed/1.0 (+https://liorexmotors.github.io/poanta-demo/)"
 ISRAEL_TZ = ZoneInfo("Asia/Jerusalem")
 
@@ -730,7 +731,12 @@ def should_keep(row: dict[str, Any], source: dict[str, Any]) -> bool:
     return True
 
 
-def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
+def write_breaking_feed(output_path: Path, payload: dict[str, Any]) -> None:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def build(sources_path: Path, output_path: Path, limit: int, dist_output_path: Path | None = DEFAULT_DIST_OUTPUT) -> dict[str, Any]:
     cfg = json.loads(sources_path.read_text(encoding="utf-8"))
     items: list[dict[str, Any]] = []
     errors: list[dict[str, str]] = []
@@ -795,7 +801,9 @@ def build(sources_path: Path, output_path: Path, limit: int) -> dict[str, Any]:
         "sources": [s.get("name") for s in cfg.get("active", [])],
         "errors": errors,
     }
-    output_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_breaking_feed(output_path, out)
+    if dist_output_path and output_path.resolve() != dist_output_path.resolve():
+        write_breaking_feed(dist_output_path, out)
     return out
 
 
@@ -803,10 +811,16 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sources", type=Path, default=DEFAULT_SOURCES)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--dist-output", type=Path, default=DEFAULT_DIST_OUTPUT)
+    parser.add_argument("--no-dist-output", action="store_true")
     parser.add_argument("--limit", type=int, default=80)
     args = parser.parse_args(argv)
-    out = build(args.sources, args.output, args.limit)
-    print(f"breaking_feed: {len(out['items'])} items, {len(out['errors'])} source errors -> {args.output}")
+    dist_output = None if args.no_dist_output else args.dist_output
+    out = build(args.sources, args.output, args.limit, dist_output)
+    target_note = str(args.output)
+    if dist_output:
+        target_note += f" + {dist_output}"
+    print(f"breaking_feed: {len(out['items'])} items, {len(out['errors'])} source errors -> {target_note}")
     if out["errors"]:
         for err in out["errors"]:
             print(f"WARN {err['source']}: {err['error']}", file=sys.stderr)

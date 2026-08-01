@@ -9,6 +9,7 @@ individually; the already-live, known-good feed is retained.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -35,6 +36,7 @@ FEED_B = ROOT / "feed_b.json"
 LIVE_FEED = ROOT / "feed.json"
 TMP_CANDIDATE = ROOT / "tmp" / "feed-b-live-auto-candidate.json"
 QUALITY_REPORT = ROOT / "tmp" / "feed-b-live-auto-quality.md"
+PROMOTION_QUARANTINE = ROOT / "pointa_promotion_quarantine.json"
 # Kept only so old operational tooling can detect and archive the former pilot
 # marker. V5 is now the permanent production mechanism and must not be disabled
 # by the retired pilot audit.
@@ -77,6 +79,63 @@ def item_title(item: dict[str, Any]) -> str:
 
 def item_summary(item: dict[str, Any]) -> str:
     return str(item.get("summary") or item.get("subtitle") or item.get("context") or "").strip()
+
+
+def item_fingerprint(item: dict[str, Any]) -> str:
+    payload = {
+        key: item.get(key)
+        for key in ("sourceUrl", "url", "publishedAt", "updatedAt", "headline", "title", "summary", "context", "takeaway", "category")
+    }
+    raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+def active_quarantine_entries(path: Path | None = None) -> dict[str, dict[str, Any]]:
+    path = path or PROMOTION_QUARANTINE
+    payload = load_json(path, {})
+    rows = payload.get("items", []) if isinstance(payload, dict) else []
+    return {
+        str(row.get("url") or ""): row
+        for row in rows
+        if isinstance(row, dict) and str(row.get("url") or "")
+    }
+
+
+def quarantine_matches(item: dict[str, Any], entries: dict[str, dict[str, Any]]) -> bool:
+    row = entries.get(item_url(item))
+    return bool(row and row.get("fingerprint") == item_fingerprint(item))
+
+
+def persist_promotion_quarantine(
+    rejected: list[dict[str, Any]],
+    reason: str,
+    path: Path | None = None,
+) -> int:
+    path = path or PROMOTION_QUARANTINE
+    if not rejected:
+        return 0
+    entries = active_quarantine_entries(path)
+    now = datetime.now(timezone.utc).isoformat()
+    for item in rejected:
+        url = item_url(item)
+        if not url:
+            continue
+        entries[url] = {
+            "url": url,
+            "fingerprint": item_fingerprint(item),
+            "status": "rejected_by_public_qa",
+            "reason": reason,
+            "rejectedAt": now,
+            "headline": item_title(item),
+            "source": item.get("source") or "",
+        }
+    write_json(path, {
+        "schemaVersion": 1,
+        "updatedAt": now,
+        "policy": "Skip unchanged public-QA rejects; retry automatically after editorial content changes.",
+        "items": sorted(entries.values(), key=lambda row: str(row.get("rejectedAt") or "")),
+    })
+    return len(rejected)
 
 
 def candidate_payload(
@@ -355,12 +414,15 @@ def incremental_items(live: dict[str, Any], source: dict[str, Any], *, now_dt: d
         if isinstance(item, dict) and item_url(item)
     }
     selected: list[dict[str, Any]] = []
+    quarantine = active_quarantine_entries()
     for item in source.get("items") or []:
         if not isinstance(item, dict):
             continue
         url = item_url(item)
         item_time = parse_dt(item.get("updatedAt") or item.get("publishedAt"))
         if not url or item_time is None or item_time < cutoff:
+            continue
+        if quarantine_matches(item, quarantine):
             continue
         existing = live_by_url.get(url)
         if existing is None:
@@ -431,13 +493,22 @@ def main() -> int:
         return 0
 
     blocked: set[str] = set()
+    quarantined: list[dict[str, Any]] = []
     report: dict[str, Any] = {}
     for attempt in range(1, len(incremental) + 2):
         usable = [item for item in incremental if item_url(item) not in blocked]
         payload = candidate_payload(source, usable, args.limit, live)
         count = len(payload.get("items") or [])
         if count == 0:
-            raise SystemExit("all new items failed editorial validation; live feed left unchanged")
+            persist_promotion_quarantine(quarantined, "public QA rejected unchanged promotion candidate")
+            print(json.dumps({
+                "ok": True,
+                "reason": "all-new-items-quarantined",
+                "newCandidates": len(incremental),
+                "quarantined": len(quarantined),
+                "items": len(live.get("items") or []),
+            }, ensure_ascii=False, indent=2))
+            return 0
         write_json(TMP_CANDIDATE, payload)
         ok, remove, message = validate_new_package(TMP_CANDIDATE)
         report = {"attempt": attempt, "newCandidates": len(incremental), "accepted": count, "ok": ok, "message": message, "pruned": len(blocked)}
@@ -446,12 +517,15 @@ def main() -> int:
             if len(merged.get("items") or []) < args.min_items:
                 raise SystemExit("merged live candidate is unexpectedly small")
             write_json(Path(args.out), merged)
+            persist_promotion_quarantine(quarantined, "public QA rejected unchanged promotion candidate")
             write_json(ROOT / "tmp" / "feed-b-live-auto-promotion.json", report)
             print(json.dumps(report, ensure_ascii=False, indent=2))
             return 0
         if not remove:
             write_json(ROOT / "tmp" / "feed-b-live-auto-promotion.json", report)
             raise SystemExit(message)
+        newly_removed = remove - blocked
+        quarantined.extend(item for item in incremental if item_url(item) in newly_removed)
         blocked |= remove
 
     write_json(ROOT / "tmp" / "feed-b-live-auto-promotion.json", report)

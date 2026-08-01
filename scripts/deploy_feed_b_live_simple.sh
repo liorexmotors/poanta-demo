@@ -28,6 +28,11 @@ if [[ -d assets/poenta-image-bank ]]; then
   rm -rf dist/assets/poenta-image-bank
   cp -a assets/poenta-image-bank dist/assets/poenta-image-bank
 fi
+if [[ -d assets/poenta-image-bank-v5 ]]; then
+  mkdir -p dist/assets
+  rm -rf dist/assets/poenta-image-bank-v5
+  cp -a assets/poenta-image-bank-v5 dist/assets/poenta-image-bank-v5
+fi
 # The main feed changes on every promotion, so its static WhatsApp/OpenGraph
 # pages must be regenerated in the same release artifact. Otherwise new share
 # URLs fall through to the marketing homepage.
@@ -74,7 +79,7 @@ git fetch origin main gh-pages
 
 rm -rf "$MAIN_WORKTREE"
 git worktree add "$MAIN_WORKTREE" origin/main
-for p in feed.json feed_b.json breaking_feed.json .feed-b-state.json .feed-b-seen.json scripts/poenta_image_bank.py scripts/promote_feed_b_live.py scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh scripts/generate_share_pages.py scripts/update_breaking_feed.py tests/test_share_pages.py assets/poenta-image-bank; do
+for p in feed.json feed_b.json breaking_feed.json .feed-b-state.json .feed-b-seen.json scripts/poenta_image_bank.py scripts/promote_feed_b_live.py scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh scripts/generate_share_pages.py scripts/update_breaking_feed.py tests/test_share_pages.py assets/poenta-image-bank assets/poenta-image-bank-v5; do
   if [[ -e "$ROOT/$p" ]]; then
     mkdir -p "$MAIN_WORKTREE/$(dirname "$p")"
     rm -rf "$MAIN_WORKTREE/$p"
@@ -85,7 +90,7 @@ cd "$MAIN_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json feed_b.json breaking_feed.json .feed-b-state.json .feed-b-seen.json scripts/poenta_image_bank.py scripts/promote_feed_b_live.py scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh scripts/generate_share_pages.py scripts/update_breaking_feed.py tests/test_share_pages.py assets/poenta-image-bank
+  git add feed.json feed_b.json breaking_feed.json .feed-b-state.json .feed-b-seen.json scripts/poenta_image_bank.py scripts/promote_feed_b_live.py scripts/promote_feed_b_live_simple.py scripts/deploy_feed_b_live_simple.sh scripts/generate_share_pages.py scripts/update_breaking_feed.py tests/test_share_pages.py assets/poenta-image-bank assets/poenta-image-bank-v5
   git commit -m "Deploy Feed B live snapshot"
   git pull --rebase origin main
   git push origin HEAD:main
@@ -94,7 +99,7 @@ fi
 cd "$ROOT"
 rm -rf "$GH_WORKTREE"
 git worktree add --detach "$GH_WORKTREE" origin/gh-pages
-for p in feed.json feed_b.json breaking_feed.json assets/poenta-image-bank; do
+for p in feed.json feed_b.json breaking_feed.json assets/poenta-image-bank assets/poenta-image-bank-v5; do
   rm -rf "$GH_WORKTREE/$p"
   mkdir -p "$GH_WORKTREE/$(dirname "$p")"
   cp -a "$ROOT/$p" "$GH_WORKTREE/$p"
@@ -109,7 +114,7 @@ cd "$GH_WORKTREE"
 if [[ -n "$(git status --porcelain)" ]]; then
   git config user.name "poanta-feed-bot"
   git config user.email "poanta-feed-bot@users.noreply.github.com"
-  git add feed.json feed_b.json breaking_feed.json feed-b share assets/poenta-image-bank
+  git add feed.json feed_b.json breaking_feed.json feed-b share assets/poenta-image-bank assets/poenta-image-bank-v5
   git commit -m "Deploy Feed B live snapshot"
   git pull --rebase origin gh-pages
   git push origin HEAD:gh-pages
